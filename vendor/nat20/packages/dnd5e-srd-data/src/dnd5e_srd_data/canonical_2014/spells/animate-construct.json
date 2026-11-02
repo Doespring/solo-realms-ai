@@ -1,0 +1,230 @@
+{
+  "slug": "animate-construct",
+  "foundry_uuid": "Compendium.dnd5e.laaru-hw-spells.Item.6kdPgLgvAeu1XQej",
+  "name": "Оживление конструкции / Animate Construct",
+  "description": "(Механомагия)\n\nЗаклинание оживляет тщательно подготовленную, небольшого размера конструкцию. Она немедленно действует в ваш ход, и атакует ваших врагов как может. Вы можете приказать ей не атаковать, атаковать конкретных врагов и совершать другие действия. Вы выбираете объект для оживления и можете при каждом сотворении выбирать новый. Стоимость объекта для оживления равна [его ПЗ помноженные на 10] зм. Объект может быть использован любое количество раз, если он не была сильно поврежден или уничтожен.\n\nЕсли под рукой нет подготовленной конструкции, вместо неё можно оживить кучу металла или камней. Перед сотворением объекту надо придать подходящую форму (что может занять до минуты), а ПЗ у такого конструкции будет в два раза меньше, чем у под готовленной.\n\nОживлённая конструкция имеет Выносливость 10, Интеллект и Мудрость 3, и Харизму 1. Другие характеристики определяются из его размера согласно таблице ниже.\n\nХарактеристики оживлённых конструкций\n\nРазмер\n\nПЗ\n\nКБ\n\nАтака\n\nУрон\n\nСИЛ\n\nЛОВ\n\nКруг ячейки\n\nМаленький\n\n15\n\n12\n\n+3\n\n[[/r 1d4+4]]\n\n4\n\n16\n\n1\n\nНебольшой\n\n25\n\n13\n\n+4\n\n[[/r 1d8+2]]\n\n6\n\n14\n\n2\n\nСредний\n\n40\n\n14\n\n+5\n\n[[/r 2d6+1]]\n\n10\n\n12\n\n3\n\nКрупный\n\n50\n\n15\n\n+6\n\n[[/r 2d10+2]]\n\n14\n\n10\n\n4\n\nОгромный\n\n80\n\n16\n\n+8\n\n[[/r 2d12+4]]\n\n18\n\n8\n\n5\n\nИсполинский\n\n100\n\n17\n\n+10\n\n[[/r 4d8+8]]\n\n20\n\n6\n\n6\n\nНа высоких кругах. Сотворение этого заклинания, используя ячейку более высокого круга, позволяет вам оживить конструкцию большего размера, как показано в таблице.",
+  "level": 1,
+  "school": "trs",
+  "components": [
+    "M",
+    "S",
+    "V"
+  ],
+  "ritual": false,
+  "concentration": true,
+  "casting_time": {
+    "unit": "action",
+    "value": 1,
+    "condition": ""
+  },
+  "range": {
+    "units": "ft",
+    "value": 30,
+    "special": null
+  },
+  "duration": {
+    "units": "minute",
+    "value": 10
+  },
+  "materials": {
+    "value": "тело конструкта соответствующего размера",
+    "consumed": false,
+    "cost": 0,
+    "supply": 0
+  },
+  "preparation": {
+    "mode": "prepared",
+    "prepared": false
+  },
+  "activities": [
+    {
+      "id": "4aiFGB9bqjhGy2Pc",
+      "name": "",
+      "img": "",
+      "sort": 0,
+      "activation": {
+        "type": "action",
+        "value": null,
+        "condition": "",
+        "override": false,
+        "reaction_conditions": []
+      },
+      "consumption": {
+        "scaling": {
+          "allowed": false,
+          "max": ""
+        },
+        "spell_slot": true,
+        "targets": []
+      },
+      "description": {
+        "chat_flavor": ""
+      },
+      "duration": {
+        "value": null,
+        "units": "inst",
+        "special": "",
+        "concentration": false,
+        "override": false
+      },
+      "flags": {},
+      "range": {
+        "value": null,
+        "units": "self",
+        "special": "",
+        "override": false
+      },
+      "target": {
+        "template": {
+          "count": "",
+          "contiguous": false,
+          "stationary": false,
+          "type": "",
+          "size": "",
+          "width": "",
+          "height": "",
+          "units": "ft"
+        },
+        "affects": {
+          "count": "",
+          "type": "",
+          "choice": false,
+          "special": ""
+        },
+        "override": false,
+        "prompt": true
+      },
+      "uses": {
+        "spent": 0,
+        "max": "",
+        "recovery": []
+      },
+      "visibility": {
+        "identifier": "",
+        "level": {
+          "min": null,
+          "max": null
+        },
+        "require_attunement": false,
+        "require_identification": false,
+        "require_magic": false
+      },
+      "effects": [],
+      "applied_effects": [],
+      "kind": "summon",
+      "bonuses": {
+        "ac": "",
+        "hd": "",
+        "hp": "",
+        "attack_damage": "",
+        "save_damage": "",
+        "healing": ""
+      },
+      "creature_sizes": [],
+      "creature_types": [],
+      "match": {
+        "ability": "",
+        "attacks": false,
+        "disposition": false,
+        "proficiency": false,
+        "saves": false
+      },
+      "profiles": [
+        {
+          "id": "blhpB6x8dZVTt2sP",
+          "count": "",
+          "cr": "",
+          "level": {
+            "min": 1,
+            "max": 1
+          },
+          "name": "Маленькая",
+          "types": [],
+          "uuid": "Compendium.laaru-dnd5-hw.monsters2.Actor.9ChLUI1cB6UXcafh"
+        },
+        {
+          "id": "IKOXBr6f8DiUQtRz",
+          "count": "",
+          "cr": "",
+          "level": {
+            "min": 2,
+            "max": 2
+          },
+          "name": "Небольшая",
+          "types": [],
+          "uuid": "Compendium.laaru-dnd5-hw.monsters2.Actor.7kxFJWTV81j7PDAw"
+        },
+        {
+          "id": "KrYNG1CGMq9EO1sW",
+          "count": "",
+          "cr": "",
+          "level": {
+            "min": 3,
+            "max": 3
+          },
+          "name": "Средняя",
+          "types": [],
+          "uuid": "Compendium.laaru-dnd5-hw.monsters2.Actor.o3MaebuBINRMhiOS"
+        },
+        {
+          "id": "HGYplwzwMNta4QFu",
+          "count": "",
+          "cr": "",
+          "level": {
+            "min": 5,
+            "max": 5
+          },
+          "name": "Огромная",
+          "types": [],
+          "uuid": "Compendium.laaru-dnd5-hw.monsters2.Actor.napuztFdYc6LNvBg"
+        },
+        {
+          "id": "bIP4oscTcUMOKoGI",
+          "count": "",
+          "cr": "",
+          "level": {
+            "min": 4,
+            "max": 4
+          },
+          "name": "Крупная",
+          "types": [],
+          "uuid": "Compendium.laaru-dnd5-hw.monsters2.Actor.AgwTRCOLY9AA3EfS"
+        },
+        {
+          "id": "9KQYDyaTHz6Bu5D5",
+          "count": "",
+          "cr": "",
+          "level": {
+            "min": 6,
+            "max": 6
+          },
+          "name": "Исполинская",
+          "types": [],
+          "uuid": "Compendium.laaru-dnd5-hw.monsters2.Actor.AGtBNauVXOJKtxdl"
+        }
+      ],
+      "summon": {
+        "mode": "",
+        "prompt": true,
+        "identifier": null
+      },
+      "temp_hp": ""
+    }
+  ],
+  "passive_effects": [],
+  "provenance": {
+    "source": "foundry",
+    "source_url": "https://github.com/foundryvtt/dnd5e/blob/965ad2d0cf5d063dac675ba078b5bd3c3c0dd449/packs/_source/laaru-hw-spells/Оживление_конструкции___Animate_Construct_6kdPgLgvAeu1XQej.yml",
+    "ingest_date": "2026-10-26",
+    "ingest_version": "foundry-translator-v1",
+    "srd_version": [
+      "5.1"
+    ],
+    "license_tag": "CC-BY-4.0"
+  },
+  "review": {
+    "known_divergence": null,
+    "requires_user_decision": false
+  },
+  "entry_kind": "spell"
+}

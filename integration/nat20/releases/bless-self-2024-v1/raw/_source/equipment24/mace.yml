@@ -1,0 +1,207 @@
+{
+  "_id": "phbwepMace000000",
+  "_stats": {
+    "coreVersion": "13.344",
+    "createdTime": 1724425919708,
+    "duplicateSource": null,
+    "exportSource": null,
+    "lastModifiedBy": "dnd5ebuilder0000",
+    "modifiedTime": 1745431704598,
+    "systemId": "dnd5e",
+    "systemVersion": "4.4.0"
+  },
+  "effects": [],
+  "flags": {
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    }
+  },
+  "folder": "FL1Jee9DzStc7vM3",
+  "img": "icons/weapons/maces/mace-flanged-steel.webp",
+  "name": "Mace",
+  "ownership": {
+    "default": 0
+  },
+  "sort": 0,
+  "system": {
+    "activities": {
+      "KiHlb6kIDAvWmnhv": {
+        "_id": "KiHlb6kIDAvWmnhv",
+        "activation": {
+          "condition": "",
+          "override": false,
+          "type": "action",
+          "value": 1
+        },
+        "appliedEffects": [],
+        "attack": {
+          "ability": "",
+          "bonus": "",
+          "critical": {
+            "threshold": null
+          },
+          "flat": false,
+          "type": {
+            "classification": "weapon",
+            "value": "melee"
+          }
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false,
+            "max": ""
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "damage": {
+          "critical": {
+            "bonus": ""
+          },
+          "includeBase": true,
+          "parts": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "concentration": false,
+          "override": false,
+          "special": "",
+          "units": "inst",
+          "value": ""
+        },
+        "effects": [],
+        "img": "",
+        "name": "",
+        "range": {
+          "override": false,
+          "special": "",
+          "units": "ft",
+          "value": "5"
+        },
+        "sort": 0,
+        "target": {
+          "affects": {
+            "choice": false,
+            "count": "",
+            "special": "",
+            "type": ""
+          },
+          "override": false,
+          "prompt": false,
+          "template": {
+            "contiguous": false,
+            "count": "",
+            "height": "",
+            "size": "",
+            "type": "",
+            "units": "",
+            "width": ""
+          }
+        },
+        "type": "attack",
+        "uses": {
+          "max": "",
+          "recovery": [],
+          "spent": 0
+        }
+      }
+    },
+    "ammunition": {},
+    "armor": {
+      "value": null
+    },
+    "attuned": false,
+    "attunement": "",
+    "container": null,
+    "cover": null,
+    "crewed": false,
+    "damage": {
+      "base": {
+        "bonus": "",
+        "custom": {
+          "enabled": false
+        },
+        "denomination": 6,
+        "number": 1,
+        "scaling": {
+          "number": 1
+        },
+        "types": [
+          "bludgeoning"
+        ]
+      },
+      "versatile": {
+        "bonus": "",
+        "custom": {
+          "enabled": true,
+          "formula": ""
+        },
+        "denomination": null,
+        "number": null,
+        "scaling": {
+          "formula": "",
+          "mode": "",
+          "number": null
+        },
+        "types": []
+      }
+    },
+    "description": {
+      "chat": "",
+      "value": ""
+    },
+    "equipped": false,
+    "hp": {
+      "conditions": "",
+      "dt": null,
+      "max": null,
+      "value": null
+    },
+    "identified": true,
+    "identifier": "mace",
+    "magicalBonus": null,
+    "mastery": "sap",
+    "price": {
+      "denomination": "gp",
+      "value": 5
+    },
+    "proficient": null,
+    "properties": [],
+    "quantity": 1,
+    "range": {
+      "long": null,
+      "reach": null,
+      "units": "ft",
+      "value": null
+    },
+    "rarity": "",
+    "source": {
+      "book": "",
+      "custom": "",
+      "license": "CC-BY-4.0",
+      "rules": "2024"
+    },
+    "type": {
+      "baseItem": "mace",
+      "value": "simpleM"
+    },
+    "unidentified": {
+      "description": ""
+    },
+    "uses": {
+      "max": "",
+      "recovery": [],
+      "spent": 0
+    },
+    "weight": {
+      "units": "lb",
+      "value": 4
+    }
+  },
+  "type": "weapon"
+}

@@ -1,0 +1,145 @@
+{
+  "slug": "fast-friends",
+  "foundry_uuid": "Compendium.dnd5e.laaru-hw-spells.Item.vopaIitWrfAANv5A",
+  "name": "Быстрые друзья / Fast Friends",
+  "description": "Когда вам нужны гарантии, что поручение будет выполнено, вы не можете полагаться на чьи-то обещания, клятвы или на трудовой договор.\n\nКогда вы сотворяете это заклинание, выберите одного гуманоида в пределах дистанции, который может видеть и слышать вас, и который может вас понять. Существо должно преуспеть в испытании Мудрости, иначе станет &amp;reference[charmed]{обворожённым} вами, пока заклинание активно. Пока существо обворожено таким образом, оно обязуется выполнять любые распоряжения, которые вы  в дружеской манере попросите его выполнить, в меру своих возможностей.\n\nВы можете дать существу новое поручение, когда предыдущее будет выполнено, или если вы решите отменить текущую задачу. Если ваши распоряжения могут причинить вред обворожённому существу или если они противоречат обычной деятельности и желаниям существа, то существо может пройти ещё одно испытание Мудрости, чтобы попытаться досрочно окончить действие эффекта. Испытание совершается с преимуществом, если вы или ваши товарищи сражаетесь с этим существом. Если существо умирает, действие заклинания заканчивается.\n\nПосле окончания действия данного заклинания существо точно знает, кем оно было &amp;reference[charmed]{обворожено}.\n\nНа высоких кругах. Если вы сотворяете это заклинание, используя ячейку заклинаний 4-го круга или выше, вы можете нацелиться на одно дополнительное существо для каждого круга ячейки выше 3-го.",
+  "level": 3,
+  "school": "enc",
+  "components": [
+    "V"
+  ],
+  "ritual": false,
+  "concentration": true,
+  "casting_time": {
+    "unit": "action",
+    "value": 1,
+    "condition": ""
+  },
+  "range": {
+    "units": "ft",
+    "value": 30,
+    "special": null
+  },
+  "duration": {
+    "units": "hour",
+    "value": 1
+  },
+  "materials": {
+    "value": "",
+    "consumed": false,
+    "cost": 0,
+    "supply": 0
+  },
+  "preparation": {
+    "mode": "prepared",
+    "prepared": false
+  },
+  "activities": [
+    {
+      "id": "dnd5eactivity000",
+      "name": "",
+      "img": "",
+      "sort": 0,
+      "activation": {
+        "type": "action",
+        "value": null,
+        "condition": "",
+        "override": false,
+        "reaction_conditions": []
+      },
+      "consumption": {
+        "scaling": {
+          "allowed": false,
+          "max": ""
+        },
+        "spell_slot": true,
+        "targets": []
+      },
+      "description": {
+        "chat_flavor": ""
+      },
+      "duration": {
+        "value": null,
+        "units": "inst",
+        "special": "",
+        "concentration": false,
+        "override": false
+      },
+      "flags": {},
+      "range": {
+        "value": null,
+        "units": "self",
+        "special": "",
+        "override": false
+      },
+      "target": {
+        "template": {
+          "count": "",
+          "contiguous": false,
+          "stationary": false,
+          "type": "",
+          "size": "",
+          "width": "",
+          "height": "",
+          "units": ""
+        },
+        "affects": {
+          "count": "",
+          "type": "",
+          "choice": false,
+          "special": ""
+        },
+        "override": false,
+        "prompt": true
+      },
+      "uses": {
+        "spent": 0,
+        "max": "",
+        "recovery": []
+      },
+      "visibility": {
+        "identifier": "",
+        "level": {
+          "min": null,
+          "max": null
+        },
+        "require_attunement": false,
+        "require_identification": false,
+        "require_magic": false
+      },
+      "effects": [],
+      "applied_effects": [],
+      "kind": "save",
+      "damage": {
+        "on_save": "half",
+        "parts": []
+      },
+      "save": {
+        "ability": [
+          "wis"
+        ],
+        "dc": {
+          "calculation": "spellcasting",
+          "formula": ""
+        },
+        "ignore_cover": false
+      }
+    }
+  ],
+  "passive_effects": [],
+  "provenance": {
+    "source": "foundry",
+    "source_url": "https://github.com/foundryvtt/dnd5e/blob/965ad2d0cf5d063dac675ba078b5bd3c3c0dd449/packs/_source/laaru-hw-spells/Быстрые_друзья___Fast_Friends_vopaIitWrfAANv5A.yml",
+    "ingest_date": "2026-10-26",
+    "ingest_version": "foundry-translator-v1",
+    "srd_version": [
+      "5.1"
+    ],
+    "license_tag": "CC-BY-4.0"
+  },
+  "review": {
+    "known_divergence": null,
+    "requires_user_decision": false
+  },
+  "entry_kind": "spell"
+}

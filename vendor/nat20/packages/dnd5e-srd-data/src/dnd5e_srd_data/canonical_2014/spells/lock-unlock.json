@@ -1,0 +1,139 @@
+{
+  "slug": "lock-unlock",
+  "foundry_uuid": "Compendium.dnd5e.laaru-hw-spells.Item.WDlsfNRHmtLrleET",
+  "name": "Запирание/Отпирание / Lock/Unlock",
+  "description": "Вы касаетесь одной закрытой двери, окна, ворот, сундука или другого входа и либо запираете, либо отпираете ее, используя правила, приведенные ниже:\n\nЗапереть. Вы и существа, которых вы укажете, когда будете сотворять это заклинание, сможете открыть объект обычным способом. Вы также можете выбрать пароль, который, будучи произнесенным вслух в радиусе 5 футов от объекта, подавляет действие заклинания на 1 минуту. Этот замок можно обойти, успешно выполнив проверку Силы или проверку инструментов вора против вашей СЛ испытания от заклинания, после чего заклинание рассеивается.\n\nОтпирание. Если объект закрыт обычным замком, застрял или заперт, он мгновенно перестаёт быть закрытым, застрявшим или запертым. Если на объекте несколько замков, отпирается только один из них. Независимо от этого, когда вы сотворяете заклинание, из целевого объекта раздается громкий стук, слышимый на расстоянии до 300 футов.",
+  "level": 2,
+  "school": "abj",
+  "components": [
+    "M",
+    "S",
+    "V"
+  ],
+  "ritual": false,
+  "concentration": false,
+  "casting_time": {
+    "unit": "action",
+    "value": 1,
+    "condition": ""
+  },
+  "range": {
+    "units": "touch",
+    "value": null,
+    "special": null
+  },
+  "duration": {
+    "units": "inst",
+    "value": null
+  },
+  "materials": {
+    "value": "колышек, который расходует заклинание",
+    "consumed": true,
+    "cost": 0,
+    "supply": 0
+  },
+  "preparation": {
+    "mode": "prepared",
+    "prepared": false
+  },
+  "activities": [
+    {
+      "id": "dnd5eactivity000",
+      "name": "",
+      "img": "",
+      "sort": 0,
+      "activation": {
+        "type": "action",
+        "value": null,
+        "condition": "",
+        "override": false,
+        "reaction_conditions": []
+      },
+      "consumption": {
+        "scaling": {
+          "allowed": false,
+          "max": ""
+        },
+        "spell_slot": true,
+        "targets": []
+      },
+      "description": {
+        "chat_flavor": ""
+      },
+      "duration": {
+        "value": null,
+        "units": "inst",
+        "special": "",
+        "concentration": false,
+        "override": false
+      },
+      "flags": {},
+      "range": {
+        "value": null,
+        "units": "self",
+        "special": "",
+        "override": false
+      },
+      "target": {
+        "template": {
+          "count": "",
+          "contiguous": false,
+          "stationary": false,
+          "type": "",
+          "size": "",
+          "width": "",
+          "height": "",
+          "units": ""
+        },
+        "affects": {
+          "count": "1",
+          "type": "object",
+          "choice": false,
+          "special": ""
+        },
+        "override": false,
+        "prompt": true
+      },
+      "uses": {
+        "spent": 0,
+        "max": "",
+        "recovery": []
+      },
+      "visibility": {
+        "identifier": "",
+        "level": {
+          "min": null,
+          "max": null
+        },
+        "require_attunement": false,
+        "require_identification": false,
+        "require_magic": false
+      },
+      "effects": [],
+      "applied_effects": [],
+      "kind": "utility",
+      "roll": {
+        "formula": "",
+        "name": "",
+        "prompt": false,
+        "visible": false
+      }
+    }
+  ],
+  "passive_effects": [],
+  "provenance": {
+    "source": "foundry",
+    "source_url": "https://github.com/foundryvtt/dnd5e/blob/965ad2d0cf5d063dac675ba078b5bd3c3c0dd449/packs/_source/laaru-hw-spells/Запирание_Отпирание___Lock_Unlock_WDlsfNRHmtLrleET.yml",
+    "ingest_date": "2026-10-26",
+    "ingest_version": "foundry-translator-v1",
+    "srd_version": [
+      "5.1"
+    ],
+    "license_tag": "CC-BY-4.0"
+  },
+  "review": {
+    "known_divergence": null,
+    "requires_user_decision": false
+  },
+  "entry_kind": "spell"
+}

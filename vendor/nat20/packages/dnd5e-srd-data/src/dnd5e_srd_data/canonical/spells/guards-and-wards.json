@@ -1,0 +1,140 @@
+{
+  "activities": [
+    {
+      "activation": {
+        "condition": "",
+        "override": false,
+        "reaction_conditions": [],
+        "type": "action",
+        "value": null
+      },
+      "applied_effects": [],
+      "consumption": {
+        "scaling": {
+          "allowed": false,
+          "max": ""
+        },
+        "spell_slot": true,
+        "targets": []
+      },
+      "description": {
+        "chat_flavor": ""
+      },
+      "duration": {
+        "concentration": false,
+        "override": false,
+        "special": "",
+        "units": "inst",
+        "value": null
+      },
+      "effects": [],
+      "flags": {},
+      "id": "0UuktQmXxk0juJgb",
+      "img": "",
+      "kind": "utility",
+      "name": "",
+      "range": {
+        "override": false,
+        "special": "",
+        "units": "self",
+        "value": null
+      },
+      "roll": {
+        "formula": "",
+        "name": "",
+        "prompt": false,
+        "visible": false
+      },
+      "sort": 0,
+      "target": {
+        "affects": {
+          "choice": false,
+          "count": "",
+          "special": "",
+          "type": ""
+        },
+        "override": true,
+        "prompt": false,
+        "template": {
+          "contiguous": false,
+          "count": "",
+          "height": "",
+          "size": "50",
+          "stationary": false,
+          "type": "square",
+          "units": "ft",
+          "width": ""
+        }
+      },
+      "uses": {
+        "max": "",
+        "recovery": [],
+        "spent": 0
+      },
+      "visibility": {
+        "identifier": "",
+        "level": {
+          "max": null,
+          "min": null
+        },
+        "require_attunement": false,
+        "require_identification": false,
+        "require_magic": false
+      }
+    }
+  ],
+  "casting_time": {
+    "condition": "",
+    "unit": "hour",
+    "value": 1
+  },
+  "components": [
+    "M",
+    "S",
+    "V"
+  ],
+  "concentration": false,
+  "description": "You create a ward that protects up to 2,500 square feet of floor space. The warded area can be up to 20 feet tall, and you shape it as one 50-foot square, one hundred 5-foot squares that are contiguous, or twenty-five 10-foot squares that are contiguous.\n\nWhen you cast this spell, you can specify individuals that are unaffected by the spell's effects. You can also specify a password that, when spoken aloud within 5 feet of the warded area, makes the speaker immune to its effects.\n\nThe spell creates the effects below within the warded area. Dispel Magic has no effect on Guards and Wards itself, but each of the following effects can be dispelled. If all four are dispelled, Guards and Wards ends. If you cast the spell every day for 365 days on the same area, the spell thereafter lasts until all its effects are dispelled.\n\nCorridors. Fog fills all the warded corridors, making them &amp;Reference[HeavilyObscured]. In addition, at each intersection or branching passage offering a choice of direction, there is a 50 percent chance that a creature other than you believes it is going in the opposite direction from the one it chooses.\n\nDoors. All doors in the warded area are magically locked, as if sealed by the Arcane Lock spell. In addition, you can cover up to ten doors with an illusion to make them appear as plain sections of wall.\n\nStairs. Webs fill all stairs in the warded area from top to bottom, as in the Web spell. These strands regrow in 10 minutes if they are destroyed while Guards and Wards lasts.\n\nOther Spell Effect. Place one of the following magical effects within the warded area:\n\nDancing Lights in four corridors, with a simple program that the lights repeat as long as Guards and Wards lasts\n\nMagic Mouth in two locations\n\nStinking Cloud in two locations (the vapors return within 10 minutes if dispersed while Guards and Wards lasts)\n\nGust of Wind in one corridor or room (the wind blows continuously while the spell lasts)\n\nSuggestion in one 5-foot square; any creature that enters that square receives the suggestion mentally",
+  "description_localized": "<p>Вы создаёте охранные чары, защищающие до 2 500 квадратных футов поверхности (либо 50-футовый квадрат, либо сто 5-футовых квадратов, либо двадцать пять 10-футовых квадратов). Защищённая область может быть до 20 футов в высоту и любой формы. Вы можете защитить несколько этажей резиденции, разделив область между ними, если вы можете зайти в каждую из смежных областей, пока творите заклинание.</p><p>Когда вы творите это заклинание, вы можете указать лиц, на которых не будут влиять все или часть эффектов на ваш выбор. Вы можете также указать пароль: тот, кто его произнесёт, будет невосприимчив к этим эффектам</p><p>Заклинание создает следующие эффекты в пределах защищаемой области.</p><p><strong>Двери. </strong>Все двери в защищённой области магически запираются, словно бы заклинанием @Compendium[laaru-dnd5-hw.spells.CuRWKGEoSXJmDPsh]{Волшебный засов}. Кроме того, вы можете скрыть до десяти дверей иллюзией (аналогичной иллюзорному образу, созданному заклинанием @Compendium[laaru-dnd5-hw.spells.4rjhJZz5ob7yJX7T]{Малая иллюзия}), чтобы они казались частью стены.</p><p><strong>Коридоры</strong>. Туман заполняет все защищённые коридоры, крайне затрудняя в них видимость. Кроме того, на любом перекрёстке или ответвлении, где нужно выбрать направление, есть шанс [[/r 1d100]] 50%, что любое существо, кроме вас, ошибется и направится в противоположном направлении относительно выбранного.</p><p><strong>Лестницы.</strong> Паутина заполняет все лестницы в защищённой области сверху донизу, аналогично заклинанию @Compendium[laaru-dnd5-hw.spells.UJeW7iSqWn2q3pxM]{Паутина}. Если паутину сжечь или разорвать, она вырастает заново через 10 минут, пока длятся охранные чары.</p><p>Эффекты других заклинаний. Вы можете поместить один из этих магических эффектов в пределах защищённой области.</p><ul><li>@Compendium[laaru-dnd5-hw.spells.x5uXJduVO8z3e1k1]{Пляшущие огоньки} в четырех коридорах. Вы можете задать простую программу, которой огоньки будут следовать, пока длятся охранные чары.</li><li>Заклинание @Compendium[laaru-dnd5-hw.spells.4juoJMPLLcprI7W8]{Волшебный рот} в двух местах.</li><li>@UUID[Compendium.laaru-dnd5-hw.spells.ZLskoJJy5QkzWjuP]{Смрадное облако} в двух местах. Пары появятся в указанных вами местах. Если их развеет ветер, они возникнут снова через 10 минут, пока длятся охранные чари. </li><li>Постоянный @Compendium[laaru-dnd5-hw.spells.4TFtW7zG8mAENjQb]{Порыв ветра} в одном из коридоров или комнате.</li><li>@Compendium[laaru-dnd5-hw.spells.CKgN4e01PV56X3N9]{Внушение} в одном месте. Выберите область не более 5-футового квадрата. Любое существо, которое войдёт в область или пройдёт через неё, получит мысленное внушение.</li></ul><p>Вся защищённая область излучает магию. Заклинание @Compendium[laaru-dnd5-hw.spells.ZdDJVUlzYudd4nHO]{Рассеивание магии}, сотворённое на определённый эффект, при успехе рассеивает только его. Вы можете защитить строение постоянными охранными чарами, творя это заклинание в нём ежедневно целый год.</p>",
+  "duration": {
+    "units": "hour",
+    "value": 24
+  },
+  "entry_kind": "spell",
+  "foundry_uuid": "Compendium.dnd5e.spells24.Item.phbsplGuardsandW",
+  "level": 6,
+  "materials": {
+    "consumed": false,
+    "cost": 0,
+    "supply": 0,
+    "value": "a silver rod worth 10+ GP"
+  },
+  "name": "Охранные чары",
+  "passive_effects": [],
+  "preparation": {
+    "mode": "prepared",
+    "prepared": false
+  },
+  "provenance": {
+    "ingest_date": "2026-05-30",
+    "ingest_version": "foundry-translator-v1",
+    "license_tag": "CC-BY-4.0",
+    "source": "foundry",
+    "source_url": "https://github.com/foundryvtt/dnd5e/blob/965ad2d0cf5d063dac675ba078b5bd3c3c0dd449/packs/_source/spells24/6th-level/guards-and-wards.yml",
+    "srd_version": [
+      "5.2"
+    ]
+  },
+  "range": {
+    "special": null,
+    "units": "touch",
+    "value": null
+  },
+  "review": {
+    "known_divergence": null,
+    "requires_user_decision": false
+  },
+  "ritual": false,
+  "school": "abj",
+  "slug": "guards-and-wards"
+}

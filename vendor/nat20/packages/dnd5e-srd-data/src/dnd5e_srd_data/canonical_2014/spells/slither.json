@@ -1,0 +1,287 @@
+{
+  "slug": "slither",
+  "foundry_uuid": "Compendium.dnd5e.laaru-hw-spells.Item.3k5C48yfmhEJpv27",
+  "name": "Ускользнуть / Slither",
+  "description": "(Иллюминация)\n\nНа мгновение вы становитесь тенью (оптическим явлением в форме гуманоида, а не одноимённой нежитью).\n\nВы можете проскользнуть под дверь, сквозь замочную скважину и через другие маленькие отверстия. Всё ваше снаряжение исчезает вместе с вами, и пока длится заклинание, вы можете перемещаться на своей полной скорости. В этой форме вы с преимуществом совершаете проверки Ловкости (Скрытность) в темноте или тусклом свете, а также у вас невосприимчивость к немагическому дробящему, колющему, режущему урону. Вы может действием прекратить это заклинание досрочно.\n\nЕсли вы возвращаетесь в обычный облик в недостаточно большом пространстве (мышиная нора, канализационная труба и т.п.), вы получаете [[/damage 4d6 force]]{4d6 урона силой} и выталкивается в ближайшую свободную область в пределах 50 футов достаточную, чтобы вместить вас. Если такая область дальше, вы получает [[/damage 1d6 force]]{1d6 урона силой} за каждые дополнительные 10 футов до ближайшей подходящей области.\n\nНа высоких кругах: Если вы творите это заклинание, используя ячейку 3-го круга или выше, то вы можете применить это заклинание на одну дополнительную цель кроме себя, за каждую ячейку выше 2-го круга (с дистанцией «касание»).",
+  "level": 2,
+  "school": "trs",
+  "components": [
+    "M",
+    "V"
+  ],
+  "ritual": false,
+  "concentration": true,
+  "casting_time": {
+    "unit": "action",
+    "value": 1,
+    "condition": ""
+  },
+  "range": {
+    "units": "self",
+    "value": null,
+    "special": null
+  },
+  "duration": {
+    "units": "minute",
+    "value": 1
+  },
+  "materials": {
+    "value": "пепел вашей деревянной статуи, переработанный в чернила, которыми рисовали ваш портрет, стоимостью не менее 50 зм",
+    "consumed": false,
+    "cost": 0,
+    "supply": 0
+  },
+  "preparation": {
+    "mode": "prepared",
+    "prepared": false
+  },
+  "activities": [
+    {
+      "id": "wVAgnLEB8ndePMwT",
+      "name": "",
+      "img": "",
+      "sort": 0,
+      "activation": {
+        "type": "action",
+        "value": null,
+        "condition": "",
+        "override": false,
+        "reaction_conditions": []
+      },
+      "consumption": {
+        "scaling": {
+          "allowed": false,
+          "max": ""
+        },
+        "spell_slot": true,
+        "targets": []
+      },
+      "description": {
+        "chat_flavor": ""
+      },
+      "duration": {
+        "value": null,
+        "units": "inst",
+        "special": "",
+        "concentration": false,
+        "override": false
+      },
+      "flags": {},
+      "range": {
+        "value": null,
+        "units": "self",
+        "special": "",
+        "override": false
+      },
+      "target": {
+        "template": {
+          "count": "",
+          "contiguous": false,
+          "stationary": false,
+          "type": "",
+          "size": "",
+          "width": "",
+          "height": "",
+          "units": "ft"
+        },
+        "affects": {
+          "count": "",
+          "type": "",
+          "choice": false,
+          "special": ""
+        },
+        "override": false,
+        "prompt": true
+      },
+      "uses": {
+        "spent": 0,
+        "max": "",
+        "recovery": []
+      },
+      "visibility": {
+        "identifier": "",
+        "level": {
+          "min": null,
+          "max": null
+        },
+        "require_attunement": false,
+        "require_identification": false,
+        "require_magic": false
+      },
+      "effects": [
+        {
+          "id": "6hcLmq3HbF0jFgpq",
+          "level": {
+            "min": null,
+            "max": null
+          },
+          "on_save": null,
+          "riders": null
+        }
+      ],
+      "applied_effects": [],
+      "kind": "utility",
+      "roll": {
+        "formula": "",
+        "name": "",
+        "prompt": false,
+        "visible": false
+      }
+    },
+    {
+      "id": "2j7FWIJ86dz10DYj",
+      "name": "Урон 4d6",
+      "img": "",
+      "sort": 0,
+      "activation": {
+        "type": "special",
+        "value": null,
+        "condition": "",
+        "override": true,
+        "reaction_conditions": []
+      },
+      "consumption": {
+        "scaling": {
+          "allowed": false,
+          "max": ""
+        },
+        "spell_slot": false,
+        "targets": []
+      },
+      "description": {
+        "chat_flavor": ""
+      },
+      "duration": {
+        "value": null,
+        "units": "inst",
+        "special": "",
+        "concentration": false,
+        "override": false
+      },
+      "flags": {},
+      "range": {
+        "value": null,
+        "units": "self",
+        "special": "",
+        "override": false
+      },
+      "target": {
+        "template": {
+          "count": "",
+          "contiguous": false,
+          "stationary": false,
+          "type": "",
+          "size": "",
+          "width": "",
+          "height": "",
+          "units": "ft"
+        },
+        "affects": {
+          "count": "",
+          "type": "",
+          "choice": false,
+          "special": ""
+        },
+        "override": false,
+        "prompt": true
+      },
+      "uses": {
+        "spent": 0,
+        "max": "",
+        "recovery": []
+      },
+      "visibility": {
+        "identifier": "",
+        "level": {
+          "min": null,
+          "max": null
+        },
+        "require_attunement": false,
+        "require_identification": false,
+        "require_magic": false
+      },
+      "effects": [],
+      "applied_effects": [],
+      "kind": "damage",
+      "damage": {
+        "critical": {
+          "allow": false,
+          "bonus": ""
+        },
+        "parts": [
+          {
+            "number": 4,
+            "denomination": 6,
+            "bonus": "",
+            "types": [
+              "force"
+            ],
+            "custom": {
+              "enabled": false,
+              "formula": ""
+            },
+            "scaling": {
+              "mode": "",
+              "number": 1,
+              "formula": ""
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "passive_effects": [
+    {
+      "id": "6hcLmq3HbF0jFgpq",
+      "name": "Ускользнуть: невосприимчивость",
+      "description": "",
+      "changes": [
+        {
+          "key": "system.traits.di.value",
+          "mode": 2,
+          "value": "bludgeoning",
+          "priority": 20
+        },
+        {
+          "key": "system.traits.di.bypasses",
+          "mode": 0,
+          "value": "mgc",
+          "priority": 20
+        },
+        {
+          "key": "system.traits.di.value",
+          "mode": 2,
+          "value": "piercing",
+          "priority": 20
+        },
+        {
+          "key": "system.traits.di.value",
+          "mode": 2,
+          "value": "slashing",
+          "priority": 20
+        }
+      ],
+      "statuses": [],
+      "duration": {
+        "seconds": 60
+      },
+      "disabled": false,
+      "transfer": false
+    }
+  ],
+  "provenance": {
+    "source": "foundry",
+    "source_url": "https://github.com/foundryvtt/dnd5e/blob/965ad2d0cf5d063dac675ba078b5bd3c3c0dd449/packs/_source/laaru-hw-spells/Ускользнуть___Slither_3k5C48yfmhEJpv27.yml",
+    "ingest_date": "2026-10-26",
+    "ingest_version": "foundry-translator-v1",
+    "srd_version": [
+      "5.1"
+    ],
+    "license_tag": "CC-BY-4.0"
+  },
+  "review": {
+    "known_divergence": null,
+    "requires_user_decision": false
+  },
+  "entry_kind": "spell"
+}

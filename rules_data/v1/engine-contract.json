@@ -1,0 +1,40 @@
+{
+  "contract_version": "1.0.0",
+  "repository_commit": "b881148652c72ad0c17c9a68191ce3d4e04da074",
+  "inspection": "static_only",
+  "runtime_import_supported": false,
+  "auto_activate": false,
+  "interfaces": {
+    "Step": {"path": "solo/contracts.py", "fields": {"advantage": "bool, default false", "disadvantage": "bool, default false"}, "trust": "assigned by trusted program or player, not free-form model text"},
+    "RulesetEngine.d20": {
+      "path": "solo/rulesets.py", "line": 58,
+      "parameters": ["hero", "ability", "kind", "proficient", "expertise", "advantage", "disadvantage", "rng"],
+      "result_fields": ["dice", "selected", "bonus", "total", "mode", "ruleset", "source"],
+      "kind_values_observed": ["check", "save", "attack", "initiative"],
+      "mode_values": {"normal": "обычный", "advantage": "преимущество", "disadvantage": "помеха"},
+      "internal_disadvantage_sources": ["exhaustion_effects(hero,kind)", "poisoned for kind check or attack"],
+      "reroll_or_replacement_parameter": false
+    },
+    "Ruleset": {"path": "solo/rulesets.py", "line": 11, "edition_values": ["2014", "2024", "custom"], "accepts_rule_definitions": false},
+    "Resource": {"path": "solo/contracts.py", "line": 70, "fields": ["current", "maximum", "recovery"], "recovery_values": ["short", "long", "none"], "automatically_created": false},
+    "RuleKnowledge": {"path": "solo/rule_knowledge.py", "database": "data/rules-knowledge.sqlite3", "tables": ["books", "sections", "rule_fts"], "editions": ["dnd2014", "dnd2024"], "page_numbering": "one_based_pdf", "index_version": 3, "executes_pdf_rules": false},
+    "coverage": {"path": "solo/rule_registry.py", "operation": "checks.ability", "supplied_book_crosscheck_in_existing_registry": "pending", "existing_registry_modified": false}
+  },
+  "prospective_binding": {
+    "edition": {"dnd2024": "2024", "dnd2014": "2014"},
+    "ability_check": "RulesetEngine.check / skill -> d20 kind check",
+    "saving_throw": "RulesetEngine.saving_throw -> d20 kind save",
+    "attack_roll": "CombatEngine.attack -> d20 kind attack (combat.py:336)",
+    "advantage_sources": "trusted nonnegative integer; pass presence as advantage bool",
+    "disadvantage_sources": "trusted nonnegative integer; pass presence as disadvantage bool; include engine-computed sources for declarative comparison",
+    "rng": "future trusted test harness supplies values; no runtime implementation added",
+    "unknown_fact_or_operation": "reject; never eval or dynamic import"
+  },
+  "preserved_sha256": {
+    "solo/rulesets.py": "a91628e7fd3ca0acd3729a5f2260de1bab5457c21827f3a9d046ff3a1eaa0f64",
+    "solo/contracts.py": "d6bacfbe8b9ef3404ddb91552fc82fd25fc39902c34c100a7cb18ae766a916fb",
+    "solo/rule_knowledge.py": "c0ac02a993b64814f32f9376cc1ca64b036bcf91375942b6b753e9f52f6370a7",
+    "solo/rule_registry.py": "6a9e46b7202db15b45807b1da6b6811bd8f4474c70c37c32947a1d0ff0859cbd",
+    "data/rules-knowledge.sqlite3": "e1db922584bb3a53640de4e114582644586c1bef6b01a803c8d97c5d7b518a33"
+  }
+}

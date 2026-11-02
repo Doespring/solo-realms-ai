@@ -1,0 +1,314 @@
+{
+  "slug": "war-domain",
+  "name": "Домен войны",
+  "description": "Домен войны | War Domain\n\nУ войны много проявлений. Она может превратить простых людей в героев. Она может быть отчаянной и ужасной, а жестокость и трусость могут затмевать редкие проявления доблести и отваги. В любом случае боги войны следят за войнами и вознаграждают их за великие подвиги. Жрецы таких богов доблести сражаются, вдохновляя других биться за правое дело или, наоборот, проливать кровь во славу своего бога. Среди богов войны есть защитники чести и рыцарства (такие как Торм, Хайрониус и Кири-Джолит), есть боги разрушения и разорения (такие как Эритнул, Ярость, Груумш и Арес), а есть боги завоевания и покорения (Бейн, Хекстор и Маглубиет). Другие боги войны (например, Темпус, Ника и Нуада) занимают нейтралитет, поддерживая войну во всех её проявлениях и помогая воинам при любых обстоятельства.\n\nУровень Особенности\n\n1-й\n\n@Compendium[laaru-dnd5-hw.classfeatures.FO94xAc7TBllYsht]{Дополнительные умения}, @Compendium[laaru-dnd5-hw.classfeatures.kVxmVoHhXm8pmJgA]{Жрец войны}\n\n2-й\n\n@Compendium[laaru-dnd5-hw.classfeatures.C2AzcKMy5FtqVjpX]{Проведение энергии: Наведённый удар}\n\n6-й\n\n@Compendium[laaru-dnd5-hw.classfeatures.VjO82815Vq9ZVVBc]{Проведение энергии: Благословение бога войны}\n\n8-й\n\n@Compendium[laaru-dnd5-hw.classfeatures.Dr9Lls8LNqkWbc6Z]{Божественный удар} или @Compendium[laaru-dnd5-hw.classfeatures.XXg29SJBaE3ts5sQ]{Благословенные удары (опционально)}\n\n17-й\n\n@Compendium[laaru-dnd5-hw.classfeatures.fqB8xedrpzQt2u8D]{Аватара битвы}\n\nЗаклинания домена войны\n\nУровень жреца Заклинания\n\n1-й\n\n@Compendium[laaru-dnd5-hw.spells.WO8AgSsdM8ZaqWBD]{Милость божества}, @Compendium[laaru-dnd5-hw.spells.udKxenn4q1sL9UYe]{Щит веры}\n\n3-й\n\n@Compendium[laaru-dnd5-hw.spells.r1oOhdLZ81NCL1SI]{Волшебное оружие}, @Compendium[laaru-dnd5-hw.spells.cuHHUSHiHrOjA8xo]{Призрачное оружие}\n\n5-й\n\n@Compendium[laaru-dnd5-hw.spells.xYOk3wHgX0mnEvut]{Плащ крестоносца}, @Compendium[laaru-dnd5-hw.spells.EwBVFuFBC1mUDpdJ]{Призрачные стражи}\n\n7-й\n\n@Compendium[laaru-dnd5-hw.spells.C1bX7ze3ftVefjUf]{Каменная кожа}, @Compendium[laaru-dnd5-hw.spells.qBqA0Y0k8CFbU5Bw]{Свобода движений}\n\n9-й\n\n@Compendium[laaru-dnd5-hw.spells.qhhv1TGExW0r843c]{Огненный столп}, @Compendium[laaru-dnd5-hw.spells.VsdwrXXgpElVReQm]{Паралич чудовища}\n\n*Заклинания добавляются в автоматическом режиме при повышении уровней.",
+  "identifier": "war-domain",
+  "class_identifier": "cleric",
+  "spellcasting": {
+    "ability": "",
+    "progression": "none"
+  },
+  "advancement": [
+    {
+      "id": "zqnehrkeawbw39rm",
+      "type": "ItemGrant",
+      "level": 1,
+      "title": "1. Особенности",
+      "hint": "",
+      "class_restriction": "",
+      "configuration": {
+        "items": [
+          {
+            "uuid": "Compendium.laaru-dnd5-hw.classfeatures.FO94xAc7TBllYsht",
+            "optional": false
+          },
+          {
+            "uuid": "Compendium.laaru-dnd5-hw.classfeatures.kVxmVoHhXm8pmJgA",
+            "optional": false
+          }
+        ],
+        "optional": false,
+        "spell": null
+      },
+      "value": {}
+    },
+    {
+      "id": "w24wtuqemyf0g5fe",
+      "type": "ItemGrant",
+      "level": 2,
+      "title": "Особенность",
+      "hint": "",
+      "class_restriction": "",
+      "configuration": {
+        "items": [
+          {
+            "uuid": "Compendium.laaru-dnd5-hw.classfeatures.C2AzcKMy5FtqVjpX",
+            "optional": false
+          }
+        ],
+        "optional": false,
+        "spell": null
+      },
+      "value": {}
+    },
+    {
+      "id": "pib3mthphpncdbve",
+      "type": "ItemGrant",
+      "level": 6,
+      "title": "Особенность",
+      "hint": "",
+      "class_restriction": "",
+      "configuration": {
+        "items": [
+          {
+            "uuid": "Compendium.laaru-dnd5-hw.classfeatures.VjO82815Vq9ZVVBc",
+            "optional": false
+          }
+        ],
+        "optional": false,
+        "spell": null
+      },
+      "value": {}
+    },
+    {
+      "id": "ngspbfkxr5bmjmxe",
+      "type": "ItemGrant",
+      "level": 8,
+      "title": "Выберите одну особенность",
+      "hint": "",
+      "class_restriction": "",
+      "configuration": {
+        "items": [
+          {
+            "uuid": "Compendium.laaru-dnd5-hw.classfeatures.Dr9Lls8LNqkWbc6Z",
+            "optional": false
+          },
+          {
+            "uuid": "Compendium.laaru-dnd5-hw.classfeatures.XXg29SJBaE3ts5sQ",
+            "optional": false
+          }
+        ],
+        "optional": false,
+        "spell": null
+      },
+      "value": {}
+    },
+    {
+      "id": "vuvcfj4gjte4qz6o",
+      "type": "ItemGrant",
+      "level": 17,
+      "title": "Особенность",
+      "hint": "",
+      "class_restriction": "",
+      "configuration": {
+        "items": [
+          {
+            "uuid": "Compendium.laaru-dnd5-hw.classfeatures.fqB8xedrpzQt2u8D",
+            "optional": false
+          }
+        ],
+        "optional": false,
+        "spell": null
+      },
+      "value": {}
+    },
+    {
+      "id": "d39y5x51cbqocfeb",
+      "type": "ItemGrant",
+      "level": 1,
+      "title": "2. Заклинания домена войны",
+      "hint": "",
+      "class_restriction": "",
+      "configuration": {
+        "items": [
+          {
+            "uuid": "Compendium.laaru-dnd5-hw.spells.WO8AgSsdM8ZaqWBD",
+            "optional": false
+          },
+          {
+            "uuid": "Compendium.laaru-dnd5-hw.spells.udKxenn4q1sL9UYe",
+            "optional": false
+          }
+        ],
+        "optional": false,
+        "spell": {
+          "ability": [
+            "wis"
+          ],
+          "preparation": "always",
+          "uses": {
+            "max": "",
+            "per": ""
+          }
+        }
+      },
+      "value": {}
+    },
+    {
+      "id": "mpmt7zrfsf8tfjb4",
+      "type": "ItemGrant",
+      "level": 3,
+      "title": "Заклинания домена войны",
+      "hint": "",
+      "class_restriction": "",
+      "configuration": {
+        "items": [
+          {
+            "uuid": "Compendium.laaru-dnd5-hw.spells.r1oOhdLZ81NCL1SI",
+            "optional": false
+          },
+          {
+            "uuid": "Compendium.laaru-dnd5-hw.spells.cuHHUSHiHrOjA8xo",
+            "optional": false
+          }
+        ],
+        "optional": false,
+        "spell": {
+          "ability": [
+            "wis"
+          ],
+          "preparation": "always",
+          "uses": {
+            "max": "",
+            "per": ""
+          }
+        }
+      },
+      "value": {}
+    },
+    {
+      "id": "6hv8q47j22tquc66",
+      "type": "ItemGrant",
+      "level": 5,
+      "title": "Заклинания домена войны",
+      "hint": "",
+      "class_restriction": "",
+      "configuration": {
+        "items": [
+          {
+            "uuid": "Compendium.laaru-dnd5-hw.spells.xYOk3wHgX0mnEvut",
+            "optional": false
+          },
+          {
+            "uuid": "Compendium.laaru-dnd5-hw.spells.EwBVFuFBC1mUDpdJ",
+            "optional": false
+          }
+        ],
+        "optional": false,
+        "spell": {
+          "ability": [
+            "wis"
+          ],
+          "preparation": "always",
+          "uses": {
+            "max": "",
+            "per": ""
+          }
+        }
+      },
+      "value": {}
+    },
+    {
+      "id": "bvot4a7po83yttyw",
+      "type": "ItemGrant",
+      "level": 7,
+      "title": "Заклинания домена войны",
+      "hint": "",
+      "class_restriction": "",
+      "configuration": {
+        "items": [
+          {
+            "uuid": "Compendium.laaru-dnd5-hw.spells.C1bX7ze3ftVefjUf",
+            "optional": false
+          },
+          {
+            "uuid": "Compendium.laaru-dnd5-hw.spells.qBqA0Y0k8CFbU5Bw",
+            "optional": false
+          }
+        ],
+        "optional": false,
+        "spell": {
+          "ability": [
+            "wis"
+          ],
+          "preparation": "always",
+          "uses": {
+            "max": "",
+            "per": ""
+          }
+        }
+      },
+      "value": {}
+    },
+    {
+      "id": "apiqxhfrbrj4zuye",
+      "type": "ItemGrant",
+      "level": 9,
+      "title": "Заклинания домена войны",
+      "hint": "",
+      "class_restriction": "",
+      "configuration": {
+        "items": [
+          {
+            "uuid": "Compendium.laaru-dnd5-hw.spells.qhhv1TGExW0r843c",
+            "optional": false
+          },
+          {
+            "uuid": "Compendium.laaru-dnd5-hw.spells.VsdwrXXgpElVReQm",
+            "optional": false
+          }
+        ],
+        "optional": false,
+        "spell": {
+          "ability": [
+            "wis"
+          ],
+          "preparation": "always",
+          "uses": {
+            "max": "",
+            "per": ""
+          }
+        }
+      },
+      "value": {}
+    },
+    {
+      "id": "Rgs3hvSusnytJUvv",
+      "type": "Trait",
+      "level": 1,
+      "title": "",
+      "hint": "",
+      "class_restriction": "",
+      "configuration": {
+        "mode": "default",
+        "allowReplacements": false,
+        "grants": [
+          "armor:hvy",
+          "weapon:mar"
+        ],
+        "choices": [],
+        "hint": "С 1-го уровня вы умелы в обращении с военным оружием и тяжёлой бронёй."
+      },
+      "value": {
+        "chosen": []
+      }
+    }
+  ],
+  "granted_features": [],
+  "feature_choices": [],
+  "provenance": {
+    "source": "foundry",
+    "source_url": "https://github.com/foundryvtt/dnd5e/blob/965ad2d0cf5d063dac675ba078b5bd3c3c0dd449/packs/_source/laaru-hw-subclasses/Домен_войны_9JYWb8lJdZxeAPpA.yml",
+    "ingest_date": "2026-10-26",
+    "ingest_version": "foundry-translator-v1",
+    "srd_version": [
+      "5.1"
+    ],
+    "license_tag": "CC-BY-4.0"
+  },
+  "review": {
+    "known_divergence": null,
+    "requires_user_decision": false
+  },
+  "entry_kind": "subclass"
+}

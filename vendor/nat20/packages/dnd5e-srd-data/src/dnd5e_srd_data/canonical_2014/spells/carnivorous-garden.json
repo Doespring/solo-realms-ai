@@ -1,0 +1,342 @@
+{
+  "slug": "carnivorous-garden",
+  "foundry_uuid": "Compendium.dnd5e.laaru-hw-spells.Item.c8Gv9sWcM0y5lfAE",
+  "name": "Плотоядный сад / Carnivorous Garden",
+  "description": "Вы вызываете цепляющиеся растения в четырех 15-футовых квадратах, которые вы можете видеть в пределах досягаемости, и рычащее плотоядное растение в центральном пространстве каждой области. Каждый 15-футовый квадрат является пересечённой местностью. Когда вы сотворяете заклинание, каждое растение совершает одну атаку против выбранного вами существа в радиусе 5 футов от него. Растения совершают атаки заклинанием ближнего боя с вашим модификатором атаки заклинания, нанося [[/damage 2d8 piercing]]{2d8 колющего урона} при попадании.\n\nЕсли существо заканчивает свой ход в радиусе 5 футов от одного или нескольких плотоядных растений, растения автоматически атакуют это существо, если вы не используете свое ответное действие, чтобы предотвратить это.\n\nРастения имеют КБ 14 и 30 ПЗ, а также уязвимость к огню и режущему урону. Каждое растение восстанавливает все свои ПЗ в начале вашего хода, если у него есть хотя бы 1 ПЗ, и погибает, если его ПЗ снижены до нуля. Когда заклинание заканчивается, пересечённая местность исчезает, за исключением тех мест, где находились сами растения. Эта пересечённая местность также исчезает, если растение было убито огнём.\n\nНа высоких кругах. Когда вы сотворяете это заклинание, используя ячейку заклинания 5-го круга или выше, вы можете призвать еще 1 плотоядное растение за каждую ячейку заклинания выше 4-го круга.",
+  "level": 4,
+  "school": "trs",
+  "components": [
+    "M",
+    "S",
+    "V"
+  ],
+  "ritual": false,
+  "concentration": true,
+  "casting_time": {
+    "unit": "action",
+    "value": 1,
+    "condition": ""
+  },
+  "range": {
+    "units": "ft",
+    "value": 60,
+    "special": null
+  },
+  "duration": {
+    "units": "minute",
+    "value": 1
+  },
+  "materials": {
+    "value": "сушеное плотоядное растение",
+    "consumed": false,
+    "cost": 0,
+    "supply": 0
+  },
+  "preparation": {
+    "mode": "prepared",
+    "prepared": false
+  },
+  "activities": [
+    {
+      "id": "dnd5eactivity000",
+      "name": "Атака растением",
+      "img": "",
+      "sort": 0,
+      "activation": {
+        "type": "special",
+        "value": null,
+        "condition": "",
+        "override": true,
+        "reaction_conditions": []
+      },
+      "consumption": {
+        "scaling": {
+          "allowed": false,
+          "max": ""
+        },
+        "spell_slot": false,
+        "targets": []
+      },
+      "description": {
+        "chat_flavor": ""
+      },
+      "duration": {
+        "value": null,
+        "units": "inst",
+        "special": "",
+        "concentration": false,
+        "override": true
+      },
+      "flags": {},
+      "range": {
+        "value": null,
+        "units": "self",
+        "special": "",
+        "override": false
+      },
+      "target": {
+        "template": {
+          "count": "",
+          "contiguous": false,
+          "stationary": false,
+          "type": "",
+          "size": "",
+          "width": "",
+          "height": "",
+          "units": "ft"
+        },
+        "affects": {
+          "count": "",
+          "type": "creature",
+          "choice": false,
+          "special": ""
+        },
+        "override": true,
+        "prompt": true
+      },
+      "uses": {
+        "spent": 0,
+        "max": "",
+        "recovery": []
+      },
+      "visibility": {
+        "identifier": "",
+        "level": {
+          "min": null,
+          "max": null
+        },
+        "require_attunement": false,
+        "require_identification": false,
+        "require_magic": false
+      },
+      "effects": [],
+      "applied_effects": [],
+      "kind": "attack",
+      "attack": {
+        "ability": "",
+        "bonus": "",
+        "critical": {
+          "threshold": null
+        },
+        "flat": false,
+        "type": {
+          "value": "melee",
+          "classification": "spell"
+        }
+      },
+      "damage": {
+        "critical": {
+          "bonus": ""
+        },
+        "include_base": true,
+        "parts": [
+          {
+            "number": 2,
+            "denomination": 8,
+            "bonus": "",
+            "types": [
+              "piercing"
+            ],
+            "custom": {
+              "enabled": false,
+              "formula": ""
+            },
+            "scaling": {
+              "mode": "",
+              "number": 1,
+              "formula": ""
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "VaCK6Sp5LLE6OfJq",
+      "name": "Сотворение заклинания",
+      "img": "",
+      "sort": 100000,
+      "activation": {
+        "type": "action",
+        "value": null,
+        "condition": "",
+        "override": false,
+        "reaction_conditions": []
+      },
+      "consumption": {
+        "scaling": {
+          "allowed": false,
+          "max": ""
+        },
+        "spell_slot": true,
+        "targets": []
+      },
+      "description": {
+        "chat_flavor": ""
+      },
+      "duration": {
+        "value": null,
+        "units": "inst",
+        "special": "",
+        "concentration": false,
+        "override": false
+      },
+      "flags": {},
+      "range": {
+        "value": null,
+        "units": "self",
+        "special": "",
+        "override": true
+      },
+      "target": {
+        "template": {
+          "count": "",
+          "contiguous": false,
+          "stationary": false,
+          "type": "",
+          "size": "",
+          "width": "",
+          "height": "",
+          "units": "ft"
+        },
+        "affects": {
+          "count": "",
+          "type": "",
+          "choice": false,
+          "special": ""
+        },
+        "override": true,
+        "prompt": true
+      },
+      "uses": {
+        "spent": 0,
+        "max": "",
+        "recovery": []
+      },
+      "visibility": {
+        "identifier": "",
+        "level": {
+          "min": null,
+          "max": null
+        },
+        "require_attunement": false,
+        "require_identification": false,
+        "require_magic": false
+      },
+      "kind": "cast",
+      "spell": {
+        "ability": "",
+        "challenge": {
+          "attack": null,
+          "save": null,
+          "override": false
+        },
+        "level": null,
+        "properties": [
+          "vocal",
+          "somatic",
+          "material"
+        ],
+        "spellbook": true,
+        "uuid": ""
+      }
+    },
+    {
+      "id": "RX2mxC2RHd2V3ebb",
+      "name": "Размещение шаблонов",
+      "img": "",
+      "sort": 0,
+      "activation": {
+        "type": "special",
+        "value": null,
+        "condition": "",
+        "override": true,
+        "reaction_conditions": []
+      },
+      "consumption": {
+        "scaling": {
+          "allowed": false,
+          "max": ""
+        },
+        "spell_slot": false,
+        "targets": []
+      },
+      "description": {
+        "chat_flavor": ""
+      },
+      "duration": {
+        "value": null,
+        "units": "inst",
+        "special": "",
+        "concentration": false,
+        "override": true
+      },
+      "flags": {},
+      "range": {
+        "value": null,
+        "units": "self",
+        "special": "",
+        "override": false
+      },
+      "target": {
+        "template": {
+          "count": "",
+          "contiguous": false,
+          "stationary": false,
+          "type": "square",
+          "size": "15",
+          "width": "",
+          "height": "",
+          "units": "ft"
+        },
+        "affects": {
+          "count": "",
+          "type": "",
+          "choice": false,
+          "special": ""
+        },
+        "override": false,
+        "prompt": true
+      },
+      "uses": {
+        "spent": 0,
+        "max": "",
+        "recovery": []
+      },
+      "visibility": {
+        "identifier": "",
+        "level": {
+          "min": null,
+          "max": null
+        },
+        "require_attunement": false,
+        "require_identification": false,
+        "require_magic": false
+      },
+      "effects": [],
+      "applied_effects": [],
+      "kind": "utility",
+      "roll": {
+        "formula": "",
+        "name": "",
+        "prompt": false,
+        "visible": false
+      }
+    }
+  ],
+  "passive_effects": [],
+  "provenance": {
+    "source": "foundry",
+    "source_url": "https://github.com/foundryvtt/dnd5e/blob/965ad2d0cf5d063dac675ba078b5bd3c3c0dd449/packs/_source/laaru-hw-spells/Плотоядный_сад___Carnivorous_Garden_c8Gv9sWcM0y5lfAE.yml",
+    "ingest_date": "2026-10-26",
+    "ingest_version": "foundry-translator-v1",
+    "srd_version": [
+      "5.1"
+    ],
+    "license_tag": "CC-BY-4.0"
+  },
+  "review": {
+    "known_divergence": null,
+    "requires_user_decision": false
+  },
+  "entry_kind": "spell"
+}

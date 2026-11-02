@@ -1,0 +1,111 @@
+{
+  "checked_on": "2026-10-17",
+  "scope": "production route verification on temporary campaigns",
+  "tests": {
+    "total": 136,
+    "passed": 136,
+    "failed": [],
+    "skipped": [],
+    "runtime_vectors": 48,
+    "schema_vectors": 13,
+    "integration_checks": 24,
+    "existing_targeted_regressions": 3,
+    "production_checks": 48
+  },
+  "duration_seconds": 25.699,
+  "pytest_exit_code": 0,
+  "catalog_unchanged": true,
+  "user_data_unchanged": true,
+  "catalog_sha256": {
+    "rules_data\\v1\\chapters\\phb-01\\advantage.json": "13c0d2ac568357c5715f882fcd6a9dce96a1219b213cf3f4cd65ac35c0da0b59",
+    "rules_data\\v1\\chapters\\phb-01\\cancellation.json": "7fc3cabb68fc6f34dcc3bfb55e615ceae693c8896bd619e37aa98759ca616a83",
+    "rules_data\\v1\\chapters\\phb-01\\disadvantage.json": "8a9b89df3adb1efbf9898ec3a01947bd3fdf3b9af9fa12a506670a48e1685924",
+    "rules_data\\v1\\chapters\\phb-01\\single-die-change.json": "9168c5d96d996479a5ce88da3379f97ae6cf8742067b7259b08360ee018321f2",
+    "rules_data\\v1\\engine-contract.json": "4504d62ec00f068776080505bb0c084b0fdd1d9383bd512cd5d27ae8de8cff73",
+    "rules_data\\v1\\progress.json": "d0b800d0199e83ba925f0a96cc1e8f3ba36b45e078ddd38f3c08f51eb26b0fae",
+    "rules_data\\v1\\rule.schema.json": "51113eb34fc790126d31d667391782ab56f15b572103c846e6c26e25030a206f",
+    "rules_data\\v1\\sources.json": "dd99fa39630cb2eebdc24079e6a0c2a331a8b8cb1b3de0e58cd4b5bb82df894f",
+    "rules_data\\v1\\tests\\behavior.cases.json": "f98f1b1a1c17e5090490848fc825228f415bb98bcbbf1812c7a7319d69a628e6",
+    "rules_data\\v1\\tests\\invalid\\auto-activation.json": "2b86850a978e3c6c9352fc1f4e69d103b4f86efd87731771298d0ad8e0e47743",
+    "rules_data\\v1\\tests\\invalid\\missing-fields.json": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356",
+    "rules_data\\v1\\tests\\invalid\\unknown-effect.json": "38c2615feaa3792ad29de191a92f771df04950786e4244aea5bbaf7206a99a13",
+    "rules_data\\v1\\tests\\manifest.json": "734e0a335c77f497917b729613572862e02c572537e58edbf7689f2c0c3ed3ba",
+    "rules_data\\v1\\validation.json": "11adecc59bd98c4f957826145f0e686e3816efb3d1b03d1e4d61a5e60bf6d049",
+    "rules_data\\v2\\ai-engine.schema.json": "5f1dc413c3ef79702cc0f22ba05be3c94f31f0ee8ade6607634b6905dc6088b9",
+    "rules_data\\v2\\routing.schema.json": "990cb9aa1c3056d6337ec70d625d31eda79cb88282848b9b3b4fe0d7991e1260",
+    "rules_data\\v2\\sections\\dmg.rules.json": "fb1bb0f3537166badaa60317bad3d685135f56d60a2392c22d43aecb882a20be",
+    "rules_data\\v2\\sections\\mm.rules.json": "1abe522565ffd43a821f78bbb7c3ee4c403307084c366447ab6c09ee0edd884f",
+    "rules_data\\v2\\sections\\phb.rules.json": "fbc704023cddba127129155a2567a68d5c95aa7793cc5cc356437c60c93c72a7",
+    "rules_data\\v2\\sources.json": "44bd6584c9777d693ccf233771a5310d316a3773ce31e675f7081db310dc536b",
+    "rules_data\\v2\\tests\\runtime.cases.json": "cd3551fb4412d7a6d43c0126dad6a6787c6e56104c6e42d11487d70f58c3c7de"
+  },
+  "user_data_sha256": {
+    "data\\adventure.sqlite3": "79c584209f55e03363b8cd67caa45f9d4576e0590e6fc60b0b218353c24d3a8b",
+    "data\\cloud-profiles.json": "9950c6d7d99d35020994868dd04be56ccc02035f2edb71c13b703e2e22e19e68",
+    "data\\cloud-usage.sqlite3": "0687dda84a5c91df379f07d6b936ede6bd99ebdb60e9efb581a72f3e78f065a9",
+    "data\\cloud-usage.sqlite3-shm": "fd4c9fda9cd3f9ae7c962b0ddf37232294d55580e1aa165aa06129b8549389eb",
+    "data\\cloud-usage.sqlite3-wal": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "data\\preparation.sqlite3": "030ccc13002b956976f7cc14b21455e2feac7af9e20321ea5b01e16c21243a26",
+    "data\\rules-knowledge.sqlite3": "e1db922584bb3a53640de4e114582644586c1bef6b01a803c8d97c5d7b518a33",
+    "data\\solo.sqlite3": "5cabcf993a68af2182de72935d28977824072f5e01ea4981bf8aea0a8f875c8a",
+    "data\\solo.sqlite3-shm": "fd4c9fda9cd3f9ae7c962b0ddf37232294d55580e1aa165aa06129b8549389eb",
+    "data\\solo.sqlite3-wal": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "temporary_test_root_removed": true,
+  "integration_path": "RulesetEngine.check -> Store.engine_event -> SQLite event/state -> Store.save -> reopen",
+  "fixed_issue": "No mathematical/catalog changes; the Windows loopback allowance is needed only for asyncio test infrastructure",
+  "checks": [
+    "unequal cause cancellation",
+    "internal poisoned source",
+    "edition mismatch",
+    "stale state",
+    "ruleset fingerprint",
+    "idempotent replay",
+    "changed command replay",
+    "replay after undo",
+    "forbidden operations",
+    "AI proposal without write capability",
+    "AI text never executed",
+    "database outside owned sandbox refused",
+    "transaction failure rollback",
+    "backup handle closure"
+  ],
+  "app_adapter_registered": true,
+  "user_campaign_rules_activated": false,
+  "ai_or_pdf_code_executed": false,
+  "paid_api_calls": 0,
+  "exe_builds": 0,
+  "remaining_blockers": [
+    "only the local single-user Advanced/session ACL model is supported",
+    "unverified rules and ambiguous Wish stress remain unactivated"
+  ],
+  "binding": {
+    "operation": "ability_check",
+    "definitions": [
+      "dnd2024.d20.advantage",
+      "dnd2024.d20.disadvantage",
+      "dnd2024.d20.cancellation"
+    ],
+    "session_campaign_opt_in_required": true,
+    "restart_default": "inactive",
+    "acl_scope": "existing local Advanced role, with campaign- and session-bound grants",
+    "context_projection": "actor name, level and abilities; no world or state snapshots",
+    "example": {
+      "dice": [
+        5,
+        19
+      ],
+      "selected": 19,
+      "bonus": 2,
+      "total": 21,
+      "dc": 15,
+      "success": true
+    }
+  },
+  "production_code_sha256": {
+    "solo\\app.py": "ff80514d2e0b49efa19197c588c8e3e59540f5c5e5c7f2722719cb7bc69f6f9d",
+    "solo\\hybrid_rules.py": "1c9b17229b9029688e3abf4ddef5896722c4c3d12df1759f3d20c28057632fcf",
+    "solo\\hybrid_rules_api.py": "ae32299beea2da8a5ec28a1e3aeaf49f519dbe11ce77d359dfab00b4fc015048",
+    "solo\\tabletop_api.py": "96f6e0d85fd6b7a62a5279dc5c3fe484322d3bdd3be0a11d4c67740f9c525286"
+  }
+}

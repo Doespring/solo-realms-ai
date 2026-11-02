@@ -1,0 +1,53 @@
+﻿Укрытие~ [26, 27, 381]
+Застигнутый врасплох [366]
+Помощь [Действие] [374, 375]
+Засада [Действие] [208, 357, 359, 366]
+Поиск [Действие] [21, 23, 56, 84]
+Изучение [Действие] [249, 289, 318]
+Влияние [Действие] [364]
+Использование [Действие] [147, 202, 225, 225]
+Рывок [Действие] [27, 160, 312, 323]
+Отход [Действие] [66, 127, 127, 145]
+Уклонение [Действие] [16, 25, 251, 251]
+Подготовка [Действие] []
+Магия [Действие] [77, 94, 100, 100]
+Атака [Действие] [73, 73, 73, 73]
+Тест к20~ [10, 380]
+Преимущество~ [375]
+Помеха~ [13, 374]
+Спасбросок~ [35, 35, 35, 35]
+Проверка характеристики~ [375]
+Инициатива~ [24, 367]
+Бонус владения~ [12, 13, 13, 14]
+Владение~ [14, 364]
+Окровавленный~ [372]
+Порог урона~ [231, 375]
+python.exe : Traceback (most recent call last):
+At line:16 char:1
++ & 'C:\Users\iwa41\Documents\Codex\2026-10-13\files-pasted-by-the-user ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (Traceback (most recent call last)::String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+  File "C:\Users\iwa41\Documents\Codex\2026-10-13\files-pasted-by-the-user-solo\outputs\SoloRealmsAI\rules_extract\work
+\ru\scripts\explore97.py", line 9, in <module>
+    ms=[pgn(m.start()) for m in re.finditer(kw,P)][:4]
+                                ^^^^^^^^^^^^^^^^^
+  File "C:\Users\iwa41\AppData\Local\Programs\Python\Python312\Lib\re\__init__.py", line 224, in finditer
+    return _compile(pattern, flags).finditer(string)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\iwa41\AppData\Local\Programs\Python\Python312\Lib\re\__init__.py", line 307, in _compile
+    p = _compiler.compile(pattern, flags)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\iwa41\AppData\Local\Programs\Python\Python312\Lib\re\_compiler.py", line 750, in compile
+    p = _parser.parse(p, flags)
+        ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\iwa41\AppData\Local\Programs\Python\Python312\Lib\re\_parser.py", line 979, in parse
+    p = _parse_sub(source, state, flags & SRE_FLAG_VERBOSE, 0)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\iwa41\AppData\Local\Programs\Python\Python312\Lib\re\_parser.py", line 460, in _parse_sub
+    itemsappend(_parse(source, state, verbose, nested + 1,
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\iwa41\AppData\Local\Programs\Python\Python312\Lib\re\_parser.py", line 568, in _parse
+    raise source.error("unterminated character set",
+re.error: unterminated character set at position 6

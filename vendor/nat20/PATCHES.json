@@ -1,0 +1,88 @@
+{
+  "commit": "e187c813bb4e43c4e4e62942ecd83831f1cdbcaa",
+  "upstream": "https://github.com/tapestria/nat20",
+  "version": "0.7.0",
+  "note": "Reviewed SRD 5.2 patches. The advancement module adds a new file. The weapon-mastery patch makes mastery a CHOSEN weapon kind (SRD 5.2 Weapon Mastery) instead of a property of the weapon, so a fighter who chose nothing earns nothing; it also threads the choice from the derived sheet through the party spec into the combatant. | 2026-10-24: periods_covered/recover_item_and_activity_pools ported from work/nat20-engine a9b8479 | 2026-10-26: activities context/damage/dice/formula patched so class-feature formulas that use parenthesised dice counts, multiplication and @item.uses/@attributes.hd/@spells.pact tokens actually resolve (Preserve Life, Overchannel, Lifedrinker, Eldritch Smite, Divine Smite vs undead). | 2026-10-26: loader falls back to canonical_2014 when a category has no 2024 document, so SRD 5.1 subclasses/features stay loadable alongside the 2024 corpus. | 2026-10-26: SRD translator tooling declares the laaru import fixes (foundry.py, regen.py); they do not run at game time.",
+  "files": [
+    {
+      "path": "packages/dnd5e-engine/src/dnd5e_engine/__init__.py",
+      "sha256": "2a2a6202f234929ed020eef2c2a4a4f5f8e29f260b429723669fedf914d945a3",
+      "kind": "modified"
+    },
+    {
+      "path": "packages/dnd5e-engine/src/dnd5e_engine/activities/mastery.py",
+      "sha256": "14e0cb48c6c72d771d8190f4cb4b870930e0e744453b4bcc0b2b3fa2571a1483",
+      "kind": "modified"
+    },
+    {
+      "path": "packages/dnd5e-engine/src/dnd5e_engine/build_party.py",
+      "sha256": "54bca9f8d33d35a76e9539fea38167c5c0efd91ede9be84d83938bbcd0bf7d78",
+      "kind": "modified"
+    },
+    {
+      "path": "packages/dnd5e-engine/src/dnd5e_engine/build_spec.py",
+      "sha256": "17fa8e6fa93bcc48707fdd17779f9520448b928ac0bcc964e1c698e1ae26c0b7",
+      "kind": "modified"
+    },
+    {
+      "path": "packages/dnd5e-engine/src/dnd5e_engine/orchestrator.py",
+      "sha256": "1555b595038c0405751f55272a92347d0de9cc77c06307c1d7eb98e954e6cfd0",
+      "kind": "modified"
+    },
+    {
+      "path": "packages/dnd5e-engine/src/dnd5e_engine/rest.py",
+      "sha256": "25663ac71972bac3bf6dc157f9dc6ebdc5b08285ebc942c15723258f21faa5d3",
+      "kind": "modified"
+    },
+    {
+      "path": "packages/dnd5e-engine/src/dnd5e_engine/rules/advancement.py",
+      "sha256": "c61e8b8c4c04077b0eb634e18b54818a1ac34f9795a4820fb4eeb2d878a6ae1e",
+      "kind": "added"
+    },
+    {
+      "path": "packages/dnd5e-engine/src/dnd5e_engine/specs.py",
+      "sha256": "265b5e0b4c3c884c270c52751bdeabfd3f8b9940fb43067ca7ae4fd71896570e",
+      "kind": "modified"
+    },
+    {
+      "path": "packages/dnd5e-engine/src/dnd5e_engine/types/combat.py",
+      "sha256": "a2902e046c9e336dedd3822c030cd4fe5d0bad48253d3fea204de2f8c4007c35",
+      "kind": "modified"
+    },
+    {
+      "path": "packages/dnd5e-engine/src/dnd5e_engine/activities/context.py",
+      "sha256": "3470de8b91ea19e43852dd4da1bc75d522551b89f6782134472ed0131f815762",
+      "kind": "modified"
+    },
+    {
+      "path": "packages/dnd5e-engine/src/dnd5e_engine/activities/damage.py",
+      "sha256": "e74761c99578ca46784a176955c238df9a5658e6bea4ebb2a02c1f2b937be219",
+      "kind": "modified"
+    },
+    {
+      "path": "packages/dnd5e-engine/src/dnd5e_engine/activities/dice.py",
+      "sha256": "0d5326a5378f24f748e3e7f6221c683438373c8e39079e7823ad8073719d4fc9",
+      "kind": "modified"
+    },
+    {
+      "path": "packages/dnd5e-engine/src/dnd5e_engine/activities/formula.py",
+      "sha256": "4b062d652b981e1d9f288ffbc501261ec2affad44b88432c5f523fef9afa4a2b",
+      "kind": "modified"
+    },
+    {
+      "path": "packages/dnd5e-srd-data/src/dnd5e_srd_data/loader.py",
+      "sha256": "618921d9b7568dfe55071b61f7b105b31d198c18b280c2115f2c1bb55f0a36d6",
+      "kind": "modified"
+    },
+    {
+      "path": "packages/dnd5e-srd-data/tools/translators/foundry.py",
+      "sha256": "518ebab6d8036c29f9c2f7eb53c754a96904824dbfc94870acbd07cf0ed14bcb",
+      "kind": "modified"
+    },
+    {
+      "path": "packages/dnd5e-srd-data/tools/regen.py",
+      "sha256": "4853abe45c835b1b8cb9fcd04ffdd3984f3c448410908d6cd2f9fefe19d63c7e",
+      "kind": "modified"
+    }
+  ]
+}

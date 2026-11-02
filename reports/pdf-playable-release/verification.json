@@ -1,0 +1,37 @@
+{
+  "zip_crc": "ok",
+  "verified_files": 2193,
+  "archive_sha256": "51c7e3056f216c292d32885b2a9847fb78926c9878fd18b839d4442d4e6397e0",
+  "bundle_bad": [],
+  "bundle_extra": [],
+  "zip_bad": [],
+  "zip_extra": [],
+  "source_changed": [],
+  "code_changed": [],
+  "old_artifacts_changed": [],
+  "pinned_runtime_changed": [],
+  "selected_regression": {
+    "tests": 11,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "full_regression": false,
+  "native_frozen_both": true,
+  "native_synthetic_pdf_prepared": true,
+  "native_new_process_continued": true,
+  "distinct_native_pids": true,
+  "mock_transport_requests": 8,
+  "mock_preparation_requests_by_phase": {
+    "prepare": 1,
+    "continue": 0
+  },
+  "own_main_ledger_present": false,
+  "own_main_ledger_calls": null,
+  "own_synthetic_ledger_calls": 9,
+  "real_provider_calls": 0,
+  "paid_calls": 0,
+  "user_profile_connected": false,
+  "own_processes_stopped": true,
+  "ok": true
+}

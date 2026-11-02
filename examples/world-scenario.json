@@ -1,0 +1,9 @@
+{
+  "version": 1,
+  "name": "Полянa старого дозора",
+  "source": "Собственный демонстрационный сценарий; добавление требует подтверждения игрока",
+  "locations": [{"name":"Поляна дозора","description":"Между соснами лежат камни старого караула.","known_to_hero":false,"objects":["камни","погасший костёр"],"npc":[{"name":"Рада","character":"Осторожная проводница","biography":"Несколько лет изучает лесные дороги.","motivation":"Найти пропавший дозор","mood":"Насторожена","goals":["Проверить старый лагерь"],"known":"Проводница ищет старый лагерь.","private_knowledge":["Она хранит семейную тайну."]}],"facts":[],"secrets":["Под камнем спрятан знак дозора."]}],
+  "nodes": [{"id":"watch-clearing","name":"Поляна дозора","coordinates":[0,2],"known":false,"environment":"forest_road"}],
+  "routes": [{"from":"tavern","to":"watch-clearing","meters":700,"minutes":10,"description":"Узкая тропа на юг","explorable":true}],
+  "events": [{"id":"watch-encounter","after_minutes":10,"location":"Поляна дозора","kind":"encounter","text":"В лесу замечены следы чужого караула. Можно подтвердить тренировочное столкновение или оставить предложение.","encounter":{"environment":"forest_road","seed":42},"lethal_risk":false}]
+}

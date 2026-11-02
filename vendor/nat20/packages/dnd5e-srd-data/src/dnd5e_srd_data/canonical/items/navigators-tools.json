@@ -1,0 +1,198 @@
+{
+  "activities": [
+    {
+      "activation": {
+        "condition": "",
+        "override": false,
+        "reaction_conditions": [],
+        "type": "action",
+        "value": null
+      },
+      "applied_effects": [],
+      "check": {
+        "ability": "wis",
+        "associated": [],
+        "dc": {
+          "calculation": "",
+          "formula": "10"
+        }
+      },
+      "consumption": {
+        "scaling": {
+          "allowed": false,
+          "max": ""
+        },
+        "spell_slot": true,
+        "targets": []
+      },
+      "description": {
+        "chat_flavor": ""
+      },
+      "duration": {
+        "concentration": false,
+        "override": false,
+        "special": "",
+        "units": "inst",
+        "value": ""
+      },
+      "effects": [],
+      "flags": {},
+      "id": "tbXPqxy6Ukm9WnSs",
+      "img": "",
+      "kind": "check",
+      "name": "Plot a Course",
+      "range": {
+        "override": false,
+        "special": "",
+        "units": "self",
+        "value": null
+      },
+      "sort": 0,
+      "target": {
+        "affects": {
+          "choice": false,
+          "count": "",
+          "special": "",
+          "type": ""
+        },
+        "override": false,
+        "prompt": false,
+        "template": {
+          "contiguous": false,
+          "count": "",
+          "height": "",
+          "size": "",
+          "stationary": false,
+          "type": "",
+          "units": "",
+          "width": ""
+        }
+      },
+      "uses": {
+        "max": "",
+        "recovery": [],
+        "spent": 0
+      },
+      "visibility": {
+        "identifier": "",
+        "level": {
+          "max": null,
+          "min": null
+        },
+        "require_attunement": false,
+        "require_identification": false,
+        "require_magic": false
+      }
+    },
+    {
+      "activation": {
+        "condition": "",
+        "override": false,
+        "reaction_conditions": [],
+        "type": "action",
+        "value": null
+      },
+      "applied_effects": [],
+      "check": {
+        "ability": "wis",
+        "associated": [],
+        "dc": {
+          "calculation": "",
+          "formula": "15"
+        }
+      },
+      "consumption": {
+        "scaling": {
+          "allowed": false,
+          "max": ""
+        },
+        "spell_slot": true,
+        "targets": []
+      },
+      "description": {
+        "chat_flavor": ""
+      },
+      "duration": {
+        "concentration": false,
+        "override": false,
+        "special": "",
+        "units": "inst",
+        "value": ""
+      },
+      "effects": [],
+      "flags": {},
+      "id": "TPOgnShxoZdAsFXc",
+      "img": "",
+      "kind": "check",
+      "name": "Determine Position by Stargazing",
+      "range": {
+        "override": false,
+        "special": "",
+        "units": "self",
+        "value": null
+      },
+      "sort": 0,
+      "target": {
+        "affects": {
+          "choice": false,
+          "count": "",
+          "special": "",
+          "type": ""
+        },
+        "override": false,
+        "prompt": false,
+        "template": {
+          "contiguous": false,
+          "count": "",
+          "height": "",
+          "size": "",
+          "stationary": false,
+          "type": "",
+          "units": "",
+          "width": ""
+        }
+      },
+      "uses": {
+        "max": "",
+        "recovery": [],
+        "spent": 0
+      },
+      "visibility": {
+        "identifier": "",
+        "level": {
+          "max": null,
+          "min": null
+        },
+        "require_attunement": false,
+        "require_identification": false,
+        "require_magic": false
+      }
+    }
+  ],
+  "attunement_constraint": null,
+  "cost_gp": 25.0,
+  "description": "Ability: Wisdom\n\nUtilize: Plot a course (DC 10), or determine position by stargazing (DC 15)",
+  "description_localized": "<p>Ими пользуются для морской навигации. Умение в обращении с этими инструментами позволяет вам прокладывать курс судна и пользоваться навигационными картами. Кроме того, эти инструменты позволяют вам добавить ваш бонус умения к любой проверке характеристики, связанной с ориентацией в море.</p>\n<p>Умение в обращении с инструментами навигатора помогает вам определить правильный курс, основываясь на наблюдении за звёздами. Они также позволяют вам разбираться в чтении схем и карт, благодаря выработанному у вас чувство направления.</p>\n<p><em><strong>Компоненты.</strong></em> Инструменты навигатора включают в себя секстант, компас, кронциркуль, линейку, пергамент, чернила и писчее перо.</p>\n<p><em><strong>Выживание.</strong></em> Умение обращаться с инструментами навигатора помогает вам не заблудиться и даёт знания о наиболее вероятном расположении дорог и населённых пунктов.</p>\n<p><em><strong>Определение положения.</strong></em> Проведя тщательные измерения, вы можете определить своё положение на морской навигационной карте и время суток.</p>\n<table class=\"rd__table  stripe-odd-table\">\n<thead>\n<tr>\n<th class=\"col-10\" data-rd-isroller=\"false\">Возможное действие</th>\n<th class=\"col-2 text-center\" data-rd-isroller=\"false\">СЛ</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td class=\"col-10\">Проложить курс</td>\n<td class=\"col-2 text-center\">10</td>\n</tr>\n<tr>\n<td class=\"col-10\">Определить своё местоположение на морской навигационной карте</td>\n<td class=\"col-2 text-center\">15</td>\n</tr>\n</tbody>\n</table>",
+  "item_kind": "item",
+  "name": "Инструменты навигатора",
+  "passive_effects": [],
+  "provenance": {
+    "ingest_date": "2026-05-30",
+    "ingest_version": "foundry-translator-v1",
+    "license_tag": "CC-BY-4.0",
+    "source": "foundry",
+    "source_url": "https://github.com/foundryvtt/dnd5e/blob/965ad2d0cf5d063dac675ba078b5bd3c3c0dd449/packs/_source/equipment24/tools/other/navigators-tools.yml",
+    "srd_version": [
+      "5.2"
+    ]
+  },
+  "rarity": "common",
+  "requires_attunement": false,
+  "review": {
+    "known_divergence": null,
+    "requires_user_decision": false
+  },
+  "slug": "navigators-tools",
+  "uses": null,
+  "weight": 2.0
+}

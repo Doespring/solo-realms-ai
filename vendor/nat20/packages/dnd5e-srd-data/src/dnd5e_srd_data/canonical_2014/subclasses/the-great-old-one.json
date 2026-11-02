@@ -1,0 +1,211 @@
+{
+  "slug": "the-great-old-one",
+  "name": "Великий древний",
+  "description": "Великий древний | The Great Old One\n\nВаш покровитель — загадочное создание, чья природа совершенно чужда самой ткани реальности. Возможно, он явился из Дальнего Предела, места за гранью реальности, или же был одним из древних богов, о которых остались лишь легенды. Его мотивы непостижимы для смертных, а знания столь глубоки и древни, что даже величайшие библиотеки ничтожны в сравнении с известными ему тайнами. Великий Древний может даже не подозревать о вашем существовании, или же вы можете быть ему безразличны, но тайны, которые вы познали, позволяют вам получать от него магию.\n\nТакими покровителями могут быть Гонадар Таящийся, Прикованный бог Тариздан, Дендар Ночная Змея, Заргон Возвращающийся, Великий Ктулху и другие непостижимые создания.\n\nУровень Особенности\n\n1-й\n\n@Compendium[laaru-dnd5-hw.classfeatures.XgdHpoQ1SLz0vrTw]{Пробуждение разума}, @Compendium[laaru-dnd5-hw.classfeatures.o6d8gRvcWrh1oBfY]{Расширенный список заклинаний}\n\n6-й\n\n@Compendium[laaru-dnd5-hw.classfeatures.d2hPQkkCwxNmjcEd]{Оберег энтропии}\n\n10-й\n\n@Compendium[laaru-dnd5-hw.classfeatures.4yjVYotbjObeqZFN]{Щит разума}\n\n14-й\n\n@Compendium[laaru-dnd5-hw.classfeatures.GEQypN2nmXlQCQ55]{Подчинение}",
+  "identifier": "the-great-old-one",
+  "class_identifier": "warlock",
+  "spellcasting": {
+    "ability": "",
+    "progression": "none"
+  },
+  "advancement": [
+    {
+      "id": "pd3fe91te4tbfmh4",
+      "type": "ItemGrant",
+      "level": 1,
+      "title": "1. Особенности",
+      "hint": "",
+      "class_restriction": "",
+      "configuration": {
+        "items": [
+          "Compendium.laaru-dnd5-hw.classfeatures.o6d8gRvcWrh1oBfY",
+          "Compendium.laaru-dnd5-hw.classfeatures.XgdHpoQ1SLz0vrTw"
+        ],
+        "optional": false
+      },
+      "value": {}
+    },
+    {
+      "id": "5y3bb14x6fwulrrt",
+      "type": "ItemGrant",
+      "level": 6,
+      "title": "Особенность",
+      "hint": "",
+      "class_restriction": "",
+      "configuration": {
+        "items": [
+          "Compendium.laaru-dnd5-hw.classfeatures.d2hPQkkCwxNmjcEd"
+        ],
+        "optional": false
+      },
+      "value": {}
+    },
+    {
+      "id": "b2osisy5zyprxy1a",
+      "type": "ItemGrant",
+      "level": 10,
+      "title": "Особенность",
+      "hint": "",
+      "class_restriction": "",
+      "configuration": {
+        "items": [
+          "Compendium.laaru-dnd5-hw.classfeatures.4yjVYotbjObeqZFN"
+        ],
+        "optional": false
+      },
+      "value": {}
+    },
+    {
+      "id": "b2axyu0b8shtx1ym",
+      "type": "ItemGrant",
+      "level": 14,
+      "title": "Особенность",
+      "hint": "",
+      "class_restriction": "",
+      "configuration": {
+        "items": [
+          "Compendium.laaru-dnd5-hw.classfeatures.GEQypN2nmXlQCQ55"
+        ],
+        "optional": false
+      },
+      "value": {}
+    },
+    {
+      "id": "ZwMwWGaoRKmHqoFm",
+      "type": "ItemGrant",
+      "level": 1,
+      "title": "2. Заклинания",
+      "hint": "",
+      "class_restriction": "",
+      "configuration": {
+        "items": [
+          "Compendium.laaru-dnd5-hw.spells.pwuEGpwpLknLtimK",
+          "Compendium.laaru-dnd5-hw.spells.YjVfvXKWwlPBXZgA"
+        ],
+        "optional": false,
+        "spell": {
+          "ability": "cha",
+          "preparation": "pact",
+          "uses": {
+            "max": "",
+            "per": ""
+          }
+        }
+      },
+      "value": {}
+    },
+    {
+      "id": "LtFzH3sneRIl506h",
+      "type": "ItemGrant",
+      "level": 3,
+      "title": "Заклинания",
+      "hint": "",
+      "class_restriction": "",
+      "configuration": {
+        "items": [
+          "Compendium.laaru-dnd5-hw.spells.MSM1XtWei12DFoLN",
+          "Compendium.laaru-dnd5-hw.spells.EEzRRTG4l4Zzc2K7"
+        ],
+        "optional": false,
+        "spell": {
+          "ability": "cha",
+          "preparation": "innate",
+          "uses": {
+            "max": "",
+            "per": ""
+          }
+        }
+      },
+      "value": {}
+    },
+    {
+      "id": "DpB9ybcesPOIn53D",
+      "type": "ItemGrant",
+      "level": 5,
+      "title": "Заклинания",
+      "hint": "",
+      "class_restriction": "",
+      "configuration": {
+        "items": [
+          "Compendium.laaru-dnd5-hw.spells.IopVF9lETFjtZTK6",
+          "Compendium.laaru-dnd5-hw.spells.KHTEvkMkGDL1PQYH"
+        ],
+        "optional": false,
+        "spell": {
+          "ability": "cha",
+          "preparation": "pact",
+          "uses": {
+            "max": "",
+            "per": ""
+          }
+        }
+      },
+      "value": {}
+    },
+    {
+      "id": "DIqxhXRln03S8lQO",
+      "type": "ItemGrant",
+      "level": 7,
+      "title": "Заклинания",
+      "hint": "",
+      "class_restriction": "",
+      "configuration": {
+        "items": [
+          "Compendium.laaru-dnd5-hw.spells.oRpH5FblD1gmSFgF",
+          "Compendium.laaru-dnd5-hw.spells.dXwkYryKC7q4ZTh3"
+        ],
+        "optional": false,
+        "spell": {
+          "ability": "cha",
+          "preparation": "pact",
+          "uses": {
+            "max": "",
+            "per": ""
+          }
+        }
+      },
+      "value": {}
+    },
+    {
+      "id": "3a3RHmO36gvSvq3R",
+      "type": "ItemGrant",
+      "level": 9,
+      "title": "Заклинания",
+      "hint": "",
+      "class_restriction": "",
+      "configuration": {
+        "items": [
+          "Compendium.laaru-dnd5-hw.spells.uLKYcMWQhOpEnJCe",
+          "Compendium.laaru-dnd5-hw.spells.MDvLGhwXCJnaTmwt"
+        ],
+        "optional": false,
+        "spell": {
+          "ability": "cha",
+          "preparation": "pact",
+          "uses": {
+            "max": "",
+            "per": ""
+          }
+        }
+      },
+      "value": {}
+    }
+  ],
+  "granted_features": [],
+  "feature_choices": [],
+  "provenance": {
+    "source": "foundry",
+    "source_url": "https://github.com/foundryvtt/dnd5e/blob/965ad2d0cf5d063dac675ba078b5bd3c3c0dd449/packs/_source/laaru-hw-subclasses/Великий_древний_lK6gqUMeymPTerw2.yml",
+    "ingest_date": "2026-10-26",
+    "ingest_version": "foundry-translator-v1",
+    "srd_version": [
+      "5.1"
+    ],
+    "license_tag": "CC-BY-4.0"
+  },
+  "review": {
+    "known_divergence": null,
+    "requires_user_decision": false
+  },
+  "entry_kind": "subclass"
+}

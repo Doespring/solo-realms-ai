@@ -1,0 +1,170 @@
+{
+  "slug": "feign-death",
+  "foundry_uuid": "Compendium.dnd5e.laaru-hw-spells.Item.w1rLAZaey2J52l3q",
+  "name": "Фальшивая смерть / Feign Death",
+  "description": "Прикоснитесь к согласному существу и погрузите его в состояние каталепсии, неотличимое от смерти.\n\nПока длится заклинание или пока вы не используете действие, чтобы коснуться цели, и не прекратите заклинание, цель кажется мёртвой для стороннего наблюдателя и даже для заклинаний, определяющих её состояние. Цель &amp;reference[blinded]{слепа} и &amp;reference[incapacitated]{выведена из строя}, а её скорость снижается до 0. У цели устойчивость к любому урону, кроме психического. Если цель была больна или отравлена в момент сотворения заклинания или становится больна или &amp;reference[poisoned]{отравлена}, пока оно действует, то болезнь или яд не оказывают на неё влияния, пока длится заклинание.",
+  "level": 3,
+  "school": "nec",
+  "components": [
+    "M",
+    "S",
+    "V"
+  ],
+  "ritual": true,
+  "concentration": false,
+  "casting_time": {
+    "unit": "action",
+    "value": 1,
+    "condition": ""
+  },
+  "range": {
+    "units": "touch",
+    "value": null,
+    "special": null
+  },
+  "duration": {
+    "units": "hour",
+    "value": 1
+  },
+  "materials": {
+    "value": "щепотка могильной земли",
+    "consumed": false,
+    "cost": 0,
+    "supply": 0
+  },
+  "preparation": {
+    "mode": "prepared",
+    "prepared": false
+  },
+  "activities": [
+    {
+      "id": "dnd5eactivity000",
+      "name": "",
+      "img": "",
+      "sort": 0,
+      "activation": {
+        "type": "action",
+        "value": null,
+        "condition": "",
+        "override": false,
+        "reaction_conditions": []
+      },
+      "consumption": {
+        "scaling": {
+          "allowed": false,
+          "max": ""
+        },
+        "spell_slot": true,
+        "targets": []
+      },
+      "description": {
+        "chat_flavor": ""
+      },
+      "duration": {
+        "value": null,
+        "units": "inst",
+        "special": "",
+        "concentration": false,
+        "override": false
+      },
+      "flags": {},
+      "range": {
+        "value": null,
+        "units": "self",
+        "special": "",
+        "override": false
+      },
+      "target": {
+        "template": {
+          "count": "",
+          "contiguous": false,
+          "stationary": false,
+          "type": "",
+          "size": "",
+          "width": "",
+          "height": "",
+          "units": ""
+        },
+        "affects": {
+          "count": "",
+          "type": "",
+          "choice": false,
+          "special": ""
+        },
+        "override": false,
+        "prompt": true
+      },
+      "uses": {
+        "spent": 0,
+        "max": "",
+        "recovery": []
+      },
+      "visibility": {
+        "identifier": "",
+        "level": {
+          "min": null,
+          "max": null
+        },
+        "require_attunement": false,
+        "require_identification": false,
+        "require_magic": false
+      },
+      "effects": [
+        {
+          "id": "GTuBZBV83nvoDV6K",
+          "level": {
+            "min": null,
+            "max": null
+          },
+          "on_save": null,
+          "riders": null
+        }
+      ],
+      "applied_effects": [],
+      "kind": "utility",
+      "roll": {
+        "formula": "",
+        "name": "",
+        "prompt": false,
+        "visible": false
+      }
+    }
+  ],
+  "passive_effects": [
+    {
+      "id": "GTuBZBV83nvoDV6K",
+      "name": "Фальшивая смерть",
+      "description": "",
+      "changes": [
+        {
+          "key": "system.traits.dr.all",
+          "mode": 0,
+          "value": "1",
+          "priority": 20
+        }
+      ],
+      "statuses": [
+        "incapacitated",
+        "blinded"
+      ],
+      "duration": null,
+      "disabled": false,
+      "transfer": false
+    }
+  ],
+  "provenance": {
+    "source": "foundry",
+    "source_url": "https://github.com/foundryvtt/dnd5e/blob/965ad2d0cf5d063dac675ba078b5bd3c3c0dd449/packs/_source/laaru-hw-spells/Фальшивая_смерть___Feign_Death_w1rLAZaey2J52l3q.yml",
+    "ingest_date": "2026-10-26",
+    "ingest_version": "foundry-translator-v1",
+    "srd_version": [
+      "5.1"
+    ],
+    "license_tag": "CC-BY-4.0"
+  },
+  "review": {
+    "known_divergence": null,
+    "requires_user_decision": false
+  },
+  "entry_kind": "spell"
+}

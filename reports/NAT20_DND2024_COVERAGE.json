@@ -1,0 +1,194 @@
+{
+  "schema_version": "1.0.0",
+  "generated": "2026-10-23",
+  "source": "ручной аудит кода vendor/nat20 и solo",
+  "statuses": [
+    "implemented",
+    "partial",
+    "missing",
+    "erroneous",
+    "unverified"
+  ],
+  "coverage": [
+    {
+      "id": "character_build",
+      "title": "Создание персонажа, характеристики, навыки",
+      "status": "implemented",
+      "evidence": "build_spec.py, rules/skills.py"
+    },
+    {
+      "id": "classes",
+      "title": "Классы и способности",
+      "status": "implemented",
+      "evidence": "12 классов, 261 способность"
+    },
+    {
+      "id": "subclasses",
+      "title": "Подклассы",
+      "status": "implemented",
+      "evidence": "12 подклассов"
+    },
+    {
+      "id": "species",
+      "title": "Виды и предыстории",
+      "status": "implemented",
+      "evidence": "14 видов, 4 предыстории"
+    },
+    {
+      "id": "checks",
+      "title": "Проверки и спасброски",
+      "status": "implemented",
+      "evidence": "check.py"
+    },
+    {
+      "id": "advantage",
+      "title": "Преимущества и помехи",
+      "status": "implemented",
+      "evidence": "AdvantageSource"
+    },
+    {
+      "id": "initiative",
+      "title": "Инициатива, раунды, действия",
+      "status": "implemented",
+      "evidence": "orchestrator.py, turn_lifecycle.py"
+    },
+    {
+      "id": "movement",
+      "title": "Передвижение и расстояния",
+      "status": "implemented",
+      "evidence": "spatial.py"
+    },
+    {
+      "id": "cover_vision",
+      "title": "Укрытия и видимость",
+      "status": "unverified",
+      "evidence": "требует проверки"
+    },
+    {
+      "id": "weapons_armor",
+      "title": "Оружие, броня, свойства",
+      "status": "implemented",
+      "evidence": "86 оружий, 32 доспеха"
+    },
+    {
+      "id": "weapon_mastery",
+      "title": "Weapon Mastery",
+      "status": "implemented",
+      "evidence": "activities/mastery.py (патч проектом)"
+    },
+    {
+      "id": "spells",
+      "title": "Заклинания и ячейки",
+      "status": "partial",
+      "evidence": "339 заклинаний, часть narrative_only"
+    },
+    {
+      "id": "spell_components",
+      "title": "Компоненты заклинаний",
+      "status": "partial",
+      "evidence": "заявлено дефектным в nat20_api.py:115"
+    },
+    {
+      "id": "concentration",
+      "title": "Концентрация",
+      "status": "partial",
+      "evidence": "bless заявлен дефектным (nat20_api.py:112)"
+    },
+    {
+      "id": "conditions",
+      "title": "Состояния",
+      "status": "implemented",
+      "evidence": "15 состояний, rules/conditions.py"
+    },
+    {
+      "id": "resistances",
+      "title": "Сопротивления/иммунитеты",
+      "status": "implemented",
+      "evidence": "interpret_passive_stats"
+    },
+    {
+      "id": "rest",
+      "title": "Отдых и восстановление",
+      "status": "partial",
+      "evidence": "способности да, предметы нет"
+    },
+    {
+      "id": "feats",
+      "title": "Черты",
+      "status": "implemented",
+      "evidence": "17 черт"
+    },
+    {
+      "id": "magic_items_passive",
+      "title": "Пассивные эффекты предметов",
+      "status": "missing",
+      "evidence": "passive_effects предметов не читаются"
+    },
+    {
+      "id": "magic_items_attunement_effect",
+      "title": "Настройка как источник эффекта",
+      "status": "missing",
+      "evidence": "_attuned только валидирует"
+    },
+    {
+      "id": "magic_items_attunement_constraint",
+      "title": "Ограничение настройки по источнику",
+      "status": "missing",
+      "evidence": "attunement_constraint не читается"
+    },
+    {
+      "id": "magic_items_charges_restore",
+      "title": "Восстановление зарядов предметов",
+      "status": "missing",
+      "evidence": "recover_item_uses не вызывается в solo"
+    },
+    {
+      "id": "magic_items_use_path",
+      "title": "Применение предмета из чата",
+      "status": "missing",
+      "evidence": "use_item объявлен, но не подключён"
+    },
+    {
+      "id": "inventory_sync",
+      "title": "Связь инвентаря Solo с боевым снаряжением",
+      "status": "missing",
+      "evidence": "inventory.py не знает nat20"
+    },
+    {
+      "id": "magic_items_tables",
+      "title": "Таблицы предметов",
+      "status": "unverified",
+      "evidence": "6 таблиц внесены вручную"
+    },
+    {
+      "id": "monsters_statblocks",
+      "title": "Статблоки монстров",
+      "status": "implemented",
+      "evidence": "341 монстр"
+    },
+    {
+      "id": "monsters_abilities",
+      "title": "Исполняемые способности монстров",
+      "status": "partial",
+      "evidence": "часть через monster_actions.py"
+    },
+    {
+      "id": "localization_items",
+      "title": "Русские названия предметов",
+      "status": "missing",
+      "evidence": "0 вхождений"
+    },
+    {
+      "id": "localization_terms",
+      "title": "Словарь терминов",
+      "status": "implemented",
+      "evidence": "138 записей в rules_extract/work/ru"
+    }
+  ],
+  "counts": {
+    "implemented": 15,
+    "unverified": 2,
+    "partial": 5,
+    "missing": 7
+  }
+}

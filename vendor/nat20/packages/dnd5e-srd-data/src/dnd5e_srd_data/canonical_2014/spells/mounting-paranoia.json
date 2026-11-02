@@ -1,0 +1,169 @@
+{
+  "slug": "mounting-paranoia",
+  "foundry_uuid": "Compendium.dnd5e.laaru-hw-spells.Item.WQwyLBucamN4wHHt",
+  "name": "Нарастающая паранойя / Mounting Paranoia",
+  "description": "Вы окутываете разум существа, которое видите в пределах дистанции, тенью, искажая его восприятие мира. Цель воспринимает всё, что находится дальше 15 футов, окутанным тенью, неразличимым по форме и звуку. Когда цель пытается выбрать целью существо, окутанное тенью, атакой или заклинанием, она должна пройти испытание Мудрости. При провале она вместо этого выбирает случайную другую цель в пределах дистанции. Когда цель становится способной видеть существо, которое ранее было окутано тенью, она должна пройти испытание Мудрости. В случае провала она становится &amp;Reference[frightened]{испуганной} этим существом до начала своего следующего хода.\n\nВ конце каждого хода цели она проходит испытание Мудрости. В случае провала тени приближаются на 5 футов, сокращая расстояние, на котором цель может видеть чётко. Если всё зрение цели окутывается тенью (после третьего провала), она становится &amp;Reference[paralyzed]{парализованной} страхом, пока не преуспеет в этом испытании. Если цель преуспевает в этом испытании, заклинание оканчивается.",
+  "level": 3,
+  "school": "ill",
+  "components": [
+    "S",
+    "V"
+  ],
+  "ritual": false,
+  "concentration": true,
+  "casting_time": {
+    "unit": "action",
+    "value": 1,
+    "condition": ""
+  },
+  "range": {
+    "units": "ft",
+    "value": 60,
+    "special": null
+  },
+  "duration": {
+    "units": "minute",
+    "value": 1
+  },
+  "materials": {
+    "value": "",
+    "consumed": false,
+    "cost": 0,
+    "supply": 0
+  },
+  "preparation": {
+    "mode": "prepared",
+    "prepared": false
+  },
+  "activities": [
+    {
+      "id": "dnd5eactivity000",
+      "name": "",
+      "img": "",
+      "sort": 0,
+      "activation": {
+        "type": "action",
+        "value": null,
+        "condition": "",
+        "override": false,
+        "reaction_conditions": []
+      },
+      "consumption": {
+        "scaling": {
+          "allowed": false,
+          "max": ""
+        },
+        "spell_slot": true,
+        "targets": []
+      },
+      "description": {
+        "chat_flavor": ""
+      },
+      "duration": {
+        "value": null,
+        "units": "inst",
+        "special": "",
+        "concentration": false,
+        "override": false
+      },
+      "flags": {},
+      "range": {
+        "value": null,
+        "units": "self",
+        "special": "",
+        "override": false
+      },
+      "target": {
+        "template": {
+          "count": "",
+          "contiguous": false,
+          "stationary": false,
+          "type": "",
+          "size": "",
+          "width": "",
+          "height": "",
+          "units": ""
+        },
+        "affects": {
+          "count": "1",
+          "type": "creature",
+          "choice": false,
+          "special": ""
+        },
+        "override": false,
+        "prompt": true
+      },
+      "uses": {
+        "spent": 0,
+        "max": "",
+        "recovery": []
+      },
+      "visibility": {
+        "identifier": "",
+        "level": {
+          "min": null,
+          "max": null
+        },
+        "require_attunement": false,
+        "require_identification": false,
+        "require_magic": false
+      },
+      "effects": [
+        {
+          "id": "K7vP4nIrwoFMXaWV",
+          "level": {
+            "min": null,
+            "max": null
+          },
+          "on_save": false,
+          "riders": null
+        }
+      ],
+      "applied_effects": [],
+      "kind": "save",
+      "damage": {
+        "on_save": "half",
+        "parts": []
+      },
+      "save": {
+        "ability": [
+          "wis"
+        ],
+        "dc": {
+          "calculation": "spellcasting",
+          "formula": ""
+        },
+        "ignore_cover": false
+      }
+    }
+  ],
+  "passive_effects": [
+    {
+      "id": "K7vP4nIrwoFMXaWV",
+      "name": "Нарастающая паранойя / Mounting Paranoia",
+      "description": "",
+      "changes": [],
+      "statuses": [
+        "frightened"
+      ],
+      "duration": null,
+      "disabled": false,
+      "transfer": false
+    }
+  ],
+  "provenance": {
+    "source": "foundry",
+    "source_url": "https://github.com/foundryvtt/dnd5e/blob/965ad2d0cf5d063dac675ba078b5bd3c3c0dd449/packs/_source/laaru-hw-spells/Нарастающая_паранойя___Mounting_Paranoia_WQwyLBucamN4wHHt.yml",
+    "ingest_date": "2026-10-26",
+    "ingest_version": "foundry-translator-v1",
+    "srd_version": [
+      "5.1"
+    ],
+    "license_tag": "CC-BY-4.0"
+  },
+  "review": {
+    "known_divergence": null,
+    "requires_user_decision": false
+  },
+  "entry_kind": "spell"
+}

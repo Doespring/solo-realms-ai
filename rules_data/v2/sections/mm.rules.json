@@ -1,0 +1,53 @@
+{
+  "schema_version": "2.0.0",
+  "rules": [
+    {
+      "id": "dnd2024.mm2025.goblin_warrior.stats", "rules_family": "dnd2024", "name": "Гоблин-воитель: параметры и атаки", "kind": "monster_stats",
+      "classification": {"mode": "deterministic", "semantic_required": false, "formal_required": true, "reason": "Числа блока и урон при уже установленных условиях вычисляются локально. Тактический выбор цели сюда не входит."},
+      "conditions": [], "triggers": ["monster.stat_block_loaded", "registered_attack.hit"],
+      "formal_operations": [{"op": "ability_modifier", "inputs": ["ability_score"], "constants": {}}, {"op": "sum_dice", "inputs": ["local_damage_draws"], "constants": {"sides": 6, "modifier": 2}}],
+      "semantic_questions": [],
+      "facts": {
+        "size": "small", "creature_type": "fey", "tags": ["goblinoid"], "alignment_recommendation": "chaotic_neutral",
+        "armor_class": 15, "initiative_modifier": 2, "initiative_passive": 12, "hit_points": 10, "hit_dice_count": 3, "hit_dice_sides": 6, "speed_ft": 30,
+        "strength": 8, "dexterity": 15, "constitution": 10, "intelligence": 10, "wisdom": 8, "charisma": 8,
+        "strength_save": -1, "dexterity_save": 2, "constitution_save": 0, "intelligence_save": 0, "wisdom_save": -1, "charisma_save": -1,
+        "stealth": 6, "darkvision_ft": 60, "passive_perception": 9, "languages": ["common", "goblin"],
+        "challenge_numerator": 1, "challenge_denominator": 4, "experience": 50, "proficiency_bonus": 2,
+        "equipment": ["leather_armor", "shortbow", "scimitar", "shield"],
+        "scimitar.attack_bonus": 4, "scimitar.reach_ft": 5, "scimitar.damage_count": 1, "scimitar.damage_sides": 6, "scimitar.damage_modifier": 2, "scimitar.fixed_damage": 5, "scimitar.damage_type": "slashing",
+        "shortbow.attack_bonus": 4, "shortbow.range_ft": 80, "shortbow.long_range_ft": 320, "shortbow.damage_count": 1, "shortbow.damage_sides": 6, "shortbow.damage_modifier": 2, "shortbow.fixed_damage": 5, "shortbow.damage_type": "piercing",
+        "advantage_extra.count": 1, "advantage_extra.sides": 4, "advantage_extra.fixed_damage": 2, "advantage_extra.damage_type": "slashing",
+        "bonus_action_choices": ["disengage", "hide"]
+      },
+      "constraints": ["Дополнительные 1d4 режущего урона у обеих атак только при преимуществе к броску. Отменённое преимущество этого условия не выполняет.", "Сохранять тип Фея и режущий тип дополнительного урона лука буквально, без подстановки блока из 2014.", "Фиксированные значения урона и случайные кости — альтернативы, их нельзя складывать.", "Проверки попадания, критические попадания, дистанция, видимость и действие Засада требуют отдельных зарегистрированных правил; этот блок не доказывает полноту их реализации."],
+      "exceptions": [{"when": "Короткий лук с преимуществом", "consequence": "Основной урон колющий, дополнительный режущий — как напечатано."}],
+      "duration": "per_action", "resources": [{"id": "action_economy", "handling": "registered_engine_only"}],
+      "source": {"document_id": "mm_2025_ru_v1_1", "sha256": "28e9491b39b3df24b255f62973f95e83abd0395e4ac3d2d10d7163ead47146ca", "publication_year": 2025, "pdf_page": 77, "printed_page": "76", "section": "Гоблины. Гоблин-воитель: полный блок параметров"},
+      "verification": "source_checked_human_pending", "implementation": "kernel_only_unexecuted", "auto_activate": false
+    },
+    {
+      "id": "dnd2024.mm2025.goblin_warrior.behavior", "rules_family": "dnd2024", "name": "Мотивы и тактическое намерение гоблина", "kind": "guidance",
+      "classification": {"mode": "adjudicated", "semantic_required": true, "formal_required": false, "reason": "Описание склонностей вдохновляет решение о намерении; не задаёт обязательной атаки или вероятности предательства."},
+      "conditions": [], "triggers": ["npc.intent_needed"], "formal_operations": [],
+      "semantic_questions": ["Как известные обстоятельства и индивидуальный характер влияют на намерение гоблина: нападение, отступление или засада?"],
+      "facts": {"description_mentions_ambush_retreat": true},
+      "constraints": ["Текст о виде не заменяет индивидуально установленный канон персонажа.", "AI предлагает намерение, но не перемещение, урон или успешную засаду."],
+      "exceptions": [], "duration": "persistent_guidance", "resources": [],
+      "source": {"document_id": "mm_2025_ru_v1_1", "sha256": "28e9491b39b3df24b255f62973f95e83abd0395e4ac3d2d10d7163ead47146ca", "publication_year": 2025, "pdf_page": 77, "printed_page": "76", "section": "Гоблины. Гоблин-воитель: описание поведения"},
+      "verification": "source_checked_human_pending", "implementation": "not_implemented", "auto_activate": false
+    },
+    {
+      "id": "dnd2024.mm2025.goblin_warrior.nimble_escape", "rules_family": "dnd2024", "name": "Проворное бегство при самостоятельном выборе тактики", "kind": "monster_ability",
+      "classification": {"mode": "hybrid", "semantic_required": true, "formal_required": true, "reason": "В этом контексте AI выбирает намерение и вариант, движок проверяет доступность бонусного действия и правила Отступления/Засады. При уже заданном варианте формальная стадия deterministic."},
+      "conditions": [{"fact": "monster_chooses_tactic", "operator": "eq", "value": true}], "triggers": ["monster.bonus_action_choice_needed"],
+      "formal_operations": [{"op": "registered_bonus_action", "inputs": ["selected_action_id", "actor_id"], "constants": {"allowed": ["disengage", "hide"]}}],
+      "semantic_questions": ["Какой из допустимых вариантов соответствует текущему намерению и известной обстановке?"],
+      "facts": {"allowed_actions": ["disengage", "hide"], "action_type": "bonus_action"},
+      "constraints": ["Эта способность не гарантирует успешную Засаду и не даёт дополнительного бонусного действия.", "Общие правила действий должны быть извлечены/зарегистрированы отдельно; выбор неизвестного действия отклоняется."],
+      "exceptions": [], "duration": "per_action", "resources": [{"id": "bonus_action", "handling": "registered_engine_only"}],
+      "source": {"document_id": "mm_2025_ru_v1_1", "sha256": "28e9491b39b3df24b255f62973f95e83abd0395e4ac3d2d10d7163ead47146ca", "publication_year": 2025, "pdf_page": 77, "printed_page": "76", "section": "Гоблин-воитель. Бонусные действия. Проворное бегство"},
+      "verification": "source_checked_human_pending", "implementation": "not_implemented", "auto_activate": false
+    }
+  ]
+}

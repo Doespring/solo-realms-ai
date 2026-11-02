@@ -1,0 +1,505 @@
+{
+  "slug": "ringward",
+  "foundry_uuid": "Compendium.dnd5e.laaru-hw-spells.Item.O0ZlQkl53YpAlOCV",
+  "name": "Охранное кольцо / Ringward",
+  "description": "(Магия колец)\n\nЭто заклинание превращает железное кольцо в мерцающее кольцо энергии радиусом 15 футов, которое мед­ленно вращается вокруг вас. Пока длится заклинание, вы и ваши союзники, находящиеся внутри кольца с преимуществом проходите испытания против заклинаний и получаете устойчивость к одному типу урона на выбор.",
+  "level": 7,
+  "school": "abj",
+  "components": [
+    "M",
+    "S",
+    "V"
+  ],
+  "ritual": false,
+  "concentration": true,
+  "casting_time": {
+    "unit": "action",
+    "value": 1,
+    "condition": ""
+  },
+  "range": {
+    "units": "self",
+    "value": null,
+    "special": null
+  },
+  "duration": {
+    "units": "hour",
+    "value": 1
+  },
+  "materials": {
+    "value": "кольцо стоимостью 200 зм, расходуемое заклинанием",
+    "consumed": false,
+    "cost": 0,
+    "supply": 0
+  },
+  "preparation": {
+    "mode": "prepared",
+    "prepared": false
+  },
+  "activities": [
+    {
+      "id": "r02WmvsRn3lEDnhY",
+      "name": "",
+      "img": "",
+      "sort": 0,
+      "activation": {
+        "type": "action",
+        "value": null,
+        "condition": "",
+        "override": false,
+        "reaction_conditions": []
+      },
+      "consumption": {
+        "scaling": {
+          "allowed": false,
+          "max": ""
+        },
+        "spell_slot": true,
+        "targets": []
+      },
+      "description": {
+        "chat_flavor": ""
+      },
+      "duration": {
+        "value": null,
+        "units": "inst",
+        "special": "",
+        "concentration": false,
+        "override": false
+      },
+      "flags": {},
+      "range": {
+        "value": null,
+        "units": "self",
+        "special": "",
+        "override": false
+      },
+      "target": {
+        "template": {
+          "count": "",
+          "contiguous": false,
+          "stationary": false,
+          "type": "radius",
+          "size": "15",
+          "width": "",
+          "height": "",
+          "units": "ft"
+        },
+        "affects": {
+          "count": "",
+          "type": "",
+          "choice": false,
+          "special": ""
+        },
+        "override": false,
+        "prompt": true
+      },
+      "uses": {
+        "spent": 0,
+        "max": "",
+        "recovery": []
+      },
+      "visibility": {
+        "identifier": "",
+        "level": {
+          "min": null,
+          "max": null
+        },
+        "require_attunement": false,
+        "require_identification": false,
+        "require_magic": false
+      },
+      "effects": [
+        {
+          "id": "XQRdLA2pgaskX4U7",
+          "level": {
+            "min": null,
+            "max": null
+          },
+          "on_save": null,
+          "riders": null
+        },
+        {
+          "id": "nHE6MvasHNn9BgDy",
+          "level": {
+            "min": null,
+            "max": null
+          },
+          "on_save": null,
+          "riders": null
+        },
+        {
+          "id": "cDcookZRxfUXgSUh",
+          "level": {
+            "min": null,
+            "max": null
+          },
+          "on_save": null,
+          "riders": null
+        },
+        {
+          "id": "g93MkQI6DM71pftZ",
+          "level": {
+            "min": null,
+            "max": null
+          },
+          "on_save": null,
+          "riders": null
+        },
+        {
+          "id": "k5k1hYKfLBs2vj7d",
+          "level": {
+            "min": null,
+            "max": null
+          },
+          "on_save": null,
+          "riders": null
+        },
+        {
+          "id": "FXo2rqTXBhmGCEFF",
+          "level": {
+            "min": null,
+            "max": null
+          },
+          "on_save": null,
+          "riders": null
+        },
+        {
+          "id": "XHgV5ffQx8bjeQ4c",
+          "level": {
+            "min": null,
+            "max": null
+          },
+          "on_save": null,
+          "riders": null
+        },
+        {
+          "id": "xwOlxHJJYCLhWaHk",
+          "level": {
+            "min": null,
+            "max": null
+          },
+          "on_save": null,
+          "riders": null
+        },
+        {
+          "id": "IaLbGsz2hC1HKzk7",
+          "level": {
+            "min": null,
+            "max": null
+          },
+          "on_save": null,
+          "riders": null
+        },
+        {
+          "id": "PVun7ETehpeK2iPD",
+          "level": {
+            "min": null,
+            "max": null
+          },
+          "on_save": null,
+          "riders": null
+        },
+        {
+          "id": "Jc1ZxHhneY1wUnLC",
+          "level": {
+            "min": null,
+            "max": null
+          },
+          "on_save": null,
+          "riders": null
+        },
+        {
+          "id": "XVxiaQmHqUfBBBdI",
+          "level": {
+            "min": null,
+            "max": null
+          },
+          "on_save": null,
+          "riders": null
+        },
+        {
+          "id": "ojjxe1JXdcCB2zaJ",
+          "level": {
+            "min": null,
+            "max": null
+          },
+          "on_save": null,
+          "riders": null
+        }
+      ],
+      "applied_effects": [],
+      "kind": "utility",
+      "roll": {
+        "formula": "",
+        "name": "",
+        "prompt": false,
+        "visible": false
+      }
+    }
+  ],
+  "passive_effects": [
+    {
+      "id": "XQRdLA2pgaskX4U7",
+      "name": "Охранное кольцо / гром",
+      "description": "",
+      "changes": [
+        {
+          "key": "system.traits.dr.value",
+          "mode": 2,
+          "value": "thunder",
+          "priority": 20
+        }
+      ],
+      "statuses": [],
+      "duration": {
+        "seconds": 3600
+      },
+      "disabled": false,
+      "transfer": false
+    },
+    {
+      "id": "nHE6MvasHNn9BgDy",
+      "name": "Охранное кольцо / дробящий",
+      "description": "",
+      "changes": [
+        {
+          "key": "system.traits.dr.value",
+          "mode": 2,
+          "value": "bludgeoning",
+          "priority": 20
+        }
+      ],
+      "statuses": [],
+      "duration": {
+        "seconds": 3600
+      },
+      "disabled": false,
+      "transfer": false
+    },
+    {
+      "id": "cDcookZRxfUXgSUh",
+      "name": "Охранное кольцо / кислота",
+      "description": "",
+      "changes": [
+        {
+          "key": "system.traits.dr.value",
+          "mode": 2,
+          "value": "acid",
+          "priority": 20
+        }
+      ],
+      "statuses": [],
+      "duration": {
+        "seconds": 3600
+      },
+      "disabled": false,
+      "transfer": false
+    },
+    {
+      "id": "g93MkQI6DM71pftZ",
+      "name": "Охранное кольцо / колющий",
+      "description": "",
+      "changes": [
+        {
+          "key": "system.traits.dr.value",
+          "mode": 2,
+          "value": "piercing",
+          "priority": 20
+        }
+      ],
+      "statuses": [],
+      "duration": {
+        "seconds": 3600
+      },
+      "disabled": false,
+      "transfer": false
+    },
+    {
+      "id": "k5k1hYKfLBs2vj7d",
+      "name": "Охранное кольцо / лучистый",
+      "description": "",
+      "changes": [
+        {
+          "key": "system.traits.dr.value",
+          "mode": 2,
+          "value": "radiant",
+          "priority": 20
+        }
+      ],
+      "statuses": [],
+      "duration": {
+        "seconds": 3600
+      },
+      "disabled": false,
+      "transfer": false
+    },
+    {
+      "id": "FXo2rqTXBhmGCEFF",
+      "name": "Охранное кольцо / молния",
+      "description": "",
+      "changes": [
+        {
+          "key": "system.traits.dr.value",
+          "mode": 2,
+          "value": "lightning",
+          "priority": 20
+        }
+      ],
+      "statuses": [],
+      "duration": {
+        "seconds": 3600
+      },
+      "disabled": false,
+      "transfer": false
+    },
+    {
+      "id": "XHgV5ffQx8bjeQ4c",
+      "name": "Охранное кольцо / некротический",
+      "description": "",
+      "changes": [
+        {
+          "key": "system.traits.dr.value",
+          "mode": 2,
+          "value": "necrotic",
+          "priority": 20
+        }
+      ],
+      "statuses": [],
+      "duration": {
+        "seconds": 3600
+      },
+      "disabled": false,
+      "transfer": false
+    },
+    {
+      "id": "xwOlxHJJYCLhWaHk",
+      "name": "Охранное кольцо / огонь",
+      "description": "",
+      "changes": [
+        {
+          "key": "system.traits.dr.value",
+          "mode": 2,
+          "value": "fire",
+          "priority": 20
+        }
+      ],
+      "statuses": [],
+      "duration": {
+        "seconds": 3600
+      },
+      "disabled": false,
+      "transfer": false
+    },
+    {
+      "id": "IaLbGsz2hC1HKzk7",
+      "name": "Охранное кольцо / психический",
+      "description": "",
+      "changes": [
+        {
+          "key": "system.traits.dr.value",
+          "mode": 2,
+          "value": "psychic",
+          "priority": 20
+        }
+      ],
+      "statuses": [],
+      "duration": {
+        "seconds": 3600
+      },
+      "disabled": false,
+      "transfer": false
+    },
+    {
+      "id": "PVun7ETehpeK2iPD",
+      "name": "Охранное кольцо / режущий",
+      "description": "",
+      "changes": [
+        {
+          "key": "system.traits.dr.value",
+          "mode": 2,
+          "value": "slashing",
+          "priority": 20
+        }
+      ],
+      "statuses": [],
+      "duration": {
+        "seconds": 3600
+      },
+      "disabled": false,
+      "transfer": false
+    },
+    {
+      "id": "Jc1ZxHhneY1wUnLC",
+      "name": "Охранное кольцо / сила",
+      "description": "",
+      "changes": [
+        {
+          "key": "system.traits.dr.value",
+          "mode": 2,
+          "value": "force",
+          "priority": 20
+        }
+      ],
+      "statuses": [],
+      "duration": {
+        "seconds": 3600
+      },
+      "disabled": false,
+      "transfer": false
+    },
+    {
+      "id": "XVxiaQmHqUfBBBdI",
+      "name": "Охранное кольцо / холод",
+      "description": "",
+      "changes": [
+        {
+          "key": "system.traits.dr.value",
+          "mode": 2,
+          "value": "cold",
+          "priority": 20
+        }
+      ],
+      "statuses": [],
+      "duration": {
+        "seconds": 3600
+      },
+      "disabled": false,
+      "transfer": false
+    },
+    {
+      "id": "ojjxe1JXdcCB2zaJ",
+      "name": "Охранное кольцо / яд",
+      "description": "",
+      "changes": [
+        {
+          "key": "system.traits.dr.value",
+          "mode": 2,
+          "value": "poison",
+          "priority": 20
+        }
+      ],
+      "statuses": [],
+      "duration": {
+        "seconds": 3600
+      },
+      "disabled": false,
+      "transfer": false
+    }
+  ],
+  "provenance": {
+    "source": "foundry",
+    "source_url": "https://github.com/foundryvtt/dnd5e/blob/965ad2d0cf5d063dac675ba078b5bd3c3c0dd449/packs/_source/laaru-hw-spells/Охранное_кольцо___Ringward_O0ZlQkl53YpAlOCV.yml",
+    "ingest_date": "2026-10-26",
+    "ingest_version": "foundry-translator-v1",
+    "srd_version": [
+      "5.1"
+    ],
+    "license_tag": "CC-BY-4.0"
+  },
+  "review": {
+    "known_divergence": null,
+    "requires_user_decision": false
+  },
+  "entry_kind": "spell"
+}

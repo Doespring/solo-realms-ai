@@ -1,0 +1,139 @@
+{
+  "slug": "cosmic-alignment",
+  "foundry_uuid": "Compendium.dnd5e.laaru-hw-spells.Item.8YvYStP2Nhbz3VIV",
+  "name": "Управление космосом / Cosmic Alignment",
+  "description": "(Высшая эльфийская магия)\n\nВы манипулируете космическими силами в своих целях. Вы выбираете космическое явление из Познание звёздного неба (см. Магическая традиция: Школа свечения) которое влияет на сотворение заклинаний: Затмение, Парад планет или Сверхновая.\n\nВсе заклинания, сотворяемые до следующего восхода солнца или по истечению 24 часов (смотря что произошло раньше), сотворяются под выбранным эффектом. Если заклинание требует от вас использовать Осознание, вместо этого вы можете использовать свою Ритуальную фокусировку. Управление космосом должно быть сотворено под открытым небом, и его сотворение очевидно для всех существ в радиусе 10 миль, потому что над вами в небе появляется соответствующее явление (например, пылающая комета).\n\nПознание звёздного неба\n\nПарад планет: Сопряжение планет дестабилизирует умы и эмоции существ. Если существо проходит испытание против эффекта вашего заклинания Иллюзии или Очарования вы можете один раз использовать особенность и дать ему помеху на этот бросок.\n\nЗатмение: Затмения погружают мир во тьму и укрепляют связь с теневым планом. Когда вы сотворяете заклинание не выше 5-го круга, наносящее некротический урон, вы можете перебросить кости в количестве равном вашему модификатору Интеллекта (минимум 1). Вы обязаны использовать новые выпавшие значения.\n\nСверхновая: Сверхновая звезда - мощная помощь в заклинаниях Прорицания. Вы можете сотворить одно заклинание Прорицания так, словно использовали ячейку на один круг выше реальной.",
+  "level": 9,
+  "school": "con",
+  "components": [
+    "M",
+    "S",
+    "V"
+  ],
+  "ritual": true,
+  "concentration": false,
+  "casting_time": {
+    "unit": "action",
+    "value": 1,
+    "condition": ""
+  },
+  "range": {
+    "units": "self",
+    "value": null,
+    "special": null
+  },
+  "duration": {
+    "units": "hour",
+    "value": 24
+  },
+  "materials": {
+    "value": "кусочек кварца",
+    "consumed": false,
+    "cost": 0,
+    "supply": 0
+  },
+  "preparation": {
+    "mode": "prepared",
+    "prepared": false
+  },
+  "activities": [
+    {
+      "id": "yL0FhejyKuMnWnXN",
+      "name": "",
+      "img": "",
+      "sort": 0,
+      "activation": {
+        "type": "action",
+        "value": null,
+        "condition": "",
+        "override": false,
+        "reaction_conditions": []
+      },
+      "consumption": {
+        "scaling": {
+          "allowed": false,
+          "max": ""
+        },
+        "spell_slot": true,
+        "targets": []
+      },
+      "description": {
+        "chat_flavor": ""
+      },
+      "duration": {
+        "value": null,
+        "units": "inst",
+        "special": "",
+        "concentration": false,
+        "override": false
+      },
+      "flags": {},
+      "range": {
+        "value": null,
+        "units": "self",
+        "special": "",
+        "override": false
+      },
+      "target": {
+        "template": {
+          "count": "",
+          "contiguous": false,
+          "stationary": false,
+          "type": "",
+          "size": "",
+          "width": "",
+          "height": "",
+          "units": "ft"
+        },
+        "affects": {
+          "count": "",
+          "type": "",
+          "choice": false,
+          "special": ""
+        },
+        "override": false,
+        "prompt": true
+      },
+      "uses": {
+        "spent": 0,
+        "max": "",
+        "recovery": []
+      },
+      "visibility": {
+        "identifier": "",
+        "level": {
+          "min": null,
+          "max": null
+        },
+        "require_attunement": false,
+        "require_identification": false,
+        "require_magic": false
+      },
+      "effects": [],
+      "applied_effects": [],
+      "kind": "utility",
+      "roll": {
+        "formula": "",
+        "name": "",
+        "prompt": false,
+        "visible": false
+      }
+    }
+  ],
+  "passive_effects": [],
+  "provenance": {
+    "source": "foundry",
+    "source_url": "https://github.com/foundryvtt/dnd5e/blob/965ad2d0cf5d063dac675ba078b5bd3c3c0dd449/packs/_source/laaru-hw-spells/Управление_космосом___Cosmic_Alignment_8YvYStP2Nhbz3VIV.yml",
+    "ingest_date": "2026-10-26",
+    "ingest_version": "foundry-translator-v1",
+    "srd_version": [
+      "5.1"
+    ],
+    "license_tag": "CC-BY-4.0"
+  },
+  "review": {
+    "known_divergence": null,
+    "requires_user_decision": false
+  },
+  "entry_kind": "spell"
+}

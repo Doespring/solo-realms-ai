@@ -1,0 +1,212 @@
+{
+  "slug": "blade-of-wrath",
+  "foundry_uuid": "Compendium.dnd5e.laaru-hw-spells.Item.fanrVQ27Ko6Ol25Q",
+  "name": "Клинок гнева / Blade Of Wrath",
+  "description": "(Ангельская магия)\n\nВы призываете в свою свободную руку клинок из чистого белого пламени. Он похож по форме и размеру на длинный меч и существует, пока длится заклинание. Если вы отпускаете клинок, тот исчезнет, но вы может призвать его снова в качестве бонусного действия.\n\nДействием вы можете совершить этим мечом атаку заклинанием в ближнем бою. При попадании цель получает [[/damage 2d8 fire]]{2d8 урона огнём} и [[/damage 2d8 radiant]]{2d8 лучистого урона}. Если целью является Аберрация, Фея, Бестия или Нежить, она должна преуспеть в испытании Мудрости, иначе будет &amp;Reference[frightened]{испугана} вами до начала вашего следующего хода. Лезвие испускает свет - яркий в радиусе 20 футов, и тусклый в радиусе следующих 20 футов.\n\nНа высоких кругах: Если вы сотворяете это заклинание, используя ячейку 4-го круга или выше, лучистый урон или огнём (на ваш выбор) увеличивается на [[/r 1d8]] за каждый круг ячейки выше 3-го.",
+  "level": 3,
+  "school": "evo",
+  "components": [
+    "M",
+    "S",
+    "V"
+  ],
+  "ritual": false,
+  "concentration": true,
+  "casting_time": {
+    "unit": "bonus",
+    "value": 1,
+    "condition": ""
+  },
+  "range": {
+    "units": "ft",
+    "value": 5,
+    "special": null
+  },
+  "duration": {
+    "units": "minute",
+    "value": 10
+  },
+  "materials": {
+    "value": "изгоняющая зло молитва, на­писанная на Небесном языке",
+    "consumed": false,
+    "cost": 0,
+    "supply": 0
+  },
+  "preparation": {
+    "mode": "prepared",
+    "prepared": false
+  },
+  "activities": [
+    {
+      "id": "5XZxi5xpbOcRP6Cg",
+      "name": "",
+      "img": "",
+      "sort": 0,
+      "activation": {
+        "type": "action",
+        "value": null,
+        "condition": "",
+        "override": false,
+        "reaction_conditions": []
+      },
+      "consumption": {
+        "scaling": {
+          "allowed": false,
+          "max": ""
+        },
+        "spell_slot": true,
+        "targets": []
+      },
+      "description": {
+        "chat_flavor": ""
+      },
+      "duration": {
+        "value": null,
+        "units": "inst",
+        "special": "",
+        "concentration": false,
+        "override": false
+      },
+      "flags": {},
+      "range": {
+        "value": null,
+        "units": "self",
+        "special": "",
+        "override": false
+      },
+      "target": {
+        "template": {
+          "count": "",
+          "contiguous": false,
+          "stationary": false,
+          "type": "",
+          "size": "",
+          "width": "",
+          "height": "",
+          "units": "ft"
+        },
+        "affects": {
+          "count": "1",
+          "type": "creature",
+          "choice": false,
+          "special": ""
+        },
+        "override": false,
+        "prompt": true
+      },
+      "uses": {
+        "spent": 0,
+        "max": "",
+        "recovery": []
+      },
+      "visibility": {
+        "identifier": "",
+        "level": {
+          "min": null,
+          "max": null
+        },
+        "require_attunement": false,
+        "require_identification": false,
+        "require_magic": false
+      },
+      "effects": [
+        {
+          "id": "SGNVOlPrQ2JmYLsH",
+          "level": {
+            "min": null,
+            "max": null
+          },
+          "on_save": null,
+          "riders": null
+        }
+      ],
+      "applied_effects": [],
+      "kind": "attack",
+      "attack": {
+        "ability": "",
+        "bonus": "",
+        "critical": {
+          "threshold": null
+        },
+        "flat": false,
+        "type": {
+          "value": "melee",
+          "classification": ""
+        }
+      },
+      "damage": {
+        "critical": {
+          "bonus": ""
+        },
+        "include_base": true,
+        "parts": [
+          {
+            "number": 2,
+            "denomination": 8,
+            "bonus": "",
+            "types": [
+              "fire"
+            ],
+            "custom": {
+              "enabled": false,
+              "formula": ""
+            },
+            "scaling": {
+              "mode": "whole",
+              "number": 1,
+              "formula": ""
+            }
+          },
+          {
+            "number": 2,
+            "denomination": 8,
+            "bonus": "",
+            "types": [
+              "radiant"
+            ],
+            "custom": {
+              "enabled": false,
+              "formula": ""
+            },
+            "scaling": {
+              "mode": "whole",
+              "number": 1,
+              "formula": ""
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "passive_effects": [
+    {
+      "id": "SGNVOlPrQ2JmYLsH",
+      "name": "Клинок гнева: испуг",
+      "description": "",
+      "changes": [],
+      "statuses": [
+        "frightened"
+      ],
+      "duration": {
+        "turns": 1
+      },
+      "disabled": false,
+      "transfer": false
+    }
+  ],
+  "provenance": {
+    "source": "foundry",
+    "source_url": "https://github.com/foundryvtt/dnd5e/blob/965ad2d0cf5d063dac675ba078b5bd3c3c0dd449/packs/_source/laaru-hw-spells/Клинок_гнева___Blade_Of_Wrath_fanrVQ27Ko6Ol25Q.yml",
+    "ingest_date": "2026-10-26",
+    "ingest_version": "foundry-translator-v1",
+    "srd_version": [
+      "5.1"
+    ],
+    "license_tag": "CC-BY-4.0"
+  },
+  "review": {
+    "known_divergence": null,
+    "requires_user_decision": false
+  },
+  "entry_kind": "spell"
+}

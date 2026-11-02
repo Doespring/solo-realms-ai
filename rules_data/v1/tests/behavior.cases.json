@@ -1,0 +1,42 @@
+{
+  "test_contract_version": "1.0.0",
+  "execution_status": "not_executed",
+  "manual_source_review": "2026-10-16",
+  "paths_relative_to": "rules_data/v1",
+  "rule_files": ["chapters/phb-01/advantage.json", "chapters/phb-01/disadvantage.json", "chapters/phb-01/cancellation.json", "chapters/phb-01/single-die-change.json"],
+  "protocol": {
+    "normalization": "counts are nonnegative integers from trusted sources, including any internal engine disadvantage; unknown facts are an error",
+    "pool": "Evaluate before_roll conditions. If none match, retain engine default normal pool. Do not sum or execute multiple pool selections.",
+    "dice_queue": "Must consume exactly the expected count. Fixed queue removes randomness; no actual die rolls occurred.",
+    "die_change": "Requires an external authorization with matching kind. Validate choice, change exactly one die, then select using unchanged roll_mode.",
+    "engine_comparison": "Future trusted harness: neutral hero (all scores 10, no proficiency/exhaustion/conditions), preset dnd2024; compare dice/selected/mode, not source text or success.",
+    "rejections": "Invalid authorization, count, or input must be rejected by future trusted adapter; existing d20 does not support die_change."
+  },
+  "pool_cases": [
+    {"id": "normal_default", "kind": "check", "facts": {"advantage_sources": 0, "disadvantage_sources": 0}, "dice_queue": [7], "expected": {"matching_rule": null, "count": 1, "selected": 7, "mode": "обычный"}},
+    {"id": "advantage_example", "kind": "check", "facts": {"advantage_sources": 1, "disadvantage_sources": 0}, "dice_queue": [18, 3], "expected": {"matching_rule": "dnd2024.d20.advantage", "count": 2, "selected": 18, "mode": "преимущество"}},
+    {"id": "disadvantage_example", "kind": "check", "facts": {"advantage_sources": 0, "disadvantage_sources": 1}, "dice_queue": [18, 3], "expected": {"matching_rule": "dnd2024.d20.disadvantage", "count": 2, "selected": 3, "mode": "помеха"}},
+    {"id": "advantage_does_not_stack", "kind": "check", "facts": {"advantage_sources": 3, "disadvantage_sources": 0}, "dice_queue": [3, 18], "expected": {"matching_rule": "dnd2024.d20.advantage", "count": 2, "selected": 18, "mode": "преимущество"}},
+    {"id": "disadvantage_does_not_stack", "kind": "check", "facts": {"advantage_sources": 0, "disadvantage_sources": 3}, "dice_queue": [3, 18], "expected": {"matching_rule": "dnd2024.d20.disadvantage", "count": 2, "selected": 3, "mode": "помеха"}},
+    {"id": "equal_cancellation", "kind": "check", "facts": {"advantage_sources": 1, "disadvantage_sources": 1}, "dice_queue": [11], "expected": {"matching_rule": "dnd2024.d20.cancellation", "count": 1, "selected": 11, "mode": "обычный"}},
+    {"id": "more_advantages_still_cancel", "kind": "check", "facts": {"advantage_sources": 3, "disadvantage_sources": 1}, "dice_queue": [11], "expected": {"matching_rule": "dnd2024.d20.cancellation", "count": 1, "selected": 11, "mode": "обычный"}},
+    {"id": "more_disadvantages_still_cancel", "kind": "check", "facts": {"advantage_sources": 1, "disadvantage_sources": 3}, "dice_queue": [11], "expected": {"matching_rule": "dnd2024.d20.cancellation", "count": 1, "selected": 11, "mode": "обычный"}},
+    {"id": "equal_dice", "kind": "check", "facts": {"advantage_sources": 1, "disadvantage_sources": 0}, "dice_queue": [9, 9], "expected": {"matching_rule": "dnd2024.d20.advantage", "count": 2, "selected": 9, "mode": "преимущество"}},
+    {"id": "saving_throw_scope", "kind": "save", "facts": {"advantage_sources": 0, "disadvantage_sources": 1}, "dice_queue": [20, 1], "expected": {"matching_rule": "dnd2024.d20.disadvantage", "count": 2, "selected": 1, "mode": "помеха"}},
+    {"id": "attack_roll_scope", "kind": "attack", "facts": {"advantage_sources": 1, "disadvantage_sources": 0}, "dice_queue": [1, 20], "expected": {"matching_rule": "dnd2024.d20.advantage", "count": 2, "selected": 20, "mode": "преимущество"}}
+  ],
+  "die_change_cases": [
+    {"id": "choose_first_die", "facts": {"roll_mode": "advantage", "die_change_authorized": true}, "authorization": {"kind": "reroll"}, "before": [3, 18], "choice": 0, "new_value": 14, "expected": {"applicable": true, "after": [14, 18], "selected": 18}},
+    {"id": "choose_second_even_if_worse", "facts": {"roll_mode": "advantage", "die_change_authorized": true}, "authorization": {"kind": "reroll"}, "before": [3, 18], "choice": 1, "new_value": 2, "expected": {"applicable": true, "after": [3, 2], "selected": 3}},
+    {"id": "replacement_uses_same_selection", "facts": {"roll_mode": "disadvantage", "die_change_authorized": true}, "authorization": {"kind": "replace"}, "before": [3, 18], "choice": 1, "new_value": 20, "expected": {"applicable": true, "after": [3, 20], "selected": 3}},
+    {"id": "no_external_permission", "facts": {"roll_mode": "advantage", "die_change_authorized": false}, "expected": {"applicable": false}},
+    {"id": "cancelled_mode_not_applicable", "facts": {"roll_mode": "normal", "die_change_authorized": true}, "expected": {"applicable": false}}
+  ],
+  "boundary_cases": [
+    {"id": "negative_source_count", "facts": {"advantage_sources": -1, "disadvantage_sources": 0}, "expected": {"reject": "invalid_context"}},
+    {"id": "missing_disadvantage_count", "facts": {"advantage_sources": 1}, "expected": {"reject": "unknown_fact"}},
+    {"id": "cannot_change_both_dice", "facts": {"roll_mode": "advantage", "die_change_authorized": true}, "choices": [0, 1], "expected": {"reject": "one_die_only"}},
+    {"id": "reroll_does_not_authorize_replace", "authorization": {"kind": "reroll"}, "requested_change": "replace", "expected": {"reject": "authorization_mismatch"}},
+    {"id": "poisoned_cancels_advantage", "kind": "check", "hero_conditions": ["poisoned"], "engine_arguments": {"advantage": true, "disadvantage": false}, "normalized_facts": {"advantage_sources": 1, "disadvantage_sources": 1}, "dice_queue": [8], "expected": {"matching_rule": "dnd2024.d20.cancellation", "count": 1, "selected": 8, "mode": "обычный"}}
+  ]
+}

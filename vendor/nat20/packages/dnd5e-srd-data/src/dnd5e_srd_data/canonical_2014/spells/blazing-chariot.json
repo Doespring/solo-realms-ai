@@ -1,0 +1,170 @@
+{
+  "slug": "blazing-chariot",
+  "foundry_uuid": "Compendium.dnd5e.laaru-hw-spells.Item.gCHcGIyUe7IHCmhp",
+  "name": "Пылающая колесница / Blazing Chariot",
+  "description": "(Ангельская магия)\n\nВзывая к могуществу ангелов, вы призывает в незанятое пространство (10 футовый квадрат), которое видите в пределах дистанции, огненную колесницу из золота и мифрила, запряжённую двумя лошадьми из огня и света. Вы и ещё 3 существа на ваш выбор, имеющие размер не больше Среднего, могут встать на эту колесницу, потратив 5 футов передвижения, и пламя не причинит вам вреда. Любое другое существо, которое прикасается к колеснице, попадает по ней (или по тому, кто на ней едет) атакой в ближнем бою, когда находится не дальше 5 футов от неё, получает [[/damage 3d6 fire]]{3d6 урона огнём} и [[/damage 3d6 radiant]]{3d6 лучистого урона}.\n\nКолесница имеет КБ 18 и 50 ПЗ, обладает невосприимчивостью к урону огнём, ядом, психическому и лучистому урону, а так же устойчивостью ко всем остальным типам урона. Скакуны, запряжённые в неё, не являются отдельными сущностями, а составляют с колесницей единое целое. Как только ПЗ колесницы опустятся до 0, она исчезает и все пассажиры выпадают из неё. Колесница перемещается со скоростью 50 футов и может летать со скоростью 40 футов.\n\nВ свой ход вы можете управлять колесницей вместо того, чтобы использовать собственное движение. Бонусным действием вы можете использовать колесницей Уклонение, Отступление или Рывок.\n\nДействием вы можете заставить колесницу врезаться в существо у неё на пути. Она тратит всё своё оставшуюся скорость и входит в пространство с враждебным вам существом. Существо получает урон, как будто оно коснулось колесницы, а также проходит испытание Силы при провале &amp;Reference[prone]{распластываясь}.",
+  "level": 5,
+  "school": "con",
+  "components": [
+    "M",
+    "S",
+    "V"
+  ],
+  "ritual": false,
+  "concentration": false,
+  "casting_time": {
+    "unit": "action",
+    "value": 1,
+    "condition": ""
+  },
+  "range": {
+    "units": "ft",
+    "value": 30,
+    "special": null
+  },
+  "duration": {
+    "units": "hour",
+    "value": 1
+  },
+  "materials": {
+    "value": "небольшое золотое колесо, стоимостью не менее 250 зм",
+    "consumed": false,
+    "cost": 0,
+    "supply": 0
+  },
+  "preparation": {
+    "mode": "prepared",
+    "prepared": false
+  },
+  "activities": [
+    {
+      "id": "BtTWNu4LwciIK3LF",
+      "name": "",
+      "img": "",
+      "sort": 0,
+      "activation": {
+        "type": "action",
+        "value": null,
+        "condition": "",
+        "override": false,
+        "reaction_conditions": []
+      },
+      "consumption": {
+        "scaling": {
+          "allowed": false,
+          "max": ""
+        },
+        "spell_slot": true,
+        "targets": []
+      },
+      "description": {
+        "chat_flavor": ""
+      },
+      "duration": {
+        "value": null,
+        "units": "inst",
+        "special": "",
+        "concentration": false,
+        "override": false
+      },
+      "flags": {},
+      "range": {
+        "value": null,
+        "units": "self",
+        "special": "",
+        "override": false
+      },
+      "target": {
+        "template": {
+          "count": "",
+          "contiguous": false,
+          "stationary": false,
+          "type": "square",
+          "size": "10",
+          "width": "",
+          "height": "",
+          "units": "ft"
+        },
+        "affects": {
+          "count": "",
+          "type": "",
+          "choice": false,
+          "special": ""
+        },
+        "override": false,
+        "prompt": true
+      },
+      "uses": {
+        "spent": 0,
+        "max": "",
+        "recovery": []
+      },
+      "visibility": {
+        "identifier": "",
+        "level": {
+          "min": null,
+          "max": null
+        },
+        "require_attunement": false,
+        "require_identification": false,
+        "require_magic": false
+      },
+      "effects": [],
+      "applied_effects": [],
+      "kind": "summon",
+      "bonuses": {
+        "ac": "",
+        "hd": "",
+        "hp": "",
+        "attack_damage": "",
+        "save_damage": "",
+        "healing": ""
+      },
+      "creature_sizes": [],
+      "creature_types": [],
+      "match": {
+        "ability": "",
+        "attacks": false,
+        "disposition": false,
+        "proficiency": false,
+        "saves": true
+      },
+      "profiles": [
+        {
+          "id": "KRWO2qPJu3cDH4ov",
+          "count": "",
+          "cr": "",
+          "level": {
+            "min": null,
+            "max": null
+          },
+          "name": "",
+          "types": [],
+          "uuid": "Compendium.laaru-dnd5-hw.monsters2.Actor.mRbNTpfdIS4RGOjm"
+        }
+      ],
+      "summon": {
+        "mode": "",
+        "prompt": true,
+        "identifier": null
+      },
+      "temp_hp": ""
+    }
+  ],
+  "passive_effects": [],
+  "provenance": {
+    "source": "foundry",
+    "source_url": "https://github.com/foundryvtt/dnd5e/blob/965ad2d0cf5d063dac675ba078b5bd3c3c0dd449/packs/_source/laaru-hw-spells/Пылающая_колесница___Blazing_Chariot_gCHcGIyUe7IHCmhp.yml",
+    "ingest_date": "2026-10-26",
+    "ingest_version": "foundry-translator-v1",
+    "srd_version": [
+      "5.1"
+    ],
+    "license_tag": "CC-BY-4.0"
+  },
+  "review": {
+    "known_divergence": null,
+    "requires_user_decision": false
+  },
+  "entry_kind": "spell"
+}

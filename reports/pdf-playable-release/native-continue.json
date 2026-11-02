@@ -1,0 +1,33 @@
+{
+  "ok": true,
+  "frozen": true,
+  "python": "3.12.10",
+  "native_window_created": true,
+  "renderer": "edgechromium",
+  "mock_only": true,
+  "paid_calls": 0,
+  "pdf_world": {
+    "phase": "continue",
+    "synthetic_pdf": true,
+    "real_pdf_prepared": false,
+    "source_ruleset": "dnd2014",
+    "mechanics_ruleset": "dnd2024",
+    "world_confirmed": true,
+    "native_hero": true,
+    "game_and_save": true,
+    "new_process_continued": true,
+    "version": 5,
+    "preparation_mock_requests": 0,
+    "mock_transport_requests": 2,
+    "real_provider_calls": 0,
+    "paid_calls": 0,
+    "renderer": {
+      "title": "Solo Realms AI — Obsidian Chronicle",
+      "creation": true,
+      "fonts": true
+    }
+  },
+  "ready_ms": 1746.6,
+  "probe_ms": 4207.9,
+  "backend_stopped": true
+}

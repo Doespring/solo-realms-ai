@@ -1,0 +1,140 @@
+{
+  "activities": [
+    {
+      "activation": {
+        "condition": "",
+        "override": false,
+        "reaction_conditions": [],
+        "type": "action",
+        "value": null
+      },
+      "applied_effects": [],
+      "consumption": {
+        "scaling": {
+          "allowed": false,
+          "max": ""
+        },
+        "spell_slot": true,
+        "targets": []
+      },
+      "description": {
+        "chat_flavor": ""
+      },
+      "duration": {
+        "concentration": false,
+        "override": false,
+        "special": "",
+        "units": "inst",
+        "value": null
+      },
+      "effects": [],
+      "flags": {},
+      "id": "dnd5eactivity000",
+      "img": "",
+      "kind": "utility",
+      "name": "",
+      "range": {
+        "override": false,
+        "special": "",
+        "units": "self",
+        "value": null
+      },
+      "roll": {
+        "formula": "",
+        "name": "",
+        "prompt": false,
+        "visible": false
+      },
+      "sort": 0,
+      "target": {
+        "affects": {
+          "choice": false,
+          "count": "",
+          "special": "",
+          "type": ""
+        },
+        "override": false,
+        "prompt": false,
+        "template": {
+          "contiguous": false,
+          "count": "",
+          "height": "",
+          "size": "5 * @item.level - 20",
+          "stationary": false,
+          "type": "cube",
+          "units": "ft",
+          "width": ""
+        }
+      },
+      "uses": {
+        "max": "",
+        "recovery": [],
+        "spent": 0
+      },
+      "visibility": {
+        "identifier": "",
+        "level": {
+          "max": null,
+          "min": null
+        },
+        "require_attunement": false,
+        "require_identification": false,
+        "require_magic": false
+      }
+    }
+  ],
+  "casting_time": {
+    "condition": "",
+    "unit": "minute",
+    "value": 1
+  },
+  "components": [
+    "M",
+    "S",
+    "V"
+  ],
+  "concentration": false,
+  "description": "You pull wisps of shadow material from the Shadowfell to create an object within range. It is either an object of vegetable matter (soft goods, rope, wood, and the like) or mineral matter (stone, crystal, metal, and the like). The object must be no larger than a 5-foot Cube, and the object must be of a form and material that you have seen.\n\nThe spell's duration depends on the object's material, as shown in the Materials table. If the object is composed of multiple materials, use the shortest duration. Using any object created by this spell as another spell's Material component causes the other spell to fail.\n\nMaterial\n\nDuration\n\nVegetable matter\n\n24 hours\n\nStone or crystal\n\n12 hours\n\nPrecious metals\n\n1 hour\n\nGems\n\n10 minutes\n\nAdamantine or mithral\n\n1 minute\n\nUsing a Higher-Level Spell Slot. The Cube increases by 5 feet for each spell slot level above 5.",
+  "description_localized": "<p>Вы вытягиваете клочья теневой ткани из Царства Теней и создаёте в пределах дистанции неживой объект из растительной материи: ткани, верёвки, древесину или что-то подобное. Вы можете также использовать заклинание, чтобы создать минеральные объекты, такие как камни, кристаллы или металл. Созданный объект должен быть не больше 5-футового куба и иметь форму и материал, которые вы раньше видели.</p>\n<p> Длительность заклинания зависит от материала объекта. Если он создан из разных материалов, используйте самую короткую длительность.</p>\n<table class=\"rd__table  stripe-odd-table\"><caption>Creation</caption>\n<thead>\n<tr>\n<th class=\"col-8\" data-rd-isroller=\"false\">Материал</th>\n<th class=\"col-4\" data-rd-isroller=\"false\">\n<p>Длительность</p>\n</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td class=\"col-8\">Растительная материя</td>\n<td class=\"col-4\">1 день</td>\n</tr>\n<tr>\n<td class=\"col-8\">Камень или кристалл</td>\n<td class=\"col-4\">12 часов</td>\n</tr>\n<tr>\n<td class=\"col-8\">Драгоценный металл</td>\n<td class=\"col-4\">1 час</td>\n</tr>\n<tr>\n<td class=\"col-8\">Драгоценный камень</td>\n<td class=\"col-4\">10 минут</td>\n</tr>\n<tr>\n<td class=\"col-8\">Адамантин или мифрал</td>\n<td class=\"col-4\">1 минута</td>\n</tr>\n</tbody>\n</table>\n\n\n<div class=\"rd__spc-inline-post\"> Если использовать материал, созданный этим заклинанием, как реагент для другого заклинания, оно не сработает. </div>\n<div class=\"rd__spc-inline-post\"><strong> На высоких кругах</strong>.  Если вы сотворяете это заклинание, используя ячейку 6-го круга или выше, куб увеличивается на 5 футов за каждый круг ячейки выше 5-го.</div>",
+  "duration": {
+    "units": "spec",
+    "value": null
+  },
+  "entry_kind": "spell",
+  "foundry_uuid": "Compendium.dnd5e.spells24.Item.phbsplCreation00",
+  "level": 5,
+  "materials": {
+    "consumed": false,
+    "cost": 0,
+    "supply": 0,
+    "value": "a paintbrush"
+  },
+  "name": "Творение",
+  "passive_effects": [],
+  "preparation": {
+    "mode": "prepared",
+    "prepared": false
+  },
+  "provenance": {
+    "ingest_date": "2026-05-30",
+    "ingest_version": "foundry-translator-v1",
+    "license_tag": "CC-BY-4.0",
+    "source": "foundry",
+    "source_url": "https://github.com/foundryvtt/dnd5e/blob/965ad2d0cf5d063dac675ba078b5bd3c3c0dd449/packs/_source/spells24/5th-level/creation.yml",
+    "srd_version": [
+      "5.2"
+    ]
+  },
+  "range": {
+    "special": null,
+    "units": "ft",
+    "value": 30
+  },
+  "review": {
+    "known_divergence": null,
+    "requires_user_decision": false
+  },
+  "ritual": false,
+  "school": "ill",
+  "slug": "creation"
+}

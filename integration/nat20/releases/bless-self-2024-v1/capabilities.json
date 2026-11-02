@@ -1,0 +1,48 @@
+{
+  "schema_version": "pending-spell-capabilities-v1",
+  "rules_version": "dnd2024",
+  "release_id": "bless-self-2024-v1",
+  "profile": "cleric-bless-2024-v1",
+  "status": "pending",
+  "user_campaign_activation": false,
+  "required_stand_environment": [
+    "SOLO_TEST=1",
+    "SOLO_NAT20_BLESS_STAND=1"
+  ],
+  "stand_commands": [
+    {
+      "kind": "cast_spell",
+      "spell_id": "bless",
+      "target": "hero"
+    },
+    {
+      "kind": "drop_concentration"
+    }
+  ],
+  "constraints": [
+    "base slot only",
+    "fixed normal Cleric 1 / mace and held Amulet / no shield",
+    "recast with surviving effect rejected",
+    "no post-combat elapsed time or standalone checks/rest with active effect"
+  ],
+  "blockers": [
+    "post-combat concentration elapsed-time API not bound",
+    "upstream concentration save does not fold Bless saving-throw bonus",
+    "upstream same-identity recast duplicates effects and drop leaves a copy",
+    "upstream standalone saving throw does not alias Foundry Bless save keys",
+    "complete Cleric preparation/cantrip and origin choices not certified"
+  ],
+  "native_execution_verified": [
+    "real effect application and slot spending",
+    "one d4 on live attack",
+    "in-combat minute expiry",
+    "drop then new cast",
+    "new-process replay",
+    "ACL, atomic memory, undo/idempotence/version"
+  ],
+  "known_rule_gaps_reproduced": [
+    "concentration_save_without_bless_d4",
+    "same_identity_recast_duplicate_and_survivor",
+    "standalone_save_foundry_key_alias_missing"
+  ]
+}

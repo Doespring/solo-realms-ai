@@ -1,0 +1,198 @@
+{
+  "activities": [
+    {
+      "activation": {
+        "condition": "",
+        "override": false,
+        "reaction_conditions": [],
+        "type": "action",
+        "value": null
+      },
+      "applied_effects": [],
+      "check": {
+        "ability": "dex",
+        "associated": [],
+        "dc": {
+          "calculation": "",
+          "formula": "15"
+        }
+      },
+      "consumption": {
+        "scaling": {
+          "allowed": false,
+          "max": ""
+        },
+        "spell_slot": true,
+        "targets": []
+      },
+      "description": {
+        "chat_flavor": ""
+      },
+      "duration": {
+        "concentration": false,
+        "override": false,
+        "special": "",
+        "units": "inst",
+        "value": ""
+      },
+      "effects": [],
+      "flags": {},
+      "id": "rIanv5IgN2QhpKSK",
+      "img": "",
+      "kind": "check",
+      "name": "Mimic Handwriting",
+      "range": {
+        "override": false,
+        "special": "",
+        "units": "self",
+        "value": null
+      },
+      "sort": 0,
+      "target": {
+        "affects": {
+          "choice": false,
+          "count": "",
+          "special": "",
+          "type": ""
+        },
+        "override": false,
+        "prompt": false,
+        "template": {
+          "contiguous": false,
+          "count": "",
+          "height": "",
+          "size": "",
+          "stationary": false,
+          "type": "",
+          "units": "",
+          "width": ""
+        }
+      },
+      "uses": {
+        "max": "",
+        "recovery": [],
+        "spent": 0
+      },
+      "visibility": {
+        "identifier": "",
+        "level": {
+          "max": null,
+          "min": null
+        },
+        "require_attunement": false,
+        "require_identification": false,
+        "require_magic": false
+      }
+    },
+    {
+      "activation": {
+        "condition": "",
+        "override": false,
+        "reaction_conditions": [],
+        "type": "action",
+        "value": null
+      },
+      "applied_effects": [],
+      "check": {
+        "ability": "dex",
+        "associated": [],
+        "dc": {
+          "calculation": "",
+          "formula": "20"
+        }
+      },
+      "consumption": {
+        "scaling": {
+          "allowed": false,
+          "max": ""
+        },
+        "spell_slot": true,
+        "targets": []
+      },
+      "description": {
+        "chat_flavor": ""
+      },
+      "duration": {
+        "concentration": false,
+        "override": false,
+        "special": "",
+        "units": "inst",
+        "value": ""
+      },
+      "effects": [],
+      "flags": {},
+      "id": "HcOxYMy4gmRHLJiF",
+      "img": "",
+      "kind": "check",
+      "name": "Duplicate Wax Seal",
+      "range": {
+        "override": false,
+        "special": "",
+        "units": "self",
+        "value": null
+      },
+      "sort": 0,
+      "target": {
+        "affects": {
+          "choice": false,
+          "count": "",
+          "special": "",
+          "type": ""
+        },
+        "override": false,
+        "prompt": false,
+        "template": {
+          "contiguous": false,
+          "count": "",
+          "height": "",
+          "size": "",
+          "stationary": false,
+          "type": "",
+          "units": "",
+          "width": ""
+        }
+      },
+      "uses": {
+        "max": "",
+        "recovery": [],
+        "spent": 0
+      },
+      "visibility": {
+        "identifier": "",
+        "level": {
+          "max": null,
+          "min": null
+        },
+        "require_attunement": false,
+        "require_identification": false,
+        "require_magic": false
+      }
+    }
+  ],
+  "attunement_constraint": null,
+  "cost_gp": 15.0,
+  "description": "Ability: Dexterity\n\nUtilize: Mimic 10 or fewer words of someone else's handwriting (DC 15), or duplicate a wax seal (DC 20)",
+  "description_localized": "<p>Коробочка с разнообразными бумагами и пергаментами, перьями и чернилами, печатями и сургучом, золотой и серебряной фольгой и прочими предметами, необходимыми, чтобы убедительно подделать документы. Умение в обращении с этим набором позволяет вам добавить ваш бонус умения к любой проверке характеристики, связанной с созданием поддельного документа.</p>\n<p>Набор для подделки предназначен для копирования документов и упрощения копирования личной печати или подписи.</p>\n<p><strong><em>Компоненты.</em></strong> Включает в себя чернила различных видов, пергамент и бумагу различных видов, несколько писчих перьев, печати и сургуч, золотой и серебряный листы и небольшие инструменты для лепки имитации печати из расплавленного воска.</p>\n<p><em><strong>Магия. </strong></em>Набор для подделки может быть использован вместе с навыком Магия, чтобы определить, является магический предмет настоящим или поддельным.</p>\n<p><em><strong>Обман. </strong></em>Качественно выполненная подделка, такая как документ, подтверждающий вашу знатность или предписание, гарантирующее вам безопасный проезд, может придать достоверности вашей лжи.</p>\n<p><em><strong>История. </strong></em>Набор для подделки вместе с вашими познаниями в истории улучшает вашу способность подделывать исторические документы или определять их подлинность.</p>\n<p><strong>Расследование. </strong>Когда вы осматриваете предмет, умение в обращении с набором для подделки помогает определить, как предмет был сделан и его подлинность.</p>\n<p><em><strong>Другие инструменты. </strong></em>Умение использовать другие инструменты делает ваши подделки более правдоподобными. Например, если вы умеете обращаться с набором для подделки и инструментами картографа, вы можете сделать поддельную карту.</p>\n<p><em><strong>Быстрая подделка. </strong></em>Частью короткого отдыха вы можете создать поддельный документ длиной не более одной страницы. Частью долгого отдыха вы можете создать документ длинной до четырёх страниц. Ваша проверка Интеллекта в использовании набора для подделки определяет СЛ проверки Интеллекта (Расследование) на определение того, что это подделка.</p>\n<table class=\"rd__table  stripe-odd-table\">\n<thead>\n<tr>\n<th class=\"col-10\" data-rd-isroller=\"false\">Возможное действие</th>\n<th class=\"col-2 text-center\" data-rd-isroller=\"false\">СЛ</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td class=\"col-10\">Подделать почерк</td>\n<td class=\"col-2 text-center\">15</td>\n</tr>\n<tr>\n<td class=\"col-10\">Скопировать восковую печать</td>\n<td class=\"col-2 text-center\">20</td>\n</tr>\n</tbody>\n</table>",
+  "item_kind": "item",
+  "name": "Набор для подделки",
+  "passive_effects": [],
+  "provenance": {
+    "ingest_date": "2026-05-30",
+    "ingest_version": "foundry-translator-v1",
+    "license_tag": "CC-BY-4.0",
+    "source": "foundry",
+    "source_url": "https://github.com/foundryvtt/dnd5e/blob/965ad2d0cf5d063dac675ba078b5bd3c3c0dd449/packs/_source/equipment24/tools/other/forgery-kit.yml",
+    "srd_version": [
+      "5.2"
+    ]
+  },
+  "rarity": "common",
+  "requires_attunement": false,
+  "review": {
+    "known_divergence": null,
+    "requires_user_decision": false
+  },
+  "slug": "forgery-kit",
+  "uses": null,
+  "weight": 5.0
+}

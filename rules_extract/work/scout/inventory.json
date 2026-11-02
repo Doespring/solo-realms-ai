@@ -1,0 +1,370 @@
+{
+  "schema_version": "scout-inventory-v1",
+  "agent": "scout",
+  "generated": "2026-10-23",
+  "project_root": "C:/Users/iwa41/Documents/Codex/2026-10-13/files-pasted-by-the-user-solo/outputs/SoloRealmsAI",
+  "mode": "read-only audit; no project files modified",
+  "engines": [
+    {
+      "id": "nat20",
+      "role": "the only D&D 2024 calculator",
+      "pin": "0.7.0",
+      "commit": "e187c813bb4e43c4e4e62942ecd83831f1cdbcaa",
+      "entrypoints": [
+        "solo/nat20_api.py:Nat20GameEngine",
+        "solo/nat20_worker.py"
+      ],
+      "commands_verified": [
+        "check",
+        "start_combat",
+        "move",
+        "dash",
+        "attack",
+        "use_feature:second-wind",
+        "end_turn",
+        "end_combat",
+        "short_rest",
+        "long_rest"
+      ],
+      "commands_experimental": [
+        "level_up",
+        "native_action"
+      ],
+      "source": "integration/nat20/playable/capabilities.json"
+    },
+    {
+      "id": "solo_legacy",
+      "role": "legacy self-written rules for ordinary campaigns; not to be extended",
+      "entrypoints": [
+        "solo/rules.py",
+        "solo/rulesets.py",
+        "solo/combat.py",
+        "solo/inventory.py",
+        "solo/character_catalog.py"
+      ]
+    }
+  ],
+  "registries": [
+    {
+      "path": "solo/rule_registry.py",
+      "kind": "python",
+      "format": "ROWS=(id,category,status,handler,scope,limitations)",
+      "categories": 9,
+      "notes": "coverage() adds source_kind='existing_srd_engine_subset'"
+    },
+    {
+      "path": "solo/rulesets.py",
+      "kind": "python",
+      "format": "pydantic Ruleset; SKILLS/SKILL_NAMES; sqlite ruleset_versions(id,version,body,time)",
+      "categories": 1
+    },
+    {
+      "path": "solo/character_catalog.py",
+      "kind": "python",
+      "format": "dict tables",
+      "counts": {
+        "classes": 4,
+        "species_2024": 2,
+        "species_2014": 3,
+        "backgrounds_2024": 4,
+        "backgrounds_2014": 1,
+        "spells": 26,
+        "features": 30,
+        "fighting_styles": 4,
+        "subclasses": 4,
+        "tools": 7,
+        "languages": 17
+      }
+    },
+    {
+      "path": "solo/inventory.py",
+      "kind": "python",
+      "format": "pydantic Item/Economy/Merchant + CATALOG dict",
+      "counts": {
+        "catalog_items": 10
+      }
+    },
+    {
+      "path": "solo/nat20_kit.py",
+      "kind": "python",
+      "format": "KITS[(kind,source)] dict",
+      "counts": {
+        "classes": 12,
+        "backgrounds": 4
+      },
+      "fields": [
+        "items[(slug,count)]",
+        "picks[(group,default)]",
+        "notes",
+        "gold_gp",
+        "unresolved[]"
+      ]
+    },
+    {
+      "path": "solo/nat20_content.py",
+      "kind": "python",
+      "format": "CHECKS dict id->(kind,skill,ability,dc); weapons()",
+      "counts": {
+        "skills": 18,
+        "abilities": 6,
+        "saves": 6,
+        "weapons": 86
+      },
+      "notes": "DC 15 default, perception 12"
+    },
+    {
+      "path": "solo/mechanics_mapping.py",
+      "kind": "python",
+      "format": "MONSTER_ALIASES/CHECK_ALIASES dicts",
+      "counts": {
+        "monster_aliases": 15,
+        "check_aliases": 31
+      },
+      "fields": [
+        "Substitution(kind,source,page,target,basis,reason)",
+        "Adaptation(kind,source,page,needs)"
+      ]
+    },
+    {
+      "path": "rules_data/v1/rule.schema.json",
+      "kind": "json-schema",
+      "format": "draft 2020-12, contract 1.0.0",
+      "records": 4,
+      "required": [
+        "schema_version",
+        "id",
+        "revision",
+        "name",
+        "edition",
+        "category",
+        "conditions",
+        "triggers",
+        "effects",
+        "duration",
+        "resources",
+        "restrictions",
+        "sources",
+        "verification",
+        "engine"
+      ],
+      "notes": "engine.handler enum ['RulesetEngine.d20', null]; auto_activate const false; not accepted by /api/rulesets"
+    },
+    {
+      "path": "rules_data/v2/routing.schema.json",
+      "kind": "json-schema",
+      "format": "draft 2020-12, 2.0.0|2.1.0",
+      "records": 143,
+      "counts": {
+        "procedure": 115,
+        "guidance": 23,
+        "spell_branch": 3,
+        "monster_stats": 1,
+        "monster_ability": 1
+      },
+      "implementation": {
+        "existing_engine_subset": 56,
+        "kernel_verified": 9,
+        "kernel_only_unexecuted": 3,
+        "not_implemented": 75
+      },
+      "classification": {
+        "deterministic": 75,
+        "hybrid": 44,
+        "adjudicated": 24
+      },
+      "files": [
+        "rules_data/v2/chapters/phb-01/01-core.rules.json",
+        "rules_data/v2/chapters/phb-01/02-actions-social.rules.json",
+        "rules_data/v2/chapters/phb-01/03-exploration.rules.json",
+        "rules_data/v2/chapters/phb-01/04-combat.rules.json",
+        "rules_data/v2/chapters/phb-01/05-damage-conditions.rules.json",
+        "rules_data/v2/sections/phb.rules.json",
+        "rules_data/v2/sections/dmg.rules.json",
+        "rules_data/v2/sections/mm.rules.json"
+      ]
+    },
+    {
+      "path": "rules_data/v2/coverage.schema.json",
+      "kind": "json-schema",
+      "format": "1.0.0",
+      "hardcoded": {
+        "document_id": "phb_2024_ru",
+        "chapter": 1,
+        "pdf_range": [
+          8,
+          33
+        ]
+      }
+    },
+    {
+      "path": "solo/nat20_prototype.py",
+      "kind": "python",
+      "format": "CATEGORIES tuple + DATA root",
+      "categories": [
+        "classes",
+        "species",
+        "subclasses",
+        "backgrounds",
+        "feats",
+        "features",
+        "items",
+        "spells",
+        "monsters",
+        "conditions",
+        "traits"
+      ]
+    },
+    {
+      "path": "integration/nat20/playable/registry.json",
+      "kind": "json",
+      "format": "nat20-campaign-registry-v1",
+      "definitions": [
+        "fighter-road-2024-v1",
+        "fighter-standard-array-2024-v1"
+      ],
+      "status": "behaviorally_verified"
+    },
+    {
+      "path": "integration/nat20/playable/search-catalog.json",
+      "kind": "json",
+      "documents": 2460,
+      "notes": "metadata_only, executable=false"
+    },
+    {
+      "path": "data/rules-knowledge.sqlite3",
+      "kind": "sqlite",
+      "tables": [
+        "books",
+        "sections",
+        "rule_fts"
+      ],
+      "books": 4,
+      "sections": 7503,
+      "notes": "DMG 2024 incomplete (185 pages); PHB 388; SRD 5.2.1 364; SRD 5.1 403"
+    }
+  ],
+  "content_corpus": {
+    "root": "vendor/nat20/packages/dnd5e-srd-data/src/dnd5e_srd_data/canonical",
+    "counts": {
+      "backgrounds": 4,
+      "classes": 12,
+      "conditions": 15,
+      "feats": 17,
+      "features": 261,
+      "items": 546,
+      "monsters": 341,
+      "species": 14,
+      "spells": 339,
+      "subclasses": 12,
+      "traits": 102
+    },
+    "schemas": "dnd5e_srd_data/schema/{advancement,background,class_,common,condition,feat,feature,item,monster,refs,species,spell}.py",
+    "imported_for_play": 12,
+    "imported_list": [
+      "classes/fighter",
+      "features/fighting-style",
+      "features/resourceful",
+      "features/second-wind",
+      "features/skillful",
+      "features/versatile",
+      "features/weapon-mastery",
+      "items/chain-mail",
+      "items/longsword",
+      "items/shield",
+      "monsters/goblin-warrior",
+      "species/human"
+    ]
+  },
+  "gaps": [
+    {
+      "id": "spellcasting",
+      "severity": "critical",
+      "evidence": "solo/rule_registry.py magic.casting=unsupported; game_commands.bless_stand_enabled()"
+    },
+    {
+      "id": "spell_effect_translation",
+      "severity": "critical",
+      "evidence": "foundry.py:_passive_effects ~line 802 drops system.changes[].type='add'"
+    },
+    {
+      "id": "spell_components",
+      "severity": "high",
+      "evidence": "nat20_api known_issues spell_components"
+    },
+    {
+      "id": "weapon_mastery",
+      "severity": "high",
+      "evidence": "capabilities.json imported_but_not_enabled"
+    },
+    {
+      "id": "classes_playable",
+      "severity": "critical",
+      "evidence": "only fighter level 1 (human)"
+    },
+    {
+      "id": "monsters_playable",
+      "severity": "high",
+      "evidence": "only goblin-warrior, scimitar branch"
+    },
+    {
+      "id": "items_playable",
+      "severity": "high",
+      "evidence": "longsword, chain-mail, shield only; inventory.py CATALOG 10 items, no magic items"
+    },
+    {
+      "id": "spell_slot_tables",
+      "severity": "high",
+      "evidence": "no standalone tables in solo; come from Nat20 derive_sheet"
+    },
+    {
+      "id": "xp_cr_tables",
+      "severity": "medium",
+      "evidence": "encounter XP is authored parameter (solo-road-watch 50 XP)"
+    },
+    {
+      "id": "dc_table",
+      "severity": "low",
+      "evidence": "math_handlers.lookup_dc has only easy10/mod15/hard20"
+    },
+    {
+      "id": "conditions_durations",
+      "severity": "high",
+      "evidence": "Hero.conditions 14 names only; no effect tables"
+    },
+    {
+      "id": "condition_dc_set",
+      "severity": "medium",
+      "evidence": "nat20_content.CHECKS all DC 15"
+    },
+    {
+      "id": "death_zero_hp",
+      "severity": "high",
+      "evidence": "playable stops at 0 HP"
+    },
+    {
+      "id": "multiclass_subclass",
+      "severity": "high",
+      "evidence": "sheet().unsupported: multiclass; 4 subclasses in catalog"
+    },
+    {
+      "id": "russian_names",
+      "severity": "high",
+      "evidence": "translations only for 26 spells, 4 classes, 2 species, 4 backgrounds, 15 monsters"
+    },
+    {
+      "id": "format_unification",
+      "severity": "high",
+      "evidence": "three incompatible formats; no v2->canonical converter"
+    }
+  ],
+  "recommended_format": {
+    "reference_level": "rules-knowledge.sqlite3 sections(book,page,printed,heading,text,public,topic) — text only",
+    "declarative_level": "rules_data/v2/*.rules.json under routing.schema 2.1.0 with source{sha256,pdf_page,printed_page}, dependencies, readiness{status,handler,blockers}, behavior_tests, revision, auto_activate=false",
+    "executable_level": "Nat20 canonical doc (provenance+review) -> integration/nat20/imported/manifest.json -> playable/capabilities.json sources[] -> campaign definition + registry.json",
+    "localization": "name_en + name_ru in declarative rules; separate i18n json for canonical entities"
+  },
+  "artifacts": [
+    "PROJECT_RULES_MAP.md",
+    "inventory.json"
+  ]
+}

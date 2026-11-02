@@ -1,0 +1,212 @@
+{
+  "slug": "oath-of-glory",
+  "name": "Клятва славы",
+  "description": "Клятва славы | Oath of Glory\n\nПаладины, приносящие клятву славы, верят, что им и их товарищам суждено прославиться через героические подвиги. Они усердно тренируются и поддерживают своих товарищей, так что они всегда готовы, когда судьба позовёт их.\n\nДогмы славы\n\nДогмы клятвы славы побуждают паладина совершать героические подвиги, которые в один прекрасный день могут воплотиться в легенды.\n\nДействия превыше слов. Стремитесь быть известными по своим славным делам, а не словам.\n\nИспытания — это всего лишь испытания. Смело встречайте трудности и вдохновляйте своих союзников на то, чтобы они преодолевали их вместе с вами.\n\nТренируй своё тело. Как и с неотёсанным камнем, с вашим телом нужно работать, чтобы раскрыть весь его потенциал.\n\nДисциплинируй душу. Вы должны дисциплинировать себя, чтобы победить свои слабости, угрожающие затмить славу ваших свершений и подвигов ваших друзей.\n\nУровеньОсобенности\n\n3-й\n\n@Compendium[laaru-dnd5-hw.classfeatures.G28HlJ3h6GPWvTtS]{Заклинания клятвы славы}, @Compendium[laaru-dnd5-hw.classfeatures.rvD9rtG9y2kwNFKZ]{Проведение энергии: Впечатляющий удар}, @Compendium[laaru-dnd5-hw.classfeatures.jRiBqTZD0McF19qc]{Проведение энергии: Несравненный атлет}\n\n7-й\n\n@Compendium[laaru-dnd5-hw.classfeatures.UuXrApZeESb1nCtI]{Аура рвения}\n\n15-й\n\n@Compendium[laaru-dnd5-hw.classfeatures.qVSvulhPOonT1gPR]{Блестящая оборона}\n\n20-й\n\n@Compendium[laaru-dnd5-hw.classfeatures.TrG0tqzrh5TzXONc]{Живая легенда}",
+  "identifier": "oath-of-glory",
+  "class_identifier": "paladin",
+  "spellcasting": {
+    "ability": "",
+    "progression": "none"
+  },
+  "advancement": [
+    {
+      "id": "uw4x6zyw9tsse858",
+      "type": "ItemGrant",
+      "level": 3,
+      "title": "1. Особенности",
+      "hint": "",
+      "class_restriction": "",
+      "configuration": {
+        "items": [
+          "Compendium.laaru-dnd5-hw.classfeatures.G28HlJ3h6GPWvTtS",
+          "Compendium.laaru-dnd5-hw.classfeatures.rvD9rtG9y2kwNFKZ",
+          "Compendium.laaru-dnd5-hw.classfeatures.jRiBqTZD0McF19qc"
+        ],
+        "optional": false
+      },
+      "value": {}
+    },
+    {
+      "id": "3r8v3lwbbzj0v6mq",
+      "type": "ItemGrant",
+      "level": 7,
+      "title": "Особенность",
+      "hint": "",
+      "class_restriction": "",
+      "configuration": {
+        "items": [
+          "Compendium.laaru-dnd5-hw.classfeatures.UuXrApZeESb1nCtI"
+        ],
+        "optional": false
+      },
+      "value": {}
+    },
+    {
+      "id": "q4ifwhuuksrubbuw",
+      "type": "ItemGrant",
+      "level": 15,
+      "title": "Особенность",
+      "hint": "",
+      "class_restriction": "",
+      "configuration": {
+        "items": [
+          "Compendium.laaru-dnd5-hw.classfeatures.qVSvulhPOonT1gPR"
+        ],
+        "optional": false
+      },
+      "value": {}
+    },
+    {
+      "id": "w4da06opd7ho9ubi",
+      "type": "ItemGrant",
+      "level": 20,
+      "title": "Особенность",
+      "hint": "",
+      "class_restriction": "",
+      "configuration": {
+        "items": [
+          "Compendium.laaru-dnd5-hw.classfeatures.TrG0tqzrh5TzXONc"
+        ],
+        "optional": false
+      },
+      "value": {}
+    },
+    {
+      "id": "8nbhlc5cferkpgb7",
+      "type": "ItemGrant",
+      "level": 3,
+      "title": "2. Заклинания клятвы славы",
+      "hint": "",
+      "class_restriction": "",
+      "configuration": {
+        "items": [
+          "Compendium.laaru-dnd5-hw.spells.Y2So9xXGJcssoHvu",
+          "Compendium.laaru-dnd5-hw.spells.wE7p0clFpTiKXGyl"
+        ],
+        "optional": false,
+        "spell": {
+          "ability": "cha",
+          "preparation": "always",
+          "uses": {
+            "max": "",
+            "per": ""
+          }
+        }
+      },
+      "value": {}
+    },
+    {
+      "id": "xpgd6xlquv2va0b3",
+      "type": "ItemGrant",
+      "level": 5,
+      "title": "Заклинания клятвы славы",
+      "hint": "",
+      "class_restriction": "",
+      "configuration": {
+        "items": [
+          "Compendium.laaru-dnd5-hw.spells.r1oOhdLZ81NCL1SI",
+          "Compendium.laaru-dnd5-hw.spells.M4TUqs2CgqL8wwIR"
+        ],
+        "optional": false,
+        "spell": {
+          "ability": "cha",
+          "preparation": "always",
+          "uses": {
+            "max": "",
+            "per": ""
+          }
+        }
+      },
+      "value": {}
+    },
+    {
+      "id": "k07galvgwgwu9dhm",
+      "type": "ItemGrant",
+      "level": 9,
+      "title": "Заклинания клятвы славы",
+      "hint": "",
+      "class_restriction": "",
+      "configuration": {
+        "items": [
+          "Compendium.laaru-dnd5-hw.spells.hIaHx6K0X5bxyHiM",
+          "Compendium.laaru-dnd5-hw.spells.bmGqZnc69SQysORr"
+        ],
+        "optional": false,
+        "spell": {
+          "ability": "cha",
+          "preparation": "always",
+          "uses": {
+            "max": "",
+            "per": ""
+          }
+        }
+      },
+      "value": {}
+    },
+    {
+      "id": "ngobu5blftthvzps",
+      "type": "ItemGrant",
+      "level": 13,
+      "title": "Заклинания клятвы славы",
+      "hint": "",
+      "class_restriction": "",
+      "configuration": {
+        "items": [
+          "Compendium.laaru-dnd5-hw.spells.qBqA0Y0k8CFbU5Bw",
+          "Compendium.laaru-dnd5-hw.spells.B6AsDaR4CpcwqBO6"
+        ],
+        "optional": false,
+        "spell": {
+          "ability": "cha",
+          "preparation": "always",
+          "uses": {
+            "max": "",
+            "per": ""
+          }
+        }
+      },
+      "value": {}
+    },
+    {
+      "id": "nj09ggrpfbp8bse2",
+      "type": "ItemGrant",
+      "level": 17,
+      "title": "Заклинания клятвы славы",
+      "hint": "",
+      "class_restriction": "",
+      "configuration": {
+        "items": [
+          "Compendium.laaru-dnd5-hw.spells.qhhv1TGExW0r843c",
+          "Compendium.laaru-dnd5-hw.spells.mpFzsXDLtVxcn0iM"
+        ],
+        "optional": false,
+        "spell": {
+          "ability": "cha",
+          "preparation": "always",
+          "uses": {
+            "max": "",
+            "per": ""
+          }
+        }
+      },
+      "value": {}
+    }
+  ],
+  "granted_features": [],
+  "feature_choices": [],
+  "provenance": {
+    "source": "foundry",
+    "source_url": "https://github.com/foundryvtt/dnd5e/blob/965ad2d0cf5d063dac675ba078b5bd3c3c0dd449/packs/_source/laaru-hw-subclasses/Клятва_славы_fBI8fq7eyrrvQzAB.yml",
+    "ingest_date": "2026-10-26",
+    "ingest_version": "foundry-translator-v1",
+    "srd_version": [
+      "5.1"
+    ],
+    "license_tag": "CC-BY-4.0"
+  },
+  "review": {
+    "known_divergence": null,
+    "requires_user_decision": false
+  },
+  "entry_kind": "subclass"
+}

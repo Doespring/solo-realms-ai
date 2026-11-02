@@ -1,0 +1,29 @@
+{
+  "status": "source-frozen",
+  "scope": "Stage 2 Interpreter seam only",
+  "date": "2026-10-18",
+  "tests": "2 passed",
+  "live_paid_calls": 0,
+  "files": [
+    {
+      "path": "solo/game.py",
+      "sha256": "d40101fbf786a85520b7720d799d8e8eb6744c3ba92aa538573095197f59d488",
+      "bytes": 56615
+    },
+    {
+      "path": "prompts/gm_commands_v1.txt",
+      "sha256": "91d9625a07c3cbc8e2718b69ed7e73b247afa342e80dfb7d8048708f9255d9ad",
+      "bytes": 2459
+    },
+    {
+      "path": "tests/test_stage2_interpreter_capabilities.py",
+      "sha256": "9c10265dea21fa134eb27a911ed621769ee970ac1d6114b80ff1260aa4384d43",
+      "bytes": 4728
+    },
+    {
+      "path": "reports/STAGE2_INTERPRETER_SEAM.md",
+      "sha256": "da13cd9747a9fca4c3c1620d859b00acfcb4411fbe64d11e23a70521775a67b4",
+      "bytes": 3569
+    }
+  ]
+}

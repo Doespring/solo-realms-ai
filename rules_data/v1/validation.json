@@ -1,0 +1,60 @@
+{
+  "report_version": "1.0.0",
+  "checked_on": "2026-10-16",
+  "schema_version": "1.0.0",
+  "schema_tests": {
+    "validator": "Microsoft.PowerShell.Utility Test-Json 7.0.0.0",
+    "passed": 7,
+    "failed": 0,
+    "positive_accepted": 4,
+    "negative_rejected": 3,
+    "results": [
+      {"file": "chapters/phb-01/advantage.json", "expected": true, "actual": true},
+      {"file": "chapters/phb-01/disadvantage.json", "expected": true, "actual": true},
+      {"file": "chapters/phb-01/cancellation.json", "expected": true, "actual": true},
+      {"file": "chapters/phb-01/single-die-change.json", "expected": true, "actual": true},
+      {"file": "tests/invalid/unknown-effect.json", "expected": false, "actual": false},
+      {"file": "tests/invalid/auto-activation.json", "expected": false, "actual": false},
+      {"file": "tests/invalid/missing-fields.json", "expected": false, "actual": false}
+    ]
+  },
+  "behavior_tests": {
+    "prepared": 21,
+    "pool_cases": 11,
+    "die_change_cases": 5,
+    "boundary_cases": 5,
+    "executed": 0,
+    "status": "pending_trusted_harness",
+    "reason": "No generated program or repository code was executed; only existing extraction, hashing, read-only query, and JSON validation utilities were used.",
+    "manual_review": "compared with supplied PHB pages and statically inspected engine; not a substitute for runtime tests"
+  },
+  "source_review": {
+    "pdf_pages": [13, 14],
+    "printed_pages": ["12", "13"],
+    "visual_pages_inspected": [13, 14],
+    "knowledge_section_ids": [59686, 59687, 59688],
+    "evidence_file": "evidence/phb-pdf-013-014.txt",
+    "evidence_sha256": "c018047418da4ea0cc8eb00f8f49b1fd25417a6de9ca10eb5f427b3b9526036d",
+    "human_review": "pending"
+  },
+  "preservation": {
+    "original_pdf_sha256_rechecked_unchanged": true,
+    "inspected_engine_file_sha256_rechecked_unchanged": true,
+    "rules_knowledge_sqlite_sha256_rechecked_unchanged": true,
+    "existing_tracked_changes": false,
+    "only_new_git_path": "rules_data/",
+    "engine_modified": false,
+    "ui_modified": false,
+    "user_data_modified": false
+  },
+  "cleanup": {
+    "deleted_only_created_temporary_files": ["evidence/phb-013.png", "evidence/phb-014.png"],
+    "deleted_bytes": 2539136,
+    "extracted_text_preserved": true,
+    "original_pdfs_copied": false
+  },
+  "generated_code_executed": false,
+  "paid_api_calls": 0,
+  "activation_performed": false,
+  "completion_scope": "first PHB subsection only; chapter incomplete; supplied full DMG inventoried, not converted"
+}

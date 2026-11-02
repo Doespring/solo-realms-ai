@@ -1,0 +1,26 @@
+{
+  "status": "UI_READY_SOURCE_FROZEN",
+  "date": "2026-10-18",
+  "test": "tests/test_stage2_ui.py",
+  "passed": 1,
+  "seconds": 50.44,
+  "real_provider_calls": 0,
+  "files": [
+    {
+      "path": "web/game-screen.js",
+      "sha256": "382f2330a979430711d1dba99956bbba0aabe088cc512d06aa04d8e5c8ec5751"
+    },
+    {
+      "path": "web/prototype-actions.js",
+      "sha256": "42f30b30108d9bf4231fc58329ee331621fae590f939577a5fd3db3c70cadac1"
+    },
+    {
+      "path": "tests/test_stage2_ui.py",
+      "sha256": "7c096e2d0725716c1da936020b8b46aa5c1b3ce8191ddc37de02c3ee4e6e3dc9"
+    },
+    {
+      "path": "tests/test_stage2_ui.cjs",
+      "sha256": "3c20f9e2ccb899c8ca34ad9e79ec18cd527e7237b583e6555c43b897c3f354d5"
+    }
+  ]
+}

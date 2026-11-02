@@ -1,0 +1,146 @@
+{
+  "slug": "sprout-tree",
+  "foundry_uuid": "Compendium.dnd5e.laaru-hw-spells.Item.AQpCG27wZhhNFqAL",
+  "name": "Прорастающее древо / Sprout Tree",
+  "description": "Вы указываете на пустое пространство в 5 футов на земле, которое видите в пределах дистанции, и там прорастает дерево, быстро вырастающее до 20 футов в высоту со стволом радиусом 2 фута. Дерево должно расти на земле, песке или другой подходящей поверхности. По усмотрению мастера, оно может прорваться сквозь твердый материал толщиной до 6 дюймов. Дерево прекращает рост, если оно ударится о потолок или другой объект.\n\nЛюбое существо, находящееся в этом пространстве, должно пройти испытание Ловкости. При провале оно поднимается на 20 футов в воздух в ветвях дерева. При успехе оно перемещается на 5 футов в незанятое пространство по своему выбору (если нет пустого пространства, куда оно может переместиться, оно автоматически проваливает испытание). Крупного или меньшего размера существо может провалить это испытание, тогда как огромное или большего размера существо автоматически добивается успеха.\n\nДерево наполовину укрывает любое существо, находящееся в его ветвях, и на три четверти - от эффектов, исходящих с другой стороны его ствола. У дерева 50 ПЗ и КБ 13.\n\nДерево сохраняется после окончания действия заклинания, но может быстро погибнуть, если прорастет в неподходящем месте или в неподходящей среде. Его древесина воспламеняется только в высушенном виде и не служит никакой полезной цели, кроме дров.",
+  "level": 2,
+  "school": "trs",
+  "components": [
+    "S",
+    "V"
+  ],
+  "ritual": false,
+  "concentration": false,
+  "casting_time": {
+    "unit": "action",
+    "value": 1,
+    "condition": ""
+  },
+  "range": {
+    "units": "ft",
+    "value": 30,
+    "special": null
+  },
+  "duration": {
+    "units": "inst",
+    "value": null
+  },
+  "materials": {
+    "value": "",
+    "consumed": false,
+    "cost": 0,
+    "supply": 0
+  },
+  "preparation": {
+    "mode": "prepared",
+    "prepared": false
+  },
+  "activities": [
+    {
+      "id": "dnd5eactivity000",
+      "name": "",
+      "img": "",
+      "sort": 0,
+      "activation": {
+        "type": "action",
+        "value": null,
+        "condition": "",
+        "override": false,
+        "reaction_conditions": []
+      },
+      "consumption": {
+        "scaling": {
+          "allowed": false,
+          "max": ""
+        },
+        "spell_slot": true,
+        "targets": []
+      },
+      "description": {
+        "chat_flavor": ""
+      },
+      "duration": {
+        "value": null,
+        "units": "inst",
+        "special": "",
+        "concentration": false,
+        "override": false
+      },
+      "flags": {},
+      "range": {
+        "value": null,
+        "units": "self",
+        "special": "",
+        "override": false
+      },
+      "target": {
+        "template": {
+          "count": "",
+          "contiguous": false,
+          "stationary": false,
+          "type": "square",
+          "size": "5",
+          "width": "",
+          "height": "",
+          "units": "ft"
+        },
+        "affects": {
+          "count": "",
+          "type": "",
+          "choice": false,
+          "special": ""
+        },
+        "override": false,
+        "prompt": true
+      },
+      "uses": {
+        "spent": 0,
+        "max": "",
+        "recovery": []
+      },
+      "visibility": {
+        "identifier": "",
+        "level": {
+          "min": null,
+          "max": null
+        },
+        "require_attunement": false,
+        "require_identification": false,
+        "require_magic": false
+      },
+      "effects": [],
+      "applied_effects": [],
+      "kind": "save",
+      "damage": {
+        "on_save": "half",
+        "parts": []
+      },
+      "save": {
+        "ability": [
+          "dex"
+        ],
+        "dc": {
+          "calculation": "spellcasting",
+          "formula": ""
+        },
+        "ignore_cover": false
+      }
+    }
+  ],
+  "passive_effects": [],
+  "provenance": {
+    "source": "foundry",
+    "source_url": "https://github.com/foundryvtt/dnd5e/blob/965ad2d0cf5d063dac675ba078b5bd3c3c0dd449/packs/_source/laaru-hw-spells/Прорастающее_древо___Sprout_Tree_AQpCG27wZhhNFqAL.yml",
+    "ingest_date": "2026-10-26",
+    "ingest_version": "foundry-translator-v1",
+    "srd_version": [
+      "5.1"
+    ],
+    "license_tag": "CC-BY-4.0"
+  },
+  "review": {
+    "known_divergence": null,
+    "requires_user_decision": false
+  },
+  "entry_kind": "spell"
+}

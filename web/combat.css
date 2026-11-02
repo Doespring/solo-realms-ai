@@ -1,0 +1,9 @@
+.battle-panel{margin-bottom:var(--space-3,16px)}
+.battle-content{padding:16px;display:grid;gap:12px}
+.battle-content canvas{display:block;width:100%;height:auto;aspect-ratio:900/470;border:1px solid var(--line);border-radius:10px;touch-action:none}
+.battle-content canvas[hidden]{display:none}
+.battle-actors{display:flex;gap:8px;flex-wrap:wrap}
+.battle-actors button{font-size:.85rem;text-align:left}
+.battle-setup{display:grid;gap:12px}
+.battle-content .button-row{align-items:center}
+.battle-content label:has(input[type=checkbox]){display:flex;align-items:center;gap:8px}

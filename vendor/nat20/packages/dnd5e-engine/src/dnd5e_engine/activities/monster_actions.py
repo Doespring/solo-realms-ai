@@ -1,0 +1,637 @@
+"""Typed monster-action selection + multiattack fan-out from ``Monster.actions``.
+
+A monster's repertoire lives on ``Monster.actions`` as typed ``MonsterAction``
+instances. Only ``actions`` drives the turn today — ``legendary_actions``,
+``lair_actions`` and ``special_abilities`` are carried by the schema but have no
+action economy in the engine yet (see ``BACKLOG.md``).
+
+Multiattack is the hard case. It carries only a no-op ``UtilityActivity``; the
+sub-attacks it fans out into are named *in prose*, via Foundry ``[[/item …]]``
+enricher tokens, in two shapes the corpus mixes freely::
+
+    makes three [[/item Rend]] attacks              # name form  — joinable
+    makes two [[/item .mmClaw000000]]{Claw} attacks # id + label — joinable
+    makes two [[/item .mmBite000000]] attacks       # bare id    — NOT joinable
+
+The bare Foundry id is not a field on ``MonsterAction``, so it cannot be joined
+to a typed sibling. Resolution, in order:
+
+1. Collect sibling actions carrying an ``AttackActivity`` or ``SaveActivity``
+   (excluding the multiattack itself).
+2. Parse the *first sentence* of the description into ``(name, count)`` pairs,
+   reading the count immediately preceding each token ("makes two Claw attacks
+   and uses Roar" → ``[(Claw, 2), (Roar, 1)]``). Later sentences are riders
+   ("It can replace one attack with …") and are deliberately ignored — they
+   describe a substitution the engine does not model, not an extra attack.
+3. If every parsed name joins to a sibling, emit each sibling's first offensive
+   activity, repeated its own count — the *precise* path. Candidate order is
+   the PROSE order returned by ``_parse_item_counts`` (the order the names
+   appear in the description), not corpus/schema order. An "in any
+   combination" clause is the one exception to "repeated its own count": its
+   parsed count is instead distributed range-aware over the named siblings
+   (see ``_distribute_any_combination`` below) rather than joined 1:1.
+4. Otherwise repeat one chosen AT-WILL sibling ``count`` times — one the
+   clause names, when it names any, never a Recharge/``N/Day``/limited-use
+   one, nor one the caller reports unavailable (an area that affects no
+   enemy from where the monster stands) — and log
+   ``multiattack_join_unresolved`` at WARNING (the loss is
+   visible — never a silent normalization). This is correctness-preserving
+   for the homogeneous ("three Rend attacks") and free-choice ("two attacks,
+   using Slam or Force Bolt in any combination") shapes, and lossy only for
+   a heterogeneous multiattack whose tokens are bare ids.
+
+"in any combination" clauses distribute the parsed count over the named
+siblings range-aware (see ``_distribute_any_combination``).
+"""
+
+from __future__ import annotations
+
+import logging
+import re
+from collections.abc import Callable, Sequence
+from typing import TYPE_CHECKING
+
+from dnd5e_srd_data.schema.common import AttackActivity, CastActivity, SaveActivity
+
+if TYPE_CHECKING:
+    from dnd5e_srd_data.schema.common import Activity
+    from dnd5e_srd_data.schema.monster import Monster, MonsterAction
+
+_LOGGER = logging.getLogger(__name__)
+
+_MULTIATTACK_SLUG = "multiattack"
+
+# Count words in a multiattack description ("makes two attacks…"). The corpus
+# also writes counts as digits ("makes 2 Pincer attacks"), so both parse.
+_NUMBER_WORD: dict[str, int] = {
+    "one": 1,
+    "two": 2,
+    "three": 3,
+    "four": 4,
+    "five": 5,
+    "six": 6,
+}
+
+# Foundry item enricher, in the two joinable shapes the corpus ships:
+#   ``[[/item .<id>]]{Label}``  -> group "label"
+#   ``[[/item Name]]``          -> group "name"
+# A bare ``[[/item .<id>]]`` with no label matches but yields neither, which is
+# what makes it unjoinable — the id is not a field on ``MonsterAction``.
+_ITEM_TOKEN_RE = re.compile(
+    r"\[\[/item\s+(?:\.(?P<id>[A-Za-z0-9.]+)\]\](?:\{(?P<label>[^}]*)\})?"
+    r"|(?P<name>[^\].{}][^\]]*)\]\])"
+)
+
+# A count immediately preceding an item token: "makes two [[/item Claw]]",
+# "uses [[/item Reel]]", "makes 2 [[/item Pincer]]". Captured lazily so the
+# scan stays anchored to the token that follows it.
+_COUNT_BEFORE_TOKEN_RE = re.compile(
+    r"(?:\b(?P<word>" + "|".join(_NUMBER_WORD) + r")\b|\b(?P<digits>\d{1,2})\b)"
+    r"(?:\s+\w+){0,3}?\s*$",
+    re.IGNORECASE,
+)
+
+
+def _activity_is_offensive(activity: Activity) -> bool:
+    return isinstance(activity, (AttackActivity, SaveActivity))
+
+
+def _activity_is_offensive_or_cast(activity: Activity) -> bool:
+    """``_activity_is_offensive`` plus ``CastActivity`` — a spellcasting
+    action is offensive-in-spirit even though its own activity carries no
+    attack/save block (the referenced spell does)."""
+    return _activity_is_offensive(activity) or isinstance(activity, CastActivity)
+
+
+def _action_has_offense(action: MonsterAction) -> bool:
+    return any(_activity_is_offensive(a) for a in action.activities)
+
+
+def _limited_use_cast_activities(action: MonsterAction) -> list[CastActivity]:
+    """``action``'s cast activities with an integer ``uses.max`` and a
+    ``day`` recovery period (SRD 5.2 Innate Spellcasting's "N/Day" shape).
+
+    An at-will cast (empty ``uses.max``) or one recovering on a rest period
+    other than ``day`` doesn't qualify — this is deliberately narrow to the
+    one shape ``rank_monster_actions`` ranks above multiattack.
+    """
+    return [
+        activity
+        for activity in action.activities
+        if isinstance(activity, CastActivity)
+        and activity.uses.max.strip().isdigit()
+        and any(entry.period == "day" for entry in activity.uses.recovery)
+    ]
+
+
+def rank_monster_actions(
+    actions: Sequence[MonsterAction],
+    *,
+    is_available: Callable[[MonsterAction], bool],
+    has_limited_use_remaining: Callable[[MonsterAction], bool] | None = None,
+) -> list[MonsterAction]:
+    """Order ``actions`` by SRD 5.2 selection priority for a monster's turn.
+
+    Tiers, ties broken by ``actions`` list order within each tier:
+
+    1. offensive actions with ``recharge`` set that pass ``is_available``
+       (a live breath weapon/AoE is the monster's biggest hitter and was
+       structurally unreachable under the old first-in-list selection);
+    2. actions carrying a limited-use offensive cast activity (integer
+       ``uses.max`` with a ``day`` recovery period) that pass
+       ``is_available`` AND, when the caller supplies
+       ``has_limited_use_remaining``, for which it reports that the cast the
+       turn would actually resolve is such a limited-use one with a use
+       left — Innate Spellcasting's N/Day slots. Once every N/Day cast is
+       spent, an action that can still cast an at-will spell falls to
+       tier 4, behind multiattack;
+    3. the ``multiattack`` action, if present;
+    4. every other offensive action (offensive now includes any
+       ``CastActivity``, e.g. an at-will spell) that passes ``is_available``,
+       in list order.
+
+    An action that fails ``is_available`` drops out entirely rather than
+    sinking to a lower tier. Pure — ``is_available`` and
+    ``has_limited_use_remaining`` are the caller's seams into live
+    per-entity state (recharge/uses tracking); this function reads no
+    orchestrator state itself. Omitting ``has_limited_use_remaining`` keeps
+    the static tier-2 predicate (the shape alone).
+    """
+    placed: set[str] = set()
+    ranked: list[MonsterAction] = []
+
+    for action in actions:
+        if action.recharge and _action_has_offense(action) and is_available(action):
+            ranked.append(action)
+            placed.add(action.slug)
+
+    for action in actions:
+        if action.slug in placed:
+            continue
+        if (
+            _limited_use_cast_activities(action)
+            and is_available(action)
+            and (has_limited_use_remaining is None or has_limited_use_remaining(action))
+        ):
+            ranked.append(action)
+            placed.add(action.slug)
+
+    for action in actions:
+        if action.slug in placed:
+            continue
+        if action.slug == _MULTIATTACK_SLUG:
+            ranked.append(action)
+            placed.add(action.slug)
+
+    for action in actions:
+        if action.slug in placed:
+            continue
+        if any(_activity_is_offensive_or_cast(a) for a in action.activities) and is_available(
+            action
+        ):
+            ranked.append(action)
+            placed.add(action.slug)
+
+    return ranked
+
+
+def _attack_siblings(monster: Monster, exclude: MonsterAction) -> list[MonsterAction]:
+    """Actions with an attack/save activity, excluding the given action."""
+    return [a for a in monster.actions if a.slug != exclude.slug and _action_has_offense(a)]
+
+
+def _first_offensive_activity(action: MonsterAction) -> Activity | None:
+    for activity in action.activities:
+        if _activity_is_offensive(activity):
+            return activity
+    return None
+
+
+# Foundry's monster-manual action ids are mnemonic: ``mmRottingFist000`` is
+# "Rotting Fist", ``mmBite0000000000`` is "Bite". The id is zero-padded to a
+# fixed width and camel-cased. Ids that do NOT follow this convention (a random
+# document key like ``w3cX0piuU875Hc2M``) yield nothing and stay unjoinable.
+_FOUNDRY_MM_ID_RE = re.compile(r"^mm([A-Za-z][A-Za-z]*?)0*$")
+_CAMEL_BOUNDARY_RE = re.compile(r"(?<=[a-z])(?=[A-Z])")
+
+# Sentence break. The corpus is not consistently spaced ("attacks.It can
+# replace…"), so a period followed by whitespace OR a capital letter ends it —
+# unless it sits inside an item token, whose Foundry id starts with one
+# ("[[/item .XbNHC5OBGT6VQF40]]{Shortbow}").
+_SENTENCE_BREAK_RE = re.compile(r"\.(?:\s+|(?=[A-Z]))(?![^\[\]]*\]\])")
+
+# A sibling's name may carry a form qualifier the clause leaves out: the
+# clause's "Hand Crossbow" is the wererat's "Hand Crossbow (Humanoid or Hybrid
+# Form Only)".
+_FORM_QUALIFIER_RE = re.compile(r"\s*\([^)]*\)\s*$")
+
+
+def _multiattack_clause(description: str) -> str:
+    """The first sentence — the multiattack proper, minus any rider clause.
+
+    Later sentences describe substitutions the engine does not model ("It can
+    replace one attack with a use of Spellcasting"). Counting their tokens as
+    extra attacks would inflate every dragon's action economy, so they are cut.
+    """
+    return _SENTENCE_BREAK_RE.split(description, maxsplit=1)[0]
+
+
+def _name_from_foundry_id(foundry_id: str) -> str | None:
+    """Recover an action name from a mnemonic Foundry id, or ``None``.
+
+    ``mmDreadfulGlare0`` -> ``"Dreadful Glare"``. Purely a *hint*: the caller
+    only uses it when the recovered name joins to exactly one typed sibling, so
+    a bad guess degrades to the existing fallback rather than mis-resolving.
+    """
+    match = _FOUNDRY_MM_ID_RE.match(foundry_id)
+    if match is None:
+        return None
+    words = _CAMEL_BOUNDARY_RE.split(match.group(1))
+    return " ".join(words) if words else None
+
+
+def _parse_multiattack_count(description: str) -> int:
+    """Parse the leading count ("makes two attacks…" → 2, "makes 2 …" → 2).
+
+    Defaults to 1 (logged) when nothing parses, so an unparseable multiattack
+    degrades to a single attack rather than guessing arity.
+    """
+    for word, count in _NUMBER_WORD.items():
+        if re.search(rf"\bmakes? {word}\b", description, re.IGNORECASE):
+            return count
+    digits = re.search(r"\bmakes? (\d{1,2})\b", description, re.IGNORECASE)
+    if digits:
+        return max(1, int(digits.group(1)))
+    _LOGGER.warning("multiattack_count_unparsed default=1 description=%r", description)
+    return 1
+
+
+def _parse_item_counts(description: str) -> list[tuple[str, int]] | None:
+    """Parse the multiattack clause into ordered ``(sibling name, count)`` pairs.
+
+    Returns ``None`` when the clause cannot be read precisely — any token that
+    is a bare Foundry id (unjoinable), or a free-choice clause ("Slam or Force
+    Bolt in any combination", "three Radiant Sword attacks or uses Holy Burst
+    twice") where the prose describes alternatives rather than a fixed sequence.
+    The caller falls back to the repeat-one-sibling path in both cases.
+    """
+    clause = _multiattack_clause(description)
+    matches = list(_ITEM_TOKEN_RE.finditer(clause))
+    if not matches:
+        return None
+    if re.search(r"\bor\b", clause, re.IGNORECASE):
+        return None  # alternatives, not a sequence — the fallback handles it
+
+    pairs: list[tuple[str, int]] = []
+    for match in matches:
+        name = match.group("label") or match.group("name")
+        if not name or not name.strip():
+            # Bare id — recoverable only when Foundry's mnemonic id convention
+            # yields a name; otherwise the token cannot identify a sibling.
+            name = _name_from_foundry_id(match.group("id") or "") or ""
+        if not name.strip():
+            return None
+        preceding = clause[: match.start()]
+        count_match = _COUNT_BEFORE_TOKEN_RE.search(preceding)
+        if count_match is None:
+            count = 1
+        elif count_match.group("word"):
+            count = _NUMBER_WORD[count_match.group("word").lower()]
+        else:
+            count = max(1, int(count_match.group("digits")))
+        pairs.append((name.strip(), count))
+    return pairs
+
+
+def multiattack_count(monster: Monster) -> int:
+    """How many attacks ``monster``'s Multiattack makes: the sum of the named
+    counts when its clause parses precisely ("one Bite attack and one Claw
+    attack" is 2), else its leading count ("two attacks, using Bite or Claw in
+    any combination" is 2); 1 for a monster without a Multiattack."""
+    action = next((a for a in monster.actions if a.slug == _MULTIATTACK_SLUG), None)
+    if action is None:
+        return 1
+    parsed = _parse_item_counts(action.description)
+    if parsed:
+        return sum(count for _, count in parsed)
+    return _parse_multiattack_count(_multiattack_clause(action.description))
+
+
+def _activity_range_ft(activity: Activity, melee_reach_ft: int) -> int | None:
+    """The effective reach, in feet, of an attack/save activity for sibling choice.
+
+    Mirrors ``orchestrator._monster_attack_range_ft``'s per-activity reading so
+    the fallback selection and the movement gate agree on each sibling's range:
+
+      * an ``AttackActivity`` with an explicit ``units == "ft"`` positive
+        value uses it verbatim (the Scout longbow's ``"150"``); a Foundry melee
+        attack (``units == "self"`` / empty value) falls back to ``melee_reach_ft``;
+      * a ranged single-target ``SaveActivity`` (``units == "ft"``, positive
+        value) uses that value; a self/template save carries no positional reach.
+
+    Returns ``None`` when no finite reach is resolvable — the caller treats an
+    unknown-range sibling as unable to disqualify itself (never over-filters).
+    """
+    rng = activity.range
+    if rng.units == "ft" and rng.value:
+        try:
+            parsed = int(rng.value)
+        except ValueError:
+            parsed = 0
+        if parsed > 0:
+            return parsed
+    if isinstance(activity, AttackActivity):
+        # units == "self" / empty ft value ⇒ melee reach (mirrors the gate).
+        return melee_reach_ft if melee_reach_ft > 0 else None
+    return None
+
+
+def _select_fallback_sibling(
+    siblings: list[MonsterAction],
+    target_distance_ft: int | None,
+    behavior_profile: str | None,
+    melee_reach_ft: int,
+) -> MonsterAction:
+    """Pick which attack sibling the labelless-multiattack fallback repeats.
+
+    Default (``target_distance_ft is None``): the first sibling in
+    ``Monster.actions`` order — the historical dict-order behaviour, preserved
+    for callers that pass no live distance.
+
+    Range/profile-aware when the live distance to the chosen target
+    is known, prefer a sibling whose OWN range already covers it over one that
+    does not (the Scout at 100 ft: its 150 ft longbow covers, its 5 ft shortsword
+    does not — so fire the longbow rather than the first-listed melee weapon).
+    When several in-range siblings tie and the monster is ``RANGED``, break toward
+    the longest-reach (ranged) sibling; otherwise keep list order. When NO sibling
+    covers the distance, fall back to the first — the movement gate then closes
+    the gap exactly as before.
+    """
+    if not siblings:  # pragma: no cover — callers guard for a non-empty list
+        raise ValueError("_select_fallback_sibling requires at least one sibling")
+    if target_distance_ft is None:
+        return siblings[0]
+
+    def _reach(sibling: MonsterAction) -> int | None:
+        activity = _first_offensive_activity(sibling)
+        return _activity_range_ft(activity, melee_reach_ft) if activity is not None else None
+
+    def _covers(sibling: MonsterAction) -> bool:
+        reach = _reach(sibling)
+        # An unresolvable reach can't disqualify a sibling (never over-filter).
+        return reach is None or reach >= target_distance_ft
+
+    in_range = [s for s in siblings if _covers(s)]
+    if not in_range:
+        return siblings[0]
+    if len(in_range) == 1:
+        return in_range[0]
+    if behavior_profile == "RANGED":
+        # Tiebreak toward the ranged sibling — the one with the longest reach.
+        return max(in_range, key=lambda s: _reach(s) or 0)
+    return in_range[0]
+
+
+def select_typed_monster_action(monster: Monster) -> MonsterAction | None:
+    """Pick which action this monster should use this turn.
+
+    Mirrors ``monster_ai.select_monster_action`` mechanical priority:
+    multiattack first (the signature "use your full action budget" choice),
+    else the first action whose activities contain an attack or save.
+    Behaviour/flee gating stays with the caller (it owns the live Combatant).
+    """
+    for action in monster.actions:
+        if action.slug == _MULTIATTACK_SLUG:
+            return action
+    for action in monster.actions:
+        if _action_has_offense(action):
+            return action
+    return None
+
+
+_ANY_COMBINATION_RE = re.compile(r"\bin any combination\b", re.IGNORECASE)
+
+
+def _distribute_any_combination(
+    named: list[MonsterAction],
+    count: int,
+    target_distance_ft: int | None,
+    behavior_profile: str | None,
+    melee_reach_ft: int,
+) -> list[tuple[MonsterAction, Activity]]:
+    """SRD "makes N attacks, using A and B in any combination": the monster
+    chooses the mix. Candidates are the named siblings whose reach covers the
+    live distance (all of them when the distance is unknown or none covers);
+    one candidate ⇒ repeat it; a ``RANGED`` monster repeats its longest-reach
+    candidate; otherwise alternate over the candidates in list order."""
+
+    def _reach(sibling: MonsterAction) -> int | None:
+        activity = _first_offensive_activity(sibling)
+        return _activity_range_ft(activity, melee_reach_ft) if activity is not None else None
+
+    candidates = [s for s in named if _first_offensive_activity(s) is not None]
+    if target_distance_ft is not None:
+        covering = [
+            s for s in candidates if (_reach(s) is None or (_reach(s) or 0) >= target_distance_ft)
+        ]
+        if covering:
+            candidates = covering
+    if not candidates:
+        return []
+    if len(candidates) > 1 and behavior_profile == "RANGED":
+        candidates = [max(candidates, key=lambda s: _reach(s) or 0)]
+    out: list[tuple[MonsterAction, Activity]] = []
+    for index in range(count):
+        sibling = candidates[index % len(candidates)]
+        activity = _first_offensive_activity(sibling)
+        assert activity is not None  # filtered above
+        out.append((sibling, activity))
+    return out
+
+
+def expand_action_to_activities(
+    monster: Monster,
+    action: MonsterAction,
+    *,
+    target_distance_ft: int | None = None,
+    behavior_profile: str | None = None,
+    melee_reach_ft: int = 5,
+) -> list[Activity]:
+    """The activities ``expand_action_to_parts`` resolves, without the action
+    each one comes from."""
+    return [
+        activity
+        for _, activity in expand_action_to_parts(
+            monster,
+            action,
+            target_distance_ft=target_distance_ft,
+            behavior_profile=behavior_profile,
+            melee_reach_ft=melee_reach_ft,
+        )
+    ]
+
+
+def _clause_siblings(clause: str, siblings: list[MonsterAction]) -> list[MonsterAction]:
+    """The siblings a multiattack clause names, in ``siblings`` order — "using
+    Storm Blade or Storm Bolt in any combination" names two of the Djinni's
+    three — or every sibling when its tokens name none."""
+    names = set()
+    for match in _ITEM_TOKEN_RE.finditer(clause):
+        name = match.group("label") or match.group("name") or ""
+        if not name.strip():
+            name = _name_from_foundry_id(match.group("id") or "") or ""
+        if name.strip():
+            names.add(name.strip().casefold())
+    return [
+        s for s in siblings if _FORM_QUALIFIER_RE.sub("", s.name).casefold() in names
+    ] or siblings
+
+
+def _action_is_usage_gated(action: MonsterAction) -> bool:
+    """``action`` is spent by use: SRD 5.2 "Recharge X-Y", a flat ``N/Day``
+    pool, or a limited-use ``N/Day`` cast activity (Innate Spellcasting).
+
+    The multiattack fallback must never repeat such a sibling: repeating an
+    available 2/Day action ``count`` times would spend it more than once in
+    one turn, a budget only the PRECISE join's ``is_available`` seam can
+    account for (one name, one availability check — never N).
+    """
+    return (
+        action.recharge is not None
+        or action.uses_per_day is not None
+        or bool(_limited_use_cast_activities(action))
+    )
+
+
+def expand_action_to_parts(
+    monster: Monster,
+    action: MonsterAction,
+    *,
+    target_distance_ft: int | None = None,
+    behavior_profile: str | None = None,
+    melee_reach_ft: int = 5,
+    is_available: Callable[[MonsterAction], bool] | None = None,
+) -> list[tuple[MonsterAction, Activity]]:
+    """Expand a chosen action into the activities to resolve this turn, each
+    with the action it comes from (a multiattack's sibling, else ``action``).
+
+    Non-multiattack actions resolve their own activities, but Foundry's 2024
+    weapon/monster actions ship the SAME attack as multiple ``AttackActivity``
+    variants (e.g. a base attack + an "Attack with Advantage" alternative). These
+    are alternative modes the actor chooses between, not sequential attacks —
+    resolving all of them would make the monster attack twice. Collapse them to
+    the first ``AttackActivity`` while preserving every non-attack activity
+    (riders such as on-hit saves). Multiattack fans out per the rule at module
+    top.
+
+    ``target_distance_ft`` / ``behavior_profile`` / ``melee_reach_ft`` steer the
+    labelless-multiattack fallback's sibling choice when the live
+    distance to the chosen target is supplied, the fallback prefers a sibling
+    whose own range covers it (``RANGED`` tie-breaks toward the ranged sibling).
+    Omitting them preserves the historical first-in-list-order fallback.
+
+    ``is_available`` gates a sibling joined through the PRECISE path by name:
+    SRD 5.2 "uses Unsettling Visage if available" — a sibling it reports
+    unavailable (a spent Recharge) sits the turn out. The fallback repeats
+    only an AT-WILL sibling the caller reports available — the one the
+    clause names, when it names any: never a Recharge, ``N/Day`` or
+    limited-use-cast sibling, since repeating one of those its own ``count``
+    times would spend it more than once in a single turn whatever the caller
+    reports, and never one ``is_available`` rules out (an area that affects
+    no enemy from where the monster stands), which would leave the turn with
+    nothing to resolve and nothing to walk toward.
+    """
+    if action.slug != _MULTIATTACK_SLUG:
+        resolved: list[tuple[MonsterAction, Activity]] = []
+        seen_attack = False
+        for activity in action.activities:
+            if isinstance(activity, AttackActivity):
+                if seen_attack:
+                    continue  # alternative attack-mode variant — skip duplicates
+                seen_attack = True
+            resolved.append((action, activity))
+        return resolved
+
+    siblings = _attack_siblings(monster, exclude=action)
+    if not siblings:
+        _LOGGER.warning(
+            "multiattack_join_unresolved monster=%s reason=no_attack_sibling description=%r",
+            monster.slug,
+            action.description,
+        )
+        return []
+
+    count = _parse_multiattack_count(_multiattack_clause(action.description))
+    parsed = _parse_item_counts(action.description)
+
+    # Precise path: every named token joins 1:1 to a sibling (case-insensitive),
+    # and each is repeated its OWN parsed count — "makes two Claw attacks and
+    # uses Roar" is 2 claws + 1 roar, not 2 of each.
+    if parsed:
+        by_name = {sibling.name.casefold(): sibling for sibling in siblings}
+        matched = [(by_name.get(name.casefold()), name_count) for name, name_count in parsed]
+        if all(sibling is not None for sibling, _ in matched):
+            available = [
+                (sibling, name_count)
+                for sibling, name_count in matched
+                if sibling is not None and (is_available is None or is_available(sibling))
+            ]
+            named = [sibling for sibling, _ in available]
+            if _ANY_COMBINATION_RE.search(_multiattack_clause(action.description)):
+                distributed = _distribute_any_combination(
+                    named, count, target_distance_ft, behavior_profile, melee_reach_ft
+                )
+                if distributed:
+                    return distributed
+            matched_resolved: list[tuple[MonsterAction, Activity]] = []
+            for sibling, name_count in available:
+                sibling_activity = _first_offensive_activity(sibling)
+                if sibling_activity is not None:
+                    matched_resolved.extend([(sibling, sibling_activity)] * name_count)
+            return matched_resolved
+
+    # Fallback: repeat the chosen attack sibling's first offensive activity.
+    # Correctness-preserving for single-attack-type multiattacks (owlbear → Rend)
+    # and "any combination" count cases (goblin-boss → 2 attacks); range/profile-
+    # aware for mixed melee+ranged repertoires (scout → longbow at 100 ft).
+    # Usage-gated siblings never enter the pool to pick from: the aboleth's
+    # Dominate Mind (2/Day) and a dragon's Fire Breath (Recharge) cover any
+    # distance an unresolvable reach can't disqualify them from (see
+    # ``_activity_range_ft``), and repeating one ``count`` times would spend
+    # it more than once in a single turn — a budget the fallback has no
+    # availability seam to check, unlike the precise join.
+    # A sibling the caller reports unavailable is dropped too: an area the
+    # monster can't place on an enemy (the ancient gold dragon's Weakening
+    # Breath beyond 90 ft) has no reach to lose the tie-break on, so it
+    # would beat the attack that walks in, then resolve nothing.
+    at_will_candidates = [
+        sibling
+        for sibling in _clause_siblings(_multiattack_clause(action.description), siblings)
+        if not _action_is_usage_gated(sibling) and (is_available is None or is_available(sibling))
+    ]
+    if not at_will_candidates:
+        _LOGGER.warning(
+            "multiattack_join_unresolved monster=%s reason=no_at_will_sibling description=%r",
+            monster.slug,
+            action.description,
+        )
+        return []
+    chosen_sibling = _select_fallback_sibling(
+        at_will_candidates, target_distance_ft, behavior_profile, melee_reach_ft
+    )
+    first_activity = _first_offensive_activity(chosen_sibling)
+    if first_activity is None:
+        _LOGGER.warning(
+            "multiattack_join_unresolved monster=%s reason=no_offensive_activity description=%r",
+            monster.slug,
+            action.description,
+        )
+        return []
+    _LOGGER.warning(
+        "multiattack_join_unresolved monster=%s count=%d sibling=%s description=%r",
+        monster.slug,
+        count,
+        chosen_sibling.slug,
+        action.description,
+    )
+    return [(chosen_sibling, first_activity)] * count

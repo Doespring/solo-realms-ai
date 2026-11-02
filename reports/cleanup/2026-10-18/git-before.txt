@@ -1,0 +1,186 @@
+ M README.md
+ M assets/README-Windows.txt
+ M desktop_main.py
+ M docs/MEMORY_ENGINE.md
+ M packaging/SoloRealmsAI.spec
+ M packaging/installer.iss
+ M scripts/build_windows.ps1
+ M scripts/package_windows.py
+ M solo/app.py
+ M solo/cloud.py
+ M solo/cloud_cost.py
+ M solo/cloud_settings.py
+ M solo/cloud_setup.py
+ M solo/combat.py
+ M solo/combat_service.py
+ M solo/combat_view.py
+ M solo/game.py
+ M solo/llm.py
+ M solo/memory.py
+ M solo/model_protocol.py
+ M solo/rules_api.py
+ M solo/storage.py
+ M solo/tabletop_api.py
+ M solo/version.py
+ M solo/world.py
+ M tests/test_adventure_workflow.py
+ M tests/test_groq.py
+ M tests/test_tabletop_b.py
+ M web/character-creation.js
+ M web/chronicle.js
+ M web/cloud.js
+ M web/creation.js
+ M web/index.html
+ M web/play.js
+ M web/preparation.js
+ M web/rulesets.js
+ M web/tabletop.js
+?? .test-playable-scene-tmp/
+?? ROADMAP.md
+?? TRANSFER-README-2026-10-17.md
+?? docs/CONTINUATION-PROMPTS-2026-10-17.md
+?? docs/GM_COMMAND_CYCLE.md
+?? docs/NAT20_BLESS_IMPLEMENTATION.md
+?? docs/NAT20_DASH_SCOPE.md
+?? docs/NAT20_PLAY_SCREEN.md
+?? docs/NAT20_RUNTIME_RELEASE_PLAN.md
+?? docs/NAT20_UPSTREAM_REPAIR_PLAN.md
+?? docs/NEXT_RULES_GAP_REVIEW.md
+?? docs/PLAYABLE_RULES_SCOPE.md
+?? docs/PLAYABLE_SCENE.md
+?? docs/TODAY-2026-10-17.md
+?? examples/lantern-post/
+?? integration/
+?? packaging/preview-mock.json
+?? prompts/gm_commands_v1.txt
+?? reports/AUTONOMOUS_COORDINATION.md
+?? reports/CLOUD_ACCOUNTING-2026-10-17.md
+?? reports/DASH_MOCK_MAPPING.md
+?? reports/DASH_UI_ACCEPTANCE.md
+?? reports/INDEPENDENT_PREVIEW10_ACCEPTANCE.md
+?? reports/INDEPENDENT_PREVIEW7_ACCEPTANCE.md
+?? reports/INDEPENDENT_PREVIEW8_ACCEPTANCE.md
+?? reports/INDEPENDENT_PREVIEW9_ACCEPTANCE.md
+?? reports/NEXT_BUILD_GATE.md
+?? reports/NEXT_UI_ACCEPTANCE.md
+?? reports/PLAYABLE_AI_READINESS.md
+?? reports/PLAYABLE_UI_ACCEPTANCE.md
+?? reports/PLAYABLE_UI_COMBAT.jpg
+?? reports/PLAYABLE_UI_REST.jpg
+?? reports/PLAYABLE_UI_RESTORED.jpg
+?? reports/PLAYABLE_UI_TRACE.json
+?? reports/PREVIEW7_UI_FOLLOWUP.md
+?? reports/PREVIEW9_CLARIFICATION_FIX.md
+?? reports/PREVIEW9_SMALL_WINDOW_REVIEW.md
+?? reports/SMALL_WINDOW_UI_FIX.md
+?? reports/UI_PLAY_SCREEN.md
+?? reports/WINDOWS_PREVIEW10_ACCEPTANCE.md
+?? reports/WINDOWS_PREVIEW8_ACCEPTANCE.md
+?? reports/WINDOWS_PREVIEW_ACCEPTANCE.md
+?? reports/cleanup/2026-10-18/
+?? reports/command-cycle.json
+?? reports/dash-mock-mapping/
+?? reports/dash-small-window-tmp/
+?? reports/dash-small-window/
+?? reports/dash-ui-tmp/
+?? reports/dash-ui/
+?? reports/independent-preview10/
+?? reports/independent-preview7/
+?? reports/independent-preview8/
+?? reports/independent-preview9/
+?? reports/nat20-cleric-readiness/
+?? reports/nat20-dash/
+?? reports/nat20-screen-restart.png
+?? reports/nat20-upstream-repair/
+?? reports/playable-ai-measurements.json
+?? reports/preview10/
+?? reports/preview7-ui-followup/
+?? reports/preview7/
+?? reports/preview8/
+?? reports/preview9-small-window/
+?? reports/preview9/
+?? reports/small-window-evidence-tmp/
+?? reports/small-window-final-tmp/
+?? reports/small-window-regression-tmp/
+?? reports/small-window-sticky-final-tmp/
+?? reports/small-window-ui-tmp/
+?? reports/small-window-ui-tmp2/
+?? reports/small-window-ui/
+?? reports/ui-play-screen-smoke.jpg
+?? requirements-nat20.txt
+?? rules_data/
+?? scripts/playable_ai_readiness.py
+?? scripts/preview10_acceptance.py
+?? scripts/preview10_frozen_probe.py
+?? scripts/preview10_native_evidence.py
+?? scripts/preview7_browser.cjs
+?? scripts/preview7_evidence.py
+?? scripts/preview7_frozen_probe.py
+?? scripts/preview7_full_tests.py
+?? scripts/preview7_host.py
+?? scripts/preview7_native_evidence.py
+?? scripts/preview8_acceptance.py
+?? scripts/preview8_frozen_probe.py
+?? scripts/preview8_native_evidence.py
+?? scripts/preview9_acceptance.py
+?? scripts/preview9_frozen_probe.py
+?? scripts/preview9_native_evidence.py
+?? scripts/smoke_nat20_screen.py
+?? scripts/smoke_play_screen.py
+?? scripts/smoke_playable_ui.py
+?? solo/cloud_context.py
+?? solo/command_backend.py
+?? solo/command_engine.py
+?? solo/command_smoke.py
+?? solo/engine_memory.py
+?? solo/engine_memory_contracts.py
+?? solo/game_commands.py
+?? solo/hybrid_rules.py
+?? solo/hybrid_rules_api.py
+?? solo/lantern_scene.py
+?? solo/nat20_api.py
+?? solo/nat20_bless.py
+?? solo/nat20_campaign.py
+?? solo/nat20_content.py
+?? solo/nat20_contracts.py
+?? solo/nat20_screen.py
+?? solo/nat20_worker.py
+?? solo/play_screen.py
+?? solo/playable_ui.py
+?? solo/preview_mock.py
+?? tests/fixtures/engine_memory_combat.py
+?? tests/fixtures/game_screen.json
+?? tests/fixtures/nat20-preview7-fighter-combat.json
+?? tests/playable_scene_run.py
+?? tests/test_cloud_accounting.py
+?? tests/test_command_cycle.py
+?? tests/test_dash_ui.cjs
+?? tests/test_dash_ui.py
+?? tests/test_engine_memory.py
+?? tests/test_hybrid_rules_integration.py
+?? tests/test_hybrid_rules_production.py
+?? tests/test_hybrid_rules_runtime.py
+?? tests/test_nat20_api.py
+?? tests/test_nat20_bless.py
+?? tests/test_nat20_command_cycle.py
+?? tests/test_nat20_dash.py
+?? tests/test_nat20_playable_rules.py
+?? tests/test_nat20_screen.py
+?? tests/test_phb_chapter_one.py
+?? tests/test_phb_chapter_one_production.py
+?? tests/test_play_screen.py
+?? tests/test_playable_ai_readiness.py
+?? tests/test_playable_scene_memory.py
+?? tests/test_playable_ui.py
+?? tests/test_preview7_acceptance.py
+?? tests/test_preview7_ui_followup.cjs
+?? tests/test_preview7_ui_followup.py
+?? tests/test_preview8_release.py
+?? tests/test_preview9_clarification.py
+?? tests/test_preview_dash_mapping.py
+?? tests/test_small_window_ui.cjs
+?? tests/test_small_window_ui.py
+?? tools/
+?? vendor/
+?? web/game-screen.css
+?? web/game-screen.js

@@ -1,0 +1,211 @@
+{
+  "slug": "archfey",
+  "name": "Архифея",
+  "description": "Архифея | The Archfey\n\nВаш покровитель — лорд или леди из народа фей, легендарное существо, хранящее тайны, которые были забыты ещё до появления смертных народов. Мотивы этого создания порой непостижимы и диковинны, они могут быть связаны с жаждой ещё большей магической силы или обидой тысячелетней давности. Среди подобных фей — Князь Мороза; Королева Ветра и Тьмы, владычица Сумеречного Двора; Титания из Летнего Двора; её супруг, Зелёный Лорд Оберон; Гирсам, Князь Глупцов; а также древние карги.\n\nУровень Особенности\n\n1-й\n\n@Compendium[laaru-dnd5-hw.classfeatures.mCnvJ8AJsGrba8bY]{Расширенный список заклинаний}, @Compendium[laaru-dnd5-hw.classfeatures.2VgdV9CFyb9Slg66]{Сила феи}\n\n6-й\n\n@Compendium[laaru-dnd5-hw.classfeatures.2ejw7td6cHwAqPLx]{Туманное бегство}\n\n10-й\n\n@Compendium[laaru-dnd5-hw.classfeatures.Tn40tHKiTN6jnMN1]{Защита от соблазна}\n\n14-й\n\n@Compendium[laaru-dnd5-hw.classfeatures.33sXK6rohWnrjEWJ]{Тёмное безумие}",
+  "identifier": "archfey",
+  "class_identifier": "warlock",
+  "spellcasting": {
+    "ability": "",
+    "progression": "none"
+  },
+  "advancement": [
+    {
+      "id": "su0b5mkin978c4t9",
+      "type": "ItemGrant",
+      "level": 1,
+      "title": "1. Особенности",
+      "hint": "",
+      "class_restriction": "",
+      "configuration": {
+        "items": [
+          "Compendium.laaru-dnd5-hw.classfeatures.mCnvJ8AJsGrba8bY",
+          "Compendium.laaru-dnd5-hw.classfeatures.2VgdV9CFyb9Slg66"
+        ],
+        "optional": false
+      },
+      "value": {}
+    },
+    {
+      "id": "so0r6cjdv6hwe517",
+      "type": "ItemGrant",
+      "level": 6,
+      "title": "Особенность",
+      "hint": "",
+      "class_restriction": "",
+      "configuration": {
+        "items": [
+          "Compendium.laaru-dnd5-hw.classfeatures.2ejw7td6cHwAqPLx"
+        ],
+        "optional": false
+      },
+      "value": {}
+    },
+    {
+      "id": "f9x1edh9cvqtbbdc",
+      "type": "ItemGrant",
+      "level": 10,
+      "title": "Особенность",
+      "hint": "",
+      "class_restriction": "",
+      "configuration": {
+        "items": [
+          "Compendium.laaru-dnd5-hw.classfeatures.Tn40tHKiTN6jnMN1"
+        ],
+        "optional": false
+      },
+      "value": {}
+    },
+    {
+      "id": "53iwds832oa9izzp",
+      "type": "ItemGrant",
+      "level": 14,
+      "title": "Особенность",
+      "hint": "",
+      "class_restriction": "",
+      "configuration": {
+        "items": [
+          "Compendium.laaru-dnd5-hw.classfeatures.33sXK6rohWnrjEWJ"
+        ],
+        "optional": false
+      },
+      "value": {}
+    },
+    {
+      "id": "jcxhzwJrIORGMWWI",
+      "type": "ItemGrant",
+      "level": 1,
+      "title": "2. Заклинания",
+      "hint": "",
+      "class_restriction": "",
+      "configuration": {
+        "items": [
+          "Compendium.laaru-dnd5-hw.spells.KlVo17qWGwXLevip",
+          "Compendium.laaru-dnd5-hw.spells.b4KBXMQmaKhefDIa"
+        ],
+        "optional": false,
+        "spell": {
+          "ability": "cha",
+          "preparation": "pact",
+          "uses": {
+            "max": "",
+            "per": ""
+          }
+        }
+      },
+      "value": {}
+    },
+    {
+      "id": "jamLiBzzzRaOQoqD",
+      "type": "ItemGrant",
+      "level": 3,
+      "title": "Заклинания",
+      "hint": "",
+      "class_restriction": "",
+      "configuration": {
+        "items": [
+          "Compendium.laaru-dnd5-hw.spells.hPfjByP5fg1xnJMz",
+          "Compendium.laaru-dnd5-hw.spells.EEzRRTG4l4Zzc2K7"
+        ],
+        "optional": false,
+        "spell": {
+          "ability": "cha",
+          "preparation": "pact",
+          "uses": {
+            "max": "",
+            "per": ""
+          }
+        }
+      },
+      "value": {}
+    },
+    {
+      "id": "zIEdMKY2SDIizcOe",
+      "type": "ItemGrant",
+      "level": 5,
+      "title": "Заклинания",
+      "hint": "",
+      "class_restriction": "",
+      "configuration": {
+        "items": [
+          "Compendium.laaru-dnd5-hw.spells.jMVfNqdqSq3GLWgt",
+          "Compendium.laaru-dnd5-hw.spells.KiwIzQDXhEMwCro8"
+        ],
+        "optional": false,
+        "spell": {
+          "ability": "cha",
+          "preparation": "pact",
+          "uses": {
+            "max": "",
+            "per": ""
+          }
+        }
+      },
+      "value": {}
+    },
+    {
+      "id": "lmghOtFi9ghzJnR9",
+      "type": "ItemGrant",
+      "level": 7,
+      "title": "Заклинания",
+      "hint": "",
+      "class_restriction": "",
+      "configuration": {
+        "items": [
+          "Compendium.laaru-dnd5-hw.spells.oRpH5FblD1gmSFgF",
+          "Compendium.laaru-dnd5-hw.spells.EDHoJyS6OTNqvD2V"
+        ],
+        "optional": false,
+        "spell": {
+          "ability": "cha",
+          "preparation": "pact",
+          "uses": {
+            "max": "",
+            "per": ""
+          }
+        }
+      },
+      "value": {}
+    },
+    {
+      "id": "gln0jMAFJtO4Pf1A",
+      "type": "ItemGrant",
+      "level": 9,
+      "title": "Заклинания",
+      "hint": "",
+      "class_restriction": "",
+      "configuration": {
+        "items": [
+          "Compendium.laaru-dnd5-hw.spells.uLKYcMWQhOpEnJCe",
+          "Compendium.laaru-dnd5-hw.spells.Z4A4Un8C3ox9OXWV"
+        ],
+        "optional": false,
+        "spell": {
+          "ability": "cha",
+          "preparation": "pact",
+          "uses": {
+            "max": "",
+            "per": ""
+          }
+        }
+      },
+      "value": {}
+    }
+  ],
+  "granted_features": [],
+  "feature_choices": [],
+  "provenance": {
+    "source": "foundry",
+    "source_url": "https://github.com/foundryvtt/dnd5e/blob/965ad2d0cf5d063dac675ba078b5bd3c3c0dd449/packs/_source/laaru-hw-subclasses/Архифея_8nHyH8aeNvpO9RM0.yml",
+    "ingest_date": "2026-10-26",
+    "ingest_version": "foundry-translator-v1",
+    "srd_version": [
+      "5.1"
+    ],
+    "license_tag": "CC-BY-4.0"
+  },
+  "review": {
+    "known_divergence": null,
+    "requires_user_decision": false
+  },
+  "entry_kind": "subclass"
+}

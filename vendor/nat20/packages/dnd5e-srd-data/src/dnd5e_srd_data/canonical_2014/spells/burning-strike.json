@@ -1,0 +1,288 @@
+{
+  "slug": "burning-strike",
+  "foundry_uuid": "Compendium.dnd5e.laaru-hw-spells.Item.orrMwhDRt4yu4Rmn",
+  "name": "Горящий удар / Burning Strike",
+  "description": "Вы прикасаетесь к оружию или боеприпасам, наделяя их лижущим пламенем. В следующий раз, когда вы атакуете этим предметом, он вспыхивает ярким огнем. При попадании цель получает дополнительные [[/damage 4d4 fire]]{4d4 урона огнем} и начинает гореть. При промахе цель получает вдвое меньше урона и не начинает гореть. Горящая цель излучает яркий свет в радиусе 10 футов и тусклый свет еще на 10 футов, а также получает [[/damage 1d4 fire]]{1d4 урона огнём} в конце каждого своего хода. Цель или другое существо в радиусе 5 футов может использовать действие, чтобы погасить пламя.\n\nЕсли вы выбрали оружие, обладающее свойством света, вы можете немедленно произвести им одну атаку оружием в рамках того же действия, что и сотворяете заклинание. Как только вы совершите одну атаку с помощью выбранного предмета, действие заклинания заканчивается.\n\nНа высоких кругах. Когда вы сотворяете это заклинание, используя ячейку заклинания 3-го круга или выше, начальный и текущий урон от огня увеличивается на 1d4 урона.\n\nПримечание\n\nЗаклинание настроено как Зачарование, дающее оружию дополнительный урона огнём 4d4. Дополнительный 1d4 урон можно наносить выбрав Дополнительный урон при использовании этого заклинания (ячейки не тратятся).",
+  "level": 2,
+  "school": "trs",
+  "components": [
+    "M",
+    "S",
+    "V"
+  ],
+  "ritual": false,
+  "concentration": false,
+  "casting_time": {
+    "unit": "bonus",
+    "value": 1,
+    "condition": ""
+  },
+  "range": {
+    "units": "self",
+    "value": null,
+    "special": null
+  },
+  "duration": {
+    "units": "round",
+    "value": 1
+  },
+  "materials": {
+    "value": "часть боеприпасов или оружие стоимостью не менее 1 cм",
+    "consumed": false,
+    "cost": 0,
+    "supply": 0
+  },
+  "preparation": {
+    "mode": "prepared",
+    "prepared": false
+  },
+  "activities": [
+    {
+      "id": "dnd5eactivity000",
+      "name": "",
+      "img": "",
+      "sort": 0,
+      "activation": {
+        "type": "action",
+        "value": null,
+        "condition": "",
+        "override": false,
+        "reaction_conditions": []
+      },
+      "consumption": {
+        "scaling": {
+          "allowed": false,
+          "max": ""
+        },
+        "spell_slot": true,
+        "targets": []
+      },
+      "description": {
+        "chat_flavor": ""
+      },
+      "duration": {
+        "value": null,
+        "units": "inst",
+        "special": "",
+        "concentration": false,
+        "override": false
+      },
+      "flags": {},
+      "range": {
+        "value": null,
+        "units": "self",
+        "special": "",
+        "override": false
+      },
+      "target": {
+        "template": {
+          "count": "",
+          "contiguous": false,
+          "stationary": false,
+          "type": "",
+          "size": "",
+          "width": "",
+          "height": "",
+          "units": ""
+        },
+        "affects": {
+          "count": "",
+          "type": "",
+          "choice": false,
+          "special": ""
+        },
+        "override": false,
+        "prompt": true
+      },
+      "uses": {
+        "spent": 0,
+        "max": "",
+        "recovery": []
+      },
+      "visibility": {
+        "identifier": "",
+        "level": {
+          "min": null,
+          "max": null
+        },
+        "require_attunement": false,
+        "require_identification": false,
+        "require_magic": false
+      },
+      "effects": [
+        {
+          "id": "5QFxSN2Uc1FvPz7Y",
+          "level": {
+            "min": null,
+            "max": null
+          },
+          "on_save": null,
+          "riders": {
+            "activity": [],
+            "effect": [],
+            "item": []
+          }
+        }
+      ],
+      "applied_effects": [],
+      "kind": "enchant",
+      "enchant": {
+        "self": false,
+        "identifier": ""
+      },
+      "restrictions": {
+        "allow_magical": false,
+        "categories": [],
+        "properties": [],
+        "type": ""
+      }
+    },
+    {
+      "id": "p4nUartAUTJDrYBz",
+      "name": "Дополнительный урон",
+      "img": "",
+      "sort": 0,
+      "activation": {
+        "type": "special",
+        "value": null,
+        "condition": "",
+        "override": true,
+        "reaction_conditions": []
+      },
+      "consumption": {
+        "scaling": {
+          "allowed": false,
+          "max": ""
+        },
+        "spell_slot": false,
+        "targets": []
+      },
+      "description": {
+        "chat_flavor": ""
+      },
+      "duration": {
+        "value": null,
+        "units": "inst",
+        "special": "",
+        "concentration": false,
+        "override": true
+      },
+      "flags": {},
+      "range": {
+        "value": null,
+        "units": "any",
+        "special": "",
+        "override": true
+      },
+      "target": {
+        "template": {
+          "count": "",
+          "contiguous": false,
+          "stationary": false,
+          "type": "",
+          "size": "",
+          "width": "",
+          "height": "",
+          "units": "ft"
+        },
+        "affects": {
+          "count": "",
+          "type": "creature",
+          "choice": false,
+          "special": ""
+        },
+        "override": true,
+        "prompt": true
+      },
+      "uses": {
+        "spent": 0,
+        "max": "",
+        "recovery": []
+      },
+      "visibility": {
+        "identifier": "",
+        "level": {
+          "min": null,
+          "max": null
+        },
+        "require_attunement": false,
+        "require_identification": false,
+        "require_magic": false
+      },
+      "effects": [],
+      "applied_effects": [],
+      "kind": "damage",
+      "damage": {
+        "critical": {
+          "allow": false,
+          "bonus": ""
+        },
+        "parts": [
+          {
+            "number": 1,
+            "denomination": 4,
+            "bonus": "",
+            "types": [
+              "fire"
+            ],
+            "custom": {
+              "enabled": false,
+              "formula": ""
+            },
+            "scaling": {
+              "mode": "",
+              "number": 1,
+              "formula": ""
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "passive_effects": [
+    {
+      "id": "5QFxSN2Uc1FvPz7Y",
+      "name": "Горящий удар / Burning Strike",
+      "description": "",
+      "changes": [
+        {
+          "key": "name",
+          "mode": 2,
+          "value": ", горящего удара",
+          "priority": 20
+        },
+        {
+          "key": "system.description.value",
+          "mode": 2,
+          "value": "<p>Вы прикасаетесь к оружию или боеприпасам, наделяя их лижущим пламенем. В следующий раз, когда вы атакуете этим предметом, он вспыхивает ярким огнем. При попадании цель получает дополнительные [[/damage 4d4 fire]]{4d4 урона огнем} и начинает гореть. При промахе цель получает вдвое меньше урона и не начинает гореть. Горящая цель излучает @UUID[Compendium.laaru-dnd5-hw.actions.Item.EvGCMCVp1VpUtCbI]{яркий свет} в радиусе 10 футов и @UUID[Compendium.laaru-dnd5-hw.actions.Item.BbWvc4m610EHv070]{тусклый свет} еще на 10 футов, а также получает [[/damage 1d4 fire]]{1d4 урона огнём} в конце каждого своего хода. Цель или другое существо в радиусе 5 футов может использовать действие, чтобы погасить пламя.</p>\n<p>Если вы выбрали оружие, обладающее свойством света, вы можете немедленно произвести им одну атаку оружием в рамках того же действия, что и сотворяете заклинание. Как только вы совершите одну атаку с помощью выбранного предмета, действие заклинания заканчивается.</p><p>Для нанесения половинного урона используйте эту кнопку: [[/damage 2d4 fire]]{2d4 урона огнем}</p>",
+          "priority": 20
+        },
+        {
+          "key": "system.damage.parts",
+          "mode": 2,
+          "value": "[[\"4d4\", \"fire\"]]",
+          "priority": 20
+        }
+      ],
+      "statuses": [],
+      "duration": null,
+      "disabled": false,
+      "transfer": false
+    }
+  ],
+  "provenance": {
+    "source": "foundry",
+    "source_url": "https://github.com/foundryvtt/dnd5e/blob/965ad2d0cf5d063dac675ba078b5bd3c3c0dd449/packs/_source/laaru-hw-spells/Горящий_удар___Burning_Strike_orrMwhDRt4yu4Rmn.yml",
+    "ingest_date": "2026-10-26",
+    "ingest_version": "foundry-translator-v1",
+    "srd_version": [
+      "5.1"
+    ],
+    "license_tag": "CC-BY-4.0"
+  },
+  "review": {
+    "known_divergence": null,
+    "requires_user_decision": false
+  },
+  "entry_kind": "spell"
+}

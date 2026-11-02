@@ -1,0 +1,188 @@
+{
+  "slug": "waterspout",
+  "foundry_uuid": "Compendium.dnd5e.laaru-hw-spells.Item.faZH5h7aGGETFbja",
+  "name": "Водяной смерч / Waterspout",
+  "description": "Вы призываете крупную массу воды и формируете из нее вокруг видимой вам точки на земле водоворот. Воронка заполняет цилиндр радиусом 10 футов и высотой 30 футов. Если существо входит в воронку в свой ход или воронка перемещается в пространство существа, оно должно пройти испытание Силы. При провале оно получает [[/damage 2d8 bludgeoning]]{2d8 дробящего урона}, &amp;Reference[blinded]{слепоту}, &amp;Reference[deafened]{глухоту} и не может говорить. В начале своего следующего хода оно выбрасывается из водяного смерча в ближайшее свободное место. При успехе оно получает в два раза меньше урона и не подвергается другим эффектам заклинания.\n\nВ свой ход вы можете использовать бонусное действие, чтобы переместить водяной смерч на расстояние до 20 футов в любом направлении вдоль земли, захватывая всех существ на своем пути. Существо, провалившее испытание после того, как было поглощено водоворотом таким образом, уносится вместе с ним до тех пор, пока не будет выброшено в начале своего хода. Если центр этого заклинания находится над водоёмом огромного или более крупного размера, размер водоворота удваивается.",
+  "level": 3,
+  "school": "con",
+  "components": [
+    "S",
+    "V"
+  ],
+  "ritual": false,
+  "concentration": true,
+  "casting_time": {
+    "unit": "action",
+    "value": 1,
+    "condition": ""
+  },
+  "range": {
+    "units": "ft",
+    "value": 60,
+    "special": null
+  },
+  "duration": {
+    "units": "minute",
+    "value": 1
+  },
+  "materials": {
+    "value": "",
+    "consumed": false,
+    "cost": 0,
+    "supply": 0
+  },
+  "preparation": {
+    "mode": "prepared",
+    "prepared": false
+  },
+  "activities": [
+    {
+      "id": "dnd5eactivity000",
+      "name": "",
+      "img": "",
+      "sort": 0,
+      "activation": {
+        "type": "action",
+        "value": null,
+        "condition": "",
+        "override": false,
+        "reaction_conditions": []
+      },
+      "consumption": {
+        "scaling": {
+          "allowed": false,
+          "max": ""
+        },
+        "spell_slot": true,
+        "targets": []
+      },
+      "description": {
+        "chat_flavor": ""
+      },
+      "duration": {
+        "value": null,
+        "units": "inst",
+        "special": "",
+        "concentration": false,
+        "override": false
+      },
+      "flags": {},
+      "range": {
+        "value": null,
+        "units": "self",
+        "special": "",
+        "override": false
+      },
+      "target": {
+        "template": {
+          "count": "",
+          "contiguous": false,
+          "stationary": false,
+          "type": "cylinder",
+          "size": "10",
+          "width": "",
+          "height": "30",
+          "units": "ft"
+        },
+        "affects": {
+          "count": "",
+          "type": "",
+          "choice": false,
+          "special": ""
+        },
+        "override": false,
+        "prompt": true
+      },
+      "uses": {
+        "spent": 0,
+        "max": "",
+        "recovery": []
+      },
+      "visibility": {
+        "identifier": "",
+        "level": {
+          "min": null,
+          "max": null
+        },
+        "require_attunement": false,
+        "require_identification": false,
+        "require_magic": false
+      },
+      "effects": [
+        {
+          "id": "62e1vNb5YV9GTnvZ",
+          "level": {
+            "min": null,
+            "max": null
+          },
+          "on_save": false,
+          "riders": null
+        }
+      ],
+      "applied_effects": [],
+      "kind": "save",
+      "damage": {
+        "on_save": "half",
+        "parts": [
+          {
+            "number": 2,
+            "denomination": 8,
+            "bonus": "",
+            "types": [
+              "bludgeoning"
+            ],
+            "custom": {
+              "enabled": false,
+              "formula": ""
+            },
+            "scaling": {
+              "mode": "",
+              "number": null,
+              "formula": ""
+            }
+          }
+        ]
+      },
+      "save": {
+        "ability": [
+          "str"
+        ],
+        "dc": {
+          "calculation": "spellcasting",
+          "formula": ""
+        },
+        "ignore_cover": false
+      }
+    }
+  ],
+  "passive_effects": [
+    {
+      "id": "62e1vNb5YV9GTnvZ",
+      "name": "Водяной смерч: слепота, глухота",
+      "description": "",
+      "changes": [],
+      "statuses": [
+        "deafened",
+        "blinded"
+      ],
+      "duration": null,
+      "disabled": false,
+      "transfer": false
+    }
+  ],
+  "provenance": {
+    "source": "foundry",
+    "source_url": "https://github.com/foundryvtt/dnd5e/blob/965ad2d0cf5d063dac675ba078b5bd3c3c0dd449/packs/_source/laaru-hw-spells/Водяной_смерч___Waterspout_faZH5h7aGGETFbja.yml",
+    "ingest_date": "2026-10-26",
+    "ingest_version": "foundry-translator-v1",
+    "srd_version": [
+      "5.1"
+    ],
+    "license_tag": "CC-BY-4.0"
+  },
+  "review": {
+    "known_divergence": null,
+    "requires_user_decision": false
+  },
+  "entry_kind": "spell"
+}

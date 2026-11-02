@@ -1,0 +1,178 @@
+{
+  "slug": "irresistible-dance-alt",
+  "foundry_uuid": "Compendium.dnd5e.laaru-hw-spells.Item.CLS0hd1OhUR9kZju",
+  "name": "Безудержная пляска (альт) / Irresistible Dance Alt",
+  "description": "Вы заставляете существо в пределах дистанции, которое может вас слышать, пройти DC 0 Wisdom save{испытание Мудрости}. В случае провала оно начинает комично танцевать на месте: шаркать ногами, притоптывать и прыгать в течение всей длительности заклинания. Существа, которых нельзя обворожить, невосприимчивы к этому заклинанию.\n\nЭто существо должно тратить всё своё перемещение на танец, не покидая своего пространства, и проходит с помехой испытания Ловкости и броски атаки. Пока цель находится под воздействием этого заклинания, существа совершают броски атаки против неё с преимуществом. Танцующее существо может действием пройти DC 0 Wisdom save{испытание Мудрости}, чтобы вернуть над собой контроль; в случае успеха заклинание завершается.\n\nНа высоких кругах. Если вы сотворяете это заклинание, используя ячейку заклинания 4-го круга или выше, вы можете выбрать одну дополнительную цель, которая может вас слышать в пределах дистанции, за каждый круг ячейки выше 3-го.",
+  "level": 3,
+  "school": "enc",
+  "components": [
+    "V"
+  ],
+  "ritual": false,
+  "concentration": true,
+  "casting_time": {
+    "unit": "action",
+    "value": 1,
+    "condition": ""
+  },
+  "range": {
+    "units": "ft",
+    "value": 30,
+    "special": null
+  },
+  "duration": {
+    "units": "minute",
+    "value": 1
+  },
+  "materials": {
+    "value": "",
+    "consumed": false,
+    "cost": 0,
+    "supply": 0
+  },
+  "preparation": {
+    "mode": "",
+    "prepared": false
+  },
+  "activities": [
+    {
+      "id": "oaiCoV0SlsLgPcM1",
+      "name": "",
+      "img": "",
+      "sort": 0,
+      "activation": {
+        "type": "action",
+        "value": null,
+        "condition": "",
+        "override": false,
+        "reaction_conditions": []
+      },
+      "consumption": {
+        "scaling": {
+          "allowed": false,
+          "max": ""
+        },
+        "spell_slot": true,
+        "targets": [
+          {
+            "type": "activityUses",
+            "target": "",
+            "value": "1",
+            "scaling": {
+              "mode": "amount",
+              "formula": ""
+            }
+          }
+        ]
+      },
+      "description": {
+        "chat_flavor": ""
+      },
+      "duration": {
+        "value": null,
+        "units": "inst",
+        "special": "",
+        "concentration": false,
+        "override": false
+      },
+      "flags": {},
+      "range": {
+        "value": null,
+        "units": "self",
+        "special": "",
+        "override": false
+      },
+      "target": {
+        "template": {
+          "count": "",
+          "contiguous": false,
+          "stationary": false,
+          "type": "",
+          "size": "",
+          "width": "",
+          "height": "",
+          "units": "ft"
+        },
+        "affects": {
+          "count": "1",
+          "type": "creature",
+          "choice": false,
+          "special": ""
+        },
+        "override": false,
+        "prompt": true
+      },
+      "uses": {
+        "spent": 0,
+        "max": "",
+        "recovery": []
+      },
+      "visibility": {
+        "identifier": "",
+        "level": {
+          "min": null,
+          "max": null
+        },
+        "require_attunement": false,
+        "require_identification": false,
+        "require_magic": false
+      },
+      "effects": [
+        {
+          "id": "yGJczbb0UHNFcQxb",
+          "level": {
+            "min": null,
+            "max": null
+          },
+          "on_save": false,
+          "riders": null
+        }
+      ],
+      "applied_effects": [],
+      "kind": "save",
+      "damage": {
+        "on_save": "half",
+        "parts": []
+      },
+      "save": {
+        "ability": [
+          "wis"
+        ],
+        "dc": {
+          "calculation": "spellcasting",
+          "formula": ""
+        },
+        "ignore_cover": false
+      }
+    }
+  ],
+  "passive_effects": [
+    {
+      "id": "yGJczbb0UHNFcQxb",
+      "name": "Безудержная пляска",
+      "description": "",
+      "changes": [],
+      "statuses": [],
+      "duration": {
+        "seconds": 60
+      },
+      "disabled": false,
+      "transfer": false
+    }
+  ],
+  "provenance": {
+    "source": "foundry",
+    "source_url": "https://github.com/foundryvtt/dnd5e/blob/965ad2d0cf5d063dac675ba078b5bd3c3c0dd449/packs/_source/laaru-hw-spells/Безудержная_пляска__альт____Irresistible_Dance_Alt_CLS0hd1OhUR9kZju.yml",
+    "ingest_date": "2026-10-26",
+    "ingest_version": "foundry-translator-v1",
+    "srd_version": [
+      "5.1"
+    ],
+    "license_tag": "CC-BY-4.0"
+  },
+  "review": {
+    "known_divergence": null,
+    "requires_user_decision": false
+  },
+  "entry_kind": "spell"
+}

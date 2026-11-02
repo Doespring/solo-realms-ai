@@ -1,0 +1,198 @@
+{
+  "activities": [
+    {
+      "activation": {
+        "condition": "",
+        "override": false,
+        "reaction_conditions": [],
+        "type": "action",
+        "value": null
+      },
+      "applied_effects": [],
+      "check": {
+        "ability": "cha",
+        "associated": [],
+        "dc": {
+          "calculation": "",
+          "formula": "10"
+        }
+      },
+      "consumption": {
+        "scaling": {
+          "allowed": false,
+          "max": ""
+        },
+        "spell_slot": true,
+        "targets": []
+      },
+      "description": {
+        "chat_flavor": ""
+      },
+      "duration": {
+        "concentration": false,
+        "override": false,
+        "special": "",
+        "units": "inst",
+        "value": ""
+      },
+      "effects": [],
+      "flags": {},
+      "id": "LqgwTSdc7UQxSuRf",
+      "img": "",
+      "kind": "check",
+      "name": "Play a Known Tune",
+      "range": {
+        "override": false,
+        "special": "",
+        "units": "self",
+        "value": null
+      },
+      "sort": 0,
+      "target": {
+        "affects": {
+          "choice": false,
+          "count": "",
+          "special": "",
+          "type": ""
+        },
+        "override": false,
+        "prompt": false,
+        "template": {
+          "contiguous": false,
+          "count": "",
+          "height": "",
+          "size": "",
+          "stationary": false,
+          "type": "",
+          "units": "",
+          "width": ""
+        }
+      },
+      "uses": {
+        "max": "",
+        "recovery": [],
+        "spent": 0
+      },
+      "visibility": {
+        "identifier": "",
+        "level": {
+          "max": null,
+          "min": null
+        },
+        "require_attunement": false,
+        "require_identification": false,
+        "require_magic": false
+      }
+    },
+    {
+      "activation": {
+        "condition": "",
+        "override": false,
+        "reaction_conditions": [],
+        "type": "action",
+        "value": null
+      },
+      "applied_effects": [],
+      "check": {
+        "ability": "cha",
+        "associated": [],
+        "dc": {
+          "calculation": "",
+          "formula": "15"
+        }
+      },
+      "consumption": {
+        "scaling": {
+          "allowed": false,
+          "max": ""
+        },
+        "spell_slot": true,
+        "targets": []
+      },
+      "description": {
+        "chat_flavor": ""
+      },
+      "duration": {
+        "concentration": false,
+        "override": false,
+        "special": "",
+        "units": "inst",
+        "value": ""
+      },
+      "effects": [],
+      "flags": {},
+      "id": "Gp0oZApy9ygRjom3",
+      "img": "",
+      "kind": "check",
+      "name": "Improvise a Song",
+      "range": {
+        "override": false,
+        "special": "",
+        "units": "self",
+        "value": null
+      },
+      "sort": 0,
+      "target": {
+        "affects": {
+          "choice": false,
+          "count": "",
+          "special": "",
+          "type": ""
+        },
+        "override": false,
+        "prompt": false,
+        "template": {
+          "contiguous": false,
+          "count": "",
+          "height": "",
+          "size": "",
+          "stationary": false,
+          "type": "",
+          "units": "",
+          "width": ""
+        }
+      },
+      "uses": {
+        "max": "",
+        "recovery": [],
+        "spent": 0
+      },
+      "visibility": {
+        "identifier": "",
+        "level": {
+          "max": null,
+          "min": null
+        },
+        "require_attunement": false,
+        "require_identification": false,
+        "require_magic": false
+      }
+    }
+  ],
+  "attunement_constraint": null,
+  "cost_gp": 6.0,
+  "description": "Ability: Charisma\n\nUtilize: Play a known tune (DC 10), or improvise a song (DC 15)",
+  "description_localized": "<p>Барабан любой разновидности, чтобы вызвать трепет, изумление или страх у ваших слушателей. Умение в обращении с этим музыкальным инструментом позволяет вам добавить ваш бонус умения к любой проверке характеристики, связанной с исполнением музыки на нём. Бард может использовать музыкальный инструмент как фокусирующий предмет для своих заклинаний.</p>\n<p>Умение в обращении с барабаном означает, что вы знакомы с приёмами игры на нём. Вы также знаете несколько песен, как правило, исполняющихся на этом музыкальном инструменте.</p>\n<p><em><strong>История.</strong></em> Ваш опыт помогает вам вспомнить исторические факты, связанные с вашим инструментом.</p>\n<p><em><strong>Исполнение.</strong></em> Ваши постановки заметно улучшаются, когда вы включаете в них игру на инструменте.</p>\n<p><em><strong>Сочинение мелодии.</strong></em> Частью долгого отдыха вы можете сочинить новую мелодию и слова для песни, исполняемой на своем инструменте. Вы можете использовать эту способность, чтобы произвести впечатление на дворянина или распространять скандальные слухи вместе с легко запоминающейся мелодией.</p>\n<table class=\"rd__table  stripe-odd-table\">\n<thead>\n<tr>\n<th class=\"col-10\" data-rd-isroller=\"false\">Возможное действие</th>\n<th class=\"col-2 text-center\" data-rd-isroller=\"false\">СЛ</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td class=\"col-10\">Опознать мелодию на слух</td>\n<td class=\"col-2 text-center\">10</td>\n</tr>\n<tr>\n<td class=\"col-10\">Импровизация мелодии</td>\n<td class=\"col-2 text-center\">20</td>\n</tr>\n</tbody>\n</table>",
+  "item_kind": "item",
+  "name": "Барабан",
+  "passive_effects": [],
+  "provenance": {
+    "ingest_date": "2026-05-30",
+    "ingest_version": "foundry-translator-v1",
+    "license_tag": "CC-BY-4.0",
+    "source": "foundry",
+    "source_url": "https://github.com/foundryvtt/dnd5e/blob/965ad2d0cf5d063dac675ba078b5bd3c3c0dd449/packs/_source/equipment24/tools/other/musical-instrument/drum.yml",
+    "srd_version": [
+      "5.2"
+    ]
+  },
+  "rarity": "common",
+  "requires_attunement": false,
+  "review": {
+    "known_divergence": null,
+    "requires_user_decision": false
+  },
+  "slug": "drum",
+  "uses": null,
+  "weight": 3.0
+}

@@ -1,0 +1,139 @@
+{
+  "slug": "extract-foyson",
+  "foundry_uuid": "Compendium.dnd5e.laaru-hw-spells.Item.EsWNOglzSnjMuaOS",
+  "name": "Вытягивание эссенции / Extract Foyson",
+  "description": "(Высшая эльфийская магия)\n\nВы извлекаете все полезные вещества из пищи, рассчитанной на три дня, и превращает их в столовую ложку пресного, похожего на муку порошка. Эту муку можно смешать с жидкостью и выпить или испечь из неё эльфийский хлеб. Эссенция передаёт все питательные вещества исходной еды пропорционально съеденному.\n\nИсходная еда после извлечения внешне неотличима от обычной и даже может насытить, но в ней нет питательных веществ. Питаясь едой без питательной эссенции, существо рано или поздно оголодает.\n\nРитуальная фокусировка. Если вы используете ритуальную фокусировку, то можете выбрать, чтобы эссенция на каждый отдельный день приняла форму ломтя вкуснейшего эльфийского хлеба.\n\nНа высоких кругах. Если вы сотворяете это заклинание, используя ячейку 2-го круга или выше, то можете создать эссенцию на дополнительные три дня за каждую ячейку выше 1-го круга.",
+  "level": 1,
+  "school": "trs",
+  "components": [
+    "M",
+    "S",
+    "V"
+  ],
+  "ritual": true,
+  "concentration": false,
+  "casting_time": {
+    "unit": "minute",
+    "value": 1,
+    "condition": ""
+  },
+  "range": {
+    "units": "ft",
+    "value": 30,
+    "special": null
+  },
+  "duration": {
+    "units": "perm",
+    "value": null
+  },
+  "materials": {
+    "value": "деревянный кубок",
+    "consumed": false,
+    "cost": 0,
+    "supply": 0
+  },
+  "preparation": {
+    "mode": "prepared",
+    "prepared": false
+  },
+  "activities": [
+    {
+      "id": "UQ68jrrCSUlv98QV",
+      "name": "",
+      "img": "",
+      "sort": 0,
+      "activation": {
+        "type": "action",
+        "value": null,
+        "condition": "",
+        "override": false,
+        "reaction_conditions": []
+      },
+      "consumption": {
+        "scaling": {
+          "allowed": false,
+          "max": ""
+        },
+        "spell_slot": true,
+        "targets": []
+      },
+      "description": {
+        "chat_flavor": ""
+      },
+      "duration": {
+        "value": null,
+        "units": "inst",
+        "special": "",
+        "concentration": false,
+        "override": false
+      },
+      "flags": {},
+      "range": {
+        "value": null,
+        "units": "self",
+        "special": "",
+        "override": false
+      },
+      "target": {
+        "template": {
+          "count": "",
+          "contiguous": false,
+          "stationary": false,
+          "type": "",
+          "size": "",
+          "width": "",
+          "height": "",
+          "units": "ft"
+        },
+        "affects": {
+          "count": "",
+          "type": "",
+          "choice": false,
+          "special": ""
+        },
+        "override": false,
+        "prompt": true
+      },
+      "uses": {
+        "spent": 0,
+        "max": "",
+        "recovery": []
+      },
+      "visibility": {
+        "identifier": "",
+        "level": {
+          "min": null,
+          "max": null
+        },
+        "require_attunement": false,
+        "require_identification": false,
+        "require_magic": false
+      },
+      "effects": [],
+      "applied_effects": [],
+      "kind": "utility",
+      "roll": {
+        "formula": "",
+        "name": "",
+        "prompt": false,
+        "visible": false
+      }
+    }
+  ],
+  "passive_effects": [],
+  "provenance": {
+    "source": "foundry",
+    "source_url": "https://github.com/foundryvtt/dnd5e/blob/965ad2d0cf5d063dac675ba078b5bd3c3c0dd449/packs/_source/laaru-hw-spells/Вытягивание_эссенции___Extract_Foyson_EsWNOglzSnjMuaOS.yml",
+    "ingest_date": "2026-10-26",
+    "ingest_version": "foundry-translator-v1",
+    "srd_version": [
+      "5.1"
+    ],
+    "license_tag": "CC-BY-4.0"
+  },
+  "review": {
+    "known_divergence": null,
+    "requires_user_decision": false
+  },
+  "entry_kind": "spell"
+}

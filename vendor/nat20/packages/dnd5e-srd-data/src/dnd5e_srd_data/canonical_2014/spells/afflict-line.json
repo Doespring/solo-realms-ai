@@ -1,0 +1,168 @@
+{
+  "slug": "afflict-line",
+  "foundry_uuid": "Compendium.dnd5e.laaru-hw-spells.Item.qyt4aPB34IGYKKeI",
+  "name": "Линия боли / Afflict Line",
+  "description": "(Высшая эльфийская магия)\n\nВы насылаете на цель и её потомков темнейшие проклятия. Для этого не обязательно видеть цель, главное, чтобы она находилась в пределах дистанции заклинания. Цель должна преуспеть в испытании Мудрости, иначе будет будет проклято, пока магия не рассеется. Выберите одну из характеристик, цель получает помеху на все проверки и испытания, основанные на этой характеристике. Также это проклятие передаётся первенцу цели. Если он уже рождён, он должен пройти испытание от эффекта заклинания, если же нет - то испытание проходит сразу после рождения. Если первенец уже умер, проклятие переходит на следующего по старшинству ребёнка цели.\n\nРитуальная фокусировка. Если вы используете ритуальную фокусировку, то проклятье становится наследственным и переходит от первенца к первенцу по всей протяжении всей родословной, пока один из проклятых не преуспеет в испытании и не развеет вашу тёмную магию.",
+  "level": 9,
+  "school": "nec",
+  "components": [
+    "M",
+    "S",
+    "V"
+  ],
+  "ritual": true,
+  "concentration": false,
+  "casting_time": {
+    "unit": "action",
+    "value": 1,
+    "condition": ""
+  },
+  "range": {
+    "units": "mi",
+    "value": 1,
+    "special": null
+  },
+  "duration": {
+    "units": "perm",
+    "value": null
+  },
+  "materials": {
+    "value": "резная статуэтка, похожая на жертву, стоимостью 1250 зм",
+    "consumed": false,
+    "cost": 0,
+    "supply": 0
+  },
+  "preparation": {
+    "mode": "prepared",
+    "prepared": false
+  },
+  "activities": [
+    {
+      "id": "mBI9i7hSJNjbaYpt",
+      "name": "",
+      "img": "",
+      "sort": 0,
+      "activation": {
+        "type": "action",
+        "value": null,
+        "condition": "",
+        "override": false,
+        "reaction_conditions": []
+      },
+      "consumption": {
+        "scaling": {
+          "allowed": false,
+          "max": ""
+        },
+        "spell_slot": true,
+        "targets": []
+      },
+      "description": {
+        "chat_flavor": ""
+      },
+      "duration": {
+        "value": null,
+        "units": "inst",
+        "special": "",
+        "concentration": false,
+        "override": false
+      },
+      "flags": {},
+      "range": {
+        "value": null,
+        "units": "self",
+        "special": "",
+        "override": false
+      },
+      "target": {
+        "template": {
+          "count": "",
+          "contiguous": false,
+          "stationary": false,
+          "type": "",
+          "size": "",
+          "width": "",
+          "height": "",
+          "units": "ft"
+        },
+        "affects": {
+          "count": "1",
+          "type": "creature",
+          "choice": false,
+          "special": ""
+        },
+        "override": false,
+        "prompt": true
+      },
+      "uses": {
+        "spent": 0,
+        "max": "",
+        "recovery": []
+      },
+      "visibility": {
+        "identifier": "",
+        "level": {
+          "min": null,
+          "max": null
+        },
+        "require_attunement": false,
+        "require_identification": false,
+        "require_magic": false
+      },
+      "effects": [
+        {
+          "id": "heASCvnajM9bklOE",
+          "level": {
+            "min": null,
+            "max": null
+          },
+          "on_save": false,
+          "riders": null
+        }
+      ],
+      "applied_effects": [],
+      "kind": "save",
+      "damage": {
+        "on_save": "half",
+        "parts": []
+      },
+      "save": {
+        "ability": [
+          "wis"
+        ],
+        "dc": {
+          "calculation": "spellcasting",
+          "formula": ""
+        },
+        "ignore_cover": false
+      }
+    }
+  ],
+  "passive_effects": [
+    {
+      "id": "heASCvnajM9bklOE",
+      "name": "Линия боли",
+      "description": "",
+      "changes": [],
+      "statuses": [],
+      "duration": null,
+      "disabled": false,
+      "transfer": false
+    }
+  ],
+  "provenance": {
+    "source": "foundry",
+    "source_url": "https://github.com/foundryvtt/dnd5e/blob/965ad2d0cf5d063dac675ba078b5bd3c3c0dd449/packs/_source/laaru-hw-spells/Линия_боли___Afflict_Line_qyt4aPB34IGYKKeI.yml",
+    "ingest_date": "2026-10-26",
+    "ingest_version": "foundry-translator-v1",
+    "srd_version": [
+      "5.1"
+    ],
+    "license_tag": "CC-BY-4.0"
+  },
+  "review": {
+    "known_divergence": null,
+    "requires_user_decision": false
+  },
+  "entry_kind": "spell"
+}

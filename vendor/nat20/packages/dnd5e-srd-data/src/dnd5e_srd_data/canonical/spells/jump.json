@@ -1,0 +1,164 @@
+{
+  "activities": [
+    {
+      "activation": {
+        "condition": "",
+        "override": false,
+        "reaction_conditions": [],
+        "type": "action",
+        "value": null
+      },
+      "applied_effects": [],
+      "consumption": {
+        "scaling": {
+          "allowed": false,
+          "max": ""
+        },
+        "spell_slot": true,
+        "targets": []
+      },
+      "description": {
+        "chat_flavor": ""
+      },
+      "duration": {
+        "concentration": false,
+        "override": false,
+        "special": "",
+        "units": "inst",
+        "value": null
+      },
+      "effects": [
+        {
+          "id": "Esyd01OZ3NCv8gtp",
+          "level": {
+            "max": null,
+            "min": null
+          },
+          "on_save": null,
+          "riders": null
+        }
+      ],
+      "flags": {},
+      "id": "dnd5eactivity000",
+      "img": "",
+      "kind": "utility",
+      "name": "",
+      "range": {
+        "override": false,
+        "special": "",
+        "units": "self",
+        "value": null
+      },
+      "roll": {
+        "formula": "",
+        "name": "",
+        "prompt": false,
+        "visible": false
+      },
+      "sort": 0,
+      "target": {
+        "affects": {
+          "choice": false,
+          "count": "1",
+          "special": "",
+          "type": "willing"
+        },
+        "override": false,
+        "prompt": true,
+        "template": {
+          "contiguous": false,
+          "count": "",
+          "height": "",
+          "size": "",
+          "stationary": false,
+          "type": "",
+          "units": "",
+          "width": ""
+        }
+      },
+      "uses": {
+        "max": "",
+        "recovery": [],
+        "spent": 0
+      },
+      "visibility": {
+        "identifier": "",
+        "level": {
+          "max": null,
+          "min": null
+        },
+        "require_attunement": false,
+        "require_identification": false,
+        "require_magic": false
+      }
+    }
+  ],
+  "casting_time": {
+    "condition": "",
+    "unit": "bonus",
+    "value": 1
+  },
+  "components": [
+    "M",
+    "S",
+    "V"
+  ],
+  "concentration": false,
+  "description": "You touch a willing creature. Once on each of its turns until the spell ends, that creature can jump up to 30 feet by spending 10 feet of movement.\n\nUsing a Higher-Level Spell Slot.You can target one additional creature for each spell slot level above 1.",
+  "description_localized": "<p>Вы касаетесь согласного существа и сильно изменяете его прыгучесть. Один раз в каждый свой ход, пока заклинание не закончится, цель может потратить 10 футов своего движения, чтобы подпрыгнуть на 30 футов.</p><p><strong>На высоких кругах</strong>. Если вы сотворяете это заклинание, используя ячейку заклинания 2-го круга или выше, расстояние этого магического прыжка увеличивается на 10 футов за каждый круг ячейки выше 1-го.</p>",
+  "duration": {
+    "units": "minute",
+    "value": 1
+  },
+  "entry_kind": "spell",
+  "foundry_uuid": "Compendium.dnd5e.spells24.Item.phbsplJump000000",
+  "level": 1,
+  "materials": {
+    "consumed": false,
+    "cost": 0,
+    "supply": 0,
+    "value": "a grasshopper’s hind leg"
+  },
+  "name": "Прыжок (альт.)",
+  "passive_effects": [
+    {
+      "changes": [],
+      "description": "<p>Once on each of its turns until the spell ends, that creature can jump up to 30 feet by spending 10 feet of movement.</p>",
+      "disabled": false,
+      "duration": {
+        "rounds": 1,
+        "seconds": 60
+      },
+      "id": "Esyd01OZ3NCv8gtp",
+      "name": "Jump",
+      "statuses": [],
+      "transfer": false
+    }
+  ],
+  "preparation": {
+    "mode": "prepared",
+    "prepared": false
+  },
+  "provenance": {
+    "ingest_date": "2026-05-30",
+    "ingest_version": "foundry-translator-v1",
+    "license_tag": "CC-BY-4.0",
+    "source": "foundry",
+    "source_url": "https://github.com/foundryvtt/dnd5e/blob/965ad2d0cf5d063dac675ba078b5bd3c3c0dd449/packs/_source/spells24/1st-level/jump.yml",
+    "srd_version": [
+      "5.2"
+    ]
+  },
+  "range": {
+    "special": null,
+    "units": "touch",
+    "value": null
+  },
+  "review": {
+    "known_divergence": null,
+    "requires_user_decision": false
+  },
+  "ritual": false,
+  "school": "trs",
+  "slug": "jump"
+}

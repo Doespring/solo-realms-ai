@@ -1,0 +1,114 @@
+{
+  "activities": [
+    {
+      "activation": {
+        "condition": "",
+        "override": false,
+        "reaction_conditions": [],
+        "type": "action",
+        "value": null
+      },
+      "applied_effects": [],
+      "check": {
+        "ability": "dex",
+        "associated": [],
+        "dc": {
+          "calculation": "",
+          "formula": "10"
+        }
+      },
+      "consumption": {
+        "scaling": {
+          "allowed": false,
+          "max": ""
+        },
+        "spell_slot": true,
+        "targets": []
+      },
+      "description": {
+        "chat_flavor": ""
+      },
+      "duration": {
+        "concentration": false,
+        "override": false,
+        "special": "",
+        "units": "inst",
+        "value": ""
+      },
+      "effects": [],
+      "flags": {},
+      "id": "BUtZN2MAxVTxHX0S",
+      "img": "",
+      "kind": "check",
+      "name": "Carve Pattern",
+      "range": {
+        "override": false,
+        "special": "",
+        "units": "self",
+        "value": null
+      },
+      "sort": 0,
+      "target": {
+        "affects": {
+          "choice": false,
+          "count": "",
+          "special": "",
+          "type": ""
+        },
+        "override": false,
+        "prompt": false,
+        "template": {
+          "contiguous": false,
+          "count": "",
+          "height": "",
+          "size": "",
+          "stationary": false,
+          "type": "",
+          "units": "",
+          "width": ""
+        }
+      },
+      "uses": {
+        "max": "",
+        "recovery": [],
+        "spent": 0
+      },
+      "visibility": {
+        "identifier": "",
+        "level": {
+          "max": null,
+          "min": null
+        },
+        "require_attunement": false,
+        "require_identification": false,
+        "require_magic": false
+      }
+    }
+  ],
+  "attunement_constraint": null,
+  "cost_gp": 1.0,
+  "description": "Ability: Dexterity\n\nUtilize: Carve a pattern in wood (DC 10)\n\nCraft: Club, Greatclub, Quarterstaff, Ranged weapons (except Pistol, Musket, and Sling), Arcane Focus, Arrows, Bolts, Druidic Focus, Ink Pen, Needles",
+  "description_localized": "<p>Эти специальные инструменты включают предметы, необходимые для занятия резьбой. Умение в обращении с этими инструментами позволяет вам добавить ваш бонус умения к любой проверке характеристики, связанной с их использованием.</p>\n<p>Позволяют вам создавать сложные предметы из дерева, такие как деревянные фигурки или стрелы.</p>\n<p><em><strong>Компоненты.</strong></em> Инструменты резчика включают в себя нож, стамеску и маленькую пилу.</p>\n<p><em><strong>История, Магия.</strong></em> Ваш опыт даёт вам дополнительные знания при осмотре деревянных предметов, таких как статуэтки или стрелы.</p>\n<p><em><strong>Природа.</strong></em> Ваши познания о древесине дают вам дополнительные знания, когда вы изучаете деревья.</p>\n<p><em><strong>Починка.</strong></em> Частью короткого отдыха вы можете починить один повреждённый деревянный предмет.</p>\n<p><em><strong>Сделать стрелы.</strong></em> Частью короткого отдыха вы можете сделать до 5 стрел, а частью долгого отдыха вы можете сделать до 12. Вы должны иметь под рукой древесину для изготовления стрел.</p>\n<table class=\"rd__table  stripe-odd-table\">\n<thead>\n<tr>\n<th class=\"col-10\" data-rd-isroller=\"false\">Возможное действие</th>\n<th class=\"col-2 text-center\" data-rd-isroller=\"false\">СЛ</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td class=\"col-10\">Сделать небольшую деревянную фигурку</td>\n<td class=\"col-2 text-center\">10</td>\n</tr>\n<tr>\n<td class=\"col-10\">Вырезать замысловатый узор на древесине</td>\n<td class=\"col-2 text-center\">15</td>\n</tr>\n</tbody>\n</table>",
+  "item_kind": "item",
+  "name": "Инструменты резчика",
+  "passive_effects": [],
+  "provenance": {
+    "ingest_date": "2026-05-30",
+    "ingest_version": "foundry-translator-v1",
+    "license_tag": "CC-BY-4.0",
+    "source": "foundry",
+    "source_url": "https://github.com/foundryvtt/dnd5e/blob/965ad2d0cf5d063dac675ba078b5bd3c3c0dd449/packs/_source/equipment24/tools/artisan/woodcarvers-tools.yml",
+    "srd_version": [
+      "5.2"
+    ]
+  },
+  "rarity": "common",
+  "requires_attunement": false,
+  "review": {
+    "known_divergence": null,
+    "requires_user_decision": false
+  },
+  "slug": "woodcarvers-tools",
+  "uses": null,
+  "weight": 5.0
+}

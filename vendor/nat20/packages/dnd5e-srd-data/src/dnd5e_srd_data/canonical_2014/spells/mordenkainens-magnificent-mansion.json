@@ -1,0 +1,139 @@
+{
+  "slug": "mordenkainens-magnificent-mansion",
+  "foundry_uuid": "Compendium.dnd5e.laaru-hw-spells.Item.zdIFLqV9tUyKn5px",
+  "name": "Великолепный особняк Морденкайнена / Mordenkainen's Magnificent Mansion",
+  "description": "Вы создаёте межпространственное жилище в пределах дистанции. Оно существует, пока длится заклинание. Вы сами выбираете, где находится единственный вход. Он слабо мерцает и имеет размеры 5 футов в ширину и 10 футов в высоту. Вы и любые существа, выбранные вами при сотворении заклинания, можете входить в межпространственное жилище, пока портал открыт. Вы можете открыть или закрыть портал, если находитесь в пределах 30 футов от него. Пока портал закрыт, он невидим.\n\nЗа порталом находится роскошная приёмная, а за ней — множество палат. Воздух там чистый, свежий и тёплый.\n\nВы можете создать любую планировку на свой выбор, но жилище не может занимать больше пятидесяти 10-футовых кубов. Можете украсить и обставить его по своему вкусу. Здесь достаточно еды, чтобы устроить пир на сто персон с девятью переменами блюд. Тем, кто входит, прислуживают сто полупрозрачных слуг. Вы сами решаете, как выглядят слуги и во что одеты. Они беспрекословно подчиняются вашим приказам. Каждый слуга может выполнить любую задачу, посильную обычному слуге-человеку, но не может атаковать или совершать действия, напрямую вредящие другим существам. Слуги могут убираться, носить или чинить вещи, складывать одежду, разжигать огонь, подавать еду, разливать вино и тому подобное. Слуги могут входить в любое помещение в особняке, но не могут покидать его пределы. Если мебель или любые другие предметы, созданные этим заклинанием, вынести из особняка, они испарятся. Когда заклинание прекращает действовать, любые существа, находившиеся в межпространственном жилище, изгоняются в ближайшее к входу свободное пространство.",
+  "level": 7,
+  "school": "con",
+  "components": [
+    "M",
+    "S",
+    "V"
+  ],
+  "ritual": false,
+  "concentration": false,
+  "casting_time": {
+    "unit": "minute",
+    "value": 1,
+    "condition": ""
+  },
+  "range": {
+    "units": "ft",
+    "value": 300,
+    "special": null
+  },
+  "duration": {
+    "units": "hour",
+    "value": 24
+  },
+  "materials": {
+    "value": "миниатюрная дверца из слоновой кости, кусочек полированного мрамора и серебряная ложечка; каждый предмет стоимостью не менее 5 зм",
+    "consumed": false,
+    "cost": 5,
+    "supply": 0
+  },
+  "preparation": {
+    "mode": "prepared",
+    "prepared": false
+  },
+  "activities": [
+    {
+      "id": "dnd5eactivity000",
+      "name": "",
+      "img": "",
+      "sort": 0,
+      "activation": {
+        "type": "action",
+        "value": null,
+        "condition": "",
+        "override": false,
+        "reaction_conditions": []
+      },
+      "consumption": {
+        "scaling": {
+          "allowed": false,
+          "max": ""
+        },
+        "spell_slot": true,
+        "targets": []
+      },
+      "description": {
+        "chat_flavor": ""
+      },
+      "duration": {
+        "value": null,
+        "units": "inst",
+        "special": "",
+        "concentration": false,
+        "override": false
+      },
+      "flags": {},
+      "range": {
+        "value": null,
+        "units": "self",
+        "special": "",
+        "override": false
+      },
+      "target": {
+        "template": {
+          "count": "",
+          "contiguous": false,
+          "stationary": false,
+          "type": "",
+          "size": "",
+          "width": "",
+          "height": "",
+          "units": ""
+        },
+        "affects": {
+          "count": "",
+          "type": "",
+          "choice": false,
+          "special": ""
+        },
+        "override": false,
+        "prompt": true
+      },
+      "uses": {
+        "spent": 0,
+        "max": "",
+        "recovery": []
+      },
+      "visibility": {
+        "identifier": "",
+        "level": {
+          "min": null,
+          "max": null
+        },
+        "require_attunement": false,
+        "require_identification": false,
+        "require_magic": false
+      },
+      "effects": [],
+      "applied_effects": [],
+      "kind": "utility",
+      "roll": {
+        "formula": "",
+        "name": "",
+        "prompt": false,
+        "visible": false
+      }
+    }
+  ],
+  "passive_effects": [],
+  "provenance": {
+    "source": "foundry",
+    "source_url": "https://github.com/foundryvtt/dnd5e/blob/965ad2d0cf5d063dac675ba078b5bd3c3c0dd449/packs/_source/laaru-hw-spells/Великолепный_особняк_Морденкайнена___Mordenkainen_s_Magnificent_Mansion_zdIFLqV9tUyKn5px.yml",
+    "ingest_date": "2026-10-26",
+    "ingest_version": "foundry-translator-v1",
+    "srd_version": [
+      "5.1"
+    ],
+    "license_tag": "CC-BY-4.0"
+  },
+  "review": {
+    "known_divergence": null,
+    "requires_user_decision": false
+  },
+  "entry_kind": "spell"
+}

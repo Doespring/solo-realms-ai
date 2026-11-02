@@ -1,0 +1,146 @@
+{
+  "slug": "riptide",
+  "foundry_uuid": "Compendium.dnd5e.laaru-hw-spells.Item.HNThZNOHxrQdXM4h",
+  "name": "Крутое течение / Riptide",
+  "description": "Широким жестом вы призываете огромную волну воды в цилиндре радиусом 20 футов и высотой 20 футов с центром в точке на земле, которую вы можете видеть. Каждое существо в области действия должно пройти испытание Силы. При провале существо становится &amp;Reference[restrained]{обездвиженным} и подвешивается в цилиндре; или перемещается к ближайшему краю цилиндра при успехе. В начале вашего следующего хода, вы можете направить волну по мере её рассеивания. Выберите один вариант из следующих:\n\nКрутое течение. Вода в цилиндре течёт в выбранном направлении, сметая всех существ в области действия к краю цилиндра. Существа получают [[/damage bludgeoning 3d8]]{3d8 дробящего урона} и отталкиваются до 40 футов в выбранном направлении, или к краю цилиндра, приземляясь &amp;Reference[prone]{распластанным}.\n\nПодводное течение. Вода устремляется вниз, стягивая каждое существо в области действия в незанятое пространство в центре. Существа &amp;Reference[prone]{распластываются} и должны пройти [[/check constitution 0]]{испытание Выносливости}. При провале существо будет в &amp;Reference[stunned]{шоке} до начала вашего следующего хода.",
+  "level": 3,
+  "school": "con",
+  "components": [
+    "S",
+    "V"
+  ],
+  "ritual": false,
+  "concentration": false,
+  "casting_time": {
+    "unit": "action",
+    "value": 1,
+    "condition": ""
+  },
+  "range": {
+    "units": "ft",
+    "value": 60,
+    "special": null
+  },
+  "duration": {
+    "units": "round",
+    "value": 1
+  },
+  "materials": {
+    "value": "",
+    "consumed": false,
+    "cost": 0,
+    "supply": 0
+  },
+  "preparation": {
+    "mode": "prepared",
+    "prepared": false
+  },
+  "activities": [
+    {
+      "id": "dnd5eactivity000",
+      "name": "",
+      "img": "",
+      "sort": 0,
+      "activation": {
+        "type": "action",
+        "value": null,
+        "condition": "",
+        "override": false,
+        "reaction_conditions": []
+      },
+      "consumption": {
+        "scaling": {
+          "allowed": false,
+          "max": ""
+        },
+        "spell_slot": true,
+        "targets": []
+      },
+      "description": {
+        "chat_flavor": ""
+      },
+      "duration": {
+        "value": null,
+        "units": "inst",
+        "special": "",
+        "concentration": false,
+        "override": false
+      },
+      "flags": {},
+      "range": {
+        "value": null,
+        "units": "self",
+        "special": "",
+        "override": false
+      },
+      "target": {
+        "template": {
+          "count": "",
+          "contiguous": false,
+          "stationary": false,
+          "type": "cylinder",
+          "size": "20",
+          "width": "",
+          "height": "",
+          "units": "ft"
+        },
+        "affects": {
+          "count": "",
+          "type": "",
+          "choice": false,
+          "special": ""
+        },
+        "override": false,
+        "prompt": true
+      },
+      "uses": {
+        "spent": 0,
+        "max": "",
+        "recovery": []
+      },
+      "visibility": {
+        "identifier": "",
+        "level": {
+          "min": null,
+          "max": null
+        },
+        "require_attunement": false,
+        "require_identification": false,
+        "require_magic": false
+      },
+      "effects": [],
+      "applied_effects": [],
+      "kind": "save",
+      "damage": {
+        "on_save": "half",
+        "parts": []
+      },
+      "save": {
+        "ability": [
+          "str"
+        ],
+        "dc": {
+          "calculation": "spellcasting",
+          "formula": ""
+        },
+        "ignore_cover": false
+      }
+    }
+  ],
+  "passive_effects": [],
+  "provenance": {
+    "source": "foundry",
+    "source_url": "https://github.com/foundryvtt/dnd5e/blob/965ad2d0cf5d063dac675ba078b5bd3c3c0dd449/packs/_source/laaru-hw-spells/Крутое_течение___Riptide_HNThZNOHxrQdXM4h.yml",
+    "ingest_date": "2026-10-26",
+    "ingest_version": "foundry-translator-v1",
+    "srd_version": [
+      "5.1"
+    ],
+    "license_tag": "CC-BY-4.0"
+  },
+  "review": {
+    "known_divergence": null,
+    "requires_user_decision": false
+  },
+  "entry_kind": "spell"
+}

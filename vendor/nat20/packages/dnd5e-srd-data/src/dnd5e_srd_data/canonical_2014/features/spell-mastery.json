@@ -1,0 +1,27 @@
+{
+  "slug": "spell-mastery",
+  "name": "Spell Mastery",
+  "description": "At 18th level, you have achieved such mastery over certain spells that you can cast them at will. Choose a 1st-level wizard spell and a 2nd-level wizard spell that are in your spellbook. You can cast those spells at their lowest level without expending a spell slot when you have them prepared. If you want to cast either spell at a higher level, you must expend a spell slot as normal.\n\nBy spending 8 hours in study, you can exchange one or both of the spells you chose for different spells of the same levels.\n\nFoundry Note\n\nIf you wish, manually edit this entry and make a note of your choices here:\n\n1st level spell\n\n2nd level spell",
+  "feature_type": "class_feature",
+  "foundry_id": "JfFfHTeIszx1hNRx",
+  "source_slug": "wizard",
+  "activities": [],
+  "passive_effects": [],
+  "advancement": [],
+  "uses": null,
+  "provenance": {
+    "source": "foundry",
+    "source_url": "https://github.com/foundryvtt/dnd5e/blob/965ad2d0cf5d063dac675ba078b5bd3c3c0dd449/packs/_source/classfeatures/Spell_Mastery_JfFfHTeIszx1hNRx.yml",
+    "ingest_date": "2026-10-26",
+    "ingest_version": "foundry-translator-v1",
+    "srd_version": [
+      "5.1"
+    ],
+    "license_tag": "CC-BY-4.0"
+  },
+  "review": {
+    "known_divergence": null,
+    "requires_user_decision": false
+  },
+  "entry_kind": "feature"
+}

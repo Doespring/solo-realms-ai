@@ -1,0 +1,132 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:solo-realms-ai:rules-data:rule:1.0.0",
+  "title": "Solo Realms AI declarative rule 1.0.0",
+  "description": "Data contract, never an executable Ruleset or dispatcher. Vocabulary extensions require a new schema version.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "id", "revision", "name", "edition", "category", "conditions", "triggers", "effects", "duration", "resources", "restrictions", "sources", "verification", "engine"],
+  "properties": {
+    "schema_version": {"const": "1.0.0"},
+    "id": {"type": "string", "pattern": "^dnd(2014|2024)\\.[a-z0-9_]+(\\.[a-z0-9_]+)+$"},
+    "revision": {"type": "integer", "minimum": 1},
+    "name": {"$ref": "#/$defs/text"},
+    "edition": {"enum": ["dnd2014", "dnd2024"]},
+    "category": {"enum": ["d20_test", "condition", "action", "rest", "resource", "movement", "feature", "spell", "equipment"]},
+    "conditions": {"$ref": "#/$defs/condition"},
+    "triggers": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"$ref": "#/$defs/trigger"}},
+    "effects": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/effect"}},
+    "duration": {"$ref": "#/$defs/duration"},
+    "resources": {"type": "array", "items": {"$ref": "#/$defs/resource"}},
+    "restrictions": {"type": "array", "items": {"$ref": "#/$defs/restriction"}},
+    "sources": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"$ref": "#/$defs/source"}},
+    "verification": {"$ref": "#/$defs/verification"},
+    "engine": {"$ref": "#/$defs/engine"}
+  },
+  "allOf": [
+    {"if": {"properties": {"edition": {"const": "dnd2024"}}}, "then": {"properties": {"id": {"pattern": "^dnd2024\\."}}}},
+    {"if": {"properties": {"edition": {"const": "dnd2014"}}}, "then": {"properties": {"id": {"pattern": "^dnd2014\\."}}}}
+  ],
+  "$defs": {
+    "text": {"type": "string", "minLength": 1, "maxLength": 2000},
+    "identifier": {"type": "string", "pattern": "^[a-z][a-z0-9_.]*$", "maxLength": 120},
+    "scalar": {"type": ["string", "number", "boolean", "null"]},
+    "condition": {
+      "oneOf": [
+        {"type": "object", "additionalProperties": false, "required": ["all"], "properties": {"all": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/condition"}}}},
+        {"type": "object", "additionalProperties": false, "required": ["any"], "properties": {"any": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/condition"}}}},
+        {"type": "object", "additionalProperties": false, "required": ["not"], "properties": {"not": {"$ref": "#/$defs/condition"}}},
+        {
+          "type": "object", "additionalProperties": false, "required": ["fact", "operator", "value"],
+          "properties": {
+            "fact": {"$ref": "#/$defs/identifier"},
+            "operator": {"enum": ["eq", "neq", "gte", "lte", "in"]},
+            "value": {"oneOf": [{"$ref": "#/$defs/scalar"}, {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"$ref": "#/$defs/scalar"}}]}
+          },
+          "allOf": [
+            {"if": {"properties": {"operator": {"const": "in"}}}, "then": {"properties": {"value": {"type": "array"}}}, "else": {"properties": {"value": {"$ref": "#/$defs/scalar"}}}},
+            {"if": {"properties": {"operator": {"enum": ["gte", "lte"]}}}, "then": {"properties": {"value": {"type": "number"}}}}
+          ]
+        }
+      ]
+    },
+    "trigger": {
+      "type": "object", "additionalProperties": false, "required": ["event", "scope"],
+      "properties": {
+        "event": {"enum": ["d20_test.before_roll", "d20_test.after_roll", "turn.start", "turn.end", "rest.completed", "condition.applied", "condition.removed", "action.declared"]},
+        "scope": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"enum": ["ability_check", "saving_throw", "attack_roll", "creature", "actor"]}}
+      }
+    },
+    "effect": {
+      "oneOf": [
+        {
+          "type": "object", "additionalProperties": false, "required": ["op", "count", "sides", "keep"],
+          "properties": {"op": {"const": "select_d20_pool"}, "count": {"enum": [1, 2]}, "sides": {"const": 20}, "keep": {"enum": ["first", "highest", "lowest"]}},
+          "allOf": [{"if": {"properties": {"count": {"const": 1}}}, "then": {"properties": {"keep": {"const": "first"}}}, "else": {"properties": {"keep": {"enum": ["highest", "lowest"]}}}}]
+        },
+        {
+          "type": "object", "additionalProperties": false, "required": ["op", "count", "chooser", "change", "authorization"],
+          "properties": {"op": {"const": "permit_die_change"}, "count": {"const": 1}, "chooser": {"const": "roller"}, "change": {"const": "authorized_change_only"}, "authorization": {"const": "external_rule"}}
+        },
+        {
+          "type": "object", "additionalProperties": false, "required": ["op", "target", "amount"],
+          "properties": {"op": {"const": "add_modifier"}, "target": {"$ref": "#/$defs/identifier"}, "amount": {"type": "number"}}
+        },
+        {
+          "type": "object", "additionalProperties": false, "required": ["op", "condition"],
+          "properties": {"op": {"enum": ["apply_condition", "remove_condition"]}, "condition": {"$ref": "#/$defs/identifier"}}
+        }
+      ]
+    },
+    "duration": {
+      "oneOf": [
+        {"type": "object", "additionalProperties": false, "required": ["kind"], "properties": {"kind": {"const": "instantaneous"}}},
+        {"type": "object", "additionalProperties": false, "required": ["kind", "amount", "unit"], "properties": {"kind": {"const": "fixed"}, "amount": {"type": "integer", "minimum": 1}, "unit": {"enum": ["round", "turn", "minute", "hour", "day"]}}},
+        {"type": "object", "additionalProperties": false, "required": ["kind", "event"], "properties": {"kind": {"const": "until_event"}, "event": {"$ref": "#/$defs/identifier"}}},
+        {"type": "object", "additionalProperties": false, "required": ["kind", "dependency"], "properties": {"kind": {"const": "source_defined"}, "dependency": {"$ref": "#/$defs/text"}}}
+      ]
+    },
+    "resource": {
+      "type": "object", "additionalProperties": false, "required": ["resource_id", "operation", "amount", "timing"],
+      "properties": {"resource_id": {"$ref": "#/$defs/identifier"}, "operation": {"enum": ["consume", "restore", "grant"]}, "amount": {"type": "integer", "minimum": 1}, "timing": {"enum": ["before_effect", "after_effect"]}}
+    },
+    "restriction": {
+      "type": "object", "additionalProperties": false, "required": ["code", "description", "source_derived"],
+      "properties": {"code": {"$ref": "#/$defs/identifier"}, "description": {"$ref": "#/$defs/text"}, "source_derived": {"type": "boolean"}}
+    },
+    "source": {
+      "type": "object", "additionalProperties": false, "required": ["document_id", "sha256", "chapter", "section", "pages", "knowledge_section_ids"],
+      "properties": {
+        "document_id": {"$ref": "#/$defs/identifier"},
+        "sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+        "chapter": {"$ref": "#/$defs/text"}, "section": {"$ref": "#/$defs/text"},
+        "pages": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "object", "additionalProperties": false, "required": ["pdf", "printed"], "properties": {"pdf": {"type": "integer", "minimum": 1}, "printed": {"type": ["string", "null"], "minLength": 1}}}},
+        "knowledge_section_ids": {"type": "array", "uniqueItems": true, "items": {"type": "integer", "minimum": 1}}
+      }
+    },
+    "verification": {
+      "type": "object", "additionalProperties": false, "required": ["status", "method", "checked_on", "reviewer", "human_review", "evidence"],
+      "properties": {
+        "status": {"enum": ["candidate", "source_checked", "human_verified", "rejected"]},
+        "method": {"enum": ["none", "pdf_text_and_visual"]},
+        "checked_on": {"type": ["string", "null"], "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$"},
+        "reviewer": {"$ref": "#/$defs/text"}, "human_review": {"enum": ["pending", "approved", "rejected"]},
+        "evidence": {"type": "array", "uniqueItems": true, "items": {"$ref": "#/$defs/text"}}
+      },
+      "allOf": [
+        {"if": {"properties": {"status": {"enum": ["source_checked", "human_verified"]}}}, "then": {"properties": {"method": {"const": "pdf_text_and_visual"}, "checked_on": {"type": "string"}, "evidence": {"minItems": 1}}}},
+        {"if": {"properties": {"status": {"const": "human_verified"}}}, "then": {"properties": {"human_review": {"const": "approved"}}}}
+      ]
+    },
+    "engine": {
+      "type": "object", "additionalProperties": false, "required": ["compatibility", "handler", "supported_scope", "auto_activate", "notes"],
+      "properties": {
+        "compatibility": {"enum": ["implemented_subset", "unsupported", "reference_only"]},
+        "handler": {"enum": ["RulesetEngine.d20", null]},
+        "supported_scope": {"type": "array", "uniqueItems": true, "items": {"enum": ["ability_check", "saving_throw", "attack_roll"]}},
+        "auto_activate": {"const": false}, "notes": {"$ref": "#/$defs/text"}
+      },
+      "allOf": [{"if": {"properties": {"compatibility": {"const": "implemented_subset"}}}, "then": {"properties": {"handler": {"const": "RulesetEngine.d20"}, "supported_scope": {"minItems": 1}}}, "else": {"properties": {"handler": {"type": "null"}, "supported_scope": {"maxItems": 0}}}}]
+    }
+  }
+}

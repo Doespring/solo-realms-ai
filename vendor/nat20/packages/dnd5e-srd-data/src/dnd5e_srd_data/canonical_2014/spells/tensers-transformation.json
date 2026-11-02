@@ -1,0 +1,165 @@
+{
+  "slug": "tensers-transformation",
+  "foundry_uuid": "Compendium.dnd5e.laaru-hw-spells.Item.Zdd6V9Ms2wsStyLv",
+  "name": "Трансформация Тензера / Tenser's Transformation",
+  "description": "Вы наделяете себя выносливостью и воинской доблестью, подпитываемыми магией. Пока заклинание не закончится, вы не можете творить заклинания, но получаете следующие преимущества:\n\nВы получаете 50 временных ПЗ. Если какое-либо их количество остаётся, когда заклинание заканчивается, они теряются.\n\nВы совершаете с преимуществом все броски атаки, которые вы делаете простым или воинским оружием.\n\nКогда вы попадаете по цели атакой оружием, она получает дополнительный урон силой [[/r 2d12]].\n\nВы получаете владение всеми видами доспехов, щитов, простого и воинского оружия.\n\nВы получаете владение испытаниями Силы и Выносливости.\n\nЕсли вы в свой ход совершаете действие @Compendium[laaru-dnd5-hw.actions.Y0O7jQKh7vGMSTBu]{Атака}, вы можете совершить две атаки вместо одной. Вы игнорируете это преимущество, если у вас уже есть подобное умение, которое даёт вам дополнительные атаки (например, Дополнительная атака).\n\nСразу после того, как заклинание заканчивается, вы должны преуспеть в испытании Выносливости со СЛ 15 или получаете один уровень &amp;reference[exhaustion]{Утомления}.",
+  "level": 6,
+  "school": "trs",
+  "components": [
+    "M",
+    "S",
+    "V"
+  ],
+  "ritual": false,
+  "concentration": true,
+  "casting_time": {
+    "unit": "action",
+    "value": 1,
+    "condition": ""
+  },
+  "range": {
+    "units": "self",
+    "value": null,
+    "special": null
+  },
+  "duration": {
+    "units": "minute",
+    "value": 10
+  },
+  "materials": {
+    "value": "несколько волосков быка",
+    "consumed": false,
+    "cost": 0,
+    "supply": 0
+  },
+  "preparation": {
+    "mode": "prepared",
+    "prepared": false
+  },
+  "activities": [
+    {
+      "id": "dnd5eactivity000",
+      "name": "",
+      "img": "",
+      "sort": 0,
+      "activation": {
+        "type": "action",
+        "value": null,
+        "condition": "",
+        "override": false,
+        "reaction_conditions": []
+      },
+      "consumption": {
+        "scaling": {
+          "allowed": false,
+          "max": ""
+        },
+        "spell_slot": true,
+        "targets": []
+      },
+      "description": {
+        "chat_flavor": ""
+      },
+      "duration": {
+        "value": null,
+        "units": "inst",
+        "special": "",
+        "concentration": false,
+        "override": false
+      },
+      "flags": {},
+      "range": {
+        "value": null,
+        "units": "self",
+        "special": "",
+        "override": false
+      },
+      "target": {
+        "template": {
+          "count": "",
+          "contiguous": false,
+          "stationary": false,
+          "type": "",
+          "size": "",
+          "width": "",
+          "height": "",
+          "units": ""
+        },
+        "affects": {
+          "count": "",
+          "type": "self",
+          "choice": false,
+          "special": ""
+        },
+        "override": false,
+        "prompt": true
+      },
+      "uses": {
+        "spent": 0,
+        "max": "",
+        "recovery": []
+      },
+      "visibility": {
+        "identifier": "",
+        "level": {
+          "min": null,
+          "max": null
+        },
+        "require_attunement": false,
+        "require_identification": false,
+        "require_magic": false
+      },
+      "effects": [],
+      "applied_effects": [],
+      "kind": "save",
+      "damage": {
+        "on_save": "half",
+        "parts": [
+          {
+            "number": 2,
+            "denomination": 12,
+            "bonus": "",
+            "types": [
+              "force"
+            ],
+            "custom": {
+              "enabled": false,
+              "formula": ""
+            },
+            "scaling": {
+              "mode": "",
+              "number": null,
+              "formula": ""
+            }
+          }
+        ]
+      },
+      "save": {
+        "ability": [
+          "con"
+        ],
+        "dc": {
+          "calculation": "spellcasting",
+          "formula": ""
+        },
+        "ignore_cover": false
+      }
+    }
+  ],
+  "passive_effects": [],
+  "provenance": {
+    "source": "foundry",
+    "source_url": "https://github.com/foundryvtt/dnd5e/blob/965ad2d0cf5d063dac675ba078b5bd3c3c0dd449/packs/_source/laaru-hw-spells/Трансформация_Тензера___Tenser_s_Transformation_Zdd6V9Ms2wsStyLv.yml",
+    "ingest_date": "2026-10-26",
+    "ingest_version": "foundry-translator-v1",
+    "srd_version": [
+      "5.1"
+    ],
+    "license_tag": "CC-BY-4.0"
+  },
+  "review": {
+    "known_divergence": null,
+    "requires_user_decision": false
+  },
+  "entry_kind": "spell"
+}

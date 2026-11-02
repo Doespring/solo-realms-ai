@@ -1,0 +1,12 @@
+﻿python.exe : Traceback (most recent call last):
+At line:22 char:1
++ & 'C:\Users\iwa41\Documents\Codex\2026-10-13\files-pasted-by-the-user ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (Traceback (most recent call last)::String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+  File "C:\Users\iwa41\Documents\Codex\2026-10-13\files-pasted-by-the-user-solo\outputs\SoloRealmsAI\rules_extract\work
+\ru\scripts\explore69.py", line 9, in <module>
+    for f,T,name in ((G,'GM'),(P,'PHB')):
+        ^^^^^^^^
+ValueError: not enough values to unpack (expected 3, got 2)

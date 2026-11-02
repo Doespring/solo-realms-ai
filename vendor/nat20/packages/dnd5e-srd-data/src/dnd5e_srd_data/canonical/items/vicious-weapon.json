@@ -1,0 +1,197 @@
+{
+  "activities": [
+    {
+      "activation": {
+        "condition": "",
+        "override": false,
+        "reaction_conditions": [],
+        "type": "action",
+        "value": null
+      },
+      "applied_effects": [],
+      "consumption": {
+        "scaling": {
+          "allowed": false,
+          "max": ""
+        },
+        "spell_slot": true,
+        "targets": []
+      },
+      "description": {
+        "chat_flavor": ""
+      },
+      "duration": {
+        "concentration": false,
+        "override": false,
+        "special": "",
+        "units": "inst",
+        "value": null
+      },
+      "effects": [
+        {
+          "id": "CzJMRNHYWlVNvnJN",
+          "level": {
+            "max": null,
+            "min": null
+          },
+          "on_save": null,
+          "riders": {
+            "activity": [],
+            "effect": [],
+            "item": []
+          }
+        }
+      ],
+      "enchant": {
+        "identifier": null,
+        "self": false
+      },
+      "flags": {},
+      "id": "b5Zu1sp22JNY5ctz",
+      "img": "",
+      "kind": "enchant",
+      "name": "Vicious Weapon",
+      "range": {
+        "override": false,
+        "special": "",
+        "units": "self",
+        "value": null
+      },
+      "restrictions": {
+        "allow_magical": false,
+        "categories": [],
+        "properties": [],
+        "type": ""
+      },
+      "sort": 0,
+      "target": {
+        "affects": {
+          "choice": false,
+          "count": "",
+          "special": "",
+          "type": ""
+        },
+        "override": false,
+        "prompt": true,
+        "template": {
+          "contiguous": false,
+          "count": "",
+          "height": "",
+          "size": "",
+          "stationary": false,
+          "type": "",
+          "units": "ft",
+          "width": ""
+        }
+      },
+      "uses": {
+        "max": "",
+        "recovery": [],
+        "spent": 0
+      },
+      "visibility": {
+        "identifier": "",
+        "level": {
+          "max": null,
+          "min": null
+        },
+        "require_attunement": false,
+        "require_identification": false,
+        "require_magic": false
+      }
+    }
+  ],
+  "attunement_constraint": null,
+  "cost_gp": 4000.0,
+  "damage_parts": [],
+  "description": "Weapon (Any Simple or Martial), Rare\n\nThis magic weapon deals an extra 2d6 damage to any creature it hits. This extra damage is of the same type as the weapon's normal damage.\n\n@Embed[Compendium.dnd5e.content24.JournalEntry.dmgFoundryRefere.JournalEntryPage.Ok4iCgD25ENgoRxE cite=false caption=false classes=\"hide-in-embed\"]",
+  "description_localized": "<div><p>Если вы выбросили 20 при броске атаки этим магическим оружием, цель дополнительно получает 7 ([[/r 2d6]]) урона того типа, который наносит оружие.</p></div><p>Оружие существует в следующих разновидностях:</p><ul><li><p>@UUID[Compendium.laaru-dnd5-hw.items.isKR904LkLaH4i6M]{Свирепая алебарда / Vicious Glaive}</p></li><li><p>@UUID[Compendium.laaru-dnd5-hw.items.gSwpQacBLOJeLWrK]{Свирепая булава / Vicious Mace}</p></li><li><p>@UUID[Compendium.laaru-dnd5-hw.items.eKip69fExSYN661B]{Свирепая глефа / Vicious Glaive}</p></li><li><p>@UUID[Compendium.laaru-dnd5-hw.items.p9dtQU9wEZGumHSb]{Свирепая дубина / Vicious Greatclub}</p></li><li><p>@UUID[Compendium.laaru-dnd5-hw.items.UctSPehpKb4lJQGr]{Свирепая дубинка / Vicious Club}</p></li><li><p>@UUID[Compendium.laaru-dnd5-hw.items.ozYrQ5N4s81h35Fa]{Свирепая духовая трубка / Vicious Blowgun}</p></li><li><p>@UUID[Compendium.laaru-dnd5-hw.items.ucf9SwpMxMb9jDHY]{Свирепая иклва / Vicious Yklwa}</p></li><li><p>@UUID[Compendium.laaru-dnd5-hw.items.r8yK6SrWOz4hqF01]{Свирепая кавалерийская пика / Vicious Lance}</p></li><li><p>@UUID[Compendium.laaru-dnd5-hw.items.zibIgdxPz8QHSCg6]{Свирепая пика / Vicious Pike}</p></li><li><p>@UUID[Compendium.laaru-dnd5-hw.items.qGRN4wvZLJ8uITf2]{Свирепая праща / Vicious Sling}</p></li><li><p>@UUID[Compendium.laaru-dnd5-hw.items.h0XLhuUQ0vSnW3DU]{Свирепая рапира / Vicious Rapier}</p></li><li><p>@UUID[Compendium.laaru-dnd5-hw.items.e7JpVX2549vp9mgF]{Свирепое копьё / Vicious Spear}</p></li><li><p>@UUID[Compendium.laaru-dnd5-hw.items.cDyUgR8Ea2mZG58I]{Свирепое короткое копье с крюком / Vicious Hooked Shortspear}</p></li><li><p>@UUID[Compendium.laaru-dnd5-hw.items.y2l4tJncd3Ct2xOY]{Свирепый боевой молот / Vicious Warhammer}</p></li><li><p>@UUID[Compendium.laaru-dnd5-hw.items.Z7xno2zMzRtqqUIQ]{Свирепый боевой посох / Vicious Quarterstaff}</p></li><li><p>@UUID[Compendium.laaru-dnd5-hw.items.ZD03wGEtLkgPmDAB]{Свирепый боевой топор / Vicious Battleaxe}</p></li><li><p>@UUID[Compendium.laaru-dnd5-hw.items.FpLaviCom3XR1ckP]{Свирепый двуручный меч / Vicious Greatsword}</p></li><li><p>@UUID[Compendium.laaru-dnd5-hw.items.6JbrdSg5YYbs9ANm]{Свирепый двуручный молот / Vicious Maul}</p></li><li><p>@UUID[Compendium.laaru-dnd5-hw.items.nY6CnKEHyJ5STgt5]{Свирепый двуручный топор / Vicious Greataxe}</p></li><li><p>@UUID[Compendium.laaru-dnd5-hw.items.M0hwB6NRPNQht7n6]{Свирепый двухклинковый скимитар / Vicious Double-Bladed Scimitar}</p></li><li><p>@UUID[Compendium.laaru-dnd5-hw.items.gVo3UbvwjFIiFR0c]{Свирепый длинный лук / Vicious Longbow}</p></li><li><p>@UUID[Compendium.laaru-dnd5-hw.items.pC3202gDTy8G5i4r]{Свирепый длинный меч / Vicious Longsword}</p></li><li><p>@UUID[Compendium.laaru-dnd5-hw.items.jeoZmDD9fuQdvC77]{Свирепый дротик / Vicious Dart}</p></li><li><p>@UUID[Compendium.laaru-dnd5-hw.items.5Jz5w7XJxgtlsx6K]{Свирепый кинжал / Vicious Dagger}</p></li><li><p>@UUID[Compendium.laaru-dnd5-hw.items.hXn06PSDbNfNAYZm]{Свирепый клевец / Vicious War Pick}</p></li><li><p>@UUID[Compendium.laaru-dnd5-hw.items.KL7g3njIREM9y1tf]{Свирепый кнут / Vicious Whip}</p></li><li><p>@UUID[Compendium.laaru-dnd5-hw.items.Z0eO3TTpYA2hjwdd]{Свирепый короткий лук / Vicious Shortbow}</p></li><li><p>@UUID[Compendium.laaru-dnd5-hw.items.1PMaZR6CX8fUnOZd]{Свирепый короткий меч / Vicious Shortsword}</p></li><li><p>@UUID[Compendium.laaru-dnd5-hw.items.VQAUcjn1qdwW3MeU]{Свирепый лёгкий арбалет / Vicious Light Crossbow}</p></li><li><p>@UUID[Compendium.laaru-dnd5-hw.items.XyTkzBU2Az2QP6yC]{Свирепый лёгкий многозарядный арбалет / Vicious Light Repeating Crossbow}</p></li><li><p>@UUID[Compendium.laaru-dnd5-hw.items.4MeSq8KcF7KK7emF]{Свирепый лёгкий молот / Vicious Light Hammer}</p></li><li><p>@UUID[Compendium.laaru-dnd5-hw.items.Vm6SuX6TkDvSIVGr]{Свирепый моргенштерн / Vicious Morningstar}</p></li><li><p>@UUID[Compendium.laaru-dnd5-hw.items.lM5uo6R4gy8rJG5Y]{Свирепый пилум / Vicious Javelin}</p></li><li><p>@UUID[Compendium.laaru-dnd5-hw.items.K7h4LT03SNt2807z]{Свирепый ручной арбалет / Vicious Hand Crossbow}</p></li><li><p>@UUID[Compendium.laaru-dnd5-hw.items.AChuumAYmts5uGFT]{Свирепый серп / Vicious Sickle}</p></li><li><p>@UUID[Compendium.laaru-dnd5-hw.items.FHUDEygUW7EWCDgA]{Свирепый скимитар / Vicious Scimitar}</p></li><li><p>@UUID[Compendium.laaru-dnd5-hw.items.QM3gdsL0eaAus7XT]{Свирепый топорик / Vicious Handaxe}</p></li><li><p>@UUID[Compendium.laaru-dnd5-hw.items.TMqS62qjBCveT1Ss]{Свирепый трезубец / Vicious Trident}</p></li><li><p>@UUID[Compendium.laaru-dnd5-hw.items.Fk78kNmp3OLX5EMC]{Свирепый тяжёлый арбалет / Vicious Heavy Crossbow}</p></li><li><p>@UUID[Compendium.laaru-dnd5-hw.items.qmuOeNsOKwkn6K8W]{Свирепый цеп / Vicious Flail}</p></li></ul>",
+  "item_kind": "weapon",
+  "magical": true,
+  "magical_bonus": 0,
+  "mastery": null,
+  "name": "Свирепое оружие",
+  "passive_effects": [
+    {
+      "changes": [
+        {
+          "key": "name",
+          "mode": 5,
+          "priority": null,
+          "value": "Vicious {}"
+        },
+        {
+          "key": "system.rarity",
+          "mode": 5,
+          "priority": null,
+          "value": "rare"
+        },
+        {
+          "key": "system.description.value",
+          "mode": 5,
+          "priority": null,
+          "value": "{}<p>@Embed[Compendium.dnd5e.equipment24.Item.dmgViciousWeapon caption=false]</p>"
+        },
+        {
+          "key": "system.properties",
+          "mode": 2,
+          "priority": null,
+          "value": "mgc"
+        },
+        {
+          "key": "system.damage.base.bonus",
+          "mode": 2,
+          "priority": null,
+          "value": "2d6"
+        },
+        {
+          "key": "system.price.value",
+          "mode": 2,
+          "priority": null,
+          "value": "4000"
+        },
+        {
+          "key": "system.price.denomination",
+          "mode": 5,
+          "priority": null,
+          "value": "gp"
+        }
+      ],
+      "description": "",
+      "disabled": true,
+      "duration": null,
+      "id": "CzJMRNHYWlVNvnJN",
+      "name": "Vicious Weapon",
+      "statuses": [],
+      "transfer": true
+    }
+  ],
+  "properties": [],
+  "provenance": {
+    "ingest_date": "2026-05-30",
+    "ingest_version": "foundry-translator-v1",
+    "license_tag": "CC-BY-4.0",
+    "source": "foundry",
+    "source_url": "https://github.com/foundryvtt/dnd5e/blob/965ad2d0cf5d063dac675ba078b5bd3c3c0dd449/packs/_source/equipment24/weapons/magical/vicious-weapon.yml",
+    "srd_version": [
+      "5.2"
+    ]
+  },
+  "range": {
+    "kind": "melee",
+    "long": null,
+    "units": null,
+    "value": null
+  },
+  "rarity": "rare",
+  "requires_attunement": false,
+  "review": {
+    "known_divergence": null,
+    "requires_user_decision": false
+  },
+  "slug": "vicious-weapon",
+  "uses": null,
+  "versatile_damage": null,
+  "weapon_category": "simple_melee",
+  "weight": 0.0
+}

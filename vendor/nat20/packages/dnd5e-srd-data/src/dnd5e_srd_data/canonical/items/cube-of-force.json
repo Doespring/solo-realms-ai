@@ -1,0 +1,617 @@
+{
+  "activities": [
+    {
+      "activation": {
+        "condition": "",
+        "override": false,
+        "reaction_conditions": [],
+        "type": "action",
+        "value": null
+      },
+      "consumption": {
+        "scaling": {
+          "allowed": false,
+          "max": ""
+        },
+        "spell_slot": true,
+        "targets": [
+          {
+            "scaling": {
+              "formula": "",
+              "mode": ""
+            },
+            "target": "",
+            "type": "itemUses",
+            "value": "1"
+          }
+        ]
+      },
+      "description": {
+        "chat_flavor": ""
+      },
+      "duration": {
+        "concentration": false,
+        "override": false,
+        "special": "",
+        "units": "inst",
+        "value": null
+      },
+      "flags": {},
+      "id": "P5hQL8Tv1BZgMM5p",
+      "img": "",
+      "kind": "cast",
+      "name": "",
+      "range": {
+        "override": false,
+        "special": "",
+        "units": "self",
+        "value": null
+      },
+      "sort": 0,
+      "spell": {
+        "ability": "",
+        "challenge": {
+          "attack": null,
+          "override": false,
+          "save": null
+        },
+        "level": 1,
+        "properties": [],
+        "spellbook": true,
+        "uuid": "Compendium.dnd5e.spells24.Item.phbsplMageArmor0"
+      },
+      "target": {
+        "affects": {
+          "choice": false,
+          "count": "",
+          "special": "",
+          "type": ""
+        },
+        "override": false,
+        "prompt": true,
+        "template": {
+          "contiguous": false,
+          "count": "",
+          "height": "",
+          "size": "",
+          "stationary": false,
+          "type": "",
+          "units": "ft",
+          "width": ""
+        }
+      },
+      "uses": {
+        "max": "",
+        "recovery": [],
+        "spent": 0
+      },
+      "visibility": {
+        "identifier": "",
+        "level": {
+          "max": null,
+          "min": null
+        },
+        "require_attunement": false,
+        "require_identification": true,
+        "require_magic": false
+      }
+    },
+    {
+      "activation": {
+        "condition": "",
+        "override": false,
+        "reaction_conditions": [],
+        "type": "action",
+        "value": null
+      },
+      "consumption": {
+        "scaling": {
+          "allowed": false,
+          "max": ""
+        },
+        "spell_slot": true,
+        "targets": [
+          {
+            "scaling": {
+              "formula": "",
+              "mode": ""
+            },
+            "target": "",
+            "type": "itemUses",
+            "value": "1"
+          }
+        ]
+      },
+      "description": {
+        "chat_flavor": ""
+      },
+      "duration": {
+        "concentration": false,
+        "override": false,
+        "special": "",
+        "units": "inst",
+        "value": null
+      },
+      "flags": {},
+      "id": "ZtRR3jrinUNMIEvU",
+      "img": "",
+      "kind": "cast",
+      "name": "",
+      "range": {
+        "override": false,
+        "special": "",
+        "units": "self",
+        "value": null
+      },
+      "sort": 0,
+      "spell": {
+        "ability": "",
+        "challenge": {
+          "attack": null,
+          "override": false,
+          "save": null
+        },
+        "level": 1,
+        "properties": [],
+        "spellbook": true,
+        "uuid": "Compendium.dnd5e.spells24.Item.phbsplShield0000"
+      },
+      "target": {
+        "affects": {
+          "choice": false,
+          "count": "",
+          "special": "",
+          "type": ""
+        },
+        "override": false,
+        "prompt": true,
+        "template": {
+          "contiguous": false,
+          "count": "",
+          "height": "",
+          "size": "",
+          "stationary": false,
+          "type": "",
+          "units": "ft",
+          "width": ""
+        }
+      },
+      "uses": {
+        "max": "",
+        "recovery": [],
+        "spent": 0
+      },
+      "visibility": {
+        "identifier": "",
+        "level": {
+          "max": null,
+          "min": null
+        },
+        "require_attunement": false,
+        "require_identification": true,
+        "require_magic": false
+      }
+    },
+    {
+      "activation": {
+        "condition": "",
+        "override": false,
+        "reaction_conditions": [],
+        "type": "action",
+        "value": null
+      },
+      "consumption": {
+        "scaling": {
+          "allowed": false,
+          "max": ""
+        },
+        "spell_slot": true,
+        "targets": [
+          {
+            "scaling": {
+              "formula": "",
+              "mode": ""
+            },
+            "target": "",
+            "type": "itemUses",
+            "value": "3"
+          }
+        ]
+      },
+      "description": {
+        "chat_flavor": ""
+      },
+      "duration": {
+        "concentration": false,
+        "override": false,
+        "special": "",
+        "units": "inst",
+        "value": null
+      },
+      "flags": {},
+      "id": "tCJJNlbzPWFK6X2m",
+      "img": "",
+      "kind": "cast",
+      "name": "",
+      "range": {
+        "override": false,
+        "special": "",
+        "units": "self",
+        "value": null
+      },
+      "sort": 0,
+      "spell": {
+        "ability": "",
+        "challenge": {
+          "attack": null,
+          "override": false,
+          "save": null
+        },
+        "level": 3,
+        "properties": [],
+        "spellbook": true,
+        "uuid": "Compendium.dnd5e.spells24.Item.phbsplLeomundsTi"
+      },
+      "target": {
+        "affects": {
+          "choice": false,
+          "count": "",
+          "special": "",
+          "type": ""
+        },
+        "override": false,
+        "prompt": true,
+        "template": {
+          "contiguous": false,
+          "count": "",
+          "height": "",
+          "size": "",
+          "stationary": false,
+          "type": "",
+          "units": "ft",
+          "width": ""
+        }
+      },
+      "uses": {
+        "max": "",
+        "recovery": [],
+        "spent": 0
+      },
+      "visibility": {
+        "identifier": "",
+        "level": {
+          "max": null,
+          "min": null
+        },
+        "require_attunement": false,
+        "require_identification": true,
+        "require_magic": false
+      }
+    },
+    {
+      "activation": {
+        "condition": "",
+        "override": false,
+        "reaction_conditions": [],
+        "type": "action",
+        "value": null
+      },
+      "consumption": {
+        "scaling": {
+          "allowed": false,
+          "max": ""
+        },
+        "spell_slot": true,
+        "targets": [
+          {
+            "scaling": {
+              "formula": "",
+              "mode": ""
+            },
+            "target": "",
+            "type": "itemUses",
+            "value": "4"
+          }
+        ]
+      },
+      "description": {
+        "chat_flavor": ""
+      },
+      "duration": {
+        "concentration": false,
+        "override": false,
+        "special": "",
+        "units": "inst",
+        "value": null
+      },
+      "flags": {},
+      "id": "KRhYoWhmZNWAmv1i",
+      "img": "",
+      "kind": "cast",
+      "name": "",
+      "range": {
+        "override": false,
+        "special": "",
+        "units": "self",
+        "value": null
+      },
+      "sort": 0,
+      "spell": {
+        "ability": "",
+        "challenge": {
+          "attack": null,
+          "override": false,
+          "save": null
+        },
+        "level": 4,
+        "properties": [],
+        "spellbook": true,
+        "uuid": "Compendium.dnd5e.spells24.Item.phbPrivateSanctu"
+      },
+      "target": {
+        "affects": {
+          "choice": false,
+          "count": "",
+          "special": "",
+          "type": ""
+        },
+        "override": false,
+        "prompt": true,
+        "template": {
+          "contiguous": false,
+          "count": "",
+          "height": "",
+          "size": "",
+          "stationary": false,
+          "type": "",
+          "units": "ft",
+          "width": ""
+        }
+      },
+      "uses": {
+        "max": "",
+        "recovery": [],
+        "spent": 0
+      },
+      "visibility": {
+        "identifier": "",
+        "level": {
+          "max": null,
+          "min": null
+        },
+        "require_attunement": false,
+        "require_identification": true,
+        "require_magic": false
+      }
+    },
+    {
+      "activation": {
+        "condition": "",
+        "override": false,
+        "reaction_conditions": [],
+        "type": "action",
+        "value": null
+      },
+      "consumption": {
+        "scaling": {
+          "allowed": false,
+          "max": ""
+        },
+        "spell_slot": true,
+        "targets": [
+          {
+            "scaling": {
+              "formula": "",
+              "mode": ""
+            },
+            "target": "",
+            "type": "itemUses",
+            "value": "4"
+          }
+        ]
+      },
+      "description": {
+        "chat_flavor": ""
+      },
+      "duration": {
+        "concentration": false,
+        "override": false,
+        "special": "",
+        "units": "inst",
+        "value": null
+      },
+      "flags": {},
+      "id": "N5Y0YZKK2llU4HXf",
+      "img": "",
+      "kind": "cast",
+      "name": "",
+      "range": {
+        "override": false,
+        "special": "",
+        "units": "self",
+        "value": null
+      },
+      "sort": 0,
+      "spell": {
+        "ability": "",
+        "challenge": {
+          "attack": null,
+          "override": true,
+          "save": 17
+        },
+        "level": 4,
+        "properties": [],
+        "spellbook": true,
+        "uuid": "Compendium.dnd5e.spells24.Item.phbsplOtilukesRe"
+      },
+      "target": {
+        "affects": {
+          "choice": false,
+          "count": "",
+          "special": "",
+          "type": ""
+        },
+        "override": false,
+        "prompt": true,
+        "template": {
+          "contiguous": false,
+          "count": "",
+          "height": "",
+          "size": "",
+          "stationary": false,
+          "type": "",
+          "units": "ft",
+          "width": ""
+        }
+      },
+      "uses": {
+        "max": "",
+        "recovery": [],
+        "spent": 0
+      },
+      "visibility": {
+        "identifier": "",
+        "level": {
+          "max": null,
+          "min": null
+        },
+        "require_attunement": false,
+        "require_identification": true,
+        "require_magic": false
+      }
+    },
+    {
+      "activation": {
+        "condition": "",
+        "override": false,
+        "reaction_conditions": [],
+        "type": "action",
+        "value": null
+      },
+      "consumption": {
+        "scaling": {
+          "allowed": false,
+          "max": ""
+        },
+        "spell_slot": true,
+        "targets": [
+          {
+            "scaling": {
+              "formula": "",
+              "mode": ""
+            },
+            "target": "",
+            "type": "itemUses",
+            "value": "5"
+          }
+        ]
+      },
+      "description": {
+        "chat_flavor": ""
+      },
+      "duration": {
+        "concentration": false,
+        "override": false,
+        "special": "",
+        "units": "inst",
+        "value": null
+      },
+      "flags": {},
+      "id": "ZIMYDxhyS56bcRQE",
+      "img": "",
+      "kind": "cast",
+      "name": "",
+      "range": {
+        "override": false,
+        "special": "",
+        "units": "self",
+        "value": null
+      },
+      "sort": 0,
+      "spell": {
+        "ability": "",
+        "challenge": {
+          "attack": null,
+          "override": false,
+          "save": null
+        },
+        "level": 5,
+        "properties": [],
+        "spellbook": true,
+        "uuid": "Compendium.dnd5e.spells24.Item.phbsplWallofForc"
+      },
+      "target": {
+        "affects": {
+          "choice": false,
+          "count": "",
+          "special": "",
+          "type": ""
+        },
+        "override": false,
+        "prompt": true,
+        "template": {
+          "contiguous": false,
+          "count": "",
+          "height": "",
+          "size": "",
+          "stationary": false,
+          "type": "",
+          "units": "ft",
+          "width": ""
+        }
+      },
+      "uses": {
+        "max": "",
+        "recovery": [],
+        "spent": 0
+      },
+      "visibility": {
+        "identifier": "",
+        "level": {
+          "max": null,
+          "min": null
+        },
+        "require_attunement": false,
+        "require_identification": true,
+        "require_magic": false
+      }
+    }
+  ],
+  "attunement_constraint": null,
+  "cost_gp": 4000.0,
+  "description": "Wondrous Item, Rare (Requires Attunement)\n\nThis cube is about an inch across. Each face has a distinct marking on it. You can press one of those faces, expend the number of charges required for it, and thereby cast the spell associated with it (save DC 17), as shown in the Cube of Force Faces table.\n\nThe cube starts with 10 charges, and it regains 1d6 expended charges daily at dawn.\n\nCube of Force Faces\n\nSpell\n\nCharge Cost\n\nMage Armor\n\n1\n\nShield\n\n1\n\nTiny Hut\n\n3\n\nPrivate Sanctum\n\n4\n\nResilient Sphere\n\n4\n\nWall of Force\n\n5",
+  "description_localized": "<p><em>Чудесный предмет, редкий (требует настроенности)</em></p><p>Это куб с ребром длиной примерно дюйм. На каждой грани есть своя пометка, на которую можно нажать. Сначала у куба 36 зарядов, ежедневно на рассвете он восстанавливает [[/r 1d20]] потраченных зарядов.</p><p>Вы можете использовать действие, чтобы нажать одну из граней куба и потратить зависящее от грани количество зарядов, как указано в таблице далее. У каждой грани свой эффект. Если у куба осталось недостаточно зарядов, ничего не происходит. В противном случае возникает барьер невидимой силы, формируя куб со стороной 15 футов с центром на вас. Барьер перемещается вместе с вами и существует 1 минуту, или пока вы не используете действие, чтобы нажать шестую грань куба, или пока у куба не кончатся заряды. Вы можете поменять эффект барьера, нажав другую грань куба и потратив указанное число зарядов, при этом отсчёт длительности начинается заново. Если из-за вашего перемещения барьер сталкивается с твёрдой поверхностью, которая не может пройти сквозь куб, вы не можете приблизиться к этому объекту, пока существует барьер.</p><table class=\"w-100 rd__table  stripe-odd-table\" style=\"width:100%;height:153px\"><caption>Грани силового куба</caption><thead><tr style=\"height:17px\"><th class=\"col-1 text-center\" style=\"width:6.38693%;height:17px\" data-rd-isroller=\"false\">Грань</th><th class=\"col-1 text-center\" style=\"width:9.25518%;height:17px\" data-rd-isroller=\"false\">Зарядов</th><th class=\"col-10\" style=\"width:83.7319%;height:17px\" data-rd-isroller=\"false\">Эффект</th></tr></thead><tbody><tr style=\"height:17px\"><td class=\"col-1 text-center\" style=\"width:6.38693%;height:17px\">1</td><td class=\"col-1 text-center\" style=\"width:9.25518%;height:17px\">1</td><td class=\"col-10\" style=\"width:83.7319%;height:17px\">Газы, ветер и туман не проходят через барьер.</td></tr><tr style=\"height:34px\"><td class=\"col-1 text-center\" style=\"width:6.38693%;height:34px\">2</td><td class=\"col-1 text-center\" style=\"width:9.25518%;height:34px\">2</td><td class=\"col-10\" style=\"width:83.7319%;height:34px\">Неживая материя не проходит через барьер. Стены, двери и потолки могут проходить по вашему усмотрению.</td></tr><tr style=\"height:17px\"><td class=\"col-1 text-center\" style=\"width:6.38693%;height:17px\">3</td><td class=\"col-1 text-center\" style=\"width:9.25518%;height:17px\">3</td><td class=\"col-10\" style=\"width:83.7319%;height:17px\">Живая материя не проходит через барьер.</td></tr><tr style=\"height:17px\"><td class=\"col-1 text-center\" style=\"width:6.38693%;height:17px\">4</td><td class=\"col-1 text-center\" style=\"width:9.25518%;height:17px\">4</td><td class=\"col-10\" style=\"width:83.7319%;height:17px\">Эффекты заклинаний не проходят через барьер.</td></tr><tr style=\"height:34px\"><td class=\"col-1 text-center\" style=\"width:6.38693%;height:34px\">5</td><td class=\"col-1 text-center\" style=\"width:9.25518%;height:34px\">5</td><td class=\"col-10\" style=\"width:83.7319%;height:34px\">Ничто не проходит через барьер. Стены, двери и потолки могут проходить по вашему усмотрению.</td></tr><tr style=\"height:17px\"><td class=\"col-1 text-center\" style=\"width:6.38693%;height:17px\">6</td><td class=\"col-1 text-center\" style=\"width:9.25518%;height:17px\">0</td><td class=\"col-10\" style=\"width:83.7319%;height:17px\">Барьер деактивируется.</td></tr></tbody></table><p>Куб теряет заряды, если на барьер сотворят определённые заклинания или если он контактирует с определёнными эффектами заклинаний или магических предметов, как указано в этой таблице.</p><table class=\"w-100 rd__table  stripe-odd-table\" style=\"width:100%;height:102px\"><thead><tr style=\"height:17px\"><th class=\"col-3\" style=\"width:87.2405%;height:17px\" data-rd-isroller=\"false\">Заклинание или предмет</th><th class=\"col-9\" style=\"width:12.44%;height:17px\" data-rd-isroller=\"false\">Потеря зарядов</th></tr></thead><tbody><tr style=\"height:17px\"><td class=\"col-3\" style=\"width:87.2405%;height:17px\">@Compendium[laaru-dnd5-hw.spells.KMGALOtvIkVjYggc]{Дезинтеграция}</td><td class=\"col-9\" style=\"width:12.44%;height:17px\">[[/r 1d12]]</td></tr><tr style=\"height:17px\"><td class=\"col-3\" style=\"width:87.2405%;height:17px\">@Compendium[laaru-dnd5-hw.items.AIQHUXuVTICEAvE5]{Звучный рог}</td><td class=\"col-9\" style=\"width:12.44%;height:17px\">[[/r 1d10]]</td></tr><tr style=\"height:17px\"><td class=\"col-3\" style=\"width:87.2405%;height:17px\">@Compendium[laaru-dnd5-hw.spells.vfMWZt9aM7IEdwXi]{Проход сквозь стену}</td><td class=\"col-9\" style=\"width:12.44%;height:17px\">[[/r 1d6]]</td></tr><tr style=\"height:17px\"><td class=\"col-3\" style=\"width:87.2405%;height:17px\">@Compendium[laaru-dnd5-hw.spells.b33yzLRWRd1iKVHO]{Радужные брызги}</td><td class=\"col-9\" style=\"width:12.44%;height:17px\">[[/r 1d20]]</td></tr><tr style=\"height:17px\"><td class=\"col-3\" style=\"width:87.2405%;height:17px\">@Compendium[laaru-dnd5-hw.spells.hNLGjcsAX6Pg9OT2]{Огненная стена}</td><td class=\"col-9\" style=\"width:12.44%;height:17px\">[[/r 1d4]]</td></tr></tbody></table>",
+  "item_kind": "magic_item",
+  "name": "Силовой куб",
+  "passive_effects": [],
+  "provenance": {
+    "ingest_date": "2026-05-30",
+    "ingest_version": "foundry-translator-v1",
+    "license_tag": "CC-BY-4.0",
+    "source": "foundry",
+    "source_url": "https://github.com/foundryvtt/dnd5e/blob/965ad2d0cf5d063dac675ba078b5bd3c3c0dd449/packs/_source/equipment24/equipment/cube-of-force.yml",
+    "srd_version": [
+      "5.2"
+    ]
+  },
+  "rarity": "rare",
+  "requires_attunement": true,
+  "review": {
+    "known_divergence": null,
+    "requires_user_decision": false
+  },
+  "slug": "cube-of-force",
+  "uses": {
+    "auto_destroy": false,
+    "max": "10",
+    "recovery": [
+      {
+        "formula": "1d6",
+        "period": "dawn",
+        "type": "formula"
+      }
+    ],
+    "spent": 0
+  },
+  "weight": 0.0
+}

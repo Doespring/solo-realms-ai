@@ -1,0 +1,171 @@
+{
+  "slug": "dominate-creature-alt",
+  "foundry_uuid": "Compendium.dnd5e.laaru-hw-spells.Item.Ta9xDDf3GC6R6Z0Y",
+  "name": "Подчинение существа / Dominate Creature",
+  "description": "Вы пытаетесь обворожить животное, которого видите в пределах дистанции. Оно должно пройти DC 0 Wisdom save{испытание Мудрости}, иначе будет &amp;Reference[charmed]{обворожено} вами на время действия заклинания. Если вы или дружественные вам существа сражаются с ним, оно будет проходить это испытание с преимуществом.\n\nПока существо обворожено, вы поддерживаете с ним телепатическую связь, если находитесь на одном Плане. Вы можете отдавать существу приказы через эту связь, и оно будет стараться их выполнить, пока вы не станете выведенным из строя. Вы можете отдавать как конкретные, так и общие приказы, например «атакуй то существо» или «охраняй ту дверь». Если у существа нет текущего приказа, оно будет защищать себя в меру своих способностей.\n\nДействием, вы можете полностью взять существо под контроль до начала вашего следующего хода. В этом случае оно совершает только те действия, которые вы выберете, и ничего более. Вы можете заставить его использовать ответное действие, но при этом должны потратить и своё ответное действие.\n\nКаждый раз, когда существо получает урон, оно повторяет DC 0 Wisdom save{испытание Мудрости}; в случае успеха эффект заклинания заканчивается.\n\nНа высоких кругах. Если вы сотворяете это заклинание, используя ячейку заклинания 5-го круга или выше, эффекты заклинания усиливаются, как показано в таблице:\n\nКруг ячейкиУсиленный эффект\n\n5-й\n\nЗаклинание может быть сотворено на Гуманоидов\n\n6-й\n\nДлительность увеличивается до 10 минут\n\n7-й\n\nДлительность увеличивается до 1 часа\n\n8-й\n\nЗаклинание может быть сотворено на любое существо\n\n9-й\n\nДлительность увеличивается до 8 часов",
+  "level": 4,
+  "school": "enc",
+  "components": [
+    "S",
+    "V"
+  ],
+  "ritual": false,
+  "concentration": true,
+  "casting_time": {
+    "unit": "action",
+    "value": 1,
+    "condition": ""
+  },
+  "range": {
+    "units": "ft",
+    "value": 60,
+    "special": null
+  },
+  "duration": {
+    "units": "minute",
+    "value": 1
+  },
+  "materials": {
+    "value": "",
+    "consumed": false,
+    "cost": 0,
+    "supply": 0
+  },
+  "preparation": {
+    "mode": "",
+    "prepared": false
+  },
+  "activities": [
+    {
+      "id": "33ChRzI6QOM9E0d0",
+      "name": "",
+      "img": "",
+      "sort": 0,
+      "activation": {
+        "type": "action",
+        "value": null,
+        "condition": "",
+        "override": false,
+        "reaction_conditions": []
+      },
+      "consumption": {
+        "scaling": {
+          "allowed": false,
+          "max": ""
+        },
+        "spell_slot": true,
+        "targets": []
+      },
+      "description": {
+        "chat_flavor": ""
+      },
+      "duration": {
+        "value": null,
+        "units": "inst",
+        "special": "",
+        "concentration": false,
+        "override": false
+      },
+      "flags": {},
+      "range": {
+        "value": null,
+        "units": "self",
+        "special": "",
+        "override": false
+      },
+      "target": {
+        "template": {
+          "count": "",
+          "contiguous": false,
+          "stationary": false,
+          "type": "",
+          "size": "",
+          "width": "",
+          "height": "",
+          "units": "ft"
+        },
+        "affects": {
+          "count": "1",
+          "type": "creature",
+          "choice": false,
+          "special": ""
+        },
+        "override": false,
+        "prompt": true
+      },
+      "uses": {
+        "spent": 0,
+        "max": "",
+        "recovery": []
+      },
+      "visibility": {
+        "identifier": "",
+        "level": {
+          "min": null,
+          "max": null
+        },
+        "require_attunement": false,
+        "require_identification": false,
+        "require_magic": false
+      },
+      "effects": [
+        {
+          "id": "bkmKh4YUcfc2MNum",
+          "level": {
+            "min": null,
+            "max": null
+          },
+          "on_save": false,
+          "riders": null
+        }
+      ],
+      "applied_effects": [],
+      "kind": "save",
+      "damage": {
+        "on_save": "half",
+        "parts": []
+      },
+      "save": {
+        "ability": [
+          "wis"
+        ],
+        "dc": {
+          "calculation": "spellcasting",
+          "formula": ""
+        },
+        "ignore_cover": false
+      }
+    }
+  ],
+  "passive_effects": [
+    {
+      "id": "bkmKh4YUcfc2MNum",
+      "name": "Обворожение",
+      "description": "",
+      "changes": [],
+      "statuses": [
+        "charmed"
+      ],
+      "duration": {
+        "seconds": 60
+      },
+      "disabled": false,
+      "transfer": false
+    }
+  ],
+  "provenance": {
+    "source": "foundry",
+    "source_url": "https://github.com/foundryvtt/dnd5e/blob/965ad2d0cf5d063dac675ba078b5bd3c3c0dd449/packs/_source/laaru-hw-spells/Подчинение_существа___Dominate_Creature_Ta9xDDf3GC6R6Z0Y.yml",
+    "ingest_date": "2026-10-26",
+    "ingest_version": "foundry-translator-v1",
+    "srd_version": [
+      "5.1"
+    ],
+    "license_tag": "CC-BY-4.0"
+  },
+  "review": {
+    "known_divergence": null,
+    "requires_user_decision": false
+  },
+  "entry_kind": "spell"
+}

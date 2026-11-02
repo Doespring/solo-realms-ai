@@ -1,0 +1,165 @@
+{
+  "slug": "wall-of-death",
+  "foundry_uuid": "Compendium.dnd5e.laaru-hw-spells.Item.SejbL2aHhhCZRrUG",
+  "name": "Стена смерти / Wall of Death",
+  "description": "Вы создаете стену из некротической энергии на поверхности в пределах дистанции. Вы можете создать стену длиной до 60 футов, высотой 20 футов и толщиной 1 фут или кольцевую стену диаметром до 20 футов, высотой 20 футов и толщиной 1 фут. Стена непрозрачна и действует в течение всего времени. Когда стена появляется, каждое существо в ее области должно пройти испытание Выносливости. При провале существо получает [[/damage 4d8 necrotic]]{4d8 некротического урона}, при успехе - в два раза меньше.\n\nОдна сторона стены, выбранная вами, когда вы сотворяете это заклинание, наносит 4d8 некротического урона каждому существу, которое заканчивает свой ход в радиусе 10 футов от этой стороны или внутри стены. Существо получает тот же урон, когда впервые за ход входит в стену или заканчивает там свой ход. Другая сторона стены не наносит урона.\n\nКогда существо получает урон от стены, вы можете использовать Ответное действие, чтобы получить временные ПЗ, равные количеству нанесенного урона.\n\nПримечание\n\nЗаклинание настроено как Линия 60 футов, при необходимости отредактируйте самостоятельно. Также настроено как Испытание.",
+  "level": 4,
+  "school": "nec",
+  "components": [
+    "M",
+    "S",
+    "V"
+  ],
+  "ritual": false,
+  "concentration": true,
+  "casting_time": {
+    "unit": "action",
+    "value": 1,
+    "condition": ""
+  },
+  "range": {
+    "units": "ft",
+    "value": 120,
+    "special": null
+  },
+  "duration": {
+    "units": "minute",
+    "value": 1
+  },
+  "materials": {
+    "value": "осколок оникса",
+    "consumed": false,
+    "cost": 0,
+    "supply": 0
+  },
+  "preparation": {
+    "mode": "prepared",
+    "prepared": false
+  },
+  "activities": [
+    {
+      "id": "dnd5eactivity000",
+      "name": "",
+      "img": "",
+      "sort": 0,
+      "activation": {
+        "type": "action",
+        "value": null,
+        "condition": "",
+        "override": false,
+        "reaction_conditions": []
+      },
+      "consumption": {
+        "scaling": {
+          "allowed": false,
+          "max": ""
+        },
+        "spell_slot": true,
+        "targets": []
+      },
+      "description": {
+        "chat_flavor": ""
+      },
+      "duration": {
+        "value": null,
+        "units": "inst",
+        "special": "",
+        "concentration": false,
+        "override": false
+      },
+      "flags": {},
+      "range": {
+        "value": null,
+        "units": "self",
+        "special": "",
+        "override": false
+      },
+      "target": {
+        "template": {
+          "count": "",
+          "contiguous": false,
+          "stationary": false,
+          "type": "wall",
+          "size": "60",
+          "width": "",
+          "height": "",
+          "units": "ft"
+        },
+        "affects": {
+          "count": "",
+          "type": "",
+          "choice": false,
+          "special": ""
+        },
+        "override": false,
+        "prompt": true
+      },
+      "uses": {
+        "spent": 0,
+        "max": "",
+        "recovery": []
+      },
+      "visibility": {
+        "identifier": "",
+        "level": {
+          "min": null,
+          "max": null
+        },
+        "require_attunement": false,
+        "require_identification": false,
+        "require_magic": false
+      },
+      "effects": [],
+      "applied_effects": [],
+      "kind": "save",
+      "damage": {
+        "on_save": "half",
+        "parts": [
+          {
+            "number": 4,
+            "denomination": 8,
+            "bonus": "",
+            "types": [
+              "necrotic"
+            ],
+            "custom": {
+              "enabled": false,
+              "formula": ""
+            },
+            "scaling": {
+              "mode": "whole",
+              "number": 1,
+              "formula": ""
+            }
+          }
+        ]
+      },
+      "save": {
+        "ability": [
+          "con"
+        ],
+        "dc": {
+          "calculation": "spellcasting",
+          "formula": ""
+        },
+        "ignore_cover": false
+      }
+    }
+  ],
+  "passive_effects": [],
+  "provenance": {
+    "source": "foundry",
+    "source_url": "https://github.com/foundryvtt/dnd5e/blob/965ad2d0cf5d063dac675ba078b5bd3c3c0dd449/packs/_source/laaru-hw-spells/Стена_смерти___Wall_of_Death_SejbL2aHhhCZRrUG.yml",
+    "ingest_date": "2026-10-26",
+    "ingest_version": "foundry-translator-v1",
+    "srd_version": [
+      "5.1"
+    ],
+    "license_tag": "CC-BY-4.0"
+  },
+  "review": {
+    "known_divergence": null,
+    "requires_user_decision": false
+  },
+  "entry_kind": "spell"
+}
