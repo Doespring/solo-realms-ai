@@ -1,0 +1,986 @@
+{
+  "activities": [
+    {
+      "activation": {
+        "condition": "",
+        "override": false,
+        "reaction_conditions": [],
+        "type": "action",
+        "value": null
+      },
+      "applied_effects": [
+        "YreDFSu9z9mGCWt1",
+        "LTByr2rsRPBLLOA0",
+        "MqubvD3XEwB7DRST",
+        "lsPKUk288Jkvahsp",
+        "18IZ8X8zpDXyN33T",
+        "CfxFdUSiXkOUXym6",
+        "VST1qNRu1dHDzkD2",
+        "mmp5O2pZOxJUc2vq",
+        "jyWNVNHLYdxvCOQz",
+        "cbsuJ2tdbBuT5e8U"
+      ],
+      "consumption": {
+        "scaling": {
+          "allowed": false,
+          "max": ""
+        },
+        "spell_slot": true,
+        "targets": []
+      },
+      "description": {
+        "chat_flavor": ""
+      },
+      "duration": {
+        "concentration": false,
+        "override": false,
+        "special": "",
+        "units": "inst",
+        "value": null
+      },
+      "effects": [
+        {
+          "id": "YreDFSu9z9mGCWt1",
+          "level": {
+            "max": null,
+            "min": null
+          },
+          "on_save": null,
+          "riders": {
+            "activity": [],
+            "effect": [
+              "YP420EGhAHmNVa8w"
+            ],
+            "item": []
+          }
+        },
+        {
+          "id": "LTByr2rsRPBLLOA0",
+          "level": {
+            "max": null,
+            "min": null
+          },
+          "on_save": null,
+          "riders": {
+            "activity": [],
+            "effect": [
+              "ACmdUQgMzhh6BiJs"
+            ],
+            "item": []
+          }
+        },
+        {
+          "id": "MqubvD3XEwB7DRST",
+          "level": {
+            "max": null,
+            "min": null
+          },
+          "on_save": null,
+          "riders": {
+            "activity": [],
+            "effect": [
+              "Lakck2k6LIxzlncZ"
+            ],
+            "item": []
+          }
+        },
+        {
+          "id": "lsPKUk288Jkvahsp",
+          "level": {
+            "max": null,
+            "min": null
+          },
+          "on_save": null,
+          "riders": {
+            "activity": [],
+            "effect": [
+              "nP2MPjGkjwc2qoa7"
+            ],
+            "item": []
+          }
+        },
+        {
+          "id": "18IZ8X8zpDXyN33T",
+          "level": {
+            "max": null,
+            "min": null
+          },
+          "on_save": null,
+          "riders": {
+            "activity": [],
+            "effect": [
+              "MHtyWzlMMBeUoFnz"
+            ],
+            "item": []
+          }
+        },
+        {
+          "id": "CfxFdUSiXkOUXym6",
+          "level": {
+            "max": null,
+            "min": null
+          },
+          "on_save": null,
+          "riders": {
+            "activity": [],
+            "effect": [
+              "OVh17qutRZ4vceWw"
+            ],
+            "item": []
+          }
+        },
+        {
+          "id": "VST1qNRu1dHDzkD2",
+          "level": {
+            "max": null,
+            "min": null
+          },
+          "on_save": null,
+          "riders": {
+            "activity": [],
+            "effect": [
+              "R2WuyXjV8Z8E0wKu"
+            ],
+            "item": []
+          }
+        },
+        {
+          "id": "mmp5O2pZOxJUc2vq",
+          "level": {
+            "max": null,
+            "min": null
+          },
+          "on_save": null,
+          "riders": {
+            "activity": [],
+            "effect": [
+              "meu3jAB2SZjKZrUC"
+            ],
+            "item": []
+          }
+        },
+        {
+          "id": "jyWNVNHLYdxvCOQz",
+          "level": {
+            "max": null,
+            "min": null
+          },
+          "on_save": null,
+          "riders": {
+            "activity": [],
+            "effect": [
+              "MOoO1WhULDcQtooN"
+            ],
+            "item": []
+          }
+        },
+        {
+          "id": "cbsuJ2tdbBuT5e8U",
+          "level": {
+            "max": null,
+            "min": null
+          },
+          "on_save": null,
+          "riders": {
+            "activity": [],
+            "effect": [
+              "FtKhRdQT4zB1DG4f"
+            ],
+            "item": []
+          }
+        }
+      ],
+      "enchant": {
+        "identifier": "",
+        "self": false
+      },
+      "flags": {},
+      "id": "WBZbIEyjUkYdQ6i2",
+      "img": "",
+      "kind": "enchant",
+      "name": "Armor of Resistance",
+      "range": {
+        "override": false,
+        "special": "",
+        "units": "self",
+        "value": null
+      },
+      "restrictions": {
+        "allow_magical": false,
+        "categories": [],
+        "properties": [],
+        "type": ""
+      },
+      "sort": 0,
+      "target": {
+        "affects": {
+          "choice": false,
+          "count": "",
+          "special": "",
+          "type": ""
+        },
+        "override": false,
+        "prompt": true,
+        "template": {
+          "contiguous": false,
+          "count": "",
+          "height": "",
+          "size": "",
+          "stationary": false,
+          "type": "",
+          "units": "ft",
+          "width": ""
+        }
+      },
+      "uses": {
+        "max": "",
+        "recovery": [],
+        "spent": 0
+      },
+      "visibility": {
+        "identifier": "",
+        "level": {
+          "max": null,
+          "min": null
+        },
+        "require_attunement": false,
+        "require_identification": false,
+        "require_magic": false
+      }
+    }
+  ],
+  "armor_category": "light",
+  "attunement_constraint": null,
+  "base_ac": 10,
+  "cost_gp": 4000.0,
+  "description": "Armor (Any Light, Medium, or Heavy), Rare (Requires Attunement)\n\nYou have Resistance to one type of damage while you wear this armor. The GM chooses the type or determines it randomly by rolling on the following table.\n\n@Embed[Compendium.dnd5e.tables24.RollTable.dmgArmorOfResist rollable caption=false]\n\n@Embed[Compendium.dnd5e.content24.JournalEntry.dmgFoundryRefere.JournalEntryPage.Ok4iCgD25ENgoRxE cite=false caption=false classes=\"hide-in-embed\"]",
+  "description_localized": "<p><em>Броня, редкая (требует настроенности)</em></p><p>Пока вы носите эту броню, у вас &amp;reference[damageresistance]{устойчивость} к урону громом.</p><p>Состоит из нескольких слоёв ткани и набивки. Стёганый доспех обеспечивает сравнимый с жёсткой кожей уровень защиты, но в меньшей степени отягощает носителя.</p><p>Эта броня имеет следующие разновидности:</p><ul><li><p>@UUID[Compendium.laaru-dnd5-hw.items.JLqS1JCLcrCiFhmw]{Стёганый доспех устойчивости (гром) / Padded Armor of Thunder Resistance}</p></li><li><p>@UUID[Compendium.laaru-dnd5-hw.items.hCBXuZQOEWIQp1ZV]{Стёганый доспех устойчивости (кислота) / Padded Armor of Acid Resistance}</p></li><li><p>@UUID[Compendium.laaru-dnd5-hw.items.tzGSkwjrETXcNxtC]{Стёганый доспех устойчивости (лучистый) / Padded Armor of Radiant Resistance}</p></li><li><p>@UUID[Compendium.laaru-dnd5-hw.items.0F5LxfMMBo7HmfIb]{Стёганый доспех устойчивости (молния) / Padded Armor of Lightning Resistance}</p></li><li><p>@UUID[Compendium.laaru-dnd5-hw.items.a7mnxYLEAsuTDcXW]{Стёганый доспех устойчивости (некротический) / Padded Armor of Necrotic Resistance}</p></li><li><p>@UUID[Compendium.laaru-dnd5-hw.items.On36V286MNpIDs9u]{Стёганый доспех устойчивости (огонь) / Padded Armor of Fire Resistance}</p></li><li><p>@UUID[Compendium.laaru-dnd5-hw.items.A2ZW2Fhmadak8DCw]{Стёганый доспех устойчивости (психический) / Padded Armor of Psychic Resistance}</p></li><li><p>@UUID[Compendium.laaru-dnd5-hw.items.wpMTFyJRE8OHcdGR]{Стёганый доспех устойчивости (сила) / Padded Armor of Force Resistance}</p></li><li><p>@UUID[Compendium.laaru-dnd5-hw.items.d3bxfLIe5569eChL]{Стёганый доспех устойчивости (холод) / Padded Armor of Cold Resistance}</p></li><li><p>@UUID[Compendium.laaru-dnd5-hw.items.FZ0ivLkN1aYz0iRQ]{Стёганый доспех устойчивости (яд) / Padded Armor of Poison Resistance}</p></li></ul><hr /><ul><li><p>@UUID[Compendium.laaru-dnd5-hw.items.mAEYnlO9sBcla9pu]{Кожаный доспех устойчивости (гром) / Leather Armor of Thunder Resistance}</p></li><li><p>@UUID[Compendium.laaru-dnd5-hw.items.7WX7uELNa9Iq1eMt]{Кожаный доспех устойчивости (кислота) / Leather Armor of Acid Resistance}</p></li><li><p>@UUID[Compendium.laaru-dnd5-hw.items.qA1kdhTYe1TU9iTe]{Кожаный доспех устойчивости (лучистый) / Leather Armor of Radiant Resistance}</p></li><li><p>@UUID[Compendium.laaru-dnd5-hw.items.9iTpfb7WPlMKRFAO]{Кожаный доспех устойчивости (молния) / Leather Armor of Lightning Resistance}</p></li><li><p>@UUID[Compendium.laaru-dnd5-hw.items.IBd9k3CifnUbjGDN]{Кожаный доспех устойчивости (некротический) / Leather Armor of Necrotic Resistance}</p></li><li><p>@UUID[Compendium.laaru-dnd5-hw.items.o6EXIyblPyOuaX7X]{Кожаный доспех устойчивости (огонь) / Leather Armor of Fire Resistance}</p></li><li><p>@UUID[Compendium.laaru-dnd5-hw.items.oROODJBoGWJ4Y1en]{Кожаный доспех устойчивости (психический) / Leather Armor of Psychic Resistance}</p></li><li><p>@UUID[Compendium.laaru-dnd5-hw.items.EdtnnNfvl4CjK9by]{Кожаный доспех устойчивости (сила) / Leather Armor of Force Resistance}</p></li><li><p>@UUID[Compendium.laaru-dnd5-hw.items.EolTTy36BAqvW2aF]{Кожаный доспех устойчивости (холод) / Leather Armor of Cold Resistance}</p></li><li><p>@UUID[Compendium.laaru-dnd5-hw.items.RUIpLFEOuE1TQ83K]{Кожаный доспех устойчивости (яд) / Leather Armor of Poison Resistance}</p></li></ul><hr /><ul><li><p>@UUID[Compendium.laaru-dnd5-hw.items.qkBG45yn4s996cki]{Клёпаный кожаный доспех устойчивости (гром) / Studded Leather Armor of Thunder Resistance}</p></li><li><p>@UUID[Compendium.laaru-dnd5-hw.items.EDLgEDSn0kx3wNCK]{Клёпаный кожаный доспех устойчивости (кислота) / Studded Leather Armor of Acid Resistance}</p></li><li><p>@UUID[Compendium.laaru-dnd5-hw.items.dTEaHQq4kCb04PCa]{Клёпаный кожаный доспех устойчивости (лучистый) / Studded Leather Armor of Radiant Resistance}</p></li><li><p>@UUID[Compendium.laaru-dnd5-hw.items.C876L7WTHwghStug]{Клёпаный кожаный доспех устойчивости (молния) / Studded Leather Armor of Lightning Resistance}</p></li><li><p>@UUID[Compendium.laaru-dnd5-hw.items.0izQpHF8hlvAV2Da]{Клёпаный кожаный доспех устойчивости (некротический) / Studded Leather Armor of Necrotic Resistance}</p></li><li><p>@UUID[Compendium.laaru-dnd5-hw.items.0EJ2mYiPtObCiLc3]{Клёпаный кожаный доспех устойчивости (огонь) / Studded Leather Armor of Fire Resistance}</p></li><li><p>@UUID[Compendium.laaru-dnd5-hw.items.pmaAr4bBMQHL2pqI]{Клёпаный кожаный доспех устойчивости (психический) / Studded Leather Armor of Psychic Resistance}</p></li><li><p>@UUID[Compendium.laaru-dnd5-hw.items.TgsRSuQOUCFCNpDw]{Клёпаный кожаный доспех устойчивости (сила) / Studded Leather Armor of Force Resistance}</p></li><li><p>@UUID[Compendium.laaru-dnd5-hw.items.DmIJDNeBWOwuuYl8]{Клёпаный кожаный доспех устойчивости (холод) / Studded Leather Armor of Cold Resistance}</p></li><li>@UUID[Compendium.laaru-dnd5-hw.items.ylonICl1ME0cionQ]{Клёпаный кожаный доспех устойчивости (яд) / Studded Leather Armor of Poison Resistance}</li></ul><hr /><ul><li><p>@UUID[Compendium.laaru-dnd5-hw.items.kjgRVXeEAsVtAHqH]{Сыромятный доспех устойчивости (гром) / Hide Armor of Thunder Resistance}</p></li><li><p>@UUID[Compendium.laaru-dnd5-hw.items.puYVkDX24glSMq6q]{Сыромятный доспех устойчивости (кислота) / Hide Armor of Acid Resistance}</p></li><li><p>@UUID[Compendium.laaru-dnd5-hw.items.QtTsLKURlnIBSuzQ]{Сыромятный доспех устойчивости (лучистый) / Hide Armor of Radiant Resistance}</p></li><li><p>@UUID[Compendium.laaru-dnd5-hw.items.tdsFebf1BAmoEaWt]{Сыромятный доспех устойчивости (молния) / Hide Armor of Lightning Resistance}</p></li><li><p>@UUID[Compendium.laaru-dnd5-hw.items.FsQzqB4vxtCKf1rD]{Сыромятный доспех устойчивости (некротический) / Hide Armor of Necrotic Resistance}</p></li><li><p>@UUID[Compendium.laaru-dnd5-hw.items.9Ii84cGIBbwSUyDx]{Сыромятный доспех устойчивости (огонь) / Hide Armor of Fire Resistance}</p></li><li><p>@UUID[Compendium.laaru-dnd5-hw.items.DMxx8Q78xs16Mn0B]{Сыромятный доспех устойчивости (психический) / Hide Armor of Psychic Resistance}</p></li><li><p>@UUID[Compendium.laaru-dnd5-hw.items.OnIUh3MGa5tqcb2A]{Сыромятный доспех устойчивости (сила) / Hide Armor of Force Resistance}</p></li><li><p>@UUID[Compendium.laaru-dnd5-hw.items.m8b7J2Ow25jtrmdO]{Сыромятный доспех устойчивости (холод) / Hide Armor of Cold Resistance}</p></li><li><p>@UUID[Compendium.laaru-dnd5-hw.items.5IV4Yhj1ziAf1VHi]{Сыромятный доспех устойчивости (яд) / Hide Armor of Poison Resistance}</p></li></ul><hr /><ul><li><p>@UUID[Compendium.laaru-dnd5-hw.items.ZnlInvTs8pEmzFG5]{Кольчужная рубаха устойчивости (гром) / Chain Shirt of Thunder Resistance}</p></li><li><p>@UUID[Compendium.laaru-dnd5-hw.items.YMc0UroAPX5qBJnC]{Кольчужная рубаха устойчивости (кислота) / Chain Shirt of Acid Resistance}</p></li><li><p>@UUID[Compendium.laaru-dnd5-hw.items.cTEpKEbWNDj12Uky]{Кольчужная рубаха устойчивости (лучистый) / Chain Shirt of Radiant Resistance}</p></li><li><p>@UUID[Compendium.laaru-dnd5-hw.items.K4wamGFrzsp7uuI2]{Кольчужная рубаха устойчивости (молния) / Chain Shirt of Lightning Resistance}</p></li><li><p>@UUID[Compendium.laaru-dnd5-hw.items.ry5oCRJn4QrzLizK]{Кольчужная рубаха устойчивости (некротический) / Chain Shirt of Necrotic Resistance}</p></li><li><p>@UUID[Compendium.laaru-dnd5-hw.items.nOLbkOlPExbhAIIH]{Кольчужная рубаха устойчивости (огонь) / Chain Shirt of Fire Resistance}</p></li><li><p>@UUID[Compendium.laaru-dnd5-hw.items.s1DAixQNz4P0lGlJ]{Кольчужная рубаха устойчивости (психический) / Chain Shirt of Psychic Resistance}</p></li><li><p>@UUID[Compendium.laaru-dnd5-hw.items.xoYMFPAA3vNYoPVT]{Кольчужная рубаха устойчивости (сила) / Chain Shirt of Force Resistance}</p></li><li><p>@UUID[Compendium.laaru-dnd5-hw.items.SGSioVv28AFALijg]{Кольчужная рубаха устойчивости (холод) / Chain Shirt of Cold Resistance}</p></li><li><p>@UUID[Compendium.laaru-dnd5-hw.items.PdOAK9hcPDXovCKp]{Кольчужная рубаха устойчивости (яд) / Chain Shirt of Poison Resistance}</p></li></ul><hr /><ul><li><p>@UUID[Compendium.laaru-dnd5-hw.items.aXosPhZ2Ulq8g9ta]{Чешуйчатый доспех устойчивости (гром) / Scale Mail of Thunder Resistance}</p></li><li><p>@UUID[Compendium.laaru-dnd5-hw.items.t2LQvdmtSed0GNvM]{Чешуйчатый доспех устойчивости (кислота) / Scale Mail of Acid Resistance}</p></li><li><p>@UUID[Compendium.laaru-dnd5-hw.items.kFgosx5NUbXwyyWk]{Чешуйчатый доспех устойчивости (лучистый) / Scale Mail of Radiant Resistance}</p></li><li><p>@UUID[Compendium.laaru-dnd5-hw.items.krNCN7D4XC50I3f2]{Чешуйчатый доспех устойчивости (молния) / Scale Mail of Lightning Resistance}</p></li><li><p>@UUID[Compendium.laaru-dnd5-hw.items.2uXyCN1WK3X726a7]{Чешуйчатый доспех устойчивости (некротический) / Scale Mail of Necrotic Resistance}</p></li><li><p>@UUID[Compendium.laaru-dnd5-hw.items.ApwdyhVwG5jON8UA]{Чешуйчатый доспех устойчивости (огонь) / Scale Mail of Fire Resistance}</p></li><li><p>@UUID[Compendium.laaru-dnd5-hw.items.Q2vYDDUZ8WVSuQJ2]{Чешуйчатый доспех устойчивости (психический) / Scale Mail of Psychic Resistance}</p></li><li><p>@UUID[Compendium.laaru-dnd5-hw.items.WnAgrgHLN5YMccMA]{Чешуйчатый доспех устойчивости (сила) / Scale Mail of Force Resistance}</p></li><li><p>@UUID[Compendium.laaru-dnd5-hw.items.neC7k08vSRs4EaPD]{Чешуйчатый доспех устойчивости (холод) / Scale Mail of Cold Resistance}</p></li><li><p>@UUID[Compendium.laaru-dnd5-hw.items.rDLTZeyi6wdzncFP]{Чешуйчатый доспех устойчивости (яд) / Scale Mail of Poison Resistance}</p></li></ul><hr /><ul><li><p>@UUID[Compendium.laaru-dnd5-hw.items.hWFwWNW9rrf0rRKH]{Нагрудник устойчивости к грому / Breastplate of Thunder Resistance}</p></li><li><p>@UUID[Compendium.laaru-dnd5-hw.items.Q3LNgvTX3VZyNKk7]{Нагрудник устойчивости к кислоте / Breastplate of Acid Resistance}</p></li><li><p>@UUID[Compendium.laaru-dnd5-hw.items.1Y70GaqIGWPsUWMS]{Нагрудник устойчивости к лучистому урону / Breastplate of Radiant Resistance}</p></li><li><p>@UUID[Compendium.laaru-dnd5-hw.items.EPSTW3s2g1YDG0oV]{Нагрудник устойчивости к некротическому урону / Breastplate of Necrotic Resistance}</p></li><li><p>@UUID[Compendium.laaru-dnd5-hw.items.TT7ZYeLiKEBNCpmF]{Нагрудник устойчивости к огню / Breastplate of Fire Resistance}</p></li><li><p>@UUID[Compendium.laaru-dnd5-hw.items.1u5lln7AtYdMuc0O]{Нагрудник устойчивости к психическому урону / Breastplate of Psychic Resistance}</p></li><li><p>@UUID[Compendium.laaru-dnd5-hw.items.4mPi8BtcF5swFd92]{Нагрудник устойчивости к урону молнией / Breastplate of Lightning Resistance}</p></li><li><p>@UUID[Compendium.laaru-dnd5-hw.items.NLGh3pHQNAZSmHz9]{Нагрудник устойчивости к урону силой / Breastplate of Force Resistance}</p></li><li><p>@UUID[Compendium.laaru-dnd5-hw.items.Jzs5WJPAXfdQTMTk]{Нагрудник устойчивости к урону холодом / Breastplate of Cold Resistance}</p></li><li><p>@UUID[Compendium.laaru-dnd5-hw.items.R6ul8vOwsNWnEqL6]{Нагрудник устойчивости к урону ядом / Breastplate of Poison Resistance}</p></li></ul><hr /><ul><li><p>@UUID[Compendium.laaru-dnd5-hw.items.VxBb2pXPPJjqHdYR]{Кольчужно-латный доспех устойчивости (гром) / Half Plate Armor of Thunder Resistance}</p></li><li><p>@UUID[Compendium.laaru-dnd5-hw.items.UIsdTZL4SMVbOCAW]{Кольчужно-латный доспех устойчивости (кислота) / Half Plate Armor of Acid Resistance}</p></li><li><p>@UUID[Compendium.laaru-dnd5-hw.items.ysW60pxd0jgQ4FfV]{Кольчужно-латный доспех устойчивости (лучистый) / Half Plate Armor of Radiant Resistance}</p></li><li><p>@UUID[Compendium.laaru-dnd5-hw.items.wzKRusLVe5esYiDz]{Кольчужно-латный доспех устойчивости (молния) / Half Plate Armor of Lightning Resistance}</p></li><li><p>@UUID[Compendium.laaru-dnd5-hw.items.iNszubLK0IV8nrRv]{Кольчужно-латный доспех устойчивости (некротический) / Half Plate Armor of Necrotic Resistance}</p></li><li><p>@UUID[Compendium.laaru-dnd5-hw.items.Je3twKs0klH8xMh3]{Кольчужно-латный доспех устойчивости (огонь) / Half Plate Armor of Fire Resistance}</p></li><li><p>@UUID[Compendium.laaru-dnd5-hw.items.OV3ozaJXcOGgqT8n]{Кольчужно-латный доспех устойчивости (психический) / Half Plate Armor of Psychic Resistance}</p></li><li><p>@UUID[Compendium.laaru-dnd5-hw.items.AzwGo0rRXOXgpZLk]{Кольчужно-латный доспех устойчивости (сила) / Half Plate Armor of Force Resistance}</p></li><li><p>@UUID[Compendium.laaru-dnd5-hw.items.Rt3YO578NF8tjAoV]{Кольчужно-латный доспех устойчивости (холод) / Half Plate Armor of Cold Resistance}</p></li><li><p>@UUID[Compendium.laaru-dnd5-hw.items.NJzRj18POpSZ9Bbv]{Кольчужно-латный доспех устойчивости (яд) / Half Plate Armor of Poison Resistance}</p></li></ul><hr /><ul><li><p>@UUID[Compendium.laaru-dnd5-hw.items.eTGOwGv7IOxPHVZd]{Кольчатый доспех устойчивости (гром) / Ring Mail of Thunder Resistance}</p></li><li><p>@UUID[Compendium.laaru-dnd5-hw.items.EXNpWSg3BXx1bTtn]{Кольчатый доспех устойчивости (кислота) / Ring Mail of Acid Resistance}</p></li><li><p>@UUID[Compendium.laaru-dnd5-hw.items.kbPK6xoTzwpbdeMZ]{Кольчатый доспех устойчивости (лучистый) / Ring Mail of Radiant Resistance}</p></li><li><p>@UUID[Compendium.laaru-dnd5-hw.items.TPQL9yCDgzc0hRX2]{Кольчатый доспех устойчивости (молния) / Ring Mail of Lightning Resistance}</p></li><li><p>@UUID[Compendium.laaru-dnd5-hw.items.TEKFxUzwqNT87ZqK]{Кольчатый доспех устойчивости (некротический) / Ring Mail of Necrotic Resistance}</p></li><li><p>@UUID[Compendium.laaru-dnd5-hw.items.BOCoBWpIomNYLK47]{Кольчатый доспех устойчивости (огонь) / Ring Mail of Fire Resistance}</p></li><li><p>@UUID[Compendium.laaru-dnd5-hw.items.52FOOyaCKM3WuWo2]{Кольчатый доспех устойчивости (психический) / Ring Mail of Psychic Resistance}</p></li><li><p>@UUID[Compendium.laaru-dnd5-hw.items.qwzVjBvtkKl1jpS6]{Кольчатый доспех устойчивости (сила) / Ring Mail of Force Resistance}</p></li><li><p>@UUID[Compendium.laaru-dnd5-hw.items.ry2D5MthYIZFPsAm]{Кольчатый доспех устойчивости (холод) / Ring Mail of Cold Resistance}</p></li><li><p>@UUID[Compendium.laaru-dnd5-hw.items.TM49GyYQa9bWrKy7]{Кольчатый доспех устойчивости (яд) / Ring Mail of Poison Resistance}</p></li></ul><hr /><ul><li><p>@UUID[Compendium.laaru-dnd5-hw.items.HRaaUzUM1Kn48gA6]{Пластинчатый доспех устойчивости (гром) / Splint Armor of Thunder Resistance}</p></li><li><p>@UUID[Compendium.laaru-dnd5-hw.items.jNU9iR8f6bR6rKJl]{Пластинчатый доспех устойчивости (кислота) / Splint Armor of Acid Resistance}</p></li><li><p>@UUID[Compendium.laaru-dnd5-hw.items.fZQx4knQ4DphyCcO]{Пластинчатый доспех устойчивости (лучистый) / Splint Armor of Radiant Resistance}</p></li><li><p>@UUID[Compendium.laaru-dnd5-hw.items.sXCTBoXOBOr0HC2m]{Пластинчатый доспех устойчивости (молния) / Splint Armor of Lightning Resistance}</p></li><li><p>@UUID[Compendium.laaru-dnd5-hw.items.ABFPSmU2iQg8br9U]{Пластинчатый доспех устойчивости (некротический) / Splint Armor of Necrotic Resistance}</p></li><li><p>@UUID[Compendium.laaru-dnd5-hw.items.5ySpRGI3hHM9m3kr]{Пластинчатый доспех устойчивости (огонь) / Splint Armor of Fire Resistance}</p></li><li><p>@UUID[Compendium.laaru-dnd5-hw.items.tYi726s2O30ap1I5]{Пластинчатый доспех устойчивости (психический) / Splint Armor of Psychic Resistance}</p></li><li><p>@UUID[Compendium.laaru-dnd5-hw.items.W5Yy3b0czjtkjFF1]{Пластинчатый доспех устойчивости (сила) / Splint Armor of Force Resistance}</p></li><li><p>@UUID[Compendium.laaru-dnd5-hw.items.gntFNVvavSqPbaPT]{Пластинчатый доспех устойчивости (холод) / Splint Armor of Cold Resistance}</p></li><li><p>@UUID[Compendium.laaru-dnd5-hw.items.RrOlXXBtucpQ1XHi]{Пластинчатый доспех устойчивости (яд) / Splint Armor of Poison Resistance}</p></li></ul><hr /><ul><li><p>@UUID[Compendium.laaru-dnd5-hw.items.GuMOcMZHKptAyFZs]{Латный доспех устойчивости (гром) / Plate Armor of Thunder Resistance}</p></li><li><p>@UUID[Compendium.laaru-dnd5-hw.items.1XJYkznDa3lhr1ua]{Латный доспех устойчивости (кислота) / Plate Armor of Acid Resistance}</p></li><li><p>@UUID[Compendium.laaru-dnd5-hw.items.3fmtFDpP9NJ6B7s5]{Латный доспех устойчивости (лучистый) / Plate Armor of Radiant Resistance}</p></li><li><p>@UUID[Compendium.laaru-dnd5-hw.items.r9N6iG9SdJaWC9IT]{Латный доспех устойчивости (молния) / Plate Armor of Lightning Resistance}</p></li><li><p>@UUID[Compendium.laaru-dnd5-hw.items.RRnX5PFsc4qqdCcQ]{Латный доспех устойчивости (некротический) / Plate Armor of Necrotic Resistance}</p></li><li><p>@UUID[Compendium.laaru-dnd5-hw.items.IAhxRmCpSNafKGsC]{Латный доспех устойчивости (огонь) / Plate Armor of Fire Resistance}</p></li><li><p>@UUID[Compendium.laaru-dnd5-hw.items.uYbdzbFUwqsCgXDz]{Латный доспех устойчивости (психический) / Plate Armor of Psychic Resistance}</p></li><li><p>@UUID[Compendium.laaru-dnd5-hw.items.9YH0MnTX6coqucPk]{Латный доспех устойчивости (сила) / Plate Armor of Force Resistance}</p></li><li><p>@UUID[Compendium.laaru-dnd5-hw.items.pzIgkMBGpwKhuif1]{Латный доспех устойчивости (холод) / Plate Armor of Cold Resistance}</p></li><li><p>@UUID[Compendium.laaru-dnd5-hw.items.cVmyQ69ZOmyEL8gG]{Латный доспех устойчивости (яд) / Plate Armor of Poison Resistance}</p></li></ul><hr /><ul><li><p>@UUID[Compendium.laaru-dnd5-hw.items.fDqY3ORIX4TZLf6e]{Шипованный доспех устойчивости (гром) / Spiked Armor of Thunder Resistance}</p></li><li><p>@UUID[Compendium.laaru-dnd5-hw.items.9VKtMP6u8ka2zr2b]{Шипованный доспех устойчивости (кислота) / Spiked Armor of Acid Resistance}</p></li><li><p>@UUID[Compendium.laaru-dnd5-hw.items.gB1OlXrTJYmohDTF]{Шипованный доспех устойчивости (лучистый) / Spiked Armor of Radiant Resistance}</p></li><li><p>@UUID[Compendium.laaru-dnd5-hw.items.VQ0AIxDiK1PCb3R6]{Шипованный доспех устойчивости (молния) / Spiked Armor of Lightning Resistance}</p></li><li><p>@UUID[Compendium.laaru-dnd5-hw.items.tka5WsmayMJGx9Ga]{Шипованный доспех устойчивости (некротический) / Spiked Armor of Necrotic Resistance}</p></li><li><p>@UUID[Compendium.laaru-dnd5-hw.items.Ii3iEYpcnlMqnIfr]{Шипованный доспех устойчивости (огонь) / Spiked Armor of Fire Resistance}</p></li><li><p>@UUID[Compendium.laaru-dnd5-hw.items.uqHZluxF2MfP6LhJ]{Шипованный доспех устойчивости (психический) / Spiked Armor of Psychic Resistance}</p></li><li><p>@UUID[Compendium.laaru-dnd5-hw.items.VgMlHwHfae9xoLNo]{Шипованный доспех устойчивости (сила) / Spiked Armor of Force Resistance}</p></li><li><p>@UUID[Compendium.laaru-dnd5-hw.items.vDgADEE5gK4eTytb]{Шипованный доспех устойчивости (холод) / Spiked Armor of Cold Resistance}</p></li><li><p>@UUID[Compendium.laaru-dnd5-hw.items.byrLYoBk7f0kWTIx]{Шипованный доспех устойчивости (яд) / Spiked Armor of Poison Resistance}</p></li></ul>",
+  "dex_bonus_max": null,
+  "item_kind": "armor",
+  "magical": true,
+  "magical_bonus": 0,
+  "name": "Броня устойчивости",
+  "passive_effects": [
+    {
+      "changes": [
+        {
+          "key": "name",
+          "mode": 5,
+          "priority": null,
+          "value": "{} of Acid Resistance"
+        },
+        {
+          "key": "system.description.value",
+          "mode": 5,
+          "priority": null,
+          "value": "{}<p>@Embed[Compendium.dnd5e.equipment24.Item.dmgArmorOfResist caption=false]</p>"
+        },
+        {
+          "key": "system.properties",
+          "mode": 2,
+          "priority": null,
+          "value": "mgc"
+        },
+        {
+          "key": "system.rarity",
+          "mode": 5,
+          "priority": null,
+          "value": "rare"
+        },
+        {
+          "key": "system.attunement",
+          "mode": 5,
+          "priority": null,
+          "value": "required"
+        },
+        {
+          "key": "img",
+          "mode": 5,
+          "priority": null,
+          "value": "icons/equipment/chest/breastplate-layered-gold.webp"
+        },
+        {
+          "key": "system.price.value",
+          "mode": 2,
+          "priority": null,
+          "value": "4000"
+        }
+      ],
+      "description": "",
+      "disabled": true,
+      "duration": null,
+      "id": "YreDFSu9z9mGCWt1",
+      "name": "Armor of Acid Resistance",
+      "statuses": [],
+      "transfer": true
+    },
+    {
+      "changes": [
+        {
+          "key": "name",
+          "mode": 5,
+          "priority": null,
+          "value": "{} of Cold Resistance"
+        },
+        {
+          "key": "system.description.value",
+          "mode": 5,
+          "priority": null,
+          "value": "{}<p>@Embed[Compendium.dnd5e.equipment24.Item.dmgArmorOfResist caption=false]</p>"
+        },
+        {
+          "key": "system.properties",
+          "mode": 2,
+          "priority": null,
+          "value": "mgc"
+        },
+        {
+          "key": "system.rarity",
+          "mode": 5,
+          "priority": null,
+          "value": "rare"
+        },
+        {
+          "key": "system.attunement",
+          "mode": 5,
+          "priority": null,
+          "value": "required"
+        },
+        {
+          "key": "img",
+          "mode": 5,
+          "priority": null,
+          "value": "icons/equipment/chest/breastplate-layered-gold.webp"
+        },
+        {
+          "key": "system.price.value",
+          "mode": 2,
+          "priority": null,
+          "value": "4000"
+        }
+      ],
+      "description": "",
+      "disabled": true,
+      "duration": null,
+      "id": "LTByr2rsRPBLLOA0",
+      "name": "Armor of Cold Resistance",
+      "statuses": [],
+      "transfer": true
+    },
+    {
+      "changes": [
+        {
+          "key": "name",
+          "mode": 5,
+          "priority": null,
+          "value": "{} of Fire Resistance"
+        },
+        {
+          "key": "system.description.value",
+          "mode": 5,
+          "priority": null,
+          "value": "{}<p>@Embed[Compendium.dnd5e.equipment24.Item.dmgArmorOfResist caption=false]</p>"
+        },
+        {
+          "key": "system.properties",
+          "mode": 2,
+          "priority": null,
+          "value": "mgc"
+        },
+        {
+          "key": "system.rarity",
+          "mode": 5,
+          "priority": null,
+          "value": "rare"
+        },
+        {
+          "key": "system.attunement",
+          "mode": 5,
+          "priority": null,
+          "value": "required"
+        },
+        {
+          "key": "img",
+          "mode": 5,
+          "priority": null,
+          "value": "icons/equipment/chest/breastplate-layered-gold.webp"
+        },
+        {
+          "key": "system.price.value",
+          "mode": 2,
+          "priority": null,
+          "value": "4000"
+        }
+      ],
+      "description": "",
+      "disabled": true,
+      "duration": null,
+      "id": "MqubvD3XEwB7DRST",
+      "name": "Armor of Fire Resistance",
+      "statuses": [],
+      "transfer": true
+    },
+    {
+      "changes": [
+        {
+          "key": "name",
+          "mode": 5,
+          "priority": null,
+          "value": "{} of Force Resistance"
+        },
+        {
+          "key": "system.description.value",
+          "mode": 5,
+          "priority": null,
+          "value": "{}<p>@Embed[Compendium.dnd5e.equipment24.Item.dmgArmorOfResist caption=false]</p>"
+        },
+        {
+          "key": "system.properties",
+          "mode": 2,
+          "priority": null,
+          "value": "mgc"
+        },
+        {
+          "key": "system.rarity",
+          "mode": 5,
+          "priority": null,
+          "value": "rare"
+        },
+        {
+          "key": "system.attunement",
+          "mode": 5,
+          "priority": null,
+          "value": "required"
+        },
+        {
+          "key": "img",
+          "mode": 5,
+          "priority": null,
+          "value": "icons/equipment/chest/breastplate-layered-gold.webp"
+        },
+        {
+          "key": "system.price.value",
+          "mode": 2,
+          "priority": null,
+          "value": "4000"
+        }
+      ],
+      "description": "",
+      "disabled": true,
+      "duration": null,
+      "id": "lsPKUk288Jkvahsp",
+      "name": "Armor of Force Resistance",
+      "statuses": [],
+      "transfer": true
+    },
+    {
+      "changes": [
+        {
+          "key": "name",
+          "mode": 5,
+          "priority": null,
+          "value": "{} of Lightning Resistance"
+        },
+        {
+          "key": "system.description.value",
+          "mode": 5,
+          "priority": null,
+          "value": "{}<p>@Embed[Compendium.dnd5e.equipment24.Item.dmgArmorOfResist caption=false]</p>"
+        },
+        {
+          "key": "system.properties",
+          "mode": 2,
+          "priority": null,
+          "value": "mgc"
+        },
+        {
+          "key": "system.rarity",
+          "mode": 5,
+          "priority": null,
+          "value": "rare"
+        },
+        {
+          "key": "system.attunement",
+          "mode": 5,
+          "priority": null,
+          "value": "required"
+        },
+        {
+          "key": "img",
+          "mode": 5,
+          "priority": null,
+          "value": "icons/equipment/chest/breastplate-layered-gold.webp"
+        },
+        {
+          "key": "system.price.value",
+          "mode": 2,
+          "priority": null,
+          "value": "4000"
+        }
+      ],
+      "description": "",
+      "disabled": true,
+      "duration": null,
+      "id": "18IZ8X8zpDXyN33T",
+      "name": "Armor of Lightning Resistance",
+      "statuses": [],
+      "transfer": true
+    },
+    {
+      "changes": [
+        {
+          "key": "name",
+          "mode": 5,
+          "priority": null,
+          "value": "{} of Necrotic Resistance"
+        },
+        {
+          "key": "system.description.value",
+          "mode": 5,
+          "priority": null,
+          "value": "{}<p>@Embed[Compendium.dnd5e.equipment24.Item.dmgArmorOfResist caption=false]</p>"
+        },
+        {
+          "key": "system.properties",
+          "mode": 2,
+          "priority": null,
+          "value": "mgc"
+        },
+        {
+          "key": "system.rarity",
+          "mode": 5,
+          "priority": null,
+          "value": "rare"
+        },
+        {
+          "key": "system.attunement",
+          "mode": 5,
+          "priority": null,
+          "value": "required"
+        },
+        {
+          "key": "img",
+          "mode": 5,
+          "priority": null,
+          "value": "icons/equipment/chest/breastplate-layered-gold.webp"
+        },
+        {
+          "key": "system.price.value",
+          "mode": 2,
+          "priority": null,
+          "value": "4000"
+        }
+      ],
+      "description": "",
+      "disabled": true,
+      "duration": null,
+      "id": "CfxFdUSiXkOUXym6",
+      "name": "Armor of Necrotic Resistance",
+      "statuses": [],
+      "transfer": true
+    },
+    {
+      "changes": [
+        {
+          "key": "name",
+          "mode": 5,
+          "priority": null,
+          "value": "{} of Poison Resistance"
+        },
+        {
+          "key": "system.description.value",
+          "mode": 5,
+          "priority": null,
+          "value": "{}<p>@Embed[Compendium.dnd5e.equipment24.Item.dmgArmorOfResist caption=false]</p>"
+        },
+        {
+          "key": "system.properties",
+          "mode": 2,
+          "priority": null,
+          "value": "mgc"
+        },
+        {
+          "key": "system.rarity",
+          "mode": 5,
+          "priority": null,
+          "value": "rare"
+        },
+        {
+          "key": "system.attunement",
+          "mode": 5,
+          "priority": null,
+          "value": "required"
+        },
+        {
+          "key": "img",
+          "mode": 5,
+          "priority": null,
+          "value": "icons/equipment/chest/breastplate-layered-gold.webp"
+        },
+        {
+          "key": "system.price.value",
+          "mode": 2,
+          "priority": null,
+          "value": "4000"
+        }
+      ],
+      "description": "",
+      "disabled": true,
+      "duration": null,
+      "id": "VST1qNRu1dHDzkD2",
+      "name": "Armor of Poison Resistance",
+      "statuses": [],
+      "transfer": true
+    },
+    {
+      "changes": [
+        {
+          "key": "name",
+          "mode": 5,
+          "priority": null,
+          "value": "{} of Psychic Resistance"
+        },
+        {
+          "key": "system.description.value",
+          "mode": 5,
+          "priority": null,
+          "value": "{}<p>@Embed[Compendium.dnd5e.equipment24.Item.dmgArmorOfResist caption=false]</p>"
+        },
+        {
+          "key": "system.properties",
+          "mode": 2,
+          "priority": null,
+          "value": "mgc"
+        },
+        {
+          "key": "system.rarity",
+          "mode": 5,
+          "priority": null,
+          "value": "rare"
+        },
+        {
+          "key": "system.attunement",
+          "mode": 5,
+          "priority": null,
+          "value": "required"
+        },
+        {
+          "key": "img",
+          "mode": 5,
+          "priority": null,
+          "value": "icons/equipment/chest/breastplate-layered-gold.webp"
+        },
+        {
+          "key": "system.price.value",
+          "mode": 2,
+          "priority": null,
+          "value": "4000"
+        }
+      ],
+      "description": "",
+      "disabled": true,
+      "duration": null,
+      "id": "mmp5O2pZOxJUc2vq",
+      "name": "Armor of Psychic Resistance",
+      "statuses": [],
+      "transfer": true
+    },
+    {
+      "changes": [
+        {
+          "key": "name",
+          "mode": 5,
+          "priority": null,
+          "value": "{} of Radiant Resistance"
+        },
+        {
+          "key": "system.description.value",
+          "mode": 5,
+          "priority": null,
+          "value": "{}<p>@Embed[Compendium.dnd5e.equipment24.Item.dmgArmorOfResist caption=false]</p>"
+        },
+        {
+          "key": "system.properties",
+          "mode": 2,
+          "priority": null,
+          "value": "mgc"
+        },
+        {
+          "key": "system.rarity",
+          "mode": 5,
+          "priority": null,
+          "value": "rare"
+        },
+        {
+          "key": "system.attunement",
+          "mode": 5,
+          "priority": null,
+          "value": "required"
+        },
+        {
+          "key": "img",
+          "mode": 5,
+          "priority": null,
+          "value": "icons/equipment/chest/breastplate-layered-gold.webp"
+        },
+        {
+          "key": "system.price.value",
+          "mode": 2,
+          "priority": null,
+          "value": "4000"
+        }
+      ],
+      "description": "",
+      "disabled": true,
+      "duration": null,
+      "id": "jyWNVNHLYdxvCOQz",
+      "name": "Armor of Radiant Resistance",
+      "statuses": [],
+      "transfer": true
+    },
+    {
+      "changes": [
+        {
+          "key": "name",
+          "mode": 5,
+          "priority": null,
+          "value": "{} of Thunder Resistance"
+        },
+        {
+          "key": "system.description.value",
+          "mode": 5,
+          "priority": null,
+          "value": "{}<p>@Embed[Compendium.dnd5e.equipment24.Item.dmgArmorOfResist caption=false]</p>"
+        },
+        {
+          "key": "system.properties",
+          "mode": 2,
+          "priority": null,
+          "value": "mgc"
+        },
+        {
+          "key": "system.rarity",
+          "mode": 5,
+          "priority": null,
+          "value": "rare"
+        },
+        {
+          "key": "system.attunement",
+          "mode": 5,
+          "priority": null,
+          "value": "required"
+        },
+        {
+          "key": "img",
+          "mode": 5,
+          "priority": null,
+          "value": "icons/equipment/chest/breastplate-layered-gold.webp"
+        },
+        {
+          "key": "system.price.value",
+          "mode": 2,
+          "priority": null,
+          "value": "4000"
+        }
+      ],
+      "description": "",
+      "disabled": true,
+      "duration": null,
+      "id": "cbsuJ2tdbBuT5e8U",
+      "name": "Armor of Thunder Resistance",
+      "statuses": [],
+      "transfer": true
+    },
+    {
+      "changes": [
+        {
+          "key": "system.traits.dr.value",
+          "mode": 2,
+          "priority": null,
+          "value": "acid"
+        }
+      ],
+      "description": "",
+      "disabled": false,
+      "duration": null,
+      "id": "YP420EGhAHmNVa8w",
+      "name": "Acid Resistance",
+      "statuses": [],
+      "transfer": true
+    },
+    {
+      "changes": [
+        {
+          "key": "system.traits.dr.value",
+          "mode": 2,
+          "priority": null,
+          "value": "cold"
+        }
+      ],
+      "description": "",
+      "disabled": false,
+      "duration": null,
+      "id": "ACmdUQgMzhh6BiJs",
+      "name": "Cold Resistance",
+      "statuses": [],
+      "transfer": true
+    },
+    {
+      "changes": [
+        {
+          "key": "system.traits.dr.value",
+          "mode": 2,
+          "priority": null,
+          "value": "fire"
+        }
+      ],
+      "description": "",
+      "disabled": false,
+      "duration": null,
+      "id": "Lakck2k6LIxzlncZ",
+      "name": "Fire Resistance",
+      "statuses": [],
+      "transfer": true
+    },
+    {
+      "changes": [
+        {
+          "key": "system.traits.dr.value",
+          "mode": 2,
+          "priority": null,
+          "value": "force"
+        }
+      ],
+      "description": "",
+      "disabled": false,
+      "duration": null,
+      "id": "nP2MPjGkjwc2qoa7",
+      "name": "Force Resistance",
+      "statuses": [],
+      "transfer": true
+    },
+    {
+      "changes": [
+        {
+          "key": "system.traits.dr.value",
+          "mode": 2,
+          "priority": null,
+          "value": "lightning"
+        }
+      ],
+      "description": "",
+      "disabled": false,
+      "duration": null,
+      "id": "MHtyWzlMMBeUoFnz",
+      "name": "Lightning Resistance",
+      "statuses": [],
+      "transfer": true
+    },
+    {
+      "changes": [
+        {
+          "key": "system.traits.dr.value",
+          "mode": 2,
+          "priority": null,
+          "value": "necrotic"
+        }
+      ],
+      "description": "",
+      "disabled": false,
+      "duration": null,
+      "id": "OVh17qutRZ4vceWw",
+      "name": "Necrotic Resistance",
+      "statuses": [],
+      "transfer": true
+    },
+    {
+      "changes": [
+        {
+          "key": "system.traits.dr.value",
+          "mode": 2,
+          "priority": null,
+          "value": "poison"
+        }
+      ],
+      "description": "",
+      "disabled": false,
+      "duration": null,
+      "id": "R2WuyXjV8Z8E0wKu",
+      "name": "Poison Resistance",
+      "statuses": [],
+      "transfer": true
+    },
+    {
+      "changes": [
+        {
+          "key": "system.traits.dr.value",
+          "mode": 2,
+          "priority": null,
+          "value": "radiant"
+        }
+      ],
+      "description": "",
+      "disabled": false,
+      "duration": null,
+      "id": "MOoO1WhULDcQtooN",
+      "name": "Radiant Resistance",
+      "statuses": [],
+      "transfer": true
+    },
+    {
+      "changes": [
+        {
+          "key": "system.traits.dr.value",
+          "mode": 2,
+          "priority": null,
+          "value": "psychic"
+        }
+      ],
+      "description": "",
+      "disabled": false,
+      "duration": null,
+      "id": "meu3jAB2SZjKZrUC",
+      "name": "Psychic Resistance",
+      "statuses": [],
+      "transfer": true
+    },
+    {
+      "changes": [
+        {
+          "key": "system.traits.dr.value",
+          "mode": 2,
+          "priority": null,
+          "value": "thunder"
+        }
+      ],
+      "description": "",
+      "disabled": false,
+      "duration": null,
+      "id": "FtKhRdQT4zB1DG4f",
+      "name": "Thunder Resistance",
+      "statuses": [],
+      "transfer": true
+    }
+  ],
+  "provenance": {
+    "ingest_date": "2026-05-30",
+    "ingest_version": "foundry-translator-v1",
+    "license_tag": "CC-BY-4.0",
+    "source": "foundry",
+    "source_url": "https://github.com/foundryvtt/dnd5e/blob/965ad2d0cf5d063dac675ba078b5bd3c3c0dd449/packs/_source/equipment24/armor/magical/armor-of-resistance.yml",
+    "srd_version": [
+      "5.2"
+    ]
+  },
+  "rarity": "rare",
+  "requires_attunement": true,
+  "review": {
+    "known_divergence": null,
+    "requires_user_decision": false
+  },
+  "slug": "armor-of-resistance",
+  "stealth_disadvantage": false,
+  "strength_min": null,
+  "uses": null,
+  "weight": 0.0
+}

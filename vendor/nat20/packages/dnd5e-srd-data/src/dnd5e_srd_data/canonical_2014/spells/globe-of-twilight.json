@@ -1,0 +1,139 @@
+{
+  "slug": "globe-of-twilight",
+  "foundry_uuid": "Compendium.dnd5e.laaru-hw-spells.Item.U1Wp89sBLlASp2ej",
+  "name": "Сумеречная сфера / Globe Of Twilight",
+  "description": "Вы окутываете окружающее вас пространство сферой ночного неба, усеянного маленькими звёздами. Сумрак скрывает ваших союзников, но подсвечивает ваших врагов.\n\nОбласть, на которую распространяется действие этого заклинания, является магической тенью со слегка затруднённой видимостью, внутри которой мягко мерцают маленькие созвездия. Кроме этих звезд, только свет, созданный заклинанием 3-го круга или выше, может нормально осветить любую область внутри сферы. Немагический свет не действует внутри сферы, а все остальные формы магического света могут создавать лишь тусклый свет в пределах 5 футов.\n\nКогда вы творите это заклинание, вы можете указать любое количество существ, которых можете видеть, чтобы скрыть их потусторонними тенями, пока находятся в сфере. Скрытое существо с преимуществом совершает проверки Ловкости (Скрытность), когда находится в сфере, и может попытаться спрятаться в любой момент. Поскольку видимость в области заклинания слегка затруднена, существа, находящиеся в ней, с помехой совершают проверки Мудрости (Внимание), чтобы увидеть то, что находится за её пределами.\n\nВсе остальные существа в этой области слепнут от света миниатюрных звезд, из за чего все проверки Внимания внутри сферы совершаются с помехой. Когда существо впервые входит в сферу заклинания или начинает в ней свой ход, оно должно пройти испытание Мудрости, иначе будет ослеплена до конца своего хода.",
+  "level": 3,
+  "school": "con",
+  "components": [
+    "M",
+    "S",
+    "V"
+  ],
+  "ritual": false,
+  "concentration": true,
+  "casting_time": {
+    "unit": "action",
+    "value": 1,
+    "condition": ""
+  },
+  "range": {
+    "units": "self",
+    "value": null,
+    "special": null
+  },
+  "duration": {
+    "units": "minute",
+    "value": 10
+  },
+  "materials": {
+    "value": "немного смолы и мешочек блестящего песка",
+    "consumed": false,
+    "cost": 0,
+    "supply": 0
+  },
+  "preparation": {
+    "mode": "prepared",
+    "prepared": false
+  },
+  "activities": [
+    {
+      "id": "5KcroIuKtPW3VDUs",
+      "name": "",
+      "img": "",
+      "sort": 0,
+      "activation": {
+        "type": "action",
+        "value": null,
+        "condition": "",
+        "override": false,
+        "reaction_conditions": []
+      },
+      "consumption": {
+        "scaling": {
+          "allowed": false,
+          "max": ""
+        },
+        "spell_slot": true,
+        "targets": []
+      },
+      "description": {
+        "chat_flavor": ""
+      },
+      "duration": {
+        "value": null,
+        "units": "inst",
+        "special": "",
+        "concentration": false,
+        "override": false
+      },
+      "flags": {},
+      "range": {
+        "value": null,
+        "units": "self",
+        "special": "",
+        "override": false
+      },
+      "target": {
+        "template": {
+          "count": "",
+          "contiguous": false,
+          "stationary": false,
+          "type": "sphere",
+          "size": "15",
+          "width": "",
+          "height": "",
+          "units": "ft"
+        },
+        "affects": {
+          "count": "",
+          "type": "",
+          "choice": false,
+          "special": ""
+        },
+        "override": false,
+        "prompt": true
+      },
+      "uses": {
+        "spent": 0,
+        "max": "",
+        "recovery": []
+      },
+      "visibility": {
+        "identifier": "",
+        "level": {
+          "min": null,
+          "max": null
+        },
+        "require_attunement": false,
+        "require_identification": false,
+        "require_magic": false
+      },
+      "effects": [],
+      "applied_effects": [],
+      "kind": "utility",
+      "roll": {
+        "formula": "",
+        "name": "",
+        "prompt": false,
+        "visible": false
+      }
+    }
+  ],
+  "passive_effects": [],
+  "provenance": {
+    "source": "foundry",
+    "source_url": "https://github.com/foundryvtt/dnd5e/blob/965ad2d0cf5d063dac675ba078b5bd3c3c0dd449/packs/_source/laaru-hw-spells/Сумеречная_сфера___Globe_Of_Twilight_U1Wp89sBLlASp2ej.yml",
+    "ingest_date": "2026-10-26",
+    "ingest_version": "foundry-translator-v1",
+    "srd_version": [
+      "5.1"
+    ],
+    "license_tag": "CC-BY-4.0"
+  },
+  "review": {
+    "known_divergence": null,
+    "requires_user_decision": false
+  },
+  "entry_kind": "spell"
+}

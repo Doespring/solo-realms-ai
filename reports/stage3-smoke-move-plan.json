@@ -1,0 +1,22 @@
+[
+  {
+    "removed_path": "solo/command_smoke.py",
+    "removed_sha256": "d84d4ab010cc0ecd898008668b5f01636745e73cbf07b8969d42a35db45096b8",
+    "replacement_path": "scripts/command_smoke.py"
+  },
+  {
+    "removed_path": "solo/desktop_cloud_smoke.py",
+    "removed_sha256": "d10c514909614362e8c3b31ef58953c71926d3626bdab55b4733c14526331fa3",
+    "replacement_path": "scripts/desktop_cloud_smoke.py"
+  },
+  {
+    "removed_path": "solo/desktop_creation_smoke.py",
+    "removed_sha256": "d71d35097283db7a0163b571128a1e1d70ebf55aafa4128a1e2fcd512766c33f",
+    "replacement_path": "scripts/desktop_creation_smoke.py"
+  },
+  {
+    "removed_path": "solo/smoke_fixture.py",
+    "removed_sha256": "c2069a758ab19bc3d63b5e2cb2a66aa48319c11659a70aef33dff1b312ff6e8b",
+    "replacement_path": "scripts/smoke_fixture.py"
+  }
+]

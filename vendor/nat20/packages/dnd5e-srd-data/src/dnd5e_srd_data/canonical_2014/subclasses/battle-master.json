@@ -1,0 +1,153 @@
+{
+  "slug": "battle-master",
+  "name": "Мастер битвы",
+  "description": "Мастер битвы | Battle Master\n\nТе, кто следует архетипу мастер битвы, передают техники боя из поколения в поколение. Для вас битва – объект изучения. Иногда вы изучаете и предметы, не связанные непосредственно с боем, - например, ковку оружия или каллиграфию.  Не всякий готов к урокам по истории, теории и искусству, подобающим этому архетипу, но те, кто готовы, становятся всесторонне развитыми воинами с блестящими навыками и знаниями.\n\nУровеньОсобенности\n\n3-й\n\n@Compendium[laaru-dnd5-hw.classfeatures.AuFqXlNflqnBZ7DE]{Боевое превосходство}, @Compendium[laaru-dnd5-hw.classfeatures.sxO0p0BbirCzOhdU]{Ученик войны}\n\n7-й\n\n@Compendium[laaru-dnd5-hw.classfeatures.BKCcUbnk3jRSeu6z]{Знай своего врага}, @Compendium[laaru-dnd5-hw.classfeatures.02YJWwKbRqsyDxl8]{Дополнительные манёвры}\n\n10-й\n\n@Compendium[laaru-dnd5-hw.classfeatures.v8SJzbKVthf8bPoJ]{Улучшенное боевое превосходство}\n\n15-й\n\n@Compendium[laaru-dnd5-hw.classfeatures.A9Z2b0uXXXGshcR8]{Несгибаемость}",
+  "identifier": "battle-master",
+  "class_identifier": "fighter",
+  "spellcasting": {
+    "ability": "",
+    "progression": "none"
+  },
+  "advancement": [
+    {
+      "id": "l5lp95odi1csrbxg",
+      "type": "ScaleValue",
+      "level": 0,
+      "title": "Количество костей превосходства",
+      "hint": "",
+      "class_restriction": "",
+      "configuration": {
+        "source": {},
+        "identifier": "combat",
+        "type": "number",
+        "distance": {
+          "units": ""
+        },
+        "scale": {
+          "3": {
+            "value": 4
+          },
+          "7": {
+            "value": 5
+          },
+          "15": {
+            "value": 6
+          }
+        }
+      },
+      "value": {}
+    },
+    {
+      "id": "3k2yoa4dd7qi3re5",
+      "type": "ScaleValue",
+      "level": 0,
+      "title": "Кость превосходства",
+      "hint": "",
+      "class_restriction": "",
+      "configuration": {
+        "source": {},
+        "identifier": "dice",
+        "type": "dice",
+        "distance": {
+          "units": ""
+        },
+        "scale": {
+          "3": {
+            "n": 1,
+            "die": 8
+          },
+          "10": {
+            "n": 1,
+            "die": 10
+          },
+          "18": {
+            "n": 1,
+            "die": 12
+          }
+        }
+      },
+      "value": {}
+    },
+    {
+      "id": "pocnx3mkpftt65g8",
+      "type": "ItemGrant",
+      "level": 3,
+      "title": "Особенности",
+      "hint": "",
+      "class_restriction": "",
+      "configuration": {
+        "items": [
+          "Compendium.laaru-dnd5-hw.classfeatures.AuFqXlNflqnBZ7DE",
+          "Compendium.laaru-dnd5-hw.classfeatures.sxO0p0BbirCzOhdU",
+          "Compendium.laaru-dnd5-hw.classfeatures.ngtqrIFUqjs53pQs",
+          "Compendium.laaru-dnd5-hw.classfeatures.pvRwYr9wnEPGSd5S"
+        ],
+        "optional": false
+      },
+      "value": {}
+    },
+    {
+      "id": "lit15j9ji34prx8z",
+      "type": "ItemGrant",
+      "level": 7,
+      "title": "Особенности",
+      "hint": "",
+      "class_restriction": "",
+      "configuration": {
+        "items": [
+          "Compendium.laaru-dnd5-hw.classfeatures.BKCcUbnk3jRSeu6z",
+          "Compendium.laaru-dnd5-hw.classfeatures.02YJWwKbRqsyDxl8"
+        ],
+        "optional": false
+      },
+      "value": {}
+    },
+    {
+      "id": "x82mllpxabhsj8u5",
+      "type": "ItemGrant",
+      "level": 10,
+      "title": "Особенность",
+      "hint": "",
+      "class_restriction": "",
+      "configuration": {
+        "items": [
+          "Compendium.laaru-dnd5-hw.classfeatures.v8SJzbKVthf8bPoJ"
+        ],
+        "optional": false
+      },
+      "value": {}
+    },
+    {
+      "id": "1r4owv2bj3a6ua7s",
+      "type": "ItemGrant",
+      "level": 15,
+      "title": "Особенность",
+      "hint": "",
+      "class_restriction": "",
+      "configuration": {
+        "items": [
+          "Compendium.laaru-dnd5-hw.classfeatures.A9Z2b0uXXXGshcR8"
+        ],
+        "optional": false
+      },
+      "value": {}
+    }
+  ],
+  "granted_features": [],
+  "feature_choices": [],
+  "provenance": {
+    "source": "foundry",
+    "source_url": "https://github.com/foundryvtt/dnd5e/blob/965ad2d0cf5d063dac675ba078b5bd3c3c0dd449/packs/_source/laaru-hw-subclasses/Мастер_битвы_T9NtaK16Hka7eSZk.yml",
+    "ingest_date": "2026-10-26",
+    "ingest_version": "foundry-translator-v1",
+    "srd_version": [
+      "5.1"
+    ],
+    "license_tag": "CC-BY-4.0"
+  },
+  "review": {
+    "known_divergence": null,
+    "requires_user_decision": false
+  },
+  "entry_kind": "subclass"
+}

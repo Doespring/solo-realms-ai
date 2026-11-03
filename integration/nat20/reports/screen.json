@@ -1,0 +1,141 @@
+{
+  "schema_version": "1.0.0",
+  "checked_on": "2026-10-18",
+  "status": "passed",
+  "unique_targeted_tests": 14,
+  "test_runs": [
+    {
+      "file": "screen-shared-route.junit.xml",
+      "tests": 3,
+      "failures": 0,
+      "seconds": 134.905
+    },
+    {
+      "file": "screen-regression.junit.xml",
+      "tests": 11,
+      "failures": 0,
+      "seconds": 118.697
+    }
+  ],
+  "manual_browser": {
+    "transport": "real localhost HTTP + mock Interpreter/Narrator + real Nat20",
+    "workflow": [
+      "open Native campaign",
+      "free text check",
+      "double click start creates one combat",
+      "native far-attack refused",
+      "move/attack buttons",
+      "save at NPC turn",
+      "stop server process/start new process",
+      "reload same HP/resources/initiative/turn",
+      "continue via shared commands",
+      "end combat",
+      "short rest heals 7 to 12",
+      "two-tab version conflict refreshes without repeating action",
+      "switch ordinary Solo and free-text check"
+    ],
+    "campaign_results": [
+      {
+        "backend": "nat20",
+        "version": 13,
+        "hp": 12,
+        "commands": [
+          "check",
+          "start_combat",
+          "move",
+          "attack",
+          "end_turn",
+          "attack",
+          "end_turn",
+          "attack",
+          "end_turn",
+          "attack",
+          "end_combat",
+          "short_rest",
+          "check"
+        ],
+        "hit_dice": 0,
+        "second_wind_spent": 0,
+        "checkpoint": {
+          "hp": {
+            "hero": 7,
+            "goblin": 6
+          },
+          "initiative": [
+            "hero",
+            "goblin"
+          ],
+          "current_actor": "goblin",
+          "round": 1
+        }
+      },
+      {
+        "backend": "solo",
+        "version": 1,
+        "hp": 12,
+        "commands": [
+          "check"
+        ]
+      }
+    ],
+    "screenshot": "reports/nat20-screen-restart.png",
+    "startup_error": "Fixed stale rulesets.js cache version; diagnostic code reverted"
+  },
+  "routes": {
+    "text": "command-turn",
+    "buttons": "commands",
+    "projection": "screen",
+    "services": [
+      "saves",
+      "restore/{checkpoint}"
+    ]
+  },
+  "changed_files": [
+    "solo/nat20_api.py",
+    "solo/nat20_screen.py",
+    "solo/play_screen.py",
+    "web/game-screen.js",
+    "web/index.html",
+    "tests/test_nat20_screen.py",
+    "scripts/smoke_nat20_screen.py",
+    "docs/NAT20_PLAY_SCREEN.md"
+  ],
+  "reused_integration_files": [
+    "solo/command_backend.py",
+    "solo/playable_ui.py",
+    "solo/engine_memory_contracts.py"
+  ],
+  "sha256": {
+    "solo/nat20_api.py": "0d77245c9198982f3c5df37681ef1d59c0564f78b6463706831fafac197814b9",
+    "solo/nat20_screen.py": "59521343cc1f1c5815af208e5533572d231a9904fcc606e2d345b06c9a7a7ff6",
+    "solo/play_screen.py": "b0c2fa5858a84456e21160813e6c787ddd4942d93f20525404b388e12449646c",
+    "web/game-screen.js": "8b711dd18d9a248f5c7c8cadeb46a45d4edc2a7d55e67945a9d4f224cba2dbc5",
+    "web/index.html": "da600bd66b964d66a1e10f798f5d2d60d7bc31b33d17c5e9c59ef819fca6ced6",
+    "tests/test_nat20_screen.py": "d873162ab174153fb3e8c03bc472a9fadd84e3137a1b07f0ab6d1c3b290bdf19",
+    "scripts/smoke_nat20_screen.py": "de1d7f81cf8f6f748cc9eded893084e8f64b53ea3ae1b56ba51732673664a683",
+    "docs/NAT20_PLAY_SCREEN.md": "73deacd3b5df1e89ca677f79dd9d98cc77cf3e0895df89803bad3cc2d2a3dc86"
+  },
+  "paid_api_calls": 0,
+  "exe_builds": 0,
+  "user_campaigns_used": false,
+  "engine_arithmetic_changed": false,
+  "memory_contracts_changed": false,
+  "cloud_accounting_changed_by_this_task": false,
+  "temporary_cleanup": {
+    "removed": [
+      ".test-tmp-nat20-screen-legacy",
+      ".test-tmp-nat20-screen-native",
+      ".test-tmp-nat20-screen-regression",
+      ".test-tmp-nat20-screen-shared",
+      ".test-tmp-nat20-screen-smoke"
+    ],
+    "server_stopped": true,
+    "browser_tabs_closed": true
+  },
+  "limitations": [
+    "One existing fixed fighter/goblin profile; three checks",
+    "No Native tactical map or full rules coverage",
+    "Mock AI only; full test suite not rerun",
+    "Availability probes are cached; first load of a new version can take several seconds"
+  ]
+}

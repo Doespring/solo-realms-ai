@@ -1,0 +1,109 @@
+{
+  "slug": "way-of-shadow",
+  "name": "Путь Тени",
+  "description": "Путь Тени | Way of Shadow\n\nМонахи Пути Тени следуют традиции, которая выше всего ценит незаметность и скрытность. Эти монахи могут быть названы ниндзя или танцорами теней, они часто служат шпионами и убийцами. Порой члены монастыря ниндзя приходятся друг другу родственниками и формируют клан, хранящий тайну своего искусства и своих заданий. Другие монастыри действуют подобно воровским гильдиям и продают свои услуги аристократам, богатым купцам и всем, кто готов заплатить указанную цену. При любых методах настоятели таких монастырей требуют от своих учеников беспрекословного подчинения.\n\nУровень Особенности\n\n3-й\n\n@Compendium[laaru-dnd5-hw.classfeatures.uzpEoQi4JCC0dWmP]{Искусство тени}\n\n6-й\n\n@Compendium[laaru-dnd5-hw.classfeatures.RHOyrQW3OhxOKCEZ]{Шаг теней}\n\n11-й\n\n@Compendium[laaru-dnd5-hw.classfeatures.w9GfsWcr2S26LSNz]{Плащ теней}\n\n17-й\n\n@Compendium[laaru-dnd5-hw.classfeatures.qME5jwiSmOnSuMJV]{Оппортунист}",
+  "identifier": "way-of-shadow",
+  "class_identifier": "monk",
+  "spellcasting": {
+    "ability": "",
+    "progression": "none"
+  },
+  "advancement": [
+    {
+      "id": "ihnr4iurkve5codg",
+      "type": "ItemGrant",
+      "level": 3,
+      "title": "1. Особенность",
+      "hint": "",
+      "class_restriction": "",
+      "configuration": {
+        "items": [
+          "Compendium.laaru-dnd5-hw.classfeatures.uzpEoQi4JCC0dWmP"
+        ],
+        "optional": false
+      },
+      "value": {}
+    },
+    {
+      "id": "po20qg4kg2st8n8h",
+      "type": "ItemGrant",
+      "level": 6,
+      "title": "Особенность",
+      "hint": "",
+      "class_restriction": "",
+      "configuration": {
+        "items": [
+          "Compendium.laaru-dnd5-hw.classfeatures.RHOyrQW3OhxOKCEZ"
+        ],
+        "optional": false
+      },
+      "value": {}
+    },
+    {
+      "id": "6683anirxtfn8be4",
+      "type": "ItemGrant",
+      "level": 11,
+      "title": "Особенность",
+      "hint": "",
+      "class_restriction": "",
+      "configuration": {
+        "items": [
+          "Compendium.laaru-dnd5-hw.classfeatures.w9GfsWcr2S26LSNz"
+        ],
+        "optional": false
+      },
+      "value": {}
+    },
+    {
+      "id": "unzfshw5u4shisdu",
+      "type": "ItemGrant",
+      "level": 17,
+      "title": "Особенность",
+      "hint": "",
+      "class_restriction": "",
+      "configuration": {
+        "items": [
+          "Compendium.laaru-dnd5-hw.classfeatures.qME5jwiSmOnSuMJV"
+        ],
+        "optional": false
+      },
+      "value": {}
+    },
+    {
+      "id": "rmh34xctke8ohut6",
+      "type": "ItemGrant",
+      "level": 3,
+      "title": "2. Искусство тени: Заклинания",
+      "hint": "",
+      "class_restriction": "",
+      "configuration": {
+        "items": [
+          "Compendium.laaru-dnd5-hw.spells.MByqnEhamV1MsaSP",
+          "Compendium.laaru-dnd5-hw.spells.9k3SN10nrQLnKbbH",
+          "Compendium.laaru-dnd5-hw.spells.mXsGFzyYHuUrGy94",
+          "Compendium.laaru-dnd5-hw.spells.UWHFKgmUesGUTF37",
+          "Compendium.laaru-dnd5-hw.spells.4rjhJZz5ob7yJX7T"
+        ],
+        "optional": false
+      },
+      "value": {}
+    }
+  ],
+  "granted_features": [],
+  "feature_choices": [],
+  "provenance": {
+    "source": "foundry",
+    "source_url": "https://github.com/foundryvtt/dnd5e/blob/965ad2d0cf5d063dac675ba078b5bd3c3c0dd449/packs/_source/laaru-hw-subclasses/Путь_Тени_Zy2MdK0aWZZUSOsY.yml",
+    "ingest_date": "2026-10-26",
+    "ingest_version": "foundry-translator-v1",
+    "srd_version": [
+      "5.1"
+    ],
+    "license_tag": "CC-BY-4.0"
+  },
+  "review": {
+    "known_divergence": null,
+    "requires_user_decision": false
+  },
+  "entry_kind": "subclass"
+}

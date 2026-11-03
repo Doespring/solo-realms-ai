@@ -1,0 +1,48 @@
+{
+  "slug": "unarmored-movement",
+  "name": "Unarmored Movement",
+  "description": "Starting at 2nd level, your speed increases by 10 feet while you are not wearing armor or wielding a shield. This bonus increases when you reach certain monk levels, as shown in the Monk table.\n\nAt 9th level, you gain the ability to move along vertical surfaces and across liquids on your turn without falling during the move.",
+  "feature_type": "class_feature",
+  "foundry_id": "zCeqyQ8uIPNdYJSW",
+  "source_slug": "monk",
+  "activities": [],
+  "passive_effects": [
+    {
+      "id": "Veg0vXI93A0qlxZn",
+      "name": "Unarmored Movement",
+      "description": "",
+      "changes": [
+        {
+          "key": "system.attributes.movement.walk",
+          "mode": 2,
+          "value": "@scale.monk.unarmored-movement",
+          "priority": null
+        }
+      ],
+      "statuses": [],
+      "duration": {
+        "units": "seconds",
+        "expired": false
+      },
+      "disabled": false,
+      "transfer": true
+    }
+  ],
+  "advancement": [],
+  "uses": null,
+  "provenance": {
+    "source": "foundry",
+    "source_url": "https://github.com/foundryvtt/dnd5e/blob/965ad2d0cf5d063dac675ba078b5bd3c3c0dd449/packs/_source/classfeatures/Unarmored_Movement_zCeqyQ8uIPNdYJSW.yml",
+    "ingest_date": "2026-10-26",
+    "ingest_version": "foundry-translator-v1",
+    "srd_version": [
+      "5.1"
+    ],
+    "license_tag": "CC-BY-4.0"
+  },
+  "review": {
+    "known_divergence": null,
+    "requires_user_decision": false
+  },
+  "entry_kind": "feature"
+}

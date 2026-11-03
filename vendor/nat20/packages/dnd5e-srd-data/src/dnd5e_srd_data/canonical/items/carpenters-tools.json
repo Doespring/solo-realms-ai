@@ -1,0 +1,114 @@
+{
+  "activities": [
+    {
+      "activation": {
+        "condition": "",
+        "override": false,
+        "reaction_conditions": [],
+        "type": "action",
+        "value": null
+      },
+      "applied_effects": [],
+      "check": {
+        "ability": "str",
+        "associated": [],
+        "dc": {
+          "calculation": "",
+          "formula": "20"
+        }
+      },
+      "consumption": {
+        "scaling": {
+          "allowed": false,
+          "max": ""
+        },
+        "spell_slot": true,
+        "targets": []
+      },
+      "description": {
+        "chat_flavor": ""
+      },
+      "duration": {
+        "concentration": false,
+        "override": false,
+        "special": "",
+        "units": "inst",
+        "value": ""
+      },
+      "effects": [],
+      "flags": {},
+      "id": "FA1LisaMRSw353K6",
+      "img": "",
+      "kind": "check",
+      "name": "Seal or Pry Open",
+      "range": {
+        "override": false,
+        "special": "",
+        "units": "self",
+        "value": null
+      },
+      "sort": 0,
+      "target": {
+        "affects": {
+          "choice": false,
+          "count": "",
+          "special": "",
+          "type": ""
+        },
+        "override": false,
+        "prompt": false,
+        "template": {
+          "contiguous": false,
+          "count": "",
+          "height": "",
+          "size": "",
+          "stationary": false,
+          "type": "",
+          "units": "",
+          "width": ""
+        }
+      },
+      "uses": {
+        "max": "",
+        "recovery": [],
+        "spent": 0
+      },
+      "visibility": {
+        "identifier": "",
+        "level": {
+          "max": null,
+          "min": null
+        },
+        "require_attunement": false,
+        "require_identification": false,
+        "require_magic": false
+      }
+    }
+  ],
+  "attunement_constraint": null,
+  "cost_gp": 8.0,
+  "description": "Ability: Strength\n\nUtilize: Seal or pry open a door or container (DC 20)\n\nCraft: Club, Greatclub, Quarterstaff, Barrel, Chest, Ladder, Pole, Portable Ram, Torch",
+  "description_localized": "<p>Эти специальные инструменты включают предметы, необходимые для занятия плотничеством. Умение в обращении с этими инструментами позволяет вам добавить ваш бонус умения к любой проверке характеристики, связанной с их использованием.</p>\n<p>Навыки работы по дереву позволяют персонажу строить деревянные сооружения. Плотник может построить дом, хижину, деревянный шкаф или подобный предмет.</p>\n<p><em><strong>Компоненты. </strong></em>Инструменты плотника включают в себя пилу, молоток, гвозди, топор, угольник, линейку, кородёр, рубанок и стамеску.</p>\n<p><em><strong>История. </strong></em>Умение в обращении с этими инструментами помогает вам определять происхождение и назначение деревянных строений и прочих больших деревянных объектов.</p>\n<p><em><strong>Расследование. </strong></em>Вы получаете дополнительные знания при обследовании области в деревянном здании, потому что знаете строительные хитрости, которые могут скрыть что-то от любопытных глаз.</p>\n<p><em><strong>Внимание. </strong></em>Вы можете заметить неровности на деревянных стенах и полу, что облегчает поиск ловушек и тайных ходов.</p>\n<p><em><strong>Скрытность. </strong></em>Вы можете быстро найти слабое место в деревянном полу, что облегчает вам определение мест, которые сломаются или заскрипят, если на них наступить.</p>\n<p><em><strong>Укрепление. </strong></em>За 1 минуту при наличии материалов вы можете укрепить дверь или окно. СЛ броска чтобы их выбить увеличивается на 5.</p>\n<p><em><strong>Временное укрытие. </strong></em>Частью долгого отдыха вы можете построить навес или подобное укрытие, чтобы укрыть свою группу от дождя или солнечного зноя на время отдыха. Поскольку оно было построено на скорую руку из первой попавшейся древесины, укрытие разваливается через [[/r 1d3]] дня после постройки.</p>\n<table class=\"rd__table  stripe-odd-table\">\n<thead>\n<tr>\n<th class=\"col-10\" data-rd-isroller=\"false\">Возможное действие</th>\n<th class=\"col-2 text-center\" data-rd-isroller=\"false\">СЛ</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td class=\"col-10\">Построить простое деревянное сооружение</td>\n<td class=\"col-2 text-center\">10</td>\n</tr>\n<tr>\n<td class=\"col-10\">Спроектировать сложное деревянное строение</td>\n<td class=\"col-2 text-center\">15</td>\n</tr>\n<tr>\n<td class=\"col-10\">Найти слабое место в деревянной стене</td>\n<td class=\"col-2 text-center\">15</td>\n</tr>\n<tr>\n<td class=\"col-10\">Выломать дверь</td>\n<td class=\"col-2 text-center\">20</td>\n</tr>\n</tbody>\n</table>",
+  "item_kind": "item",
+  "name": "Инструменты плотника",
+  "passive_effects": [],
+  "provenance": {
+    "ingest_date": "2026-05-30",
+    "ingest_version": "foundry-translator-v1",
+    "license_tag": "CC-BY-4.0",
+    "source": "foundry",
+    "source_url": "https://github.com/foundryvtt/dnd5e/blob/965ad2d0cf5d063dac675ba078b5bd3c3c0dd449/packs/_source/equipment24/tools/artisan/carpenters-tools.yml",
+    "srd_version": [
+      "5.2"
+    ]
+  },
+  "rarity": "common",
+  "requires_attunement": false,
+  "review": {
+    "known_divergence": null,
+    "requires_user_decision": false
+  },
+  "slug": "carpenters-tools",
+  "uses": null,
+  "weight": 6.0
+}

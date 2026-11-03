@@ -1,0 +1,28 @@
+{
+  "stage": 2,
+  "status": "source integrated with explicit Hide/Bless blockers",
+  "copied_this_pass": [
+    "docs/NAT20_STAGE2_UI.md",
+    "prompts/gm_commands_v1.txt",
+    "reports/STAGE2_INTERPRETER_SEAM.md",
+    "reports/stage2-interpreter-freeze.json",
+    "reports/stage2-ui/dying-restored.png",
+    "reports/stage2-ui/freeze.json",
+    "reports/stage2-ui/results.json",
+    "reports/stage2-ui/unsupported-spell.png",
+    "solo/game.py",
+    "tests/test_stage2_interpreter_capabilities.py",
+    "tests/test_stage2_ui.cjs",
+    "tests/test_stage2_ui.py",
+    "web/game-screen.js",
+    "web/prototype-actions.js"
+  ],
+  "hash_mismatches": 0,
+  "owner_tests": {
+    "engine_unique_latest": 14,
+    "ui_browser": 1,
+    "interpreter": 2
+  },
+  "tests_rerun_by_root": false,
+  "executable_rebuilt": false
+}

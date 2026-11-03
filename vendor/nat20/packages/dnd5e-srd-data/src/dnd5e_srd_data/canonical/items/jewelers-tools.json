@@ -1,0 +1,114 @@
+{
+  "activities": [
+    {
+      "activation": {
+        "condition": "",
+        "override": false,
+        "reaction_conditions": [],
+        "type": "action",
+        "value": null
+      },
+      "applied_effects": [],
+      "check": {
+        "ability": "int",
+        "associated": [],
+        "dc": {
+          "calculation": "",
+          "formula": "15"
+        }
+      },
+      "consumption": {
+        "scaling": {
+          "allowed": false,
+          "max": ""
+        },
+        "spell_slot": true,
+        "targets": []
+      },
+      "description": {
+        "chat_flavor": ""
+      },
+      "duration": {
+        "concentration": false,
+        "override": false,
+        "special": "",
+        "units": "inst",
+        "value": ""
+      },
+      "effects": [],
+      "flags": {},
+      "id": "ghdkI4seBn7XykXx",
+      "img": "",
+      "kind": "check",
+      "name": "Discern Value",
+      "range": {
+        "override": false,
+        "special": "",
+        "units": "self",
+        "value": null
+      },
+      "sort": 0,
+      "target": {
+        "affects": {
+          "choice": false,
+          "count": "",
+          "special": "",
+          "type": ""
+        },
+        "override": false,
+        "prompt": false,
+        "template": {
+          "contiguous": false,
+          "count": "",
+          "height": "",
+          "size": "",
+          "stationary": false,
+          "type": "",
+          "units": "",
+          "width": ""
+        }
+      },
+      "uses": {
+        "max": "",
+        "recovery": [],
+        "spent": 0
+      },
+      "visibility": {
+        "identifier": "",
+        "level": {
+          "max": null,
+          "min": null
+        },
+        "require_attunement": false,
+        "require_identification": false,
+        "require_magic": false
+      }
+    }
+  ],
+  "attunement_constraint": null,
+  "cost_gp": 25.0,
+  "description": "Ability: Intelligence\n\nUtilize: Discern a gem's value (DC 15)\n\nCraft: Arcane Focus, Holy Symbol",
+  "description_localized": "<p>Эти специальные инструменты включают предметы, необходимые для занятия ювелирным делом. Умение в обращении с этими инструментами позволяет вам добавить ваш бонус умения к любой проверке характеристики, связанной с их использованием.</p><p>Умение в обращении с инструментами ювелира включает в себя знание основных способов работы с драгоценностями, также позволяет опознавать драгоценные камни.</p><p><em><strong>Компоненты.</strong></em> Инструменты ювелира включают в себя небольшие пилу и молоточек, напильники, щипцы и пинцет.</p><p><em><strong>Магия.</strong></em> Умение в обращении с инструментами ювелира даёт вам знания об известных способах магического применения драгоценных камней. Эти знания будут кстати при проверках Магии, связанных с драгоценными камнями или инкрустированными ими предметами.</p><p><em><strong>Расследование.</strong></em> При осмотре драгоценностей владение инструментами ювелира помогает вам находить зацепки, которые другие бы просмотрели.</p><p><em><strong>Опознание драгоценности.</strong></em> Вы можете опознать драгоценность и на глаз определить её стоимость.</p><table class=\"rd__table  stripe-odd-table\"><thead><tr><th class=\"col-10\" data-rd-isroller=\"false\">Возможное действие</th><th class=\"col-2 text-center\" data-rd-isroller=\"false\">СЛ</th></tr></thead><tbody><tr><td class=\"col-10\">Изменить внешний вид драгоценности</td><td class=\"col-2 text-center\">15</td></tr><tr><td class=\"col-10\">Определить прошлое драгоценности</td><td class=\"col-2 text-center\">20</td></tr></tbody></table>",
+  "item_kind": "item",
+  "name": "Инструменты ювелира",
+  "passive_effects": [],
+  "provenance": {
+    "ingest_date": "2026-05-30",
+    "ingest_version": "foundry-translator-v1",
+    "license_tag": "CC-BY-4.0",
+    "source": "foundry",
+    "source_url": "https://github.com/foundryvtt/dnd5e/blob/965ad2d0cf5d063dac675ba078b5bd3c3c0dd449/packs/_source/equipment24/tools/artisan/jewelers-tools.yml",
+    "srd_version": [
+      "5.2"
+    ]
+  },
+  "rarity": "common",
+  "requires_attunement": false,
+  "review": {
+    "known_divergence": null,
+    "requires_user_decision": false
+  },
+  "slug": "jewelers-tools",
+  "uses": null,
+  "weight": 2.0
+}

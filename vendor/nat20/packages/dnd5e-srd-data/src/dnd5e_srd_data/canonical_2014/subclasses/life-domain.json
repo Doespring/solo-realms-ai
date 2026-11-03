@@ -1,0 +1,211 @@
+{
+  "slug": "life-domain",
+  "name": "Life Domain",
+  "description": "The Life domain focuses on the vibrant positive energy—one of the fundamental forces of the universe—that sustains all life. The gods of life promote vitality and health through healing the sick and wounded, caring for those in need, and driving away the forces of death and undeath. Almost any non-­evil deity can claim influence over this domain, particularly agricultural deities (such as Chauntea, Arawai, and Demeter), sun gods (such as Lathander, Pelor, and Re-­Horakhty), gods of healing or endurance (such as Ilmater, Mishakal, Apollo, and Diancecht), and gods of home and community (such as Hestia, Hathor, and Boldrei).\n\nLife Domain Spells\n\nCleric Level\n\nSpells\n\n1st\n\nBless, Cure Wounds\n\n3rd\n\nLesser Restoration, Spiritual Weapon\n\n5th\n\nBeacon of Hope, Revivify\n\n7th\n\nDeath Ward, Guardian of Faith\n\n9th\n\nMass Cure Wounds, Raise Dead",
+  "identifier": "life-domain",
+  "class_identifier": "cleric",
+  "spellcasting": {
+    "ability": "",
+    "progression": "none"
+  },
+  "advancement": [
+    {
+      "id": "bW7chouU8WIVH0Le",
+      "type": "Trait",
+      "level": 1,
+      "title": "",
+      "hint": "",
+      "class_restriction": "",
+      "configuration": {
+        "mode": "default",
+        "allowReplacements": false,
+        "grants": [
+          "armor:hvy"
+        ],
+        "choices": []
+      },
+      "value": {
+        "chosen": []
+      }
+    },
+    {
+      "id": "9fyr5t01nhdg0u8n",
+      "type": "ItemGrant",
+      "level": 1,
+      "title": "Features",
+      "hint": "",
+      "class_restriction": "",
+      "configuration": {
+        "items": [
+          {
+            "uuid": "Compendium.dnd5e.classfeatures.68bYIOvx6rIqnlOW",
+            "optional": false
+          },
+          {
+            "uuid": "Compendium.dnd5e.classfeatures.jF8AFfEMICIJnAkR",
+            "optional": false
+          }
+        ],
+        "optional": false,
+        "spell": {
+          "ability": [],
+          "preparation": "",
+          "uses": {
+            "max": "",
+            "per": ""
+          }
+        }
+      },
+      "value": {}
+    },
+    {
+      "id": "4qh4ejxpwugva6ma",
+      "type": "ItemGrant",
+      "level": 2,
+      "title": "Features",
+      "hint": "",
+      "class_restriction": "",
+      "configuration": {
+        "items": [
+          {
+            "uuid": "Compendium.dnd5e.classfeatures.hEymt45rICi4f9eL",
+            "optional": false
+          }
+        ],
+        "optional": false,
+        "spell": {
+          "ability": [],
+          "preparation": "",
+          "uses": {
+            "max": "",
+            "per": ""
+          }
+        }
+      },
+      "value": {}
+    },
+    {
+      "id": "ihquu4r80mxr07qt",
+      "type": "ItemGrant",
+      "level": 6,
+      "title": "Features",
+      "hint": "",
+      "class_restriction": "",
+      "configuration": {
+        "items": [
+          {
+            "uuid": "Compendium.dnd5e.classfeatures.yv49QN6Bzqs0ecCs",
+            "optional": false
+          }
+        ],
+        "optional": false,
+        "spell": {
+          "ability": [],
+          "preparation": "",
+          "uses": {
+            "max": "",
+            "per": ""
+          }
+        }
+      },
+      "value": {}
+    },
+    {
+      "id": "ayh4gqp9vxjo9yd3",
+      "type": "ItemGrant",
+      "level": 8,
+      "title": "Features",
+      "hint": "",
+      "class_restriction": "",
+      "configuration": {
+        "items": [
+          {
+            "uuid": "Compendium.dnd5e.classfeatures.T6u5z8ZTX6UftXqE",
+            "optional": false
+          }
+        ],
+        "optional": false,
+        "spell": {
+          "ability": [],
+          "preparation": "",
+          "uses": {
+            "max": "",
+            "per": ""
+          }
+        }
+      },
+      "value": {}
+    },
+    {
+      "id": "m4m8xp6cabt71mdq",
+      "type": "ItemGrant",
+      "level": 17,
+      "title": "Features",
+      "hint": "",
+      "class_restriction": "",
+      "configuration": {
+        "items": [
+          {
+            "uuid": "Compendium.dnd5e.classfeatures.4UOgxzr83vFuUash",
+            "optional": false
+          }
+        ],
+        "optional": false,
+        "spell": {
+          "ability": [],
+          "preparation": "",
+          "uses": {
+            "max": "",
+            "per": ""
+          }
+        }
+      },
+      "value": {}
+    },
+    {
+      "id": "RYU9NFMQarGlfW23",
+      "type": "ScaleValue",
+      "level": 0,
+      "title": "Divine Strike Damage",
+      "hint": "",
+      "class_restriction": "",
+      "configuration": {
+        "identifier": "divine-strike",
+        "type": "dice",
+        "distance": {
+          "units": ""
+        },
+        "scale": {
+          "8": {
+            "number": 1,
+            "faces": 8,
+            "modifiers": []
+          },
+          "14": {
+            "number": 2,
+            "faces": 8,
+            "modifiers": []
+          }
+        }
+      },
+      "value": {}
+    }
+  ],
+  "granted_features": [],
+  "feature_choices": [],
+  "provenance": {
+    "source": "foundry",
+    "source_url": "https://github.com/foundryvtt/dnd5e/blob/965ad2d0cf5d063dac675ba078b5bd3c3c0dd449/packs/_source/subclasses/Life_Domain_H3RYLGqCiqm8BP3q.yml",
+    "ingest_date": "2026-10-26",
+    "ingest_version": "foundry-translator-v1",
+    "srd_version": [
+      "5.1"
+    ],
+    "license_tag": "CC-BY-4.0"
+  },
+  "review": {
+    "known_divergence": null,
+    "requires_user_decision": false
+  },
+  "entry_kind": "subclass"
+}

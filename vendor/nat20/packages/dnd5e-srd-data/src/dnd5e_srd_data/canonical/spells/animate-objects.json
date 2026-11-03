@@ -1,0 +1,218 @@
+{
+  "activities": [
+    {
+      "activation": {
+        "condition": "",
+        "override": false,
+        "reaction_conditions": [],
+        "type": "action",
+        "value": null
+      },
+      "applied_effects": [],
+      "bonuses": {
+        "ac": "",
+        "attack_damage": "",
+        "hd": "",
+        "healing": "",
+        "hp": "",
+        "save_damage": ""
+      },
+      "consumption": {
+        "scaling": {
+          "allowed": false,
+          "max": ""
+        },
+        "spell_slot": true,
+        "targets": []
+      },
+      "creature_sizes": [],
+      "creature_types": [],
+      "description": {
+        "chat_flavor": ""
+      },
+      "duration": {
+        "concentration": false,
+        "override": false,
+        "special": "",
+        "units": "inst",
+        "value": null
+      },
+      "effects": [],
+      "flags": {},
+      "id": "dnd5eactivity000",
+      "img": "",
+      "kind": "summon",
+      "match": {
+        "ability": "",
+        "attacks": true,
+        "disposition": false,
+        "proficiency": true,
+        "saves": false
+      },
+      "name": "",
+      "profiles": [
+        {
+          "count": "floor(@attributes.spell.mod / 3)",
+          "cr": "",
+          "id": "wlo67rwZWeVG9YzC",
+          "level": {
+            "max": null,
+            "min": null
+          },
+          "name": "Huge Object (costs 3)",
+          "types": [],
+          "uuid": "Compendium.dnd5e.actors24.Actor.phbhaoAnimatedOb"
+        },
+        {
+          "count": "floor(@attributes.spell.mod / 2)",
+          "cr": "",
+          "id": "9gKBKcYbDDeyXoPY",
+          "level": {
+            "max": null,
+            "min": null
+          },
+          "name": "Large Object (costs 2)",
+          "types": [],
+          "uuid": "Compendium.dnd5e.actors24.Actor.phblaoAnimatedOb"
+        },
+        {
+          "count": "@attributes.spell.mod",
+          "cr": "",
+          "id": "j8huhBMmSxwSoBCq",
+          "level": {
+            "max": null,
+            "min": null
+          },
+          "name": "Medium Object",
+          "types": [],
+          "uuid": "Compendium.dnd5e.actors24.Actor.phbmaoAnimatedOb"
+        },
+        {
+          "count": "@attributes.spell.mod",
+          "cr": "",
+          "id": "TZYGQ4aQjvvAIRPe",
+          "level": {
+            "max": null,
+            "min": null
+          },
+          "name": "Small Object",
+          "types": [],
+          "uuid": "Compendium.dnd5e.actors24.Actor.phbsaoAnimatedOb"
+        },
+        {
+          "count": "@attributes.spell.mod",
+          "cr": "",
+          "id": "RUknezIXLCycNPIH",
+          "level": {
+            "max": null,
+            "min": null
+          },
+          "name": "Tiny Object",
+          "types": [],
+          "uuid": "Compendium.dnd5e.actors24.Actor.phbtaoAnimatedOb"
+        }
+      ],
+      "range": {
+        "override": false,
+        "special": "",
+        "units": "self",
+        "value": null
+      },
+      "sort": 0,
+      "summon": {
+        "identifier": "",
+        "mode": "",
+        "prompt": true
+      },
+      "target": {
+        "affects": {
+          "choice": false,
+          "count": "@attributes.spell.mod",
+          "special": "",
+          "type": "object"
+        },
+        "override": false,
+        "prompt": true,
+        "template": {
+          "contiguous": false,
+          "count": "",
+          "height": "",
+          "size": "",
+          "stationary": false,
+          "type": "",
+          "units": "",
+          "width": ""
+        }
+      },
+      "temp_hp": "",
+      "uses": {
+        "max": "",
+        "recovery": [],
+        "spent": 0
+      },
+      "visibility": {
+        "identifier": "",
+        "level": {
+          "max": null,
+          "min": null
+        },
+        "require_attunement": false,
+        "require_identification": false,
+        "require_magic": false
+      }
+    }
+  ],
+  "casting_time": {
+    "condition": "",
+    "unit": "action",
+    "value": 1
+  },
+  "components": [
+    "S",
+    "V"
+  ],
+  "concentration": true,
+  "description": "Objects animate at your command. Choose a number of nonmagical objects within range that aren't being worn or carried, aren't fixed to a surface, and aren't Gargantuan. The maximum number of objects is equal to your spellcasting ability modifier; for this number, a Medium or smaller target counts as one object, a Large target counts as two, and a Huge target counts as three.\n\nEach target animates, sprouts legs, and becomes a Construct that uses the Animated Object stat block; this creature is under your control until the spell ends or until it is reduced to 0 Hit Points. Each creature you make with this spell is an ally to you and your allies. In combat, it shares your Initiative count and takes its turn immediately after yours.\n\nUntil the spell ends, you can take a Bonus Action to mentally command any creature you made with this spell if the creature is within 500 feet of you (if you control multiple creatures, you can command any of them at the same time, issuing the same command to each one). If you issue no commands, the creature takes the &amp;Reference[Dodge] action and moves only to avoid harm. When the creature drops to 0 Hit Points, it reverts to its object form, and any remaining damage carries over to that form.\n\nUsing a Higher-Level Spell Slot. The creature's Slam damage increases by 1d4 (Medium or smaller), 1d6 (Large), or 1d12 (Huge) for each spell slot level above 5.\n\nAnimated Object Sizes\n\nTiny, Small, Medium, Large, Huge",
+  "description_localized": "<div class=\"rd__spc-inline-post\"><p>Предметы оживают и подчиняются вам. Выберите до десяти немагических объектов в пределах дистанции, кроме тех, что носят или держат. Среднего размера цели считаются за два объекта, крупные — за четыре, огромные — за восемь. Нельзя оживить предмет больше огромного. Каждая цель оживает и становится существом под вашим контролем, пока длится заклинание или пока его ПЗ не снизятся до 0.</p></div><div class=\"rd__spc-inline-post\"><p>В качестве бонусного действия вы можете отдать мысленный приказ любому существу, которое вы создали этим заклинанием, если оно в пределах 500 футов от вас. Если вы контролируете несколько существ, можете отдать одинаковый приказ любому их количеству одновременно. Вы можете решить, какое действие совершит существо и куда переместится в свой следующий ход, а можете отдать приказ общего характера, например охранять конкретную комнату или коридор. Если вы не прикажете ничего, то существо будет только защищаться от враждебных существ. Получив приказ, существо следует ему до выполнения задачи.</p></div><table class=\"rd__table  stripe-odd-table\" style=\"width:99.4624%\"><caption>Параметры оживших предметов</caption><thead><tr><th class=\"col-2\" style=\"width:36.274%\" data-rd-isroller=\"false\">Размер</th><th class=\"col-1 text-center\" style=\"width:2.23536%\" data-rd-isroller=\"false\">ПЗ</th><th class=\"col-1 text-center\" style=\"width:2.07488%\" data-rd-isroller=\"false\">КБ</th><th class=\"col-6\" style=\"width:32.7801%\" data-rd-isroller=\"false\">Атака</th><th class=\"col-1 text-center\" style=\"width:13.0011%\" data-rd-isroller=\"false\">Сил</th><th class=\"col-1 text-center\" style=\"width:13.004%\" data-rd-isroller=\"false\">Лвк</th></tr></thead><tbody><tr><td class=\"col-2\" style=\"width:36.274%\">@Compendium[laaru-dnd5-hw.monsters.ZXnE6Xll6WiGV1Q7]{Маленький}</td><td class=\"col-1 text-center\" style=\"width:2.23536%\">20</td><td class=\"col-1 text-center\" style=\"width:2.07488%\">18</td><td class=\"col-6\" style=\"width:32.7801%\">[[/r 1d20+8]] (+8) к броску, [[/r 1d4 + 4]] урона</td><td class=\"col-1 text-center\" style=\"width:13.0011%\">[[/r 1d20 - 3]] (4)</td><td class=\"col-1 text-center\" style=\"width:13.004%\">[[/r 1d20 + 4]] (18)</td></tr><tr><td class=\"col-2\" style=\"width:36.274%\">@Compendium[laaru-dnd5-hw.monsters.uVg666mcjfs46Ty8]{Небольшой}</td><td class=\"col-1 text-center\" style=\"width:2.23536%\">25</td><td class=\"col-1 text-center\" style=\"width:2.07488%\">16</td><td class=\"col-6\" style=\"width:32.7801%\">[[/r 1d20+6]] (+6) <span style=\"background-color:rgba(0, 0, 0, 0.05)\">к броску</span>, [[/r 1d8 + 2]] урона</td><td class=\"col-1 text-center\" style=\"width:13.0011%\">[[/r 1d20 - 2]] (6)</td><td class=\"col-1 text-center\" style=\"width:13.004%\">[[/r 1d20 + 2]] (14)</td></tr><tr><td class=\"col-2\" style=\"width:36.274%\">@Compendium[laaru-dnd5-hw.monsters.Hd8xRyuOAcZMSmjT]{Средний}</td><td class=\"col-1 text-center\" style=\"width:2.23536%\">40</td><td class=\"col-1 text-center\" style=\"width:2.07488%\">13</td><td class=\"col-6\" style=\"width:32.7801%\">[[/r 1d20+5]] (+5) к броску, [[/r 2d6 + 1]] урона</td><td class=\"col-1 text-center\" style=\"width:13.0011%\">[[/r 1d20]] (10)</td><td class=\"col-1 text-center\" style=\"width:13.004%\">[[/r 1d20 + 1]] (12)</td></tr><tr><td class=\"col-2\" style=\"width:36.274%\">@Compendium[laaru-dnd5-hw.monsters.XqWJiFuT26cpKK1F]{Крупный}</td><td class=\"col-1 text-center\" style=\"width:2.23536%\">50</td><td class=\"col-1 text-center\" style=\"width:2.07488%\">10</td><td class=\"col-6\" style=\"width:32.7801%\">[[/r 1d20+6]] (+6) <span style=\"background-color:rgba(0, 0, 0, 0.05)\">к броску</span>, [[/r 2d10 + 2]] урона</td><td class=\"col-1 text-center\" style=\"width:13.0011%\">[[/r 1d20 + 2]] (14)</td><td class=\"col-1 text-center\" style=\"width:13.004%\">[[/r 1d20]] (10)</td></tr><tr><td class=\"col-2\" style=\"width:36.274%\">@Compendium[laaru-dnd5-hw.monsters.ABR4VWn8a2WB3OMx]{Огромный}</td><td class=\"col-1 text-center\" style=\"width:2.23536%\">80</td><td class=\"col-1 text-center\" style=\"width:2.07488%\">10</td><td class=\"col-6\" style=\"width:32.7801%\">[[/r 1d20+8]] (+8) к броску, [[/r 2d12 + 4]] урона</td><td class=\"col-1 text-center\" style=\"width:13.0011%\">[[/r 1d20 + 4]] (18)</td><td class=\"col-1 text-center\" style=\"width:13.004%\">[[/r 1d20 - 3]] (6)</td></tr></tbody></table><div class=\"rd__spc-inline-post\"><p>Оживший предмет — это конструкция с КБ, ПЗ, атаками, Силой и Ловкостью, зависящими от его размера. Его Выносливость равна 10, Интеллект и Мудрость по 3, Харизма 1. Ero скорость — 30 футов; если у него нет ножек или иных конечностей, он получает скорость полёта 30 футов и может парить. Если предмет надёжно приделан к поверхности или к другому объекту, например к стене, его скорость равна 0. У него &amp;reference[blindsight]{Слепозрение} в радиусе 30 футов, за пределами этого радиуса он &amp;reference[blinded]{слеп}. Когда ПЗ предмета снижаются до 0, он возвращается в свою обычную форму, а оставшийся урон переносится на неё.</p></div><div class=\"rd__spc-inline-post\"><p>Если приказать предмету атаковать, он может совершить одну атаку ближнего боя по существу в пределах 5 футов от себя. Это крушащий удар с бонусом атаки и дробящим уроном, зависящими от размера предмета. Мастер может решить, что конкретный предмет наносит режущий или колющий урон в зависимости от его формы</p></div><div class=\"rd__spc-inline-post\"><p><strong>На высоких кругах</strong>. Если вы сотворяете это заклинание, используя ячейку 6-го круга или выше, то можете оживить два дополнительных объекта за каждый круг ячейки выше 5-го.</p></div>",
+  "duration": {
+    "units": "minute",
+    "value": 1
+  },
+  "entry_kind": "spell",
+  "foundry_uuid": "Compendium.dnd5e.spells24.Item.phbsplAnimateObj",
+  "level": 5,
+  "materials": {
+    "consumed": false,
+    "cost": 0,
+    "supply": 0,
+    "value": ""
+  },
+  "name": "Оживление предметов",
+  "passive_effects": [],
+  "preparation": {
+    "mode": "prepared",
+    "prepared": false
+  },
+  "provenance": {
+    "ingest_date": "2026-05-30",
+    "ingest_version": "foundry-translator-v1",
+    "license_tag": "CC-BY-4.0",
+    "source": "foundry",
+    "source_url": "https://github.com/foundryvtt/dnd5e/blob/965ad2d0cf5d063dac675ba078b5bd3c3c0dd449/packs/_source/spells24/5th-level/animate-objects.yml",
+    "srd_version": [
+      "5.2"
+    ]
+  },
+  "range": {
+    "special": null,
+    "units": "ft",
+    "value": 120
+  },
+  "review": {
+    "known_divergence": null,
+    "requires_user_decision": false
+  },
+  "ritual": false,
+  "school": "trs",
+  "slug": "animate-objects"
+}

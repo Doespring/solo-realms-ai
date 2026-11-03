@@ -1,0 +1,29 @@
+{
+  "activities": [],
+  "attunement_constraint": null,
+  "cost_gp": 12.0,
+  "description": "A Dungeoneer's Pack contains the following items: Backpack, Caltrops, Crowbar, 2 flasks of Oil, 10 days of Rations, Rope, Tinderbox, 10 Torches, and Waterskin.",
+  "description_localized": "<p><em><strong>Комплект исследователя подземелий (12 зм)</strong></em>. В него входят рюкзак (здесь это сам <em>комплект</em>), ломик, молоток, 10 колышков, 10 факелов, огниво, сухой паёк на 10 дней и бурдюк. В комплект также входят 50 футов пеньковой верёвки, привязанной сбоку к рюкзаку.</p>",
+  "item_kind": "item",
+  "name": "Комплект исследователя подземелий",
+  "passive_effects": [],
+  "provenance": {
+    "ingest_date": "2026-05-30",
+    "ingest_version": "foundry-translator-v1",
+    "license_tag": "CC-BY-4.0",
+    "source": "foundry",
+    "source_url": "https://github.com/foundryvtt/dnd5e/blob/965ad2d0cf5d063dac675ba078b5bd3c3c0dd449/packs/_source/equipment24/adventuring-gear/dungeoneers-pack/_container.yml",
+    "srd_version": [
+      "5.2"
+    ]
+  },
+  "rarity": "common",
+  "requires_attunement": false,
+  "review": {
+    "known_divergence": null,
+    "requires_user_decision": false
+  },
+  "slug": "dungeoneers-pack",
+  "uses": null,
+  "weight": 5.0
+}

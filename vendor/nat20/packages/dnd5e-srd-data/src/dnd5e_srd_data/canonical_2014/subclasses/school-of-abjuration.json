@@ -1,0 +1,91 @@
+{
+  "slug": "school-of-abjuration",
+  "name": "Школа преграждения",
+  "description": "Школа преграждения | School of Abjuration\n\nЭта школа связана с магией, которая блокирует, изгоняет или защищает. Противники этой школы считают, что традиция посвящена скорее отрицанию и отвержению, чем акту творения. Но надо понимать, что магия, позволяющая прекратить вредное воздействие, защитить слабого и игнать зло, — вполне уважаемый род занятий.\n\nМастера преграждения нужны, когда требуется изгнать злых духов, защитить важные места от магических шпионов или закрыть порталы на другие планы бытия.\n\nУровень Особенности\n\n2-й\n\n@Compendium[laaru-dnd5-hw.classfeatures.elYJ2BrHAz92YnSn]{Знаток преграждения}, @Compendium[laaru-dnd5-hw.classfeatures.Jh0RqVznenhCOzw8]{Магический оберег}\n\n6-й\n\n@Compendium[laaru-dnd5-hw.classfeatures.WVBqFYjyxuyfIayx]{Проекция оберега}\n\n10-й\n\n@Compendium[laaru-dnd5-hw.classfeatures.0EIP2OFxGgNbhvFZ]{Улучшенное преграждение}\n\n14-й\n\n@Compendium[laaru-dnd5-hw.classfeatures.cC0foThbccpuvrsh]{Устойчивость к заклинаниям}",
+  "identifier": "school-of-abjuration",
+  "class_identifier": "wizard",
+  "spellcasting": {
+    "ability": "",
+    "progression": "none"
+  },
+  "advancement": [
+    {
+      "id": "83lrmd82z0jh2kyf",
+      "type": "ItemGrant",
+      "level": 2,
+      "title": "Особенности",
+      "hint": "",
+      "class_restriction": "",
+      "configuration": {
+        "items": [
+          "Compendium.laaru-dnd5-hw.classfeatures.elYJ2BrHAz92YnSn",
+          "Compendium.laaru-dnd5-hw.classfeatures.Jh0RqVznenhCOzw8"
+        ],
+        "optional": false
+      },
+      "value": {}
+    },
+    {
+      "id": "x2c4heftqlhri9sd",
+      "type": "ItemGrant",
+      "level": 6,
+      "title": "Особенность",
+      "hint": "",
+      "class_restriction": "",
+      "configuration": {
+        "items": [
+          "Compendium.laaru-dnd5-hw.classfeatures.WVBqFYjyxuyfIayx"
+        ],
+        "optional": false
+      },
+      "value": {}
+    },
+    {
+      "id": "g7jm97widfdopzk5",
+      "type": "ItemGrant",
+      "level": 10,
+      "title": "Особенность",
+      "hint": "",
+      "class_restriction": "",
+      "configuration": {
+        "items": [
+          "Compendium.laaru-dnd5-hw.classfeatures.0EIP2OFxGgNbhvFZ"
+        ],
+        "optional": false
+      },
+      "value": {}
+    },
+    {
+      "id": "tqmze7z8udpuf115",
+      "type": "ItemGrant",
+      "level": 14,
+      "title": "Особенность",
+      "hint": "",
+      "class_restriction": "",
+      "configuration": {
+        "items": [
+          "Compendium.laaru-dnd5-hw.classfeatures.cC0foThbccpuvrsh"
+        ],
+        "optional": false
+      },
+      "value": {}
+    }
+  ],
+  "granted_features": [],
+  "feature_choices": [],
+  "provenance": {
+    "source": "foundry",
+    "source_url": "https://github.com/foundryvtt/dnd5e/blob/965ad2d0cf5d063dac675ba078b5bd3c3c0dd449/packs/_source/laaru-hw-subclasses/Школа_преграждения_l5ztRG57d2bMRPyD.yml",
+    "ingest_date": "2026-10-26",
+    "ingest_version": "foundry-translator-v1",
+    "srd_version": [
+      "5.1"
+    ],
+    "license_tag": "CC-BY-4.0"
+  },
+  "review": {
+    "known_divergence": null,
+    "requires_user_decision": false
+  },
+  "entry_kind": "subclass"
+}

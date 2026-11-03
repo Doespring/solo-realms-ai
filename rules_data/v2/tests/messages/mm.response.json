@@ -1,0 +1,8 @@
+{
+  "message_type": "adjudication_response", "contract_version": "2.0.0", "request_id": "demo.mm.001", "state_version": 1,
+  "rules_family": "dnd2024", "ruleset_digest": "44bd6584c9777d693ccf233771a5310d316a3773ce31e675f7081db310dc536b",
+  "context_hash": "d2146cf3c4f279e8ccbfee9f3b36a4f58b52504c854e72552083a67105a63be2",
+  "status": "decided", "choice_ids": ["disengage"], "proposals": [{"entity_id": "goblin", "predicate": "intent", "text": "Attempt to escape without inviting a retaliation."}],
+  "fact_ids": ["intent", "known_cover"], "rule_ids": ["dnd2024.mm2025.goblin_warrior.nimble_escape"],
+  "rationale": "Fixture tactical choice; actual eligibility and movement remain local checks.", "uncertainties": []
+}

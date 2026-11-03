@@ -1,0 +1,139 @@
+{
+  "slug": "druid-grove",
+  "foundry_uuid": "Compendium.dnd5e.laaru-hw-spells.Item.Nk7UAhCuteUhdCNO",
+  "name": "Роща друида / Druid Grove",
+  "description": "Вы призываете духов природы для защиты области на открытом воздухе или под землей. Эта область может быть кубом с длиной ребра от 30 до 90 футов. Здания и другие сооружения исключаются из этой области.\n\nЕсли вы сотворяете это заклинание в одном и том же месте каждый день в течение года, заклинание длится до тех пор, пока не будет рассеяно. Заклинание создает следующие эффекты в пределах области. Когда вы сотворяете это заклинание, вы можете указать существ как друзей, которые будут невосприимчивы к эффектам заклинания. Вы также можете указать кодовое слово, которое, при произношении, делает говорящего невосприимчивым к этим эффектам. Вся защищённая область источает магию.\n\n@Compendium[laaru-dnd5-hw.spells.ZdDJVUlzYudd4nHO]{Рассеивание магии}, наложенная на область, при успехе удаляет только один из нижеследующих эффектов, а не всю область. Заклинатель выбирает, какой эффект окончить. Только когда все эффекты окончены, заклинание рассеивается.\n\nНепроглядный туман. Вы можете заполнить любое количество 5-футовых квадратов на земле густым туманом, делая их местностью с &amp;reference[heavilyobscured]{крайне затруднённой видимостью}. Туман достигает 10 футов в высоту. Кроме того, каждый фут движения через туман стоит 2 дополнительных фута. Для существа, невосприимчивого к данному эффекту, туман ничего не скрывает и выглядит как лёгкая дымка с песчинками зеленого света, плавающими в воздухе.\n\nЦепкий подлесок. Вы можете заполнить любое количество 5-футовых квадратов на земле, которые не заполнены туманом, цепкими сорняками и лозой, как если бы они были созданы заклинанием @Compendium[laaru-dnd5-hw.spells.dG8ddfpg5fOIkJ4h]{Опутывание}. Для существа, невосприимчивого к данному эффекту, сорняки и лоза ощущаются мягкими и меняют свою форму, чтобы служить временными сидениями или постелями.\n\nХранители рощи. Вы можете оживить до четырех деревьев в этой области, заставляя их выкорчевать себя из земли. Эти деревья имеют ту же статистику, что и @Compendium[laaru-dnd5-hw.monsters.LB82goq5hZ36yfff]{Пробуждённое дерево} за исключением того, что они не могут говорить, и их кора покрыта друидическими символами.\n\nЕсли любое существо, невосприимчивое к этому эффекту, заходит в защищаемую область, хранители рощи сражаются, пока не прогонят или не убьют вторженцев. Хранители рощи также подчиняются вашим устным командам (действие не требуется), которые вы произносите в этой области.\n\nЕсли вы не даёте им команд, и в области нет незваных гостей, хранители рощи бездействуют. Хранители рощи не могут покинуть охраняемую область.\n\nКогда заклинание заканчивается, магия, оживляющая их, исчезает, и деревья снова укореняются, если это возможно.\n\nДополнительный эффект от заклинания. Вы можете выбрать один из следующих магических эффектов в защищенной области:\n\nПостоянный @Compendium[laaru-dnd5-hw.spells.4TFtW7zG8mAENjQb]{Порыв ветра} в двух местах по вашему выбору\n\n@Compendium[laaru-dnd5-hw.spells.akj1JPqDHE1LVDv5]{Шипастая поросль} в одном месте по вашему выбору\n\n@Compendium[laaru-dnd5-hw.spells.hHHSDCZFsZF29DRe]{Стена ветра} в двух местах по вашему выбору\n\nДля существа, невосприимчивого к данному эффекту, ветры – это приятный легкий бриз, а шипы безвредны.",
+  "level": 6,
+  "school": "abj",
+  "components": [
+    "M",
+    "S",
+    "V"
+  ],
+  "ritual": false,
+  "concentration": false,
+  "casting_time": {
+    "unit": "minute",
+    "value": 10,
+    "condition": ""
+  },
+  "range": {
+    "units": "touch",
+    "value": null,
+    "special": null
+  },
+  "duration": {
+    "units": "hour",
+    "value": 24
+  },
+  "materials": {
+    "value": "омела, расходуемая заклинанием, которая была собрана золотым серпом под светом полной луны",
+    "consumed": true,
+    "cost": 0,
+    "supply": 0
+  },
+  "preparation": {
+    "mode": "prepared",
+    "prepared": false
+  },
+  "activities": [
+    {
+      "id": "dnd5eactivity000",
+      "name": "",
+      "img": "",
+      "sort": 0,
+      "activation": {
+        "type": "action",
+        "value": null,
+        "condition": "",
+        "override": false,
+        "reaction_conditions": []
+      },
+      "consumption": {
+        "scaling": {
+          "allowed": false,
+          "max": ""
+        },
+        "spell_slot": true,
+        "targets": []
+      },
+      "description": {
+        "chat_flavor": ""
+      },
+      "duration": {
+        "value": null,
+        "units": "inst",
+        "special": "",
+        "concentration": false,
+        "override": false
+      },
+      "flags": {},
+      "range": {
+        "value": null,
+        "units": "self",
+        "special": "",
+        "override": false
+      },
+      "target": {
+        "template": {
+          "count": "",
+          "contiguous": false,
+          "stationary": false,
+          "type": "",
+          "size": "",
+          "width": "",
+          "height": "",
+          "units": "touch"
+        },
+        "affects": {
+          "count": "",
+          "type": "",
+          "choice": false,
+          "special": ""
+        },
+        "override": false,
+        "prompt": true
+      },
+      "uses": {
+        "spent": 0,
+        "max": "",
+        "recovery": []
+      },
+      "visibility": {
+        "identifier": "",
+        "level": {
+          "min": null,
+          "max": null
+        },
+        "require_attunement": false,
+        "require_identification": false,
+        "require_magic": false
+      },
+      "effects": [],
+      "applied_effects": [],
+      "kind": "utility",
+      "roll": {
+        "formula": "",
+        "name": "",
+        "prompt": false,
+        "visible": false
+      }
+    }
+  ],
+  "passive_effects": [],
+  "provenance": {
+    "source": "foundry",
+    "source_url": "https://github.com/foundryvtt/dnd5e/blob/965ad2d0cf5d063dac675ba078b5bd3c3c0dd449/packs/_source/laaru-hw-spells/Роща_друида___Druid_Grove_Nk7UAhCuteUhdCNO.yml",
+    "ingest_date": "2026-10-26",
+    "ingest_version": "foundry-translator-v1",
+    "srd_version": [
+      "5.1"
+    ],
+    "license_tag": "CC-BY-4.0"
+  },
+  "review": {
+    "known_divergence": null,
+    "requires_user_decision": false
+  },
+  "entry_kind": "spell"
+}

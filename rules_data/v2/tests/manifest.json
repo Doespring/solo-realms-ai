@@ -1,0 +1,27 @@
+{
+  "test_version": "2.0.0", "paths_relative_to": "rules_data/v2",
+  "schema_cases": [
+    {"file": "sections/phb.rules.json", "schema": "routing.schema.json", "valid": true, "records": 4},
+    {"file": "sections/dmg.rules.json", "schema": "routing.schema.json", "valid": true, "records": 4},
+    {"file": "sections/mm.rules.json", "schema": "routing.schema.json", "valid": true, "records": 3},
+    {"file": "tests/messages/phb.request.json", "schema": "ai-engine.schema.json", "valid": true},
+    {"file": "tests/messages/phb.response.json", "schema": "ai-engine.schema.json", "valid": true},
+    {"file": "tests/messages/dmg.request.json", "schema": "ai-engine.schema.json", "valid": true},
+    {"file": "tests/messages/dmg.response.json", "schema": "ai-engine.schema.json", "valid": true},
+    {"file": "tests/messages/mm.request.json", "schema": "ai-engine.schema.json", "valid": true},
+    {"file": "tests/messages/mm.response.json", "schema": "ai-engine.schema.json", "valid": true},
+    {"file": "tests/invalid/classification.rules.json", "schema": "routing.schema.json", "valid": false},
+    {"file": "tests/invalid/state-write.response.json", "schema": "ai-engine.schema.json", "valid": false},
+    {"file": "tests/invalid/wrong-edition.response.json", "schema": "ai-engine.schema.json", "valid": false},
+    {"file": "tests/invalid/uncertain-choice.response.json", "schema": "ai-engine.schema.json", "valid": false}
+  ],
+  "schema_validator": "Microsoft.PowerShell.Utility Test-Json",
+  "runtime_cases": "tests/runtime.cases.json",
+  "runtime_case_count": 48,
+  "runtime_executed": 48,
+  "runtime_execution_report": "reports/executability/summary.json",
+  "fixture_ruleset_digest": "44bd6584c9777d693ccf233771a5310d316a3773ce31e675f7081db310dc536b",
+  "fixture_ruleset_digest_basis": "SHA-256 of this stage's sources.json, test identity only; not an active campaign ruleset or production rule-pack digest",
+  "canonical_context_files": {"dmg": "tests/payloads/dmg.json", "phb": "tests/payloads/phb.json", "mm": "tests/payloads/mm.json"},
+  "context_hash_format": "SHA-256 over canonical sorted-key compact JSON without context_hash, UTF-8 no BOM, followed by exactly one LF. Facts use integers, not floats."
+}

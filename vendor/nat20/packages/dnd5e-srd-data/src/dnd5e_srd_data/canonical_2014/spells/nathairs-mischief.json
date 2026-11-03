@@ -1,0 +1,138 @@
+{
+  "slug": "nathairs-mischief",
+  "foundry_uuid": "Compendium.dnd5e.laaru-hw-spells.Item.HuhGsxNcxhZB2Kia",
+  "name": "Озорство Натайра / Nathair's Mischief",
+  "description": "Вы заполняете 20-футовый куб, который видите в пределах дистанции, магией Фей и Драконов. Совершите бросок по таблице «Озорной порыв» для определения создаваемого магического эффекта, и совершайте новый бросок в начале каждого вашего хода, пока заклинание не закончится. Вы можете переместить куб на 10 футов, прежде чем совершить бросок.\n\nОзорной порыв\n\n[[/r d4]] Эффект\n\n1\n\nЗапах яблочного пирога наполняет воздух и каждое существо в кубе должно преуспеть в испытании Мудрости, иначе станет &amp;reference[charmed]{обворожённым} вами до начала вашего следующего хода.\n\n2\n\nБукеты цветов появляются повсюду и каждое существо в кубе должно преуспеть в испытании Ловкости, иначе станет &amp;reference[blinded]{ослеплённым} до начала вашего следующего хода, так как цветы брызгают водой им в лица.\n\n3\n\nКаждое существо в кубе должно преуспеть в испытании Мудрости, иначе оно будет смеяться до начала вашего следующего хода. Смеющееся существо &amp;reference[incapacitated]{выведено из строя} и использует всё своё передвижение, чтобы переместиться в случайном направлении.\n\n4\n\nКапли патоки начинают парить в кубе, превращая его в &amp;reference[difficultterrain]{пересечённую местность} до начала вашего следующего хода.",
+  "level": 2,
+  "school": "ill",
+  "components": [
+    "M",
+    "S"
+  ],
+  "ritual": false,
+  "concentration": true,
+  "casting_time": {
+    "unit": "action",
+    "value": 1,
+    "condition": ""
+  },
+  "range": {
+    "units": "ft",
+    "value": 60,
+    "special": null
+  },
+  "duration": {
+    "units": "minute",
+    "value": 1
+  },
+  "materials": {
+    "value": "кусочек корочки яблочного пирога",
+    "consumed": false,
+    "cost": 0,
+    "supply": 0
+  },
+  "preparation": {
+    "mode": "prepared",
+    "prepared": false
+  },
+  "activities": [
+    {
+      "id": "dnd5eactivity000",
+      "name": "",
+      "img": "",
+      "sort": 0,
+      "activation": {
+        "type": "action",
+        "value": null,
+        "condition": "",
+        "override": false,
+        "reaction_conditions": []
+      },
+      "consumption": {
+        "scaling": {
+          "allowed": false,
+          "max": ""
+        },
+        "spell_slot": true,
+        "targets": []
+      },
+      "description": {
+        "chat_flavor": ""
+      },
+      "duration": {
+        "value": null,
+        "units": "inst",
+        "special": "",
+        "concentration": false,
+        "override": false
+      },
+      "flags": {},
+      "range": {
+        "value": null,
+        "units": "self",
+        "special": "",
+        "override": false
+      },
+      "target": {
+        "template": {
+          "count": "",
+          "contiguous": false,
+          "stationary": false,
+          "type": "",
+          "size": "",
+          "width": "",
+          "height": "",
+          "units": ""
+        },
+        "affects": {
+          "count": "",
+          "type": "",
+          "choice": false,
+          "special": ""
+        },
+        "override": false,
+        "prompt": true
+      },
+      "uses": {
+        "spent": 0,
+        "max": "",
+        "recovery": []
+      },
+      "visibility": {
+        "identifier": "",
+        "level": {
+          "min": null,
+          "max": null
+        },
+        "require_attunement": false,
+        "require_identification": false,
+        "require_magic": false
+      },
+      "effects": [],
+      "applied_effects": [],
+      "kind": "utility",
+      "roll": {
+        "formula": "",
+        "name": "",
+        "prompt": false,
+        "visible": false
+      }
+    }
+  ],
+  "passive_effects": [],
+  "provenance": {
+    "source": "foundry",
+    "source_url": "https://github.com/foundryvtt/dnd5e/blob/965ad2d0cf5d063dac675ba078b5bd3c3c0dd449/packs/_source/laaru-hw-spells/Озорство_Натайра___Nathair_s_Mischief_HuhGsxNcxhZB2Kia.yml",
+    "ingest_date": "2026-10-26",
+    "ingest_version": "foundry-translator-v1",
+    "srd_version": [
+      "5.1"
+    ],
+    "license_tag": "CC-BY-4.0"
+  },
+  "review": {
+    "known_divergence": null,
+    "requires_user_decision": false
+  },
+  "entry_kind": "spell"
+}

@@ -1,0 +1,139 @@
+{
+  "slug": "mordenkainens-private-sanctum",
+  "foundry_uuid": "Compendium.dnd5e.laaru-hw-spells.Item.1EOKBf7KgcAXcLbU",
+  "name": "Личное убежище Морденкайнена / Mordenkainen's Private Sanctum",
+  "description": "Вы магически делаете безопасной область в пределах дистанции. Эта область куб, который может быть размером не менее 5 футов и не более 100 футов по каждой стороне. Вы можете прекратить заклинание до окончания длительности, потратив действие.\n\nТворя это заклинание, вы сами решаете, какого рода защиту даёт заклинание, выбрав любые или даже все из этих вариантов:\n\nЗвук не может проходить через барьер по краям области.\n\nБарьер вокруг области выглядит тёмным и мутным, не позволяя видеть сквозь него (даже с помощью &amp;reference[darkvision]{ночного зрения}).\n\nСенсоры, созданные заклинаниями прорицания, не могут появиться внутри защищённой области или пройти сквозь барьер по её периметру.\n\nСуществ, находящихся в области, нельзя выбрать целью заклинаний прорицания.\n\nНичто не может телепортироваться в область или из области.\n\nПланарные путешествия блокируются в пределах защищённой области. Если творить это заклинание в одной и той же точке каждый день на протяжении года, оно становится постоянным.\n\nНа высоких кругах. Если вы сотворяете это заклинание, используя ячейку 5-го круга или выше, то можете увеличить размер куба на 100 футов за каждый круг ячейки выше 4-го. Таким образом, вы можете защитить куб размером до 200 футов по одной стороне, если сотворить его, используя ячейку 5-го круга.",
+  "level": 4,
+  "school": "abj",
+  "components": [
+    "M",
+    "S",
+    "V"
+  ],
+  "ritual": false,
+  "concentration": false,
+  "casting_time": {
+    "unit": "minute",
+    "value": 10,
+    "condition": ""
+  },
+  "range": {
+    "units": "ft",
+    "value": 120,
+    "special": null
+  },
+  "duration": {
+    "units": "hour",
+    "value": 24
+  },
+  "materials": {
+    "value": "тонкий лист свинца, осколок непрозрачного стекла, комок хлопка или ткани и толчёный хризолит",
+    "consumed": false,
+    "cost": 0,
+    "supply": 0
+  },
+  "preparation": {
+    "mode": "prepared",
+    "prepared": false
+  },
+  "activities": [
+    {
+      "id": "dnd5eactivity000",
+      "name": "",
+      "img": "",
+      "sort": 0,
+      "activation": {
+        "type": "action",
+        "value": null,
+        "condition": "",
+        "override": false,
+        "reaction_conditions": []
+      },
+      "consumption": {
+        "scaling": {
+          "allowed": false,
+          "max": ""
+        },
+        "spell_slot": true,
+        "targets": []
+      },
+      "description": {
+        "chat_flavor": ""
+      },
+      "duration": {
+        "value": null,
+        "units": "inst",
+        "special": "",
+        "concentration": false,
+        "override": false
+      },
+      "flags": {},
+      "range": {
+        "value": null,
+        "units": "self",
+        "special": "",
+        "override": false
+      },
+      "target": {
+        "template": {
+          "count": "",
+          "contiguous": false,
+          "stationary": false,
+          "type": "cube",
+          "size": "100",
+          "width": "",
+          "height": "",
+          "units": "ft"
+        },
+        "affects": {
+          "count": "",
+          "type": "",
+          "choice": false,
+          "special": ""
+        },
+        "override": false,
+        "prompt": true
+      },
+      "uses": {
+        "spent": 0,
+        "max": "",
+        "recovery": []
+      },
+      "visibility": {
+        "identifier": "",
+        "level": {
+          "min": null,
+          "max": null
+        },
+        "require_attunement": false,
+        "require_identification": false,
+        "require_magic": false
+      },
+      "effects": [],
+      "applied_effects": [],
+      "kind": "utility",
+      "roll": {
+        "formula": "",
+        "name": "",
+        "prompt": false,
+        "visible": false
+      }
+    }
+  ],
+  "passive_effects": [],
+  "provenance": {
+    "source": "foundry",
+    "source_url": "https://github.com/foundryvtt/dnd5e/blob/965ad2d0cf5d063dac675ba078b5bd3c3c0dd449/packs/_source/laaru-hw-spells/Личное_убежище_Морденкайнена___Mordenkainen_s_Private_Sanctum_1EOKBf7KgcAXcLbU.yml",
+    "ingest_date": "2026-10-26",
+    "ingest_version": "foundry-translator-v1",
+    "srd_version": [
+      "5.1"
+    ],
+    "license_tag": "CC-BY-4.0"
+  },
+  "review": {
+    "known_divergence": null,
+    "requires_user_decision": false
+  },
+  "entry_kind": "spell"
+}

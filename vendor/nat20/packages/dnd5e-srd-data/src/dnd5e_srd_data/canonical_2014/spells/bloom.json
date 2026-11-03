@@ -1,0 +1,139 @@
+{
+  "slug": "bloom",
+  "foundry_uuid": "Compendium.dnd5e.laaru-hw-spells.Item.Bug5i2OcopZCbzgC",
+  "name": "Цветение / Bloom",
+  "description": "(Высшая эльфийская магия)\n\nВы сажаете серебряный жёлудь в землю и проводите час, распевая хвалебную литанию природе, после чего земля в пределах 1 мили становится особо плодородной независимо от её предыдущего состояния. Любые семена, посаженные в области, растут в два раза быстрее обычного. Собранный урожай снова вырастает через неделю. Через год земля постепенно возвращается к обычному состоянию, поскольку заклинание не способно долго сдерживать силу природы.\n\nНеобходимо выбрать один из следующих эффектов. Он возникает сразу после сотворения. Появляется:\n\nПоле, засаженное овощами (на ваш выбор), готовыми к сбору.\n\nГустой лес из крепких деревьев и молодняка.\n\nЛуг с полевыми цветами и пастбище для скота.\n\nРовные ряды фруктовых деревьев (на ваш выбор) со спелыми плодами, готовыми к сбору.\n\nЖивые существа, завершающие короткий отдых в области цветения, исцеляют максимально возможное значение с каждой потраченной Костью Здоровья. Цветение отменяет заклинание разорение.\n\nРитуальная фокусировка. Если вы используете ритуальную фокусировку, то длительность становится постоянной.",
+  "level": 8,
+  "school": "con",
+  "components": [
+    "M",
+    "S",
+    "V"
+  ],
+  "ritual": true,
+  "concentration": false,
+  "casting_time": {
+    "unit": "action",
+    "value": 1,
+    "condition": ""
+  },
+  "range": {
+    "units": "mi",
+    "value": 1,
+    "special": null
+  },
+  "duration": {
+    "units": "spec",
+    "value": 1
+  },
+  "materials": {
+    "value": "серебряный желудь стоимостью 500 зм, расходуемый заклинанием",
+    "consumed": false,
+    "cost": 0,
+    "supply": 0
+  },
+  "preparation": {
+    "mode": "prepared",
+    "prepared": false
+  },
+  "activities": [
+    {
+      "id": "mdFskA55WyUT6sCK",
+      "name": "",
+      "img": "",
+      "sort": 0,
+      "activation": {
+        "type": "action",
+        "value": null,
+        "condition": "",
+        "override": false,
+        "reaction_conditions": []
+      },
+      "consumption": {
+        "scaling": {
+          "allowed": false,
+          "max": ""
+        },
+        "spell_slot": true,
+        "targets": []
+      },
+      "description": {
+        "chat_flavor": ""
+      },
+      "duration": {
+        "value": null,
+        "units": "inst",
+        "special": "",
+        "concentration": false,
+        "override": false
+      },
+      "flags": {},
+      "range": {
+        "value": null,
+        "units": "self",
+        "special": "",
+        "override": false
+      },
+      "target": {
+        "template": {
+          "count": "",
+          "contiguous": false,
+          "stationary": false,
+          "type": "",
+          "size": "",
+          "width": "",
+          "height": "",
+          "units": "ft"
+        },
+        "affects": {
+          "count": "",
+          "type": "",
+          "choice": false,
+          "special": ""
+        },
+        "override": false,
+        "prompt": true
+      },
+      "uses": {
+        "spent": 0,
+        "max": "",
+        "recovery": []
+      },
+      "visibility": {
+        "identifier": "",
+        "level": {
+          "min": null,
+          "max": null
+        },
+        "require_attunement": false,
+        "require_identification": false,
+        "require_magic": false
+      },
+      "effects": [],
+      "applied_effects": [],
+      "kind": "utility",
+      "roll": {
+        "formula": "",
+        "name": "",
+        "prompt": false,
+        "visible": false
+      }
+    }
+  ],
+  "passive_effects": [],
+  "provenance": {
+    "source": "foundry",
+    "source_url": "https://github.com/foundryvtt/dnd5e/blob/965ad2d0cf5d063dac675ba078b5bd3c3c0dd449/packs/_source/laaru-hw-spells/Цветение___Bloom_Bug5i2OcopZCbzgC.yml",
+    "ingest_date": "2026-10-26",
+    "ingest_version": "foundry-translator-v1",
+    "srd_version": [
+      "5.1"
+    ],
+    "license_tag": "CC-BY-4.0"
+  },
+  "review": {
+    "known_divergence": null,
+    "requires_user_decision": false
+  },
+  "entry_kind": "spell"
+}

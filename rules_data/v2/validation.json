@@ -1,0 +1,32 @@
+{
+  "report_version": "2.0.0", "checked_on": "2026-10-16",
+  "scope": "first hybrid architecture stage and sampled sections; not full corpus conversion",
+  "schema_validation": {"validator": "Microsoft.PowerShell.Utility Test-Json", "expected_results": 13, "matched": 13, "failed": 0, "accepted_documents": 9, "rejected_negative_fixtures": 4, "manifest": "tests/manifest.json"},
+  "classification_records": {"total": 11, "deterministic": 4, "adjudicated": 4, "hybrid": 3, "phb": 4, "dmg": 4, "mm": 3},
+  "static_syntax_validation": {"tool": "Python standard-library ast CLI; file parsing only, no source execution", "files": ["../runtime/__init__.py", "../runtime/classifier.py", "../runtime/math_handlers.py", "../runtime/protocol.py"], "passed": 4, "failed": 0},
+  "runtime_validation": {"prepared_cases": 48, "classifier": 8, "math": 24, "protocol": 16, "executed": 0, "reason": "User prohibits executing AI-generated code. No generated module was imported, compiled for execution or run.", "integration_executed": false},
+  "context_fixture_hashes": {
+    "format": "canonical sorted compact JSON, UTF-8 without BOM, exactly one terminal LF; context_hash omitted",
+    "method": "Get-FileHash SHA256 on saved canonical byte fixtures, not execution of protocol.py",
+    "tests/payloads/dmg.json": "3fe98ac8e8516f8682d802ad68976559e3ad28fb61874920e2e8b53534b2611b",
+    "tests/payloads/phb.json": "499ec453041f1ea56a4893f72590c1efbb9a5304ce073ec752ef7f71022853b9",
+    "tests/payloads/mm.json": "d2146cf3c4f279e8ccbfee9f3b36a4f58b52504c854e72552083a67105a63be2",
+    "fixture_ruleset_digest": "44bd6584c9777d693ccf233771a5310d316a3773ce31e675f7081db310dc536b",
+    "fixture_ruleset_digest_basis": "sources.json only, test identity; not production fingerprint"
+  },
+  "source_checks": {"visual_pdf_pages_this_stage": {"phb": [269], "dmg": [24, 25], "mm": [77]}, "reused_visual_review_previous_stage": {"phb": [13, 14]}, "dmg_page_29_text_checked_only": true, "human_review": "pending", "wish_stress_translation_ambiguity": "held_unimplemented"},
+  "preserved_sha256_rechecked": {
+    "solo/rulesets.py": "a91628e7fd3ca0acd3729a5f2260de1bab5457c21827f3a9d046ff3a1eaa0f64",
+    "solo/contracts.py": "d6bacfbe8b9ef3404ddb91552fc82fd25fc39902c34c100a7cb18ae766a916fb",
+    "solo/rule_knowledge.py": "c0ac02a993b64814f32f9376cc1ca64b036bcf91375942b6b753e9f52f6370a7",
+    "solo/rule_registry.py": "6a9e46b7202db15b45807b1da6b6811bd8f4474c70c37c32947a1d0ff0859cbd",
+    "solo/storage.py": "ff0ee577a8f390822d6d7728dfd162f9295dace5a1b8f089a6007180702142b8",
+    "solo/model_protocol.py": "9f8d598eb75e442a650369ea3968ec59e130178514af6d96a225413fda1adc02",
+    "solo/game.py": "9eb6c059b86f8e7b238ea4051038a5d7cdeb3df301b3e3d335e6d069c50188f8",
+    "data/rules-knowledge.sqlite3": "e1db922584bb3a53640de4e114582644586c1bef6b01a803c8d97c5d7b518a33"
+  },
+  "preservation": {"three_source_pdfs_sha256_rechecked_unchanged": true, "tracked_engine_changes": false, "ui_changes": false, "user_data_changes": false, "v1_definitions_changed": false, "only_untracked_git_path": "rules_data/"},
+  "cleanup": {"only_created_temporary_images_deleted": ["evidence/review-phb-269.png", "evidence/review-phb-270.png", "evidence/review-dmg-024.png", "evidence/review-dmg-025.png", "evidence/review-mm-077.png"], "deleted_bytes": 8006249, "source_text_and_toc_caches_preserved": true},
+  "paid_api_calls": 0, "exe_builds": 0, "generated_code_executed": false,
+  "remaining": ["runtime verification by a trusted permitted harness", "semantic consistency and transactional bridge integration", "all unsampled book sections, spells, abilities, monsters and exceptions"]
+}

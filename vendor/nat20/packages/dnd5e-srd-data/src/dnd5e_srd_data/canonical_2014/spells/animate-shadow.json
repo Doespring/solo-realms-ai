@@ -1,0 +1,139 @@
+{
+  "slug": "animate-shadow",
+  "foundry_uuid": "Compendium.dnd5e.laaru-hw-spells.Item.0HRvIC0gnfrq2lGN",
+  "name": "Оживление тени / Animate Shadow",
+  "description": "Выбирая целью существо, которое вы можете видеть в пределах дистанции, вы оживляете его тень, подчиняя её своему контролю. Если класс опасности существа превышает 3, или у него нет тени (из-за его природы или отсутствия источника света, способного её отбрасывать), заклинание проваливается. Существа без КО невосприимчивы к этому заклинанию.\n\nВ противном случае, создаётся копия существа, использующая его игровые параметры, в пространстве, смежном с существом (с противоположной стороны от ближайшего яркого света). Тень не обладает легендарными действиями, легендарной устойчивостью и не может сотворять заклинания. Тень имеет пункты здоровья, равные половине пунктов здоровья цели, и выглядит как зеркальное отражение существа, из которого она была призвана, сформированное из чернильно-чёрного дыма. Тень обладает устойчивостью к дробящему, колющему и режущему урону от немагических источников, находясь в темноте. Тень уязвима ко всему урону, находясь при ярком свете, и всегда уязвима к урону огнём, молнией и лучистому урону. Если тень погибает, целевое существо, из которого она была призвана, не отбрасывает теней в течение следующих 8 часов.\n\nТень действует сразу после хода цели, и без дальнейших указаний она пытается следовать за целью и совершает действие Атака против неё. В качестве ответного действия, когда тень начинает свой ход, вы можете взять её под контроль и заставить её перемещаться и совершать действия по вашему указанию.\n\nНа высоких кругах. Когда вы сотворяете это заклинание, используя ячейку заклинания 5-го или 6-го круга, максимальный КО цели увеличивается до 4. Когда вы сотворяете его, используя ячейку заклинания 7-го или 8-го круга, максимальный КО увеличивается до 5. Когда вы сотворяете его, используя ячейку заклинания 9-го круга, максимальный КО увеличивается до 6.",
+  "level": 3,
+  "school": "ill",
+  "components": [
+    "M",
+    "S",
+    "V"
+  ],
+  "ritual": false,
+  "concentration": true,
+  "casting_time": {
+    "unit": "action",
+    "value": 1,
+    "condition": ""
+  },
+  "range": {
+    "units": "ft",
+    "value": 60,
+    "special": null
+  },
+  "duration": {
+    "units": "hour",
+    "value": 1
+  },
+  "materials": {
+    "value": "закопчённое зеркало",
+    "consumed": false,
+    "cost": 0,
+    "supply": 0
+  },
+  "preparation": {
+    "mode": "prepared",
+    "prepared": false
+  },
+  "activities": [
+    {
+      "id": "dnd5eactivity000",
+      "name": "",
+      "img": "",
+      "sort": 0,
+      "activation": {
+        "type": "action",
+        "value": null,
+        "condition": "",
+        "override": false,
+        "reaction_conditions": []
+      },
+      "consumption": {
+        "scaling": {
+          "allowed": false,
+          "max": ""
+        },
+        "spell_slot": true,
+        "targets": []
+      },
+      "description": {
+        "chat_flavor": ""
+      },
+      "duration": {
+        "value": null,
+        "units": "inst",
+        "special": "",
+        "concentration": false,
+        "override": false
+      },
+      "flags": {},
+      "range": {
+        "value": null,
+        "units": "self",
+        "special": "",
+        "override": false
+      },
+      "target": {
+        "template": {
+          "count": "",
+          "contiguous": false,
+          "stationary": false,
+          "type": "",
+          "size": "",
+          "width": "",
+          "height": "",
+          "units": ""
+        },
+        "affects": {
+          "count": "",
+          "type": "",
+          "choice": false,
+          "special": ""
+        },
+        "override": false,
+        "prompt": true
+      },
+      "uses": {
+        "spent": 0,
+        "max": "",
+        "recovery": []
+      },
+      "visibility": {
+        "identifier": "",
+        "level": {
+          "min": null,
+          "max": null
+        },
+        "require_attunement": false,
+        "require_identification": false,
+        "require_magic": false
+      },
+      "effects": [],
+      "applied_effects": [],
+      "kind": "utility",
+      "roll": {
+        "formula": "",
+        "name": "",
+        "prompt": false,
+        "visible": false
+      }
+    }
+  ],
+  "passive_effects": [],
+  "provenance": {
+    "source": "foundry",
+    "source_url": "https://github.com/foundryvtt/dnd5e/blob/965ad2d0cf5d063dac675ba078b5bd3c3c0dd449/packs/_source/laaru-hw-spells/Оживление_тени___Animate_Shadow_0HRvIC0gnfrq2lGN.yml",
+    "ingest_date": "2026-10-26",
+    "ingest_version": "foundry-translator-v1",
+    "srd_version": [
+      "5.1"
+    ],
+    "license_tag": "CC-BY-4.0"
+  },
+  "review": {
+    "known_divergence": null,
+    "requires_user_decision": false
+  },
+  "entry_kind": "spell"
+}

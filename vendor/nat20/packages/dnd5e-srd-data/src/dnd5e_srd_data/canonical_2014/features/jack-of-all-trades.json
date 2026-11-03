@@ -1,0 +1,48 @@
+{
+  "slug": "jack-of-all-trades",
+  "name": "Jack of All Trades",
+  "description": "Starting at 2nd level, you can add half your proficiency bonus, rounded down, to any ability check you make that doesn't already include your proficiency bonus.",
+  "feature_type": "class_feature",
+  "foundry_id": "ezWijmCnlnQ9ZRX2",
+  "source_slug": "bard",
+  "activities": [],
+  "passive_effects": [
+    {
+      "id": "K4xQzXl1Z4zMnyOa",
+      "name": "Jack of All Trades",
+      "description": "",
+      "changes": [
+        {
+          "key": "flags.dnd5e.jackOfAllTrades",
+          "mode": 5,
+          "value": "True",
+          "priority": null
+        }
+      ],
+      "statuses": [],
+      "duration": {
+        "units": "seconds",
+        "expired": false
+      },
+      "disabled": false,
+      "transfer": true
+    }
+  ],
+  "advancement": [],
+  "uses": null,
+  "provenance": {
+    "source": "foundry",
+    "source_url": "https://github.com/foundryvtt/dnd5e/blob/965ad2d0cf5d063dac675ba078b5bd3c3c0dd449/packs/_source/classfeatures/Jack_of_All_Trades_ezWijmCnlnQ9ZRX2.yml",
+    "ingest_date": "2026-10-26",
+    "ingest_version": "foundry-translator-v1",
+    "srd_version": [
+      "5.1"
+    ],
+    "license_tag": "CC-BY-4.0"
+  },
+  "review": {
+    "known_divergence": null,
+    "requires_user_decision": false
+  },
+  "entry_kind": "feature"
+}

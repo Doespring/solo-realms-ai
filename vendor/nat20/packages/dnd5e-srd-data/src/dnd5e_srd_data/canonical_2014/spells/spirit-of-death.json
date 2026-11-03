@@ -1,0 +1,170 @@
+{
+  "slug": "spirit-of-death",
+  "foundry_uuid": "Compendium.dnd5e.laaru-hw-spells.Item.k9DVgFskeXoAb9q5",
+  "name": "Дух Смерти / Spirit of Death",
+  "description": "Вы вызываете дух, воплощающий саму смерть. Дух проявляется в незанятом пространстве, которое вы можете видеть в пределах досягаемости. Дух использует параметры @Compendium[laaru-dnd5-hw.monsters2.EppuL6XZIu9PjFPC]{Духа жнеца}. Дух исчезает, когда его ПЗ уменьшаются до 0 или когда заклинание заканчивается.\n\nДух — дружественен к вам и вашим спутникам. В бою дух получает вашу инициативу и ходит сразу же после вас. Он подчиняется вашим словесным командам (никаких действий от вас не требуется). Если вы не отдаете духу никаких команд, он совершает действие @Compendium[laaru-dnd5-hw.actions.UMuz44p8fXeLCZn7]{Уклонение} и использует своё движение, чтобы избежать опасности.\n\nНа высоких кругах: Когда вы творите это заклинание, используя ячейку заклинаний 5-го круга или выше, используйте более высокие значения везде, где круг заклинания указан в параметрах духа-жнеца.",
+  "level": 4,
+  "school": "nec",
+  "components": [
+    "M",
+    "S",
+    "V"
+  ],
+  "ritual": false,
+  "concentration": true,
+  "casting_time": {
+    "unit": "action",
+    "value": 1,
+    "condition": ""
+  },
+  "range": {
+    "units": "ft",
+    "value": 60,
+    "special": null
+  },
+  "duration": {
+    "units": "hour",
+    "value": 1
+  },
+  "materials": {
+    "value": "позолоченная игральная карта с изображением аватара смерти стоимостью не менее 400 зм",
+    "consumed": false,
+    "cost": 400,
+    "supply": 0
+  },
+  "preparation": {
+    "mode": "prepared",
+    "prepared": false
+  },
+  "activities": [
+    {
+      "id": "dnd5eactivity000",
+      "name": "",
+      "img": "",
+      "sort": 0,
+      "activation": {
+        "type": "action",
+        "value": null,
+        "condition": "",
+        "override": false,
+        "reaction_conditions": []
+      },
+      "consumption": {
+        "scaling": {
+          "allowed": false,
+          "max": ""
+        },
+        "spell_slot": true,
+        "targets": []
+      },
+      "description": {
+        "chat_flavor": ""
+      },
+      "duration": {
+        "value": null,
+        "units": "inst",
+        "special": "",
+        "concentration": false,
+        "override": false
+      },
+      "flags": {},
+      "range": {
+        "value": null,
+        "units": "self",
+        "special": "",
+        "override": false
+      },
+      "target": {
+        "template": {
+          "count": "",
+          "contiguous": false,
+          "stationary": false,
+          "type": "",
+          "size": "",
+          "width": "",
+          "height": "",
+          "units": ""
+        },
+        "affects": {
+          "count": "",
+          "type": "",
+          "choice": false,
+          "special": ""
+        },
+        "override": false,
+        "prompt": true
+      },
+      "uses": {
+        "spent": 0,
+        "max": "",
+        "recovery": []
+      },
+      "visibility": {
+        "identifier": "",
+        "level": {
+          "min": null,
+          "max": null
+        },
+        "require_attunement": false,
+        "require_identification": false,
+        "require_magic": false
+      },
+      "effects": [],
+      "applied_effects": [],
+      "kind": "summon",
+      "bonuses": {
+        "ac": "",
+        "hd": "",
+        "hp": "",
+        "attack_damage": "@item.level",
+        "save_damage": "",
+        "healing": ""
+      },
+      "creature_sizes": [],
+      "creature_types": [],
+      "match": {
+        "ability": "",
+        "attacks": false,
+        "disposition": false,
+        "proficiency": false,
+        "saves": true
+      },
+      "profiles": [
+        {
+          "id": "WUjIMweaUNQytipe",
+          "count": "",
+          "cr": "",
+          "level": {
+            "min": null,
+            "max": null
+          },
+          "name": "Дух жнеца",
+          "types": [],
+          "uuid": "Compendium.laaru-dnd5-hw.monsters2.Actor.EppuL6XZIu9PjFPC"
+        }
+      ],
+      "summon": {
+        "mode": "",
+        "prompt": true,
+        "identifier": ""
+      },
+      "temp_hp": ""
+    }
+  ],
+  "passive_effects": [],
+  "provenance": {
+    "source": "foundry",
+    "source_url": "https://github.com/foundryvtt/dnd5e/blob/965ad2d0cf5d063dac675ba078b5bd3c3c0dd449/packs/_source/laaru-hw-spells/Дух_Смерти___Spirit_of_Death_k9DVgFskeXoAb9q5.yml",
+    "ingest_date": "2026-10-26",
+    "ingest_version": "foundry-translator-v1",
+    "srd_version": [
+      "5.1"
+    ],
+    "license_tag": "CC-BY-4.0"
+  },
+  "review": {
+    "known_divergence": null,
+    "requires_user_decision": false
+  },
+  "entry_kind": "spell"
+}

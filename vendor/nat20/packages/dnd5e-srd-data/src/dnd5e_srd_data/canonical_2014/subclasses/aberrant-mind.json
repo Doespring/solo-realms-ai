@@ -1,0 +1,213 @@
+{
+  "slug": "aberrant-mind",
+  "name": "Аберрантный разум",
+  "description": "Аберрантный разум | Aberrant Mind\n\nЧужеродное влияние оплело своими щупальцами ваш разум, даруя вам псионическую силу. Теперь вы можете касаться разумов других существ с помощью этой силы и изменять мир вокруг себя, используя её для управления магической энергией в мультивселенной. Будет ли эта сила сиять в вас, как маяк надежды для других? Или вы станете источником ужаса для тех, кто почувствует укол вашего разума и станет свидетелем странных проявлений вашей мощи?\n\nУровеньОсобенности\n\n1-й\n\n@Compendium[laaru-dnd5-hw.classfeatures.LVUprimkcIrws0pT]{Телепатическая речь}, @Compendium[laaru-dnd5-hw.classfeatures.YOfCCDZHeKp3tEpG]{Псионические заклинания}\n\n6-й\n\n@Compendium[laaru-dnd5-hw.classfeatures.BA1RkH3JSEoi8Y1I]{Псионическое чародейство} @Compendium[laaru-dnd5-hw.classfeatures.UcL4A1E1LULpmf4r]{Психическая защита}\n\n14-й\n\n@Compendium[laaru-dnd5-hw.classfeatures.EoRNPmVMBZlWaq1A]{Откровение во плоти}\n\n18-й\n\n@Compendium[laaru-dnd5-hw.classfeatures.hurDjYHAu5Z7xMlI]{Искажающий взрыв}\n\nКак чародей с аберрантным разумом, вы сами решаете, как вы приобрели свои силы. Вы с ними родились? Или какое-то событие позже в жизни заставило вас засиять в псионическом пробуждении? Обратитесь к таблице «Аберрантное происхождение» для возможного объяснения ваших сил.\n\nАберрантное происхождение\n\n[[/r d6]]Происхождение\n\n1\n\nНа вас оказало влияние искажение Дальнего Предела. Вы убеждены, что прямо сейчас на вас растёт щупальце, но никто его не видит.\n\n2\n\nПсихический ветер с Астрального плана принёс вам псионическую энергию. Когда вы используете свои силы, вокруг вас сверкают слабые искорки.\n\n3\n\nКогда-то на вас оказали влияние доминирующие силы аболета, и с тех пор в вашем разуме осталась психическая заноза.\n\n4\n\nВам имплантировали головастика свежевателей разума, но цереморфоз так и не завершился. И теперь его псионическая сила — ваша. Когда вы используете её, ваша плоть блестит странной слизью.\n\n5\n\nВ детстве у вас был воображаемый друг, похожий на фламфа или странное существо, напоминающее утконоса. В один из дней он одарил вас псионическими силами, которые в конечном итоге оказались не такими уж воображаемыми.\n\n6\n\nВаши кошмары шепчут вам правду: ваши псионические способности не принадлежат вам. Вы черпаете их из своего паразитического близнеца!",
+  "identifier": "aberrant-mind",
+  "class_identifier": "sorcerer",
+  "spellcasting": {
+    "ability": "",
+    "progression": "none"
+  },
+  "advancement": [
+    {
+      "id": "39qu2no73qwa2fht",
+      "type": "ItemGrant",
+      "level": 1,
+      "title": "1. Особенности",
+      "hint": "",
+      "class_restriction": "",
+      "configuration": {
+        "items": [
+          "Compendium.laaru-dnd5-hw.classfeatures.LVUprimkcIrws0pT",
+          "Compendium.laaru-dnd5-hw.classfeatures.YOfCCDZHeKp3tEpG"
+        ],
+        "optional": false
+      },
+      "value": {}
+    },
+    {
+      "id": "xqlgk4i99zxgyfz3",
+      "type": "ItemGrant",
+      "level": 6,
+      "title": "Особенности",
+      "hint": "",
+      "class_restriction": "",
+      "configuration": {
+        "items": [
+          "Compendium.laaru-dnd5-hw.classfeatures.BA1RkH3JSEoi8Y1I",
+          "Compendium.laaru-dnd5-hw.classfeatures.UcL4A1E1LULpmf4r"
+        ],
+        "optional": false
+      },
+      "value": {}
+    },
+    {
+      "id": "ur6udrufz2i0jvci",
+      "type": "ItemGrant",
+      "level": 14,
+      "title": "Особенность",
+      "hint": "",
+      "class_restriction": "",
+      "configuration": {
+        "items": [
+          "Compendium.laaru-dnd5-hw.classfeatures.EoRNPmVMBZlWaq1A"
+        ],
+        "optional": false
+      },
+      "value": {}
+    },
+    {
+      "id": "9v39v9zt99tqqtpo",
+      "type": "ItemGrant",
+      "level": 18,
+      "title": "Особенность",
+      "hint": "",
+      "class_restriction": "",
+      "configuration": {
+        "items": [
+          "Compendium.laaru-dnd5-hw.classfeatures.hurDjYHAu5Z7xMlI"
+        ],
+        "optional": false
+      },
+      "value": {}
+    },
+    {
+      "id": "exor2f9a6ggpfvtu",
+      "type": "ItemGrant",
+      "level": 1,
+      "title": "2. Псионические заклинания",
+      "hint": "",
+      "class_restriction": "",
+      "configuration": {
+        "items": [
+          "Compendium.laaru-dnd5-hw.spells.jO1VYKlHcU4Gu4oL",
+          "Compendium.laaru-dnd5-hw.spells.pwuEGpwpLknLtimK",
+          "Compendium.laaru-dnd5-hw.spells.20hXiTscFGnQtJkB"
+        ],
+        "optional": false,
+        "spell": {
+          "ability": "cha",
+          "preparation": "always",
+          "uses": {
+            "max": "",
+            "per": ""
+          }
+        }
+      },
+      "value": {}
+    },
+    {
+      "id": "fme075t6os7i03uv",
+      "type": "ItemGrant",
+      "level": 3,
+      "title": "Псионические заклинания",
+      "hint": "",
+      "class_restriction": "",
+      "configuration": {
+        "items": [
+          "Compendium.laaru-dnd5-hw.spells.hPfjByP5fg1xnJMz",
+          "Compendium.laaru-dnd5-hw.spells.MSM1XtWei12DFoLN"
+        ],
+        "optional": false,
+        "spell": {
+          "ability": "cha",
+          "preparation": "always",
+          "uses": {
+            "max": "",
+            "per": ""
+          }
+        }
+      },
+      "value": {}
+    },
+    {
+      "id": "akoq9vsroswgi1oq",
+      "type": "ItemGrant",
+      "level": 5,
+      "title": "Псионические заклинания",
+      "hint": "",
+      "class_restriction": "",
+      "configuration": {
+        "items": [
+          "Compendium.laaru-dnd5-hw.spells.BczWvLLQEeYx24Gg",
+          "Compendium.laaru-dnd5-hw.spells.KHTEvkMkGDL1PQYH"
+        ],
+        "optional": false,
+        "spell": {
+          "ability": "cha",
+          "preparation": "always",
+          "uses": {
+            "max": "",
+            "per": ""
+          }
+        }
+      },
+      "value": {}
+    },
+    {
+      "id": "5epyg4opmdupqd92",
+      "type": "ItemGrant",
+      "level": 7,
+      "title": "Псионические заклинания",
+      "hint": "",
+      "class_restriction": "",
+      "configuration": {
+        "items": [
+          "Compendium.laaru-dnd5-hw.spells.dXwkYryKC7q4ZTh3",
+          "Compendium.laaru-dnd5-hw.spells.brdtpYq1uPGaaQkW"
+        ],
+        "optional": false,
+        "spell": {
+          "ability": "cha",
+          "preparation": "always",
+          "uses": {
+            "max": "",
+            "per": ""
+          }
+        }
+      },
+      "value": {}
+    },
+    {
+      "id": "a1csrsxsgk9666sy",
+      "type": "ItemGrant",
+      "level": 9,
+      "title": "Псионические заклинания",
+      "hint": "",
+      "class_restriction": "",
+      "configuration": {
+        "items": [
+          "Compendium.laaru-dnd5-hw.spells.jCISOJWOJUUNsTuW",
+          "Compendium.laaru-dnd5-hw.spells.MDvLGhwXCJnaTmwt"
+        ],
+        "optional": false,
+        "spell": {
+          "ability": "cha",
+          "preparation": "always",
+          "uses": {
+            "max": "",
+            "per": ""
+          }
+        }
+      },
+      "value": {}
+    }
+  ],
+  "granted_features": [],
+  "feature_choices": [],
+  "provenance": {
+    "source": "foundry",
+    "source_url": "https://github.com/foundryvtt/dnd5e/blob/965ad2d0cf5d063dac675ba078b5bd3c3c0dd449/packs/_source/laaru-hw-subclasses/Аберрантный_разум_oPmSzuAbDzLhZKBy.yml",
+    "ingest_date": "2026-10-26",
+    "ingest_version": "foundry-translator-v1",
+    "srd_version": [
+      "5.1"
+    ],
+    "license_tag": "CC-BY-4.0"
+  },
+  "review": {
+    "known_divergence": null,
+    "requires_user_decision": false
+  },
+  "entry_kind": "subclass"
+}

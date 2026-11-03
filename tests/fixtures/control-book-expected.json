@@ -1,0 +1,130 @@
+{
+ "book": "The Lantern Quarry",
+ "purpose": "An independent control book. These facts were written before the extractor ran and are never read by it.",
+ "pages": 7,
+ "places": [
+  {
+   "page": 1,
+   "name": "Bell Landing",
+   "must_contain": [
+    "Fog sits on the water",
+    "one lit lamp"
+   ],
+   "role": "start"
+  },
+  {
+   "page": 3,
+   "name": "Sunken Gallery",
+   "must_contain": [
+    "Water covers the floor",
+    "Three kobolds"
+   ],
+   "role": "reachable"
+  },
+  {
+   "page": 4,
+   "name": "Overseer Walk",
+   "must_contain": [
+    "rail of rusted iron",
+    "overlooks all four places"
+   ],
+   "role": "reachable"
+  },
+  {
+   "page": 6,
+   "name": "Flooded Shaft",
+   "must_contain": [
+    "rope hangs into the dark"
+   ],
+   "role": "reachable"
+  }
+ ],
+ "npc": [
+  {
+   "page": 1,
+   "name": "Mara Quill",
+   "must_contain": [
+    "ferry guide"
+   ]
+  }
+ ],
+ "rewards": [
+  {
+   "page": 2,
+   "name": "Bell Landing entry",
+   "experience": 10
+  },
+  {
+   "page": 2,
+   "name": "Sunken Gallery cleared",
+   "experience": 40
+  },
+  {
+   "page": 2,
+   "name": "Overseer Walk inspected",
+   "experience": 25
+  },
+  {
+   "page": 2,
+   "name": "Ferryman letter handed in",
+   "experience": 15
+  }
+ ],
+ "opponents": [
+  {
+   "page": 3,
+   "wording": "kobolds",
+   "count": 3,
+   "must_resolve": true,
+   "may_start_fight": false,
+   "note": "The book says the gallery can be entered without a fight."
+  },
+  {
+   "page": 4,
+   "wording": "marsh drake",
+   "must_resolve": false,
+   "may_start_fight": false,
+   "note": "The book says the drake does not land and is not an encounter."
+  }
+ ],
+ "cross_references": [
+  {
+   "from_page": 1,
+   "text": "The gallery is described on page 3."
+  },
+  {
+   "from_page": 1,
+   "text": "The stair is described on page 4."
+  },
+  {
+   "from_page": 6,
+   "text": "See page 4 for the walk and page 3 for the gallery."
+  }
+ ],
+ "scan_page": {
+  "page": 7,
+  "has_text_layer": false,
+  "must_not_invent": true
+ },
+ "map": {
+  "page": 4,
+  "marker": "Map:"
+ },
+ "handout": {
+  "page": 5,
+  "marker": "Handout:"
+ },
+ "table": {
+  "page": 2,
+  "marker": "Table 1:"
+ },
+ "columns": {
+  "page": 1,
+  "has_two_columns": true
+ },
+ "forbidden": [
+  "GM_SECRET",
+  "@UUID",
+  "Compendium."
+ ]
+}

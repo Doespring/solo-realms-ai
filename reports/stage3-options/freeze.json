@@ -1,0 +1,231 @@
+{
+  "status": "ready_source_frozen_with_fresh_500ms_limit",
+  "date": "2026-10-18",
+  "source_only": true,
+  "files": [
+    {
+      "path": "solo/prototype_ui.py",
+      "bytes": 14740,
+      "sha256": "b0819817fc0226d19e10da4d01c27eeb58da0a85ad576a6f42c2a359d3e7219c"
+    },
+    {
+      "path": "solo/nat20_prototype.py",
+      "bytes": 16758,
+      "sha256": "08e3260302995b200d1d1d9135b1eb91fa0c1d6b7ecafae2954f2ebe2a011c28"
+    },
+    {
+      "path": "tests/test_creation_options_batch.py",
+      "bytes": 3821,
+      "sha256": "03644f5c028979fe520a0f148a609b20c0be063c34c4f83c383eba3c3db54c42"
+    },
+    {
+      "path": "tests/fixtures/creation-options-before.json",
+      "bytes": 180070,
+      "sha256": "0c0d3e93c1ec8b55d3ebaf8af6a37e6390dc61e3c8db19c4bc4585f25fdfec35"
+    },
+    {
+      "path": "docs/NAT20_STAGE3_OPTIONS.md",
+      "bytes": 6519,
+      "sha256": "ef563558e92e185cf57567b17c4133a2b310f350b81aef5c18f31d36c1828b04"
+    },
+    {
+      "path": "docs/PROTOTYPE_INTEGRATION.md",
+      "bytes": 40662,
+      "sha256": "329849e22f36c22dd4b6b1b516185968c137cc0a9843431929101a448520f454"
+    },
+    {
+      "path": "reports/stage3-options/measure.py",
+      "bytes": 1529,
+      "sha256": "0afe95898331aa1b01ffdb681d735aa6dd9467178defc66f152ec7103b16f797"
+    },
+    {
+      "path": "reports/stage3-options/tests.xml",
+      "bytes": 2224,
+      "sha256": "6ab4cb88621bff03ed86370a7bc28f42f02806be6b2b734496951340a57e11c0"
+    },
+    {
+      "path": "reports/stage3-options/tests.log",
+      "bytes": 2492,
+      "sha256": "cff8c53f8477cccb96f4222fae4414ee01fa2ad739e8b1a0f24e6cde7f851f49"
+    },
+    {
+      "path": "reports/stage3-options/fix.xml",
+      "bytes": 387,
+      "sha256": "1a420b73bfb7fe0bc628ed2d2ccea8bf3aecc8ee8b47185df76c450f97171225"
+    },
+    {
+      "path": "reports/stage3-options/fix.log",
+      "bytes": 792,
+      "sha256": "795fed3e68c512f357e6b6c4953d862d87737693d0602fd02f3e9872518db110"
+    },
+    {
+      "path": "reports/stage3-options/cleanup-plan.json",
+      "bytes": 847,
+      "sha256": "fe020951693757654f2043a641c456f83056454c4aff9f9cb1d0aabb5fd8a913"
+    },
+    {
+      "path": "reports/stage3-options/cleanup.json",
+      "bytes": 287,
+      "sha256": "facdbd9ada9ec3eaf3280ac6fb9ac4a3d112caf1f588f59908f0276926fa4580"
+    },
+    {
+      "path": "reports/stage3-options/before-fresh.json",
+      "bytes": 644,
+      "sha256": "6bb5e675de7c843bef628790ce00478b4a1a5a044f1978d2e5c745de7a6ce3e5"
+    },
+    {
+      "path": "reports/stage3-options/before-persisted.json",
+      "bytes": 643,
+      "sha256": "8e1bcf0cd0f92fde5d7baef4c6bc577075b788220715ad4b04dd0e70cdc265df"
+    },
+    {
+      "path": "reports/stage3-options/after-fresh.json",
+      "bytes": 643,
+      "sha256": "36173deda8ec5f8fbbb954fe7403bee385c6ee02eb1a073bafbde476988ad883"
+    },
+    {
+      "path": "reports/stage3-options/after-persisted.json",
+      "bytes": 644,
+      "sha256": "0fc68f3f07046ef71e029bf0ae826033693b011460da77907af789434816c872"
+    }
+  ],
+  "dependencies": [
+    {
+      "path": "solo/content_verification_cache.py",
+      "sha256": "32b5b6ed4376df4490c97813fbdf395dd281f7a753984d002e291f1fb9210899",
+      "source": "reports/stage3-content-cache/freeze.json",
+      "unchanged": true
+    },
+    {
+      "path": "solo/nat20_content.py",
+      "sha256": "8a7be7c8a55ff5ddf7afd704ba66a77ad5a3d5dfa4c0ac80cbeb1768bcc2ce9b",
+      "source": "reports/stage3-content-cache/freeze.json",
+      "unchanged": true
+    }
+  ],
+  "previous_cache_freeze": "reports/stage3-content-cache/freeze.json",
+  "supersedes_previous_sha": {
+    "path": "solo/nat20_prototype.py",
+    "old_sha256": "3d5352d7d37820fd6d97c12c094187c82d1a51800c3cdb0ea879d2911d36e8f1",
+    "new_sha256": "08e3260302995b200d1d1d9135b1eb91fa0c1d6b7ecafae2954f2ebe2a011c28",
+    "scope": "approved batch helper/shared catalogue entry projection only"
+  },
+  "latest_unique_tests": {
+    "test_exact_prechange_options_and_one_release_one_read_per_selected_file": true,
+    "test_public_catalog_pagination_query_and_known_issues_unchanged": true,
+    "test_changed_catalog_is_revalidated_before_options_and_changed_pin_reprojects": true
+  },
+  "test_history": [
+    "2 passed / 1 test expectation failed, 2.68s",
+    "only failed case corrected:1 passed,1.45s"
+  ],
+  "dto_bytes": 180070,
+  "dto_sha256": "0c0d3e93c1ec8b55d3ebaf8af6a37e6390dc61e3c8db19c4bc4585f25fdfec35",
+  "measurements": {
+    "before-fresh": {
+      "label": "before-fresh",
+      "profile": "C:\\Users\\iwa41\\Documents\\Codex\\2026-10-13\\files-pasted-by-the-user-solo\\outputs\\SoloRealmsAI\\reports\\stage3-options\\baseline-profile",
+      "import_ms": 1034.513,
+      "runs": [
+        {
+          "options_ms": 1325.697,
+          "sha_files": 1731
+        },
+        {
+          "options_ms": 741.582,
+          "sha_files": 0
+        }
+      ],
+      "dto_sha256": "0c0d3e93c1ec8b55d3ebaf8af6a37e6390dc61e3c8db19c4bc4585f25fdfec35",
+      "bytes": 180070,
+      "paid_calls": 0,
+      "profiler": false,
+      "conditions": "Same OS session; filesystem cache not flushed, imports excluded; new process for persisted measurement"
+    },
+    "before-persisted": {
+      "label": "before-persisted",
+      "profile": "C:\\Users\\iwa41\\Documents\\Codex\\2026-10-13\\files-pasted-by-the-user-solo\\outputs\\SoloRealmsAI\\reports\\stage3-options\\baseline-profile",
+      "import_ms": 991.318,
+      "runs": [
+        {
+          "options_ms": 974.459,
+          "sha_files": 0
+        },
+        {
+          "options_ms": 757.343,
+          "sha_files": 0
+        }
+      ],
+      "dto_sha256": "0c0d3e93c1ec8b55d3ebaf8af6a37e6390dc61e3c8db19c4bc4585f25fdfec35",
+      "bytes": 180070,
+      "paid_calls": 0,
+      "profiler": false,
+      "conditions": "Same OS session; filesystem cache not flushed, imports excluded; new process for persisted measurement"
+    },
+    "after-fresh": {
+      "label": "after-fresh",
+      "profile": "C:\\Users\\iwa41\\Documents\\Codex\\2026-10-13\\files-pasted-by-the-user-solo\\outputs\\SoloRealmsAI\\reports\\stage3-options\\optimized-profile",
+      "import_ms": 1018.388,
+      "runs": [
+        {
+          "options_ms": 697.672,
+          "sha_files": 1731
+        },
+        {
+          "options_ms": 161.583,
+          "sha_files": 0
+        }
+      ],
+      "dto_sha256": "0c0d3e93c1ec8b55d3ebaf8af6a37e6390dc61e3c8db19c4bc4585f25fdfec35",
+      "bytes": 180070,
+      "paid_calls": 0,
+      "profiler": false,
+      "conditions": "Same OS session; filesystem cache not flushed, imports excluded; new process for persisted measurement"
+    },
+    "after-persisted": {
+      "label": "after-persisted",
+      "profile": "C:\\Users\\iwa41\\Documents\\Codex\\2026-10-13\\files-pasted-by-the-user-solo\\outputs\\SoloRealmsAI\\reports\\stage3-options\\optimized-profile",
+      "import_ms": 1001.289,
+      "runs": [
+        {
+          "options_ms": 431.657,
+          "sha_files": 0
+        },
+        {
+          "options_ms": 160.672,
+          "sha_files": 0
+        }
+      ],
+      "dto_sha256": "0c0d3e93c1ec8b55d3ebaf8af6a37e6390dc61e3c8db19c4bc4585f25fdfec35",
+      "bytes": 180070,
+      "paid_calls": 0,
+      "profiler": false,
+      "conditions": "Same OS session; filesystem cache not flushed, imports excluded; new process for persisted measurement"
+    }
+  },
+  "fresh_under_500ms": false,
+  "persisted_new_process_under_500ms": true,
+  "full_screen_startup_under_500ms": false,
+  "imports_separate": true,
+  "file_cache_flushed": false,
+  "profiler": false,
+  "builds": 0,
+  "full_suite": false,
+  "live_calls": 0,
+  "paid_calls": 0,
+  "cleanup": {
+    "status": "blocked by policy",
+    "attempts": 1,
+    "workaround_attempted": false,
+    "own_processes_active": 0,
+    "remaining_files": 7,
+    "remaining_bytes": 4477017,
+    "paths": [
+      "baseline-profile",
+      "optimized-profile",
+      "tmp-contract",
+      "tmp-contract-fix"
+    ],
+    "old_stands_touched": false
+  }
+}

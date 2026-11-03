@@ -1,0 +1,211 @@
+{
+  "slug": "clockwork-soul",
+  "name": "Заводная душа",
+  "description": "Заводная душа | Clockwork Soul\n\nС помощью магии вас наполнили силами космического порядка. Эта сила проистекает из Механуса или подобного ему царства — плана существования, сформированного исключительно соображениями эффективности, как у часового механизма. Вы или кто-то из вашего рода могли быть вовлечены в махинации модронов — существ порядка, населяющих Механус. Возможно, кто-то из ваших предков даже принимал участие в Великом Марше модронов. Каким бы ни было её происхождение внутри вас, сила порядка может показаться странной другим, но для вас это часть огромной и славной системы.\n\nУровень Особенности\n\n1-й\n\n@Compendium[laaru-dnd5-hw.classfeatures.xy2xgqOX2FxdmsSn]{Заводная магия}, @Compendium[laaru-dnd5-hw.classfeatures.XkzXz3wnvwXV26zE]{Восстановление баланса}\n\n6-й\n\n@Compendium[laaru-dnd5-hw.classfeatures.xbe4vsXhWkAgHb0q]{Бастион закона}\n\n14-й\n\n@Compendium[laaru-dnd5-hw.classfeatures.JOMgUptVB68k5q1l]{Медитация порядка}\n\n18-й\n\n@Compendium[laaru-dnd5-hw.classfeatures.hTMqvq011gMffD1g]{Заводная кавалькада}",
+  "identifier": "clockwork-soul",
+  "class_identifier": "sorcerer",
+  "spellcasting": {
+    "ability": "",
+    "progression": "none"
+  },
+  "advancement": [
+    {
+      "id": "iy3k104ljzah0vuu",
+      "type": "ItemGrant",
+      "level": 1,
+      "title": "1. Особенности",
+      "hint": "",
+      "class_restriction": "",
+      "configuration": {
+        "items": [
+          "Compendium.laaru-dnd5-hw.classfeatures.xy2xgqOX2FxdmsSn",
+          "Compendium.laaru-dnd5-hw.classfeatures.XkzXz3wnvwXV26zE"
+        ],
+        "optional": false
+      },
+      "value": {}
+    },
+    {
+      "id": "pm5w8yo6g8f4pitd",
+      "type": "ItemGrant",
+      "level": 6,
+      "title": "Особенность",
+      "hint": "",
+      "class_restriction": "",
+      "configuration": {
+        "items": [
+          "Compendium.laaru-dnd5-hw.classfeatures.xbe4vsXhWkAgHb0q"
+        ],
+        "optional": false
+      },
+      "value": {}
+    },
+    {
+      "id": "u7bwu0fo4icrernf",
+      "type": "ItemGrant",
+      "level": 14,
+      "title": "Особенность",
+      "hint": "",
+      "class_restriction": "",
+      "configuration": {
+        "items": [
+          "Compendium.laaru-dnd5-hw.classfeatures.JOMgUptVB68k5q1l"
+        ],
+        "optional": false
+      },
+      "value": {}
+    },
+    {
+      "id": "penfhvi73dso6e8g",
+      "type": "ItemGrant",
+      "level": 18,
+      "title": "Особенность",
+      "hint": "",
+      "class_restriction": "",
+      "configuration": {
+        "items": [
+          "Compendium.laaru-dnd5-hw.classfeatures.hTMqvq011gMffD1g"
+        ],
+        "optional": false
+      },
+      "value": {}
+    },
+    {
+      "id": "zwqrm52c30l6rf8p",
+      "type": "ItemGrant",
+      "level": 1,
+      "title": "2. Заклинания заводной магии",
+      "hint": "",
+      "class_restriction": "",
+      "configuration": {
+        "items": [
+          "Compendium.laaru-dnd5-hw.spells.sQSnAqsvleQJvtie",
+          "Compendium.laaru-dnd5-hw.spells.31Wl6sI9H1RspwYu"
+        ],
+        "optional": false,
+        "spell": {
+          "ability": "cha",
+          "preparation": "always",
+          "uses": {
+            "max": "",
+            "per": ""
+          }
+        }
+      },
+      "value": {}
+    },
+    {
+      "id": "eztf71v5ccf7cc62",
+      "type": "ItemGrant",
+      "level": 3,
+      "title": "Заклинания заводной магии",
+      "hint": "",
+      "class_restriction": "",
+      "configuration": {
+        "items": [
+          "Compendium.laaru-dnd5-hw.spells.8OiHYtAQCPk93X9g",
+          "Compendium.laaru-dnd5-hw.spells.SbBquXD3ciRsDLsk"
+        ],
+        "optional": false,
+        "spell": {
+          "ability": "cha",
+          "preparation": "always",
+          "uses": {
+            "max": "",
+            "per": ""
+          }
+        }
+      },
+      "value": {}
+    },
+    {
+      "id": "mbj8wdtg37bbx2gm",
+      "type": "ItemGrant",
+      "level": 5,
+      "title": "Заклинания заводной магии",
+      "hint": "",
+      "class_restriction": "",
+      "configuration": {
+        "items": [
+          "Compendium.laaru-dnd5-hw.spells.ZdDJVUlzYudd4nHO",
+          "Compendium.laaru-dnd5-hw.spells.hIaHx6K0X5bxyHiM"
+        ],
+        "optional": false,
+        "spell": {
+          "ability": "cha",
+          "preparation": "always",
+          "uses": {
+            "max": "",
+            "per": ""
+          }
+        }
+      },
+      "value": {}
+    },
+    {
+      "id": "r3ne59qriacpk3sd",
+      "type": "ItemGrant",
+      "level": 7,
+      "title": "Заклинания заводной магии",
+      "hint": "",
+      "class_restriction": "",
+      "configuration": {
+        "items": [
+          "Compendium.laaru-dnd5-hw.spells.qBqA0Y0k8CFbU5Bw",
+          "Compendium.laaru-dnd5-hw.spells.7h2ltRAnROKhHySM"
+        ],
+        "optional": false,
+        "spell": {
+          "ability": "cha",
+          "preparation": "always",
+          "uses": {
+            "max": "",
+            "per": ""
+          }
+        }
+      },
+      "value": {}
+    },
+    {
+      "id": "r1d5qk01b4fs273k",
+      "type": "ItemGrant",
+      "level": 9,
+      "title": "Заклинания заводной магии",
+      "hint": "",
+      "class_restriction": "",
+      "configuration": {
+        "items": [
+          "Compendium.laaru-dnd5-hw.spells.lFqzcFBz3F0u96i1",
+          "Compendium.laaru-dnd5-hw.spells.2rqlJgNTKzBvGGWk"
+        ],
+        "optional": false,
+        "spell": {
+          "ability": "cha",
+          "preparation": "always",
+          "uses": {
+            "max": "",
+            "per": ""
+          }
+        }
+      },
+      "value": {}
+    }
+  ],
+  "granted_features": [],
+  "feature_choices": [],
+  "provenance": {
+    "source": "foundry",
+    "source_url": "https://github.com/foundryvtt/dnd5e/blob/965ad2d0cf5d063dac675ba078b5bd3c3c0dd449/packs/_source/laaru-hw-subclasses/Заводная_душа_xI6ZApkWUkPnPdGO.yml",
+    "ingest_date": "2026-10-26",
+    "ingest_version": "foundry-translator-v1",
+    "srd_version": [
+      "5.1"
+    ],
+    "license_tag": "CC-BY-4.0"
+  },
+  "review": {
+    "known_divergence": null,
+    "requires_user_decision": false
+  },
+  "entry_kind": "subclass"
+}

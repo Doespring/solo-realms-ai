@@ -1,0 +1,114 @@
+{
+  "activities": [
+    {
+      "activation": {
+        "condition": "",
+        "override": false,
+        "reaction_conditions": [],
+        "type": "action",
+        "value": null
+      },
+      "applied_effects": [],
+      "check": {
+        "ability": "int",
+        "associated": [],
+        "dc": {
+          "calculation": "",
+          "formula": "10"
+        }
+      },
+      "consumption": {
+        "scaling": {
+          "allowed": false,
+          "max": ""
+        },
+        "spell_slot": true,
+        "targets": []
+      },
+      "description": {
+        "chat_flavor": ""
+      },
+      "duration": {
+        "concentration": false,
+        "override": false,
+        "special": "",
+        "units": "inst",
+        "value": ""
+      },
+      "effects": [],
+      "flags": {},
+      "id": "EEn8IAiinlOlAluN",
+      "img": "",
+      "kind": "check",
+      "name": "Identify Plant",
+      "range": {
+        "override": false,
+        "special": "",
+        "units": "self",
+        "value": null
+      },
+      "sort": 0,
+      "target": {
+        "affects": {
+          "choice": false,
+          "count": "",
+          "special": "",
+          "type": ""
+        },
+        "override": false,
+        "prompt": false,
+        "template": {
+          "contiguous": false,
+          "count": "",
+          "height": "",
+          "size": "",
+          "stationary": false,
+          "type": "",
+          "units": "",
+          "width": ""
+        }
+      },
+      "uses": {
+        "max": "",
+        "recovery": [],
+        "spent": 0
+      },
+      "visibility": {
+        "identifier": "",
+        "level": {
+          "max": null,
+          "min": null
+        },
+        "require_attunement": false,
+        "require_identification": false,
+        "require_magic": false
+      }
+    }
+  ],
+  "attunement_constraint": null,
+  "cost_gp": 5.0,
+  "description": "Ability: Intelligence\n\nUtilize: Identify a plant (DC 10)\n\nCraft: Antitoxin, Candle, Healer's Kit, Potion of Healing",
+  "description_localized": "<p>Сюда входят различные инструменты вроде щипцов, ступки и пестика, а также кошельки и пузырьки, которыми пользуются травники, чтобы готовить лекарства и зелья. Умение в обращении с этим набором позволяет вам добавить ваш бонус умения к любой проверке характеристики, связанной с определением и использованием трав. Также это умение требуется, чтобы приготовить <em>противоядие</em> и <em>зелье исцеления</em>.</p>\n<p>Умение в обращении с набором травника позволяет вам распознавать растения и безопасно собирать их полезные части.</p>\n<p><strong><em>Компоненты.</em></strong> Набор травника включает в себя мешочки для хранения трав, секатор и кожаные перчатки для сбора растений, несколько стеклянных банок, ступку и пестик.</p>\n<p><strong><em>Магия.</em></strong> Ваша осведомлённость в природе и использовании растений может дать дополнительные знания к магическим исследованиям, когда дело касается растений и попыток опознать зелье.</p>\n<p><em><strong>Расследование.</strong></em> Когда вы обследуете заросшую растениями зону, владение этим набором помогает вам находить детали и зацепки, которые другие бы проглядели.</p>\n<p><em><strong>Медицина.</strong></em> Ваше умение в обращении с набором травника улучшает ваши способности лечить болезни и раны, расширяя доступные методы благодаря использованию лекарственных растений.</p>\n<p><em><strong>Выживание и Природа.</strong></em> Когда вы путешествуете в дикой местности, ваши навыки травничества облегчают опознание растений и поиск источников еды, которые другие могут не заметить.</p>\n<p><em><strong>Опознание растений.</strong></em> Вы можете быстро распознать большинство растений по запаху и внешнему виду.</p>\n<table class=\"rd__table  stripe-odd-table\">\n<thead>\n<tr>\n<th class=\"col-10\" data-rd-isroller=\"false\">Возможное действие</th>\n<th class=\"col-2 text-center\" data-rd-isroller=\"false\">СЛ</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td class=\"col-10\">Найти растения</td>\n<td class=\"col-2 text-center\">15</td>\n</tr>\n<tr>\n<td class=\"col-10\">Опознать яд</td>\n<td class=\"col-2 text-center\">20</td>\n</tr>\n</tbody>\n</table>",
+  "item_kind": "item",
+  "name": "Набор травника",
+  "passive_effects": [],
+  "provenance": {
+    "ingest_date": "2026-05-30",
+    "ingest_version": "foundry-translator-v1",
+    "license_tag": "CC-BY-4.0",
+    "source": "foundry",
+    "source_url": "https://github.com/foundryvtt/dnd5e/blob/965ad2d0cf5d063dac675ba078b5bd3c3c0dd449/packs/_source/equipment24/tools/other/herbalism-kit.yml",
+    "srd_version": [
+      "5.2"
+    ]
+  },
+  "rarity": "common",
+  "requires_attunement": false,
+  "review": {
+    "known_divergence": null,
+    "requires_user_decision": false
+  },
+  "slug": "herbalism-kit",
+  "uses": null,
+  "weight": 8.0
+}

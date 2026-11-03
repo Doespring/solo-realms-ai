@@ -1,0 +1,318 @@
+{
+  "slug": "conjure-minor-voidborn",
+  "foundry_uuid": "Compendium.dnd5e.laaru-hw-spells.Item.uFHUtnp6UxPjtjPT",
+  "name": "Призыв малых порождений пустоты / Conjure Minor Voidborn",
+  "description": "(Пустотное)\n\nВы призываете бестий или аберраций, которые появляются в незанятых пространствах, видимых вами в пределах дистанции. Выберите один из следующих вариантов появления:\n\nОдно существо с классом опасности 2 или ниже\n\nДва существа с классом опасности 1 или ниже\n\nЧетыре существа с классом опасности 1/2 или ниже\n\nВосемь существ с классом опасности 1/4 или ниже\n\nПризванные существа исчезают, когда их ПЗ опускаются до 0 или когда заклинание заканчивается.\n\nПризванные существа не атакуют напрямую вас или ваших спутников. Бросьте инициативу за призванных существ как за одну группу; они совершают свои собственные ходы в соответствии с результатом инициативы. Они атакуют ваших врагов и стараются оставаться в пределах 90 футов от вас, но сами управляют своими действиями. Призванные существа ненавидят быть скованными узами, поэтому они могут навредить вам и вашим спутникам или помешать вторичными эффектами (но не прямыми атаками), если представится такая возможность. В начале хода существ вы можете использовать ответное действие, чтобы отдать им словесную команду. Они подчиняются вашим командам в течение этого хода, а вы получаете [[/damage 1d6 psychic]]{1d6 психического урона} в конце хода.\n\nЕсли ваша концентрация прерывается, существа не исчезают. Вместо этого вы больше не можете ими командовать, и они становятся враждебны к вам и вашим спутникам. Они будут атаковать вас и ваших союзников, если сочтут, что у них есть шанс победить в бою или нанести значимый вред, но они не станут сражаться, если испугаются, что это приведёт к их собственной смерти. Вы не можете отозвать этих существ, но они исчезают через 1 час после призыва.\n\nНа высоких кругах. Если вы сотворяете это заклинание, используя ячейку заклинания 7-го или 9-го круга, вы выбираете один из вариантов призыва, указанных выше, и появляется больше существ: в два раза больше при использовании ячейки 7-го круга и в три раза больше при использовании ячейки 9-го круга.",
+  "level": 5,
+  "school": "con",
+  "components": [
+    "S",
+    "V"
+  ],
+  "ritual": false,
+  "concentration": true,
+  "casting_time": {
+    "unit": "minute",
+    "value": 1,
+    "condition": ""
+  },
+  "range": {
+    "units": "ft",
+    "value": 90,
+    "special": null
+  },
+  "duration": {
+    "units": "hour",
+    "value": 1
+  },
+  "materials": {
+    "value": "",
+    "consumed": false,
+    "cost": 0,
+    "supply": 0
+  },
+  "preparation": {
+    "mode": "prepared",
+    "prepared": false
+  },
+  "activities": [
+    {
+      "id": "YnmGOBAoTCW7ACz5",
+      "name": "",
+      "img": "",
+      "sort": 0,
+      "activation": {
+        "type": "action",
+        "value": null,
+        "condition": "",
+        "override": false,
+        "reaction_conditions": []
+      },
+      "consumption": {
+        "scaling": {
+          "allowed": false,
+          "max": ""
+        },
+        "spell_slot": true,
+        "targets": []
+      },
+      "description": {
+        "chat_flavor": ""
+      },
+      "duration": {
+        "value": null,
+        "units": "inst",
+        "special": "",
+        "concentration": false,
+        "override": false
+      },
+      "flags": {},
+      "range": {
+        "value": null,
+        "units": "self",
+        "special": "",
+        "override": false
+      },
+      "target": {
+        "template": {
+          "count": "",
+          "contiguous": false,
+          "stationary": false,
+          "type": "",
+          "size": "",
+          "width": "",
+          "height": "",
+          "units": "ft"
+        },
+        "affects": {
+          "count": "",
+          "type": "",
+          "choice": false,
+          "special": ""
+        },
+        "override": false,
+        "prompt": true
+      },
+      "uses": {
+        "spent": 0,
+        "max": "",
+        "recovery": []
+      },
+      "visibility": {
+        "identifier": "",
+        "level": {
+          "min": null,
+          "max": null
+        },
+        "require_attunement": false,
+        "require_identification": false,
+        "require_magic": false
+      },
+      "effects": [],
+      "applied_effects": [],
+      "kind": "summon",
+      "bonuses": {
+        "ac": "",
+        "hd": "",
+        "hp": "",
+        "attack_damage": "",
+        "save_damage": "",
+        "healing": ""
+      },
+      "creature_sizes": [],
+      "creature_types": [],
+      "match": {
+        "ability": "",
+        "attacks": false,
+        "disposition": false,
+        "proficiency": false,
+        "saves": false
+      },
+      "profiles": [
+        {
+          "id": "945xMwDF07SKY61o",
+          "count": "1",
+          "cr": "2",
+          "level": {
+            "min": null,
+            "max": null
+          },
+          "name": "",
+          "types": [
+            "aberration",
+            "fiend"
+          ],
+          "uuid": ""
+        },
+        {
+          "id": "uRfzjqZR1BI4NmlI",
+          "count": "2",
+          "cr": "1",
+          "level": {
+            "min": null,
+            "max": null
+          },
+          "name": "",
+          "types": [
+            "aberration",
+            "fiend"
+          ],
+          "uuid": ""
+        },
+        {
+          "id": "1j7W86Tv1uytdCuz",
+          "count": "4",
+          "cr": "0.5",
+          "level": {
+            "min": null,
+            "max": null
+          },
+          "name": "",
+          "types": [
+            "aberration",
+            "fiend"
+          ],
+          "uuid": ""
+        },
+        {
+          "id": "EpEKhzokPGaglqIl",
+          "count": "8",
+          "cr": "0.25",
+          "level": {
+            "min": null,
+            "max": null
+          },
+          "name": "",
+          "types": [
+            "aberration",
+            "fiend"
+          ],
+          "uuid": ""
+        }
+      ],
+      "summon": {
+        "mode": "cr",
+        "prompt": true,
+        "identifier": null
+      },
+      "temp_hp": ""
+    },
+    {
+      "id": "N8KUaLVIgv9WwnhB",
+      "name": "Урон себе",
+      "img": "",
+      "sort": 0,
+      "activation": {
+        "type": "action",
+        "value": null,
+        "condition": "",
+        "override": false,
+        "reaction_conditions": []
+      },
+      "consumption": {
+        "scaling": {
+          "allowed": false,
+          "max": ""
+        },
+        "spell_slot": false,
+        "targets": []
+      },
+      "description": {
+        "chat_flavor": ""
+      },
+      "duration": {
+        "value": null,
+        "units": "inst",
+        "special": "",
+        "concentration": false,
+        "override": false
+      },
+      "flags": {},
+      "range": {
+        "value": null,
+        "units": "self",
+        "special": "",
+        "override": true
+      },
+      "target": {
+        "template": {
+          "count": "",
+          "contiguous": false,
+          "stationary": false,
+          "type": "",
+          "size": "",
+          "width": "",
+          "height": "",
+          "units": "ft"
+        },
+        "affects": {
+          "count": "",
+          "type": "",
+          "choice": false,
+          "special": ""
+        },
+        "override": false,
+        "prompt": true
+      },
+      "uses": {
+        "spent": 0,
+        "max": "",
+        "recovery": []
+      },
+      "visibility": {
+        "identifier": "",
+        "level": {
+          "min": null,
+          "max": null
+        },
+        "require_attunement": false,
+        "require_identification": false,
+        "require_magic": false
+      },
+      "effects": [],
+      "applied_effects": [],
+      "kind": "damage",
+      "damage": {
+        "critical": {
+          "allow": false,
+          "bonus": ""
+        },
+        "parts": [
+          {
+            "number": 1,
+            "denomination": 6,
+            "bonus": "",
+            "types": [
+              "psychic"
+            ],
+            "custom": {
+              "enabled": false,
+              "formula": ""
+            },
+            "scaling": {
+              "mode": "",
+              "number": 1,
+              "formula": ""
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "passive_effects": [],
+  "provenance": {
+    "source": "foundry",
+    "source_url": "https://github.com/foundryvtt/dnd5e/blob/965ad2d0cf5d063dac675ba078b5bd3c3c0dd449/packs/_source/laaru-hw-spells/Призыв_малых_порождений_пустоты___Conjure_Minor_Voidborn_uFHUtnp6UxPjtjPT.yml",
+    "ingest_date": "2026-10-26",
+    "ingest_version": "foundry-translator-v1",
+    "srd_version": [
+      "5.1"
+    ],
+    "license_tag": "CC-BY-4.0"
+  },
+  "review": {
+    "known_divergence": null,
+    "requires_user_decision": false
+  },
+  "entry_kind": "spell"
+}

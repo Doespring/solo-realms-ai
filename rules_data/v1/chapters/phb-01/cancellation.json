@@ -1,0 +1,27 @@
+{
+  "schema_version": "1.0.0",
+  "id": "dnd2024.d20.cancellation",
+  "revision": 1,
+  "name": "Одновременные преимущество и помеха",
+  "edition": "dnd2024",
+  "category": "d20_test",
+  "conditions": {"all": [
+    {"fact": "advantage_sources", "operator": "gte", "value": 1},
+    {"fact": "disadvantage_sources", "operator": "gte", "value": 1}
+  ]},
+  "triggers": [{"event": "d20_test.before_roll", "scope": ["ability_check", "saving_throw", "attack_roll"]}],
+  "effects": [{"op": "select_d20_pool", "count": 1, "sides": 20, "keep": "first"}],
+  "duration": {"kind": "instantaneous"},
+  "resources": [],
+  "restrictions": [{"code": "no_netting", "description": "Число причин не сравнивается: одна причина любого вида отменяет любое число причин другого вида.", "source_derived": true}],
+  "sources": [{
+    "document_id": "phb_2024_ru",
+    "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+    "chapter": "1. Правила игры",
+    "section": "Преимущество/Помеха; Преимущества и помехи не складываются",
+    "pages": [{"pdf": 13, "printed": "12"}, {"pdf": 14, "printed": "13"}],
+    "knowledge_section_ids": [59687, 59688]
+  }],
+  "verification": {"status": "source_checked", "method": "pdf_text_and_visual", "checked_on": "2026-10-16", "reviewer": "codex", "human_review": "pending", "evidence": ["evidence/phb-pdf-013-014.txt"]},
+  "engine": {"compatibility": "implemented_subset", "handler": "RulesetEngine.d20", "supported_scope": ["ability_check", "saving_throw", "attack_roll"], "auto_activate": false, "notes": "После учёта внутренних источников движок сравнивает два bool; равные True дают обычный бросок. Существующий test_expertise_advantage_cancellation_and_no_automatic_check_crit изучен, но не запускался."}
+}

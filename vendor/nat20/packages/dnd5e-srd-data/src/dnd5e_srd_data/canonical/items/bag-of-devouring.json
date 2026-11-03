@@ -1,0 +1,29 @@
+{
+  "activities": [],
+  "attunement_constraint": null,
+  "cost_gp": 40000.0,
+  "description": "This bag resembles a Bag of Holding but is a feeding orifice for a gigantic extradimensional creature. Turning the bag inside out closes the orifice.\n\nThe extradimensional creature attached to the bag can sense whatever is placed inside the bag. Animal or vegetable matter placed wholly in the bag is devoured and lost forever. When part of a living creature is placed in the bag, as happens when someone reaches inside it, there is a [[/r 1dc#Creature pulled in on a 1, or \"Heads\"]]{50 percent} chance that the creature is pulled inside the bag. A creature inside the bag can take an action to try to escape, doing so with a successful [[/check ability=str skill=ath dc=15 format=long]]. Another creature can take an action to reach into the bag to pull a creature out, doing so with a successful [[/check ability=str skill=ath dc=20 format=long]], provided the puller isn't pulled inside the bag first. Any creature that starts its turn inside the bag is devoured, its body destroyed.\n\nInanimate objects can be stored in the bag, which can hold a cubic foot of such material. However, once each day, the bag swallows any objects inside it and spits them out into another plane of existence. The GM determines the time and plane.\n\nIf the bag is pierced or torn, it is destroyed, and anything contained within it is transported to a random location on the Astral Plane.",
+  "description_localized": "<p>Эта сумка выглядит точь-в-точь как @Compendium[laaru-dnd5-hw.items.3caW0NShL9xoiuln]{Бездонная сумка}, но на самом деле это орган питания гигантского межпространственного существа. Если вывернуть сумку наизнанку, орган закроется.</p><p>Межпространственное существо, связанное с сумкой, чувствует, что кладут в сумку. Если в неё полностью поместить животную или растительную материю, сумка её поглотит и материя исчезнет. Когда в сумку попадает часть живого существа, например рука, существо с шансом 50% (<span style=\"font-family:var(--font-primary)\">[[/r 1d100]]) втянет в сумку. Существо, находясь внутри сумки, может использовать действие, чтобы попытаться сбежать, успешно пройдя проверку Силы со СЛ 15. Другое существо может использовать действие, чтобы протянуть руку в сумку и вытащить существо из неё, успешно пройдя проверку Силы со СЛ 20 (если его самого раньше не затянет в сумку). Существо, начинающее свой ход в сумке, сожрано, а его тело уничтожено. </span></p><p><span style=\"font-family:var(--font-primary)\">В сумке можно хранить неживые объекты объёмом до 1 кубического фута. Но раз в день сумка поглощает любые объекты внутри себя и выплёвывает их на иной план бытия. Время и план выбирает мастер. Если сумку проткнуть или порвать, она уничтожена, а всё её содержимое перемещается в случайное место на Астральном плане.</span></p>",
+  "item_kind": "magic_item",
+  "name": "Прожорливая сумка",
+  "passive_effects": [],
+  "provenance": {
+    "ingest_date": "2026-05-30",
+    "ingest_version": "foundry-translator-v1",
+    "license_tag": "CC-BY-4.0",
+    "source": "foundry",
+    "source_url": "https://github.com/foundryvtt/dnd5e/blob/965ad2d0cf5d063dac675ba078b5bd3c3c0dd449/packs/_source/equipment24/containers/bag-of-devouring/_container.yml",
+    "srd_version": [
+      "5.2"
+    ]
+  },
+  "rarity": "very_rare",
+  "requires_attunement": false,
+  "review": {
+    "known_divergence": null,
+    "requires_user_decision": false
+  },
+  "slug": "bag-of-devouring",
+  "uses": null,
+  "weight": 5.0
+}

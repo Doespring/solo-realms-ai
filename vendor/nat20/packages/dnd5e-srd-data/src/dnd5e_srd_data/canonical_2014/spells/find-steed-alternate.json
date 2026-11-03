@@ -1,0 +1,302 @@
+{
+  "slug": "find-steed-alternate",
+  "foundry_uuid": "Compendium.dnd5e.laaru-hw-spells.Item.af6UmjX2bkMMrMkd",
+  "name": "Призыв скакуна (альтернативное) / Find Steed (Alternate)",
+  "description": "Вы призываете духа в незанятом пространстве в пределах досягаемости, который принимает форму сверхъестественно умного, сильного и верного скакуна, который мгновенно привязывается к вам. Скакун принимает облик среднего или крупного размера четвероногого животного, которого вы видели раньше, с КО 1/2 или ниже, не обладающего скоростью лазания, полета или плавания. Примеры: @Compendium[laaru-dnd5-hw.monsters.dy0EsZ9AjDclnobu]{Лось}, @Compendium[laaru-dnd5-hw.monsters.OWaAUtjQFOD0GSsB]{Верблюд}, @Compendium[laaru-dnd5-hw.monsters.qfVadcqRJ2KsqTgj]{Гигантский козёл}, @Compendium[laaru-dnd5-hw.monsters.xGuwh46ubTwb66oI]{Мастиф}, @Compendium[laaru-dnd5-hw.monsters.UgPzf6AScVoYZxni]{Пони} или @Compendium[laaru-dnd5-hw.monsters.fRYieFHWaVQJctGW]{Боевая лошадь}.\n\nВаш скакун использует блок параметров выбранной для него формы, но его тип существа теперь отражает ваше соответствие: небожитель (добрый), фея (нейтральный) или бестия (злой). Интеллект скакуна становится равным 6, если он был ниже, и он понимает один из языков, на которых вы говорите.\n\nВ бою скакун разделяет вашу инициативу и действует во время вашего хода. Вы управляете скакуном и выбираете, как ему действовать в бою и вне его. Сидя на нем, вы можете сделать так, чтобы любое ваше заклинание, направленное только на вас, было направлено и на вашего скакуна.\n\nПока вы и ваш скакун находитесь в радиусе 1 мили друг от друга, вы можете использовать особую форму телепатии для общения.\n\nЕсли количество ПЗ вашего скакуна уменьшается до 0, он исчезает. Вы также можете использовать бонусное действие, чтобы отпустить своего скакуна, в результате чего он исчезнет. Если вы сотворите это заклинание снова, вы можете выбрать: либо призвать того же скакуна, и он снова появится в радиусе действия с максимальным количеством ПЗ, либо призвать нового скакуна, освободив при этом предыдущего скакуна от его уз.\n\nНа высоких кругах. Когда вы творите это заклинание, используя ячейку заклинания 4-го уровня или выше, ваш скакун может принять форму любого среднего или крупного размера четвероногого или крылатого животного, небожителя или чудовища, которое вы видели раньше и КО которого равно 2 или ниже. Примеры: @Compendium[laaru-dnd5-hw.monsters.0GnA6FBdPjnfgNqc]{Свирепый волк}, @Compendium[laaru-dnd5-hw.monsters.HmtmLYv1MXX2EsyK]{Грифон}, @Compendium[laaru-dnd5-hw.monsters.i05uitxX7rvnseGz]{Пегас}, @Compendium[laaru-dnd5-hw.monsters.QMb9Xg7zf7tXGXqh]{Перитон}, @Compendium[laaru-dnd5-hw.monsters.bjM30XQmz3jyEIoj]{Белый медведь}, или @Compendium[laaru-dnd5-hw.monsters.lryd8pTY0riXttpX]{Носорог}.\n\nПримечание. Для работоспособности Призыва, мастеру нужно в настройках прав игроков разрешить создавать Токены и Актёров.",
+  "level": 2,
+  "school": "con",
+  "components": [],
+  "ritual": false,
+  "concentration": false,
+  "casting_time": {
+    "unit": "minute",
+    "value": 1,
+    "condition": ""
+  },
+  "range": {
+    "units": "ft",
+    "value": 30,
+    "special": null
+  },
+  "duration": {
+    "units": "inst",
+    "value": null
+  },
+  "materials": {
+    "value": "",
+    "consumed": false,
+    "cost": 0,
+    "supply": 0
+  },
+  "preparation": {
+    "mode": "prepared",
+    "prepared": false
+  },
+  "activities": [
+    {
+      "id": "dnd5eactivity000",
+      "name": "",
+      "img": "",
+      "sort": 0,
+      "activation": {
+        "type": "action",
+        "value": null,
+        "condition": "",
+        "override": false,
+        "reaction_conditions": []
+      },
+      "consumption": {
+        "scaling": {
+          "allowed": false,
+          "max": ""
+        },
+        "spell_slot": true,
+        "targets": []
+      },
+      "description": {
+        "chat_flavor": ""
+      },
+      "duration": {
+        "value": null,
+        "units": "inst",
+        "special": "",
+        "concentration": false,
+        "override": false
+      },
+      "flags": {},
+      "range": {
+        "value": null,
+        "units": "self",
+        "special": "",
+        "override": false
+      },
+      "target": {
+        "template": {
+          "count": "",
+          "contiguous": false,
+          "stationary": false,
+          "type": "",
+          "size": "",
+          "width": "",
+          "height": "",
+          "units": ""
+        },
+        "affects": {
+          "count": "",
+          "type": "",
+          "choice": false,
+          "special": ""
+        },
+        "override": false,
+        "prompt": true
+      },
+      "uses": {
+        "spent": 0,
+        "max": "",
+        "recovery": []
+      },
+      "visibility": {
+        "identifier": "",
+        "level": {
+          "min": null,
+          "max": null
+        },
+        "require_attunement": false,
+        "require_identification": false,
+        "require_magic": false
+      },
+      "effects": [],
+      "applied_effects": [],
+      "kind": "summon",
+      "bonuses": {
+        "ac": "",
+        "hd": "",
+        "hp": "",
+        "attack_damage": "",
+        "save_damage": "",
+        "healing": ""
+      },
+      "creature_sizes": [],
+      "creature_types": [
+        "fiend",
+        "celestial",
+        "fey"
+      ],
+      "match": {
+        "ability": "",
+        "attacks": false,
+        "disposition": false,
+        "proficiency": false,
+        "saves": false
+      },
+      "profiles": [
+        {
+          "id": "yHmlSHci32NobDkB",
+          "count": "",
+          "cr": "",
+          "level": {
+            "min": 4,
+            "max": null
+          },
+          "name": "",
+          "types": [],
+          "uuid": "Compendium.laaru-dnd5-hw.monsters.Actor.bjM30XQmz3jyEIoj"
+        },
+        {
+          "id": "6W8dKdnbJMgxH2Bn",
+          "count": "",
+          "cr": "",
+          "level": {
+            "min": null,
+            "max": null
+          },
+          "name": "",
+          "types": [],
+          "uuid": "Compendium.laaru-dnd5-hw.monsters.Actor.fRYieFHWaVQJctGW"
+        },
+        {
+          "id": "qkI7AfLWP86lJuL0",
+          "count": "",
+          "cr": "",
+          "level": {
+            "min": null,
+            "max": null
+          },
+          "name": "",
+          "types": [],
+          "uuid": "Compendium.laaru-dnd5-hw.monsters.Actor.OWaAUtjQFOD0GSsB"
+        },
+        {
+          "id": "JL2NgW9DS1t8qo5R",
+          "count": "",
+          "cr": "",
+          "level": {
+            "min": null,
+            "max": null
+          },
+          "name": "",
+          "types": [],
+          "uuid": "Compendium.laaru-dnd5-hw.monsters.Actor.qfVadcqRJ2KsqTgj"
+        },
+        {
+          "id": "CwGUDIFLbfiAomKY",
+          "count": "",
+          "cr": "",
+          "level": {
+            "min": 4,
+            "max": null
+          },
+          "name": "",
+          "types": [],
+          "uuid": "Compendium.laaru-dnd5-hw.monsters.Actor.HmtmLYv1MXX2EsyK"
+        },
+        {
+          "id": "4YygaU24lTsYU7lw",
+          "count": "",
+          "cr": "",
+          "level": {
+            "min": null,
+            "max": null
+          },
+          "name": "",
+          "types": [],
+          "uuid": "Compendium.laaru-dnd5-hw.monsters.Actor.dy0EsZ9AjDclnobu"
+        },
+        {
+          "id": "bj1lMpoL8xx2MVSz",
+          "count": "",
+          "cr": "",
+          "level": {
+            "min": null,
+            "max": null
+          },
+          "name": "",
+          "types": [],
+          "uuid": "Compendium.laaru-dnd5-hw.monsters.Actor.xGuwh46ubTwb66oI"
+        },
+        {
+          "id": "8Da9Hu3wEr5A7t9s",
+          "count": "",
+          "cr": "",
+          "level": {
+            "min": 4,
+            "max": null
+          },
+          "name": "",
+          "types": [],
+          "uuid": "Compendium.laaru-dnd5-hw.monsters.Actor.lryd8pTY0riXttpX"
+        },
+        {
+          "id": "NmCn5mCew3CHKImn",
+          "count": "",
+          "cr": "",
+          "level": {
+            "min": 4,
+            "max": null
+          },
+          "name": "",
+          "types": [],
+          "uuid": "Compendium.laaru-dnd5-hw.monsters.Actor.i05uitxX7rvnseGz"
+        },
+        {
+          "id": "1qnEYBXNW6AElcxD",
+          "count": "",
+          "cr": "",
+          "level": {
+            "min": 4,
+            "max": null
+          },
+          "name": "",
+          "types": [],
+          "uuid": "Compendium.laaru-dnd5-hw.monsters.Actor.QMb9Xg7zf7tXGXqh"
+        },
+        {
+          "id": "B0owgb4JRnC5XLoS",
+          "count": "",
+          "cr": "",
+          "level": {
+            "min": null,
+            "max": null
+          },
+          "name": "",
+          "types": [],
+          "uuid": "Compendium.laaru-dnd5-hw.monsters.Actor.UgPzf6AScVoYZxni"
+        },
+        {
+          "id": "yztHolNm2PYWcf0a",
+          "count": "",
+          "cr": "",
+          "level": {
+            "min": 4,
+            "max": null
+          },
+          "name": "",
+          "types": [],
+          "uuid": "Compendium.laaru-dnd5-hw.monsters.Actor.0GnA6FBdPjnfgNqc"
+        }
+      ],
+      "summon": {
+        "mode": "",
+        "prompt": true,
+        "identifier": ""
+      },
+      "temp_hp": ""
+    }
+  ],
+  "passive_effects": [],
+  "provenance": {
+    "source": "foundry",
+    "source_url": "https://github.com/foundryvtt/dnd5e/blob/965ad2d0cf5d063dac675ba078b5bd3c3c0dd449/packs/_source/laaru-hw-spells/Призыв_скакуна__альтернативное____Find_Steed__Alternate__af6UmjX2bkMMrMkd.yml",
+    "ingest_date": "2026-10-26",
+    "ingest_version": "foundry-translator-v1",
+    "srd_version": [
+      "5.1"
+    ],
+    "license_tag": "CC-BY-4.0"
+  },
+  "review": {
+    "known_divergence": null,
+    "requires_user_decision": false
+  },
+  "entry_kind": "spell"
+}

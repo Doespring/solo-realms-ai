@@ -1,0 +1,127 @@
+{
+  "slug": "soulknife",
+  "name": "Клинок души",
+  "description": "Клинок души | Soulknife\n\nБольшинство убийц наносят удары физическим оружием, а многие грабители и шпионы используют воровские инструменты для проникновения в безопасные места.\n\nКлинок души, в отличии от обычного плута, поражает и проникает в разум, прорезая как физические, так и психические барьеры. Эти плуты обнаруживают в себе псионическую силу и направляют ее на свою плутовскую работу. Им легко найти работу в качестве членов воровских гильдий, хотя им часто не доверяют плуты, которые подозрительно относятся к любому, кто использует странные умственные способности для ведения своего дела. Большинство правительств были бы счастливы использовать Клинок души в качестве шпиона.\n\nСреди чащь древних лесов на Материальном Плане и в Мире Фей некоторые лесные эльфы идут по тропе Духовного ножа, выступая в качестве безмолвных и смертоносных стражей своих лесов. В бесконечной войне между гитцераями поощряется стать Духовным ножом, когда против врага гитьянки требуется скрытность.\n\nВаши псионические способности, возможно, преследовали вас с детства, раскрывая весь свой потенциал только тогда, когда вы испытывали стресс во время приключений. Или вы могли бы найти затворнический орден адептов-экстрасенсов и потратить годы на изучение того, как проявлять свою силу.\n\nУровеньОсобенности\n\n3-й\n\n@Compendium[laaru-dnd5-hw.classfeatures.TcP4zPGj0qAnp2TP]{Псионическая энергия}, @Compendium[laaru-dnd5-hw.classfeatures.qGHbpEDabylw3SFG]{Психические клинки}\n\n9-й\n\n@Compendium[laaru-dnd5-hw.classfeatures.RWiK0xUWWyc4GjOG]{Клинок души}\n\n13-й\n\n@Compendium[laaru-dnd5-hw.classfeatures.97q1WxY8FbU5panh]{Психическая завеса}\n\n17-й\n\n@Compendium[laaru-dnd5-hw.classfeatures.5bZDHFGVLEg7o0mB]{Расщепление разума}",
+  "identifier": "soulknife",
+  "class_identifier": "rogue",
+  "spellcasting": {
+    "ability": "",
+    "progression": "none"
+  },
+  "advancement": [
+    {
+      "id": "7irgvbf3pwi6bnwy",
+      "type": "ItemGrant",
+      "level": 3,
+      "title": "Особенности",
+      "hint": "",
+      "class_restriction": "",
+      "configuration": {
+        "items": [
+          "Compendium.laaru-dnd5-hw.classfeatures.TcP4zPGj0qAnp2TP",
+          "Compendium.laaru-dnd5-hw.classfeatures.qGHbpEDabylw3SFG",
+          "Compendium.laaru-dnd5-hw.classfeatures.OD03axPlHw54bsDg"
+        ],
+        "optional": false
+      },
+      "value": {}
+    },
+    {
+      "id": "xweywc03y6rjo5z6",
+      "type": "ItemGrant",
+      "level": 9,
+      "title": "Особеность",
+      "hint": "",
+      "class_restriction": "",
+      "configuration": {
+        "items": [
+          "Compendium.laaru-dnd5-hw.classfeatures.RWiK0xUWWyc4GjOG"
+        ],
+        "optional": false
+      },
+      "value": {}
+    },
+    {
+      "id": "9cgahn8086887r4r",
+      "type": "ItemGrant",
+      "level": 13,
+      "title": "Особенность",
+      "hint": "",
+      "class_restriction": "",
+      "configuration": {
+        "items": [
+          "Compendium.laaru-dnd5-hw.classfeatures.97q1WxY8FbU5panh"
+        ],
+        "optional": false
+      },
+      "value": {}
+    },
+    {
+      "id": "ij3npu2mrnepok72",
+      "type": "ItemGrant",
+      "level": 17,
+      "title": "Особенность",
+      "hint": "",
+      "class_restriction": "",
+      "configuration": {
+        "items": [
+          "Compendium.laaru-dnd5-hw.classfeatures.5bZDHFGVLEg7o0mB"
+        ],
+        "optional": false
+      },
+      "value": {}
+    },
+    {
+      "id": "irefl8yb16isd5sz",
+      "type": "ScaleValue",
+      "level": 0,
+      "title": "Увеличение пси-кости",
+      "hint": "",
+      "class_restriction": "",
+      "configuration": {
+        "source": {},
+        "identifier": "psy-dice",
+        "type": "dice",
+        "distance": {
+          "units": ""
+        },
+        "scale": {
+          "3": {
+            "n": null,
+            "die": 6
+          },
+          "5": {
+            "n": null,
+            "die": 8
+          },
+          "11": {
+            "n": null,
+            "die": 10
+          },
+          "17": {
+            "n": null,
+            "die": 12
+          }
+        }
+      },
+      "value": {}
+    }
+  ],
+  "granted_features": [],
+  "feature_choices": [],
+  "provenance": {
+    "source": "foundry",
+    "source_url": "https://github.com/foundryvtt/dnd5e/blob/965ad2d0cf5d063dac675ba078b5bd3c3c0dd449/packs/_source/laaru-hw-subclasses/Клинок_души_3put1ejCdXfuZY8d.yml",
+    "ingest_date": "2026-10-26",
+    "ingest_version": "foundry-translator-v1",
+    "srd_version": [
+      "5.1"
+    ],
+    "license_tag": "CC-BY-4.0"
+  },
+  "review": {
+    "known_divergence": null,
+    "requires_user_decision": false
+  },
+  "entry_kind": "subclass"
+}

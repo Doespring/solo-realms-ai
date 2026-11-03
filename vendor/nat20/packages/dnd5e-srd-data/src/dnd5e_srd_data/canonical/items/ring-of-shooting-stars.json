@@ -1,0 +1,441 @@
+{
+  "activities": [
+    {
+      "activation": {
+        "condition": "",
+        "override": false,
+        "reaction_conditions": [],
+        "type": "action",
+        "value": null
+      },
+      "consumption": {
+        "scaling": {
+          "allowed": false,
+          "max": ""
+        },
+        "spell_slot": true,
+        "targets": [
+          {
+            "scaling": {
+              "formula": "",
+              "mode": ""
+            },
+            "target": "",
+            "type": "itemUses",
+            "value": "1"
+          }
+        ]
+      },
+      "description": {
+        "chat_flavor": ""
+      },
+      "duration": {
+        "concentration": false,
+        "override": false,
+        "special": "",
+        "units": "inst",
+        "value": null
+      },
+      "flags": {},
+      "id": "745v4uo4m3ghldT9",
+      "img": "",
+      "kind": "cast",
+      "name": "",
+      "range": {
+        "override": false,
+        "special": "",
+        "units": "self",
+        "value": null
+      },
+      "sort": 0,
+      "spell": {
+        "ability": "",
+        "challenge": {
+          "attack": null,
+          "override": false,
+          "save": null
+        },
+        "level": 1,
+        "properties": [
+          "vocal",
+          "somatic",
+          "material"
+        ],
+        "spellbook": true,
+        "uuid": "Compendium.dnd5e.spells24.Item.phbsplFaerieFire"
+      },
+      "target": {
+        "affects": {
+          "choice": false,
+          "count": "",
+          "special": "",
+          "type": ""
+        },
+        "override": false,
+        "prompt": true,
+        "template": {
+          "contiguous": false,
+          "count": "",
+          "height": "",
+          "size": "",
+          "stationary": false,
+          "type": "",
+          "units": "ft",
+          "width": ""
+        }
+      },
+      "uses": {
+        "max": "",
+        "recovery": [],
+        "spent": 0
+      },
+      "visibility": {
+        "identifier": "",
+        "level": {
+          "max": null,
+          "min": null
+        },
+        "require_attunement": false,
+        "require_identification": true,
+        "require_magic": false
+      }
+    },
+    {
+      "activation": {
+        "condition": "",
+        "override": false,
+        "reaction_conditions": [],
+        "type": "action",
+        "value": null
+      },
+      "applied_effects": [],
+      "consumption": {
+        "scaling": {
+          "allowed": true,
+          "max": "4"
+        },
+        "spell_slot": true,
+        "targets": [
+          {
+            "scaling": {
+              "formula": "",
+              "mode": ""
+            },
+            "target": "",
+            "type": "itemUses",
+            "value": "2"
+          }
+        ]
+      },
+      "description": {
+        "chat_flavor": ""
+      },
+      "duration": {
+        "concentration": true,
+        "override": false,
+        "special": "",
+        "units": "minute",
+        "value": "1"
+      },
+      "effects": [],
+      "flags": {},
+      "id": "sZwpvVE0OpUNXe2B",
+      "img": "",
+      "kind": "utility",
+      "name": "Create Lightning Spheres",
+      "range": {
+        "override": false,
+        "special": "",
+        "units": "ft",
+        "value": "120"
+      },
+      "roll": {
+        "formula": "",
+        "name": "",
+        "prompt": false,
+        "visible": false
+      },
+      "sort": 0,
+      "target": {
+        "affects": {
+          "choice": false,
+          "count": "",
+          "special": "",
+          "type": "space"
+        },
+        "override": false,
+        "prompt": true,
+        "template": {
+          "contiguous": false,
+          "count": "@scaling",
+          "height": "",
+          "size": "5",
+          "stationary": false,
+          "type": "square",
+          "units": "ft",
+          "width": ""
+        }
+      },
+      "uses": {
+        "max": "",
+        "recovery": [],
+        "spent": 0
+      },
+      "visibility": {
+        "identifier": "",
+        "level": {
+          "max": null,
+          "min": null
+        },
+        "require_attunement": false,
+        "require_identification": true,
+        "require_magic": true
+      }
+    },
+    {
+      "activation": {
+        "condition": "",
+        "override": false,
+        "reaction_conditions": [],
+        "type": "",
+        "value": null
+      },
+      "applied_effects": [],
+      "consumption": {
+        "scaling": {
+          "allowed": false,
+          "max": ""
+        },
+        "spell_slot": true,
+        "targets": []
+      },
+      "damage": {
+        "on_save": "half",
+        "parts": []
+      },
+      "description": {
+        "chat_flavor": ""
+      },
+      "duration": {
+        "concentration": false,
+        "override": false,
+        "special": "",
+        "units": "inst",
+        "value": null
+      },
+      "effects": [],
+      "flags": {},
+      "id": "GLyk6XaqTk5JOVQ8",
+      "img": "",
+      "kind": "save",
+      "name": "Lightning Sphere Save",
+      "range": {
+        "override": false,
+        "special": "",
+        "units": "self",
+        "value": null
+      },
+      "save": {
+        "ability": [
+          "dex"
+        ],
+        "dc": {
+          "calculation": "",
+          "formula": "15"
+        },
+        "ignore_cover": false
+      },
+      "sort": 0,
+      "target": {
+        "affects": {
+          "choice": false,
+          "count": "1",
+          "special": "",
+          "type": "creature"
+        },
+        "override": false,
+        "prompt": false,
+        "template": {
+          "contiguous": false,
+          "count": "",
+          "height": "",
+          "size": "",
+          "stationary": false,
+          "type": "",
+          "units": "ft",
+          "width": ""
+        }
+      },
+      "uses": {
+        "max": "",
+        "recovery": [],
+        "spent": 0
+      },
+      "visibility": {
+        "identifier": "",
+        "level": {
+          "max": null,
+          "min": null
+        },
+        "require_attunement": false,
+        "require_identification": true,
+        "require_magic": true
+      }
+    },
+    {
+      "activation": {
+        "condition": "",
+        "override": false,
+        "reaction_conditions": [],
+        "type": "action",
+        "value": null
+      },
+      "applied_effects": [],
+      "consumption": {
+        "scaling": {
+          "allowed": true,
+          "max": "3"
+        },
+        "spell_slot": true,
+        "targets": [
+          {
+            "scaling": {
+              "formula": "",
+              "mode": "amount"
+            },
+            "target": "",
+            "type": "itemUses",
+            "value": "1"
+          }
+        ]
+      },
+      "damage": {
+        "on_save": "half",
+        "parts": [
+          {
+            "bonus": "",
+            "custom": {
+              "enabled": false,
+              "formula": ""
+            },
+            "denomination": 4,
+            "number": 5,
+            "scaling": {
+              "formula": "",
+              "mode": "",
+              "number": 1
+            },
+            "types": [
+              "radiant"
+            ]
+          }
+        ]
+      },
+      "description": {
+        "chat_flavor": ""
+      },
+      "duration": {
+        "concentration": false,
+        "override": false,
+        "special": "",
+        "units": "inst",
+        "value": null
+      },
+      "effects": [],
+      "flags": {},
+      "id": "4ZI0cvhpjWiYg9i4",
+      "img": "",
+      "kind": "save",
+      "name": "Shooting Stars",
+      "range": {
+        "override": false,
+        "special": "",
+        "units": "ft",
+        "value": "60"
+      },
+      "save": {
+        "ability": [
+          "dex"
+        ],
+        "dc": {
+          "calculation": "",
+          "formula": "15"
+        },
+        "ignore_cover": false
+      },
+      "sort": 0,
+      "target": {
+        "affects": {
+          "choice": false,
+          "count": "",
+          "special": "",
+          "type": ""
+        },
+        "override": false,
+        "prompt": true,
+        "template": {
+          "contiguous": false,
+          "count": "@scaling",
+          "height": "",
+          "size": "15",
+          "stationary": false,
+          "type": "cube",
+          "units": "ft",
+          "width": ""
+        }
+      },
+      "uses": {
+        "max": "",
+        "recovery": [],
+        "spent": 0
+      },
+      "visibility": {
+        "identifier": "",
+        "level": {
+          "max": null,
+          "min": null
+        },
+        "require_attunement": false,
+        "require_identification": true,
+        "require_magic": true
+      }
+    }
+  ],
+  "attunement_constraint": null,
+  "cost_gp": 40000.0,
+  "description": "Ring, Very Rare (Requires Attunement)\n\nYou can cast Dancing Lights or Light from the ring.\n\nThe ring has 6 charges and regains 1d6 expended charges daily at dawn. You can expend its charges to use the properties below.\n\nFaerie Fire. You can expend 1 charge to cast Faerie Fire from the ring.\n\nLightning Spheres. You can expend 2 charges as a Magic action to create up to four 3-foot-diameter spheres of lightning.\n\nEach sphere appears in an unoccupied space you can see within 120 feet of yourself. The spheres last as long as you maintain Concentration, up to 1 minute. Each sphere sheds Dim Light in a 30-foot radius.\n\nAs a Bonus Action, you can move each sphere up to 30 feet, but no farther than 120 feet away from yourself. The first time the sphere comes within 5 feet of a creature other than you that isn't behind &amp;Reference[Total Cover apply=false], the sphere discharges lightning at that creature and disappears. That creature makes a DC 15 Dexterity saving throw. On a failed save, the creature takes Lightning damage based on the number of spheres you created, as shown in the following table. On a successful save, the creature takes half as much damage.\n\nNumber of Spheres Lightning Damage\n\n1\n\n[[/damage 4d12 lightning]]\n\n3\n\n[[/damage 2d6 lightning]]\n\n2\n\n[[/damage 5d4 lightning]]\n\n4\n\n[[/damage 2d4 lightning]]\n\nShooting Stars. You can expend 1 to 3 charges as a Magic action. For every charge you expend, you launch a glowing mote of light from the ring at a point you can see within 60 feet of yourself. Each creature in a 15-foot Cube originating from that point is showered in sparks and makes a DC 15 Dexterity saving throw, taking 5d4 Radiant damage on a failed save or half as much damage on a successful one.\n\nFoundry Note\n\nThe Create Lightning Spheres and Shooting Stars activities allow you to select the number of spheres/motes you would like to create and places a measured template for each one.",
+  "description_localized": "<div><div><div><p><em>Требует настроенности, достигнутой вне помещений ночью</em></p></div><div><p>Пока вы носите это кольцо на &amp;reference[dimlight]{тусклом свету} или в &amp;reference[darkness]{темноте}, вы можете неограниченно творить из него заклинания @Compendium[laaru-dnd5-hw.spells.x5uXJduVO8z3e1k1]{Пляшущие огоньки} и @Compendium[laaru-dnd5-hw.spells.Vc5xlOFSeMIRUwaE]{Свет}. Сотворение одного из этих заклинаний из кольца требует действия.</p></div><div><p>Для остальных свойств у кольца есть 6 зарядов. Ежедневно на рассвете кольцо восстанавливает [[/r 1d6]] потраченных зарядов.</p></div><div><p><strong>Метеоры</strong>. Вы можете потратить от 1 до 3 зарядов в качестве действия. За каждый потраченный заряд вы выпускаете из кольца светящийся шарик в точку, которую видите в пределах 60 футов от вас. Каждое существо в пределах 15-футового куба, исходящего из этой точки, окутывают искры. Оно должно пройти испытание Ловкости со СЛ 15, получая [[/r 5d4]] урона огнём при провале или половину этого урона при успехе.</p></div><div><p><strong>Фейское сияние</strong>. Вы можете потратить 1 заряд в качестве действия, чтобы сотворить из кольца заклинание @Compendium[laaru-dnd5-hw.spells.KlVo17qWGwXLevip]{Фейское сияние}.</p></div><div><p><strong>Шаровая молния</strong>. Вы можете потратить 2 заряда в качестве действия, чтобы создать от одной до четырёх шаровых молний — сфер диаметром 3 фута. Чем больше молний вы создадите, тем слабее каждая из них. Каждая сфера появляется в свободном пространстве, которое вы видите в пределах 120 футов от себя. Сферы существуют, пока вы концентрируетесь (как если бы концентрировались на заклинании), но не более 1 минуты. Каждая сфера испускает &amp;reference[dimlight]{Тусклый свет} в радиусе 30 футов. В качестве бонусного действия вы можете переместить каждую сферу на расстояние до 30 футов, но не дальше 120 футов от вас. Когда любое существо, кроме вас, оказывается в пределах 5 футов от сферы, та бьёт его разрядом молнии и исчезает. Это существо должно пройти испытание Ловкости со СЛ 15. При провале оно получает урон молнией, зависящий от количества созданных вами сфер. (4 сферы = [[/r 2d4]], 3 сферы = [[/r 2d6]], 2 сферы = [[/r 5d4]], 1 сфера = [[/r 4d12]])</p></div></div></div>",
+  "item_kind": "magic_item",
+  "name": "Кольцо падающих звёзд",
+  "passive_effects": [],
+  "provenance": {
+    "ingest_date": "2026-05-30",
+    "ingest_version": "foundry-translator-v1",
+    "license_tag": "CC-BY-4.0",
+    "source": "foundry",
+    "source_url": "https://github.com/foundryvtt/dnd5e/blob/965ad2d0cf5d063dac675ba078b5bd3c3c0dd449/packs/_source/equipment24/equipment/rings/ring-of-shooting-stars.yml",
+    "srd_version": [
+      "5.2"
+    ]
+  },
+  "rarity": "very_rare",
+  "requires_attunement": true,
+  "review": {
+    "known_divergence": null,
+    "requires_user_decision": false
+  },
+  "slug": "ring-of-shooting-stars",
+  "uses": {
+    "auto_destroy": false,
+    "max": "6",
+    "recovery": [
+      {
+        "formula": "1d6",
+        "period": "dawn",
+        "type": "formula"
+      }
+    ],
+    "spent": 0
+  },
+  "weight": 0.0
+}

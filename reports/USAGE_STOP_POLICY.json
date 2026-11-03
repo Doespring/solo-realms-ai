@@ -1,0 +1,18 @@
+{
+  "remaining_percent_stop": null,
+  "stop_when_used_percent_at_least": null,
+  "resets_authorized": false,
+  "scope": "autonomous project chats and heartbeat",
+  "triggered": false,
+  "last_observed_remaining_percent": 99,
+  "windows": "available applicable non-null primary/secondary",
+  "manual_drive_sync": "leave running",
+  "resume_requires_explicit_user": false,
+  "last_observed_windows": {
+    "primary_remaining": 99,
+    "secondary_remaining": 100
+  },
+  "last_checked_at": "2026-10-18T09:31:40Z",
+  "enabled": false,
+  "reason": "Owner revoked local 11 percent stop and authorized continuation of master prompt, Stage2"
+}

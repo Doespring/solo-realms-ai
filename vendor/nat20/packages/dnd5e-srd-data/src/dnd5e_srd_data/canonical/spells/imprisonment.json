@@ -1,0 +1,249 @@
+{
+  "activities": [
+    {
+      "activation": {
+        "condition": "",
+        "override": false,
+        "reaction_conditions": [],
+        "type": "action",
+        "value": null
+      },
+      "applied_effects": [],
+      "consumption": {
+        "scaling": {
+          "allowed": false,
+          "max": ""
+        },
+        "spell_slot": true,
+        "targets": []
+      },
+      "damage": {
+        "on_save": "half",
+        "parts": []
+      },
+      "description": {
+        "chat_flavor": ""
+      },
+      "duration": {
+        "concentration": false,
+        "override": false,
+        "special": "",
+        "units": "inst",
+        "value": null
+      },
+      "effects": [
+        {
+          "id": "RCuPR9PN6DD1YDFc",
+          "level": {
+            "max": null,
+            "min": null
+          },
+          "on_save": false,
+          "riders": null
+        },
+        {
+          "id": "VrrFIk47pnm9qKuX",
+          "level": {
+            "max": null,
+            "min": null
+          },
+          "on_save": false,
+          "riders": null
+        },
+        {
+          "id": "6P8mzDayeidhwod7",
+          "level": {
+            "max": null,
+            "min": null
+          },
+          "on_save": false,
+          "riders": null
+        },
+        {
+          "id": "ApXXZFLy8fD2cWO0",
+          "level": {
+            "max": null,
+            "min": null
+          },
+          "on_save": false,
+          "riders": null
+        },
+        {
+          "id": "R4BMRAXaadQwpvwk",
+          "level": {
+            "max": null,
+            "min": null
+          },
+          "on_save": null,
+          "riders": null
+        }
+      ],
+      "flags": {},
+      "id": "lQVWdTLYPGVts5eR",
+      "img": "",
+      "kind": "save",
+      "name": "",
+      "range": {
+        "override": false,
+        "special": "",
+        "units": "self",
+        "value": null
+      },
+      "save": {
+        "ability": [
+          "wis"
+        ],
+        "dc": {
+          "calculation": "spellcasting",
+          "formula": ""
+        },
+        "ignore_cover": false
+      },
+      "sort": 0,
+      "target": {
+        "affects": {
+          "choice": false,
+          "count": "1",
+          "special": "",
+          "type": "creature"
+        },
+        "override": false,
+        "prompt": true,
+        "template": {
+          "contiguous": false,
+          "count": "",
+          "height": "",
+          "size": "",
+          "stationary": false,
+          "type": "",
+          "units": "",
+          "width": ""
+        }
+      },
+      "uses": {
+        "max": "",
+        "recovery": [],
+        "spent": 0
+      },
+      "visibility": {
+        "identifier": "",
+        "level": {
+          "max": null,
+          "min": null
+        },
+        "require_attunement": false,
+        "require_identification": false,
+        "require_magic": false
+      }
+    }
+  ],
+  "casting_time": {
+    "condition": "",
+    "unit": "minute",
+    "value": 1
+  },
+  "components": [
+    "M",
+    "S",
+    "V"
+  ],
+  "concentration": false,
+  "description": "You create a magical restraint to hold a creature that you can see within range. The target must make a Wisdom saving throw. On a successful save, the target is unaffected, and it is immune to this spell for the next 24 hours. On a failed save, the target is imprisoned. While imprisoned, the target doesn't need to breathe, eat, or drink, and it doesn't age. Divination spells can't locate or perceive the imprisoned target, and the target can't teleport.\n\nUntil the spell ends, the target is also affected by one of the following effects of your choice:\n\nBurial. The target is entombed beneath the earth in a hollow globe of magical force that is just large enough to contain the target. Nothing can pass into or out of the globe.\n\nChaining. Chains firmly rooted in the ground hold the target in place. The target has the &amp;Reference[Restrained apply=false] condition and can't be moved by any means.\n\nHedged Prison. The target is trapped in a demiplane that is warded against teleportation and planar travel. The demiplane is your choice of a labyrinth, a cage, a tower, or the like.\n\nMinimus Containment. The target becomes 1 inch tall and is trapped inside an indestructible gemstone or a similar object. Light can pass through the gemstone (allowing the target to see out and other creatures to see in), but nothing else can pass through by any means.\n\nSlumber. The target has the &amp;Reference[Unconscious apply=false] condition and can't be awoken.\n\nEnding the Spell. When you cast the spell, specify a trigger that will end it. The trigger can be as simple or as elaborate as you choose, but the DM must agree that it has a high likelihood of happening within the next decade. The trigger must be an observable action, such as someone making a particular offering at the temple of your god, saving your true love, or defeating a specific monster.\n\nA Dispel Magic spell can end the spell only if it is cast with a level 9 spell slot, targeting either the prison or the component used to create it.",
+  "description_localized": "<div><p>Вы создаёте магические путы, удерживающие существо, которое вы видите в пределах дистанции. Цель должна пройти испытание Мудрости, при провале она скована заклинанием. При успехе она невосприимчива к заклинанию, если вы снова его сотворите.</p><p>Пока существо под влиянием заклинания, ему не нужно дышать, есть и пить и оно не стареет. Заклинания прорицания не могут найти местонахождение цели или наблюдать за ней. Когда вы сотворяете это заклинание, выберите один из вариантов заключения.</p><ul><li><p><strong>Микрозаключение</strong>. Цель уменьшается в размере, став ростом в 1 дюйм, и оказывается заперта в самоцвете или ином подобном предмете. Свет может проходить через этот предмет (позволяя цели видеть всё вокруг, а окружающим — видеть ее), но больше через него ничто не может пройти, даже с помощью телепортации или планарного путешествия. Самоцвет нельзя разрезать или разбить, пока длится заклинание. Особый реагент для этого варианта заклинания крупный прозрачный самоцвет вроде корунда, алмаза или рубина.</p></li><li><p><strong>Оковы</strong>. Тяжёлые цепи, надёжно укреплённые в земле, удерживают цель на месте. Цель &amp;reference[restrained]{обездвижена}, пока длится заклинание, она не может ни переместиться сама, ни быть перемещена каким-либо образом. Особый реагент для этого варианта заклинания — цепочка из драгоценного металла.</p></li><li><p><strong>Острог</strong>. Цель переносится в маленький демиплан, защищённый от телепортации и планарного путешествия. Демиплан может выглядеть как лабиринт, клетка, башня или иное подобное строение или область на ваш выбор. Особый реагент для этого варианта заклинания миниатюрная модель острога из нефрита.</p></li><li><p><strong>Погребение</strong>. Цель оказывается глубоко под землёй в магической силовой сфере, достаточно большой, чтобы вместить цель. Ничто не может проникнуть сквозь сферу, ни одно существо не может войти в неё или выйти с помощью телепортации или планарного путешествия. Особый реагент для этого варианта заклинания — небольшой шарик из мифрала.</p></li><li><p><strong>Спячка</strong>. Цель засыпает, и её невозможно разбудить. Особый реагент для этого варианта заклинания редкие снотворные травы.</p></li></ul><p><em><strong>Как прекратить заклинание</strong></em>.</p><p>При сотворении заклинания в любом его варианте вы можете указать условия, при которых заклинание прекратит действовать и освободит цель. Условия могут быть простыми или такими сложными, как вы пожелаете, но только если мастер признает их разумными и в принципе выполнимыми. Условия могут быть связаны с именем, личностью или божеством цели, но в остальном должны зависеть от наблюдаемых действий или качеств, а не параметров вроде уровня, класса или здоровья. Заклинание  @Compendium[laaru-dnd5-hw.spells.ZdDJVUlzYudd4nHO]{Рассеивание магии} может прервать действие этого заклинания, но только если его сотворить из ячейки 9-го круга либо на тюрьму, либо на особый реагент, использованный при ее создании. Использовать каждый конкретный особый реагент можно только для создания одной тюрьмы одновременно. Если вы сотворите заклинание повторно, используя тот же экземпляр реагента, цель первого заклинания немедленно освободится.</p></div>",
+  "duration": {
+    "units": "disp",
+    "value": null
+  },
+  "entry_kind": "spell",
+  "foundry_uuid": "Compendium.dnd5e.spells24.Item.phbsplImprisonme",
+  "level": 9,
+  "materials": {
+    "consumed": false,
+    "cost": 0,
+    "supply": 0,
+    "value": "a statuette of the target worth 5,000+ GP"
+  },
+  "name": "Заключение",
+  "passive_effects": [
+    {
+      "changes": [],
+      "description": "<p>The target is entombed beneath the earth in a hollow globe of magical force that is just large enough to contain the target. Nothing can pass into or out of the globe.</p>",
+      "disabled": false,
+      "duration": null,
+      "id": "RCuPR9PN6DD1YDFc",
+      "name": "Burial",
+      "statuses": [],
+      "transfer": false
+    },
+    {
+      "changes": [],
+      "description": "<p>Chains firmly rooted in the ground hold the target in place. The target has the &amp;Reference[Restrained apply=false] condition and can’t be moved by any means.</p>",
+      "disabled": false,
+      "duration": null,
+      "id": "VrrFIk47pnm9qKuX",
+      "name": "Chaining",
+      "statuses": [
+        "restrained"
+      ],
+      "transfer": false
+    },
+    {
+      "changes": [],
+      "description": "<p>The target is trapped in a demiplane that is warded against teleportation and planar travel. The demiplane is your choice of a labyrinth, a cage, a tower, or the like.</p>",
+      "disabled": false,
+      "duration": null,
+      "id": "6P8mzDayeidhwod7",
+      "name": "Hedged Prison",
+      "statuses": [],
+      "transfer": false
+    },
+    {
+      "changes": [],
+      "description": "<p>The target becomes 1 inch tall and is trapped inside an indestructible gemstone or a similar object. Light can pass through the gemstone (allowing the target to see out and other creatures to see in), but nothing else can pass through by any means.</p>",
+      "disabled": false,
+      "duration": null,
+      "id": "ApXXZFLy8fD2cWO0",
+      "name": "Minimus Containment",
+      "statuses": [],
+      "transfer": false
+    },
+    {
+      "changes": [],
+      "description": "<p>The target has the &amp;Reference[Unconscious apply=false] condition and can’t be awoken.</p>",
+      "disabled": false,
+      "duration": null,
+      "id": "R4BMRAXaadQwpvwk",
+      "name": "Slumber",
+      "statuses": [
+        "unconscious"
+      ],
+      "transfer": false
+    }
+  ],
+  "preparation": {
+    "mode": "prepared",
+    "prepared": false
+  },
+  "provenance": {
+    "ingest_date": "2026-05-30",
+    "ingest_version": "foundry-translator-v1",
+    "license_tag": "CC-BY-4.0",
+    "source": "foundry",
+    "source_url": "https://github.com/foundryvtt/dnd5e/blob/965ad2d0cf5d063dac675ba078b5bd3c3c0dd449/packs/_source/spells24/9th-level/imprisonment.yml",
+    "srd_version": [
+      "5.2"
+    ]
+  },
+  "range": {
+    "special": null,
+    "units": "ft",
+    "value": 30
+  },
+  "review": {
+    "known_divergence": null,
+    "requires_user_decision": false
+  },
+  "ritual": false,
+  "school": "abj",
+  "slug": "imprisonment"
+}

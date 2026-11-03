@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="2" skipped="0" tests="5" time="43.944" timestamp="2026-10-18T14:15:00.276545+04:00" hostname="Doespring"><testcase classname="tests.test_nat20_stage2" name="test_standalone_poisoned_advantage_cancels_effect_bonus_and_exhaustion" time="11.273"><failure message="AssertionError: No external network in prototype-1">tests\test_nat20_stage2.py:46: in test_standalone_poisoned_advantage_cancels_effect_bonus_and_exhaustion
+    committed=asyncio.run(execute(dict(mode='execute',state=state,command=command.model_dump(mode='json'),session_id='checks')))
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\iwa41\AppData\Local\Programs\Python\Python312\Lib\asyncio\runners.py:194: in run
+    with Runner(debug=debug, loop_factory=loop_factory) as runner:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\iwa41\AppData\Local\Programs\Python\Python312\Lib\asyncio\runners.py:58: in __enter__
+    self._lazy_init()
+C:\Users\iwa41\AppData\Local\Programs\Python\Python312\Lib\asyncio\runners.py:137: in _lazy_init
+    self._loop = events.new_event_loop()
+                 ^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\iwa41\AppData\Local\Programs\Python\Python312\Lib\asyncio\events.py:823: in new_event_loop
+    return get_event_loop_policy().new_event_loop()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\iwa41\AppData\Local\Programs\Python\Python312\Lib\asyncio\events.py:720: in new_event_loop
+    return self._loop_factory()
+           ^^^^^^^^^^^^^^^^^^^^
+C:\Users\iwa41\AppData\Local\Programs\Python\Python312\Lib\asyncio\windows_events.py:316: in __init__
+    super().__init__(proactor)
+C:\Users\iwa41\AppData\Local\Programs\Python\Python312\Lib\asyncio\proactor_events.py:640: in __init__
+    self._make_self_pipe()
+C:\Users\iwa41\AppData\Local\Programs\Python\Python312\Lib\asyncio\proactor_events.py:787: in _make_self_pipe
+    self._ssock, self._csock = socket.socketpair()
+                               ^^^^^^^^^^^^^^^^^^^
+C:\Users\iwa41\AppData\Local\Programs\Python\Python312\Lib\socket.py:623: in _fallback_socketpair
+    csock.connect((addr, port))
+tests\test_nat20_prototype.py:21: in forbidden
+    def forbidden(*args, **kwargs):raise AssertionError('No external network in prototype-1')
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   AssertionError: No external network in prototype-1</failure></testcase><testcase classname="tests.test_nat20_stage2" name="test_native_automatic_failure_does_not_draw_or_fabricate_die" time="2.521" /><testcase classname="tests.test_nat20_stage2" name="test_native_hide_defect_proof_and_adapter_refusal" time="2.438"><failure message="AssertionError: No external network in prototype-1">tests\test_nat20_stage2.py:78: in test_native_hide_defect_proof_and_adapter_refusal
+    events=asyncio.run(probe())
+           ^^^^^^^^^^^^^^^^^^^^
+C:\Users\iwa41\AppData\Local\Programs\Python\Python312\Lib\asyncio\runners.py:194: in run
+    with Runner(debug=debug, loop_factory=loop_factory) as runner:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\iwa41\AppData\Local\Programs\Python\Python312\Lib\asyncio\runners.py:58: in __enter__
+    self._lazy_init()
+C:\Users\iwa41\AppData\Local\Programs\Python\Python312\Lib\asyncio\runners.py:137: in _lazy_init
+    self._loop = events.new_event_loop()
+                 ^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\iwa41\AppData\Local\Programs\Python\Python312\Lib\asyncio\events.py:823: in new_event_loop
+    return get_event_loop_policy().new_event_loop()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\iwa41\AppData\Local\Programs\Python\Python312\Lib\asyncio\events.py:720: in new_event_loop
+    return self._loop_factory()
+           ^^^^^^^^^^^^^^^^^^^^
+C:\Users\iwa41\AppData\Local\Programs\Python\Python312\Lib\asyncio\windows_events.py:316: in __init__
+    super().__init__(proactor)
+C:\Users\iwa41\AppData\Local\Programs\Python\Python312\Lib\asyncio\proactor_events.py:640: in __init__
+    self._make_self_pipe()
+C:\Users\iwa41\AppData\Local\Programs\Python\Python312\Lib\asyncio\proactor_events.py:787: in _make_self_pipe
+    self._ssock, self._csock = socket.socketpair()
+                               ^^^^^^^^^^^^^^^^^^^
+C:\Users\iwa41\AppData\Local\Programs\Python\Python312\Lib\socket.py:623: in _fallback_socketpair
+    csock.connect((addr, port))
+tests\test_nat20_prototype.py:21: in forbidden
+    def forbidden(*args, **kwargs):raise AssertionError('No external network in prototype-1')
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   AssertionError: No external network in prototype-1</failure></testcase><testcase classname="tests.test_nat20_stage2" name="test_zero_hp_native_death_saves_memory_undo_save_new_process" time="16.865" /><testcase classname="tests.test_nat20_stage2" name="test_spell_catalogue_combat_payload_status_is_data_driven" time="9.433" /></testsuite></testsuites>

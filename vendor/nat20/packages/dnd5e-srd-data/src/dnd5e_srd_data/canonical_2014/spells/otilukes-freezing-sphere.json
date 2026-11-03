@@ -1,0 +1,165 @@
+{
+  "slug": "otilukes-freezing-sphere",
+  "foundry_uuid": "Compendium.dnd5e.laaru-hw-spells.Item.CcYK0e755HtHT1zR",
+  "name": "Морозный шар Отилюка / Otiluke's Freezing Sphere",
+  "description": "Шар морозной энергии срывается с кончиков ваших пальцев и обрушивается в выбранную вами точку в пределах дистанции, где взрывается в виде сферы радиусом бо футов. Каждое существо в пределах этой области должно пройти испытание Выносливости. При провале существо получает [[/r 10d6]] урона холодом, при успехе — половину этого урона.\n\nЕсли шар попадает в воду или схожую с ней жидкость (но не живых существ из воды), он замораживает жидкость на глубину в 6 дюймов на площади 30 на 30 футов. Лёд существует 1 минуту. Существа, плававшие по поверхности замёрзшей воды, пойманы во льду. Пойманное существо может использовать действие, чтобы пройти проверку Силы для освобождения. СЛ равна СЛ испытаний против ваших заклинаний.\n\nПри желании вы можете не метать шар после завершения заклинания. Тогда маленький холодный шарик размером с ядро для пращи появляется у вас в руке.  В любой момент вы или существо, которому вы отдадите шар, можете метнуть его (на расстояние до 40 футов) или выстрелить им из пращи (на обычную дистанцию для пращи). При попадании он разбивается и вызывает тот же эффект, что и обычное сотворение этого заклинания. Вы можете также заложить шарик как бомбу, не разбивая его. Через 1 минуту, если шар ещё не разбили, он взорвется сам.\n\nНа высоких кругах. Если вы сотворяете это заклинание, используя ячейку 7-го круга или выше, урон увеличивается на [[/r 1d6]] за каждый круг ячейки выше 6-го.",
+  "level": 6,
+  "school": "evo",
+  "components": [
+    "M",
+    "S",
+    "V"
+  ],
+  "ritual": false,
+  "concentration": false,
+  "casting_time": {
+    "unit": "action",
+    "value": 1,
+    "condition": ""
+  },
+  "range": {
+    "units": "ft",
+    "value": 300,
+    "special": null
+  },
+  "duration": {
+    "units": "inst",
+    "value": null
+  },
+  "materials": {
+    "value": "хрустальный шарик",
+    "consumed": false,
+    "cost": 0,
+    "supply": 0
+  },
+  "preparation": {
+    "mode": "prepared",
+    "prepared": false
+  },
+  "activities": [
+    {
+      "id": "dnd5eactivity000",
+      "name": "",
+      "img": "",
+      "sort": 0,
+      "activation": {
+        "type": "action",
+        "value": null,
+        "condition": "",
+        "override": false,
+        "reaction_conditions": []
+      },
+      "consumption": {
+        "scaling": {
+          "allowed": false,
+          "max": ""
+        },
+        "spell_slot": true,
+        "targets": []
+      },
+      "description": {
+        "chat_flavor": ""
+      },
+      "duration": {
+        "value": null,
+        "units": "inst",
+        "special": "",
+        "concentration": false,
+        "override": false
+      },
+      "flags": {},
+      "range": {
+        "value": null,
+        "units": "self",
+        "special": "",
+        "override": false
+      },
+      "target": {
+        "template": {
+          "count": "",
+          "contiguous": false,
+          "stationary": false,
+          "type": "sphere",
+          "size": "60",
+          "width": "",
+          "height": "",
+          "units": "ft"
+        },
+        "affects": {
+          "count": "",
+          "type": "",
+          "choice": false,
+          "special": ""
+        },
+        "override": false,
+        "prompt": true
+      },
+      "uses": {
+        "spent": 0,
+        "max": "",
+        "recovery": []
+      },
+      "visibility": {
+        "identifier": "",
+        "level": {
+          "min": null,
+          "max": null
+        },
+        "require_attunement": false,
+        "require_identification": false,
+        "require_magic": false
+      },
+      "effects": [],
+      "applied_effects": [],
+      "kind": "save",
+      "damage": {
+        "on_save": "half",
+        "parts": [
+          {
+            "number": 10,
+            "denomination": 6,
+            "bonus": "",
+            "types": [
+              "cold"
+            ],
+            "custom": {
+              "enabled": false,
+              "formula": ""
+            },
+            "scaling": {
+              "mode": "whole",
+              "number": 1,
+              "formula": ""
+            }
+          }
+        ]
+      },
+      "save": {
+        "ability": [
+          "con"
+        ],
+        "dc": {
+          "calculation": "spellcasting",
+          "formula": ""
+        },
+        "ignore_cover": false
+      }
+    }
+  ],
+  "passive_effects": [],
+  "provenance": {
+    "source": "foundry",
+    "source_url": "https://github.com/foundryvtt/dnd5e/blob/965ad2d0cf5d063dac675ba078b5bd3c3c0dd449/packs/_source/laaru-hw-spells/Морозный_шар_Отилюка___Otiluke_s_Freezing_Sphere_CcYK0e755HtHT1zR.yml",
+    "ingest_date": "2026-10-26",
+    "ingest_version": "foundry-translator-v1",
+    "srd_version": [
+      "5.1"
+    ],
+    "license_tag": "CC-BY-4.0"
+  },
+  "review": {
+    "known_divergence": null,
+    "requires_user_decision": false
+  },
+  "entry_kind": "spell"
+}

@@ -1,0 +1,322 @@
+{
+  "activities": [
+    {
+      "activation": {
+        "condition": "",
+        "override": false,
+        "reaction_conditions": [],
+        "type": "action",
+        "value": null
+      },
+      "applied_effects": [],
+      "consumption": {
+        "scaling": {
+          "allowed": false,
+          "max": ""
+        },
+        "spell_slot": true,
+        "targets": []
+      },
+      "damage": {
+        "on_save": "half",
+        "parts": []
+      },
+      "description": {
+        "chat_flavor": ""
+      },
+      "duration": {
+        "concentration": false,
+        "override": false,
+        "special": "",
+        "units": "inst",
+        "value": null
+      },
+      "effects": [],
+      "flags": {},
+      "id": "UVei1X4pYM1VZDWv",
+      "img": "",
+      "kind": "save",
+      "name": "Attempt to Trap Creature",
+      "range": {
+        "override": false,
+        "special": "",
+        "units": "self",
+        "value": null
+      },
+      "save": {
+        "ability": [
+          "wis"
+        ],
+        "dc": {
+          "calculation": "",
+          "formula": "17"
+        },
+        "ignore_cover": false
+      },
+      "sort": 0,
+      "target": {
+        "affects": {
+          "choice": false,
+          "count": "1",
+          "special": "",
+          "type": "creature"
+        },
+        "override": false,
+        "prompt": true,
+        "template": {
+          "contiguous": false,
+          "count": "",
+          "height": "",
+          "size": "",
+          "stationary": false,
+          "type": "",
+          "units": "ft",
+          "width": ""
+        }
+      },
+      "uses": {
+        "max": "",
+        "recovery": [],
+        "spent": 0
+      },
+      "visibility": {
+        "identifier": "",
+        "level": {
+          "max": null,
+          "min": null
+        },
+        "require_attunement": false,
+        "require_identification": true,
+        "require_magic": true
+      }
+    },
+    {
+      "activation": {
+        "condition": "",
+        "override": false,
+        "reaction_conditions": [],
+        "type": "action",
+        "value": null
+      },
+      "applied_effects": [],
+      "bonuses": {
+        "ac": "",
+        "attack_damage": "",
+        "hd": "",
+        "healing": "",
+        "hp": "",
+        "save_damage": ""
+      },
+      "consumption": {
+        "scaling": {
+          "allowed": false,
+          "max": ""
+        },
+        "spell_slot": true,
+        "targets": [
+          {
+            "scaling": {
+              "formula": "",
+              "mode": ""
+            },
+            "target": "",
+            "type": "itemUses",
+            "value": "-1"
+          }
+        ]
+      },
+      "creature_sizes": [],
+      "creature_types": [],
+      "description": {
+        "chat_flavor": ""
+      },
+      "duration": {
+        "concentration": false,
+        "override": false,
+        "special": "",
+        "units": "hour",
+        "value": "1"
+      },
+      "effects": [],
+      "flags": {},
+      "id": "4FJGA5jQX1wjCADZ",
+      "img": "",
+      "kind": "summon",
+      "match": {
+        "ability": "",
+        "attacks": false,
+        "disposition": false,
+        "proficiency": false,
+        "saves": false
+      },
+      "name": "Release Creature",
+      "profiles": [],
+      "range": {
+        "override": false,
+        "special": "",
+        "units": "self",
+        "value": null
+      },
+      "sort": 0,
+      "summon": {
+        "identifier": "",
+        "mode": "",
+        "prompt": true
+      },
+      "target": {
+        "affects": {
+          "choice": false,
+          "count": "1",
+          "special": "",
+          "type": "space"
+        },
+        "override": false,
+        "prompt": true,
+        "template": {
+          "contiguous": false,
+          "count": "",
+          "height": "",
+          "size": "",
+          "stationary": false,
+          "type": "",
+          "units": "ft",
+          "width": ""
+        }
+      },
+      "temp_hp": "",
+      "uses": {
+        "max": "",
+        "recovery": [],
+        "spent": 0
+      },
+      "visibility": {
+        "identifier": "",
+        "level": {
+          "max": null,
+          "min": null
+        },
+        "require_attunement": false,
+        "require_identification": false,
+        "require_magic": true
+      }
+    },
+    {
+      "activation": {
+        "condition": "",
+        "override": false,
+        "reaction_conditions": [],
+        "type": "action",
+        "value": null
+      },
+      "applied_effects": [],
+      "consumption": {
+        "scaling": {
+          "allowed": false,
+          "max": ""
+        },
+        "spell_slot": true,
+        "targets": [
+          {
+            "scaling": {
+              "formula": "",
+              "mode": ""
+            },
+            "target": "",
+            "type": "itemUses",
+            "value": "1"
+          }
+        ]
+      },
+      "description": {
+        "chat_flavor": ""
+      },
+      "duration": {
+        "concentration": false,
+        "override": false,
+        "special": "",
+        "units": "inst",
+        "value": null
+      },
+      "effects": [],
+      "flags": {},
+      "id": "Jd5BGVg4MO1h2ZRl",
+      "img": "",
+      "kind": "utility",
+      "name": "Add Trapped Creature",
+      "range": {
+        "override": false,
+        "special": "",
+        "units": "self",
+        "value": null
+      },
+      "roll": {
+        "formula": "",
+        "name": "",
+        "prompt": false,
+        "visible": false
+      },
+      "sort": 0,
+      "target": {
+        "affects": {
+          "choice": false,
+          "count": "",
+          "special": "",
+          "type": ""
+        },
+        "override": false,
+        "prompt": true,
+        "template": {
+          "contiguous": false,
+          "count": "",
+          "height": "",
+          "size": "",
+          "stationary": false,
+          "type": "",
+          "units": "ft",
+          "width": ""
+        }
+      },
+      "uses": {
+        "max": "",
+        "recovery": [],
+        "spent": 0
+      },
+      "visibility": {
+        "identifier": "",
+        "level": {
+          "max": null,
+          "min": null
+        },
+        "require_attunement": false,
+        "require_identification": true,
+        "require_magic": true
+      }
+    }
+  ],
+  "attunement_constraint": null,
+  "cost_gp": 200000.0,
+  "description": "Wondrous Item, Legendary\n\nWhile holding this brass-stoppered iron flask, you can take a Magic action to target a creature that you can see within 60 feet of yourself. If the flask is empty and the target is native to a plane of existence other than the one you're on, the target must succeed on a DC 17 Wisdom saving throw or be trapped in the flask. If the target has been trapped by the flask before, it has Advantage on the save. Once trapped, a creature remains in the flask until released. The flask can hold only one creature at a time. A creature trapped in the flask doesn't age and doesn't need to breathe, eat, or drink.\n\nYou can take a Magic action to remove the flask's stopper and release the creature in the flask. The creature then obeys your commands for 1 hour, understanding those commands even if it doesn't know the language in which the commands are given. If you issue no commands or give the creature a command that is likely to result in its death or imprisonment, it defends itself but otherwise takes no actions. At the end of the duration, the creature acts in accordance with its normal disposition and alignment.\n\nAn Identify spell reveals if the flask contains a creature, but the only way to determine the type of creature is to open the flask. A newly discovered Iron Flask might already contain a creature chosen by the GM.\n\nFoundry Note\n\nThis item has one limited use for tracking whether or not a creature has been trapped in the flask.\n\nThe Add Trapped Creature activity expends a usage to indicate it is currently full.\n\nThe Release Trapped Creature activity is a summon activity which restores a usage to indicate it can now contain another creature. You can edit the activity, change to the \"Summon\" tab and drag the captured creature's Actor onto the tab so it can be summoned later.",
+  "description_localized": "<div><p><em>Чудесный предмет</em></p><p>Это железная бутыль с латунной пробкой. Вы можете использовать действие, чтобы произнести её командное слово и выбрать целью существо, которое вы видите в пределах 60 футов от вас. Если цель родом не с того плана бытия, на котором вы сейчас, она должна пройти испытание Мудрости со СЛ 17, при провале она будет заточена во фляжке. Если цель уже бывала заточена во фляжке, у неё преимущество к этому испытанию. Заточённое существо остаётся во фляжке, пока его не выпустят. Фляжка вмещает только одно существо. Заточённому существу не нужно дышать, есть или пить, и оно не стареет.</p><p>Вы можете использовать действие, чтобы вытащить пробку фляжки и выпустить существо. Существо будет дружественно вам и вашим спутникам в течение 1 часа и в это время будет подчиняться вашим приказам. Если вы не прикажете ничего или отдадите приказ, ведущий к верной смерти, оно будет защищаться, но не совершает иных действий. После истечения длительности существо будет действовать в соответствии со своими обычными взглядами и мировоззрением.</p><p>Заклинание @Compendium[laaru-dnd5-hw.spells.hYlsH4UD97HeWuws]{Опознание} показывает, что во фляжке есть существо, но узнать, какое именно, можно, лишь открыв фляжку. В только что найденной фляжке может уже быть существо, которое мастер выбирает или определяет случайным образом.</p><table><thead><tr><th>[[/r d100]]</th><th>Содержимое</th></tr></thead><tbody><tr><td>01-50</td><td>Пусто</td></tr><tr><td>51</td><td>@Compendium[laaru-dnd5-hw.monsters.Df709rZKpuCl939e]{Арканалот}</td></tr><tr><td>52</td><td>@Compendium[laaru-dnd5-hw.monsters.hJaFnkVtabhnN6CL]{Камбион}</td></tr><tr><td>53-54</td><td>@Compendium[laaru-dnd5-hw.monsters.rgXFzpX3hK1ffHvm]{Дао}</td></tr><tr><td>55-57</td><td>Демон (тип 1): @Compendium[laaru-dnd5-hw.monsters.q8RlqwGdJcZAmXXX]{Барлгура}, @Compendium[laaru-dnd5-hw.monsters.iTwBrYjJ9GDxmiR3]{Теневой демон}, или @Compendium[laaru-dnd5-hw.monsters.CjQOgZ1UytKsqT0k]{Врак}</td></tr><tr><td>58-60</td><td>Демон (тип 2): @Compendium[laaru-dnd5-hw.monsters.qgZfiylinc3gk9i1]{Чазм} или @Compendium[laaru-dnd5-hw.monsters.T4yY3NxIKcUtiJGl]{Хезроу}</td></tr><tr><td>61-62</td><td>Демон (тип 3): @Compendium[laaru-dnd5-hw.monsters.natWRibofgoN8hiy]{Глабрезу} или @Compendium[laaru-dnd5-hw.monsters.Ilzzj8n2HpOBl0Tv]{Йоклол}</td></tr><tr><td>63-64</td><td>Демон (тип 4): @Compendium[laaru-dnd5-hw.monsters.Wwr9dBJonQzbwruK]{Нальфешни}</td></tr><tr><td>65</td><td>Демон (тип 5): @Compendium[laaru-dnd5-hw.monsters.GPGNfVfU1bSyjZvv]{Марилит}</td></tr><tr><td>66</td><td>Демон (тип 6): @Compendium[laaru-dnd5-hw.monsters.3Vq87CH3HpjPxm3g]{Балор} или @Compendium[laaru-dnd5-hw.monsters.LaeLvak2GfJbeyRL]{Гористо}</td></tr><tr><td>67</td><td>@Compendium[laaru-dnd5-hw.monsters.1OU01Rdm79HfHFrY]{Дэва / Deva}</td></tr><tr><td>68-69</td><td>Дьявол (высший): @Compendium[laaru-dnd5-hw.monsters.FzqbR1eEfSVixIx1]{Рогатый дьявол}, @Compendium[laaru-dnd5-hw.monsters.dHo9YAUpvguTrox8]{Эриния}, @Compendium[laaru-dnd5-hw.monsters.bfwiZ9ei4Fta1tMX]{Ледяной дьявол}, или @Compendium[laaru-dnd5-hw.monsters.c3b0tbqD9lOZyIQu]{Исчадие ада}</td></tr><tr><td>70-72</td><td>Дьявол (низший): @Compendium[laaru-dnd5-hw.monsters.YeTA9VxMZh9Ms2FB]{Бес}, @Compendium[laaru-dnd5-hw.monsters.fkaCzjorYKUzJfD4]{Игольчатый дьявол}, @Compendium[laaru-dnd5-hw.monsters.bwrvYGku6dZr43cW]{Бородатый дьявол}, @Compendium[laaru-dnd5-hw.monsters.dmBS6IZ9befD5mJk]{Шипастый дьявол}, @Compendium[laaru-dnd5-hw.monsters.FwrIUaWwDtUUsT73]{Цепной дьявол}, или @Compendium[laaru-dnd5-hw.monsters.n2fKVLA9ylbPRQ5F]{Костяной дьявол}</td></tr><tr><td>73-74</td><td>@Compendium[laaru-dnd5-hw.monsters.IF6pv3GD25MoAjXC]{Джинн}</td></tr><tr><td>75-76</td><td>@Compendium[laaru-dnd5-hw.monsters.w0EXDKbZgcmZoDM2]{Ифрит}</td></tr><tr><td>77-78</td><td>Элементаль (любой)</td></tr><tr><td>79</td><td>@Compendium[laaru-dnd5-hw.monsters.KM8Bk2QUHfadm5Zz]{Гитьянки-рыцарь}</td></tr><tr><td>80</td><td>@Compendium[laaru-dnd5-hw.monsters.ntri886B89YnGeM6]{Гитзерай-зерт}</td></tr><tr><td>81-82</td><td>@Compendium[laaru-dnd5-hw.monsters.kf4uiWlzzSyrdrcS]{Невидимый охотник}</td></tr><tr><td>83-84</td><td>@Compendium[laaru-dnd5-hw.monsters.U2bx13yNaRsu4x0R]{Марид}</td></tr><tr><td>85-86</td><td>@Compendium[laaru-dnd5-hw.monsters.K1mLsyCONujVZX7a]{Меззолот}</td></tr><tr><td>87-88</td><td>@Compendium[laaru-dnd5-hw.monsters.B45jP9Xjmh59SrrB]{Ночная карга}</td></tr><tr><td>89-90</td><td>@Compendium[laaru-dnd5-hw.monsters.wjbkfIrJBwjdDh6T]{Никалот}</td></tr><tr><td>91</td><td>@Compendium[laaru-dnd5-hw.monsters.alj5BFW0FKvC92qz]{Планетар}</td></tr><tr><td>92-93</td><td>@Compendium[laaru-dnd5-hw.monsters.xIwenUm3b5MQakYQ]{Саламандра}</td></tr><tr><td>94-95</td><td>Слаад (любой)</td></tr><tr><td>96</td><td>@Compendium[laaru-dnd5-hw.monsters.feSGaOEmWk4OxDGe]{Соляр}</td></tr><tr><td>97-98</td><td>@Compendium[laaru-dnd5-hw.monsters.RY2Gh94Yx1d6p8iO]{Инкуб}/@Compendium[laaru-dnd5-hw.monsters.I02fag0AcGRVjHxe]{Суккуб}</td></tr><tr><td>99</td><td>@Compendium[laaru-dnd5-hw.monsters.7NB8lpSSsfiaJkpz]{Ультролот}</td></tr><tr><td>00</td><td>@Compendium[laaru-dnd5-hw.monsters.C8fVoIxk0WQUIERR]{Зорн}</td></tr></tbody></table></div><div><div><p> </p></div></div>",
+  "item_kind": "magic_item",
+  "name": "Железная фляжка",
+  "passive_effects": [],
+  "provenance": {
+    "ingest_date": "2026-05-30",
+    "ingest_version": "foundry-translator-v1",
+    "license_tag": "CC-BY-4.0",
+    "source": "foundry",
+    "source_url": "https://github.com/foundryvtt/dnd5e/blob/965ad2d0cf5d063dac675ba078b5bd3c3c0dd449/packs/_source/equipment24/equipment/iron-flask.yml",
+    "srd_version": [
+      "5.2"
+    ]
+  },
+  "rarity": "legendary",
+  "requires_attunement": false,
+  "review": {
+    "known_divergence": null,
+    "requires_user_decision": false
+  },
+  "slug": "iron-flask",
+  "uses": null,
+  "weight": 0.0
+}

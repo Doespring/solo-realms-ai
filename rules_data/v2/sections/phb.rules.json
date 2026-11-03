@@ -1,0 +1,62 @@
+{
+  "schema_version": "2.0.0",
+  "rules": [
+    {
+      "id": "dnd2024.phb.advantage_pool", "rules_family": "dnd2024", "name": "Пул к20 после установления причин", "kind": "procedure",
+      "classification": {"mode": "deterministic", "semantic_required": false, "formal_required": true, "reason": "При известных итоговых флагах выбор пула и результата полностью формален."},
+      "conditions": [], "triggers": ["d20.before_roll"],
+      "formal_operations": [{"op": "select_d20", "inputs": ["effective_advantage", "effective_disadvantage", "local_draws"], "constants": {}}],
+      "semantic_questions": [], "facts": {"ordinary_count": 1, "modified_count": 2, "die_sides": 20},
+      "constraints": ["Не складывать причины; оба вида дают обычный бросок независимо от количества. См. полностью извлечённые определения rules_data/v1/chapters/phb-01/.", "Причины не назначаются по тексту автоматически."],
+      "exceptions": [], "duration": "per_test", "resources": [],
+      "source": {"document_id": "phb_2024_ru", "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5", "publication_year": 2024, "pdf_page": 13, "printed_page": "12", "section": "Глава 1. Преимущество/Помеха; продолжение PDF 14 / печатная 13"},
+      "verification": "source_checked_human_pending", "implementation": "existing_engine_subset", "auto_activate": false
+    },
+    {
+      "id": "dnd2024.phb.wish.duplication_gate", "rules_family": "dnd2024", "name": "Wish: допустимость уровня дублируемого заклинания", "kind": "spell_branch",
+      "classification": {"mode": "deterministic", "semantic_required": false, "formal_required": true, "reason": "Это только проверка уровня уже выбранного зарегистрированного заклинания. Исполнение цели наследует её собственный режим."},
+      "conditions": [{"fact": "wish_branch", "operator": "eq", "value": "duplicate_spell"}], "triggers": ["spell.wish.declared"],
+      "formal_operations": [{"op": "bounded_value", "inputs": ["selected_spell_level"], "constants": {"maximum": 8}}, {"op": "delegate_registered_spell", "inputs": ["selected_spell_id"], "constants": {}}],
+      "semantic_questions": [], "facts": {"maximum_duplicated_level": 8, "ignore_target_spell_requirements": true, "ignore_target_costly_components": true},
+      "constraints": ["Выбранное заклинание должно иметь проверенное определение и доверенный обработчик. Неизвестная цель не исполняется.", "Обход требований относится к дублируемому заклинанию; требования самого Wish сохраняются.", "Если цель hybrid/adjudicated, совокупное исполнение не становится deterministic только из-за этой проверки."],
+      "exceptions": [{"when": "Уровень выше 8", "consequence": "Не допускать через ветвь дублирования; нестандартное желание рассматривается отдельно."}],
+      "duration": "source_dependent", "resources": [{"id": "wish_casting_resource", "handling": "registered_engine_only"}],
+      "source": {"document_id": "phb_2024_ru", "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5", "publication_year": 2024, "pdf_page": 269, "printed_page": "268", "section": "Глава 7. Желание: дублирование"},
+      "verification": "source_checked_human_pending", "implementation": "not_implemented", "auto_activate": false
+    },
+    {
+      "id": "dnd2024.phb.wish.interpretation", "rules_family": "dnd2024", "name": "Wish: смысловая трактовка нестандартного желания", "kind": "spell_branch",
+      "classification": {"mode": "adjudicated", "semantic_required": true, "formal_required": false, "reason": "Отдельная стадия трактовки смысла, полноты и непредвиденных последствий не задаёт математического результата."},
+      "conditions": [{"fact": "wish_branch", "operator": "eq", "value": "alter_reality"}], "triggers": ["spell.wish.interpretation_requested"], "formal_operations": [],
+      "semantic_questions": ["Как понимать точную формулировку в контексте известных фактов?", "Исполнение, частичное исполнение, отказ или уточнение; какие последствия обоснованы текстом?"],
+      "facts": {"possible_outcomes": ["fulfilled", "partial", "failed", "needs_clarification"]},
+      "constraints": ["Нет придуманной формулы вероятности успеха по размеру желания.", "AI возвращает предложения и ссылки; не значения HP, команды состояния или код.", "Желание разрушить мультивселенную, угрожать Сигилу или воздействовать на Леди Боли проваливается по тексту. Смысловую применимость ограничения следует установить явно."],
+      "exceptions": [{"when": "Желание влияет на бога", "consequence": "Текст допускает вмешательство божественных слуг или требование переформулировать; это не автоматический математический исход."}],
+      "duration": "not_applicable", "resources": [],
+      "source": {"document_id": "phb_2024_ru", "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5", "publication_year": 2024, "pdf_page": 269, "printed_page": "268", "section": "Глава 7. Желание: Изменение реальности"},
+      "verification": "source_checked_human_pending", "implementation": "not_implemented", "auto_activate": false
+    },
+    {
+      "id": "dnd2024.phb.wish.orchestration", "rules_family": "dnd2024", "name": "Wish: ветви, ограничения и формальные последствия", "kind": "spell_branch",
+      "classification": {"mode": "hybrid", "semantic_required": true, "formal_required": true, "reason": "Родитель объединяет смысловую ветвь с локальными проверками и последствиями; отдельные стандартные ветви при известных данных обходят AI."},
+      "conditions": [], "triggers": ["spell.wish.declared"],
+      "formal_operations": [{"op": "bounded_value", "inputs": ["object_value_gp"], "constants": {"maximum": 25000}}, {"op": "bounded_value", "inputs": ["object_largest_dimension_ft"], "constants": {"maximum": 300}}, {"op": "wish_stress", "inputs": ["wish_branch"], "constants": {}}],
+      "semantic_questions": ["Какую ветвь выбирает точная формулировка?", "При нестандартной ветви: какое смысловое предложение допустимо и достаточно определено?"],
+      "facts": {
+        "spell_level": 9, "school": "conjuration", "classes": ["wizard", "sorcerer"], "casting_time": "action", "range": "self", "components": ["verbal"],
+        "standard_branches": ["duplicate_spell", "create_object", "instant_healing", "damage_resistance", "spell_immunity", "feat_replacement", "reroll_recent_event"],
+        "object_count": 1, "object_max_gp": 25000, "object_max_dimension_ft": 300, "object_magic_allowed": false,
+        "healing_includes_caster": true, "healing_max_other_creatures": 20, "healing_restores_all_hp": true,
+        "resistance_max_creatures": 10, "resistance_duration": "permanent", "immunity_max_creatures": 10, "immunity_hours": 8,
+        "feat_replacement_count": 1, "recent_event_window": "last_round_including_last_turn", "reroll_allow_old_result": true, "reroll_allow_advantage_disadvantage": true,
+        "stress_strength_score": 3, "stress_duration_count": 2, "stress_duration_sides": 4, "stress_duration_unit": "days", "rest_day_duration_reduction": 2,
+        "stress_necrotic_die_sides_per_spell_level": 10, "stress_damage_prevention_allowed": false, "stress_never_cast_wish_again_percent": 33
+      },
+      "constraints": ["Объект: видимое свободное место на земле; оценка цены/геометрии должна быть известна, иначе требуется уточнение.", "Лечение: видимые существа; окончание эффектов зависит от полного определения Высшего восстановления, ещё не извлечённого.", "Замена черты требует соблюдения предпосылок; нельзя удалить черту, служащую требованием другой черты/умения.", "Переброс события требует контролируемой реконструкции последнего раунда; текущий движок этим пакетом не изменён.", "Стресс относится к эффектам кроме дублирования; неоднозначный текст о последующих сотворениях запрещено молча исправлять.", "Реальная операция изменения состояния для Wish пока отсутствует: не применять частичные результаты даже после прохождения числовых пределов."],
+      "exceptions": [{"when": "Дублирование другого заклинания", "consequence": "Исключено из исходного условия стресса."}, {"when": "Стресс: русский текст говорит «каждый раз ... когда вы сотворяете это заклинание»", "consequence": "Неоднозначность охвата последующих заклинаний отмечена; нужен проверенный источник/решение редактора до реализации."}],
+      "duration": "instantaneous", "resources": [{"id": "wish_casting_resource", "handling": "registered_engine_only"}],
+      "source": {"document_id": "phb_2024_ru", "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5", "publication_year": 2024, "pdf_page": 269, "printed_page": "268", "section": "Глава 7. Желание: полное описание"},
+      "verification": "translation_ambiguity", "implementation": "not_implemented", "auto_activate": false
+    }
+  ]
+}

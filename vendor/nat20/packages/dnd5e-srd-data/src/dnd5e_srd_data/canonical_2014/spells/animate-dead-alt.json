@@ -1,0 +1,139 @@
+{
+  "slug": "animate-dead-alt",
+  "foundry_uuid": "Compendium.dnd5e.laaru-hw-spells.Item.LXy27VO5RK5LPBnq",
+  "name": "Оживление мертвецов (альт.) / Animate Dead Alt",
+  "description": "Вы используете тёмную магию, чтобы оживить кости или труп существа с КО 3 или ниже, превращая его в вашего трэлла нежить. Пока он не уничтожен, этот трэлл использует правила ниже:\n\nПараметры. Нежить трэлл — это шатающийся труп без памяти о каких-либо способностях, которые у него были при жизни. Он использует тот же блок параметров, но его тип существа становится нежить, у него пункты здоровья равны 7 помноженный на круг ячейки заклинания, которую вы потратили на его создание, и он использует вашу заклинательную характеристику для бросков атаки и урона. Если ему приказано атаковать, он совершает только одну атаку, даже если при жизни мог совершить больше атак.\n\nТрэллы не могут получать пользу от короткого или долгого отдыха и не восстанавливают пункты здоровья. Они невосприимчивы к состоянию утомления. Если он уничтожен, его нельзя снова поднять как нежить трэлл.\n\nКонтроль. Трэллы нежить следуют вашим приказам без вопросов. Если им не даны приказы, трэлл не двигается и действует только для самозащиты. В бою все трэллы делят вашу инициативу и действуют во время вашего хода.\n\nБонусным действием вы можете мысленно приказать любому количеству трэллов, созданных этим заклинанием, при условии, что все они находятся в пределах 120 футов. Вы можете отдать индивидуальный приказ каждому, определяя точно, как он действует, или установить общий план действий (\"защищай этот зал\"). Пока он под вашим контролем, трэллы следуют приказам до их выполнения.\n\nСотворение заклинаний. Если он может сотворять заклинания, вы можете приказать ему это сделать, но он использует ваши ячейки заклинаний для сотворения заклинаний, даже если обычно мог бы сотворять без ячеек.\n\nНеживые узы. Пока трэлл под вашим контролем, вы не можете восстановить ячейку заклинания, потраченную на его создание. Однако, когда вы завершаете долгий отдых, вы можете прекратить контроль над трэллом, чтобы восстановить ячейку. Если вы это сделаете, этот трэлл освободится и станет враждебным ко всем живым существам, особенно к заклинателю.\n\nНа высоких кругах. Если вы сотворяете это заклинание ячейкой заклинания 4-го круга или выше, КО существ, которых вы можете поднять как трэллы нежить, увеличивается на 1 за каждый круг ячейки выше 3-го.",
+  "level": 3,
+  "school": "nec",
+  "components": [
+    "M",
+    "S",
+    "V"
+  ],
+  "ritual": false,
+  "concentration": false,
+  "casting_time": {
+    "unit": "minute",
+    "value": 1,
+    "condition": ""
+  },
+  "range": {
+    "units": "ft",
+    "value": 10,
+    "special": null
+  },
+  "duration": {
+    "units": "inst",
+    "value": null
+  },
+  "materials": {
+    "value": "труп или куча костей, поглощаемые при сотворении заклинания для создания нежити трэлла",
+    "consumed": false,
+    "cost": 0,
+    "supply": 0
+  },
+  "preparation": {
+    "mode": "prepared",
+    "prepared": false
+  },
+  "activities": [
+    {
+      "id": "dnd5eactivity000",
+      "name": "",
+      "img": "",
+      "sort": 0,
+      "activation": {
+        "type": "action",
+        "value": null,
+        "condition": "",
+        "override": false,
+        "reaction_conditions": []
+      },
+      "consumption": {
+        "scaling": {
+          "allowed": false,
+          "max": ""
+        },
+        "spell_slot": true,
+        "targets": []
+      },
+      "description": {
+        "chat_flavor": ""
+      },
+      "duration": {
+        "value": null,
+        "units": "inst",
+        "special": "",
+        "concentration": false,
+        "override": false
+      },
+      "flags": {},
+      "range": {
+        "value": null,
+        "units": "self",
+        "special": "",
+        "override": false
+      },
+      "target": {
+        "template": {
+          "count": "",
+          "contiguous": false,
+          "stationary": false,
+          "type": "",
+          "size": "",
+          "width": "",
+          "height": "",
+          "units": ""
+        },
+        "affects": {
+          "count": "1",
+          "type": "creature",
+          "choice": false,
+          "special": ""
+        },
+        "override": false,
+        "prompt": true
+      },
+      "uses": {
+        "spent": 0,
+        "max": "",
+        "recovery": []
+      },
+      "visibility": {
+        "identifier": "",
+        "level": {
+          "min": null,
+          "max": null
+        },
+        "require_attunement": false,
+        "require_identification": false,
+        "require_magic": false
+      },
+      "effects": [],
+      "applied_effects": [],
+      "kind": "utility",
+      "roll": {
+        "formula": "",
+        "name": "",
+        "prompt": false,
+        "visible": false
+      }
+    }
+  ],
+  "passive_effects": [],
+  "provenance": {
+    "source": "foundry",
+    "source_url": "https://github.com/foundryvtt/dnd5e/blob/965ad2d0cf5d063dac675ba078b5bd3c3c0dd449/packs/_source/laaru-hw-spells/Оживление_мертвецов__альт_____Animate_Dead_Alt_LXy27VO5RK5LPBnq.yml",
+    "ingest_date": "2026-10-26",
+    "ingest_version": "foundry-translator-v1",
+    "srd_version": [
+      "5.1"
+    ],
+    "license_tag": "CC-BY-4.0"
+  },
+  "review": {
+    "known_divergence": null,
+    "requires_user_decision": false
+  },
+  "entry_kind": "spell"
+}
