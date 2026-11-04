@@ -1,0 +1,145 @@
+{
+  "slug": "illusory-dragon",
+  "foundry_uuid": "Compendium.dnd5e.laaru-hw-spells.Item.M8aZrdLsRHm7hnZq",
+  "name": "Иллюзорный дракон / Illusory Dragon",
+  "description": "Собирая нити теневой материи в Царстве Теней, вы создаёте Огромного теневого дракона в незанятом пространстве, которое вы можете видеть в пределах дистанции. Иллюзия существует всю длительность заклинания и занимает свое пространство, как если бы это было существо. Когда иллюзия появляется, каждый враг, который может её видеть, должен преуспеть в испытании Мудрости, иначе становится &amp;reference[frightened]{испуганным} на 1 минуту.\n\nЕсли испуганное существо оканчивает свой ход в том месте, где у него нет прямой видимости иллюзии, он может повторить пройти испытание, окончив эффект на себе при успехе. В свой ход вы можете переместить иллюзию на 60 футов бонусным действием. В любой момент во время её движения вы можете заставить её извергнуть поток энергии в 60-футовом конусе, исходящем от неё.\n\nКогда вы создаёте дракона, выберите тип урона: кислота, холод, огонь, молния, некротический или яд. Каждое существо в конусе должно пройти испытание Интеллекта, получив [[/r 7d6]] выбранного типа урона при провале или половину этого урона при успехе.\n\nИллюзия осязаема из-за теневого материала, используемого при её создании, но атаки по ней проваливаются автоматически, она преуспевает во всех испытаниях и невосприимчива к любым повреждениям и состояниям.\n\nСущество, которое использует действие для изучения дракона, может определить, что это иллюзия, выполнив проверку Интеллекта (Расследование) против вашей СЛ заклинания. Если существо распознаёт иллюзию, оно может видеть сквозь неё и имеет преимущество при испытании от её дыхания.",
+  "level": 8,
+  "school": "ill",
+  "components": [
+    "S"
+  ],
+  "ritual": false,
+  "concentration": true,
+  "casting_time": {
+    "unit": "action",
+    "value": 1,
+    "condition": ""
+  },
+  "range": {
+    "units": "ft",
+    "value": 120,
+    "special": null
+  },
+  "duration": {
+    "units": "minute",
+    "value": 1
+  },
+  "materials": {
+    "value": "",
+    "consumed": false,
+    "cost": 0,
+    "supply": 0
+  },
+  "preparation": {
+    "mode": "prepared",
+    "prepared": false
+  },
+  "activities": [
+    {
+      "id": "dnd5eactivity000",
+      "name": "",
+      "img": "",
+      "sort": 0,
+      "activation": {
+        "type": "action",
+        "value": null,
+        "condition": "",
+        "override": false,
+        "reaction_conditions": []
+      },
+      "consumption": {
+        "scaling": {
+          "allowed": false,
+          "max": ""
+        },
+        "spell_slot": true,
+        "targets": []
+      },
+      "description": {
+        "chat_flavor": ""
+      },
+      "duration": {
+        "value": null,
+        "units": "inst",
+        "special": "",
+        "concentration": false,
+        "override": false
+      },
+      "flags": {},
+      "range": {
+        "value": null,
+        "units": "self",
+        "special": "",
+        "override": false
+      },
+      "target": {
+        "template": {
+          "count": "",
+          "contiguous": false,
+          "stationary": false,
+          "type": "cone",
+          "size": "60",
+          "width": "",
+          "height": "",
+          "units": "ft"
+        },
+        "affects": {
+          "count": "",
+          "type": "",
+          "choice": false,
+          "special": ""
+        },
+        "override": false,
+        "prompt": true
+      },
+      "uses": {
+        "spent": 0,
+        "max": "",
+        "recovery": []
+      },
+      "visibility": {
+        "identifier": "",
+        "level": {
+          "min": null,
+          "max": null
+        },
+        "require_attunement": false,
+        "require_identification": false,
+        "require_magic": false
+      },
+      "effects": [],
+      "applied_effects": [],
+      "kind": "save",
+      "damage": {
+        "on_save": "half",
+        "parts": []
+      },
+      "save": {
+        "ability": [
+          "wis"
+        ],
+        "dc": {
+          "calculation": "spellcasting",
+          "formula": ""
+        },
+        "ignore_cover": false
+      }
+    }
+  ],
+  "passive_effects": [],
+  "provenance": {
+    "source": "foundry",
+    "source_url": "https://github.com/foundryvtt/dnd5e/blob/965ad2d0cf5d063dac675ba078b5bd3c3c0dd449/packs/_source/laaru-hw-spells/Иллюзорный_дракон___Illusory_Dragon_M8aZrdLsRHm7hnZq.yml",
+    "ingest_date": "2026-10-26",
+    "ingest_version": "foundry-translator-v1",
+    "srd_version": [
+      "5.1"
+    ],
+    "license_tag": "CC-BY-4.0"
+  },
+  "review": {
+    "known_divergence": null,
+    "requires_user_decision": false
+  },
+  "entry_kind": "spell"
+}

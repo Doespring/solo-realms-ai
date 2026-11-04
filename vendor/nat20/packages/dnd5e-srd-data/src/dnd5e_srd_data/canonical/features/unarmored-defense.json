@@ -1,0 +1,45 @@
+{
+  "activities": [],
+  "advancement": [],
+  "description": "While you aren't wearing any armor, your base Armor Class equals 10 plus your Dexterity and Constitution modifiers. You can use a Shield and still gain this benefit.",
+  "entry_kind": "feature",
+  "feature_type": "class_feature",
+  "foundry_id": "phbbrbUnarmoredD",
+  "name": "Защита без доспехов",
+  "passive_effects": [
+    {
+      "changes": [
+        {
+          "key": "system.attributes.ac.calc",
+          "mode": 5,
+          "priority": null,
+          "value": "unarmoredBarb"
+        }
+      ],
+      "description": "",
+      "disabled": false,
+      "duration": null,
+      "id": "2nOM7nl6sd6UAxA1",
+      "name": "Unarmored Defense",
+      "statuses": [],
+      "transfer": true
+    }
+  ],
+  "provenance": {
+    "ingest_date": "2026-05-30",
+    "ingest_version": "foundry-translator-v1",
+    "license_tag": "CC-BY-4.0",
+    "source": "foundry",
+    "source_url": "https://github.com/foundryvtt/dnd5e/blob/965ad2d0cf5d063dac675ba078b5bd3c3c0dd449/packs/_source/classes24/barbarian/class-features/unarmored-defense.yml",
+    "srd_version": [
+      "5.2"
+    ]
+  },
+  "review": {
+    "known_divergence": null,
+    "requires_user_decision": false
+  },
+  "slug": "unarmored-defense",
+  "source_slug": "barbarian",
+  "uses": null
+}

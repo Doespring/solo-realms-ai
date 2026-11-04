@@ -1,0 +1,226 @@
+{
+  "slug": "trickery-domain",
+  "name": "Домен обмана",
+  "description": "Домен обмана | Trickery Domain\n\nБоги обмана, такие как Тимора, Бешаба, Олидаммара, Странник, Гарл Глиттерголд и Локи – это трикстеры, мошенники и подстрекатели, которые постоянно бросают вызов устоявшемуся среди богов и смертных порядку. Они покровители воров, жуликов, игроков, бунтарей и борцов за свободу. Их жрецы становятся разрушительной силой, они уязвляют гордых, высмеивают тиранов, крадут у богатых, освобождают пленников и разрушают пустые традиции. Прямым конфликтам они предпочитают уловки, шутки, обман и воровство.\n\nУровень Особенности\n\n1-й\n\n@Compendium[laaru-dnd5-hw.classfeatures.s1cp1ixsZG3Y1PWO]{Благословение трикстера}\n\n2-й\n\n@Compendium[laaru-dnd5-hw.classfeatures.RW0GHxZOYFISnyex]{Проведение энергии: Призыв двойника}\n\n6-й\n\n@Compendium[laaru-dnd5-hw.classfeatures.gNx62HNKVUgjsyJ3]{Проведение энергии: Плащ теней}\n\n8-й\n\n@Compendium[laaru-dnd5-hw.classfeatures.DMeYE9lDtFOKimVG]{Божественный удар} или @Compendium[laaru-dnd5-hw.classfeatures.XXg29SJBaE3ts5sQ]{Благословенные удары (опционально)}\n\n17-й\n\n@Compendium[laaru-dnd5-hw.classfeatures.yzQlm9KySHQfMmWv]{Улучшенный двойник}\n\nЗаклинания домена обмана\n\nУровень жреца Заклинания\n\n1-й\n\n@Compendium[laaru-dnd5-hw.spells.b43DxBasUIOw69tC]{Изменение облика}, @Compendium[laaru-dnd5-hw.spells.KcziiS01MniKTNZ9]{Приворот гуманоида}\n\n3-й\n\n@Compendium[laaru-dnd5-hw.spells.MByqnEhamV1MsaSP]{Бесследный шаг}, @Compendium[laaru-dnd5-hw.spells.tJLAOUVC46nKuVXd]{Зеркальное отражение}\n\n5-й\n\n@Compendium[laaru-dnd5-hw.spells.jMVfNqdqSq3GLWgt]{Мерцание}, @Compendium[laaru-dnd5-hw.spells.ZdDJVUlzYudd4nHO]{Рассеивание магии}\n\n7-й\n\n@Compendium[laaru-dnd5-hw.spells.nJ8TX9ZpXVUznyPT]{Дверь в пространстве}, @Compendium[laaru-dnd5-hw.spells.8qeo9ZE7VnkmVKcv]{Полиморф}\n\n9-й\n\n@Compendium[laaru-dnd5-hw.spells.ujIJlxgzYuog6Nkk]{Манипуляция памятью}, @Compendium[laaru-dnd5-hw.spells.uLKYcMWQhOpEnJCe]{Подчинение гуманоида}\n\n*Заклинания добавляются в автоматическом режиме при повышении уровней.",
+  "identifier": "trickery-domain",
+  "class_identifier": "cleric",
+  "spellcasting": {
+    "ability": "",
+    "progression": "none"
+  },
+  "advancement": [
+    {
+      "id": "p1tb5z2nu6k73scf",
+      "type": "ItemGrant",
+      "level": 1,
+      "title": "1. Особенность",
+      "hint": "",
+      "class_restriction": "",
+      "configuration": {
+        "items": [
+          "Compendium.laaru-dnd5-hw.classfeatures.s1cp1ixsZG3Y1PWO"
+        ],
+        "optional": false
+      },
+      "value": {}
+    },
+    {
+      "id": "xvci8qfs62cj0l6n",
+      "type": "ItemGrant",
+      "level": 2,
+      "title": "Особенность",
+      "hint": "",
+      "class_restriction": "",
+      "configuration": {
+        "items": [
+          "Compendium.laaru-dnd5-hw.classfeatures.RW0GHxZOYFISnyex"
+        ],
+        "optional": false
+      },
+      "value": {}
+    },
+    {
+      "id": "6bpmygsmy88ww0b7",
+      "type": "ItemGrant",
+      "level": 6,
+      "title": "Особенность",
+      "hint": "",
+      "class_restriction": "",
+      "configuration": {
+        "items": [
+          "Compendium.laaru-dnd5-hw.classfeatures.gNx62HNKVUgjsyJ3"
+        ],
+        "optional": false
+      },
+      "value": {}
+    },
+    {
+      "id": "lg2mo40tr1qhopgv",
+      "type": "ItemGrant",
+      "level": 8,
+      "title": "Выберите одну особенность",
+      "hint": "",
+      "class_restriction": "",
+      "configuration": {
+        "items": [
+          "Compendium.laaru-dnd5-hw.classfeatures.DMeYE9lDtFOKimVG",
+          "Compendium.laaru-dnd5-hw.classfeatures.XXg29SJBaE3ts5sQ"
+        ],
+        "optional": false
+      },
+      "value": {}
+    },
+    {
+      "id": "6bixje2757syacnm",
+      "type": "ItemGrant",
+      "level": 17,
+      "title": "Особенность",
+      "hint": "",
+      "class_restriction": "",
+      "configuration": {
+        "items": [
+          "Compendium.laaru-dnd5-hw.classfeatures.yzQlm9KySHQfMmWv"
+        ],
+        "optional": false
+      },
+      "value": {}
+    },
+    {
+      "id": "7g4rpylb7h53joqm",
+      "type": "ItemGrant",
+      "level": 1,
+      "title": "2. Заклинания домена обмана",
+      "hint": "",
+      "class_restriction": "",
+      "configuration": {
+        "items": [
+          "Compendium.laaru-dnd5-hw.spells.b43DxBasUIOw69tC",
+          "Compendium.laaru-dnd5-hw.spells.KcziiS01MniKTNZ9"
+        ],
+        "optional": false,
+        "spell": {
+          "ability": "wis",
+          "preparation": "always",
+          "uses": {
+            "max": "",
+            "per": ""
+          }
+        }
+      },
+      "value": {}
+    },
+    {
+      "id": "rnk37u9zki3tkbmx",
+      "type": "ItemGrant",
+      "level": 3,
+      "title": "Заклинания домена обмана",
+      "hint": "",
+      "class_restriction": "",
+      "configuration": {
+        "items": [
+          "Compendium.laaru-dnd5-hw.spells.MByqnEhamV1MsaSP",
+          "Compendium.laaru-dnd5-hw.spells.tJLAOUVC46nKuVXd"
+        ],
+        "optional": false,
+        "spell": {
+          "ability": "wis",
+          "preparation": "always",
+          "uses": {
+            "max": "",
+            "per": ""
+          }
+        }
+      },
+      "value": {}
+    },
+    {
+      "id": "77wxpk7fyxbltlev",
+      "type": "ItemGrant",
+      "level": 5,
+      "title": "Заклинания домена обмана",
+      "hint": "",
+      "class_restriction": "",
+      "configuration": {
+        "items": [
+          "Compendium.laaru-dnd5-hw.spells.jMVfNqdqSq3GLWgt",
+          "Compendium.laaru-dnd5-hw.spells.ZdDJVUlzYudd4nHO"
+        ],
+        "optional": false,
+        "spell": {
+          "ability": "wis",
+          "preparation": "always",
+          "uses": {
+            "max": "",
+            "per": ""
+          }
+        }
+      },
+      "value": {}
+    },
+    {
+      "id": "uq5jsaoefaipnt29",
+      "type": "ItemGrant",
+      "level": 7,
+      "title": "Заклинания домена обмана",
+      "hint": "",
+      "class_restriction": "",
+      "configuration": {
+        "items": [
+          "Compendium.laaru-dnd5-hw.spells.nJ8TX9ZpXVUznyPT",
+          "Compendium.laaru-dnd5-hw.spells.8qeo9ZE7VnkmVKcv"
+        ],
+        "optional": false,
+        "spell": {
+          "ability": "wis",
+          "preparation": "always",
+          "uses": {
+            "max": "",
+            "per": ""
+          }
+        }
+      },
+      "value": {}
+    },
+    {
+      "id": "6pp4zh2e90gm7txz",
+      "type": "ItemGrant",
+      "level": 9,
+      "title": "Заклинания домена обмана",
+      "hint": "",
+      "class_restriction": "",
+      "configuration": {
+        "items": [
+          "Compendium.laaru-dnd5-hw.spells.ujIJlxgzYuog6Nkk",
+          "Compendium.laaru-dnd5-hw.spells.uLKYcMWQhOpEnJCe"
+        ],
+        "optional": false,
+        "spell": {
+          "ability": "wis",
+          "preparation": "always",
+          "uses": {
+            "max": "",
+            "per": ""
+          }
+        }
+      },
+      "value": {}
+    }
+  ],
+  "granted_features": [],
+  "feature_choices": [],
+  "provenance": {
+    "source": "foundry",
+    "source_url": "https://github.com/foundryvtt/dnd5e/blob/965ad2d0cf5d063dac675ba078b5bd3c3c0dd449/packs/_source/laaru-hw-subclasses/Домен_обмана_Qq5cwhiIfe1caCTb.yml",
+    "ingest_date": "2026-10-26",
+    "ingest_version": "foundry-translator-v1",
+    "srd_version": [
+      "5.1"
+    ],
+    "license_tag": "CC-BY-4.0"
+  },
+  "review": {
+    "known_divergence": null,
+    "requires_user_decision": false
+  },
+  "entry_kind": "subclass"
+}

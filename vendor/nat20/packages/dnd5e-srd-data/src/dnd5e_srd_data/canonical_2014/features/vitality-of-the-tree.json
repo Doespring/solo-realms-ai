@@ -1,0 +1,28 @@
+{
+  "slug": "vitality-of-the-tree",
+  "name": "Vitality of the Tree",
+  "description": "Your Rage taps into the life force of the World Tree. You gain the following benefits. Vitality Surge - when you activate your Rage, you gain a number of Temporary Hit Points equal to your Barbarian level. Life-Giving Force - at the start of each of your turns while your Rage is active, you can choose another creature within 10 feet of yourself to gain Temporary Hit Points. To determine the number, roll a number of d6s equal to your Rage Damage bonus. The creature gains Temporary Hit Points equal to the total rolled.",
+  "feature_type": "subclass_feature",
+  "foundry_id": "b329b8c827d59d8f",
+  "source_slug": "path-of-the-world-tree",
+  "activities": [],
+  "passive_effects": [],
+  "advancement": [],
+  "uses": null,
+  "provenance": {
+    "source": "foundry",
+    "source_url": "https://www.dndbeyond.com/sources/dnd/phb-2024",
+    "ingest_date": "2026-10-26",
+    "ingest_version": "phb-2024-manual-v1",
+    "srd_version": [
+      "5.2"
+    ],
+    "license_tag": "CC-BY-4.0"
+  },
+  "review": {
+    "requires_user_decision": false,
+    "known_divergence": null,
+    "notes": "authored from PHB 2024, mechanic not yet wired to activities"
+  },
+  "entry_kind": "feature"
+}

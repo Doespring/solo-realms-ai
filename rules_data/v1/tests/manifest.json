@@ -1,0 +1,19 @@
+{
+  "test_contract_version": "1.0.0",
+  "paths_relative_to": "rules_data/v1",
+  "schema": "rule.schema.json",
+  "validator": "Microsoft.PowerShell.Utility Test-Json",
+  "schema_cases": [
+    {"file": "chapters/phb-01/advantage.json", "valid": true},
+    {"file": "chapters/phb-01/disadvantage.json", "valid": true},
+    {"file": "chapters/phb-01/cancellation.json", "valid": true},
+    {"file": "chapters/phb-01/single-die-change.json", "valid": true},
+    {"file": "tests/invalid/unknown-effect.json", "valid": false, "error_at": "/effects/0"},
+    {"file": "tests/invalid/auto-activation.json", "valid": false, "error_at": "/engine/auto_activate"},
+    {"file": "tests/invalid/missing-fields.json", "valid": false, "error_at": "/"}
+  ],
+  "behavior_cases": "tests/behavior.cases.json",
+  "behavior_execution": "not_run_no_trusted_data_harness",
+  "existing_engine_test_read_only": "tests/test_rulesets.py::test_expertise_advantage_cancellation_and_no_automatic_check_crit",
+  "existing_engine_test_executed": false
+}

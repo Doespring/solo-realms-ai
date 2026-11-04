@@ -1,0 +1,225 @@
+{
+  "activities": [
+    {
+      "activation": {
+        "condition": "",
+        "override": false,
+        "reaction_conditions": [],
+        "type": "action",
+        "value": null
+      },
+      "applied_effects": [],
+      "consumption": {
+        "scaling": {
+          "allowed": false,
+          "max": ""
+        },
+        "spell_slot": true,
+        "targets": []
+      },
+      "description": {
+        "chat_flavor": ""
+      },
+      "duration": {
+        "concentration": false,
+        "override": false,
+        "special": "",
+        "units": "inst",
+        "value": null
+      },
+      "effects": [
+        {
+          "id": "VUqQIaiZoIzxUdf1",
+          "level": {
+            "max": null,
+            "min": null
+          },
+          "on_save": null,
+          "riders": null
+        },
+        {
+          "id": "XcTQl9DhT9lC3bxI",
+          "level": {
+            "max": null,
+            "min": null
+          },
+          "on_save": null,
+          "riders": null
+        },
+        {
+          "id": "uMsGEsbEZ2hckOKW",
+          "level": {
+            "max": null,
+            "min": null
+          },
+          "on_save": null,
+          "riders": null
+        }
+      ],
+      "flags": {},
+      "id": "dnd5eactivity000",
+      "img": "",
+      "kind": "utility",
+      "name": "",
+      "range": {
+        "override": false,
+        "special": "",
+        "units": "self",
+        "value": null
+      },
+      "roll": {
+        "formula": "(@flags.dnd-players-handbook.mirrorImages)d6kh",
+        "name": "",
+        "prompt": false,
+        "visible": false
+      },
+      "sort": 0,
+      "target": {
+        "affects": {
+          "choice": false,
+          "count": "",
+          "special": "",
+          "type": ""
+        },
+        "override": false,
+        "prompt": true,
+        "template": {
+          "contiguous": false,
+          "count": "",
+          "height": "",
+          "size": "",
+          "stationary": false,
+          "type": "",
+          "units": "",
+          "width": ""
+        }
+      },
+      "uses": {
+        "max": "",
+        "recovery": [],
+        "spent": 0
+      },
+      "visibility": {
+        "identifier": "",
+        "level": {
+          "max": null,
+          "min": null
+        },
+        "require_attunement": false,
+        "require_identification": false,
+        "require_magic": false
+      }
+    }
+  ],
+  "casting_time": {
+    "condition": "",
+    "unit": "action",
+    "value": 1
+  },
+  "components": [
+    "S",
+    "V"
+  ],
+  "concentration": false,
+  "description": "Three illusory duplicates of yourself appear in your space. Until the spell ends, the duplicates move with you and mimic your actions, shifting position so it's impossible to track which image is real.\n\nEach time a creature hits you with an attack roll during the spell's duration, roll a [[/r (@flags.dnd-players-handbook.mirrorImages)d6kh1cs&gt;2#Duplicate destroyed]]{d6 for each} of your remaining duplicates. If any of the d6s rolls a 3 or higher, one of the duplicates is hit instead of you, and the duplicate is destroyed. The duplicates otherwise ignore all other damage and effects. The spell ends when all three duplicates are destroyed.\n\nA creature is unaffected by this spell if it has the &amp;Reference[blinded apply=false] condition, &amp;Reference[blindsight], or &amp;Reference[truesight].",
+  "description_localized": "<p>Три ваших иллюзорных двойника появляются в занимаемом вами пространстве. Пока длится заклинание, двойники перемещаются вместе с вами, повторяя ваши действия и меняясь местами, так что невозможно уследить, кто из вас реален. Вы можете использовать действие, чтобы рассеять иллюзорных двойников.</p><p>Пока длится заклинание, каждый раз, когда существо выбирает вас целью атаки, бросьте [[/r d20]], чтобы определить, будет ли атака нацелена на вас или на ваших двойников.</p><p>Если у вас три двойника, то двойник станет целью атаки при результате 6 и более. Если двойников двое, надо получить 8 или более. Если двойник один 11 или более.</p><p>КБ двойника равен 10 + ваш модификатор Ловкости. Если атака попадает в двойника, он уничтожается. Двойника можно уничтожить только попавшей по нему атакой. Он невосприимчив к любому другому урону и эффектам. Заклинание прекращает действовать, когда уничтожены все три двойника.</p><p>Заклинание не действует на существо, которое не может видеть или полагается на другие способы восприятия, например обладает @UUID[Compendium.laaru-dnd5-hw.actions.x7Ty7ddxZGFudOeO]{слепозрением}, или если оно способно распознавать иллюзии, например обладает &amp;reference[truesight]{истинным зрением}.</p>",
+  "duration": {
+    "units": "minute",
+    "value": 1
+  },
+  "entry_kind": "spell",
+  "foundry_uuid": "Compendium.dnd5e.spells24.Item.phbsplMirrorImag",
+  "level": 2,
+  "materials": {
+    "consumed": false,
+    "cost": 0,
+    "supply": 0,
+    "value": ""
+  },
+  "name": "Зеркальное отражение",
+  "passive_effects": [
+    {
+      "changes": [
+        {
+          "key": "flags.dnd-players-handbook.mirrorImages",
+          "mode": 2,
+          "priority": null,
+          "value": "1"
+        }
+      ],
+      "description": "",
+      "disabled": false,
+      "duration": {
+        "seconds": 60
+      },
+      "id": "VUqQIaiZoIzxUdf1",
+      "name": "Duplicate A",
+      "statuses": [],
+      "transfer": false
+    },
+    {
+      "changes": [
+        {
+          "key": "flags.dnd-players-handbook.mirrorImages",
+          "mode": 2,
+          "priority": null,
+          "value": "1"
+        }
+      ],
+      "description": "",
+      "disabled": false,
+      "duration": {
+        "seconds": 60
+      },
+      "id": "XcTQl9DhT9lC3bxI",
+      "name": "Duplicate B",
+      "statuses": [],
+      "transfer": false
+    },
+    {
+      "changes": [
+        {
+          "key": "flags.dnd-players-handbook.mirrorImages",
+          "mode": 2,
+          "priority": null,
+          "value": "1"
+        }
+      ],
+      "description": "",
+      "disabled": false,
+      "duration": {
+        "seconds": 60
+      },
+      "id": "uMsGEsbEZ2hckOKW",
+      "name": "Duplicate C",
+      "statuses": [],
+      "transfer": false
+    }
+  ],
+  "preparation": {
+    "mode": "prepared",
+    "prepared": false
+  },
+  "provenance": {
+    "ingest_date": "2026-05-30",
+    "ingest_version": "foundry-translator-v1",
+    "license_tag": "CC-BY-4.0",
+    "source": "foundry",
+    "source_url": "https://github.com/foundryvtt/dnd5e/blob/965ad2d0cf5d063dac675ba078b5bd3c3c0dd449/packs/_source/spells24/2nd-level/mirror-image.yml",
+    "srd_version": [
+      "5.2"
+    ]
+  },
+  "range": {
+    "special": null,
+    "units": "self",
+    "value": null
+  },
+  "review": {
+    "known_divergence": null,
+    "requires_user_decision": false
+  },
+  "ritual": false,
+  "school": "ill",
+  "slug": "mirror-image"
+}

@@ -1,0 +1,34 @@
+{
+  "activities": [],
+  "attunement_constraint": null,
+  "cost_gp": 0.0,
+  "description": "Potion, Rarity Varies\n\nWhen you drink this potion, your Strength score changes for 1 hour. The type of giant determines the score (see the table below). The potion has no effect on you if your Strength is equal to or greater than that score.\n\nThis potion's transparent liquid has floating in it a sliver of light resembling a giant's fingernail.\n\nPotion\n\nStr.\n\nRarity\n\nPotion of Giant Strength (hill)\n\n21\n\nUncommon\n\nPotion of Giant Strength (frost or stone)\n\n23\n\nRare\n\nPotion of Giant Strength (fire)\n\n25\n\nRare\n\nPotion of Giant Strength (cloud)\n\n27\n\nVery Rare\n\nPotion of Giant Strength (storm)\n\n29\n\nLegendary",
+  "description_localized": "<p>Выпив это зелье, вы меняете значение вашей Силы на 1 час. Новое значение зависит от вида великана:</p><p><em>Примечание. При выдаче игроку выбранного зелья, вы можете отметить галочку \"Неопознанное\" в самом предмете, так игрок прочитает только \"неопознанное описание\".</em></p><ul class=\"rd__list\"><li class=\"rd__li \">@Compendium[laaru-dnd5-hw.items.sDPLBAdQ1Lc5Pj1t]{Зелье силы каменного великана}</li><li class=\"rd__li \">@Compendium[laaru-dnd5-hw.items.p42Ct1NNgVIWEGx1]{Зелье силы морозного великана}</li><li class=\"rd__li \">@Compendium[laaru-dnd5-hw.items.ULLwKKCK0B0ztL1d]{Зелье силы облачного великана}</li><li class=\"rd__li \">@Compendium[laaru-dnd5-hw.items.otMhKhdQqLzmKI0n]{Зелье силы огненного великана}</li><li class=\"rd__li \">@Compendium[laaru-dnd5-hw.items.agLBcwIe3oyhdJh0]{Зелье силы холмового великана}</li><li class=\"rd__li \">@Compendium[laaru-dnd5-hw.items.MD30INyLUcEMAuHL]{Зелье силы штормового великана}</li></ul><div id=\"gtx-trans\" style=\"position:absolute;left:16px;top:51px\"><div class=\"gtx-trans-icon\"><p> </p></div></div>",
+  "item_kind": "item",
+  "name": "Зелье силы великана",
+  "passive_effects": [],
+  "provenance": {
+    "ingest_date": "2026-05-30",
+    "ingest_version": "foundry-translator-v1",
+    "license_tag": "CC-BY-4.0",
+    "source": "foundry",
+    "source_url": "https://github.com/foundryvtt/dnd5e/blob/965ad2d0cf5d063dac675ba078b5bd3c3c0dd449/packs/_source/equipment24/consumables/potions/potion-of-giant-strength.yml",
+    "srd_version": [
+      "5.2"
+    ]
+  },
+  "rarity": "common",
+  "requires_attunement": false,
+  "review": {
+    "known_divergence": null,
+    "requires_user_decision": false
+  },
+  "slug": "potion-of-giant-strength",
+  "uses": {
+    "auto_destroy": true,
+    "max": "1",
+    "recovery": [],
+    "spent": 0
+  },
+  "weight": 0.0
+}

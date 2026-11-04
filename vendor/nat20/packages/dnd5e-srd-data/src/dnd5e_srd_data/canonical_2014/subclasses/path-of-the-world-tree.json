@@ -1,0 +1,103 @@
+{
+  "slug": "path-of-the-world-tree",
+  "name": "Path of the World Tree",
+  "description": "Barbarians who follow the Path of the World Tree connect with the cosmic tree Yggdrasil through their Rage. This connection gives them extraordinary endurance and allows them to tap into the tree's memories of countless worlds.",
+  "identifier": "path-of-the-world-tree",
+  "class_identifier": "barbarian",
+  "spellcasting": {
+    "ability": "",
+    "progression": "none"
+  },
+  "advancement": [
+    {
+      "id": "b329b8c8",
+      "type": "ItemGrant",
+      "level": 3,
+      "title": "Features",
+      "hint": "",
+      "class_restriction": "",
+      "configuration": {
+        "items": [
+          {
+            "uuid": "phb2024.vitality-of-the-tree",
+            "optional": false
+          }
+        ],
+        "optional": false
+      },
+      "value": {}
+    },
+    {
+      "id": "c1ce398f",
+      "type": "ItemGrant",
+      "level": 6,
+      "title": "Features",
+      "hint": "",
+      "class_restriction": "",
+      "configuration": {
+        "items": [
+          {
+            "uuid": "phb2024.branches-of-the-tree",
+            "optional": false
+          }
+        ],
+        "optional": false
+      },
+      "value": {}
+    },
+    {
+      "id": "83eeacc7",
+      "type": "ItemGrant",
+      "level": 10,
+      "title": "Features",
+      "hint": "",
+      "class_restriction": "",
+      "configuration": {
+        "items": [
+          {
+            "uuid": "phb2024.battering-roots",
+            "optional": false
+          }
+        ],
+        "optional": false
+      },
+      "value": {}
+    },
+    {
+      "id": "e0d68160",
+      "type": "ItemGrant",
+      "level": 14,
+      "title": "Features",
+      "hint": "",
+      "class_restriction": "",
+      "configuration": {
+        "items": [
+          {
+            "uuid": "phb2024.travel-along-the-tree",
+            "optional": false
+          }
+        ],
+        "optional": false
+      },
+      "value": {}
+    }
+  ],
+  "granted_features": [],
+  "feature_choices": [],
+  "provenance": {
+    "source": "foundry",
+    "source_url": "https://www.dndbeyond.com/sources/dnd/phb-2024",
+    "ingest_date": "2026-10-26",
+    "ingest_version": "phb-2024-manual-v1",
+    "srd_version": [
+      "5.2"
+    ],
+    "license_tag": "CC-BY-4.0"
+  },
+  "review": {
+    "requires_user_decision": false,
+    "known_divergence": null,
+    "notes": "authored from PHB 2024 book text"
+  },
+  "entry_kind": "subclass"
+}

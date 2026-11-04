@@ -1,0 +1,6 @@
+{
+  "message_type": "adjudication_response", "contract_version": "2.0.0", "request_id": "demo.dmg.001", "state_version": 1,
+  "rules_family": "dnd2014", "ruleset_digest": "44bd6584c9777d693ccf233771a5310d316a3773ce31e675f7081db310dc536b",
+  "context_hash": "3fe98ac8e8516f8682d802ad68976559e3ad28fb61874920e2e8b53534b2611b",
+  "status": "decided", "choice_ids": ["moderate"], "proposals": [], "fact_ids": ["task"], "rule_ids": ["dnd2024.dmg.choose_and_resolve_check"], "rationale": "Negative fixture", "uncertainties": []
+}

@@ -1,0 +1,139 @@
+{
+  "slug": "nystuls-magic-aura",
+  "foundry_uuid": "Compendium.dnd5e.laaru-hw-spells.Item.SapL4AqM9v1eBWGH",
+  "name": "Магическая аура Нистула / Nystul's Magic Aura",
+  "description": "Вы окутываете иллюзией существо или объект, которого коснулись, так что заклинания прорицания выдают о нем ложные сведения. Целью может быть согласное существо или объект, который не носит и не держит другое существо.\n\nКогда вы творите это заклинание, выберите один из этих эффектов или оба. Они длятся, пока длится заклинание. Если сотворять это заклинание на то же существо или объект каждый день на протяжении 30 дней, используя один и тот же эффект, иллюзия будет существовать, пока не рассеяна.\n\nЛожная аура. Вы меняете то, как цель выглядит для заклинаний и магических эффектов, таких как @Compendium[laaru-dnd5-hw.spells.O5tFJkuBe4IhqKEw]{Обнаружение магии}, определяющих магические ауры. Можете заставить немагический предмет казаться магическим, магический — немагическим или изменить ауру предмета так, что она будет казаться принадлежащей к определённой школе магии на ваш выбор. Когда вы применяете этот эффект к объекту, то можете сделать так, чтобы ложная магия казалась настоящей любому существу, использующему предмет.\n\nМаскировка. Вы меняете то, как цель выглядит для заклинаний и магических эффектов, направленных на обнаружение конкретных типов существ, вроде Божественного чутья у паладина или условия срабатывания заклинания @Compendium[laaru-dnd5-hw.spells.9ZpJ79lDSnkltNCR]{Символ}. Вы выбираете тип существа, и все прочие заклинания и магические эффекты воспринимают цель, как если бы она была существом этого типа или мировоззрения.",
+  "level": 2,
+  "school": "ill",
+  "components": [
+    "M",
+    "S",
+    "V"
+  ],
+  "ritual": false,
+  "concentration": false,
+  "casting_time": {
+    "unit": "action",
+    "value": 1,
+    "condition": ""
+  },
+  "range": {
+    "units": "touch",
+    "value": null,
+    "special": null
+  },
+  "duration": {
+    "units": "hour",
+    "value": 24
+  },
+  "materials": {
+    "value": "небольшой квадратный лоскут шёлка",
+    "consumed": false,
+    "cost": 0,
+    "supply": 0
+  },
+  "preparation": {
+    "mode": "prepared",
+    "prepared": false
+  },
+  "activities": [
+    {
+      "id": "dnd5eactivity000",
+      "name": "",
+      "img": "",
+      "sort": 0,
+      "activation": {
+        "type": "action",
+        "value": null,
+        "condition": "",
+        "override": false,
+        "reaction_conditions": []
+      },
+      "consumption": {
+        "scaling": {
+          "allowed": false,
+          "max": ""
+        },
+        "spell_slot": true,
+        "targets": []
+      },
+      "description": {
+        "chat_flavor": ""
+      },
+      "duration": {
+        "value": null,
+        "units": "inst",
+        "special": "",
+        "concentration": false,
+        "override": false
+      },
+      "flags": {},
+      "range": {
+        "value": null,
+        "units": "self",
+        "special": "",
+        "override": false
+      },
+      "target": {
+        "template": {
+          "count": "",
+          "contiguous": false,
+          "stationary": false,
+          "type": "",
+          "size": "",
+          "width": "",
+          "height": "",
+          "units": "touch"
+        },
+        "affects": {
+          "count": "",
+          "type": "object",
+          "choice": false,
+          "special": ""
+        },
+        "override": false,
+        "prompt": true
+      },
+      "uses": {
+        "spent": 0,
+        "max": "",
+        "recovery": []
+      },
+      "visibility": {
+        "identifier": "",
+        "level": {
+          "min": null,
+          "max": null
+        },
+        "require_attunement": false,
+        "require_identification": false,
+        "require_magic": false
+      },
+      "effects": [],
+      "applied_effects": [],
+      "kind": "utility",
+      "roll": {
+        "formula": "",
+        "name": "",
+        "prompt": false,
+        "visible": false
+      }
+    }
+  ],
+  "passive_effects": [],
+  "provenance": {
+    "source": "foundry",
+    "source_url": "https://github.com/foundryvtt/dnd5e/blob/965ad2d0cf5d063dac675ba078b5bd3c3c0dd449/packs/_source/laaru-hw-spells/Магическая_аура_Нистула___Nystul_s_Magic_Aura_SapL4AqM9v1eBWGH.yml",
+    "ingest_date": "2026-10-26",
+    "ingest_version": "foundry-translator-v1",
+    "srd_version": [
+      "5.1"
+    ],
+    "license_tag": "CC-BY-4.0"
+  },
+  "review": {
+    "known_divergence": null,
+    "requires_user_decision": false
+  },
+  "entry_kind": "spell"
+}

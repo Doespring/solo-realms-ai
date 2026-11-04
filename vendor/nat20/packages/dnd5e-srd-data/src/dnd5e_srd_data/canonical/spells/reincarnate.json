@@ -1,0 +1,140 @@
+{
+  "activities": [
+    {
+      "activation": {
+        "condition": "",
+        "override": false,
+        "reaction_conditions": [],
+        "type": "action",
+        "value": null
+      },
+      "applied_effects": [],
+      "consumption": {
+        "scaling": {
+          "allowed": false,
+          "max": ""
+        },
+        "spell_slot": true,
+        "targets": []
+      },
+      "description": {
+        "chat_flavor": ""
+      },
+      "duration": {
+        "concentration": false,
+        "override": false,
+        "special": "",
+        "units": "inst",
+        "value": null
+      },
+      "effects": [],
+      "flags": {},
+      "id": "bSqu9vf9hRI4v7VX",
+      "img": "",
+      "kind": "utility",
+      "name": "",
+      "range": {
+        "override": false,
+        "special": "",
+        "units": "self",
+        "value": null
+      },
+      "roll": {
+        "formula": "",
+        "name": "",
+        "prompt": false,
+        "visible": false
+      },
+      "sort": 0,
+      "target": {
+        "affects": {
+          "choice": false,
+          "count": "1",
+          "special": "dead Humanoid or a piece of one",
+          "type": "creature"
+        },
+        "override": false,
+        "prompt": true,
+        "template": {
+          "contiguous": false,
+          "count": "",
+          "height": "",
+          "size": "",
+          "stationary": false,
+          "type": "",
+          "units": "",
+          "width": ""
+        }
+      },
+      "uses": {
+        "max": "",
+        "recovery": [],
+        "spent": 0
+      },
+      "visibility": {
+        "identifier": "",
+        "level": {
+          "max": null,
+          "min": null
+        },
+        "require_attunement": false,
+        "require_identification": false,
+        "require_magic": false
+      }
+    }
+  ],
+  "casting_time": {
+    "condition": "",
+    "unit": "hour",
+    "value": 1
+  },
+  "components": [
+    "M",
+    "S",
+    "V"
+  ],
+  "concentration": false,
+  "description": "You touch a dead Humanoid or a piece of one. If the creature has been dead no longer than 10 days, the spell forms a new body for it and calls the soul to enter that body. @Embed[Compendium.dnd5e.tables24.RollTable.phbsplReincarnat rollable classes=\"caption-top\"]\n\nThe reincarnated creature makes any choices that a species' description offers, and the creature recalls its former life. It retains the capabilities it had in its original form, except it loses the traits of its previous species and gains the traits of its new one.",
+  "description_localized": "<p>Вы касаетесь мёртвого гуманоида или части мертвого гуманоида. Если это существо было мертво не более 10 дней, заклинание создаёт для него новое взрослое тело и вызывает его душу занять это тело. Если душа цели несвободна или не хочет вернуться, заклинание не сработает.</p>\n<p>Магия создаёт для существа новое тело, из-за чего его раса может поменяться. Мастер бросает [[/r d100]] и сверяется с таблицей, чтобы определить, какую форму существо примет, вернувшись к жизни. Как вариант, мастер может сам выбрать форму</p>\n<table class=\"rd__table  stripe-odd-table\" style=\"width:99.4077%;height:255px\"><caption> </caption>\n<thead>\n<tr style=\"height:17px\">\n<th class=\"col-1 text-center no-wrap\" style=\"width:19.5817%;height:17px\" data-rd-isroller=\"true\">[[/r d100]]</th>\n<th class=\"col-11\" style=\"width:80.1204%;height:17px\" data-rd-isroller=\"false\">Раса</th>\n</tr>\n</thead>\n<tbody>\n<tr style=\"height:17px\">\n<td class=\"col-1 text-center no-wrap\" style=\"width:19.5817%;height:17px\" data-roll-min=\"1\" data-roll-max=\"4\">01-04</td>\n<td class=\"col-11\" style=\"width:80.1204%;height:17px\">Драконорождённый</td>\n</tr>\n<tr style=\"height:17px\">\n<td class=\"col-1 text-center no-wrap\" style=\"width:19.5817%;height:17px\" data-roll-min=\"5\" data-roll-max=\"13\">05-13</td>\n<td class=\"col-11\" style=\"width:80.1204%;height:17px\">Дварф холмовой</td>\n</tr>\n<tr style=\"height:17px\">\n<td class=\"col-1 text-center no-wrap\" style=\"width:19.5817%;height:17px\" data-roll-min=\"14\" data-roll-max=\"21\">14-21</td>\n<td class=\"col-11\" style=\"width:80.1204%;height:17px\">Дварф горный</td>\n</tr>\n<tr style=\"height:17px\">\n<td class=\"col-1 text-center no-wrap\" style=\"width:19.5817%;height:17px\" data-roll-min=\"22\" data-roll-max=\"25\">22-25</td>\n<td class=\"col-11\" style=\"width:80.1204%;height:17px\">Эльф тёмный</td>\n</tr>\n<tr style=\"height:17px\">\n<td class=\"col-1 text-center no-wrap\" style=\"width:19.5817%;height:17px\" data-roll-min=\"26\" data-roll-max=\"34\">26-34</td>\n<td class=\"col-11\" style=\"width:80.1204%;height:17px\">Эльф высший</td>\n</tr>\n<tr style=\"height:17px\">\n<td class=\"col-1 text-center no-wrap\" style=\"width:19.5817%;height:17px\" data-roll-min=\"35\" data-roll-max=\"42\">35-42</td>\n<td class=\"col-11\" style=\"width:80.1204%;height:17px\">Эльф лесной</td>\n</tr>\n<tr style=\"height:17px\">\n<td class=\"col-1 text-center no-wrap\" style=\"width:19.5817%;height:17px\" data-roll-min=\"43\" data-roll-max=\"46\">43-46</td>\n<td class=\"col-11\" style=\"width:80.1204%;height:17px\">Гном лесной</td>\n</tr>\n<tr style=\"height:17px\">\n<td class=\"col-1 text-center no-wrap\" style=\"width:19.5817%;height:17px\" data-roll-min=\"47\" data-roll-max=\"52\">47-52</td>\n<td class=\"col-11\" style=\"width:80.1204%;height:17px\">Гном скальный</td>\n</tr>\n<tr style=\"height:17px\">\n<td class=\"col-1 text-center no-wrap\" style=\"width:19.5817%;height:17px\" data-roll-min=\"53\" data-roll-max=\"56\">53-56</td>\n<td class=\"col-11\" style=\"width:80.1204%;height:17px\">Полуэльф</td>\n</tr>\n<tr style=\"height:17px\">\n<td class=\"col-1 text-center no-wrap\" style=\"width:19.5817%;height:17px\" data-roll-min=\"57\" data-roll-max=\"60\">57-60</td>\n<td class=\"col-11\" style=\"width:80.1204%;height:17px\">Полуорк</td>\n</tr>\n<tr style=\"height:17px\">\n<td class=\"col-1 text-center no-wrap\" style=\"width:19.5817%;height:17px\" data-roll-min=\"61\" data-roll-max=\"68\">61-68</td>\n<td class=\"col-11\" style=\"width:80.1204%;height:17px\">Полурослик легконогий</td>\n</tr>\n<tr style=\"height:17px\">\n<td class=\"col-1 text-center no-wrap\" style=\"width:19.5817%;height:17px\" data-roll-min=\"69\" data-roll-max=\"76\">69-76</td>\n<td class=\"col-11\" style=\"width:80.1204%;height:17px\">Полурослик крепкий</td>\n</tr>\n<tr style=\"height:17px\">\n<td class=\"col-1 text-center no-wrap\" style=\"width:19.5817%;height:17px\" data-roll-min=\"77\" data-roll-max=\"96\">77-96</td>\n<td class=\"col-11\" style=\"width:80.1204%;height:17px\">Человек</td>\n</tr>\n<tr style=\"height:17px\">\n<td class=\"col-1 text-center no-wrap\" style=\"width:19.5817%;height:17px\" data-roll-min=\"97\" data-roll-max=\"100\">97-00</td>\n<td class=\"col-11\" style=\"width:80.1204%;height:17px\">Тифлинг</td>\n</tr>\n</tbody>\n</table>\n<p>Реинкарнированное существо помнит о своей прошлой жизни и её событиях. Оно сохраняет прежние способности и особенности, кроме тех, что были связаны с расой. Вместо последних оно получает особенности новой расы.</p>\n\n<div id=\"gtx-trans\" style=\"position:absolute;left:575px;top:132.5px\">\n<div class=\"gtx-trans-icon\"> </div>\n</div>",
+  "duration": {
+    "units": "inst",
+    "value": null
+  },
+  "entry_kind": "spell",
+  "foundry_uuid": "Compendium.dnd5e.spells24.Item.phbsplReincarnat",
+  "level": 5,
+  "materials": {
+    "consumed": true,
+    "cost": 0,
+    "supply": 0,
+    "value": "rare oils worth 1,000+ GP, which the spell consumes"
+  },
+  "name": "Реинкарнация",
+  "passive_effects": [],
+  "preparation": {
+    "mode": "prepared",
+    "prepared": false
+  },
+  "provenance": {
+    "ingest_date": "2026-05-30",
+    "ingest_version": "foundry-translator-v1",
+    "license_tag": "CC-BY-4.0",
+    "source": "foundry",
+    "source_url": "https://github.com/foundryvtt/dnd5e/blob/965ad2d0cf5d063dac675ba078b5bd3c3c0dd449/packs/_source/spells24/5th-level/reincarnate.yml",
+    "srd_version": [
+      "5.2"
+    ]
+  },
+  "range": {
+    "special": null,
+    "units": "touch",
+    "value": null
+  },
+  "review": {
+    "known_divergence": null,
+    "requires_user_decision": false
+  },
+  "ritual": false,
+  "school": "nec",
+  "slug": "reincarnate"
+}

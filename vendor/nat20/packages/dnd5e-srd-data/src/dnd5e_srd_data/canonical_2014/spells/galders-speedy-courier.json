@@ -1,0 +1,139 @@
+{
+  "slug": "galders-speedy-courier",
+  "foundry_uuid": "Compendium.dnd5e.laaru-hw-spells.Item.YmPz9qHzzLuXrEw6",
+  "name": "Быстрый курьер Галдера / Galder's Speedy Courier",
+  "description": "Вы вызываете &amp;reference[size]{небольшого} @Compendium[laaru-dnd5-hw.monsters.Y9UnzitcFp76rhQt]{элементаля воздуха} в точке в пределах дистанции. Элементаль воздуха бесформенен, почти прозрачен, невосприимчив ко всем типам урона и не может взаимодействовать с другими существами или объектами. Он несёт пустой открытый сундук, внутренние размеры которого составляют 3 фута с каждой стороны. Пока действует заклинание, вы можете положить в сундук столько предметов, сколько поместится. После чего вы можете назвать живое существо, которого вы встречали и видели хотя бы один раз раньше, или любое существо, чья часть тела (прядь волос, кусочек ногтя или иная подобная часть) у вас есть.\n\nКак только крышка сундука закрывается, элементаль и сундук исчезают, а затем снова появляются рядом с целевым существом. Если целевое существо находится на другом плане, или если оно защищено от магического обнаружения или определения местоположения, содержимое сундука снова появляется на земле у ваших ног.\n\nЦелевое существо узнает о содержимом сундука до того, как решит, открывать его или нет, и знает, сколько времени осталось до конца заклинания, в течение которого оно может забрать содержимое сундука. Ни одно другое существо не может открыть сундук и забрать его содержимое. Когда заклинание заканчивается или когда всё содержимое сундука изъято, элементаль и сундук исчезают. Элементаль также исчезает, если целевое существо приказывает ему вернуть вам предметы. Когда элементаль исчезает, все предметы, не взятые из сундука, снова появляются на земле у ваших ног.\n\nНа высоких кругах. Если вы сотворяете это заклинание, используя ячейку заклинания 8-го круга, вы можете отправить сундук существу, находящемуся на другом плане существования.",
+  "level": 4,
+  "school": "con",
+  "components": [
+    "M",
+    "S",
+    "V"
+  ],
+  "ritual": false,
+  "concentration": false,
+  "casting_time": {
+    "unit": "action",
+    "value": 1,
+    "condition": ""
+  },
+  "range": {
+    "units": "ft",
+    "value": 10,
+    "special": null
+  },
+  "duration": {
+    "units": "minute",
+    "value": 10
+  },
+  "materials": {
+    "value": "25 зм или минералы равноценной стоимости, расходуемые заклинанием",
+    "consumed": true,
+    "cost": 25,
+    "supply": 0
+  },
+  "preparation": {
+    "mode": "prepared",
+    "prepared": false
+  },
+  "activities": [
+    {
+      "id": "dnd5eactivity000",
+      "name": "",
+      "img": "",
+      "sort": 0,
+      "activation": {
+        "type": "action",
+        "value": null,
+        "condition": "",
+        "override": false,
+        "reaction_conditions": []
+      },
+      "consumption": {
+        "scaling": {
+          "allowed": false,
+          "max": ""
+        },
+        "spell_slot": true,
+        "targets": []
+      },
+      "description": {
+        "chat_flavor": ""
+      },
+      "duration": {
+        "value": null,
+        "units": "inst",
+        "special": "",
+        "concentration": false,
+        "override": false
+      },
+      "flags": {},
+      "range": {
+        "value": null,
+        "units": "self",
+        "special": "",
+        "override": false
+      },
+      "target": {
+        "template": {
+          "count": "",
+          "contiguous": false,
+          "stationary": false,
+          "type": "",
+          "size": "",
+          "width": "",
+          "height": "",
+          "units": ""
+        },
+        "affects": {
+          "count": "",
+          "type": "",
+          "choice": false,
+          "special": ""
+        },
+        "override": false,
+        "prompt": true
+      },
+      "uses": {
+        "spent": 0,
+        "max": "",
+        "recovery": []
+      },
+      "visibility": {
+        "identifier": "",
+        "level": {
+          "min": null,
+          "max": null
+        },
+        "require_attunement": false,
+        "require_identification": false,
+        "require_magic": false
+      },
+      "effects": [],
+      "applied_effects": [],
+      "kind": "utility",
+      "roll": {
+        "formula": "",
+        "name": "",
+        "prompt": false,
+        "visible": false
+      }
+    }
+  ],
+  "passive_effects": [],
+  "provenance": {
+    "source": "foundry",
+    "source_url": "https://github.com/foundryvtt/dnd5e/blob/965ad2d0cf5d063dac675ba078b5bd3c3c0dd449/packs/_source/laaru-hw-spells/Быстрый_курьер_Галдера___Galder_s_Speedy_Courier_YmPz9qHzzLuXrEw6.yml",
+    "ingest_date": "2026-10-26",
+    "ingest_version": "foundry-translator-v1",
+    "srd_version": [
+      "5.1"
+    ],
+    "license_tag": "CC-BY-4.0"
+  },
+  "review": {
+    "known_divergence": null,
+    "requires_user_decision": false
+  },
+  "entry_kind": "spell"
+}

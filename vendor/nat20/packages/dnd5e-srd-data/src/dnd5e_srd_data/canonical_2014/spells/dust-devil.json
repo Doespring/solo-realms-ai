@@ -1,0 +1,165 @@
+{
+  "slug": "dust-devil",
+  "foundry_uuid": "Compendium.dnd5e.laaru-hw-spells.Item.AzZaAft9rozFWZpA",
+  "name": "Пылевой вихрь / Dust Devil",
+  "description": "Выберите свободный 5-футовый куб воздуха, который вы можете видеть в пределах дистанции заклинания. На время действия заклинания в этой области возникает стихийная сила, похожая на пылевой вихрь.\n\nВсе существа, которые заканчивают свой ход в пределах 5 футов от пылевого вихря, должны пройти испытание Силы. При провале существо получает дробящий урон [[/r 1d8]] и отталкивается на 10 футов от пылевого вихря. При успешном испытании существо получает половину урона и не отталкивается.\n\nВы можете бонусным действием переместить пылевой вихрь на расстояние до 30 футов в любом направлении. Если он перемещается по песку, пыли, рыхлой грязи или гравию, то он всасывает часть вещества, создавая вокруг себя облако мусора радиусом 10 футов до начала вашего следующего хода.\n\nОблако является областью &amp;reference[heavilyobscured]{крайне затруднённой видимости}.\n\nНа высоких кругах. Если вы сотворяете это заклинание, используя ячейку 3 круга или выше, то урон увеличивается на [[/r 1d8]] за каждый круг ячейки выше 2.",
+  "level": 2,
+  "school": "con",
+  "components": [
+    "M",
+    "S",
+    "V"
+  ],
+  "ritual": false,
+  "concentration": true,
+  "casting_time": {
+    "unit": "action",
+    "value": 1,
+    "condition": ""
+  },
+  "range": {
+    "units": "ft",
+    "value": 60,
+    "special": null
+  },
+  "duration": {
+    "units": "minute",
+    "value": 1
+  },
+  "materials": {
+    "value": "щепотка пыли",
+    "consumed": false,
+    "cost": 0,
+    "supply": 0
+  },
+  "preparation": {
+    "mode": "prepared",
+    "prepared": false
+  },
+  "activities": [
+    {
+      "id": "dnd5eactivity000",
+      "name": "",
+      "img": "",
+      "sort": 0,
+      "activation": {
+        "type": "action",
+        "value": null,
+        "condition": "",
+        "override": false,
+        "reaction_conditions": []
+      },
+      "consumption": {
+        "scaling": {
+          "allowed": false,
+          "max": ""
+        },
+        "spell_slot": true,
+        "targets": []
+      },
+      "description": {
+        "chat_flavor": ""
+      },
+      "duration": {
+        "value": null,
+        "units": "inst",
+        "special": "",
+        "concentration": false,
+        "override": false
+      },
+      "flags": {},
+      "range": {
+        "value": null,
+        "units": "self",
+        "special": "",
+        "override": false
+      },
+      "target": {
+        "template": {
+          "count": "",
+          "contiguous": false,
+          "stationary": false,
+          "type": "cube",
+          "size": "5",
+          "width": "",
+          "height": "",
+          "units": "ft"
+        },
+        "affects": {
+          "count": "",
+          "type": "",
+          "choice": false,
+          "special": ""
+        },
+        "override": false,
+        "prompt": true
+      },
+      "uses": {
+        "spent": 0,
+        "max": "",
+        "recovery": []
+      },
+      "visibility": {
+        "identifier": "",
+        "level": {
+          "min": null,
+          "max": null
+        },
+        "require_attunement": false,
+        "require_identification": false,
+        "require_magic": false
+      },
+      "effects": [],
+      "applied_effects": [],
+      "kind": "save",
+      "damage": {
+        "on_save": "half",
+        "parts": [
+          {
+            "number": 1,
+            "denomination": 8,
+            "bonus": "",
+            "types": [
+              "bludgeoning"
+            ],
+            "custom": {
+              "enabled": false,
+              "formula": ""
+            },
+            "scaling": {
+              "mode": "whole",
+              "number": 1,
+              "formula": ""
+            }
+          }
+        ]
+      },
+      "save": {
+        "ability": [
+          "str"
+        ],
+        "dc": {
+          "calculation": "spellcasting",
+          "formula": ""
+        },
+        "ignore_cover": false
+      }
+    }
+  ],
+  "passive_effects": [],
+  "provenance": {
+    "source": "foundry",
+    "source_url": "https://github.com/foundryvtt/dnd5e/blob/965ad2d0cf5d063dac675ba078b5bd3c3c0dd449/packs/_source/laaru-hw-spells/Пылевой_вихрь___Dust_Devil_AzZaAft9rozFWZpA.yml",
+    "ingest_date": "2026-10-26",
+    "ingest_version": "foundry-translator-v1",
+    "srd_version": [
+      "5.1"
+    ],
+    "license_tag": "CC-BY-4.0"
+  },
+  "review": {
+    "known_divergence": null,
+    "requires_user_decision": false
+  },
+  "entry_kind": "spell"
+}

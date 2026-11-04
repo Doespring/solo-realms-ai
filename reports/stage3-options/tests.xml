@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="1" skipped="0" tests="3" time="2.570" timestamp="2026-10-18T19:35:49.243209+04:00" hostname="Doespring"><testcase classname="tests.test_creation_options_batch" name="test_exact_prechange_options_and_one_release_one_read_per_selected_file" time="1.014" /><testcase classname="tests.test_creation_options_batch" name="test_public_catalog_pagination_query_and_known_issues_unchanged" time="0.485"><failure message="AssertionError: assert 'native_candidate' == 'narrative_or...ted_in_combat'&#10;  &#10;  - narrative_or_unsupported_in_combat&#10;  + native_candidate">tmp_path = WindowsPath('C:/Users/iwa41/Documents/Codex/2026-10-13/files-pasted-by-the-user-solo/outputs/SoloRealmsAI/reports/stage3-options/tmp-contract/test_public_catalog_pagination0')
+monkeypatch = &lt;_pytest.monkeypatch.MonkeyPatch object at 0x00000252F68E8F50&gt;
+
+    def test_public_catalog_pagination_query_and_known_issues_unchanged(tmp_path,monkeypatch):
+        monkeypatch.setenv('SOLO_DATA_DIR',str(tmp_path))
+        baseline=json.loads((Path(__file__).parent/'fixtures/creation-options-before.json').read_text(encoding='utf-8'))
+        packet=native.catalog('spells',limit=200,offset=200)
+        assert packet['total']==len(baseline['spells'])
+        assert [row['slug'] for row in packet['entries']]==[row['id'] for row in baseline['spells'][200:400]]
+        bless=native.catalog('spells','bless')['entries']
+        assert next(row for row in bless if row['slug']=='bless')['execution_status']=='blocked'
+        unsupported=native.catalog('spells','comprehend-languages')['entries'][0]
+&gt;       assert unsupported['execution_status']=='narrative_or_unsupported_in_combat'
+E       AssertionError: assert 'native_candidate' == 'narrative_or...ted_in_combat'
+E         
+E         - narrative_or_unsupported_in_combat
+E         + native_candidate
+
+tests\test_creation_options_batch.py:39: AssertionError</failure></testcase><testcase classname="tests.test_creation_options_batch" name="test_changed_catalog_is_revalidated_before_options_and_changed_pin_reprojects" time="0.035" /></testsuite></testsuites>

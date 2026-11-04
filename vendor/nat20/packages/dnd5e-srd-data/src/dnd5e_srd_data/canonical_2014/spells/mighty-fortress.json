@@ -1,0 +1,139 @@
+{
+  "slug": "mighty-fortress",
+  "foundry_uuid": "Compendium.dnd5e.laaru-hw-spells.Item.nu8TS6Gudgqn1HGf",
+  "name": "Могучая крепость / Mighty Fortress",
+  "description": "Каменная крепость выростает из квадратного участка земли, который вы можете видеть в пределах дистанции. Сторона этого квадрата составляет 120 футов, и на ней не должно быть никаких зданий или других сооружений.\n\nЛюбые существа в этом участке безвредно поднимаются вместе с крепостью. У крепости есть четыре башни с квадратными основаниями, сторонами 20 футов и высотой 30 футов, по одной на каждом углу. Башни соединены друг с другом каменными стенами, каждая длиной 80 футов, создавая замкнутую область. Каждая стена имеет толщину 1 фут и состоит из блоков шириной 10 футов и высотой 20 футов. Каждый из них соприкасается с двумя другими блоками или одним блоком и башней. Вы можете разместить до 4 каменных дверей на внешней стене крепости.\n\nВнутри закрытой области находится небольшая цитадель. Цитадель имеет квадратное основание со стороной 50 футов и состоит из 3 этажей с высотой потолка 10 футов. Каждый из этажей может быть разделён на любое количество комнат по вашему желанию, при условии, что длина каждой из сторон комнаты будет не менее 5 футов.\n\nЭтажи цитадели соединены каменными лестничными пролётами, толщина её стен составляет 6 дюймов, а внутренние комнаты могут иметь каменные двери или открытые арки по вашему желанию.\n\nЦитадель меблирована и украшена так, как вам нравится, и содержит достаточное количество еды для обслуживания банкета на девять блюд вплоть до 100 человек на каждый день. Мебель, украшения, еда и другие предметы, созданные этим заклинанием, рассыпаются в пыль, если оказываются за пределами крепости. Сто невидимых слуг в крепости подчиняются любой команде, данной им существами, которых вы указываете, когда сотворяете заклинание. Каждый слуга действует так, как будто создаётся заклинанием @Compendium[laaru-dnd5-hw.spells.n13RbmslN3yV6GYO]{Невидимый слуга}.\n\nСтены, башни и цитадель сделаны из камня, который может быть разрушен. Каждая каменная секция размером 10 на 10 футов имеет КБ 15 и 30 ПЗ на каждый дюйм толщины.\n\nСекция невосприимчива к яду и психическому урону. Снижение ПЗ секции до 0 разрушает её и может вызвать разрушение ближайших секций по усмотрению Мастера.\n\nЧерез 7 дней или когда вы сотворяете это заклинание где-то ещё, крепость рушится без вреда для существ, находящихся внутри неё, и опускается обратно под землю, оставляя существ на земле. Применение заклинания на одну и ту же точку каждые семь дней в течение года делает крепость постоянной.",
+  "level": 8,
+  "school": "con",
+  "components": [
+    "M",
+    "S",
+    "V"
+  ],
+  "ritual": false,
+  "concentration": false,
+  "casting_time": {
+    "unit": "minute",
+    "value": 1,
+    "condition": ""
+  },
+  "range": {
+    "units": "mi",
+    "value": 1,
+    "special": null
+  },
+  "duration": {
+    "units": "inst",
+    "value": null
+  },
+  "materials": {
+    "value": "бриллиант стоимостью не менее 500 зм, расходуемый заклинанием",
+    "consumed": true,
+    "cost": 500,
+    "supply": 0
+  },
+  "preparation": {
+    "mode": "prepared",
+    "prepared": false
+  },
+  "activities": [
+    {
+      "id": "dnd5eactivity000",
+      "name": "",
+      "img": "",
+      "sort": 0,
+      "activation": {
+        "type": "action",
+        "value": null,
+        "condition": "",
+        "override": false,
+        "reaction_conditions": []
+      },
+      "consumption": {
+        "scaling": {
+          "allowed": false,
+          "max": ""
+        },
+        "spell_slot": true,
+        "targets": []
+      },
+      "description": {
+        "chat_flavor": ""
+      },
+      "duration": {
+        "value": null,
+        "units": "inst",
+        "special": "",
+        "concentration": false,
+        "override": false
+      },
+      "flags": {},
+      "range": {
+        "value": null,
+        "units": "self",
+        "special": "",
+        "override": false
+      },
+      "target": {
+        "template": {
+          "count": "",
+          "contiguous": false,
+          "stationary": false,
+          "type": "",
+          "size": "",
+          "width": "",
+          "height": "",
+          "units": ""
+        },
+        "affects": {
+          "count": "",
+          "type": "",
+          "choice": false,
+          "special": ""
+        },
+        "override": false,
+        "prompt": true
+      },
+      "uses": {
+        "spent": 0,
+        "max": "",
+        "recovery": []
+      },
+      "visibility": {
+        "identifier": "",
+        "level": {
+          "min": null,
+          "max": null
+        },
+        "require_attunement": false,
+        "require_identification": false,
+        "require_magic": false
+      },
+      "effects": [],
+      "applied_effects": [],
+      "kind": "utility",
+      "roll": {
+        "formula": "",
+        "name": "",
+        "prompt": false,
+        "visible": false
+      }
+    }
+  ],
+  "passive_effects": [],
+  "provenance": {
+    "source": "foundry",
+    "source_url": "https://github.com/foundryvtt/dnd5e/blob/965ad2d0cf5d063dac675ba078b5bd3c3c0dd449/packs/_source/laaru-hw-spells/Могучая_крепость___Mighty_Fortress_nu8TS6Gudgqn1HGf.yml",
+    "ingest_date": "2026-10-26",
+    "ingest_version": "foundry-translator-v1",
+    "srd_version": [
+      "5.1"
+    ],
+    "license_tag": "CC-BY-4.0"
+  },
+  "review": {
+    "known_divergence": null,
+    "requires_user_decision": false
+  },
+  "entry_kind": "spell"
+}

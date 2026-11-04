@@ -1,0 +1,390 @@
+{
+  "slug": "summon-greater-demon",
+  "foundry_uuid": "Compendium.dnd5e.laaru-hw-spells.Item.KEFZr6RMcHirfgv5",
+  "name": "Призыв высшего демона / Summon Greater Demon",
+  "description": "Вы произносите инфернальные слова, призывая одного демона из хаоса Бездны. Вы выбираете тип демона, класс опасности которого равен 5 или ниже, например, @Compendium[laaru-dnd5-hw.monsters.iTwBrYjJ9GDxmiR3]{Теневой демон} или @Compendium[laaru-dnd5-hw.monsters.q8RlqwGdJcZAmXXX]{Барлгура}. Демон появляется в незанятом пространстве, которое вы можете видеть в пределах дистанции. Демон исчезает, когда его ПЗ опускаются до 0 или когда заклинание заканчивается.\n\nСовершите проверку инициативы за демона, который будет совершать свои собственные ходы. Когда вы призываете его и в каждый свой ход после этого, вы можете дать словесную команду (действий не требуется), сообщая ему, что он должен делать в свой следующий ход. Если вы не даёте никаких команд, демон тратит свой ход, атакуя любое существо в пределах досягаемости, которое атаковало его. В конце каждого своего хода демон проходит испытание Харизмы. Он получает помеху в этом испытании, если вы назовёте его истинное имя. В случае провала демон продолжает подчиняться вам. При успехе, демон освобождается из-под вашего контроля на всё оставшееся время и тратит свои последующие ходы, преследуя и атакуя ближайших не-демонов в меру своих способностей. Если вы перестанете держать концентрацию на заклинании до того, как оно достигнет своей полной продолжительности, неконтролируемый демон не исчезнет в течение [[/r 1d6]] раундов, если его ПЗ ещё не равны 0.\n\nЧастью сотворения заклинания вы можете начертить на земле круг кровью, используемой в качестве реагента. Круг должен быть достаточного размера, чтобы вместить вас. Пока заклинание длится, призванный демон не может пересечь круг или разрушить его, и он не может атаковать никого в нём. Если реагент использован подобным образом, он расходуется при окончании заклинания.\n\nНа высоких кругах. Если вы сотворяете это заклинание, используя ячейку заклинания 5 круга или выше, класс опасности увеличивается на 1 за каждый круг ячейки выше 4.\n\nПримечание. Для работоспособности Призыва, мастеру нужно в настройках прав игроков разрешить создавать Токены и Актёров.",
+  "level": 4,
+  "school": "con",
+  "components": [
+    "M",
+    "S",
+    "V"
+  ],
+  "ritual": false,
+  "concentration": true,
+  "casting_time": {
+    "unit": "action",
+    "value": 1,
+    "condition": ""
+  },
+  "range": {
+    "units": "ft",
+    "value": 60,
+    "special": null
+  },
+  "duration": {
+    "units": "hour",
+    "value": 1
+  },
+  "materials": {
+    "value": "сосуд с кровью гуманоида, убитого за последние 24 часа",
+    "consumed": true,
+    "cost": 0,
+    "supply": 0
+  },
+  "preparation": {
+    "mode": "prepared",
+    "prepared": false
+  },
+  "activities": [
+    {
+      "id": "dnd5eactivity000",
+      "name": "",
+      "img": "",
+      "sort": 0,
+      "activation": {
+        "type": "action",
+        "value": null,
+        "condition": "",
+        "override": false,
+        "reaction_conditions": []
+      },
+      "consumption": {
+        "scaling": {
+          "allowed": false,
+          "max": ""
+        },
+        "spell_slot": true,
+        "targets": []
+      },
+      "description": {
+        "chat_flavor": ""
+      },
+      "duration": {
+        "value": null,
+        "units": "inst",
+        "special": "",
+        "concentration": false,
+        "override": false
+      },
+      "flags": {},
+      "range": {
+        "value": null,
+        "units": "self",
+        "special": "",
+        "override": false
+      },
+      "target": {
+        "template": {
+          "count": "",
+          "contiguous": false,
+          "stationary": false,
+          "type": "",
+          "size": "",
+          "width": "",
+          "height": "",
+          "units": ""
+        },
+        "affects": {
+          "count": "",
+          "type": "",
+          "choice": false,
+          "special": ""
+        },
+        "override": false,
+        "prompt": true
+      },
+      "uses": {
+        "spent": 0,
+        "max": "",
+        "recovery": []
+      },
+      "visibility": {
+        "identifier": "",
+        "level": {
+          "min": null,
+          "max": null
+        },
+        "require_attunement": false,
+        "require_identification": false,
+        "require_magic": false
+      },
+      "effects": [],
+      "applied_effects": [],
+      "kind": "summon",
+      "bonuses": {
+        "ac": "",
+        "hd": "",
+        "hp": "",
+        "attack_damage": "",
+        "save_damage": "",
+        "healing": ""
+      },
+      "creature_sizes": [],
+      "creature_types": [],
+      "match": {
+        "ability": "",
+        "attacks": false,
+        "disposition": false,
+        "proficiency": false,
+        "saves": false
+      },
+      "profiles": [
+        {
+          "id": "JeKrLBHofqPxqDO7",
+          "count": "",
+          "cr": "",
+          "level": {
+            "min": null,
+            "max": null
+          },
+          "name": "",
+          "types": [],
+          "uuid": "Compendium.laaru-dnd5-hw.monsters.Actor.G3C0XRMxlwBRXcHb"
+        },
+        {
+          "id": "m22jNQUX6fgsEmT8",
+          "count": "",
+          "cr": "",
+          "level": {
+            "min": null,
+            "max": null
+          },
+          "name": "",
+          "types": [],
+          "uuid": "Compendium.laaru-dnd5-hw.monsters.Actor.q8RlqwGdJcZAmXXX"
+        },
+        {
+          "id": "XelzSJu5R3Pesxtk",
+          "count": "",
+          "cr": "",
+          "level": {
+            "min": null,
+            "max": null
+          },
+          "name": "",
+          "types": [],
+          "uuid": "Compendium.laaru-dnd5-hw.monsters.Actor.ecqJTLbPBAad0WID"
+        },
+        {
+          "id": "2oTfZ1FeoHdBS0Aa",
+          "count": "",
+          "cr": "",
+          "level": {
+            "min": null,
+            "max": null
+          },
+          "name": "",
+          "types": [],
+          "uuid": "Compendium.laaru-dnd5-hw.monsters.Actor.iTwBrYjJ9GDxmiR3"
+        },
+        {
+          "id": "3H3DCXuuWufwDySh",
+          "count": "",
+          "cr": "",
+          "level": {
+            "min": null,
+            "max": null
+          },
+          "name": "",
+          "types": [],
+          "uuid": "Compendium.laaru-dnd5-hw.monsters2.Actor.lcQpvtdKSlr43Smq"
+        }
+      ],
+      "summon": {
+        "mode": "",
+        "prompt": true,
+        "identifier": ""
+      },
+      "temp_hp": ""
+    },
+    {
+      "id": "dnd5eactivity100",
+      "name": "",
+      "img": "",
+      "sort": 0,
+      "activation": {
+        "type": "action",
+        "value": null,
+        "condition": "",
+        "override": false,
+        "reaction_conditions": []
+      },
+      "consumption": {
+        "scaling": {
+          "allowed": false,
+          "max": ""
+        },
+        "spell_slot": true,
+        "targets": []
+      },
+      "description": {
+        "chat_flavor": ""
+      },
+      "duration": {
+        "value": null,
+        "units": "inst",
+        "special": "",
+        "concentration": false,
+        "override": false
+      },
+      "flags": {},
+      "range": {
+        "value": null,
+        "units": "self",
+        "special": "",
+        "override": false
+      },
+      "target": {
+        "template": {
+          "count": "",
+          "contiguous": false,
+          "stationary": false,
+          "type": "",
+          "size": "",
+          "width": "",
+          "height": "",
+          "units": ""
+        },
+        "affects": {
+          "count": "",
+          "type": "",
+          "choice": false,
+          "special": ""
+        },
+        "override": false,
+        "prompt": true
+      },
+      "uses": {
+        "spent": 0,
+        "max": "",
+        "recovery": []
+      },
+      "visibility": {
+        "identifier": "",
+        "level": {
+          "min": null,
+          "max": null
+        },
+        "require_attunement": false,
+        "require_identification": false,
+        "require_magic": false
+      },
+      "effects": [],
+      "applied_effects": [],
+      "kind": "save",
+      "damage": {
+        "on_save": "half",
+        "parts": []
+      },
+      "save": {
+        "ability": [
+          "cha"
+        ],
+        "dc": {
+          "calculation": "spellcasting",
+          "formula": ""
+        },
+        "ignore_cover": false
+      }
+    },
+    {
+      "id": "dnd5eactivity300",
+      "name": "",
+      "img": "",
+      "sort": 0,
+      "activation": {
+        "type": "action",
+        "value": null,
+        "condition": "",
+        "override": false,
+        "reaction_conditions": []
+      },
+      "consumption": {
+        "scaling": {
+          "allowed": false,
+          "max": ""
+        },
+        "spell_slot": true,
+        "targets": []
+      },
+      "description": {
+        "chat_flavor": ""
+      },
+      "duration": {
+        "value": null,
+        "units": "inst",
+        "special": "",
+        "concentration": false,
+        "override": false
+      },
+      "flags": {},
+      "range": {
+        "value": null,
+        "units": "self",
+        "special": "",
+        "override": false
+      },
+      "target": {
+        "template": {
+          "count": "",
+          "contiguous": false,
+          "stationary": false,
+          "type": "",
+          "size": "",
+          "width": "",
+          "height": "",
+          "units": ""
+        },
+        "affects": {
+          "count": "",
+          "type": "",
+          "choice": false,
+          "special": ""
+        },
+        "override": false,
+        "prompt": true
+      },
+      "uses": {
+        "spent": 0,
+        "max": "",
+        "recovery": []
+      },
+      "visibility": {
+        "identifier": "",
+        "level": {
+          "min": null,
+          "max": null
+        },
+        "require_attunement": false,
+        "require_identification": false,
+        "require_magic": false
+      },
+      "effects": [],
+      "applied_effects": [],
+      "kind": "utility",
+      "roll": {
+        "formula": "1d6",
+        "name": "",
+        "prompt": false,
+        "visible": false
+      }
+    }
+  ],
+  "passive_effects": [],
+  "provenance": {
+    "source": "foundry",
+    "source_url": "https://github.com/foundryvtt/dnd5e/blob/965ad2d0cf5d063dac675ba078b5bd3c3c0dd449/packs/_source/laaru-hw-spells/Призыв_высшего_демона___Summon_Greater_Demon_KEFZr6RMcHirfgv5.yml",
+    "ingest_date": "2026-10-26",
+    "ingest_version": "foundry-translator-v1",
+    "srd_version": [
+      "5.1"
+    ],
+    "license_tag": "CC-BY-4.0"
+  },
+  "review": {
+    "known_divergence": null,
+    "requires_user_decision": false
+  },
+  "entry_kind": "spell"
+}

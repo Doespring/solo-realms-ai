@@ -1,0 +1,23 @@
+{
+  "schema_version": "nat20-campaign-registry-v1",
+  "rules_version": "dnd2024",
+  "definitions": {
+    "cleric-bless-2024-v1": {
+      "file": "cleric-bless-2024-v1.json",
+      "sha256": "3e03ba993397c1b9ab133123a0225cedf7c10e9d0fd5dd29b5b8a41e2b436ef5",
+      "verification": "pending",
+      "blockers": [
+        "post-combat concentration elapsed-time API not bound",
+        "upstream concentration save does not fold Bless saving-throw bonus",
+        "upstream same-identity recast duplicates effects and drop leaves a copy",
+        "upstream standalone saving throw does not alias Foundry Bless save keys",
+        "complete Cleric preparation/cantrip and origin choices not certified"
+      ],
+      "evidence": [
+        "../../reports/bless-regression.xml",
+        "../../reports/bless-targeted.xml",
+        "../../reports/bless-components.xml"
+      ]
+    }
+  }
+}

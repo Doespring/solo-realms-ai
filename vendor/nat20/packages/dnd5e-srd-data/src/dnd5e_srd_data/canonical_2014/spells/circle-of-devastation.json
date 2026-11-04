@@ -1,0 +1,169 @@
+{
+  "slug": "circle-of-devastation",
+  "foundry_uuid": "Compendium.dnd5e.laaru-hw-spells.Item.mzf5bczK5OeV6Q9q",
+  "name": "Кольцо разрушения / Circle Of Devastation",
+  "description": "(Магия колец)\n\nВы создаёте кольцо разрушительной энергии радиусом в 20 футов и высотой в 10 футов вокруг точки, которую вы можете видеть в пределах досягаемости. Область внутри кольца становится пересечённой местностью.\n\nПри сотворении заклинания и в качестве бонусного действия в последующие ходы, вы можете выбрать один из следующих типов урона: холод, огонь, молния, некротический или лучистый урон. Существа и объекты, касающиеся кольца, находящиеся внутри во время его сотворения или завершающие свой ход внутри него, должны пройти испытание Выносливости. При провале получая [[/r 6d6]] выбранного типа урона или половину урона при успехе. Если этот урона снизил ПЗ существа или объекта до 0, то оно превращается в пепел.\n\nВ начале каждого своего следующего хода радиус кольца увеличивается на 20 футов. Любые существа или объекты, затронутые расширяющимся кольцом, немедленно подвергаются его эффектам.",
+  "level": 9,
+  "school": "evo",
+  "components": [
+    "M",
+    "S",
+    "V"
+  ],
+  "ritual": false,
+  "concentration": true,
+  "casting_time": {
+    "unit": "action",
+    "value": 1,
+    "condition": ""
+  },
+  "range": {
+    "units": "mi",
+    "value": 1,
+    "special": null
+  },
+  "duration": {
+    "units": "minute",
+    "value": 1
+  },
+  "materials": {
+    "value": "металлическое кольцо",
+    "consumed": false,
+    "cost": 0,
+    "supply": 0
+  },
+  "preparation": {
+    "mode": "prepared",
+    "prepared": false
+  },
+  "activities": [
+    {
+      "id": "dx5R9qw0eeKtXFJ0",
+      "name": "",
+      "img": "",
+      "sort": 0,
+      "activation": {
+        "type": "action",
+        "value": null,
+        "condition": "",
+        "override": false,
+        "reaction_conditions": []
+      },
+      "consumption": {
+        "scaling": {
+          "allowed": false,
+          "max": ""
+        },
+        "spell_slot": true,
+        "targets": []
+      },
+      "description": {
+        "chat_flavor": ""
+      },
+      "duration": {
+        "value": null,
+        "units": "inst",
+        "special": "",
+        "concentration": false,
+        "override": false
+      },
+      "flags": {},
+      "range": {
+        "value": null,
+        "units": "self",
+        "special": "",
+        "override": false
+      },
+      "target": {
+        "template": {
+          "count": "",
+          "contiguous": false,
+          "stationary": false,
+          "type": "cylinder",
+          "size": "20",
+          "width": "",
+          "height": "10",
+          "units": "ft"
+        },
+        "affects": {
+          "count": "",
+          "type": "",
+          "choice": false,
+          "special": ""
+        },
+        "override": false,
+        "prompt": true
+      },
+      "uses": {
+        "spent": 0,
+        "max": "",
+        "recovery": []
+      },
+      "visibility": {
+        "identifier": "",
+        "level": {
+          "min": null,
+          "max": null
+        },
+        "require_attunement": false,
+        "require_identification": false,
+        "require_magic": false
+      },
+      "effects": [],
+      "applied_effects": [],
+      "kind": "save",
+      "damage": {
+        "on_save": "half",
+        "parts": [
+          {
+            "number": 6,
+            "denomination": 6,
+            "bonus": "",
+            "types": [
+              "lightning",
+              "necrotic",
+              "fire",
+              "cold",
+              "radiant"
+            ],
+            "custom": {
+              "enabled": false,
+              "formula": ""
+            },
+            "scaling": {
+              "mode": "",
+              "number": 1,
+              "formula": ""
+            }
+          }
+        ]
+      },
+      "save": {
+        "ability": [
+          "con"
+        ],
+        "dc": {
+          "calculation": "spellcasting",
+          "formula": ""
+        },
+        "ignore_cover": false
+      }
+    }
+  ],
+  "passive_effects": [],
+  "provenance": {
+    "source": "foundry",
+    "source_url": "https://github.com/foundryvtt/dnd5e/blob/965ad2d0cf5d063dac675ba078b5bd3c3c0dd449/packs/_source/laaru-hw-spells/Кольцо_разрушения___Circle_Of_Devastation_mzf5bczK5OeV6Q9q.yml",
+    "ingest_date": "2026-10-26",
+    "ingest_version": "foundry-translator-v1",
+    "srd_version": [
+      "5.1"
+    ],
+    "license_tag": "CC-BY-4.0"
+  },
+  "review": {
+    "known_divergence": null,
+    "requires_user_decision": false
+  },
+  "entry_kind": "spell"
+}

@@ -1,0 +1,139 @@
+{
+  "slug": "song-of-the-forest",
+  "foundry_uuid": "Compendium.dnd5e.laaru-hw-spells.Item.Zk8wM0n08r6MOW64",
+  "name": "Песня леса / Song Of The Forest",
+  "description": "(Высшая эльфийская магия)\n\nВы настраиваете свои чувства на мир природы, чтобы слышать каждый звук в пределах 60 футов: ветер в ветвях, падающие листья, оленей, пасущихся на поляне, журчание ручья и т.п. Вы отчётливо представляет источник каждого звука. Это даёт вам чувство вибрации в диапазоне 10 футов.\n\nКроме того, у вас есть преимущество на проверки Мудрости (Внимание), которые полагаются на слух. Существ, которые не шумят, в том числе из­-за магии, не обнаружить с помощью этого заклинания.\n\nПесня леса действует только на природе. Его нельзя сотворить под землёй, в городе или в здании, которое изолирует заклинателя от природы (на усмотрение Мастера).\n\nРитуальная фокусировка. Использование ритуальной фокусировки приводит к тому, что эффект заклинания заменяется слепозрением радиусом в 30 футов.",
+  "level": 3,
+  "school": "trs",
+  "components": [
+    "M",
+    "S",
+    "V"
+  ],
+  "ritual": true,
+  "concentration": true,
+  "casting_time": {
+    "unit": "minute",
+    "value": 1,
+    "condition": ""
+  },
+  "range": {
+    "units": "self",
+    "value": null,
+    "special": null
+  },
+  "duration": {
+    "units": "minute",
+    "value": 10
+  },
+  "materials": {
+    "value": "высушенный и смятый лист дерева",
+    "consumed": false,
+    "cost": 0,
+    "supply": 0
+  },
+  "preparation": {
+    "mode": "prepared",
+    "prepared": false
+  },
+  "activities": [
+    {
+      "id": "Grwp0d0euWLHC2T6",
+      "name": "",
+      "img": "",
+      "sort": 0,
+      "activation": {
+        "type": "action",
+        "value": null,
+        "condition": "",
+        "override": false,
+        "reaction_conditions": []
+      },
+      "consumption": {
+        "scaling": {
+          "allowed": false,
+          "max": ""
+        },
+        "spell_slot": true,
+        "targets": []
+      },
+      "description": {
+        "chat_flavor": ""
+      },
+      "duration": {
+        "value": null,
+        "units": "inst",
+        "special": "",
+        "concentration": false,
+        "override": false
+      },
+      "flags": {},
+      "range": {
+        "value": null,
+        "units": "self",
+        "special": "",
+        "override": false
+      },
+      "target": {
+        "template": {
+          "count": "",
+          "contiguous": false,
+          "stationary": false,
+          "type": "",
+          "size": "",
+          "width": "",
+          "height": "",
+          "units": "ft"
+        },
+        "affects": {
+          "count": "",
+          "type": "",
+          "choice": false,
+          "special": ""
+        },
+        "override": false,
+        "prompt": true
+      },
+      "uses": {
+        "spent": 0,
+        "max": "",
+        "recovery": []
+      },
+      "visibility": {
+        "identifier": "",
+        "level": {
+          "min": null,
+          "max": null
+        },
+        "require_attunement": false,
+        "require_identification": false,
+        "require_magic": false
+      },
+      "effects": [],
+      "applied_effects": [],
+      "kind": "utility",
+      "roll": {
+        "formula": "",
+        "name": "",
+        "prompt": false,
+        "visible": false
+      }
+    }
+  ],
+  "passive_effects": [],
+  "provenance": {
+    "source": "foundry",
+    "source_url": "https://github.com/foundryvtt/dnd5e/blob/965ad2d0cf5d063dac675ba078b5bd3c3c0dd449/packs/_source/laaru-hw-spells/Песня_леса___Song_Of_The_Forest_Zk8wM0n08r6MOW64.yml",
+    "ingest_date": "2026-10-26",
+    "ingest_version": "foundry-translator-v1",
+    "srd_version": [
+      "5.1"
+    ],
+    "license_tag": "CC-BY-4.0"
+  },
+  "review": {
+    "known_divergence": null,
+    "requires_user_decision": false
+  },
+  "entry_kind": "spell"
+}

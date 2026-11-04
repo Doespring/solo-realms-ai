@@ -1,0 +1,194 @@
+{
+  "slug": "summon-undead",
+  "foundry_uuid": "Compendium.dnd5e.laaru-hw-spells.Item.X3ifsK036Yudhc3e",
+  "name": "Призыв духа нежити / Summon Undead",
+  "description": "Вы призываете дух нежити. Существо появляется в незанятом пространстве, которое вы можете видеть в пределах досягаемости. Эта телесная форма использует блок параметров @Compendium[laaru-dnd5-hw.monsters.vzY1pLCfWFyclwTg]{Духа нежити}\n\nКогда вы сотворяете заклинание, выберите форму существа: Призрачное, Гнилостное или Скелетное.\n\nДух напоминает нежить с выбранной формой, которая определяет определенные черты в его блоке параметров. Существо исчезает, когда его ПЗ опускаются до 0 или когда заклинание заканчивается.\n\nЭто существо дружественно вам и вашим спутникам. В бою оно получает вашу инициативу и ходит сразу же после вас. Оно подчиняется вашим словесным командам (никаких действий от вас не требуется). Если вы ничего не приказываете, то оно совершает действие @Compendium[laaru-dnd5-hw.actions.UMuz44p8fXeLCZn7]{Уклонение} и перемещается, избегая опасностей.\n\nНа высоких кругах. Когда вы сотворяете это заклинание, используя ячейку заклинания 4-го круга или выше, используйте более высокий круг везде, где круг заклинания появляется в блоке параметров.",
+  "level": 3,
+  "school": "nec",
+  "components": [
+    "M",
+    "S",
+    "V"
+  ],
+  "ritual": false,
+  "concentration": false,
+  "casting_time": {
+    "unit": "action",
+    "value": 1,
+    "condition": ""
+  },
+  "range": {
+    "units": "ft",
+    "value": 90,
+    "special": null
+  },
+  "duration": {
+    "units": "hour",
+    "value": 1
+  },
+  "materials": {
+    "value": "позолоченный череп стоимостью не менее 300 зм",
+    "consumed": false,
+    "cost": 300,
+    "supply": 0
+  },
+  "preparation": {
+    "mode": "prepared",
+    "prepared": false
+  },
+  "activities": [
+    {
+      "id": "dnd5eactivity000",
+      "name": "",
+      "img": "",
+      "sort": 0,
+      "activation": {
+        "type": "action",
+        "value": null,
+        "condition": "",
+        "override": false,
+        "reaction_conditions": []
+      },
+      "consumption": {
+        "scaling": {
+          "allowed": false,
+          "max": ""
+        },
+        "spell_slot": true,
+        "targets": []
+      },
+      "description": {
+        "chat_flavor": ""
+      },
+      "duration": {
+        "value": null,
+        "units": "inst",
+        "special": "",
+        "concentration": false,
+        "override": false
+      },
+      "flags": {},
+      "range": {
+        "value": null,
+        "units": "self",
+        "special": "",
+        "override": false
+      },
+      "target": {
+        "template": {
+          "count": "",
+          "contiguous": false,
+          "stationary": false,
+          "type": "",
+          "size": "",
+          "width": "",
+          "height": "",
+          "units": ""
+        },
+        "affects": {
+          "count": "",
+          "type": "",
+          "choice": false,
+          "special": ""
+        },
+        "override": false,
+        "prompt": true
+      },
+      "uses": {
+        "spent": 0,
+        "max": "",
+        "recovery": []
+      },
+      "visibility": {
+        "identifier": "",
+        "level": {
+          "min": null,
+          "max": null
+        },
+        "require_attunement": false,
+        "require_identification": false,
+        "require_magic": false
+      },
+      "effects": [],
+      "applied_effects": [],
+      "kind": "summon",
+      "bonuses": {
+        "ac": "@item.level",
+        "hd": "",
+        "hp": "(@item.level - 3) * 10",
+        "attack_damage": "@item.level",
+        "save_damage": "",
+        "healing": ""
+      },
+      "creature_sizes": [],
+      "creature_types": [],
+      "match": {
+        "ability": "",
+        "attacks": true,
+        "disposition": false,
+        "proficiency": true,
+        "saves": true
+      },
+      "profiles": [
+        {
+          "id": "dYA5uD0Rz3Wi33BA",
+          "count": "1",
+          "cr": "",
+          "level": {
+            "min": null,
+            "max": null
+          },
+          "name": "Гнилостный",
+          "types": [],
+          "uuid": "Compendium.laaru-dnd5-hw.monsters.Actor.nkkD4psh2qK5LrG5"
+        },
+        {
+          "id": "8ASeVmyScc7hwjCF",
+          "count": "1",
+          "cr": "",
+          "level": {
+            "min": null,
+            "max": null
+          },
+          "name": "Призрачный",
+          "types": [],
+          "uuid": "Compendium.laaru-dnd5-hw.monsters.Actor.sXb2lbpM7dckZBRe"
+        },
+        {
+          "id": "AAGlQ59dT48kZDWr",
+          "count": "1",
+          "cr": "",
+          "level": {
+            "min": null,
+            "max": null
+          },
+          "name": "Скелетный",
+          "types": [],
+          "uuid": "Compendium.laaru-dnd5-hw.monsters.Actor.qimE9frgwI5RXMKg"
+        }
+      ],
+      "summon": {
+        "mode": "",
+        "prompt": false,
+        "identifier": ""
+      },
+      "temp_hp": ""
+    }
+  ],
+  "passive_effects": [],
+  "provenance": {
+    "source": "foundry",
+    "source_url": "https://github.com/foundryvtt/dnd5e/blob/965ad2d0cf5d063dac675ba078b5bd3c3c0dd449/packs/_source/laaru-hw-spells/Призыв_духа_нежити___Summon_Undead_X3ifsK036Yudhc3e.yml",
+    "ingest_date": "2026-10-26",
+    "ingest_version": "foundry-translator-v1",
+    "srd_version": [
+      "5.1"
+    ],
+    "license_tag": "CC-BY-4.0"
+  },
+  "review": {
+    "known_divergence": null,
+    "requires_user_decision": false
+  },
+  "entry_kind": "spell"
+}

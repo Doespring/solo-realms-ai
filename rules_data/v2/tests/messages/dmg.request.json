@@ -1,0 +1,9 @@
+{
+  "allowed_entities": ["actor"], "allowed_predicates": [],
+  "choices": [{"id": "easy", "meaning": "Easy task"}, {"id": "moderate", "meaning": "Moderate task"}, {"id": "hard", "meaning": "Hard task"}],
+  "contract_version": "2.0.0", "context_hash": "3fe98ac8e8516f8682d802ad68976559e3ad28fb61874920e2e8b53534b2611b",
+  "facts": [{"id": "task", "value": "Force a firmly stuck ordinary door"}, {"id": "test_required", "value": true}],
+  "message_type": "adjudication_request", "question": "Choose difficulty from the supplied options; do not roll or assign a numeric DC.", "request_id": "demo.dmg.001",
+  "rules": [{"excerpt": "Choose difficulty from circumstances. This section gives DC 10 for easy, 15 for moderate, and 20 for hard tasks.", "id": "dnd2024.dmg.choose_and_resolve_check", "pdf_page": 24, "source_sha256": "2fdee6ad8dd6931eaf41b19cdf498d6d86ddca6e54ad9b9c8a5417585c1c526d"}],
+  "rules_family": "dnd2024", "ruleset_digest": "44bd6584c9777d693ccf233771a5310d316a3773ce31e675f7081db310dc536b", "state_version": 1
+}

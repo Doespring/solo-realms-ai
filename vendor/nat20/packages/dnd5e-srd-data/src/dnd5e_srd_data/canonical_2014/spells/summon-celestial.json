@@ -1,0 +1,182 @@
+{
+  "slug": "summon-celestial",
+  "foundry_uuid": "Compendium.dnd5e.laaru-hw-spells.Item.v6oWiq8Fu1EM8fDi",
+  "name": "Призыв духа небожителя / Summon Celestial",
+  "description": "Вы призываете дух небожителя. Существо появляется в ангельской форме в незанятом пространстве, которое вы можете видеть в пределах досягаемости. Эта телесная форма использует блок параметров @Compendium[laaru-dnd5-hw.monsters.sTuoJrENRTWlGxyu]{Духа Небожителя}\n\nКогда вы творите заклинание, выберите Мстителя или Защитника.\n\nВаш выбор определяет атаку существа в его блоке параметров. Существо исчезает, когда его ПЗ опускаются до 0 или когда заклинание заканчивается.\n\nСущество дружественно вам и вашим спутникам. В бою оно получает вашу инициативу и ходит сразу же после вас. Оно подчиняется вашим словесным командам (никаких действий от вас не требуется). Если вы ничего не приказываете, то оно совершает действие @Compendium[laaru-dnd5-hw.actions.UMuz44p8fXeLCZn7]{Уклонение} и перемещается, избегая опасностей.\n\nНа высоких кругах. Если вы сотворяете это заклинание, используя ячейку заклинания 6-го круга или выше, используйте более высокий круг всякий раз, когда круг заклинания появляется в блоке параметров.",
+  "level": 5,
+  "school": "con",
+  "components": [
+    "M",
+    "S",
+    "V"
+  ],
+  "ritual": false,
+  "concentration": true,
+  "casting_time": {
+    "unit": "action",
+    "value": 1,
+    "condition": ""
+  },
+  "range": {
+    "units": "ft",
+    "value": 90,
+    "special": null
+  },
+  "duration": {
+    "units": "hour",
+    "value": 1
+  },
+  "materials": {
+    "value": "золотой реликварий стоимостью не менее 500 зм",
+    "consumed": false,
+    "cost": 500,
+    "supply": 0
+  },
+  "preparation": {
+    "mode": "prepared",
+    "prepared": false
+  },
+  "activities": [
+    {
+      "id": "dnd5eactivity000",
+      "name": "",
+      "img": "",
+      "sort": 0,
+      "activation": {
+        "type": "action",
+        "value": null,
+        "condition": "",
+        "override": false,
+        "reaction_conditions": []
+      },
+      "consumption": {
+        "scaling": {
+          "allowed": false,
+          "max": ""
+        },
+        "spell_slot": true,
+        "targets": []
+      },
+      "description": {
+        "chat_flavor": ""
+      },
+      "duration": {
+        "value": null,
+        "units": "inst",
+        "special": "",
+        "concentration": false,
+        "override": false
+      },
+      "flags": {},
+      "range": {
+        "value": null,
+        "units": "self",
+        "special": "",
+        "override": false
+      },
+      "target": {
+        "template": {
+          "count": "",
+          "contiguous": false,
+          "stationary": false,
+          "type": "",
+          "size": "",
+          "width": "",
+          "height": "",
+          "units": ""
+        },
+        "affects": {
+          "count": "1",
+          "type": "space",
+          "choice": false,
+          "special": ""
+        },
+        "override": false,
+        "prompt": true
+      },
+      "uses": {
+        "spent": 0,
+        "max": "",
+        "recovery": []
+      },
+      "visibility": {
+        "identifier": "",
+        "level": {
+          "min": null,
+          "max": null
+        },
+        "require_attunement": false,
+        "require_identification": false,
+        "require_magic": false
+      },
+      "effects": [],
+      "applied_effects": [],
+      "kind": "summon",
+      "bonuses": {
+        "ac": "@item.level",
+        "hd": "",
+        "hp": "(@item.level - 5) * 10",
+        "attack_damage": "@item.level",
+        "save_damage": "",
+        "healing": "@item.level"
+      },
+      "creature_sizes": [],
+      "creature_types": [],
+      "match": {
+        "ability": "",
+        "attacks": true,
+        "disposition": false,
+        "proficiency": true,
+        "saves": false
+      },
+      "profiles": [
+        {
+          "id": "VF3ZvnNE3FgY5PHj",
+          "count": "",
+          "cr": "",
+          "level": {
+            "min": null,
+            "max": null
+          },
+          "name": "Защитник",
+          "types": [],
+          "uuid": "Compendium.laaru-dnd5-hw.monsters.Actor.zAke3Y4nvqcfbdjn"
+        },
+        {
+          "id": "Z3bXIHFgJhhbr8g6",
+          "count": "",
+          "cr": "",
+          "level": {
+            "min": null,
+            "max": null
+          },
+          "name": "Мститель",
+          "types": [],
+          "uuid": "Compendium.laaru-dnd5-hw.monsters.Actor.6GnHpmm0u3hcSo9h"
+        }
+      ],
+      "summon": {
+        "mode": "",
+        "prompt": true,
+        "identifier": ""
+      },
+      "temp_hp": ""
+    }
+  ],
+  "passive_effects": [],
+  "provenance": {
+    "source": "foundry",
+    "source_url": "https://github.com/foundryvtt/dnd5e/blob/965ad2d0cf5d063dac675ba078b5bd3c3c0dd449/packs/_source/laaru-hw-spells/Призыв_духа_небожителя___Summon_Celestial_v6oWiq8Fu1EM8fDi.yml",
+    "ingest_date": "2026-10-26",
+    "ingest_version": "foundry-translator-v1",
+    "srd_version": [
+      "5.1"
+    ],
+    "license_tag": "CC-BY-4.0"
+  },
+  "review": {
+    "known_divergence": null,
+    "requires_user_decision": false
+  },
+  "entry_kind": "spell"
+}

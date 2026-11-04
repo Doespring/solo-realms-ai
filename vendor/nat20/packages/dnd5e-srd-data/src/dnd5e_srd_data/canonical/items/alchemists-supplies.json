@@ -1,0 +1,114 @@
+{
+  "activities": [
+    {
+      "activation": {
+        "condition": "",
+        "override": false,
+        "reaction_conditions": [],
+        "type": "action",
+        "value": null
+      },
+      "applied_effects": [],
+      "check": {
+        "ability": "int",
+        "associated": [],
+        "dc": {
+          "calculation": "",
+          "formula": "15"
+        }
+      },
+      "consumption": {
+        "scaling": {
+          "allowed": false,
+          "max": ""
+        },
+        "spell_slot": true,
+        "targets": []
+      },
+      "description": {
+        "chat_flavor": ""
+      },
+      "duration": {
+        "concentration": false,
+        "override": false,
+        "special": "",
+        "units": "inst",
+        "value": ""
+      },
+      "effects": [],
+      "flags": {},
+      "id": "3tr6iV1buoI6GB27",
+      "img": "",
+      "kind": "check",
+      "name": "",
+      "range": {
+        "override": false,
+        "special": "",
+        "units": "self",
+        "value": null
+      },
+      "sort": 0,
+      "target": {
+        "affects": {
+          "choice": false,
+          "count": "",
+          "special": "",
+          "type": ""
+        },
+        "override": false,
+        "prompt": true,
+        "template": {
+          "contiguous": false,
+          "count": "",
+          "height": "",
+          "size": "",
+          "stationary": false,
+          "type": "",
+          "units": "",
+          "width": ""
+        }
+      },
+      "uses": {
+        "max": "",
+        "recovery": [],
+        "spent": 0
+      },
+      "visibility": {
+        "identifier": "",
+        "level": {
+          "max": null,
+          "min": null
+        },
+        "require_attunement": false,
+        "require_identification": false,
+        "require_magic": false
+      }
+    }
+  ],
+  "attunement_constraint": null,
+  "cost_gp": 50.0,
+  "description": "Ability: Intelligence\n\nUtilize: Identify a substance (DC 15), or start a fire (DC 15)\n\nCraft: Acid, Alchemist's Fire, Component Pouch, Oil, Paper, Perfume",
+  "description_localized": "<p>Эти специальные инструменты включают предметы, необходимые для занятия алхимией и позволяют персонажу создавать полезные варева, такие как кислота или алхимический огонь. Умение в обращении с этими инструментами позволяет вам добавить ваш бонус умения к любой проверке характеристики, связанной с их использованием.</p><p><em><strong>Компоненты.</strong></em> Инструменты алхимика включают в себя две стеклянные мензурки, металлический каркас, удерживающий мензурку над открытым пламенем, стеклянную палочку для размешивания, небольшие ступку и пестик, мешочек обычных алхимических ингредиентов, включающих в себя соль, измельчённое железо и дистиллированную воду.</p><p><em><strong>Магия.</strong></em> Умение в обращении с инструментами алхимика позволяет вам раскрыть больше информации при проверках Магии, связанных с зельями и подобными веществами.</p><p><em><strong>Расследование.</strong></em> Когда вы осматриваете область в поиске улик, умение в обращении с инструментами алхимика даёт дополнительные знания о том, какие химикаты и прочие вещества использовались в области.</p><p><em><strong>Алхимическое ремесло.</strong></em><strong> </strong>Вы можете использовать умением в обращении с инструментами для создания алхимических предметов. Персонаж может потратить деньги, чтобы собрать сырьё, которое весит 500 грамм за каждые использованные 50 зм. Мастер может позволить персонажу пройти проверку на опознание с преимуществом. Частью долгого отдыха вы можете использовать инструменты алхимика, чтобы сделать одну порцию @UUID[Compendium.dnd5e.items.Sx5E6utixHdAbGNb]{кислоты}, @UUID[Compendium.dnd5e.items.FvNOwWbh5FXyX4xe]{алхимического огня}, @UUID[Compendium.dnd5e.items.Fc6UfFNOnW80XMzi]{противоядия}, @UUID[Compendium.dnd5e.items.psoZaItkOScMVaHL]{масла}, @UUID[Compendium.dnd5e.items.uuh4UH3Jx5CsFjdA]{духов} или @UUID[Compendium.dnd5e.items.REBWkTKe6lJaIkpn]{мыла}. Вычтите половину стоимости созданного предмета из суммарной стоимости собранного вами сырья.</p><table class=\"rd__table  stripe-odd-table\"><thead><tr><th class=\"col-10\" data-rd-isroller=\"false\">Возможное действие</th><th class=\"col-2 text-center\" data-rd-isroller=\"false\">СЛ</th></tr></thead><tbody><tr><td class=\"col-10\">Создать клубы густого дыма</td><td class=\"col-2 text-center\">10</td></tr><tr><td class=\"col-10\">Опознать яд</td><td class=\"col-2 text-center\">10</td></tr><tr><td class=\"col-10\">Опознать вещество</td><td class=\"col-2 text-center\">15</td></tr><tr><td class=\"col-10\">Получить огонь</td><td class=\"col-2 text-center\">15</td></tr><tr><td class=\"col-10\">Нейтрализовать кислоту</td><td class=\"col-2 text-center\">20</td></tr></tbody></table>",
+  "item_kind": "item",
+  "name": "Инструменты алхимика",
+  "passive_effects": [],
+  "provenance": {
+    "ingest_date": "2026-05-30",
+    "ingest_version": "foundry-translator-v1",
+    "license_tag": "CC-BY-4.0",
+    "source": "foundry",
+    "source_url": "https://github.com/foundryvtt/dnd5e/blob/965ad2d0cf5d063dac675ba078b5bd3c3c0dd449/packs/_source/equipment24/tools/artisan/alchemists-supplies.yml",
+    "srd_version": [
+      "5.2"
+    ]
+  },
+  "rarity": "common",
+  "requires_attunement": false,
+  "review": {
+    "known_divergence": null,
+    "requires_user_decision": false
+  },
+  "slug": "alchemists-supplies",
+  "uses": null,
+  "weight": 8.0
+}

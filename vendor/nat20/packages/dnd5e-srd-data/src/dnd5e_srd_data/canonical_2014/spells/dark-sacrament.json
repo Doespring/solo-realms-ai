@@ -1,0 +1,234 @@
+{
+  "slug": "dark-sacrament",
+  "foundry_uuid": "Compendium.dnd5e.laaru-hw-spells.Item.1kMF7AtMHATpnmiX",
+  "name": "Тёмное таинство / Dark Sacrament",
+  "description": "Частью сотворения заклинания, вы должны потратить четыре кости здоровья или заклинание автоматически проваливается. Если вы это делаете, то совершите атаку заклинанием в ближнем бою по существу в 5 футах от вас, используя в качестве оружия реагент заклинания. При попадании, бросьте потраченные кости здоровья, плюс ещё [[/r 4d8]] и нанесите существу некротический урон равный результату броска. Если из-за получения урона от этого заклинания ПЗ существа опускаются до 0 оно моментально умирает и вы получаете одно из следующих тёмных благословений:\n\nНеприступность. Вы проходите все испытания с преимуществом.\n\nНесокрушимость. Ваш размер увеличивается на одну категорию — от Среднего до Крупного, например. Также, вы получаете временные ПЗ в количестве равном вашему модификатору Выносливости (минимум 1) в начале каждого вашего следующего хода, также ваши атаки оружием наносят дополнительно [[/r 1d4]] урона того же типа, что и урон оружия.\n\nБезупречность. Ваш бонус умения увеличен на 2.\n\nТёмное благословение заканчивается через 10 минут или когда ваши ПЗ опускаются до 0. Получив лучистый урон, пока на вас действует тёмное благословение, вы получаете дополнительно [[/r 1d4]] лучистого урона.\n\nНа высоких кругах. Если вы творите это заклинание, используя ячейку 5 круга или выше, урон от атаки заклинанием в ближнем бою увеличивается на [[/r 1d8]] за каждый круг ячейки выше четвертого.",
+  "level": 4,
+  "school": "evo",
+  "components": [
+    "M",
+    "S",
+    "V"
+  ],
+  "ritual": false,
+  "concentration": false,
+  "casting_time": {
+    "unit": "action",
+    "value": 1,
+    "condition": ""
+  },
+  "range": {
+    "units": "self",
+    "value": null,
+    "special": null
+  },
+  "duration": {
+    "units": "inst",
+    "value": null
+  },
+  "materials": {
+    "value": "кинжал украшенный самоцветами, стоимостью не менее 100 зм",
+    "consumed": false,
+    "cost": 100,
+    "supply": 0
+  },
+  "preparation": {
+    "mode": "prepared",
+    "prepared": false
+  },
+  "activities": [
+    {
+      "id": "dnd5eactivity000",
+      "name": "",
+      "img": "",
+      "sort": 0,
+      "activation": {
+        "type": "action",
+        "value": null,
+        "condition": "",
+        "override": false,
+        "reaction_conditions": []
+      },
+      "consumption": {
+        "scaling": {
+          "allowed": false,
+          "max": ""
+        },
+        "spell_slot": true,
+        "targets": []
+      },
+      "description": {
+        "chat_flavor": ""
+      },
+      "duration": {
+        "value": null,
+        "units": "inst",
+        "special": "",
+        "concentration": false,
+        "override": false
+      },
+      "flags": {},
+      "range": {
+        "value": null,
+        "units": "self",
+        "special": "",
+        "override": false
+      },
+      "target": {
+        "template": {
+          "count": "",
+          "contiguous": false,
+          "stationary": false,
+          "type": "",
+          "size": "",
+          "width": "",
+          "height": "",
+          "units": ""
+        },
+        "affects": {
+          "count": "",
+          "type": "self",
+          "choice": false,
+          "special": ""
+        },
+        "override": false,
+        "prompt": true
+      },
+      "uses": {
+        "spent": 0,
+        "max": "",
+        "recovery": []
+      },
+      "visibility": {
+        "identifier": "",
+        "level": {
+          "min": null,
+          "max": null
+        },
+        "require_attunement": false,
+        "require_identification": false,
+        "require_magic": false
+      },
+      "effects": [],
+      "applied_effects": [],
+      "kind": "attack",
+      "attack": {
+        "ability": "",
+        "bonus": "",
+        "critical": {
+          "threshold": null
+        },
+        "flat": false,
+        "type": {
+          "value": "melee",
+          "classification": "spell"
+        }
+      },
+      "damage": {
+        "critical": {
+          "bonus": ""
+        },
+        "include_base": true,
+        "parts": []
+      }
+    },
+    {
+      "id": "dnd5eactivity300",
+      "name": "",
+      "img": "",
+      "sort": 0,
+      "activation": {
+        "type": "action",
+        "value": null,
+        "condition": "",
+        "override": false,
+        "reaction_conditions": []
+      },
+      "consumption": {
+        "scaling": {
+          "allowed": false,
+          "max": ""
+        },
+        "spell_slot": true,
+        "targets": []
+      },
+      "description": {
+        "chat_flavor": ""
+      },
+      "duration": {
+        "value": null,
+        "units": "inst",
+        "special": "",
+        "concentration": false,
+        "override": false
+      },
+      "flags": {},
+      "range": {
+        "value": null,
+        "units": "self",
+        "special": "",
+        "override": false
+      },
+      "target": {
+        "template": {
+          "count": "",
+          "contiguous": false,
+          "stationary": false,
+          "type": "",
+          "size": "",
+          "width": "",
+          "height": "",
+          "units": ""
+        },
+        "affects": {
+          "count": "",
+          "type": "self",
+          "choice": false,
+          "special": ""
+        },
+        "override": false,
+        "prompt": true
+      },
+      "uses": {
+        "spent": 0,
+        "max": "",
+        "recovery": []
+      },
+      "visibility": {
+        "identifier": "",
+        "level": {
+          "min": null,
+          "max": null
+        },
+        "require_attunement": false,
+        "require_identification": false,
+        "require_magic": false
+      },
+      "effects": [],
+      "applied_effects": [],
+      "kind": "utility",
+      "roll": {
+        "formula": "4d8",
+        "name": "",
+        "prompt": false,
+        "visible": false
+      }
+    }
+  ],
+  "passive_effects": [],
+  "provenance": {
+    "source": "foundry",
+    "source_url": "https://github.com/foundryvtt/dnd5e/blob/965ad2d0cf5d063dac675ba078b5bd3c3c0dd449/packs/_source/laaru-hw-spells/Т_мное_таинство___Dark_Sacrament_1kMF7AtMHATpnmiX.yml",
+    "ingest_date": "2026-10-26",
+    "ingest_version": "foundry-translator-v1",
+    "srd_version": [
+      "5.1"
+    ],
+    "license_tag": "CC-BY-4.0"
+  },
+  "review": {
+    "known_divergence": null,
+    "requires_user_decision": false
+  },
+  "entry_kind": "spell"
+}

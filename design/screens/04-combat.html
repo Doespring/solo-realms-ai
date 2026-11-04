@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Solo Realms AI — бой</title>
+<link rel="stylesheet" href="../assets/icons.css">
+<link rel="stylesheet" href="core.css">
+<link rel="stylesheet" href="04-combat.css">
+</head>
+<body class="app">
+
+<header class="topbar">
+  <a class="iconbtn" href="03-play.html" title="Выйти из боя">
+    <span class="icon ic-exit"></span>
+  </a>
+  <div class="topbar__grow topbar__cramped">
+    <span class="topbar__title">Тайна трёх сосен</span>
+    <span class="topbar__sep"></span>
+    <span class="topbar__sub">бой · раунд 2 · ход Мирона</span>
+  </div>
+  <div class="vitals" aria-label="Состояние героя">
+    <span><span class="icon ic-heart"></span><span class="label">Хиты</span> <b>11</b>/11</span>
+    <span><span class="icon ic-shield"></span><span class="label">Защита</span> <b>15</b></span>
+  </div>
+  <nav class="topbar__nav" aria-label="Справочные экраны">
+    <button class="iconbtn" title="Лист героя"><span class="icon ic-person"></span><span>Лист</span></button>
+    <button class="iconbtn" title="Журнал"><span class="icon ic-journal"></span><span>Журнал</span></button>
+  </nav>
+</header>
+
+<main class="combat">
+
+  <section class="combat__feed" aria-label="Лента боя">
+    <div class="combat__scroll">
+      <div class="feed">
+
+        <div class="round" aria-hidden="true">
+          <span class="rule"></span><span class="round__label">раунд 2</span><span class="rule"></span>
+        </div>
+
+        <article class="message message--master">
+          <div class="speaker"><span class="icon ic-feather"></span>Мастер</div>
+          <div class="prose">
+            <p>Стол перевёрнут, и между тобой и разбойником — только ножка стола и дым.
+              Он замахивается первым, коротко и без замаха, как бьют люди, которым нечего терять.</p>
+          </div>
+        </article>
+
+        <article class="message message--you">
+          <div class="speaker"><span class="icon ic-person"></span>Ты</div>
+          <div class="prose">
+            <p>Отвожу удар в сторону ножкой стола и бью коротким мечом в ответ.</p>
+          </div>
+          <aside class="roll" aria-label="Атака коротким мечом: нужно 13, выпало 12, итого 17">
+            <div class="roll__kicker">Атака коротким мечом</div>
+            <div class="roll__math">нужно <b>13</b> на d20 · у тебя <b>+5</b></div>
+            <div class="roll__out" data-out="hit">Выпало <b>12</b>, итого <b>17</b> — попадание, урон <b>5</b></div>
+          </aside>
+        </article>
+
+        <article class="message message--master">
+          <div class="speaker"><span class="icon ic-feather"></span>Мастер</div>
+          <div class="prose">
+            <p>Клинок входит под ключицу. Разбойник оседает на колено, но кинжал не выпускает —
+              и смотрит не на тебя, а на дверь за твоей спиной.</p>
+          </div>
+        </article>
+
+        <div class="thinking" role="status" aria-live="polite">
+          <span class="dots" aria-hidden="true"><i></i><i></i><i></i></span>
+          Мастер собирает ответ
+        </div>
+      </div>
+    </div>
+
+    <div class="combat__bottom">
+      <div class="quick" aria-label="Быстрые действия">
+        <button type="button">Ударить ещё раз</button>
+        <button type="button">Отступить к двери</button>
+        <button type="button">Швырнуть кружку в лицо</button>
+      </div>
+      <form class="composer" onsubmit="return false">
+        <div class="composer__frame">
+          <label class="sr-only" for="say">Что ты делаешь</label>
+          <textarea id="say" rows="1" placeholder="Что делаешь? Можно словами, можно «отступаю за стойку и жду»."></textarea>
+          <button class="btn btn--primary" type="submit"><span class="icon ic-feather icon--sm"></span>Сказать</button>
+        </div>
+        <div class="composer__hint">
+          <span class="kbd-hint"><kbd>Ctrl</kbd> + <kbd>Enter</kbd> — отправить · ход не заканчивается, пока не скажешь</span>
+          <span>Раунд 2 из боя</span>
+        </div>
+      </form>
+      <p class="attrib__mini">
+        Иконки: Lorc, Delapouite — game-icons.net, CC BY 3.0.
+        Правила основаны на System Reference Document 5.2 · CC BY 4.0 · Wizards of the Coast LLC.
+      </p>
+    </div>
+  </section>
+
+  <aside class="board" aria-label="Карта боя">
+    <div class="board__head">
+      <div>
+        <p class="eyebrow">поле боя</p>
+        <h2 class="board__title">Трактирный зал</h2>
+      </div>
+      <span class="board__meta">9 × 7 · клетка 1,5 м</span>
+    </div>
+
+    <ol class="turns" aria-label="Очередь ходов">
+      <li class="turn is-active"><span class="turn__n">1</span><span class="turn__name">Мирон</span><span class="turn__hp">11/11</span></li>
+      <li class="turn"><span class="turn__n">2</span><span class="turn__name">Разбойник</span><span class="turn__hp is-hurt">4/9</span></li>
+      <li class="turn"><span class="turn__n">3</span><span class="turn__name">Разбойник</span><span class="turn__hp">9/9</span></li>
+      <li class="turn"><span class="turn__n">4</span><span class="turn__name">Стрелок</span><span class="turn__hp">7/7</span></li>
+    </ol>
+
+    <div class="map" id="map" role="img"
+         aria-label="Сетка 9 на 7. Мирон в центре зала, двое разбойников у стола, стрелок на балконе. Укрытия: бочки, стол, колонна.">
+    </div>
+
+    <div class="legend">
+      <span class="legend__item"><i class="legend__token legend__token--hero"></i>ты</span>
+      <span class="legend__item"><i class="legend__token legend__token--foe"></i>противник</span>
+      <span class="legend__item"><i class="legend__cover"></i>укрытие: −2 к попаданию</span>
+      <span class="legend__item"><i class="legend__move"></i>можно дойти</span>
+    </div>
+
+    <p class="board__note">Клетка — 1,5 метра. Дойти и ударить за ход можно, если путь не длиннее шести клеток.
+      Мастер считает расстояние сам — тебе достаточно сказать, куда идёшь.</p>
+  </aside>
+
+</main>
+
+<script>
+(function(){
+  'use strict';
+  var W = 9, H = 7;
+  var floor = [
+    '.........',
+    '..B...X..',
+    '.........',
+    '....TT...',
+    '...M..f..',
+    '..f.....S',
+    '.........'
+  ];
+  var cover = { B: 'Бочки', T: 'Стол', X: 'Колонна' };
+  var move = [[4,4],[3,3],[5,3],[4,2]];
+  var map = document.getElementById('map');
+
+  function isMove(r,c){
+    return move.some(function(p){ return p[0] === r && p[1] === c; });
+  }
+
+  for (var r = 0; r < H; r++){
+    for (var c = 0; c < W; c++){
+      var ch = floor[r][c];
+      var cell = document.createElement('div');
+      cell.className = 'cell';
+      cell.dataset.r = r; cell.dataset.c = c;
+
+      if (cover[ch]){
+        cell.classList.add('cell--cover');
+        cell.setAttribute('aria-label', cover[ch] + ' — укрытие');
+        var mark = document.createElement('span');
+        mark.className = 'cell__mark';
+        cell.appendChild(mark);
+      }
+      if (ch === 'M'){
+        cell.classList.add('cell--hero');
+        cell.innerHTML = '<span class="token token--hero" title="Мирон">М</span>';
+      }
+      if (ch === 'F'){
+        cell.classList.add('cell--foe');
+        cell.innerHTML = '<span class="token token--foe" title="Разбойник">Р</span>';
+      }
+      if (ch === 'S'){
+        cell.classList.add('cell--foe', 'cell--far');
+        cell.innerHTML = '<span class="token token--foe" title="Стрелок на балконе">С</span>';
+      }
+      if (isMove(r,c) && ch === '.'){
+        cell.classList.add('cell--move');
+      }
+      map.appendChild(cell);
+    }
+  }
+
+  /* Клик по подсвеченной клетке — «иду сюда»: работает как демонстрация. */
+  map.addEventListener('click', function(e){
+    var cell = e.target.closest('.cell--move');
+    if (!cell) return;
+    document.querySelectorAll('.cell--move').forEach(function(c){ c.classList.remove('is-chosen'); });
+    cell.classList.add('is-chosen');
+    var ta = document.getElementById('say');
+    ta.value = 'Перехожу на ' + (parseInt(cell.dataset.c,10) + 1) + '-ю клетку и жду, что будет.';
+    ta.focus();
+  });
+})();
+</script>
+</body>
+</html>

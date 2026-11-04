@@ -1,0 +1,144 @@
+{
+  "checked_on": "2026-10-17",
+  "scope": "PHB chapter 1 extraction and closed local check release on temporary campaigns",
+  "tests": {
+    "total": 377,
+    "passed": 377,
+    "failed": [],
+    "skipped": [],
+    "runtime_vectors": 48,
+    "schema_vectors": 13,
+    "integration_checks": 24,
+    "existing_targeted_regressions": 3,
+    "production_checks": 48,
+    "chapter_checks": 231,
+    "combat_regressions": 10
+  },
+  "duration_seconds": 42.997,
+  "pytest_exit_code": 0,
+  "catalog_unchanged": true,
+  "user_data_unchanged": true,
+  "catalog_sha256": {
+    "rules_data\\v1\\chapters\\phb-01\\advantage.json": "13c0d2ac568357c5715f882fcd6a9dce96a1219b213cf3f4cd65ac35c0da0b59",
+    "rules_data\\v1\\chapters\\phb-01\\cancellation.json": "7fc3cabb68fc6f34dcc3bfb55e615ceae693c8896bd619e37aa98759ca616a83",
+    "rules_data\\v1\\chapters\\phb-01\\disadvantage.json": "8a9b89df3adb1efbf9898ec3a01947bd3fdf3b9af9fa12a506670a48e1685924",
+    "rules_data\\v1\\chapters\\phb-01\\single-die-change.json": "9168c5d96d996479a5ce88da3379f97ae6cf8742067b7259b08360ee018321f2",
+    "rules_data\\v1\\engine-contract.json": "4504d62ec00f068776080505bb0c084b0fdd1d9383bd512cd5d27ae8de8cff73",
+    "rules_data\\v1\\progress.json": "d0b800d0199e83ba925f0a96cc1e8f3ba36b45e078ddd38f3c08f51eb26b0fae",
+    "rules_data\\v1\\rule.schema.json": "51113eb34fc790126d31d667391782ab56f15b572103c846e6c26e25030a206f",
+    "rules_data\\v1\\sources.json": "dd99fa39630cb2eebdc24079e6a0c2a331a8b8cb1b3de0e58cd4b5bb82df894f",
+    "rules_data\\v1\\tests\\behavior.cases.json": "f98f1b1a1c17e5090490848fc825228f415bb98bcbbf1812c7a7319d69a628e6",
+    "rules_data\\v1\\tests\\invalid\\auto-activation.json": "2b86850a978e3c6c9352fc1f4e69d103b4f86efd87731771298d0ad8e0e47743",
+    "rules_data\\v1\\tests\\invalid\\missing-fields.json": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356",
+    "rules_data\\v1\\tests\\invalid\\unknown-effect.json": "38c2615feaa3792ad29de191a92f771df04950786e4244aea5bbaf7206a99a13",
+    "rules_data\\v1\\tests\\manifest.json": "734e0a335c77f497917b729613572862e02c572537e58edbf7689f2c0c3ed3ba",
+    "rules_data\\v1\\validation.json": "11adecc59bd98c4f957826145f0e686e3816efb3d1b03d1e4d61a5e60bf6d049",
+    "rules_data\\v2\\ai-engine.schema.json": "5f1dc413c3ef79702cc0f22ba05be3c94f31f0ee8ade6607634b6905dc6088b9",
+    "rules_data\\v2\\chapters\\phb-01\\01-core.rules.json": "1c656711d63cad3eea0fd1f7c800d1fdee2b19a3f27b6443fb669c8bac071396",
+    "rules_data\\v2\\chapters\\phb-01\\02-actions-social.rules.json": "04e3bcdcea6f714533185934a7ded110d97fa8a0f154ad3d3a9743138ae9d217",
+    "rules_data\\v2\\chapters\\phb-01\\03-exploration.rules.json": "d2befcf880e11aad316629d3dfce704167731da2bf64d0d4423c8e195818fe09",
+    "rules_data\\v2\\chapters\\phb-01\\04-combat.rules.json": "71cd75d4ba0af4a7eccf582fd9ba28da43a0feac0b9925a33abdf4494b4d18b7",
+    "rules_data\\v2\\chapters\\phb-01\\05-damage-conditions.rules.json": "c8115dfc284530ada4f1fac090afe78a2b161bf711e90fbadf23a21cd35ce69f",
+    "rules_data\\v2\\coverage\\phb-01.json": "bb94f14c56440ddd055c6676a91ba2366a41e6056e709ef5602a34be8f245748",
+    "rules_data\\v2\\coverage.schema.json": "01d78c719a51de3432835ab3b6288bf082f33d92c053829cd328143598a5db21",
+    "rules_data\\v2\\routing.schema.json": "2f7b219fb0049da888c6b360545edaacca8bfae8db294eb63880461357edc4b8",
+    "rules_data\\v2\\sections\\dmg.rules.json": "fb1bb0f3537166badaa60317bad3d685135f56d60a2392c22d43aecb882a20be",
+    "rules_data\\v2\\sections\\mm.rules.json": "1abe522565ffd43a821f78bbb7c3ee4c403307084c366447ab6c09ee0edd884f",
+    "rules_data\\v2\\sections\\phb.rules.json": "fbc704023cddba127129155a2567a68d5c95aa7793cc5cc356437c60c93c72a7",
+    "rules_data\\v2\\sources.json": "593c80464276fda4cc3da0459d0406031d811ced04cf5be17ac6cea6a7ce0d26",
+    "rules_data\\v2\\tests\\phb-01.math.cases.json": "68414f221636e5945673f7e201b877317e4ad0c9bb6c188afe4b384c76b572e2",
+    "rules_data\\v2\\tests\\runtime.cases.json": "cd3551fb4412d7a6d43c0126dad6a6787c6e56104c6e42d11487d70f58c3c7de"
+  },
+  "user_data_sha256": {
+    "data\\adventure.sqlite3": "79c584209f55e03363b8cd67caa45f9d4576e0590e6fc60b0b218353c24d3a8b",
+    "data\\cloud-profiles.json": "9950c6d7d99d35020994868dd04be56ccc02035f2edb71c13b703e2e22e19e68",
+    "data\\cloud-usage.sqlite3": "0687dda84a5c91df379f07d6b936ede6bd99ebdb60e9efb581a72f3e78f065a9",
+    "data\\cloud-usage.sqlite3-shm": "fd4c9fda9cd3f9ae7c962b0ddf37232294d55580e1aa165aa06129b8549389eb",
+    "data\\cloud-usage.sqlite3-wal": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "data\\preparation.sqlite3": "030ccc13002b956976f7cc14b21455e2feac7af9e20321ea5b01e16c21243a26",
+    "data\\rules-knowledge.sqlite3": "e1db922584bb3a53640de4e114582644586c1bef6b01a803c8d97c5d7b518a33",
+    "data\\solo.sqlite3": "5cabcf993a68af2182de72935d28977824072f5e01ea4981bf8aea0a8f875c8a",
+    "data\\solo.sqlite3-shm": "fd4c9fda9cd3f9ae7c962b0ddf37232294d55580e1aa165aa06129b8549389eb",
+    "data\\solo.sqlite3-wal": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "temporary_test_root_removed": true,
+  "integration_path": "RulesetEngine.check/skill/saving_throw -> Store.engine_event -> SQLite event/state -> Store.save -> reopen",
+  "fixed_issue": "CombatEngine.search treated zero darkvision range as an active sense in the actor cell; require a positive range. Unsupported condition-dependent tests fail before RNG",
+  "checks": [
+    "unequal cause cancellation",
+    "internal poisoned source",
+    "edition mismatch",
+    "stale state",
+    "ruleset fingerprint",
+    "idempotent replay",
+    "changed command replay",
+    "replay after undo",
+    "forbidden operations",
+    "AI proposal without write capability",
+    "AI text never executed",
+    "database outside owned sandbox refused",
+    "transaction failure rollback",
+    "backup handle closure"
+  ],
+  "app_adapter_registered": true,
+  "user_campaign_rules_activated": false,
+  "ai_or_pdf_code_executed": false,
+  "paid_api_calls": 0,
+  "exe_builds": 0,
+  "remaining_blockers": [
+    "Explicit glossary/item/class/spell dependencies remain unextracted",
+    "Knockout, ranged-close visibility, multi-source conditions and other listed Engine differences are unbound",
+    "Narrative/adjudicated decisions require GM proposals and separately validated consequences",
+    "Existing local single-user Advanced ACL only; human source review pending"
+  ],
+  "binding": {
+    "operations": [
+      "ability_check",
+      "skill_check",
+      "saving_throw"
+    ],
+    "new_definitions": [
+      "dnd2024.phb01.ability_modifier",
+      "dnd2024.phb01.ability_check",
+      "dnd2024.phb01.saving_throw",
+      "dnd2024.phb01.proficiency",
+      "dnd2024.phb01.skill_check",
+      "dnd2024.phb01.save_proficiency"
+    ],
+    "legacy_d20_definitions": 3,
+    "default_active": false,
+    "session_campaign_opt_in_required": true,
+    "engine_mechanics_duplicated": false
+  },
+  "production_code_sha256": {
+    "solo\\app.py": "ff80514d2e0b49efa19197c588c8e3e59540f5c5e5c7f2722719cb7bc69f6f9d",
+    "solo\\hybrid_rules.py": "c5c7d509749369f52ab6a84f62ae44979b99d14c7070eef5eb5da8fef5d0efad",
+    "solo\\hybrid_rules_api.py": "ae32299beea2da8a5ec28a1e3aeaf49f519dbe11ce77d359dfab00b4fc015048",
+    "solo\\tabletop_api.py": "96f6e0d85fd6b7a62a5279dc5c3fe484322d3bdd3be0a11d4c67740f9c525286"
+  },
+  "coverage": {
+    "rule_count": 131,
+    "extraction_complete": true,
+    "execution_complete": false,
+    "classification_counts": {
+      "deterministic": 70,
+      "adjudicated": 20,
+      "hybrid": 41
+    },
+    "readiness_counts": {
+      "kernel_verified": 7,
+      "adjudication_required": 23,
+      "blocked": 56,
+      "engine_subset_verified": 39,
+      "adapter_verified": 6
+    }
+  },
+  "catalog_expanded": true,
+  "chapter_artifacts_sha256": {
+    "rules_data\\runtime\\math_handlers.py": "ea072c903eea6221a783ced70a2961817ebee4800ef089ca265e4481493f6c11",
+    "solo\\combat.py": "4be970ef0033464a51cdf880e5011c5aa7d9d33a03da15fe2e65ab751fec9b05",
+    "solo\\rulesets.py": "a91628e7fd3ca0acd3729a5f2260de1bab5457c21827f3a9d046ff3a1eaa0f64",
+    "tests\\test_phb_chapter_one.py": "2ae88437ae9d8c573175116134a444ff54e63e4ad462020a651b1629af184458",
+    "tests\\test_phb_chapter_one_production.py": "8cb5a57fa25ade53389f235557888d094c2888781b17a21983e86644969f6cd9"
+  }
+}

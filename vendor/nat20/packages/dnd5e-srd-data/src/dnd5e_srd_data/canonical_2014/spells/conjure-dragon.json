@@ -1,0 +1,254 @@
+{
+  "slug": "conjure-dragon",
+  "foundry_uuid": "Compendium.dnd5e.laaru-hw-spells.Item.dFrtQlB7eT1JxjKg",
+  "name": "Призыв дракона / Conjure Dragon",
+  "description": "Сжимая реагент этого заклинания, вы вызываете часть сущности того Древнего Дракона к своей помощи. Пока длится ваша концентрация, эта драконья сущность дружелюбна к вам и вашим союзникам и повинуется вашим приказам. На протяжении длительности эта драконья сущность использует правила ниже:\n\nПараметры. Драконья сущность проявляется в форме Дракона на ваш выбор с КО 5 или ниже; однако цвет её чешуи, её устойчивость к урону и урон от дыхательного оружия изменяются, чтобы соответствовать дракону, чья чешуйка послужила реагентом этого заклинания. Она появляется в свободной клетке на ваш выбор в пределах дистанции.\n\nБой. В бою этот Дракон делит с вами инициативу и действует на вашем ходу. Вы можете отдавать ему словесные приказы (действие не требуется). Если Дракон не получает приказов или его приказы выполнены, будет защищаться без пощады.\n\nСотворение заклинаний. Если он может сотворять заклинания, вы можете приказать ему это сделать, но он использует ваши ячейки заклинаний для своих заклинаний, даже если обычно мог бы сотворять их без ячеек.\n\nКонтроль. Если ваша концентрация прерывается, Дракон мгновенно исчезает, и сущность возвращается к Древнему Дракону.\n\nНа высоких кругах. Когда вы сотворяете это заклинание, используя ячейку заклинания 6-го круга или выше, КО Дракона, в форму которого может проявиться эта сущность, увеличивается на 1 за каждый круг ячейки выше 5-го.",
+  "level": 5,
+  "school": "con",
+  "components": [
+    "M",
+    "S",
+    "V"
+  ],
+  "ritual": false,
+  "concentration": true,
+  "casting_time": {
+    "unit": "action",
+    "value": 1,
+    "condition": ""
+  },
+  "range": {
+    "units": "ft",
+    "value": 30,
+    "special": null
+  },
+  "duration": {
+    "units": "hour",
+    "value": 1
+  },
+  "materials": {
+    "value": "чешуйка Древнего Дракона, инкрустированная драгоценными камнями стоимостью не менее 500 золотых, подаренная вам добровольно",
+    "consumed": false,
+    "cost": 0,
+    "supply": 0
+  },
+  "preparation": {
+    "mode": "prepared",
+    "prepared": false
+  },
+  "activities": [
+    {
+      "id": "dnd5eactivity000",
+      "name": "",
+      "img": "",
+      "sort": 0,
+      "activation": {
+        "type": "action",
+        "value": null,
+        "condition": "",
+        "override": false,
+        "reaction_conditions": []
+      },
+      "consumption": {
+        "scaling": {
+          "allowed": false,
+          "max": ""
+        },
+        "spell_slot": true,
+        "targets": []
+      },
+      "description": {
+        "chat_flavor": ""
+      },
+      "duration": {
+        "value": null,
+        "units": "inst",
+        "special": "",
+        "concentration": false,
+        "override": false
+      },
+      "flags": {},
+      "range": {
+        "value": null,
+        "units": "self",
+        "special": "",
+        "override": false
+      },
+      "target": {
+        "template": {
+          "count": "",
+          "contiguous": false,
+          "stationary": false,
+          "type": "",
+          "size": "",
+          "width": "",
+          "height": "",
+          "units": ""
+        },
+        "affects": {
+          "count": "",
+          "type": "",
+          "choice": false,
+          "special": ""
+        },
+        "override": false,
+        "prompt": true
+      },
+      "uses": {
+        "spent": 0,
+        "max": "",
+        "recovery": []
+      },
+      "visibility": {
+        "identifier": "",
+        "level": {
+          "min": null,
+          "max": null
+        },
+        "require_attunement": false,
+        "require_identification": false,
+        "require_magic": false
+      },
+      "effects": [],
+      "applied_effects": [],
+      "kind": "utility",
+      "roll": {
+        "formula": "",
+        "name": "",
+        "prompt": false,
+        "visible": false
+      }
+    },
+    {
+      "id": "pFGFZ53BR9qPtjPB",
+      "name": "",
+      "img": "",
+      "sort": 0,
+      "activation": {
+        "type": "action",
+        "value": null,
+        "condition": "",
+        "override": false,
+        "reaction_conditions": []
+      },
+      "consumption": {
+        "scaling": {
+          "allowed": false,
+          "max": ""
+        },
+        "spell_slot": true,
+        "targets": []
+      },
+      "description": {
+        "chat_flavor": ""
+      },
+      "duration": {
+        "value": null,
+        "units": "inst",
+        "special": "",
+        "concentration": false,
+        "override": false
+      },
+      "flags": {},
+      "range": {
+        "value": null,
+        "units": "self",
+        "special": "",
+        "override": false
+      },
+      "target": {
+        "template": {
+          "count": "",
+          "contiguous": false,
+          "stationary": false,
+          "type": "",
+          "size": "",
+          "width": "",
+          "height": "",
+          "units": ""
+        },
+        "affects": {
+          "count": "",
+          "type": "",
+          "choice": false,
+          "special": ""
+        },
+        "override": false,
+        "prompt": true
+      },
+      "uses": {
+        "spent": 0,
+        "max": "",
+        "recovery": []
+      },
+      "visibility": {
+        "identifier": "",
+        "level": {
+          "min": null,
+          "max": null
+        },
+        "require_attunement": false,
+        "require_identification": false,
+        "require_magic": false
+      },
+      "effects": [],
+      "applied_effects": [],
+      "kind": "summon",
+      "bonuses": {
+        "ac": "",
+        "hd": "",
+        "hp": "",
+        "attack_damage": "",
+        "save_damage": "",
+        "healing": ""
+      },
+      "creature_sizes": [],
+      "creature_types": [],
+      "match": {
+        "ability": "",
+        "attacks": false,
+        "disposition": false,
+        "proficiency": false,
+        "saves": false
+      },
+      "profiles": [
+        {
+          "id": "E1LnzdGt9Jeo9PMx",
+          "count": "",
+          "cr": "@item.level",
+          "level": {
+            "min": null,
+            "max": null
+          },
+          "name": "",
+          "types": [
+            "dragon"
+          ],
+          "uuid": ""
+        }
+      ],
+      "summon": {
+        "mode": "cr",
+        "prompt": true,
+        "identifier": null
+      },
+      "temp_hp": ""
+    }
+  ],
+  "passive_effects": [],
+  "provenance": {
+    "source": "foundry",
+    "source_url": "https://github.com/foundryvtt/dnd5e/blob/965ad2d0cf5d063dac675ba078b5bd3c3c0dd449/packs/_source/laaru-hw-spells/Призыв_дракона___Conjure_Dragon_dFrtQlB7eT1JxjKg.yml",
+    "ingest_date": "2026-10-26",
+    "ingest_version": "foundry-translator-v1",
+    "srd_version": [
+      "5.1"
+    ],
+    "license_tag": "CC-BY-4.0"
+  },
+  "review": {
+    "known_divergence": null,
+    "requires_user_decision": false
+  },
+  "entry_kind": "spell"
+}

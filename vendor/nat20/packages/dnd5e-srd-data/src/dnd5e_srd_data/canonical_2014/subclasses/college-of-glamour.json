@@ -1,0 +1,77 @@
+{
+  "slug": "college-of-glamour",
+  "name": "Коллегия Очарования",
+  "description": "Коллегия Очарования | College of Glamour\n\nКоллегия Очарования открыта для тех бардов, чьё мастерство было взращено в Царстве Фей или под руководством того, кто проживал там. Обученные сатирами, эладринами, и другими фейскими существами, эти барды учатся использовать свою магию, чтобы восхищать и очаровывать окружающих. Барды этой коллегии в своём ремесле используют магию, которая наделена одновременно благоговением и страхом. Их выступления – легендарны.\n\nБарды этой коллегии настолько красноречивы, что одной их песни или речи может хватить, чтобы убедить похитителей отпустить барда нетронутым или успокоить разъяренного дракона. Но та же магия, что помогает им усмирять зверей, может и подчинять разумы людей. Недобрые барды этой коллегии могут неделями паразитировать на выбранном ими сообществе, используя свои чары, чтобы превратить гостеприимных хозяев в рабов своей воли.\n\nГероические барды этой коллегии вместо этого используют свою силу, чтобы радовать угнетенных и ослаблять диктаторов.\n\nУровеньОсобенности\n\n3-й\n\n@Compendium[laaru-dnd5-hw.classfeatures.TkaGNrUC36xFrm9N]{Завораживающее выступление}, @Compendium[laaru-dnd5-hw.classfeatures.v2QJTXzciW3LdERg]{Мантия вдохновения}\n\n6-й\n\n@Compendium[laaru-dnd5-hw.classfeatures.Tzy2AeuxtyYUMi8n]{Мантия величия}\n\n14-й\n\n@Compendium[laaru-dnd5-hw.classfeatures.RQHMGq166osGwNSU]{Несокрушимое величие}",
+  "identifier": "college-of-glamour",
+  "class_identifier": "bard",
+  "spellcasting": {
+    "ability": "",
+    "progression": "none"
+  },
+  "advancement": [
+    {
+      "id": "a62oqozil1j90d0q",
+      "type": "ItemGrant",
+      "level": 3,
+      "title": "Особенности",
+      "hint": "",
+      "class_restriction": "",
+      "configuration": {
+        "items": [
+          "Compendium.laaru-dnd5-hw.classfeatures.TkaGNrUC36xFrm9N",
+          "Compendium.laaru-dnd5-hw.classfeatures.v2QJTXzciW3LdERg"
+        ],
+        "optional": false
+      },
+      "value": {}
+    },
+    {
+      "id": "vq441kav5vod28dy",
+      "type": "ItemGrant",
+      "level": 6,
+      "title": "Особенности",
+      "hint": "",
+      "class_restriction": "",
+      "configuration": {
+        "items": [
+          "Compendium.laaru-dnd5-hw.classfeatures.Tzy2AeuxtyYUMi8n",
+          "Compendium.laaru-dnd5-hw.spells.bM98WJMhzC5LjfrO"
+        ],
+        "optional": false
+      },
+      "value": {}
+    },
+    {
+      "id": "xvifx32igks7nntu",
+      "type": "ItemGrant",
+      "level": 14,
+      "title": "Особенность",
+      "hint": "",
+      "class_restriction": "",
+      "configuration": {
+        "items": [
+          "Compendium.laaru-dnd5-hw.classfeatures.RQHMGq166osGwNSU"
+        ],
+        "optional": false
+      },
+      "value": {}
+    }
+  ],
+  "granted_features": [],
+  "feature_choices": [],
+  "provenance": {
+    "source": "foundry",
+    "source_url": "https://github.com/foundryvtt/dnd5e/blob/965ad2d0cf5d063dac675ba078b5bd3c3c0dd449/packs/_source/laaru-hw-subclasses/Коллегия_Очарования_Y1PwXjWnr37JG65h.yml",
+    "ingest_date": "2026-10-26",
+    "ingest_version": "foundry-translator-v1",
+    "srd_version": [
+      "5.1"
+    ],
+    "license_tag": "CC-BY-4.0"
+  },
+  "review": {
+    "known_divergence": null,
+    "requires_user_decision": false
+  },
+  "entry_kind": "subclass"
+}

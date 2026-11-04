@@ -1,0 +1,195 @@
+{
+  "scope": "only task-owned setup cache and superseded raw extraction paths",
+  "removed_files": 37,
+  "removed_bytes": 9423937,
+  "files": [
+    {
+      "path": "integration/nat20/.build-cache/cachetools-7.2.2-py3-none-any.whl",
+      "bytes": 17819,
+      "sha256": "39b6c9291adde28c5de6622d25329375fadf3e8a678226e7872e2e72854e4549"
+    },
+    {
+      "path": "integration/nat20/.build-cache/cachetools-index.metadata.json",
+      "bytes": 121567,
+      "sha256": "6ba2f5ccea66a528705b48dfefad517090580cc26e2708c2fb255b012f95cf9d"
+    },
+    {
+      "path": "integration/nat20/.build-cache/cramjam-2.14.0-cp312-cp312-win_amd64.whl",
+      "bytes": 1794029,
+      "sha256": "e4d4de4904712bb15f6b726bbe92a8e62b340c6df832c9f310b8d66c0baa8220"
+    },
+    {
+      "path": "integration/nat20/.build-cache/cramjam-index.metadata.json",
+      "bytes": 3150675,
+      "sha256": "b8965c54e130343ea50dd144b6e2adfbfe164f1aaf333888de30118566684e86"
+    },
+    {
+      "path": "integration/nat20/.build-cache/d20-1.1.2-py3-none-any.whl",
+      "bytes": 20681,
+      "sha256": "1195bfc643aa4bd984bf6d26327491795272bfab8b19ac15108b4352a9de3166"
+    },
+    {
+      "path": "integration/nat20/.build-cache/d20-1.1.2.metadata.json",
+      "bytes": 14165,
+      "sha256": "e2b1bf4b4d677840b924e88815fc66632e401c5823336f4652a25a68bb29000c"
+    },
+    {
+      "path": "integration/nat20/.build-cache/dfindexeddb-20260210-py3-none-any.whl",
+      "bytes": 91178,
+      "sha256": "c037eb764b8bc437e2052d9d54952de1ef97aec4c81d5676b490a2901fdf4290"
+    },
+    {
+      "path": "integration/nat20/.build-cache/dfindexeddb-20260210.metadata.json",
+      "bytes": 8549,
+      "sha256": "619ef9834542c6a0ba911e3216e2fef877bdc047c753bbf22d8d836ad198ce82"
+    },
+    {
+      "path": "integration/nat20/.build-cache/hatchling-1.27.0-py3-none-any.whl",
+      "bytes": 75794,
+      "sha256": "d3a2f3567c4f926ea39849cdf924c7e99e6686c9c8e288ae1037c8fa2a5d937b"
+    },
+    {
+      "path": "integration/nat20/.build-cache/hatchling-1.27.0.metadata.json",
+      "bytes": 5857,
+      "sha256": "943d869d7c8444101db256731c1cfc2c7bba4538025106658a5625f419e2ebcc"
+    },
+    {
+      "path": "integration/nat20/.build-cache/lark-parser-0.9.0.metadata.json",
+      "bytes": 2927,
+      "sha256": "33228346282cbfdc8c6c93ed35c128010293f02e7344fb51a44114b74697c478"
+    },
+    {
+      "path": "integration/nat20/.build-cache/lark-parser-0.9.0.tar.gz",
+      "bytes": 298176,
+      "sha256": "9e7589365d6b6de1cca40b0eaec31104a3fb96a37a11a9dfd5098e95b50aa6cd"
+    },
+    {
+      "path": "integration/nat20/.build-cache/pathspec-1.1.1-py3-none-any.whl",
+      "bytes": 57328,
+      "sha256": "a00ce642f577bf7f473932318056212bc4f8bfdf53128c78bbd5af0b9b20b189"
+    },
+    {
+      "path": "integration/nat20/.build-cache/pathspec-index.metadata.json",
+      "bytes": 61254,
+      "sha256": "df109cf06c88402cc0907de428b352e676ce059ed5eb51c87a8732c0fb9e90a6"
+    },
+    {
+      "path": "integration/nat20/.build-cache/python-snappy-0.7.3.metadata.json",
+      "bytes": 3397,
+      "sha256": "353c2e4f6c42b23285451709f9799dd5448337278e1ab2f2d10c972543da9300"
+    },
+    {
+      "path": "integration/nat20/.build-cache/python_snappy-0.7.3-py3-none-any.whl",
+      "bytes": 9155,
+      "sha256": "074c0636cfcd97e7251330f428064050ac81a52c62ed884fc2ddebbb60ed7f50"
+    },
+    {
+      "path": "integration/nat20/.build-cache/pyyaml-6.0.3-cp312-cp312-win_amd64.whl",
+      "bytes": 154003,
+      "sha256": "5fcd34e47f6e0b794d17de1b4ff496c00986e1c83f7ab2fb8fcfe9616ff7477b"
+    },
+    {
+      "path": "integration/nat20/.build-cache/pyyaml-6.0.3.metadata.json",
+      "bytes": 66402,
+      "sha256": "c3f35597bc2f08cc990c2a5fe57bef6687b3a3d7c61d8b0ba4cc067777eb1def"
+    },
+    {
+      "path": "integration/nat20/.build-cache/setuptools-80.9.0-py3-none-any.whl",
+      "bytes": 1201486,
+      "sha256": "062d34222ad13e0cc312a4c02d73f059e86a4acbfbdea8f8f76b28c99f306922"
+    },
+    {
+      "path": "integration/nat20/.build-cache/setuptools-80.9.0.metadata.json",
+      "bytes": 12463,
+      "sha256": "e56bbccd90d9251cbdebab83dbf16c5520501483faf37a08a2dcb2e7b5a1f891"
+    },
+    {
+      "path": "integration/nat20/.build-cache/trove-classifiers-index.metadata.json",
+      "bytes": 208051,
+      "sha256": "ad9992ada40f82c466b5b35c9254d71a4c0807604ebaf13237ee55e1ae3739ea"
+    },
+    {
+      "path": "integration/nat20/.build-cache/trove_classifiers-2026.9.21.13-py3-none-any.whl",
+      "bytes": 14232,
+      "sha256": "8b1ff4f9c191b1040b71c37f1e445ab99732911e3cd91de52838453a854d7a17"
+    },
+    {
+      "path": "integration/nat20/.build-cache/wheel-0.45.1-py3-none-any.whl",
+      "bytes": 72494,
+      "sha256": "708e7481cc80179af0e556bbf0cc00b8444c7321e2700b8d8580231d13017248"
+    },
+    {
+      "path": "integration/nat20/.build-cache/wheel-0.45.1.metadata.json",
+      "bytes": 12040,
+      "sha256": "617c2b62cc17caeef3fc1e10144bd3d5b8dc2fb93bb67a87f2802c2d0a856c32"
+    },
+    {
+      "path": "integration/nat20/.build-cache/zstd-1.5.5.1.metadata.json",
+      "bytes": 84168,
+      "sha256": "71f702ac36252c61125d8c4dbab582d7fd5d49bde5522b058410fa1f5dc3097a"
+    },
+    {
+      "path": "integration/nat20/.build-cache/zstd-1.5.7.2-cp312-cp312-win_amd64.whl",
+      "bytes": 166628,
+      "sha256": "55e2edc4560a5cf8ee9908595e90a15b1f47536ea9aad4b2889f0e6165890a38"
+    },
+    {
+      "path": "integration/nat20/.build-cache/zstd-1.5.7.2.metadata.json",
+      "bytes": 132851,
+      "sha256": "e8f38d1f04797e51d91590e1887428d6a8ce0b4319190fc0ec2119119b15d4ae"
+    },
+    {
+      "path": "integration/nat20/.build-cache/zstd-index.metadata.json",
+      "bytes": 1489237,
+      "sha256": "bd2e72436a39206a4a31969dd3dca7a88c4a193c8c216968399a18b6d102933a"
+    },
+    {
+      "path": "integration/nat20/dfindexeddb.metadata.json",
+      "bytes": 34411,
+      "sha256": "5d95ea8198d21bd8e5e815e9a758e542ab7fc8ed3fec6c782d3fb1aa6aef02c0"
+    },
+    {
+      "path": "integration/nat20/imported/raw/_source/classes24/fighter.yml",
+      "bytes": 26396,
+      "sha256": "11564e58269b3c18a283ba797d81196b8612e030182b76b5c3f1531e2b112d1b"
+    },
+    {
+      "path": "integration/nat20/imported/raw/_source/classes24/fighting-style.yml",
+      "bytes": 1611,
+      "sha256": "b19f83b7c28e4bdbef1be7ca3ab2426153913e9c58f7157191d1103b08d578a6"
+    },
+    {
+      "path": "integration/nat20/imported/raw/_source/classes24/second-wind.yml",
+      "bytes": 3994,
+      "sha256": "c0e8b50853d780c635f58348ce75eb6d6ed11930fe29ae2c5fce7f0e83d6eef8"
+    },
+    {
+      "path": "integration/nat20/imported/raw/_source/classes24/weapon-mastery.yml",
+      "bytes": 2112,
+      "sha256": "39c178831f69ecbbf1c055bd2f3e76c023b183025a5a50da30ff2914fb1f1959"
+    },
+    {
+      "path": "integration/nat20/imported/raw/_source/origins24/human.yml",
+      "bytes": 4762,
+      "sha256": "5a9891ead35d050117eab4ed619b7108d54d68c48054c43491263613a155ec44"
+    },
+    {
+      "path": "integration/nat20/imported/raw/_source/origins24/resourceful.yml",
+      "bytes": 1173,
+      "sha256": "4f8d8dd668960954905f5ea35c9fe876a28b067bcdf9338d4422b3cd3c62efd4"
+    },
+    {
+      "path": "integration/nat20/imported/raw/_source/origins24/skillful.yml",
+      "bytes": 1351,
+      "sha256": "005a0e1aeeedf49ff56a60e8da8079a65175079fbda88e63a1a352b1cc2ba3c4"
+    },
+    {
+      "path": "integration/nat20/imported/raw/_source/origins24/versatile.yml",
+      "bytes": 1521,
+      "sha256": "ba8ecc789f0477a55433cfda1009afd69ea93c12e16e5e663ed7292a8249dbd3"
+    }
+  ],
+  "user_data_unchanged": true,
+  "original_archives_modules_modified": false,
+  "temporary_test_root_removed": true
+}

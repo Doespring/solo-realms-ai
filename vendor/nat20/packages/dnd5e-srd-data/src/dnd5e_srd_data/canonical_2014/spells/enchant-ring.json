@@ -1,0 +1,162 @@
+{
+  "slug": "enchant-ring",
+  "foundry_uuid": "Compendium.dnd5e.laaru-hw-spells.Item.84sFFBIXGj9qCXe2",
+  "name": "Зачаровать кольцо / Enchant Ring",
+  "description": "(Магия колец)\n\nВы зачаровываете кольцо, которое никто не держит и не носит. Следующее существо, надевшее его добровольно, становится &amp;Reference[charmed]{обворожено} вами на 1 неделю или до тех пор, пока вы или ваш союзник не навредите ему. Если вы или ваш союзник угрозами заставляете существо надеть кольцо, заклинание заканчивается.\n\nОбворожённое существо считает вас другом. Когда заклинание заканчивается, оно не знает, что оно было обворожено вами, но оно осознает, что его чувство к вам изменилось (потенциально – весьма значительно) за короткое время. То, как существо отреагирует на это и будет относиться к вам в будущем, зависит от Мастера.",
+  "level": 6,
+  "school": "enc",
+  "components": [
+    "M",
+    "S",
+    "V"
+  ],
+  "ritual": false,
+  "concentration": false,
+  "casting_time": {
+    "unit": "action",
+    "value": 1,
+    "condition": ""
+  },
+  "range": {
+    "units": "touch",
+    "value": null,
+    "special": null
+  },
+  "duration": {
+    "units": "perm",
+    "value": null
+  },
+  "materials": {
+    "value": "Алмазная пыль стоимостью 500 зм, которую расходует заклинание",
+    "consumed": false,
+    "cost": 0,
+    "supply": 0
+  },
+  "preparation": {
+    "mode": "prepared",
+    "prepared": false
+  },
+  "activities": [
+    {
+      "id": "GFci7fCiY9Uz1VOr",
+      "name": "Обворожить цель",
+      "img": "",
+      "sort": 0,
+      "activation": {
+        "type": "action",
+        "value": null,
+        "condition": "",
+        "override": false,
+        "reaction_conditions": []
+      },
+      "consumption": {
+        "scaling": {
+          "allowed": false,
+          "max": ""
+        },
+        "spell_slot": true,
+        "targets": []
+      },
+      "description": {
+        "chat_flavor": ""
+      },
+      "duration": {
+        "value": null,
+        "units": "inst",
+        "special": "",
+        "concentration": false,
+        "override": false
+      },
+      "flags": {},
+      "range": {
+        "value": null,
+        "units": "self",
+        "special": "",
+        "override": false
+      },
+      "target": {
+        "template": {
+          "count": "",
+          "contiguous": false,
+          "stationary": false,
+          "type": "",
+          "size": "",
+          "width": "",
+          "height": "",
+          "units": "ft"
+        },
+        "affects": {
+          "count": "1",
+          "type": "creature",
+          "choice": false,
+          "special": ""
+        },
+        "override": true,
+        "prompt": true
+      },
+      "uses": {
+        "spent": 0,
+        "max": "",
+        "recovery": []
+      },
+      "visibility": {
+        "identifier": "",
+        "level": {
+          "min": null,
+          "max": null
+        },
+        "require_attunement": false,
+        "require_identification": false,
+        "require_magic": false
+      },
+      "effects": [
+        {
+          "id": "cXi3ZkGkOnWyhOaw",
+          "level": {
+            "min": null,
+            "max": null
+          },
+          "on_save": null,
+          "riders": null
+        }
+      ],
+      "applied_effects": [],
+      "kind": "utility",
+      "roll": {
+        "formula": "",
+        "name": "",
+        "prompt": false,
+        "visible": false
+      }
+    }
+  ],
+  "passive_effects": [
+    {
+      "id": "cXi3ZkGkOnWyhOaw",
+      "name": "Зачаровать кольцо",
+      "description": "",
+      "changes": [],
+      "statuses": [
+        "charmed"
+      ],
+      "duration": null,
+      "disabled": false,
+      "transfer": false
+    }
+  ],
+  "provenance": {
+    "source": "foundry",
+    "source_url": "https://github.com/foundryvtt/dnd5e/blob/965ad2d0cf5d063dac675ba078b5bd3c3c0dd449/packs/_source/laaru-hw-spells/Зачаровать_кольцо___Enchant_Ring_84sFFBIXGj9qCXe2.yml",
+    "ingest_date": "2026-10-26",
+    "ingest_version": "foundry-translator-v1",
+    "srd_version": [
+      "5.1"
+    ],
+    "license_tag": "CC-BY-4.0"
+  },
+  "review": {
+    "known_divergence": null,
+    "requires_user_decision": false
+  },
+  "entry_kind": "spell"
+}

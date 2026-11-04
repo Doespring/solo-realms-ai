@@ -1,0 +1,146 @@
+{
+  "slug": "shadows-brought-to-light",
+  "foundry_uuid": "Compendium.dnd5e.laaru-hw-spells.Item.UoOCU4GrCaRImk1O",
+  "name": "Тени на свету / Shadows Brought To Light",
+  "description": "(Высшая эльфийская магия)\n\nЦель должна пройти испытание Харизмы. При провале её тень оживает и раскрывает один из самых постыдных фактов из жизни цели (по выбору Мастера). При сотворении этого заклинания вы выбираете, кто услышит секрет: все присутствующие (тень громогласно произнесёт секрет искажённым голосом цели) или только вы (тень прошепчет секрет только вам). Тень говорит на родном языке цели. Если у цели нет постыдного секрета или она не умеет говорить, заклинание не срабатывает, словно цель преуспела в испытании.\n\nЕсли секрет был произнесён вслух, то цель до конца дня получает штраф −2 к проверкам Харизмы при общении со всеми, кто слышал её секрет. Этот штраф сохраняется, пока цель не завершит долгий отдых.\n\nРитуальная фокусировка. Если вы использует ритуальную фокусировку, то вместо штрафа существо получает помеху на проверки Харизмы.",
+  "level": 2,
+  "school": "div",
+  "components": [
+    "S",
+    "V"
+  ],
+  "ritual": true,
+  "concentration": false,
+  "casting_time": {
+    "unit": "action",
+    "value": 1,
+    "condition": ""
+  },
+  "range": {
+    "units": "ft",
+    "value": 30,
+    "special": null
+  },
+  "duration": {
+    "units": "inst",
+    "value": null
+  },
+  "materials": {
+    "value": "",
+    "consumed": false,
+    "cost": 0,
+    "supply": 0
+  },
+  "preparation": {
+    "mode": "prepared",
+    "prepared": false
+  },
+  "activities": [
+    {
+      "id": "YK8DvED8kRnLCxvl",
+      "name": "",
+      "img": "",
+      "sort": 0,
+      "activation": {
+        "type": "action",
+        "value": null,
+        "condition": "",
+        "override": false,
+        "reaction_conditions": []
+      },
+      "consumption": {
+        "scaling": {
+          "allowed": false,
+          "max": ""
+        },
+        "spell_slot": true,
+        "targets": []
+      },
+      "description": {
+        "chat_flavor": ""
+      },
+      "duration": {
+        "value": null,
+        "units": "inst",
+        "special": "",
+        "concentration": false,
+        "override": false
+      },
+      "flags": {},
+      "range": {
+        "value": null,
+        "units": "self",
+        "special": "",
+        "override": false
+      },
+      "target": {
+        "template": {
+          "count": "",
+          "contiguous": false,
+          "stationary": false,
+          "type": "",
+          "size": "",
+          "width": "",
+          "height": "",
+          "units": "ft"
+        },
+        "affects": {
+          "count": "1",
+          "type": "creature",
+          "choice": false,
+          "special": ""
+        },
+        "override": false,
+        "prompt": true
+      },
+      "uses": {
+        "spent": 0,
+        "max": "",
+        "recovery": []
+      },
+      "visibility": {
+        "identifier": "",
+        "level": {
+          "min": null,
+          "max": null
+        },
+        "require_attunement": false,
+        "require_identification": false,
+        "require_magic": false
+      },
+      "effects": [],
+      "applied_effects": [],
+      "kind": "save",
+      "damage": {
+        "on_save": "half",
+        "parts": []
+      },
+      "save": {
+        "ability": [
+          "cha"
+        ],
+        "dc": {
+          "calculation": "spellcasting",
+          "formula": ""
+        },
+        "ignore_cover": false
+      }
+    }
+  ],
+  "passive_effects": [],
+  "provenance": {
+    "source": "foundry",
+    "source_url": "https://github.com/foundryvtt/dnd5e/blob/965ad2d0cf5d063dac675ba078b5bd3c3c0dd449/packs/_source/laaru-hw-spells/Тени_на_свету___Shadows_Brought_To_Light_UoOCU4GrCaRImk1O.yml",
+    "ingest_date": "2026-10-26",
+    "ingest_version": "foundry-translator-v1",
+    "srd_version": [
+      "5.1"
+    ],
+    "license_tag": "CC-BY-4.0"
+  },
+  "review": {
+    "known_divergence": null,
+    "requires_user_decision": false
+  },
+  "entry_kind": "spell"
+}

@@ -1,0 +1,164 @@
+{
+  "slug": "whirlwind",
+  "foundry_uuid": "Compendium.dnd5e.laaru-hw-spells.Item.EWM3sy8JZ5AG5gyE",
+  "name": "Смерч / Whirlwind",
+  "description": "В указанной вами точке на поверхности земли возникает ревущий смерч. Он представляет собой цилиндр с радиусом 10 футов и высотой 30 футов. Пока заклинание действует, вы можете действием переместить его на расстояние до 30 футов в любом направлении вдоль земли.\n\nСмерч засасывает любые предметы с размером не больше Среднего, ни на кого не надетые и никем не переносимые.\n\nСущество должно пройти испытание Ловкости в момент, когда в первый раз за ход оно входит в область смерча или когда область смерча входит в пространство существа, включая момент первоначального возникновения смерча. При провале существо получает дробящий урон [[/r 10d6]], а при успехе – половину этого урона.\n\nКроме того, существо с размером не больше Крупного, провалившее испытание, должно преуспеть в испытании Силы, иначе будет &amp;reference[restrained]{обездвижено} смерчем на время действия заклинания.\n\nВ начале каждого хода обездвиженное существо подтягивается на 5 футов вверх, пока не окажется на вершине смерча. Обездвиженное существо перемещается вместе со смерчем и падает на землю, когда заклинание заканчивается, если у него нет возможности остаться в воздухе. Обездвиженное существо может действием совершить проверку Силы или Ловкости против СЛ ваших заклинаний. В случае успеха оно перестаёт быть &amp;reference[restrained]{обездвиженным} и вылетает из смерча на [[/r 3d6 * 10]] (3d6 × 10) футов в случайном направлении.",
+  "level": 7,
+  "school": "evo",
+  "components": [
+    "M",
+    "V"
+  ],
+  "ritual": false,
+  "concentration": true,
+  "casting_time": {
+    "unit": "action",
+    "value": 1,
+    "condition": ""
+  },
+  "range": {
+    "units": "ft",
+    "value": 300,
+    "special": null
+  },
+  "duration": {
+    "units": "minute",
+    "value": 1
+  },
+  "materials": {
+    "value": "соломинка",
+    "consumed": false,
+    "cost": 0,
+    "supply": 0
+  },
+  "preparation": {
+    "mode": "prepared",
+    "prepared": false
+  },
+  "activities": [
+    {
+      "id": "dnd5eactivity000",
+      "name": "",
+      "img": "",
+      "sort": 0,
+      "activation": {
+        "type": "action",
+        "value": null,
+        "condition": "",
+        "override": false,
+        "reaction_conditions": []
+      },
+      "consumption": {
+        "scaling": {
+          "allowed": false,
+          "max": ""
+        },
+        "spell_slot": true,
+        "targets": []
+      },
+      "description": {
+        "chat_flavor": ""
+      },
+      "duration": {
+        "value": null,
+        "units": "inst",
+        "special": "",
+        "concentration": false,
+        "override": false
+      },
+      "flags": {},
+      "range": {
+        "value": null,
+        "units": "self",
+        "special": "",
+        "override": false
+      },
+      "target": {
+        "template": {
+          "count": "",
+          "contiguous": false,
+          "stationary": false,
+          "type": "cylinder",
+          "size": "10",
+          "width": "",
+          "height": "",
+          "units": "ft"
+        },
+        "affects": {
+          "count": "",
+          "type": "",
+          "choice": false,
+          "special": ""
+        },
+        "override": false,
+        "prompt": true
+      },
+      "uses": {
+        "spent": 0,
+        "max": "",
+        "recovery": []
+      },
+      "visibility": {
+        "identifier": "",
+        "level": {
+          "min": null,
+          "max": null
+        },
+        "require_attunement": false,
+        "require_identification": false,
+        "require_magic": false
+      },
+      "effects": [],
+      "applied_effects": [],
+      "kind": "save",
+      "damage": {
+        "on_save": "half",
+        "parts": [
+          {
+            "number": 10,
+            "denomination": 6,
+            "bonus": "",
+            "types": [
+              "bludgeoning"
+            ],
+            "custom": {
+              "enabled": false,
+              "formula": ""
+            },
+            "scaling": {
+              "mode": "",
+              "number": null,
+              "formula": ""
+            }
+          }
+        ]
+      },
+      "save": {
+        "ability": [
+          "dex"
+        ],
+        "dc": {
+          "calculation": "spellcasting",
+          "formula": ""
+        },
+        "ignore_cover": false
+      }
+    }
+  ],
+  "passive_effects": [],
+  "provenance": {
+    "source": "foundry",
+    "source_url": "https://github.com/foundryvtt/dnd5e/blob/965ad2d0cf5d063dac675ba078b5bd3c3c0dd449/packs/_source/laaru-hw-spells/Смерч___Whirlwind_EWM3sy8JZ5AG5gyE.yml",
+    "ingest_date": "2026-10-26",
+    "ingest_version": "foundry-translator-v1",
+    "srd_version": [
+      "5.1"
+    ],
+    "license_tag": "CC-BY-4.0"
+  },
+  "review": {
+    "known_divergence": null,
+    "requires_user_decision": false
+  },
+  "entry_kind": "spell"
+}

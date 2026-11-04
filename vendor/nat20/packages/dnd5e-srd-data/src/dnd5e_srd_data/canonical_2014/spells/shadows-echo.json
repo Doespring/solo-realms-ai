@@ -1,0 +1,138 @@
+{
+  "slug": "shadows-echo",
+  "foundry_uuid": "Compendium.dnd5e.laaru-hw-spells.Item.1k6SeBulWSYk4fZw",
+  "name": "Эхо тени / Shadow’s Echo",
+  "description": "Вы отзеркаливаете существо его теневым отражением. Если существо творит заклинание, круг которого как минимум на 2 круга ниже круга этого заклинания, вы также сотворяете это заклинание частью ответного действия, не тратя дополнительную ячейку на это заклинание.\n\nЗаклинание, которое вы сотворяете, использует вашу базовую характеристику, и если заклинание наносит урон, оно наносит психический урон вместо обычных видов урона.\n\nЧастью вашего ответного действия, когда вы сотворяете это заклинание, вы узнаете, какого круга целевое заклинание. Если круг израсходованной вами ячейки заклинания слишком низок для отзеркаливания этого заклинания, вы восстанавливаете израсходованную ячейку заклинания. Когда это происходит, вы можете либо потратить ячейку заклинания бóльшего круга, чтобы отзеркалить заклинание, либо отменить это заклинание. В любом случае ваше ответное действие расходуется. Например, если другое существо творит заклинание 5-го круга, вы можете восстановить свою ячейку заклинаний 3-го круга и вместо этого потратить ячейку заклинания 7-го круга, чтобы отзеркалить это заклинание.",
+  "level": 3,
+  "school": "ill",
+  "components": [
+    "S",
+    "V"
+  ],
+  "ritual": false,
+  "concentration": false,
+  "casting_time": {
+    "unit": "reaction",
+    "value": 1,
+    "condition": "1 ответное действие, совершаемое вами, когда вы увидите как существо в пределах 60 футов от себя, закончит творить заклинание со временем сотворения «1 действие» и длительностью «Мгновенная»"
+  },
+  "range": {
+    "units": "ft",
+    "value": 60,
+    "special": null
+  },
+  "duration": {
+    "units": "inst",
+    "value": null
+  },
+  "materials": {
+    "value": "",
+    "consumed": false,
+    "cost": 0,
+    "supply": 0
+  },
+  "preparation": {
+    "mode": "prepared",
+    "prepared": false
+  },
+  "activities": [
+    {
+      "id": "0mxcUKP7CBOBPA6a",
+      "name": "",
+      "img": "",
+      "sort": 0,
+      "activation": {
+        "type": "action",
+        "value": null,
+        "condition": "",
+        "override": false,
+        "reaction_conditions": []
+      },
+      "consumption": {
+        "scaling": {
+          "allowed": false,
+          "max": ""
+        },
+        "spell_slot": true,
+        "targets": []
+      },
+      "description": {
+        "chat_flavor": ""
+      },
+      "duration": {
+        "value": null,
+        "units": "inst",
+        "special": "",
+        "concentration": false,
+        "override": false
+      },
+      "flags": {},
+      "range": {
+        "value": null,
+        "units": "self",
+        "special": "",
+        "override": false
+      },
+      "target": {
+        "template": {
+          "count": "",
+          "contiguous": false,
+          "stationary": false,
+          "type": "",
+          "size": "",
+          "width": "",
+          "height": "",
+          "units": "ft"
+        },
+        "affects": {
+          "count": "",
+          "type": "",
+          "choice": false,
+          "special": ""
+        },
+        "override": false,
+        "prompt": true
+      },
+      "uses": {
+        "spent": 0,
+        "max": "",
+        "recovery": []
+      },
+      "visibility": {
+        "identifier": "",
+        "level": {
+          "min": null,
+          "max": null
+        },
+        "require_attunement": false,
+        "require_identification": false,
+        "require_magic": false
+      },
+      "effects": [],
+      "applied_effects": [],
+      "kind": "utility",
+      "roll": {
+        "formula": "",
+        "name": "",
+        "prompt": false,
+        "visible": false
+      }
+    }
+  ],
+  "passive_effects": [],
+  "provenance": {
+    "source": "foundry",
+    "source_url": "https://github.com/foundryvtt/dnd5e/blob/965ad2d0cf5d063dac675ba078b5bd3c3c0dd449/packs/_source/laaru-hw-spells/Эхо_тени___Shadow_s_Echo_1k6SeBulWSYk4fZw.yml",
+    "ingest_date": "2026-10-26",
+    "ingest_version": "foundry-translator-v1",
+    "srd_version": [
+      "5.1"
+    ],
+    "license_tag": "CC-BY-4.0"
+  },
+  "review": {
+    "known_divergence": null,
+    "requires_user_decision": false
+  },
+  "entry_kind": "spell"
+}

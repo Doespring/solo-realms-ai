@@ -1,0 +1,165 @@
+{
+  "slug": "dark-star",
+  "foundry_uuid": "Compendium.dnd5e.laaru-hw-spells.Item.HGflBMljyeazjxUJ",
+  "name": "Тёмная звезда / Dark Star",
+  "description": "Вы создаёте сферу с радиусом до 40 фт. в указанной точке в пределах дистанции заклинания. Область внутри этой сферы заполнена магической тьмой и сокрушительной гравитационной силой.\n\nНа время действия заклинания область сферы является &amp;reference[difficultterrain]{пересечённой местностью}. Существо с &amp;reference[darkvision]{ночным} зрением не может видеть сквозь магическую тьму, и немагический свет не может осветить её. Никакой звук не может быть создан внутри сферы или проходить через её область.\n\nЛюбое существо или объект, полностью находящийся внутри сферы, невосприимчиво для урона громом, и существа являются &amp;reference[deafened]{глухими}. Сотворять заклинание, включающее словесный компонент, так же невозможно. Любое существо, которое впервые за ход входит в область сферы или начинает там ход должно пройти испытание Выносливости. При провале существо получает [[/r 8d10]] урона силой, или половину урона при успехе. Если этот урон опускает ПЗ существа до 0, оно распадается. Распавшееся существо, а также всё, что оно несло и носило, кроме магических предметов, превращается в кучку мелкого серого порошка.",
+  "level": 8,
+  "school": "evo",
+  "components": [
+    "M",
+    "S",
+    "V"
+  ],
+  "ritual": false,
+  "concentration": true,
+  "casting_time": {
+    "unit": "action",
+    "value": 1,
+    "condition": ""
+  },
+  "range": {
+    "units": "ft",
+    "value": 150,
+    "special": null
+  },
+  "duration": {
+    "units": "minute",
+    "value": 1
+  },
+  "materials": {
+    "value": "осколок оникса и капля крови заклинателя, расходуемые заклинанием",
+    "consumed": true,
+    "cost": 0,
+    "supply": 0
+  },
+  "preparation": {
+    "mode": "prepared",
+    "prepared": false
+  },
+  "activities": [
+    {
+      "id": "dnd5eactivity000",
+      "name": "",
+      "img": "",
+      "sort": 0,
+      "activation": {
+        "type": "action",
+        "value": null,
+        "condition": "",
+        "override": false,
+        "reaction_conditions": []
+      },
+      "consumption": {
+        "scaling": {
+          "allowed": false,
+          "max": ""
+        },
+        "spell_slot": true,
+        "targets": []
+      },
+      "description": {
+        "chat_flavor": ""
+      },
+      "duration": {
+        "value": null,
+        "units": "inst",
+        "special": "",
+        "concentration": false,
+        "override": false
+      },
+      "flags": {},
+      "range": {
+        "value": null,
+        "units": "self",
+        "special": "",
+        "override": false
+      },
+      "target": {
+        "template": {
+          "count": "",
+          "contiguous": false,
+          "stationary": false,
+          "type": "",
+          "size": "",
+          "width": "",
+          "height": "",
+          "units": ""
+        },
+        "affects": {
+          "count": "",
+          "type": "",
+          "choice": false,
+          "special": ""
+        },
+        "override": false,
+        "prompt": true
+      },
+      "uses": {
+        "spent": 0,
+        "max": "",
+        "recovery": []
+      },
+      "visibility": {
+        "identifier": "",
+        "level": {
+          "min": null,
+          "max": null
+        },
+        "require_attunement": false,
+        "require_identification": false,
+        "require_magic": false
+      },
+      "effects": [],
+      "applied_effects": [],
+      "kind": "save",
+      "damage": {
+        "on_save": "half",
+        "parts": [
+          {
+            "number": 8,
+            "denomination": 10,
+            "bonus": "",
+            "types": [
+              "force"
+            ],
+            "custom": {
+              "enabled": false,
+              "formula": ""
+            },
+            "scaling": {
+              "mode": "",
+              "number": null,
+              "formula": ""
+            }
+          }
+        ]
+      },
+      "save": {
+        "ability": [
+          "con"
+        ],
+        "dc": {
+          "calculation": "spellcasting",
+          "formula": ""
+        },
+        "ignore_cover": false
+      }
+    }
+  ],
+  "passive_effects": [],
+  "provenance": {
+    "source": "foundry",
+    "source_url": "https://github.com/foundryvtt/dnd5e/blob/965ad2d0cf5d063dac675ba078b5bd3c3c0dd449/packs/_source/laaru-hw-spells/Т_мная_звезда___Dark_Star_HGflBMljyeazjxUJ.yml",
+    "ingest_date": "2026-10-26",
+    "ingest_version": "foundry-translator-v1",
+    "srd_version": [
+      "5.1"
+    ],
+    "license_tag": "CC-BY-4.0"
+  },
+  "review": {
+    "known_divergence": null,
+    "requires_user_decision": false
+  },
+  "entry_kind": "spell"
+}

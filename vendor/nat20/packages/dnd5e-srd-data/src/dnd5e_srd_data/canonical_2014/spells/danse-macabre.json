@@ -1,0 +1,138 @@
+{
+  "slug": "danse-macabre",
+  "foundry_uuid": "Compendium.dnd5e.laaru-hw-spells.Item.iWoX65OXn2KhBtWl",
+  "name": "Пляска смерти / Danse Macabre",
+  "description": "Нити темной силы прыгают с ваших пальцев, чтобы пронзить до пяти Маленьких или Средних трупов, которые вы можете видеть в пределах дистанции. Каждый труп немедленно встает и становится нежитью.\n\nВы решаете, является ли он @Compendium[laaru-dnd5-hw.monsters.wHcIolsp84cr72UR]{Зомби} или @Compendium[laaru-dnd5-hw.monsters.b7M77dRP7LHnsNPB]{Скелетом}, и он получает бонус к атаке и броскам урона, равный модификатору вашей заклинательной характеристики.\n\nВы можете использовать бонусное действие, чтобы мысленно управлять существами, которых вы создали этим заклинанием, выдавая одну и ту же команду каждому или всем им. Чтобы получить команду, существо должно находиться в пределах 60 футов от вас.\n\nВы решаете, какие действия предпримут существа и куда они будут двигаться в следующий ход, или вы можете выдать команду общего характера, например, охранять помещение или проход от ваших врагов.\n\nЕсли вы не выдаете никаких команд, существа ничего не предпринимают, кроме самозащиты от враждебных существ. После получения команды существа продолжают следовать им, пока их задача не будет выполнена.\n\nСущества находятся под вашим контролем до тех пор, пока заклинание не закончится, после чего они снова станут трупами.\n\nНа высоких кругах. Если вы сотворяете это заклинание, используя ячейку заклинания 6 круга или выше, вы можете оживить до двух дополнительных трупов для каждого круга ячейки выше 5.",
+  "level": 5,
+  "school": "nec",
+  "components": [
+    "S",
+    "V"
+  ],
+  "ritual": false,
+  "concentration": true,
+  "casting_time": {
+    "unit": "action",
+    "value": 1,
+    "condition": ""
+  },
+  "range": {
+    "units": "ft",
+    "value": 60,
+    "special": null
+  },
+  "duration": {
+    "units": "hour",
+    "value": 1
+  },
+  "materials": {
+    "value": "",
+    "consumed": false,
+    "cost": 0,
+    "supply": 0
+  },
+  "preparation": {
+    "mode": "prepared",
+    "prepared": false
+  },
+  "activities": [
+    {
+      "id": "dnd5eactivity000",
+      "name": "",
+      "img": "",
+      "sort": 0,
+      "activation": {
+        "type": "action",
+        "value": null,
+        "condition": "",
+        "override": false,
+        "reaction_conditions": []
+      },
+      "consumption": {
+        "scaling": {
+          "allowed": false,
+          "max": ""
+        },
+        "spell_slot": true,
+        "targets": []
+      },
+      "description": {
+        "chat_flavor": ""
+      },
+      "duration": {
+        "value": null,
+        "units": "inst",
+        "special": "",
+        "concentration": false,
+        "override": false
+      },
+      "flags": {},
+      "range": {
+        "value": null,
+        "units": "self",
+        "special": "",
+        "override": false
+      },
+      "target": {
+        "template": {
+          "count": "",
+          "contiguous": false,
+          "stationary": false,
+          "type": "",
+          "size": "",
+          "width": "",
+          "height": "",
+          "units": ""
+        },
+        "affects": {
+          "count": "",
+          "type": "",
+          "choice": false,
+          "special": ""
+        },
+        "override": false,
+        "prompt": true
+      },
+      "uses": {
+        "spent": 0,
+        "max": "",
+        "recovery": []
+      },
+      "visibility": {
+        "identifier": "",
+        "level": {
+          "min": null,
+          "max": null
+        },
+        "require_attunement": false,
+        "require_identification": false,
+        "require_magic": false
+      },
+      "effects": [],
+      "applied_effects": [],
+      "kind": "utility",
+      "roll": {
+        "formula": "",
+        "name": "",
+        "prompt": false,
+        "visible": false
+      }
+    }
+  ],
+  "passive_effects": [],
+  "provenance": {
+    "source": "foundry",
+    "source_url": "https://github.com/foundryvtt/dnd5e/blob/965ad2d0cf5d063dac675ba078b5bd3c3c0dd449/packs/_source/laaru-hw-spells/Пляска_смерти___Danse_Macabre_iWoX65OXn2KhBtWl.yml",
+    "ingest_date": "2026-10-26",
+    "ingest_version": "foundry-translator-v1",
+    "srd_version": [
+      "5.1"
+    ],
+    "license_tag": "CC-BY-4.0"
+  },
+  "review": {
+    "known_divergence": null,
+    "requires_user_decision": false
+  },
+  "entry_kind": "spell"
+}

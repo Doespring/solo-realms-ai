@@ -1,0 +1,139 @@
+{
+  "slug": "lair-sense",
+  "foundry_uuid": "Compendium.dnd5e.laaru-hw-spells.Item.Z8FmltNdfE1nqCeG",
+  "name": "Чувство логова / Lair Sense",
+  "description": "(Магия драконов)\n\nВы создаёте вокруг своего логова магический периметр, границы которого должны помещаться в 100 футовый куб. В этой области можно выстроить периметр как угодно, например, заставить его точно огибать стены здания или пещеры. Пока длится заклинание, вы немедленно узнаёт о любом существе размером не меньше маленького, вторгшемся в охранный периметр. При этом заклинание сообщает только тип существа, а также когда существо покидает область.\n\nПри вторжении вы сразу просыпаетесь с этими знаниями. Вы получает эти знания только пока находится на том же плане существования, что и ваше логово.\n\nНа высоких кругах. Если вы творите это заклинание, используя ячейку 3-го круга или выше, увеличивается максимальный размер куба на 50 футов и добавляются 12 часов к длительности заклинания за каждый круг ячейки выше 2-го.",
+  "level": 2,
+  "school": "div",
+  "components": [
+    "M",
+    "S",
+    "V"
+  ],
+  "ritual": false,
+  "concentration": false,
+  "casting_time": {
+    "unit": "minute",
+    "value": 1,
+    "condition": ""
+  },
+  "range": {
+    "units": "ft",
+    "value": 120,
+    "special": null
+  },
+  "duration": {
+    "units": "hour",
+    "value": 24
+  },
+  "materials": {
+    "value": "сокровища стоимостью хотя бы 500 зм, не задействованные в других заклинаниях",
+    "consumed": false,
+    "cost": 0,
+    "supply": 0
+  },
+  "preparation": {
+    "mode": "prepared",
+    "prepared": false
+  },
+  "activities": [
+    {
+      "id": "w5ajXSgUXQ8QJovK",
+      "name": "",
+      "img": "",
+      "sort": 0,
+      "activation": {
+        "type": "action",
+        "value": null,
+        "condition": "",
+        "override": false,
+        "reaction_conditions": []
+      },
+      "consumption": {
+        "scaling": {
+          "allowed": false,
+          "max": ""
+        },
+        "spell_slot": true,
+        "targets": []
+      },
+      "description": {
+        "chat_flavor": ""
+      },
+      "duration": {
+        "value": null,
+        "units": "inst",
+        "special": "",
+        "concentration": false,
+        "override": false
+      },
+      "flags": {},
+      "range": {
+        "value": null,
+        "units": "self",
+        "special": "",
+        "override": false
+      },
+      "target": {
+        "template": {
+          "count": "",
+          "contiguous": false,
+          "stationary": false,
+          "type": "cube",
+          "size": "100",
+          "width": "",
+          "height": "",
+          "units": "ft"
+        },
+        "affects": {
+          "count": "",
+          "type": "",
+          "choice": false,
+          "special": ""
+        },
+        "override": false,
+        "prompt": true
+      },
+      "uses": {
+        "spent": 0,
+        "max": "",
+        "recovery": []
+      },
+      "visibility": {
+        "identifier": "",
+        "level": {
+          "min": null,
+          "max": null
+        },
+        "require_attunement": false,
+        "require_identification": false,
+        "require_magic": false
+      },
+      "effects": [],
+      "applied_effects": [],
+      "kind": "utility",
+      "roll": {
+        "formula": "",
+        "name": "",
+        "prompt": false,
+        "visible": false
+      }
+    }
+  ],
+  "passive_effects": [],
+  "provenance": {
+    "source": "foundry",
+    "source_url": "https://github.com/foundryvtt/dnd5e/blob/965ad2d0cf5d063dac675ba078b5bd3c3c0dd449/packs/_source/laaru-hw-spells/Чувство_логова___Lair_Sense_Z8FmltNdfE1nqCeG.yml",
+    "ingest_date": "2026-10-26",
+    "ingest_version": "foundry-translator-v1",
+    "srd_version": [
+      "5.1"
+    ],
+    "license_tag": "CC-BY-4.0"
+  },
+  "review": {
+    "known_divergence": null,
+    "requires_user_decision": false
+  },
+  "entry_kind": "spell"
+}

@@ -1,0 +1,248 @@
+{
+  "activities": [
+    {
+      "activation": {
+        "condition": "",
+        "override": false,
+        "reaction_conditions": [],
+        "type": "action",
+        "value": null
+      },
+      "applied_effects": [
+        "gN0PgSLPlbsD8T2g"
+      ],
+      "consumption": {
+        "scaling": {
+          "allowed": true,
+          "max": "@item.uses.max"
+        },
+        "spell_slot": true,
+        "targets": [
+          {
+            "scaling": {
+              "formula": "",
+              "mode": "amount"
+            },
+            "target": "",
+            "type": "itemUses",
+            "value": "1"
+          }
+        ]
+      },
+      "description": {
+        "chat_flavor": ""
+      },
+      "duration": {
+        "concentration": false,
+        "override": false,
+        "special": "",
+        "units": "minute",
+        "value": "@scaling"
+      },
+      "effects": [
+        {
+          "id": "gN0PgSLPlbsD8T2g",
+          "level": {
+            "max": null,
+            "min": null
+          },
+          "on_save": null,
+          "riders": null
+        }
+      ],
+      "flags": {},
+      "id": "hG1Iplp3uG2fd39N",
+      "img": "icons/svg/light.svg",
+      "kind": "utility",
+      "name": "Light Candle (Minutes)",
+      "range": {
+        "override": false,
+        "special": "",
+        "units": "self",
+        "value": null
+      },
+      "roll": {
+        "formula": "",
+        "name": "",
+        "prompt": false,
+        "visible": false
+      },
+      "sort": 0,
+      "target": {
+        "affects": {
+          "choice": false,
+          "count": "",
+          "special": "",
+          "type": ""
+        },
+        "override": false,
+        "prompt": true,
+        "template": {
+          "contiguous": false,
+          "count": "",
+          "height": "",
+          "size": "",
+          "stationary": false,
+          "type": "",
+          "units": "ft",
+          "width": ""
+        }
+      },
+      "uses": {
+        "max": "",
+        "recovery": [],
+        "spent": 0
+      },
+      "visibility": {
+        "identifier": "",
+        "level": {
+          "max": null,
+          "min": null
+        },
+        "require_attunement": false,
+        "require_identification": false,
+        "require_magic": false
+      }
+    },
+    {
+      "activation": {
+        "condition": "",
+        "override": false,
+        "reaction_conditions": [],
+        "type": "action",
+        "value": null
+      },
+      "consumption": {
+        "scaling": {
+          "allowed": false,
+          "max": ""
+        },
+        "spell_slot": true,
+        "targets": [
+          {
+            "scaling": {
+              "formula": "",
+              "mode": ""
+            },
+            "target": "",
+            "type": "itemUses",
+            "value": "@item.uses.max"
+          }
+        ]
+      },
+      "description": {
+        "chat_flavor": ""
+      },
+      "duration": {
+        "concentration": false,
+        "override": false,
+        "special": "",
+        "units": "inst",
+        "value": null
+      },
+      "flags": {},
+      "id": "N7prweo4AeKHRzd8",
+      "img": "",
+      "kind": "cast",
+      "name": "Burn and Cast",
+      "range": {
+        "override": false,
+        "special": "",
+        "units": "self",
+        "value": null
+      },
+      "sort": 0,
+      "spell": {
+        "ability": "",
+        "challenge": {
+          "attack": null,
+          "override": false,
+          "save": null
+        },
+        "level": 9,
+        "properties": [],
+        "spellbook": true,
+        "uuid": "Compendium.dnd5e.spells24.Item.phbsplGate000000"
+      },
+      "target": {
+        "affects": {
+          "choice": false,
+          "count": "",
+          "special": "",
+          "type": ""
+        },
+        "override": false,
+        "prompt": true,
+        "template": {
+          "contiguous": false,
+          "count": "",
+          "height": "",
+          "size": "",
+          "stationary": false,
+          "type": "",
+          "units": "ft",
+          "width": ""
+        }
+      },
+      "uses": {
+        "max": "",
+        "recovery": [],
+        "spent": 0
+      },
+      "visibility": {
+        "identifier": "",
+        "level": {
+          "max": null,
+          "min": null
+        },
+        "require_attunement": false,
+        "require_identification": false,
+        "require_magic": false
+      }
+    }
+  ],
+  "attunement_constraint": null,
+  "cost_gp": 20000.0,
+  "description": "Wondrous Item, Very Rare (Requires Attunement)\n\nThis candle's magic is activated when the candle is lit, which requires a Magic action. After burning for 4 hours, the candle is destroyed. You can snuff it out early for use at a later time. Deduct the time it burned in increments of 1 minute from its total burn time.\n\nWhile lit, the candle sheds Dim Light in a 30-foot radius. While you are within that light, you have Advantage on D20 Tests. In addition, a Cleric or Druid in the light can cast level 1 spells they have prepared without expending spell slots.\n\nAlternatively, when you light the candle for the first time, you can cast Gate with it. Doing so destroys the candle. The portal created by the spell links to a particular Outer Plane chosen by the GM or determined by rolling on the following table.\n\n@Embed[Compendium.dnd5e.tables24.RollTable.dmgCandleOfInvoc rollable]",
+  "description_localized": "<p><em>Чудесный предмет, (Требуется настроенность)</em></p><p>Эта тонкая свечка посвящена божеству и разделяет его мировоззрение. Это мировоззрение можно определить заклинанием @Compendium[laaru-dnd5-hw.spells.1TO8Seox4AGcnJDq]{Обнаружение зла и добра}. Мастер выбирает бога и связанное с ним мировоззрение или определяет его случайным образом.</p><table class=\"w-100 rd__table  stripe-odd-table\"><thead><tr><th class=\"col-1 text-center\" data-rd-isroller=\"true\">[[/r d20]]</th><th class=\"col-11\" data-rd-isroller=\"false\">Мировоззрение</th></tr></thead><tbody><tr><td class=\"col-1 text-center\" data-roll-min=\"1\" data-roll-max=\"2\">1-2</td><td class=\"col-11\">Хаотичный злой</td></tr><tr><td class=\"col-1 text-center\" data-roll-min=\"3\" data-roll-max=\"4\">3-4</td><td class=\"col-11\">Хаотичный нейтральный</td></tr><tr><td class=\"col-1 text-center\" data-roll-min=\"5\" data-roll-max=\"7\">5-7</td><td class=\"col-11\">Хаотичный добрый</td></tr><tr><td class=\"col-1 text-center\" data-roll-min=\"8\" data-roll-max=\"9\">8-9</td><td class=\"col-11\">Нейтральный злой</td></tr><tr><td class=\"col-1 text-center\" data-roll-min=\"10\" data-roll-max=\"11\">10-11</td><td class=\"col-11\">Нейтральный</td></tr><tr><td class=\"col-1 text-center\" data-roll-min=\"12\" data-roll-max=\"13\">12-13</td><td class=\"col-11\">Нейтральный добрый</td></tr><tr><td class=\"col-1 text-center\" data-roll-min=\"14\" data-roll-max=\"15\">14-15</td><td class=\"col-11\">Принципиальный злой</td></tr><tr><td class=\"col-1 text-center\" data-roll-min=\"16\" data-roll-max=\"17\">16-17</td><td class=\"col-11\">Принципиальный нейтральный</td></tr><tr><td class=\"col-1 text-center\" data-roll-min=\"18\" data-roll-max=\"20\">18-20</td><td class=\"col-11\">Принципиальный добрый</td></tr></tbody></table><p>Магия свечи активируется, если её зажечь, что требует действия. Свеча уничтожается, прогорев 4 часа. Вы можете погасить её раньше, чтобы продолжить использование потом. Вычтите время её горения, округлённое вверх до минут, из общего времени использования.</p><p>Пока свеча горит, она испускает &amp;reference[dimlight]{Тусклый свет} в радиусе 30 футов. Любое существо в области света, чьё мировоззрение такое же, как у свечи, совершает броски атак, испытания и проверки характеристик с преимуществом.</p><p>Кроме того, жрец или друид в этой области, чьё мировоззрение такое же, как у свечи, может творить подготовленные заклинания 1-го круга, не тратя ячейки заклинаний. Заклинания оказывают эффект, как если бы были сотворены из ячейки 1-го круга. Как вариант, зажигая свечу впервые, вы можете сотворить из неё заклинание @Compendium[laaru-dnd5-hw.spells.vStdomjAhcRaeA3x]{Врата}, Свеча при этом уничтожается. </p><div id=\"gtx-trans\" style=\"position:absolute;left:571px;top:481px\"><div class=\"gtx-trans-icon\"><p> </p></div></div>",
+  "item_kind": "magic_item",
+  "name": "Свеча воззвания",
+  "passive_effects": [
+    {
+      "changes": [],
+      "description": "<p>While lit, the candle sheds Dim Light in a 30-foot radius. While you are within that light, you have Advantage on D20 Tests. In addition, a Cleric or Druid in the light can cast level 1 spells they have prepared without expending spell slots.</p>",
+      "disabled": false,
+      "duration": {
+        "seconds": 60
+      },
+      "id": "gN0PgSLPlbsD8T2g",
+      "name": "Lit Candle of Invocation",
+      "statuses": [],
+      "transfer": false
+    }
+  ],
+  "provenance": {
+    "ingest_date": "2026-05-30",
+    "ingest_version": "foundry-translator-v1",
+    "license_tag": "CC-BY-4.0",
+    "source": "foundry",
+    "source_url": "https://github.com/foundryvtt/dnd5e/blob/965ad2d0cf5d063dac675ba078b5bd3c3c0dd449/packs/_source/equipment24/consumables/candle-of-invocation.yml",
+    "srd_version": [
+      "5.2"
+    ]
+  },
+  "rarity": "very_rare",
+  "requires_attunement": true,
+  "review": {
+    "known_divergence": null,
+    "requires_user_decision": false
+  },
+  "slug": "candle-of-invocation",
+  "uses": {
+    "auto_destroy": true,
+    "max": "240",
+    "recovery": [],
+    "spent": 0
+  },
+  "weight": 0.0
+}

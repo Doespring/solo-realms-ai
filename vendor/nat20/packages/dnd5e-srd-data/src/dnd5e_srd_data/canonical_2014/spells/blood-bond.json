@@ -1,0 +1,139 @@
+{
+  "slug": "blood-bond",
+  "foundry_uuid": "Compendium.dnd5e.laaru-hw-spells.Item.fWycbj2b0yLI23M4",
+  "name": "Кровные узы / Blood Bond",
+  "description": "Как часть сотворения заклинания, вы должны потратить три кости здоровья или заклинание автоматически проваливается. Если вы это делаете, то бросьте потраченные для сотворения заклинания кости здоровья, чтобы существо, которого вы касаетесь получило временные ПЗ в количестве, равном выпавшему на костях значению.\n\nПока действует заклинание, вы знаете направление и расстояние до этого существа, вы можете телепатически общаться с этим существом (значение Интеллекта у существа должно быть выше 3) и вы можете выбирать это существо целью для заклинаний с дальностью «На себя» или «Касание» вне зависимости от текущего расстояния до него, но вы должны быть на одном плане существования или заклинание не будет действовать до момента, когда вы снова не окажетесь на одном плане существования.\n\nВ любой момент времени существо может решить окончить действие заклинания раньше времени. В таком случае существо теряет временные ПЗ, полученные от этого заклинания и получает некротический урон, равный потерянным таким способом временным ПЗ.\n\nНа высоких кругах. Если вы творите это заклинание, используя ячейку 5-го или 6-го круга, его длительность увеличивается до 8 часов. Если вы используете ячейку заклинания 7-го или 8-го круга, то длительность увеличивается до 24 часов. Если вы творите это заклинание, используя ячейку 9-го, то его длительность увеличивается до 7 дней.",
+  "level": 3,
+  "school": "enc",
+  "components": [
+    "M",
+    "S",
+    "V"
+  ],
+  "ritual": false,
+  "concentration": false,
+  "casting_time": {
+    "unit": "action",
+    "value": 1,
+    "condition": ""
+  },
+  "range": {
+    "units": "touch",
+    "value": null,
+    "special": null
+  },
+  "duration": {
+    "units": "hour",
+    "value": 1
+  },
+  "materials": {
+    "value": "тряпка вымоченная в вашей собственной крови",
+    "consumed": false,
+    "cost": 0,
+    "supply": 0
+  },
+  "preparation": {
+    "mode": "prepared",
+    "prepared": false
+  },
+  "activities": [
+    {
+      "id": "dnd5eactivity000",
+      "name": "",
+      "img": "",
+      "sort": 0,
+      "activation": {
+        "type": "action",
+        "value": null,
+        "condition": "",
+        "override": false,
+        "reaction_conditions": []
+      },
+      "consumption": {
+        "scaling": {
+          "allowed": false,
+          "max": ""
+        },
+        "spell_slot": true,
+        "targets": []
+      },
+      "description": {
+        "chat_flavor": ""
+      },
+      "duration": {
+        "value": null,
+        "units": "inst",
+        "special": "",
+        "concentration": false,
+        "override": false
+      },
+      "flags": {},
+      "range": {
+        "value": null,
+        "units": "self",
+        "special": "",
+        "override": false
+      },
+      "target": {
+        "template": {
+          "count": "",
+          "contiguous": false,
+          "stationary": false,
+          "type": "",
+          "size": "",
+          "width": "",
+          "height": "",
+          "units": ""
+        },
+        "affects": {
+          "count": "",
+          "type": "",
+          "choice": false,
+          "special": ""
+        },
+        "override": false,
+        "prompt": true
+      },
+      "uses": {
+        "spent": 0,
+        "max": "",
+        "recovery": []
+      },
+      "visibility": {
+        "identifier": "",
+        "level": {
+          "min": null,
+          "max": null
+        },
+        "require_attunement": false,
+        "require_identification": false,
+        "require_magic": false
+      },
+      "effects": [],
+      "applied_effects": [],
+      "kind": "utility",
+      "roll": {
+        "formula": "",
+        "name": "",
+        "prompt": false,
+        "visible": false
+      }
+    }
+  ],
+  "passive_effects": [],
+  "provenance": {
+    "source": "foundry",
+    "source_url": "https://github.com/foundryvtt/dnd5e/blob/965ad2d0cf5d063dac675ba078b5bd3c3c0dd449/packs/_source/laaru-hw-spells/Кровные_узы___Blood_Bond_fWycbj2b0yLI23M4.yml",
+    "ingest_date": "2026-10-26",
+    "ingest_version": "foundry-translator-v1",
+    "srd_version": [
+      "5.1"
+    ],
+    "license_tag": "CC-BY-4.0"
+  },
+  "review": {
+    "known_divergence": null,
+    "requires_user_decision": false
+  },
+  "entry_kind": "spell"
+}

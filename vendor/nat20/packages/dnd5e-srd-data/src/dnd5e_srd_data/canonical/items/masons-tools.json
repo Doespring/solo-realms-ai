@@ -1,0 +1,114 @@
+{
+  "activities": [
+    {
+      "activation": {
+        "condition": "",
+        "override": false,
+        "reaction_conditions": [],
+        "type": "action",
+        "value": null
+      },
+      "applied_effects": [],
+      "check": {
+        "ability": "str",
+        "associated": [],
+        "dc": {
+          "calculation": "",
+          "formula": "10"
+        }
+      },
+      "consumption": {
+        "scaling": {
+          "allowed": false,
+          "max": ""
+        },
+        "spell_slot": true,
+        "targets": []
+      },
+      "description": {
+        "chat_flavor": ""
+      },
+      "duration": {
+        "concentration": false,
+        "override": false,
+        "special": "",
+        "units": "inst",
+        "value": ""
+      },
+      "effects": [],
+      "flags": {},
+      "id": "fEjYUIHLH9OahqE8",
+      "img": "",
+      "kind": "check",
+      "name": "Chisel a Symbol or Hole",
+      "range": {
+        "override": false,
+        "special": "",
+        "units": "self",
+        "value": null
+      },
+      "sort": 0,
+      "target": {
+        "affects": {
+          "choice": false,
+          "count": "",
+          "special": "",
+          "type": ""
+        },
+        "override": false,
+        "prompt": false,
+        "template": {
+          "contiguous": false,
+          "count": "",
+          "height": "",
+          "size": "",
+          "stationary": false,
+          "type": "",
+          "units": "",
+          "width": ""
+        }
+      },
+      "uses": {
+        "max": "",
+        "recovery": [],
+        "spent": 0
+      },
+      "visibility": {
+        "identifier": "",
+        "level": {
+          "max": null,
+          "min": null
+        },
+        "require_attunement": false,
+        "require_identification": false,
+        "require_magic": false
+      }
+    }
+  ],
+  "attunement_constraint": null,
+  "cost_gp": 10.0,
+  "description": "Ability: Strength\n\nUtilize: Chisel a symbol or hole in stone (DC 10)\n\nCraft: Block and Tackle",
+  "description_localized": "<p>Эти специальные инструменты включают предметы, необходимые для работы с камнем. Умение в обращении с этими инструментами позволяет вам добавить ваш бонус умения к любой проверке характеристики, связанной с их использованием.</p>\n<p>Позволяют вам возводить каменные строения, включая стены и здания из кирпича.</p>\n<p><em><strong>Компоненты.</strong></em> Инструменты каменщика включают в себя мастерок, молоток, долото, щётки и угольник.</p>\n<p><em><strong>История.</strong></em> Ваш опыт помогает вам определять дату постройки и предназначение каменного здания, а также понять, кто мог его построить.</p>\n<p><em><strong>Расследование.</strong></em> Вы получаете дополнительные знания при обследовании помещений в каменном здании.</p>\n<p><em><strong>Внимание.</strong></em> Вы замечаете неровности на каменных стенах и полах, что облегчает поиск ловушек и тайных ходов.</p>\n<p><em><strong>Снос.</strong></em> Ваши познания в каменном зодчестве позволяют вам найти уязвимые места в кладке каменных стен. Вы наносите таким строениям двойной урон своими атаками.</p>\n<table class=\"rd__table  stripe-odd-table\">\n<thead>\n<tr>\n<th class=\"col-10\" data-rd-isroller=\"false\">Возможное действие</th>\n<th class=\"col-2 text-center\" data-rd-isroller=\"false\">СЛ</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td class=\"col-10\">Продолбить небольшое отверстие в каменной стене</td>\n<td class=\"col-2 text-center\">10</td>\n</tr>\n<tr>\n<td class=\"col-10\">Найти слабое место в каменной стене</td>\n<td class=\"col-2 text-center\">15</td>\n</tr>\n</tbody>\n</table>",
+  "item_kind": "item",
+  "name": "Инструменты каменщика",
+  "passive_effects": [],
+  "provenance": {
+    "ingest_date": "2026-05-30",
+    "ingest_version": "foundry-translator-v1",
+    "license_tag": "CC-BY-4.0",
+    "source": "foundry",
+    "source_url": "https://github.com/foundryvtt/dnd5e/blob/965ad2d0cf5d063dac675ba078b5bd3c3c0dd449/packs/_source/equipment24/tools/artisan/masons-tools.yml",
+    "srd_version": [
+      "5.2"
+    ]
+  },
+  "rarity": "common",
+  "requires_attunement": false,
+  "review": {
+    "known_divergence": null,
+    "requires_user_decision": false
+  },
+  "slug": "masons-tools",
+  "uses": null,
+  "weight": 8.0
+}

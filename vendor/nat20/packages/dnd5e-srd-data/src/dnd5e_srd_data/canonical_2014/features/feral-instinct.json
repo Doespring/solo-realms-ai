@@ -1,0 +1,48 @@
+{
+  "slug": "feral-instinct",
+  "name": "Feral Instinct",
+  "description": "By 7th level, your instincts are so honed that you have advantage on initiative rolls.\n\nAdditionally, if you are surprised at the beginning of combat and aren't incapacitated, you can act normally on your first turn, but only if you enter your rage before doing anything else on that turn.",
+  "feature_type": "class_feature",
+  "foundry_id": "NlXslw4yAqmKZWtN",
+  "source_slug": "barbarian",
+  "activities": [],
+  "passive_effects": [
+    {
+      "id": "q7TkJQX7PeVOzTQH",
+      "name": "Feral Instinct",
+      "description": "",
+      "changes": [
+        {
+          "key": "system.attributes.init.roll.mode",
+          "mode": 2,
+          "value": "1",
+          "priority": null
+        }
+      ],
+      "statuses": [],
+      "duration": {
+        "units": "seconds",
+        "expired": false
+      },
+      "disabled": false,
+      "transfer": true
+    }
+  ],
+  "advancement": [],
+  "uses": null,
+  "provenance": {
+    "source": "foundry",
+    "source_url": "https://github.com/foundryvtt/dnd5e/blob/965ad2d0cf5d063dac675ba078b5bd3c3c0dd449/packs/_source/classfeatures/Feral_Instinct_NlXslw4yAqmKZWtN.yml",
+    "ingest_date": "2026-10-26",
+    "ingest_version": "foundry-translator-v1",
+    "srd_version": [
+      "5.1"
+    ],
+    "license_tag": "CC-BY-4.0"
+  },
+  "review": {
+    "known_divergence": null,
+    "requires_user_decision": false
+  },
+  "entry_kind": "feature"
+}

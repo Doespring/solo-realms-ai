@@ -1,0 +1,138 @@
+{
+  "slug": "detect-dragons",
+  "foundry_uuid": "Compendium.dnd5e.laaru-hw-spells.Item.KfhqR50bkO4HDaqQ",
+  "name": "Обнаружение драконов / Detect Dragons",
+  "description": "(Магия драконов)\n\nВы можете обнаружить присутствие драконов и драконоподобных существ в пределах прямой видимости в 120 футов, независимо от маскировки, иллюзий и заклинаний, меняющих форму, как в заклинании Полиморф. Сведения, которые вы узнаёте, зависят от количества последовательных раундов, в которых вы действием может изучить объект или область.\n\nВ первом раунде, вы узнаёте о присутствии любых драконоподобных существ, но не их число, местоположение, имена или тип.\n\nВо втором раунде вы узнаёте количество существ и общее состояние самого мощного из них.\n\nВ третьем и последующих раундах, вы совершаете проверку [[/skill arcana 15]]{Интеллекта (Магия) со СЛ 15}. При успехе, вы узнаёт возраст, тип и точное местоположение одного драконоподобного существа.\n\nОбратите внимание, что заклинание не даёт информации в ход его сотворения если у вас нет возможности предпринять второе действие в этот ход.",
+  "level": 2,
+  "school": "div",
+  "components": [
+    "S",
+    "V"
+  ],
+  "ritual": false,
+  "concentration": true,
+  "casting_time": {
+    "unit": "action",
+    "value": 1,
+    "condition": ""
+  },
+  "range": {
+    "units": "self",
+    "value": null,
+    "special": null
+  },
+  "duration": {
+    "units": "minute",
+    "value": 10
+  },
+  "materials": {
+    "value": "",
+    "consumed": false,
+    "cost": 0,
+    "supply": 0
+  },
+  "preparation": {
+    "mode": "prepared",
+    "prepared": false
+  },
+  "activities": [
+    {
+      "id": "yLNUFjvs6hyUDiwA",
+      "name": "",
+      "img": "",
+      "sort": 0,
+      "activation": {
+        "type": "action",
+        "value": null,
+        "condition": "",
+        "override": false,
+        "reaction_conditions": []
+      },
+      "consumption": {
+        "scaling": {
+          "allowed": false,
+          "max": ""
+        },
+        "spell_slot": true,
+        "targets": []
+      },
+      "description": {
+        "chat_flavor": ""
+      },
+      "duration": {
+        "value": null,
+        "units": "inst",
+        "special": "",
+        "concentration": false,
+        "override": false
+      },
+      "flags": {},
+      "range": {
+        "value": null,
+        "units": "self",
+        "special": "",
+        "override": false
+      },
+      "target": {
+        "template": {
+          "count": "",
+          "contiguous": false,
+          "stationary": false,
+          "type": "",
+          "size": "",
+          "width": "",
+          "height": "",
+          "units": "ft"
+        },
+        "affects": {
+          "count": "",
+          "type": "",
+          "choice": false,
+          "special": ""
+        },
+        "override": false,
+        "prompt": true
+      },
+      "uses": {
+        "spent": 0,
+        "max": "",
+        "recovery": []
+      },
+      "visibility": {
+        "identifier": "",
+        "level": {
+          "min": null,
+          "max": null
+        },
+        "require_attunement": false,
+        "require_identification": false,
+        "require_magic": false
+      },
+      "effects": [],
+      "applied_effects": [],
+      "kind": "utility",
+      "roll": {
+        "formula": "",
+        "name": "",
+        "prompt": false,
+        "visible": false
+      }
+    }
+  ],
+  "passive_effects": [],
+  "provenance": {
+    "source": "foundry",
+    "source_url": "https://github.com/foundryvtt/dnd5e/blob/965ad2d0cf5d063dac675ba078b5bd3c3c0dd449/packs/_source/laaru-hw-spells/Обнаружение_драконов___Detect_Dragons_KfhqR50bkO4HDaqQ.yml",
+    "ingest_date": "2026-10-26",
+    "ingest_version": "foundry-translator-v1",
+    "srd_version": [
+      "5.1"
+    ],
+    "license_tag": "CC-BY-4.0"
+  },
+  "review": {
+    "known_divergence": null,
+    "requires_user_decision": false
+  },
+  "entry_kind": "spell"
+}

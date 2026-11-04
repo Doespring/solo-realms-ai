@@ -1,0 +1,315 @@
+{
+  "slug": "hunter",
+  "name": "Hunter",
+  "description": "Emulating the Hunter archetype means accepting your place as a bulwark between civilization and the terrors of the wilderness. As you walk the Hunter's path, you learn specialized techniques for fighting the threats you face, from rampaging ogres and hordes of orcs to towering giants and terrifying dragons.",
+  "identifier": "hunter",
+  "class_identifier": "ranger",
+  "spellcasting": {
+    "ability": "",
+    "progression": "none"
+  },
+  "advancement": [
+    {
+      "id": "lk5l6vsi3jk52is6",
+      "type": "ItemGrant",
+      "level": 3,
+      "title": "Features",
+      "hint": "",
+      "class_restriction": "",
+      "configuration": {
+        "items": [
+          {
+            "uuid": "Compendium.dnd5e.classfeatures.wrxIW5sDfmGr3u5s",
+            "optional": false
+          }
+        ],
+        "optional": false,
+        "spell": {
+          "ability": [],
+          "preparation": "",
+          "uses": {
+            "max": "",
+            "per": ""
+          }
+        }
+      },
+      "value": {}
+    },
+    {
+      "id": "gia6u4kb86to8zu2",
+      "type": "ItemGrant",
+      "level": 7,
+      "title": "Features",
+      "hint": "",
+      "class_restriction": "",
+      "configuration": {
+        "items": [
+          {
+            "uuid": "Compendium.dnd5e.classfeatures.WgQrqjmeyMqDzVt3",
+            "optional": false
+          }
+        ],
+        "optional": false,
+        "spell": {
+          "ability": [],
+          "preparation": "",
+          "uses": {
+            "max": "",
+            "per": ""
+          }
+        }
+      },
+      "value": {}
+    },
+    {
+      "id": "nd466kbxtd1mqg97",
+      "type": "ItemGrant",
+      "level": 11,
+      "title": "Features",
+      "hint": "",
+      "class_restriction": "",
+      "configuration": {
+        "items": [
+          {
+            "uuid": "Compendium.dnd5e.classfeatures.7zlTRRXT1vWSBGjX",
+            "optional": false
+          }
+        ],
+        "optional": false,
+        "spell": {
+          "ability": [],
+          "preparation": "",
+          "uses": {
+            "max": "",
+            "per": ""
+          }
+        }
+      },
+      "value": {}
+    },
+    {
+      "id": "7l3aayc87oepree4",
+      "type": "ItemGrant",
+      "level": 15,
+      "title": "Features",
+      "hint": "",
+      "class_restriction": "",
+      "configuration": {
+        "items": [
+          {
+            "uuid": "Compendium.dnd5e.classfeatures.a0Sq88dgnREcIMfl",
+            "optional": false
+          }
+        ],
+        "optional": false,
+        "spell": {
+          "ability": [],
+          "preparation": "",
+          "uses": {
+            "max": "",
+            "per": ""
+          }
+        }
+      },
+      "value": {}
+    },
+    {
+      "id": "Xr04szY7gFqZKBxP",
+      "type": "ItemChoice",
+      "level": 0,
+      "title": "Hunter's Prey",
+      "hint": "",
+      "class_restriction": "",
+      "configuration": {
+        "choices": {
+          "3": {
+            "count": 1,
+            "replacement": false
+          }
+        },
+        "allowDrops": false,
+        "type": "feat",
+        "pool": [
+          {
+            "uuid": "Compendium.dnd5e.classfeatures.5gx1O0sxK08awEO9"
+          },
+          {
+            "uuid": "Compendium.dnd5e.classfeatures.StfmqK1twVfukpa0"
+          },
+          {
+            "uuid": "Compendium.dnd5e.classfeatures.C6sHdDGmCMo0cYHd"
+          }
+        ],
+        "spell": {
+          "ability": [],
+          "preparation": "",
+          "uses": {
+            "max": "",
+            "per": ""
+          }
+        },
+        "restriction": {
+          "type": "class",
+          "subtype": "huntersPrey",
+          "level": ""
+        }
+      },
+      "value": {
+        "added": {},
+        "replaced": {}
+      }
+    },
+    {
+      "id": "3UE5ZrBP2hCi52mC",
+      "type": "ItemChoice",
+      "level": 0,
+      "title": "Defensive Tactics",
+      "hint": "",
+      "class_restriction": "",
+      "configuration": {
+        "choices": {
+          "7": {
+            "count": 1,
+            "replacement": false
+          }
+        },
+        "allowDrops": false,
+        "type": "feat",
+        "pool": [
+          {
+            "uuid": "Compendium.dnd5e.classfeatures.pAQMJU5R9SGUmzHU"
+          },
+          {
+            "uuid": "Compendium.dnd5e.classfeatures.slelvrm83v9UAKZU"
+          },
+          {
+            "uuid": "Compendium.dnd5e.classfeatures.zbHu0NvHuII8lR7W"
+          }
+        ],
+        "spell": {
+          "ability": [],
+          "preparation": "",
+          "uses": {
+            "max": "",
+            "per": ""
+          }
+        },
+        "restriction": {
+          "type": "class",
+          "subtype": "defensiveTactic",
+          "level": ""
+        }
+      },
+      "value": {
+        "added": {},
+        "replaced": {}
+      }
+    },
+    {
+      "id": "rKt0QvE4kJO06u9c",
+      "type": "ItemChoice",
+      "level": 0,
+      "title": "Multiattack",
+      "hint": "",
+      "class_restriction": "",
+      "configuration": {
+        "choices": {
+          "11": {
+            "count": 1,
+            "replacement": false
+          }
+        },
+        "allowDrops": false,
+        "type": "feat",
+        "pool": [
+          {
+            "uuid": "Compendium.dnd5e.classfeatures.l7W6JB9yWLLLtQKP"
+          },
+          {
+            "uuid": "Compendium.dnd5e.classfeatures.1DY8w3CXeD7PHDXF"
+          }
+        ],
+        "spell": {
+          "ability": [],
+          "preparation": "",
+          "uses": {
+            "max": "",
+            "per": ""
+          }
+        },
+        "restriction": {
+          "type": "class",
+          "subtype": "multiattack",
+          "level": ""
+        }
+      },
+      "value": {
+        "added": {},
+        "replaced": {}
+      }
+    },
+    {
+      "id": "8Ssyn9fPrW1TgBN5",
+      "type": "ItemChoice",
+      "level": 0,
+      "title": "Superior Hunter's Defense",
+      "hint": "",
+      "class_restriction": "",
+      "configuration": {
+        "choices": {
+          "15": {
+            "count": 1,
+            "replacement": false
+          }
+        },
+        "allowDrops": false,
+        "type": "feat",
+        "pool": [
+          {
+            "uuid": "Compendium.dnd5e.classfeatures.laVHAIOKIsUeezWd"
+          },
+          {
+            "uuid": "Compendium.dnd5e.classfeatures.Xf763cJoDHPPWSGG"
+          },
+          {
+            "uuid": "Compendium.dnd5e.classfeatures.7pyZjz5vlUWV01qQ"
+          }
+        ],
+        "spell": {
+          "ability": [],
+          "preparation": "",
+          "uses": {
+            "max": "",
+            "per": ""
+          }
+        },
+        "restriction": {
+          "type": "class",
+          "subtype": "",
+          "level": ""
+        }
+      },
+      "value": {
+        "added": {},
+        "replaced": {}
+      }
+    }
+  ],
+  "granted_features": [],
+  "feature_choices": [],
+  "provenance": {
+    "source": "foundry",
+    "source_url": "https://github.com/foundryvtt/dnd5e/blob/965ad2d0cf5d063dac675ba078b5bd3c3c0dd449/packs/_source/subclasses/Hunter_uqd2q6WjVfcsaaGb.yml",
+    "ingest_date": "2026-10-26",
+    "ingest_version": "foundry-translator-v1",
+    "srd_version": [
+      "5.1"
+    ],
+    "license_tag": "CC-BY-4.0"
+  },
+  "review": {
+    "known_divergence": null,
+    "requires_user_decision": false
+  },
+  "entry_kind": "subclass"
+}

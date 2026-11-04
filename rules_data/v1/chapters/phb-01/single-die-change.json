@@ -1,0 +1,31 @@
+{
+  "schema_version": "1.0.0",
+  "id": "dnd2024.d20.single_die_change",
+  "revision": 1,
+  "name": "Переброс или замена одной к20 при преимуществе/помехе",
+  "edition": "dnd2024",
+  "category": "d20_test",
+  "conditions": {"all": [
+    {"fact": "roll_mode", "operator": "in", "value": ["advantage", "disadvantage"]},
+    {"fact": "die_change_authorized", "operator": "eq", "value": true}
+  ]},
+  "triggers": [{"event": "d20_test.after_roll", "scope": ["ability_check", "saving_throw", "attack_roll"]}],
+  "effects": [{"op": "permit_die_change", "count": 1, "chooser": "roller", "change": "authorized_change_only", "authorization": "external_rule"}],
+  "duration": {"kind": "instantaneous"},
+  "resources": [],
+  "restrictions": [
+    {"code": "external_authorization", "description": "Этот пункт сам не даёт переброс: отдельное правило должно разрешать конкретно переброс или замену. Его стоимость и сроки сохраняются.", "source_derived": true},
+    {"code": "player_choice", "description": "Бросающий выбирает одну из двух костей. Разрешение переброса не даёт права вместо этого заменить результат, и наоборот.", "source_derived": true},
+    {"code": "scope_boundary", "description": "Расход, получение и передача Героического вдохновения не включены в эту запись.", "source_derived": false}
+  ],
+  "sources": [{
+    "document_id": "phb_2024_ru",
+    "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+    "chapter": "1. Правила игры",
+    "section": "Преимущество/Помеха; Перебрасывание костей",
+    "pages": [{"pdf": 14, "printed": "13"}],
+    "knowledge_section_ids": [59688]
+  }],
+  "verification": {"status": "source_checked", "method": "pdf_text_and_visual", "checked_on": "2026-10-16", "reviewer": "codex", "human_review": "pending", "evidence": ["evidence/phb-pdf-013-014.txt"]},
+  "engine": {"compatibility": "unsupported", "handler": null, "supported_scope": [], "auto_activate": false, "notes": "RulesetEngine.d20 не принимает разрешение изменения, индекс выбранной кости или заменяющий результат. Это справочное определение, без исполнения."}
+}

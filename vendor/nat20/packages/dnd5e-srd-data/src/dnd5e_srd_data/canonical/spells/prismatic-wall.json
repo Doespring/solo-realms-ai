@@ -1,0 +1,495 @@
+{
+  "activities": [
+    {
+      "activation": {
+        "condition": "",
+        "override": false,
+        "reaction_conditions": [],
+        "type": "action",
+        "value": null
+      },
+      "applied_effects": [],
+      "consumption": {
+        "scaling": {
+          "allowed": false,
+          "max": ""
+        },
+        "spell_slot": true,
+        "targets": []
+      },
+      "description": {
+        "chat_flavor": ""
+      },
+      "duration": {
+        "concentration": false,
+        "override": false,
+        "special": "",
+        "units": "inst",
+        "value": null
+      },
+      "effects": [],
+      "flags": {},
+      "id": "5f0JerdDSOQQXiTe",
+      "img": "",
+      "kind": "utility",
+      "name": "Create Wall",
+      "range": {
+        "override": false,
+        "special": "",
+        "units": "self",
+        "value": null
+      },
+      "roll": {
+        "formula": "",
+        "name": "",
+        "prompt": false,
+        "visible": false
+      },
+      "sort": 0,
+      "target": {
+        "affects": {
+          "choice": false,
+          "count": "1",
+          "special": "",
+          "type": "space"
+        },
+        "override": true,
+        "prompt": true,
+        "template": {
+          "contiguous": false,
+          "count": "",
+          "height": "30",
+          "size": "90",
+          "stationary": false,
+          "type": "wall",
+          "units": "ft",
+          "width": "1/12"
+        }
+      },
+      "uses": {
+        "max": "",
+        "recovery": [],
+        "spent": 0
+      },
+      "visibility": {
+        "identifier": "",
+        "level": {
+          "max": null,
+          "min": null
+        },
+        "require_attunement": false,
+        "require_identification": false,
+        "require_magic": false
+      }
+    },
+    {
+      "activation": {
+        "condition": "",
+        "override": false,
+        "reaction_conditions": [],
+        "type": "action",
+        "value": null
+      },
+      "applied_effects": [],
+      "consumption": {
+        "scaling": {
+          "allowed": false,
+          "max": ""
+        },
+        "spell_slot": true,
+        "targets": []
+      },
+      "description": {
+        "chat_flavor": ""
+      },
+      "duration": {
+        "concentration": false,
+        "override": false,
+        "special": "",
+        "units": "inst",
+        "value": null
+      },
+      "effects": [],
+      "flags": {},
+      "id": "fOYr1bgsB1VXROcm",
+      "img": "",
+      "kind": "utility",
+      "name": "Create Globe",
+      "range": {
+        "override": false,
+        "special": "",
+        "units": "self",
+        "value": null
+      },
+      "roll": {
+        "formula": "",
+        "name": "",
+        "prompt": false,
+        "visible": false
+      },
+      "sort": 0,
+      "target": {
+        "affects": {
+          "choice": false,
+          "count": "1",
+          "special": "",
+          "type": "space"
+        },
+        "override": true,
+        "prompt": true,
+        "template": {
+          "contiguous": false,
+          "count": "",
+          "height": "30",
+          "size": "15",
+          "stationary": false,
+          "type": "sphere",
+          "units": "ft",
+          "width": "1/12"
+        }
+      },
+      "uses": {
+        "max": "",
+        "recovery": [],
+        "spent": 0
+      },
+      "visibility": {
+        "identifier": "",
+        "level": {
+          "max": null,
+          "min": null
+        },
+        "require_attunement": false,
+        "require_identification": false,
+        "require_magic": false
+      }
+    },
+    {
+      "activation": {
+        "condition": "",
+        "override": true,
+        "reaction_conditions": [],
+        "type": "",
+        "value": null
+      },
+      "applied_effects": [
+        "iuIlP2Br3aHDUjai"
+      ],
+      "consumption": {
+        "scaling": {
+          "allowed": false,
+          "max": ""
+        },
+        "spell_slot": false,
+        "targets": []
+      },
+      "damage": {
+        "on_save": "none",
+        "parts": []
+      },
+      "description": {
+        "chat_flavor": ""
+      },
+      "duration": {
+        "concentration": false,
+        "override": true,
+        "special": "",
+        "units": "inst",
+        "value": null
+      },
+      "effects": [
+        {
+          "id": "iuIlP2Br3aHDUjai",
+          "level": {
+            "max": null,
+            "min": null
+          },
+          "on_save": null,
+          "riders": null
+        }
+      ],
+      "flags": {},
+      "id": "Pm0Re9Gt8pJNaF1C",
+      "img": "",
+      "kind": "save",
+      "name": "Blinding Save",
+      "range": {
+        "override": true,
+        "special": "measured from nearest point on wall or globe",
+        "units": "ft",
+        "value": "20"
+      },
+      "save": {
+        "ability": [
+          "con"
+        ],
+        "dc": {
+          "calculation": "spellcasting",
+          "formula": ""
+        },
+        "ignore_cover": false
+      },
+      "sort": 0,
+      "target": {
+        "affects": {
+          "choice": false,
+          "count": "1",
+          "special": "",
+          "type": "creature"
+        },
+        "override": true,
+        "prompt": true,
+        "template": {
+          "contiguous": false,
+          "count": "",
+          "height": "",
+          "size": "",
+          "stationary": false,
+          "type": "",
+          "units": "ft",
+          "width": ""
+        }
+      },
+      "uses": {
+        "max": "",
+        "recovery": [],
+        "spent": 0
+      },
+      "visibility": {
+        "identifier": "",
+        "level": {
+          "max": null,
+          "min": null
+        },
+        "require_attunement": false,
+        "require_identification": false,
+        "require_magic": false
+      }
+    },
+    {
+      "activation": {
+        "condition": "",
+        "override": true,
+        "reaction_conditions": [],
+        "type": "",
+        "value": null
+      },
+      "applied_effects": [],
+      "consumption": {
+        "scaling": {
+          "allowed": false,
+          "max": ""
+        },
+        "spell_slot": false,
+        "targets": []
+      },
+      "damage": {
+        "on_save": "half",
+        "parts": [
+          {
+            "bonus": "",
+            "custom": {
+              "enabled": false,
+              "formula": ""
+            },
+            "denomination": 6,
+            "number": 12,
+            "scaling": {
+              "formula": "",
+              "mode": "",
+              "number": 1
+            },
+            "types": [
+              "acid",
+              "fire",
+              "lightning",
+              "poison",
+              "cold"
+            ]
+          }
+        ]
+      },
+      "description": {
+        "chat_flavor": ""
+      },
+      "duration": {
+        "concentration": false,
+        "override": true,
+        "special": "",
+        "units": "inst",
+        "value": null
+      },
+      "effects": [
+        {
+          "id": "CbAuJQPoOViKebWs",
+          "level": {
+            "max": null,
+            "min": null
+          },
+          "on_save": false,
+          "riders": null
+        },
+        {
+          "id": "EIaFpuWAfQKSkFyp",
+          "level": {
+            "max": null,
+            "min": null
+          },
+          "on_save": null,
+          "riders": null
+        }
+      ],
+      "flags": {},
+      "id": "fxEIn0sNwZReZJhV",
+      "img": "",
+      "kind": "save",
+      "name": "Traversal Save",
+      "range": {
+        "override": true,
+        "special": "",
+        "units": "any",
+        "value": null
+      },
+      "save": {
+        "ability": [
+          "dex"
+        ],
+        "dc": {
+          "calculation": "spellcasting",
+          "formula": ""
+        },
+        "ignore_cover": false
+      },
+      "sort": 0,
+      "target": {
+        "affects": {
+          "choice": false,
+          "count": "1",
+          "special": "",
+          "type": "creature"
+        },
+        "override": true,
+        "prompt": true,
+        "template": {
+          "contiguous": false,
+          "count": "",
+          "height": "",
+          "size": "",
+          "stationary": false,
+          "type": "",
+          "units": "ft",
+          "width": ""
+        }
+      },
+      "uses": {
+        "max": "",
+        "recovery": [],
+        "spent": 0
+      },
+      "visibility": {
+        "identifier": "",
+        "level": {
+          "max": null,
+          "min": null
+        },
+        "require_attunement": false,
+        "require_identification": false,
+        "require_magic": false
+      }
+    }
+  ],
+  "casting_time": {
+    "condition": "",
+    "unit": "action",
+    "value": 1
+  },
+  "components": [
+    "S",
+    "V"
+  ],
+  "concentration": false,
+  "description": "A shimmering, multicolored plane of light forms a vertical opaque wall—up to 90 feet long, 30 feet high, and 1 inch thick—centered on a point within range. Alternatively, you shape the wall into a globe up to 30 feet in diameter centered on a point within range. The wall lasts for the duration. If you position the wall in a space occupied by a creature, the spell ends instantly without effect.\n\nThe wall sheds &amp;Reference[BrightLight] within 100 feet and &amp;Reference[DimLight] for an additional 100 feet. You and creatures you designate when you cast the spell can pass through and be near the wall without harm. If another creature that can see the wall moves within 20 feet of it or starts its turn there, the creature must succeed on a Constitution saving throw or have the &amp;Reference[Blinded apply=false] condition for 1 minute.\n\nThe wall consists of seven layers, each with a different color. When a creature reaches into or passes through the wall, it does so one layer at a time through all the layers. Each layer forces the creature to make a Dexterity saving throw or be affected by that layer's properties as described in the Prismatic Layers table.\n\nThe wall, which has AC 10, can be destroyed one layer at a time, in order from red to violet, by means specific to each layer. If a layer is destroyed, it is gone for the duration. Antimagic Field has no effect on the wall, and Dispel Magic can affect only the violet layer.\n\n@Embed[Compendium.dnd5e.tables24.RollTable.phbPrismaticLaye rangeLabel=\"Order\"]",
+  "description_localized": "<div class=\"rd__spc-inline-post\"><p>Мерцающая разноцветная плоскость света образует вертикальную непрозрачную стену длиной до 90 футов, высотой до 30 футов и толщиной до дюйма с центром в точке, которую вы видите в пределах дистанции. Как вариант, вы можете придать стене форму сферы до 30 футов в диаметре вокруг выбранной вами точки в пределах дистанции. Стена остаётся на месте, пока длится заклинание. Если вы расположите стену так, что она проходит сквозь пространство, занятое существом, заклинание не сработает, а ваше действие и ячейка заклинания будут потрачены зря.</p></div><div class=\"rd__spc-inline-post\"><p>Стена испускает яркий свет на расстоянии до 100 футов и тусклый ещё на 100 футов. Вы и существа, выбранные вами при сотворении, можете проходить сквозь стену и оставаться возле неё без вреда для себя. Если другое существо, которое видит стену, переместится в пределы 20 футов от неё или начнёт там свой ход, оно должно пройти испытание Выносливости, при провале оно &amp;reference[blinded]{ослеплено} на 1 минуту</p></div><div class=\"rd__spc-inline-post\"><p>Стена состоит из семи слоёв, каждый своего цвета. Когда существо пытается проникнуть в стену или пройти сквозь нее, оно это делает по слою за раз, поочередно проходя все слои. На каждом слое существо должно пройти испытание Ловкости, при провале оно подвергается воздействию слоя, описанному далее.</p></div><div class=\"rd__spc-inline-post\"><p>Стену можно уничтожить, тоже по слою за раз, в порядке от красного до фиолетового. Методы отличаются для каждого слоя. Если слой уничтожить, он не появляется снова, пока длится заклинание. Поле антимагии не действует на стену, а рассеивание магии действует только на фиолетовый слой.</p></div><div class=\"rd__spc-inline-post\"><ol><li><p><strong>Красный.</strong> Существо получает [[/r 10d6]] урона огнём при провале или половину этого урона при успехе. Пока этот слой существует, немагические дистанционные атаки не могут проходить сквозь стену. Слой можно уничтожить, нанеся ему не менее 25 урона холодом.</p></li><li><p><strong>Оранжевый.</strong> Существо получает [[/r 10d6]] урона кислотой при провале или половину этого урона при успехе. Пока этот слой существует, магические дистанционные атаки не могут проходить сквозь стену. Слой можно уничто жить с помощью сильного ветра.</p></li><li><p><strong>Жёлтый.</strong> Существо получает [[/r 10d6]] урона молнией при провале или половину этого урона при успехе. Слой можно уничтожить, нанеся ему не менее 60 урона силой.</p></li><li><p><strong>Зелёный.</strong> Существо получает [[/r 10d6]] урона ядом при провале или половину этого урона при успехе. Слой можно уничтожить заклинанием @Compendium[laaru-dnd5-hw.spells.vfMWZt9aM7IEdwXi]{Проход сквозь стену} или иным заклинанием того же круга или выше, способным открыть портал в твёрдой поверхности.</p></li><li><p><strong>Голубой. </strong>Существо получает [[/r 10d6]] урона холодом при провале или половину этого урона при успехе. Слой можно уничтожить, нанеся ему не менее 25 урона огнём.</p></li><li><p><strong>Синий. </strong>При провале испытания существо &amp;reference[restrained]{обездвижено}. Оно должно проходить испытание Выносливости в конце каждого своего хода. Если цель успешно пройдёт его трижды, заклинание прекращает действовать. Если цель провалит испытание трижды, она окончательно превратится в камень и получит состояние &amp;reference[petrified]{окаменения} . Успехи и провалы необязательно должны быть подряд: подсчитывайте их, пока чего-то не наберётся три.<br />Пока этот слой существует, заклинания нельзя творить сквозь стену. Слой можно уничтожить ярким светом, например заклинанием  @Compendium[laaru-dnd5-hw.spells.xoxTz9mfsHkmHcX6]{Дневной свет} или аналогичным заклинанием того же круга или выше.</p></li><li><p><strong>Фиолетовый. </strong>При провале цель &amp;reference[blinded]{ослеплена}. Она должна пройти испытание Мудрости в начале вашего следующего хода. При успехе слепота прекращается. При провале существо перемещается на другой план бытия по выбору мастера, слепота при этом прекращается. Как правило, если существо не на том плане, с которого родом, оно возвращается на родной план, остальные существа обычно попадают на Астральный или Эфирный планы.</p></li></ol></div><div class=\"rd__spc-inline-post\"><p>Слой можно уничтожить заклинанием @Compendium[laaru-dnd5-hw.spells.ZdDJVUlzYudd4nHO]{Рассеивание магии} или аналогичным заклинанием того же круга или выше, способным рассеивать заклинания и магические эффекты.</p></div>",
+  "duration": {
+    "units": "minute",
+    "value": 10
+  },
+  "entry_kind": "spell",
+  "foundry_uuid": "Compendium.dnd5e.spells24.Item.phbsplPrismaticW",
+  "level": 9,
+  "materials": {
+    "consumed": false,
+    "cost": 0,
+    "supply": 0,
+    "value": ""
+  },
+  "name": "Радужная стена",
+  "passive_effects": [
+    {
+      "changes": [],
+      "description": "<p>The target has the &amp;Reference[Blinded apply=false] condition for 1 minute.</p>",
+      "disabled": false,
+      "duration": {
+        "seconds": 60
+      },
+      "id": "iuIlP2Br3aHDUjai",
+      "name": "Prismatic Blinding",
+      "statuses": [
+        "blinded"
+      ],
+      "transfer": false
+    },
+    {
+      "changes": [],
+      "description": "<p>The target has the &amp;Reference[Restrained apply=false] condition and makes a [[/save ability=con dc=@attributes.spell.dc]] format=long]] at the end of each of its turns. If it successfully saves three times, the condition ends. If it fails three times, it has the &amp;Reference[Petrified] condition until it is freed by an effect like the <em>@UUID[Compendium.dnd5e.spells24.Item.phbsplGreaterRes]{Greater Restoration}</em> spell.</p>",
+      "disabled": false,
+      "duration": null,
+      "id": "CbAuJQPoOViKebWs",
+      "name": "Restrained (Indigo)",
+      "statuses": [
+        "restrained"
+      ],
+      "transfer": false
+    },
+    {
+      "changes": [],
+      "description": "<p> The target has the &amp;Reference[Blinded apply=false] condition and makes a [[/save ability=wis dc=@attributes.spell.dc format=long]] at the start of your next turn. On a successful save, the condition ends. On a failed save, the condition ends, and the creature teleports to another plane of existence (DM’s choice).</p>",
+      "disabled": false,
+      "duration": {
+        "rounds": 1
+      },
+      "id": "EIaFpuWAfQKSkFyp",
+      "name": "Blinded (Violet)",
+      "statuses": [
+        "blinded"
+      ],
+      "transfer": false
+    }
+  ],
+  "preparation": {
+    "mode": "prepared",
+    "prepared": false
+  },
+  "provenance": {
+    "ingest_date": "2026-05-30",
+    "ingest_version": "foundry-translator-v1",
+    "license_tag": "CC-BY-4.0",
+    "source": "foundry",
+    "source_url": "https://github.com/foundryvtt/dnd5e/blob/965ad2d0cf5d063dac675ba078b5bd3c3c0dd449/packs/_source/spells24/9th-level/prismatic-wall.yml",
+    "srd_version": [
+      "5.2"
+    ]
+  },
+  "range": {
+    "special": null,
+    "units": "ft",
+    "value": 60
+  },
+  "review": {
+    "known_divergence": null,
+    "requires_user_decision": false
+  },
+  "ritual": false,
+  "school": "abj",
+  "slug": "prismatic-wall"
+}

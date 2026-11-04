@@ -1,0 +1,29 @@
+{
+  "activities": [],
+  "attunement_constraint": null,
+  "cost_gp": 10.0,
+  "description": "An Arcane Focus is bejeweled or carved to channel arcane magic. A Sorcerer, Warlock, or Wizard can use such an item as a Spellcasting Focus.",
+  "description_localized": "<p>Скипетр с замысловатой резьбой или формой из кости, камня, металла или более экзотических материалов. Такие скипетры используются заклинателями, чтобы сфокусировать свою магическую энергию.</p><p><strong>Фокусирующий предмет</strong>. Он создан, чтобы направлять силу мистических заклинаний. Волшебник, колдун или чародей могут использовать такой предмет как фокусирующий, применяя его вместо любого регента, стоимость которого не указана.</p>",
+  "item_kind": "item",
+  "name": "Скипетр",
+  "passive_effects": [],
+  "provenance": {
+    "ingest_date": "2026-05-30",
+    "ingest_version": "foundry-translator-v1",
+    "license_tag": "CC-BY-4.0",
+    "source": "foundry",
+    "source_url": "https://github.com/foundryvtt/dnd5e/blob/965ad2d0cf5d063dac675ba078b5bd3c3c0dd449/packs/_source/equipment24/adventuring-gear/spellcasting-focuses/arcane-focus/rod.yml",
+    "srd_version": [
+      "5.2"
+    ]
+  },
+  "rarity": "common",
+  "requires_attunement": false,
+  "review": {
+    "known_divergence": null,
+    "requires_user_decision": false
+  },
+  "slug": "rod",
+  "uses": null,
+  "weight": 2.0
+}

@@ -1,0 +1,21 @@
+{
+  "stage": 3,
+  "status": "ready_for_single_pdf_gate_repeat",
+  "full_cold_screen_under_500ms": false,
+  "source_only": true,
+  "files": {
+    "solo/content_verification_cache.py": "32b5b6ed4376df4490c97813fbdf395dd281f7a753984d002e291f1fb9210899",
+    "solo/nat20_content.py": "8a7be7c8a55ff5ddf7afd704ba66a77ad5a3d5dfa4c0ac80cbeb1768bcc2ce9b",
+    "solo/nat20_prototype.py": "3d5352d7d37820fd6d97c12c094187c82d1a51800c3cdb0ea879d2911d36e8f1",
+    "tests/test_content_verification_cache.py": "8f3b630dfd6d0ec52900fe6fd1036259f0b5c459942b0c0bcac07040304e7412",
+    "tests/profile_content_cache.py": "6094a200d783d0aded006144124c1616b0a94a0d7b5b1f5a388bc7d99d59a87f",
+    "reports/STAGE3_CONTENT_CACHE.md": "b37764f0202ef2e9cc50a76d7e0f9bcca86a75e5bb585343a69de86f44165cd6"
+  },
+  "tests": "22 passed, 1.53 s",
+  "timing_files": [
+    "reports/stage3-content-cache/empty-cache.json",
+    "reports/stage3-content-cache/persisted-cache.json",
+    "reports/stage3-content-cache/verification-timings.json"
+  ],
+  "cleanup": "blocked by policy; profile, final-profile, tests-01, tests-final retained; no active own processes"
+}

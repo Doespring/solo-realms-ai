@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Solo Realms AI — игра</title>
+<link rel="stylesheet" href="../assets/icons.css">
+<link rel="stylesheet" href="core.css">
+<link rel="stylesheet" href="03-play.css">
+</head>
+<body class="app">
+
+<header class="topbar">
+  <button class="iconbtn" aria-label="К списку историй" title="К списку историй">
+    <span class="icon ic-compass"></span>
+  </button>
+
+  <div class="topbar__grow topbar__cramped">
+    <span class="topbar__title">Тайна трёх сосен</span>
+    <span class="topbar__sep"></span>
+    <span class="topbar__sub">глава II · трактир</span>
+  </div>
+
+  <div class="vitals" aria-label="Состояние героя">
+    <span><span class="icon ic-heart"></span><span class="label">Хиты</span> <b>11</b>/11</span>
+    <span><span class="icon ic-shield"></span><span class="label">Защита</span> <b>15</b></span>
+  </div>
+
+  <nav class="topbar__nav" aria-label="Справочные экраны">
+    <button class="iconbtn" title="Лист героя"><span class="icon ic-person"></span><span>Лист</span></button>
+    <button class="iconbtn" title="Карта"><span class="icon ic-map"></span><span>Карта</span></button>
+    <button class="iconbtn" title="Журнал"><span class="icon ic-journal"></span><span>Журнал</span></button>
+  </nav>
+</header>
+
+<div class="feed-scroll">
+  <div class="column">
+
+    <div class="chapter" aria-hidden="true">
+      <span class="rule"></span>
+      <span class="chapter__label">глава II · три сосны</span>
+      <span class="rule"></span>
+    </div>
+
+    <main class="feed">
+
+      <article class="message message--master">
+        <div class="speaker"><span class="icon ic-feather"></span>Мастер</div>
+        <div class="prose">
+          <p>Дверь закрывается за спиной, и дождь остаётся снаружи. Внутри пахнет мокрой шерстью, дымом и луком. У очага спит собака, положив голову на чью-то куртку.</p>
+          <p>За стойкой женщина протирает кружки. Она смотрит на тебя дольше, чем нужно, и ставит на стойку пустую — будто уже знает, что ты подойдёшь.</p>
+        </div>
+      </article>
+
+      <article class="message message--you">
+        <div class="speaker"><span class="icon ic-person"></span>Ты</div>
+        <div class="prose">
+          <p>Подхожу к стойке, кладу две монеты и спрашиваю про караван, который не дошёл до города.</p>
+        </div>
+
+        <aside class="roll" aria-label="Проверка Харизмы: нужно 12, выпало 8, итого 9">
+          <div class="roll__kicker">Проверка Харизмы</div>
+          <div class="roll__math">нужно <b>12</b> на d20 · у тебя <b>+1</b></div>
+          <div class="roll__out" data-out="miss">Выпало <b>8</b>, итого <b>9</b> — на три меньше</div>
+        </aside>
+      </article>
+
+      <article class="message message--master">
+        <div class="speaker"><span class="icon ic-feather"></span>Мастер</div>
+        <div class="prose">
+          <p>Женщина накрывает кружку ладонью.</p>
+          <p class="say">— Караван, — повторяет она. — Ты не первый, кто спрашивает. И, судя по сапогам, не последний.</p>
+          <p>Она кивает на дальний стол, где двое бросают кости.</p>
+          <p class="say">— Спроси у того, кто проигрывает. Он ходил с ними.</p>
+        </div>
+      </article>
+
+      <div class="thinking" role="status" aria-live="polite">
+        <span class="dots" aria-hidden="true"><i></i><i></i><i></i></span>
+        Мастер собирает ответ
+      </div>
+
+    </main>
+  </div>
+</div>
+
+<div class="bottom">
+  <div class="column">
+    <form class="composer" onsubmit="return false">
+      <div class="composer__frame">
+        <label class="sr-only" for="say">Что ты делаешь</label>
+        <textarea id="say" name="say" rows="1" placeholder="Что ты делаешь? Опиши словами — можно целым абзацем."></textarea>
+        <button class="btn btn--primary" type="submit">
+          <span class="icon ic-feather icon--sm"></span>Сказать
+        </button>
+      </div>
+      <div class="composer__hint">
+        <span class="kbd-hint"><kbd>Ctrl</kbd> + <kbd>Enter</kbd> — отправить · «Мастер, …» — вопрос вне игры</span>
+        <span>Ход 14 · сохранено</span>
+      </div>
+    </form>
+
+    <p class="attrib__mini">
+      Иконки: Lorc, Delapouite — game-icons.net, CC BY 3.0.
+      Правила основаны на System Reference Document 5.2 · CC BY 4.0 · Wizards of the Coast LLC.
+    </p>
+  </div>
+</div>
+
+<script>
+  /* Живой макет: Enter отправляет, текст очищается. Ничего не сохраняется. */
+  (function(){
+    var ta = document.getElementById('say');
+    var form = ta.form;
+    function grow(){ ta.style.height='auto'; ta.style.height=Math.min(ta.scrollHeight,170)+'px'; }
+    ta.addEventListener('input', grow);
+    ta.addEventListener('keydown', function(e){
+      if ((e.ctrlKey||e.metaKey) && e.key === 'Enter') { e.preventDefault(); send(); }
+    });
+    function send(){
+      if (!ta.value.trim()) return;
+      var art = document.createElement('article');
+      art.className = 'message message--you';
+      art.innerHTML = '<div class="speaker"><span class="icon ic-person"></span>Ты</div>' +
+                      '<div class="prose"><p></p></div>';
+      art.querySelector('p').textContent = ta.value.trim();
+      var feed = document.querySelector('.feed');
+      feed.insertBefore(art, feed.querySelector('.thinking'));
+      ta.value = ''; grow();
+      art.scrollIntoView({block:'end', behavior:'smooth'});
+    }
+    form.addEventListener('submit', function(e){ e.preventDefault(); send(); });
+  })();
+</script>
+</body>
+</html>
