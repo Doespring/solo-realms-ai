@@ -1,0 +1,114 @@
+{
+  "activities": [
+    {
+      "activation": {
+        "condition": "",
+        "override": false,
+        "reaction_conditions": [],
+        "type": "action",
+        "value": null
+      },
+      "applied_effects": [],
+      "check": {
+        "ability": "dex",
+        "associated": [],
+        "dc": {
+          "calculation": "",
+          "formula": "10"
+        }
+      },
+      "consumption": {
+        "scaling": {
+          "allowed": false,
+          "max": ""
+        },
+        "spell_slot": true,
+        "targets": []
+      },
+      "description": {
+        "chat_flavor": ""
+      },
+      "duration": {
+        "concentration": false,
+        "override": false,
+        "special": "",
+        "units": "inst",
+        "value": ""
+      },
+      "effects": [],
+      "flags": {},
+      "id": "dnvBdyoNniSVN9Ky",
+      "img": "",
+      "kind": "check",
+      "name": "Modify Footwear",
+      "range": {
+        "override": false,
+        "special": "",
+        "units": "self",
+        "value": null
+      },
+      "sort": 0,
+      "target": {
+        "affects": {
+          "choice": false,
+          "count": "",
+          "special": "",
+          "type": ""
+        },
+        "override": false,
+        "prompt": false,
+        "template": {
+          "contiguous": false,
+          "count": "",
+          "height": "",
+          "size": "",
+          "stationary": false,
+          "type": "",
+          "units": "",
+          "width": ""
+        }
+      },
+      "uses": {
+        "max": "",
+        "recovery": [],
+        "spent": 0
+      },
+      "visibility": {
+        "identifier": "",
+        "level": {
+          "max": null,
+          "min": null
+        },
+        "require_attunement": false,
+        "require_identification": false,
+        "require_magic": false
+      }
+    }
+  ],
+  "attunement_constraint": null,
+  "cost_gp": 5.0,
+  "description": "Ability: Dexterity\n\nUtilize: Modify footwear to give Advantage on the wearer's next Dexterity (Acrobatics) check (DC 10)\n\nCraft: Climber's Kit",
+  "description_localized": "<p>Эти специальные инструменты включают предметы, необходимые для занятия сапожным делом. Умение в обращении с этими инструментами позволяет вам добавить ваш бонус умения к любой проверке характеристики, связанной с их использованием.</p>\n<p>Несмотря на то, что профессия сапожника может показаться искателю приключений слишком простой, пара хороших сапог будет сопровождать персонажа и в труднопроходимой глуши, и в смертельных подземельях.</p>\n<p><em><strong>Компоненты. </strong></em>Инструменты сапожника включают в себя молоток, шило, нож, обувную колодку, ножницы, запас кожи и ниток.</p>\n<p><em><strong>История, Магия. </strong></em>Ваши знания об обуви помогают вам определить магические свойства зачарованных сапог или узнать историю подобных предметов.</p>\n<p><em><strong>Расследование. </strong></em>Обувь скрывает множество секретов. Вы можете узнать, где недавно был тот, чью обувь вы осматриваете на предмет грязи и поношенности. Ваш опыт в починке обуви облегчает вам определение того, как она была повреждена.</p>\n<p><em><strong>Уход за обувью. </strong></em>Частью долгого отдыха, вы можете починить обувь ваших компаньонов. В течение следующих 24 часов до 6 существ по вашему выбору, носящих обувь, над которой вы поработали, могут путешествовать до 10 часов в день, не совершая испытания от истощения.</p>\n<p><em><strong>Создание потайного отделения. </strong></em>За 8 часов работы вы можете добавить потайное отделение в пару обуви. Отделение может содержать в себе предмет до 8 сантиметров длиной и 3 сантиметров шириной и высотой. Вы совершаете проверку Интеллекта, добавляя ваш бонус умения в обращении с этими инструментами, для определения СЛ проверки Интеллекта (Расследование), необходимой для нахождения отделения.</p>\n<table class=\"rd__table  stripe-odd-table\">\n<thead>\n<tr>\n<th class=\"col-10\" data-rd-isroller=\"false\">Возможное действие</th>\n<th class=\"col-2 text-center\" data-rd-isroller=\"false\">СЛ</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td class=\"col-10\">Определить возраст и происхождение обуви</td>\n<td class=\"col-2 text-center\">10</td>\n</tr>\n<tr>\n<td class=\"col-10\">Найти потайное отделение в каблуке</td>\n<td class=\"col-2 text-center\">15</td>\n</tr>\n</tbody>\n</table>",
+  "item_kind": "item",
+  "name": "Инструменты сапожника",
+  "passive_effects": [],
+  "provenance": {
+    "ingest_date": "2026-05-30",
+    "ingest_version": "foundry-translator-v1",
+    "license_tag": "CC-BY-4.0",
+    "source": "foundry",
+    "source_url": "https://github.com/foundryvtt/dnd5e/blob/965ad2d0cf5d063dac675ba078b5bd3c3c0dd449/packs/_source/equipment24/tools/artisan/cobblers-tools.yml",
+    "srd_version": [
+      "5.2"
+    ]
+  },
+  "rarity": "common",
+  "requires_attunement": false,
+  "review": {
+    "known_divergence": null,
+    "requires_user_decision": false
+  },
+  "slug": "cobblers-tools",
+  "uses": null,
+  "weight": 5.0
+}

@@ -1,0 +1,12 @@
+{
+  "contract_version": "screen-v1",
+  "feedback": null,
+  "snapshot": {
+    "campaign_id": "fixture", "version": 4, "command_turn": false,
+    "hero": {"name": "Мирон", "hp": 16, "max_hp": 20, "conditions": ["poisoned"], "hit_dice": 1, "resources": [{"id": "second_wind", "label": "Второе дыхание", "current": 1, "maximum": 1}]},
+    "combat": {"active": true, "round": 2, "current_actor": "hero", "actors": [{"id": "hero", "name": "Мирон", "initiative": 18}, {"id": "guard", "name": "Страж", "initiative": 12}]},
+    "last_roll": {"label": "Атака", "dice": [15], "total": 19, "success": true, "formula": ""}
+  },
+  "events": [{"id": "fixture-roll", "sequence": 4, "text": "Мирон атакует стража. Попадание подтверждено.", "roll": {"label": "Атака", "dice": [15], "total": 19, "success": true, "formula": ""}}],
+  "commands": [{"id": "combat:0", "label": "Закончить ход", "kind": "combat", "parameters": {"kind": "end_turn"}, "expected_version": 4}]
+}

@@ -1,0 +1,52 @@
+/* 03 — игра: лента и поле ввода. Всё остальное спрятано. */
+
+body.app{display:flex;flex-direction:column;height:100dvh;overflow:hidden}
+
+.column{width:100%;max-width:var(--measure);margin:0 auto;padding:0 16px}
+@media (min-width:761px){ .column{padding:0} }
+
+.feed-scroll{position:relative;z-index:1;flex:1 1 auto;min-height:0;overflow-y:auto;overscroll-behavior:contain;scrollbar-width:thin;scrollbar-color:#3A3128 transparent}
+.feed-scroll::-webkit-scrollbar{width:10px}
+.feed-scroll::-webkit-scrollbar-thumb{background:#2E2720;border:3px solid var(--ink-900);border-radius:6px}
+
+/* Зачин главы: тонкая линейка с подписью, как шмуцтитул в книге */
+.chapter{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:16px;padding:28px 0 6px}
+.chapter .rule{width:100%}
+.chapter__label{font-family:var(--font-ui);font-size:10.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--text-3);white-space:nowrap}
+
+.feed{padding-top:22px}
+
+/* Пометка о броске стоит на левом поле, рядом со своей репликой */
+@media (min-width:1180px){
+  .message > .roll{
+    position:absolute;left:calc(-1 * var(--gutter) - 18px);top:26px;width:var(--gutter);
+    text-align:right;justify-items:end;
+  }
+  .message > .roll .roll__kicker{flex-direction:row-reverse}
+  .message > .roll::after{
+    content:"";position:absolute;right:-18px;top:9px;width:18px;height:1px;background:var(--line-strong);
+  }
+  .message--you{padding-left:0}
+}
+
+/* Низ: ввод + колофон */
+.bottom{position:relative;z-index:2;flex:none;padding-top:6px;background:linear-gradient(to top,var(--ink-900) 78%,#14110D00)}
+.bottom .composer{padding-bottom:6px}
+.attrib__mini{
+  margin:0;padding:6px 0 10px;font-family:var(--font-ui);font-size:10px;line-height:1.6;
+  color:#8A7D69;text-align:center;
+}
+
+@media (max-width:760px){
+  .chapter{padding:18px 0 2px;gap:10px}
+  .chapter__label{font-size:9.5px;letter-spacing:.16em}
+  .feed{padding-top:16px}
+  .composer__frame{padding:8px 8px 8px 12px;gap:8px}
+  .composer .btn{padding:0 14px}
+  .attrib__mini{font-size:9px;padding:4px 0 8px}
+  .bottom{padding-top:0}
+}
+@media (max-width:400px){
+  .composer .btn span:not(.icon){display:none}
+  .composer .btn{min-width:44px;padding:0 12px}
+}

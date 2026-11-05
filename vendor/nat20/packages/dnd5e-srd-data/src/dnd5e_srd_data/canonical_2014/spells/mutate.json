@@ -1,0 +1,139 @@
+{
+  "slug": "mutate",
+  "foundry_uuid": "Compendium.dnd5e.laaru-hw-spells.Item.41L2qvUevzBXjngl",
+  "name": "Мутация / Mutate",
+  "description": "Вы значительно меняете свою форму, магически изменяя своё тело, чтобы получить до трёх следующих свойств:\n\nВы становитесь податливым и аморфным. Вы получаете преимущество на испытания и проверки против захвата или обездвиживания, вы не получаете помехи от протискивания в меньшие пространства, и можете протискиваться через проёмы на две категории размера меньше вас.\n\nУ вас вырастает одна дополнительная конечность. Эта конечность функционирует как рука, хотя может принимать форму руки, щупальца или подобного отростка.\n\nВы удлиняете свои конечности, увеличивая зону досягаемости ваших атак ближнего боя, заклинаний касанием и взаимодействий с предметами на 5 футов.\n\nВаше тело твердеет. Вы можете рассчитывать свой КБ как 14 + ваш модификатор Ловкости.\n\nВы становитесь более стойким, адаптируясь к одной внешней угрозе. Вы получаете преимущество на испытания одной характеристики по вашему выбору.\n\nВы адаптируете своё тело к водной среде, отращивая жабры и перепонки между пальцами. Вы можете дышать под водой и получаете скорость плавания, равную вашей скорости ходьбы.\n\nВаше тело покрывается регенерирующим панцирем. Вы получаете временные ПЗ, равные вашему модификатору заклинательной характеристики, в начале каждого вашего хода.\n\nВы можете изменить свой размер на одну категорию.\n\nУ вас вырастают крылья, давая вам скорость полёта 30 футов.\n\nУ вас вырастает естественное оружие, которое может иметь параметры любого военного оружия ближнего боя без свойства «метательное» и принимает соответствующую форму. Вы умелы в обращении с этим оружием и считается, что вы держите его. Вы можете использовать свой модификатор заклинательной характеристики вместо модификатора Силы для бросков атаки и урона этим оружием. Это естественное оружие является магическим и получает бонус +1 к броскам атаки и урона.\n\nВ течение длительности заклинания вы можете использовать действие, чтобы изменить одно или все выбранные вами свойства, теряя преимущества ранее выбранных свойств и получая преимущества новых.\n\nНа высоких кругах. Когда вы сотворяете это заклинание, используя ячейку заклинания 4-го круга или выше, вы можете выбрать 1 дополнительное свойство из списка вариантов за каждый круг ячейки выше 3-го.",
+  "level": 3,
+  "school": "trs",
+  "components": [
+    "M",
+    "S",
+    "V"
+  ],
+  "ritual": false,
+  "concentration": true,
+  "casting_time": {
+    "unit": "action",
+    "value": 1,
+    "condition": ""
+  },
+  "range": {
+    "units": "self",
+    "value": null,
+    "special": null
+  },
+  "duration": {
+    "units": "minute",
+    "value": 10
+  },
+  "materials": {
+    "value": "куколка бабочки",
+    "consumed": false,
+    "cost": 0,
+    "supply": 0
+  },
+  "preparation": {
+    "mode": "prepared",
+    "prepared": false
+  },
+  "activities": [
+    {
+      "id": "dnd5eactivity000",
+      "name": "",
+      "img": "",
+      "sort": 0,
+      "activation": {
+        "type": "action",
+        "value": null,
+        "condition": "",
+        "override": false,
+        "reaction_conditions": []
+      },
+      "consumption": {
+        "scaling": {
+          "allowed": false,
+          "max": ""
+        },
+        "spell_slot": true,
+        "targets": []
+      },
+      "description": {
+        "chat_flavor": ""
+      },
+      "duration": {
+        "value": null,
+        "units": "inst",
+        "special": "",
+        "concentration": false,
+        "override": false
+      },
+      "flags": {},
+      "range": {
+        "value": null,
+        "units": "self",
+        "special": "",
+        "override": false
+      },
+      "target": {
+        "template": {
+          "count": "",
+          "contiguous": false,
+          "stationary": false,
+          "type": "",
+          "size": "",
+          "width": "",
+          "height": "",
+          "units": ""
+        },
+        "affects": {
+          "count": "",
+          "type": "",
+          "choice": false,
+          "special": ""
+        },
+        "override": false,
+        "prompt": true
+      },
+      "uses": {
+        "spent": 0,
+        "max": "",
+        "recovery": []
+      },
+      "visibility": {
+        "identifier": "",
+        "level": {
+          "min": null,
+          "max": null
+        },
+        "require_attunement": false,
+        "require_identification": false,
+        "require_magic": false
+      },
+      "effects": [],
+      "applied_effects": [],
+      "kind": "utility",
+      "roll": {
+        "formula": "",
+        "name": "",
+        "prompt": false,
+        "visible": false
+      }
+    }
+  ],
+  "passive_effects": [],
+  "provenance": {
+    "source": "foundry",
+    "source_url": "https://github.com/foundryvtt/dnd5e/blob/965ad2d0cf5d063dac675ba078b5bd3c3c0dd449/packs/_source/laaru-hw-spells/Мутация___Mutate_41L2qvUevzBXjngl.yml",
+    "ingest_date": "2026-10-26",
+    "ingest_version": "foundry-translator-v1",
+    "srd_version": [
+      "5.1"
+    ],
+    "license_tag": "CC-BY-4.0"
+  },
+  "review": {
+    "known_divergence": null,
+    "requires_user_decision": false
+  },
+  "entry_kind": "spell"
+}

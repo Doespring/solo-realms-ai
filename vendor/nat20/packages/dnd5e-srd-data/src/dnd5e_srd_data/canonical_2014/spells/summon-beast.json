@@ -1,0 +1,194 @@
+{
+  "slug": "summon-beast",
+  "foundry_uuid": "Compendium.dnd5e.laaru-hw-spells.Item.niAor8tMV2uAOIEH",
+  "name": "Призыв духа зверя / Summon Beast",
+  "description": "Вы призываете дух зверя. Существо появляется в незанятом пространстве, которое вы можете видеть в пределах дистанции. Воплощённая форма духа использует блок параметров @Compendium[laaru-dnd5-hw.monsters.wUcmQ55NCb2UTIbd]{Духа Зверя}.\n\nКогда вы сотворяете заклинание, выберите среду обитания: Воздух, Земля или Вода. Дух принимает форму животного по вашему выбору, для которого выбранная среда обитания является родной и имеет соответствующие признаки, описанные в блоке параметров. Существо исчезает, когда его ПЗ опускаются до 0 или когда заклинание заканчивается.\n\nЭто существо дружественно вам и вашим спутникам. В бою оно получает вашу инициативу и ходит сразу же после вас. Оно подчиняется вашим словесным командам (никаких действий от вас не требуется). Если вы ничего не приказываете, то оно совершает действие @Compendium[laaru-dnd5-hw.actions.UMuz44p8fXeLCZn7]{Уклонение} и перемещается, избегая опасностей.\n\nНа высоких кругах. Если вы сотворяете это заклинание, используя ячейку 3-го круга или выше, характеристики призываемого существа изменяются в соответствии с описанием в блоке параметров.",
+  "level": 2,
+  "school": "con",
+  "components": [
+    "M",
+    "S",
+    "V"
+  ],
+  "ritual": false,
+  "concentration": true,
+  "casting_time": {
+    "unit": "action",
+    "value": 1,
+    "condition": ""
+  },
+  "range": {
+    "units": "ft",
+    "value": 90,
+    "special": null
+  },
+  "duration": {
+    "units": "hour",
+    "value": 1
+  },
+  "materials": {
+    "value": "перо, пучок меха и рыбий хвост внутри позолоченного жёлудя стоимостью не менее 200 зм",
+    "consumed": false,
+    "cost": 200,
+    "supply": 0
+  },
+  "preparation": {
+    "mode": "prepared",
+    "prepared": false
+  },
+  "activities": [
+    {
+      "id": "dnd5eactivity000",
+      "name": "",
+      "img": "",
+      "sort": 0,
+      "activation": {
+        "type": "action",
+        "value": null,
+        "condition": "",
+        "override": false,
+        "reaction_conditions": []
+      },
+      "consumption": {
+        "scaling": {
+          "allowed": false,
+          "max": ""
+        },
+        "spell_slot": true,
+        "targets": []
+      },
+      "description": {
+        "chat_flavor": ""
+      },
+      "duration": {
+        "value": null,
+        "units": "inst",
+        "special": "",
+        "concentration": false,
+        "override": false
+      },
+      "flags": {},
+      "range": {
+        "value": null,
+        "units": "self",
+        "special": "",
+        "override": false
+      },
+      "target": {
+        "template": {
+          "count": "",
+          "contiguous": false,
+          "stationary": false,
+          "type": "",
+          "size": "",
+          "width": "",
+          "height": "",
+          "units": ""
+        },
+        "affects": {
+          "count": "1",
+          "type": "space",
+          "choice": false,
+          "special": ""
+        },
+        "override": false,
+        "prompt": true
+      },
+      "uses": {
+        "spent": 0,
+        "max": "",
+        "recovery": []
+      },
+      "visibility": {
+        "identifier": "",
+        "level": {
+          "min": null,
+          "max": null
+        },
+        "require_attunement": false,
+        "require_identification": false,
+        "require_magic": false
+      },
+      "effects": [],
+      "applied_effects": [],
+      "kind": "summon",
+      "bonuses": {
+        "ac": "@item.level",
+        "hd": "",
+        "hp": "(@item.level - 2) * 5",
+        "attack_damage": "@item.level",
+        "save_damage": "",
+        "healing": ""
+      },
+      "creature_sizes": [],
+      "creature_types": [],
+      "match": {
+        "ability": "",
+        "attacks": true,
+        "disposition": false,
+        "proficiency": true,
+        "saves": false
+      },
+      "profiles": [
+        {
+          "id": "Nfo8BV7EebXLoIoQ",
+          "count": "",
+          "cr": "",
+          "level": {
+            "min": null,
+            "max": null
+          },
+          "name": "Вода",
+          "types": [],
+          "uuid": "Compendium.laaru-dnd5-hw.monsters.Actor.w6zFbCUkZ5ZGvYUG"
+        },
+        {
+          "id": "f37Egp6vbW6ObEWy",
+          "count": "",
+          "cr": "",
+          "level": {
+            "min": null,
+            "max": null
+          },
+          "name": "Воздух",
+          "types": [],
+          "uuid": "Compendium.laaru-dnd5-hw.monsters.Actor.r6WLgBa928apf3gR"
+        },
+        {
+          "id": "2vmHKKPiPChrnZZr",
+          "count": "",
+          "cr": "",
+          "level": {
+            "min": null,
+            "max": null
+          },
+          "name": "Земля",
+          "types": [],
+          "uuid": "Compendium.laaru-dnd5-hw.monsters.Actor.or49lS91IZNtaGp3"
+        }
+      ],
+      "summon": {
+        "mode": "",
+        "prompt": false,
+        "identifier": ""
+      },
+      "temp_hp": ""
+    }
+  ],
+  "passive_effects": [],
+  "provenance": {
+    "source": "foundry",
+    "source_url": "https://github.com/foundryvtt/dnd5e/blob/965ad2d0cf5d063dac675ba078b5bd3c3c0dd449/packs/_source/laaru-hw-spells/Призыв_духа_зверя___Summon_Beast_niAor8tMV2uAOIEH.yml",
+    "ingest_date": "2026-10-26",
+    "ingest_version": "foundry-translator-v1",
+    "srd_version": [
+      "5.1"
+    ],
+    "license_tag": "CC-BY-4.0"
+  },
+  "review": {
+    "known_divergence": null,
+    "requires_user_decision": false
+  },
+  "entry_kind": "spell"
+}

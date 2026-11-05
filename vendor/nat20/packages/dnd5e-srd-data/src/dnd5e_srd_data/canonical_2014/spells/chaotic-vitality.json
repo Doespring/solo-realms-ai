@@ -1,0 +1,233 @@
+{
+  "slug": "chaotic-vitality",
+  "foundry_uuid": "Compendium.dnd5e.laaru-hw-spells.Item.MGzfEKjtEmx9lKk3",
+  "name": "Хаотичная живучесть / Chaotic Vitality",
+  "description": "(Хаос)\n\nСовершите атаку заклинанием в ближнем бою по цели, количество Костей здоровья которой меньше или равно вашему уровню и у которой есть хотя бы 1 ПЗ. При попадании вы создаёте пульсирующие волны энергии хаоса внутри цели и самого себя. Через мгновение, кажущееся вечностью, ваши текущие ПЗ и ПЗ цели изменяются следующим образом. Бросьте [[/r d100]] и увеличьте и используйте выпавшее число, чтобы увеличить или уменьшить свои ПЗ и ПЗ цели по таблице «Изменение ПЗ», приведённой ниже. Полученный по таблице результат применяется как к вашим ПЗ, так и к ПЗ цели. Все пункты здоровья, полученные сверх возможного максимума ПЗ, становятся временными и исчезают спустя количество раундов, равное уровню класса, дающего вам доступ к данному заклинанию.\n\nНапример, заклинатель 3­-го уровня, у которого в данный момент 17 ПЗ из 30, сотворяющий хаотичную живучесть на существо с 54 ПЗ и получает при броске \"75\", который сверяет с таблицей «Изменение ПЗ». В сумме у заклинателя и существа ­цели 17 + 54 = 71 хитов. Выпавший при броске результат \"75\" означает, что оба существа получат по 50% суммы, так что и у заклинателя, и у цели становится по 35 хитов. Для заклинателя 5 из них — временные и исчезнут спустя 3 раунда.\n\nИзменение ПЗ\n\n[[/r d100]]\n\nПункты здоровья\n\n01-09\n\n0\n\n10-39\n\n1\n\n40-69\n\n25% от суммы\n\n70-84\n\n50% от суммы\n\n85-94\n\n75% от суммы\n\n95-99\n\n100% от суммы\n\n100\n\n200% суммы и оба существа получает эффект заклинания Ускорение исчезающего через количество раундов, равное уровню заклинателя.",
+  "level": 2,
+  "school": "con",
+  "components": [
+    "S",
+    "V"
+  ],
+  "ritual": false,
+  "concentration": false,
+  "casting_time": {
+    "unit": "action",
+    "value": 1,
+    "condition": ""
+  },
+  "range": {
+    "units": "touch",
+    "value": null,
+    "special": null
+  },
+  "duration": {
+    "units": "inst",
+    "value": null
+  },
+  "materials": {
+    "value": "",
+    "consumed": false,
+    "cost": 0,
+    "supply": 0
+  },
+  "preparation": {
+    "mode": "prepared",
+    "prepared": false
+  },
+  "activities": [
+    {
+      "id": "He2V5goLluZxD9yG",
+      "name": "",
+      "img": "",
+      "sort": 0,
+      "activation": {
+        "type": "action",
+        "value": null,
+        "condition": "",
+        "override": false,
+        "reaction_conditions": []
+      },
+      "consumption": {
+        "scaling": {
+          "allowed": false,
+          "max": ""
+        },
+        "spell_slot": true,
+        "targets": []
+      },
+      "description": {
+        "chat_flavor": ""
+      },
+      "duration": {
+        "value": null,
+        "units": "inst",
+        "special": "",
+        "concentration": false,
+        "override": false
+      },
+      "flags": {},
+      "range": {
+        "value": null,
+        "units": "self",
+        "special": "",
+        "override": false
+      },
+      "target": {
+        "template": {
+          "count": "",
+          "contiguous": false,
+          "stationary": false,
+          "type": "",
+          "size": "",
+          "width": "",
+          "height": "",
+          "units": "ft"
+        },
+        "affects": {
+          "count": "1",
+          "type": "creature",
+          "choice": false,
+          "special": ""
+        },
+        "override": false,
+        "prompt": true
+      },
+      "uses": {
+        "spent": 0,
+        "max": "",
+        "recovery": []
+      },
+      "visibility": {
+        "identifier": "",
+        "level": {
+          "min": null,
+          "max": null
+        },
+        "require_attunement": false,
+        "require_identification": false,
+        "require_magic": false
+      },
+      "effects": [],
+      "applied_effects": [],
+      "kind": "attack",
+      "attack": {
+        "ability": "",
+        "bonus": "",
+        "critical": {
+          "threshold": null
+        },
+        "flat": false,
+        "type": {
+          "value": "",
+          "classification": ""
+        }
+      },
+      "damage": {
+        "critical": {
+          "bonus": ""
+        },
+        "include_base": true,
+        "parts": []
+      }
+    },
+    {
+      "id": "piGu1rQBt8VdiX9P",
+      "name": "d100",
+      "img": "",
+      "sort": 0,
+      "activation": {
+        "type": "action",
+        "value": null,
+        "condition": "",
+        "override": false,
+        "reaction_conditions": []
+      },
+      "consumption": {
+        "scaling": {
+          "allowed": false,
+          "max": ""
+        },
+        "spell_slot": false,
+        "targets": []
+      },
+      "description": {
+        "chat_flavor": ""
+      },
+      "duration": {
+        "value": null,
+        "units": "inst",
+        "special": "",
+        "concentration": false,
+        "override": false
+      },
+      "flags": {},
+      "range": {
+        "value": null,
+        "units": "self",
+        "special": "",
+        "override": false
+      },
+      "target": {
+        "template": {
+          "count": "",
+          "contiguous": false,
+          "stationary": false,
+          "type": "",
+          "size": "",
+          "width": "",
+          "height": "",
+          "units": "ft"
+        },
+        "affects": {
+          "count": "1",
+          "type": "creature",
+          "choice": false,
+          "special": ""
+        },
+        "override": false,
+        "prompt": false
+      },
+      "uses": {
+        "spent": 0,
+        "max": "",
+        "recovery": []
+      },
+      "visibility": {
+        "identifier": "",
+        "level": {
+          "min": null,
+          "max": null
+        },
+        "require_attunement": false,
+        "require_identification": false,
+        "require_magic": false
+      },
+      "effects": [],
+      "applied_effects": [],
+      "kind": "utility",
+      "roll": {
+        "formula": "d100",
+        "name": "",
+        "prompt": false,
+        "visible": false
+      }
+    }
+  ],
+  "passive_effects": [],
+  "provenance": {
+    "source": "foundry",
+    "source_url": "https://github.com/foundryvtt/dnd5e/blob/965ad2d0cf5d063dac675ba078b5bd3c3c0dd449/packs/_source/laaru-hw-spells/Хаотичная_живучесть___Chaotic_Vitality_MGzfEKjtEmx9lKk3.yml",
+    "ingest_date": "2026-10-26",
+    "ingest_version": "foundry-translator-v1",
+    "srd_version": [
+      "5.1"
+    ],
+    "license_tag": "CC-BY-4.0"
+  },
+  "review": {
+    "known_divergence": null,
+    "requires_user_decision": false
+  },
+  "entry_kind": "spell"
+}

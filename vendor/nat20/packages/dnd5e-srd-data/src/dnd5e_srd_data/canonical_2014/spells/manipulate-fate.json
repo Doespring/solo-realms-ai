@@ -1,0 +1,139 @@
+{
+  "slug": "manipulate-fate",
+  "foundry_uuid": "Compendium.dnd5e.laaru-hw-spells.Item.PRUb2BQ7dauP2jq2",
+  "name": "Управление судьбой / Manipulate Fate",
+  "description": "Вы протягиваете руку и хватаетесь за неосязаемые нити судьбы, позволяя себе незаметно манипулировать ими. В течение длительности, когда существо в пределах 60 футов от вас совершает бросок атаки, испытание или проверку характеристики, вы можете использовать своё ответное действие, чтобы подкорректировать его судьбу, изменив результат броска кости. Вы можете выбрать манипуляцию судьбой после того, как кость брошена, но до того, как будет определён исход.\n\nВы можете подтолкнуть бросок к любой из смежных граней кости по вашему выбору (возможные результаты перечислены ниже).\n\n[[/r d20]]\n\nПодкрученные судьбы\n\n1\n\n7, 13, или 19\n\n2\n\n12, 18, или 20\n\n3\n\n17, 16, или 19\n\n4\n\n11, 14, или 18\n\n5\n\n13, 15, или 18\n\n6\n\n9, 14, или 16\n\n7\n\n1, 15, или 17\n\n8\n\n10, 16, или 20\n\n9\n\n6, 11, или 19\n\n10\n\n8, 12, или 17\n\n11\n\n4, 9, или 13\n\n12\n\n2, 10, или 15\n\n13\n\n1, 5, или 11\n\n14\n\n4, 6, или 20\n\n15\n\n5, 7, 12\n\n16\n\n3, 6, или 8\n\n17\n\n3, 7, или 10\n\n18\n\n2, 4, или 5\n\n19\n\n1, 3, или 9\n\n20\n\n2, 8, или 14\n\nВместо того чтобы подталкивать, вы можете вместо этого отбросить тонкость и дёрнуть нить судьбы, выбрав любое значение на [[/r d20]] в качестве результата. Если вы это сделаете, вы получите откат. Бросьте количество [[/r d6]], равное разнице между вашим выбором и исходным результатом; вы получаете столько некротического урона, и заклинание немедленно оканчивается.\n\nПримечание по механике костей\n\nЧисла, которые вы можете выбрать, — это смежные грани d20 к выпавшему числу. Это буквально представляет собой подталкивание кости судьбы.",
+  "level": 9,
+  "school": "div",
+  "components": [
+    "M",
+    "S",
+    "V"
+  ],
+  "ritual": false,
+  "concentration": true,
+  "casting_time": {
+    "unit": "action",
+    "value": 1,
+    "condition": ""
+  },
+  "range": {
+    "units": "self",
+    "value": null,
+    "special": null
+  },
+  "duration": {
+    "units": "minute",
+    "value": 1
+  },
+  "materials": {
+    "value": "катушка шёлковой нити",
+    "consumed": false,
+    "cost": 0,
+    "supply": 0
+  },
+  "preparation": {
+    "mode": "prepared",
+    "prepared": false
+  },
+  "activities": [
+    {
+      "id": "dnd5eactivity000",
+      "name": "",
+      "img": "",
+      "sort": 0,
+      "activation": {
+        "type": "action",
+        "value": null,
+        "condition": "",
+        "override": false,
+        "reaction_conditions": []
+      },
+      "consumption": {
+        "scaling": {
+          "allowed": false,
+          "max": ""
+        },
+        "spell_slot": true,
+        "targets": []
+      },
+      "description": {
+        "chat_flavor": ""
+      },
+      "duration": {
+        "value": null,
+        "units": "inst",
+        "special": "",
+        "concentration": false,
+        "override": false
+      },
+      "flags": {},
+      "range": {
+        "value": null,
+        "units": "self",
+        "special": "",
+        "override": false
+      },
+      "target": {
+        "template": {
+          "count": "",
+          "contiguous": false,
+          "stationary": false,
+          "type": "",
+          "size": "",
+          "width": "",
+          "height": "",
+          "units": ""
+        },
+        "affects": {
+          "count": "",
+          "type": "",
+          "choice": false,
+          "special": ""
+        },
+        "override": false,
+        "prompt": true
+      },
+      "uses": {
+        "spent": 0,
+        "max": "",
+        "recovery": []
+      },
+      "visibility": {
+        "identifier": "",
+        "level": {
+          "min": null,
+          "max": null
+        },
+        "require_attunement": false,
+        "require_identification": false,
+        "require_magic": false
+      },
+      "effects": [],
+      "applied_effects": [],
+      "kind": "utility",
+      "roll": {
+        "formula": "",
+        "name": "",
+        "prompt": false,
+        "visible": false
+      }
+    }
+  ],
+  "passive_effects": [],
+  "provenance": {
+    "source": "foundry",
+    "source_url": "https://github.com/foundryvtt/dnd5e/blob/965ad2d0cf5d063dac675ba078b5bd3c3c0dd449/packs/_source/laaru-hw-spells/Управление_судьбой___Manipulate_Fate_PRUb2BQ7dauP2jq2.yml",
+    "ingest_date": "2026-10-26",
+    "ingest_version": "foundry-translator-v1",
+    "srd_version": [
+      "5.1"
+    ],
+    "license_tag": "CC-BY-4.0"
+  },
+  "review": {
+    "known_divergence": null,
+    "requires_user_decision": false
+  },
+  "entry_kind": "spell"
+}

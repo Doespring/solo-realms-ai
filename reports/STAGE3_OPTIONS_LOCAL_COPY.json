@@ -1,0 +1,20 @@
+{
+  "component": "Stage3 options",
+  "status": "accepted with measured cold-cache/startup limits",
+  "verified_hashes": 17,
+  "dependencies_verified": 2,
+  "latest_unique_tests": {
+    "test_exact_prechange_options_and_one_release_one_read_per_selected_file": true,
+    "test_public_catalog_pagination_query_and_known_issues_unchanged": true,
+    "test_changed_catalog_is_revalidated_before_options_and_changed_pin_reprojects": true
+  },
+  "hash_mismatches": 0,
+  "options_ms": {
+    "empty_verification_cache": 697.672,
+    "new_process_persisted_cache": 431.657,
+    "repeat": 160.672
+  },
+  "imports_excluded": true,
+  "root_reran_tests": false,
+  "new_builds": 0
+}

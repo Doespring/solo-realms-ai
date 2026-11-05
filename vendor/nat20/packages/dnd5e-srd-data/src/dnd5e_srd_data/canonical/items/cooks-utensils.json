@@ -1,0 +1,198 @@
+{
+  "activities": [
+    {
+      "activation": {
+        "condition": "",
+        "override": false,
+        "reaction_conditions": [],
+        "type": "action",
+        "value": null
+      },
+      "applied_effects": [],
+      "check": {
+        "ability": "wis",
+        "associated": [],
+        "dc": {
+          "calculation": "",
+          "formula": "10"
+        }
+      },
+      "consumption": {
+        "scaling": {
+          "allowed": false,
+          "max": ""
+        },
+        "spell_slot": true,
+        "targets": []
+      },
+      "description": {
+        "chat_flavor": ""
+      },
+      "duration": {
+        "concentration": false,
+        "override": false,
+        "special": "",
+        "units": "inst",
+        "value": ""
+      },
+      "effects": [],
+      "flags": {},
+      "id": "CxQN6WZyRt5IGrNj",
+      "img": "",
+      "kind": "check",
+      "name": "Improve Flavor",
+      "range": {
+        "override": false,
+        "special": "",
+        "units": "self",
+        "value": null
+      },
+      "sort": 0,
+      "target": {
+        "affects": {
+          "choice": false,
+          "count": "",
+          "special": "",
+          "type": ""
+        },
+        "override": false,
+        "prompt": false,
+        "template": {
+          "contiguous": false,
+          "count": "",
+          "height": "",
+          "size": "",
+          "stationary": false,
+          "type": "",
+          "units": "",
+          "width": ""
+        }
+      },
+      "uses": {
+        "max": "",
+        "recovery": [],
+        "spent": 0
+      },
+      "visibility": {
+        "identifier": "",
+        "level": {
+          "max": null,
+          "min": null
+        },
+        "require_attunement": false,
+        "require_identification": false,
+        "require_magic": false
+      }
+    },
+    {
+      "activation": {
+        "condition": "",
+        "override": false,
+        "reaction_conditions": [],
+        "type": "action",
+        "value": null
+      },
+      "applied_effects": [],
+      "check": {
+        "ability": "wis",
+        "associated": [],
+        "dc": {
+          "calculation": "",
+          "formula": "15"
+        }
+      },
+      "consumption": {
+        "scaling": {
+          "allowed": false,
+          "max": ""
+        },
+        "spell_slot": true,
+        "targets": []
+      },
+      "description": {
+        "chat_flavor": ""
+      },
+      "duration": {
+        "concentration": false,
+        "override": false,
+        "special": "",
+        "units": "inst",
+        "value": ""
+      },
+      "effects": [],
+      "flags": {},
+      "id": "XpIVwyE6VhHNBoae",
+      "img": "",
+      "kind": "check",
+      "name": "Detect Spoiled or Poisoned Food",
+      "range": {
+        "override": false,
+        "special": "",
+        "units": "self",
+        "value": null
+      },
+      "sort": 0,
+      "target": {
+        "affects": {
+          "choice": false,
+          "count": "",
+          "special": "",
+          "type": ""
+        },
+        "override": false,
+        "prompt": false,
+        "template": {
+          "contiguous": false,
+          "count": "",
+          "height": "",
+          "size": "",
+          "stationary": false,
+          "type": "",
+          "units": "",
+          "width": ""
+        }
+      },
+      "uses": {
+        "max": "",
+        "recovery": [],
+        "spent": 0
+      },
+      "visibility": {
+        "identifier": "",
+        "level": {
+          "max": null,
+          "min": null
+        },
+        "require_attunement": false,
+        "require_identification": false,
+        "require_magic": false
+      }
+    }
+  ],
+  "attunement_constraint": null,
+  "cost_gp": 1.0,
+  "description": "Ability: Wisdom\n\nUtilize: Improve food's flavor (DC 10), or detect spoiled or poisoned food (DC 15)\n\nCraft: Rations",
+  "description_localized": "<p>Эти специальные инструменты включают предметы, необходимые для занятия готовкой. Умение в обращении с этими инструментами позволяет вам добавить ваш бонус умения к любой проверке характеристики, связанной с их использованием.</p>\n<p>Жизнь искателя приключений тяжела. При наличии в компании повара ваша пища будет намного вкуснее, чем привычные галеты и сухофрукты.</p>\n<p><em><strong>Компоненты. </strong></em>Инструменты повара включают в себя металлический котёл, ножи, вилки, ложку для размешивания и половник.</p>\n<p><em><strong>История. </strong></em>Ваши знания кулинарных методик позволяют вам оценивать структуру социального развития, основываясь на гастрономических обычаях этой культуры.</p>\n<p><strong><em>Медицина. </em></strong>Оказывая лечение, вы можете превратить горькое или кислое лекарство в приятную на вкус стряпню.</p>\n<p><em><strong>Выживание. </strong></em>Добывая еду, вы можете использовать собранные вами ингредиенты, которые другие не смогли бы приготовить.</p>\n<p><em><strong>Приготовление еды. </strong></em>Частью короткого отдыха, вы можете приготовить вкусное блюдо, которое поможет вашим компаньонам восстановить силы. Вы и до пяти существ на ваш выбор восстанавливаете по 1 дополнительному ПЗ за каждую потраченную во время короткого отдыха кость здоровья, при условии, что у вас есть доступ к вашим инструментам повара и достаточно еды.</p>\n<table class=\"rd__table  stripe-odd-table\">\n<thead>\n<tr>\n<th class=\"col-10\" data-rd-isroller=\"false\">Возможное действие</th>\n<th class=\"col-2 text-center\" data-rd-isroller=\"false\">СЛ</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td class=\"col-10\">Приготовить обычную пищу</td>\n<td class=\"col-2 text-center\">10</td>\n</tr>\n<tr>\n<td class=\"col-10\">Повторить блюдо</td>\n<td class=\"col-2 text-center\">10</td>\n</tr>\n<tr>\n<td class=\"col-10\">Обнаружить яд или примесь в еде</td>\n<td class=\"col-2 text-center\">15</td>\n</tr>\n<tr>\n<td class=\"col-10\">Приготовить изысканное блюдо</td>\n<td class=\"col-2 text-center\">15</td>\n</tr>\n</tbody>\n</table>",
+  "item_kind": "item",
+  "name": "Инструменты повара",
+  "passive_effects": [],
+  "provenance": {
+    "ingest_date": "2026-05-30",
+    "ingest_version": "foundry-translator-v1",
+    "license_tag": "CC-BY-4.0",
+    "source": "foundry",
+    "source_url": "https://github.com/foundryvtt/dnd5e/blob/965ad2d0cf5d063dac675ba078b5bd3c3c0dd449/packs/_source/equipment24/tools/artisan/cooks-utensils.yml",
+    "srd_version": [
+      "5.2"
+    ]
+  },
+  "rarity": "common",
+  "requires_attunement": false,
+  "review": {
+    "known_divergence": null,
+    "requires_user_decision": false
+  },
+  "slug": "cooks-utensils",
+  "uses": null,
+  "weight": 8.0
+}

@@ -1,0 +1,165 @@
+{
+  "slug": "dust-cyclone",
+  "foundry_uuid": "Compendium.dnd5e.laaru-hw-spells.Item.dBnWiCwl94BeApn9",
+  "name": "Пыльный циклон / Dust Cyclone",
+  "description": "Выберите цель на земле, которую вы можете видеть в пределах Дистанции. Небольшой циклон поднимается в точке цели с радиусом 5 футов и высотой 30 футов.\n\nЛюбое существо, которое начинает свой ход в радиусе пыльного циклона или входит в его радиус впервые во время своего хода, должно пройти испытание Силы. При провале существо получает [[/damage 1d12 bludgeoning]]{1d12 дробящего урона} и отталкивается на 5 футов от центра. При успехе существо получает в два раза меньше урона и не отталкивается.\n\nВ качестве бонусного действия вы можете переместить пыльный вихрь на 30 футов в любом направлении. В первый раз, когда радиус пыльного вихря проходит через существо, оно должно пройти испытание на сопротивление урону пыльного вихря и при провале отталкивается. Вы можете продолжать перемещать пыльный циклон, но его сила утомляется до конца вашего хода, и последующие существа не подвергаются его воздействию при прохождении через него.\n\nЕсли пыльный циклон движется над песком, пылью, рыхлой землей или небольшим гравием, он всасывает материал и его радиус считается областью с крайне затруднённой видимостью до начала вашего следующего хода.",
+  "level": 2,
+  "school": "con",
+  "components": [
+    "M",
+    "S",
+    "V"
+  ],
+  "ritual": false,
+  "concentration": false,
+  "casting_time": {
+    "unit": "action",
+    "value": 1,
+    "condition": ""
+  },
+  "range": {
+    "units": "ft",
+    "value": 60,
+    "special": null
+  },
+  "duration": {
+    "units": "minute",
+    "value": 1
+  },
+  "materials": {
+    "value": "щепотка пыли",
+    "consumed": false,
+    "cost": 0,
+    "supply": 0
+  },
+  "preparation": {
+    "mode": "prepared",
+    "prepared": false
+  },
+  "activities": [
+    {
+      "id": "dnd5eactivity000",
+      "name": "",
+      "img": "",
+      "sort": 0,
+      "activation": {
+        "type": "action",
+        "value": null,
+        "condition": "",
+        "override": false,
+        "reaction_conditions": []
+      },
+      "consumption": {
+        "scaling": {
+          "allowed": false,
+          "max": ""
+        },
+        "spell_slot": true,
+        "targets": []
+      },
+      "description": {
+        "chat_flavor": ""
+      },
+      "duration": {
+        "value": null,
+        "units": "inst",
+        "special": "",
+        "concentration": false,
+        "override": false
+      },
+      "flags": {},
+      "range": {
+        "value": null,
+        "units": "self",
+        "special": "",
+        "override": false
+      },
+      "target": {
+        "template": {
+          "count": "",
+          "contiguous": false,
+          "stationary": false,
+          "type": "radius",
+          "size": "5",
+          "width": "",
+          "height": "",
+          "units": "ft"
+        },
+        "affects": {
+          "count": "",
+          "type": "",
+          "choice": false,
+          "special": ""
+        },
+        "override": false,
+        "prompt": true
+      },
+      "uses": {
+        "spent": 0,
+        "max": "",
+        "recovery": []
+      },
+      "visibility": {
+        "identifier": "",
+        "level": {
+          "min": null,
+          "max": null
+        },
+        "require_attunement": false,
+        "require_identification": false,
+        "require_magic": false
+      },
+      "effects": [],
+      "applied_effects": [],
+      "kind": "save",
+      "damage": {
+        "on_save": "half",
+        "parts": [
+          {
+            "number": 1,
+            "denomination": 12,
+            "bonus": "",
+            "types": [
+              "bludgeoning"
+            ],
+            "custom": {
+              "enabled": false,
+              "formula": ""
+            },
+            "scaling": {
+              "mode": "",
+              "number": null,
+              "formula": ""
+            }
+          }
+        ]
+      },
+      "save": {
+        "ability": [
+          "str"
+        ],
+        "dc": {
+          "calculation": "spellcasting",
+          "formula": ""
+        },
+        "ignore_cover": false
+      }
+    }
+  ],
+  "passive_effects": [],
+  "provenance": {
+    "source": "foundry",
+    "source_url": "https://github.com/foundryvtt/dnd5e/blob/965ad2d0cf5d063dac675ba078b5bd3c3c0dd449/packs/_source/laaru-hw-spells/Пыльный_циклон___Dust_Cyclone_dBnWiCwl94BeApn9.yml",
+    "ingest_date": "2026-10-26",
+    "ingest_version": "foundry-translator-v1",
+    "srd_version": [
+      "5.1"
+    ],
+    "license_tag": "CC-BY-4.0"
+  },
+  "review": {
+    "known_divergence": null,
+    "requires_user_decision": false
+  },
+  "entry_kind": "spell"
+}

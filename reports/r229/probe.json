@@ -1,0 +1,102 @@
+{
+  "workdir": "/home/hermes/.hermes/profiles/coder/cache/scratch/r229-probe-9lppm6wf",
+  "cases": [
+    {
+      "file": "text-layer.pdf",
+      "bytes": 3318,
+      "job_status": "complete",
+      "job_message": "Материалы извлечены: 3 страниц, 1 076 символов. Подготовка правил, событий и доступа ещё требует проверки.",
+      "document_status": "extracted",
+      "extracted_characters": 1076,
+      "pages": 3,
+      "encoding": null,
+      "library_reason": null,
+      "draft": "b2f61381-cabb-43f2-a346-3ca486599a34",
+      "prepare_http": 200,
+      "prepare_status": "ready",
+      "run_message": "Приключение подготовлено. Создайте героя.",
+      "sections": 1,
+      "pages_in_sections": 3,
+      "payload_characters": 12129,
+      "locations": 2,
+      "errors": [],
+      "title": "PDF с текстовым слоем",
+      "library": {
+        "documents": [
+          {
+            "id": "54dca2bf30bb84932ba33f68c8a77391a407162c5d639023680d0eab897f3922",
+            "format": ".pdf",
+            "status": "extracted",
+            "pages": 3,
+            "quality": "{\"text_characters\": 1076, \"blank_pages\": 0, \"partial_pages\": [], \"mechanics\": \"requires_review\", \"media_scope\": \"gm\", \"ocr\": false, \"blank_pages_list\": [], \"pictured_pages\": [], \"text_encoding\": null}"
+          }
+        ],
+        "page_rows": 3,
+        "material_rows": 3
+      }
+    },
+    {
+      "file": "scan.pdf",
+      "bytes": 28879,
+      "job_status": "failed",
+      "job_message": "Извлечение не завершено: В этом PDF нет текстового слоя: распознавание (OCR) не поддерживается. Нужен PDF с текстом или TXT.",
+      "document_status": "failed",
+      "extracted_characters": 0,
+      "pages": 0,
+      "encoding": null,
+      "library_reason": "В этом PDF нет текстового слоя: распознавание (OCR) не поддерживается. Нужен PDF с текстом или TXT.",
+      "draft": "ccdae021-f1c3-4c08-b2b3-121ac1e9be39",
+      "prepare_http": 409,
+      "prepare_refusal": "Файл «scan.pdf» не извлечён: В этом PDF нет текстового слоя: распознавание (OCR) не поддерживается. Нужен PDF с текстом или TXT. Уберите его из подготовки или загрузите другой источник.",
+      "sections": 0,
+      "title": "PDF-скан без текста",
+      "library": {
+        "documents": [
+          {
+            "id": "f2cecef5d583e3cb8e7307ba6d56e365618f6fcb1f8f99094b488e9d799acdfb",
+            "format": ".pdf",
+            "status": "failed",
+            "pages": 0,
+            "quality": "{\"text_characters\": 0, \"blank_pages\": 2, \"blank_pages_list\": [1, 2], \"pictured_pages\": [1, 2], \"ocr\": false, \"text_encoding\": null, \"reason\": \"В этом PDF нет текстового слоя: распознавание (OCR) не поддерживается. Нужен PDF с текстом или TXT.\", \"mechanics\": \"requires_review\"}"
+          }
+        ],
+        "page_rows": 0,
+        "material_rows": 0
+      }
+    },
+    {
+      "file": "russian-cp1251.txt",
+      "bytes": 539,
+      "job_status": "complete",
+      "job_message": "Материалы извлечены: 1 страница, 539 символов. Подготовка правил, событий и доступа ещё требует проверки.",
+      "document_status": "extracted",
+      "extracted_characters": 539,
+      "pages": 1,
+      "encoding": "cp1251",
+      "library_reason": null,
+      "draft": "c4d00158-f29b-409d-b589-caa76690d881",
+      "prepare_http": 200,
+      "prepare_status": "ready",
+      "run_message": "Приключение подготовлено. Создайте героя.",
+      "sections": 1,
+      "pages_in_sections": 1,
+      "payload_characters": 11228,
+      "locations": 1,
+      "errors": [],
+      "title": "TXT в cp1251",
+      "library": {
+        "documents": [
+          {
+            "id": "ad3c738353e96614755d8393bf0d7066274da8a3d6b09cef4e475d0564dc34f2",
+            "format": ".txt",
+            "status": "extracted",
+            "pages": 1,
+            "quality": "{\"text_characters\": 539, \"blank_pages\": 0, \"partial_pages\": [], \"mechanics\": \"requires_review\", \"media_scope\": \"gm\", \"ocr\": false, \"blank_pages_list\": [], \"pictured_pages\": [], \"text_encoding\": \"cp1251\"}"
+          }
+        ],
+        "page_rows": 1,
+        "material_rows": 0
+      }
+    }
+  ]
+}

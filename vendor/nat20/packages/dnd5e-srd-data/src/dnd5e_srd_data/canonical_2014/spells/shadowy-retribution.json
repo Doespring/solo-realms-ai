@@ -1,0 +1,182 @@
+{
+  "slug": "shadowy-retribution",
+  "foundry_uuid": "Compendium.dnd5e.laaru-hw-spells.Item.CYWBGjPLu3muoxEM",
+  "name": "Теневое возмездие / Shadowy Retribution",
+  "description": "(Высшая эльфийская магия)\n\nВы наполняете серебряную чашу своей собственной кровью (нанесите себе [[/damage 1d4 piercing]]{1d4 колющего урона}), зачитывая в темноте мерзкие проклятия. После этого вы выпиваете всю кровь и клянётесь отомстить всем, кто вам навредит.\n\nЕсли ваши ПЗ опускаются до 0, то проклятие срабатывает. В 5 футов от вас материализуется Тень, которая атакует цель, опустившую ваши ПЗ до 0, игнорируя других врагов. Как только сама тень или цель будет убита, тень исчезает.\n\nРитуальная фокусировка. Использование ритуальной фокусировки приводит к тому , что вместо тени появляется Баньши. Однако, если вы используете ячейку более высокого круга, то появляющиеся дополнительные создания остаются тенями.\n\nНа высоких кругах: Если вы сотворяете это заклинание, используя ячейку 5-го круга или выше, то за каждую ячейку выше 4-го призывается дополнительная тень.",
+  "level": 4,
+  "school": "nec",
+  "components": [
+    "M",
+    "S",
+    "V"
+  ],
+  "ritual": true,
+  "concentration": false,
+  "casting_time": {
+    "unit": "minute",
+    "value": 10,
+    "condition": ""
+  },
+  "range": {
+    "units": "self",
+    "value": null,
+    "special": null
+  },
+  "duration": {
+    "units": "hour",
+    "value": 12
+  },
+  "materials": {
+    "value": "серебряный кубок, наполненный кровью заклинателя",
+    "consumed": false,
+    "cost": 0,
+    "supply": 0
+  },
+  "preparation": {
+    "mode": "prepared",
+    "prepared": false
+  },
+  "activities": [
+    {
+      "id": "mbExJdaAqW1SOdqU",
+      "name": "",
+      "img": "",
+      "sort": 0,
+      "activation": {
+        "type": "action",
+        "value": null,
+        "condition": "",
+        "override": false,
+        "reaction_conditions": []
+      },
+      "consumption": {
+        "scaling": {
+          "allowed": false,
+          "max": ""
+        },
+        "spell_slot": true,
+        "targets": []
+      },
+      "description": {
+        "chat_flavor": ""
+      },
+      "duration": {
+        "value": null,
+        "units": "inst",
+        "special": "",
+        "concentration": false,
+        "override": false
+      },
+      "flags": {},
+      "range": {
+        "value": null,
+        "units": "self",
+        "special": "",
+        "override": false
+      },
+      "target": {
+        "template": {
+          "count": "",
+          "contiguous": false,
+          "stationary": false,
+          "type": "",
+          "size": "",
+          "width": "",
+          "height": "",
+          "units": "ft"
+        },
+        "affects": {
+          "count": "",
+          "type": "",
+          "choice": false,
+          "special": ""
+        },
+        "override": false,
+        "prompt": true
+      },
+      "uses": {
+        "spent": 0,
+        "max": "",
+        "recovery": []
+      },
+      "visibility": {
+        "identifier": "",
+        "level": {
+          "min": null,
+          "max": null
+        },
+        "require_attunement": false,
+        "require_identification": false,
+        "require_magic": false
+      },
+      "effects": [],
+      "applied_effects": [],
+      "kind": "summon",
+      "bonuses": {
+        "ac": "",
+        "hd": "",
+        "hp": "",
+        "attack_damage": "",
+        "save_damage": "",
+        "healing": ""
+      },
+      "creature_sizes": [],
+      "creature_types": [],
+      "match": {
+        "ability": "",
+        "attacks": false,
+        "disposition": false,
+        "proficiency": false,
+        "saves": false
+      },
+      "profiles": [
+        {
+          "id": "tQa12YxIssTkxkKp",
+          "count": "",
+          "cr": "",
+          "level": {
+            "min": null,
+            "max": null
+          },
+          "name": "",
+          "types": [],
+          "uuid": "Compendium.laaru-dnd5-hw.monsters.Actor.7mRqE7ExrQcjBJcr"
+        },
+        {
+          "id": "pFMkoGonquVmEJSJ",
+          "count": "",
+          "cr": "",
+          "level": {
+            "min": null,
+            "max": null
+          },
+          "name": "",
+          "types": [],
+          "uuid": "Compendium.laaru-dnd5-hw.monsters.Actor.EHM16HHUFTZdiTB0"
+        }
+      ],
+      "summon": {
+        "mode": "",
+        "prompt": true,
+        "identifier": null
+      },
+      "temp_hp": ""
+    }
+  ],
+  "passive_effects": [],
+  "provenance": {
+    "source": "foundry",
+    "source_url": "https://github.com/foundryvtt/dnd5e/blob/965ad2d0cf5d063dac675ba078b5bd3c3c0dd449/packs/_source/laaru-hw-spells/Теневое_возмездие___Shadowy_Retribution_CYWBGjPLu3muoxEM.yml",
+    "ingest_date": "2026-10-26",
+    "ingest_version": "foundry-translator-v1",
+    "srd_version": [
+      "5.1"
+    ],
+    "license_tag": "CC-BY-4.0"
+  },
+  "review": {
+    "known_divergence": null,
+    "requires_user_decision": false
+  },
+  "entry_kind": "spell"
+}

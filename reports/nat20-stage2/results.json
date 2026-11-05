@@ -1,0 +1,94 @@
+{
+  "stage": 2,
+  "status": "source_complete_with_explicit_hide_bless_upstream_blockers",
+  "unique_latest_tests": 14,
+  "cases": {
+    "tests.test_nat20_stage2.test_standalone_poisoned_advantage_cancels_effect_bonus_and_exhaustion": {
+      "passed": true,
+      "report": "projection.xml"
+    },
+    "tests.test_nat20_stage2.test_native_automatic_failure_does_not_draw_or_fabricate_die": {
+      "passed": true,
+      "report": "tests.xml"
+    },
+    "tests.test_nat20_stage2.test_native_hide_defect_proof_and_adapter_refusal": {
+      "passed": true,
+      "report": "fixes.xml"
+    },
+    "tests.test_nat20_stage2.test_zero_hp_native_death_saves_memory_undo_save_new_process": {
+      "passed": true,
+      "report": "death-final.xml"
+    },
+    "tests.test_nat20_stage2.test_spell_catalogue_combat_payload_status_is_data_driven": {
+      "passed": true,
+      "report": "spells-final.xml"
+    },
+    "tests.test_nat20_stage2.test_goblin_advantage_is_resolved_by_native_not_adapter_crash": {
+      "passed": true,
+      "report": "fixes.xml"
+    },
+    "tests.test_nat20_bless.test_gap_native_concentration_save_omits_bless_bonus": {
+      "passed": true,
+      "report": "fixes.xml"
+    },
+    "tests.test_nat20_bless.test_gap_standalone_save_does_not_alias_foundry_bless_keys": {
+      "passed": true,
+      "report": "fixes.xml"
+    },
+    "tests.test_nat20_bless.test_gap_same_identity_recast_retains_a_duplicate_after_drop": {
+      "passed": true,
+      "report": "fixes.xml"
+    },
+    "tests.test_nat20_stage2.test_native_death_save_critical_recovery_stability_and_death": {
+      "passed": true,
+      "report": "death-final.xml"
+    },
+    "tests.test_nat20_prototype.test_atomicity_and_old_fighter_release_survive": {
+      "passed": true,
+      "report": "death-final.xml"
+    },
+    "tests.test_nat20_api.test_native_goblin_hit_uses_projected_bonus_and_damage": {
+      "passed": true,
+      "report": "death-final.xml"
+    },
+    "tests.test_nat20_playable_next.test_no_manual_numbers_ability_cost_save_new_process_and_replay[wizard]": {
+      "passed": true,
+      "report": "spells-final.xml"
+    },
+    "tests.test_nat20_prototype.test_equipped_consumable_and_wolf_policy_use_native_resources": {
+      "passed": true,
+      "report": "items.xml"
+    }
+  },
+  "reports_are_separate_targeted_runs": true,
+  "production_files": [
+    "solo/nat20_checks.py",
+    "solo/nat20_worker.py",
+    "solo/nat20_api.py",
+    "solo/nat20_prototype.py",
+    "solo/nat20_screen.py"
+  ],
+  "old_release": "374afd1a3898e089e023130cc342a0f3c6fe88a75bf4f8ee7e3bf865852abf75",
+  "prototype_release": "95ccb98deeca8009aa02ef77069d3d9aa112e4e813954e98be888e7f583640aa",
+  "runtime_or_pin_modified": false,
+  "schema_or_version_migration": false,
+  "full_suite_or_exe_zip": false,
+  "paid_or_live_ai_calls": 0,
+  "cleanup": {
+    "status": "blocked by policy",
+    "workaround_attempted": false,
+    "remaining_owned_paths": [
+      "C:\\Users\\iwa41\\Documents\\Codex\\2026-10-13\\files-pasted-by-the-user-solo\\outputs\\SoloRealmsAI\\reports\\nat20-stage2\\tmp-tests",
+      "C:\\Users\\iwa41\\Documents\\Codex\\2026-10-13\\files-pasted-by-the-user-solo\\outputs\\SoloRealmsAI\\reports\\nat20-stage2\\tmp-fixes",
+      "C:\\Users\\iwa41\\Documents\\Codex\\2026-10-13\\files-pasted-by-the-user-solo\\outputs\\SoloRealmsAI\\reports\\nat20-stage2\\tmp-death-final",
+      "C:\\Users\\iwa41\\Documents\\Codex\\2026-10-13\\files-pasted-by-the-user-solo\\outputs\\SoloRealmsAI\\reports\\nat20-stage2\\tmp-spells-final",
+      "C:\\Users\\iwa41\\Documents\\Codex\\2026-10-13\\files-pasted-by-the-user-solo\\outputs\\SoloRealmsAI\\reports\\nat20-stage2\\tmp-items",
+      "C:\\Users\\iwa41\\Documents\\Codex\\2026-10-13\\files-pasted-by-the-user-solo\\outputs\\SoloRealmsAI\\reports\\nat20-stage2\\tmp-projection",
+      "C:\\Users\\iwa41\\Documents\\Codex\\2026-10-13\\files-pasted-by-the-user-solo\\outputs\\SoloRealmsAI\\reports\\nat20-stage2\\probe.sqlite3"
+    ],
+    "owned_test_processes_finished": true,
+    "old_blocked_stands_touched": false
+  },
+  "stage3_started": false,
+  "engine_frozen": true
+}

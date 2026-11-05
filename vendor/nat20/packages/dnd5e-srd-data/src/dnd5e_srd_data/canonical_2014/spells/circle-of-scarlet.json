@@ -1,0 +1,147 @@
+{
+  "slug": "circle-of-scarlet",
+  "foundry_uuid": "Compendium.dnd5e.laaru-hw-spells.Item.0ieFJbEpm4HyxC9c",
+  "name": "Алый круг / Circle of Scarlet",
+  "description": "Частью сотворения заклинания, вы должны потратить четыре кости здоровья или заклинание автоматически проваливается. Если вы это делаете, то выберите точку на земле в пределах дистанции и бросьте потраченные на сотворение заклинания кости здоровья.\n\nКровавый столб вырывается из земли, с его центром в выбранной вами точке. Столб представляет собой цилиндр радиусом 15 футов и высотой 100 футов.\n\nКаждое существо внутри цилиндра должно пройти испытание Выносливости. В случае успеха, существо получает некротический урон равный результату броска потраченных на сотворение заклинания костей здоровья. При провале, существо получает некротический урон равный результату броска потраченных на сотворение заклинания костей здоровья и должно потратить свои четыре кости здоровья, бросить их и получить дополнительный некротический урон, равный выпавшему значению.\n\nЗа каждое существо, провалившее испытание от этого заклинания, вы получаете по 5 временных ПЗ.",
+  "level": 4,
+  "school": "evo",
+  "components": [
+    "M",
+    "S",
+    "V"
+  ],
+  "ritual": false,
+  "concentration": false,
+  "casting_time": {
+    "unit": "action",
+    "value": 1,
+    "condition": ""
+  },
+  "range": {
+    "units": "ft",
+    "value": 120,
+    "special": null
+  },
+  "duration": {
+    "units": "inst",
+    "value": null
+  },
+  "materials": {
+    "value": "кусок пергамента с нарисованным на нём человеческой кровью кругом",
+    "consumed": false,
+    "cost": 0,
+    "supply": 0
+  },
+  "preparation": {
+    "mode": "prepared",
+    "prepared": false
+  },
+  "activities": [
+    {
+      "id": "dnd5eactivity000",
+      "name": "",
+      "img": "",
+      "sort": 0,
+      "activation": {
+        "type": "action",
+        "value": null,
+        "condition": "",
+        "override": false,
+        "reaction_conditions": []
+      },
+      "consumption": {
+        "scaling": {
+          "allowed": false,
+          "max": ""
+        },
+        "spell_slot": true,
+        "targets": []
+      },
+      "description": {
+        "chat_flavor": ""
+      },
+      "duration": {
+        "value": null,
+        "units": "inst",
+        "special": "",
+        "concentration": false,
+        "override": false
+      },
+      "flags": {},
+      "range": {
+        "value": null,
+        "units": "self",
+        "special": "",
+        "override": false
+      },
+      "target": {
+        "template": {
+          "count": "",
+          "contiguous": false,
+          "stationary": false,
+          "type": "",
+          "size": "",
+          "width": "",
+          "height": "",
+          "units": ""
+        },
+        "affects": {
+          "count": "",
+          "type": "",
+          "choice": false,
+          "special": ""
+        },
+        "override": false,
+        "prompt": true
+      },
+      "uses": {
+        "spent": 0,
+        "max": "",
+        "recovery": []
+      },
+      "visibility": {
+        "identifier": "",
+        "level": {
+          "min": null,
+          "max": null
+        },
+        "require_attunement": false,
+        "require_identification": false,
+        "require_magic": false
+      },
+      "effects": [],
+      "applied_effects": [],
+      "kind": "save",
+      "damage": {
+        "on_save": "half",
+        "parts": []
+      },
+      "save": {
+        "ability": [
+          "con"
+        ],
+        "dc": {
+          "calculation": "spellcasting",
+          "formula": ""
+        },
+        "ignore_cover": false
+      }
+    }
+  ],
+  "passive_effects": [],
+  "provenance": {
+    "source": "foundry",
+    "source_url": "https://github.com/foundryvtt/dnd5e/blob/965ad2d0cf5d063dac675ba078b5bd3c3c0dd449/packs/_source/laaru-hw-spells/Алый_круг___Circle_of_Scarlet_0ieFJbEpm4HyxC9c.yml",
+    "ingest_date": "2026-10-26",
+    "ingest_version": "foundry-translator-v1",
+    "srd_version": [
+      "5.1"
+    ],
+    "license_tag": "CC-BY-4.0"
+  },
+  "review": {
+    "known_divergence": null,
+    "requires_user_decision": false
+  },
+  "entry_kind": "spell"
+}

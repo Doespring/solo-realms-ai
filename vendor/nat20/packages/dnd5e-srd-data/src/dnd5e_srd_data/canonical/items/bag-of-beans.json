@@ -1,0 +1,346 @@
+{
+  "activities": [
+    {
+      "activation": {
+        "condition": "Upon discovering the bag.",
+        "override": false,
+        "reaction_conditions": [],
+        "type": "",
+        "value": null
+      },
+      "applied_effects": [],
+      "consumption": {
+        "scaling": {
+          "allowed": false,
+          "max": ""
+        },
+        "spell_slot": true,
+        "targets": [
+          {
+            "scaling": {
+              "formula": "",
+              "mode": ""
+            },
+            "target": "",
+            "type": "itemUses",
+            "value": "-3d4"
+          },
+          {
+            "scaling": {
+              "formula": "",
+              "mode": ""
+            },
+            "target": "",
+            "type": "activityUses",
+            "value": "1"
+          }
+        ]
+      },
+      "description": {
+        "chat_flavor": "3d4 dry beans found in bag."
+      },
+      "duration": {
+        "concentration": false,
+        "override": false,
+        "special": "",
+        "units": "inst",
+        "value": null
+      },
+      "effects": [],
+      "flags": {},
+      "id": "pCPfWEoVCDCMzl58",
+      "img": "",
+      "kind": "utility",
+      "name": "Count Beans",
+      "range": {
+        "override": false,
+        "special": "",
+        "units": "touch",
+        "value": null
+      },
+      "roll": {
+        "formula": "",
+        "name": "",
+        "prompt": false,
+        "visible": false
+      },
+      "sort": 0,
+      "target": {
+        "affects": {
+          "choice": false,
+          "count": "1",
+          "special": "Held Bag of Beans",
+          "type": "object"
+        },
+        "override": false,
+        "prompt": true,
+        "template": {
+          "contiguous": false,
+          "count": "",
+          "height": "",
+          "size": "",
+          "stationary": false,
+          "type": "",
+          "units": "ft",
+          "width": ""
+        }
+      },
+      "uses": {
+        "max": "1",
+        "recovery": [],
+        "spent": 0
+      },
+      "visibility": {
+        "identifier": "",
+        "level": {
+          "max": null,
+          "min": null
+        },
+        "require_attunement": false,
+        "require_identification": false,
+        "require_magic": false
+      }
+    },
+    {
+      "activation": {
+        "condition": "Object interaction",
+        "override": false,
+        "reaction_conditions": [],
+        "type": "special",
+        "value": null
+      },
+      "applied_effects": [],
+      "consumption": {
+        "scaling": {
+          "allowed": true,
+          "max": "@item.uses.value"
+        },
+        "spell_slot": true,
+        "targets": [
+          {
+            "scaling": {
+              "formula": "",
+              "mode": "amount"
+            },
+            "target": "",
+            "type": "itemUses",
+            "value": "1"
+          }
+        ]
+      },
+      "damage": {
+        "on_save": "half",
+        "parts": [
+          {
+            "bonus": "",
+            "custom": {
+              "enabled": false,
+              "formula": ""
+            },
+            "denomination": 4,
+            "number": 5,
+            "scaling": {
+              "formula": "",
+              "mode": "",
+              "number": 1
+            },
+            "types": [
+              "force"
+            ]
+          }
+        ]
+      },
+      "description": {
+        "chat_flavor": ""
+      },
+      "duration": {
+        "concentration": false,
+        "override": false,
+        "special": "",
+        "units": "inst",
+        "value": null
+      },
+      "effects": [],
+      "flags": {},
+      "id": "2OuJC3aroy0tJ8SW",
+      "img": "",
+      "kind": "save",
+      "name": "Dump Beans",
+      "range": {
+        "override": false,
+        "special": "",
+        "units": "self",
+        "value": null
+      },
+      "save": {
+        "ability": [
+          "dex"
+        ],
+        "dc": {
+          "calculation": "",
+          "formula": "15"
+        },
+        "ignore_cover": false
+      },
+      "sort": 0,
+      "target": {
+        "affects": {
+          "choice": false,
+          "count": "1",
+          "special": "",
+          "type": "space"
+        },
+        "override": false,
+        "prompt": true,
+        "template": {
+          "contiguous": false,
+          "count": "",
+          "height": "",
+          "size": "10",
+          "stationary": false,
+          "type": "sphere",
+          "units": "ft",
+          "width": ""
+        }
+      },
+      "uses": {
+        "max": "",
+        "recovery": [],
+        "spent": 0
+      },
+      "visibility": {
+        "identifier": "",
+        "level": {
+          "max": null,
+          "min": null
+        },
+        "require_attunement": false,
+        "require_identification": false,
+        "require_magic": true
+      }
+    },
+    {
+      "activation": {
+        "condition": "Object interaction",
+        "override": false,
+        "reaction_conditions": [],
+        "type": "special",
+        "value": null
+      },
+      "applied_effects": [],
+      "consumption": {
+        "scaling": {
+          "allowed": false,
+          "max": ""
+        },
+        "spell_slot": true,
+        "targets": [
+          {
+            "scaling": {
+              "formula": "",
+              "mode": ""
+            },
+            "target": "",
+            "type": "itemUses",
+            "value": "1"
+          }
+        ]
+      },
+      "description": {
+        "chat_flavor": ""
+      },
+      "duration": {
+        "concentration": false,
+        "override": false,
+        "special": "",
+        "units": "inst",
+        "value": null
+      },
+      "effects": [],
+      "flags": {},
+      "id": "fo7GQpsx1ryDXtPU",
+      "img": "",
+      "kind": "utility",
+      "name": "Plant Bean",
+      "range": {
+        "override": false,
+        "special": "",
+        "units": "touch",
+        "value": null
+      },
+      "roll": {
+        "formula": "",
+        "name": "",
+        "prompt": false,
+        "visible": false
+      },
+      "sort": 0,
+      "target": {
+        "affects": {
+          "choice": false,
+          "count": "1",
+          "special": "Dirt or sand",
+          "type": "space"
+        },
+        "override": false,
+        "prompt": true,
+        "template": {
+          "contiguous": false,
+          "count": "",
+          "height": "",
+          "size": "",
+          "stationary": false,
+          "type": "",
+          "units": "ft",
+          "width": ""
+        }
+      },
+      "uses": {
+        "max": "",
+        "recovery": [],
+        "spent": 0
+      },
+      "visibility": {
+        "identifier": "",
+        "level": {
+          "max": null,
+          "min": null
+        },
+        "require_attunement": false,
+        "require_identification": false,
+        "require_magic": true
+      }
+    }
+  ],
+  "attunement_constraint": null,
+  "cost_gp": 2000.0,
+  "description": "Wondrous Item, Rare\n\nThis heavy cloth bag contains 3d4 dry beans when found. The bag weighs half a pound regardless of how many beans it contains and becomes a nonmagical item when it no longer contains any beans.\n\nIf you dump one or more beans out of the bag, they explode in a 10-foot-radius Sphere centered on them. All the dumped beans are destroyed in the explosion, and each creature in the Sphere, including you, makes a DC 15 Dexterity saving throw, taking 5d4 Force damage on a failed save or half as much damage on a successful one.\n\nIf you remove a bean from the bag, plant it in dirt or sand, and then water it, the bean disappears as it produces an effect 1 minute later from the ground where it was planted. The GM can choose an effect from the following table or determine it randomly. Bag of Beans Effect (click to expand) @Embed[Compendium.dnd5e.tables24.RollTable.dmgBagOfBeansEff rollable caption=false]\n\nFoundry Note\n\nUpon obtaining this item, the Count Beans activity can be used to determine the number of dry beans contained within and set this item's number of uses accordingly.",
+  "description_localized": "<p>В этой плотной матерчатой сумке [[/r 3d4]] сушеных боба. Сумка весит ½ фунта +¼ фунта за каждый боб внутри.</p><p>Если бросить содержимое сумки наземь, оно взорвётся в радиусе 10 футов вокруг бобов. Каждое существо в этой области, включая вас, должно пройти испытание Ловкости по СЛ 15, получая [[/r 5d4]] урона огнём при провале или половину этого урона при успехе. Огонь поджигает горючие объекты в области, кроме тех, что носят или держат.</p><p>Если вынуть боб из сумки, посадить в землю или песок и полить водой, через 1 минуту он вызовет некий эффект из земли, в которую посажен. Мастер может выбрать эффект из таблицы, определить его случайно или придумать.</p><table class=\"w-100 rd__table  stripe-odd-table\" style=\"width:100%\"><thead><tr><th class=\"col-1 text-center\" style=\"width:6.14035%\" data-rd-isroller=\"true\">[[/r d100]]</th><th class=\"col-11\" style=\"width:93.8596%\" data-rd-isroller=\"false\">Эффект</th></tr></thead><tbody><tr><td class=\"col-1 text-center\" style=\"width:6.14035%\" data-roll-min=\"1\" data-roll-max=\"1\">01</td><td class=\"col-11\" style=\"width:93.8596%\"><p>Вырастает [[/r 5d4]] грибов. Если существо съест гриб. бросьте любую кость. Если результат нечётный, съевший должен пройти испытание Выносливости со СЛ 15, при провале он получит [[/r 5d6]] урона ядом и &amp;reference[poisoned]{отравлен} на 1 час. Если результат чётный, съевший получит [[/r 5d6]] временных ПЗ на 1 час</p></td></tr><tr><td class=\"col-1 text-center\" style=\"width:6.14035%\" data-roll-min=\"2\" data-roll-max=\"10\">02-10</td><td class=\"col-11\" style=\"width:93.8596%\">[[/r 1d12]] раундов из-под земли бьёт гейзер воды, пива, сока, чая, уксуса, вина или масла (на выбор мастера) высотой 30 футов</td></tr><tr><td class=\"col-1 text-center\" style=\"width:6.14035%\" data-roll-min=\"11\" data-roll-max=\"20\">11-20</td><td class=\"col-11\" style=\"width:93.8596%\">Вырастает <em><strong>Древень</strong></em>. С вероятностью [[/r 1d100]]{50%} он хаотичный злой и нападает</td></tr><tr><td class=\"col-1 text-center\" style=\"width:6.14035%\" data-roll-min=\"21\" data-roll-max=\"30\">21-30</td><td class=\"col-11\" style=\"width:93.8596%\">Возникает ожившая неподвижная статуя вас, которая вам устно угрожает. Если оставить её, то всем следующим встречным она опишет вас как мерзейших злодеев и направит их по вашему следу, советуя атаковать вас. Пока вы на одном плане бытия со статуей, она знает, где вы. Статуя становится безжизненной через 24 часа. </td></tr><tr><td class=\"col-1 text-center\" style=\"width:6.14035%\" data-roll-min=\"31\" data-roll-max=\"40\">31-40</td><td class=\"col-11\" style=\"width:93.8596%\">Загорается костер синего пламени и горит 24 часа (или пока не погасят).</td></tr><tr><td class=\"col-1 text-center\" style=\"width:6.14035%\" data-roll-min=\"41\" data-roll-max=\"50\">41-50</td><td class=\"col-11\" style=\"width:93.8596%\"> Вырастает [[/r 1d6 + 6]] <em><strong>Визгунов</strong></em>.</td></tr><tr><td class=\"col-1 text-center\" style=\"width:6.14035%\" data-roll-min=\"51\" data-roll-max=\"60\">51-60</td><td class=\"col-11\" style=\"width:93.8596%\">Появляется [[/r 1d4 + 8]] ярко-розовых жаб. Если тронуть жабу, она превратится в чудовище крупного или меньшего &amp;reference[size]{размера} на выбор мастера. Чудовище существует 1 минуту, а затем исчезает в облаке розового дыма,</td></tr><tr><td class=\"col-1 text-center\" style=\"width:6.14035%\" data-roll-min=\"61\" data-roll-max=\"70\">61-70</td><td class=\"col-11\" style=\"width:93.8596%\">Выкапывается голодный <em><strong>Булей</strong></em> и нападает.</td></tr><tr><td class=\"col-1 text-center\" style=\"width:6.14035%\" data-roll-min=\"71\" data-roll-max=\"80\">71-80</td><td class=\"col-11\" style=\"width:93.8596%\">Вырастает плодовое дерево. На нем [[/r 1d10 + 20]] плодов, из которых [[/r 1d8]] действуют как случайные магические зелья, а один как поглощаемый яд на выбор мастера. Дерево исчезает через 1 час. Сорванные Плоды остаются, а магия в них сохраняется на 30 дней,</td></tr><tr><td class=\"col-1 text-center\" style=\"width:6.14035%\" data-roll-min=\"81\" data-roll-max=\"90\">81-90</td><td class=\"col-11\" style=\"width:93.8596%\">Появляется гнездо с [[/r 1d4 + 3]] яйцами. Любое существо, съевшее яйцо, должно пройти испытание Выносливости со СЛ 20. При успехе существо навсегда повышает значение своей самой низкой характеристики на 1, если таких несколько случайно выбрав между ними. При провале существо получает [[/r 10d6]] урона силой от магического взрыва внутри.</td></tr><tr><td class=\"col-1 text-center\" style=\"width:6.14035%\" data-roll-min=\"91\" data-roll-max=\"99\">91-99</td><td class=\"col-11\" style=\"width:93.8596%\">Вырастает пирамида с квадратным основанием 60 на 60 футов. Внутри неё саркофаг с <em><strong>Лордом-мумией</strong></em>. Пирамида считается логовом лорда-мумии, а в саркофаге есть сокровище на выбор мастера.</td></tr><tr><td class=\"col-1 text-center\" style=\"width:6.14035%\" data-roll-min=\"100\" data-roll-max=\"100\">00</td><td class=\"col-11\" style=\"width:93.8596%\">Вырастает гигантский бобовый стебель высотой на выбор мастера. Его верхушка ведёт в место на выбор мастера — например, к шикарному виду, в замок <em><strong>облачного великана</strong></em> или на иной план бытия.</td></tr></tbody></table>",
+  "item_kind": "magic_item",
+  "name": "Сумка бобов",
+  "passive_effects": [],
+  "provenance": {
+    "ingest_date": "2026-05-30",
+    "ingest_version": "foundry-translator-v1",
+    "license_tag": "CC-BY-4.0",
+    "source": "foundry",
+    "source_url": "https://github.com/foundryvtt/dnd5e/blob/965ad2d0cf5d063dac675ba078b5bd3c3c0dd449/packs/_source/equipment24/consumables/bag-of-beans.yml",
+    "srd_version": [
+      "5.2"
+    ]
+  },
+  "rarity": "rare",
+  "requires_attunement": false,
+  "review": {
+    "known_divergence": null,
+    "requires_user_decision": false
+  },
+  "slug": "bag-of-beans",
+  "uses": {
+    "auto_destroy": false,
+    "max": "12",
+    "recovery": [],
+    "spent": 12
+  },
+  "weight": 0.5
+}

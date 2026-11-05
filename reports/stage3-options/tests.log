@@ -1,0 +1,36 @@
+.F.                                                                      [100%]
+================================== FAILURES ===================================
+_______ test_public_catalog_pagination_query_and_known_issues_unchanged _______
+
+tmp_path = WindowsPath('C:/Users/iwa41/Documents/Codex/2026-10-13/files-pasted-by-the-user-solo/outputs/SoloRealmsAI/reports/stage3-options/tmp-contract/test_public_catalog_pagination0')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x00000252F68E8F50>
+
+    def test_public_catalog_pagination_query_and_known_issues_unchanged(tmp_path,monkeypatch):
+        monkeypatch.setenv('SOLO_DATA_DIR',str(tmp_path))
+        baseline=json.loads((Path(__file__).parent/'fixtures/creation-options-before.json').read_text(encoding='utf-8'))
+        packet=native.catalog('spells',limit=200,offset=200)
+        assert packet['total']==len(baseline['spells'])
+        assert [row['slug'] for row in packet['entries']]==[row['id'] for row in baseline['spells'][200:400]]
+        bless=native.catalog('spells','bless')['entries']
+        assert next(row for row in bless if row['slug']=='bless')['execution_status']=='blocked'
+        unsupported=native.catalog('spells','comprehend-languages')['entries'][0]
+>       assert unsupported['execution_status']=='narrative_or_unsupported_in_combat'
+E       AssertionError: assert 'native_candidate' == 'narrative_or...ted_in_combat'
+E         
+E         - narrative_or_unsupported_in_combat
+E         + native_candidate
+
+tests\test_creation_options_batch.py:39: AssertionError
+============================== warnings summary ===============================
+.venv\Lib\site-packages\lark\utils.py:176
+  C:\Users\iwa41\Documents\Codex\2026-10-13\files-pasted-by-the-user-solo\outputs\SoloRealmsAI\.venv\Lib\site-packages\lark\utils.py:176: DeprecationWarning: module 'sre_parse' is deprecated
+    import sre_parse
+
+.venv\Lib\site-packages\lark\utils.py:177
+  C:\Users\iwa41\Documents\Codex\2026-10-13\files-pasted-by-the-user-solo\outputs\SoloRealmsAI\.venv\Lib\site-packages\lark\utils.py:177: DeprecationWarning: module 'sre_constants' is deprecated
+    import sre_constants
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ===========================
+FAILED tests/test_creation_options_batch.py::test_public_catalog_pagination_query_and_known_issues_unchanged
+1 failed, 2 passed, 2 warnings in 2.68s

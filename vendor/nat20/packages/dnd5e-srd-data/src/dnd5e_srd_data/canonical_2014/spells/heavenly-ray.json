@@ -1,0 +1,149 @@
+{
+  "slug": "heavenly-ray",
+  "foundry_uuid": "Compendium.dnd5e.laaru-hw-spells.Item.k4UWiiu8lMx7qH2e",
+  "name": "Небесный луч / Heavenly Ray",
+  "description": "Золотой столб небесного сияния сияет цилиндром с радиусом 10 футов и высотой 60 футов, центрированный в точке, которую вы можете видеть в пределах дистанции. До окончания действия заклинания цилиндр заполнен ярким светом и излучает тусклый свет на 10 футов во всех направлениях от него.\n\nКогда существо впервые входит в область действия заклинания в свой ход или начинает свой ход там, небесное сияние наполняет его тело положительной энергией. Если существо не является нежитью или конструкцией, оно восстанавливает [[/damage 2d8 healing]]{2d8 ПЗ} и получает [[/damage 2d8 temphp]]{2d8 временных ПЗ}. Если это конструкция, свет не оказывает на него никакого воздействия. Если это нежить, оно вместо этого получает [[/damage 2d8 radiant]]{2d8 лучистого урона}.\n\nВ первый раз, когда существо исцеляется этим заклинанием, оно исцеляется без ограничений; каждый последующий раз, когда существо исцеляется этим заклинанием, оно не может быть исцелено более чем на половину своих максимальных ПЗ.\n\nВ качестве бонусного действия вы можете переместить столб на расстояние до 60 футов в любом направлении.\n\nИсцеление врагов\n\nЭто заклинание не позволяет вам выбирать, кто получит эффект исцеления. Размещайте его с умом, иначе вы рискуете, что враги воспользуются вашей щедростью.",
+  "level": 4,
+  "school": "evo",
+  "components": [
+    "S",
+    "V"
+  ],
+  "ritual": false,
+  "concentration": true,
+  "casting_time": {
+    "unit": "action",
+    "value": 1,
+    "condition": ""
+  },
+  "range": {
+    "units": "ft",
+    "value": 60,
+    "special": null
+  },
+  "duration": {
+    "units": "minute",
+    "value": 1
+  },
+  "materials": {
+    "value": "",
+    "consumed": false,
+    "cost": 0,
+    "supply": 0
+  },
+  "preparation": {
+    "mode": "prepared",
+    "prepared": false
+  },
+  "activities": [
+    {
+      "id": "dnd5eactivity000",
+      "name": "",
+      "img": "",
+      "sort": 0,
+      "activation": {
+        "type": "action",
+        "value": null,
+        "condition": "",
+        "override": false,
+        "reaction_conditions": []
+      },
+      "consumption": {
+        "scaling": {
+          "allowed": false,
+          "max": ""
+        },
+        "spell_slot": true,
+        "targets": []
+      },
+      "description": {
+        "chat_flavor": ""
+      },
+      "duration": {
+        "value": null,
+        "units": "inst",
+        "special": "",
+        "concentration": false,
+        "override": false
+      },
+      "flags": {},
+      "range": {
+        "value": null,
+        "units": "self",
+        "special": "",
+        "override": false
+      },
+      "target": {
+        "template": {
+          "count": "",
+          "contiguous": false,
+          "stationary": false,
+          "type": "cylinder",
+          "size": "10",
+          "width": "",
+          "height": "",
+          "units": "ft"
+        },
+        "affects": {
+          "count": "",
+          "type": "",
+          "choice": false,
+          "special": ""
+        },
+        "override": false,
+        "prompt": true
+      },
+      "uses": {
+        "spent": 0,
+        "max": "",
+        "recovery": []
+      },
+      "visibility": {
+        "identifier": "",
+        "level": {
+          "min": null,
+          "max": null
+        },
+        "require_attunement": false,
+        "require_identification": false,
+        "require_magic": false
+      },
+      "effects": [],
+      "applied_effects": [],
+      "kind": "heal",
+      "healing": {
+        "number": 2,
+        "denomination": 8,
+        "bonus": "",
+        "types": [
+          "healing"
+        ],
+        "custom": {
+          "enabled": false,
+          "formula": ""
+        },
+        "scaling": {
+          "mode": "",
+          "number": null,
+          "formula": ""
+        }
+      }
+    }
+  ],
+  "passive_effects": [],
+  "provenance": {
+    "source": "foundry",
+    "source_url": "https://github.com/foundryvtt/dnd5e/blob/965ad2d0cf5d063dac675ba078b5bd3c3c0dd449/packs/_source/laaru-hw-spells/Небесный_луч___Heavenly_Ray_k4UWiiu8lMx7qH2e.yml",
+    "ingest_date": "2026-10-26",
+    "ingest_version": "foundry-translator-v1",
+    "srd_version": [
+      "5.1"
+    ],
+    "license_tag": "CC-BY-4.0"
+  },
+  "review": {
+    "known_divergence": null,
+    "requires_user_decision": false
+  },
+  "entry_kind": "spell"
+}

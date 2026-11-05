@@ -1,0 +1,18 @@
+
+raw = open('solo/chronicles.py','rb').read()
+print('type(raw)', type(raw))
+print("b'sys.path.insert' in raw      :", b'sys.path.insert' in raw)
+print("'sys.path.insert' in raw       :", 'sys.path.insert' in raw if isinstance(raw,str) else 'n/a(bytes)')
+print("b'sys.path' in raw             :", b'sys.path' in raw)
+print("b'path.insert' in raw          :", b'path.insert' in raw)
+print("b'_s.path.insert' in raw       :", b'_s.path.insert' in raw)
+print("len raw                        :", len(raw))
+tail = raw[-60:]
+print('tail repr                      :', repr(tail))
+print("b'sys.path.insert' in tail     :", b'sys.path.insert' in tail)
+print()
+print('--- does the file really contain the literal? ---')
+idx = raw.find(b'import sys as _s')
+print('index of import sys:', idx)
+print('slice around        :', repr(raw[idx:idx+70]))
+print("b'sys.path.insert' in slice:", b'sys.path.insert' in raw[idx:idx+70])

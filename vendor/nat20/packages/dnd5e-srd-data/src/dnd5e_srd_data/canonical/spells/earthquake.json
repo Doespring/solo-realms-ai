@@ -1,0 +1,371 @@
+{
+  "activities": [
+    {
+      "activation": {
+        "condition": "",
+        "override": false,
+        "reaction_conditions": [],
+        "type": "action",
+        "value": null
+      },
+      "applied_effects": [],
+      "consumption": {
+        "scaling": {
+          "allowed": false,
+          "max": ""
+        },
+        "spell_slot": true,
+        "targets": []
+      },
+      "damage": {
+        "on_save": "half",
+        "parts": []
+      },
+      "description": {
+        "chat_flavor": ""
+      },
+      "duration": {
+        "concentration": false,
+        "override": false,
+        "special": "",
+        "units": "inst",
+        "value": null
+      },
+      "effects": [],
+      "flags": {},
+      "id": "Z1voDdIYLdJfGwMH",
+      "img": "icons/magic/sonic/explosion-shock-sound-wave.webp",
+      "kind": "save",
+      "name": "Cast",
+      "range": {
+        "override": false,
+        "special": "",
+        "units": "self",
+        "value": null
+      },
+      "save": {
+        "ability": [
+          "dex"
+        ],
+        "dc": {
+          "calculation": "spellcasting",
+          "formula": ""
+        },
+        "ignore_cover": false
+      },
+      "sort": 0,
+      "target": {
+        "affects": {
+          "choice": false,
+          "count": "1",
+          "special": "",
+          "type": "space"
+        },
+        "override": false,
+        "prompt": true,
+        "template": {
+          "contiguous": false,
+          "count": "",
+          "height": "",
+          "size": "100",
+          "stationary": false,
+          "type": "circle",
+          "units": "ft",
+          "width": ""
+        }
+      },
+      "uses": {
+        "max": "",
+        "recovery": [],
+        "spent": 0
+      },
+      "visibility": {
+        "identifier": "",
+        "level": {
+          "max": null,
+          "min": null
+        },
+        "require_attunement": false,
+        "require_identification": false,
+        "require_magic": false
+      }
+    },
+    {
+      "activation": {
+        "condition": "end of turn of initial casting",
+        "override": true,
+        "reaction_conditions": [],
+        "type": "",
+        "value": null
+      },
+      "applied_effects": [],
+      "consumption": {
+        "scaling": {
+          "allowed": false,
+          "max": ""
+        },
+        "spell_slot": false,
+        "targets": []
+      },
+      "damage": {
+        "on_save": "half",
+        "parts": []
+      },
+      "description": {
+        "chat_flavor": "[[1d6]] Fissure(s)<br>[[10 * 1d10]] Feet deep"
+      },
+      "duration": {
+        "concentration": false,
+        "override": true,
+        "special": "",
+        "units": "minute",
+        "value": "1"
+      },
+      "effects": [],
+      "flags": {},
+      "id": "2CCthCZliyjEoavy",
+      "img": "icons/magic/earth/lava-stone-fire-eye.webp",
+      "kind": "save",
+      "name": "End of Turn Fissures",
+      "range": {
+        "override": false,
+        "special": "",
+        "units": "self",
+        "value": null
+      },
+      "save": {
+        "ability": [
+          "dex"
+        ],
+        "dc": {
+          "calculation": "spellcasting",
+          "formula": ""
+        },
+        "ignore_cover": false
+      },
+      "sort": 0,
+      "target": {
+        "affects": {
+          "choice": false,
+          "count": "",
+          "special": "",
+          "type": "creature"
+        },
+        "override": true,
+        "prompt": true,
+        "template": {
+          "contiguous": false,
+          "count": "",
+          "height": "",
+          "size": "200",
+          "stationary": false,
+          "type": "line",
+          "units": "ft",
+          "width": "10"
+        }
+      },
+      "uses": {
+        "max": "",
+        "recovery": [],
+        "spent": 0
+      },
+      "visibility": {
+        "identifier": "",
+        "level": {
+          "max": null,
+          "min": null
+        },
+        "require_attunement": false,
+        "require_identification": false,
+        "require_magic": false
+      }
+    },
+    {
+      "activation": {
+        "condition": "when a structure drops to 0 Hit Points",
+        "override": true,
+        "reaction_conditions": [],
+        "type": "",
+        "value": null
+      },
+      "applied_effects": [
+        "6UanNy7OTib1zFSq"
+      ],
+      "consumption": {
+        "scaling": {
+          "allowed": false,
+          "max": ""
+        },
+        "spell_slot": false,
+        "targets": []
+      },
+      "damage": {
+        "on_save": "half",
+        "parts": [
+          {
+            "bonus": "",
+            "custom": {
+              "enabled": false,
+              "formula": ""
+            },
+            "denomination": 6,
+            "number": 12,
+            "scaling": {
+              "formula": "",
+              "mode": "",
+              "number": 1
+            },
+            "types": [
+              "bludgeoning"
+            ]
+          }
+        ]
+      },
+      "description": {
+        "chat_flavor": ""
+      },
+      "duration": {
+        "concentration": false,
+        "override": true,
+        "special": "",
+        "units": "inst",
+        "value": null
+      },
+      "effects": [
+        {
+          "id": "6UanNy7OTib1zFSq",
+          "level": {
+            "max": null,
+            "min": null
+          },
+          "on_save": null,
+          "riders": null
+        }
+      ],
+      "flags": {},
+      "id": "qQtXMvVJZDL3NtNF",
+      "img": "icons/environment/settlement/building-rubble.webp",
+      "kind": "save",
+      "name": "Collapsing Structure Save",
+      "range": {
+        "override": true,
+        "special": "half of the structure's height",
+        "units": "spec",
+        "value": null
+      },
+      "save": {
+        "ability": [
+          "dex"
+        ],
+        "dc": {
+          "calculation": "spellcasting",
+          "formula": ""
+        },
+        "ignore_cover": false
+      },
+      "sort": 0,
+      "target": {
+        "affects": {
+          "choice": false,
+          "count": "",
+          "special": "",
+          "type": "space"
+        },
+        "override": true,
+        "prompt": false,
+        "template": {
+          "contiguous": false,
+          "count": "",
+          "height": "",
+          "size": "",
+          "stationary": false,
+          "type": "",
+          "units": "ft",
+          "width": ""
+        }
+      },
+      "uses": {
+        "max": "",
+        "recovery": [],
+        "spent": 0
+      },
+      "visibility": {
+        "identifier": "",
+        "level": {
+          "max": null,
+          "min": null
+        },
+        "require_attunement": false,
+        "require_identification": false,
+        "require_magic": false
+      }
+    }
+  ],
+  "casting_time": {
+    "condition": "",
+    "unit": "action",
+    "value": 1
+  },
+  "components": [
+    "M",
+    "S",
+    "V"
+  ],
+  "concentration": true,
+  "description": "Choose a point on the ground that you can see within range. For the duration, an intense tremor rips through the ground in a 100-foot-radius circle centered on that point. The ground there is Difficult Terrain.\n\nWhen you cast this spell and at the end of each of your turns for the duration, each creature on the ground in the area makes a Dexterity saving throw. On a failed save, a creature has the &amp;Reference[Prone] condition, and its Concentration is broken.\n\nYou can also cause the effects below.\n\nFissures. A total of [[/r 1d6]] fissures open in the spell's area at the end of the turn you cast it. You choose the fissures' locations, which can't be under structures. Each fissure is [[/r 1d10 * 10]] feet deep and 10 feet wide, and it extends from one edge of the spell's area to another edge. A creature in the same space as a fissure must succeed on a Dexterity saving throw or fall in. A creature that successfully saves moves with the fissure's edge as it opens.\n\nStructures. The tremor deals [[/damage 50 type=bludgeoning]] damage to any structure in contact with the ground in the area when you cast the spell and at the end of each of your turns until the spell ends. If a structure drops to 0 Hit Points, it collapses.\n\nA creature within a distance from a collapsing structure equal to half the structure's height makes a Dexterity saving throw. On a failed save, the creature takes 12d6 Bludgeoning damage, has the &amp;Reference[Prone apply=false] condition, and is buried in the rubble, requiring a [[/check ability=str skill=ath dc=20]] check as an action to escape. On a successful save, the creature takes half as much damage only.",
+  "description_localized": "<div class=\"rd__spc-inline-post\">Вы создаёте сейсмические колебания в точке поверхности, которую видите в пределах дистанции. Пока длится заклинание, сильные толчки сотрясают землю в круге радиусом 100 футов вокруг этой точки, заставляя содрогаться существа и строения, соприкасающиеся с землей в этой области.</div>\n<div class=\"rd__spc-inline-post\">Земля в области становится пересечённой местностью. Каждое существо, стоящее на земле и концентрирующееся, должно пройти испытание Выносливости. При провале концентрация нарушается.</div>\n<div class=\"rd__spc-inline-post\">Когда вы творите это заклинание и в конце каждого хода, в котором вы нём концентрируетесь, каждое существо на земле в пределах области должно пройти испытание Ловкости. При провале это существо &amp;reference[prone]{распластывается}.</div>\n<div class=\"rd__spc-inline-post\">У этого заклинания могут быть дополнительные эффекты, зависящие от поверхности земли в области по усмотрению мастера.</div>\n<div class=\"rd__spc-inline-post\"><strong>Расселины. </strong>После того как вы сотворили заклинание, в начале вашего следующего хода по всей области его действия образуется [[/r 1d6]] расселин. Их местоположение выбирает мастер. Каждая расселина имеет [[/r 1d10 * 10]] <span style=\"color:#191813;font-family:Roboto, Arial, 'Helvetica Neue', sans-serif;font-size:13px\">(1d10 × 10)</span> футов в глубину, 10 футов в ширину и тянется с одного края области до противоположного. Существо, стоящее в точке, где открылась расселина, должно пройти испытание Ловкости, при провале оно падает в расселину. При успехе существо перемещается вместе с краем расселины при ее раскрытии. Если расселина открывается под строением, оно автоматически рушится (см. далее).</div>\n<div class=\"rd__spc-inline-post\"><strong>Строения</strong>. Когда вы творите это заклинание и в начале каждого вашего хода, пока длится заклинание, толчки наносят 50 дробящего урона любому строению, соприкасающемуся с землей в области заклинания. Если ПЗ строения доходят до 0, оно обрушивается и может повредить существам по соседству. Существо, находящееся в пределах расстояния, равного половине высоты строения, должно пройти испытание Ловкости. При провале существо получает [[/r 5d6]] дробящего урона, &amp;reference[prone]{распластывается}и оказывается погребено под обломками. Чтобы освободиться из-под них, требуется в качестве действия пройти проверку Силы (Атлетика) со СЛ 20. Мастер может повысить или понизить СЛ в зависимости от природы обломков. При успехе испытания существо получает половину урона, не распластывается и не погребено под обломками.</div>",
+  "duration": {
+    "units": "minute",
+    "value": 1
+  },
+  "entry_kind": "spell",
+  "foundry_uuid": "Compendium.dnd5e.spells24.Item.phbsplEarthquake",
+  "level": 8,
+  "materials": {
+    "consumed": false,
+    "cost": 0,
+    "supply": 0,
+    "value": "a fractured rock"
+  },
+  "name": "Землетрясение",
+  "passive_effects": [
+    {
+      "changes": [],
+      "description": "<p>On a failed save, the creature takes 12d6 Bludgeoning damage, has the &amp;Reference[Prone apply=false] condition, and is buried in the rubble, requiring a [[/check ability=str skill=ath dc=20]] check as an action to escape.</p>",
+      "disabled": false,
+      "duration": null,
+      "id": "6UanNy7OTib1zFSq",
+      "name": "Buried in Rubble",
+      "statuses": [
+        "prone"
+      ],
+      "transfer": false
+    }
+  ],
+  "preparation": {
+    "mode": "prepared",
+    "prepared": false
+  },
+  "provenance": {
+    "ingest_date": "2026-05-30",
+    "ingest_version": "foundry-translator-v1",
+    "license_tag": "CC-BY-4.0",
+    "source": "foundry",
+    "source_url": "https://github.com/foundryvtt/dnd5e/blob/965ad2d0cf5d063dac675ba078b5bd3c3c0dd449/packs/_source/spells24/8th-level/earthquake.yml",
+    "srd_version": [
+      "5.2"
+    ]
+  },
+  "range": {
+    "special": null,
+    "units": "ft",
+    "value": 500
+  },
+  "review": {
+    "known_divergence": null,
+    "requires_user_decision": false
+  },
+  "ritual": false,
+  "school": "trs",
+  "slug": "earthquake"
+}

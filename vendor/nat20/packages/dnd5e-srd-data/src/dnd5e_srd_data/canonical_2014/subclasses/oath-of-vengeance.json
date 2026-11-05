@@ -1,0 +1,212 @@
+{
+  "slug": "oath-of-vengeance",
+  "name": "Клятва возмездия",
+  "description": "Клятва возмездия | Oath of Vengeance\n\nКлятва возмездия — это суровая решимость покарать тех, кто сотворил непростительный грех. Когда силы зла убивают беззащитных селян, когда целые народы отворачиваются от воли своих богов, когда воровская гильдия становится могущественной и жестокой, когда дракон разоряет округу — в таких случаях появляется паладин и приносит клятву возмездия, чтобы покончить с несправедливостью. Этих паладинов порой ещё называют мстителями и тёмными рыцарями. Собственная честь для них не так важна, как правосудие.\n\nДогмы возмездия\n\nДогмы возмездия у разных паладинов разные, но все они требуют покарать злодеев любой ценой. Паладины, придерживающиеся этих догм, готовы пожертвовать даже собственной праведностью, лишь бы правосудие настигло негодяев. Поэтому подобные паладины часто нейтральные или принципиальные нейтральные по мировоззрению. Основные принципы догм суровы и просты.\n\nБорись с большим злом. Если мне придётся выбирать между борьбой с моими заклятыми врагами или с меньшим злом, я выберу большее зло.\n\nНет пощады негодяям. Я могу пощадить простого врага, но не заклятого.\n\nЛюбой ценой. Мои сомнения не должны мешать мне уничтожить врагов.\n\nРасплата. Когда мои враги разрушают мир, это моя вина - я не сумел остановить их. Я должен помогать тем, кто пострадал от их злодеяний.\n\nУровеньОсобенности\n\n3-й\n\n@Compendium[laaru-dnd5-hw.classfeatures.MyI89q7tF8XE20S5]{Заклинания клятвы возмездия}, @Compendium[laaru-dnd5-hw.classfeatures.mlfOwAfU4vy4zOsp]{Проведение энергии: Клятва ненависти}, @Compendium[laaru-dnd5-hw.classfeatures.LbS8AAdFUIyNYeAm]{Проведение энергии: Отречение от врага}\n\n7-й\n\n@Compendium[laaru-dnd5-hw.classfeatures.XDf2skuvELbtU26V]{Несгибаемый мститель}\n\n15-й\n\n@Compendium[laaru-dnd5-hw.classfeatures.hgh6dpHKpgTmG7sj]{Дух возмездия}\n\n20-й\n\n@Compendium[laaru-dnd5-hw.classfeatures.yN4ab1LltdcQXJyd]{Ангел возмездия}",
+  "identifier": "oath-of-vengeance",
+  "class_identifier": "paladin",
+  "spellcasting": {
+    "ability": "",
+    "progression": "none"
+  },
+  "advancement": [
+    {
+      "id": "f6jfiicfnjflaq2r",
+      "type": "ItemGrant",
+      "level": 3,
+      "title": "1. Особенности",
+      "hint": "",
+      "class_restriction": "",
+      "configuration": {
+        "items": [
+          "Compendium.laaru-dnd5-hw.classfeatures.MyI89q7tF8XE20S5",
+          "Compendium.laaru-dnd5-hw.classfeatures.mlfOwAfU4vy4zOsp",
+          "Compendium.laaru-dnd5-hw.classfeatures.LbS8AAdFUIyNYeAm"
+        ],
+        "optional": false
+      },
+      "value": {}
+    },
+    {
+      "id": "gvfla4r2shjr4y7k",
+      "type": "ItemGrant",
+      "level": 15,
+      "title": "Особенность",
+      "hint": "",
+      "class_restriction": "",
+      "configuration": {
+        "items": [
+          "Compendium.laaru-dnd5-hw.classfeatures.hgh6dpHKpgTmG7sj"
+        ],
+        "optional": false
+      },
+      "value": {}
+    },
+    {
+      "id": "g71tm4xu558rgsrn",
+      "type": "ItemGrant",
+      "level": 20,
+      "title": "Особенность",
+      "hint": "",
+      "class_restriction": "",
+      "configuration": {
+        "items": [
+          "Compendium.laaru-dnd5-hw.classfeatures.yN4ab1LltdcQXJyd"
+        ],
+        "optional": false
+      },
+      "value": {}
+    },
+    {
+      "id": "rhzd6c1zjcqcf85s",
+      "type": "ItemGrant",
+      "level": 3,
+      "title": "2. Заклинания клятвы возмездия",
+      "hint": "",
+      "class_restriction": "",
+      "configuration": {
+        "items": [
+          "Compendium.laaru-dnd5-hw.spells.p7pqc57hJekgMRhB",
+          "Compendium.laaru-dnd5-hw.spells.d6mvFJvqsRl6FG4g"
+        ],
+        "optional": false,
+        "spell": {
+          "ability": "cha",
+          "preparation": "always",
+          "uses": {
+            "max": "",
+            "per": ""
+          }
+        }
+      },
+      "value": {}
+    },
+    {
+      "id": "afn9nnd4hvqe39cy",
+      "type": "ItemGrant",
+      "level": 5,
+      "title": "Заклинания клятвы возмездия",
+      "hint": "",
+      "class_restriction": "",
+      "configuration": {
+        "items": [
+          "Compendium.laaru-dnd5-hw.spells.hHdE2G8F8VR08bxF",
+          "Compendium.laaru-dnd5-hw.spells.DulrpjBUeVVgrrNA"
+        ],
+        "optional": false,
+        "spell": {
+          "ability": "cha",
+          "preparation": "always",
+          "uses": {
+            "max": "",
+            "per": ""
+          }
+        }
+      },
+      "value": {}
+    },
+    {
+      "id": "j23k80o4h19xhmi3",
+      "type": "ItemGrant",
+      "level": 9,
+      "title": "Заклинания клятвы возмездия",
+      "hint": "",
+      "class_restriction": "",
+      "configuration": {
+        "items": [
+          "Compendium.laaru-dnd5-hw.spells.hIaHx6K0X5bxyHiM",
+          "Compendium.laaru-dnd5-hw.spells.bmGqZnc69SQysORr"
+        ],
+        "optional": false,
+        "spell": {
+          "ability": "cha",
+          "preparation": "always",
+          "uses": {
+            "max": "",
+            "per": ""
+          }
+        }
+      },
+      "value": {}
+    },
+    {
+      "id": "pbnxdnlavlgy1ic3",
+      "type": "ItemGrant",
+      "level": 13,
+      "title": "Заклинания клятвы возмездия",
+      "hint": "",
+      "class_restriction": "",
+      "configuration": {
+        "items": [
+          "Compendium.laaru-dnd5-hw.spells.nJ8TX9ZpXVUznyPT",
+          "Compendium.laaru-dnd5-hw.spells.K5SkRCCfmvLnsL3i"
+        ],
+        "optional": false,
+        "spell": {
+          "ability": "cha",
+          "preparation": "always",
+          "uses": {
+            "max": "",
+            "per": ""
+          }
+        }
+      },
+      "value": {}
+    },
+    {
+      "id": "811vexnjvav3rik1",
+      "type": "ItemGrant",
+      "level": 7,
+      "title": "Особенность",
+      "hint": "",
+      "class_restriction": "",
+      "configuration": {
+        "items": [
+          "Compendium.laaru-dnd5-hw.classfeatures.XDf2skuvELbtU26V"
+        ],
+        "optional": false
+      },
+      "value": {}
+    },
+    {
+      "id": "713brlfckgptl1q0",
+      "type": "ItemGrant",
+      "level": 17,
+      "title": "Заклинания клятвы возмездия",
+      "hint": "",
+      "class_restriction": "",
+      "configuration": {
+        "items": [
+          "Compendium.laaru-dnd5-hw.spells.VsdwrXXgpElVReQm",
+          "Compendium.laaru-dnd5-hw.spells.aw8tF2EFxSl4UuFT"
+        ],
+        "optional": false,
+        "spell": {
+          "ability": "cha",
+          "preparation": "always",
+          "uses": {
+            "max": "",
+            "per": ""
+          }
+        }
+      },
+      "value": {}
+    }
+  ],
+  "granted_features": [],
+  "feature_choices": [],
+  "provenance": {
+    "source": "foundry",
+    "source_url": "https://github.com/foundryvtt/dnd5e/blob/965ad2d0cf5d063dac675ba078b5bd3c3c0dd449/packs/_source/laaru-hw-subclasses/Клятва_возмездия_5Or1GNXTEnRIrqMq.yml",
+    "ingest_date": "2026-10-26",
+    "ingest_version": "foundry-translator-v1",
+    "srd_version": [
+      "5.1"
+    ],
+    "license_tag": "CC-BY-4.0"
+  },
+  "review": {
+    "known_divergence": null,
+    "requires_user_decision": false
+  },
+  "entry_kind": "subclass"
+}

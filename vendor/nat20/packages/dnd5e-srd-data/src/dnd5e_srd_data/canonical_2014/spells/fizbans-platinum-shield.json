@@ -1,0 +1,139 @@
+{
+  "slug": "fizbans-platinum-shield",
+  "foundry_uuid": "Compendium.dnd5e.laaru-hw-spells.Item.Jsa0Jpu4GuC06Ug0",
+  "name": "Платиновый щит Физбана / Fizban's Platinum Shield",
+  "description": "Вы создаёте поле серебристого света, окружающее существо по вашему выбору в пределах дистанции (включая себя). Поле испускает &amp;reference[dimlight]{тусклый свет} в радиусе 5 футов. Находясь в поле, существо получает следующие преимущества:\n\nУкрытие. Существо получает &amp;reference[cover]{укрытие} наполовину.\n\nУстойчивость к урону. Существо получает устойчивость к урону кислотой, огнём, холодом, молнии и ядом.\n\nУвёртливость. Если существо попадает под действие эффекта, который позволяет ему совершить испытание Ловкости, чтобы получить только половину урона, вместо этого существо не получает никакого урона вовсе, если испытание было успешно, и только половину урона, если оно было провалено.\n\nБонусным действием в последующие ходы вы можете переместить поле к другому существу находящемуся в 60 футах от поля.",
+  "level": 6,
+  "school": "abj",
+  "components": [
+    "M",
+    "S",
+    "V"
+  ],
+  "ritual": false,
+  "concentration": true,
+  "casting_time": {
+    "unit": "bonus",
+    "value": 1,
+    "condition": ""
+  },
+  "range": {
+    "units": "ft",
+    "value": 60,
+    "special": null
+  },
+  "duration": {
+    "units": "minute",
+    "value": 1
+  },
+  "materials": {
+    "value": "покрытая платиной чешуя дракона, стоимостью не менее 500 зм",
+    "consumed": false,
+    "cost": 500,
+    "supply": 0
+  },
+  "preparation": {
+    "mode": "prepared",
+    "prepared": false
+  },
+  "activities": [
+    {
+      "id": "dnd5eactivity000",
+      "name": "",
+      "img": "",
+      "sort": 0,
+      "activation": {
+        "type": "action",
+        "value": null,
+        "condition": "",
+        "override": false,
+        "reaction_conditions": []
+      },
+      "consumption": {
+        "scaling": {
+          "allowed": false,
+          "max": ""
+        },
+        "spell_slot": true,
+        "targets": []
+      },
+      "description": {
+        "chat_flavor": ""
+      },
+      "duration": {
+        "value": null,
+        "units": "inst",
+        "special": "",
+        "concentration": false,
+        "override": false
+      },
+      "flags": {},
+      "range": {
+        "value": null,
+        "units": "self",
+        "special": "",
+        "override": false
+      },
+      "target": {
+        "template": {
+          "count": "",
+          "contiguous": false,
+          "stationary": false,
+          "type": "",
+          "size": "",
+          "width": "",
+          "height": "",
+          "units": ""
+        },
+        "affects": {
+          "count": "",
+          "type": "",
+          "choice": false,
+          "special": ""
+        },
+        "override": false,
+        "prompt": true
+      },
+      "uses": {
+        "spent": 0,
+        "max": "",
+        "recovery": []
+      },
+      "visibility": {
+        "identifier": "",
+        "level": {
+          "min": null,
+          "max": null
+        },
+        "require_attunement": false,
+        "require_identification": false,
+        "require_magic": false
+      },
+      "effects": [],
+      "applied_effects": [],
+      "kind": "utility",
+      "roll": {
+        "formula": "",
+        "name": "",
+        "prompt": false,
+        "visible": false
+      }
+    }
+  ],
+  "passive_effects": [],
+  "provenance": {
+    "source": "foundry",
+    "source_url": "https://github.com/foundryvtt/dnd5e/blob/965ad2d0cf5d063dac675ba078b5bd3c3c0dd449/packs/_source/laaru-hw-spells/Платиновый_щит_Физбана___Fizban_s_Platinum_Shield_Jsa0Jpu4GuC06Ug0.yml",
+    "ingest_date": "2026-10-26",
+    "ingest_version": "foundry-translator-v1",
+    "srd_version": [
+      "5.1"
+    ],
+    "license_tag": "CC-BY-4.0"
+  },
+  "review": {
+    "known_divergence": null,
+    "requires_user_decision": false
+  },
+  "entry_kind": "spell"
+}

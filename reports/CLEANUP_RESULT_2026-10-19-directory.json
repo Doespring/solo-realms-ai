@@ -1,0 +1,266 @@
+{
+  "failed": [],
+  "kind": "directory",
+  "removed": [
+    {
+      "relative": "dist/pdf-hotfix",
+      "bytes": 81312523,
+      "files": 2186
+    },
+    {
+      "relative": "dist/pdf-world",
+      "bytes": 81361891,
+      "files": 2187
+    },
+    {
+      "relative": "dist/playable-next",
+      "bytes": 81407282,
+      "files": 2190
+    },
+    {
+      "relative": "dist/SoloRealmsAI",
+      "bytes": 69707741,
+      "files": 514
+    },
+    {
+      "relative": "dist/SoloRealmsAI-Prototype",
+      "bytes": 81300074,
+      "files": 2184
+    },
+    {
+      "relative": "reports/dash-mock-mapping",
+      "bytes": 2013124,
+      "files": 21
+    },
+    {
+      "relative": "reports/dash-small-window",
+      "bytes": 1119445,
+      "files": 9
+    },
+    {
+      "relative": "reports/dash-ui",
+      "bytes": 560910,
+      "files": 5
+    },
+    {
+      "relative": "reports/drive-upload",
+      "bytes": 40439568,
+      "files": 2611
+    },
+    {
+      "relative": "reports/independent-preview10",
+      "bytes": 6786860,
+      "files": 24
+    },
+    {
+      "relative": "reports/independent-preview7",
+      "bytes": 4602157,
+      "files": 34
+    },
+    {
+      "relative": "reports/independent-preview8",
+      "bytes": 5738706,
+      "files": 47
+    },
+    {
+      "relative": "reports/independent-preview9",
+      "bytes": 1887159,
+      "files": 22
+    },
+    {
+      "relative": "reports/monster-profile-ui",
+      "bytes": 764994,
+      "files": 8
+    },
+    {
+      "relative": "reports/nat20-cleric-readiness",
+      "bytes": 14022247,
+      "files": 1792
+    },
+    {
+      "relative": "reports/nat20-dash",
+      "bytes": 30211,
+      "files": 7
+    },
+    {
+      "relative": "reports/nat20-playable-next",
+      "bytes": 4949941,
+      "files": 18
+    },
+    {
+      "relative": "reports/nat20-upstream-repair/fixtures",
+      "bytes": 23474,
+      "files": 3
+    },
+    {
+      "relative": "reports/nat20-upstream-repair/independent",
+      "bytes": 27264981,
+      "files": 3532
+    },
+    {
+      "relative": "reports/nat20-upstream-repair/independent-v2",
+      "bytes": 27271762,
+      "files": 3534
+    },
+    {
+      "relative": "reports/nat20-upstream-repair/tests",
+      "bytes": 14445,
+      "files": 4
+    },
+    {
+      "relative": "reports/nat20-upstream-repair/v2",
+      "bytes": 29168125,
+      "files": 3562
+    },
+    {
+      "relative": "reports/nat20-upstream-repair/work",
+      "bytes": 54528851,
+      "files": 7077
+    },
+    {
+      "relative": "reports/native-parameters-ui",
+      "bytes": 2715794,
+      "files": 19
+    },
+    {
+      "relative": "reports/pdf-hotfix",
+      "bytes": 67904113,
+      "files": 449
+    },
+    {
+      "relative": "reports/pdf-nat20-ui",
+      "bytes": 7567139,
+      "files": 66
+    },
+    {
+      "relative": "reports/pdf-pipeline-stage1",
+      "bytes": 30746,
+      "files": 7
+    },
+    {
+      "relative": "reports/pdf-readiness-ui",
+      "bytes": 4722138,
+      "files": 35
+    },
+    {
+      "relative": "reports/pdf-world-http",
+      "bytes": 4108644,
+      "files": 54
+    },
+    {
+      "relative": "reports/pdf-world-release",
+      "bytes": 79912517,
+      "files": 361
+    },
+    {
+      "relative": "reports/preview10/data-incident",
+      "bytes": 607227,
+      "files": 6
+    },
+    {
+      "relative": "reports/preview10/latency-profile",
+      "bytes": 1052672,
+      "files": 5
+    },
+    {
+      "relative": "reports/preview10/latency-safe-profile",
+      "bytes": 1052672,
+      "files": 5
+    },
+    {
+      "relative": "reports/preview10/native-old-profile",
+      "bytes": 82618480,
+      "files": 348
+    },
+    {
+      "relative": "reports/preview10/native-terminal-profile",
+      "bytes": 78267981,
+      "files": 316
+    },
+    {
+      "relative": "reports/preview7/browser-profile",
+      "bytes": 3076096,
+      "files": 6
+    },
+    {
+      "relative": "reports/preview7/native-final-profile",
+      "bytes": 78759149,
+      "files": 339
+    },
+    {
+      "relative": "reports/preview7/native-profile",
+      "bytes": 11341794,
+      "files": 231
+    },
+    {
+      "relative": "reports/preview7-ui-followup",
+      "bytes": 567938,
+      "files": 4
+    },
+    {
+      "relative": "reports/preview8/native-old-profile",
+      "bytes": 82123828,
+      "files": 342
+    },
+    {
+      "relative": "reports/preview9/native-profile",
+      "bytes": 17021490,
+      "files": 261
+    },
+    {
+      "relative": "reports/preview9-small-window",
+      "bytes": 395660,
+      "files": 5
+    },
+    {
+      "relative": "reports/prototype-1",
+      "bytes": 7032,
+      "files": 6
+    },
+    {
+      "relative": "reports/prototype-1-empty-world",
+      "bytes": 1675500,
+      "files": 7
+    },
+    {
+      "relative": "reports/prototype-4/legacy-ui",
+      "bytes": 512889,
+      "files": 4
+    },
+    {
+      "relative": "reports/prototype-4/small-window",
+      "bytes": 1119445,
+      "files": 9
+    },
+    {
+      "relative": "reports/prototype-5/native-profile",
+      "bytes": 79064650,
+      "files": 342
+    },
+    {
+      "relative": "reports/small-window-ui",
+      "bytes": 1632334,
+      "files": 13
+    },
+    {
+      "relative": "reports/stage2-ui/tmp-smoke",
+      "bytes": 737280,
+      "files": 5
+    },
+    {
+      "relative": "reports/stage2-ui/tmp-smoke-2",
+      "bytes": 1249280,
+      "files": 6
+    },
+    {
+      "relative": "reports/stage2-ui/tmp-smoke-final",
+      "bytes": 1486848,
+      "files": 6
+    },
+    {
+      "relative": "reports/stage2-ui/tmp-smoke-pass",
+      "bytes": 1486848,
+      "files": 6
+    }
+  ]
+}

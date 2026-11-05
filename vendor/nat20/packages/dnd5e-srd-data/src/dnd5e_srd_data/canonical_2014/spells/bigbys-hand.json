@@ -1,0 +1,170 @@
+{
+  "slug": "bigbys-hand",
+  "foundry_uuid": "Compendium.dnd5e.laaru-hw-spells.Item.HhqqY4DMvB6t1qMF",
+  "name": "Рука Бигби / Bigby's Hand",
+  "description": "Вы создаёте ладонь крупного размера из мерцающей полупрозрачной силы в незанятом пространстве, которое видите в пределах дистанции. Рука существует, пока длится заклинание, и перемещается по вашему приказу, повторяя движение вашей руки\n\nРука — это объект с КБ 20 и ПЗ, равными вашему максимуму ПЗ. Если её ПЗ снижаются до 0, заклинание прекращается. У руки Сила 26 ([[/r 1d20+8]] (+8)) и Ловкость 10 ([[/r 1d20+0]] (+0)). Рука не занимает пространство полностью\n\nКогда вы сотворяете это заклинание, а также в качестве бонусного действия в свои последующие ходы, вы можете переместить руку на расстояние до 60 футов, а затем вызвать с её помощью один из следующих эффектов.\n\nМогучая рука. Рука пытается толкнуть существо в пределах 5 футов от себя в направлении на ваш выбор. Пройдите проверку Силы руки в состязании с проверкой Силы (Атлетика) цели. Если цель среднего размера или меньше, у вас преимущество. При успехе рука отталкивает цель на расстояние до 5 футов плюс количество футов, равное вашему модификатору заклинательной характеристики, умноженному на 5. Рука перемещается вместе с целью, оставаясь в пределах 5 футов от неё.\n\nПреграждающая рука. Рука становится между вами и существом на ваш выбор, пока вы не дадите ей другой приказ. Рука перемещается, чтобы всегда оставаться между вами и целью, и дает вам &amp;reference[cover]{укрытие наполовину} от цели. Цель не может пройти сквозь пространство руки, если Сила цели ниже или равна Силе руки. Если Сила цели выше, она может пройти сквозь пространство руки, но оно считается для цели &amp;reference[difficultterrain]{пересеченной местностью}.\n\nСжатый кулак. Рука наносит удар существу или объекту в пределах 5 футов от себя. Совершите атаку заклинанием в ближнем бою с помощью руки, используя ваши параметры. При попадании цель получает [[/r 4d8]] урона силой.\n\nХваткая рука. Рука пытается захватить существо размером не более огромного в пределах 5 футов от неё. Используйте значение Силы руки при проверке захвата. Если цель среднего размера или меньше, у вас преимущество к проверке. Пока рука держит цель в &amp;reference[grappled]{захвате}, вы можете использовать бонусное действие, чтобы заставить руку сдавить цель. При этом цель получает дробящий урон, равный [[/r 2d6]] + ваш модификатор заклинательной характеристики.\n\nНа высоких кругах.\n\nЕсли вы сотворяете это заклинание, используя ячейку 6-го круга или выше, урон от сжатого кулака увеличивается на [[/r 2d8]], а урон от хваткой руки на [[/r 2d6]]за каждый круг ячейки выше 5-го.",
+  "level": 5,
+  "school": "evo",
+  "components": [
+    "M",
+    "S",
+    "V"
+  ],
+  "ritual": false,
+  "concentration": true,
+  "casting_time": {
+    "unit": "action",
+    "value": 1,
+    "condition": ""
+  },
+  "range": {
+    "units": "ft",
+    "value": 120,
+    "special": null
+  },
+  "duration": {
+    "units": "minute",
+    "value": 1
+  },
+  "materials": {
+    "value": "яичная скорлупа и перчатка из змеиной кожи",
+    "consumed": false,
+    "cost": 0,
+    "supply": 0
+  },
+  "preparation": {
+    "mode": "prepared",
+    "prepared": false
+  },
+  "activities": [
+    {
+      "id": "dnd5eactivity000",
+      "name": "",
+      "img": "",
+      "sort": 0,
+      "activation": {
+        "type": "action",
+        "value": null,
+        "condition": "",
+        "override": false,
+        "reaction_conditions": []
+      },
+      "consumption": {
+        "scaling": {
+          "allowed": false,
+          "max": ""
+        },
+        "spell_slot": true,
+        "targets": []
+      },
+      "description": {
+        "chat_flavor": ""
+      },
+      "duration": {
+        "value": null,
+        "units": "inst",
+        "special": "",
+        "concentration": false,
+        "override": false
+      },
+      "flags": {},
+      "range": {
+        "value": null,
+        "units": "self",
+        "special": "",
+        "override": false
+      },
+      "target": {
+        "template": {
+          "count": "",
+          "contiguous": false,
+          "stationary": false,
+          "type": "",
+          "size": "",
+          "width": "",
+          "height": "",
+          "units": ""
+        },
+        "affects": {
+          "count": "1",
+          "type": "space",
+          "choice": false,
+          "special": ""
+        },
+        "override": false,
+        "prompt": true
+      },
+      "uses": {
+        "spent": 0,
+        "max": "",
+        "recovery": []
+      },
+      "visibility": {
+        "identifier": "",
+        "level": {
+          "min": null,
+          "max": null
+        },
+        "require_attunement": false,
+        "require_identification": false,
+        "require_magic": false
+      },
+      "effects": [],
+      "applied_effects": [],
+      "kind": "attack",
+      "attack": {
+        "ability": "",
+        "bonus": "",
+        "critical": {
+          "threshold": null
+        },
+        "flat": false,
+        "type": {
+          "value": "melee",
+          "classification": "spell"
+        }
+      },
+      "damage": {
+        "critical": {
+          "bonus": ""
+        },
+        "include_base": true,
+        "parts": [
+          {
+            "number": 4,
+            "denomination": 8,
+            "bonus": "",
+            "types": [
+              "force"
+            ],
+            "custom": {
+              "enabled": false,
+              "formula": ""
+            },
+            "scaling": {
+              "mode": "whole",
+              "number": 2,
+              "formula": ""
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "passive_effects": [],
+  "provenance": {
+    "source": "foundry",
+    "source_url": "https://github.com/foundryvtt/dnd5e/blob/965ad2d0cf5d063dac675ba078b5bd3c3c0dd449/packs/_source/laaru-hw-spells/Рука_Бигби___Bigby_s_Hand_HhqqY4DMvB6t1qMF.yml",
+    "ingest_date": "2026-10-26",
+    "ingest_version": "foundry-translator-v1",
+    "srd_version": [
+      "5.1"
+    ],
+    "license_tag": "CC-BY-4.0"
+  },
+  "review": {
+    "known_divergence": null,
+    "requires_user_decision": false
+  },
+  "entry_kind": "spell"
+}

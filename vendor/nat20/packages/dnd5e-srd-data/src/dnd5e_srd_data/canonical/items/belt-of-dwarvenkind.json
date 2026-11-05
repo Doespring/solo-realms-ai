@@ -1,0 +1,71 @@
+{
+  "activities": [],
+  "attunement_constraint": null,
+  "cost_gp": 4000.0,
+  "description": "Wondrous Item, Rare (Requires Attunement)\n\nWhile wearing this belt, you gain the following benefits:\n\nDwarvish. You know Dwarvish.\n\nFriend of Dwarvenkind. You have Advantage on Charisma (Persuasion) checks made to interact with dwarves and duergar.\n\nToughness. Your Constitution increases by 2, to a maximum of 20.\n\nIn addition, while attuned to the belt, you have a 50 percent chance each day at dawn of growing a full beard if you can grow one, or a thicker beard if you already have one.\n\nIf you aren't a dwarf or duergar, you gain the following additional benefits while wearing the belt:\n\nDarkvision. You have Darkvision with a range of 60 feet.\n\nResilience. You have Resistance to Poison damage. You also have Advantage on saving throws you make to avoid or end the Poisoned condition.",
+  "description_localized": "<p><em>Чудесный предмет, (Требуется настроенность)</em></p><p>Пока вы носите этот пояс, вы получаете следующую пользу:</p><ul><li>Значение вашей Выносливости повышается на 2, максимум до 20.</li><li>У вас преимущество к проверкам Харизмы (Убеждение) при общении с дварфами.</li></ul><p>Кроме того, пока вы настроены на пояс, у вас есть шанс [[/r 1d100]]{50%} каждый день на рассвете отрастить густую бороду, если вы на это способны. А если у вас уже есть борода, она станет заметно гуще.</p><p>Если вы не дварф, вы получаете дополнительную пользу, пока носите пояс:</p><ul><li>У вас преимущество к испытаниям против яда и устойчивость к урону ядом.</li><li>У вас &amp;reference[darkvision]{ночное зрение} на расстоянии до 60 футов.</li><li>Вы можете говорить, читать и писать на дварфийском.</li></ul>",
+  "item_kind": "magic_item",
+  "name": "Дварфийский пояс",
+  "passive_effects": [
+    {
+      "changes": [
+        {
+          "key": "system.traits.languages.value",
+          "mode": 2,
+          "priority": null,
+          "value": "dwarvish"
+        },
+        {
+          "key": "system.abilities.con.value",
+          "mode": 2,
+          "priority": null,
+          "value": "2"
+        },
+        {
+          "key": "system.attributes.senses.darkvision",
+          "mode": 4,
+          "priority": null,
+          "value": "60"
+        },
+        {
+          "key": "system.traits.dr.value",
+          "mode": 2,
+          "priority": null,
+          "value": "poison"
+        },
+        {
+          "key": "system.abilities.con.value",
+          "mode": 3,
+          "priority": null,
+          "value": "20"
+        }
+      ],
+      "description": "<div class=\"def-block\"><p><strong>Dwarvish.</strong> You know Dwarvish.</p><p><strong>Friend of Dwarvenkind.</strong> You have Advantage on Charisma (Persuasion) checks made to interact with dwarves and duergar.</p><p><strong>Toughness.</strong> Your Constitution increases by 2, to a maximum of 20.</p><p>If you aren’t a dwarf or duergar, you gain the following additional benefits while wearing the belt:</p><div class=\"def-block\"><p><strong>Darkvision.</strong> You have Darkvision with a range of 60 feet.</p><p><strong>Resilience.</strong> You have Resistance to Poison damage. You also have Advantage on saving throws you make to avoid or end the Poisoned condition.</p></div></div>",
+      "disabled": true,
+      "duration": null,
+      "id": "HNruvcSEl25DRvjj",
+      "name": "Dwarvenkind Benefits",
+      "statuses": [],
+      "transfer": true
+    }
+  ],
+  "provenance": {
+    "ingest_date": "2026-05-30",
+    "ingest_version": "foundry-translator-v1",
+    "license_tag": "CC-BY-4.0",
+    "source": "foundry",
+    "source_url": "https://github.com/foundryvtt/dnd5e/blob/965ad2d0cf5d063dac675ba078b5bd3c3c0dd449/packs/_source/equipment24/equipment/belt-of-dwarvenkind.yml",
+    "srd_version": [
+      "5.2"
+    ]
+  },
+  "rarity": "rare",
+  "requires_attunement": true,
+  "review": {
+    "known_divergence": null,
+    "requires_user_decision": false
+  },
+  "slug": "belt-of-dwarvenkind",
+  "uses": null,
+  "weight": 0.0
+}

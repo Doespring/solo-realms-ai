@@ -1,0 +1,1238 @@
+{
+  "schema_version": "2.1.0",
+  "rules": [
+    {
+      "id": "dnd2024.phb01.exploration_equipment",
+      "rules_family": "dnd2024",
+      "name": "Использование экипировки в исследовании",
+      "kind": "procedure",
+      "classification": {
+        "mode": "hybrid",
+        "semantic_required": true,
+        "formal_required": true,
+        "reason": "GM proposes applicability; Engine alone may apply registered formal consequences."
+      },
+      "conditions": [],
+      "triggers": [
+        "exploration_equipment.requested"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "procedure_id": "exploration_equipment"
+          }
+        }
+      ],
+      "semantic_questions": [
+        "Использование экипировки в исследовании — какие факты и применимость подтверждены Мастером?"
+      ],
+      "facts": {
+        "examples": [
+          "ladder",
+          "torch",
+          "thieves_tools",
+          "caltrops"
+        ],
+        "equipment_rules_chapter": 6
+      },
+      "constraints": [],
+      "exceptions": [],
+      "duration": "source_dependent",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 20,
+        "printed_page": "19",
+        "section": "Исследование / Экипировка для приключений"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "not_implemented",
+      "auto_activate": false,
+      "dependencies": [
+        "catalog.items"
+      ],
+      "behavior_tests": [
+        "phb01.exploration_equipment"
+      ],
+      "readiness": {
+        "status": "blocked",
+        "handler": null,
+        "scope": "Использование экипировки в исследовании",
+        "blockers": [
+          "Item examples are not full item definitions."
+        ]
+      },
+      "revision": 1
+    },
+    {
+      "id": "dnd2024.phb01.light_obscurement",
+      "rules_family": "dnd2024",
+      "name": "Слабо заслонённая область",
+      "kind": "procedure",
+      "classification": {
+        "mode": "deterministic",
+        "semantic_required": false,
+        "formal_required": true,
+        "reason": "Formal rule over trusted inputs."
+      },
+      "conditions": [],
+      "triggers": [
+        "light_obscurement.requested"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "procedure_id": "light_obscurement"
+          }
+        }
+      ],
+      "semantic_questions": [],
+      "facts": {
+        "vision_based_perception": "disadvantage",
+        "examples": [
+          "dim_light",
+          "patchy_fog",
+          "moderate_foliage"
+        ]
+      },
+      "constraints": [
+        "Existing handler is only nearby map search, not arbitrary perception."
+      ],
+      "exceptions": [],
+      "duration": "source_dependent",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 20,
+        "printed_page": "19",
+        "section": "Зрение и свет / Заслонённые области"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "existing_engine_subset",
+      "auto_activate": false,
+      "dependencies": [
+        "checks.ability",
+        "glossary.vision"
+      ],
+      "behavior_tests": [
+        "phb01.light_obscurement"
+      ],
+      "readiness": {
+        "status": "engine_subset_verified",
+        "handler": "CombatEngine.search",
+        "scope": "Existing handler is only nearby map search, not arbitrary perception.",
+        "blockers": []
+      },
+      "revision": 1
+    },
+    {
+      "id": "dnd2024.phb01.heavy_obscurement",
+      "rules_family": "dnd2024",
+      "name": "Сильно заслонённая область",
+      "kind": "procedure",
+      "classification": {
+        "mode": "hybrid",
+        "semantic_required": true,
+        "formal_required": true,
+        "reason": "GM proposes applicability; Engine alone may apply registered formal consequences."
+      },
+      "conditions": [],
+      "triggers": [
+        "heavy_obscurement.requested"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "procedure_id": "heavy_obscurement"
+          }
+        }
+      ],
+      "semantic_questions": [
+        "Сильно заслонённая область — какие факты и применимость подтверждены Мастером?"
+      ],
+      "facts": {
+        "vision": "blocked",
+        "condition_when_seeing_into": "blinded",
+        "examples": [
+          "darkness",
+          "opaque_fog",
+          "dense_foliage"
+        ]
+      },
+      "constraints": [],
+      "exceptions": [],
+      "duration": "source_dependent",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 20,
+        "printed_page": "19",
+        "section": "Заслонённые области"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "not_implemented",
+      "auto_activate": false,
+      "dependencies": [
+        "glossary.blinded",
+        "glossary.special_senses"
+      ],
+      "behavior_tests": [
+        "phb01.heavy_obscurement"
+      ],
+      "readiness": {
+        "status": "blocked",
+        "handler": null,
+        "scope": "Сильно заслонённая область",
+        "blockers": [
+          "Seeing into an area is not a permanent blinded state; full sense-aware resolver required."
+        ]
+      },
+      "revision": 1
+    },
+    {
+      "id": "dnd2024.phb01.illumination",
+      "rules_family": "dnd2024",
+      "name": "Категории света",
+      "kind": "procedure",
+      "classification": {
+        "mode": "deterministic",
+        "semantic_required": false,
+        "formal_required": true,
+        "reason": "Formal rule over trusted inputs."
+      },
+      "conditions": [],
+      "triggers": [
+        "illumination.requested"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "procedure_id": "illumination"
+          }
+        }
+      ],
+      "semantic_questions": [],
+      "facts": {
+        "categories": [
+          "bright",
+          "dim",
+          "dark"
+        ],
+        "dim_obscurement": "light",
+        "dark_obscurement": "heavy"
+      },
+      "constraints": [
+        "Registered light sources and map only."
+      ],
+      "exceptions": [],
+      "duration": "source_dependent",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 20,
+        "printed_page": "19",
+        "section": "Свет / Яркий свет / Тусклый свет / Тьма"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "existing_engine_subset",
+      "auto_activate": false,
+      "dependencies": [
+        "combat.turn"
+      ],
+      "behavior_tests": [
+        "phb01.illumination"
+      ],
+      "readiness": {
+        "status": "engine_subset_verified",
+        "handler": "Geometry.illumination",
+        "scope": "Registered light sources and map only.",
+        "blockers": []
+      },
+      "revision": 1
+    },
+    {
+      "id": "dnd2024.phb01.special_senses",
+      "rules_family": "dnd2024",
+      "name": "Ссылки на особые чувства",
+      "kind": "procedure",
+      "classification": {
+        "mode": "hybrid",
+        "semantic_required": true,
+        "formal_required": true,
+        "reason": "GM proposes applicability; Engine alone may apply registered formal consequences."
+      },
+      "conditions": [],
+      "triggers": [
+        "special_senses.requested"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "procedure_id": "special_senses"
+          }
+        }
+      ],
+      "semantic_questions": [
+        "Ссылки на особые чувства — какие факты и применимость подтверждены Мастером?"
+      ],
+      "facts": {
+        "senses": [
+          "blindsight",
+          "darkvision",
+          "tremorsense",
+          "truesight"
+        ],
+        "definitions_in": "glossary"
+      },
+      "constraints": [],
+      "exceptions": [],
+      "duration": "source_dependent",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 20,
+        "printed_page": "19",
+        "section": "Особые чувства"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "not_implemented",
+      "auto_activate": false,
+      "dependencies": [
+        "glossary.special_senses"
+      ],
+      "behavior_tests": [
+        "phb01.special_senses"
+      ],
+      "readiness": {
+        "status": "blocked",
+        "handler": null,
+        "scope": "Ссылки на особые чувства",
+        "blockers": [
+          "Chapter only lists sense names; do not infer ranges or complete effects."
+        ]
+      },
+      "revision": 1
+    },
+    {
+      "id": "dnd2024.phb01.hiding",
+      "rules_family": "dnd2024",
+      "name": "Возможность спрятаться",
+      "kind": "procedure",
+      "classification": {
+        "mode": "hybrid",
+        "semantic_required": true,
+        "formal_required": true,
+        "reason": "GM proposes applicability; Engine alone may apply registered formal consequences."
+      },
+      "conditions": [],
+      "triggers": [
+        "hiding.requested"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "procedure_id": "hiding"
+          }
+        }
+      ],
+      "semantic_questions": [
+        "Возможность спрятаться — какие факты и применимость подтверждены Мастером?"
+      ],
+      "facts": {
+        "circumstances_authority": "gm",
+        "action": "hide"
+      },
+      "constraints": [],
+      "exceptions": [],
+      "duration": "source_dependent",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 20,
+        "printed_page": "19",
+        "section": "Засада"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "not_implemented",
+      "auto_activate": false,
+      "dependencies": [
+        "dnd2024.phb01.action_hide"
+      ],
+      "behavior_tests": [
+        "phb01.hiding"
+      ],
+      "readiness": {
+        "status": "blocked",
+        "handler": null,
+        "scope": "Возможность спрятаться",
+        "blockers": [
+          "Hide glossary prerequisites and end conditions remain unextracted."
+        ]
+      },
+      "revision": 1
+    },
+    {
+      "id": "dnd2024.phb01.object_interaction",
+      "rules_family": "dnd2024",
+      "name": "Смысл взаимодействия и его последствия",
+      "kind": "guidance",
+      "classification": {
+        "mode": "adjudicated",
+        "semantic_required": true,
+        "formal_required": false,
+        "reason": "GM proposes applicability; Engine alone may apply registered formal consequences."
+      },
+      "conditions": [],
+      "triggers": [
+        "object_interaction.requested"
+      ],
+      "formal_operations": [],
+      "semantic_questions": [
+        "Смысл взаимодействия и его последствия — какие факты и применимость подтверждены Мастером?"
+      ],
+      "facts": {
+        "player": "declares_object_interaction",
+        "gm": "describes_result"
+      },
+      "constraints": [],
+      "exceptions": [],
+      "duration": "source_dependent",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 20,
+        "printed_page": "19",
+        "section": "Взаимодействие с объектами"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "not_implemented",
+      "auto_activate": false,
+      "dependencies": [
+        "dnd2024.phb01.free_interaction"
+      ],
+      "behavior_tests": [
+        "phb01.object_interaction"
+      ],
+      "readiness": {
+        "status": "adjudication_required",
+        "handler": null,
+        "scope": "Смысл взаимодействия и его последствия",
+        "blockers": []
+      },
+      "revision": 1
+    },
+    {
+      "id": "dnd2024.phb01.object_definition",
+      "rules_family": "dnd2024",
+      "name": "Объект как неодушевлённая вещь",
+      "kind": "guidance",
+      "classification": {
+        "mode": "adjudicated",
+        "semantic_required": true,
+        "formal_required": false,
+        "reason": "GM proposes applicability; Engine alone may apply registered formal consequences."
+      },
+      "conditions": [],
+      "triggers": [
+        "object_definition.requested"
+      ],
+      "formal_operations": [],
+      "semantic_questions": [
+        "Объект как неодушевлённая вещь — какие факты и применимость подтверждены Мастером?"
+      ],
+      "facts": {
+        "examples": [
+          "window",
+          "door",
+          "sword",
+          "book",
+          "table",
+          "chair",
+          "stone"
+        ],
+        "assemblies_not_single_objects": [
+          "building",
+          "vehicle"
+        ]
+      },
+      "constraints": [],
+      "exceptions": [],
+      "duration": "source_dependent",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 21,
+        "printed_page": "20",
+        "section": "Что такое объект?"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "not_implemented",
+      "auto_activate": false,
+      "dependencies": [],
+      "behavior_tests": [
+        "phb01.object_definition"
+      ],
+      "readiness": {
+        "status": "adjudication_required",
+        "handler": null,
+        "scope": "Объект как неодушевлённая вещь",
+        "blockers": []
+      },
+      "revision": 1
+    },
+    {
+      "id": "dnd2024.phb01.free_interaction",
+      "rules_family": "dnd2024",
+      "name": "Свободное взаимодействие и Использование",
+      "kind": "procedure",
+      "classification": {
+        "mode": "deterministic",
+        "semantic_required": false,
+        "formal_required": true,
+        "reason": "Formal rule over trusted inputs."
+      },
+      "conditions": [],
+      "triggers": [
+        "free_interaction.requested"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "procedure_id": "free_interaction"
+          }
+        }
+      ],
+      "semantic_questions": [],
+      "facts": {
+        "free_per_turn": 1,
+        "during": [
+          "movement",
+          "action"
+        ],
+        "additional_requires": "utilize"
+      },
+      "constraints": [
+        "Only registered unlocked door/light interaction. Additional Utilize not generally supported."
+      ],
+      "exceptions": [],
+      "duration": "source_dependent",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 21,
+        "printed_page": "20",
+        "section": "Кратковременные взаимодействия с объектами"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "existing_engine_subset",
+      "auto_activate": false,
+      "dependencies": [
+        "combat.turn"
+      ],
+      "behavior_tests": [
+        "phb01.free_interaction"
+      ],
+      "readiness": {
+        "status": "engine_subset_verified",
+        "handler": "CombatEngine.interact",
+        "scope": "Only registered unlocked door/light interaction. Additional Utilize not generally supported.",
+        "blockers": []
+      },
+      "revision": 1
+    },
+    {
+      "id": "dnd2024.phb01.hidden_objects",
+      "rules_family": "dnd2024",
+      "name": "Поиск только в объявленной области",
+      "kind": "procedure",
+      "classification": {
+        "mode": "hybrid",
+        "semantic_required": true,
+        "formal_required": true,
+        "reason": "GM proposes applicability; Engine alone may apply registered formal consequences."
+      },
+      "conditions": [],
+      "triggers": [
+        "hidden_objects.requested"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "procedure_id": "hidden_objects"
+          }
+        }
+      ],
+      "semantic_questions": [
+        "Поиск только в объявленной области — какие факты и применимость подтверждены Мастером?"
+      ],
+      "facts": {
+        "ability": "wisdom",
+        "skill": "perception",
+        "outside_searched_area": "cannot_discover_regardless_of_roll",
+        "success": "object_or_details_or_both"
+      },
+      "constraints": [],
+      "exceptions": [],
+      "duration": "source_dependent",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 21,
+        "printed_page": "20",
+        "section": "Поиск скрытых объектов"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "existing_engine_subset",
+      "auto_activate": false,
+      "dependencies": [
+        "dnd2024.phb01.action_search"
+      ],
+      "behavior_tests": [
+        "phb01.hidden_objects"
+      ],
+      "readiness": {
+        "status": "blocked",
+        "handler": "CombatEngine.search",
+        "scope": "Поиск только в объявленной области",
+        "blockers": [
+          "Map search exists but semantic area selection and full search permissions require adjudication."
+        ]
+      },
+      "revision": 1
+    },
+    {
+      "id": "dnd2024.phb01.carrying_objects",
+      "rules_family": "dnd2024",
+      "name": "Грузоподъёмность при необходимости",
+      "kind": "procedure",
+      "classification": {
+        "mode": "hybrid",
+        "semantic_required": true,
+        "formal_required": true,
+        "reason": "GM proposes applicability; Engine alone may apply registered formal consequences."
+      },
+      "conditions": [],
+      "triggers": [
+        "carrying_objects.requested"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "procedure_id": "carrying_objects"
+          }
+        }
+      ],
+      "semantic_questions": [
+        "Грузоподъёмность при необходимости — какие факты и применимость подтверждены Мастером?"
+      ],
+      "facts": {
+        "default": "no_weight_tracking_required",
+        "gm_may_require": "carrying_capacity"
+      },
+      "constraints": [],
+      "exceptions": [],
+      "duration": "source_dependent",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 21,
+        "printed_page": "20",
+        "section": "Перенос объектов"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "not_implemented",
+      "auto_activate": false,
+      "dependencies": [
+        "glossary.carrying_capacity"
+      ],
+      "behavior_tests": [
+        "phb01.carrying_objects"
+      ],
+      "readiness": {
+        "status": "blocked",
+        "handler": null,
+        "scope": "Грузоподъёмность при необходимости",
+        "blockers": [
+          "Chapter defers capacity formula and size exceptions to glossary; do not copy 2014 automatically."
+        ]
+      },
+      "revision": 1
+    },
+    {
+      "id": "dnd2024.phb01.destroy_fragile_object",
+      "rules_family": "dnd2024",
+      "name": "Уничтожение хрупкого немагического объекта",
+      "kind": "procedure",
+      "classification": {
+        "mode": "hybrid",
+        "semantic_required": true,
+        "formal_required": true,
+        "reason": "GM proposes applicability; Engine alone may apply registered formal consequences."
+      },
+      "conditions": [],
+      "triggers": [
+        "destroy_fragile_object.requested"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "procedure_id": "destroy_fragile_object"
+          }
+        }
+      ],
+      "semantic_questions": [
+        "Уничтожение хрупкого немагического объекта — какие факты и применимость подтверждены Мастером?"
+      ],
+      "facts": {
+        "action_cost": 1,
+        "automatic_if": [
+          "fragile",
+          "nonmagical"
+        ],
+        "durable_objects": "glossary_object_damage"
+      },
+      "constraints": [],
+      "exceptions": [],
+      "duration": "source_dependent",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 21,
+        "printed_page": "20",
+        "section": "Разрушение объектов"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "not_implemented",
+      "auto_activate": false,
+      "dependencies": [
+        "glossary.object_damage"
+      ],
+      "behavior_tests": [
+        "phb01.destroy_fragile_object"
+      ],
+      "readiness": {
+        "status": "blocked",
+        "handler": null,
+        "scope": "Уничтожение хрупкого немагического объекта",
+        "blockers": [
+          "Material/magic/ownership applicability and object state transition not registered."
+        ]
+      },
+      "revision": 1
+    },
+    {
+      "id": "dnd2024.phb01.hazards",
+      "rules_family": "dnd2024",
+      "name": "Перечень угроз со ссылкой на глоссарий",
+      "kind": "procedure",
+      "classification": {
+        "mode": "hybrid",
+        "semantic_required": true,
+        "formal_required": true,
+        "reason": "GM proposes applicability; Engine alone may apply registered formal consequences."
+      },
+      "conditions": [],
+      "triggers": [
+        "hazards.requested"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "procedure_id": "hazards"
+          }
+        }
+      ],
+      "semantic_questions": [
+        "Перечень угроз со ссылкой на глоссарий — какие факты и применимость подтверждены Мастером?"
+      ],
+      "facts": {
+        "hazards": [
+          "burning",
+          "dehydration",
+          "suffocation",
+          "malnutrition",
+          "falling"
+        ],
+        "definitions_in": "glossary"
+      },
+      "constraints": [],
+      "exceptions": [],
+      "duration": "source_dependent",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 21,
+        "printed_page": "20",
+        "section": "Угрозы"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "not_implemented",
+      "auto_activate": false,
+      "dependencies": [
+        "glossary.burning",
+        "glossary.dehydration",
+        "glossary.suffocation",
+        "glossary.malnutrition",
+        "glossary.falling"
+      ],
+      "behavior_tests": [
+        "phb01.hazards"
+      ],
+      "readiness": {
+        "status": "blocked",
+        "handler": null,
+        "scope": "Перечень угроз со ссылкой на глоссарий",
+        "blockers": [
+          "Chapter provides hazard names only, not numerical rules."
+        ]
+      },
+      "revision": 1
+    },
+    {
+      "id": "dnd2024.phb01.travel_abstraction",
+      "rules_family": "dnd2024",
+      "name": "Обобщённое или подробное путешествие",
+      "kind": "guidance",
+      "classification": {
+        "mode": "adjudicated",
+        "semantic_required": true,
+        "formal_required": false,
+        "reason": "GM proposes applicability; Engine alone may apply registered formal consequences."
+      },
+      "conditions": [],
+      "triggers": [
+        "travel_abstraction.requested"
+      ],
+      "formal_operations": [],
+      "semantic_questions": [
+        "Обобщённое или подробное путешествие — какие факты и применимость подтверждены Мастером?"
+      ],
+      "facts": {
+        "gm_choice": [
+          "summarize",
+          "use_travel_pace"
+        ],
+        "combat_movement": "separate"
+      },
+      "constraints": [],
+      "exceptions": [],
+      "duration": "source_dependent",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 21,
+        "printed_page": "20",
+        "section": "Путешествие"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "not_implemented",
+      "auto_activate": false,
+      "dependencies": [],
+      "behavior_tests": [
+        "phb01.travel_abstraction"
+      ],
+      "readiness": {
+        "status": "adjudication_required",
+        "handler": null,
+        "scope": "Обобщённое или подробное путешествие",
+        "blockers": []
+      },
+      "revision": 1
+    },
+    {
+      "id": "dnd2024.phb01.travel_pace",
+      "rules_family": "dnd2024",
+      "name": "Темп путешествия и эффекты",
+      "kind": "procedure",
+      "classification": {
+        "mode": "hybrid",
+        "semantic_required": true,
+        "formal_required": true,
+        "reason": "GM proposes applicability; Engine alone may apply registered formal consequences."
+      },
+      "conditions": [],
+      "triggers": [
+        "travel_pace.requested"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "procedure_id": "travel_pace"
+          }
+        }
+      ],
+      "semantic_questions": [
+        "Темп путешествия и эффекты — какие факты и применимость подтверждены Мастером?"
+      ],
+      "facts": {
+        "paces": [
+          "fast",
+          "normal",
+          "slow"
+        ],
+        "feet_per_minute": [
+          400,
+          300,
+          200
+        ],
+        "miles_per_hour": [
+          4,
+          3,
+          2
+        ],
+        "miles_per_day": [
+          30,
+          24,
+          18
+        ],
+        "fast_disadvantage_skills": [
+          "survival",
+          "perception",
+          "stealth"
+        ],
+        "normal_disadvantage_skills": [
+          "stealth"
+        ],
+        "slow_advantage_skills": [
+          "survival",
+          "perception"
+        ],
+        "perception_survival_ability": "wisdom",
+        "stealth_ability": "dexterity"
+      },
+      "constraints": [],
+      "exceptions": [],
+      "duration": "source_dependent",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 21,
+        "printed_page": "20",
+        "section": "Темп перемещения"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "not_implemented",
+      "auto_activate": false,
+      "dependencies": [
+        "dmg.terrain_pace",
+        "dnd2024.phb01.skill_check"
+      ],
+      "behavior_tests": [
+        "phb01.travel_pace"
+      ],
+      "readiness": {
+        "status": "blocked",
+        "handler": null,
+        "scope": "Темп путешествия и эффекты",
+        "blockers": [
+          "Existing preset has speeds but no complete PHB pace-effect command; table values must not be recomputed from incompatible units."
+        ]
+      },
+      "revision": 1
+    },
+    {
+      "id": "dnd2024.phb01.mounted_travel",
+      "rules_family": "dnd2024",
+      "name": "Удвоенный путь верхом на один час",
+      "kind": "procedure",
+      "classification": {
+        "mode": "deterministic",
+        "semantic_required": false,
+        "formal_required": true,
+        "reason": "Formal rule over trusted inputs."
+      },
+      "conditions": [],
+      "triggers": [
+        "mounted_travel.requested"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "procedure_id": "mounted_travel"
+          }
+        }
+      ],
+      "semantic_questions": [],
+      "facts": {
+        "distance_multiplier": 2,
+        "duration_hours": 1,
+        "refresh": [
+          "short_rest",
+          "long_rest"
+        ]
+      },
+      "constraints": [],
+      "exceptions": [],
+      "duration": "source_dependent",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 21,
+        "printed_page": "20",
+        "section": "Темп перемещения / Скакуны"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "not_implemented",
+      "auto_activate": false,
+      "dependencies": [
+        "catalog.mounts",
+        "resource.mount_fast_travel"
+      ],
+      "behavior_tests": [
+        "phb01.mounted_travel"
+      ],
+      "readiness": {
+        "status": "blocked",
+        "handler": null,
+        "scope": "Удвоенный путь верхом на один час",
+        "blockers": [
+          "Mount travel resource and reset tracking not implemented."
+        ]
+      },
+      "revision": 1
+    },
+    {
+      "id": "dnd2024.phb01.vehicles",
+      "rules_family": "dnd2024",
+      "name": "Темп транспорта и судов",
+      "kind": "procedure",
+      "classification": {
+        "mode": "hybrid",
+        "semantic_required": true,
+        "formal_required": true,
+        "reason": "GM proposes applicability; Engine alone may apply registered formal consequences."
+      },
+      "conditions": [],
+      "triggers": [
+        "vehicles.requested"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "procedure_id": "vehicles"
+          }
+        }
+      ],
+      "semantic_questions": [
+        "Темп транспорта и судов — какие факты и применимость подтверждены Мастером?"
+      ],
+      "facts": {
+        "land_vehicle_pace": "normal",
+        "water_vehicle": "vessel_speed_no_pace_choice",
+        "max_possible_hours_per_day": 24,
+        "water_hours_depend_on": [
+          "vessel_type",
+          "crew"
+        ]
+      },
+      "constraints": [],
+      "exceptions": [],
+      "duration": "source_dependent",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 21,
+        "printed_page": "20",
+        "section": "Транспорт"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "not_implemented",
+      "auto_activate": false,
+      "dependencies": [
+        "catalog.vehicles"
+      ],
+      "behavior_tests": [
+        "phb01.vehicles"
+      ],
+      "readiness": {
+        "status": "blocked",
+        "handler": null,
+        "scope": "Темп транспорта и судов",
+        "blockers": [
+          "Vessel speed and crew requirements not extracted from chapter 6."
+        ]
+      },
+      "revision": 1
+    },
+    {
+      "id": "dnd2024.phb01.marching_order",
+      "rules_family": "dnd2024",
+      "name": "Походный строй и его изменение",
+      "kind": "guidance",
+      "classification": {
+        "mode": "adjudicated",
+        "semantic_required": true,
+        "formal_required": false,
+        "reason": "GM proposes applicability; Engine alone may apply registered formal consequences."
+      },
+      "conditions": [],
+      "triggers": [
+        "marching_order.requested"
+      ],
+      "formal_operations": [],
+      "semantic_questions": [
+        "Походный строй и его изменение — какие факты и применимость подтверждены Мастером?"
+      ],
+      "facts": {
+        "record": "party_order",
+        "change": "outside_combat",
+        "used_for": [
+          "traps",
+          "hidden_enemies",
+          "combat_start_position"
+        ]
+      },
+      "constraints": [],
+      "exceptions": [],
+      "duration": "source_dependent",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 21,
+        "printed_page": "20",
+        "section": "Походный строй"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "not_implemented",
+      "auto_activate": false,
+      "dependencies": [],
+      "behavior_tests": [
+        "phb01.marching_order"
+      ],
+      "readiness": {
+        "status": "adjudication_required",
+        "handler": null,
+        "scope": "Походный строй и его изменение",
+        "blockers": []
+      },
+      "revision": 1
+    },
+    {
+      "id": "dnd2024.phb01.exploration_example",
+      "rules_family": "dnd2024",
+      "name": "Пример исследования и отдельные зависимости",
+      "kind": "guidance",
+      "classification": {
+        "mode": "adjudicated",
+        "semantic_required": true,
+        "formal_required": false,
+        "reason": "GM proposes applicability; Engine alone may apply registered formal consequences."
+      },
+      "conditions": [],
+      "triggers": [
+        "exploration_example.requested"
+      ],
+      "formal_operations": [],
+      "semantic_questions": [
+        "Пример исследования и отдельные зависимости — какие факты и применимость подтверждены Мастером?"
+      ],
+      "facts": {
+        "lesson": [
+          "track_each_character",
+          "untrained_checks_allowed",
+          "teamwork",
+          "search_may_be_accidental",
+          "track_light_sources",
+          "consult_spell_description"
+        ],
+        "example_effects_not_catalog": [
+          "create_or_destroy_water",
+          "paralyzing_gas"
+        ]
+      },
+      "constraints": [],
+      "exceptions": [],
+      "duration": "source_dependent",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 22,
+        "printed_page": "21",
+        "section": "Пример исследования (стр.21–22)"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "not_implemented",
+      "auto_activate": false,
+      "dependencies": [
+        "catalog.spells",
+        "catalog.trap_effects"
+      ],
+      "behavior_tests": [
+        "phb01.exploration_example"
+      ],
+      "readiness": {
+        "status": "adjudication_required",
+        "handler": null,
+        "scope": "Пример исследования и отдельные зависимости",
+        "blockers": []
+      },
+      "revision": 1
+    }
+  ]
+}

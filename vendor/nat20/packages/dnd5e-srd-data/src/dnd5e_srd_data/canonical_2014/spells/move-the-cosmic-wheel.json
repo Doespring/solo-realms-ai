@@ -1,0 +1,139 @@
+{
+  "slug": "move-the-cosmic-wheel",
+  "foundry_uuid": "Compendium.dnd5e.laaru-hw-spells.Item.IrxikrIUAfp6E8H2",
+  "name": "Движение мирового колеса / Move The Cosmic Wheel",
+  "description": "(Механомагия)\n\nВы заводите музыкальную шкатулку и призываете некую часть другого плана существования, с которым вы знакомы либо по личному опыту, либо подробно изучив его. Магия создаёт сферу радиусом 30 футов в радиусе 120 футов от вас в указанном вами месте. Часть вашего плана, находящаяся внутри сферы, меняется местами с соответствующей частью плана, на который настроена музыкальная шкатулка.\n\nС [[/r 1d100]]{10-% шансом} часть призываемого плана появляется с местными обитателями. Неодушевлённые объекты и недвижимые организмы (такие, как деревья) обрезаются по границе сферы, а живые существа, не помещающиеся в сферу, выталкиваются из неё наружу прежде чем произойдёт обмен. В остальных случаях существа с обоих планов будут пойманы в сферу и переместятся вместе с их куском реальности на другой план, пока длится заклинание, если только не преуспеют в испытании Харизмы при сотворении заклинания. При успехе существо само выбирает перенестись ему на другой план существования или выпрыгнуть из сферы за мгновение до переноса.\n\nЕстественные реакции между планами проходят как обычно (огонь распространяется, вода течёт и т.п.), но энергия (например, некротическая) медленно просачивается через границу сферы (не более 1-2 фута в час). В остальном существа и эффекты могут свободно проходить границу сферы. На время действия заклинания область в сфере становится частью новой местности насколько это возможно с учётом особенностей обоих планов. Перемещённые сферы возвращаются на свои первоначальные области автоматически спустя 24 часа.\n\nПри этом объём подготовки (поиск и настройка музыкальной шкатулки) не позволяет сотворять это заклинание экспромтом. Из-­за непредсказуемости и много­образия возможных эффектов игроку, управляющему заклинателем, следует обсудить с мастером возможные интересные последствия заклинания, прежде чем брать его для своего персонажа.",
+  "level": 8,
+  "school": "con",
+  "components": [
+    "M",
+    "S",
+    "V"
+  ],
+  "ritual": false,
+  "concentration": false,
+  "casting_time": {
+    "unit": "action",
+    "value": 1,
+    "condition": ""
+  },
+  "range": {
+    "units": "ft",
+    "value": 120,
+    "special": null
+  },
+  "duration": {
+    "units": "hour",
+    "value": 24
+  },
+  "materials": {
+    "value": "музыкальная шкатулка, стоящая как минимум 250 зм, настроенная на конкретный план существования",
+    "consumed": false,
+    "cost": 0,
+    "supply": 0
+  },
+  "preparation": {
+    "mode": "prepared",
+    "prepared": false
+  },
+  "activities": [
+    {
+      "id": "aKVZo4egEVo8pGwy",
+      "name": "",
+      "img": "",
+      "sort": 0,
+      "activation": {
+        "type": "action",
+        "value": null,
+        "condition": "",
+        "override": false,
+        "reaction_conditions": []
+      },
+      "consumption": {
+        "scaling": {
+          "allowed": false,
+          "max": ""
+        },
+        "spell_slot": true,
+        "targets": []
+      },
+      "description": {
+        "chat_flavor": ""
+      },
+      "duration": {
+        "value": null,
+        "units": "inst",
+        "special": "",
+        "concentration": false,
+        "override": false
+      },
+      "flags": {},
+      "range": {
+        "value": null,
+        "units": "self",
+        "special": "",
+        "override": false
+      },
+      "target": {
+        "template": {
+          "count": "",
+          "contiguous": false,
+          "stationary": false,
+          "type": "radius",
+          "size": "30",
+          "width": "",
+          "height": "",
+          "units": "ft"
+        },
+        "affects": {
+          "count": "",
+          "type": "",
+          "choice": false,
+          "special": ""
+        },
+        "override": false,
+        "prompt": true
+      },
+      "uses": {
+        "spent": 0,
+        "max": "",
+        "recovery": []
+      },
+      "visibility": {
+        "identifier": "",
+        "level": {
+          "min": null,
+          "max": null
+        },
+        "require_attunement": false,
+        "require_identification": false,
+        "require_magic": false
+      },
+      "effects": [],
+      "applied_effects": [],
+      "kind": "utility",
+      "roll": {
+        "formula": "",
+        "name": "",
+        "prompt": false,
+        "visible": false
+      }
+    }
+  ],
+  "passive_effects": [],
+  "provenance": {
+    "source": "foundry",
+    "source_url": "https://github.com/foundryvtt/dnd5e/blob/965ad2d0cf5d063dac675ba078b5bd3c3c0dd449/packs/_source/laaru-hw-spells/Движение_мирового_колеса___Move_The_Cosmic_Wheel_IrxikrIUAfp6E8H2.yml",
+    "ingest_date": "2026-10-26",
+    "ingest_version": "foundry-translator-v1",
+    "srd_version": [
+      "5.1"
+    ],
+    "license_tag": "CC-BY-4.0"
+  },
+  "review": {
+    "known_divergence": null,
+    "requires_user_decision": false
+  },
+  "entry_kind": "spell"
+}

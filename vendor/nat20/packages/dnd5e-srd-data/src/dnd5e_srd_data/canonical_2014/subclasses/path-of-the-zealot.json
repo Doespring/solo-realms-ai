@@ -1,0 +1,118 @@
+{
+  "slug": "path-of-the-zealot",
+  "name": "Путь фанатика",
+  "description": "Путь фанатика | Path of the Zealot\n\nНекоторые божества вдохновляют своих последователей вводить себя в свирепый боевой раж. Такие варвары — фанатики, воины, которые преобразуют свой гнев в могущественную демонстрацию божественной мощи.\n\nМножество богов в мирах ДнД вдохновляют своих последователей принимать этот путь. Темпус из Забытых Королевств или Гектор и Эритнул в Грейхоке – отличные примеры. В целом, боги, которые вдохновляют фанатиков, — это боги войны, разрушения и насилия. Не все они злые, но мало кто из них добр.\n\nУровень Особенности\n\n3-й\n\n@Compendium[laaru-dnd5-hw.classfeatures.dKHMv8GKykt5xTFT]{Божественный гнев}, @Compendium[laaru-dnd5-hw.classfeatures.5XniuZI4eYj1TNiI]{Воин богов}\n\n6-й\n\n@Compendium[laaru-dnd5-hw.classfeatures.C1I3AemZWm8TSN5E]{Концентрация фанатика}\n\n10-й\n\n@Compendium[laaru-dnd5-hw.classfeatures.Q1TbG2xWqHvCvg3y]{Фанатичное присутствие}\n\n14-й\n\n@Compendium[laaru-dnd5-hw.classfeatures.FArP60gsrKE1vPaK]{Ярость превыше смерти}",
+  "identifier": "path-of-the-zealot",
+  "class_identifier": "barbarian",
+  "spellcasting": {
+    "ability": "",
+    "progression": "none"
+  },
+  "advancement": [
+    {
+      "id": "ey76815ej79r9yr0",
+      "type": "ItemGrant",
+      "level": 3,
+      "title": "Особенности",
+      "hint": "",
+      "class_restriction": "",
+      "configuration": {
+        "items": [
+          {
+            "uuid": "Compendium.laaru-dnd5-hw.classfeatures.dKHMv8GKykt5xTFT",
+            "optional": false
+          },
+          {
+            "uuid": "Compendium.laaru-dnd5-hw.classfeatures.5XniuZI4eYj1TNiI",
+            "optional": false
+          },
+          {
+            "uuid": "Compendium.laaru-dnd5-hw.classfeatures.Item.u7K52HW7EZpQ502R",
+            "optional": false
+          },
+          {
+            "uuid": "Compendium.laaru-dnd5-hw.classfeatures.Item.N7qt8r57yrqvDrFY",
+            "optional": false
+          }
+        ],
+        "optional": false,
+        "spell": null
+      },
+      "value": {}
+    },
+    {
+      "id": "e1iwwazan1wkdqjd",
+      "type": "ItemGrant",
+      "level": 6,
+      "title": "Особенность",
+      "hint": "",
+      "class_restriction": "",
+      "configuration": {
+        "items": [
+          {
+            "uuid": "Compendium.laaru-dnd5-hw.classfeatures.C1I3AemZWm8TSN5E",
+            "optional": false
+          }
+        ],
+        "optional": false,
+        "spell": null
+      },
+      "value": {}
+    },
+    {
+      "id": "o1gaiym83em8sgvl",
+      "type": "ItemGrant",
+      "level": 10,
+      "title": "Особенность",
+      "hint": "",
+      "class_restriction": "",
+      "configuration": {
+        "items": [
+          {
+            "uuid": "Compendium.laaru-dnd5-hw.classfeatures.Q1TbG2xWqHvCvg3y",
+            "optional": false
+          }
+        ],
+        "optional": false,
+        "spell": null
+      },
+      "value": {}
+    },
+    {
+      "id": "5dh4y5hqoelcx72f",
+      "type": "ItemGrant",
+      "level": 14,
+      "title": "Особенность",
+      "hint": "",
+      "class_restriction": "",
+      "configuration": {
+        "items": [
+          {
+            "uuid": "Compendium.laaru-dnd5-hw.classfeatures.FArP60gsrKE1vPaK",
+            "optional": false
+          }
+        ],
+        "optional": false,
+        "spell": null
+      },
+      "value": {}
+    }
+  ],
+  "granted_features": [],
+  "feature_choices": [],
+  "provenance": {
+    "source": "foundry",
+    "source_url": "https://github.com/foundryvtt/dnd5e/blob/965ad2d0cf5d063dac675ba078b5bd3c3c0dd449/packs/_source/laaru-hw-subclasses/Путь_фанатика_ncN9Yc701BQ4EWD2.yml",
+    "ingest_date": "2026-10-26",
+    "ingest_version": "foundry-translator-v1",
+    "srd_version": [
+      "5.1"
+    ],
+    "license_tag": "CC-BY-4.0"
+  },
+  "review": {
+    "known_divergence": null,
+    "requires_user_decision": false
+  },
+  "entry_kind": "subclass"
+}

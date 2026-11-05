@@ -1,0 +1,97 @@
+/* Limited to the existing play screen. Keep the established theme and controls. */
+.nat20-game .developer-only,.nat20-game [data-tabletop-link="world"],.nat20-game [data-tabletop-link="adventure-handouts"]{display:none!important}
+#nat20-create-dialog form{display:grid;gap:12px;max-width:560px}#nat20-create-dialog input{width:100%}
+.nat20-game #character>p.hint,.nat20-game #chat .event-buttons,.nat20-game #scene-hero .button-row{display:none!important}
+.game-movement{font-size:13px;width:100%}.game-movement button{display:block;margin:4px 0}
+.tabletop #play.unified-game .workspace-layout{display:flex;flex-direction:column;gap:0;align-items:stretch;height:calc(100dvh - 120px);min-height:420px}
+/* The game screen is one conversation. The old right-hand rail duplicated the
+   scene and the event log that the transcript already shows, so it is removed
+   rather than merely hidden: nothing renders there any more. */
+.tabletop #play.unified-game .workspace-layout>.scene-rail{display:none}
+#play.unified-game .scene-rail>#scene-presence,#play.unified-game .scene-rail>#scene-session,#play.unified-game .scene-rail>.scene-context{display:none}
+.tabletop.tabletop-scene-open #play.unified-game .scene-rail>#scene-presence,.tabletop.tabletop-scene-open #play.unified-game .scene-rail>#scene-session,.tabletop.tabletop-scene-open #play.unified-game .scene-rail>.scene-context{display:block}
+#play.unified-game .scene-heading{margin-bottom:8px}#play.unified-game .scene-heading h1{font-size:28px!important}#play.unified-game .scene-heading .eyebrow{margin:4px 0}
+.tabletop #play.unified-game .chat{flex:1 1 auto;min-height:220px;max-height:none;overflow-y:auto;padding:14px 18px}
+#play.unified-game .composer{position:sticky;bottom:0;z-index:5;padding:10px 18px;background:var(--surface);border-top:1px solid var(--line)}#play.unified-game .composer textarea{height:58px;min-height:58px}
+#play.unified-game .game-actions{gap:6px;margin:8px 0;padding:0 12px 8px}#play.unified-game .game-actions button{font-size:13px;min-height:36px;padding:6px 9px}
+#play.unified-game #scene-hero h3{margin:4px 0}#play.unified-game .game-hp{font-size:20px;margin:6px 0}#play.unified-game #scene-hero p{margin:5px 0}
+#play.unified-game .game-last-roll{padding:8px 18px;margin:0;border-top:1px solid var(--line);font-size:14px}
+.game-feedback{padding:10px 16px;background:var(--surface2);border-left:3px solid var(--gold);font-size:14px}.game-feedback button{margin:4px 8px}.game-feedback[data-state=conflict],.game-feedback[data-state=error]{border-color:var(--accent)}
+.game-log>div{max-height:180px;overflow:auto}.game-event summary{font-size:13px;white-space:normal;overflow-wrap:anywhere;margin:7px 0}.game-event p{white-space:pre-wrap}
+#play.unified-game #battle-map{height:160px}#play.unified-game .battle-content{gap:5px}#play.unified-game .battle-content>p{font-size:12px}#play.unified-game .battle-content .battle-actors button{font-size:12px}
+#play.unified-game .game-restore select{width:100%;margin:6px 0}
+#play.unified-game .game-save-name{overflow-wrap:anywhere;margin:0 0 8px}
+#play.unified-game .undone-history{border:1px dashed var(--line);padding:8px 10px;margin:10px 0;background:var(--surface2)}
+#play.unified-game .undone-history>summary{position:sticky;top:0;z-index:1;padding:4px 0;background:var(--surface2);font-size:12px;color:var(--muted);cursor:pointer;overflow-wrap:anywhere}
+#play.unified-game .undone-history[open]>summary{margin-bottom:12px}
+#play.unified-game .undone-history .message.undone{opacity:1;color:var(--muted)}
+#play.unified-game .scene-rail .disclosure{padding:10px 14px;margin-bottom:10px}
+#play.unified-game .scene-rail summary,#play.unified-game #battle-panel>summary{font-size:15px;line-height:1.35}
+#play.unified-game #scene-hero h3{font-size:20px}#play.unified-game .battle-actors{gap:3px}
+#play.unified-game .game-log>div{max-height:90px}
+#play.unified-game{padding-top:0}#play.unified-game .scene-heading .eyebrow{display:none}
+#play.unified-game .tabletop-tabs{margin:6px 0}#play.unified-game #scene-description{margin:8px 0}
+#play.unified-game .scene-rail .disclosure[open]>summary{margin-bottom:6px}
+#play.unified-game #scene-hero .disclosure-body{margin-top:4px}
+#play.unified-game #scene-hero p{line-height:1.3;font-size:12px}
+#play.unified-game #scene-hero .game-hp{font-size:18px}
+#play.unified-game #scene-hero button{min-height:26px;padding:3px 6px}
+#play.unified-game .battle-content{padding:4px 0;gap:4px}
+#play.unified-game .battle-content>p{margin:4px 0;line-height:1.35}
+#play.unified-game .battle-actors button{padding:4px 6px;min-height:28px;line-height:1.3}
+#play.unified-game .battle-content>.game-actions{padding:0;margin:4px 0}
+@media(max-width:1100px){
+ .tabletop #play.unified-game .workspace-layout{grid-template-columns:minmax(0,1fr) 230px;gap:12px}
+ #play.unified-game .scene-rail .disclosure{padding:8px}
+ body.tabletop:has(#play.unified-game.active) main{padding-left:18px;padding-right:18px}
+ body.tabletop:has(#play.unified-game.active) main>header{height:52px}
+ #play.unified-game .scene-heading h1{font-size:24px!important}
+ #play.unified-game .panel-heading{padding:8px 12px}
+ .tabletop #play.unified-game .chat{padding:10px 12px}
+ #play.unified-game .message{padding-bottom:12px;margin-bottom:12px}
+ #play.unified-game .message .speaker{margin-bottom:6px}
+ #play.unified-game .composer{padding:8px 12px}
+ #play.unified-game .composer textarea{height:58px;min-height:58px;padding:10px}
+ #play.unified-game .composer-footer{margin-top:6px}
+ #play.unified-game .game-actions{gap:4px;margin:4px 0;padding:0 8px 6px}
+ #play.unified-game .game-actions button{font-size:12px;padding:5px 7px}
+ #play.unified-game .game-feedback,#play.unified-game .game-last-roll{padding:6px 12px}
+}
+@media(max-width:850px){.tabletop #play.unified-game .workspace-layout{grid-template-columns:1fr}.tabletop #play.unified-game .workspace-layout>.scene-rail{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px}}
+
+/* ── Блок B: игра — это разговор ─────────────────────────────────────────────
+   The owner asked for one transcript plus an input. Everything that restated
+   the scene above the transcript, listed engine events, or offered buttons for
+   checks and rests is gone: those actions are typed in the input instead. */
+#play.unified-game .scene-heading{display:none}
+#play.unified-game .game-actions,#play.unified-game #battle-panel,
+#play.unified-game .game-last-roll,#play.unified-game #chat .game-event{display:none!important}
+#play.unified-game #chat{display:flex;flex-direction:column;gap:10px}
+#play.unified-game .chat article.message{max-width:min(72ch,100%)}
+
+/* Tidy the remaining stragglers so the transcript plus input fit one screen. */
+#play.unified-game .story-card{display:flex;flex-direction:column;height:100%}
+#play.unified-game .literary-column{height:100%;min-height:0}
+#play.unified-game .panel-heading{display:none}
+#play.unified-game .chat{padding-top:8px}
+#play.unified-game .workspace-layout{height:calc(100dvh - 96px)}
+
+/* The note under the game and the footer repeated instructions the chat now
+   carries; they cost the transcript 46 px of height. */
+#play.unified-game ~ p.hint,.view#play ~ p.hint,body > footer{display:none}
+#play.unified-game{height:calc(100dvh - 110px);min-height:380px}
+/* Narrow windows and browser zoom (125–200%) pushed the composer past the
+   viewport: #chat kept a fixed 220–300 px height inside a fixed 100dvh column, so
+   the input ended up below the fold. Keep the transcript in a bounded, flowing
+   box instead of a fixed one, and let the composer sit after it, so the input and
+   the send button stay on screen at any window size. */
+@media(max-width:900px),(max-height:700px){
+ .tabletop #play.unified-game .workspace-layout,#play.unified-game .workspace-layout{display:flex;flex-direction:column;height:auto;min-height:0}
+ .tabletop #play.unified-game{height:auto;min-height:0}
+ #play.unified-game{height:auto;min-height:0}
+ #play.unified-game .story-card{height:auto;min-height:0;flex:0 0 auto}
+ #play.unified-game .literary-column{height:auto;min-height:0;display:flex;flex-direction:column}
+ #play.unified-game .composer{position:static;flex:0 0 auto}
+ #play.unified-game #chat{min-height:0;height:min(52dvh,420px);max-height:none;flex:0 1 auto;overflow-y:auto}
+}
+

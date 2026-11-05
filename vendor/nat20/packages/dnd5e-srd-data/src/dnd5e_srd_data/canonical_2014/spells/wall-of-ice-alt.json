@@ -1,0 +1,273 @@
+{
+  "slug": "wall-of-ice-alt",
+  "foundry_uuid": "Compendium.dnd5e.laaru-hw-spells.Item.n1P1tUFChJAbXtrX",
+  "name": "Стена льда (альт.) / Wall of Ice (alt)",
+  "description": "Вы создаете ледяную стену толщиной в 1 фут на твердой поверхности в пределах дистанции. Вы можете создать её в виде полусферического купола или сферы радиусом до 10 футов, либо придать ей форму плоской поверхности, состоящей из десяти панелей размером 10 на 10 футов каждая. Все панели должны соприкасаться друг с другом. Ледяная стена существует в течение всей длительности заклинания.\n\nКогда стена появляется, существа, находящиеся в её пространстве, должны пройти DC 0 Dexterity save{испытание Ловкости}. В случае провала вы решаете, на какую сторону стены они будут оттолкнуты, и они получают [[/damage 6d6 cold]]{6d6 урона холодом}. В случае успеха они сами решают, на какую сторону будут оттолкнуты, и получают половину этого урона.\n\nСтена имеет КБ 12, 30 ПЗ на каждую 10-футовую секцию и уязвимость к урону огнем. Когда 10-футовая секция разрушается, в этом пространстве остается слой ледяного воздуха. Когда существо проходит сквозь такой слой, оно должно пройти DC 0 Constitution save{испытание Выносливости}. В случае провала оно получает [[/damage 2d6 cold]]{2d6 урона холодом}, а в случае успеха — половину этого урона. Существо может быть вынуждено проходить это испытание не более одного раза за ход.\n\nНа высоких кругах. Если вы сотворяете это заклинание, используя ячейку заклинания 5-го круга или выше, урон, который наносит стена при появлении, увеличивается на [[/r 2d6]], а урон от прохождения сквозь слой ледяного воздуха увеличивается на [[/r 1d6]] за каждый круг ячейки выше 4-го.",
+  "level": 4,
+  "school": "con",
+  "components": [
+    "M",
+    "S",
+    "V"
+  ],
+  "ritual": false,
+  "concentration": true,
+  "casting_time": {
+    "unit": "action",
+    "value": 1,
+    "condition": ""
+  },
+  "range": {
+    "units": "ft",
+    "value": 30,
+    "special": null
+  },
+  "duration": {
+    "units": "minute",
+    "value": 1
+  },
+  "materials": {
+    "value": "кусочек кварца",
+    "consumed": false,
+    "cost": 0,
+    "supply": 0
+  },
+  "preparation": {
+    "mode": "",
+    "prepared": false
+  },
+  "activities": [
+    {
+      "id": "Vnsk1brcSVKIS9zi",
+      "name": "Испытание Ловкости",
+      "img": "",
+      "sort": 0,
+      "activation": {
+        "type": "action",
+        "value": null,
+        "condition": "",
+        "override": false,
+        "reaction_conditions": []
+      },
+      "consumption": {
+        "scaling": {
+          "allowed": false,
+          "max": ""
+        },
+        "spell_slot": true,
+        "targets": []
+      },
+      "description": {
+        "chat_flavor": ""
+      },
+      "duration": {
+        "value": null,
+        "units": "inst",
+        "special": "",
+        "concentration": false,
+        "override": false
+      },
+      "flags": {},
+      "range": {
+        "value": null,
+        "units": "self",
+        "special": "",
+        "override": false
+      },
+      "target": {
+        "template": {
+          "count": "",
+          "contiguous": false,
+          "stationary": false,
+          "type": "radius",
+          "size": "10",
+          "width": "",
+          "height": "",
+          "units": "ft"
+        },
+        "affects": {
+          "count": "",
+          "type": "",
+          "choice": false,
+          "special": ""
+        },
+        "override": false,
+        "prompt": true
+      },
+      "uses": {
+        "spent": 0,
+        "max": "",
+        "recovery": []
+      },
+      "visibility": {
+        "identifier": "",
+        "level": {
+          "min": null,
+          "max": null
+        },
+        "require_attunement": false,
+        "require_identification": false,
+        "require_magic": false
+      },
+      "effects": [],
+      "applied_effects": [],
+      "kind": "save",
+      "damage": {
+        "on_save": "half",
+        "parts": [
+          {
+            "number": 6,
+            "denomination": 6,
+            "bonus": "",
+            "types": [
+              "cold"
+            ],
+            "custom": {
+              "enabled": false,
+              "formula": ""
+            },
+            "scaling": {
+              "mode": "whole",
+              "number": 2,
+              "formula": ""
+            }
+          }
+        ]
+      },
+      "save": {
+        "ability": [
+          "dex"
+        ],
+        "dc": {
+          "calculation": "spellcasting",
+          "formula": ""
+        },
+        "ignore_cover": false
+      }
+    },
+    {
+      "id": "XKTLxAvblR704uQW",
+      "name": "Испытание Выносливости",
+      "img": "",
+      "sort": 100000,
+      "activation": {
+        "type": "action",
+        "value": null,
+        "condition": "",
+        "override": false,
+        "reaction_conditions": []
+      },
+      "consumption": {
+        "scaling": {
+          "allowed": false,
+          "max": ""
+        },
+        "spell_slot": false,
+        "targets": []
+      },
+      "description": {
+        "chat_flavor": ""
+      },
+      "duration": {
+        "value": null,
+        "units": "inst",
+        "special": "",
+        "concentration": false,
+        "override": false
+      },
+      "flags": {},
+      "range": {
+        "value": null,
+        "units": "self",
+        "special": "",
+        "override": false
+      },
+      "target": {
+        "template": {
+          "count": "",
+          "contiguous": false,
+          "stationary": false,
+          "type": "",
+          "size": "",
+          "width": "",
+          "height": "",
+          "units": "ft"
+        },
+        "affects": {
+          "count": "",
+          "type": "creature",
+          "choice": false,
+          "special": ""
+        },
+        "override": true,
+        "prompt": true
+      },
+      "uses": {
+        "spent": 0,
+        "max": "",
+        "recovery": []
+      },
+      "visibility": {
+        "identifier": "",
+        "level": {
+          "min": null,
+          "max": null
+        },
+        "require_attunement": false,
+        "require_identification": false,
+        "require_magic": false
+      },
+      "effects": [],
+      "applied_effects": [],
+      "kind": "save",
+      "damage": {
+        "on_save": "half",
+        "parts": [
+          {
+            "number": 2,
+            "denomination": 6,
+            "bonus": "",
+            "types": [
+              "cold"
+            ],
+            "custom": {
+              "enabled": false,
+              "formula": ""
+            },
+            "scaling": {
+              "mode": "whole",
+              "number": 1,
+              "formula": ""
+            }
+          }
+        ]
+      },
+      "save": {
+        "ability": [
+          "con"
+        ],
+        "dc": {
+          "calculation": "spellcasting",
+          "formula": ""
+        },
+        "ignore_cover": false
+      }
+    }
+  ],
+  "passive_effects": [],
+  "provenance": {
+    "source": "foundry",
+    "source_url": "https://github.com/foundryvtt/dnd5e/blob/965ad2d0cf5d063dac675ba078b5bd3c3c0dd449/packs/_source/laaru-hw-spells/Стена_льда__альт_____Wall_of_Ice__alt__n1P1tUFChJAbXtrX.yml",
+    "ingest_date": "2026-10-26",
+    "ingest_version": "foundry-translator-v1",
+    "srd_version": [
+      "5.1"
+    ],
+    "license_tag": "CC-BY-4.0"
+  },
+  "review": {
+    "known_divergence": null,
+    "requires_user_decision": false
+  },
+  "entry_kind": "spell"
+}

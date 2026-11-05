@@ -1,0 +1,170 @@
+{
+  "slug": "time-trap",
+  "foundry_uuid": "Compendium.dnd5e.laaru-hw-spells.Item.da1cfE8qZzkG9AMe",
+  "name": "Временная ловушка / Time Trap",
+  "description": "Вы нарушаете время в пустом кубе со стороной 5 футов, который вы можете видеть в пределах дистанции. Когда существо впервые входит в эту область, оно должно пройти испытание Мудрости. При провале существо, полностью находящееся внутри куба, становится в &amp;Reference[stunned]{шоке}, в то время как существо, находящееся лишь частично внутри куба (например, крупного или большего размера существо), становится &amp;Reference[restrained]{Обезвиженным}, поскольку часть его тела застывает во времени. При успехе скорость существа вместо этого уменьшается вдвое. Любое затронутое существо восстанавливается в начале своего следующего хода.\n\nЛовушка может сработать только один раз, и заклинание заканчивается в начале следующего хода пойманного существа. Область ловушки слегка искажена, и любое существо, которое не видит эту область во время сотворения заклинания, должно совершить проверку Мудрости (Внимание) против вашей СЛ испытания заклинаний, чтобы обнаружить ловушку.",
+  "level": 2,
+  "school": "trs",
+  "components": [
+    "M",
+    "S",
+    "V"
+  ],
+  "ritual": false,
+  "concentration": false,
+  "casting_time": {
+    "unit": "action",
+    "value": 1,
+    "condition": ""
+  },
+  "range": {
+    "units": "ft",
+    "value": 60,
+    "special": null
+  },
+  "duration": {
+    "units": "hour",
+    "value": 1
+  },
+  "materials": {
+    "value": "горсть песка из песочных часов",
+    "consumed": false,
+    "cost": 0,
+    "supply": 0
+  },
+  "preparation": {
+    "mode": "prepared",
+    "prepared": false
+  },
+  "activities": [
+    {
+      "id": "dnd5eactivity000",
+      "name": "",
+      "img": "",
+      "sort": 0,
+      "activation": {
+        "type": "action",
+        "value": null,
+        "condition": "",
+        "override": false,
+        "reaction_conditions": []
+      },
+      "consumption": {
+        "scaling": {
+          "allowed": false,
+          "max": ""
+        },
+        "spell_slot": true,
+        "targets": []
+      },
+      "description": {
+        "chat_flavor": ""
+      },
+      "duration": {
+        "value": null,
+        "units": "inst",
+        "special": "",
+        "concentration": false,
+        "override": false
+      },
+      "flags": {},
+      "range": {
+        "value": null,
+        "units": "self",
+        "special": "",
+        "override": false
+      },
+      "target": {
+        "template": {
+          "count": "",
+          "contiguous": false,
+          "stationary": false,
+          "type": "cube",
+          "size": "5",
+          "width": "",
+          "height": "",
+          "units": "ft"
+        },
+        "affects": {
+          "count": "",
+          "type": "",
+          "choice": false,
+          "special": ""
+        },
+        "override": false,
+        "prompt": true
+      },
+      "uses": {
+        "spent": 0,
+        "max": "",
+        "recovery": []
+      },
+      "visibility": {
+        "identifier": "",
+        "level": {
+          "min": null,
+          "max": null
+        },
+        "require_attunement": false,
+        "require_identification": false,
+        "require_magic": false
+      },
+      "effects": [
+        {
+          "id": "diHBMT16uZEJ5n4F",
+          "level": {
+            "min": null,
+            "max": null
+          },
+          "on_save": false,
+          "riders": null
+        }
+      ],
+      "applied_effects": [],
+      "kind": "save",
+      "damage": {
+        "on_save": "half",
+        "parts": []
+      },
+      "save": {
+        "ability": [
+          "wis"
+        ],
+        "dc": {
+          "calculation": "spellcasting",
+          "formula": ""
+        },
+        "ignore_cover": false
+      }
+    }
+  ],
+  "passive_effects": [
+    {
+      "id": "diHBMT16uZEJ5n4F",
+      "name": "Временная ловушка / Time Trap",
+      "description": "",
+      "changes": [],
+      "statuses": [
+        "stunned"
+      ],
+      "duration": null,
+      "disabled": false,
+      "transfer": false
+    }
+  ],
+  "provenance": {
+    "source": "foundry",
+    "source_url": "https://github.com/foundryvtt/dnd5e/blob/965ad2d0cf5d063dac675ba078b5bd3c3c0dd449/packs/_source/laaru-hw-spells/Временная_ловушка___Time_Trap_da1cfE8qZzkG9AMe.yml",
+    "ingest_date": "2026-10-26",
+    "ingest_version": "foundry-translator-v1",
+    "srd_version": [
+      "5.1"
+    ],
+    "license_tag": "CC-BY-4.0"
+  },
+  "review": {
+    "known_divergence": null,
+    "requires_user_decision": false
+  },
+  "entry_kind": "spell"
+}

@@ -1,0 +1,27 @@
+/* r236 — готовые миры. Только раскладка: цвета и кегли берутся из общих
+   переменных темы, чтобы блок жил в обеих темах и на 375, и на 1440. */
+.worlds-pack,
+.worlds-library{margin:0 0 var(--space-4,1.5rem);padding:var(--space-3,1rem);border:1px solid var(--line,rgba(255,255,255,.14));border-radius:14px;background:var(--surface,rgba(255,255,255,.03))}
+.worlds-pack h2,
+.worlds-library h2{margin:0 0 .35rem;font-size:1.05rem;letter-spacing:.01em}
+.worlds-library-head{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:.5rem}
+.worlds-rows{display:grid;gap:.75rem;margin-top:.75rem}
+.worlds-card{display:grid;gap:.25rem}
+.worlds-card h3{margin:0;font-size:1rem}
+.worlds-card small{opacity:.6;word-break:break-all}
+.worlds-card .button-row{margin-top:.35rem}
+.worlds-problem{margin:.25rem 0 0;color:var(--danger,#ff8f7a)}
+.worlds-import{display:inline-block}
+@media (max-width:600px){
+  .worlds-pack .button-row,
+  .worlds-card .button-row{flex-direction:column;align-items:stretch}
+  .worlds-pack .button-row>*,
+  .worlds-card .button-row>*{width:100%}
+  .worlds-pack .worlds-import,
+  .worlds-pack .worlds-import button,
+  .worlds-card .worlds-import,
+  .worlds-card .worlds-import button{width:100%}
+  .worlds-library-head{align-items:stretch;flex-direction:column}
+  .worlds-library-head .worlds-import,
+  .worlds-library-head .worlds-import button{width:100%}
+}

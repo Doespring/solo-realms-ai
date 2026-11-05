@@ -1,0 +1,491 @@
+{
+  "removed": [
+    {
+      "relative": ".pytest_cache",
+      "bytes": 17172,
+      "files": 5
+    },
+    {
+      "relative": ".test-playable-scene-tmp",
+      "bytes": 18894848,
+      "files": 42
+    },
+    {
+      "relative": "build",
+      "bytes": 41898287,
+      "files": 16
+    },
+    {
+      "relative": "reports/dash-small-window-tmp",
+      "bytes": 606208,
+      "files": 5
+    },
+    {
+      "relative": "reports/dash-ui-tmp",
+      "bytes": 1429504,
+      "files": 6
+    },
+    {
+      "relative": "reports/small-window-evidence-tmp",
+      "bytes": 606208,
+      "files": 5
+    },
+    {
+      "relative": "reports/small-window-final-tmp",
+      "bytes": 1511424,
+      "files": 11
+    },
+    {
+      "relative": "reports/small-window-regression-tmp",
+      "bytes": 1473173,
+      "files": 10
+    },
+    {
+      "relative": "reports/small-window-sticky-final-tmp",
+      "bytes": 606208,
+      "files": 5
+    },
+    {
+      "relative": "reports/small-window-ui-tmp",
+      "bytes": 606208,
+      "files": 5
+    },
+    {
+      "relative": "reports/small-window-ui-tmp2",
+      "bytes": 606208,
+      "files": 5
+    },
+    {
+      "relative": "scripts/__pycache__",
+      "bytes": 43571,
+      "files": 2
+    },
+    {
+      "relative": "solo/__pycache__",
+      "bytes": 1876729,
+      "files": 110
+    },
+    {
+      "relative": "tests/__pycache__",
+      "bytes": 3293959,
+      "files": 88
+    },
+    {
+      "relative": "reports/nat20-stage2/tmp-death-final",
+      "bytes": 1986560,
+      "files": 4
+    },
+    {
+      "relative": "reports/nat20-stage2/tmp-fixes",
+      "bytes": 1802240,
+      "files": 6
+    },
+    {
+      "relative": "reports/nat20-stage2/tmp-items",
+      "bytes": 557056,
+      "files": 1
+    },
+    {
+      "relative": "reports/nat20-stage2/tmp-projection",
+      "bytes": 303104,
+      "files": 1
+    },
+    {
+      "relative": "reports/nat20-stage2/tmp-spells-final",
+      "bytes": 1667072,
+      "files": 4
+    },
+    {
+      "relative": "reports/nat20-stage2/tmp-tests",
+      "bytes": 2383872,
+      "files": 6
+    },
+    {
+      "relative": "reports/pdf-play-today-ui/tmp-guards-1",
+      "bytes": 602112,
+      "files": 5
+    },
+    {
+      "relative": "reports/pdf-play-today-ui/tmp-guards-final",
+      "bytes": 602112,
+      "files": 5
+    },
+    {
+      "relative": "reports/pdf-play-today-ui/tmp-guards-freeze",
+      "bytes": 602112,
+      "files": 5
+    },
+    {
+      "relative": "reports/pdf-play-today-ui/tmp-real-1",
+      "bytes": 774594,
+      "files": 12
+    },
+    {
+      "relative": "reports/pdf-play-today-ui/tmp-real-2",
+      "bytes": 647940,
+      "files": 9
+    },
+    {
+      "relative": "reports/pdf-play-today-ui/tmp-real-3",
+      "bytes": 1493525,
+      "files": 16
+    },
+    {
+      "relative": "reports/pdf-playable-release/build",
+      "bytes": 43866023,
+      "files": 16
+    },
+    {
+      "relative": "reports/pdf-playable-release/native-profile",
+      "bytes": 14325488,
+      "files": 219
+    },
+    {
+      "relative": "reports/pdf-playable-release/tmp-regression",
+      "bytes": 2547077,
+      "files": 30
+    },
+    {
+      "relative": "reports/playable-next-release/build",
+      "bytes": 43825383,
+      "files": 16
+    },
+    {
+      "relative": "reports/playable-next-release/native-profile",
+      "bytes": 11374639,
+      "files": 190
+    },
+    {
+      "relative": "reports/playable-next-release/tmp-regression",
+      "bytes": 12604666,
+      "files": 88
+    },
+    {
+      "relative": "reports/preview10/tmp-full",
+      "bytes": 263958516,
+      "files": 1941
+    },
+    {
+      "relative": "reports/preview10/tmp-targeted",
+      "bytes": 40062523,
+      "files": 240
+    },
+    {
+      "relative": "reports/preview10/unpacked",
+      "bytes": 69707741,
+      "files": 514
+    },
+    {
+      "relative": "reports/preview7/tmp-debug",
+      "bytes": 610304,
+      "files": 5
+    },
+    {
+      "relative": "reports/preview7/tmp-full",
+      "bytes": 246787822,
+      "files": 1848
+    },
+    {
+      "relative": "reports/preview7/tmp-readiness-fix",
+      "bytes": 1478424,
+      "files": 6
+    },
+    {
+      "relative": "reports/preview7/tmp-scene-debug",
+      "bytes": 2134016,
+      "files": 6
+    },
+    {
+      "relative": "reports/preview7/tmp-targeted",
+      "bytes": 4755456,
+      "files": 30
+    },
+    {
+      "relative": "reports/preview7/tmp-targeted-final",
+      "bytes": 19816921,
+      "files": 63
+    },
+    {
+      "relative": "reports/preview7/tmp-targeted2",
+      "bytes": 4182016,
+      "files": 20
+    },
+    {
+      "relative": "reports/preview7/tmp-targeted3",
+      "bytes": 19759577,
+      "files": 63
+    },
+    {
+      "relative": "reports/preview7/unpacked",
+      "bytes": 69686103,
+      "files": 514
+    },
+    {
+      "relative": "reports/preview7/unpacked-final",
+      "bytes": 69686154,
+      "files": 514
+    },
+    {
+      "relative": "reports/preview8/tmp-full",
+      "bytes": 252672190,
+      "files": 1873
+    },
+    {
+      "relative": "reports/preview8/tmp-targeted",
+      "bytes": 32885749,
+      "files": 186
+    },
+    {
+      "relative": "reports/preview8/unpacked",
+      "bytes": 69701959,
+      "files": 514
+    },
+    {
+      "relative": "reports/preview9/tmp-final-fix",
+      "bytes": 2772760,
+      "files": 22
+    },
+    {
+      "relative": "reports/preview9/tmp-fix",
+      "bytes": 2088728,
+      "files": 17
+    },
+    {
+      "relative": "reports/preview9/tmp-red",
+      "bytes": 643072,
+      "files": 5
+    },
+    {
+      "relative": "reports/preview9/tmp-red-reproducer",
+      "bytes": 643072,
+      "files": 5
+    },
+    {
+      "relative": "reports/preview9/tmp-targeted",
+      "bytes": 24208046,
+      "files": 160
+    },
+    {
+      "relative": "reports/preview9/unpacked",
+      "bytes": 69703148,
+      "files": 514
+    },
+    {
+      "relative": "reports/prototype-3/generic-final",
+      "bytes": 778240,
+      "files": 2
+    },
+    {
+      "relative": "reports/prototype-3/privacy-final",
+      "bytes": 786432,
+      "files": 2
+    },
+    {
+      "relative": "reports/prototype-3/smoke-01",
+      "bytes": 1183744,
+      "files": 3
+    },
+    {
+      "relative": "reports/prototype-3/smoke-02",
+      "bytes": 2224128,
+      "files": 5
+    },
+    {
+      "relative": "reports/prototype-3/smoke-03",
+      "bytes": 2195456,
+      "files": 5
+    },
+    {
+      "relative": "reports/prototype-4/tmp",
+      "bytes": 614400,
+      "files": 5
+    },
+    {
+      "relative": "reports/prototype-4/tmp-delivery",
+      "bytes": 1400832,
+      "files": 8
+    },
+    {
+      "relative": "reports/prototype-4/tmp-final",
+      "bytes": 1429504,
+      "files": 6
+    },
+    {
+      "relative": "reports/prototype-4/tmp-legacy",
+      "bytes": 905216,
+      "files": 6
+    },
+    {
+      "relative": "reports/prototype-4/tmp-small",
+      "bytes": 606208,
+      "files": 5
+    },
+    {
+      "relative": "reports/prototype-4/tmp2",
+      "bytes": 1122304,
+      "files": 8
+    },
+    {
+      "relative": "reports/prototype-4/tmp3",
+      "bytes": 1175552,
+      "files": 8
+    },
+    {
+      "relative": "reports/prototype-4/tmp4",
+      "bytes": 1216512,
+      "files": 6
+    },
+    {
+      "relative": "reports/prototype-4/tmp5",
+      "bytes": 1368064,
+      "files": 6
+    },
+    {
+      "relative": "reports/prototype-5/build",
+      "bytes": 43756804,
+      "files": 16
+    },
+    {
+      "relative": "reports/prototype-5/native-cloud-profile",
+      "bytes": 11307742,
+      "files": 214
+    },
+    {
+      "relative": "reports/prototype-5/source-smoke",
+      "bytes": 602165,
+      "files": 7
+    },
+    {
+      "relative": "reports/prototype-5/tmp-contract-fixes",
+      "bytes": 2248472,
+      "files": 18
+    },
+    {
+      "relative": "reports/prototype-5/tmp-desktop",
+      "bytes": 5822435,
+      "files": 51
+    },
+    {
+      "relative": "reports/prototype-5/tmp-final-integration",
+      "bytes": 3485860,
+      "files": 25
+    },
+    {
+      "relative": "reports/prototype-5/tmp-full",
+      "bytes": 276036075,
+      "files": 2009
+    },
+    {
+      "relative": "reports/prototype-5/tmp-host",
+      "bytes": 602224,
+      "files": 8
+    },
+    {
+      "relative": "reports/prototype-5/tmp-host-final",
+      "bytes": 1204388,
+      "files": 14
+    },
+    {
+      "relative": "reports/prototype-5/tmp-integration",
+      "bytes": 753664,
+      "files": 5
+    },
+    {
+      "relative": "reports/prototype-5/tmp-integration-bound",
+      "bytes": 1548288,
+      "files": 6
+    },
+    {
+      "relative": "reports/prototype-5/tmp-integration-fixed",
+      "bytes": 1302528,
+      "files": 6
+    },
+    {
+      "relative": "reports/prototype-5/tmp-packaging",
+      "bytes": 6285,
+      "files": 1
+    },
+    {
+      "relative": "reports/prototype-5/tmp-social",
+      "bytes": 733184,
+      "files": 5
+    },
+    {
+      "relative": "reports/prototype-5/tmp-social-fixed",
+      "bytes": 733184,
+      "files": 5
+    },
+    {
+      "relative": "reports/prototype-5/tmp-social-topic",
+      "bytes": 733184,
+      "files": 5
+    },
+    {
+      "relative": "reports/prototype-5/ui-seam",
+      "bytes": 602112,
+      "files": 5
+    },
+    {
+      "relative": "reports/stage3-content-cache/final-profile",
+      "bytes": 892928,
+      "files": 1
+    },
+    {
+      "relative": "reports/stage3-content-cache/profile",
+      "bytes": 892928,
+      "files": 1
+    },
+    {
+      "relative": "reports/stage3-content-cache/tests-01",
+      "bytes": 159992,
+      "files": 37
+    },
+    {
+      "relative": "reports/stage3-content-cache/tests-final",
+      "bytes": 1052920,
+      "files": 38
+    },
+    {
+      "relative": "reports/stage3-options/baseline-profile",
+      "bytes": 892928,
+      "files": 1
+    },
+    {
+      "relative": "reports/stage3-options/optimized-profile",
+      "bytes": 892928,
+      "files": 1
+    },
+    {
+      "relative": "reports/stage3-options/tmp-contract",
+      "bytes": 1798233,
+      "files": 4
+    },
+    {
+      "relative": "reports/stage3-options/tmp-contract-fix",
+      "bytes": 892928,
+      "files": 1
+    },
+    {
+      "relative": "reports/stage3-routing/tmp-targeted",
+      "bytes": 6197248,
+      "files": 22
+    },
+    {
+      "relative": "rules_data/runtime/__pycache__",
+      "bytes": 15850,
+      "files": 4
+    },
+    {
+      "relative": "rules_data/testing/__pycache__",
+      "bytes": 13570,
+      "files": 3
+    },
+    {
+      "relative": "tests/fixtures/__pycache__",
+      "bytes": 5028,
+      "files": 1
+    }
+  ],
+  "kind": "directory",
+  "failed": []
+}

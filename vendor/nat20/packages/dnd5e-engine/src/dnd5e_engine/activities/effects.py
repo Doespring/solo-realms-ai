@@ -1,0 +1,291 @@
+"""PassiveEffect (lib definition) → ActiveEffect (runtime) builder.
+
+The typed lib ships ``PassiveEffect`` — the effect *definition* riding on a
+spell/item (``changes`` / ``statuses`` / ``duration``). The resolver emits the
+engine's ``ActiveEffect`` (the runtime effect carried by ``EffectApplied``).
+This module is the one translation seam between the two.
+
+``ActiveEffectChange.mode`` is a string Literal (``ChangeMode``); the lib's
+``PassiveEffectChange.mode`` is the Foundry ``CONST.ACTIVE_EFFECT_MODES`` int.
+``_MODE_MAP`` is the single source of truth for that int→str correspondence;
+its values are pinned to the ``ChangeMode`` Literal order (index == int key).
+
+The ``id``/``origin`` slug conventions MIRROR ``effects/ieffect2.py``
+(``_effect_id_from_name`` / ``_origin_from_name``) verbatim — the orchestrator
+parses ``origin`` back into ``cast:<slug>:<caster_id>``, so any drift
+here breaks that round-trip.
+"""
+
+from __future__ import annotations
+
+import logging
+import typing
+from collections.abc import Iterable, Mapping
+from typing import TYPE_CHECKING, Any, get_args
+
+from dnd5e_engine.activities.formula import resolve_roll_data
+from dnd5e_engine.events import ConditionApplied, ConditionType, EffectApplied
+from dnd5e_engine.rules.conditions import granted_condition_immunities
+from dnd5e_engine.types.combat import Combatant
+from dnd5e_engine.types.effects import (
+    ActiveEffect,
+    ActiveEffectChange,
+    ActiveEffectDuration,
+    ChangeMode,
+)
+
+if TYPE_CHECKING:
+    from dnd5e_srd_data.schema.common import (
+        PassiveEffect,
+        PassiveEffectChange,
+        _ActivityBaseWithEffects,
+    )
+
+    from .context import ActivityResolutionContext
+
+_LOGGER = logging.getLogger(__name__)
+
+# The valid SRD condition ids — a status string becomes a ConditionApplied only
+# when it names one of these. Derived from the ConditionType Literal so the two
+# never drift.
+_CONDITION_VALUES: frozenset[str] = frozenset(get_args(ConditionType))
+
+# Foundry CONST.ACTIVE_EFFECT_MODES → ChangeMode Literal. Pinned to the Literal
+# member order in types/effects.py (index == int key); test_effects_builder
+# asserts the two stay in lockstep.
+_MODE_MAP: dict[int, ChangeMode] = {
+    0: "custom",
+    1: "multiply",
+    2: "add",
+    3: "downgrade",
+    4: "upgrade",
+    5: "override",
+}
+
+_DEFAULT_CHANGE_PRIORITY = 20
+
+
+def is_condition_immune(target: Combatant, condition: str, *, imposed: Iterable[str] = ()) -> bool:
+    """SRD 5.2 §Immunity: "If you have Immunity to a damage type or a
+    condition, it doesn't affect you in any way." A target immune to
+    ``condition`` never has it attach.
+
+    Immune when the condition is among ``target.condition_immunities`` (its
+    stat block, its features) or granted by a condition it has
+    (``rules.conditions.granted_condition_immunities``: Petrified grants
+    Poisoned). ``imposed`` names the other conditions arriving with this one
+    (one effect's statuses), so an effect that both petrifies and poisons
+    leaves its target Petrified only.
+
+    The one gate every action or effect that applies a condition consults: the
+    effect-status riders below, ``activities/mastery.py``'s Topple, the
+    orchestrator's effect folds, and the conditions its actions apply
+    (Grapple, Shove, Hide). A save that comes first (Topple's, a grapple's)
+    still rolls; only the condition is withheld.
+    """
+    if condition in target.condition_immunities:
+        return True
+    held = [ac.condition for ac in target.conditions]
+    # A status the target is immune to never lands, so it grants nothing.
+    # Filtering static immunities alone is exact while no condition grants
+    # immunity to a condition that grants one (Petrified grants Poisoned only).
+    landing = [s for s in imposed if s not in target.condition_immunities]
+    return condition in granted_condition_immunities([*held, *landing])
+
+
+def _name_slug(name: str) -> str:
+    return name.lower().replace(" ", "_")
+
+
+def _effect_id_from_name(name: str) -> str:
+    """Synthesize an ActiveEffect.id from the effect name (mirrors ieffect2)."""
+    return f"effect:{_name_slug(name)}"
+
+
+def _origin_from_name(name: str, caster_id: str) -> str:
+    """Synthesize an ActiveEffect.origin from name + caster (mirrors ieffect2)."""
+    return f"cast:{_name_slug(name)}:{caster_id}"
+
+
+def _passive_change_to_active(
+    ch: PassiveEffectChange, ctx: ActivityResolutionContext | None
+) -> ActiveEffectChange:
+    """Translate one lib ``PassiveEffectChange`` to an ``ActiveEffectChange``.
+
+    ``mode`` int→str via ``_MODE_MAP``; an out-of-range int defaults to
+    ``"custom"`` and logs loudly. ``priority`` defaults to 20 when the source
+    leaves it ``None``.
+
+    ``value`` stays the Foundry string EXCEPT for level-scaled roll-data tokens
+    (``@scale.*`` / ``@classes.*``): Rage's ``system.bonuses.mwak.damage`` ships
+    ``"+@scale.barbarian.rage-damage"``, which must be the CONCRETE bonus
+    (``"+2"`` at L5) the moment the effect lands so the next attack's hydration
+    fold reads a real number, not an unresolved token. When ``ctx`` is supplied
+    and the value carries an ``@``-token, it is resolved here at apply-time via
+    the same pure formula layer the dice/heal paths use.
+    """
+    mode = _MODE_MAP.get(ch.mode)
+    if mode is None:
+        _LOGGER.warning(
+            "effect_change_mode_unknown mode=%s key=%s value=%s — defaulting to custom",
+            ch.mode,
+            ch.key,
+            ch.value,
+        )
+        mode = "custom"
+    priority = ch.priority if ch.priority is not None else _DEFAULT_CHANGE_PRIORITY
+    value = ch.value
+    if ctx is not None and isinstance(value, str) and "@" in value:
+        # Resolve @scale.*/@classes.* (and any other roll-data token) against the
+        # caster's pre-resolved carriers. No governing ability is supplied —
+        # feature passive-effect change values never carry a bare ``@mod``.
+        value = resolve_roll_data(value, ctx)
+    return ActiveEffectChange(key=ch.key, mode=mode, value=value, priority=priority)
+
+
+def _duration_from_passive(duration: dict[str, typing.Any] | None) -> ActiveEffectDuration:
+    """Map the lib's free-form duration dict to the structured runtime duration.
+
+    Only ``rounds`` / ``turns`` / ``seconds`` are carried; absent keys (and a
+    ``None``/empty dict) leave the corresponding field ``None``.
+    """
+    if not duration:
+        return ActiveEffectDuration()
+    return ActiveEffectDuration(
+        rounds=duration.get("rounds"),
+        turns=duration.get("turns"),
+        seconds=duration.get("seconds"),
+    )
+
+
+def passive_effect_to_active_effect(
+    pe: PassiveEffect,
+    *,
+    target_id: str,
+    caster_id: str,
+    concentration: bool = False,
+    ctx: ActivityResolutionContext | None = None,
+    extra_flags: Mapping[str, Any] | None = None,
+) -> ActiveEffect:
+    """Build the runtime ``ActiveEffect`` the resolver emits for one target.
+
+    ``id``/``origin`` follow the ieffect2 slug conventions so the orchestrator
+    can parse them back. ``flags`` carries ``{"concentration": True}``
+    only when the caster's cast is concentration-gated, then ``extra_flags``
+    (an allowlisted conjuration's keys, e.g. the enchanted weapon's slug).
+
+    ``ctx`` (when supplied) resolves level-scaled roll-data tokens in each
+    change value at apply-time (Rage's ``@scale.barbarian.rage-damage`` → the
+    concrete ``+2``); absent, change values stay verbatim Foundry strings.
+    """
+    return ActiveEffect(
+        id=_effect_id_from_name(pe.name),
+        name=pe.name,
+        origin=_origin_from_name(pe.name, caster_id),
+        target_id=target_id,
+        disabled=pe.disabled,
+        transfer=pe.transfer,
+        duration=_duration_from_passive(pe.duration),
+        changes=[_passive_change_to_active(ch, ctx) for ch in pe.changes],
+        statuses=set(pe.statuses),
+        flags={**({"concentration": True} if concentration else {}), **(extra_flags or {})},
+    )
+
+
+def apply_activity_effects(
+    activity: _ActivityBaseWithEffects,
+    ctx: ActivityResolutionContext,
+    target: Combatant,
+    *,
+    save_succeeded: bool | None,
+    cast_level: int,
+    extra_flags: Mapping[str, Any] | None = None,
+) -> None:
+    """Apply an activity's effect riders to ``target``, emitting events.
+
+    Each ``AppliedEffectRef`` on the activity points (by ``ref.id``) at a
+    ``PassiveEffect`` definition the parent entity carries (``ctx.source_passive_
+    effects``). For every ref that resolves and passes the level + on_save gates,
+    one ``EffectApplied`` is emitted (the translated runtime ``ActiveEffect``),
+    followed by one ``ConditionApplied`` per status that names a valid SRD
+    condition.
+
+    The EffectApplied-then-ConditionApplied emit order is load-bearing: the
+    orchestrator pairs each condition to its effect by emit order.
+
+    ``save_succeeded`` is the target's save outcome for save activities (``None``
+    for non-save kinds, which apply unconditionally). ``cast_level`` is the slot
+    level the activity was cast at, gated against each ref's ``level`` block.
+    ``extra_flags`` are merged into every built effect's ``flags``.
+
+    Mirrors (does not import) ``effects/ieffect2._apply_effect``'s emit shape.
+    """
+    by_id: dict[str, PassiveEffect] = {pe.id: pe for pe in ctx.source_passive_effects}
+
+    for ref in activity.effects:
+        pe = by_id.get(ref.id)
+        if pe is None:
+            _LOGGER.warning(
+                "effect_ref_unresolved ref_id=%s activity=%s",
+                ref.id,
+                activity.id,
+            )
+            continue
+
+        # Level gate: the ref applies only within [min, max] (either may be
+        # unset). cast_level outside the band → this ref doesn't fire at this
+        # slot level.
+        if ref.level.min is not None and cast_level < ref.level.min:
+            continue
+        if ref.level.max is not None and cast_level > ref.level.max:
+            continue
+
+        # On-save gate (save activities only). Foundry per-effect semantics:
+        # on_save=True applies even on a successful save; False/None applies
+        # only on a FAILED save. Non-save activities (save_succeeded is None)
+        # apply unconditionally.
+        if save_succeeded is True and not ref.on_save:
+            continue
+
+        ae = passive_effect_to_active_effect(
+            pe,
+            target_id=target.entity_id,
+            caster_id=ctx.caster.entity_id,
+            concentration=ctx.concentration,
+            ctx=ctx,
+            extra_flags=extra_flags,
+        )
+        ctx.event_emitter(EffectApplied(effect=ae))
+
+        # Conditions land AFTER the EffectApplied (load-bearing order), in a
+        # deterministic (sorted) sequence. A status that isn't a valid SRD
+        # ConditionType still rides on ae.statuses; only ConditionApplied is
+        # gated on the mapping.
+        for status in sorted(pe.statuses):
+            if status in _CONDITION_VALUES:
+                # condition-immunity gate (``is_condition_immune``, shared with
+                # ``mastery.py``'s Topple rider). A target immune to this
+                # condition (Nature's Ward → "poisoned") never has it attach —
+                # the ConditionApplied is SUPPRESSED outright (the EffectApplied
+                # rider above still fired narratively). Suppress, not
+                # emit-and-neutralize: a condition is binary present/absent with
+                # no amount to zero, so a ConditionApplied the engine treats as
+                # not-applied would mislead every condition-tick reader.
+                # ``target`` is the creature as this activity began, so a
+                # Petrified an earlier rider landed doesn't shield a later
+                # rider's Poisoned; no activity carries both riders.
+                if is_condition_immune(target, status, imposed=pe.statuses):
+                    _LOGGER.info(
+                        "condition_immune_suppressed status=%s target_id=%s",
+                        status,
+                        target.entity_id,
+                    )
+                    continue
+                ctx.event_emitter(
+                    ConditionApplied(
+                        target_id=target.entity_id,
+                        condition=typing.cast("ConditionType", status),
+                    )
+                )
+            else:
+                _LOGGER.info("effect_status_unmapped status=%s", status)

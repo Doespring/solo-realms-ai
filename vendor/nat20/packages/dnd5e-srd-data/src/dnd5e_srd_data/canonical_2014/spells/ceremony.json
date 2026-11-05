@@ -1,0 +1,139 @@
+{
+  "slug": "ceremony",
+  "foundry_uuid": "Compendium.dnd5e.laaru-hw-spells.Item.WCxYCv1YATeObyf0",
+  "name": "Церемония / Ceremony",
+  "description": "Вы совершаете особую религиозную церемонию, наполненную магией. Когда вы произносите заклинание, выберите один из следующих обрядов, цель которого должна находиться в пределах 10 футов от вас во время сотворения.\n\nИскупление. Вы касаетесь одного согласного существа, чьё мировоззрение было изменено, и совершаете проверку Мудрости (Проницательность) против СЛ 20. При успехе вы возвращаете цели её изначальное мировоззрение.\n\nБлагословение воды. Вы прикасаетесь к одной фляге воды и делаете ее Святой водой.\n\nСтановление. Вы касаетесь одного взрослого гуманоида, который достиг совершеннолетия. На следующие 24 часа, каждый раз, когда цель совершает проверку характеристики, она может бросить [[/r d4]] и добавить выпавшее число к результату. Существо может получить преимущества от этого заклинания только один раз.\n\nПосвящение. Вы касаетесь одного гуманоида, который хочет посвятить себя служению вашему богу. На следующие 24 часа, каждый раз, когда цель проходит испытание, она может бросить [[/r d4]] и добавить выпавшее число к результату. Существо может получить преимущества от этого заклинания только один раз.\n\nЗаупокойный обряд. Вы касаетесь одного трупа, и в течение следующих 7 дней цель не может стать нежитью, кроме как с помощью заклинания @Compendium[laaru-dnd5-hw.spells.3DmrqW87SyWdaa8T]{Желание}.\n\nВенчание. Вы касаетесь взрослых гуманоидов, желающих связать себя узами брака. В течение следующих 7 дней каждая цель получает бонус +2 к КБ пока они находятся в пределах 30 футов друг от друга. Существо может получить преимущества от этого заклинания снова, только если оно овдовело.",
+  "level": 1,
+  "school": "abj",
+  "components": [
+    "M",
+    "S",
+    "V"
+  ],
+  "ritual": true,
+  "concentration": false,
+  "casting_time": {
+    "unit": "hour",
+    "value": 1,
+    "condition": ""
+  },
+  "range": {
+    "units": "touch",
+    "value": null,
+    "special": null
+  },
+  "duration": {
+    "units": "inst",
+    "value": null
+  },
+  "materials": {
+    "value": "порошок серебра стоимостью 25 зм, расходуемый заклинанием",
+    "consumed": true,
+    "cost": 25,
+    "supply": 0
+  },
+  "preparation": {
+    "mode": "prepared",
+    "prepared": false
+  },
+  "activities": [
+    {
+      "id": "dnd5eactivity000",
+      "name": "",
+      "img": "",
+      "sort": 0,
+      "activation": {
+        "type": "action",
+        "value": null,
+        "condition": "",
+        "override": false,
+        "reaction_conditions": []
+      },
+      "consumption": {
+        "scaling": {
+          "allowed": false,
+          "max": ""
+        },
+        "spell_slot": true,
+        "targets": []
+      },
+      "description": {
+        "chat_flavor": ""
+      },
+      "duration": {
+        "value": null,
+        "units": "inst",
+        "special": "",
+        "concentration": false,
+        "override": false
+      },
+      "flags": {},
+      "range": {
+        "value": null,
+        "units": "self",
+        "special": "",
+        "override": false
+      },
+      "target": {
+        "template": {
+          "count": "",
+          "contiguous": false,
+          "stationary": false,
+          "type": "",
+          "size": "",
+          "width": "",
+          "height": "",
+          "units": "touch"
+        },
+        "affects": {
+          "count": "",
+          "type": "",
+          "choice": false,
+          "special": ""
+        },
+        "override": false,
+        "prompt": true
+      },
+      "uses": {
+        "spent": 0,
+        "max": "",
+        "recovery": []
+      },
+      "visibility": {
+        "identifier": "",
+        "level": {
+          "min": null,
+          "max": null
+        },
+        "require_attunement": false,
+        "require_identification": false,
+        "require_magic": false
+      },
+      "effects": [],
+      "applied_effects": [],
+      "kind": "utility",
+      "roll": {
+        "formula": "d4",
+        "name": "",
+        "prompt": false,
+        "visible": false
+      }
+    }
+  ],
+  "passive_effects": [],
+  "provenance": {
+    "source": "foundry",
+    "source_url": "https://github.com/foundryvtt/dnd5e/blob/965ad2d0cf5d063dac675ba078b5bd3c3c0dd449/packs/_source/laaru-hw-spells/Церемония___Ceremony_WCxYCv1YATeObyf0.yml",
+    "ingest_date": "2026-10-26",
+    "ingest_version": "foundry-translator-v1",
+    "srd_version": [
+      "5.1"
+    ],
+    "license_tag": "CC-BY-4.0"
+  },
+  "review": {
+    "known_divergence": null,
+    "requires_user_decision": false
+  },
+  "entry_kind": "spell"
+}

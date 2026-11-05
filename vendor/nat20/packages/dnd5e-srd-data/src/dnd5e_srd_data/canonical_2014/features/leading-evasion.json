@@ -1,0 +1,28 @@
+{
+  "slug": "leading-evasion",
+  "name": "Leading Evasion",
+  "description": "When you are subjected to an effect that allows you to make a Dexterity saving throw to take only half damage, you instead take no damage on a successful save and only half damage on a failed save. If any creatures within 5 feet of you are making the same save, you can have them share in the benefit provided you aren't Incapacitated.",
+  "feature_type": "subclass_feature",
+  "foundry_id": "853a50f47756ef53",
+  "source_slug": "college-of-dance",
+  "activities": [],
+  "passive_effects": [],
+  "advancement": [],
+  "uses": null,
+  "provenance": {
+    "source": "foundry",
+    "source_url": "https://www.dndbeyond.com/sources/dnd/phb-2024",
+    "ingest_date": "2026-10-26",
+    "ingest_version": "phb-2024-manual-v1",
+    "srd_version": [
+      "5.2"
+    ],
+    "license_tag": "CC-BY-4.0"
+  },
+  "review": {
+    "requires_user_decision": false,
+    "known_divergence": null,
+    "notes": "authored from PHB 2024, mechanic not yet wired to activities"
+  },
+  "entry_kind": "feature"
+}

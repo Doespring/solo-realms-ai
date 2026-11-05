@@ -1,0 +1,265 @@
+{
+  "slug": "hellforging",
+  "foundry_uuid": "Compendium.dnd5e.laaru-hw-spells.Item.PU9Q8gshlJQ46wy7",
+  "name": "Адская ковка / Hellforging",
+  "description": "(Механомагия)\n\nВы проводите час призывая бестелесного злого духа. По окончанию этого времени, призванный дух должен преуспеть в испытании Харизмы. При успехе, вы получаете [[/damage 2d10 psychic]]{2d10 психического урона} плюс [[/damage 2d10 necrotic]]{2d10 некротического урона} от волн неконтролируемой энергии исходящих от бестелесного духа. Пока заклинание активно, вы можете поддерживать заклинание, заставляя духа проходить испытание в конце каждого своего хода с теми же последствиями.\n\nЕсли вы решите прекратить данное заклинание, либо вы не в состоянии поддерживать его, то дух возвращается в место своих мучений и не может быть призван вновь. При провале испытания, призванный дух перемещается в пустой самоцвет души и немедленно оживляет механическое тело. Оно становится демоническим механизмом — адским кованым. Дух теряет все предыдущие расовые особенности и получает особенности кованого, за исключением следующего:\n\nУязвимость. Адский кованый уязвим к лучистому урону.\n\nЗлой ум. Адский кованый имеет помеху на испытания против заклинаний и особенностей злых бестий или аберраций, которые затрагивают разум или поведение.\n\nНекогда живой. Адский кованый имеет смутное представление о том, кем он был в своей прошлой жизни, но этих воспоминаний достаточно, чтобы он мог получить умение в одном навыке.\n\nЯзыки. Общий, Машинная речь и Дьявольский или язык Демонический.\n\nДо четырёх заклинателей как минимум 5-го уровня могут помочь вам в ритуале. Каждый помощник увеличивает СЛ испытания Харизмы на 1. В случае провала испытания урон получают как заклинатель, так и каждый из помощников. Помощник, выбывший из процесса сотворения заклинания, не может присоединиться к нему снова.",
+  "level": 7,
+  "school": "nec",
+  "components": [
+    "M",
+    "S",
+    "V"
+  ],
+  "ritual": true,
+  "concentration": false,
+  "casting_time": {
+    "unit": "action",
+    "value": 1,
+    "condition": ""
+  },
+  "range": {
+    "units": "touch",
+    "value": null,
+    "special": null
+  },
+  "duration": {
+    "units": "inst",
+    "value": null
+  },
+  "materials": {
+    "value": "готовое механическое тело стоимостью 10000 зм с пустым самоцветом души, покрытое демоническими рунами",
+    "consumed": false,
+    "cost": 0,
+    "supply": 0
+  },
+  "preparation": {
+    "mode": "prepared",
+    "prepared": false
+  },
+  "activities": [
+    {
+      "id": "CPMGpdrOK63aQfWA",
+      "name": "",
+      "img": "",
+      "sort": 0,
+      "activation": {
+        "type": "action",
+        "value": null,
+        "condition": "",
+        "override": false,
+        "reaction_conditions": []
+      },
+      "consumption": {
+        "scaling": {
+          "allowed": false,
+          "max": ""
+        },
+        "spell_slot": true,
+        "targets": []
+      },
+      "description": {
+        "chat_flavor": ""
+      },
+      "duration": {
+        "value": null,
+        "units": "inst",
+        "special": "",
+        "concentration": false,
+        "override": false
+      },
+      "flags": {},
+      "range": {
+        "value": null,
+        "units": "self",
+        "special": "",
+        "override": false
+      },
+      "target": {
+        "template": {
+          "count": "",
+          "contiguous": false,
+          "stationary": false,
+          "type": "",
+          "size": "",
+          "width": "",
+          "height": "",
+          "units": "ft"
+        },
+        "affects": {
+          "count": "1",
+          "type": "creature",
+          "choice": false,
+          "special": ""
+        },
+        "override": false,
+        "prompt": true
+      },
+      "uses": {
+        "spent": 0,
+        "max": "",
+        "recovery": []
+      },
+      "visibility": {
+        "identifier": "",
+        "level": {
+          "min": null,
+          "max": null
+        },
+        "require_attunement": false,
+        "require_identification": false,
+        "require_magic": false
+      },
+      "effects": [],
+      "applied_effects": [],
+      "kind": "save",
+      "damage": {
+        "on_save": "half",
+        "parts": []
+      },
+      "save": {
+        "ability": [
+          "cha"
+        ],
+        "dc": {
+          "calculation": "spellcasting",
+          "formula": ""
+        },
+        "ignore_cover": false
+      }
+    },
+    {
+      "id": "oLEptOHsNsS7QdGa",
+      "name": "",
+      "img": "",
+      "sort": 0,
+      "activation": {
+        "type": "special",
+        "value": null,
+        "condition": "",
+        "override": true,
+        "reaction_conditions": []
+      },
+      "consumption": {
+        "scaling": {
+          "allowed": false,
+          "max": ""
+        },
+        "spell_slot": false,
+        "targets": []
+      },
+      "description": {
+        "chat_flavor": ""
+      },
+      "duration": {
+        "value": null,
+        "units": "inst",
+        "special": "",
+        "concentration": false,
+        "override": false
+      },
+      "flags": {},
+      "range": {
+        "value": null,
+        "units": "self",
+        "special": "",
+        "override": true
+      },
+      "target": {
+        "template": {
+          "count": "",
+          "contiguous": false,
+          "stationary": false,
+          "type": "",
+          "size": "",
+          "width": "",
+          "height": "",
+          "units": "ft"
+        },
+        "affects": {
+          "count": "",
+          "type": "",
+          "choice": false,
+          "special": ""
+        },
+        "override": true,
+        "prompt": true
+      },
+      "uses": {
+        "spent": 0,
+        "max": "",
+        "recovery": []
+      },
+      "visibility": {
+        "identifier": "",
+        "level": {
+          "min": null,
+          "max": null
+        },
+        "require_attunement": false,
+        "require_identification": false,
+        "require_magic": false
+      },
+      "effects": [],
+      "applied_effects": [],
+      "kind": "damage",
+      "damage": {
+        "critical": {
+          "allow": false,
+          "bonus": ""
+        },
+        "parts": [
+          {
+            "number": 2,
+            "denomination": 10,
+            "bonus": "",
+            "types": [
+              "psychic"
+            ],
+            "custom": {
+              "enabled": false,
+              "formula": ""
+            },
+            "scaling": {
+              "mode": "",
+              "number": 1,
+              "formula": ""
+            }
+          },
+          {
+            "number": 2,
+            "denomination": 10,
+            "bonus": "",
+            "types": [
+              "necrotic"
+            ],
+            "custom": {
+              "enabled": false,
+              "formula": ""
+            },
+            "scaling": {
+              "mode": "",
+              "number": 1,
+              "formula": ""
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "passive_effects": [],
+  "provenance": {
+    "source": "foundry",
+    "source_url": "https://github.com/foundryvtt/dnd5e/blob/965ad2d0cf5d063dac675ba078b5bd3c3c0dd449/packs/_source/laaru-hw-spells/Адская_ковка___Hellforging_PU9Q8gshlJQ46wy7.yml",
+    "ingest_date": "2026-10-26",
+    "ingest_version": "foundry-translator-v1",
+    "srd_version": [
+      "5.1"
+    ],
+    "license_tag": "CC-BY-4.0"
+  },
+  "review": {
+    "known_divergence": null,
+    "requires_user_decision": false
+  },
+  "entry_kind": "spell"
+}

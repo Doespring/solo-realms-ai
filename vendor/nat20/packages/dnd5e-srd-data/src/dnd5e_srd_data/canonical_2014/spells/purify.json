@@ -1,0 +1,135 @@
+{
+  "slug": "purify",
+  "foundry_uuid": "Compendium.dnd5e.laaru-hw-spells.Item.u2ewiOw8oC0r63pj",
+  "name": "Очищение / Purify",
+  "description": "В качестве действия вы открываете свои чувства и узнаете о присутствии и местонахождении любого из следующего в радиусе 30 футов: ядов, болезней, существ, способных вызвать состояния &amp;reference[blinded]{Слепоты}, &amp;reference[deafened]{Глухоты}, &amp;reference[paralyzed]{Паралича} или &amp;reference[poisoned]{Отравление}, или любую болезнь, или существ, страдающих от болезни или вышеперечисленных состояний.\n\nВы также определяете вид яда, болезни, существа или конкретное состояние или болезнь, от которых страдает существо.\n\nВ рамках этого действия вы можете мгновенно вылечить одно существо в радиусе действия от болезни или снять с него состояние слепоты, глухоты, паралича или отравления, а также удалить все яды и болезни из 5-футового куба еды и питья в пределах этого радиуса действия.\n\nНа высоких кругах. Когда вы творите это заклинание, используя ячейку заклинания 3-го круга или выше, вы можете покончить с одной дополнительной болезнью или состоянием, поражающим существо в радиусе действия, или удалить яд и болезнь из дополнительного 5-футового куба еды и питья в радиусе действия, за каждый круг ячейки выше 2-го.",
+  "level": 2,
+  "school": "abj",
+  "components": [],
+  "ritual": false,
+  "concentration": false,
+  "casting_time": {
+    "unit": "action",
+    "value": 1,
+    "condition": ""
+  },
+  "range": {
+    "units": "self",
+    "value": 0,
+    "special": null
+  },
+  "duration": {
+    "units": "inst",
+    "value": null
+  },
+  "materials": {
+    "value": "освященный кусок прозрачного стекла",
+    "consumed": false,
+    "cost": 0,
+    "supply": 0
+  },
+  "preparation": {
+    "mode": "prepared",
+    "prepared": false
+  },
+  "activities": [
+    {
+      "id": "dnd5eactivity000",
+      "name": "",
+      "img": "",
+      "sort": 0,
+      "activation": {
+        "type": "action",
+        "value": null,
+        "condition": "",
+        "override": false,
+        "reaction_conditions": []
+      },
+      "consumption": {
+        "scaling": {
+          "allowed": false,
+          "max": ""
+        },
+        "spell_slot": true,
+        "targets": []
+      },
+      "description": {
+        "chat_flavor": ""
+      },
+      "duration": {
+        "value": null,
+        "units": "inst",
+        "special": "",
+        "concentration": false,
+        "override": false
+      },
+      "flags": {},
+      "range": {
+        "value": null,
+        "units": "self",
+        "special": "",
+        "override": false
+      },
+      "target": {
+        "template": {
+          "count": "",
+          "contiguous": false,
+          "stationary": false,
+          "type": "",
+          "size": "",
+          "width": "",
+          "height": "",
+          "units": "self"
+        },
+        "affects": {
+          "count": "",
+          "type": "",
+          "choice": false,
+          "special": ""
+        },
+        "override": false,
+        "prompt": true
+      },
+      "uses": {
+        "spent": 0,
+        "max": "",
+        "recovery": []
+      },
+      "visibility": {
+        "identifier": "",
+        "level": {
+          "min": null,
+          "max": null
+        },
+        "require_attunement": false,
+        "require_identification": false,
+        "require_magic": false
+      },
+      "effects": [],
+      "applied_effects": [],
+      "kind": "utility",
+      "roll": {
+        "formula": "",
+        "name": "",
+        "prompt": false,
+        "visible": false
+      }
+    }
+  ],
+  "passive_effects": [],
+  "provenance": {
+    "source": "foundry",
+    "source_url": "https://github.com/foundryvtt/dnd5e/blob/965ad2d0cf5d063dac675ba078b5bd3c3c0dd449/packs/_source/laaru-hw-spells/Очищение___Purify_u2ewiOw8oC0r63pj.yml",
+    "ingest_date": "2026-10-26",
+    "ingest_version": "foundry-translator-v1",
+    "srd_version": [
+      "5.1"
+    ],
+    "license_tag": "CC-BY-4.0"
+  },
+  "review": {
+    "known_divergence": null,
+    "requires_user_decision": false
+  },
+  "entry_kind": "spell"
+}

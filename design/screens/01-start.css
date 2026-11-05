@@ -1,0 +1,112 @@
+/* 01 — первый экран: титул, два действия, продолжение и роза ветров */
+
+body.start{
+  position:relative;min-height:100dvh;display:flex;flex-direction:column;
+  overflow-x:hidden;
+}
+body.start::before{
+  background:
+    radial-gradient(70% 50% at 78% 34%, #D8A05C1F, transparent 62%),
+    radial-gradient(120% 80% at 50% -10%, #D8A05C0C, transparent 55%);
+}
+
+.start__top{position:relative;z-index:3;display:flex;align-items:center;justify-content:space-between;
+  gap:16px;padding:22px clamp(16px,4vw,56px)}
+.start__nav{display:flex;align-items:center;gap:2px}
+.start__nav .iconbtn{height:38px;font-size:12.5px;letter-spacing:.02em}
+
+.wordmark{display:inline-flex;align-items:baseline;gap:9px}
+.wordmark__name{
+  font-family:var(--font-book);font-size:15px;letter-spacing:.26em;text-transform:uppercase;color:var(--text);
+}
+.wordmark__ai{
+  font-family:var(--font-ui);font-size:10px;font-weight:700;letter-spacing:.12em;color:#191207;
+  background:var(--candle);padding:2px 5px 3px;line-height:1;
+}
+
+.start__main{
+  position:relative;z-index:2;flex:1 1 auto;
+  display:grid;grid-template-columns:minmax(0,540px) minmax(0,1fr);
+  align-items:center;gap:clamp(24px,4vw,64px);
+  padding:clamp(16px,4vh,48px) clamp(16px,4vw,56px) clamp(24px,5vh,56px);
+}
+.start__copy{max-width:520px}
+.start__copy .eyebrow{margin-bottom:18px}
+.start__copy .h1{margin-bottom:20px}
+.start__copy .lead{max-width:26em}
+
+.start__actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:34px}
+.start__actions .btn{min-height:48px;padding:0 24px}
+
+/* Продолжение: строка со свечной чертой, как закладка в книге */
+.continue{
+  display:flex;align-items:center;gap:16px;margin-top:36px;padding:14px 4px 14px 16px;
+  border-left:2px solid var(--candle);transition:background .16s ease,border-color .16s ease;
+}
+.continue:hover{background:linear-gradient(90deg,#D8A05C12,transparent 80%)}
+.continue__body{display:grid;gap:3px;min-width:0}
+.continue__kicker{font-family:var(--font-ui);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:#A57E45}
+.continue__title{font-family:var(--font-book);font-size:22px;line-height:1.2;color:var(--text)}
+.continue__meta{font-family:var(--font-ui);font-size:12px;color:var(--text-3)}
+.continue__go{
+  margin-left:auto;display:grid;place-items:center;width:30px;height:30px;flex:none;
+  color:var(--candle);opacity:.7;transition:opacity .16s,transform .16s;
+}
+.continue__go::before{
+  content:"";width:8px;height:8px;border-top:1.5px solid currentColor;border-right:1.5px solid currentColor;
+  transform:rotate(45deg) translate(-1px,1px);
+}
+.continue:hover .continue__go{opacity:1;transform:translateX(3px)}
+
+/* Роза ветров: нарисована линиями, служит подложкой под будущую иллюстрацию */
+.start__art{
+  position:relative;display:grid;place-items:center;justify-self:stretch;
+  min-height:min(58vh,520px);color:var(--candle);
+}
+.rose-glow{
+  position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(closest-side,#D8A05C30,#D8A05C10 46%,transparent 72%);
+  filter:blur(6px);
+}
+.rose{position:relative;width:min(100%,620px);height:auto;color:var(--candle)}
+.rose__card path{stroke-linecap:round}
+
+.start__foot{
+  position:relative;z-index:2;display:flex;flex-wrap:wrap;gap:8px 28px;justify-content:space-between;
+  align-items:center;padding:18px clamp(16px,4vw,56px) 22px;
+  border-top:1px solid #2A231B;
+  font-family:var(--font-ui);font-size:11.5px;color:#8A7D69;
+}
+.start__local{display:inline-flex;align-items:center;gap:8px;font-family:var(--font-ui);font-size:11.5px;color:#8A7D69}
+.start__local .icon{color:#8A7D69}
+.attrib__mini{margin:0;font-family:var(--font-ui);font-size:10.5px;line-height:1.6;color:#8A7D69;max-width:62ch}
+
+@media (max-width:1080px){
+  .start__main{grid-template-columns:minmax(0,1fr) minmax(0,380px);gap:24px}
+  .rose{width:100%}
+}
+@media (max-width:900px){
+  .start__main{display:block;overflow:hidden;padding-top:8px}
+  .start__copy{position:relative;z-index:2;max-width:none}
+  .start__art{
+    position:absolute;right:-38%;top:-6%;width:112%;min-height:0;
+    opacity:.30;pointer-events:none;z-index:1;
+  }
+  .rose{width:100%}
+  .start__copy .h1{font-size:clamp(30px,8.4vw,44px)}
+}
+@media (max-width:760px){
+  .start__top{padding:16px 16px 8px}
+  .start__nav .iconbtn span:not(.icon){display:none}
+  .start__nav .iconbtn{min-width:38px;padding:0 8px}
+  .start__main{padding:0 16px 16px}
+  .start__copy .eyebrow{margin-bottom:14px}
+  .start__copy .h1{margin-bottom:16px}
+  .start__copy .lead{font-size:17.5px;line-height:1.5}
+  .start__actions{margin-top:26px}
+  .start__actions .btn{flex:1 1 auto;min-height:50px}
+  .continue{margin-top:26px;padding:12px 0 12px 14px}
+  .continue__title{font-size:20px}
+  .start__foot{padding:14px 16px 18px;gap:10px}
+  .start__local{font-size:10.5px}
+}
