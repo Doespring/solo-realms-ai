@@ -1,0 +1,139 @@
+{
+  "slug": "drawmijs-instant-summons",
+  "foundry_uuid": "Compendium.dnd5e.laaru-hw-spells.Item.5FtLxBzAehnldATN",
+  "name": "Мгновенные призывы Драумижа / Drawmij's Instant Summons",
+  "description": "Прикоснитесь к предмету весом не более 10 фунтов и размером не более 6 футов в любом измерении. Заклинание оставляет невидимую отметку на поверхности объекта и невидимо записывает название предмета на сапфире, который вы использовали как реагент. Каждый раз, когда вы сотворяете это заклинание, вы должны использовать новый сапфир\n\nВпоследствии в любой момент вы можете использовать действие, чтобы произнести название предмета и раздавить сапфир. Предмет мгновенно появится у вас в руке, на каком бы расстоянии и плане бытия он ни находился. После этого заклинание прекращает действовать.\n\nЕсли предмет держит или несёт другое существо, он к вам не перемещается, но вы узнаете, какое существо им владеет и где примерно находится в данный момент.\n\n@Compendium[laaru-dnd5-hw.spells.ZdDJVUlzYudd4nHO]{Рассеивание магии} или иной подобный эффект, примененный к сапфиру, прекращает действие заклинания.",
+  "level": 6,
+  "school": "con",
+  "components": [
+    "M",
+    "S",
+    "V"
+  ],
+  "ritual": true,
+  "concentration": false,
+  "casting_time": {
+    "unit": "minute",
+    "value": 1,
+    "condition": ""
+  },
+  "range": {
+    "units": "touch",
+    "value": null,
+    "special": null
+  },
+  "duration": {
+    "units": "perm",
+    "value": null
+  },
+  "materials": {
+    "value": "сапфир стоимостью 1 000 зм",
+    "consumed": false,
+    "cost": 1000,
+    "supply": 0
+  },
+  "preparation": {
+    "mode": "prepared",
+    "prepared": false
+  },
+  "activities": [
+    {
+      "id": "dnd5eactivity000",
+      "name": "",
+      "img": "",
+      "sort": 0,
+      "activation": {
+        "type": "action",
+        "value": null,
+        "condition": "",
+        "override": false,
+        "reaction_conditions": []
+      },
+      "consumption": {
+        "scaling": {
+          "allowed": false,
+          "max": ""
+        },
+        "spell_slot": true,
+        "targets": []
+      },
+      "description": {
+        "chat_flavor": ""
+      },
+      "duration": {
+        "value": null,
+        "units": "inst",
+        "special": "",
+        "concentration": false,
+        "override": false
+      },
+      "flags": {},
+      "range": {
+        "value": null,
+        "units": "self",
+        "special": "",
+        "override": false
+      },
+      "target": {
+        "template": {
+          "count": "",
+          "contiguous": false,
+          "stationary": false,
+          "type": "",
+          "size": "",
+          "width": "",
+          "height": "",
+          "units": "touch"
+        },
+        "affects": {
+          "count": "",
+          "type": "object",
+          "choice": false,
+          "special": ""
+        },
+        "override": false,
+        "prompt": true
+      },
+      "uses": {
+        "spent": 0,
+        "max": "",
+        "recovery": []
+      },
+      "visibility": {
+        "identifier": "",
+        "level": {
+          "min": null,
+          "max": null
+        },
+        "require_attunement": false,
+        "require_identification": false,
+        "require_magic": false
+      },
+      "effects": [],
+      "applied_effects": [],
+      "kind": "utility",
+      "roll": {
+        "formula": "",
+        "name": "",
+        "prompt": false,
+        "visible": false
+      }
+    }
+  ],
+  "passive_effects": [],
+  "provenance": {
+    "source": "foundry",
+    "source_url": "https://github.com/foundryvtt/dnd5e/blob/965ad2d0cf5d063dac675ba078b5bd3c3c0dd449/packs/_source/laaru-hw-spells/Мгновенные_призывы_Драумижа___Drawmij_s_Instant_Summons_5FtLxBzAehnldATN.yml",
+    "ingest_date": "2026-10-26",
+    "ingest_version": "foundry-translator-v1",
+    "srd_version": [
+      "5.1"
+    ],
+    "license_tag": "CC-BY-4.0"
+  },
+  "review": {
+    "known_divergence": null,
+    "requires_user_decision": false
+  },
+  "entry_kind": "spell"
+}

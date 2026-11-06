@@ -1,0 +1,172 @@
+--- a/packages/dnd5e-engine/src/dnd5e_engine/rules/effects.py
++++ b/packages/dnd5e-engine/src/dnd5e_engine/rules/effects.py
+@@ -57,15 +57,21 @@
+     return sign * (total + flat_v)
+ 
+ 
++def canonical_effect_key(key: str) -> str:
++    """One shared save-key alias; do not alias the four attack categories."""
++    return "save.bonus" if key == "system.bonuses.abilities.save" else key
++
++
+ def filter_changes_by_bucket(
+     effects: Iterable[ActiveEffect], bucket: str
+ ) -> list[ActiveEffectChange]:
+-    """Return changes whose `key == bucket`, preserving order across
++    """Return changes whose canonical key matches, preserving order across
+     effects then in-effect order."""
++    bucket = canonical_effect_key(bucket)
+     out: list[ActiveEffectChange] = []
+     for eff in effects:
+         for ch in eff.changes:
+-            if ch.key == bucket:
++            if canonical_effect_key(ch.key) == bucket:
+                 out.append(ch)
+     return out
+ 
+--- a/packages/dnd5e-engine/src/dnd5e_engine/orchestrator.py
++++ b/packages/dnd5e-engine/src/dnd5e_engine/orchestrator.py
+@@ -116,6 +116,8 @@
+ )
+ from dnd5e_engine.activities.context import ActivityResolutionContext
+ from dnd5e_engine.activities.d20 import AdvantageSources, roll_d20_test
++from dnd5e_engine.activities.save_primitive import SaveRoll, roll_save
++from dnd5e_engine.rules.effects import canonical_effect_key, dedupe_by_identity
+ from dnd5e_engine.activities.dice import roll_damage_part
+ from dnd5e_engine.activities.effects import is_condition_immune
+ from dnd5e_engine.activities.forced_movement import FORCED_MOVEMENT_RIDERS
+@@ -751,7 +753,7 @@
+     """SRD 5.2 Legendary Resistance ("If the monster fails a saving throw, it
+     can choose to succeed instead") for the orchestrator-level save rolls
+     that bypass the typed activity resolver entirely (the end-of-turn repeat
+-    save, the concentration check, and the Grapple/Shove unarmed-option save)
++    save and the Grapple/Shove unarmed-option save)
+     — ``activities/save_primitive.roll_save`` never runs for any of these, so
+     its conversion never sees them. Death saves are OUT OF SCOPE by design —
+     a death save has no DC/pass-fail shape this gate applies to.
+@@ -5172,9 +5174,8 @@
+     # combatant is concentrating on an effect (tracked in
+     # ``concentration_chain``), roll the CON save and cascade on
+     # failure. The save applies the concentrating creature's real CON
+-    # modifier + proficiency bonus (F1c, via ``actor_stats``) and goes
+-    # through the shared ``roll_d20_test`` primitive (F2c) with no
+-    # advantage source, so it is still a single draw.
++    # modifier, proficiency and live effect sidecars through the shared
++    # effect-aware save primitive (d20 first, bonus dice afterward).
+     # Capped at 30 — SRD 5.2 "up to a maximum DC of 30" (2024-specific; the 2014
+     # formula has no cap).
+     # Done BEFORE death synthesis so a dropped-conc + slain caster
+@@ -5183,49 +5184,42 @@
+     if caster_chain:
+         dc = min(30, max(10, event.amount // 2))
+         concentrator = _find_combatant(live, event.target_id)
+-        # The ``else 0`` cannot fire in practice: ``concentration_chain`` is
+-        # only ever keyed by an entity that is in ``live.initiative``, and the
+-        # damage that got us here was applied to that same combatant. It stays
+-        # because ``_emit_apply_damage`` is contractually non-throwing — a
+-        # missing combatant degrades to an unmodified save rather than
+-        # aborting damage application mid-flight.
+-        # SRD 5.2 Exhaustion — the concentration CON save is a D20 Test.
+-        modifier = (
+-            save_modifier(concentrator, "con").total + d20_test_penalty(concentrator.conditions)
+-            if concentrator
+-            else 0
+-        )
+-        roll = roll_d20_test(live.rng, modifier, AdvantageSources())
+-        roll_total = roll.total
+-        succeeded = roll_total >= dc
+-        # C18 §Monster action economy — Legendary Resistance: the
+-        # concentration check bypasses ``activities/save_primitive.roll_save``
+-        # (it rolls its own d20 above), so the conversion is decided before
+-        # its ``ConcentrationCheck`` carries ``succeeded`` and
+-        # ``LegendaryResistanceUsed`` is emitted after it — via the same
+-        # shared helpers the repeat save uses.
+-        lr_remaining = (
+-            _consume_armed_legendary_resistance(live, concentrator)
+-            if not succeeded and concentrator is not None
+-            else None
+-        )
+-        if lr_remaining is not None:
+-            succeeded = True
++        if concentrator is not None:
++            payload = _build_hydration_payload(live)
++            ctx = build_activity_context(
++                concentrator, [concentrator], rng=live.rng,
++                event_emitter=lambda ev: _emit(live, ev),
++                slot_level=None, base_spell_level=None, spellcasting_ability=None,
++                concentration=False, source_passive_effects=[], spell_book={},
++                passive_damage_modifiers=payload["passive_damage_modifiers"],
++                save_modifiers=payload["save_modifiers"],
++                d20_test_penalty=payload["d20_test_penalty"],
++                legendary_resistance_armed=payload["legendary_resistance_armed"],
++                legendary_resistances_remaining_by_entity=payload["legendary_resistances_remaining_by_entity"],
++            )
++            roll = roll_save(ctx, concentrator, "con", dc)
++        else:
++            # Preserve the existing non-throwing missing-combatant fallback.
++            raw = roll_d20_test(live.rng, 0, AdvantageSources())
++            roll = SaveRoll(total=raw.total, succeeded=raw.total >= dc,
++                            natural=raw.kept, modifier=raw.modifier,
++                            mode=raw.mode, sources=tuple(raw.sources))
++        succeeded = roll.succeeded
+         _emit(
+             live,
+             ConcentrationCheck(
+-                target_id=event.target_id,
+-                dc=dc,
+-                roll_total=roll_total,
+-                succeeded=succeeded,
+-                advantage=roll.mode,
+-                natural=roll.kept,
+-                modifier=roll.modifier,
+-                sources=list(roll.sources),
++                target_id=event.target_id, dc=dc, roll_total=roll.total,
++                succeeded=succeeded, advantage=roll.mode, natural=roll.natural,
++                modifier=roll.modifier, sources=list(roll.sources),
+             ),
+         )
+-        if lr_remaining is not None:
+-            _emit_legendary_resistance_used(live, event.target_id, lr_remaining)
++        if roll.legendary_resistance_remaining is not None:
++            # The primitive changed disposable sidecars, not canonical pools.
++            # Emit once, then use the existing idempotent reconciliation fold.
++            index = len(live.event_log)
++            _emit(live, LegendaryResistanceUsed(
++                actor_id=event.target_id, uses_remaining=roll.legendary_resistance_remaining))
++            _sync_legendary_resistance(live, index)
+         if not succeeded:
+             _drop_concentration(live, event.target_id)
+     if new_hp <= 0 and event.target_id not in live.dead_ids:
+@@ -5380,7 +5374,13 @@
+     target's conditions, and record concentration spell-slot expenditure
+     for PCs."""
+     applied = event.effect
+-    live.active_effects.setdefault(applied.target_id, []).append(applied)
++    target_effects = live.active_effects.setdefault(applied.target_id, [])
++    identity = (applied.target_id, applied.id, applied.origin)
++    index = next((i for i, old in enumerate(target_effects)
++                  if (old.target_id, old.id, old.origin) == identity), len(target_effects))
++    # New instance wins, while unrelated effects keep their stable draw order.
++    target_effects.insert(index, applied)
++    target_effects[:] = dedupe_by_identity(target_effects)
+     # One entry per (status, effect), the seed's key: an effect that lands a
+     # condition the target already holds from another effect gets its own
+     # entry, so losing either effect later (``_emit_apply_effect_expired`` /
+@@ -5846,7 +5846,7 @@
+                 signed_str = val if val.startswith("-") else f"+{val}"
+             else:
+                 continue
+-            key = change.key
++            key = canonical_effect_key(change.key)
+             # Route attack/damage by action-type tag. Effects
+             # tagged ["attack"] (right-hand weapon enchantments)
+             # write to a weapon-only sidecar surface
+@@ -5892,8 +5892,6 @@
+                 )
+                 dmg_dirty = True
+                 continue
+-            elif key == "system.bonuses.abilities.save":
+-                key = "save.bonus"
+             elif key == "system.attributes.ac.bonus":
+                 # SRD Shield's own change key (Foundry-native path). Alias to
+                 # the existing "ac.bonus" branch below — not a new branch

@@ -1,0 +1,19 @@
+{
+  "stage": 1,
+  "source_files": [
+    "solo/cloud.py",
+    "solo/cloud_cost.py",
+    "solo/cloud_context.py",
+    "solo/cloud_settings.py",
+    "solo/cloud_setup.py",
+    "tests/test_cloud_accounting.py",
+    "tests/test_cloud_stage1.py",
+    "reports/CLOUD_STAGE1_2026-10-18.md",
+    "reports/cloud-stage1-freeze.json",
+    "AGENTS.md"
+  ],
+  "hash_verified": true,
+  "tests": "123 passed (owner run)",
+  "executable_rebuilt": false,
+  "remote_drive_changed": false
+}

@@ -1,0 +1,222 @@
+{
+  "activities": [
+    {
+      "activation": {
+        "condition": "",
+        "override": false,
+        "reaction_conditions": [],
+        "type": "action",
+        "value": null
+      },
+      "applied_effects": [],
+      "consumption": {
+        "scaling": {
+          "allowed": false,
+          "max": ""
+        },
+        "spell_slot": true,
+        "targets": []
+      },
+      "description": {
+        "chat_flavor": ""
+      },
+      "duration": {
+        "concentration": false,
+        "override": false,
+        "special": "",
+        "units": "inst",
+        "value": null
+      },
+      "effects": [],
+      "flags": {},
+      "id": "VFttNSDq3q1qOwDJ",
+      "img": "",
+      "kind": "utility",
+      "name": "Cast and Control",
+      "range": {
+        "override": false,
+        "special": "",
+        "units": "self",
+        "value": null
+      },
+      "roll": {
+        "formula": "10 * 1d4[minutes]",
+        "name": "Weather Change Delay",
+        "prompt": false,
+        "visible": false
+      },
+      "sort": 0,
+      "target": {
+        "affects": {
+          "choice": false,
+          "count": "",
+          "special": "weather within 5 miles",
+          "type": "space"
+        },
+        "override": false,
+        "prompt": true,
+        "template": {
+          "contiguous": false,
+          "count": "",
+          "height": "",
+          "size": "",
+          "stationary": false,
+          "type": "",
+          "units": "",
+          "width": ""
+        }
+      },
+      "uses": {
+        "max": "",
+        "recovery": [],
+        "spent": 0
+      },
+      "visibility": {
+        "identifier": "",
+        "level": {
+          "max": null,
+          "min": null
+        },
+        "require_attunement": false,
+        "require_identification": false,
+        "require_magic": false
+      }
+    },
+    {
+      "activation": {
+        "condition": "",
+        "override": false,
+        "reaction_conditions": [],
+        "type": "action",
+        "value": null
+      },
+      "applied_effects": [],
+      "consumption": {
+        "scaling": {
+          "allowed": false,
+          "max": ""
+        },
+        "spell_slot": false,
+        "targets": []
+      },
+      "description": {
+        "chat_flavor": ""
+      },
+      "duration": {
+        "concentration": false,
+        "override": true,
+        "special": "",
+        "units": "hour",
+        "value": "8"
+      },
+      "effects": [],
+      "flags": {},
+      "id": "ucJPCYAaXqiukPF9",
+      "img": "systems/dnd5e/icons/svg/statuses/concentrating.svg",
+      "kind": "utility",
+      "name": "Change Conditions",
+      "range": {
+        "override": false,
+        "special": "",
+        "units": "self",
+        "value": null
+      },
+      "roll": {
+        "formula": "10 * 1d4[minutes]",
+        "name": "Weather Change Delay",
+        "prompt": false,
+        "visible": false
+      },
+      "sort": 0,
+      "target": {
+        "affects": {
+          "choice": false,
+          "count": "",
+          "special": "weather within 5 miles",
+          "type": "space"
+        },
+        "override": false,
+        "prompt": true,
+        "template": {
+          "contiguous": false,
+          "count": "",
+          "height": "",
+          "size": "",
+          "stationary": false,
+          "type": "",
+          "units": "",
+          "width": ""
+        }
+      },
+      "uses": {
+        "max": "",
+        "recovery": [],
+        "spent": 0
+      },
+      "visibility": {
+        "identifier": "",
+        "level": {
+          "max": null,
+          "min": null
+        },
+        "require_attunement": false,
+        "require_identification": false,
+        "require_magic": false
+      }
+    }
+  ],
+  "casting_time": {
+    "condition": "",
+    "unit": "minute",
+    "value": 10
+  },
+  "components": [
+    "M",
+    "S",
+    "V"
+  ],
+  "concentration": true,
+  "description": "You take control of the weather within 5 miles of you for the duration. You must be outdoors to cast this spell, and it ends early if you go indoors.\n\nWhen you cast the spell, you change the current weather conditions, which are determined by the DM. You can change precipitation, temperature, and wind. It takes 1d4 × 10 minutes for the new conditions to take effect. Once they do so, you can change the conditions again. When the spell ends, the weather gradually returns to normal.\n\nWhen you change the weather conditions, find a current condition on the following tables and change its stage by one, up or down. When changing the wind, you can change its direction. Precipitation\n\nStage\n\nCondition\n\n1\n\nClear\n\n2\n\nLight clouds\n\n3\n\nOvercast or ground fog\n\n4\n\nRain, hail, or snow\n\n5\n\nTorrential rain, driving hail, or blizzard\n\nTemperature\n\nStage\n\nCondition\n\n1\n\nHeat wave\n\n2\n\nHot\n\n3\n\nWarm\n\n4\n\nCool\n\n5\n\nCold\n\n6\n\nFreezing\n\nWind\n\nStage\n\nCondition\n\n1\n\nCalm\n\n2\n\nModerate wind\n\n3\n\nStrong wind\n\n4\n\nGale\n\n5\n\nStorm",
+  "description_localized": "<p>Вы управляете погодой в пределах 5 миль от вас, пока длится заклинание. Вам надо быть под открытым небом, чтобы сотворить это заклинание. Если вы окажетесь вместе, где нет прямого пути между вами и небом, заклинание прекращает действовать.</p>\n<p>Когда вы творите это заклинание, вы меняете текущую погоду, определённую мастером на основе климата и времени года. Вы можете поменять осадки, температуру и ветер. На наступление новой погоды уходит [[/r 1d4 * 10]] (1d4 × 10)  минут. После этого вы можете поменять погоду снова. По окончании заклинания погода постепенно возвращается в норму.</p>\n<p>Когда вы меняете погоду, найдите текущую погоду в этих таблицах и меняйте её на одну стадию вверх или вниз. Меняя ветер, вы можете изменить его направление.</p>\n<table class=\"rd__table  stripe-odd-table\"><caption>Осадки</caption>\n<thead>\n<tr>\n<th class=\"col-1 text-center\" data-rd-isroller=\"false\">Стадия</th>\n<th class=\"col-11\" data-rd-isroller=\"false\">Погода</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td class=\"col-1 text-center\">1</td>\n<td class=\"col-11\">Ясное небо</td>\n</tr>\n<tr>\n<td class=\"col-1 text-center\">2</td>\n<td class=\"col-11\">Лёгкая облачность</td>\n</tr>\n<tr>\n<td class=\"col-1 text-center\">3</td>\n<td class=\"col-11\">Пасмурно или густой туман</td>\n</tr>\n<tr>\n<td class=\"col-1 text-center\">4</td>\n<td class=\"col-11\">Дождь, снег или град</td>\n</tr>\n<tr>\n<td class=\"col-1 text-center\">5</td>\n<td class=\"col-11\">Ливень, сильный град или метель</td>\n</tr>\n</tbody>\n</table>\n<table class=\"rd__table  stripe-odd-table\" style=\"width:99.1803%\"><caption>Температура</caption>\n<thead>\n<tr>\n<th class=\"col-1 text-center\" style=\"width:23.5935%\" data-rd-isroller=\"false\">Стадия</th>\n<th class=\"col-11\" style=\"width:75.9932%\" data-rd-isroller=\"false\">Погода</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td class=\"col-1 text-center\" style=\"width:23.5935%\">1</td>\n<td class=\"col-11\" style=\"width:75.9932%\">Невыносимая жара</td>\n</tr>\n<tr>\n<td class=\"col-1 text-center\" style=\"width:23.5935%\">2</td>\n<td class=\"col-11\" style=\"width:75.9932%\">Жара</td>\n</tr>\n<tr>\n<td class=\"col-1 text-center\" style=\"width:23.5935%\">3</td>\n<td class=\"col-11\" style=\"width:75.9932%\">Тепло</td>\n</tr>\n<tr>\n<td class=\"col-1 text-center\" style=\"width:23.5935%\">4</td>\n<td class=\"col-11\" style=\"width:75.9932%\">Прохладно</td>\n</tr>\n<tr>\n<td class=\"col-1 text-center\" style=\"width:23.5935%\">5</td>\n<td class=\"col-11\" style=\"width:75.9932%\">Холодно</td>\n</tr>\n<tr>\n<td class=\"col-1 text-center\" style=\"width:23.5935%\">6</td>\n<td class=\"col-11\" style=\"width:75.9932%\">Полярный мороз</td>\n</tr>\n</tbody>\n</table>\n<table class=\"rd__table  stripe-odd-table\"><caption>Ветер</caption>\n<thead>\n<tr>\n<th class=\"col-1 text-center\" data-rd-isroller=\"false\">Стадия</th>\n<th class=\"col-11\" data-rd-isroller=\"false\">Погода</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td class=\"col-1 text-center\">1</td>\n<td class=\"col-11\">Штиль</td>\n</tr>\n<tr>\n<td class=\"col-1 text-center\">2</td>\n<td class=\"col-11\">Средний ветер</td>\n</tr>\n<tr>\n<td class=\"col-1 text-center\">3</td>\n<td class=\"col-11\">Сильный ветер</td>\n</tr>\n<tr>\n<td class=\"col-1 text-center\">4</td>\n<td class=\"col-11\">Крепкий ветер</td>\n</tr>\n<tr>\n<td class=\"col-1 text-center\">5</td>\n<td class=\"col-11\">Шторм</td>\n</tr>\n</tbody>\n</table>",
+  "duration": {
+    "units": "hour",
+    "value": 8
+  },
+  "entry_kind": "spell",
+  "foundry_uuid": "Compendium.dnd5e.spells24.Item.phbsplControlWea",
+  "level": 8,
+  "materials": {
+    "consumed": false,
+    "cost": 0,
+    "supply": 0,
+    "value": "burning incense"
+  },
+  "name": "Управление погодой",
+  "passive_effects": [],
+  "preparation": {
+    "mode": "prepared",
+    "prepared": false
+  },
+  "provenance": {
+    "ingest_date": "2026-05-30",
+    "ingest_version": "foundry-translator-v1",
+    "license_tag": "CC-BY-4.0",
+    "source": "foundry",
+    "source_url": "https://github.com/foundryvtt/dnd5e/blob/965ad2d0cf5d063dac675ba078b5bd3c3c0dd449/packs/_source/spells24/8th-level/control-weather.yml",
+    "srd_version": [
+      "5.2"
+    ]
+  },
+  "range": {
+    "special": null,
+    "units": "self",
+    "value": null
+  },
+  "review": {
+    "known_divergence": null,
+    "requires_user_decision": false
+  },
+  "ritual": false,
+  "school": "trs",
+  "slug": "control-weather"
+}

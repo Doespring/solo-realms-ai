@@ -1,0 +1,236 @@
+{
+  "slug": "tashas-otherworldly-guise",
+  "foundry_uuid": "Compendium.dnd5e.laaru-hw-spells.Item.ZHRM5kjYcXFMfZXD",
+  "name": "Потусторонний облик Таши / Tasha's Otherworldly Guise",
+  "description": "Творя заклинание, вы обращаетесь к магии Нижних или Верхних планов (по вашему выбору), для преобразования себя. Вы получаете следующие преимущества до тех пор, пока заклинание не закончится:\n\nВсегда\n\nЗа вашей спиной появляются призрачные крылья, дарующие скорость полета 40 футов.\n\nВы получаете бонус +2 к КБ.\n\nВсе ваши атаки оружием считаются магическими, и когда вы совершаете атаку оружием, вы можете использовать свой модификатор базовой характеристики вместо Силы или Ловкости для бросков атаки и урона.\n\nДействием Атака вы можете совершить две атаки вместо одной. Вы не получаете это преимущество, если у вас уже есть подобное умение (например, «Дополнительная атака»), которое позволяет атаковать более одного раза за действие Атака.\n\nВерхние планы\n\nневосприимчивость к лучистому урону и некротическому урону.\n\nневосприимчивость к состоянию &amp;reference[charmed]{Обворожение}.\n\nНижние планы\n\nневосприимчивость к урону огнём и ядом.\n\nневосприимчивость к состоянию &amp;reference[poisoned]{Отравление}.\n\nПримечание\n\nЭта особенность включает в себя два активных эффекта, \"Верхние\" и \"Нижние\", которые автоматически дают вам невосприимчивость к соответствующим типам и условиям урона, скорость полета и бонус к КБ. Она не автоматизирует использование модификатора заклинательной характеристики вместо Силы/Ловкости.",
+  "level": 6,
+  "school": "trs",
+  "components": [
+    "M",
+    "S",
+    "V"
+  ],
+  "ritual": false,
+  "concentration": true,
+  "casting_time": {
+    "unit": "bonus",
+    "value": 1,
+    "condition": ""
+  },
+  "range": {
+    "units": "self",
+    "value": null,
+    "special": null
+  },
+  "duration": {
+    "units": "minute",
+    "value": 1
+  },
+  "materials": {
+    "value": "предмет с выгравированным символом Внешних планов стоимостью не менее 500 зм",
+    "consumed": false,
+    "cost": 0,
+    "supply": 0
+  },
+  "preparation": {
+    "mode": "prepared",
+    "prepared": false
+  },
+  "activities": [
+    {
+      "id": "dnd5eactivity000",
+      "name": "",
+      "img": "",
+      "sort": 0,
+      "activation": {
+        "type": "action",
+        "value": null,
+        "condition": "",
+        "override": false,
+        "reaction_conditions": []
+      },
+      "consumption": {
+        "scaling": {
+          "allowed": false,
+          "max": ""
+        },
+        "spell_slot": true,
+        "targets": []
+      },
+      "description": {
+        "chat_flavor": ""
+      },
+      "duration": {
+        "value": null,
+        "units": "inst",
+        "special": "",
+        "concentration": false,
+        "override": false
+      },
+      "flags": {},
+      "range": {
+        "value": null,
+        "units": "self",
+        "special": "",
+        "override": false
+      },
+      "target": {
+        "template": {
+          "count": "",
+          "contiguous": false,
+          "stationary": false,
+          "type": "",
+          "size": "",
+          "width": "",
+          "height": "",
+          "units": ""
+        },
+        "affects": {
+          "count": "",
+          "type": "self",
+          "choice": false,
+          "special": ""
+        },
+        "override": false,
+        "prompt": true
+      },
+      "uses": {
+        "spent": 0,
+        "max": "",
+        "recovery": []
+      },
+      "visibility": {
+        "identifier": "",
+        "level": {
+          "min": null,
+          "max": null
+        },
+        "require_attunement": false,
+        "require_identification": false,
+        "require_magic": false
+      },
+      "effects": [
+        {
+          "id": "gXpy3WSXTeBVsxg2",
+          "level": {
+            "min": null,
+            "max": null
+          },
+          "on_save": null,
+          "riders": null
+        }
+      ],
+      "applied_effects": [],
+      "kind": "utility",
+      "roll": {
+        "formula": "",
+        "name": "",
+        "prompt": false,
+        "visible": false
+      }
+    }
+  ],
+  "passive_effects": [
+    {
+      "id": "gXpy3WSXTeBVsxg2",
+      "name": "Верхние планы",
+      "description": "<ul><li><p>невосприимчивость к лучистому урону и некротическому урону.</p></li><li><p>невосприимчивость к состоянию &amp;reference[charmed]{Обворожение}.</p></li></ul>",
+      "changes": [
+        {
+          "key": "system.traits.di.value",
+          "mode": 2,
+          "value": "fire",
+          "priority": 20
+        },
+        {
+          "key": "system.traits.di.value",
+          "mode": 2,
+          "value": "poison",
+          "priority": 20
+        },
+        {
+          "key": "system.traits.ci.value",
+          "mode": 2,
+          "value": "poisoned",
+          "priority": 20
+        },
+        {
+          "key": "system.attributes.ac.bonus",
+          "mode": 2,
+          "value": "2",
+          "priority": 20
+        },
+        {
+          "key": "system.attributes.fly",
+          "mode": 4,
+          "value": "40",
+          "priority": 40
+        }
+      ],
+      "statuses": [],
+      "duration": {
+        "seconds": 60
+      },
+      "disabled": false,
+      "transfer": false
+    },
+    {
+      "id": "QMLyaPOTslUqGwnN",
+      "name": "Нижние планы",
+      "description": "<ul><li><p>невосприимчивость к урону огнём и ядом.</p></li><li><p>невосприимчивость к состоянию &amp;reference[poisoned]{Отравление}.</p></li></ul>",
+      "changes": [
+        {
+          "key": "system.traits.di.value",
+          "mode": 2,
+          "value": "radiant",
+          "priority": 20
+        },
+        {
+          "key": "system.traits.di.value",
+          "mode": 2,
+          "value": "necrotic",
+          "priority": 20
+        },
+        {
+          "key": "system.traits.ci.value",
+          "mode": 2,
+          "value": "charmed",
+          "priority": 20
+        },
+        {
+          "key": "system.attributes.ac.bonus",
+          "mode": 2,
+          "value": "",
+          "priority": 20
+        },
+        {
+          "key": "system.attributes.fly",
+          "mode": 2,
+          "value": "",
+          "priority": 20
+        }
+      ],
+      "statuses": [],
+      "duration": {
+        "seconds": 60
+      },
+      "disabled": false,
+      "transfer": true
+    }
+  ],
+  "provenance": {
+    "source": "foundry",
+    "source_url": "https://github.com/foundryvtt/dnd5e/blob/965ad2d0cf5d063dac675ba078b5bd3c3c0dd449/packs/_source/laaru-hw-spells/Потусторонний_облик_Таши___Tasha_s_Otherworldly_Guise_ZHRM5kjYcXFMfZXD.yml",
+    "ingest_date": "2026-10-26",
+    "ingest_version": "foundry-translator-v1",
+    "srd_version": [
+      "5.1"
+    ],
+    "license_tag": "CC-BY-4.0"
+  },
+  "review": {
+    "known_divergence": null,
+    "requires_user_decision": false
+  },
+  "entry_kind": "spell"
+}

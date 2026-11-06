@@ -1,0 +1,163 @@
+{
+  "slug": "guardian-of-nature",
+  "foundry_uuid": "Compendium.dnd5e.laaru-hw-spells.Item.r7MPzg5aCfuz43mY",
+  "name": "Страж природы / Guardian of Nature",
+  "description": "Дух природы отвечает на ваш призыв и превращает вас в могущественного стража. Превращение длится до тех пор, пока заклинание не закончится. Вы выбираете одну из следующих форм: Первобытный зверь или Великое древо.\n\nПервобытный зверь. Мягкий мех покрывает ваше тело, ваши черты лица становятся дикими, и вы получаете следующие преимущества:\n\nСкорость ходьбы увеличивается на 10 футов.\n\nВы получаете &amp;reference[darkvision]{ночное зрение} в радиусе 120 футов.\n\nВы совершаете броски атаки, основанные на Силе, с преимуществом.\n\nатаки в ближнем бою оружием наносят дополнительный урон Силой [[/r 1d6]].\n\nВеликое древо. Ваша кожа покрывается корой, листья прорастают из ваших волос, и вы получаете следующие преимущества:\n\nВы получаете 10 временных ПЗ.\n\nВы проходите с преимуществом испытания Выносливости.\n\nВы совершаете броски атаки, основанные на Ловкости и Мудрости, с преимуществом.\n\nКогда вы находитесь на земле, земля в радиусе 15 футов от вас становится &amp;reference[difficultterrain]{пересечённой местностью} для врагов.",
+  "level": 4,
+  "school": "trs",
+  "components": [
+    "V"
+  ],
+  "ritual": false,
+  "concentration": true,
+  "casting_time": {
+    "unit": "bonus",
+    "value": 1,
+    "condition": ""
+  },
+  "range": {
+    "units": "self",
+    "value": null,
+    "special": null
+  },
+  "duration": {
+    "units": "minute",
+    "value": 1
+  },
+  "materials": {
+    "value": "",
+    "consumed": false,
+    "cost": 0,
+    "supply": 0
+  },
+  "preparation": {
+    "mode": "prepared",
+    "prepared": false
+  },
+  "activities": [
+    {
+      "id": "dnd5eactivity000",
+      "name": "",
+      "img": "",
+      "sort": 0,
+      "activation": {
+        "type": "action",
+        "value": null,
+        "condition": "",
+        "override": false,
+        "reaction_conditions": []
+      },
+      "consumption": {
+        "scaling": {
+          "allowed": false,
+          "max": ""
+        },
+        "spell_slot": true,
+        "targets": []
+      },
+      "description": {
+        "chat_flavor": ""
+      },
+      "duration": {
+        "value": null,
+        "units": "inst",
+        "special": "",
+        "concentration": false,
+        "override": false
+      },
+      "flags": {},
+      "range": {
+        "value": null,
+        "units": "self",
+        "special": "",
+        "override": false
+      },
+      "target": {
+        "template": {
+          "count": "",
+          "contiguous": false,
+          "stationary": false,
+          "type": "",
+          "size": "",
+          "width": "",
+          "height": "",
+          "units": ""
+        },
+        "affects": {
+          "count": "",
+          "type": "self",
+          "choice": false,
+          "special": ""
+        },
+        "override": false,
+        "prompt": true
+      },
+      "uses": {
+        "spent": 0,
+        "max": "",
+        "recovery": []
+      },
+      "visibility": {
+        "identifier": "",
+        "level": {
+          "min": null,
+          "max": null
+        },
+        "require_attunement": false,
+        "require_identification": false,
+        "require_magic": false
+      },
+      "effects": [],
+      "applied_effects": [],
+      "kind": "save",
+      "damage": {
+        "on_save": "half",
+        "parts": [
+          {
+            "number": 1,
+            "denomination": 6,
+            "bonus": "",
+            "types": [
+              "force"
+            ],
+            "custom": {
+              "enabled": false,
+              "formula": ""
+            },
+            "scaling": {
+              "mode": "",
+              "number": null,
+              "formula": ""
+            }
+          }
+        ]
+      },
+      "save": {
+        "ability": [
+          "con"
+        ],
+        "dc": {
+          "calculation": "spellcasting",
+          "formula": ""
+        },
+        "ignore_cover": false
+      }
+    }
+  ],
+  "passive_effects": [],
+  "provenance": {
+    "source": "foundry",
+    "source_url": "https://github.com/foundryvtt/dnd5e/blob/965ad2d0cf5d063dac675ba078b5bd3c3c0dd449/packs/_source/laaru-hw-spells/Страж_природы___Guardian_of_Nature_r7MPzg5aCfuz43mY.yml",
+    "ingest_date": "2026-10-26",
+    "ingest_version": "foundry-translator-v1",
+    "srd_version": [
+      "5.1"
+    ],
+    "license_tag": "CC-BY-4.0"
+  },
+  "review": {
+    "known_divergence": null,
+    "requires_user_decision": false
+  },
+  "entry_kind": "spell"
+}

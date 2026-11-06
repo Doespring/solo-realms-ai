@@ -1,0 +1,236 @@
+{
+  "slug": "celestial",
+  "name": "Небожитель",
+  "description": "Небожитель | Celestial\n\nВаш покровитель – могущественное существо с Верхних Планов. Вы связаны с древним эмпирейцем, соляром, ки-рином, единорогом или другим существом, которое находится в планах вечного блаженства. Ваш договор с этим существом позволяет вам ощутить малейшие колебания священного света, который освещает мультивселенную.\n\nПрисоединение к такой силе может привести к изменениям в вашем поведении и убеждениях. Вы можете пробудить в себе желание уничтожить нежить, победить бестий и защитить невинных. Время от времени ваше сердце также может быть наполнено стремлением к небесному царству вашего покровителя и желанием бродить по этому раю до конца ваших дней. Но вы знаете, что сейчас ваша миссия среди смертных, и что ваш договор обязывает вас принести свет в темные уголки мира.\n\nУровень Особенности\n\n1-й\n\n@Compendium[laaru-dnd5-hw.classfeatures.3x76sR1HhgEXyTxc]{Дополнительные фокусы}, @Compendium[laaru-dnd5-hw.classfeatures.NRLDB1T3ZuTltDcG]{Расширенный список заклинаний}, @Compendium[laaru-dnd5-hw.classfeatures.VGvVxgeCHYpgqROJ]{Лечащий свет}\n\n6-й\n\n@Compendium[laaru-dnd5-hw.classfeatures.PIxsWoHDKS4dgSY2]{Сияющая душа}\n\n10-й\n\n@Compendium[laaru-dnd5-hw.classfeatures.u2sZI9hos9tVAzvc]{Небесное сопротивление}\n\n14-й\n\n@Compendium[laaru-dnd5-hw.classfeatures.1V71fh0K5PfJxDUu]{Жгучее возмездие}",
+  "identifier": "celestial",
+  "class_identifier": "warlock",
+  "spellcasting": {
+    "ability": "",
+    "progression": "none"
+  },
+  "advancement": [
+    {
+      "id": "uhg9s56koc7wip8g",
+      "type": "ItemGrant",
+      "level": 1,
+      "title": "1. Особенности",
+      "hint": "",
+      "class_restriction": "",
+      "configuration": {
+        "items": [
+          "Compendium.laaru-dnd5-hw.classfeatures.3x76sR1HhgEXyTxc",
+          "Compendium.laaru-dnd5-hw.classfeatures.NRLDB1T3ZuTltDcG",
+          "Compendium.laaru-dnd5-hw.classfeatures.VGvVxgeCHYpgqROJ"
+        ],
+        "optional": false
+      },
+      "value": {}
+    },
+    {
+      "id": "d0ifbbvp24fss866",
+      "type": "ItemGrant",
+      "level": 6,
+      "title": "Особенность",
+      "hint": "",
+      "class_restriction": "",
+      "configuration": {
+        "items": [
+          "Compendium.laaru-dnd5-hw.classfeatures.PIxsWoHDKS4dgSY2"
+        ],
+        "optional": false
+      },
+      "value": {}
+    },
+    {
+      "id": "y89ib9pm3olyzrjn",
+      "type": "ItemGrant",
+      "level": 10,
+      "title": "Особенность",
+      "hint": "",
+      "class_restriction": "",
+      "configuration": {
+        "items": [
+          "Compendium.laaru-dnd5-hw.classfeatures.u2sZI9hos9tVAzvc"
+        ],
+        "optional": false
+      },
+      "value": {}
+    },
+    {
+      "id": "yad78bj6mjqo0vnq",
+      "type": "ItemGrant",
+      "level": 14,
+      "title": "Особенность",
+      "hint": "",
+      "class_restriction": "",
+      "configuration": {
+        "items": [
+          "Compendium.laaru-dnd5-hw.classfeatures.1V71fh0K5PfJxDUu"
+        ],
+        "optional": false
+      },
+      "value": {}
+    },
+    {
+      "id": "xcyzf72hsre58fhi",
+      "type": "ItemGrant",
+      "level": 1,
+      "title": "2. Фокусы небожителя",
+      "hint": "",
+      "class_restriction": "",
+      "configuration": {
+        "items": [
+          "Compendium.laaru-dnd5-hw.spells.Vc5xlOFSeMIRUwaE",
+          "Compendium.laaru-dnd5-hw.spells.6CxYBftoMCZk449F"
+        ],
+        "optional": false,
+        "spell": {
+          "ability": "cha",
+          "preparation": "innate",
+          "uses": {
+            "max": "",
+            "per": ""
+          }
+        }
+      },
+      "value": {}
+    },
+    {
+      "id": "aGcCPoogzeyxWyFJ",
+      "type": "ItemGrant",
+      "level": 1,
+      "title": "3. Заклинания",
+      "hint": "",
+      "class_restriction": "",
+      "configuration": {
+        "items": [
+          "Compendium.laaru-dnd5-hw.spells.tFpK65jZTM6X4wgG",
+          "Compendium.laaru-dnd5-hw.spells.wE7p0clFpTiKXGyl"
+        ],
+        "optional": false,
+        "spell": {
+          "ability": "cha",
+          "preparation": "pact",
+          "uses": {
+            "max": "",
+            "per": ""
+          }
+        }
+      },
+      "value": {}
+    },
+    {
+      "id": "M3R4hYuKenHYTtJe",
+      "type": "ItemGrant",
+      "level": 3,
+      "title": "Заклинания",
+      "hint": "",
+      "class_restriction": "",
+      "configuration": {
+        "items": [
+          "Compendium.laaru-dnd5-hw.spells.GEfMYdcJxw1esRfd",
+          "Compendium.laaru-dnd5-hw.spells.SbBquXD3ciRsDLsk"
+        ],
+        "optional": false,
+        "spell": {
+          "ability": "cha",
+          "preparation": "pact",
+          "uses": {
+            "max": "",
+            "per": ""
+          }
+        }
+      },
+      "value": {}
+    },
+    {
+      "id": "bJoJYYEKRuwlDXge",
+      "type": "ItemGrant",
+      "level": 5,
+      "title": "Заклинания",
+      "hint": "",
+      "class_restriction": "",
+      "configuration": {
+        "items": [
+          "Compendium.laaru-dnd5-hw.spells.xoxTz9mfsHkmHcX6",
+          "Compendium.laaru-dnd5-hw.spells.m9YONyOEBqNAIK0n"
+        ],
+        "optional": false,
+        "spell": {
+          "ability": "cha",
+          "preparation": "pact",
+          "uses": {
+            "max": "",
+            "per": ""
+          }
+        }
+      },
+      "value": {}
+    },
+    {
+      "id": "RDMUL18jpqCOgYeU",
+      "type": "ItemGrant",
+      "level": 7,
+      "title": "Заклинания",
+      "hint": "",
+      "class_restriction": "",
+      "configuration": {
+        "items": [
+          "Compendium.laaru-dnd5-hw.spells.obcC8fu3Oh20auBp",
+          "Compendium.laaru-dnd5-hw.spells.hNLGjcsAX6Pg9OT2"
+        ],
+        "optional": false,
+        "spell": {
+          "ability": "cha",
+          "preparation": "pact",
+          "uses": {
+            "max": "",
+            "per": ""
+          }
+        }
+      },
+      "value": {}
+    },
+    {
+      "id": "zj11NAzGipjcs1hw",
+      "type": "ItemGrant",
+      "level": 9,
+      "title": "Заклинания",
+      "hint": "",
+      "class_restriction": "",
+      "configuration": {
+        "items": [
+          "Compendium.laaru-dnd5-hw.spells.qhhv1TGExW0r843c",
+          "Compendium.laaru-dnd5-hw.spells.lFqzcFBz3F0u96i1"
+        ],
+        "optional": false,
+        "spell": {
+          "ability": "cha",
+          "preparation": "pact",
+          "uses": {
+            "max": "",
+            "per": ""
+          }
+        }
+      },
+      "value": {}
+    }
+  ],
+  "granted_features": [],
+  "feature_choices": [],
+  "provenance": {
+    "source": "foundry",
+    "source_url": "https://github.com/foundryvtt/dnd5e/blob/965ad2d0cf5d063dac675ba078b5bd3c3c0dd449/packs/_source/laaru-hw-subclasses/Небожитель_VHo5X2lyV1riY67R.yml",
+    "ingest_date": "2026-10-26",
+    "ingest_version": "foundry-translator-v1",
+    "srd_version": [
+      "5.1"
+    ],
+    "license_tag": "CC-BY-4.0"
+  },
+  "review": {
+    "known_divergence": null,
+    "requires_user_decision": false
+  },
+  "entry_kind": "subclass"
+}

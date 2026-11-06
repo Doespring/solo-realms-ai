@@ -1,0 +1,48 @@
+{
+  "status": "six docs now point to unchanged canonical runtime assets",
+  "changes": [
+    {
+      "path": "docs/COMBAT.md",
+      "canonical": "assets/COMBAT.md",
+      "original_sha256": "b0237f5e66a7f260f81e8991250e5d41b6caa1ecf2d995f8ad3aee4f4c8013a5",
+      "title": "# \u0417\u0430\u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0438\u0440\u043e\u0432\u0430\u043d\u043d\u044b\u0439 \u0431\u0430\u0437\u043e\u0432\u044b\u0439 \u0431\u043e\u0439",
+      "new_sha256": "218b62844e3a07627738b22ff1586260ce5f5e815eaf176b9052feb8e0cdafbe"
+    },
+    {
+      "path": "docs/INVENTORY.md",
+      "canonical": "assets/INVENTORY.md",
+      "original_sha256": "24562e17f4d1994d188361142110698cec4f4bbbf9ad276ca340e0a13f56d906",
+      "title": "# \u0418\u043d\u0432\u0435\u043d\u0442\u0430\u0440\u044c \u0438 \u0442\u043e\u0440\u0433\u043e\u0432\u043b\u044f",
+      "new_sha256": "5ac544e7eebb150d8a6672434009ba181acb7036fbb36a372bb620830f721621"
+    },
+    {
+      "path": "docs/MAPS.md",
+      "canonical": "assets/MAPS.md",
+      "original_sha256": "4d2f522aea7403312491ea376383bf9dccef96928b48f4b51616309d53656f13",
+      "title": "# \u041a\u0430\u0440\u0442\u044b, \u043f\u043e\u0432\u0435\u0440\u0445\u043d\u043e\u0441\u0442\u0438 \u0438 \u0432\u0438\u0434\u0438\u043c\u043e\u0441\u0442\u044c",
+      "new_sha256": "8a23cfd719b34ab8babf2669d0ca21323a8e2a892cd31e743eab4e8a242a82b3"
+    },
+    {
+      "path": "docs/RULESETS.md",
+      "canonical": "assets/RULESETS.md",
+      "original_sha256": "054ca32bbb4a843f8bfd9b1e84e49452b8e21eea7ed37aa32c871455feb95581",
+      "title": "# \u0418\u0441\u043f\u043e\u043b\u043d\u044f\u0435\u043c\u044b\u0435 \u043d\u0430\u0431\u043e\u0440\u044b \u043f\u0440\u0430\u0432\u0438\u043b \u2014 \u043f\u043e\u043a\u0440\u044b\u0442\u0438\u0435 \u044d\u0442\u0430\u043f\u0430 3",
+      "new_sha256": "a1c32200ee6a2c7bbfd6375f0a2f3c58823c00aab069a769a3d4186c68ca591a"
+    },
+    {
+      "path": "docs/SRD_ATTRIBUTION.md",
+      "canonical": "assets/SRD_ATTRIBUTION.md",
+      "original_sha256": "53edbc51dfa934205d739e21ad736e2a040a2ca5e6b630eb252d89963b2f6ea1",
+      "title": "# SRD attribution",
+      "new_sha256": "d10606175b0197e9bc1d51681e66259cf9f5999f21d07c741fb3405b5a4042ec"
+    },
+    {
+      "path": "docs/WORLD.md",
+      "canonical": "assets/WORLD.md",
+      "original_sha256": "a851797d041a2a2dd21fc41e372d67a246930f1f1134c8f86706814a35dfe947",
+      "title": "# \u041c\u0438\u0440 \u043a\u0430\u043c\u043f\u0430\u043d\u0438\u0438 \u2014 \u043f\u0440\u043e\u0432\u0435\u0440\u0435\u043d\u043d\u043e\u0435 \u043f\u043e\u043a\u0440\u044b\u0442\u0438\u0435",
+      "new_sha256": "61fe6ce4c8f64011ad6e5a1b1ee92b589ede8018cea3c4a930ef8e1697bf6fc3"
+    }
+  ],
+  "behavioral_tests_run": false
+}

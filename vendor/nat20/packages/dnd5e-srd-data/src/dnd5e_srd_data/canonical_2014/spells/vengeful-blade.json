@@ -1,0 +1,139 @@
+{
+  "slug": "vengeful-blade",
+  "foundry_uuid": "Compendium.dnd5e.laaru-hw-spells.Item.YxEGDpedJ3TLiYNA",
+  "name": "Мстительный клинок / Vengeful Blade",
+  "description": "Вы берете в руки оружие, использованное при сотворянии заклинания и совершаете с ним атаку ближнего боя против одного существа в радиусе 5 футов от вас. При попадании цель получает обычные эффекты атаки оружием, а затем излучает тёмную ауру энергии до начала вашего следующего хода. Если цель атакует или сотворяет заклинание до этого, цель получает [[/damage 1d8 necrotic]]{1d8 некротического урона} и заклинание заканчивается.\n\nУрон этого заклинания увеличивается при достижении определенных уровней. На 5-м уровне атака в ближнем бою наносит цели дополнительно [[/damage 1d8 necrotic]]{1d8 некротического урона} при попадании, а урон, получаемый целью за атаку или сотворяемое заклинание, увеличивается до [[/damage 2d8 necrotic]]{2d8}. Оба броска урона увеличиваются на 1d8 на 11-м уровне ([[/damage 2d8 necrotic]]{2d8} и [[/damage 3d8 necrotic]]{3d8}) и снова на 17-м уровне ([[/damage 3d8 necrotic]]{3d8} и [[/damage 4d8 necrotic]]{4d8}).\n\nПримечание\n\nНаносите дополнительный урон через кнопки в описании.",
+  "level": 0,
+  "school": "evo",
+  "components": [
+    "M",
+    "S",
+    "V"
+  ],
+  "ritual": false,
+  "concentration": true,
+  "casting_time": {
+    "unit": "action",
+    "value": 1,
+    "condition": ""
+  },
+  "range": {
+    "units": "touch",
+    "value": null,
+    "special": null
+  },
+  "duration": {
+    "units": "inst",
+    "value": null
+  },
+  "materials": {
+    "value": "оружие ближнего боя стоимостью не менее не менее 1 зм",
+    "consumed": false,
+    "cost": 0,
+    "supply": 0
+  },
+  "preparation": {
+    "mode": "always",
+    "prepared": true
+  },
+  "activities": [
+    {
+      "id": "dnd5eactivity000",
+      "name": "",
+      "img": "",
+      "sort": 0,
+      "activation": {
+        "type": "action",
+        "value": null,
+        "condition": "",
+        "override": false,
+        "reaction_conditions": []
+      },
+      "consumption": {
+        "scaling": {
+          "allowed": false,
+          "max": ""
+        },
+        "spell_slot": true,
+        "targets": []
+      },
+      "description": {
+        "chat_flavor": ""
+      },
+      "duration": {
+        "value": null,
+        "units": "inst",
+        "special": "",
+        "concentration": false,
+        "override": false
+      },
+      "flags": {},
+      "range": {
+        "value": null,
+        "units": "self",
+        "special": "",
+        "override": false
+      },
+      "target": {
+        "template": {
+          "count": "",
+          "contiguous": false,
+          "stationary": false,
+          "type": "",
+          "size": "",
+          "width": "",
+          "height": "",
+          "units": ""
+        },
+        "affects": {
+          "count": "",
+          "type": "self",
+          "choice": false,
+          "special": ""
+        },
+        "override": false,
+        "prompt": true
+      },
+      "uses": {
+        "spent": 0,
+        "max": "",
+        "recovery": []
+      },
+      "visibility": {
+        "identifier": "",
+        "level": {
+          "min": null,
+          "max": null
+        },
+        "require_attunement": false,
+        "require_identification": false,
+        "require_magic": false
+      },
+      "effects": [],
+      "applied_effects": [],
+      "kind": "utility",
+      "roll": {
+        "formula": "",
+        "name": "",
+        "prompt": false,
+        "visible": false
+      }
+    }
+  ],
+  "passive_effects": [],
+  "provenance": {
+    "source": "foundry",
+    "source_url": "https://github.com/foundryvtt/dnd5e/blob/965ad2d0cf5d063dac675ba078b5bd3c3c0dd449/packs/_source/laaru-hw-spells/Мстительный_клинок___Vengeful_Blade_YxEGDpedJ3TLiYNA.yml",
+    "ingest_date": "2026-10-26",
+    "ingest_version": "foundry-translator-v1",
+    "srd_version": [
+      "5.1"
+    ],
+    "license_tag": "CC-BY-4.0"
+  },
+  "review": {
+    "known_divergence": null,
+    "requires_user_decision": false
+  },
+  "entry_kind": "spell"
+}

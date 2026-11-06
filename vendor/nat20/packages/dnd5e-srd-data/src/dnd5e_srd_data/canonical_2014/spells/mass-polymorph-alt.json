@@ -1,0 +1,147 @@
+{
+  "slug": "mass-polymorph-alt",
+  "foundry_uuid": "Compendium.dnd5e.laaru-hw-spells.Item.Or9usMcpWQgjN9Xd",
+  "name": "Множественное превращение (альт.) / Mass Polymorph (alt.)",
+  "description": "Это заклинание превращает до пяти существ, которых вы можете видеть в пределах дистанции, в новую форму по вашему выбору, причем вы можете выбрать одну и ту же или разные формы для каждой цели. Нежелающее существо должно преуспеть в испытании Мудрости чтобы сопротивляться к этому эффекту. Перевертыши автоматически добиваются успеха в испытании. Это заклинание не действует на цель, у которой 0 ПЗ. Превращение длится в течение всего времени, но заканчивается раньше, если цель упадет до 0 ПЗ или умрет.\n\nФорма. Новой формой может быть любое животное, которое вы физически видели, пока оно жило. Его КО должен быть меньше или равно уровню цели или ее КО.\n\nПараметры. Игровые параметры, включая значения умственных способностей, заменяется на параметры Животного, но оно сохраняет свое мировоззрение и личность в рамках ограничений этого животного.\n\nЦель получает ПЗ своей новой формы. Когда существо возвращается в свою обычную форму, оно возвращает себе то количество ПЗ, которое было у него до превращения. Если оно вернулось в свою форму в результате падения ПЗ до 0, весь избыточный урон переносится на его обычную форму. Если этот избыточный урон снижает нормальную форму до 0 ПЗ, существо теряет сознание.\n\nДействия. Действия существа ограничены теми, которые способна выполнять его новая форма. Оно не может говорить, сотворять заклинания или совершать любые действия, требующие рук или речи.\n\nЭкипировка. Его одежда, оружие, доспехи и объекты, которые он держит сливаются с новой формой. Однако он не может активировать, использовать, применять или иным образом получать пользу от своего снаряжения.\n\nНа высоких кругах. Если вы сотворяете это заклинание, используя ячейку заклинания 9-го круга, вы можете выбрать до 10 существ в пределах дистанции.\n\nПримечание\n\nВы можете использовать встроенную функцию фаундри для полиморфа. Для этого нужно открыть бланк персонажа и перетащить на него актёра животного из вкладки Актёры. Это должен сделать владелец бланка персонажа, или мастер.",
+  "level": 8,
+  "school": "trs",
+  "components": [
+    "M",
+    "S",
+    "V"
+  ],
+  "ritual": false,
+  "concentration": true,
+  "casting_time": {
+    "unit": "action",
+    "value": 1,
+    "condition": ""
+  },
+  "range": {
+    "units": "ft",
+    "value": 30,
+    "special": null
+  },
+  "duration": {
+    "units": "minute",
+    "value": 10
+  },
+  "materials": {
+    "value": "кокон гусеницы для каждой цели",
+    "consumed": false,
+    "cost": 0,
+    "supply": 0
+  },
+  "preparation": {
+    "mode": "prepared",
+    "prepared": false
+  },
+  "activities": [
+    {
+      "id": "dnd5eactivity000",
+      "name": "",
+      "img": "",
+      "sort": 0,
+      "activation": {
+        "type": "action",
+        "value": null,
+        "condition": "",
+        "override": false,
+        "reaction_conditions": []
+      },
+      "consumption": {
+        "scaling": {
+          "allowed": false,
+          "max": ""
+        },
+        "spell_slot": true,
+        "targets": []
+      },
+      "description": {
+        "chat_flavor": ""
+      },
+      "duration": {
+        "value": null,
+        "units": "inst",
+        "special": "",
+        "concentration": false,
+        "override": false
+      },
+      "flags": {},
+      "range": {
+        "value": null,
+        "units": "self",
+        "special": "",
+        "override": false
+      },
+      "target": {
+        "template": {
+          "count": "",
+          "contiguous": false,
+          "stationary": false,
+          "type": "",
+          "size": "",
+          "width": "",
+          "height": "",
+          "units": ""
+        },
+        "affects": {
+          "count": "5",
+          "type": "creature",
+          "choice": false,
+          "special": ""
+        },
+        "override": false,
+        "prompt": true
+      },
+      "uses": {
+        "spent": 0,
+        "max": "",
+        "recovery": []
+      },
+      "visibility": {
+        "identifier": "",
+        "level": {
+          "min": null,
+          "max": null
+        },
+        "require_attunement": false,
+        "require_identification": false,
+        "require_magic": false
+      },
+      "effects": [],
+      "applied_effects": [],
+      "kind": "save",
+      "damage": {
+        "on_save": "half",
+        "parts": []
+      },
+      "save": {
+        "ability": [
+          "wis"
+        ],
+        "dc": {
+          "calculation": "spellcasting",
+          "formula": ""
+        },
+        "ignore_cover": false
+      }
+    }
+  ],
+  "passive_effects": [],
+  "provenance": {
+    "source": "foundry",
+    "source_url": "https://github.com/foundryvtt/dnd5e/blob/965ad2d0cf5d063dac675ba078b5bd3c3c0dd449/packs/_source/laaru-hw-spells/Множественное_превращение__альт_____Mass_Polymorph__alt___Or9usMcpWQgjN9Xd.yml",
+    "ingest_date": "2026-10-26",
+    "ingest_version": "foundry-translator-v1",
+    "srd_version": [
+      "5.1"
+    ],
+    "license_tag": "CC-BY-4.0"
+  },
+  "review": {
+    "known_divergence": null,
+    "requires_user_decision": false
+  },
+  "entry_kind": "spell"
+}

@@ -1,0 +1,114 @@
+{
+  "activities": [
+    {
+      "activation": {
+        "condition": "",
+        "override": false,
+        "reaction_conditions": [],
+        "type": "action",
+        "value": null
+      },
+      "applied_effects": [],
+      "check": {
+        "ability": "dex",
+        "associated": [],
+        "dc": {
+          "calculation": "",
+          "formula": "15"
+        }
+      },
+      "consumption": {
+        "scaling": {
+          "allowed": false,
+          "max": ""
+        },
+        "spell_slot": true,
+        "targets": []
+      },
+      "description": {
+        "chat_flavor": ""
+      },
+      "duration": {
+        "concentration": false,
+        "override": false,
+        "special": "",
+        "units": "inst",
+        "value": ""
+      },
+      "effects": [],
+      "flags": {},
+      "id": "4pIHxWxCdaF3Ieok",
+      "img": "",
+      "kind": "check",
+      "name": "Pick a Lock/Disarm a Trap",
+      "range": {
+        "override": false,
+        "special": "",
+        "units": "self",
+        "value": null
+      },
+      "sort": 0,
+      "target": {
+        "affects": {
+          "choice": false,
+          "count": "",
+          "special": "",
+          "type": ""
+        },
+        "override": false,
+        "prompt": false,
+        "template": {
+          "contiguous": false,
+          "count": "",
+          "height": "",
+          "size": "",
+          "stationary": false,
+          "type": "",
+          "units": "",
+          "width": ""
+        }
+      },
+      "uses": {
+        "max": "",
+        "recovery": [],
+        "spent": 0
+      },
+      "visibility": {
+        "identifier": "",
+        "level": {
+          "max": null,
+          "min": null
+        },
+        "require_attunement": false,
+        "require_identification": false,
+        "require_magic": false
+      }
+    }
+  ],
+  "attunement_constraint": null,
+  "cost_gp": 25.0,
+  "description": "Ability: Dexterity\n\nUtilize: Pick a lock (DC 15), or disarm a trap (DC 15)",
+  "description_localized": "<p>В этот набор входит маленький напильник, набор отмычек, зеркальце на длинной металлической ручке, зауженные ножницы и плоскогубцы. Умение в обращении с этими инструментами позволяет вам добавить ваш бонус умения к любой проверке характеристики, связанной с попыткой взломать замок или обезвредить ловушку.</p>\n<p>Воровские инструменты, возможно наиболее часто используемые искателями приключений инструменты, разработаны для взлома замков и обезвреживания ловушек. Умение в обращении с этими инструментами также даёт вам общие знания о принципах действий ловушек и замков.</p>\n<p><em><strong>Компоненты.</strong></em> Воровские инструменты включают в себя надфиль, набор отмычек, небольшое зеркальце с металлической рукояткой, набор ножниц с узкими лезвиями и пару щипцов.</p>\n<p><em><strong>История.</strong></em> Ваши познания в области ловушек дают вам дополнительные знания при ответах на вопросы о местах, знаменитых своими ловушками.</p>\n<p><em><strong>Внимание, Расследование.</strong></em> Вы получаете дополнительные знания при поиске ловушек, потому что вам известны различные простые признаки, выдающие их наличие.</p>\n<p><em><strong>Установка ловушки.</strong></em> Вы можете не только обезвреживать ловушки, но и устанавливать их. Частью короткого отдыха вы можете создать ловушку из подручных средств. Результат вашей проверки становится СЛ для пытающегося обнаружить или обезвредить ловушку. Ловушка наносит урон, соответствующий материалам, использованным при создании (как то яд или оружие), или урон, равный половине результата вашей проверки, смотря что Мастер сочтёт более подходящим.</p>\n<table class=\"rd__table  stripe-odd-table\">\n<thead>\n<tr>\n<th class=\"col-10\" data-rd-isroller=\"false\">Возможное действие</th>\n<th class=\"col-2 text-center\" data-rd-isroller=\"false\">СЛ</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td class=\"col-10\">Вскрыть замок</td>\n<td class=\"col-2 text-center\">Различная</td>\n</tr>\n<tr>\n<td class=\"col-10\">Обезвредить ловушку</td>\n<td class=\"col-2 text-center\">Различная</td>\n</tr>\n</tbody>\n</table>",
+  "item_kind": "item",
+  "name": "Инструменты вора",
+  "passive_effects": [],
+  "provenance": {
+    "ingest_date": "2026-05-30",
+    "ingest_version": "foundry-translator-v1",
+    "license_tag": "CC-BY-4.0",
+    "source": "foundry",
+    "source_url": "https://github.com/foundryvtt/dnd5e/blob/965ad2d0cf5d063dac675ba078b5bd3c3c0dd449/packs/_source/equipment24/tools/other/thieves-tools.yml",
+    "srd_version": [
+      "5.2"
+    ]
+  },
+  "rarity": "common",
+  "requires_attunement": false,
+  "review": {
+    "known_divergence": null,
+    "requires_user_decision": false
+  },
+  "slug": "thieves-tools",
+  "uses": null,
+  "weight": 1.0
+}

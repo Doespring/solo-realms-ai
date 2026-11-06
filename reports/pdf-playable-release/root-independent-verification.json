@@ -1,0 +1,38 @@
+{
+  "archive_sha256": "51c7e3056f216c292d32885b2a9847fb78926c9878fd18b839d4442d4e6397e0",
+  "archive_bytes": 39915258,
+  "zip_crc": null,
+  "verified_files": 2193,
+  "bad_zip": [],
+  "bad_bundle": [],
+  "extra_zip": [],
+  "extra_bundle": [],
+  "old_changed": [],
+  "source_changed": [],
+  "pin_changed": [],
+  "selected": {
+    "tests": 11,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "native_prepare_report": true,
+  "native_continue_report": true,
+  "native_process_reports": [
+    {
+      "phase": "prepare",
+      "pid": 8220,
+      "exit_code": 0,
+      "process_seconds": 21.5376006
+    },
+    {
+      "phase": "continue",
+      "pid": 24988,
+      "exit_code": 0,
+      "process_seconds": 11.3045895
+    }
+  ],
+  "independent_runtime_execution": false,
+  "database_opened": false,
+  "ok": true
+}

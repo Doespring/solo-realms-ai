@@ -1,0 +1,21 @@
+{
+  "cleanup": "blocked by policy; no workaround",
+  "copy_destination_owner": "coordinator; no copy performed by engine task",
+  "runtime_or_pin_changed": false,
+  "schema_changed": false,
+  "sha256": {
+    "docs/NAT20_STAGE2.md": "d189931421324dc66923a9ff17daf65922e2154fcf4e4baacd2883a41c75d4c5",
+    "reports/nat20-stage2/coverage.json": "d42cd9d4f716f84603f93a16a9ca8eb4ab6684f62b0dfe7d7932ff3fbfd214d4",
+    "reports/nat20-stage2/results.json": "d7359cf52b7b339c255e4bd270de93d9557d159e29c36adbff33c35d4a943429",
+    "solo/nat20_api.py": "c37680622e01b7b15aa8609677402d5d4e142ab1d1d0aaca92a4c046568571cd",
+    "solo/nat20_checks.py": "d7680a2afaf68f2772533baadaf0a233010223a6862bda875eb9c51363e7ba3a",
+    "solo/nat20_prototype.py": "ad137b5624dd7b539839b85678e28454813ab7be203d028662d90c216b4d8f1a",
+    "solo/nat20_screen.py": "f985b04058f15066b5761df278e011a5e11a4c746a3619f4bebf837d3bc741e3",
+    "solo/nat20_worker.py": "829be5a6f4f7bdd545e06eb84ea53a499f967de7efc6ca15d4d8543231a458db",
+    "tests/test_nat20_stage2.py": "e81ea2b8112272c7a059bb59e7e97e633435e7c8aec8487d93fbe2fcf63e0f4b"
+  },
+  "stage": 2,
+  "stage3_started": false,
+  "status": "frozen_with_explicit_hide_bless_upstream_blockers",
+  "tests_unique_passed": 14
+}

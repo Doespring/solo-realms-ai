@@ -1,0 +1,138 @@
+{
+  "slug": "instant-bulwark",
+  "foundry_uuid": "Compendium.dnd5e.laaru-hw-spells.Item.oRmQ6DuwgrOl211U",
+  "name": "Мгновенный бастион / Instant Bulwark",
+  "description": "Вы заставляете стену земли длиной 15 футов, высотой 10 футов и толщиной 6 дюймов вырваться из-под земли в пустом пространстве, которое вы видите в пределах дистанции. Стена даёт полное укрытие и блокирует любой урон, исходящий с обратной стороны стены. Она блокирует дистанционные атаки и любые заклинания или магические эффекты по площади, чьи области пересекают стену.\n\nСтена имеет пункты здоровья, равные [[/r 4d10]] + ваш модификатор заклинательной характеристики. Она принимает на себя весь урон, который блокирует, даже если этот урон обычно затрагивает только существ, но получает заблокированный урон только один раз, даже если защищает нескольких существ. Если ПЗ снижены до 0, она рассыпается в прах, а любой избыточный урон наносится как обычно. Если стена не разрушена, она рассыпается в начале вашего следующего хода.\n\nНа высоких кругах. Когда вы сотворяете это заклинание, используя ячейку заклинания 4-го круга или выше, стена получает [[/r 1d10]] дополнительных пунктов здоровья и становится на 5 футов длиннее за каждый круг выше 3-го.",
+  "level": 3,
+  "school": "trs",
+  "components": [
+    "S",
+    "V"
+  ],
+  "ritual": false,
+  "concentration": false,
+  "casting_time": {
+    "unit": "reaction",
+    "value": 1,
+    "condition": "которое вы можете совершить, когда существо в пределах дистанции получает урон от дистанционной атаки или эффекта по площади"
+  },
+  "range": {
+    "units": "ft",
+    "value": 60,
+    "special": null
+  },
+  "duration": {
+    "units": "inst",
+    "value": null
+  },
+  "materials": {
+    "value": "",
+    "consumed": false,
+    "cost": 0,
+    "supply": 0
+  },
+  "preparation": {
+    "mode": "prepared",
+    "prepared": false
+  },
+  "activities": [
+    {
+      "id": "dnd5eactivity000",
+      "name": "",
+      "img": "",
+      "sort": 0,
+      "activation": {
+        "type": "action",
+        "value": null,
+        "condition": "",
+        "override": false,
+        "reaction_conditions": []
+      },
+      "consumption": {
+        "scaling": {
+          "allowed": false,
+          "max": ""
+        },
+        "spell_slot": true,
+        "targets": []
+      },
+      "description": {
+        "chat_flavor": ""
+      },
+      "duration": {
+        "value": null,
+        "units": "inst",
+        "special": "",
+        "concentration": false,
+        "override": false
+      },
+      "flags": {},
+      "range": {
+        "value": null,
+        "units": "self",
+        "special": "",
+        "override": false
+      },
+      "target": {
+        "template": {
+          "count": "",
+          "contiguous": false,
+          "stationary": false,
+          "type": "wall",
+          "size": "15",
+          "width": "1",
+          "height": "10",
+          "units": "ft"
+        },
+        "affects": {
+          "count": "",
+          "type": "",
+          "choice": false,
+          "special": ""
+        },
+        "override": true,
+        "prompt": true
+      },
+      "uses": {
+        "spent": 0,
+        "max": "",
+        "recovery": []
+      },
+      "visibility": {
+        "identifier": "",
+        "level": {
+          "min": null,
+          "max": null
+        },
+        "require_attunement": false,
+        "require_identification": false,
+        "require_magic": false
+      },
+      "effects": [],
+      "applied_effects": [],
+      "kind": "utility",
+      "roll": {
+        "formula": "",
+        "name": "",
+        "prompt": false,
+        "visible": false
+      }
+    }
+  ],
+  "passive_effects": [],
+  "provenance": {
+    "source": "foundry",
+    "source_url": "https://github.com/foundryvtt/dnd5e/blob/965ad2d0cf5d063dac675ba078b5bd3c3c0dd449/packs/_source/laaru-hw-spells/Мгновенный_бастион___Instant_Bulwark_oRmQ6DuwgrOl211U.yml",
+    "ingest_date": "2026-10-26",
+    "ingest_version": "foundry-translator-v1",
+    "srd_version": [
+      "5.1"
+    ],
+    "license_tag": "CC-BY-4.0"
+  },
+  "review": {
+    "known_divergence": null,
+    "requires_user_decision": false
+  },
+  "entry_kind": "spell"
+}

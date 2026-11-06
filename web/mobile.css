@@ -1,0 +1,317 @@
+/* r230 — телефонный слой.
+
+   Подключается последним и живёт только на узком экране (≤ 760 px): рабочий
+   стол остаётся таким, каким его приняли в r224/r235. Слой не зависит от
+   каркаса r235 — он чинит и прежний столбец-меню, который владелец видит на
+   19215, и шторку каркаса.
+
+   Правила карточки r230 — это и есть числа ниже, не вкус:
+     основной текст 16 px, служебный 14 px;
+     зона нажатия 44×44, зазор между соседними 8 px;
+     никакой горизонтальной прокрутки;
+     поле ввода прижато к низу и не уезжает под клавиатуру;
+     главное действие — в нижней трети.
+
+   Замеры до и после: reports/r230/REPORT.md. */
+
+@media (max-width: 760px) {
+
+  /* ── 1. Шкала ──────────────────────────────────────────────────────────── */
+  html { -webkit-text-size-adjust: 100%; }
+  body { font-size: 16px; }
+
+  /* Основной текст. `!important` здесь — сознательно: прежние листы
+     (style.css, obsidian.css, game-screen.css) задают 9–13 px на десятках
+     конкретных селекторов, и перечислять их по одному значит оставить дыры.
+     Правило живёт только внутри этого @media. */
+  body :is(p, li, dt, dd, td, label, blockquote, figcaption, legend,
+           input, select, textarea, button, summary, .prose, .message .prose) {
+    font-size: 16px !important;
+  }
+  /* Служебный текст: подписи, подсказки, надзаголовки. Он меньше основного,
+     но не меньше 14 px. Идёт после правила выше — порядок и решает. */
+  body :is(.hint, .subtext, .eyebrow, .quiet, small, time, output, th, footer,
+           pre, code, kbd, samp, caption,
+           .notice, .speaker, .kicker, .wizard-progress, .continue-kicker,
+           .continue-meta, .continue-go, .chronicle-status, .license-record,
+           .nav, .nav-text, .drawer-tab, .drawer-row, .rail-btn, .shell-title,
+           .settings-tabs button, .tabletop-tabs button) {
+    font-size: 14px !important;
+  }
+  /* Литературный текст читается выбранным размером, но не мельче 16 px. */
+  body :is(#chat, .prose) .prose { font-size: max(16px, var(--prose-size, 16px)) !important; }
+  body :is(.metric, .metrics-grid) small { font-size: 14px !important; }
+
+  /* ── 2. Зоны нажатия ───────────────────────────────────────────────────── */
+  body :is(button, summary, select, textarea, [role=button], [role=tab],
+           .nav, .drawer-row, label.file-button, input:not([type=hidden])) {
+    min-height: 44px;
+  }
+  /* Кнопка с одним символом («−», «+», «✕») иначе выходит 40 px шириной. */
+  body :is(button, [role=button], .nav, .drawer-row) { min-width: 44px; }
+  body :is(input[type=text], input[type=search], input[type=url], input[type=number],
+           input[type=password], input[type=email], input[type=tel], select, textarea) {
+    min-height: 44px;
+    height: auto;
+  }
+  /* Чекбокс: квадрат 22 px рисуем сами, а сам input — прозрачный, во всю
+     строку 44 px. Иначе на телефоне зона нажатия 13×22, а строка в 44 px
+     обманывает замер: палец попадает только в квадратик. */
+  body label.checkline,
+  body label:has(input[type=checkbox]),
+  body label:has(input[type=radio]) {
+    display: flex; align-items: center; gap: 8px;
+    min-height: 44px; padding-left: 34px; position: relative;
+  }
+  body label.checkline > input,
+  body label:has(input[type=checkbox]) input[type=checkbox],
+  body label:has(input[type=radio]) input[type=radio] {
+    position: absolute; left: 0; top: 50%; transform: translateY(-50%);
+    width: 44px !important; height: 44px !important; min-height: 0; margin: 0;
+    appearance: none; -webkit-appearance: none; opacity: .01 !important;
+    cursor: pointer; z-index: 1;
+  }
+  body label.checkline::before,
+  body label:has(input[type=checkbox])::before {
+    content: ''; position: absolute; left: 9px; top: 50%; transform: translateY(-50%);
+    width: 22px; height: 22px; border: 2px solid var(--line, #5a5245);
+    border-radius: 3px; background: var(--surface, transparent); box-sizing: border-box;
+  }
+  body label.checkline:has(input:checked)::before,
+  body label:has(input[type=checkbox]:checked)::before {
+    background: var(--gold, #c9a227); border-color: var(--gold, #c9a227);
+  }
+  body label.checkline:has(input:checked)::after,
+  body label:has(input[type=checkbox]:checked)::after {
+    content: '✓'; position: absolute; left: 9px; top: 50%; transform: translateY(-50%);
+    width: 22px; height: 22px; line-height: 22px; text-align: center;
+    font-size: 14px; font-weight: 700; color: var(--ink-on-gold, #14130f);
+    pointer-events: none;
+  }
+  /* Самостоятельные ссылки. Строчная ссылка внутри абзаца не считается
+     отдельной зоной (WCAG 2.5.8, исключение для ссылок в предложении). */
+  body :is(a.nav, a.brand, a.home-link, a.icon-licence, a[role=button], a.quiet) {
+    display: inline-flex; align-items: center; min-height: 44px;
+  }
+  body summary { display: flex; align-items: center; gap: 8px; }
+
+  /* Зазор между соседними зонами — 8 px: ряды, кнопки, вкладки. */
+  body :is(.button-row, .drawer-tabs, .settings-tabs, .tabletop-tabs,
+           .drawer-pane, .drawer-body > nav, aside.sidebar nav,
+           .form-grid, .inline-form, .world-places, .game-actions,
+           .tabletop-secondary, .tabletop-utilities, .card-actions) {
+    gap: 8px;
+  }
+  body :is(.button-row, .inline-form, .card-actions) { flex-wrap: wrap; }
+
+  /* Соседние кнопки/списки в обычной форме — стопкой, с зазором 8 px:
+     без него две кнопки стоят вплотную и палец бьёт не туда. */
+  body form:not(.inline-form) > :is(button, select),
+  body :is(details, form) > :is(button, select) + :is(button, select) {
+    margin-top: 8px;
+  }
+
+  /* ── 3. Никакой горизонтальной прокрутки ───────────────────────────────── */
+  body img, body svg, body canvas, body video { max-width: 100%; height: auto; }
+  body :is(pre, code) { white-space: pre-wrap; overflow-wrap: anywhere; word-break: break-word; }
+  body :is(p, li, dd, td, .prose, .message .prose, .continue-name) { overflow-wrap: anywhere; }
+  /* Длинные односложные заголовки («Производительность») на 375 px шире
+     колонки и утаскивают за собой всю страницу вправо. */
+  body :is(h1, h2, h3, h4, h5, h6, summary, label, button, a, strong, dt) {
+    overflow-wrap: break-word; hyphens: auto;
+  }
+  /* Широкая таблица прокручивается внутри себя, страница — нет. */
+  body .table-scroll, body .scroll-x {
+    overflow-x: auto !important; -webkit-overflow-scrolling: touch;
+    max-width: 100%; overscroll-behavior-x: contain;
+  }
+  body .table-scroll > table { min-width: max-content; }
+  body table { max-width: 100%; }
+  body :is(.metrics-grid, .scores-grid, .form-grid) { grid-template-columns: minmax(0, 1fr) !important; }
+  body .metric { min-width: 0; }
+
+  /* ── 4. Меню прежнего дерева: за край, открывается бургером ──────────────
+     Каркас r235 рисует свою шторку и сам прячет `aside.sidebar`; здесь —
+     тот же приём для дерева без каркаса (ветка, которую видит владелец). */
+  body:not(.solo-shell) aside.sidebar {
+    position: fixed; inset: 0 auto 0 0; z-index: 95;
+    width: min(88vw, 360px); height: 100%; max-height: none !important;
+    display: flex; flex-direction: column; gap: 8px;
+    overflow-y: auto; overflow-x: hidden; overscroll-behavior: contain;
+    padding: 12px 12px calc(16px + env(safe-area-inset-bottom));
+    background: var(--surface); border-right: 1px solid var(--line);
+    transform: translateX(-101%); transition: transform .2s ease;
+  }
+  body:not(.solo-shell).menu-open aside.sidebar { transform: none; box-shadow: 0 0 48px #0008; }
+  body:not(.solo-shell) aside.sidebar .brand { min-height: 44px; }
+  body:not(.solo-shell) aside.sidebar .brand small { display: none; }
+  body:not(.solo-shell) aside.sidebar :is(.nav, details > summary) {
+    min-height: 44px; padding: 0 12px; display: flex; align-items: center; gap: 8px;
+  }
+  body.menu-open { overflow: hidden; }
+
+  /* Затемнение под меню: один узел, создаётся mobile.js. */
+  .mobile-scrim {
+    position: fixed; inset: 0; z-index: 94; background: #0009;
+    opacity: 0; pointer-events: none; transition: opacity .2s ease;
+  }
+  body.menu-open .mobile-scrim { opacity: 1; pointer-events: auto; }
+
+  /* Бургер без каркаса: та же зона 44×44, что у каркасного. */
+  .mobile-burger {
+    flex: none; width: 44px; height: 44px; min-height: 44px; padding: 0;
+    display: inline-flex; flex-direction: column; align-items: center; justify-content: center;
+    gap: 4px; border: 1px solid transparent; background: none; color: var(--text);
+    border-radius: 2px;
+  }
+  .mobile-burger span { display: block; width: 18px; height: 2px; background: currentColor; border-radius: 1px; }
+
+  /* ── 5. Экран игры: лента тянется, поле ввода прижато к низу ─────────────
+     `body.play-fixed` и `--vvh` ставит mobile.js: высота берётся у
+     visualViewport, поэтому клавиатура не уводит поле ввода под себя. */
+  body.play-fixed {
+    height: var(--vvh, 100dvh); overflow: hidden;
+    display: flex; flex-direction: column;
+  }
+  body.play-fixed > .notice { flex: 0 0 auto; }
+  body.play-fixed > main {
+    flex: 1 1 auto; min-height: 0; display: flex; flex-direction: column;
+    margin: 0 !important; padding: 0 !important; max-width: none !important;
+  }
+  /* Подвал и служебные абзацы под игрой на телефоне отнимают последние 70 px
+     у ленты; они целиком есть в «Ещё» → «О программе». */
+  body.play-fixed > main > :not(header):not(#play) { display: none !important; }
+  body.play-fixed > main > header {
+    flex: 0 0 auto; position: static; height: 56px; padding: 0 8px; margin: 0;
+  }
+  body.play-fixed #play {
+    flex: 1 1 auto; min-height: 0; height: auto !important;
+    display: flex; flex-direction: column;
+    padding: 0 !important; margin: 0 !important; max-width: none !important;
+  }
+  body.play-fixed #play .workspace-layout {
+    flex: 1 1 auto; min-height: 0; height: auto !important;
+    display: flex !important; flex-direction: column; gap: 0 !important;
+    grid-template-columns: none !important;
+  }
+  body.play-fixed #play .literary-column {
+    flex: 1 1 auto; min-height: 0; height: auto !important;
+    display: flex; flex-direction: column;
+  }
+  body.play-fixed #play .story-card {
+    flex: 1 1 auto; min-height: 0; height: auto !important;
+    display: flex; flex-direction: column;
+    margin: 0; border: 0; border-radius: 0; background: transparent;
+  }
+  body.play-fixed #play .panel-heading { display: none; }
+  body.play-fixed #chat {
+    flex: 1 1 auto; min-height: 0; height: auto !important; max-height: none !important;
+    overflow-y: auto; overscroll-behavior: contain;
+    padding: 12px 16px 8px; scroll-behavior: smooth;
+  }
+  body.play-fixed #play .composer {
+    order: 99; position: static; flex: 0 0 auto; z-index: 6;
+    padding: 8px 12px calc(8px + env(safe-area-inset-bottom));
+    background: var(--surface); border-top: 1px solid var(--line);
+    box-shadow: 0 -8px 24px #0003;
+  }
+  /* Всё, что стоит в карточке до поля ввода (панель действий, кубик), остаётся
+     доступным, но не отжимает ленту: поле ввода — последнее, у нижней кромки. */
+  body.play-fixed #play .story-card > :not(#chat):not(.composer) { flex: 0 0 auto; order: 90; }
+  body.play-fixed #play .story-card > #chat { order: 1; min-height: 140px; }
+  body.play-fixed .composer textarea {
+    height: 56px !important; min-height: 56px !important; padding: 10px 12px;
+  }
+  body.play-fixed .composer-footer { margin-top: 8px; gap: 8px; }
+  body.play-fixed .composer-footer > span { font-size: 14px !important; line-height: 1.3; }
+  body.play-fixed .composer-footer button { min-height: 44px; }
+  /* Панели механики в игре повторяют то, что уже сказано в ленте: на телефоне
+     они не нужны и отнимают у неё треть экрана. */
+  body.play-fixed #play .scene-rail,
+  body.play-fixed #play .sheet-rail,
+  body.play-fixed #play .game-log { display: none !important; }
+
+  /* ── 6. Главная: главное действие — в нижней трети ─────────────────────── */
+  #welcome {
+    display: flex; flex-direction: column;
+    min-height: calc(var(--vvh, 100dvh) - 56px - var(--notice-h, 44px));
+  }
+  #welcome > .eyebrow, #welcome > h1 { margin-left: 20px; margin-right: 20px; }
+  #welcome > .eyebrow { margin-top: 20px; }
+  #welcome .chronicle-start {
+    flex: 1 1 auto; display: flex; flex-direction: column;
+    max-width: none; margin: 0; padding: 8px 20px calc(24px + env(safe-area-inset-bottom));
+    border: 0; background: none; text-align: left;
+  }
+  /* Каркас r235 держит картинку на главной абсолютной (right/top −24 px,
+     240 px): на 375 она торчит за колонку и тянет страницу вбок. Здесь она
+     снова в потоке и маленькая — обложка, а не фон. */
+  #welcome .chronicle-start > img,
+  body.solo-shell #welcome .chronicle-start > img {
+    position: static !important; inset: auto !important;
+    width: 88px !important; height: 88px !important; opacity: .5 !important;
+    margin: 8px 0 0 !important; place-self: auto !important;
+  }
+  #welcome .chronicle-start > h2 { font-size: 28px; margin: 12px 0; }
+  #welcome .chronicle-start > p { margin: 0 0 16px; color: var(--muted); }
+  #welcome .home-start {
+    /* `margin-top: auto` кладёт главное действие к нижней кромке карточки:
+       каркас r235 ставит здесь своё правило без auto, и без !important
+       кнопка остаётся на 60 % экрана вместо нижней трети. */
+    margin-top: auto !important; display: flex; flex-direction: column; align-items: stretch; gap: 8px;
+  }
+  #welcome .home-primary { min-height: 52px; width: 100%; font-size: 16px; }
+  #welcome .home-link { justify-content: center; }
+  #welcome .home-continue { width: 100%; min-height: 56px; }
+
+  /* ── 7. Кубик: число читается с вытянутой руки ─────────────────────────── */
+  #tabletop-dice .dice-entry { font-size: 16px !important; line-height: 1.4; }
+  #tabletop-dice .dice-total {
+    display: inline-block; min-width: 2.2ch; text-align: center;
+    font-size: 36px; line-height: 1.05; font-weight: 700; color: var(--gold);
+    vertical-align: middle; margin: 0 4px;
+  }
+  #tabletop-dice .dice-formula { font-size: 14px !important; color: var(--muted); }
+  #tabletop-dice .dice-row { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+  #tabletop-dice :is(input, select, button) { min-height: 44px; }
+
+  /* ── 8. Подвал и служебные полосы ──────────────────────────────────────── */
+  body.solo-shell main > footer, body main > footer {
+    font-size: 14px !important; padding: 16px 20px; margin-top: 16px;
+  }
+  body.solo-shell .notice, body:not(.solo-shell) .notice {
+    font-size: 14px !important; line-height: 1.3; padding: 4px 12px;
+    letter-spacing: .02em; white-space: normal;
+  }
+  /* Шторка каркаса: ряды 44 px и зазор 8 px (4+4), вкладки — тоже. */
+  body.solo-shell #solo-drawer .drawer-tabs { gap: 8px; padding: 0 8px; }
+  body.solo-shell #solo-drawer .drawer-row {
+    width: auto !important; margin: 0 8px !important;
+    border-bottom: 0; border-radius: 2px; padding: 0 12px;
+  }
+  body.solo-shell #solo-drawer .drawer-row + .drawer-row { margin-top: 8px !important; }
+  body.solo-shell #solo-drawer details.drawer-group { width: auto !important; margin: 8px 8px 0 !important; border-bottom: 0; border-radius: 2px; }
+  body.solo-shell #solo-drawer details.drawer-group > summary { padding: 0 12px; }
+  body.solo-shell #solo-drawer details.drawer-group .drawer-row { margin: 4px 0 !important; padding-left: 32px; }
+  body.solo-shell #solo-drawer .drawer-section { width: auto !important; margin: 8px 8px 0 !important; border-bottom: 0; }
+
+  /* ── 9. Диалоги и широкие страницы ─────────────────────────────────────── */
+  body dialog {
+    width: calc(100vw - 24px) !important; max-width: calc(100vw - 24px);
+    max-height: calc(var(--vvh, 100dvh) - 48px); overflow-y: auto;
+    margin: auto; padding: 16px;
+  }
+  body :is(.creation-progress, .preparation-steps, .steps) { grid-template-columns: minmax(0, 1fr) !important; }
+
+  /* ── 10. Контраст в светлой теме ─────────────────────────────────────────
+     Золото #917242 на пергаменте #eee8db даёт 3.67:1, акцент #6b7754 —
+     3.92:1: ниже 4.5 для текста. Это тот же тон, но темнее, а не новый цвет. */
+  html[data-theme=parchment] :is(.eyebrow, .continue-go, .kicker, .continue-kicker,
+                                 .eyebrow .accent, .gold) {
+    color: #6f5730 !important;              /* 5.58:1 на #eee8db */
+  }
+  html[data-theme=parchment] :is(.nav-exit, .drawer-exit),
+  html[data-theme=parchment] :is(.nav-exit, .drawer-exit) :is(span, .nav-text, img) {
+    color: #5f6a4a !important;              /* 5.08:1 на #f6f0e5 */
+  }
+}

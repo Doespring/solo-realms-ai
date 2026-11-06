@@ -1,0 +1,27 @@
+{
+  "slug": "additional-fighting-style",
+  "name": "Additional Fighting Style",
+  "description": "Choose a second fighting style class feature from the following:\n\nArchery\n\nDefense\n\nDueling\n\nGreat Weapon Fighting\n\nProtection\n\nTwo Weapon Fighting\n\nThe choice must be different to the one made at level 1.\n\nYou can drag your choice from the above onto your character sheet and it will automatically update.",
+  "feature_type": "subclass_feature",
+  "foundry_id": "kYJsED0rqqqUcgKz",
+  "source_slug": "champion",
+  "activities": [],
+  "passive_effects": [],
+  "advancement": [],
+  "uses": null,
+  "provenance": {
+    "source": "foundry",
+    "source_url": "https://github.com/foundryvtt/dnd5e/blob/965ad2d0cf5d063dac675ba078b5bd3c3c0dd449/packs/_source/classfeatures/Additional_Fighting_Style_kYJsED0rqqqUcgKz.yml",
+    "ingest_date": "2026-10-26",
+    "ingest_version": "foundry-translator-v1",
+    "srd_version": [
+      "5.1"
+    ],
+    "license_tag": "CC-BY-4.0"
+  },
+  "review": {
+    "known_divergence": null,
+    "requires_user_decision": false
+  },
+  "entry_kind": "feature"
+}

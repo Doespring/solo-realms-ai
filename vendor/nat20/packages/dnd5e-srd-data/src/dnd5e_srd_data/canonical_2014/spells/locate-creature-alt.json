@@ -1,0 +1,139 @@
+{
+  "slug": "locate-creature-alt",
+  "foundry_uuid": "Compendium.dnd5e.laaru-hw-spells.Item.GavTTJjZ2Fza0SdO",
+  "name": "Поиск существа (альт.) / Locate Creature (alt.)",
+  "description": "Опишите или назовите определенный вид животных или растений. Это может быть конкретное существо, известное вам, или ближайшее существо (например, медведь, дуб или лошадь), при условии, что вы хотя бы раз видели такое существо в радиусе 30 футов.\n\nЕсли цель находится в радиусе 1 мили, реагент этого заклинания указывает на нее, как компас. Если цель находится в движении, он указывает на нее до тех пор, пока она остается в пределах досягаемости. Если существо находится в другой форме, например под действием заклинания полиморфа, это заклинание не определяет его местонахождение.\n\nЭто заклинание не может обнаружить цель, если толщина свинца или 10 футов проточной воды преграждают прямой путь к цели.\n\nНа высоких кругах. Когда вы творите это заклинание, используя ячейку заклинания 3-го круга или выше, дальность действия и тип существа, которое вы можете обнаружить, увеличиваются, как показано в таблице ниже:\n\nЯчейка\n\nДистанция\n\nТип существа\n\n3\n\n2 мили\n\nДракон, Великан, Гуманоид, Монстр, Жижа\n\n4\n\n3 мили\n\nАберрация, Конструкция, Нежить\n\n5\n\n3 мили\n\nНебожитель, Элементаль, Фея, Бестия",
+  "level": 2,
+  "school": "div",
+  "components": [
+    "M",
+    "S",
+    "V"
+  ],
+  "ritual": true,
+  "concentration": true,
+  "casting_time": {
+    "unit": "action",
+    "value": 1,
+    "condition": ""
+  },
+  "range": {
+    "units": "spec",
+    "value": null,
+    "special": null
+  },
+  "duration": {
+    "units": "hour",
+    "value": 1
+  },
+  "materials": {
+    "value": "магнит, погруженный в святую воду",
+    "consumed": false,
+    "cost": 0,
+    "supply": 0
+  },
+  "preparation": {
+    "mode": "prepared",
+    "prepared": false
+  },
+  "activities": [
+    {
+      "id": "dnd5eactivity000",
+      "name": "",
+      "img": "",
+      "sort": 0,
+      "activation": {
+        "type": "action",
+        "value": null,
+        "condition": "",
+        "override": false,
+        "reaction_conditions": []
+      },
+      "consumption": {
+        "scaling": {
+          "allowed": false,
+          "max": ""
+        },
+        "spell_slot": true,
+        "targets": []
+      },
+      "description": {
+        "chat_flavor": ""
+      },
+      "duration": {
+        "value": null,
+        "units": "inst",
+        "special": "",
+        "concentration": false,
+        "override": false
+      },
+      "flags": {},
+      "range": {
+        "value": null,
+        "units": "self",
+        "special": "",
+        "override": false
+      },
+      "target": {
+        "template": {
+          "count": "",
+          "contiguous": false,
+          "stationary": false,
+          "type": "",
+          "size": "",
+          "width": "",
+          "height": "",
+          "units": ""
+        },
+        "affects": {
+          "count": "",
+          "type": "",
+          "choice": false,
+          "special": ""
+        },
+        "override": false,
+        "prompt": true
+      },
+      "uses": {
+        "spent": 0,
+        "max": "",
+        "recovery": []
+      },
+      "visibility": {
+        "identifier": "",
+        "level": {
+          "min": null,
+          "max": null
+        },
+        "require_attunement": false,
+        "require_identification": false,
+        "require_magic": false
+      },
+      "effects": [],
+      "applied_effects": [],
+      "kind": "utility",
+      "roll": {
+        "formula": "",
+        "name": "",
+        "prompt": false,
+        "visible": false
+      }
+    }
+  ],
+  "passive_effects": [],
+  "provenance": {
+    "source": "foundry",
+    "source_url": "https://github.com/foundryvtt/dnd5e/blob/965ad2d0cf5d063dac675ba078b5bd3c3c0dd449/packs/_source/laaru-hw-spells/Поиск_существа__альт_____Locate_Creature__alt___GavTTJjZ2Fza0SdO.yml",
+    "ingest_date": "2026-10-26",
+    "ingest_version": "foundry-translator-v1",
+    "srd_version": [
+      "5.1"
+    ],
+    "license_tag": "CC-BY-4.0"
+  },
+  "review": {
+    "known_divergence": null,
+    "requires_user_decision": false
+  },
+  "entry_kind": "spell"
+}

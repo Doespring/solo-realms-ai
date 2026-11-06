@@ -1,0 +1,13 @@
+{
+  "id": "lantern-thank-you-letter",
+  "catalog": "",
+  "type": "gear",
+  "name": "Благодарственное письмо Лады",
+  "quantity": 1,
+  "weight_centilb": 0,
+  "value_cp": 0,
+  "properties": [],
+  "description": "Сюжетная награда за устранение опасности во дворе. Не даёт бонусов, валюты или новых механических действий.",
+  "owner": "npc:lada",
+  "source": "examples/lantern-post/scene.json#locations[0].description; подтверждается передачей после результата victory Nat20"
+}

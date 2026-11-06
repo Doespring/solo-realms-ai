@@ -1,0 +1,8 @@
+{
+  "message_type": "adjudication_response", "contract_version": "2.0.0", "request_id": "demo.phb.001", "state_version": 1,
+  "rules_family": "dnd2024", "ruleset_digest": "44bd6584c9777d693ccf233771a5310d316a3773ce31e675f7081db310dc536b",
+  "context_hash": "499ec453041f1ea56a4893f72590c1efbb9a5304ce073ec752ef7f71022853b9",
+  "status": "needs_clarification", "choice_ids": [], "proposals": [], "fact_ids": ["wish_text"], "rule_ids": ["dnd2024.phb.wish.interpretation"],
+  "rationale": "The affected entities and meaning of happiness are unspecified; no mechanical effect is authorized.",
+  "uncertainties": ["Who is everyone?", "What concrete outcome is intended?"]
+}

@@ -1,0 +1,395 @@
+{
+  "schema_version": "1.0.0",
+  "source": "phb_2024_ru",
+  "cases": [
+    {
+      "id": "floor_odd",
+      "op": "scale_integer",
+      "arguments": {
+        "value": 23,
+        "numerator": 1,
+        "denominator": 2,
+        "rounding": "floor"
+      },
+      "expected": 11
+    },
+    {
+      "id": "floor_negative",
+      "op": "scale_integer",
+      "arguments": {
+        "value": -3,
+        "numerator": 1,
+        "denominator": 2,
+        "rounding": "floor"
+      },
+      "expected": -2
+    },
+    {
+      "id": "ceil_negative",
+      "op": "scale_integer",
+      "arguments": {
+        "value": -3,
+        "numerator": 1,
+        "denominator": 2,
+        "rounding": "ceil"
+      },
+      "expected": -1
+    },
+    {
+      "id": "ceil_d3",
+      "op": "scale_integer",
+      "arguments": {
+        "value": 5,
+        "numerator": 1,
+        "denominator": 2,
+        "rounding": "ceil"
+      },
+      "expected": 3
+    },
+    {
+      "id": "exact",
+      "op": "scale_integer",
+      "arguments": {
+        "value": 18,
+        "numerator": 1,
+        "denominator": 2,
+        "rounding": "floor"
+      },
+      "expected": 9
+    },
+    {
+      "id": "multiply",
+      "op": "scale_integer",
+      "arguments": {
+        "value": 11,
+        "numerator": 2,
+        "denominator": 1,
+        "rounding": "floor"
+      },
+      "expected": 22
+    },
+    {
+      "id": "zero",
+      "op": "scale_integer",
+      "arguments": {
+        "value": 0,
+        "numerator": 1,
+        "denominator": 2,
+        "rounding": "floor"
+      },
+      "expected": 0
+    },
+    {
+      "id": "no_float_loss",
+      "op": "scale_integer",
+      "arguments": {
+        "value": 999999999,
+        "numerator": 999999,
+        "denominator": 1000000,
+        "rounding": "floor"
+      },
+      "expected": 999998999
+    },
+    {
+      "id": "zero_divisor",
+      "op": "scale_integer",
+      "arguments": {
+        "value": 5,
+        "numerator": 1,
+        "denominator": 0
+      },
+      "reject": true
+    },
+    {
+      "id": "float_value",
+      "op": "scale_integer",
+      "arguments": {
+        "value": 1.5,
+        "numerator": 1,
+        "denominator": 2
+      },
+      "reject": true
+    },
+    {
+      "id": "bool_value",
+      "op": "scale_integer",
+      "arguments": {
+        "value": true,
+        "numerator": 1,
+        "denominator": 2
+      },
+      "reject": true
+    },
+    {
+      "id": "negative_multiplier",
+      "op": "scale_integer",
+      "arguments": {
+        "value": 5,
+        "numerator": -1,
+        "denominator": 2
+      },
+      "reject": true
+    },
+    {
+      "id": "unknown_rounding",
+      "op": "scale_integer",
+      "arguments": {
+        "value": 5,
+        "numerator": 1,
+        "denominator": 2,
+        "rounding": "nearest"
+      },
+      "reject": true
+    },
+    {
+      "id": "percentile_00",
+      "op": "percentile",
+      "arguments": {
+        "tens": 0,
+        "units": 0
+      },
+      "expected": 100
+    },
+    {
+      "id": "percentile_71",
+      "op": "percentile",
+      "arguments": {
+        "tens": 7,
+        "units": 1
+      },
+      "expected": 71
+    },
+    {
+      "id": "percentile_09",
+      "op": "percentile",
+      "arguments": {
+        "tens": 0,
+        "units": 9
+      },
+      "expected": 9
+    },
+    {
+      "id": "percentile_90",
+      "op": "percentile",
+      "arguments": {
+        "tens": 9,
+        "units": 0
+      },
+      "expected": 90
+    },
+    {
+      "id": "percentile_99",
+      "op": "percentile",
+      "arguments": {
+        "tens": 9,
+        "units": 9
+      },
+      "expected": 99
+    },
+    {
+      "id": "digit_ten",
+      "op": "percentile",
+      "arguments": {
+        "tens": 10,
+        "units": 0
+      },
+      "reject": true
+    },
+    {
+      "id": "bool_digit",
+      "op": "percentile",
+      "arguments": {
+        "tens": false,
+        "units": 1
+      },
+      "reject": true
+    },
+    {
+      "id": "chance_1_5",
+      "op": "percentage_event",
+      "arguments": {
+        "draw": 1,
+        "chance": 5
+      },
+      "expected": true
+    },
+    {
+      "id": "chance_5_5",
+      "op": "percentage_event",
+      "arguments": {
+        "draw": 5,
+        "chance": 5
+      },
+      "expected": true
+    },
+    {
+      "id": "chance_6_5",
+      "op": "percentage_event",
+      "arguments": {
+        "draw": 6,
+        "chance": 5
+      },
+      "expected": false
+    },
+    {
+      "id": "chance_1_0",
+      "op": "percentage_event",
+      "arguments": {
+        "draw": 1,
+        "chance": 0
+      },
+      "expected": false
+    },
+    {
+      "id": "chance_100_100",
+      "op": "percentage_event",
+      "arguments": {
+        "draw": 100,
+        "chance": 100
+      },
+      "expected": true
+    },
+    {
+      "id": "chance_100_99",
+      "op": "percentage_event",
+      "arguments": {
+        "draw": 100,
+        "chance": 99
+      },
+      "expected": false
+    },
+    {
+      "id": "percentile_draw_zero",
+      "op": "percentage_event",
+      "arguments": {
+        "draw": 0,
+        "chance": 5
+      },
+      "reject": true
+    },
+    {
+      "id": "chance_over_100",
+      "op": "percentage_event",
+      "arguments": {
+        "draw": 1,
+        "chance": 101
+      },
+      "reject": true
+    },
+    {
+      "id": "replace_first",
+      "op": "replace_draw",
+      "arguments": {
+        "draws": [
+          3,
+          18
+        ],
+        "index": 0,
+        "replacement": 7,
+        "sides": 20
+      },
+      "expected": [
+        7,
+        18
+      ]
+    },
+    {
+      "id": "replacement_must_be_used",
+      "op": "replace_draw",
+      "arguments": {
+        "draws": [
+          3,
+          18
+        ],
+        "index": 1,
+        "replacement": 2,
+        "sides": 20
+      },
+      "expected": [
+        3,
+        2
+      ]
+    },
+    {
+      "id": "wrong_index",
+      "op": "replace_draw",
+      "arguments": {
+        "draws": [
+          3,
+          18
+        ],
+        "index": 2,
+        "replacement": 7,
+        "sides": 20
+      },
+      "reject": true
+    },
+    {
+      "id": "negative_index",
+      "op": "replace_draw",
+      "arguments": {
+        "draws": [
+          3,
+          18
+        ],
+        "index": -1,
+        "replacement": 7,
+        "sides": 20
+      },
+      "reject": true
+    },
+    {
+      "id": "bad_draw",
+      "op": "replace_draw",
+      "arguments": {
+        "draws": [
+          true,
+          18
+        ],
+        "index": 0,
+        "replacement": 7,
+        "sides": 20
+      },
+      "reject": true
+    },
+    {
+      "id": "bad_replacement",
+      "op": "replace_draw",
+      "arguments": {
+        "draws": [
+          3,
+          18
+        ],
+        "index": 0,
+        "replacement": 21,
+        "sides": 20
+      },
+      "reject": true
+    },
+    {
+      "id": "bad_sides",
+      "op": "replace_draw",
+      "arguments": {
+        "draws": [
+          3,
+          18
+        ],
+        "index": 0,
+        "replacement": 7,
+        "sides": true
+      },
+      "reject": true
+    },
+    {
+      "id": "empty_pool",
+      "op": "replace_draw",
+      "arguments": {
+        "draws": [],
+        "index": 0,
+        "replacement": 7,
+        "sides": 20
+      },
+      "reject": true
+    }
+  ]
+}

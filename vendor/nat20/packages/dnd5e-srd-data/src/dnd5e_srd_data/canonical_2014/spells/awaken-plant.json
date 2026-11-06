@@ -1,0 +1,256 @@
+{
+  "slug": "awaken-plant",
+  "foundry_uuid": "Compendium.dnd5e.laaru-hw-spells.Item.O7XNdz0iH7iC3OtE",
+  "name": "Пробуждение растения / Awaken Plant",
+  "description": "Вы пропитываете магией растение размером Маленькое или меньше, которое видите, оживляя его под своим контролем. На протяжении длительности, или пока оно не уничтожено, это оживлённое растение использует правила ниже:\n\nПараметры. Оживлённое растение использует блок параметров пробуждённого растения. Оно использует ваш СЛ заклинания, круг ячейки, потраченной на это заклинание (Ячейка заклинания), ваш модификатор атаки заклинанием и бонус умения (БУ) в нескольких местах. Растение уничтожается при 0 ПЗ.\n\nЕсли ваша концентрация прерывается до конца заклинания, растение возвращается в исходное состояние, укореняясь в своём пространстве.\n\nКонтроль. Оживлённое растение следует вашим приказам наилучшим образом. Если ему не даётся приказ, оно остаётся в своём пространстве и действует только для самозащиты. В бою оно делит с вами инициативу и действует в ваш ход.\n\nПока растение находится в пределах 60 футов от вас, вы можете использовать дополнительное действие, чтобы мысленно отдать ему приказ. Вы определяете, как оно будет действовать, или можете задать общий план действий (\"защищай то дерево\"). Это растение следует вашим приказам, пока они не выполнены или оно не будет уничтожено.\n\nНа высоких кругах. Когда вы сотворяете это заклинание с ячейкой более высокого круга, вы можете оживлять более крупные растения, как показано в таблице ниже. Кости урона для его крушащего удара также увеличиваются:\n\nЯчейка заклинания\n\nРазмер\n\nУрон\n\n3\n\nСредний\n\n2d6\n\n4\n\nКрупное\n\n2d10\n\n5\n\nОгромное\n\n2d12",
+  "level": 2,
+  "school": "trs",
+  "components": [
+    "S",
+    "V"
+  ],
+  "ritual": false,
+  "concentration": true,
+  "casting_time": {
+    "unit": "action",
+    "value": 1,
+    "condition": ""
+  },
+  "range": {
+    "units": "ft",
+    "value": 30,
+    "special": null
+  },
+  "duration": {
+    "units": "hour",
+    "value": 1
+  },
+  "materials": {
+    "value": "",
+    "consumed": false,
+    "cost": 0,
+    "supply": 0
+  },
+  "preparation": {
+    "mode": "prepared",
+    "prepared": false
+  },
+  "activities": [
+    {
+      "id": "dnd5eactivity000",
+      "name": "",
+      "img": "",
+      "sort": 0,
+      "activation": {
+        "type": "action",
+        "value": null,
+        "condition": "",
+        "override": false,
+        "reaction_conditions": []
+      },
+      "consumption": {
+        "scaling": {
+          "allowed": false,
+          "max": ""
+        },
+        "spell_slot": true,
+        "targets": []
+      },
+      "description": {
+        "chat_flavor": ""
+      },
+      "duration": {
+        "value": null,
+        "units": "inst",
+        "special": "",
+        "concentration": false,
+        "override": false
+      },
+      "flags": {},
+      "range": {
+        "value": null,
+        "units": "self",
+        "special": "",
+        "override": false
+      },
+      "target": {
+        "template": {
+          "count": "",
+          "contiguous": false,
+          "stationary": false,
+          "type": "",
+          "size": "",
+          "width": "",
+          "height": "",
+          "units": ""
+        },
+        "affects": {
+          "count": "",
+          "type": "",
+          "choice": false,
+          "special": ""
+        },
+        "override": false,
+        "prompt": true
+      },
+      "uses": {
+        "spent": 0,
+        "max": "",
+        "recovery": []
+      },
+      "visibility": {
+        "identifier": "",
+        "level": {
+          "min": null,
+          "max": null
+        },
+        "require_attunement": false,
+        "require_identification": false,
+        "require_magic": false
+      },
+      "effects": [],
+      "applied_effects": [],
+      "kind": "utility",
+      "roll": {
+        "formula": "",
+        "name": "",
+        "prompt": false,
+        "visible": false
+      }
+    },
+    {
+      "id": "gIA0Zhe1qjN97I0h",
+      "name": "Призыв",
+      "img": "",
+      "sort": 0,
+      "activation": {
+        "type": "action",
+        "value": null,
+        "condition": "",
+        "override": false,
+        "reaction_conditions": []
+      },
+      "consumption": {
+        "scaling": {
+          "allowed": false,
+          "max": ""
+        },
+        "spell_slot": true,
+        "targets": []
+      },
+      "description": {
+        "chat_flavor": ""
+      },
+      "duration": {
+        "value": null,
+        "units": "inst",
+        "special": "",
+        "concentration": false,
+        "override": false
+      },
+      "flags": {},
+      "range": {
+        "value": null,
+        "units": "self",
+        "special": "",
+        "override": false
+      },
+      "target": {
+        "template": {
+          "count": "",
+          "contiguous": false,
+          "stationary": false,
+          "type": "",
+          "size": "",
+          "width": "",
+          "height": "",
+          "units": ""
+        },
+        "affects": {
+          "count": "",
+          "type": "",
+          "choice": false,
+          "special": ""
+        },
+        "override": false,
+        "prompt": true
+      },
+      "uses": {
+        "spent": 0,
+        "max": "",
+        "recovery": []
+      },
+      "visibility": {
+        "identifier": "",
+        "level": {
+          "min": null,
+          "max": null
+        },
+        "require_attunement": false,
+        "require_identification": false,
+        "require_magic": false
+      },
+      "effects": [],
+      "applied_effects": [],
+      "kind": "summon",
+      "bonuses": {
+        "ac": "@attributes.spell.mod + @prof",
+        "hd": "",
+        "hp": "20 * @item.level",
+        "attack_damage": "@prof",
+        "save_damage": "",
+        "healing": ""
+      },
+      "creature_sizes": [
+        "sm",
+        "med",
+        "lg",
+        "huge"
+      ],
+      "creature_types": [],
+      "match": {
+        "ability": "",
+        "attacks": true,
+        "disposition": false,
+        "proficiency": false,
+        "saves": true
+      },
+      "profiles": [
+        {
+          "id": "e0DTtvj73XURn6RM",
+          "count": "",
+          "cr": "",
+          "level": {
+            "min": null,
+            "max": null
+          },
+          "name": "",
+          "types": [],
+          "uuid": "Compendium.laaru-dnd5-hw.monsters2.Actor.GmYVRTuf0nmmfXTs"
+        }
+      ],
+      "summon": {
+        "mode": "",
+        "prompt": true,
+        "identifier": null
+      },
+      "temp_hp": ""
+    }
+  ],
+  "passive_effects": [],
+  "provenance": {
+    "source": "foundry",
+    "source_url": "https://github.com/foundryvtt/dnd5e/blob/965ad2d0cf5d063dac675ba078b5bd3c3c0dd449/packs/_source/laaru-hw-spells/Пробуждение_растения___Awaken_Plant_O7XNdz0iH7iC3OtE.yml",
+    "ingest_date": "2026-10-26",
+    "ingest_version": "foundry-translator-v1",
+    "srd_version": [
+      "5.1"
+    ],
+    "license_tag": "CC-BY-4.0"
+  },
+  "review": {
+    "known_divergence": null,
+    "requires_user_decision": false
+  },
+  "entry_kind": "spell"
+}

@@ -1,0 +1,94 @@
+{
+  "schema_version": "1.0.0",
+  "packages": {
+    "pyyaml": {
+      "version": "6.0.3",
+      "file": "pyyaml-6.0.3-cp312-cp312-win_amd64.whl",
+      "sha256": "5fcd34e47f6e0b794d17de1b4ff496c00986e1c83f7ab2fb8fcfe9616ff7477b",
+      "source": "https://files.pythonhosted.org/packages/86/bf/899e81e4cce32febab4fb42bb97dcdf66bc135272882d1987881a4b519e9/pyyaml-6.0.3-cp312-cp312-win_amd64.whl"
+    },
+    "cachetools": {
+      "version": "7.2.2",
+      "file": "cachetools-7.2.2-py3-none-any.whl",
+      "sha256": "39b6c9291adde28c5de6622d25329375fadf3e8a678226e7872e2e72854e4549",
+      "source": "https://files.pythonhosted.org/packages/eb/d1/15cc3b3c07cfe11bf6fbe81a4a92ebb9d202d7d903aaa36b713c8f6eabda/cachetools-7.2.2-py3-none-any.whl"
+    },
+    "cramjam": {
+      "version": "2.14.0",
+      "file": "cramjam-2.14.0-cp312-cp312-win_amd64.whl",
+      "sha256": "e4d4de4904712bb15f6b726bbe92a8e62b340c6df832c9f310b8d66c0baa8220",
+      "source": "https://files.pythonhosted.org/packages/07/e6/b6ffdddc2a72812996238c063dae79d545c0e84f3e9c2463f2a00ce8834a/cramjam-2.14.0-cp312-cp312-win_amd64.whl"
+    },
+    "d20": {
+      "version": "1.1.2",
+      "file": "d20-1.1.2-py3-none-any.whl",
+      "sha256": "1195bfc643aa4bd984bf6d26327491795272bfab8b19ac15108b4352a9de3166",
+      "source": "https://files.pythonhosted.org/packages/52/ec/67f5010bd5965099bb983de6922a4b215806859d85bedf505ff655ee3056/d20-1.1.2-py3-none-any.whl"
+    },
+    "dfindexeddb": {
+      "version": "20260210",
+      "file": "dfindexeddb-20260210-py3-none-any.whl",
+      "sha256": "c037eb764b8bc437e2052d9d54952de1ef97aec4c81d5676b490a2901fdf4290",
+      "source": "https://files.pythonhosted.org/packages/c8/10/2912124299c87e7184bcee47f3895d23d11571b877e3dface338f510bb8b/dfindexeddb-20260210-py3-none-any.whl"
+    },
+    "hatchling": {
+      "version": "1.27.0",
+      "file": "hatchling-1.27.0-py3-none-any.whl",
+      "sha256": "d3a2f3567c4f926ea39849cdf924c7e99e6686c9c8e288ae1037c8fa2a5d937b",
+      "source": "https://files.pythonhosted.org/packages/08/e7/ae38d7a6dfba0533684e0b2136817d667588ae3ec984c1a4e5df5eb88482/hatchling-1.27.0-py3-none-any.whl"
+    },
+    "lark-parser": {
+      "version": "0.9.0",
+      "file": "lark-parser-0.9.0.tar.gz",
+      "sha256": "9e7589365d6b6de1cca40b0eaec31104a3fb96a37a11a9dfd5098e95b50aa6cd",
+      "source": "https://files.pythonhosted.org/packages/8e/ac/c873c508dc2955da6eb85f0425e991a022cf2a4e53933ac057603d0cf890/lark-parser-0.9.0.tar.gz"
+    },
+    "pathspec": {
+      "version": "1.1.1",
+      "file": "pathspec-1.1.1-py3-none-any.whl",
+      "sha256": "a00ce642f577bf7f473932318056212bc4f8bfdf53128c78bbd5af0b9b20b189",
+      "source": "https://files.pythonhosted.org/packages/f1/d9/7fb5aa316bc299258e68c73ba3bddbc499654a07f151cba08f6153988714/pathspec-1.1.1-py3-none-any.whl"
+    },
+    "python-snappy": {
+      "version": "0.7.3",
+      "file": "python_snappy-0.7.3-py3-none-any.whl",
+      "sha256": "074c0636cfcd97e7251330f428064050ac81a52c62ed884fc2ddebbb60ed7f50",
+      "source": "https://files.pythonhosted.org/packages/86/c1/0ee413ddd639aebf22c85d6db39f136ccc10e6a4b4dd275a92b5c839de8d/python_snappy-0.7.3-py3-none-any.whl"
+    },
+    "setuptools": {
+      "version": "80.9.0",
+      "file": "setuptools-80.9.0-py3-none-any.whl",
+      "sha256": "062d34222ad13e0cc312a4c02d73f059e86a4acbfbdea8f8f76b28c99f306922",
+      "source": "https://files.pythonhosted.org/packages/a3/dc/17031897dae0efacfea57dfd3a82fdd2a2aeb58e0ff71b77b87e44edc772/setuptools-80.9.0-py3-none-any.whl"
+    },
+    "trove-classifiers": {
+      "version": "2026.9.21.13",
+      "file": "trove_classifiers-2026.9.21.13-py3-none-any.whl",
+      "sha256": "8b1ff4f9c191b1040b71c37f1e445ab99732911e3cd91de52838453a854d7a17",
+      "source": "https://files.pythonhosted.org/packages/30/81/0da8afb52a71d0a4f2bd3152357b1a441e393b286374802b9d3addab4ab5/trove_classifiers-2026.9.21.13-py3-none-any.whl"
+    },
+    "wheel": {
+      "version": "0.45.1",
+      "file": "wheel-0.45.1-py3-none-any.whl",
+      "sha256": "708e7481cc80179af0e556bbf0cc00b8444c7321e2700b8d8580231d13017248",
+      "source": "https://files.pythonhosted.org/packages/0b/2c/87f3254fd8ffd29e4c02732eee68a83a1d3c346ae39bc6822dcbcb697f2b/wheel-0.45.1-py3-none-any.whl"
+    },
+    "zstd": {
+      "version": "1.5.7.2",
+      "file": "zstd-1.5.7.2-cp312-cp312-win_amd64.whl",
+      "sha256": "55e2edc4560a5cf8ee9908595e90a15b1f47536ea9aad4b2889f0e6165890a38",
+      "source": "https://files.pythonhosted.org/packages/3e/c7/c182ea7bc283f591e3f3c5f0f239e7a92c9bc1f626642ae2c4dfbe51d6f2/zstd-1.5.7.2-cp312-cp312-win_amd64.whl"
+    }
+  },
+  "existing_packages": {
+    "d20": "1.1.2",
+    "lark-parser": "0.9.0",
+    "hatchling": "1.27.0",
+    "setuptools": "80.9.0",
+    "wheel": "0.45.1",
+    "dfindexeddb": "20260210",
+    "python-snappy": "0.7.3",
+    "zstd": "1.5.7.2"
+  },
+  "reader_dependency_override": "dfindexeddb snappy 0.6.1 -> 0.7.3, zstd 1.5.5.1 -> 1.5.7.2; compatible decompress APIs; no engine dependency override"
+}

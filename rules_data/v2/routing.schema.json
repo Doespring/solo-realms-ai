@@ -1,0 +1,1152 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:solo-realms-ai:routing:2.1.0",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "rules"
+  ],
+  "properties": {
+    "schema_version": {
+      "enum": [
+        "2.0.0",
+        "2.1.0"
+      ]
+    },
+    "rules": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/rule"
+      }
+    }
+  },
+  "$defs": {
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z][a-z0-9_.]*$",
+      "maxLength": 160
+    },
+    "text": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 2500
+    },
+    "value": {
+      "oneOf": [
+        {
+          "type": [
+            "string",
+            "number",
+            "boolean",
+            "null"
+          ]
+        },
+        {
+          "type": "array",
+          "items": {
+            "type": [
+              "string",
+              "number",
+              "boolean",
+              "null"
+            ]
+          }
+        }
+      ]
+    },
+    "classification": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "mode",
+        "semantic_required",
+        "formal_required",
+        "reason"
+      ],
+      "properties": {
+        "mode": {
+          "enum": [
+            "deterministic",
+            "adjudicated",
+            "hybrid"
+          ]
+        },
+        "semantic_required": {
+          "type": "boolean"
+        },
+        "formal_required": {
+          "type": "boolean"
+        },
+        "reason": {
+          "$ref": "#/$defs/text"
+        }
+      },
+      "oneOf": [
+        {
+          "properties": {
+            "mode": {
+              "const": "deterministic"
+            },
+            "semantic_required": {
+              "const": false
+            },
+            "formal_required": {
+              "const": true
+            }
+          }
+        },
+        {
+          "properties": {
+            "mode": {
+              "const": "adjudicated"
+            },
+            "semantic_required": {
+              "const": true
+            },
+            "formal_required": {
+              "const": false
+            }
+          }
+        },
+        {
+          "properties": {
+            "mode": {
+              "const": "hybrid"
+            },
+            "semantic_required": {
+              "const": true
+            },
+            "formal_required": {
+              "const": true
+            }
+          }
+        }
+      ]
+    },
+    "source": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "document_id",
+        "sha256",
+        "publication_year",
+        "pdf_page",
+        "printed_page",
+        "section"
+      ],
+      "properties": {
+        "document_id": {
+          "enum": [
+            "phb_2024_ru",
+            "dmg_2024_ru_v1_1",
+            "mm_2025_ru_v1_1"
+          ]
+        },
+        "sha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "publication_year": {
+          "enum": [
+            2024,
+            2025
+          ]
+        },
+        "pdf_page": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "printed_page": {
+          "type": "string",
+          "minLength": 1
+        },
+        "section": {
+          "$ref": "#/$defs/text"
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "document_id": {
+                "const": "phb_2024_ru"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "publication_year": {
+                "const": 2024
+              },
+              "pdf_page": {
+                "maximum": 388
+              },
+              "sha256": {
+                "const": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "document_id": {
+                "const": "dmg_2024_ru_v1_1"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "publication_year": {
+                "const": 2024
+              },
+              "pdf_page": {
+                "maximum": 342
+              },
+              "sha256": {
+                "const": "2fdee6ad8dd6931eaf41b19cdf498d6d86ddca6e54ad9b9c8a5417585c1c526d"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "document_id": {
+                "const": "mm_2025_ru_v1_1"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "publication_year": {
+                "const": 2025
+              },
+              "pdf_page": {
+                "maximum": 386
+              },
+              "sha256": {
+                "const": "28e9491b39b3df24b255f62973f95e83abd0395e4ac3d2d10d7163ead47146ca"
+              }
+            }
+          }
+        }
+      ]
+    },
+    "operation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "op",
+        "inputs",
+        "constants"
+      ],
+      "properties": {
+        "op": {
+          "enum": [
+            "select_d20",
+            "ability_modifier",
+            "sum_dice",
+            "compare_threshold",
+            "group_success",
+            "bounded_value",
+            "lookup_dc",
+            "resource_change",
+            "delegate_registered_spell",
+            "registered_bonus_action",
+            "wish_stress",
+            "scale_integer",
+            "percentile",
+            "percentage_event",
+            "replace_draw",
+            "registered_procedure"
+          ]
+        },
+        "inputs": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "$ref": "#/$defs/id"
+          }
+        },
+        "constants": {
+          "type": "object",
+          "additionalProperties": {
+            "$ref": "#/$defs/value"
+          }
+        }
+      }
+    },
+    "rule": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "rules_family",
+        "name",
+        "kind",
+        "classification",
+        "conditions",
+        "triggers",
+        "formal_operations",
+        "semantic_questions",
+        "facts",
+        "constraints",
+        "exceptions",
+        "duration",
+        "resources",
+        "source",
+        "verification",
+        "implementation",
+        "auto_activate"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^dnd2024\\.[a-z0-9_.]+$"
+        },
+        "rules_family": {
+          "const": "dnd2024"
+        },
+        "name": {
+          "$ref": "#/$defs/text"
+        },
+        "kind": {
+          "enum": [
+            "procedure",
+            "spell_branch",
+            "monster_stats",
+            "monster_ability",
+            "guidance"
+          ]
+        },
+        "classification": {
+          "$ref": "#/$defs/classification"
+        },
+        "conditions": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "fact",
+              "operator",
+              "value"
+            ],
+            "properties": {
+              "fact": {
+                "$ref": "#/$defs/id"
+              },
+              "operator": {
+                "enum": [
+                  "eq",
+                  "gte",
+                  "lte",
+                  "in"
+                ]
+              },
+              "value": {
+                "$ref": "#/$defs/value"
+              }
+            }
+          }
+        },
+        "triggers": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "$ref": "#/$defs/id"
+          }
+        },
+        "formal_operations": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/operation"
+          }
+        },
+        "semantic_questions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/text"
+          }
+        },
+        "facts": {
+          "type": "object",
+          "propertyNames": {
+            "$ref": "#/$defs/id"
+          },
+          "additionalProperties": {
+            "$ref": "#/$defs/value"
+          }
+        },
+        "constraints": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/text"
+          }
+        },
+        "exceptions": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "when",
+              "consequence"
+            ],
+            "properties": {
+              "when": {
+                "$ref": "#/$defs/text"
+              },
+              "consequence": {
+                "$ref": "#/$defs/text"
+              }
+            }
+          }
+        },
+        "duration": {
+          "enum": [
+            "instantaneous",
+            "per_test",
+            "per_action",
+            "source_dependent",
+            "persistent_guidance",
+            "not_applicable"
+          ]
+        },
+        "resources": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "id",
+              "handling"
+            ],
+            "properties": {
+              "id": {
+                "$ref": "#/$defs/id"
+              },
+              "handling": {
+                "enum": [
+                  "registered_engine_only",
+                  "dependency_not_extracted"
+                ]
+              }
+            }
+          }
+        },
+        "source": {
+          "$ref": "#/$defs/source"
+        },
+        "verification": {
+          "enum": [
+            "source_checked_human_pending",
+            "text_checked_human_pending",
+            "translation_ambiguity"
+          ]
+        },
+        "implementation": {
+          "enum": [
+            "existing_engine_subset",
+            "kernel_only_unexecuted",
+            "not_implemented",
+            "kernel_verified"
+          ]
+        },
+        "auto_activate": {
+          "const": false
+        },
+        "dependencies": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "$ref": "#/$defs/id"
+          }
+        },
+        "behavior_tests": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "$ref": "#/$defs/text"
+          }
+        },
+        "readiness": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "status",
+            "handler",
+            "scope",
+            "blockers"
+          ],
+          "properties": {
+            "status": {
+              "enum": [
+                "adapter_verified",
+                "kernel_verified",
+                "engine_subset_verified",
+                "adjudication_required",
+                "blocked"
+              ]
+            },
+            "handler": {
+              "enum": [
+                null,
+                "CombatEngine.assert_action",
+                "CombatEngine.attack",
+                "CombatEngine.bonus",
+                "CombatEngine.damage",
+                "CombatEngine.death_save",
+                "CombatEngine.defend",
+                "CombatEngine.end_turn",
+                "CombatEngine.interact",
+                "CombatEngine.move",
+                "CombatEngine.search",
+                "Geometry.cover",
+                "Geometry.edge_cost",
+                "Geometry.illumination",
+                "Hero.scores",
+                "RulesetEngine.check",
+                "RulesetEngine.d20",
+                "RulesetEngine.initiative",
+                "RulesetEngine.proficiency",
+                "RulesetEngine.rest",
+                "RulesetEngine.saving_throw",
+                "RulesetEngine.skill",
+                "math.percentage_event",
+                "math.percentile",
+                "math.replace_draw",
+                "math.resource_change",
+                "math.scale_integer",
+                "math.sum_dice"
+              ]
+            },
+            "scope": {
+              "$ref": "#/$defs/text"
+            },
+            "blockers": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/text"
+              }
+            }
+          }
+        },
+        "revision": {
+          "type": "integer",
+          "minimum": 1
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "classification": {
+                "properties": {
+                  "formal_required": {
+                    "const": true
+                  }
+                }
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "formal_operations": {
+                "minItems": 1
+              }
+            }
+          },
+          "else": {
+            "properties": {
+              "formal_operations": {
+                "maxItems": 0
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "classification": {
+                "properties": {
+                  "semantic_required": {
+                    "const": true
+                  }
+                }
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "semantic_questions": {
+                "minItems": 1
+              }
+            }
+          },
+          "else": {
+            "properties": {
+              "semantic_questions": {
+                "maxItems": 0
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "id": {
+                "const": "dnd2024.phb01.rounding"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "facts": {
+                "required": [
+                  "rounding"
+                ],
+                "properties": {
+                  "rounding": {
+                    "enum": [
+                      "floor",
+                      "ceil"
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "id": {
+                "const": "dnd2024.phb01.dice_sum"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "facts": {
+                "required": [
+                  "sides",
+                  "example_draw_count",
+                  "example_sides",
+                  "example_modifier"
+                ],
+                "properties": {
+                  "sides": {
+                    "type": "array",
+                    "minItems": 1,
+                    "items": {
+                      "type": "integer",
+                      "minimum": 2
+                    }
+                  },
+                  "example_draw_count": {
+                    "type": "integer",
+                    "minimum": 1
+                  },
+                  "example_sides": {
+                    "type": "integer",
+                    "minimum": 2
+                  },
+                  "example_modifier": {
+                    "type": "integer"
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "id": {
+                "const": "dnd2024.phb01.percentile"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "facts": {
+                "required": [
+                  "digit_min",
+                  "digit_max",
+                  "double_zero"
+                ],
+                "properties": {
+                  "digit_min": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 0
+                  },
+                  "digit_max": {
+                    "type": "integer",
+                    "minimum": 9,
+                    "maximum": 9
+                  },
+                  "double_zero": {
+                    "type": "integer",
+                    "minimum": 100,
+                    "maximum": 100
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "id": {
+                "const": "dnd2024.phb01.d3"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "facts": {
+                "required": [
+                  "numerator",
+                  "denominator",
+                  "rounding",
+                  "die"
+                ],
+                "properties": {
+                  "numerator": {
+                    "type": "integer",
+                    "minimum": 0
+                  },
+                  "denominator": {
+                    "type": "integer",
+                    "minimum": 1
+                  },
+                  "rounding": {
+                    "enum": [
+                      "floor",
+                      "ceil"
+                    ]
+                  },
+                  "die": {
+                    "type": "integer",
+                    "minimum": 6,
+                    "maximum": 6
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "id": {
+                "const": "dnd2024.phb01.half_damage"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "facts": {
+                "required": [
+                  "numerator",
+                  "denominator",
+                  "rounding"
+                ],
+                "properties": {
+                  "numerator": {
+                    "type": "integer",
+                    "minimum": 0
+                  },
+                  "denominator": {
+                    "type": "integer",
+                    "minimum": 1
+                  },
+                  "rounding": {
+                    "enum": [
+                      "floor",
+                      "ceil"
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "id": {
+                "const": "dnd2024.phb01.percentage_chance"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "facts": {
+                "required": [
+                  "die",
+                  "comparison"
+                ],
+                "properties": {
+                  "die": {
+                    "type": "integer",
+                    "minimum": 100,
+                    "maximum": 100
+                  },
+                  "comparison": {
+                    "enum": [
+                      "draw_lte_chance"
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "id": {
+                "const": "dnd2024.phb01.ability_modifier"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "facts": {
+                "required": [
+                  "min_score",
+                  "max_score",
+                  "offset",
+                  "divisor",
+                  "rounding"
+                ],
+                "properties": {
+                  "min_score": {
+                    "type": "integer",
+                    "minimum": 1,
+                    "maximum": 30
+                  },
+                  "max_score": {
+                    "type": "integer",
+                    "minimum": 1,
+                    "maximum": 30
+                  },
+                  "offset": {
+                    "type": "integer"
+                  },
+                  "divisor": {
+                    "type": "integer",
+                    "minimum": 1
+                  },
+                  "rounding": {
+                    "enum": [
+                      "floor"
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "id": {
+                "const": "dnd2024.phb01.ability_check"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "facts": {
+                "required": [
+                  "die",
+                  "comparison"
+                ],
+                "properties": {
+                  "die": {
+                    "type": "integer",
+                    "minimum": 20,
+                    "maximum": 20
+                  },
+                  "comparison": {
+                    "enum": [
+                      "total_gte_dc"
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "id": {
+                "const": "dnd2024.phb01.saving_throw"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "facts": {
+                "required": [
+                  "die",
+                  "comparison"
+                ],
+                "properties": {
+                  "die": {
+                    "type": "integer",
+                    "minimum": 20,
+                    "maximum": 20
+                  },
+                  "comparison": {
+                    "enum": [
+                      "total_gte_dc"
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "id": {
+                "const": "dnd2024.phb01.proficiency"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "facts": {
+                "required": [
+                  "upper_bounds",
+                  "bonuses",
+                  "production_scope"
+                ],
+                "properties": {
+                  "upper_bounds": {
+                    "type": "array",
+                    "minItems": 8,
+                    "maxItems": 8,
+                    "items": {
+                      "type": "integer",
+                      "minimum": 1,
+                      "maximum": 30
+                    }
+                  },
+                  "bonuses": {
+                    "type": "array",
+                    "minItems": 8,
+                    "maxItems": 8,
+                    "items": {
+                      "type": "integer",
+                      "minimum": 0,
+                      "maximum": 20
+                    }
+                  },
+                  "production_scope": {
+                    "enum": [
+                      "character_levels_1_20"
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "id": {
+                "const": "dnd2024.phb01.skill_check"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "facts": {
+                "required": [
+                  "proficiency_source",
+                  "expertise_source",
+                  "untrained_allowed"
+                ],
+                "properties": {
+                  "proficiency_source": {
+                    "enum": [
+                      "hero.skill_proficiencies"
+                    ]
+                  },
+                  "expertise_source": {
+                    "enum": [
+                      "hero.expertise"
+                    ]
+                  },
+                  "untrained_allowed": {
+                    "type": "boolean"
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "id": {
+                "const": "dnd2024.phb01.damage_traits"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "facts": {
+                "required": [
+                  "resistance_divisor",
+                  "rounding",
+                  "vulnerability_multiplier",
+                  "stacks",
+                  "order",
+                  "example_raw",
+                  "example_reduction",
+                  "example_result"
+                ],
+                "properties": {
+                  "resistance_divisor": {
+                    "type": "integer",
+                    "minimum": 1
+                  },
+                  "rounding": {
+                    "enum": [
+                      "floor"
+                    ]
+                  },
+                  "vulnerability_multiplier": {
+                    "type": "integer",
+                    "minimum": 1
+                  },
+                  "stacks": {
+                    "type": "boolean"
+                  },
+                  "order": {
+                    "type": "array",
+                    "minItems": 3,
+                    "maxItems": 3,
+                    "items": {
+                      "enum": [
+                        "other_adjustments",
+                        "resistance",
+                        "vulnerability"
+                      ]
+                    }
+                  },
+                  "example_raw": {
+                    "type": "integer",
+                    "minimum": 0
+                  },
+                  "example_reduction": {
+                    "type": "integer",
+                    "minimum": 0
+                  },
+                  "example_result": {
+                    "type": "integer",
+                    "minimum": 0
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "id": {
+                "const": "dnd2024.phb01.death_saves"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "facts": {
+                "required": [
+                  "ability_modifier",
+                  "success_threshold",
+                  "successes_to_stabilize",
+                  "failures_to_die",
+                  "consecutive_required",
+                  "natural_1_failures",
+                  "natural_20_hp"
+                ],
+                "properties": {
+                  "ability_modifier": {
+                    "type": "boolean"
+                  },
+                  "success_threshold": {
+                    "type": "integer",
+                    "minimum": 1,
+                    "maximum": 20
+                  },
+                  "successes_to_stabilize": {
+                    "type": "integer",
+                    "minimum": 1
+                  },
+                  "failures_to_die": {
+                    "type": "integer",
+                    "minimum": 1
+                  },
+                  "consecutive_required": {
+                    "type": "boolean"
+                  },
+                  "natural_1_failures": {
+                    "type": "integer",
+                    "minimum": 0
+                  },
+                  "natural_20_hp": {
+                    "type": "integer",
+                    "minimum": 0
+                  }
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "schema_version": {
+            "const": "2.1.0"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "rules": {
+            "items": {
+              "required": [
+                "dependencies",
+                "behavior_tests",
+                "readiness",
+                "revision"
+              ]
+            }
+          }
+        }
+      }
+    }
+  ]
+}

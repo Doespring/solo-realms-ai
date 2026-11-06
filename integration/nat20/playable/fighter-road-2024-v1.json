@@ -1,0 +1,131 @@
+{
+  "schema_version": "nat20-campaign-v1",
+  "rules_version": "dnd2024",
+  "id": "fighter-road-2024-v1",
+  "title": "Дозор на тракте",
+  "description": "У сторожевого поста гоблин перекрыл тропу. Осмотрите следы или приготовьтесь к столкновению. За победу дозор получает зарегистрированный опыт; после боя доступен спокойный отдых.",
+  "source": {
+    "kind": "authored_scenario",
+    "id": "solo-road-watch",
+    "version": "1.0.0",
+    "note": "Author-reviewed scenario inputs, not a quotation or automatic PHB rule. DCs and encounter XP budgets are fixed here, never supplied by the Interpreter."
+  },
+  "build": {
+    "species_slug": "human",
+    "class_slug": "fighter",
+    "classes": {
+      "fighter": 1
+    },
+    "subclass_slug": null,
+    "level": 1,
+    "ability_scores": {
+      "strength": 16,
+      "dexterity": 14,
+      "constitution": 14,
+      "intelligence": 10,
+      "wisdom": 12,
+      "charisma": 8
+    },
+    "equipment": [
+      "longsword",
+      "chain-mail",
+      "shield"
+    ],
+    "selected_choices": [
+      "skill:athletics",
+      "skill:perception"
+    ],
+    "background_slug": null,
+    "hp_mode": "fixed",
+    "hp_rolls": {},
+    "ac_calc_mode": null,
+    "attuned_items": [],
+    "ability_score_method": null
+  },
+  "attack_weapon": "longsword",
+  "features": [
+    "second-wind"
+  ],
+  "checks": {
+    "athletics": {
+      "kind": "skill",
+      "skill": "athletics",
+      "ability": null,
+      "dc": 15,
+      "source": {
+        "kind": "authored_scenario",
+        "id": "solo-road-watch",
+        "version": "1.0.0",
+        "note": "Author-reviewed scenario inputs, not a quotation or automatic PHB rule. DCs and encounter XP budgets are fixed here, never supplied by the Interpreter."
+      }
+    },
+    "perception": {
+      "kind": "skill",
+      "skill": "perception",
+      "ability": null,
+      "dc": 12,
+      "source": {
+        "kind": "authored_scenario",
+        "id": "solo-road-watch",
+        "version": "1.0.0",
+        "note": "Author-reviewed scenario inputs, not a quotation or automatic PHB rule. DCs and encounter XP budgets are fixed here, never supplied by the Interpreter."
+      }
+    },
+    "strength": {
+      "kind": "ability",
+      "skill": null,
+      "ability": "str",
+      "dc": 15,
+      "source": {
+        "kind": "authored_scenario",
+        "id": "solo-road-watch",
+        "version": "1.0.0",
+        "note": "Author-reviewed scenario inputs, not a quotation or automatic PHB rule. DCs and encounter XP budgets are fixed here, never supplied by the Interpreter."
+      }
+    }
+  },
+  "encounters": {
+    "basic": {
+      "grid": {
+        "width": 7,
+        "height": 5,
+        "cell_size_ft": 5,
+        "blocked_cells": [],
+        "wall_segments": [],
+        "cover_cells": {},
+        "difficult_terrain_cells": [],
+        "lighting": {},
+        "default_lighting": "bright",
+        "obscurement_cells": {},
+        "sunlight": false
+      },
+      "hero_position": {
+        "x": 1,
+        "y": 1,
+        "z": 0
+      },
+      "actors": [
+        {
+          "id": "goblin",
+          "monster": "goblin-warrior",
+          "position": {
+            "x": 4,
+            "y": 1,
+            "z": 0
+          },
+          "xp_value": 50
+        }
+      ],
+      "reward": {
+        "id": "road-watch-victory",
+        "kind": "native_encounter_xp",
+        "source": {
+          "kind": "authored_scenario",
+          "id": "solo-road-watch",
+          "version": "1.0.0",
+          "note": "Author-reviewed scenario inputs, not a quotation or automatic PHB rule. DCs and encounter XP budgets are fixed here, never supplied by the Interpreter."
+        }
+      }
+    }
+  }
+}

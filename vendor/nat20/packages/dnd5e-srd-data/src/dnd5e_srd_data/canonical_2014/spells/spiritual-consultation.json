@@ -1,0 +1,139 @@
+{
+  "slug": "spiritual-consultation",
+  "foundry_uuid": "Compendium.dnd5e.laaru-hw-spells.Item.g2vi9NDc8Ewe3vyW",
+  "name": "Духовное наставление / Spiritual Consultation",
+  "description": "Вы призываете духа, чтобы он помог вам с проверками характеристик. Выберите один навык из следующих: Магия, Дрессировка, История, Расследование, Медицина, Природа, Внимание, Религия или Выживание. Дух становится умелым в выбранном навыке. Он эфирен и мимолётен, не может взаимодействовать с физическими объектами, но способен давать наставления по вопросам, связанным с выбранным навыком.\n\nВ течение длительности заклинания вы можете совершать любые проверки выбранного навыка, как если бы вы имели умение в нём, пока дух может общаться с вами. В качестве альтернативы, дух может сам совершать проверки Интеллекта или Мудрости с модификатором +5. Дух будет следовать за вами, всегда оставаясь рядом. Вы можете отпустить его раньше, отправив обратно туда, откуда он пришёл.\n\nНа высоких кругах. Когда вы сотворяете это заклинание, используя ячейку заклинания 2-го круга или выше, бонус духа к проверкам характеристик напрямую увеличивается на 1 за каждый круг ячейки выше 1-го, вплоть до максимума +9.",
+  "level": 1,
+  "school": "nec",
+  "components": [
+    "M",
+    "S",
+    "V"
+  ],
+  "ritual": false,
+  "concentration": false,
+  "casting_time": {
+    "unit": "minute",
+    "value": 1,
+    "condition": ""
+  },
+  "range": {
+    "units": "self",
+    "value": null,
+    "special": null
+  },
+  "duration": {
+    "units": "minute",
+    "value": 10
+  },
+  "materials": {
+    "value": "благовония стоимостью 1 зм, которые поглощаются заклинанием",
+    "consumed": false,
+    "cost": 0,
+    "supply": 0
+  },
+  "preparation": {
+    "mode": "prepared",
+    "prepared": false
+  },
+  "activities": [
+    {
+      "id": "dnd5eactivity000",
+      "name": "",
+      "img": "",
+      "sort": 0,
+      "activation": {
+        "type": "action",
+        "value": null,
+        "condition": "",
+        "override": false,
+        "reaction_conditions": []
+      },
+      "consumption": {
+        "scaling": {
+          "allowed": false,
+          "max": ""
+        },
+        "spell_slot": true,
+        "targets": []
+      },
+      "description": {
+        "chat_flavor": ""
+      },
+      "duration": {
+        "value": null,
+        "units": "inst",
+        "special": "",
+        "concentration": false,
+        "override": false
+      },
+      "flags": {},
+      "range": {
+        "value": null,
+        "units": "self",
+        "special": "",
+        "override": false
+      },
+      "target": {
+        "template": {
+          "count": "",
+          "contiguous": false,
+          "stationary": false,
+          "type": "",
+          "size": "",
+          "width": "",
+          "height": "",
+          "units": ""
+        },
+        "affects": {
+          "count": "",
+          "type": "",
+          "choice": false,
+          "special": ""
+        },
+        "override": false,
+        "prompt": true
+      },
+      "uses": {
+        "spent": 0,
+        "max": "",
+        "recovery": []
+      },
+      "visibility": {
+        "identifier": "",
+        "level": {
+          "min": null,
+          "max": null
+        },
+        "require_attunement": false,
+        "require_identification": false,
+        "require_magic": false
+      },
+      "effects": [],
+      "applied_effects": [],
+      "kind": "utility",
+      "roll": {
+        "formula": "",
+        "name": "",
+        "prompt": false,
+        "visible": false
+      }
+    }
+  ],
+  "passive_effects": [],
+  "provenance": {
+    "source": "foundry",
+    "source_url": "https://github.com/foundryvtt/dnd5e/blob/965ad2d0cf5d063dac675ba078b5bd3c3c0dd449/packs/_source/laaru-hw-spells/Духовное_наставление___Spiritual_Consultation_g2vi9NDc8Ewe3vyW.yml",
+    "ingest_date": "2026-10-26",
+    "ingest_version": "foundry-translator-v1",
+    "srd_version": [
+      "5.1"
+    ],
+    "license_tag": "CC-BY-4.0"
+  },
+  "review": {
+    "known_divergence": null,
+    "requires_user_decision": false
+  },
+  "entry_kind": "spell"
+}

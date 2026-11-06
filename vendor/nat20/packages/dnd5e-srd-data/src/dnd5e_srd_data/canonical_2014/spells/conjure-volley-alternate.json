@@ -1,0 +1,159 @@
+{
+  "slug": "conjure-volley-alternate",
+  "foundry_uuid": "Compendium.dnd5e.laaru-hw-spells.Item.90Kalfcg1uogrfzx",
+  "name": "Призыв залпа (альт.) / Conjure Volley (Alternate)",
+  "description": "Вы выпускаете один немагический боеприпас из дистанционного оружия или подбрасываете в воздух немагическое метательное оружие и выбираете точку в пределах обычного радиуса действия оружия.\n\nБоеприпасы или оружие взрываются, превращаясь во множество точных копий, которые падают в цилиндр радиусом 30 футов и высотой 20 футов в центре выбранной вами точки. Существа, находящиеся в этой области, должны пройти испытание Ловкости. При провале они получают [[/r 6d8]] урона от типа оружия или боеприпасов, а при успехе - вдвое меньше. ни боеприпасы, ни оружие, созданные этим заклинанием, не распадаются, как только эффект заклинания проходит.\n\nНа высоких кругах. Когда вы творите это заклинание, используя ячейку заклинания 4-го круга или выше, урон этого заклинания увеличивается на [[/r 1d8]], а радиус цилиндра увеличивается на 5 футов за каждый круг ячейки выше 3-го.",
+  "level": 3,
+  "school": "con",
+  "components": [],
+  "ritual": false,
+  "concentration": false,
+  "casting_time": {
+    "unit": "action",
+    "value": 1,
+    "condition": ""
+  },
+  "range": {
+    "units": "self",
+    "value": 0,
+    "special": null
+  },
+  "duration": {
+    "units": "inst",
+    "value": null
+  },
+  "materials": {
+    "value": "один боеприпас и оружие дистанционного боя или одно метательное оружие",
+    "consumed": false,
+    "cost": 0,
+    "supply": 0
+  },
+  "preparation": {
+    "mode": "prepared",
+    "prepared": false
+  },
+  "activities": [
+    {
+      "id": "dnd5eactivity000",
+      "name": "",
+      "img": "",
+      "sort": 0,
+      "activation": {
+        "type": "action",
+        "value": null,
+        "condition": "",
+        "override": false,
+        "reaction_conditions": []
+      },
+      "consumption": {
+        "scaling": {
+          "allowed": false,
+          "max": ""
+        },
+        "spell_slot": true,
+        "targets": []
+      },
+      "description": {
+        "chat_flavor": ""
+      },
+      "duration": {
+        "value": null,
+        "units": "inst",
+        "special": "",
+        "concentration": false,
+        "override": false
+      },
+      "flags": {},
+      "range": {
+        "value": null,
+        "units": "self",
+        "special": "",
+        "override": false
+      },
+      "target": {
+        "template": {
+          "count": "",
+          "contiguous": false,
+          "stationary": false,
+          "type": "cylinder",
+          "size": "30",
+          "width": "",
+          "height": "",
+          "units": "ft"
+        },
+        "affects": {
+          "count": "",
+          "type": "",
+          "choice": false,
+          "special": ""
+        },
+        "override": false,
+        "prompt": true
+      },
+      "uses": {
+        "spent": 0,
+        "max": "",
+        "recovery": []
+      },
+      "visibility": {
+        "identifier": "",
+        "level": {
+          "min": null,
+          "max": null
+        },
+        "require_attunement": false,
+        "require_identification": false,
+        "require_magic": false
+      },
+      "effects": [],
+      "applied_effects": [],
+      "kind": "save",
+      "damage": {
+        "on_save": "half",
+        "parts": [
+          {
+            "number": 6,
+            "denomination": 8,
+            "bonus": "",
+            "types": [],
+            "custom": {
+              "enabled": false,
+              "formula": ""
+            },
+            "scaling": {
+              "mode": "whole",
+              "number": 1,
+              "formula": ""
+            }
+          }
+        ]
+      },
+      "save": {
+        "ability": [
+          "dex"
+        ],
+        "dc": {
+          "calculation": "spellcasting",
+          "formula": ""
+        },
+        "ignore_cover": false
+      }
+    }
+  ],
+  "passive_effects": [],
+  "provenance": {
+    "source": "foundry",
+    "source_url": "https://github.com/foundryvtt/dnd5e/blob/965ad2d0cf5d063dac675ba078b5bd3c3c0dd449/packs/_source/laaru-hw-spells/Призыв_залпа__альт_____Conjure_Volley__Alternate__90Kalfcg1uogrfzx.yml",
+    "ingest_date": "2026-10-26",
+    "ingest_version": "foundry-translator-v1",
+    "srd_version": [
+      "5.1"
+    ],
+    "license_tag": "CC-BY-4.0"
+  },
+  "review": {
+    "known_divergence": null,
+    "requires_user_decision": false
+  },
+  "entry_kind": "spell"
+}

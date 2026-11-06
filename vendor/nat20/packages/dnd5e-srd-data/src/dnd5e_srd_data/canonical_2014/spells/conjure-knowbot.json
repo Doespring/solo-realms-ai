@@ -1,0 +1,138 @@
+{
+  "slug": "conjure-knowbot",
+  "foundry_uuid": "Compendium.dnd5e.laaru-hw-spells.Item.VF9RORHkPqBwOE1K",
+  "name": "Призыв бота / Conjure Knowbot",
+  "description": "(Техномагия)\n\nВы дотрагиваетесь до одного программируемого устройства или компьютерной системы, чтобы призвать бота - полуразумную программу с вашими навыками и компьютерными способностями. На протяжении заклинания вы можете бонусным действием заставить бота выполнить задание, связанное с компьютером, занимающее у вас действие. Бот совершает проверки Интеллекта используя ваши значение характеристики и ваш бонус умения (включая умение в обращении с инструментами хакера, если применимо).\n\nУ вас есть ограниченная телепатическая связь с ботом на расстоянии в 500 футов от устройства или системы, в которой был призван бот. Если вы выйдете за пределы этой зоны, бот исчезнет через [[/r 2d4]] раунда, как будто действие заклинания кончилось. Вход обратно в зону мгновенно обновляет связь.\n\nБот привязан к системе, в которой был создан, и остаётся в ней, пока не исчезнет.\n\nНа высоких кругах. Когда вы творите это заклинание, используя ячейку 5 круга или выше, длительность заклинания увеличивается до 1 часа. Также, ваша телепатическая связь с ботом работает на расстоянии до 1000 футов, и если вы покидаете эту зону, бот продолжит выполнять последнее задание, пока не истечёт длительность заклинания.",
+  "level": 4,
+  "school": "con",
+  "components": [
+    "S",
+    "V"
+  ],
+  "ritual": false,
+  "concentration": false,
+  "casting_time": {
+    "unit": "action",
+    "value": 1,
+    "condition": ""
+  },
+  "range": {
+    "units": "touch",
+    "value": null,
+    "special": null
+  },
+  "duration": {
+    "units": "minute",
+    "value": 10
+  },
+  "materials": {
+    "value": "",
+    "consumed": false,
+    "cost": 0,
+    "supply": 0
+  },
+  "preparation": {
+    "mode": "prepared",
+    "prepared": false
+  },
+  "activities": [
+    {
+      "id": "4Rw2jeam0JubGqpq",
+      "name": "",
+      "img": "",
+      "sort": 0,
+      "activation": {
+        "type": "action",
+        "value": null,
+        "condition": "",
+        "override": false,
+        "reaction_conditions": []
+      },
+      "consumption": {
+        "scaling": {
+          "allowed": false,
+          "max": ""
+        },
+        "spell_slot": true,
+        "targets": []
+      },
+      "description": {
+        "chat_flavor": ""
+      },
+      "duration": {
+        "value": null,
+        "units": "inst",
+        "special": "",
+        "concentration": false,
+        "override": false
+      },
+      "flags": {},
+      "range": {
+        "value": null,
+        "units": "self",
+        "special": "",
+        "override": false
+      },
+      "target": {
+        "template": {
+          "count": "",
+          "contiguous": false,
+          "stationary": false,
+          "type": "",
+          "size": "",
+          "width": "",
+          "height": "",
+          "units": "ft"
+        },
+        "affects": {
+          "count": "",
+          "type": "",
+          "choice": false,
+          "special": ""
+        },
+        "override": false,
+        "prompt": true
+      },
+      "uses": {
+        "spent": 0,
+        "max": "",
+        "recovery": []
+      },
+      "visibility": {
+        "identifier": "",
+        "level": {
+          "min": null,
+          "max": null
+        },
+        "require_attunement": false,
+        "require_identification": false,
+        "require_magic": false
+      },
+      "effects": [],
+      "applied_effects": [],
+      "kind": "utility",
+      "roll": {
+        "formula": "",
+        "name": "",
+        "prompt": false,
+        "visible": false
+      }
+    }
+  ],
+  "passive_effects": [],
+  "provenance": {
+    "source": "foundry",
+    "source_url": "https://github.com/foundryvtt/dnd5e/blob/965ad2d0cf5d063dac675ba078b5bd3c3c0dd449/packs/_source/laaru-hw-spells/Призыв_бота___Conjure_Knowbot_VF9RORHkPqBwOE1K.yml",
+    "ingest_date": "2026-10-26",
+    "ingest_version": "foundry-translator-v1",
+    "srd_version": [
+      "5.1"
+    ],
+    "license_tag": "CC-BY-4.0"
+  },
+  "review": {
+    "known_divergence": null,
+    "requires_user_decision": false
+  },
+  "entry_kind": "spell"
+}

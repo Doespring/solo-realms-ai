@@ -1,0 +1,76 @@
+{
+  "slug": "college-of-valor",
+  "name": "Коллегия Отваги",
+  "description": "Коллегия Отваги | College of Valor\n\nБарды из Коллегии Отваги — это храбрые скальды, чьи сказания сохраняют память о великих героях прошлого, вдохновляя героев нового поколения. Эти барды собираются в пиршественных залах или у огромных костров, чтобы петь о славных подвигах прошлого и настоящего. Они странствуют по земле, чтобы узреть великие события своими глазами и постараться, чтобы память о них не сгинула. Своими песнями они вдохновляют других достигать столь же великих свершений, что и герои древности.\n\nУровеньОсобенности\n\n3-й\n\n@Compendium[laaru-dnd5-hw.classfeatures.jGk9AC5x8oiNiLel]{Дополнительные умения}, @Compendium[laaru-dnd5-hw.classfeatures.p59Gn2edQ75TxBip]{Боевое вдохновение}\n\n6-й\n\n@Compendium[laaru-dnd5-hw.classfeatures.YtCfwbfQhMexn6cn]{Дополнительная атака}\n\n14-й\n\n@Compendium[laaru-dnd5-hw.classfeatures.wrz5xobOUinjhS7q]{Боевая магия}",
+  "identifier": "college-of-valor",
+  "class_identifier": "bard",
+  "spellcasting": {
+    "ability": "",
+    "progression": "none"
+  },
+  "advancement": [
+    {
+      "id": "ztn0xivya6zjgm77",
+      "type": "ItemGrant",
+      "level": 3,
+      "title": "Особенности",
+      "hint": "",
+      "class_restriction": "",
+      "configuration": {
+        "items": [
+          "Compendium.laaru-dnd5-hw.classfeatures.jGk9AC5x8oiNiLel",
+          "Compendium.laaru-dnd5-hw.classfeatures.p59Gn2edQ75TxBip"
+        ],
+        "optional": false
+      },
+      "value": {}
+    },
+    {
+      "id": "ctg1z7wfjiwc5c01",
+      "type": "ItemGrant",
+      "level": 6,
+      "title": "Особенность",
+      "hint": "",
+      "class_restriction": "",
+      "configuration": {
+        "items": [
+          "Compendium.laaru-dnd5-hw.classfeatures.YtCfwbfQhMexn6cn"
+        ],
+        "optional": false
+      },
+      "value": {}
+    },
+    {
+      "id": "yohh55tu5tdcwmaj",
+      "type": "ItemGrant",
+      "level": 14,
+      "title": "Особенность",
+      "hint": "",
+      "class_restriction": "",
+      "configuration": {
+        "items": [
+          "Compendium.laaru-dnd5-hw.classfeatures.wrz5xobOUinjhS7q"
+        ],
+        "optional": false
+      },
+      "value": {}
+    }
+  ],
+  "granted_features": [],
+  "feature_choices": [],
+  "provenance": {
+    "source": "foundry",
+    "source_url": "https://github.com/foundryvtt/dnd5e/blob/965ad2d0cf5d063dac675ba078b5bd3c3c0dd449/packs/_source/laaru-hw-subclasses/Коллегия_Отваги_xXFTmRvYuBOhwIBz.yml",
+    "ingest_date": "2026-10-26",
+    "ingest_version": "foundry-translator-v1",
+    "srd_version": [
+      "5.1"
+    ],
+    "license_tag": "CC-BY-4.0"
+  },
+  "review": {
+    "known_divergence": null,
+    "requires_user_decision": false
+  },
+  "entry_kind": "subclass"
+}

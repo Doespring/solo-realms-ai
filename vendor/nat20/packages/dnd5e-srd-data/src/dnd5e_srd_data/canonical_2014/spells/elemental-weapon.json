@@ -1,0 +1,396 @@
+{
+  "slug": "elemental-weapon",
+  "foundry_uuid": "Compendium.dnd5e.laaru-hw-spells.Item.DfL2298AExVMVw7k",
+  "name": "Стихийное оружие / Elemental Weapon",
+  "description": "Немагическое оружие, которого вы коснулись, становится магическим. Выберите один тип урона: гром, кислота, молния, огонь или холод. Пока длится заклинание, оружие получает бонус +1 к броскам атаки и дополнительно наносит при попадании [[/r 1d4]] урона выбранного типа.\n\nНа высоких кругах. Если вы сотворяете это заклинание, используя ячейку 5-го или 6-го круга, бонус к броскам атаки увеличивается до +2, а дополнительный урон — до [[/r 2d4]]. Если использовать ячейку 7-го круга или выше, бонус увеличивается до +3, а дополнительный урон до  [[/r 3d4]].\n\nПримечание\n\nЗаклинание настроено как Зачарование.",
+  "level": 3,
+  "school": "trs",
+  "components": [
+    "S",
+    "V"
+  ],
+  "ritual": false,
+  "concentration": true,
+  "casting_time": {
+    "unit": "action",
+    "value": 1,
+    "condition": ""
+  },
+  "range": {
+    "units": "touch",
+    "value": null,
+    "special": null
+  },
+  "duration": {
+    "units": "hour",
+    "value": 1
+  },
+  "materials": {
+    "value": "",
+    "consumed": false,
+    "cost": 0,
+    "supply": 0
+  },
+  "preparation": {
+    "mode": "prepared",
+    "prepared": false
+  },
+  "activities": [
+    {
+      "id": "kazwIt3w8pQNoUI2",
+      "name": "",
+      "img": "",
+      "sort": 0,
+      "activation": {
+        "type": "action",
+        "value": null,
+        "condition": "",
+        "override": false,
+        "reaction_conditions": []
+      },
+      "consumption": {
+        "scaling": {
+          "allowed": false,
+          "max": ""
+        },
+        "spell_slot": true,
+        "targets": []
+      },
+      "description": {
+        "chat_flavor": ""
+      },
+      "duration": {
+        "value": null,
+        "units": "inst",
+        "special": "",
+        "concentration": false,
+        "override": false
+      },
+      "flags": {},
+      "range": {
+        "value": null,
+        "units": "self",
+        "special": "",
+        "override": false
+      },
+      "target": {
+        "template": {
+          "count": "",
+          "contiguous": false,
+          "stationary": false,
+          "type": "",
+          "size": "",
+          "width": "",
+          "height": "",
+          "units": "touch"
+        },
+        "affects": {
+          "count": "",
+          "type": "",
+          "choice": false,
+          "special": ""
+        },
+        "override": false,
+        "prompt": true
+      },
+      "uses": {
+        "spent": 0,
+        "max": "",
+        "recovery": []
+      },
+      "visibility": {
+        "identifier": "",
+        "level": {
+          "min": null,
+          "max": null
+        },
+        "require_attunement": false,
+        "require_identification": false,
+        "require_magic": false
+      },
+      "effects": [
+        {
+          "id": "I9iE9IMP4H9aVVwZ",
+          "level": {
+            "min": null,
+            "max": null
+          },
+          "on_save": null,
+          "riders": {
+            "activity": [],
+            "effect": [],
+            "item": []
+          }
+        },
+        {
+          "id": "k8ukGVg6oLsrNyfk",
+          "level": {
+            "min": null,
+            "max": null
+          },
+          "on_save": null,
+          "riders": {
+            "activity": [],
+            "effect": [],
+            "item": []
+          }
+        },
+        {
+          "id": "tVlRI7oKEbjulxlM",
+          "level": {
+            "min": null,
+            "max": null
+          },
+          "on_save": null,
+          "riders": {
+            "activity": [],
+            "effect": [],
+            "item": []
+          }
+        },
+        {
+          "id": "7dmSO35vWB6o3q49",
+          "level": {
+            "min": null,
+            "max": null
+          },
+          "on_save": null,
+          "riders": {
+            "activity": [],
+            "effect": [],
+            "item": []
+          }
+        },
+        {
+          "id": "oj2jKrINbPDJ3gRH",
+          "level": {
+            "min": null,
+            "max": null
+          },
+          "on_save": null,
+          "riders": null
+        }
+      ],
+      "applied_effects": [
+        "I9iE9IMP4H9aVVwZ",
+        "k8ukGVg6oLsrNyfk",
+        "tVlRI7oKEbjulxlM",
+        "7dmSO35vWB6o3q49",
+        "oj2jKrINbPDJ3gRH"
+      ],
+      "kind": "enchant",
+      "enchant": {
+        "self": false,
+        "identifier": null
+      },
+      "restrictions": {
+        "allow_magical": false,
+        "categories": [],
+        "properties": [],
+        "type": "weapon"
+      }
+    }
+  ],
+  "passive_effects": [
+    {
+      "id": "I9iE9IMP4H9aVVwZ",
+      "name": "Стихийное оружие: гром",
+      "description": "",
+      "changes": [
+        {
+          "key": "name",
+          "mode": 2,
+          "value": ", оружие грома",
+          "priority": 20
+        },
+        {
+          "key": "system.damage.parts",
+          "mode": 2,
+          "value": "[[\"1d6\", \"thunder\"]]",
+          "priority": 20
+        },
+        {
+          "key": "system.properties",
+          "mode": 2,
+          "value": "mgc",
+          "priority": 20
+        },
+        {
+          "key": "system.attack.bonus",
+          "mode": 2,
+          "value": "1",
+          "priority": 20
+        }
+      ],
+      "statuses": [],
+      "duration": {
+        "seconds": 3600
+      },
+      "disabled": true,
+      "transfer": false
+    },
+    {
+      "id": "k8ukGVg6oLsrNyfk",
+      "name": "Стихийное оружие: кислота",
+      "description": "",
+      "changes": [
+        {
+          "key": "name",
+          "mode": 2,
+          "value": ", оружие кислоты",
+          "priority": 20
+        },
+        {
+          "key": "system.damage.parts",
+          "mode": 2,
+          "value": "[[\"1d6\", \"acid\"]]",
+          "priority": 20
+        },
+        {
+          "key": "system.properties",
+          "mode": 2,
+          "value": "mgc",
+          "priority": 20
+        },
+        {
+          "key": "system.attack.bonus",
+          "mode": 2,
+          "value": "1",
+          "priority": 20
+        }
+      ],
+      "statuses": [],
+      "duration": {
+        "seconds": 3600
+      },
+      "disabled": true,
+      "transfer": false
+    },
+    {
+      "id": "tVlRI7oKEbjulxlM",
+      "name": "Стихийное оружие: молнии",
+      "description": "",
+      "changes": [
+        {
+          "key": "name",
+          "mode": 2,
+          "value": ", оружие молнии",
+          "priority": 20
+        },
+        {
+          "key": "system.damage.parts",
+          "mode": 2,
+          "value": "[[\"1d6\", \"lightning\"]]",
+          "priority": 20
+        },
+        {
+          "key": "system.properties",
+          "mode": 2,
+          "value": "mgc",
+          "priority": 20
+        },
+        {
+          "key": "system.attack.bonus",
+          "mode": 2,
+          "value": "1",
+          "priority": 20
+        }
+      ],
+      "statuses": [],
+      "duration": {
+        "seconds": 3600
+      },
+      "disabled": true,
+      "transfer": false
+    },
+    {
+      "id": "7dmSO35vWB6o3q49",
+      "name": "Стихийное оружие: огня",
+      "description": "",
+      "changes": [
+        {
+          "key": "name",
+          "mode": 2,
+          "value": ", оружие огня",
+          "priority": 20
+        },
+        {
+          "key": "system.damage.parts",
+          "mode": 2,
+          "value": "[[\"1d6\", \"fire\"]]",
+          "priority": 20
+        },
+        {
+          "key": "system.properties",
+          "mode": 2,
+          "value": "mgc",
+          "priority": 20
+        },
+        {
+          "key": "system.attack.bonus",
+          "mode": 2,
+          "value": "1",
+          "priority": 20
+        }
+      ],
+      "statuses": [],
+      "duration": {
+        "seconds": 3600
+      },
+      "disabled": true,
+      "transfer": false
+    },
+    {
+      "id": "oj2jKrINbPDJ3gRH",
+      "name": "Стихийное оружие: холода",
+      "description": "",
+      "changes": [
+        {
+          "key": "name",
+          "mode": 2,
+          "value": ", оружие холода",
+          "priority": 20
+        },
+        {
+          "key": "system.damage.parts",
+          "mode": 2,
+          "value": "[[\"1d6\", \"cold\"]]",
+          "priority": 20
+        },
+        {
+          "key": "system.properties",
+          "mode": 2,
+          "value": "mgc",
+          "priority": 20
+        },
+        {
+          "key": "system.attack.bonus",
+          "mode": 2,
+          "value": "1",
+          "priority": 20
+        }
+      ],
+      "statuses": [],
+      "duration": {
+        "seconds": 3600
+      },
+      "disabled": true,
+      "transfer": false
+    }
+  ],
+  "provenance": {
+    "source": "foundry",
+    "source_url": "https://github.com/foundryvtt/dnd5e/blob/965ad2d0cf5d063dac675ba078b5bd3c3c0dd449/packs/_source/laaru-hw-spells/Стихийное_оружие___Elemental_Weapon_DfL2298AExVMVw7k.yml",
+    "ingest_date": "2026-10-26",
+    "ingest_version": "foundry-translator-v1",
+    "srd_version": [
+      "5.1"
+    ],
+    "license_tag": "CC-BY-4.0"
+  },
+  "review": {
+    "known_divergence": null,
+    "requires_user_decision": false
+  },
+  "entry_kind": "spell"
+}

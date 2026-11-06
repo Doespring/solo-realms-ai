@@ -1,0 +1,189 @@
+{
+  "slug": "draconic-transformation",
+  "foundry_uuid": "Compendium.dnd5e.laaru-hw-spells.Item.4zced0dGfdXpst3v",
+  "name": "Драконоподобное превращение / Draconic Transformation",
+  "description": "Издав громкий рык, вы прибегаете к магии драконов, чтобы преобразить себя, приобретая черты дракона. Пока заклинание активно, вы получаете следующие преимущества:\n\nСлепое зрение. Вы получаете &amp;reference[blindsight]{слепозрение} в пределах 30 футов. В пределах этой дистанции вы можете видеть всё, что не находится за полным &amp;reference[cover]{укрытием}, даже если вы &amp;reference[blinded]{ослеплены} или находитесь в &amp;reference[darkness]{темноте}. Более того, вы можете увидеть &amp;reference[invisible]{невидимое} существо в пределах этой дистанции, если только оно не преуспело в попытке спрятаться от вас.\n\nОружие дыхания. Когда вы сотворяете это заклинание, а также в последующие ходы, бонусным действием, вы можете выдыхать переливающуюся энергию 60-футовом конусом. Каждое существо в этой области должно пройти испытание Ловкости, получая [[/r 6d8]] урона силой в случае провала и половину этого урона в случае успеха.\n\nКрылья. Бесплотные крылья расправляются за вашей спиной, даруя вам скорость полёта 60 футов.",
+  "level": 7,
+  "school": "trs",
+  "components": [
+    "M",
+    "S",
+    "V"
+  ],
+  "ritual": false,
+  "concentration": true,
+  "casting_time": {
+    "unit": "bonus",
+    "value": 1,
+    "condition": ""
+  },
+  "range": {
+    "units": "self",
+    "value": null,
+    "special": null
+  },
+  "duration": {
+    "units": "minute",
+    "value": 1
+  },
+  "materials": {
+    "value": "статуэтка дракона, стоимостью не менее 500 зм",
+    "consumed": false,
+    "cost": 500,
+    "supply": 0
+  },
+  "preparation": {
+    "mode": "prepared",
+    "prepared": false
+  },
+  "activities": [
+    {
+      "id": "dnd5eactivity000",
+      "name": "",
+      "img": "",
+      "sort": 0,
+      "activation": {
+        "type": "action",
+        "value": null,
+        "condition": "",
+        "override": false,
+        "reaction_conditions": []
+      },
+      "consumption": {
+        "scaling": {
+          "allowed": false,
+          "max": ""
+        },
+        "spell_slot": true,
+        "targets": []
+      },
+      "description": {
+        "chat_flavor": ""
+      },
+      "duration": {
+        "value": null,
+        "units": "inst",
+        "special": "",
+        "concentration": false,
+        "override": false
+      },
+      "flags": {},
+      "range": {
+        "value": null,
+        "units": "self",
+        "special": "",
+        "override": false
+      },
+      "target": {
+        "template": {
+          "count": "",
+          "contiguous": false,
+          "stationary": false,
+          "type": "",
+          "size": "",
+          "width": "",
+          "height": "",
+          "units": ""
+        },
+        "affects": {
+          "count": "",
+          "type": "self",
+          "choice": false,
+          "special": ""
+        },
+        "override": false,
+        "prompt": true
+      },
+      "uses": {
+        "spent": 0,
+        "max": "",
+        "recovery": []
+      },
+      "visibility": {
+        "identifier": "",
+        "level": {
+          "min": null,
+          "max": null
+        },
+        "require_attunement": false,
+        "require_identification": false,
+        "require_magic": false
+      },
+      "effects": [],
+      "applied_effects": [],
+      "kind": "save",
+      "damage": {
+        "on_save": "half",
+        "parts": [
+          {
+            "number": 6,
+            "denomination": 8,
+            "bonus": "",
+            "types": [
+              "force"
+            ],
+            "custom": {
+              "enabled": false,
+              "formula": ""
+            },
+            "scaling": {
+              "mode": "",
+              "number": null,
+              "formula": ""
+            }
+          }
+        ]
+      },
+      "save": {
+        "ability": [
+          "dex"
+        ],
+        "dc": {
+          "calculation": "spellcasting",
+          "formula": ""
+        },
+        "ignore_cover": false
+      }
+    }
+  ],
+  "passive_effects": [
+    {
+      "id": "bOpwXinz1vmUyOat",
+      "name": "Драконоподобное превращение",
+      "description": "",
+      "changes": [
+        {
+          "key": "system.attributes.senses.blindsight",
+          "mode": 2,
+          "value": "30",
+          "priority": 20
+        },
+        {
+          "key": "system.attributes.movement.fly",
+          "mode": 2,
+          "value": "60",
+          "priority": 20
+        }
+      ],
+      "statuses": [],
+      "duration": null,
+      "disabled": true,
+      "transfer": true
+    }
+  ],
+  "provenance": {
+    "source": "foundry",
+    "source_url": "https://github.com/foundryvtt/dnd5e/blob/965ad2d0cf5d063dac675ba078b5bd3c3c0dd449/packs/_source/laaru-hw-spells/Драконоподобное_превращение___Draconic_Transformation_4zced0dGfdXpst3v.yml",
+    "ingest_date": "2026-10-26",
+    "ingest_version": "foundry-translator-v1",
+    "srd_version": [
+      "5.1"
+    ],
+    "license_tag": "CC-BY-4.0"
+  },
+  "review": {
+    "known_divergence": null,
+    "requires_user_decision": false
+  },
+  "entry_kind": "spell"
+}

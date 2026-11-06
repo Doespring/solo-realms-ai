@@ -1,0 +1,158 @@
+{
+  "slug": "create-homunculus",
+  "foundry_uuid": "Compendium.dnd5e.laaru-hw-spells.Item.97oWPGbMmu4AmZNa",
+  "name": "Сотворение гомункула / Create Homunculus",
+  "description": "Произнося сложное заклинание, вы режете себя кинжалом, украшенным драгоценными камнями, и получаете [[/r 2d4]] колющего урона, который никоим образом не может быть уменьшен.\n\nЗатем вы капаете свою кровь на другие компоненты заклинания и прикасаетесь к ним, превращая их в особую конструкцию, называемого @Compendium[laaru-dnd5-hw.monsters.Lbl80kRWOaD4AadV]{гомункулом}.\n\nЭто ваш преданный спутник, и он умирает, если умираете вы. Всякий раз, когда вы заканчиваете долгий отдых, вы можете потратить до половины своих Костей Здоровья, если гомункул находится на том же плане существования, что и вы. Когда вы это делаете, бросьте каждую Кость Здоровья и добавьте к ней свой модификатор Выносливости.\n\nМаксимум ваших ПЗ понижается на получившуюся сумму, а максимум ПЗ гомункула вместе с текущим количеством ПЗ увеличивается на это же значение. Этот процесс не может понизить ваши ПЗ ниже 1, и этот обмен ПЗ между вами и гомункулом заканчивается после того как вы завершите следующий долгий отдых. До этого момента понижение максимума ваших ПЗ не может быть отменено никаким другим образом, кроме смерти гомункула.\n\nВы можете иметь только одного @Compendium[laaru-dnd5-hw.monsters.Lbl80kRWOaD4AadV]{гомункула} в каждый момент времени. Если вы произносите это заклинание, пока ваш гомункул жив, заклинание терпит неудачу.",
+  "level": 6,
+  "school": "trs",
+  "components": [
+    "M",
+    "S",
+    "V"
+  ],
+  "ritual": false,
+  "concentration": false,
+  "casting_time": {
+    "unit": "hour",
+    "value": 1,
+    "condition": ""
+  },
+  "range": {
+    "units": "touch",
+    "value": null,
+    "special": null
+  },
+  "duration": {
+    "units": "inst",
+    "value": null
+  },
+  "materials": {
+    "value": "Глина, пепел и корень мандрагоры, расходуемые заклинанием, и кинжал с инкрустированными драгоценными камнями стоимостью не менее 1000 зм",
+    "consumed": true,
+    "cost": 1000,
+    "supply": 0
+  },
+  "preparation": {
+    "mode": "prepared",
+    "prepared": false
+  },
+  "activities": [
+    {
+      "id": "dnd5eactivity000",
+      "name": "",
+      "img": "",
+      "sort": 0,
+      "activation": {
+        "type": "action",
+        "value": null,
+        "condition": "",
+        "override": false,
+        "reaction_conditions": []
+      },
+      "consumption": {
+        "scaling": {
+          "allowed": false,
+          "max": ""
+        },
+        "spell_slot": true,
+        "targets": []
+      },
+      "description": {
+        "chat_flavor": ""
+      },
+      "duration": {
+        "value": null,
+        "units": "inst",
+        "special": "",
+        "concentration": false,
+        "override": false
+      },
+      "flags": {},
+      "range": {
+        "value": null,
+        "units": "self",
+        "special": "",
+        "override": false
+      },
+      "target": {
+        "template": {
+          "count": "",
+          "contiguous": false,
+          "stationary": false,
+          "type": "",
+          "size": "",
+          "width": "",
+          "height": "",
+          "units": ""
+        },
+        "affects": {
+          "count": "",
+          "type": "",
+          "choice": false,
+          "special": ""
+        },
+        "override": false,
+        "prompt": true
+      },
+      "uses": {
+        "spent": 0,
+        "max": "",
+        "recovery": []
+      },
+      "visibility": {
+        "identifier": "",
+        "level": {
+          "min": null,
+          "max": null
+        },
+        "require_attunement": false,
+        "require_identification": false,
+        "require_magic": false
+      },
+      "effects": [],
+      "applied_effects": [],
+      "kind": "damage",
+      "damage": {
+        "critical": {
+          "allow": false,
+          "bonus": ""
+        },
+        "parts": [
+          {
+            "number": 2,
+            "denomination": 4,
+            "bonus": "",
+            "types": [
+              "piercing"
+            ],
+            "custom": {
+              "enabled": false,
+              "formula": ""
+            },
+            "scaling": {
+              "mode": "",
+              "number": null,
+              "formula": ""
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "passive_effects": [],
+  "provenance": {
+    "source": "foundry",
+    "source_url": "https://github.com/foundryvtt/dnd5e/blob/965ad2d0cf5d063dac675ba078b5bd3c3c0dd449/packs/_source/laaru-hw-spells/Сотворение_гомункула___Create_Homunculus_97oWPGbMmu4AmZNa.yml",
+    "ingest_date": "2026-10-26",
+    "ingest_version": "foundry-translator-v1",
+    "srd_version": [
+      "5.1"
+    ],
+    "license_tag": "CC-BY-4.0"
+  },
+  "review": {
+    "known_divergence": null,
+    "requires_user_decision": false
+  },
+  "entry_kind": "spell"
+}

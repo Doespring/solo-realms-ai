@@ -1,0 +1,89 @@
+#wizard{position:fixed;inset:0;z-index:60;display:flex;align-items:stretch;justify-content:center;background:rgba(8,10,14,.72);padding:0}
+#wizard[hidden]{display:none}
+#wizard .wizard-shell{display:flex;flex-direction:column;width:min(1440px,100%);margin:16px;background:var(--panel,#151a22);border:1px solid var(--line,#2a3240);border-radius:14px;overflow:hidden;min-height:0}
+#wizard .wizard-head{display:flex;align-items:center;gap:14px;padding:14px 18px;border-bottom:1px solid var(--line,#2a3240)}
+#wizard .wizard-head h1{margin:0;font-size:1.25rem}
+#wizard .wizard-head .eyebrow{margin:0}
+#wizard .wizard-ready{margin:0;flex:1;text-align:right;font-size:.9rem;opacity:.85}
+#wizard .wizard-body{display:grid;grid-template-columns:240px minmax(0,1fr) 340px;gap:0;flex:1;min-height:0}
+#wizard .wizard-steps{border-right:1px solid var(--line,#2a3240);padding:14px;overflow:auto}
+#wizard .wizard-list{list-style:none;margin:8px 0 0;padding:0;display:flex;flex-direction:column;gap:4px}
+#wizard .wizard-list button{display:grid;grid-template-columns:auto 1fr;gap:4px 8px;align-items:center;width:100%;text-align:left;background:none;border:1px solid transparent;border-radius:8px;padding:7px 9px;color:inherit;cursor:pointer;font:inherit}
+#wizard .wizard-list button:hover{border-color:var(--line,#2a3240)}
+#wizard .wizard-list li.is-current button{border-color:var(--accent,#c8a25a);background:rgba(200,162,90,.12)}
+#wizard .wizard-step-title{font-weight:600}
+#wizard .wizard-step-note{grid-column:2;font-size:.78rem;opacity:.7}
+#wizard .wizard-chip{display:inline-flex;align-items:center;justify-content:center;width:1.35rem;height:1.35rem;border-radius:50%;border:1px solid currentColor;font-size:.8rem}
+#wizard .wizard-chip.is-complete{color:#3f9c62}
+#wizard .wizard-chip.is-invalid{color:#c65a4a}
+#wizard .wizard-chip.is-incomplete{color:#c8a25a}
+#wizard .wizard-chip.is-empty{opacity:.55}
+#wizard .wizard-chip.is-unavailable{color:#d08b6a}
+/* A draft from another adventure is offered, never applied. */
+#wizard .wizard-offer{border:1px solid var(--accent,#c8a25a);border-radius:12px;padding:14px 16px;background:rgba(200,162,90,.08)}
+#wizard .wizard-offer h2{margin:0 0 6px;font-size:1.05rem}
+#wizard .wizard-offer-actions{display:flex;gap:10px;flex-wrap:wrap;margin:12px 0}
+#wizard .wizard-recommended{border-left:3px solid var(--accent,#c8a25a);padding-left:10px;margin:0 0 12px}
+#wizard .wizard-issues{margin-top:14px;border-top:1px solid var(--line,#2a3240);padding-top:10px}
+#wizard .wizard-issues p{margin:4px 0;font-size:.82rem}
+#wizard .wizard-stage{padding:18px 22px;overflow:auto;min-width:0}
+#wizard .wizard-stage:focus{outline:none}
+#wizard .wizard-stage-head h2{margin:0 0 6px}
+#wizard .wizard-stage-head p{margin:4px 0}
+#wizard .wizard-reason{color:#d08b6a}
+#wizard .wizard-cards{display:flex;flex-direction:column;gap:12px}
+#wizard .wizard-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:10px;margin-top:10px}
+#wizard .wizard-card.wizard-option{display:flex;flex-direction:column;gap:3px;align-items:flex-start;text-align:left;padding:11px 13px;background:rgba(255,255,255,.03);border:1px solid var(--line,#2a3240);border-radius:10px;color:inherit;font:inherit;cursor:pointer}
+#wizard .wizard-option:hover:not(:disabled){border-color:var(--accent,#c8a25a)}
+#wizard .wizard-option.is-chosen{border-color:var(--accent,#c8a25a);background:rgba(200,162,90,.16)}
+#wizard .wizard-option:disabled{opacity:.5;cursor:not-allowed}
+#wizard .wizard-option-name{font-weight:600}
+#wizard .wizard-option-detail{font-size:.82rem;opacity:.75}
+#wizard .wizard-option-block{font-size:.82rem;color:#c65a4a}
+#wizard .wizard-scores{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:10px;margin-top:12px}
+#wizard .wizard-score{display:flex;align-items:center;gap:8px;padding:7px 10px;border:1px solid var(--line,#2a3240);border-radius:9px}
+#wizard .wizard-score>span{flex:1}
+#wizard .wizard-score input{width:64px}
+#wizard .wizard-budget{font-weight:600;margin:12px 0 0}
+#wizard .wizard-step-button{width:30px;height:30px;line-height:1;font-size:1rem}
+#wizard .wizard-block{margin-top:16px;border-top:1px solid var(--line,#2a3240);padding-top:12px}
+#wizard .wizard-block h3{margin:0 0 6px;font-size:1rem}
+#wizard .wizard-kits{border:1px solid var(--line,#2a3240);border-radius:10px;padding:10px 12px;margin:10px 0}
+#wizard .wizard-kits legend{padding:0 6px;font-weight:600}
+#wizard .wizard-field{display:flex;flex-direction:column;gap:4px;margin:12px 0}
+#wizard .wizard-field input,#wizard .wizard-field textarea{width:100%}
+#wizard .wizard-gate{margin-top:16px;border-top:1px solid var(--line,#2a3240);padding-top:12px}
+#wizard .wizard-ok{color:#3f9c62;font-weight:600}
+#wizard .wizard-sheet{border-left:1px solid var(--line,#2a3240);padding:14px 16px;overflow:auto;font-size:.9rem}
+#wizard .wizard-sheet h2{margin:0 0 2px;font-size:1.05rem}
+#wizard .wizard-vitals{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin:10px 0}
+#wizard .wizard-vital{display:flex;flex-direction:column;align-items:center;padding:6px 4px;border:1px solid var(--line,#2a3240);border-radius:8px}
+#wizard .wizard-vital-label{font-size:.72rem;opacity:.7}
+#wizard .wizard-abilities{display:grid;grid-template-columns:1fr auto;gap:3px 10px;margin:10px 0}
+#wizard .wizard-abilities dt{margin:0}
+#wizard .wizard-abilities dd{margin:0;font-variant-numeric:tabular-nums}
+#wizard .wizard-facts{display:grid;grid-template-columns:auto 1fr;gap:3px 10px;margin:10px 0;font-size:.82rem}
+#wizard .wizard-facts dt{opacity:.7}
+#wizard .wizard-facts dd{margin:0;text-align:right;overflow-wrap:anywhere}
+#wizard .wizard-sheet p{margin:3px 0}
+#wizard .wizard-delta{border:1px solid var(--accent,#c8a25a);border-radius:10px;padding:10px 12px;margin-bottom:14px;background:rgba(200,162,90,.1)}
+#wizard .wizard-delta h2{margin:0 0 6px;font-size:1rem}
+#wizard .wizard-delta-hp{font-weight:700;font-size:1.05rem}
+#wizard .wizard-foot{display:flex;gap:10px;align-items:center;padding:12px 18px;border-top:1px solid var(--line,#2a3240)}
+#wizard .wizard-spacer{flex:1}
+#wizard .wizard-sheet-toggle{display:none}
+#wizard .wizard-error{border:1px solid #8c261b;border-radius:10px;padding:10px 12px;margin-top:14px;background:rgba(140,38,27,.16)}
+#wizard .wizard-loading{opacity:.8;font-style:italic}
+#wizard .task-status.is-loading::before,#wizard .wizard-ready.is-loading::before{content:'';display:inline-block;width:.7em;height:.7em;margin-right:.5em;border:2px solid currentColor;border-right-color:transparent;border-radius:50%;animation:solo-wizard-wait .85s linear infinite}
+@keyframes solo-wizard-wait{to{transform:rotate(360deg)}}
+@media(max-width:1180px){#wizard .wizard-body{grid-template-columns:200px minmax(0,1fr) 300px}}
+@media(max-width:940px){#wizard .wizard-body{grid-template-columns:180px minmax(0,1fr)}#wizard .wizard-sheet{display:none}#wizard .wizard-sheet-toggle{display:inline-flex}#wizard.is-sheet .wizard-sheet{display:block;position:absolute;inset:56px 16px 64px;background:var(--panel,#151a22);z-index:2;border:1px solid var(--line,#2a3240);border-radius:12px}#wizard .wizard-shell{position:relative}}
+@media(max-width:640px){#wizard .wizard-shell{margin:0;border-radius:0;border:none}#wizard .wizard-body{grid-template-columns:minmax(0,1fr)}#wizard .wizard-steps{border-right:none;border-bottom:1px solid var(--line,#2a3240);max-height:38vh}#wizard .wizard-stage{padding:12px}#wizard .wizard-vitals{grid-template-columns:repeat(2,1fr)}#wizard .wizard-foot{flex-wrap:wrap}}
+@media(prefers-reduced-motion:reduce){#wizard *{animation:none!important;transition:none!important}#wizard .task-status.is-loading::before,#wizard .wizard-ready.is-loading::before{border-style:dotted}}
+/* A pasted sheet is read locally and only fills the draft; the panel stays a
+   normal step so the keyboard order never changes. */
+.wizard-paste{margin-left:auto;min-height:36px;padding:0 12px;border:1px solid rgba(255,255,255,.22);border-radius:10px;background:rgba(255,255,255,.06);color:inherit;font:inherit;cursor:pointer}
+.wizard-paste:hover{background:rgba(255,255,255,.12)}
+.wizard-import textarea{width:100%;min-height:180px;padding:10px 12px;border-radius:12px;border:1px solid rgba(255,255,255,.18);background:rgba(8,10,16,.55);color:inherit;font:inherit;line-height:1.5;resize:vertical}
+.wizard-import-actions{display:flex;gap:8px;margin:12px 0}
+@media(max-width:640px){.wizard-paste{margin-left:0;order:5}}

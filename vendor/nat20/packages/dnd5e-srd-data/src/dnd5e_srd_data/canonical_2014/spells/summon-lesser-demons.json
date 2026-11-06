@@ -1,0 +1,276 @@
+{
+  "slug": "summon-lesser-demons",
+  "foundry_uuid": "Compendium.dnd5e.laaru-hw-spells.Item.HcCIneN6dJq7fljx",
+  "name": "Призыв низших демонов / Summon Lesser Demons",
+  "description": "Вы произносите инфернальные слова, призывая демонов из хаоса Бездны. Совершите бросок по следующей таблице, чтобы определить, что именно появится.\n\n[[/r d6]]призванные демоны\n\n1-2\n\nДва демона с классом опасности 1 или меньше\n\n3-4\n\nЧетыре демона с классом опасности 1/2 или меньше\n\n5-6\n\nВосемь демонов с классом опасности 1/4 или меньше\n\nМастер выбирает демонов, таких как @Compendium[laaru-dnd5-hw.monsters.hYUCpxJBZCTOhPGN]{Мейны} или @Compendium[laaru-dnd5-hw.monsters.gQ6pAxwu2hpw4Sz7]{Дретчи}, а вы выбираете видимые вами свободные пространства в пределах дистанции, в которых они появятся. Призванный демон исчезает, когда его ПЗ опускаются до 0 или когда заклинание закончится. Демоны враждебны ко всем существам, включая вас. Совершите проверку инициативы за призванных демонов как за одну группу, и они будут совершать свои собственные ходы. Демоны преследуют и атакуют ближайших не-демонов в меру своих способностей. Как часть сотворения заклинания вы можете начертить на земле круг кровью, используемой в качестве реагента. Круг должен быть достаточного размера, чтобы вместить вас. Пока заклинание длится, призванные демоны не могут пересечь круг или разрушить его, и они не могут атаковать никого в нём. Если реагент использован подобным образом, он расходуется при окончании заклинания.\n\nНа высоких кругах. Если вы сотворяете это заклинание, используя ячейку 6 или 7 круга, вы вызываете в два раза больше демонов. Если вы сотворяете его с помощью ячейки заклинания 8 или 9 круга, вы вызываете в три раза больше демонов.\n\nПримечание. Для работоспособности Призыва, мастеру нужно в настройках прав игроков разрешить создавать Токены и Актёров.\n\nДля призыва прописаны известные демоны, других можно добавить в настройках этого заклинания.",
+  "level": 3,
+  "school": "con",
+  "components": [
+    "M",
+    "S",
+    "V"
+  ],
+  "ritual": false,
+  "concentration": true,
+  "casting_time": {
+    "unit": "action",
+    "value": 1,
+    "condition": ""
+  },
+  "range": {
+    "units": "ft",
+    "value": 60,
+    "special": null
+  },
+  "duration": {
+    "units": "hour",
+    "value": 1
+  },
+  "materials": {
+    "value": "сосуд с кровью гуманоида, убитого за последние 24 часа",
+    "consumed": true,
+    "cost": 0,
+    "supply": 0
+  },
+  "preparation": {
+    "mode": "prepared",
+    "prepared": false
+  },
+  "activities": [
+    {
+      "id": "dnd5eactivity000",
+      "name": "",
+      "img": "",
+      "sort": 0,
+      "activation": {
+        "type": "action",
+        "value": null,
+        "condition": "",
+        "override": false,
+        "reaction_conditions": []
+      },
+      "consumption": {
+        "scaling": {
+          "allowed": false,
+          "max": ""
+        },
+        "spell_slot": true,
+        "targets": []
+      },
+      "description": {
+        "chat_flavor": ""
+      },
+      "duration": {
+        "value": null,
+        "units": "inst",
+        "special": "",
+        "concentration": false,
+        "override": false
+      },
+      "flags": {},
+      "range": {
+        "value": null,
+        "units": "self",
+        "special": "",
+        "override": false
+      },
+      "target": {
+        "template": {
+          "count": "",
+          "contiguous": false,
+          "stationary": false,
+          "type": "",
+          "size": "",
+          "width": "",
+          "height": "",
+          "units": ""
+        },
+        "affects": {
+          "count": "",
+          "type": "",
+          "choice": false,
+          "special": ""
+        },
+        "override": false,
+        "prompt": true
+      },
+      "uses": {
+        "spent": 0,
+        "max": "",
+        "recovery": []
+      },
+      "visibility": {
+        "identifier": "",
+        "level": {
+          "min": null,
+          "max": null
+        },
+        "require_attunement": false,
+        "require_identification": false,
+        "require_magic": false
+      },
+      "effects": [],
+      "applied_effects": [],
+      "kind": "summon",
+      "bonuses": {
+        "ac": "",
+        "hd": "",
+        "hp": "",
+        "attack_damage": "",
+        "save_damage": "",
+        "healing": ""
+      },
+      "creature_sizes": [],
+      "creature_types": [],
+      "match": {
+        "ability": "",
+        "attacks": false,
+        "disposition": false,
+        "proficiency": false,
+        "saves": false
+      },
+      "profiles": [
+        {
+          "id": "nmcRju7hMUZspy26",
+          "count": "",
+          "cr": "",
+          "level": {
+            "min": null,
+            "max": null
+          },
+          "name": "",
+          "types": [],
+          "uuid": "Compendium.laaru-dnd5-hw.monsters.Actor.gQ6pAxwu2hpw4Sz7"
+        },
+        {
+          "id": "C1DlIXM6yVNyc9JZ",
+          "count": "",
+          "cr": "",
+          "level": {
+            "min": null,
+            "max": null
+          },
+          "name": "",
+          "types": [],
+          "uuid": "Compendium.laaru-dnd5-hw.monsters.Actor.UhK6HWG160Bb4I8V"
+        },
+        {
+          "id": "vhBgBTStR7CA4aKL",
+          "count": "",
+          "cr": "",
+          "level": {
+            "min": null,
+            "max": null
+          },
+          "name": "",
+          "types": [],
+          "uuid": "Compendium.laaru-dnd5-hw.monsters.Actor.Ohcv5MnrZd4PQ9RM"
+        }
+      ],
+      "summon": {
+        "mode": "",
+        "prompt": true,
+        "identifier": ""
+      },
+      "temp_hp": ""
+    },
+    {
+      "id": "dnd5eactivity300",
+      "name": "",
+      "img": "",
+      "sort": 0,
+      "activation": {
+        "type": "action",
+        "value": null,
+        "condition": "",
+        "override": false,
+        "reaction_conditions": []
+      },
+      "consumption": {
+        "scaling": {
+          "allowed": false,
+          "max": ""
+        },
+        "spell_slot": true,
+        "targets": []
+      },
+      "description": {
+        "chat_flavor": ""
+      },
+      "duration": {
+        "value": null,
+        "units": "inst",
+        "special": "",
+        "concentration": false,
+        "override": false
+      },
+      "flags": {},
+      "range": {
+        "value": null,
+        "units": "self",
+        "special": "",
+        "override": false
+      },
+      "target": {
+        "template": {
+          "count": "",
+          "contiguous": false,
+          "stationary": false,
+          "type": "",
+          "size": "",
+          "width": "",
+          "height": "",
+          "units": ""
+        },
+        "affects": {
+          "count": "",
+          "type": "",
+          "choice": false,
+          "special": ""
+        },
+        "override": false,
+        "prompt": true
+      },
+      "uses": {
+        "spent": 0,
+        "max": "",
+        "recovery": []
+      },
+      "visibility": {
+        "identifier": "",
+        "level": {
+          "min": null,
+          "max": null
+        },
+        "require_attunement": false,
+        "require_identification": false,
+        "require_magic": false
+      },
+      "effects": [],
+      "applied_effects": [],
+      "kind": "utility",
+      "roll": {
+        "formula": "d6",
+        "name": "",
+        "prompt": false,
+        "visible": false
+      }
+    }
+  ],
+  "passive_effects": [],
+  "provenance": {
+    "source": "foundry",
+    "source_url": "https://github.com/foundryvtt/dnd5e/blob/965ad2d0cf5d063dac675ba078b5bd3c3c0dd449/packs/_source/laaru-hw-spells/Призыв_низших_демонов___Summon_Lesser_Demons_HcCIneN6dJq7fljx.yml",
+    "ingest_date": "2026-10-26",
+    "ingest_version": "foundry-translator-v1",
+    "srd_version": [
+      "5.1"
+    ],
+    "license_tag": "CC-BY-4.0"
+  },
+  "review": {
+    "known_divergence": null,
+    "requires_user_decision": false
+  },
+  "entry_kind": "spell"
+}

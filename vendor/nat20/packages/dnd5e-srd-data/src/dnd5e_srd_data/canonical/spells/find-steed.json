@@ -1,0 +1,361 @@
+{
+  "activities": [
+    {
+      "activation": {
+        "condition": "",
+        "override": false,
+        "reaction_conditions": [],
+        "type": "action",
+        "value": null
+      },
+      "applied_effects": [],
+      "bonuses": {
+        "ac": "@item.level",
+        "attack_damage": "@item.level",
+        "hd": "@item.level",
+        "healing": "@item.level",
+        "hp": "10 * @item.level",
+        "save_damage": ""
+      },
+      "consumption": {
+        "scaling": {
+          "allowed": false,
+          "max": ""
+        },
+        "spell_slot": true,
+        "targets": []
+      },
+      "creature_sizes": [],
+      "creature_types": [],
+      "description": {
+        "chat_flavor": ""
+      },
+      "duration": {
+        "concentration": false,
+        "override": false,
+        "special": "",
+        "units": "inst",
+        "value": null
+      },
+      "effects": [],
+      "flags": {},
+      "id": "dnd5eactivity000",
+      "img": "",
+      "kind": "summon",
+      "match": {
+        "ability": "",
+        "attacks": true,
+        "disposition": false,
+        "proficiency": true,
+        "saves": true
+      },
+      "name": "Summon Steed",
+      "profiles": [
+        {
+          "count": "",
+          "cr": "",
+          "id": "75tIki6OBwIbeSvJ",
+          "level": {
+            "max": 3,
+            "min": null
+          },
+          "name": "",
+          "types": [],
+          "uuid": "Compendium.dnd5e.actors24.Actor.phbostCelestial0"
+        },
+        {
+          "count": "",
+          "cr": "",
+          "id": "1Wg8ocHDB4qRwiPq",
+          "level": {
+            "max": 3,
+            "min": null
+          },
+          "name": "",
+          "types": [],
+          "uuid": "Compendium.dnd5e.actors24.Actor.phbostFey0000000"
+        },
+        {
+          "count": "",
+          "cr": "",
+          "id": "PjGZSSjpULYaglnm",
+          "level": {
+            "max": 3,
+            "min": null
+          },
+          "name": "",
+          "types": [],
+          "uuid": "Compendium.dnd5e.actors24.Actor.phbostFiend00000"
+        }
+      ],
+      "range": {
+        "override": false,
+        "special": "",
+        "units": "self",
+        "value": null
+      },
+      "sort": 0,
+      "summon": {
+        "identifier": "",
+        "mode": "",
+        "prompt": true
+      },
+      "target": {
+        "affects": {
+          "choice": false,
+          "count": "1",
+          "special": "",
+          "type": "space"
+        },
+        "override": false,
+        "prompt": true,
+        "template": {
+          "contiguous": false,
+          "count": "",
+          "height": "",
+          "size": "",
+          "stationary": false,
+          "type": "",
+          "units": "",
+          "width": ""
+        }
+      },
+      "temp_hp": "",
+      "uses": {
+        "max": "",
+        "recovery": [],
+        "spent": 0
+      },
+      "visibility": {
+        "identifier": "",
+        "level": {
+          "max": null,
+          "min": null
+        },
+        "require_attunement": false,
+        "require_identification": false,
+        "require_magic": false
+      }
+    },
+    {
+      "activation": {
+        "condition": "",
+        "override": false,
+        "reaction_conditions": [],
+        "type": "action",
+        "value": null
+      },
+      "applied_effects": [
+        "SgNNVLaKxZOVKyKx"
+      ],
+      "bonuses": {
+        "ac": "@item.level",
+        "attack_damage": "@item.level",
+        "hd": "@item.level",
+        "healing": "@item.level",
+        "hp": "10 * @item.level",
+        "save_damage": ""
+      },
+      "consumption": {
+        "scaling": {
+          "allowed": false,
+          "max": ""
+        },
+        "spell_slot": true,
+        "targets": []
+      },
+      "creature_sizes": [],
+      "creature_types": [],
+      "description": {
+        "chat_flavor": ""
+      },
+      "duration": {
+        "concentration": false,
+        "override": false,
+        "special": "",
+        "units": "inst",
+        "value": null
+      },
+      "effects": [
+        {
+          "id": "SgNNVLaKxZOVKyKx",
+          "level": {
+            "max": null,
+            "min": null
+          },
+          "on_save": null,
+          "riders": null
+        }
+      ],
+      "flags": {},
+      "id": "o4YsONnsS8rOOEaS",
+      "img": "",
+      "kind": "summon",
+      "match": {
+        "ability": "",
+        "attacks": true,
+        "disposition": false,
+        "proficiency": true,
+        "saves": true
+      },
+      "name": "Summon Flying Steed",
+      "profiles": [
+        {
+          "count": "",
+          "cr": "",
+          "id": "75tIki6OBwIbeSvJ",
+          "level": {
+            "max": null,
+            "min": 4
+          },
+          "name": "",
+          "types": [],
+          "uuid": "Compendium.dnd5e.actors24.Actor.phbostCelestial0"
+        },
+        {
+          "count": "",
+          "cr": "",
+          "id": "1Wg8ocHDB4qRwiPq",
+          "level": {
+            "max": null,
+            "min": 4
+          },
+          "name": "",
+          "types": [],
+          "uuid": "Compendium.dnd5e.actors24.Actor.phbostFey0000000"
+        },
+        {
+          "count": "",
+          "cr": "",
+          "id": "PjGZSSjpULYaglnm",
+          "level": {
+            "max": null,
+            "min": 4
+          },
+          "name": "",
+          "types": [],
+          "uuid": "Compendium.dnd5e.actors24.Actor.phbostFiend00000"
+        }
+      ],
+      "range": {
+        "override": false,
+        "special": "",
+        "units": "self",
+        "value": null
+      },
+      "sort": 0,
+      "summon": {
+        "identifier": "",
+        "mode": "",
+        "prompt": true
+      },
+      "target": {
+        "affects": {
+          "choice": false,
+          "count": "1",
+          "special": "",
+          "type": "space"
+        },
+        "override": false,
+        "prompt": true,
+        "template": {
+          "contiguous": false,
+          "count": "",
+          "height": "",
+          "size": "",
+          "stationary": false,
+          "type": "",
+          "units": "",
+          "width": ""
+        }
+      },
+      "temp_hp": "",
+      "uses": {
+        "max": "",
+        "recovery": [],
+        "spent": 0
+      },
+      "visibility": {
+        "identifier": "",
+        "level": {
+          "max": null,
+          "min": null
+        },
+        "require_attunement": false,
+        "require_identification": false,
+        "require_magic": false
+      }
+    }
+  ],
+  "casting_time": {
+    "condition": "",
+    "unit": "action",
+    "value": 1
+  },
+  "components": [
+    "S",
+    "V"
+  ],
+  "concentration": false,
+  "description": "You summon an otherworldly being that appears as a loyal steed in an unoccupied space of your choice within range. This creature uses the Otherworldly Steed stat block. If you already have a steed from this spell, the steed is replaced by the new one.\n\nThe steed resembles a Large, rideable animal of your choice, such as a horse, a camel, a dire wolf, or an elk. Whenever you cast the spell, choose the steed's creature type—Celestial, Fey, or Fiend—which determines certain traits in the stat block.\n\nCombat. The steed is an ally to you and your allies. In combat, it shares your Initiative count, and it functions as a &amp;Reference[controllingamount]{controlled mount} while you ride it (as defined in the rules on mounted combat). If you have the Incapacitated condition, the steed takes its turn immediately after yours and acts independently, focusing on protecting you.\n\nDisappearance of the Steed. The steed disappears if it drops to 0 Hit Points or if you die. When it disappears, it leaves behind anything it was wearing or carrying. If you cast this spell again, you decide whether you summon the steed that disappeared or a different one.\n\nUsing a Higher-Level Spell Slot. Use the spell slot's level for the spell's level in the stat block.\n\nIn addition to the noted usage of the spell's level in the steed's Traits and Actions, the following attributes are also affected.\n\nOtherworldly Steed\n\nAC\n\n10 + 1 per spell level\n\nHP\n\n5 + 10 per spell level (the steed has a number of Hit Dice [d10s] equal to the spell's level)\n\nSpeed\n\n60 ft., Fly 60 ft. (requires level 4+ spell)\n\nPB\n\nequals your Proficiency Bonus\n\nFoundry Note\n\nThe Summon Flying Steed activity should be used when consuming a fourth level or higher spell slot and is configured to apply the Fly Speed.\n\nWhen using a second or third level spell slot, the Summon Steed activity should be used instead.",
+  "description_localized": "<p>Вы призываете духа, который принимает форму необычайно разумного, сильного и верного волшебного скакуна, связанного с вами сильными узами. Скакун появляется в незанятом пространстве в пределах дистанции и принимает форму на ваш выбор — @UUID[Compendium.laaru-dnd5-hw.monsters.fRYieFHWaVQJctGW]{боевой лошади}, @UUID[Compendium.laaru-dnd5-hw.monsters.OWaAUtjQFOD0GSsB]{верблюда}, @UUID[Compendium.laaru-dnd5-hw.monsters.dy0EsZ9AjDclnobu]{лося}, @UUID[Compendium.laaru-dnd5-hw.monsters.xGuwh46ubTwb66oI]{мастифа} или @UUID[Compendium.laaru-dnd5-hw.monsters.UgPzf6AScVoYZxni]{пони} (с разрешения мастера можете использовать и других животных). Скакун получает параметры выбранной формы, хотя на самом деле это бестия, небожитель или фея (на ваш выбор), а не животное. Кроме того, если у вашего скакуна Интеллект 5 или ниже, его Интеллект становится равным 6 и он получает способность понимать один язык, на котором вы говорите, на ваш выбор.</p><p>Вы можете ездить верхом на волшебном скакуне как в бою, так и вне его. Он связан с вами инстинктивными узами, которые позволяют вам действовать как единое целое. Пока вы верхом на своём скакуне, можете сделать так, чтобы любое сотворяемое вами заклинание, которое нацелено только на вас, также было нацелено на вашего скакуна.</p><p>Когда ПЗ скакуна снижаются до 0, он исчезает, не оставляя физического тела. В качестве действия вы также можете отпустить скакуна, после чего он исчезает. В обоих случаях, если вы сотворите заклинание повторно, появится тот же скакун, полностью восстановивший ПЗ.</p><p>Пока ваш скакун в пределах 1 мили от вас, вы можете общаться друг с другом телепатически.</p><p>С помощью этого заклинания нельзя получить больше одного волшебного скакуна одновременно. В качестве действия вы можете освободить скакуна от уз в любой момент, после чего он исчезнет.</p><section id=\"secret-hHcTXb9aDlTIy56A\" class=\"secret\"><p><em>Примечание. Для работоспособности Призыва, мастеру нужно в настройках прав игроков разрешить создавать Токены и Актёров.</em></p></section>",
+  "duration": {
+    "units": "inst",
+    "value": null
+  },
+  "entry_kind": "spell",
+  "foundry_uuid": "Compendium.dnd5e.spells24.Item.phbsplFindSteed0",
+  "level": 2,
+  "materials": {
+    "consumed": false,
+    "cost": 0,
+    "supply": 0,
+    "value": ""
+  },
+  "name": "Призыв скакуна",
+  "passive_effects": [
+    {
+      "changes": [
+        {
+          "key": "system.attributes.movement.fly",
+          "mode": 4,
+          "priority": null,
+          "value": "60"
+        }
+      ],
+      "description": "<p>The steed has a Fly speed of 60ft. when summoned by a level 4+ spell.</p>",
+      "disabled": false,
+      "duration": null,
+      "id": "SgNNVLaKxZOVKyKx",
+      "name": "Flying Steed",
+      "statuses": [],
+      "transfer": false
+    }
+  ],
+  "preparation": {
+    "mode": "prepared",
+    "prepared": false
+  },
+  "provenance": {
+    "ingest_date": "2026-05-30",
+    "ingest_version": "foundry-translator-v1",
+    "license_tag": "CC-BY-4.0",
+    "source": "foundry",
+    "source_url": "https://github.com/foundryvtt/dnd5e/blob/965ad2d0cf5d063dac675ba078b5bd3c3c0dd449/packs/_source/spells24/2nd-level/find-steed.yml",
+    "srd_version": [
+      "5.2"
+    ]
+  },
+  "range": {
+    "special": null,
+    "units": "ft",
+    "value": 30
+  },
+  "review": {
+    "known_divergence": null,
+    "requires_user_decision": false
+  },
+  "ritual": false,
+  "school": "con",
+  "slug": "find-steed"
+}

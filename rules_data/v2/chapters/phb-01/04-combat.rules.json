@@ -1,0 +1,2008 @@
+{
+  "schema_version": "2.1.0",
+  "rules": [
+    {
+      "id": "dnd2024.phb01.combat_order",
+      "rules_family": "dnd2024",
+      "name": "Раунды, ходы и шаги боя",
+      "kind": "procedure",
+      "classification": {
+        "mode": "deterministic",
+        "semantic_required": false,
+        "formal_required": true,
+        "reason": "Formal procedure after trusted input validation."
+      },
+      "conditions": [],
+      "triggers": [
+        "combat_order.requested"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "procedure_id": "combat_order"
+          }
+        }
+      ],
+      "semantic_questions": [],
+      "facts": {
+        "round_seconds": 6,
+        "steps": [
+          "establish_positions",
+          "roll_initiative",
+          "take_turns"
+        ],
+        "repeat_until": "combat_ends"
+      },
+      "constraints": [
+        "Existing registered combat only."
+      ],
+      "exceptions": [],
+      "duration": "per_action",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 24,
+        "printed_page": "23",
+        "section": "Порядок сражения / Сражение шаг за шагом"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "existing_engine_subset",
+      "auto_activate": false,
+      "dependencies": [
+        "combat.turn"
+      ],
+      "behavior_tests": [
+        "phb01.combat_order"
+      ],
+      "readiness": {
+        "status": "engine_subset_verified",
+        "handler": "CombatEngine.end_turn",
+        "scope": "Existing registered combat only.",
+        "blockers": []
+      },
+      "revision": 1
+    },
+    {
+      "id": "dnd2024.phb01.combat_positions",
+      "rules_family": "dnd2024",
+      "name": "Исходное положение участников",
+      "kind": "guidance",
+      "classification": {
+        "mode": "adjudicated",
+        "semantic_required": true,
+        "formal_required": false,
+        "reason": "GM confirms semantic preconditions; only registered Engine operations can commit consequences."
+      },
+      "conditions": [],
+      "triggers": [
+        "combat_positions.requested"
+      ],
+      "formal_operations": [],
+      "semantic_questions": [
+        "Исходное положение участников — какие применимые обстоятельства подтверждены Мастером?"
+      ],
+      "facts": {
+        "inputs": [
+          "marching_order",
+          "declared_room_positions",
+          "enemy_distance_direction"
+        ]
+      },
+      "constraints": [],
+      "exceptions": [],
+      "duration": "per_action",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 24,
+        "printed_page": "23",
+        "section": "Сражение шаг за шагом / Определение положения"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "not_implemented",
+      "auto_activate": false,
+      "dependencies": [
+        "dnd2024.phb01.marching_order"
+      ],
+      "behavior_tests": [
+        "phb01.combat_positions"
+      ],
+      "readiness": {
+        "status": "adjudication_required",
+        "handler": null,
+        "scope": "Исходное положение участников",
+        "blockers": []
+      },
+      "revision": 1
+    },
+    {
+      "id": "dnd2024.phb01.initiative",
+      "rules_family": "dnd2024",
+      "name": "Инициатива как проверка Ловкости",
+      "kind": "procedure",
+      "classification": {
+        "mode": "deterministic",
+        "semantic_required": false,
+        "formal_required": true,
+        "reason": "Formal procedure after trusted input validation."
+      },
+      "conditions": [],
+      "triggers": [
+        "initiative.requested"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "procedure_id": "initiative"
+          }
+        }
+      ],
+      "semantic_questions": [],
+      "facts": {
+        "ability": "dexterity",
+        "order": "descending",
+        "order_persists_each_round": true,
+        "identical_monsters": "one_roll_for_group"
+      },
+      "constraints": [
+        "Individual initiative verified; CombatEngine currently rolls each monster separately, not grouped."
+      ],
+      "exceptions": [],
+      "duration": "per_action",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 24,
+        "printed_page": "23",
+        "section": "Инициатива"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "existing_engine_subset",
+      "auto_activate": false,
+      "dependencies": [
+        "checks.ability"
+      ],
+      "behavior_tests": [
+        "phb01.initiative"
+      ],
+      "readiness": {
+        "status": "engine_subset_verified",
+        "handler": "RulesetEngine.initiative",
+        "scope": "Individual initiative verified; CombatEngine currently rolls each monster separately, not grouped.",
+        "blockers": []
+      },
+      "revision": 1
+    },
+    {
+      "id": "dnd2024.phb01.surprise",
+      "rules_family": "dnd2024",
+      "name": "Помеха инициативе застигнутого врасплох",
+      "kind": "procedure",
+      "classification": {
+        "mode": "hybrid",
+        "semantic_required": true,
+        "formal_required": true,
+        "reason": "GM confirms semantic preconditions; only registered Engine operations can commit consequences."
+      },
+      "conditions": [],
+      "triggers": [
+        "surprise.requested"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "procedure_id": "surprise"
+          }
+        }
+      ],
+      "semantic_questions": [
+        "Помеха инициативе застигнутого врасплох — какие применимые обстоятельства подтверждены Мастером?"
+      ],
+      "facts": {
+        "surprised": "initiative_disadvantage",
+        "no_2014_skip_turn": true
+      },
+      "constraints": [
+        "GM determines surprise; only numeric initiative branch verified."
+      ],
+      "exceptions": [],
+      "duration": "per_action",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 24,
+        "printed_page": "23",
+        "section": "Инициатива / Застигнутые врасплох"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "existing_engine_subset",
+      "auto_activate": false,
+      "dependencies": [
+        "dnd2024.phb01.initiative"
+      ],
+      "behavior_tests": [
+        "phb01.surprise"
+      ],
+      "readiness": {
+        "status": "adjudication_required",
+        "handler": "RulesetEngine.initiative",
+        "scope": "GM determines surprise; only numeric initiative branch verified.",
+        "blockers": []
+      },
+      "revision": 1
+    },
+    {
+      "id": "dnd2024.phb01.initiative_tie",
+      "rules_family": "dnd2024",
+      "name": "Решение равной инициативы",
+      "kind": "guidance",
+      "classification": {
+        "mode": "adjudicated",
+        "semantic_required": true,
+        "formal_required": false,
+        "reason": "GM confirms semantic preconditions; only registered Engine operations can commit consequences."
+      },
+      "conditions": [],
+      "triggers": [
+        "initiative_tie.requested"
+      ],
+      "formal_operations": [],
+      "semantic_questions": [
+        "Решение равной инициативы — какие применимые обстоятельства подтверждены Мастером?"
+      ],
+      "facts": {
+        "monster_monster": "gm",
+        "pc_pc": "players",
+        "monster_pc": "gm",
+        "existing_engine_local_ruling": "actor_id_order"
+      },
+      "constraints": [
+        "Engine actor-id tie order is a local ruling, not the PHB procedure."
+      ],
+      "exceptions": [],
+      "duration": "per_action",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 24,
+        "printed_page": "23",
+        "section": "Инициатива / Ничья"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "not_implemented",
+      "auto_activate": false,
+      "dependencies": [],
+      "behavior_tests": [
+        "phb01.initiative_tie"
+      ],
+      "readiness": {
+        "status": "adjudication_required",
+        "handler": null,
+        "scope": "Engine actor-id tie order is a local ruling, not the PHB procedure.",
+        "blockers": []
+      },
+      "revision": 1
+    },
+    {
+      "id": "dnd2024.phb01.turn_budget",
+      "rules_family": "dnd2024",
+      "name": "Действие и перемещение в свой ход",
+      "kind": "procedure",
+      "classification": {
+        "mode": "deterministic",
+        "semantic_required": false,
+        "formal_required": true,
+        "reason": "Formal procedure after trusted input validation."
+      },
+      "conditions": [
+        {
+          "fact": "actor.own_turn",
+          "operator": "eq",
+          "value": true
+        },
+        {
+          "fact": "actor.incapacitated",
+          "operator": "eq",
+          "value": false
+        }
+      ],
+      "triggers": [
+        "turn.action_requested"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "procedure_id": "turn_budget"
+          }
+        }
+      ],
+      "semantic_questions": [],
+      "facts": {
+        "actions": 1,
+        "movement_limit": "speed",
+        "order": "either"
+      },
+      "constraints": [],
+      "exceptions": [],
+      "duration": "per_action",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 24,
+        "printed_page": "23",
+        "section": "Ваш ход"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "existing_engine_subset",
+      "auto_activate": false,
+      "dependencies": [
+        "combat.turn"
+      ],
+      "behavior_tests": [
+        "phb01.turn_budget"
+      ],
+      "readiness": {
+        "status": "engine_subset_verified",
+        "handler": "CombatEngine.assert_action",
+        "scope": "Действие и перемещение в свой ход",
+        "blockers": []
+      },
+      "revision": 1
+    },
+    {
+      "id": "dnd2024.phb01.turn_communication",
+      "rules_family": "dnd2024",
+      "name": "Краткое общение и длительное влияние",
+      "kind": "procedure",
+      "classification": {
+        "mode": "hybrid",
+        "semantic_required": true,
+        "formal_required": true,
+        "reason": "GM confirms semantic preconditions; only registered Engine operations can commit consequences."
+      },
+      "conditions": [],
+      "triggers": [
+        "turn_communication.requested"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "procedure_id": "turn_communication"
+          }
+        }
+      ],
+      "semantic_questions": [
+        "Краткое общение и длительное влияние — какие применимые обстоятельства подтверждены Мастером?"
+      ],
+      "facts": {
+        "brief_words_gestures_cost": 0,
+        "detailed_explanation_or_persuasion": "action"
+      },
+      "constraints": [],
+      "exceptions": [],
+      "duration": "per_action",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 25,
+        "printed_page": "24",
+        "section": "Общение"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "not_implemented",
+      "auto_activate": false,
+      "dependencies": [
+        "dnd2024.phb01.action_influence"
+      ],
+      "behavior_tests": [
+        "phb01.turn_communication"
+      ],
+      "readiness": {
+        "status": "blocked",
+        "handler": null,
+        "scope": "Краткое общение и длительное влияние",
+        "blockers": [
+          "Briefness and communication possibility are semantic; no universal Influence command."
+        ]
+      },
+      "revision": 1
+    },
+    {
+      "id": "dnd2024.phb01.turn_objects",
+      "rules_family": "dnd2024",
+      "name": "Предметы в ходу и исключения",
+      "kind": "procedure",
+      "classification": {
+        "mode": "hybrid",
+        "semantic_required": true,
+        "formal_required": true,
+        "reason": "GM confirms semantic preconditions; only registered Engine operations can commit consequences."
+      },
+      "conditions": [],
+      "triggers": [
+        "turn_objects.requested"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "procedure_id": "turn_objects"
+          }
+        }
+      ],
+      "semantic_questions": [
+        "Предметы в ходу и исключения — какие применимые обстоятельства подтверждены Мастером?"
+      ],
+      "facts": {
+        "free_objects": 1,
+        "second_object_action": "utilize",
+        "specific_item_action": "item_description",
+        "gm_attention_exception": true
+      },
+      "constraints": [],
+      "exceptions": [],
+      "duration": "per_action",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 25,
+        "printed_page": "24",
+        "section": "Взаимодействие с вещами"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "existing_engine_subset",
+      "auto_activate": false,
+      "dependencies": [
+        "dnd2024.phb01.free_interaction",
+        "catalog.items"
+      ],
+      "behavior_tests": [
+        "phb01.turn_objects"
+      ],
+      "readiness": {
+        "status": "blocked",
+        "handler": "CombatEngine.interact",
+        "scope": "Предметы в ходу и исключения",
+        "blockers": [
+          "Registered interactions exist; full item rules and special attention exceptions are not implemented."
+        ]
+      },
+      "revision": 1
+    },
+    {
+      "id": "dnd2024.phb01.turn_inactivity",
+      "rules_family": "dnd2024",
+      "name": "Возможность ничего не делать",
+      "kind": "procedure",
+      "classification": {
+        "mode": "deterministic",
+        "semantic_required": false,
+        "formal_required": true,
+        "reason": "Formal procedure after trusted input validation."
+      },
+      "conditions": [],
+      "triggers": [
+        "turn_inactivity.requested"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "procedure_id": "turn_inactivity"
+          }
+        }
+      ],
+      "semantic_questions": [],
+      "facts": {
+        "movement_optional": true,
+        "action_optional": true
+      },
+      "constraints": [],
+      "exceptions": [],
+      "duration": "per_action",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 25,
+        "printed_page": "24",
+        "section": "Бездействие в свой ход"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "existing_engine_subset",
+      "auto_activate": false,
+      "dependencies": [
+        "combat.turn"
+      ],
+      "behavior_tests": [
+        "phb01.turn_inactivity"
+      ],
+      "readiness": {
+        "status": "engine_subset_verified",
+        "handler": "CombatEngine.end_turn",
+        "scope": "Возможность ничего не делать",
+        "blockers": []
+      },
+      "revision": 1
+    },
+    {
+      "id": "dnd2024.phb01.combat_end",
+      "rules_family": "dnd2024",
+      "name": "Условия окончания боя",
+      "kind": "procedure",
+      "classification": {
+        "mode": "hybrid",
+        "semantic_required": true,
+        "formal_required": true,
+        "reason": "GM confirms semantic preconditions; only registered Engine operations can commit consequences."
+      },
+      "conditions": [],
+      "triggers": [
+        "combat_end.requested"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "procedure_id": "combat_end"
+          }
+        }
+      ],
+      "semantic_questions": [
+        "Условия окончания боя — какие применимые обстоятельства подтверждены Мастером?"
+      ],
+      "facts": {
+        "ends": [
+          "killed",
+          "incapacitated",
+          "surrendered",
+          "fled",
+          "mutual_agreement"
+        ]
+      },
+      "constraints": [],
+      "exceptions": [],
+      "duration": "per_action",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 25,
+        "printed_page": "24",
+        "section": "Завершение сражения"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "not_implemented",
+      "auto_activate": false,
+      "dependencies": [
+        "combat.turn"
+      ],
+      "behavior_tests": [
+        "phb01.combat_end"
+      ],
+      "readiness": {
+        "status": "blocked",
+        "handler": null,
+        "scope": "Условия окончания боя",
+        "blockers": [
+          "Existing automatic victory/defeat covers only a subset; surrender and mutual agreement require trusted transitions."
+        ]
+      },
+      "revision": 1
+    },
+    {
+      "id": "dnd2024.phb01.movement",
+      "rules_family": "dnd2024",
+      "name": "Общий бюджет и способы перемещения",
+      "kind": "procedure",
+      "classification": {
+        "mode": "deterministic",
+        "semantic_required": false,
+        "formal_required": true,
+        "reason": "Formal procedure after trusted input validation."
+      },
+      "conditions": [],
+      "triggers": [
+        "movement.requested"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "procedure_id": "movement"
+          }
+        }
+      ],
+      "semantic_questions": [],
+      "facts": {
+        "limit": "speed",
+        "subtract": "all_movement_segments",
+        "modes": [
+          "walk",
+          "climb",
+          "crawl",
+          "jump",
+          "swim"
+        ],
+        "optional": true
+      },
+      "constraints": [
+        "Current registered grid movement only; special modes require glossary."
+      ],
+      "exceptions": [],
+      "duration": "per_action",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 25,
+        "printed_page": "24",
+        "section": "Перемещение и положение"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "existing_engine_subset",
+      "auto_activate": false,
+      "dependencies": [
+        "combat.turn"
+      ],
+      "behavior_tests": [
+        "phb01.movement"
+      ],
+      "readiness": {
+        "status": "engine_subset_verified",
+        "handler": "CombatEngine.move",
+        "scope": "Current registered grid movement only; special modes require glossary.",
+        "blockers": []
+      },
+      "revision": 1
+    },
+    {
+      "id": "dnd2024.phb01.difficult_terrain",
+      "rules_family": "dnd2024",
+      "name": "Дополнительная стоимость труднопроходимой местности",
+      "kind": "procedure",
+      "classification": {
+        "mode": "deterministic",
+        "semantic_required": false,
+        "formal_required": true,
+        "reason": "Formal procedure after trusted input validation."
+      },
+      "conditions": [],
+      "triggers": [
+        "difficult_terrain.requested"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "procedure_id": "difficult_terrain"
+          }
+        }
+      ],
+      "semantic_questions": [],
+      "facts": {
+        "additional_feet_per_foot": 1,
+        "multiple_difficult_effects_stack": false
+      },
+      "constraints": [],
+      "exceptions": [],
+      "duration": "per_action",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 25,
+        "printed_page": "24",
+        "section": "Труднопроходимая местность (продолжение на стр.25)"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "existing_engine_subset",
+      "auto_activate": false,
+      "dependencies": [
+        "combat.turn"
+      ],
+      "behavior_tests": [
+        "phb01.difficult_terrain"
+      ],
+      "readiness": {
+        "status": "engine_subset_verified",
+        "handler": "Geometry.edge_cost",
+        "scope": "Дополнительная стоимость труднопроходимой местности",
+        "blockers": []
+      },
+      "revision": 1
+    },
+    {
+      "id": "dnd2024.phb01.split_movement",
+      "rules_family": "dnd2024",
+      "name": "Прерывание движения действием",
+      "kind": "procedure",
+      "classification": {
+        "mode": "deterministic",
+        "semantic_required": false,
+        "formal_required": true,
+        "reason": "Formal procedure after trusted input validation."
+      },
+      "conditions": [],
+      "triggers": [
+        "split_movement.requested"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "procedure_id": "split_movement"
+          }
+        }
+      ],
+      "semantic_questions": [],
+      "facts": {
+        "interrupts": [
+          "action",
+          "bonus_action",
+          "reaction"
+        ],
+        "remaining_budget_preserved": true
+      },
+      "constraints": [],
+      "exceptions": [],
+      "duration": "per_action",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 26,
+        "printed_page": "25",
+        "section": "Прерывание перемещения"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "existing_engine_subset",
+      "auto_activate": false,
+      "dependencies": [
+        "combat.turn"
+      ],
+      "behavior_tests": [
+        "phb01.split_movement"
+      ],
+      "readiness": {
+        "status": "engine_subset_verified",
+        "handler": "CombatEngine.move",
+        "scope": "Прерывание движения действием",
+        "blockers": []
+      },
+      "revision": 1
+    },
+    {
+      "id": "dnd2024.phb01.drop_prone",
+      "rules_family": "dnd2024",
+      "name": "Добровольно стать Сбитым с ног",
+      "kind": "procedure",
+      "classification": {
+        "mode": "deterministic",
+        "semantic_required": false,
+        "formal_required": true,
+        "reason": "Formal procedure after trusted input validation."
+      },
+      "conditions": [],
+      "triggers": [
+        "drop_prone.requested"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "procedure_id": "drop_prone"
+          }
+        }
+      ],
+      "semantic_questions": [],
+      "facts": {
+        "action_cost": 0,
+        "movement_cost": 0,
+        "forbidden_speed": 0
+      },
+      "constraints": [],
+      "exceptions": [],
+      "duration": "per_action",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 26,
+        "printed_page": "25",
+        "section": "Падение на землю"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "not_implemented",
+      "auto_activate": false,
+      "dependencies": [
+        "glossary.prone"
+      ],
+      "behavior_tests": [
+        "phb01.drop_prone"
+      ],
+      "readiness": {
+        "status": "blocked",
+        "handler": null,
+        "scope": "Добровольно стать Сбитым с ног",
+        "blockers": [
+          "No registered voluntary-drop command; stand_up must not be used as its inverse."
+        ]
+      },
+      "revision": 1
+    },
+    {
+      "id": "dnd2024.phb01.size",
+      "rules_family": "dnd2024",
+      "name": "Размер и занимаемое пространство",
+      "kind": "procedure",
+      "classification": {
+        "mode": "deterministic",
+        "semantic_required": false,
+        "formal_required": true,
+        "reason": "Formal procedure after trusted input validation."
+      },
+      "conditions": [],
+      "triggers": [
+        "size.requested"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "procedure_id": "size"
+          }
+        }
+      ],
+      "semantic_questions": [],
+      "facts": {
+        "sizes": [
+          "Tiny",
+          "Small",
+          "Medium",
+          "Large",
+          "Huge",
+          "Gargantuan"
+        ],
+        "square_side_ft": [
+          2.5,
+          5,
+          5,
+          10,
+          15,
+          20
+        ],
+        "grid_squares": [
+          0.25,
+          1,
+          1,
+          4,
+          9,
+          16
+        ]
+      },
+      "constraints": [],
+      "exceptions": [],
+      "duration": "per_action",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 26,
+        "printed_page": "25",
+        "section": "Размер существа и занятое пространство"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "not_implemented",
+      "auto_activate": false,
+      "dependencies": [
+        "glossary.size"
+      ],
+      "behavior_tests": [
+        "phb01.size"
+      ],
+      "readiness": {
+        "status": "blocked",
+        "handler": null,
+        "scope": "Размер и занимаемое пространство",
+        "blockers": [
+          "CombatEngine currently supports only Small/Medium occupancy; table alone cannot activate other sizes."
+        ]
+      },
+      "revision": 1
+    },
+    {
+      "id": "dnd2024.phb01.move_through_creatures",
+      "rules_family": "dnd2024",
+      "name": "Проход и завершение движения в занятом пространстве",
+      "kind": "procedure",
+      "classification": {
+        "mode": "hybrid",
+        "semantic_required": true,
+        "formal_required": true,
+        "reason": "GM confirms semantic preconditions; only registered Engine operations can commit consequences."
+      },
+      "conditions": [],
+      "triggers": [
+        "move_through_creatures.requested"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "procedure_id": "move_through_creatures"
+          }
+        }
+      ],
+      "semantic_questions": [
+        "Проход и завершение движения в занятом пространстве — какие применимые обстоятельства подтверждены Мастером?"
+      ],
+      "facts": {
+        "pass_if": [
+          "ally",
+          "incapacitated",
+          "tiny",
+          "size_difference_at_least_two"
+        ],
+        "difficult_unless": [
+          "tiny",
+          "ally"
+        ],
+        "voluntary_end_occupied": false,
+        "forced_end": "prone_with_size_exception_in_source"
+      },
+      "constraints": [],
+      "exceptions": [],
+      "duration": "per_action",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 26,
+        "printed_page": "25",
+        "section": "Передвижение через других существ"
+      },
+      "verification": "translation_ambiguity",
+      "implementation": "not_implemented",
+      "auto_activate": false,
+      "dependencies": [
+        "glossary.size",
+        "glossary.prone"
+      ],
+      "behavior_tests": [
+        "phb01.move_through_creatures"
+      ],
+      "readiness": {
+        "status": "blocked",
+        "handler": null,
+        "scope": "Проход и завершение движения в занятом пространстве",
+        "blockers": [
+          "Full occupancy rules not implemented; Russian forced-end size exception needs translation review."
+        ]
+      },
+      "revision": 1
+    },
+    {
+      "id": "dnd2024.phb01.attack_procedure",
+      "rules_family": "dnd2024",
+      "name": "Цель, модификаторы и последствия атаки",
+      "kind": "procedure",
+      "classification": {
+        "mode": "hybrid",
+        "semantic_required": true,
+        "formal_required": true,
+        "reason": "GM confirms semantic preconditions; only registered Engine operations can commit consequences."
+      },
+      "conditions": [],
+      "triggers": [
+        "attack_procedure.requested"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "procedure_id": "attack_procedure"
+          }
+        }
+      ],
+      "semantic_questions": [
+        "Цель, модификаторы и последствия атаки — какие применимые обстоятельства подтверждены Мастером?"
+      ],
+      "facts": {
+        "steps": [
+          "target_in_range",
+          "cover_advantage_modifiers",
+          "attack_then_damage_if_hit"
+        ],
+        "ordinary_attack_action_attacks": 1,
+        "specific_effects": "may_replace_or_add_damage"
+      },
+      "constraints": [
+        "Only existing registered weapon attacks; no general spell/monster effect executor."
+      ],
+      "exceptions": [],
+      "duration": "per_action",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 26,
+        "printed_page": "25",
+        "section": "Совершение атаки"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "existing_engine_subset",
+      "auto_activate": false,
+      "dependencies": [
+        "combat.weapon_attack",
+        "catalog.attack_effects"
+      ],
+      "behavior_tests": [
+        "phb01.attack_procedure"
+      ],
+      "readiness": {
+        "status": "adjudication_required",
+        "handler": "CombatEngine.attack",
+        "scope": "Only existing registered weapon attacks; no general spell/monster effect executor.",
+        "blockers": []
+      },
+      "revision": 1
+    },
+    {
+      "id": "dnd2024.phb01.cover",
+      "rules_family": "dnd2024",
+      "name": "Укрытие без суммирования",
+      "kind": "procedure",
+      "classification": {
+        "mode": "hybrid",
+        "semantic_required": true,
+        "formal_required": true,
+        "reason": "GM confirms semantic preconditions; only registered Engine operations can commit consequences."
+      },
+      "conditions": [],
+      "triggers": [
+        "cover.requested"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "procedure_id": "cover"
+          }
+        }
+      ],
+      "semantic_questions": [
+        "Укрытие без суммирования — какие применимые обстоятельства подтверждены Мастером?"
+      ],
+      "facts": {
+        "degrees": [
+          "half",
+          "three_quarters",
+          "total"
+        ],
+        "ac_bonus": [
+          2,
+          5,
+          0
+        ],
+        "dex_save_bonus": [
+          2,
+          5,
+          0
+        ],
+        "total": "cannot_target_directly",
+        "combination": "highest_only",
+        "opposite_side_required": true
+      },
+      "constraints": [
+        "Map cover geometry/weapon AC branch only; save cover bonus not connected."
+      ],
+      "exceptions": [],
+      "duration": "per_action",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 26,
+        "printed_page": "25",
+        "section": "Укрытие (таблица на стр.26)"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "existing_engine_subset",
+      "auto_activate": false,
+      "dependencies": [
+        "combat.turn"
+      ],
+      "behavior_tests": [
+        "phb01.cover"
+      ],
+      "readiness": {
+        "status": "adjudication_required",
+        "handler": "Geometry.cover",
+        "scope": "Map cover geometry/weapon AC branch only; save cover bonus not connected.",
+        "blockers": []
+      },
+      "revision": 1
+    },
+    {
+      "id": "dnd2024.phb01.grid",
+      "rules_family": "dnd2024",
+      "name": "Квадраты, диагонали и углы",
+      "kind": "procedure",
+      "classification": {
+        "mode": "deterministic",
+        "semantic_required": false,
+        "formal_required": true,
+        "reason": "Formal procedure after trusted input validation."
+      },
+      "conditions": [],
+      "triggers": [
+        "grid.requested"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "procedure_id": "grid"
+          }
+        }
+      ],
+      "semantic_questions": [],
+      "facts": {
+        "cell_ft": 5,
+        "ordinary_entry_squares": 1,
+        "difficult_entry_squares": 2,
+        "diagonal_cost": "one_square",
+        "cannot_cut_full_obstacle_corner": true,
+        "distance": "shortest_route_including_destination_excluding_source"
+      },
+      "constraints": [
+        "Built-in dnd2024 five-feet diagonal only."
+      ],
+      "exceptions": [],
+      "duration": "per_action",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 26,
+        "printed_page": "25",
+        "section": "Игра на сетке"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "existing_engine_subset",
+      "auto_activate": false,
+      "dependencies": [
+        "combat.turn"
+      ],
+      "behavior_tests": [
+        "phb01.grid"
+      ],
+      "readiness": {
+        "status": "engine_subset_verified",
+        "handler": "Geometry.edge_cost",
+        "scope": "Built-in dnd2024 five-feet diagonal only.",
+        "blockers": []
+      },
+      "revision": 1
+    },
+    {
+      "id": "dnd2024.phb01.ranged_range",
+      "rules_family": "dnd2024",
+      "name": "Нормальная и максимальная дистанция",
+      "kind": "procedure",
+      "classification": {
+        "mode": "deterministic",
+        "semantic_required": false,
+        "formal_required": true,
+        "reason": "Formal procedure after trusted input validation."
+      },
+      "conditions": [],
+      "triggers": [
+        "ranged_range.requested"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "procedure_id": "ranged_range"
+          }
+        }
+      ],
+      "semantic_questions": [],
+      "facts": {
+        "beyond_single_or_max": "cannot_attack",
+        "beyond_normal_with_two_ranges": "disadvantage"
+      },
+      "constraints": [
+        "Registered weapons only."
+      ],
+      "exceptions": [],
+      "duration": "per_action",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 27,
+        "printed_page": "26",
+        "section": "Дальнобойные атаки / Дистанция"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "existing_engine_subset",
+      "auto_activate": false,
+      "dependencies": [
+        "combat.weapon_attack"
+      ],
+      "behavior_tests": [
+        "phb01.ranged_range"
+      ],
+      "readiness": {
+        "status": "engine_subset_verified",
+        "handler": "CombatEngine.attack",
+        "scope": "Registered weapons only.",
+        "blockers": []
+      },
+      "revision": 1
+    },
+    {
+      "id": "dnd2024.phb01.ranged_close",
+      "rules_family": "dnd2024",
+      "name": "Помеха дальнобойной атаке рядом с врагом",
+      "kind": "procedure",
+      "classification": {
+        "mode": "deterministic",
+        "semantic_required": false,
+        "formal_required": true,
+        "reason": "Formal procedure after trusted input validation."
+      },
+      "conditions": [],
+      "triggers": [
+        "ranged_close.requested"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "procedure_id": "ranged_close"
+          }
+        }
+      ],
+      "semantic_questions": [],
+      "facts": {
+        "hostile_distance_ft": 5,
+        "hostile_must_be_incapacitated": false,
+        "applies": [
+          "weapon",
+          "spell",
+          "other_ranged_attack"
+        ],
+        "hostile_seeing_attacker_required_by_this_source": false
+      },
+      "constraints": [],
+      "exceptions": [],
+      "duration": "per_action",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 27,
+        "printed_page": "26",
+        "section": "Дальнобойные атаки в ближнем бою"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "existing_engine_subset",
+      "auto_activate": false,
+      "dependencies": [
+        "combat.weapon_attack"
+      ],
+      "behavior_tests": [
+        "phb01.ranged_close"
+      ],
+      "readiness": {
+        "status": "blocked",
+        "handler": "CombatEngine.attack",
+        "scope": "Помеха дальнобойной атаке рядом с врагом",
+        "blockers": [
+          "Existing engine additionally requires nearby hostile sees attacker; supplied PHB paragraph does not. Keep unbound pending reconciliation."
+        ]
+      },
+      "revision": 1
+    },
+    {
+      "id": "dnd2024.phb01.melee_reach",
+      "rules_family": "dnd2024",
+      "name": "Базовая досягаемость рукопашной атаки",
+      "kind": "procedure",
+      "classification": {
+        "mode": "deterministic",
+        "semantic_required": false,
+        "formal_required": true,
+        "reason": "Formal procedure after trusted input validation."
+      },
+      "conditions": [],
+      "triggers": [
+        "melee_reach.requested"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "procedure_id": "melee_reach"
+          }
+        }
+      ],
+      "semantic_questions": [],
+      "facts": {
+        "default_ft": 5,
+        "specific_attack_may_override": true
+      },
+      "constraints": [
+        "Only registered reach profiles."
+      ],
+      "exceptions": [],
+      "duration": "per_action",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 27,
+        "printed_page": "26",
+        "section": "Рукопашные атаки / Досягаемость"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "existing_engine_subset",
+      "auto_activate": false,
+      "dependencies": [
+        "combat.weapon_attack"
+      ],
+      "behavior_tests": [
+        "phb01.melee_reach"
+      ],
+      "readiness": {
+        "status": "engine_subset_verified",
+        "handler": "CombatEngine.attack",
+        "scope": "Only registered reach profiles.",
+        "blockers": []
+      },
+      "revision": 1
+    },
+    {
+      "id": "dnd2024.phb01.opportunity_attack",
+      "rules_family": "dnd2024",
+      "name": "Провоцированная атака и исключения",
+      "kind": "procedure",
+      "classification": {
+        "mode": "deterministic",
+        "semantic_required": false,
+        "formal_required": true,
+        "reason": "Formal procedure after trusted input validation."
+      },
+      "conditions": [],
+      "triggers": [
+        "opportunity_attack.requested"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "procedure_id": "opportunity_attack"
+          }
+        }
+      ],
+      "semantic_questions": [],
+      "facts": {
+        "trigger": "visible_creature_leaves_reach",
+        "cost": "reaction",
+        "attack_count": 1,
+        "attack": [
+          "melee_weapon",
+          "unarmed"
+        ],
+        "timing": "immediately_before_leaving",
+        "avoid": [
+          "disengage",
+          "teleportation",
+          "movement_without_own_movement_action_bonus_reaction"
+        ]
+      },
+      "constraints": [
+        "Registered hostile grid movement and reaction window only. Forced/teleport movement requires dedicated paths."
+      ],
+      "exceptions": [],
+      "duration": "per_action",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 27,
+        "printed_page": "26",
+        "section": "Провоцированные атаки"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "existing_engine_subset",
+      "auto_activate": false,
+      "dependencies": [
+        "combat.turn"
+      ],
+      "behavior_tests": [
+        "phb01.opportunity_attack"
+      ],
+      "readiness": {
+        "status": "engine_subset_verified",
+        "handler": "CombatEngine.move",
+        "scope": "Registered hostile grid movement and reaction window only. Forced/teleport movement requires dedicated paths.",
+        "blockers": []
+      },
+      "revision": 1
+    },
+    {
+      "id": "dnd2024.phb01.unseen_attack",
+      "rules_family": "dnd2024",
+      "name": "Невидимый нападающий и невидимая цель",
+      "kind": "procedure",
+      "classification": {
+        "mode": "deterministic",
+        "semantic_required": false,
+        "formal_required": true,
+        "reason": "Formal procedure after trusted input validation."
+      },
+      "conditions": [],
+      "triggers": [
+        "unseen_attack.requested"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "procedure_id": "unseen_attack"
+          }
+        }
+      ],
+      "semantic_questions": [],
+      "facts": {
+        "unseen_target": "disadvantage",
+        "target_wrong_location": "automatic_miss",
+        "attacker_unseen": "advantage",
+        "hidden_attack": "location_revealed_hit_or_miss"
+      },
+      "constraints": [],
+      "exceptions": [],
+      "duration": "per_action",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 27,
+        "printed_page": "26",
+        "section": "Невидимые нападающие и цели"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "not_implemented",
+      "auto_activate": false,
+      "dependencies": [
+        "glossary.invisible",
+        "glossary.hide"
+      ],
+      "behavior_tests": [
+        "phb01.unseen_attack"
+      ],
+      "readiness": {
+        "status": "blocked",
+        "handler": null,
+        "scope": "Невидимый нападающий и невидимая цель",
+        "blockers": [
+          "Existing attack rejects unseen targets; guessed-location attacks and hidden reveal are not implemented."
+        ]
+      },
+      "revision": 1
+    },
+    {
+      "id": "dnd2024.phb01.mount_eligibility",
+      "rules_family": "dnd2024",
+      "name": "Пригодность существа как скакуна",
+      "kind": "procedure",
+      "classification": {
+        "mode": "hybrid",
+        "semantic_required": true,
+        "formal_required": true,
+        "reason": "GM confirms semantic preconditions; only registered Engine operations can commit consequences."
+      },
+      "conditions": [],
+      "triggers": [
+        "mount_eligibility.requested"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "procedure_id": "mount_eligibility"
+          }
+        }
+      ],
+      "semantic_questions": [
+        "Пригодность существа как скакуна — какие применимые обстоятельства подтверждены Мастером?"
+      ],
+      "facts": {
+        "requires": [
+          "willing",
+          "suitable_anatomy",
+          "at_least_one_size_larger"
+        ]
+      },
+      "constraints": [],
+      "exceptions": [],
+      "duration": "per_action",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 27,
+        "printed_page": "26",
+        "section": "Сражение верхом"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "not_implemented",
+      "auto_activate": false,
+      "dependencies": [
+        "glossary.size",
+        "catalog.mounts"
+      ],
+      "behavior_tests": [
+        "phb01.mount_eligibility"
+      ],
+      "readiness": {
+        "status": "blocked",
+        "handler": null,
+        "scope": "Пригодность существа как скакуна",
+        "blockers": [
+          "Mounted combat state and eligibility not registered."
+        ]
+      },
+      "revision": 1
+    },
+    {
+      "id": "dnd2024.phb01.mount_cost",
+      "rules_family": "dnd2024",
+      "name": "Стоимость посадки и спешивания",
+      "kind": "procedure",
+      "classification": {
+        "mode": "deterministic",
+        "semantic_required": false,
+        "formal_required": true,
+        "reason": "Formal procedure after trusted input validation."
+      },
+      "conditions": [],
+      "triggers": [
+        "mount_cost.requested"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "procedure_id": "mount_cost"
+          }
+        }
+      ],
+      "semantic_questions": [],
+      "facts": {
+        "distance_ft": 5,
+        "speed_numerator": 1,
+        "speed_denominator": 2,
+        "rounding": "floor"
+      },
+      "constraints": [],
+      "exceptions": [],
+      "duration": "per_action",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 27,
+        "printed_page": "26",
+        "section": "Посадка и спешивание"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "kernel_verified",
+      "auto_activate": false,
+      "dependencies": [
+        "dnd2024.phb01.mount_eligibility"
+      ],
+      "behavior_tests": [
+        "phb01.mount_cost"
+      ],
+      "readiness": {
+        "status": "blocked",
+        "handler": "math.scale_integer",
+        "scope": "Стоимость посадки и спешивания",
+        "blockers": [
+          "Arithmetic verified; mount state/occupancy transaction unavailable."
+        ]
+      },
+      "revision": 1
+    },
+    {
+      "id": "dnd2024.phb01.mount_control",
+      "rules_family": "dnd2024",
+      "name": "Управляемый и независимый скакун",
+      "kind": "procedure",
+      "classification": {
+        "mode": "hybrid",
+        "semantic_required": true,
+        "formal_required": true,
+        "reason": "GM confirms semantic preconditions; only registered Engine operations can commit consequences."
+      },
+      "conditions": [],
+      "triggers": [
+        "mount_control.requested"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "procedure_id": "mount_control"
+          }
+        }
+      ],
+      "semantic_questions": [
+        "Управляемый и независимый скакун — какие применимые обстоятельства подтверждены Мастером?"
+      ],
+      "facts": {
+        "controlled_requires": "trained",
+        "controlled_initiative": "rider",
+        "controlled_turn": "rider_turn",
+        "controlled_actions": [
+          "dash",
+          "disengage",
+          "dodge"
+        ],
+        "can_act_on_mounting_turn": true,
+        "independent": "own_initiative_and_actions"
+      },
+      "constraints": [],
+      "exceptions": [],
+      "duration": "per_action",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 27,
+        "printed_page": "26",
+        "section": "Управление скакуном"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "not_implemented",
+      "auto_activate": false,
+      "dependencies": [
+        "dnd2024.phb01.mount_eligibility"
+      ],
+      "behavior_tests": [
+        "phb01.mount_control"
+      ],
+      "readiness": {
+        "status": "blocked",
+        "handler": null,
+        "scope": "Управляемый и независимый скакун",
+        "blockers": [
+          "No controlled/independent mount actor scheduling."
+        ]
+      },
+      "revision": 1
+    },
+    {
+      "id": "dnd2024.phb01.fall_from_mount",
+      "rules_family": "dnd2024",
+      "name": "Спасбросок от падения со скакуна",
+      "kind": "procedure",
+      "classification": {
+        "mode": "deterministic",
+        "semantic_required": false,
+        "formal_required": true,
+        "reason": "Formal procedure after trusted input validation."
+      },
+      "conditions": [],
+      "triggers": [
+        "fall_from_mount.requested"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "procedure_id": "fall_from_mount"
+          }
+        }
+      ],
+      "semantic_questions": [],
+      "facts": {
+        "triggers": [
+          "mount_forcibly_moved",
+          "rider_or_mount_knocked_prone"
+        ],
+        "ability": "dexterity",
+        "dc": 10,
+        "failure": [
+          "unoccupied_space_within_5ft",
+          "prone"
+        ]
+      },
+      "constraints": [],
+      "exceptions": [],
+      "duration": "per_action",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 28,
+        "printed_page": "27",
+        "section": "Падение со скакуна"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "not_implemented",
+      "auto_activate": false,
+      "dependencies": [
+        "dnd2024.phb01.saving_throw",
+        "dnd2024.phb01.mount_control",
+        "glossary.prone"
+      ],
+      "behavior_tests": [
+        "phb01.fall_from_mount"
+      ],
+      "readiness": {
+        "status": "blocked",
+        "handler": null,
+        "scope": "Спасбросок от падения со скакуна",
+        "blockers": [
+          "Save arithmetic available; mounted transition and destination validation unavailable."
+        ]
+      },
+      "revision": 1
+    },
+    {
+      "id": "dnd2024.phb01.underwater_melee",
+      "rules_family": "dnd2024",
+      "name": "Рукопашное оружие под водой",
+      "kind": "procedure",
+      "classification": {
+        "mode": "deterministic",
+        "semantic_required": false,
+        "formal_required": true,
+        "reason": "Formal procedure after trusted input validation."
+      },
+      "conditions": [],
+      "triggers": [
+        "underwater_melee.requested"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "procedure_id": "underwater_melee"
+          }
+        }
+      ],
+      "semantic_questions": [],
+      "facts": {
+        "no_swim_speed": "disadvantage",
+        "exception_damage_type": "piercing"
+      },
+      "constraints": [],
+      "exceptions": [],
+      "duration": "per_action",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 28,
+        "printed_page": "27",
+        "section": "Подводное сражение / Трудности в использовании оружия"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "not_implemented",
+      "auto_activate": false,
+      "dependencies": [
+        "catalog.weapon",
+        "glossary.swim_speed"
+      ],
+      "behavior_tests": [
+        "phb01.underwater_melee"
+      ],
+      "readiness": {
+        "status": "blocked",
+        "handler": null,
+        "scope": "Рукопашное оружие под водой",
+        "blockers": [
+          "Combat environment/swim-speed weapon resolver not registered."
+        ]
+      },
+      "revision": 1
+    },
+    {
+      "id": "dnd2024.phb01.underwater_ranged",
+      "rules_family": "dnd2024",
+      "name": "Дальнобойное оружие под водой",
+      "kind": "procedure",
+      "classification": {
+        "mode": "deterministic",
+        "semantic_required": false,
+        "formal_required": true,
+        "reason": "Formal procedure after trusted input validation."
+      },
+      "conditions": [],
+      "triggers": [
+        "underwater_ranged.requested"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "procedure_id": "underwater_ranged"
+          }
+        }
+      ],
+      "semantic_questions": [],
+      "facts": {
+        "within_normal": "disadvantage",
+        "beyond_normal": "automatic_miss"
+      },
+      "constraints": [],
+      "exceptions": [],
+      "duration": "per_action",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 28,
+        "printed_page": "27",
+        "section": "Подводное сражение / Трудности в использовании оружия"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "not_implemented",
+      "auto_activate": false,
+      "dependencies": [
+        "catalog.weapon"
+      ],
+      "behavior_tests": [
+        "phb01.underwater_ranged"
+      ],
+      "readiness": {
+        "status": "blocked",
+        "handler": null,
+        "scope": "Дальнобойное оружие под водой",
+        "blockers": [
+          "No underwater attack command; ordinary long-range resolver would be incorrect."
+        ]
+      },
+      "revision": 1
+    },
+    {
+      "id": "dnd2024.phb01.underwater_fire",
+      "rules_family": "dnd2024",
+      "name": "Сопротивление Огню под водой",
+      "kind": "procedure",
+      "classification": {
+        "mode": "deterministic",
+        "semantic_required": false,
+        "formal_required": true,
+        "reason": "Formal procedure after trusted input validation."
+      },
+      "conditions": [],
+      "triggers": [
+        "underwater_fire.requested"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "procedure_id": "underwater_fire"
+          }
+        }
+      ],
+      "semantic_questions": [],
+      "facts": {
+        "when": "underwater",
+        "resistance": "fire"
+      },
+      "constraints": [],
+      "exceptions": [],
+      "duration": "per_action",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 28,
+        "printed_page": "27",
+        "section": "Сопротивление урону Огнём"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "not_implemented",
+      "auto_activate": false,
+      "dependencies": [
+        "dnd2024.phb01.damage_traits"
+      ],
+      "behavior_tests": [
+        "phb01.underwater_fire"
+      ],
+      "readiness": {
+        "status": "blocked",
+        "handler": null,
+        "scope": "Сопротивление Огню под водой",
+        "blockers": [
+          "No trusted underwater environment fact; resistance must not be inferred from narrative text."
+        ]
+      },
+      "revision": 1
+    }
+  ]
+}

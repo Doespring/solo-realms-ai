@@ -1,0 +1,169 @@
+{
+  "slug": "mirror-reflections",
+  "foundry_uuid": "Compendium.dnd5e.laaru-hw-spells.Item.TijxHKExQuez1y0q",
+  "name": "Зеркальные двойники / Mirror Reflections",
+  "description": "Три ваших зеркальных двойника появляются в занимаемом вами пространстве. Пока длится заклинание, двойники перемещаются вместе с вами, повторяя ваши действия и меняясь местами, так что невозможно уследить, кто из вас реален. Вы можете использовать действие, чтобы рассеять зеркальных двойников.\n\nПока длится заклинание, каждый раз, когда существо выбирает вас целью атаки, бросьте [[/r d20]], чтобы определить, будет ли атака нацелена на вас или на ваших двойников.\n\nЕсли у вас три двойника, то двойник станет целью атаки при результате 6 и более. Если двойников двое, надо получить 8 или более. Если двойник один 11 или более.\n\nКБ двойника равен 10 + ваш модификатор Ловкости. Если атака попадает в двойника, он уничтожается. Двойника можно уничтожить только попавшей по нему атакой. Он невосприимчив к любому другому урону и эффектам. Заклинание прекращает действовать, когда уничтожены все три двойника. Если зеркальное отражение уничтожается атакой ближнего боя, атакующий получает [[/damage 2d4 piercing]]{2d4 колющего урона}.\n\nЗаклинание не действует на существо, которое не может видеть или полагается на другие способы восприятия, например обладает слепозрением, или если оно способно распознавать иллюзии, например обладает &amp;reference[truesight]{истинным зрением}.",
+  "level": 2,
+  "school": "ill",
+  "components": [
+    "M",
+    "S"
+  ],
+  "ritual": false,
+  "concentration": false,
+  "casting_time": {
+    "unit": "action",
+    "value": 1,
+    "condition": ""
+  },
+  "range": {
+    "units": "self",
+    "value": null,
+    "special": null
+  },
+  "duration": {
+    "units": "minute",
+    "value": 1
+  },
+  "materials": {
+    "value": "стеклянная фигурка самого себя",
+    "consumed": false,
+    "cost": 0,
+    "supply": 0
+  },
+  "preparation": {
+    "mode": "prepared",
+    "prepared": false
+  },
+  "activities": [
+    {
+      "id": "dnd5eactivity000",
+      "name": "",
+      "img": "",
+      "sort": 0,
+      "activation": {
+        "type": "action",
+        "value": null,
+        "condition": "",
+        "override": false,
+        "reaction_conditions": []
+      },
+      "consumption": {
+        "scaling": {
+          "allowed": false,
+          "max": ""
+        },
+        "spell_slot": true,
+        "targets": []
+      },
+      "description": {
+        "chat_flavor": ""
+      },
+      "duration": {
+        "value": null,
+        "units": "inst",
+        "special": "",
+        "concentration": false,
+        "override": false
+      },
+      "flags": {},
+      "range": {
+        "value": null,
+        "units": "self",
+        "special": "",
+        "override": false
+      },
+      "target": {
+        "template": {
+          "count": "",
+          "contiguous": false,
+          "stationary": false,
+          "type": "",
+          "size": "",
+          "width": "",
+          "height": "",
+          "units": ""
+        },
+        "affects": {
+          "count": "",
+          "type": "self",
+          "choice": false,
+          "special": ""
+        },
+        "override": false,
+        "prompt": true
+      },
+      "uses": {
+        "spent": 0,
+        "max": "",
+        "recovery": []
+      },
+      "visibility": {
+        "identifier": "",
+        "level": {
+          "min": null,
+          "max": null
+        },
+        "require_attunement": false,
+        "require_identification": false,
+        "require_magic": false
+      },
+      "effects": [],
+      "applied_effects": [],
+      "kind": "summon",
+      "bonuses": {
+        "ac": "10 + @abilities.dex.mod",
+        "hd": "",
+        "hp": "",
+        "attack_damage": "",
+        "save_damage": "",
+        "healing": ""
+      },
+      "creature_sizes": [],
+      "creature_types": [],
+      "match": {
+        "ability": "",
+        "attacks": false,
+        "disposition": false,
+        "proficiency": false,
+        "saves": false
+      },
+      "profiles": [
+        {
+          "id": "TZ8M1UILBFAPcpV1",
+          "count": "3",
+          "cr": "",
+          "level": {
+            "min": null,
+            "max": null
+          },
+          "name": "",
+          "types": [],
+          "uuid": "Compendium.laaru-dnd5-hw.monsters2.Actor.f0pppebEmEjn3Nf0"
+        }
+      ],
+      "summon": {
+        "mode": "",
+        "prompt": true,
+        "identifier": ""
+      },
+      "temp_hp": ""
+    }
+  ],
+  "passive_effects": [],
+  "provenance": {
+    "source": "foundry",
+    "source_url": "https://github.com/foundryvtt/dnd5e/blob/965ad2d0cf5d063dac675ba078b5bd3c3c0dd449/packs/_source/laaru-hw-spells/Зеркальные_двойники___Mirror_Reflections_TijxHKExQuez1y0q.yml",
+    "ingest_date": "2026-10-26",
+    "ingest_version": "foundry-translator-v1",
+    "srd_version": [
+      "5.1"
+    ],
+    "license_tag": "CC-BY-4.0"
+  },
+  "review": {
+    "known_divergence": null,
+    "requires_user_decision": false
+  },
+  "entry_kind": "spell"
+}

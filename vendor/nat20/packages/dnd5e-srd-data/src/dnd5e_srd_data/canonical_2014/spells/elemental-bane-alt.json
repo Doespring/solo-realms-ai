@@ -1,0 +1,169 @@
+{
+  "slug": "elemental-bane-alt",
+  "foundry_uuid": "Compendium.dnd5e.laaru-hw-spells.Item.w3VjNjGimYZ7ZqFO",
+  "name": "Проклятие стихий (альт.) /Elemental Bane (alt.)",
+  "description": "Выберите один из следующих типов урона: кислота, холод, огонь, молния, яд или гром, а также одно существо в пределах дистанции. Цель должна пройти DC 0 Constitution save{испытание Выносливости}, иначе она будет поражена элементальным проклятием. Если у существа есть устойчивость к выбранному вами типу урона, оно теряет её на время действия заклинания.\n\nПервый раз за каждый ход, когда проклятое существо получает урон выбранного типа, оно получает дополнительно [[/r 1d6]] урона того же типа, после чего повторяет испытание Выносливости. В случае успеха действие проклятия на цель заканчивается.\n\nНа высоких кругах. Если вы сотворяете это заклинание, используя ячейку заклинания 4-го круга или выше, вы можете либо увеличить дополнительный урон на [[/r 1d6]], либо выбрать еще одну цель в пределах дистанции за каждый круг ячейки выше 3-го. Если вы выбираете несколько целей, для всех них используется один и тот же тип урона.",
+  "level": 3,
+  "school": "trs",
+  "components": [
+    "S",
+    "V"
+  ],
+  "ritual": false,
+  "concentration": false,
+  "casting_time": {
+    "unit": "action",
+    "value": 1,
+    "condition": ""
+  },
+  "range": {
+    "units": "ft",
+    "value": 60,
+    "special": null
+  },
+  "duration": {
+    "units": "minute",
+    "value": 1
+  },
+  "materials": {
+    "value": "",
+    "consumed": false,
+    "cost": 0,
+    "supply": 0
+  },
+  "preparation": {
+    "mode": "",
+    "prepared": false
+  },
+  "activities": [
+    {
+      "id": "2qxY8a9ZsquNpQfl",
+      "name": "",
+      "img": "",
+      "sort": 0,
+      "activation": {
+        "type": "action",
+        "value": null,
+        "condition": "",
+        "override": false,
+        "reaction_conditions": []
+      },
+      "consumption": {
+        "scaling": {
+          "allowed": false,
+          "max": ""
+        },
+        "spell_slot": true,
+        "targets": []
+      },
+      "description": {
+        "chat_flavor": ""
+      },
+      "duration": {
+        "value": null,
+        "units": "inst",
+        "special": "",
+        "concentration": false,
+        "override": false
+      },
+      "flags": {},
+      "range": {
+        "value": null,
+        "units": "self",
+        "special": "",
+        "override": false
+      },
+      "target": {
+        "template": {
+          "count": "",
+          "contiguous": false,
+          "stationary": false,
+          "type": "",
+          "size": "",
+          "width": "",
+          "height": "",
+          "units": "ft"
+        },
+        "affects": {
+          "count": "1",
+          "type": "creature",
+          "choice": false,
+          "special": ""
+        },
+        "override": false,
+        "prompt": true
+      },
+      "uses": {
+        "spent": 0,
+        "max": "",
+        "recovery": []
+      },
+      "visibility": {
+        "identifier": "",
+        "level": {
+          "min": null,
+          "max": null
+        },
+        "require_attunement": false,
+        "require_identification": false,
+        "require_magic": false
+      },
+      "effects": [],
+      "applied_effects": [],
+      "kind": "save",
+      "damage": {
+        "on_save": "half",
+        "parts": [
+          {
+            "number": 1,
+            "denomination": 6,
+            "bonus": "",
+            "types": [
+              "thunder",
+              "acid",
+              "lightning",
+              "fire",
+              "cold",
+              "poison"
+            ],
+            "custom": {
+              "enabled": false,
+              "formula": ""
+            },
+            "scaling": {
+              "mode": "whole",
+              "number": 1,
+              "formula": ""
+            }
+          }
+        ]
+      },
+      "save": {
+        "ability": [
+          "con"
+        ],
+        "dc": {
+          "calculation": "spellcasting",
+          "formula": ""
+        },
+        "ignore_cover": false
+      }
+    }
+  ],
+  "passive_effects": [],
+  "provenance": {
+    "source": "foundry",
+    "source_url": "https://github.com/foundryvtt/dnd5e/blob/965ad2d0cf5d063dac675ba078b5bd3c3c0dd449/packs/_source/laaru-hw-spells/Проклятие_стихий__альт____Elemental_Bane__alt___w3VjNjGimYZ7ZqFO.yml",
+    "ingest_date": "2026-10-26",
+    "ingest_version": "foundry-translator-v1",
+    "srd_version": [
+      "5.1"
+    ],
+    "license_tag": "CC-BY-4.0"
+  },
+  "review": {
+    "known_divergence": null,
+    "requires_user_decision": false
+  },
+  "entry_kind": "spell"
+}

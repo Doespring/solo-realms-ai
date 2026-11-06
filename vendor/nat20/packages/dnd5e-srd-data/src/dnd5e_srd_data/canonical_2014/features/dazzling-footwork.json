@@ -1,0 +1,28 @@
+{
+  "slug": "dazzling-footwork",
+  "name": "Dazzling Footwork",
+  "description": "While you aren't wearing armor or wielding a Shield, you gain the following benefits: Bardic Damage - you can use your Dexterity instead of Strength for the attack rolls of your Unarmed Strikes, and when you use an Unarmed Strike to deal damage, you can use a Bardic Inspiration die in place of the normal damage die. Unarmored Defense - your base Armor Class equals 10 + your Dexterity modifier + your Charisma modifier. Agile Strikes - when you expend a use of your Bardic Inspiration as part of an action, a Bonus Action, or a Reaction, you can make one Unarmed Strike as part of that action, Bonus Action, or Reaction.",
+  "feature_type": "subclass_feature",
+  "foundry_id": "10121e46ad97f893",
+  "source_slug": "college-of-dance",
+  "activities": [],
+  "passive_effects": [],
+  "advancement": [],
+  "uses": null,
+  "provenance": {
+    "source": "foundry",
+    "source_url": "https://www.dndbeyond.com/sources/dnd/phb-2024",
+    "ingest_date": "2026-10-26",
+    "ingest_version": "phb-2024-manual-v1",
+    "srd_version": [
+      "5.2"
+    ],
+    "license_tag": "CC-BY-4.0"
+  },
+  "review": {
+    "requires_user_decision": false,
+    "known_divergence": null,
+    "notes": "authored from PHB 2024, mechanic not yet wired to activities"
+  },
+  "entry_kind": "feature"
+}

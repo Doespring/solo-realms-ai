@@ -1,0 +1,114 @@
+{
+  "activities": [
+    {
+      "activation": {
+        "condition": "",
+        "override": false,
+        "reaction_conditions": [],
+        "type": "action",
+        "value": null
+      },
+      "applied_effects": [],
+      "check": {
+        "ability": "int",
+        "associated": [],
+        "dc": {
+          "calculation": "",
+          "formula": "10"
+        }
+      },
+      "consumption": {
+        "scaling": {
+          "allowed": false,
+          "max": ""
+        },
+        "spell_slot": true,
+        "targets": []
+      },
+      "description": {
+        "chat_flavor": ""
+      },
+      "duration": {
+        "concentration": false,
+        "override": false,
+        "special": "",
+        "units": "inst",
+        "value": ""
+      },
+      "effects": [],
+      "flags": {},
+      "id": "LLPutFBLFtMUNR0H",
+      "img": "",
+      "kind": "check",
+      "name": "Detect Poisoned Object",
+      "range": {
+        "override": false,
+        "special": "",
+        "units": "self",
+        "value": null
+      },
+      "sort": 0,
+      "target": {
+        "affects": {
+          "choice": false,
+          "count": "",
+          "special": "",
+          "type": ""
+        },
+        "override": false,
+        "prompt": false,
+        "template": {
+          "contiguous": false,
+          "count": "",
+          "height": "",
+          "size": "",
+          "stationary": false,
+          "type": "",
+          "units": "",
+          "width": ""
+        }
+      },
+      "uses": {
+        "max": "",
+        "recovery": [],
+        "spent": 0
+      },
+      "visibility": {
+        "identifier": "",
+        "level": {
+          "max": null,
+          "min": null
+        },
+        "require_attunement": false,
+        "require_identification": false,
+        "require_magic": false
+      }
+    }
+  ],
+  "attunement_constraint": null,
+  "cost_gp": 50.0,
+  "description": "Ability: Intelligence\n\nUtilize: Detect a poisoned object (DC 10)\n\nCraft: Basic Poison",
+  "description_localized": "<p>Включает пузырьки, снадобья и прочие предметы, необходимые для приготовления ядов. Умение в обращении с этим набором позволяет вам добавить ваш бонус умения к любой проверке характеристики, связанной с приготовлением и использованием ядов.</p><p>Излюбленное средство воров, убийц и прочих сомнительных личностей. Этот набор позволяет вам использовать яды и создавать их из различных веществ. Ваши познания в ядах также помогают вам излечивать от них.</p><p><em><strong>Компоненты.</strong></em> Набор отравителя включает в себя стеклянные склянки, ступку и пестик, химические реагенты и стеклянную палочку для размешивания.</p><p><em><strong>История.</strong></em> Ваша подготовка в использовании ядов может помочь вам при попытках вспомнить факты о печально известных отравлениях.</p><p><em><strong>Внимание, Расследование.</strong></em> Ваши познания в ядах научили вас быть осторожным, имея дело с этими веществами, тем самым помогая вам при обследовании отравленного предмета или при получении зацепок о событиях, связанных с ядами.</p><p><em><strong>Медицина.</strong></em> Когда вы лечите жертву яда, ваша осведомлённость может дать вам дополнительные знания о том, как правильнее ухаживать за отравленным.</p><p><em><strong>Выживание, Природа.</strong></em> Работа с ядами позволила вам получить знания о том, какие растения и животные ядовиты.</p><p><em><strong>Обращение с ядами.</strong></em> Ваше умение в обращении с этим набором позволяет вам аккуратно обращаться с ядами и использовать их без риска самому подвергнуться их действию.</p><table class=\"rd__table  stripe-odd-table\"><thead><tr><th class=\"col-10\" data-rd-isroller=\"false\">Возможное действие</th><th class=\"col-2 text-center\" data-rd-isroller=\"false\">СЛ</th></tr></thead><tbody><tr><td class=\"col-10\">Опознать отравленный предмет</td><td class=\"col-2 text-center\">10</td></tr><tr><td class=\"col-10\">Определить эффект яда</td><td class=\"col-2 text-center\">20</td></tr></tbody></table>",
+  "item_kind": "item",
+  "name": "Набор отравителя",
+  "passive_effects": [],
+  "provenance": {
+    "ingest_date": "2026-05-30",
+    "ingest_version": "foundry-translator-v1",
+    "license_tag": "CC-BY-4.0",
+    "source": "foundry",
+    "source_url": "https://github.com/foundryvtt/dnd5e/blob/965ad2d0cf5d063dac675ba078b5bd3c3c0dd449/packs/_source/equipment24/tools/other/poisoners-kit.yml",
+    "srd_version": [
+      "5.2"
+    ]
+  },
+  "rarity": "common",
+  "requires_attunement": false,
+  "review": {
+    "known_divergence": null,
+    "requires_user_decision": false
+  },
+  "slug": "poisoners-kit",
+  "uses": null,
+  "weight": 2.0
+}

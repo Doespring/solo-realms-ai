@@ -1,0 +1,137 @@
+{
+  "slug": "circle-of-stars",
+  "name": "Круг Звёзд",
+  "description": "Круг Звёзд | Circle of the Stars\n\nКруг звёзд позволяет друидам использовать силу звёздного света. Эти друиды с незапамятных времен отслеживают небесные узоры, открывая секреты, спрятанные среди созвездий. Раскрывая и понимая эти секреты, Круг Звёзд стремится использовать силы космоса.\n\nМногие друиды этого круга записывают созвездия и влияние звезд на мир. Некоторые группы документируют эти наблюдения на мегалитических объектах, которые служат загадочными библиотеками знаний. Эти хранилища могут иметь форму каменных кругов, пирамид, петроглифов и подземных храмов — любое сооружение, достаточно прочное, чтобы защитить священные знания круга даже от великого катаклизма.\n\nУровень Особенности\n\n2-й\n\n@Compendium[laaru-dnd5-hw.classfeatures.qGvQRT2QebqJTBYk]{Звёздная карта}, @Compendium[laaru-dnd5-hw.classfeatures.g3G3G4qZ6sxnBJ6T]{Звёздная форма}\n\n6-й\n\n@Compendium[laaru-dnd5-hw.classfeatures.t6EkRvuXZsvlkuVu]{Космическое знамение}\n\n10-й\n\n@Compendium[laaru-dnd5-hw.classfeatures.LkENvadngj2FRPsm]{Мерцающие созвездия}\n\n14-й\n\n@Compendium[laaru-dnd5-hw.classfeatures.4SwWTrnmZLzfLfSI]{Состоящий из звёзд}",
+  "identifier": "circle-of-stars",
+  "class_identifier": "druid",
+  "spellcasting": {
+    "ability": "",
+    "progression": "none"
+  },
+  "advancement": [
+    {
+      "id": "pjdzlytel4anz5jl",
+      "type": "ScaleValue",
+      "level": 0,
+      "title": "d8 Звёздной формы",
+      "hint": "",
+      "class_restriction": "",
+      "configuration": {
+        "source": {},
+        "identifier": "star",
+        "type": "dice",
+        "distance": {
+          "units": ""
+        },
+        "scale": {
+          "2": {
+            "n": 1,
+            "die": 8
+          },
+          "10": {
+            "n": 2,
+            "die": 8
+          }
+        }
+      },
+      "value": {}
+    },
+    {
+      "id": "p7s08aconwl39u6p",
+      "type": "ItemGrant",
+      "level": 2,
+      "title": "1. Особенности",
+      "hint": "",
+      "class_restriction": "",
+      "configuration": {
+        "items": [
+          "Compendium.laaru-dnd5-hw.classfeatures.qGvQRT2QebqJTBYk",
+          "Compendium.laaru-dnd5-hw.classfeatures.g3G3G4qZ6sxnBJ6T",
+          "Compendium.laaru-dnd5-hw.classfeatures.uPWw9TRFy7esLLG1",
+          "Compendium.laaru-dnd5-hw.classfeatures.U7f3KAaQD6W5Qjg0",
+          "Compendium.laaru-dnd5-hw.classfeatures.A6kp04w0Sg7aUzHS"
+        ],
+        "optional": false
+      },
+      "value": {}
+    },
+    {
+      "id": "mnbavg2zfvejuzen",
+      "type": "ItemGrant",
+      "level": 6,
+      "title": "Особенность",
+      "hint": "",
+      "class_restriction": "",
+      "configuration": {
+        "items": [
+          "Compendium.laaru-dnd5-hw.classfeatures.t6EkRvuXZsvlkuVu"
+        ],
+        "optional": false
+      },
+      "value": {}
+    },
+    {
+      "id": "d6n5adfdboan9gun",
+      "type": "ItemGrant",
+      "level": 10,
+      "title": "Особенность",
+      "hint": "",
+      "class_restriction": "",
+      "configuration": {
+        "items": [
+          "Compendium.laaru-dnd5-hw.classfeatures.LkENvadngj2FRPsm"
+        ],
+        "optional": false
+      },
+      "value": {}
+    },
+    {
+      "id": "wtpnk1k9eo9g61d1",
+      "type": "ItemGrant",
+      "level": 14,
+      "title": "Особенность",
+      "hint": "",
+      "class_restriction": "",
+      "configuration": {
+        "items": [
+          "Compendium.laaru-dnd5-hw.classfeatures.4SwWTrnmZLzfLfSI"
+        ],
+        "optional": false
+      },
+      "value": {}
+    },
+    {
+      "id": "rty5g7zzrloysmgg",
+      "type": "ItemGrant",
+      "level": 2,
+      "title": "2. Заклинания Звёздной карты",
+      "hint": "",
+      "class_restriction": "",
+      "configuration": {
+        "items": [
+          "Compendium.laaru-dnd5-hw.spells.1jcbQ9PMQyaKE0vD",
+          "Compendium.laaru-dnd5-hw.spells.wE7p0clFpTiKXGyl"
+        ],
+        "optional": false
+      },
+      "value": {}
+    }
+  ],
+  "granted_features": [],
+  "feature_choices": [],
+  "provenance": {
+    "source": "foundry",
+    "source_url": "https://github.com/foundryvtt/dnd5e/blob/965ad2d0cf5d063dac675ba078b5bd3c3c0dd449/packs/_source/laaru-hw-subclasses/Круг_Зв_зд_yXQPrOy5afiwOaQx.yml",
+    "ingest_date": "2026-10-26",
+    "ingest_version": "foundry-translator-v1",
+    "srd_version": [
+      "5.1"
+    ],
+    "license_tag": "CC-BY-4.0"
+  },
+  "review": {
+    "known_divergence": null,
+    "requires_user_decision": false
+  },
+  "entry_kind": "subclass"
+}
