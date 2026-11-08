@@ -1,0 +1,216 @@
+{
+  "slug": "reality-break",
+  "foundry_uuid": "Compendium.dnd5e.laaru-hw-spells.Item.fGQzUajaHxTdxtum",
+  "name": "Брешь в реальности / Reality Break",
+  "description": "Вы разрушаете границы между пространствами и временными линиями, погружая существо в пучину хаоса и безумия. Цель должна преуспеть в испытании Мудрости, иначе она не может совершать @Compendium[laaru-dnd5-hw.actions.mMwkUE20bEfKeetq]{ответные действия} до начала своего следующего хода.\n\nВ начале каждого своего хода существо под действием заклинания совершает бросок [[/r d10]] и попадает под действие одного из эффектов, указанных ниже. В конце своего хода существо может повторить испытание Мудрости, при успехе заканчивая на себе эффект.\n\nЭффекты бреши в реальности\n\n[[/r d10]] Эффект\n\n1-2\n\nВидение Дальнего Предела. Цель получает [[/r 6d12]] психического урона и остаётся в состоянии &amp;reference[stunned]{шока} до конца хода.\n\n3-5\n\nРазрыв пространства. Цель совершает бросок испытания Ловкости и получает [[/r 8d12]] урона силой при провале и половину урона при успехе\n\n6-8\n\nЧервоточина. Цель, вместе со всем, что она несёт и носит, телепортируется до 30 футов в незанятое видимое пространство по вашему выбору, получает [[/r 10d12]] урона силой и &amp;reference[prone]{распластывается}.\n\n9-10\n\nХлад пустоты. Цель получает [[/r 10d12]] урона холодом и &amp;reference[blinded]{ослеплена} до начала своего следующего хода.",
+  "level": 8,
+  "school": "con",
+  "components": [
+    "M",
+    "S",
+    "V"
+  ],
+  "ritual": false,
+  "concentration": true,
+  "casting_time": {
+    "unit": "action",
+    "value": 1,
+    "condition": ""
+  },
+  "range": {
+    "units": "ft",
+    "value": 60,
+    "special": null
+  },
+  "duration": {
+    "units": "minute",
+    "value": 1
+  },
+  "materials": {
+    "value": "кристаллическая призма",
+    "consumed": false,
+    "cost": 0,
+    "supply": 0
+  },
+  "preparation": {
+    "mode": "prepared",
+    "prepared": false
+  },
+  "activities": [
+    {
+      "id": "dnd5eactivity000",
+      "name": "",
+      "img": "",
+      "sort": 0,
+      "activation": {
+        "type": "action",
+        "value": null,
+        "condition": "",
+        "override": false,
+        "reaction_conditions": []
+      },
+      "consumption": {
+        "scaling": {
+          "allowed": false,
+          "max": ""
+        },
+        "spell_slot": true,
+        "targets": []
+      },
+      "description": {
+        "chat_flavor": ""
+      },
+      "duration": {
+        "value": null,
+        "units": "inst",
+        "special": "",
+        "concentration": false,
+        "override": false
+      },
+      "flags": {},
+      "range": {
+        "value": null,
+        "units": "self",
+        "special": "",
+        "override": false
+      },
+      "target": {
+        "template": {
+          "count": "",
+          "contiguous": false,
+          "stationary": false,
+          "type": "",
+          "size": "",
+          "width": "",
+          "height": "",
+          "units": ""
+        },
+        "affects": {
+          "count": "",
+          "type": "",
+          "choice": false,
+          "special": ""
+        },
+        "override": false,
+        "prompt": true
+      },
+      "uses": {
+        "spent": 0,
+        "max": "",
+        "recovery": []
+      },
+      "visibility": {
+        "identifier": "",
+        "level": {
+          "min": null,
+          "max": null
+        },
+        "require_attunement": false,
+        "require_identification": false,
+        "require_magic": false
+      },
+      "effects": [],
+      "applied_effects": [],
+      "kind": "save",
+      "damage": {
+        "on_save": "half",
+        "parts": [
+          {
+            "number": 6,
+            "denomination": 12,
+            "bonus": "",
+            "types": [
+              "psychic"
+            ],
+            "custom": {
+              "enabled": false,
+              "formula": ""
+            },
+            "scaling": {
+              "mode": "",
+              "number": null,
+              "formula": ""
+            }
+          },
+          {
+            "number": 8,
+            "denomination": 12,
+            "bonus": "",
+            "types": [
+              "force"
+            ],
+            "custom": {
+              "enabled": false,
+              "formula": ""
+            },
+            "scaling": {
+              "mode": "",
+              "number": null,
+              "formula": ""
+            }
+          },
+          {
+            "number": 10,
+            "denomination": 12,
+            "bonus": "",
+            "types": [
+              "force"
+            ],
+            "custom": {
+              "enabled": false,
+              "formula": ""
+            },
+            "scaling": {
+              "mode": "",
+              "number": null,
+              "formula": ""
+            }
+          },
+          {
+            "number": 10,
+            "denomination": 12,
+            "bonus": "",
+            "types": [
+              "cold"
+            ],
+            "custom": {
+              "enabled": false,
+              "formula": ""
+            },
+            "scaling": {
+              "mode": "",
+              "number": null,
+              "formula": ""
+            }
+          }
+        ]
+      },
+      "save": {
+        "ability": [
+          "wis"
+        ],
+        "dc": {
+          "calculation": "spellcasting",
+          "formula": ""
+        },
+        "ignore_cover": false
+      }
+    }
+  ],
+  "passive_effects": [],
+  "provenance": {
+    "source": "foundry",
+    "source_url": "https://github.com/foundryvtt/dnd5e/blob/965ad2d0cf5d063dac675ba078b5bd3c3c0dd449/packs/_source/laaru-hw-spells/Брешь_в_реальности___Reality_Break_fGQzUajaHxTdxtum.yml",
+    "ingest_date": "2026-10-26",
+    "ingest_version": "foundry-translator-v1",
+    "srd_version": [
+      "5.1"
+    ],
+    "license_tag": "CC-BY-4.0"
+  },
+  "review": {
+    "known_divergence": null,
+    "requires_user_decision": false
+  },
+  "entry_kind": "spell"
+}

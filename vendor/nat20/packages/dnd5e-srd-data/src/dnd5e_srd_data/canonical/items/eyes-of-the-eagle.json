@@ -1,0 +1,29 @@
+{
+  "activities": [],
+  "attunement_constraint": null,
+  "cost_gp": 400.0,
+  "description": "Wondrous Item, Uncommon\n\nThese crystal lenses fit over the eyes. While wearing them, you have Advantage on Wisdom (Perception) checks that rely on sight. In conditions of clear visibility, you can make out details of even extremely distant creatures and objects as small as 2 feet across.",
+  "description_localized": "<div><p><em>Чудесный предмет, (Требуется настроенность)</em></p><p>Эти хрустальные линзы носят поверх глаз. Пока вы носите их, у вас преимущество к проверкам Мудрости (Внимание), основанным на зрении. При ясной видимости вы можете различить детали даже очень удалённых существ и объектов не менее 2 футов размером.</p></div>",
+  "item_kind": "magic_item",
+  "name": "Очки орла",
+  "passive_effects": [],
+  "provenance": {
+    "ingest_date": "2026-05-30",
+    "ingest_version": "foundry-translator-v1",
+    "license_tag": "CC-BY-4.0",
+    "source": "foundry",
+    "source_url": "https://github.com/foundryvtt/dnd5e/blob/965ad2d0cf5d063dac675ba078b5bd3c3c0dd449/packs/_source/equipment24/equipment/eyes-of-the-eagle.yml",
+    "srd_version": [
+      "5.2"
+    ]
+  },
+  "rarity": "uncommon",
+  "requires_attunement": false,
+  "review": {
+    "known_divergence": null,
+    "requires_user_decision": false
+  },
+  "slug": "eyes-of-the-eagle",
+  "uses": null,
+  "weight": 0.0
+}

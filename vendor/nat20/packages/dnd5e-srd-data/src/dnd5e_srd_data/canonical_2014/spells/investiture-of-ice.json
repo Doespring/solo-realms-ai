@@ -1,0 +1,164 @@
+{
+  "slug": "investiture-of-ice",
+  "foundry_uuid": "Compendium.dnd5e.laaru-hw-spells.Item.HlJMirs3QQPo8gJI",
+  "name": "Облачение льда / Investiture of Ice",
+  "description": "Пока действует заклинание, ваше тело покрывается инеем, и вы получаете следующие преимущества:\n\nВы получаете невосприимчивость к урону холодом, а также &amp;reference[damageresistance]{устойчивость} к урону огнём.\n\nВы можете передвигаться по &amp;reference[difficultterrain]{пересечённой местности}, состоящей из льда или снега, не тратя дополнительное перемещение.\n\nЗемля в радиусе 10 футов вокруг вас покрывается льдом и является &amp;reference[difficultterrain]{пересечённой местностью} для всех существ, кроме вас. Эта область перемещается вместе с вами.\n\nВы можете действием создать 15-футовый конус морозного ветра, исходящий из вашей руки в выбранном направлении. Все существа в конусе должны испытание Выносливости. При провале они получают урон холодом [[/r 4d6]] или половину этого урона при успехе. Скорость существа, провалившего испытание, снижается вдвое до начала вашего следующего хода.",
+  "level": 6,
+  "school": "trs",
+  "components": [
+    "S",
+    "V"
+  ],
+  "ritual": false,
+  "concentration": true,
+  "casting_time": {
+    "unit": "action",
+    "value": 1,
+    "condition": ""
+  },
+  "range": {
+    "units": "self",
+    "value": null,
+    "special": null
+  },
+  "duration": {
+    "units": "minute",
+    "value": 10
+  },
+  "materials": {
+    "value": "",
+    "consumed": false,
+    "cost": 0,
+    "supply": 0
+  },
+  "preparation": {
+    "mode": "prepared",
+    "prepared": false
+  },
+  "activities": [
+    {
+      "id": "dnd5eactivity000",
+      "name": "",
+      "img": "",
+      "sort": 0,
+      "activation": {
+        "type": "action",
+        "value": null,
+        "condition": "",
+        "override": false,
+        "reaction_conditions": []
+      },
+      "consumption": {
+        "scaling": {
+          "allowed": false,
+          "max": ""
+        },
+        "spell_slot": true,
+        "targets": []
+      },
+      "description": {
+        "chat_flavor": ""
+      },
+      "duration": {
+        "value": null,
+        "units": "inst",
+        "special": "",
+        "concentration": false,
+        "override": false
+      },
+      "flags": {},
+      "range": {
+        "value": null,
+        "units": "self",
+        "special": "",
+        "override": false
+      },
+      "target": {
+        "template": {
+          "count": "",
+          "contiguous": false,
+          "stationary": false,
+          "type": "",
+          "size": "",
+          "width": "",
+          "height": "",
+          "units": ""
+        },
+        "affects": {
+          "count": "",
+          "type": "self",
+          "choice": false,
+          "special": ""
+        },
+        "override": false,
+        "prompt": true
+      },
+      "uses": {
+        "spent": 0,
+        "max": "",
+        "recovery": []
+      },
+      "visibility": {
+        "identifier": "",
+        "level": {
+          "min": null,
+          "max": null
+        },
+        "require_attunement": false,
+        "require_identification": false,
+        "require_magic": false
+      },
+      "effects": [],
+      "applied_effects": [],
+      "kind": "save",
+      "damage": {
+        "on_save": "half",
+        "parts": [
+          {
+            "number": 4,
+            "denomination": 6,
+            "bonus": "",
+            "types": [
+              "cold"
+            ],
+            "custom": {
+              "enabled": false,
+              "formula": ""
+            },
+            "scaling": {
+              "mode": "",
+              "number": null,
+              "formula": ""
+            }
+          }
+        ]
+      },
+      "save": {
+        "ability": [
+          "con"
+        ],
+        "dc": {
+          "calculation": "spellcasting",
+          "formula": ""
+        },
+        "ignore_cover": false
+      }
+    }
+  ],
+  "passive_effects": [],
+  "provenance": {
+    "source": "foundry",
+    "source_url": "https://github.com/foundryvtt/dnd5e/blob/965ad2d0cf5d063dac675ba078b5bd3c3c0dd449/packs/_source/laaru-hw-spells/Облачение_льда___Investiture_of_Ice_HlJMirs3QQPo8gJI.yml",
+    "ingest_date": "2026-10-26",
+    "ingest_version": "foundry-translator-v1",
+    "srd_version": [
+      "5.1"
+    ],
+    "license_tag": "CC-BY-4.0"
+  },
+  "review": {
+    "known_divergence": null,
+    "requires_user_decision": false
+  },
+  "entry_kind": "spell"
+}

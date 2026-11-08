@@ -1,0 +1,157 @@
+{
+  "slug": "psionic-strike",
+  "foundry_uuid": "Compendium.dnd5e.laaru-hw-spells.Item.h0p5RGtGx6FrWgFs",
+  "name": "Псионный удар / Psionic Strike",
+  "description": "Во время безоружного удара в вашей руке появляется клинок псионической энергии. При попадании цель получает психический урон, равный [[/r 1d6]] + ваш модификатор Силы, вместо обычного урона от вашего безоружного удара. По окончании атаки ваша рука немедленно возвращается к своему обычному виду.\n\nУрон, наносимый этим заклинанием, увеличивается при достижении 5-го уровня ([[/r 1d8]]), 11-го уровня ([[/r 1d10]]) и 17-го уровня ([[/r 1d12]]).",
+  "level": 0,
+  "school": "evo",
+  "components": [
+    "M",
+    "S"
+  ],
+  "ritual": false,
+  "concentration": false,
+  "casting_time": {
+    "unit": "action",
+    "value": 1,
+    "condition": ""
+  },
+  "range": {
+    "units": "self",
+    "value": 0,
+    "special": null
+  },
+  "duration": {
+    "units": "inst",
+    "value": null
+  },
+  "materials": {
+    "value": "пустая рука",
+    "consumed": false,
+    "cost": 0,
+    "supply": 0
+  },
+  "preparation": {
+    "mode": "always",
+    "prepared": false
+  },
+  "activities": [
+    {
+      "id": "dnd5eactivity000",
+      "name": "",
+      "img": "",
+      "sort": 0,
+      "activation": {
+        "type": "action",
+        "value": null,
+        "condition": "",
+        "override": false,
+        "reaction_conditions": []
+      },
+      "consumption": {
+        "scaling": {
+          "allowed": false,
+          "max": ""
+        },
+        "spell_slot": true,
+        "targets": []
+      },
+      "description": {
+        "chat_flavor": ""
+      },
+      "duration": {
+        "value": null,
+        "units": "inst",
+        "special": "",
+        "concentration": false,
+        "override": false
+      },
+      "flags": {},
+      "range": {
+        "value": null,
+        "units": "self",
+        "special": "",
+        "override": false
+      },
+      "target": {
+        "template": {
+          "count": "",
+          "contiguous": false,
+          "stationary": false,
+          "type": "",
+          "size": "",
+          "width": "",
+          "height": "",
+          "units": "self"
+        },
+        "affects": {
+          "count": "0",
+          "type": "self",
+          "choice": false,
+          "special": ""
+        },
+        "override": false,
+        "prompt": true
+      },
+      "uses": {
+        "spent": 0,
+        "max": "",
+        "recovery": []
+      },
+      "visibility": {
+        "identifier": "",
+        "level": {
+          "min": null,
+          "max": null
+        },
+        "require_attunement": false,
+        "require_identification": false,
+        "require_magic": false
+      },
+      "effects": [],
+      "applied_effects": [],
+      "kind": "damage",
+      "damage": {
+        "critical": {
+          "allow": false,
+          "bonus": ""
+        },
+        "parts": [
+          {
+            "number": 1,
+            "denomination": 6,
+            "bonus": "",
+            "types": [
+              "psychic"
+            ],
+            "custom": {
+              "enabled": false,
+              "formula": ""
+            },
+            "scaling": {
+              "mode": "whole",
+              "number": 1,
+              "formula": ""
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "passive_effects": [],
+  "provenance": {
+    "source": "foundry",
+    "source_url": "https://github.com/foundryvtt/dnd5e/blob/965ad2d0cf5d063dac675ba078b5bd3c3c0dd449/packs/_source/laaru-hw-spells/Псионный_удар___Psionic_Strike_h0p5RGtGx6FrWgFs.yml",
+    "ingest_date": "2026-10-26",
+    "ingest_version": "foundry-translator-v1",
+    "srd_version": [
+      "5.1"
+    ],
+    "license_tag": "CC-BY-4.0"
+  },
+  "review": {
+    "known_divergence": null,
+    "requires_user_decision": false
+  },
+  "entry_kind": "spell"
+}

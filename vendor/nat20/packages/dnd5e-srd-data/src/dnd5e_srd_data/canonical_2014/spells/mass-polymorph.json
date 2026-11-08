@@ -1,0 +1,147 @@
+{
+  "slug": "mass-polymorph",
+  "foundry_uuid": "Compendium.dnd5e.laaru-hw-spells.Item.vsYR4YueuJrR68Xl",
+  "name": "Множественное превращение / Mass Polymorph",
+  "description": "Вы трансформируете до десяти существ по вашему выбору, которых вы можете видеть в пределах дистанции.\n\nНесогласная цель должна преуспеть в испаытании Мудрости, чтобы противостоять трансформации. Несогласный перевёртыш по своему желанию автоматически преуспевает в испытании.\n\nКаждая цель принимает звериный облик по вашему выбору, вы можете выбрать один и тот же облик или разные для каждой цели. Новый облик может представлять собой любого зверя, которого вы видели, чей показатель опасности равен или меньше показателя опасности цели (или половины уровня цели, если у неё нет показателя опасности). Игровые параметры цели, включая ментальные способности, заменяются параметрами выбранного зверя, но цель сохраняет ПЗ, мировоззрение и личность.\n\nКаждая цель получает временные ПЗ в количестве, равном количеству ПЗ её нового облика. Эти временные ПЗ не могут быть замещены временными ПЗ, полученными из другого источника.\n\nЦель возвращается к своему нормальному облику, когда у неё больше нет временных ПЗ или когда она умирает.\n\nЕсли заклинание заканчивается раньше этого момента, существо теряет все свои временные ПЗ и возвращается к нормальному облику.\n\nСущество ограничено в действиях, которые оно может выполнять, природой своего нового облика. Оно не может говорить, сотворять заклинания или делать что-либо еще, требующее рук или речи. Экипировка цели сливается с новым обликом.\n\nЦель не может активировать, использовать, держать или иным образом извлекать выгоду из любого своего снаряжения.",
+  "level": 9,
+  "school": "trs",
+  "components": [
+    "M",
+    "S",
+    "V"
+  ],
+  "ritual": false,
+  "concentration": true,
+  "casting_time": {
+    "unit": "action",
+    "value": 1,
+    "condition": ""
+  },
+  "range": {
+    "units": "ft",
+    "value": 120,
+    "special": null
+  },
+  "duration": {
+    "units": "hour",
+    "value": 1
+  },
+  "materials": {
+    "value": "кокон гусеницы",
+    "consumed": false,
+    "cost": 0,
+    "supply": 0
+  },
+  "preparation": {
+    "mode": "prepared",
+    "prepared": false
+  },
+  "activities": [
+    {
+      "id": "dnd5eactivity000",
+      "name": "",
+      "img": "",
+      "sort": 0,
+      "activation": {
+        "type": "action",
+        "value": null,
+        "condition": "",
+        "override": false,
+        "reaction_conditions": []
+      },
+      "consumption": {
+        "scaling": {
+          "allowed": false,
+          "max": ""
+        },
+        "spell_slot": true,
+        "targets": []
+      },
+      "description": {
+        "chat_flavor": ""
+      },
+      "duration": {
+        "value": null,
+        "units": "inst",
+        "special": "",
+        "concentration": false,
+        "override": false
+      },
+      "flags": {},
+      "range": {
+        "value": null,
+        "units": "self",
+        "special": "",
+        "override": false
+      },
+      "target": {
+        "template": {
+          "count": "",
+          "contiguous": false,
+          "stationary": false,
+          "type": "",
+          "size": "",
+          "width": "",
+          "height": "",
+          "units": ""
+        },
+        "affects": {
+          "count": "",
+          "type": "",
+          "choice": false,
+          "special": ""
+        },
+        "override": false,
+        "prompt": true
+      },
+      "uses": {
+        "spent": 0,
+        "max": "",
+        "recovery": []
+      },
+      "visibility": {
+        "identifier": "",
+        "level": {
+          "min": null,
+          "max": null
+        },
+        "require_attunement": false,
+        "require_identification": false,
+        "require_magic": false
+      },
+      "effects": [],
+      "applied_effects": [],
+      "kind": "save",
+      "damage": {
+        "on_save": "half",
+        "parts": []
+      },
+      "save": {
+        "ability": [
+          "wis"
+        ],
+        "dc": {
+          "calculation": "spellcasting",
+          "formula": ""
+        },
+        "ignore_cover": false
+      }
+    }
+  ],
+  "passive_effects": [],
+  "provenance": {
+    "source": "foundry",
+    "source_url": "https://github.com/foundryvtt/dnd5e/blob/965ad2d0cf5d063dac675ba078b5bd3c3c0dd449/packs/_source/laaru-hw-spells/Множественное_превращение___Mass_Polymorph_vsYR4YueuJrR68Xl.yml",
+    "ingest_date": "2026-10-26",
+    "ingest_version": "foundry-translator-v1",
+    "srd_version": [
+      "5.1"
+    ],
+    "license_tag": "CC-BY-4.0"
+  },
+  "review": {
+    "known_divergence": null,
+    "requires_user_decision": false
+  },
+  "entry_kind": "spell"
+}

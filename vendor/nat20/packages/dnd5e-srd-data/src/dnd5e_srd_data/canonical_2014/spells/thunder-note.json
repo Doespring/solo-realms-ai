@@ -1,0 +1,185 @@
+{
+  "slug": "thunder-note",
+  "foundry_uuid": "Compendium.dnd5e.laaru-hw-spells.Item.CHCYFU5qi0bPtXMI",
+  "name": "Громовая нота / Thunder Note",
+  "description": "Вы испускаете грохочущий звук по существу, которое видите в пределах дистанции. Цель должна успешно пройти испытание Выносливости или получить [[/damage 1d8 thunder]]{1d8 урона громом} и &amp;Reference[deafened]{оглохнуть} до начала своего следующего хода. Если этот урон заставляет ее пройти испытание Выносливости, чтобы сохранить концентрацию на заклинании, она проходит это испытание с помехой.\n\nУрон этого заклинания увеличивается на [[/r 1d8]] при достижении 5-го (2d8), 11-го (3d8) и 17-го (4d8) уровней.",
+  "level": 0,
+  "school": "evo",
+  "components": [
+    "S",
+    "V"
+  ],
+  "ritual": false,
+  "concentration": false,
+  "casting_time": {
+    "unit": "action",
+    "value": 1,
+    "condition": ""
+  },
+  "range": {
+    "units": "ft",
+    "value": 60,
+    "special": null
+  },
+  "duration": {
+    "units": "inst",
+    "value": null
+  },
+  "materials": {
+    "value": "",
+    "consumed": false,
+    "cost": 0,
+    "supply": 0
+  },
+  "preparation": {
+    "mode": "prepared",
+    "prepared": false
+  },
+  "activities": [
+    {
+      "id": "dnd5eactivity000",
+      "name": "",
+      "img": "",
+      "sort": 0,
+      "activation": {
+        "type": "action",
+        "value": null,
+        "condition": "",
+        "override": false,
+        "reaction_conditions": []
+      },
+      "consumption": {
+        "scaling": {
+          "allowed": false,
+          "max": ""
+        },
+        "spell_slot": true,
+        "targets": []
+      },
+      "description": {
+        "chat_flavor": ""
+      },
+      "duration": {
+        "value": null,
+        "units": "inst",
+        "special": "",
+        "concentration": false,
+        "override": false
+      },
+      "flags": {},
+      "range": {
+        "value": null,
+        "units": "self",
+        "special": "",
+        "override": false
+      },
+      "target": {
+        "template": {
+          "count": "",
+          "contiguous": false,
+          "stationary": false,
+          "type": "",
+          "size": "",
+          "width": "",
+          "height": "",
+          "units": ""
+        },
+        "affects": {
+          "count": "1",
+          "type": "creature",
+          "choice": false,
+          "special": ""
+        },
+        "override": false,
+        "prompt": true
+      },
+      "uses": {
+        "spent": 0,
+        "max": "",
+        "recovery": []
+      },
+      "visibility": {
+        "identifier": "",
+        "level": {
+          "min": null,
+          "max": null
+        },
+        "require_attunement": false,
+        "require_identification": false,
+        "require_magic": false
+      },
+      "effects": [
+        {
+          "id": "Hxwl4chBTSfTxSnH",
+          "level": {
+            "min": null,
+            "max": null
+          },
+          "on_save": false,
+          "riders": null
+        }
+      ],
+      "applied_effects": [],
+      "kind": "save",
+      "damage": {
+        "on_save": "none",
+        "parts": [
+          {
+            "number": 1,
+            "denomination": 8,
+            "bonus": "",
+            "types": [
+              "thunder"
+            ],
+            "custom": {
+              "enabled": false,
+              "formula": ""
+            },
+            "scaling": {
+              "mode": "",
+              "number": null,
+              "formula": ""
+            }
+          }
+        ]
+      },
+      "save": {
+        "ability": [
+          "con"
+        ],
+        "dc": {
+          "calculation": "spellcasting",
+          "formula": ""
+        },
+        "ignore_cover": false
+      }
+    }
+  ],
+  "passive_effects": [
+    {
+      "id": "Hxwl4chBTSfTxSnH",
+      "name": "Громовая нота / Thunder Note",
+      "description": "",
+      "changes": [],
+      "statuses": [],
+      "duration": null,
+      "disabled": false,
+      "transfer": false
+    }
+  ],
+  "provenance": {
+    "source": "foundry",
+    "source_url": "https://github.com/foundryvtt/dnd5e/blob/965ad2d0cf5d063dac675ba078b5bd3c3c0dd449/packs/_source/laaru-hw-spells/Громовая_нота___Thunder_Note_CHCYFU5qi0bPtXMI.yml",
+    "ingest_date": "2026-10-26",
+    "ingest_version": "foundry-translator-v1",
+    "srd_version": [
+      "5.1"
+    ],
+    "license_tag": "CC-BY-4.0"
+  },
+  "review": {
+    "known_divergence": null,
+    "requires_user_decision": false
+  },
+  "entry_kind": "spell"
+}

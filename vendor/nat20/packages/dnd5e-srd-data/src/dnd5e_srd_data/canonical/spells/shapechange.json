@@ -1,0 +1,140 @@
+{
+  "activities": [
+    {
+      "activation": {
+        "condition": "",
+        "override": false,
+        "reaction_conditions": [],
+        "type": "action",
+        "value": null
+      },
+      "applied_effects": [],
+      "consumption": {
+        "scaling": {
+          "allowed": false,
+          "max": ""
+        },
+        "spell_slot": true,
+        "targets": []
+      },
+      "description": {
+        "chat_flavor": ""
+      },
+      "duration": {
+        "concentration": false,
+        "override": false,
+        "special": "",
+        "units": "inst",
+        "value": null
+      },
+      "effects": [],
+      "flags": {},
+      "id": "xLGk73cwKfSx5rhK",
+      "img": "",
+      "kind": "utility",
+      "name": "",
+      "range": {
+        "override": false,
+        "special": "",
+        "units": "self",
+        "value": null
+      },
+      "roll": {
+        "formula": "",
+        "name": "",
+        "prompt": false,
+        "visible": false
+      },
+      "sort": 0,
+      "target": {
+        "affects": {
+          "choice": false,
+          "count": "",
+          "special": "",
+          "type": "self"
+        },
+        "override": false,
+        "prompt": true,
+        "template": {
+          "contiguous": false,
+          "count": "",
+          "height": "",
+          "size": "",
+          "stationary": false,
+          "type": "",
+          "units": "",
+          "width": ""
+        }
+      },
+      "uses": {
+        "max": "",
+        "recovery": [],
+        "spent": 0
+      },
+      "visibility": {
+        "identifier": "",
+        "level": {
+          "max": null,
+          "min": null
+        },
+        "require_attunement": false,
+        "require_identification": false,
+        "require_magic": false
+      }
+    }
+  ],
+  "casting_time": {
+    "condition": "",
+    "unit": "action",
+    "value": 1
+  },
+  "components": [
+    "M",
+    "S",
+    "V"
+  ],
+  "concentration": true,
+  "description": "You shape-shift into another creature for the duration or until you take a Magic action to shape-shift into a different eligible form. The new form must be of a creature that has a Challenge Rating no higher than your level or Challenge Rating. You must have seen the sort of creature before, and it can't be a Construct or an Undead.\n\nWhen you cast the spell, you gain a number of Temporary Hit Points equal to the Hit Points of the first form into which you shape-shift. These Temporary Hit Points vanish if any remain when the spell ends.\n\nYour game statistics are replaced by the stat block of the chosen form, but you retain your creature type; alignment; personality; Intelligence, Wisdom, and Charisma scores; Hit Points; Hit Point Dice; proficiencies; and ability to communicate. If you have the Spellcasting feature, you retain it too.\n\nUpon shape-shifting, you determine whether your equipment drops to the ground or changes in size and shape to fit the new form while you're in it.",
+  "description_localized": "<p>Вы принимаете форму другого существа, пока длится заклинание. Новой формой может быть любое существо с классом опасности, не превышающим ваш уровень. Существо не может быть конструкцией или нежитью, и вы должны были видеть подобное существо хотя бы раз. Вы превращаетесь в типичный экземпляр подобного существа, без уровней в классах и без способности Заклинания.</p><p>Ваши игровые параметры заменяются параметрами выбранного существа, но вы сохраняете ваше мировоззрение и значения Интеллекта, Мудрости и Харизмы. Вы также сохраняете все ваши умения в навыках и в испытаниях в придачу к тем, что получаете от новой формы. Если у существа, которым вы стали, есть то же умение, что у вас, а бонус в его блоке параметров выше вашего, используйте бонус существа. Нельзя использовать легендарные действия и действия логова, принадлежащие новой форме.</p><p>Вы получаете ПЗ и кости здоровья новой формы. Вернувшись в обычную форму, вы возвращаетесь к тем ПЗ, которые у вас были до превращения. Но если вы превращаетесь обратно из-за снижения ПЗ до 0, любой избыточный урон переносится на вашу обычную форму; если этот урон не снижает пз обычной формы до 0, вы &amp;reference[unconscious]{не теряете сознания}.</p><p>Вы сохраняете классовые особенности, особенности расы и от прочих источников, если ваша новая форма физически способна ими пользоваться. Нельзя использовать особое восприятие вашей обычной формы (вроде &amp;reference[darkvision]{ночного зрения}), если его нет у новой формы. Вы можете говорить, только если новая форма на это способна. </p><p>Вы сами решаете, что будет с вашим снаряжением после превращения. Оно может упасть наземь, слиться с новым телом или остаться надетым на нем. Надетое снаряжение действует как обычно, но мастер вправе решать, подходит ли новой форме такого рода снаряжение, в зависимости от размеров и формы существа. Снаряжение не меняет форму и размер под новое тело, так что любое снаряжение, которое новое тело неспособно носить, должно или упасть наземь, или слиться с новой формой. Слившееся с телом снаряжение не оказывает никаких эффектов.</p><p>Пока длится заклинание, вы можете использовать действие, чтобы принять другую форму, следуя тем же ограничениям и правилам, что при первом превращении. Есть одно исключение: если у вашей новой формы больше ПЗ, чем у прежней, ваше текущее количество ПЗ не изменяется.</p>",
+  "duration": {
+    "units": "hour",
+    "value": 1
+  },
+  "entry_kind": "spell",
+  "foundry_uuid": "Compendium.dnd5e.spells24.Item.phbsplShapechang",
+  "level": 9,
+  "materials": {
+    "consumed": false,
+    "cost": 0,
+    "supply": 0,
+    "value": "a jade circlet worth 1,500+ GP"
+  },
+  "name": "Метаморфоза",
+  "passive_effects": [],
+  "preparation": {
+    "mode": "prepared",
+    "prepared": false
+  },
+  "provenance": {
+    "ingest_date": "2026-05-30",
+    "ingest_version": "foundry-translator-v1",
+    "license_tag": "CC-BY-4.0",
+    "source": "foundry",
+    "source_url": "https://github.com/foundryvtt/dnd5e/blob/965ad2d0cf5d063dac675ba078b5bd3c3c0dd449/packs/_source/spells24/9th-level/shapechange.yml",
+    "srd_version": [
+      "5.2"
+    ]
+  },
+  "range": {
+    "special": null,
+    "units": "self",
+    "value": null
+  },
+  "review": {
+    "known_divergence": null,
+    "requires_user_decision": false
+  },
+  "ritual": false,
+  "school": "trs",
+  "slug": "shapechange"
+}

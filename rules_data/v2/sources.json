@@ -1,0 +1,90 @@
+{
+  "registry_version": "2.0.0",
+  "rules_family": "dnd2024",
+  "checked_on": "2026-10-17",
+  "documents": [
+    {
+      "id": "phb_2024_ru",
+      "path": "C:/Users/iwa41/Downloads/Player's Handbook 2024 RUS.pdf",
+      "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+      "publication_year": 2024,
+      "pdf_pages": 388,
+      "rights": "user_private",
+      "sampled_pdf_pages": [
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        269
+      ],
+      "evidence": [
+        "../v1/evidence/phb-pdf-013-014.txt",
+        "evidence/phb-269-270.txt",
+        "evidence/phb-008-033.txt"
+      ]
+    },
+    {
+      "id": "dmg_2024_ru_v1_1",
+      "path": "C:/Users/iwa41/Downloads/Руководство Мастера 2024 v1.1.pdf",
+      "sha256": "2fdee6ad8dd6931eaf41b19cdf498d6d86ddca6e54ad9b9c8a5417585c1c526d",
+      "publication_year": 2024,
+      "pdf_pages": 342,
+      "rights": "user_private",
+      "sampled_pdf_pages": [
+        24,
+        25,
+        29
+      ],
+      "evidence": [
+        "evidence/dmg-024-025-029.txt"
+      ],
+      "existing_rules_knowledge_full_document": false
+    },
+    {
+      "id": "mm_2025_ru_v1_1",
+      "path": "C:/Users/iwa41/Downloads/AG-MM-v1.1-dc.pdf",
+      "sha256": "28e9491b39b3df24b255f62973f95e83abd0395e4ac3d2d10d7163ead47146ca",
+      "publication_year": 2025,
+      "publication_year_basis": "user-specified Monster Manual 2025; introduction references PHB/DMG 2024",
+      "pdf_pages": 386,
+      "rights": "user_private",
+      "sampled_pdf_pages": [
+        2,
+        6,
+        7,
+        8,
+        9,
+        77
+      ],
+      "evidence": [
+        "evidence/mm-002-006-009-077.txt"
+      ]
+    }
+  ],
+  "edition_policy": "MM publication year 2025 belongs to the requested 2024 rules family. It is not a separate dnd2025 ruleset. Never merge 2014 records by matching names.",
+  "source_text_is_instructions": false,
+  "full_corpus_converted": false,
+  "paid_api_calls": 0
+}

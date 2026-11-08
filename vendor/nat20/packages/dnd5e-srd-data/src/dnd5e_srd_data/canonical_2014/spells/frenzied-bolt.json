@@ -1,0 +1,356 @@
+{
+  "slug": "frenzied-bolt",
+  "foundry_uuid": "Compendium.dnd5e.laaru-hw-spells.Item.j0xd3WzvTIl8MxW6",
+  "name": "Бешеный снаряд / Frenzied Bolt",
+  "description": "(Хаос)\n\nВы направляете разноцветный радужный снаряд в выбранное существо в пределах дистанции, совершая дистанционную атаку заклинанием. При попадании цель получает [[/r 3d8]] урона случайного типа (определяется броском по таблице «Тип урона»). Если результатом вашего броска атаки было нечётное число (до применения бонусов и модификаторов), снаряд отскакивает в новую цель в пределах дистанции, в которую этот снаряд ещё не попадал, что требует нового броска атаки заклинанием для попадания. Снаряд отскакивает в новые цели, пока при броске атаки заклинанием не выпадет чётное число, либо он не промахнётся, или у него не закончатся возможные цели. Все новые цели должны быть в пределах дистанции от заклинателя. Вы и ваши союзники также считаетесь возможными целями этого заклинания, тут уж или повезёт, или не повезёт.\n\nНа высоких кругах. Когда вы сотворяете это заклинание, используя ячейку 3-го круга или выше, вы создаете дополнительный снаряд за каждый круг ячейки выше 2-го. Каждая цель может быть поражена не более одного раза за одно сотворение заклинания.\n\nТип урона\n\n[[/r d10]]\n\nУрон\n\n1\n\nКислота\n\n2\n\nХолод\n\n3\n\nОгонь\n\n4\n\nСила\n\n5\n\nМолния\n\n6\n\nНекротический\n\n7\n\nЯд\n\n8\n\nПсихический\n\n9\n\nЛучистый\n\n10\n\nГром",
+  "level": 2,
+  "school": "evo",
+  "components": [
+    "S",
+    "V"
+  ],
+  "ritual": false,
+  "concentration": false,
+  "casting_time": {
+    "unit": "action",
+    "value": 1,
+    "condition": ""
+  },
+  "range": {
+    "units": "ft",
+    "value": 120,
+    "special": null
+  },
+  "duration": {
+    "units": "inst",
+    "value": null
+  },
+  "materials": {
+    "value": "",
+    "consumed": false,
+    "cost": 0,
+    "supply": 0
+  },
+  "preparation": {
+    "mode": "prepared",
+    "prepared": false
+  },
+  "activities": [
+    {
+      "id": "SGtvKC5bj7Dhtgf5",
+      "name": "",
+      "img": "",
+      "sort": 0,
+      "activation": {
+        "type": "action",
+        "value": null,
+        "condition": "",
+        "override": false,
+        "reaction_conditions": []
+      },
+      "consumption": {
+        "scaling": {
+          "allowed": false,
+          "max": ""
+        },
+        "spell_slot": true,
+        "targets": []
+      },
+      "description": {
+        "chat_flavor": ""
+      },
+      "duration": {
+        "value": null,
+        "units": "inst",
+        "special": "",
+        "concentration": false,
+        "override": false
+      },
+      "flags": {},
+      "range": {
+        "value": null,
+        "units": "self",
+        "special": "",
+        "override": false
+      },
+      "target": {
+        "template": {
+          "count": "",
+          "contiguous": false,
+          "stationary": false,
+          "type": "",
+          "size": "",
+          "width": "",
+          "height": "",
+          "units": "ft"
+        },
+        "affects": {
+          "count": "1",
+          "type": "creature",
+          "choice": false,
+          "special": ""
+        },
+        "override": false,
+        "prompt": true
+      },
+      "uses": {
+        "spent": 0,
+        "max": "",
+        "recovery": []
+      },
+      "visibility": {
+        "identifier": "",
+        "level": {
+          "min": null,
+          "max": null
+        },
+        "require_attunement": false,
+        "require_identification": false,
+        "require_magic": false
+      },
+      "effects": [],
+      "applied_effects": [],
+      "kind": "attack",
+      "attack": {
+        "ability": "",
+        "bonus": "",
+        "critical": {
+          "threshold": null
+        },
+        "flat": false,
+        "type": {
+          "value": "",
+          "classification": ""
+        }
+      },
+      "damage": {
+        "critical": {
+          "bonus": ""
+        },
+        "include_base": true,
+        "parts": []
+      }
+    },
+    {
+      "id": "j0OC7UY4Jvvts8tf",
+      "name": "",
+      "img": "",
+      "sort": 0,
+      "activation": {
+        "type": "special",
+        "value": null,
+        "condition": "",
+        "override": true,
+        "reaction_conditions": []
+      },
+      "consumption": {
+        "scaling": {
+          "allowed": false,
+          "max": ""
+        },
+        "spell_slot": false,
+        "targets": []
+      },
+      "description": {
+        "chat_flavor": ""
+      },
+      "duration": {
+        "value": null,
+        "units": "inst",
+        "special": "",
+        "concentration": false,
+        "override": false
+      },
+      "flags": {},
+      "range": {
+        "value": null,
+        "units": "self",
+        "special": "",
+        "override": false
+      },
+      "target": {
+        "template": {
+          "count": "",
+          "contiguous": false,
+          "stationary": false,
+          "type": "",
+          "size": "",
+          "width": "",
+          "height": "",
+          "units": "ft"
+        },
+        "affects": {
+          "count": "1",
+          "type": "creature",
+          "choice": false,
+          "special": ""
+        },
+        "override": false,
+        "prompt": true
+      },
+      "uses": {
+        "spent": 0,
+        "max": "",
+        "recovery": []
+      },
+      "visibility": {
+        "identifier": "",
+        "level": {
+          "min": null,
+          "max": null
+        },
+        "require_attunement": false,
+        "require_identification": false,
+        "require_magic": false
+      },
+      "effects": [],
+      "applied_effects": [],
+      "kind": "damage",
+      "damage": {
+        "critical": {
+          "allow": false,
+          "bonus": ""
+        },
+        "parts": [
+          {
+            "number": 3,
+            "denomination": 8,
+            "bonus": "",
+            "types": [
+              "acid",
+              "radiant",
+              "lightning",
+              "necrotic",
+              "fire",
+              "psychic",
+              "force",
+              "cold",
+              "poison",
+              "thunder"
+            ],
+            "custom": {
+              "enabled": false,
+              "formula": ""
+            },
+            "scaling": {
+              "mode": "",
+              "number": 1,
+              "formula": ""
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "vyS3Z5IP9aizHsH8",
+      "name": "Атака по новому существу (без траты ячейки)",
+      "img": "",
+      "sort": 0,
+      "activation": {
+        "type": "special",
+        "value": null,
+        "condition": "",
+        "override": true,
+        "reaction_conditions": []
+      },
+      "consumption": {
+        "scaling": {
+          "allowed": false,
+          "max": ""
+        },
+        "spell_slot": false,
+        "targets": []
+      },
+      "description": {
+        "chat_flavor": ""
+      },
+      "duration": {
+        "value": null,
+        "units": "inst",
+        "special": "",
+        "concentration": false,
+        "override": false
+      },
+      "flags": {},
+      "range": {
+        "value": null,
+        "units": "self",
+        "special": "",
+        "override": false
+      },
+      "target": {
+        "template": {
+          "count": "",
+          "contiguous": false,
+          "stationary": false,
+          "type": "",
+          "size": "",
+          "width": "",
+          "height": "",
+          "units": "ft"
+        },
+        "affects": {
+          "count": "1",
+          "type": "creature",
+          "choice": false,
+          "special": ""
+        },
+        "override": false,
+        "prompt": true
+      },
+      "uses": {
+        "spent": 0,
+        "max": "",
+        "recovery": []
+      },
+      "visibility": {
+        "identifier": "",
+        "level": {
+          "min": null,
+          "max": null
+        },
+        "require_attunement": false,
+        "require_identification": false,
+        "require_magic": false
+      },
+      "effects": [],
+      "applied_effects": [],
+      "kind": "attack",
+      "attack": {
+        "ability": "",
+        "bonus": "",
+        "critical": {
+          "threshold": null
+        },
+        "flat": false,
+        "type": {
+          "value": "melee",
+          "classification": ""
+        }
+      },
+      "damage": {
+        "critical": {
+          "bonus": ""
+        },
+        "include_base": true,
+        "parts": []
+      }
+    }
+  ],
+  "passive_effects": [],
+  "provenance": {
+    "source": "foundry",
+    "source_url": "https://github.com/foundryvtt/dnd5e/blob/965ad2d0cf5d063dac675ba078b5bd3c3c0dd449/packs/_source/laaru-hw-spells/Бешеный_снаряд___Frenzied_Bolt_j0xd3WzvTIl8MxW6.yml",
+    "ingest_date": "2026-10-26",
+    "ingest_version": "foundry-translator-v1",
+    "srd_version": [
+      "5.1"
+    ],
+    "license_tag": "CC-BY-4.0"
+  },
+  "review": {
+    "known_divergence": null,
+    "requires_user_decision": false
+  },
+  "entry_kind": "spell"
+}

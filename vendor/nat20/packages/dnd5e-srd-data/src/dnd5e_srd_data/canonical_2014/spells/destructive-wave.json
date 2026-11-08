@@ -1,0 +1,180 @@
+{
+  "slug": "destructive-wave",
+  "foundry_uuid": "Compendium.dnd5e.laaru-hw-spells.Item.SYEOmA9WWKoQw8Tg",
+  "name": "Волна разрушения / Destructive Wave",
+  "description": "Вы наносите удар по земле и создаёте взрыв божественной энергии, исходящей кругами от вас. Каждое выбранное вами существо в пределах 30 футов от вас должно пройти испытание Выносливости. При провале оно получает [[/r 5d6]] урона громом, а также [[/r 5d6]] лучистого или некротического урона (на ваш выбор) и &amp;reference[prone]{распластывается }. При успехе существо получает половину этого урона и не распластывается.",
+  "level": 5,
+  "school": "evo",
+  "components": [
+    "V"
+  ],
+  "ritual": false,
+  "concentration": false,
+  "casting_time": {
+    "unit": "action",
+    "value": 1,
+    "condition": ""
+  },
+  "range": {
+    "units": "spec",
+    "value": 0,
+    "special": null
+  },
+  "duration": {
+    "units": "inst",
+    "value": null
+  },
+  "materials": {
+    "value": "",
+    "consumed": false,
+    "cost": 0,
+    "supply": 0
+  },
+  "preparation": {
+    "mode": "prepared",
+    "prepared": false
+  },
+  "activities": [
+    {
+      "id": "dnd5eactivity000",
+      "name": "",
+      "img": "",
+      "sort": 0,
+      "activation": {
+        "type": "action",
+        "value": null,
+        "condition": "",
+        "override": false,
+        "reaction_conditions": []
+      },
+      "consumption": {
+        "scaling": {
+          "allowed": false,
+          "max": ""
+        },
+        "spell_slot": true,
+        "targets": []
+      },
+      "description": {
+        "chat_flavor": ""
+      },
+      "duration": {
+        "value": null,
+        "units": "inst",
+        "special": "",
+        "concentration": false,
+        "override": false
+      },
+      "flags": {},
+      "range": {
+        "value": null,
+        "units": "self",
+        "special": "",
+        "override": false
+      },
+      "target": {
+        "template": {
+          "count": "",
+          "contiguous": false,
+          "stationary": false,
+          "type": "radius",
+          "size": "30",
+          "width": "",
+          "height": "",
+          "units": "ft"
+        },
+        "affects": {
+          "count": "",
+          "type": "",
+          "choice": false,
+          "special": ""
+        },
+        "override": false,
+        "prompt": true
+      },
+      "uses": {
+        "spent": 0,
+        "max": "",
+        "recovery": []
+      },
+      "visibility": {
+        "identifier": "",
+        "level": {
+          "min": null,
+          "max": null
+        },
+        "require_attunement": false,
+        "require_identification": false,
+        "require_magic": false
+      },
+      "effects": [],
+      "applied_effects": [],
+      "kind": "save",
+      "damage": {
+        "on_save": "half",
+        "parts": [
+          {
+            "number": 5,
+            "denomination": 6,
+            "bonus": "",
+            "types": [
+              "thunder"
+            ],
+            "custom": {
+              "enabled": false,
+              "formula": ""
+            },
+            "scaling": {
+              "mode": "",
+              "number": null,
+              "formula": ""
+            }
+          },
+          {
+            "number": 5,
+            "denomination": 6,
+            "bonus": "",
+            "types": [
+              "radiant"
+            ],
+            "custom": {
+              "enabled": false,
+              "formula": ""
+            },
+            "scaling": {
+              "mode": "",
+              "number": null,
+              "formula": ""
+            }
+          }
+        ]
+      },
+      "save": {
+        "ability": [
+          "con"
+        ],
+        "dc": {
+          "calculation": "spellcasting",
+          "formula": ""
+        },
+        "ignore_cover": false
+      }
+    }
+  ],
+  "passive_effects": [],
+  "provenance": {
+    "source": "foundry",
+    "source_url": "https://github.com/foundryvtt/dnd5e/blob/965ad2d0cf5d063dac675ba078b5bd3c3c0dd449/packs/_source/laaru-hw-spells/Волна_разрушения___Destructive_Wave_SYEOmA9WWKoQw8Tg.yml",
+    "ingest_date": "2026-10-26",
+    "ingest_version": "foundry-translator-v1",
+    "srd_version": [
+      "5.1"
+    ],
+    "license_tag": "CC-BY-4.0"
+  },
+  "review": {
+    "known_divergence": null,
+    "requires_user_decision": false
+  },
+  "entry_kind": "spell"
+}

@@ -1,0 +1,242 @@
+{
+  "slug": "light-domain",
+  "name": "Домен света",
+  "description": "Домен света | Light Domain\n\nБоги света, такие как Хельм, Латандер, Фольтус, Бранчала, Серебряное Пламя, Белен, Аполлон и Ра-Хорахти, поддерживают принципы возрождения и обновления, истины, бдительности и красоты и зачастую используют солнце как свой символ. Некоторых из этих богов изображают как само солнце или как возничего, который ведёт колесницу солнца по небу. Другие — неусыпные стражи, чей взгляд пронзает любую тень и раскрывает любой обман. Некоторые из них — боги красоты и искусства, которое они считают инструментом развития души. Жрецы богов света — просветлённые души, которым отчасти передаются сияние и мощь их богов и их проницательность. Их долг — бороться с ложью и изгонять тьму.\n\nУровеньОсобенности\n\n1-й\n\n@Compendium[laaru-dnd5-hw.classfeatures.BPk7z3XBRpnLOlVf]{Дополнительный фокус}, @Compendium[laaru-dnd5-hw.classfeatures.oe8g4P9R4CHuT1pm]{Защитная вспышка}\n\n2-й\n\n@Compendium[laaru-dnd5-hw.classfeatures.yMrmGsMJn8bAhJ5f]{Проведение энергии: Сияние зари}\n\n6-й\n\n@Compendium[laaru-dnd5-hw.classfeatures.vIPhbiSL33Cpm7yC]{Улучшенная вспышка}\n\n8-й\n\n@Compendium[laaru-dnd5-hw.classfeatures.NfxqQxT0J1bYAvfN]{Сильные заклинания} или @Compendium[laaru-dnd5-hw.classfeatures.XXg29SJBaE3ts5sQ]{Благословенные удары (опционально)}\n\n17-й\n\n@Compendium[laaru-dnd5-hw.classfeatures.XVHG7XsbqGJTm1fT]{Ореол света}\n\nЗаклинания домена света\n\nУровень жрецаЗаклинания\n\n1-й\n\n@Compendium[laaru-dnd5-hw.spells.UHW6d6xa3pNVVguq]{Пылающие руки}, @Compendium[laaru-dnd5-hw.spells.KlVo17qWGwXLevip]{Фейское сияние}\n\n3-й\n\n@Compendium[laaru-dnd5-hw.spells.y8FDrQvmrUsb6zFY]{Опаляющий луч}, @Compendium[laaru-dnd5-hw.spells.GEfMYdcJxw1esRfd]{Пылающая сфера}\n\n5-й\n\n@Compendium[laaru-dnd5-hw.spells.xoxTz9mfsHkmHcX6]{Дневной свет}, @Compendium[laaru-dnd5-hw.spells.j2cNLHZYnbKl46gZ]{Огненный шар}\n\n7-й\n\n@Compendium[laaru-dnd5-hw.spells.hNLGjcsAX6Pg9OT2]{Огненная стена}, @Compendium[laaru-dnd5-hw.spells.obcC8fu3Oh20auBp]{Страж веры}\n\n9-й\n\n@Compendium[laaru-dnd5-hw.spells.qhhv1TGExW0r843c]{Огненный столп}, @Compendium[laaru-dnd5-hw.spells.aw8tF2EFxSl4UuFT]{Тайновидение}\n\n*Заклинания добавляются в автоматическом режиме при повышении уровней.",
+  "identifier": "light-domain",
+  "class_identifier": "cleric",
+  "spellcasting": {
+    "ability": "",
+    "progression": "none"
+  },
+  "advancement": [
+    {
+      "id": "qjfav0x7rbfk2xb8",
+      "type": "ItemGrant",
+      "level": 1,
+      "title": "1. Особенности",
+      "hint": "",
+      "class_restriction": "",
+      "configuration": {
+        "items": [
+          "Compendium.laaru-dnd5-hw.classfeatures.BPk7z3XBRpnLOlVf",
+          "Compendium.laaru-dnd5-hw.classfeatures.oe8g4P9R4CHuT1pm"
+        ],
+        "optional": false
+      },
+      "value": {}
+    },
+    {
+      "id": "4gj233lgunmxflx8",
+      "type": "ItemGrant",
+      "level": 1,
+      "title": "2. Дополнительный фокус Свет",
+      "hint": "",
+      "class_restriction": "",
+      "configuration": {
+        "items": [
+          "Compendium.laaru-dnd5-hw.spells.Vc5xlOFSeMIRUwaE"
+        ],
+        "optional": false
+      },
+      "value": {}
+    },
+    {
+      "id": "rftjkatjpdhgr9xr",
+      "type": "ItemGrant",
+      "level": 2,
+      "title": "Особенность",
+      "hint": "",
+      "class_restriction": "",
+      "configuration": {
+        "items": [
+          "Compendium.laaru-dnd5-hw.classfeatures.yMrmGsMJn8bAhJ5f"
+        ],
+        "optional": false
+      },
+      "value": {}
+    },
+    {
+      "id": "5pan06632kp0x3p9",
+      "type": "ItemGrant",
+      "level": 6,
+      "title": "Особенность",
+      "hint": "",
+      "class_restriction": "",
+      "configuration": {
+        "items": [
+          "Compendium.laaru-dnd5-hw.classfeatures.vIPhbiSL33Cpm7yC"
+        ],
+        "optional": false
+      },
+      "value": {}
+    },
+    {
+      "id": "ys3azkdv3qjasehj",
+      "type": "ItemGrant",
+      "level": 8,
+      "title": "Выберите одну особенность",
+      "hint": "",
+      "class_restriction": "",
+      "configuration": {
+        "items": [
+          "Compendium.laaru-dnd5-hw.classfeatures.NfxqQxT0J1bYAvfN",
+          "Compendium.laaru-dnd5-hw.classfeatures.XXg29SJBaE3ts5sQ"
+        ],
+        "optional": false
+      },
+      "value": {}
+    },
+    {
+      "id": "vl5wjrmf11qcyral",
+      "type": "ItemGrant",
+      "level": 17,
+      "title": "Особенность",
+      "hint": "",
+      "class_restriction": "",
+      "configuration": {
+        "items": [
+          "Compendium.laaru-dnd5-hw.classfeatures.XVHG7XsbqGJTm1fT"
+        ],
+        "optional": false
+      },
+      "value": {}
+    },
+    {
+      "id": "1ealkwt20no325ej",
+      "type": "ItemGrant",
+      "level": 1,
+      "title": "3. Заклинания домена света",
+      "hint": "",
+      "class_restriction": "",
+      "configuration": {
+        "items": [
+          "Compendium.laaru-dnd5-hw.spells.UHW6d6xa3pNVVguq",
+          "Compendium.laaru-dnd5-hw.spells.KlVo17qWGwXLevip"
+        ],
+        "optional": false,
+        "spell": {
+          "ability": "wis",
+          "preparation": "always",
+          "uses": {
+            "max": "",
+            "per": ""
+          }
+        }
+      },
+      "value": {}
+    },
+    {
+      "id": "ag84lva99prgjtur",
+      "type": "ItemGrant",
+      "level": 3,
+      "title": "Заклинания домена света",
+      "hint": "",
+      "class_restriction": "",
+      "configuration": {
+        "items": [
+          "Compendium.laaru-dnd5-hw.spells.y8FDrQvmrUsb6zFY",
+          "Compendium.laaru-dnd5-hw.spells.GEfMYdcJxw1esRfd"
+        ],
+        "optional": false,
+        "spell": {
+          "ability": "wis",
+          "preparation": "always",
+          "uses": {
+            "max": "",
+            "per": ""
+          }
+        }
+      },
+      "value": {}
+    },
+    {
+      "id": "wamb05z5jwnz67gq",
+      "type": "ItemGrant",
+      "level": 5,
+      "title": "Заклинания домена света",
+      "hint": "",
+      "class_restriction": "",
+      "configuration": {
+        "items": [
+          "Compendium.laaru-dnd5-hw.spells.xoxTz9mfsHkmHcX6",
+          "Compendium.laaru-dnd5-hw.spells.j2cNLHZYnbKl46gZ"
+        ],
+        "optional": false,
+        "spell": {
+          "ability": "wis",
+          "preparation": "always",
+          "uses": {
+            "max": "",
+            "per": ""
+          }
+        }
+      },
+      "value": {}
+    },
+    {
+      "id": "rzgwm6oabclewom5",
+      "type": "ItemGrant",
+      "level": 7,
+      "title": "Заклинания домена света",
+      "hint": "",
+      "class_restriction": "",
+      "configuration": {
+        "items": [
+          "Compendium.laaru-dnd5-hw.spells.hNLGjcsAX6Pg9OT2",
+          "Compendium.laaru-dnd5-hw.spells.obcC8fu3Oh20auBp"
+        ],
+        "optional": false,
+        "spell": {
+          "ability": "wis",
+          "preparation": "always",
+          "uses": {
+            "max": "",
+            "per": ""
+          }
+        }
+      },
+      "value": {}
+    },
+    {
+      "id": "at9xlbfkd3vgfsb8",
+      "type": "ItemGrant",
+      "level": 9,
+      "title": "Заклинания домена света",
+      "hint": "",
+      "class_restriction": "",
+      "configuration": {
+        "items": [
+          "Compendium.laaru-dnd5-hw.spells.qhhv1TGExW0r843c",
+          "Compendium.laaru-dnd5-hw.spells.aw8tF2EFxSl4UuFT"
+        ],
+        "optional": false,
+        "spell": {
+          "ability": "wis",
+          "preparation": "always",
+          "uses": {
+            "max": "",
+            "per": ""
+          }
+        }
+      },
+      "value": {}
+    }
+  ],
+  "granted_features": [],
+  "feature_choices": [],
+  "provenance": {
+    "source": "foundry",
+    "source_url": "https://github.com/foundryvtt/dnd5e/blob/965ad2d0cf5d063dac675ba078b5bd3c3c0dd449/packs/_source/laaru-hw-subclasses/Домен_света_aArM9AdYMzAj64Fm.yml",
+    "ingest_date": "2026-10-26",
+    "ingest_version": "foundry-translator-v1",
+    "srd_version": [
+      "5.1"
+    ],
+    "license_tag": "CC-BY-4.0"
+  },
+  "review": {
+    "known_divergence": null,
+    "requires_user_decision": false
+  },
+  "entry_kind": "subclass"
+}

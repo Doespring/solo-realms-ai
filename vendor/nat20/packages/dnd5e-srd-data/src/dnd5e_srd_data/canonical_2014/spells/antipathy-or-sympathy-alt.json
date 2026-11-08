@@ -1,0 +1,260 @@
+{
+  "slug": "antipathy-or-sympathy-alt",
+  "foundry_uuid": "Compendium.dnd5e.laaru-hw-spells.Item.yR3qVL3E2kzBCBC5",
+  "name": "Антипатия/симпатия (альт.) / Antipathy or sympathy Alt",
+  "description": "Вы наделяете предмет огромного или меньшего размера мощной отталкивающей магией, выбирая тип разумного существа, такой как бронзовые драконы, тролли или карги. На протяжении длительности этот предмет излучает ауру магии радиусом 60 футов, которая отталкивает этот тип существ.\n\nЭффекты. Если выбранное существо видит предмет или входит в его магическую ауру, оно испытывает сильное желание бежать и должно пройти испытание Мудрости, иначе будет в &amp;Reference[frightened]{Испуге} от этого предмета.\n\nОно остается Испуганным, пока видит предмет или находится в его магической ауре. Пока оно Испугано, оно должно использовать своё перемещение, чтобы бежать от предмета к ближайшему безопасному месту за пределами его магической ауры, где оно не видит предмет. Как только существо это сделает, оно больше не Испугано предметом.\n\nСущество снова становится Испуганным от этого предмета, если видит его или вновь входит в магическую ауру предмета.\n\nПрекращение эффекта. Если затронутое существо больше не видит предмет и находится за пределами его магической ауры, оно может использовать своё действие, чтобы повторить испытание Мудрости. При успехе существо понимает, что эффект магический по природе, и получает невосприимчивость к эффекту на 1 минуту.\n\nОбратное сотворение. Вы можете использовать это заклинание, чтобы влить симпатию в предмет вместо антипатии. Если выбранное существо видит предмет или входит в его магическую ауру, оно должно преуспеть в испытании Мудрости, иначе на каждом ходу использует всё своё перемещение, чтобы приблизиться к предмету как можно ближе. Как только оно это сделает, оно не может добровольно отойти от предмета. Если цель получает урон, пока находится под этим эффектом, она может прекратить эффект, как описано выше.",
+  "level": 8,
+  "school": "enc",
+  "components": [
+    "M",
+    "S",
+    "V"
+  ],
+  "ritual": false,
+  "concentration": false,
+  "casting_time": {
+    "unit": "action",
+    "value": 1,
+    "condition": ""
+  },
+  "range": {
+    "units": "touch",
+    "value": null,
+    "special": null
+  },
+  "duration": {
+    "units": "day",
+    "value": 10
+  },
+  "materials": {
+    "value": "ложка уксуса для антипатии или капля меда для симпатии",
+    "consumed": false,
+    "cost": 0,
+    "supply": 0
+  },
+  "preparation": {
+    "mode": "prepared",
+    "prepared": false
+  },
+  "activities": [
+    {
+      "id": "dnd5eactivity000",
+      "name": "",
+      "img": "",
+      "sort": 0,
+      "activation": {
+        "type": "action",
+        "value": null,
+        "condition": "",
+        "override": false,
+        "reaction_conditions": []
+      },
+      "consumption": {
+        "scaling": {
+          "allowed": false,
+          "max": ""
+        },
+        "spell_slot": true,
+        "targets": []
+      },
+      "description": {
+        "chat_flavor": ""
+      },
+      "duration": {
+        "value": null,
+        "units": "inst",
+        "special": "",
+        "concentration": false,
+        "override": false
+      },
+      "flags": {},
+      "range": {
+        "value": null,
+        "units": "any",
+        "special": "",
+        "override": true
+      },
+      "target": {
+        "template": {
+          "count": "",
+          "contiguous": false,
+          "stationary": false,
+          "type": "",
+          "size": "",
+          "width": "",
+          "height": "",
+          "units": "ft"
+        },
+        "affects": {
+          "count": "",
+          "type": "creature",
+          "choice": false,
+          "special": ""
+        },
+        "override": true,
+        "prompt": true
+      },
+      "uses": {
+        "spent": 0,
+        "max": "",
+        "recovery": []
+      },
+      "visibility": {
+        "identifier": "",
+        "level": {
+          "min": null,
+          "max": null
+        },
+        "require_attunement": false,
+        "require_identification": false,
+        "require_magic": false
+      },
+      "effects": [
+        {
+          "id": "6mm0j2vpL8Az2Jrl",
+          "level": {
+            "min": null,
+            "max": null
+          },
+          "on_save": false,
+          "riders": null
+        }
+      ],
+      "applied_effects": [],
+      "kind": "save",
+      "damage": {
+        "on_save": "half",
+        "parts": []
+      },
+      "save": {
+        "ability": [
+          "wis"
+        ],
+        "dc": {
+          "calculation": "spellcasting",
+          "formula": ""
+        },
+        "ignore_cover": false
+      }
+    },
+    {
+      "id": "pHNwJja3Hvna678S",
+      "name": "Обратное сотворение",
+      "img": "",
+      "sort": 0,
+      "activation": {
+        "type": "action",
+        "value": null,
+        "condition": "",
+        "override": false,
+        "reaction_conditions": []
+      },
+      "consumption": {
+        "scaling": {
+          "allowed": false,
+          "max": ""
+        },
+        "spell_slot": true,
+        "targets": []
+      },
+      "description": {
+        "chat_flavor": ""
+      },
+      "duration": {
+        "value": null,
+        "units": "inst",
+        "special": "",
+        "concentration": false,
+        "override": false
+      },
+      "flags": {},
+      "range": {
+        "value": null,
+        "units": "any",
+        "special": "",
+        "override": true
+      },
+      "target": {
+        "template": {
+          "count": "",
+          "contiguous": false,
+          "stationary": false,
+          "type": "",
+          "size": "",
+          "width": "",
+          "height": "",
+          "units": "ft"
+        },
+        "affects": {
+          "count": "",
+          "type": "creature",
+          "choice": false,
+          "special": ""
+        },
+        "override": true,
+        "prompt": true
+      },
+      "uses": {
+        "spent": 0,
+        "max": "",
+        "recovery": []
+      },
+      "visibility": {
+        "identifier": "",
+        "level": {
+          "min": null,
+          "max": null
+        },
+        "require_attunement": false,
+        "require_identification": false,
+        "require_magic": false
+      },
+      "effects": [],
+      "applied_effects": [],
+      "kind": "save",
+      "damage": {
+        "on_save": "half",
+        "parts": []
+      },
+      "save": {
+        "ability": [
+          "wis"
+        ],
+        "dc": {
+          "calculation": "spellcasting",
+          "formula": ""
+        },
+        "ignore_cover": false
+      }
+    }
+  ],
+  "passive_effects": [
+    {
+      "id": "6mm0j2vpL8Az2Jrl",
+      "name": "Антипатия/симпатия: испуг",
+      "description": "",
+      "changes": [],
+      "statuses": [
+        "frightened"
+      ],
+      "duration": null,
+      "disabled": false,
+      "transfer": false
+    }
+  ],
+  "provenance": {
+    "source": "foundry",
+    "source_url": "https://github.com/foundryvtt/dnd5e/blob/965ad2d0cf5d063dac675ba078b5bd3c3c0dd449/packs/_source/laaru-hw-spells/Антипатия_симпатия__альт_____Antipathy_or_sympathy_Alt_yR3qVL3E2kzBCBC5.yml",
+    "ingest_date": "2026-10-26",
+    "ingest_version": "foundry-translator-v1",
+    "srd_version": [
+      "5.1"
+    ],
+    "license_tag": "CC-BY-4.0"
+  },
+  "review": {
+    "known_divergence": null,
+    "requires_user_decision": false
+  },
+  "entry_kind": "spell"
+}

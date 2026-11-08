@@ -1,0 +1,165 @@
+{
+  "slug": "evards-black-tentacles",
+  "foundry_uuid": "Compendium.dnd5e.laaru-hw-spells.Item.dXwkYryKC7q4ZTh3",
+  "name": "Чёрные щупальца Эварда / Evard’s black tentacles",
+  "description": "Извивающиеся угольно-чёрные щупальца заполняют 20-футовый квадрат на земле в месте, которое вы видите в пределах дистанции. Пока длится заклинание, щупальца превращают область заклинания в &amp;reference[difficultterrain]{пересечённую местность}.\n\nСущество, которое входит в область заклинания впервые за ход или начинает в ней свой ход, должно пройти испытание Ловкости. При провале оно получает [[/r 3d6]] дробящего урона и &amp;reference[restrained]{обездвижено} щупальцами, пока длится заклинание. Обездвиженное щупальцами существо, которое начинает свой ход в области, получает [[/r 3d6]] дробящего урона.\n\nСущество, &amp;reference[restrained]{обездвиженное} щупальцами, может использовать действие, чтобы пройти проверку Силы или Ловкости (на свой выбор). СЛ равна СЛ испытаний против ваших заклинаний. При успехе существо освобождается.",
+  "level": 4,
+  "school": "con",
+  "components": [
+    "M",
+    "S",
+    "V"
+  ],
+  "ritual": false,
+  "concentration": true,
+  "casting_time": {
+    "unit": "action",
+    "value": 1,
+    "condition": ""
+  },
+  "range": {
+    "units": "ft",
+    "value": 90,
+    "special": null
+  },
+  "duration": {
+    "units": "minute",
+    "value": 1
+  },
+  "materials": {
+    "value": "кусочек щупальца гигантского осьминога или гигантского кальмара",
+    "consumed": false,
+    "cost": 0,
+    "supply": 0
+  },
+  "preparation": {
+    "mode": "prepared",
+    "prepared": false
+  },
+  "activities": [
+    {
+      "id": "dnd5eactivity000",
+      "name": "",
+      "img": "",
+      "sort": 0,
+      "activation": {
+        "type": "action",
+        "value": null,
+        "condition": "",
+        "override": false,
+        "reaction_conditions": []
+      },
+      "consumption": {
+        "scaling": {
+          "allowed": false,
+          "max": ""
+        },
+        "spell_slot": true,
+        "targets": []
+      },
+      "description": {
+        "chat_flavor": ""
+      },
+      "duration": {
+        "value": null,
+        "units": "inst",
+        "special": "",
+        "concentration": false,
+        "override": false
+      },
+      "flags": {},
+      "range": {
+        "value": null,
+        "units": "self",
+        "special": "",
+        "override": false
+      },
+      "target": {
+        "template": {
+          "count": "",
+          "contiguous": false,
+          "stationary": false,
+          "type": "square",
+          "size": "20",
+          "width": "",
+          "height": "",
+          "units": "ft"
+        },
+        "affects": {
+          "count": "",
+          "type": "",
+          "choice": false,
+          "special": ""
+        },
+        "override": false,
+        "prompt": true
+      },
+      "uses": {
+        "spent": 0,
+        "max": "",
+        "recovery": []
+      },
+      "visibility": {
+        "identifier": "",
+        "level": {
+          "min": null,
+          "max": null
+        },
+        "require_attunement": false,
+        "require_identification": false,
+        "require_magic": false
+      },
+      "effects": [],
+      "applied_effects": [],
+      "kind": "save",
+      "damage": {
+        "on_save": "half",
+        "parts": [
+          {
+            "number": 3,
+            "denomination": 6,
+            "bonus": "",
+            "types": [
+              "bludgeoning"
+            ],
+            "custom": {
+              "enabled": false,
+              "formula": ""
+            },
+            "scaling": {
+              "mode": "",
+              "number": null,
+              "formula": ""
+            }
+          }
+        ]
+      },
+      "save": {
+        "ability": [
+          "dex"
+        ],
+        "dc": {
+          "calculation": "spellcasting",
+          "formula": ""
+        },
+        "ignore_cover": false
+      }
+    }
+  ],
+  "passive_effects": [],
+  "provenance": {
+    "source": "foundry",
+    "source_url": "https://github.com/foundryvtt/dnd5e/blob/965ad2d0cf5d063dac675ba078b5bd3c3c0dd449/packs/_source/laaru-hw-spells/Ч_рные_щупальца_Эварда___Evard_s_black_tentacles_dXwkYryKC7q4ZTh3.yml",
+    "ingest_date": "2026-10-26",
+    "ingest_version": "foundry-translator-v1",
+    "srd_version": [
+      "5.1"
+    ],
+    "license_tag": "CC-BY-4.0"
+  },
+  "review": {
+    "known_divergence": null,
+    "requires_user_decision": false
+  },
+  "entry_kind": "spell"
+}

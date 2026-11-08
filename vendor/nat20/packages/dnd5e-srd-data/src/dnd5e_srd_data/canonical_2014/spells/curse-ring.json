@@ -1,0 +1,160 @@
+{
+  "slug": "curse-ring",
+  "foundry_uuid": "Compendium.dnd5e.laaru-hw-spells.Item.DC1c4D50LifLsLmQ",
+  "name": "Проклясть кольцо / Curse Ring",
+  "description": "(Магия колец)\n\nВы проклинаете кольцо, которое в данный момент никто не держит и не носит. Когда вы творите это заклинание, выберите один из возможных эффектов заклинания Проклятие. Следующее существо, которое наденет это кольцо, получает выбранный эффект (без прохождения испытания).\n\nПроклятие переходит от кольца к владельцу, когда кольцо надето; кольцо становится обычным кольцом, которое можно снять, но проклятие остаётся на существе, которое его надело, до тех пор, пока проклятие не будет снято или рассеяно.\n\nЗаклинание Опознание, сотворённое на проклятое кольцо, раскрывает тот факт, что оно проклято.",
+  "level": 5,
+  "school": "nec",
+  "components": [
+    "M",
+    "S",
+    "V"
+  ],
+  "ritual": false,
+  "concentration": false,
+  "casting_time": {
+    "unit": "action",
+    "value": 1,
+    "condition": ""
+  },
+  "range": {
+    "units": "touch",
+    "value": null,
+    "special": null
+  },
+  "duration": {
+    "units": "perm",
+    "value": null
+  },
+  "materials": {
+    "value": "алмазная пыль стоимостью 250 зм, расходуемая заклинанием",
+    "consumed": false,
+    "cost": 0,
+    "supply": 0
+  },
+  "preparation": {
+    "mode": "prepared",
+    "prepared": false
+  },
+  "activities": [
+    {
+      "id": "vVAb6kRMis0DgFTc",
+      "name": "Проклясть цель",
+      "img": "",
+      "sort": 0,
+      "activation": {
+        "type": "action",
+        "value": null,
+        "condition": "",
+        "override": false,
+        "reaction_conditions": []
+      },
+      "consumption": {
+        "scaling": {
+          "allowed": false,
+          "max": ""
+        },
+        "spell_slot": true,
+        "targets": []
+      },
+      "description": {
+        "chat_flavor": ""
+      },
+      "duration": {
+        "value": null,
+        "units": "inst",
+        "special": "",
+        "concentration": false,
+        "override": false
+      },
+      "flags": {},
+      "range": {
+        "value": null,
+        "units": "self",
+        "special": "",
+        "override": false
+      },
+      "target": {
+        "template": {
+          "count": "",
+          "contiguous": false,
+          "stationary": false,
+          "type": "",
+          "size": "",
+          "width": "",
+          "height": "",
+          "units": "ft"
+        },
+        "affects": {
+          "count": "1",
+          "type": "creature",
+          "choice": false,
+          "special": ""
+        },
+        "override": true,
+        "prompt": true
+      },
+      "uses": {
+        "spent": 0,
+        "max": "",
+        "recovery": []
+      },
+      "visibility": {
+        "identifier": "",
+        "level": {
+          "min": null,
+          "max": null
+        },
+        "require_attunement": false,
+        "require_identification": false,
+        "require_magic": false
+      },
+      "effects": [
+        {
+          "id": "Zg8yURvLHcI4tUS0",
+          "level": {
+            "min": null,
+            "max": null
+          },
+          "on_save": null,
+          "riders": null
+        }
+      ],
+      "applied_effects": [],
+      "kind": "utility",
+      "roll": {
+        "formula": "",
+        "name": "",
+        "prompt": false,
+        "visible": false
+      }
+    }
+  ],
+  "passive_effects": [
+    {
+      "id": "Zg8yURvLHcI4tUS0",
+      "name": "Проклясть кольцо",
+      "description": "",
+      "changes": [],
+      "statuses": [],
+      "duration": null,
+      "disabled": false,
+      "transfer": false
+    }
+  ],
+  "provenance": {
+    "source": "foundry",
+    "source_url": "https://github.com/foundryvtt/dnd5e/blob/965ad2d0cf5d063dac675ba078b5bd3c3c0dd449/packs/_source/laaru-hw-spells/Проклясть_кольцо___Curse_Ring_DC1c4D50LifLsLmQ.yml",
+    "ingest_date": "2026-10-26",
+    "ingest_version": "foundry-translator-v1",
+    "srd_version": [
+      "5.1"
+    ],
+    "license_tag": "CC-BY-4.0"
+  },
+  "review": {
+    "known_divergence": null,
+    "requires_user_decision": false
+  },
+  "entry_kind": "spell"
+}

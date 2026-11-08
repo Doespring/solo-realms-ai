@@ -1,0 +1,149 @@
+{
+  "slug": "repair-metal",
+  "foundry_uuid": "Compendium.dnd5e.laaru-hw-spells.Item.Lqj9Dy8fAkfyO3oN",
+  "name": "Починка металла / Repair Metal",
+  "description": "(Механомагия)\n\nПовреждённая Конструция или металлический объект восстанавливает [[/heal 1d8 + 5]]{1d8 + 5 ПЗ}, когда на него сотворяется это заклинание.\n\nНа высоких кругах: Если вы творите это заклинание, используя ячейку 4-го круга, оно восстанавливает [[/heal 2d8 +10]]{2d8 + 10 ПЗ}. Если вы используете ячейку 6-го круга оно восстанавливает [[/heal 3d8 + 15]]{3d8 + 15 ПЗ}. Если вы используете ячейку 8-го круга оно восстанавливает [[/heal 4d8 +20]]{4d8 + 20 ПЗ}.",
+  "level": 2,
+  "school": "trs",
+  "components": [
+    "S",
+    "V"
+  ],
+  "ritual": false,
+  "concentration": false,
+  "casting_time": {
+    "unit": "action",
+    "value": 1,
+    "condition": ""
+  },
+  "range": {
+    "units": "touch",
+    "value": null,
+    "special": null
+  },
+  "duration": {
+    "units": "inst",
+    "value": null
+  },
+  "materials": {
+    "value": "",
+    "consumed": false,
+    "cost": 0,
+    "supply": 0
+  },
+  "preparation": {
+    "mode": "prepared",
+    "prepared": false
+  },
+  "activities": [
+    {
+      "id": "0w4dROiY09r715sb",
+      "name": "",
+      "img": "",
+      "sort": 0,
+      "activation": {
+        "type": "action",
+        "value": null,
+        "condition": "",
+        "override": false,
+        "reaction_conditions": []
+      },
+      "consumption": {
+        "scaling": {
+          "allowed": false,
+          "max": ""
+        },
+        "spell_slot": true,
+        "targets": []
+      },
+      "description": {
+        "chat_flavor": ""
+      },
+      "duration": {
+        "value": null,
+        "units": "inst",
+        "special": "",
+        "concentration": false,
+        "override": false
+      },
+      "flags": {},
+      "range": {
+        "value": null,
+        "units": "self",
+        "special": "",
+        "override": false
+      },
+      "target": {
+        "template": {
+          "count": "",
+          "contiguous": false,
+          "stationary": false,
+          "type": "",
+          "size": "",
+          "width": "",
+          "height": "",
+          "units": "ft"
+        },
+        "affects": {
+          "count": "1",
+          "type": "creatureOrObject",
+          "choice": false,
+          "special": ""
+        },
+        "override": false,
+        "prompt": true
+      },
+      "uses": {
+        "spent": 0,
+        "max": "",
+        "recovery": []
+      },
+      "visibility": {
+        "identifier": "",
+        "level": {
+          "min": null,
+          "max": null
+        },
+        "require_attunement": false,
+        "require_identification": false,
+        "require_magic": false
+      },
+      "effects": [],
+      "applied_effects": [],
+      "kind": "heal",
+      "healing": {
+        "number": 1,
+        "denomination": 8,
+        "bonus": "5",
+        "types": [
+          "healing"
+        ],
+        "custom": {
+          "enabled": false,
+          "formula": ""
+        },
+        "scaling": {
+          "mode": "half",
+          "number": 1,
+          "formula": "5"
+        }
+      }
+    }
+  ],
+  "passive_effects": [],
+  "provenance": {
+    "source": "foundry",
+    "source_url": "https://github.com/foundryvtt/dnd5e/blob/965ad2d0cf5d063dac675ba078b5bd3c3c0dd449/packs/_source/laaru-hw-spells/Починка_металла___Repair_Metal_Lqj9Dy8fAkfyO3oN.yml",
+    "ingest_date": "2026-10-26",
+    "ingest_version": "foundry-translator-v1",
+    "srd_version": [
+      "5.1"
+    ],
+    "license_tag": "CC-BY-4.0"
+  },
+  "review": {
+    "known_divergence": null,
+    "requires_user_decision": false
+  },
+  "entry_kind": "spell"
+}

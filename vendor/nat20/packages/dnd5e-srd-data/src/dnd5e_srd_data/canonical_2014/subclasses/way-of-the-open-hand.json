@@ -1,0 +1,134 @@
+{
+  "slug": "way-of-the-open-hand",
+  "name": "Way of the Open Hand",
+  "description": "Monks of the Way of the Open Hand are the ultimate masters of martial arts combat, whether armed or unarmed. They learn techniques to push and trip their opponents, manipulate ki to heal damage to their bodies, and practice advanced meditation that can protect them from harm.",
+  "identifier": "way-of-the-open-hand",
+  "class_identifier": "monk",
+  "spellcasting": {
+    "ability": "",
+    "progression": "none"
+  },
+  "advancement": [
+    {
+      "id": "6mobkr8qlx5gk60w",
+      "type": "ItemGrant",
+      "level": 3,
+      "title": "Features",
+      "hint": "",
+      "class_restriction": "",
+      "configuration": {
+        "items": [
+          {
+            "uuid": "Compendium.dnd5e.classfeatures.iQxLNydNLlCHNKbp",
+            "optional": false
+          }
+        ],
+        "optional": false,
+        "spell": {
+          "ability": [],
+          "preparation": "",
+          "uses": {
+            "max": "",
+            "per": ""
+          }
+        }
+      },
+      "value": {}
+    },
+    {
+      "id": "0bhigjb0qzullpil",
+      "type": "ItemGrant",
+      "level": 6,
+      "title": "Features",
+      "hint": "",
+      "class_restriction": "",
+      "configuration": {
+        "items": [
+          {
+            "uuid": "Compendium.dnd5e.classfeatures.Q7mOdk4b1lgjcptF",
+            "optional": false
+          }
+        ],
+        "optional": false,
+        "spell": {
+          "ability": [],
+          "preparation": "",
+          "uses": {
+            "max": "",
+            "per": ""
+          }
+        }
+      },
+      "value": {}
+    },
+    {
+      "id": "hj02xkoyhx9s29ci",
+      "type": "ItemGrant",
+      "level": 11,
+      "title": "Features",
+      "hint": "",
+      "class_restriction": "",
+      "configuration": {
+        "items": [
+          {
+            "uuid": "Compendium.dnd5e.classfeatures.rBDZLatuoolT2FUW",
+            "optional": false
+          }
+        ],
+        "optional": false,
+        "spell": {
+          "ability": [],
+          "preparation": "",
+          "uses": {
+            "max": "",
+            "per": ""
+          }
+        }
+      },
+      "value": {}
+    },
+    {
+      "id": "htx1d5pqlsn313pb",
+      "type": "ItemGrant",
+      "level": 17,
+      "title": "Features",
+      "hint": "",
+      "class_restriction": "",
+      "configuration": {
+        "items": [
+          {
+            "uuid": "Compendium.dnd5e.classfeatures.h1gM8SH3BNRtFevE",
+            "optional": false
+          }
+        ],
+        "optional": false,
+        "spell": {
+          "ability": [],
+          "preparation": "",
+          "uses": {
+            "max": "",
+            "per": ""
+          }
+        }
+      },
+      "value": {}
+    }
+  ],
+  "granted_features": [],
+  "feature_choices": [],
+  "provenance": {
+    "source": "foundry",
+    "source_url": "https://github.com/foundryvtt/dnd5e/blob/965ad2d0cf5d063dac675ba078b5bd3c3c0dd449/packs/_source/subclasses/Way_of_the_Open_Hand_IvlpKMXX3PmW1NY2.yml",
+    "ingest_date": "2026-10-26",
+    "ingest_version": "foundry-translator-v1",
+    "srd_version": [
+      "5.1"
+    ],
+    "license_tag": "CC-BY-4.0"
+  },
+  "review": {
+    "known_divergence": null,
+    "requires_user_decision": false
+  },
+  "entry_kind": "subclass"
+}

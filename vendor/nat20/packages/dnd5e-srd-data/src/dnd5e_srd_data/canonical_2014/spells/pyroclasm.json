@@ -1,0 +1,165 @@
+{
+  "slug": "pyroclasm",
+  "foundry_uuid": "Compendium.dnd5e.laaru-hw-spells.Item.2UmJQKfl1hRaTEa4",
+  "name": "Пироклазм / Pyroclasm",
+  "description": "Вы указываете на область земли или подобную поверхность в пределах дистанции. Гейзер магмы извергается из выбранного места, создавая цилиндр из лавы диаметром в 5 футов и высотой в 40 футов, с центром в точке, которую вы можете видеть. Когда он извергается, любое существо или находящееся в области действие, или начинающее в ней свой ход, должно пройти испытание Ловкости. Существо получает 10d8 урона огнём при провале или половину этого урона при успехе.\n\nВ начале вашего хода лава растекается вокруг основания гейзера. В первый раз, когда она растекается, она образует круг лавы радиусом 10 футов, и радиус увеличивается на 10 футов в каждом последующем раунде, вплоть до предела в 50 футов. Существа, начинающие свой ход в озере лавы, получают [[/damage fire 5d8]]{5d8 урона огнём}.\n\nЛава прилипает к существу, когда то покидает зону действия, и застывает на нём. Скорость существа уменьшается вдвое, и оно получает помеху на испытания Ловкости, которая остаётся пока оно не потратит действие чтобы сбить застывшую лаву. Если вы поддерживаете концентрацию на заклинании в течение всей его длительности, гейзер и озеро лавы навсегда застывают в виде немагического камня.\n\nСущества застывшие в камне &amp;Reference[restrained]{обездвижены}. КБ камня равен 17, у него 25 ПЗ и устойчивость любому урону кроме урона громом, и невосприимчивость к яду и психическому урону. Обездвиженное существо может попытаться вырваться, действием пройдя проверку Силы (Атлетики) со СЛ 27.",
+  "level": 9,
+  "school": "evo",
+  "components": [
+    "M",
+    "S",
+    "V"
+  ],
+  "ritual": false,
+  "concentration": true,
+  "casting_time": {
+    "unit": "action",
+    "value": 1,
+    "condition": ""
+  },
+  "range": {
+    "units": "ft",
+    "value": 500,
+    "special": null
+  },
+  "duration": {
+    "units": "minute",
+    "value": 1
+  },
+  "materials": {
+    "value": "осколок обсидиана",
+    "consumed": false,
+    "cost": 0,
+    "supply": 0
+  },
+  "preparation": {
+    "mode": "prepared",
+    "prepared": false
+  },
+  "activities": [
+    {
+      "id": "dnd5eactivity000",
+      "name": "",
+      "img": "",
+      "sort": 0,
+      "activation": {
+        "type": "action",
+        "value": null,
+        "condition": "",
+        "override": false,
+        "reaction_conditions": []
+      },
+      "consumption": {
+        "scaling": {
+          "allowed": false,
+          "max": ""
+        },
+        "spell_slot": true,
+        "targets": []
+      },
+      "description": {
+        "chat_flavor": ""
+      },
+      "duration": {
+        "value": null,
+        "units": "inst",
+        "special": "",
+        "concentration": false,
+        "override": false
+      },
+      "flags": {},
+      "range": {
+        "value": null,
+        "units": "self",
+        "special": "",
+        "override": false
+      },
+      "target": {
+        "template": {
+          "count": "",
+          "contiguous": false,
+          "stationary": false,
+          "type": "cylinder",
+          "size": "5",
+          "width": "",
+          "height": "",
+          "units": "ft"
+        },
+        "affects": {
+          "count": "",
+          "type": "",
+          "choice": false,
+          "special": ""
+        },
+        "override": false,
+        "prompt": true
+      },
+      "uses": {
+        "spent": 0,
+        "max": "",
+        "recovery": []
+      },
+      "visibility": {
+        "identifier": "",
+        "level": {
+          "min": null,
+          "max": null
+        },
+        "require_attunement": false,
+        "require_identification": false,
+        "require_magic": false
+      },
+      "effects": [],
+      "applied_effects": [],
+      "kind": "save",
+      "damage": {
+        "on_save": "half",
+        "parts": [
+          {
+            "number": 10,
+            "denomination": 8,
+            "bonus": "",
+            "types": [
+              "fire"
+            ],
+            "custom": {
+              "enabled": false,
+              "formula": ""
+            },
+            "scaling": {
+              "mode": "",
+              "number": null,
+              "formula": ""
+            }
+          }
+        ]
+      },
+      "save": {
+        "ability": [
+          "dex"
+        ],
+        "dc": {
+          "calculation": "spellcasting",
+          "formula": ""
+        },
+        "ignore_cover": false
+      }
+    }
+  ],
+  "passive_effects": [],
+  "provenance": {
+    "source": "foundry",
+    "source_url": "https://github.com/foundryvtt/dnd5e/blob/965ad2d0cf5d063dac675ba078b5bd3c3c0dd449/packs/_source/laaru-hw-spells/Пироклазм___Pyroclasm_2UmJQKfl1hRaTEa4.yml",
+    "ingest_date": "2026-10-26",
+    "ingest_version": "foundry-translator-v1",
+    "srd_version": [
+      "5.1"
+    ],
+    "license_tag": "CC-BY-4.0"
+  },
+  "review": {
+    "known_divergence": null,
+    "requires_user_decision": false
+  },
+  "entry_kind": "spell"
+}

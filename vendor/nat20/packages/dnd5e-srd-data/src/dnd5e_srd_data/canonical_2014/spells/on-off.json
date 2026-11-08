@@ -1,0 +1,55 @@
+{
+  "slug": "on-off",
+  "foundry_uuid": "Compendium.dnd5e.laaru-hw-spells.Item.a19OvT9h9emSENBQ",
+  "name": "Вкл/выкл / On/off",
+  "description": "Фокус позволяет вам активировать или деактивировать электронное устройство в пределах действия, если у устройства чётко определены состояния включения и выключения, и их можно легко сменить снаружи устройства. Устройство, которому нужно включение/выключение на программной основе не может быть переключено.",
+  "level": 0,
+  "school": "trs",
+  "components": [
+    "S",
+    "V"
+  ],
+  "ritual": false,
+  "concentration": false,
+  "casting_time": {
+    "unit": "action",
+    "value": 1,
+    "condition": ""
+  },
+  "range": {
+    "units": "ft",
+    "value": 60,
+    "special": null
+  },
+  "duration": {
+    "units": "inst",
+    "value": null
+  },
+  "materials": {
+    "value": "",
+    "consumed": false,
+    "cost": 0,
+    "supply": 0
+  },
+  "preparation": {
+    "mode": "prepared",
+    "prepared": false
+  },
+  "activities": [],
+  "passive_effects": [],
+  "provenance": {
+    "source": "foundry",
+    "source_url": "https://github.com/foundryvtt/dnd5e/blob/965ad2d0cf5d063dac675ba078b5bd3c3c0dd449/packs/_source/laaru-hw-spells/Вкл_выкл___On_off_a19OvT9h9emSENBQ.yml",
+    "ingest_date": "2026-10-26",
+    "ingest_version": "foundry-translator-v1",
+    "srd_version": [
+      "5.1"
+    ],
+    "license_tag": "CC-BY-4.0"
+  },
+  "review": {
+    "known_divergence": null,
+    "requires_user_decision": false
+  },
+  "entry_kind": "spell"
+}

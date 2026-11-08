@@ -1,0 +1,262 @@
+{
+  "slug": "booming-blade",
+  "foundry_uuid": "Compendium.dnd5e.laaru-hw-spells.Item.wbBoLMEaiBQj8Hss",
+  "name": "Громовой клинок / Booming Blade",
+  "description": "Вы взмахиваете оружием, выбранным в качестве реагента, и совершаете атаку оружием в ближнем бою против одного существа в пределах 5 футов от вас. При попадании цель подвергается обычному эффекту от атаки этим оружием и покрывается бушующей энергией до начала вашего следующего хода. Если цель добровольно перемещается на 5 футов или более до окончания действия заклинания, она получает 1d8 урона громом, и действие заклинания заканчивается.\n\nУрон этого заклинания увеличивается, когда вы достигаете определённых уровней. На 5-м уровне атака оружием в ближнем бою наносит дополнительно [[/damage 1d8 thunder]]{1d8 урона громом} при попадании, а урон, получаемый при перемещении, увеличивается до [[/damage 2d8 thunder]]{2d8}. Оба броска урона снова увеличиваются на [[/damage 1d8 thunder]]{1d8} на 11-м уровне ([[/damage 2d8 thunder]]{2d8} и [[/damage 3d8 thunder]]{3d8}) и на 17-м уровне ([[/damage 3d8 thunder]]{3d8} и [[/damage 4d8 thunder]]{4d8}).\n\nПримечание\n\nВы можете наносить урон через кнопки в описании заклинания.",
+  "level": 0,
+  "school": "evo",
+  "components": [
+    "M",
+    "S"
+  ],
+  "ritual": false,
+  "concentration": false,
+  "casting_time": {
+    "unit": "action",
+    "value": 1,
+    "condition": ""
+  },
+  "range": {
+    "units": "ft",
+    "value": 5,
+    "special": null
+  },
+  "duration": {
+    "units": "round",
+    "value": 1
+  },
+  "materials": {
+    "value": "оружие ближнего боя стоимостью не менее 1 см",
+    "consumed": false,
+    "cost": 0,
+    "supply": 0
+  },
+  "preparation": {
+    "mode": "prepared",
+    "prepared": false
+  },
+  "activities": [
+    {
+      "id": "4n60qYLGwIOd721u",
+      "name": "Сотворение заклинания",
+      "img": "",
+      "sort": 0,
+      "activation": {
+        "type": "action",
+        "value": null,
+        "condition": "",
+        "override": false,
+        "reaction_conditions": []
+      },
+      "consumption": {
+        "scaling": {
+          "allowed": false,
+          "max": ""
+        },
+        "spell_slot": true,
+        "targets": []
+      },
+      "description": {
+        "chat_flavor": ""
+      },
+      "duration": {
+        "value": null,
+        "units": "inst",
+        "special": "",
+        "concentration": false,
+        "override": false
+      },
+      "flags": {},
+      "range": {
+        "value": null,
+        "units": "self",
+        "special": "",
+        "override": false
+      },
+      "target": {
+        "template": {
+          "count": "",
+          "contiguous": false,
+          "stationary": false,
+          "type": "",
+          "size": "",
+          "width": "",
+          "height": "",
+          "units": ""
+        },
+        "affects": {
+          "count": "1",
+          "type": "creature",
+          "choice": false,
+          "special": ""
+        },
+        "override": false,
+        "prompt": true
+      },
+      "uses": {
+        "spent": 0,
+        "max": "",
+        "recovery": []
+      },
+      "visibility": {
+        "identifier": "",
+        "level": {
+          "min": null,
+          "max": null
+        },
+        "require_attunement": false,
+        "require_identification": false,
+        "require_magic": false
+      },
+      "effects": [],
+      "applied_effects": [],
+      "kind": "utility",
+      "roll": {
+        "formula": "",
+        "name": "",
+        "prompt": false,
+        "visible": false
+      }
+    },
+    {
+      "id": "h7Szvc1KP9h7Vu0s",
+      "name": "",
+      "img": "",
+      "sort": 0,
+      "activation": {
+        "type": "action",
+        "value": null,
+        "condition": "",
+        "override": false,
+        "reaction_conditions": []
+      },
+      "consumption": {
+        "scaling": {
+          "allowed": false,
+          "max": ""
+        },
+        "spell_slot": true,
+        "targets": []
+      },
+      "description": {
+        "chat_flavor": ""
+      },
+      "duration": {
+        "value": null,
+        "units": "inst",
+        "special": "",
+        "concentration": false,
+        "override": false
+      },
+      "flags": {},
+      "range": {
+        "value": null,
+        "units": "self",
+        "special": "",
+        "override": false
+      },
+      "target": {
+        "template": {
+          "count": "",
+          "contiguous": false,
+          "stationary": false,
+          "type": "",
+          "size": "",
+          "width": "",
+          "height": "",
+          "units": ""
+        },
+        "affects": {
+          "count": "1",
+          "type": "creature",
+          "choice": false,
+          "special": ""
+        },
+        "override": false,
+        "prompt": true
+      },
+      "uses": {
+        "spent": 0,
+        "max": "",
+        "recovery": []
+      },
+      "visibility": {
+        "identifier": "",
+        "level": {
+          "min": null,
+          "max": null
+        },
+        "require_attunement": false,
+        "require_identification": false,
+        "require_magic": false
+      },
+      "effects": [
+        {
+          "id": "OgjPuMVhMBzVcwR9",
+          "level": {
+            "min": null,
+            "max": null
+          },
+          "on_save": null,
+          "riders": null
+        }
+      ],
+      "applied_effects": [],
+      "kind": "damage",
+      "damage": {
+        "critical": {
+          "allow": false,
+          "bonus": ""
+        },
+        "parts": [
+          {
+            "number": 1,
+            "denomination": 8,
+            "bonus": "",
+            "types": [
+              "thunder"
+            ],
+            "custom": {
+              "enabled": false,
+              "formula": ""
+            },
+            "scaling": {
+              "mode": "whole",
+              "number": 1,
+              "formula": ""
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "passive_effects": [
+    {
+      "id": "OgjPuMVhMBzVcwR9",
+      "name": "Энергия удара",
+      "description": "<p>Если это существо добровольно перемещается на 5 футов или более до начала следующего хода заклинателя, то оно получает [[/damage 1d8 type=thunder]].</p>",
+      "changes": [],
+      "statuses": [],
+      "duration": {
+        "rounds": 1
+      },
+      "disabled": false,
+      "transfer": false
+    }
+  ],
+  "provenance": {
+    "source": "foundry",
+    "source_url": "https://github.com/foundryvtt/dnd5e/blob/965ad2d0cf5d063dac675ba078b5bd3c3c0dd449/packs/_source/laaru-hw-spells/Громовой_клинок___Booming_Blade_wbBoLMEaiBQj8Hss.yml",
+    "ingest_date": "2026-10-26",
+    "ingest_version": "foundry-translator-v1",
+    "srd_version": [
+      "5.1"
+    ],
+    "license_tag": "CC-BY-4.0"
+  },
+  "review": {
+    "known_divergence": null,
+    "requires_user_decision": false
+  },
+  "entry_kind": "spell"
+}

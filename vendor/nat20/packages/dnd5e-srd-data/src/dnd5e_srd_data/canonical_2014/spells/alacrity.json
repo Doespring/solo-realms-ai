@@ -1,0 +1,166 @@
+{
+  "slug": "alacrity",
+  "foundry_uuid": "Compendium.dnd5e.laaru-hw-spells.Item.Smt3jTl0IUi4PdkU",
+  "name": "Проворство / Alacrity",
+  "description": "До начала вашего следующего хода ваша скорость удваивается, вы получаете бонус +2 к КБ, преимущество при испытаниях Ловкости и дополнительное действие. Это действие может быть использовано только для выполнения действий Атака (только одна атака оружием), Рывок, Отступление, Засада или Использование объекта.\n\nЕсли на вас действует эффект Ускорения, вы не получаете никакой пользы от этого заклинания.",
+  "level": 2,
+  "school": "trs",
+  "components": [
+    "S",
+    "V"
+  ],
+  "ritual": false,
+  "concentration": false,
+  "casting_time": {
+    "unit": "bonus",
+    "value": 1,
+    "condition": ""
+  },
+  "range": {
+    "units": "self",
+    "value": null,
+    "special": null
+  },
+  "duration": {
+    "units": "round",
+    "value": 1
+  },
+  "materials": {
+    "value": "",
+    "consumed": false,
+    "cost": 0,
+    "supply": 0
+  },
+  "preparation": {
+    "mode": "prepared",
+    "prepared": false
+  },
+  "activities": [
+    {
+      "id": "dnd5eactivity000",
+      "name": "",
+      "img": "",
+      "sort": 0,
+      "activation": {
+        "type": "action",
+        "value": null,
+        "condition": "",
+        "override": false,
+        "reaction_conditions": []
+      },
+      "consumption": {
+        "scaling": {
+          "allowed": false,
+          "max": ""
+        },
+        "spell_slot": true,
+        "targets": []
+      },
+      "description": {
+        "chat_flavor": ""
+      },
+      "duration": {
+        "value": null,
+        "units": "inst",
+        "special": "",
+        "concentration": false,
+        "override": false
+      },
+      "flags": {},
+      "range": {
+        "value": null,
+        "units": "self",
+        "special": "",
+        "override": false
+      },
+      "target": {
+        "template": {
+          "count": "",
+          "contiguous": false,
+          "stationary": false,
+          "type": "",
+          "size": "",
+          "width": "",
+          "height": "",
+          "units": ""
+        },
+        "affects": {
+          "count": "",
+          "type": "self",
+          "choice": false,
+          "special": ""
+        },
+        "override": false,
+        "prompt": true
+      },
+      "uses": {
+        "spent": 0,
+        "max": "",
+        "recovery": []
+      },
+      "visibility": {
+        "identifier": "",
+        "level": {
+          "min": null,
+          "max": null
+        },
+        "require_attunement": false,
+        "require_identification": false,
+        "require_magic": false
+      },
+      "effects": [
+        {
+          "id": "U2WwfTrogA1kXU7y",
+          "level": {
+            "min": null,
+            "max": null
+          },
+          "on_save": null,
+          "riders": null
+        }
+      ],
+      "applied_effects": [],
+      "kind": "utility",
+      "roll": {
+        "formula": "",
+        "name": "",
+        "prompt": false,
+        "visible": false
+      }
+    }
+  ],
+  "passive_effects": [
+    {
+      "id": "U2WwfTrogA1kXU7y",
+      "name": "Проворство: Бонус к КБ",
+      "description": "",
+      "changes": [
+        {
+          "key": "system.attributes.ac.bonus",
+          "mode": 2,
+          "value": "2",
+          "priority": 20
+        }
+      ],
+      "statuses": [],
+      "duration": null,
+      "disabled": false,
+      "transfer": false
+    }
+  ],
+  "provenance": {
+    "source": "foundry",
+    "source_url": "https://github.com/foundryvtt/dnd5e/blob/965ad2d0cf5d063dac675ba078b5bd3c3c0dd449/packs/_source/laaru-hw-spells/Проворство___Alacrity_Smt3jTl0IUi4PdkU.yml",
+    "ingest_date": "2026-10-26",
+    "ingest_version": "foundry-translator-v1",
+    "srd_version": [
+      "5.1"
+    ],
+    "license_tag": "CC-BY-4.0"
+  },
+  "review": {
+    "known_divergence": null,
+    "requires_user_decision": false
+  },
+  "entry_kind": "spell"
+}

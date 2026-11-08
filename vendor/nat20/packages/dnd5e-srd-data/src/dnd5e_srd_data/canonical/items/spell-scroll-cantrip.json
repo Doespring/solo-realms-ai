@@ -1,0 +1,34 @@
+{
+  "activities": [],
+  "attunement_constraint": null,
+  "cost_gp": 30.0,
+  "description": "A Spell Scroll (Cantrip) or Spell Scroll (Level 1) is a magic item that bears the words of a cantrip or level 1 spell, respectively, determined by the scroll's creator. If the spell is on your class's spell list, you can read the scroll and cast the spell using its normal casting time and without providing any Material components.\n\nIf the spell requires a saving throw or an attack roll, the spell save DC is 13, and the attack bonus is +5. The scroll disintegrates when the casting is completed.",
+  "description_localized": "<p>Свиток заклинания содержит слова одного заклинания, записанные мистическим шифром. Если заклинание есть в списке заклинаний вашего класса, вы можете прочитать свиток и сотворить заклинание, при этом вам не требуются реагенты. В ином случае свиток для вас нечитаем. Сотворение заклинания со свитка требует обычного времени сотворения. Как только заклинание сотворено, слова на свитке исчезают и он рассыпается в прах. Если сотворение прервано, свиток не исчезает.</p>\n<p>Если заклинание есть в списке заклинаний вашего класса, но выше кругом, чем заклинания, которые вы можете сотворять, вам надо пройти проверку заклинательной характеристики, чтобы определить, удастся ли вам его сотворить. <b>СЛ равна 10.</b> При провале заклинание исчезает со свитка и не действует.</p>\n<p>Редкость свитка, СЛ испытаний против заклинания и бонус атаки зависят от круга заклинания, как указано в таблице ниже.</p>\n<p><strong>СЛ испытаний</strong>: 13<br /><strong>Бонус атаки</strong>: +5.</p>",
+  "item_kind": "item",
+  "name": "Свиток фокуса",
+  "passive_effects": [],
+  "provenance": {
+    "ingest_date": "2026-05-30",
+    "ingest_version": "foundry-translator-v1",
+    "license_tag": "CC-BY-4.0",
+    "source": "foundry",
+    "source_url": "https://github.com/foundryvtt/dnd5e/blob/965ad2d0cf5d063dac675ba078b5bd3c3c0dd449/packs/_source/equipment24/adventuring-gear/spell-scroll-cantrip.yml",
+    "srd_version": [
+      "5.2"
+    ]
+  },
+  "rarity": "common",
+  "requires_attunement": false,
+  "review": {
+    "known_divergence": null,
+    "requires_user_decision": false
+  },
+  "slug": "spell-scroll-cantrip",
+  "uses": {
+    "auto_destroy": true,
+    "max": "1",
+    "recovery": [],
+    "spent": 0
+  },
+  "weight": 0.0
+}

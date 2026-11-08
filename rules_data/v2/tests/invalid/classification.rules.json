@@ -1,0 +1,10 @@
+{
+  "schema_version": "2.0.0",
+  "rules": [{
+    "id": "dnd2024.test.wrong_classification", "rules_family": "dnd2024", "name": "Negative classification fixture", "kind": "guidance",
+    "classification": {"mode": "deterministic", "semantic_required": true, "formal_required": false, "reason": "Deliberately inconsistent"},
+    "conditions": [], "triggers": ["test.requested"], "formal_operations": [], "semantic_questions": ["Question"], "facts": {}, "constraints": [], "exceptions": [], "duration": "not_applicable", "resources": [],
+    "source": {"document_id": "dmg_2024_ru_v1_1", "sha256": "2fdee6ad8dd6931eaf41b19cdf498d6d86ddca6e54ad9b9c8a5417585c1c526d", "publication_year": 2024, "pdf_page": 24, "printed_page": "24", "section": "Negative test only"},
+    "verification": "text_checked_human_pending", "implementation": "not_implemented", "auto_activate": false
+  }]
+}

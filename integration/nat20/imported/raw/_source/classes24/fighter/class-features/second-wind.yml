@@ -1,0 +1,146 @@
+{
+  "_id": "phbftrSecondWind",
+  "_stats": {
+    "coreVersion": "13.344",
+    "createdTime": 1735866361253,
+    "duplicateSource": null,
+    "exportSource": null,
+    "lastModifiedBy": "dnd5ebuilder0000",
+    "modifiedTime": 1745256761713,
+    "systemId": "dnd5e",
+    "systemVersion": "4.4.0"
+  },
+  "effects": [],
+  "flags": {
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    }
+  },
+  "folder": "xggTDaiQq26ZrVzJ",
+  "img": "icons/magic/life/cross-worn-green.webp",
+  "name": "Second Wind",
+  "ownership": {
+    "default": 0
+  },
+  "sort": 0,
+  "system": {
+    "activities": {
+      "zumaUC11cpntqme1": {
+        "_id": "zumaUC11cpntqme1",
+        "activation": {
+          "condition": "",
+          "override": false,
+          "type": "bonus",
+          "value": null
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": [
+            {
+              "scaling": {},
+              "target": "",
+              "type": "itemUses",
+              "value": "1"
+            }
+          ]
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "concentration": false,
+          "override": false,
+          "units": "inst"
+        },
+        "effects": [],
+        "healing": {
+          "bonus": "@classes.fighter.levels",
+          "custom": {
+            "enabled": false
+          },
+          "denomination": 10,
+          "number": 1,
+          "scaling": {
+            "number": 1
+          },
+          "types": [
+            "healing"
+          ]
+        },
+        "name": "",
+        "range": {
+          "override": false,
+          "special": "",
+          "units": "self"
+        },
+        "sort": 0,
+        "target": {
+          "affects": {
+            "choice": false,
+            "count": "",
+            "special": "",
+            "type": "self"
+          },
+          "override": false,
+          "prompt": false,
+          "template": {
+            "contiguous": false,
+            "type": "",
+            "units": "ft"
+          }
+        },
+        "type": "heal",
+        "uses": {
+          "max": "",
+          "recovery": [],
+          "spent": 0
+        }
+      }
+    },
+    "description": {
+      "chat": "",
+      "value": "<p>You have a limited well of physical and mental stamina that you can draw on. As a Bonus Action, you can use it to regain Hit Points equal to 1d10 plus your Fighter level.</p><p>You can use this feature twice. You regain one expended use when you finish a Short Rest, and you regain all expended uses when you finish a Long Rest.</p><p>When you reach certain Fighter levels, you gain more uses of this feature, as shown in the Second Wind column of the @UUID[Compendium.dnd5e.content24.JournalEntry.phbFighter000000.JournalEntryPage.wDELe3k25FQvYdrq#class-features]{Fighter Features} table.</p><section class=\"secret\" id=\"secret-GEvXAMpxWEFigqSc\"><p><strong>Foundry Note</strong></p><p>This feature automatically scales in usage and recovers the correct number of uses on a Short and Long Rest.</p></section>"
+    },
+    "enchant": {},
+    "identifier": "second-wind",
+    "prerequisites": {
+      "level": 1,
+      "repeatable": false
+    },
+    "properties": [],
+    "requirements": "",
+    "source": {
+      "book": "",
+      "custom": "",
+      "license": "CC-BY-4.0",
+      "revision": 1,
+      "rules": "2024"
+    },
+    "type": {
+      "subtype": "",
+      "value": "class"
+    },
+    "uses": {
+      "max": "@scale.fighter.second-wind",
+      "recovery": [
+        {
+          "period": "lr",
+          "type": "recoverAll"
+        },
+        {
+          "formula": "1",
+          "period": "sr",
+          "type": "formula"
+        }
+      ],
+      "spent": 0
+    }
+  },
+  "type": "feat"
+}

@@ -1,0 +1,147 @@
+{
+  "slug": "antipathy-or-sympathy",
+  "foundry_uuid": "Compendium.dnd5e.laaru-hw-spells.Item.cTnGAfemo04XCkmv",
+  "name": "Антипатия/симпатия / Antipathy or sympathy",
+  "description": "Заклинание привлекает или отпугивает существ на ваш выбор. Выберите цель в пределах дистанции: существо или объект &amp;reference[size]{размером} не более огромного или область размером не более 200-футового куба. Выберите вид разумного существа, например красные драконы, гоблины или вампиры. Вы наделяете цель аурой, которая или привлекает, или отпугивает указанный вид существа, пока длится заклинание. Выберите эффект заклинания: антипатия или симпатия.\n\nАнтипатия.\n\nЗаклинание заставляет существ выбранного вида ощущать неудержимое желание покинуть область и избегать цели. Когда такое существо видит цель или подходит на 60 футов к ней, оно должно успешно пройти испытание Мудрости или стать  &amp;reference[frightened]{испуганным} . Оно остаётся испуганным, пока может видеть цель или пока находится в пределах 60 футов от неё. Пока существо испугано целью, оно должно тратить своё перемещение на то, чтобы оказаться в ближайшем месте, откуда цель не видно. Если существо перемещается более чем на 60 футов от цели и не видит её, оно перестаёт быть испуганным, но будет снова испугано, если увидит цель или окажется от неё в пределах 60 футов.\n\nСимпатия.\n\nЗаклинание заставляет существ выбранного вида ощущать неудержимое желание приблизиться к цели, если они в пределах 60 футов от неё или видят её. Когда такое существо видит цель или подходит на 60 футов к ней, оно должно пройти испытание Мудрости. При провале оно вынуждено каждый ход тратить своё перемещение на то, чтобы войти в область или оставаться в зоне досягаемости цели, и не может по своей воле удаляться от неё. Если такое существо получает от цели урон или иной вред, оно может снова пройти испытание Мудрости, чтобы прекратить эффект, как описано далее.\n\nПрекращение эффекта.\n\nЕсли существо под влиянием заклинания завершает свой ход за пределами 60 футов от цели и не может видеть её, оно проходит испытание Мудрости. При успехе на существо больше не действует заклинание, и оно понимает, что страх или влечение были вызваны магией. Кроме того, существо, попавшее под действие заклинания, может проходить испытание Мудрости каждые 24 часа, пока длится заклинание. Существо, успешно прошедшее испытание против эффекта, невосприимчиво к нему 1 минуту, после чего заклинание может снова на него подействовать.",
+  "level": 8,
+  "school": "enc",
+  "components": [
+    "M",
+    "S",
+    "V"
+  ],
+  "ritual": false,
+  "concentration": false,
+  "casting_time": {
+    "unit": "hour",
+    "value": 1,
+    "condition": ""
+  },
+  "range": {
+    "units": "ft",
+    "value": 60,
+    "special": null
+  },
+  "duration": {
+    "units": "day",
+    "value": 10
+  },
+  "materials": {
+    "value": "для антипатии – кусок квасцов, вымоченных в уксусе, для симпатии — капля меда",
+    "consumed": false,
+    "cost": 0,
+    "supply": 0
+  },
+  "preparation": {
+    "mode": "prepared",
+    "prepared": false
+  },
+  "activities": [
+    {
+      "id": "dnd5eactivity000",
+      "name": "",
+      "img": "",
+      "sort": 0,
+      "activation": {
+        "type": "action",
+        "value": null,
+        "condition": "",
+        "override": false,
+        "reaction_conditions": []
+      },
+      "consumption": {
+        "scaling": {
+          "allowed": false,
+          "max": ""
+        },
+        "spell_slot": true,
+        "targets": []
+      },
+      "description": {
+        "chat_flavor": ""
+      },
+      "duration": {
+        "value": null,
+        "units": "inst",
+        "special": "",
+        "concentration": false,
+        "override": false
+      },
+      "flags": {},
+      "range": {
+        "value": null,
+        "units": "self",
+        "special": "",
+        "override": false
+      },
+      "target": {
+        "template": {
+          "count": "",
+          "contiguous": false,
+          "stationary": false,
+          "type": "",
+          "size": "",
+          "width": "",
+          "height": "",
+          "units": ""
+        },
+        "affects": {
+          "count": "1",
+          "type": "creature",
+          "choice": false,
+          "special": ""
+        },
+        "override": false,
+        "prompt": true
+      },
+      "uses": {
+        "spent": 0,
+        "max": "",
+        "recovery": []
+      },
+      "visibility": {
+        "identifier": "",
+        "level": {
+          "min": null,
+          "max": null
+        },
+        "require_attunement": false,
+        "require_identification": false,
+        "require_magic": false
+      },
+      "effects": [],
+      "applied_effects": [],
+      "kind": "save",
+      "damage": {
+        "on_save": "half",
+        "parts": []
+      },
+      "save": {
+        "ability": [
+          "wis"
+        ],
+        "dc": {
+          "calculation": "spellcasting",
+          "formula": ""
+        },
+        "ignore_cover": false
+      }
+    }
+  ],
+  "passive_effects": [],
+  "provenance": {
+    "source": "foundry",
+    "source_url": "https://github.com/foundryvtt/dnd5e/blob/965ad2d0cf5d063dac675ba078b5bd3c3c0dd449/packs/_source/laaru-hw-spells/Антипатия_симпатия___Antipathy_or_sympathy_cTnGAfemo04XCkmv.yml",
+    "ingest_date": "2026-10-26",
+    "ingest_version": "foundry-translator-v1",
+    "srd_version": [
+      "5.1"
+    ],
+    "license_tag": "CC-BY-4.0"
+  },
+  "review": {
+    "known_divergence": null,
+    "requires_user_decision": false
+  },
+  "entry_kind": "spell"
+}

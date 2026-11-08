@@ -1,0 +1,146 @@
+{
+  "slug": "control-winds",
+  "foundry_uuid": "Compendium.dnd5e.laaru-hw-spells.Item.G3bBbrxdHW7KhHaK",
+  "name": "Власть над ветрами / Control Winds",
+  "description": "Вы можете контролировать ветер в 100-футовом кубе, который вы можете видеть в пределах дистанции. Выберите в момент произнесения заклинания один из нижеперечисленных эффектов. Этот эффект продолжается до тех пор, пока действует заклинание, если вы действием не переключитесь на другой эффект. Вы также можете действием временно отменить эффект или вновь возобновить его.\n\nШквал. Ветер усиливается, постоянно дуя горизонтально в направлении, которое вы выбрали. Вы можете выбрать интенсивность ветра: спокойный, умеренный или сильный. Если ветер умеренный или сильный, то дистанционные атаки оружием, траектория которых входит в куб, выходит из куба или проходит через него, совершаются с помехой. Все существа, идущие против сильного ветра, расходуют дополнительный фут передвижения за каждый пройдённый фут.\n\nНисходящий поток. Вы создаёте постоянный поток сильного ветра, который дует вниз от верхней части куба. Атаки дистанционным оружием совершаются с помехой, если их траектория проходит через область действия заклинания или целью является существо в кубе. Если летающее существо впервые за ход оказывается в этой области или начинает свой ход в ней, оно должно испытание Силы, сбиваясь с ног при провале.\n\nВосходящий поток. Вы создаёте постоянный поток ветра, который дует от низа куба вверх. Существа, которые падают на землю внутри куба, получают лишь половину урона от падения. Если существо в кубе совершает вертикальный прыжок, высота прыжка увеличивается на 10 футов.",
+  "level": 5,
+  "school": "trs",
+  "components": [
+    "S",
+    "V"
+  ],
+  "ritual": false,
+  "concentration": true,
+  "casting_time": {
+    "unit": "action",
+    "value": 1,
+    "condition": ""
+  },
+  "range": {
+    "units": "ft",
+    "value": 300,
+    "special": null
+  },
+  "duration": {
+    "units": "hour",
+    "value": 1
+  },
+  "materials": {
+    "value": "",
+    "consumed": false,
+    "cost": 0,
+    "supply": 0
+  },
+  "preparation": {
+    "mode": "prepared",
+    "prepared": false
+  },
+  "activities": [
+    {
+      "id": "dnd5eactivity000",
+      "name": "",
+      "img": "",
+      "sort": 0,
+      "activation": {
+        "type": "action",
+        "value": null,
+        "condition": "",
+        "override": false,
+        "reaction_conditions": []
+      },
+      "consumption": {
+        "scaling": {
+          "allowed": false,
+          "max": ""
+        },
+        "spell_slot": true,
+        "targets": []
+      },
+      "description": {
+        "chat_flavor": ""
+      },
+      "duration": {
+        "value": null,
+        "units": "inst",
+        "special": "",
+        "concentration": false,
+        "override": false
+      },
+      "flags": {},
+      "range": {
+        "value": null,
+        "units": "self",
+        "special": "",
+        "override": false
+      },
+      "target": {
+        "template": {
+          "count": "",
+          "contiguous": false,
+          "stationary": false,
+          "type": "cube",
+          "size": "100",
+          "width": "",
+          "height": "",
+          "units": "ft"
+        },
+        "affects": {
+          "count": "",
+          "type": "",
+          "choice": false,
+          "special": ""
+        },
+        "override": false,
+        "prompt": true
+      },
+      "uses": {
+        "spent": 0,
+        "max": "",
+        "recovery": []
+      },
+      "visibility": {
+        "identifier": "",
+        "level": {
+          "min": null,
+          "max": null
+        },
+        "require_attunement": false,
+        "require_identification": false,
+        "require_magic": false
+      },
+      "effects": [],
+      "applied_effects": [],
+      "kind": "save",
+      "damage": {
+        "on_save": "half",
+        "parts": []
+      },
+      "save": {
+        "ability": [
+          "str"
+        ],
+        "dc": {
+          "calculation": "spellcasting",
+          "formula": ""
+        },
+        "ignore_cover": false
+      }
+    }
+  ],
+  "passive_effects": [],
+  "provenance": {
+    "source": "foundry",
+    "source_url": "https://github.com/foundryvtt/dnd5e/blob/965ad2d0cf5d063dac675ba078b5bd3c3c0dd449/packs/_source/laaru-hw-spells/Власть_над_ветрами___Control_Winds_G3bBbrxdHW7KhHaK.yml",
+    "ingest_date": "2026-10-26",
+    "ingest_version": "foundry-translator-v1",
+    "srd_version": [
+      "5.1"
+    ],
+    "license_tag": "CC-BY-4.0"
+  },
+  "review": {
+    "known_divergence": null,
+    "requires_user_decision": false
+  },
+  "entry_kind": "spell"
+}

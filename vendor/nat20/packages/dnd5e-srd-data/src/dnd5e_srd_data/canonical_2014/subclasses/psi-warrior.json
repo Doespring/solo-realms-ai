@@ -1,0 +1,147 @@
+{
+  "slug": "psi-warrior",
+  "name": "Пси-воин",
+  "description": "Пси-воин | Psi Warrior\n\nПси-воин — это воин с пробудившейся внутри него псионической силой, дополняющий свою физическую мощь усиленными пси-энергией ударами оружием, телекинетическими хлыстами и барьерами, удерживаемыми силами разума. Многие гитьянки и некоторые наиболее дисциплинированные высшие эльфы тренируются, чтобы стать подобными воинами. В мире Эберрона многие молодые калаштары мечтают стать пси-воинами.\n\nБудучи пси-воином, вы могли взрастить свои псионические способности через самостоятельное обучение, раскрыть их при помощи опытного наставника или же познать их в академии, специализирующейся на развитии силы разума как в качестве меча и щита.\n\nУровень Особенности\n\n3-й\n\n@Compendium[laaru-dnd5-hw.classfeatures.VLCvy5YQnMZOSYHl]{Псионическая энергия}\n\n7-й\n\n@Compendium[laaru-dnd5-hw.classfeatures.6rNdsnFXagsV1xGG]{Адепт-телекинетик}\n\n10-й\n\n@Compendium[laaru-dnd5-hw.classfeatures.wkVNRV8esGU6GiQZ]{Защищённый разум}\n\n15-й\n\n@Compendium[laaru-dnd5-hw.classfeatures.2PLj1dg0quWuca5k]{Оплот силы}\n\n18-й\n\n@Compendium[laaru-dnd5-hw.classfeatures.DgSs3R1iAR7hOJ5r]{Мастер телекинеза}",
+  "identifier": "psi-warrior",
+  "class_identifier": "fighter",
+  "spellcasting": {
+    "ability": "",
+    "progression": "none"
+  },
+  "advancement": [
+    {
+      "id": "i38y84mln3regpgn",
+      "type": "ScaleValue",
+      "level": 0,
+      "title": "Размер Пси-кости",
+      "hint": "",
+      "class_restriction": "",
+      "configuration": {
+        "source": {},
+        "identifier": "dice",
+        "type": "dice",
+        "distance": {
+          "units": ""
+        },
+        "scale": {
+          "3": {
+            "n": null,
+            "die": 6
+          },
+          "5": {
+            "n": null,
+            "die": 8
+          },
+          "11": {
+            "n": null,
+            "die": 10
+          },
+          "17": {
+            "n": null,
+            "die": 12
+          }
+        }
+      },
+      "value": {}
+    },
+    {
+      "id": "nexp9h52gouosu4k",
+      "type": "ItemGrant",
+      "level": 3,
+      "title": "Особенности",
+      "hint": "",
+      "class_restriction": "",
+      "configuration": {
+        "items": [
+          "Compendium.laaru-dnd5-hw.classfeatures.VLCvy5YQnMZOSYHl",
+          "Compendium.laaru-dnd5-hw.classfeatures.ev1ZErNLOFKnunQM",
+          "Compendium.laaru-dnd5-hw.classfeatures.gS1m8GghKoBXGGrs",
+          "Compendium.laaru-dnd5-hw.classfeatures.OIgUAUn3QHtBaCl5",
+          "Compendium.laaru-dnd5-hw.classfeatures.QZeGyeJRugcZ5kVb"
+        ],
+        "optional": false
+      },
+      "value": {}
+    },
+    {
+      "id": "pa3ih6yu1a9ci12g",
+      "type": "ItemGrant",
+      "level": 7,
+      "title": "Особенности",
+      "hint": "",
+      "class_restriction": "",
+      "configuration": {
+        "items": [
+          "Compendium.laaru-dnd5-hw.classfeatures.6rNdsnFXagsV1xGG",
+          "Compendium.laaru-dnd5-hw.classfeatures.kjrA4dx5iooVrjyE",
+          "Compendium.laaru-dnd5-hw.classfeatures.jHeIzyXDdbirrydi"
+        ],
+        "optional": false
+      },
+      "value": {}
+    },
+    {
+      "id": "lc4op0qwfie2wmxb",
+      "type": "ItemGrant",
+      "level": 10,
+      "title": "Особенность",
+      "hint": "",
+      "class_restriction": "",
+      "configuration": {
+        "items": [
+          "Compendium.laaru-dnd5-hw.classfeatures.wkVNRV8esGU6GiQZ"
+        ],
+        "optional": false
+      },
+      "value": {}
+    },
+    {
+      "id": "ohvni45abgn8iw8a",
+      "type": "ItemGrant",
+      "level": 15,
+      "title": "Особенность",
+      "hint": "",
+      "class_restriction": "",
+      "configuration": {
+        "items": [
+          "Compendium.laaru-dnd5-hw.classfeatures.2PLj1dg0quWuca5k"
+        ],
+        "optional": false
+      },
+      "value": {}
+    },
+    {
+      "id": "8w62xokkkjoy7c02",
+      "type": "ItemGrant",
+      "level": 18,
+      "title": "Особенности",
+      "hint": "",
+      "class_restriction": "",
+      "configuration": {
+        "items": [
+          "Compendium.laaru-dnd5-hw.classfeatures.DgSs3R1iAR7hOJ5r",
+          "Compendium.laaru-dnd5-hw.spells.MDvLGhwXCJnaTmwt"
+        ],
+        "optional": false
+      },
+      "value": {}
+    }
+  ],
+  "granted_features": [],
+  "feature_choices": [],
+  "provenance": {
+    "source": "foundry",
+    "source_url": "https://github.com/foundryvtt/dnd5e/blob/965ad2d0cf5d063dac675ba078b5bd3c3c0dd449/packs/_source/laaru-hw-subclasses/Пси_воин_VQa4SFPXSMVXrOEG.yml",
+    "ingest_date": "2026-10-26",
+    "ingest_version": "foundry-translator-v1",
+    "srd_version": [
+      "5.1"
+    ],
+    "license_tag": "CC-BY-4.0"
+  },
+  "review": {
+    "known_divergence": null,
+    "requires_user_decision": false
+  },
+  "entry_kind": "subclass"
+}

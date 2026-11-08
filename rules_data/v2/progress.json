@@ -1,0 +1,88 @@
+{
+  "checkpoint_version": "2.1.0",
+  "saved_on": "2026-10-17",
+  "phase": "phb_chapter_one_extracted_verified_check_subset_connected",
+  "classification_records": 142,
+  "counts": {
+    "deterministic": 74,
+    "adjudicated": 24,
+    "hybrid": 44
+  },
+  "catalogue_complete": false,
+  "coverage": [
+    {
+      "document": "phb_2024_ru",
+      "sections": [
+        "1. Правила игры",
+        "7. Желание (старый образец)"
+      ],
+      "status": "chapter_1_extracted_execution_partial",
+      "chapter_1_rules": 131,
+      "prior_samples": 4,
+      "chapter_1_bookmarks": 41
+    },
+    {
+      "document": "dmg_2024_ru_v1_1",
+      "sections": [
+        "2. Разрешение исходов",
+        "2. Групповые проверки",
+        "2. Социальное взаимодействие"
+      ],
+      "status": "samples_only",
+      "rules": 4
+    },
+    {
+      "document": "mm_2025_ru_v1_1",
+      "sections": [
+        "Гоблины. Гоблин-воитель"
+      ],
+      "status": "one_stat_block_plus_behavior",
+      "rules": 3
+    }
+  ],
+  "runtime": {
+    "modules_written": [
+      "classifier.py",
+      "math_handlers.py",
+      "protocol.py"
+    ],
+    "syntax_checked_without_execution": true,
+    "executed": true,
+    "integrated": true,
+    "integrated_scope": "ability_check, skill_check, saving_throw; 3 legacy d20 definitions + 6 PHB chapter definitions",
+    "isolated_test_adapter_verified": true,
+    "new_math_handlers": [
+      "scale_integer",
+      "percentile",
+      "percentage_event",
+      "replace_draw"
+    ]
+  },
+  "latest_verification": {
+    "report": "reports/phb-01/summary.json",
+    "passed": 377,
+    "failed": 0,
+    "catalog_expanded": true,
+    "production_routes_registered": true,
+    "user_campaigns_activated": false,
+    "user_data_unchanged": true,
+    "temporary_test_root_removed": true
+  },
+  "pending": [
+    "Review source ambiguity in Wish stress; keep entire unsupported Wish branches unexecuted.",
+    "Resolve explicit glossary dependencies and blocked chapter-1 branches; then continue PHB chapters 2–7 before DMG/MM.",
+    "Continue DMG by chapters from the full provided file, keeping general adjudication guidance separate from hard mechanics.",
+    "Continue MM by complete stat blocks, retaining conditions, attacks, resources, actions, exceptions and narrative guidance separately."
+  ],
+  "engine_changes": [
+    "solo/storage.py: explicitly close the backup destination connection",
+    "solo/hybrid_rules.py and hybrid_rules_api.py: closed production binding",
+    "solo/app.py: register routes",
+    "solo/tabletop_api.py: reuse Advanced token validation",
+    "solo/combat.py: require positive darkvision range when applying dim-light search exception"
+  ],
+  "ui_user_data_modified": false,
+  "paid_api_calls": 0,
+  "exe_builds": 0,
+  "chapter_one_coverage": "coverage/phb-01.json"
+}

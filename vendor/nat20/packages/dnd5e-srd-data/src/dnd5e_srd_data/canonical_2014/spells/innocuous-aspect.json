@@ -1,0 +1,162 @@
+{
+  "slug": "innocuous-aspect",
+  "foundry_uuid": "Compendium.dnd5e.laaru-hw-spells.Item.NGgt906wWQyVRSBr",
+  "name": "Безобидный вид / Innocuous Aspect",
+  "description": "(Магия колец)\n\nКольцо иллюзии окружает всех существ в пределах 20 футов от вас. Вы и каждое существо в этой области, на которое вы хотите повлиять, приобретают внешность одного типа безобидных существ или предметов, выбранного вами. Образы идентичны и влияют лишь на зрение. Звук, движение или прикосновения могут раскрыть ложь.\n\nСущество может действием исследовать образы для распознания иллюзии. При успешной проверке Интеллекта (Расследование) против СЛ вашего заклинания оно видит истинный облик существ, на которых действует заклинание.",
+  "level": 3,
+  "school": "ill",
+  "components": [
+    "M",
+    "S",
+    "V"
+  ],
+  "ritual": false,
+  "concentration": true,
+  "casting_time": {
+    "unit": "action",
+    "value": 1,
+    "condition": ""
+  },
+  "range": {
+    "units": "ft",
+    "value": 20,
+    "special": null
+  },
+  "duration": {
+    "units": "minute",
+    "value": 10
+  },
+  "materials": {
+    "value": "бумажное кольцо",
+    "consumed": false,
+    "cost": 0,
+    "supply": 0
+  },
+  "preparation": {
+    "mode": "prepared",
+    "prepared": false
+  },
+  "activities": [
+    {
+      "id": "dpMpl8WFoBCcHbSv",
+      "name": "",
+      "img": "",
+      "sort": 0,
+      "activation": {
+        "type": "action",
+        "value": null,
+        "condition": "",
+        "override": false,
+        "reaction_conditions": []
+      },
+      "consumption": {
+        "scaling": {
+          "allowed": false,
+          "max": ""
+        },
+        "spell_slot": true,
+        "targets": []
+      },
+      "description": {
+        "chat_flavor": ""
+      },
+      "duration": {
+        "value": null,
+        "units": "inst",
+        "special": "",
+        "concentration": false,
+        "override": false
+      },
+      "flags": {},
+      "range": {
+        "value": null,
+        "units": "self",
+        "special": "",
+        "override": false
+      },
+      "target": {
+        "template": {
+          "count": "",
+          "contiguous": false,
+          "stationary": false,
+          "type": "",
+          "size": "20",
+          "width": "",
+          "height": "",
+          "units": "ft"
+        },
+        "affects": {
+          "count": "",
+          "type": "",
+          "choice": false,
+          "special": ""
+        },
+        "override": false,
+        "prompt": true
+      },
+      "uses": {
+        "spent": 0,
+        "max": "",
+        "recovery": []
+      },
+      "visibility": {
+        "identifier": "",
+        "level": {
+          "min": null,
+          "max": null
+        },
+        "require_attunement": false,
+        "require_identification": false,
+        "require_magic": false
+      },
+      "effects": [
+        {
+          "id": "TE5uTve9TTz4Bi33",
+          "level": {
+            "min": null,
+            "max": null
+          },
+          "on_save": null,
+          "riders": null
+        }
+      ],
+      "applied_effects": [],
+      "kind": "utility",
+      "roll": {
+        "formula": "",
+        "name": "",
+        "prompt": false,
+        "visible": false
+      }
+    }
+  ],
+  "passive_effects": [
+    {
+      "id": "TE5uTve9TTz4Bi33",
+      "name": "Безобидный вид",
+      "description": "",
+      "changes": [],
+      "statuses": [],
+      "duration": {
+        "seconds": 600
+      },
+      "disabled": false,
+      "transfer": false
+    }
+  ],
+  "provenance": {
+    "source": "foundry",
+    "source_url": "https://github.com/foundryvtt/dnd5e/blob/965ad2d0cf5d063dac675ba078b5bd3c3c0dd449/packs/_source/laaru-hw-spells/Безобидный_вид___Innocuous_Aspect_NGgt906wWQyVRSBr.yml",
+    "ingest_date": "2026-10-26",
+    "ingest_version": "foundry-translator-v1",
+    "srd_version": [
+      "5.1"
+    ],
+    "license_tag": "CC-BY-4.0"
+  },
+  "review": {
+    "known_divergence": null,
+    "requires_user_decision": false
+  },
+  "entry_kind": "spell"
+}

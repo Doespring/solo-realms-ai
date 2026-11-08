@@ -1,0 +1,287 @@
+{
+  "slug": "bond-of-the-dragonlords",
+  "foundry_uuid": "Compendium.dnd5e.laaru-hw-spells.Item.KSCTMnj88aWmn1fp",
+  "name": "Узы повелителя драконов / Bond Of The Dragonlords",
+  "description": "Вы навсегда связываетесь с только что вылупившимся металлическим драконом. Для этого вам необходимо найти невылупившееся яйцо дракона и его инкубационный период: [[/r 1d4]] дней, чтобы оно вылупилось. Дракончик может быть любого из следующих типов змеёныша дракона: латунный, бронзовый, медный или серебряный.\n\nВы можете передать связь другому получателю, которого вы касаетесь, когда сотворяете заклинание. Дракон, который был связан, никогда не может быть связан с другой целью. Точно так же это заклинание не может быть использовано для связи более чем одного дракона с каким-либо индивидуумом.\n\nЗмеёныши драконов не могут использоваться в качестве верховых животных, пока не вырастут в молодых драконов. Дракон не может использовать легендарные действия, пока он используется в качестве верхового животного.\n\nУправление драконом. Ваш дракон движется и действует по вашей инициативе. Вы можете решать, как дракон движется и атакует. Пока ваш дракон сражается вместе с вами, он теряет свою способность к мультиатаке. Если ваш дракон обладает оружием дыхания, он может использовать его один раз, и оно перезаряжается после того, как вы и дракон завершите долгий отдых.\n\nЕсли ваш связанный дракон умрет, вы также умрете в течение 24 часов, если дракон не будет возвращен к жизни. Вы не можете быть воскрешены из мертвых, если ваш связанный дракон мёртв. То же самое верно и для вашего дракона.",
+  "level": 2,
+  "school": "enc",
+  "components": [
+    "M",
+    "V"
+  ],
+  "ritual": false,
+  "concentration": false,
+  "casting_time": {
+    "unit": "minute",
+    "value": 1,
+    "condition": ""
+  },
+  "range": {
+    "units": "touch",
+    "value": null,
+    "special": null
+  },
+  "duration": {
+    "units": "spec",
+    "value": null
+  },
+  "materials": {
+    "value": "магическая броня, щит, оружие, кольцо, жезл, посох или скипетр стоимостью не менее 5000 золотых, которые потребляются заклинанием, и невылупившееся яйцо дракона",
+    "consumed": false,
+    "cost": 0,
+    "supply": 0
+  },
+  "preparation": {
+    "mode": "prepared",
+    "prepared": false
+  },
+  "activities": [
+    {
+      "id": "XaUx3XxyVwPlYt59",
+      "name": "",
+      "img": "",
+      "sort": 0,
+      "activation": {
+        "type": "action",
+        "value": null,
+        "condition": "",
+        "override": false,
+        "reaction_conditions": []
+      },
+      "consumption": {
+        "scaling": {
+          "allowed": false,
+          "max": ""
+        },
+        "spell_slot": true,
+        "targets": []
+      },
+      "description": {
+        "chat_flavor": ""
+      },
+      "duration": {
+        "value": null,
+        "units": "inst",
+        "special": "",
+        "concentration": false,
+        "override": false
+      },
+      "flags": {},
+      "range": {
+        "value": null,
+        "units": "self",
+        "special": "",
+        "override": false
+      },
+      "target": {
+        "template": {
+          "count": "",
+          "contiguous": false,
+          "stationary": false,
+          "type": "",
+          "size": "",
+          "width": "",
+          "height": "",
+          "units": "ft"
+        },
+        "affects": {
+          "count": "",
+          "type": "",
+          "choice": false,
+          "special": ""
+        },
+        "override": false,
+        "prompt": true
+      },
+      "uses": {
+        "spent": 0,
+        "max": "",
+        "recovery": []
+      },
+      "visibility": {
+        "identifier": "",
+        "level": {
+          "min": null,
+          "max": null
+        },
+        "require_attunement": false,
+        "require_identification": false,
+        "require_magic": false
+      },
+      "effects": [],
+      "applied_effects": [],
+      "kind": "utility",
+      "roll": {
+        "formula": "",
+        "name": "",
+        "prompt": false,
+        "visible": false
+      }
+    },
+    {
+      "id": "TrkZoegfYTEj8OK2",
+      "name": "",
+      "img": "",
+      "sort": 0,
+      "activation": {
+        "type": "action",
+        "value": null,
+        "condition": "",
+        "override": false,
+        "reaction_conditions": []
+      },
+      "consumption": {
+        "scaling": {
+          "allowed": false,
+          "max": ""
+        },
+        "spell_slot": true,
+        "targets": []
+      },
+      "description": {
+        "chat_flavor": ""
+      },
+      "duration": {
+        "value": null,
+        "units": "inst",
+        "special": "",
+        "concentration": false,
+        "override": false
+      },
+      "flags": {},
+      "range": {
+        "value": null,
+        "units": "self",
+        "special": "",
+        "override": false
+      },
+      "target": {
+        "template": {
+          "count": "",
+          "contiguous": false,
+          "stationary": false,
+          "type": "",
+          "size": "",
+          "width": "",
+          "height": "",
+          "units": "ft"
+        },
+        "affects": {
+          "count": "",
+          "type": "",
+          "choice": false,
+          "special": ""
+        },
+        "override": false,
+        "prompt": true
+      },
+      "uses": {
+        "spent": 0,
+        "max": "",
+        "recovery": []
+      },
+      "visibility": {
+        "identifier": "",
+        "level": {
+          "min": null,
+          "max": null
+        },
+        "require_attunement": false,
+        "require_identification": false,
+        "require_magic": false
+      },
+      "effects": [],
+      "applied_effects": [],
+      "kind": "summon",
+      "bonuses": {
+        "ac": "",
+        "hd": "",
+        "hp": "",
+        "attack_damage": "",
+        "save_damage": "",
+        "healing": ""
+      },
+      "creature_sizes": [],
+      "creature_types": [],
+      "match": {
+        "ability": "",
+        "attacks": false,
+        "disposition": false,
+        "proficiency": false,
+        "saves": false
+      },
+      "profiles": [
+        {
+          "id": "lTxe4xzzOelpOZKt",
+          "count": "",
+          "cr": "",
+          "level": {
+            "min": null,
+            "max": null
+          },
+          "name": "",
+          "types": [],
+          "uuid": "Compendium.laaru-dnd5-hw.monsters.Actor.DTbYzK2KO5fsc7Ie"
+        },
+        {
+          "id": "6bn7JOhhnpgtGgSn",
+          "count": "",
+          "cr": "",
+          "level": {
+            "min": null,
+            "max": null
+          },
+          "name": "",
+          "types": [],
+          "uuid": "Compendium.laaru-dnd5-hw.monsters.Actor.MQAHbiyLySqfTXNQ"
+        },
+        {
+          "id": "Y5z5yAXtUCsJV4it",
+          "count": "",
+          "cr": "",
+          "level": {
+            "min": null,
+            "max": null
+          },
+          "name": "",
+          "types": [],
+          "uuid": "Compendium.laaru-dnd5-hw.monsters.Actor.awfDDjTfyvl6VmQy"
+        },
+        {
+          "id": "",
+          "count": "",
+          "cr": "",
+          "level": {
+            "min": null,
+            "max": null
+          },
+          "name": "",
+          "types": [],
+          "uuid": "Compendium.laaru-dnd5-hw.monsters.Actor.DYJpyV8cvm8EHvW7"
+        }
+      ],
+      "summon": {
+        "mode": "",
+        "prompt": true,
+        "identifier": null
+      },
+      "temp_hp": ""
+    }
+  ],
+  "passive_effects": [],
+  "provenance": {
+    "source": "foundry",
+    "source_url": "https://github.com/foundryvtt/dnd5e/blob/965ad2d0cf5d063dac675ba078b5bd3c3c0dd449/packs/_source/laaru-hw-spells/Узы_повелителя_драконов___Bond_Of_The_Dragonlords_KSCTMnj88aWmn1fp.yml",
+    "ingest_date": "2026-10-26",
+    "ingest_version": "foundry-translator-v1",
+    "srd_version": [
+      "5.1"
+    ],
+    "license_tag": "CC-BY-4.0"
+  },
+  "review": {
+    "known_divergence": null,
+    "requires_user_decision": false
+  },
+  "entry_kind": "spell"
+}

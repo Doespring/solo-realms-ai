@@ -1,0 +1,47 @@
+{
+  "slug": "way-of-the-four-elements",
+  "name": "Путь Четырёх Стихий",
+  "description": "Путь Четырёх Стихий | Way of the Four Elements\n\nВы следуете монашеской традиции, которая учит вас управлять стихиями. Сфокусировав свою ци, вы можете слиться с силами творения и направлять четыре стихии по своему желанию, используя их как продолжение вашего тела. Некоторые последователи этой традиции посвящают себя одной стихии, другие же пытаются повелевать всеми четырьмя.\n\nМногие монахи этой традиции покрывают свои тела татуировками, изображающими их силу ци, как правило, в виде переплетённых драконов, а также фениксов, рыб, растений, гор и вздыбленных волн.\n\nУровеньОсобенности\n\n3-й\n\n@Compendium[laaru-dnd5-hw.classfeatures.jBAE3rQbaYjj3qlf]{Послушник стихий (3, 6, 11, 17 ур.)}, @Compendium[laaru-dnd5-hw.classfeatures.VtbkkK1BTkrYfQ17]{Стихийные дисциплины}",
+  "identifier": "way-of-the-four-elements",
+  "class_identifier": "monk",
+  "spellcasting": {
+    "ability": "",
+    "progression": "none"
+  },
+  "advancement": [
+    {
+      "id": "117vqppf0bdaibis",
+      "type": "ItemGrant",
+      "level": 3,
+      "title": "Особенности",
+      "hint": "",
+      "class_restriction": "",
+      "configuration": {
+        "items": [
+          "Compendium.laaru-dnd5-hw.classfeatures.jBAE3rQbaYjj3qlf",
+          "Compendium.laaru-dnd5-hw.classfeatures.VtbkkK1BTkrYfQ17",
+          "Compendium.laaru-dnd5-hw.classfeatures.qsvbgXxE16TCT3wx"
+        ],
+        "optional": false
+      },
+      "value": {}
+    }
+  ],
+  "granted_features": [],
+  "feature_choices": [],
+  "provenance": {
+    "source": "foundry",
+    "source_url": "https://github.com/foundryvtt/dnd5e/blob/965ad2d0cf5d063dac675ba078b5bd3c3c0dd449/packs/_source/laaru-hw-subclasses/Путь_Четыр_х_Стихий_PE1VrzETBeoOyiR9.yml",
+    "ingest_date": "2026-10-26",
+    "ingest_version": "foundry-translator-v1",
+    "srd_version": [
+      "5.1"
+    ],
+    "license_tag": "CC-BY-4.0"
+  },
+  "review": {
+    "known_divergence": null,
+    "requires_user_decision": false
+  },
+  "entry_kind": "subclass"
+}

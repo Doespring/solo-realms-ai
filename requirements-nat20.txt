@@ -1,0 +1,7 @@
+# Optional pinned backend; no base requirements changed.
+-r requirements.txt
+d20==1.1.2
+lark-parser==0.9.0
+cachetools==7.2.2
+./vendor/nat20/packages/dnd5e-srd-data
+./vendor/nat20/packages/dnd5e-engine

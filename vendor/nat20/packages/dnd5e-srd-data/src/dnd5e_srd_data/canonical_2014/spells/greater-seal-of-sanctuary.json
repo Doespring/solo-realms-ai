@@ -1,0 +1,348 @@
+{
+  "slug": "greater-seal-of-sanctuary",
+  "foundry_uuid": "Compendium.dnd5e.laaru-hw-spells.Item.Xdspj90yS1ZnX7xq",
+  "name": "Великая печать святилища / Greater Seal Of Sanctuary",
+  "description": "(Ангельская магия)\n\nВы чертите ангельскую печать на земле, полу или другой твёрдой поверхности. Вокруг неё создаётся сферическая духовная граница радиусом 100 футов. На время заклинания каждая аберрация, элементаль, фея, бестия или нежить, оказавшиеся в 5 футах от сферы, понимают, что перед ними смертельно опасный барьер. При попытке пересечения границы сферы любым способом, включая телепортацию и экстрапланарное перемещение, такое существо должно пройти испытание Харизмы. При провале оно получает [[/damage 15d8 radiant]]{15d8 лучистого урона}, отталкивается на 5 футов от сферы и не может выбирать то, что находится в сфере, целью своей атаки, особенности или своего заклинания. При успехе существо получает половину этого урона и может пересечь границу. Если тип существа бестия и оно не находится на своём родном плане, то оно немедленно уничтожается (без испытания), а не получает урон.\n\nВ пределах 100 футов от печати (то есть внутри сферы) аберрации, элементали, феи, бестия и нежить получают помеху на все атаки, проверки характеристик и испытания, а также [[/damage 4d8 radiant]]{4d8 лучистого урона} в начале своего каждого хода.\n\nВсе существа не являющиеся аберрациями, элементалями, феями, бестиями и нежитью не могут быть обворожены или испуганы, пока находятся в пределах сферы. Печать имеет 18 КБ и 75 ПЗ, обладает устойчивостью к колющему, режущему и дробящему урону, а так же обладает невосприимчивостью к психическому урону и ядом. Дальнобойные атаки против печати совершаются с помехой. Если печать нанесена на поверхность объекта, который в дальнейшем был уничтожен (такого как деревянная дверь), печать не повреждается и остаётся на месте, например, висит в воздухе. Как только ПЗ печати падают до 0, она исчезает и заклинание заканчивается.",
+  "level": 9,
+  "school": "abj",
+  "components": [
+    "M",
+    "S",
+    "V"
+  ],
+  "ritual": true,
+  "concentration": false,
+  "casting_time": {
+    "unit": "minute",
+    "value": 10,
+    "condition": ""
+  },
+  "range": {
+    "units": "touch",
+    "value": null,
+    "special": null
+  },
+  "duration": {
+    "units": "hour",
+    "value": 24
+  },
+  "materials": {
+    "value": "ладан и специальные чернила стоимостью не менее 500 зм, расходуемые заклинанием",
+    "consumed": false,
+    "cost": 0,
+    "supply": 0
+  },
+  "preparation": {
+    "mode": "prepared",
+    "prepared": false
+  },
+  "activities": [
+    {
+      "id": "wCNxRsvcFUWB1lLu",
+      "name": "",
+      "img": "",
+      "sort": 0,
+      "activation": {
+        "type": "action",
+        "value": null,
+        "condition": "",
+        "override": false,
+        "reaction_conditions": []
+      },
+      "consumption": {
+        "scaling": {
+          "allowed": false,
+          "max": ""
+        },
+        "spell_slot": true,
+        "targets": []
+      },
+      "description": {
+        "chat_flavor": ""
+      },
+      "duration": {
+        "value": null,
+        "units": "inst",
+        "special": "",
+        "concentration": false,
+        "override": false
+      },
+      "flags": {},
+      "range": {
+        "value": null,
+        "units": "self",
+        "special": "",
+        "override": false
+      },
+      "target": {
+        "template": {
+          "count": "",
+          "contiguous": false,
+          "stationary": false,
+          "type": "sphere",
+          "size": "100",
+          "width": "",
+          "height": "",
+          "units": "ft"
+        },
+        "affects": {
+          "count": "",
+          "type": "",
+          "choice": false,
+          "special": ""
+        },
+        "override": false,
+        "prompt": true
+      },
+      "uses": {
+        "spent": 0,
+        "max": "",
+        "recovery": []
+      },
+      "visibility": {
+        "identifier": "",
+        "level": {
+          "min": null,
+          "max": null
+        },
+        "require_attunement": false,
+        "require_identification": false,
+        "require_magic": false
+      },
+      "effects": [],
+      "applied_effects": [],
+      "kind": "utility",
+      "roll": {
+        "formula": "",
+        "name": "",
+        "prompt": false,
+        "visible": false
+      }
+    },
+    {
+      "id": "SgsDzPtAyIXC9zGN",
+      "name": "",
+      "img": "",
+      "sort": 0,
+      "activation": {
+        "type": "special",
+        "value": null,
+        "condition": "",
+        "override": true,
+        "reaction_conditions": []
+      },
+      "consumption": {
+        "scaling": {
+          "allowed": false,
+          "max": ""
+        },
+        "spell_slot": false,
+        "targets": []
+      },
+      "description": {
+        "chat_flavor": ""
+      },
+      "duration": {
+        "value": null,
+        "units": "inst",
+        "special": "",
+        "concentration": false,
+        "override": true
+      },
+      "flags": {},
+      "range": {
+        "value": null,
+        "units": "any",
+        "special": "",
+        "override": true
+      },
+      "target": {
+        "template": {
+          "count": "",
+          "contiguous": false,
+          "stationary": false,
+          "type": "",
+          "size": "",
+          "width": "",
+          "height": "",
+          "units": "ft"
+        },
+        "affects": {
+          "count": "",
+          "type": "creature",
+          "choice": false,
+          "special": ""
+        },
+        "override": true,
+        "prompt": true
+      },
+      "uses": {
+        "spent": 0,
+        "max": "",
+        "recovery": []
+      },
+      "visibility": {
+        "identifier": "",
+        "level": {
+          "min": null,
+          "max": null
+        },
+        "require_attunement": false,
+        "require_identification": false,
+        "require_magic": false
+      },
+      "effects": [],
+      "applied_effects": [],
+      "kind": "save",
+      "damage": {
+        "on_save": "half",
+        "parts": [
+          {
+            "number": 15,
+            "denomination": 8,
+            "bonus": "",
+            "types": [
+              "radiant"
+            ],
+            "custom": {
+              "enabled": false,
+              "formula": ""
+            },
+            "scaling": {
+              "mode": "",
+              "number": 1,
+              "formula": ""
+            }
+          }
+        ]
+      },
+      "save": {
+        "ability": [
+          "cha"
+        ],
+        "dc": {
+          "calculation": "spellcasting",
+          "formula": ""
+        },
+        "ignore_cover": false
+      }
+    },
+    {
+      "id": "Tr3JeYmb0aDhpOPy",
+      "name": "",
+      "img": "",
+      "sort": 0,
+      "activation": {
+        "type": "special",
+        "value": null,
+        "condition": "",
+        "override": true,
+        "reaction_conditions": []
+      },
+      "consumption": {
+        "scaling": {
+          "allowed": false,
+          "max": ""
+        },
+        "spell_slot": false,
+        "targets": []
+      },
+      "description": {
+        "chat_flavor": ""
+      },
+      "duration": {
+        "value": null,
+        "units": "inst",
+        "special": "",
+        "concentration": false,
+        "override": true
+      },
+      "flags": {},
+      "range": {
+        "value": null,
+        "units": "any",
+        "special": "",
+        "override": true
+      },
+      "target": {
+        "template": {
+          "count": "",
+          "contiguous": false,
+          "stationary": false,
+          "type": "",
+          "size": "",
+          "width": "",
+          "height": "",
+          "units": "ft"
+        },
+        "affects": {
+          "count": "",
+          "type": "creature",
+          "choice": false,
+          "special": ""
+        },
+        "override": true,
+        "prompt": true
+      },
+      "uses": {
+        "spent": 0,
+        "max": "",
+        "recovery": []
+      },
+      "visibility": {
+        "identifier": "",
+        "level": {
+          "min": null,
+          "max": null
+        },
+        "require_attunement": false,
+        "require_identification": false,
+        "require_magic": false
+      },
+      "effects": [],
+      "applied_effects": [],
+      "kind": "damage",
+      "damage": {
+        "critical": {
+          "allow": false,
+          "bonus": ""
+        },
+        "parts": [
+          {
+            "number": 4,
+            "denomination": 8,
+            "bonus": "",
+            "types": [
+              "radiant"
+            ],
+            "custom": {
+              "enabled": false,
+              "formula": ""
+            },
+            "scaling": {
+              "mode": "",
+              "number": 1,
+              "formula": ""
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "passive_effects": [],
+  "provenance": {
+    "source": "foundry",
+    "source_url": "https://github.com/foundryvtt/dnd5e/blob/965ad2d0cf5d063dac675ba078b5bd3c3c0dd449/packs/_source/laaru-hw-spells/Великая_печать_святилища___Greater_Seal_Of_Sanctuary_Xdspj90yS1ZnX7xq.yml",
+    "ingest_date": "2026-10-26",
+    "ingest_version": "foundry-translator-v1",
+    "srd_version": [
+      "5.1"
+    ],
+    "license_tag": "CC-BY-4.0"
+  },
+  "review": {
+    "known_divergence": null,
+    "requires_user_decision": false
+  },
+  "entry_kind": "spell"
+}

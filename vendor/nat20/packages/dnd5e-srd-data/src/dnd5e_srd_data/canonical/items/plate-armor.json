@@ -1,0 +1,36 @@
+{
+  "activities": [],
+  "armor_category": "heavy",
+  "attunement_constraint": null,
+  "base_ac": 18,
+  "cost_gp": 1500.0,
+  "description": "",
+  "description_localized": "<p>Состоит из кованых металлических пластин, сцепленных друг с другом и покрывающих всё тело. В латный доспех входят рукавицы, тяжёлые кожаные сапоги, шлем с забралом и толстый поддоспешник. Пряжки и ремни позволяют распределить вес по всему телу.</p>",
+  "dex_bonus_max": 0,
+  "item_kind": "armor",
+  "magical": false,
+  "magical_bonus": 0,
+  "name": "Латный доспех",
+  "passive_effects": [],
+  "provenance": {
+    "ingest_date": "2026-05-30",
+    "ingest_version": "foundry-translator-v1",
+    "license_tag": "CC-BY-4.0",
+    "source": "foundry",
+    "source_url": "https://github.com/foundryvtt/dnd5e/blob/965ad2d0cf5d063dac675ba078b5bd3c3c0dd449/packs/_source/equipment24/armor/heavy/plate-armor.yml",
+    "srd_version": [
+      "5.2"
+    ]
+  },
+  "rarity": "common",
+  "requires_attunement": false,
+  "review": {
+    "known_divergence": null,
+    "requires_user_decision": false
+  },
+  "slug": "plate-armor",
+  "stealth_disadvantage": true,
+  "strength_min": 15,
+  "uses": null,
+  "weight": 65.0
+}

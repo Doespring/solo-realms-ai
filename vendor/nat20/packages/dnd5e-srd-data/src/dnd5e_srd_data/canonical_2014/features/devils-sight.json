@@ -1,0 +1,48 @@
+{
+  "slug": "devils-sight",
+  "name": "Devil's Sight",
+  "description": "You can see normally in darkness, both magical and nonmagical, to a distance of 120 feet.",
+  "feature_type": "class_feature",
+  "foundry_id": "3sN91lT1R3oxcDKd",
+  "source_slug": "warlock",
+  "activities": [],
+  "passive_effects": [
+    {
+      "id": "3JYlSTG0olbm1FQC",
+      "name": "Devil's Sight",
+      "description": "",
+      "changes": [
+        {
+          "key": "system.attributes.senses.darkvision",
+          "mode": 4,
+          "value": "120",
+          "priority": null
+        }
+      ],
+      "statuses": [],
+      "duration": {
+        "units": "seconds",
+        "expired": false
+      },
+      "disabled": false,
+      "transfer": true
+    }
+  ],
+  "advancement": [],
+  "uses": null,
+  "provenance": {
+    "source": "foundry",
+    "source_url": "https://github.com/foundryvtt/dnd5e/blob/965ad2d0cf5d063dac675ba078b5bd3c3c0dd449/packs/_source/classfeatures/Devil_s_Sight_3sN91lT1R3oxcDKd.yml",
+    "ingest_date": "2026-10-26",
+    "ingest_version": "foundry-translator-v1",
+    "srd_version": [
+      "5.1"
+    ],
+    "license_tag": "CC-BY-4.0"
+  },
+  "review": {
+    "known_divergence": null,
+    "requires_user_decision": false
+  },
+  "entry_kind": "feature"
+}

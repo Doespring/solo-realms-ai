@@ -1,0 +1,138 @@
+{
+  "activities": [
+    {
+      "activation": {
+        "condition": "",
+        "override": false,
+        "reaction_conditions": [],
+        "type": "action",
+        "value": null
+      },
+      "applied_effects": [],
+      "consumption": {
+        "scaling": {
+          "allowed": false,
+          "max": ""
+        },
+        "spell_slot": true,
+        "targets": []
+      },
+      "description": {
+        "chat_flavor": ""
+      },
+      "duration": {
+        "concentration": false,
+        "override": false,
+        "special": "",
+        "units": "inst",
+        "value": null
+      },
+      "effects": [],
+      "flags": {},
+      "id": "CBfszVA8MvW52CdU",
+      "img": "systems/dnd5e/icons/svg/trait-saves.svg",
+      "kind": "utility",
+      "name": "",
+      "range": {
+        "override": false,
+        "special": "",
+        "units": "self",
+        "value": null
+      },
+      "roll": {
+        "formula": "",
+        "name": "",
+        "prompt": false,
+        "visible": false
+      },
+      "sort": 0,
+      "target": {
+        "affects": {
+          "choice": false,
+          "count": "9",
+          "special": "you and up to eight creatures or one object",
+          "type": "willing"
+        },
+        "override": false,
+        "prompt": true,
+        "template": {
+          "contiguous": false,
+          "count": "",
+          "height": "",
+          "size": "",
+          "stationary": false,
+          "type": "",
+          "units": "",
+          "width": ""
+        }
+      },
+      "uses": {
+        "max": "",
+        "recovery": [],
+        "spent": 0
+      },
+      "visibility": {
+        "identifier": "",
+        "level": {
+          "max": null,
+          "min": null
+        },
+        "require_attunement": false,
+        "require_identification": false,
+        "require_magic": false
+      }
+    }
+  ],
+  "casting_time": {
+    "condition": "",
+    "unit": "action",
+    "value": 1
+  },
+  "components": [
+    "V"
+  ],
+  "concentration": false,
+  "description": "This spell instantly transports you and up to eight willing creatures that you can see within range, or a single object that you can see within range, to a destination you select. If you target an object, it must be Large or smaller, and it can't be held or carried by an unwilling creature.\n\nThe destination you choose must be known to you, and it must be on the same plane of existence as you. Your familiarity with the destination determines whether you arrive there successfully. The DM rolls [[/gmr 1d100]] and consults the Teleportation Outcome table and the explanations after it. Teleportation Outcome\n\nFamiliarity\n\nMishap\n\nSimilar Area\n\nOff Target\n\nOn Target\n\nPermanent circle\n\n—\n\n—\n\n—\n\n01–00\n\nLinked object\n\n—\n\n—\n\n—\n\n01–00\n\nVery familiar\n\n01–05\n\n06–13\n\n14–24\n\n25–00\n\nSeen casually\n\n01–33\n\n34–43\n\n44–53\n\n54–00\n\nViewed once or described\n\n01–43\n\n44–53\n\n54–73\n\n74–00\n\nFalse destination\n\n01–50\n\n51–00\n\n—\n\n—\n\nFamiliarity. Here are the meanings of the terms in the table's Familiarity column:\n\n\"Permanent circle\" means a permanent teleportation circle whose sigil sequence you know.\n\n\"Linked object\" means you possess an object taken from the desired destination within the last six months, such as a book from a wizard's library.\n\n\"Very familiar\" is a place you have visited often, a place you have carefully studied, or a place you can see when you cast the spell.\n\n\"Seen casually\" is a place you have seen more than once but with which you aren't very familiar.\n\n\"Viewed once or described\" is a place you have seen once, possibly using magic, or a place you know through someone else's description, perhaps from a map.\n\n\"False destination\" is a place that doesn't exist. Perhaps you tried to scry an enemy's sanctum but instead viewed an illusion, or you are attempting to teleport to a location that no longer exists.\n\nMishap. The spell's unpredictable magic results in a difficult journey. Each teleporting creature (or the target object) takes [[/damage 3d10 type=force]] damage, and the DM rerolls on the table to see where you wind up (multiple mishaps can occur, dealing damage each time).\n\nSimilar Area. You and your group (or the target object) appear in a different area that's visually or thematically similar to the target area. You appear in the closest similar place. If you are heading for your home laboratory, for example, you might appear in another person's laboratory in the same city.\n\nOff Target. You and your group (or the target object) appear [[/r 2d12]] miles away from the destination in a random direction. Roll [[/r 1d8]] for the direction: 1, east; 2, southeast; 3, south; 4, southwest; 5, west; 6, northwest; 7, north; or 8, northeast.\n\nOn Target. You and your group (or the target object) appear where you intended.",
+  "description_localized": "<div class=\"rd__spc-inline-post\"><p>Заклинание мгновенно переносит вас и не более восьми согласных существ на ваш выбор, которых вы видите в пределах дистанции, или один объект, который вы видите в пределах дистанции, в выбранное вами место назначения. Если цель — объект, он должен полностью помещаться в 10-футовый куб и его не должно носить или держать несогласное существо.</p></div><div class=\"rd__spc-inline-post\"><p>Место назначения должно быть известно вам и находиться на том же плане бытия, что и вы. От вашей степени знакомства с местом назначения зависят ваши шансы попасть туда. Мастер бросает [[/r d100]] и сверяется с таблицей.</p></div><table class=\"rd__table  stripe-odd-table\" style=\"width:99.2188%;height:136px\"><caption>Телепортация</caption><thead><tr style=\"height:17px\"><th class=\"col-8\" style=\"width:30.5037%;height:17px\" data-rd-isroller=\"false\">Знакомство</th><th class=\"col-1 text-center no-wrap\" style=\"width:12.7461%;height:17px\" data-rd-isroller=\"false\">Срыв</th><th class=\"col-1 text-center no-wrap\" style=\"width:21.7499%;height:17px\" data-rd-isroller=\"false\">Похожее место</th><th class=\"col-1 text-center no-wrap\" style=\"width:17.4398%;height:17px\" data-rd-isroller=\"false\">Мимо</th><th class=\"col-1 text-center no-wrap\" style=\"width:16.7732%;height:17px\" data-rd-isroller=\"false\">На месте</th></tr></thead><tbody><tr style=\"height:17px\"><td class=\"col-8\" style=\"width:30.5037%;height:17px\">Постоянный круг</td><td class=\"col-1 text-center no-wrap\" style=\"width:12.7461%;height:17px\">—</td><td class=\"col-1 text-center no-wrap\" style=\"width:21.7499%;height:17px\">—</td><td class=\"col-1 text-center no-wrap\" style=\"width:17.4398%;height:17px\">—</td><td class=\"col-1 text-center no-wrap\" style=\"width:16.7732%;height:17px\">01–100</td></tr><tr style=\"height:17px\"><td class=\"col-8\" style=\"width:30.5037%;height:17px\">Связанный объект</td><td class=\"col-1 text-center no-wrap\" style=\"width:12.7461%;height:17px\">—</td><td class=\"col-1 text-center no-wrap\" style=\"width:21.7499%;height:17px\">—</td><td class=\"col-1 text-center no-wrap\" style=\"width:17.4398%;height:17px\">—</td><td class=\"col-1 text-center no-wrap\" style=\"width:16.7732%;height:17px\">01–100</td></tr><tr style=\"height:17px\"><td class=\"col-8\" style=\"width:30.5037%;height:17px\">Хорошо знакомо</td><td class=\"col-1 text-center no-wrap\" style=\"width:12.7461%;height:17px\">01–05</td><td class=\"col-1 text-center no-wrap\" style=\"width:21.7499%;height:17px\">06–13</td><td class=\"col-1 text-center no-wrap\" style=\"width:17.4398%;height:17px\">14–24</td><td class=\"col-1 text-center no-wrap\" style=\"width:16.7732%;height:17px\">25–100</td></tr><tr style=\"height:17px\"><td class=\"col-8\" style=\"width:30.5037%;height:17px\">Случалось бывать</td><td class=\"col-1 text-center no-wrap\" style=\"width:12.7461%;height:17px\">01–33</td><td class=\"col-1 text-center no-wrap\" style=\"width:21.7499%;height:17px\">34–43</td><td class=\"col-1 text-center no-wrap\" style=\"width:17.4398%;height:17px\">44–53</td><td class=\"col-1 text-center no-wrap\" style=\"width:16.7732%;height:17px\">54–100</td></tr><tr style=\"height:17px\"><td class=\"col-8\" style=\"width:30.5037%;height:17px\">Однажды видели</td><td class=\"col-1 text-center no-wrap\" style=\"width:12.7461%;height:17px\">01–43</td><td class=\"col-1 text-center no-wrap\" style=\"width:21.7499%;height:17px\">44–53</td><td class=\"col-1 text-center no-wrap\" style=\"width:17.4398%;height:17px\">54–73</td><td class=\"col-1 text-center no-wrap\" style=\"width:16.7732%;height:17px\">74–100</td></tr><tr style=\"height:17px\"><td class=\"col-8\" style=\"width:30.5037%;height:17px\">Описание</td><td class=\"col-1 text-center no-wrap\" style=\"width:12.7461%;height:17px\">01–43</td><td class=\"col-1 text-center no-wrap\" style=\"width:21.7499%;height:17px\">44–53</td><td class=\"col-1 text-center no-wrap\" style=\"width:17.4398%;height:17px\">54–73</td><td class=\"col-1 text-center no-wrap\" style=\"width:16.7732%;height:17px\">74–100</td></tr><tr style=\"height:17px\"><td class=\"col-8\" style=\"width:30.5037%;height:17px\">Ложное место</td><td class=\"col-1 text-center no-wrap\" style=\"width:12.7461%;height:17px\">01–50</td><td class=\"col-1 text-center no-wrap\" style=\"width:21.7499%;height:17px\">51–100</td><td class=\"col-1 text-center no-wrap\" style=\"width:17.4398%;height:17px\">—</td><td class=\"col-1 text-center no-wrap\" style=\"width:16.7732%;height:17px\">—</td></tr></tbody></table><div class=\"rd__spc-inline-post\"><ul><li><p><strong>Знакомство.</strong> «Постоянный круг» означает постоянный круг телепортации, последовательность символов которого вы знаете, «Связанный объект» значит, что у вас есть объект, взятый из места назначения за последние 6 месяцев, — например, книга из библиотеки волшебника, простыня из номера в гостинице или кусочек мрамора из тайной гробницы лича. </p><p>«Хорошо знакомо» — место, в котором вы часто бывали, которое тщательно изучали или можете видеть, когда творите это заклинание. «Случалось бывать» — место, где вы бывали более одного раза, но которое не очень хорошо знаете. «Однажды видели» - место, которое вы видели один раз, возможно при помощи магии. «Описание» — место, расположение и внешний вид которого вы знаете только по чужим описаниям или карте.</p><p>«Ложное место» — место, которого не существует. Возможно, вы пытались шпионить за врагом и видели его укрытие, но оно оказалось иллюзией. Или вы пытаетесь переместиться в знакомое место, которого больше нет.</p></li><li><p><strong>На месте. </strong>Вы и ваша группа (или объект) оказываетесь там, где хотели.</p></li><li><p><strong>Мимо</strong>. Вы и ваша группа (или объект) оказываетесь на случайном расстоянии от цели в неизвестном направлении. Расстояние до цели равно [[/r 1d10 * 1d10]] (1d10 × 1d10) процентов расстояния, которое вы пытались преодолеть. К примеру, если вы пытались перенестись на 120 миль, но попали мимо и выбросили 5 из на двух [[/r d10]], вы окажетесь в 15% расстояния от цели, то есть в 18 милях. Мастер случайным образом определяет, в каком направлении относительно цели вы оказались, бросив [[/r d8]]. При этом 1 означает север, 2 — северо-восток, 3 — восток и так далее по компасу. Если вы пытались телепортироваться в прибрежный город и оказались в море в 18 милях от берега, возможны проблемы.</p></li><li><p><strong>Похожее место.</strong> Вы и ваша группа (или объект) оказываетесь в другом месте, которое визуально или тематически похоже на нужное. К примеру, если вы пытались попасть в свою лабораторию, вы можете оказаться в лаборатории другого волшебника или в алхимической лавке, где есть инструменты, похожие на ваши. Как правило, вы оказываетесь в ближайшем похожем месте, но, поскольку у заклинания нет ограничения по дистанции, вы запросто можете оказаться в любом месте этого плана бытия.</p></li><li><p><strong>Срыв. </strong>Непредсказуемая магия заклинания устраивает вам неприятную прогулку. Каждое телепортирующееся существо (или объект) получает  [[/r 3d10]] урона силой, и мастер делает ещё один бросок, чтобы определить, где вы окажетесь. Срывы могут повторяться несколько раз, нанося урон многократно.</p></li></ul></div>",
+  "duration": {
+    "units": "inst",
+    "value": null
+  },
+  "entry_kind": "spell",
+  "foundry_uuid": "Compendium.dnd5e.spells24.Item.phbsplTeleport00",
+  "level": 7,
+  "materials": {
+    "consumed": false,
+    "cost": 0,
+    "supply": 0,
+    "value": ""
+  },
+  "name": "Телепортация",
+  "passive_effects": [],
+  "preparation": {
+    "mode": "prepared",
+    "prepared": false
+  },
+  "provenance": {
+    "ingest_date": "2026-05-30",
+    "ingest_version": "foundry-translator-v1",
+    "license_tag": "CC-BY-4.0",
+    "source": "foundry",
+    "source_url": "https://github.com/foundryvtt/dnd5e/blob/965ad2d0cf5d063dac675ba078b5bd3c3c0dd449/packs/_source/spells24/7th-level/teleport.yml",
+    "srd_version": [
+      "5.2"
+    ]
+  },
+  "range": {
+    "special": null,
+    "units": "ft",
+    "value": 10
+  },
+  "review": {
+    "known_divergence": null,
+    "requires_user_decision": false
+  },
+  "ritual": false,
+  "school": "con",
+  "slug": "teleport"
+}

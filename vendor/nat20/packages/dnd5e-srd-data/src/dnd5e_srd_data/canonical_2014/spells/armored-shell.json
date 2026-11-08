@@ -1,0 +1,139 @@
+{
+  "slug": "armored-shell",
+  "foundry_uuid": "Compendium.dnd5e.laaru-hw-spells.Item.Bu7iBVckHabJaekM",
+  "name": "Бронированный панцирь / Armored Shell",
+  "description": "(Механомагия)\n\nЭто заклинание создаёт магический Клёпаный кожаный доспех (КБ 12), но оно не даёт вам умение в обращении с этой бронёй. Заклинатели без необходимого умения получают помеху на все проверки характеристик, испытания и броски атаки, использующие Силу или Ловкость, и не могут творить заклинания.\n\nНа высоких кругах. Сотворение заклинания с использованием ячейки более высокого круга создает более сильный доспех: Кольчужная рубаха (КБ 13) ячейкой 2-го круга, Чешуйчатый доспех (КБ 14) ячейкой 3-го круга, Кольчуга (КБ 16) ячейкой 4-го круга и Латный доспех (КБ 18) ячейкой 5-го круга.",
+  "level": 1,
+  "school": "con",
+  "components": [
+    "M",
+    "S",
+    "V"
+  ],
+  "ritual": false,
+  "concentration": true,
+  "casting_time": {
+    "unit": "action",
+    "value": 1,
+    "condition": ""
+  },
+  "range": {
+    "units": "self",
+    "value": null,
+    "special": null
+  },
+  "duration": {
+    "units": "hour",
+    "value": 1
+  },
+  "materials": {
+    "value": "заклёпка",
+    "consumed": false,
+    "cost": 0,
+    "supply": 0
+  },
+  "preparation": {
+    "mode": "prepared",
+    "prepared": false
+  },
+  "activities": [
+    {
+      "id": "rTzXrgNz3q00BaGP",
+      "name": "",
+      "img": "",
+      "sort": 0,
+      "activation": {
+        "type": "action",
+        "value": null,
+        "condition": "",
+        "override": false,
+        "reaction_conditions": []
+      },
+      "consumption": {
+        "scaling": {
+          "allowed": false,
+          "max": ""
+        },
+        "spell_slot": true,
+        "targets": []
+      },
+      "description": {
+        "chat_flavor": ""
+      },
+      "duration": {
+        "value": null,
+        "units": "inst",
+        "special": "",
+        "concentration": false,
+        "override": false
+      },
+      "flags": {},
+      "range": {
+        "value": null,
+        "units": "self",
+        "special": "",
+        "override": false
+      },
+      "target": {
+        "template": {
+          "count": "",
+          "contiguous": false,
+          "stationary": false,
+          "type": "",
+          "size": "",
+          "width": "",
+          "height": "",
+          "units": "ft"
+        },
+        "affects": {
+          "count": "",
+          "type": "",
+          "choice": false,
+          "special": ""
+        },
+        "override": false,
+        "prompt": true
+      },
+      "uses": {
+        "spent": 0,
+        "max": "",
+        "recovery": []
+      },
+      "visibility": {
+        "identifier": "",
+        "level": {
+          "min": null,
+          "max": null
+        },
+        "require_attunement": false,
+        "require_identification": false,
+        "require_magic": false
+      },
+      "effects": [],
+      "applied_effects": [],
+      "kind": "utility",
+      "roll": {
+        "formula": "",
+        "name": "",
+        "prompt": false,
+        "visible": false
+      }
+    }
+  ],
+  "passive_effects": [],
+  "provenance": {
+    "source": "foundry",
+    "source_url": "https://github.com/foundryvtt/dnd5e/blob/965ad2d0cf5d063dac675ba078b5bd3c3c0dd449/packs/_source/laaru-hw-spells/Бронированный_панцирь___Armored_Shell_Bu7iBVckHabJaekM.yml",
+    "ingest_date": "2026-10-26",
+    "ingest_version": "foundry-translator-v1",
+    "srd_version": [
+      "5.1"
+    ],
+    "license_tag": "CC-BY-4.0"
+  },
+  "review": {
+    "known_divergence": null,
+    "requires_user_decision": false
+  },
+  "entry_kind": "spell"
+}

@@ -1,0 +1,27 @@
+{
+  "slug": "disciple-of-life",
+  "name": "Disciple of Life",
+  "description": "Starting at 1st level, your healing spells are more effective.\n\nWhenever you use a spell of 1st level or higher to restore hit points to a creature, the creature regains additional hit points equal to 2 + the spell's level.",
+  "feature_type": "subclass_feature",
+  "foundry_id": "jF8AFfEMICIJnAkR",
+  "source_slug": "life",
+  "activities": [],
+  "passive_effects": [],
+  "advancement": [],
+  "uses": null,
+  "provenance": {
+    "source": "foundry",
+    "source_url": "https://github.com/foundryvtt/dnd5e/blob/965ad2d0cf5d063dac675ba078b5bd3c3c0dd449/packs/_source/classfeatures/Disciple_of_Life_jF8AFfEMICIJnAkR.yml",
+    "ingest_date": "2026-10-26",
+    "ingest_version": "foundry-translator-v1",
+    "srd_version": [
+      "5.1"
+    ],
+    "license_tag": "CC-BY-4.0"
+  },
+  "review": {
+    "known_divergence": null,
+    "requires_user_decision": false
+  },
+  "entry_kind": "feature"
+}

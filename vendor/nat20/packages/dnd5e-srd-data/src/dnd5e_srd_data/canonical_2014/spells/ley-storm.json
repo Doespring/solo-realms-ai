@@ -1,0 +1,682 @@
+{
+  "slug": "ley-storm",
+  "foundry_uuid": "Compendium.dnd5e.laaru-hw-spells.Item.zXlUA7mQei4bsY0O",
+  "name": "Буря Лей / Ley Storm",
+  "description": "(Лей-линии)\n\nКлубящееся грозовое облако лей­-линий сгущается во­круг точки, которую вы можете видеть, растекаясь в радиусе 360 футов и высотой в 30 футов. Клубы облака прорывает меняющийся свет, и раздаётся оглушительный раскат грома. Каждое существо, оказавшееся под облаком (на расстоянии не более 5000 футов под ним), при его появлении должно пройти испытание Выносливости. При провале получая [[/damage 2d6 thunder]]{2d6 урона громом} и становится &amp;Reference[deafened]{оглохшим} на 5 минут. При успехе ни один эффект не действует на существо.\n\nКаждый раунд пока вы поддерживаете концентрацию, буря производит новые эффекты, в ваш ход.\n\nРаунд 2. Из облака падают камни, пропитанные энергией лей. Каждое существо и каждый объект под облаком получает [[/damage 1d6 bludgeoning]]{1d6 дробящего урона}.\n\nРаунд 3. Из тучи вылетает шесть снарядов энергии лей. Они бьют в шесть существ или объектов по вашему выбору, находящихся под облаком. Каждую цель можно поразить не более чем одним снарядом. Поражённое существо должно пройти испытание Ловкости. При провале цель получает [[/damage 8d8 force]]{8d8 урона силой} или половину этого урона в случае успеха.\n\nРаунд 4. Радужная вспышка света заливает 20-футовую сферу с центром в точке под облаком. Все существа в этой сфере попадают под действие заклинания Разрушительная аура.\n\nРаунды 5-10. Сквозь облако прорываются разноцвет­ные вспышки. Каждое существо, пока оно находится под облаком, с помехой совершает проверки Мудрости (Внимание), полагающиеся на зрение. Также, каждый раунд вы создаёте взрыв энергии, заполняющий 20-футовую сферу с центром в точке, которую вы можете видеть под облаком. Каждое существо в этой сфере получает [[/damage 4d8 force]]{4d8 урона силой} (без испытания).\n\nОсобое: Геомант, сотворивший это заклинание, восстанавливает себе 4d10 ПЗ.",
+  "level": 9,
+  "school": "con",
+  "components": [
+    "S",
+    "V"
+  ],
+  "ritual": false,
+  "concentration": true,
+  "casting_time": {
+    "unit": "action",
+    "value": 1,
+    "condition": ""
+  },
+  "range": {
+    "units": "any",
+    "value": null,
+    "special": null
+  },
+  "duration": {
+    "units": "minute",
+    "value": 1
+  },
+  "materials": {
+    "value": "",
+    "consumed": false,
+    "cost": 0,
+    "supply": 0
+  },
+  "preparation": {
+    "mode": "prepared",
+    "prepared": false
+  },
+  "activities": [
+    {
+      "id": "8xaol3r3tIvJzheB",
+      "name": "",
+      "img": "",
+      "sort": 0,
+      "activation": {
+        "type": "action",
+        "value": null,
+        "condition": "",
+        "override": false,
+        "reaction_conditions": []
+      },
+      "consumption": {
+        "scaling": {
+          "allowed": false,
+          "max": ""
+        },
+        "spell_slot": true,
+        "targets": []
+      },
+      "description": {
+        "chat_flavor": ""
+      },
+      "duration": {
+        "value": null,
+        "units": "inst",
+        "special": "",
+        "concentration": false,
+        "override": false
+      },
+      "flags": {},
+      "range": {
+        "value": null,
+        "units": "self",
+        "special": "",
+        "override": false
+      },
+      "target": {
+        "template": {
+          "count": "",
+          "contiguous": false,
+          "stationary": false,
+          "type": "radius",
+          "size": "360",
+          "width": "",
+          "height": "",
+          "units": "ft"
+        },
+        "affects": {
+          "count": "",
+          "type": "",
+          "choice": false,
+          "special": ""
+        },
+        "override": false,
+        "prompt": true
+      },
+      "uses": {
+        "spent": 0,
+        "max": "",
+        "recovery": []
+      },
+      "visibility": {
+        "identifier": "",
+        "level": {
+          "min": null,
+          "max": null
+        },
+        "require_attunement": false,
+        "require_identification": false,
+        "require_magic": false
+      },
+      "effects": [
+        {
+          "id": "FMonZnTjfZXmTjU4",
+          "level": {
+            "min": null,
+            "max": null
+          },
+          "on_save": false,
+          "riders": null
+        }
+      ],
+      "applied_effects": [],
+      "kind": "save",
+      "damage": {
+        "on_save": "none",
+        "parts": [
+          {
+            "number": 2,
+            "denomination": 6,
+            "bonus": "",
+            "types": [
+              "thunder"
+            ],
+            "custom": {
+              "enabled": false,
+              "formula": ""
+            },
+            "scaling": {
+              "mode": "",
+              "number": 1,
+              "formula": ""
+            }
+          }
+        ]
+      },
+      "save": {
+        "ability": [
+          "con"
+        ],
+        "dc": {
+          "calculation": "spellcasting",
+          "formula": ""
+        },
+        "ignore_cover": false
+      }
+    },
+    {
+      "id": "ohFYqesJBid4aEte",
+      "name": "Раунд 2",
+      "img": "",
+      "sort": 0,
+      "activation": {
+        "type": "special",
+        "value": null,
+        "condition": "",
+        "override": true,
+        "reaction_conditions": []
+      },
+      "consumption": {
+        "scaling": {
+          "allowed": false,
+          "max": ""
+        },
+        "spell_slot": false,
+        "targets": []
+      },
+      "description": {
+        "chat_flavor": ""
+      },
+      "duration": {
+        "value": null,
+        "units": "inst",
+        "special": "",
+        "concentration": false,
+        "override": true
+      },
+      "flags": {},
+      "range": {
+        "value": null,
+        "units": "self",
+        "special": "",
+        "override": false
+      },
+      "target": {
+        "template": {
+          "count": "",
+          "contiguous": false,
+          "stationary": false,
+          "type": "",
+          "size": "",
+          "width": "",
+          "height": "",
+          "units": "ft"
+        },
+        "affects": {
+          "count": "",
+          "type": "creature",
+          "choice": false,
+          "special": ""
+        },
+        "override": true,
+        "prompt": true
+      },
+      "uses": {
+        "spent": 0,
+        "max": "",
+        "recovery": []
+      },
+      "visibility": {
+        "identifier": "",
+        "level": {
+          "min": null,
+          "max": null
+        },
+        "require_attunement": false,
+        "require_identification": false,
+        "require_magic": false
+      },
+      "effects": [],
+      "applied_effects": [],
+      "kind": "damage",
+      "damage": {
+        "critical": {
+          "allow": false,
+          "bonus": ""
+        },
+        "parts": [
+          {
+            "number": 1,
+            "denomination": 6,
+            "bonus": "",
+            "types": [
+              "bludgeoning"
+            ],
+            "custom": {
+              "enabled": false,
+              "formula": ""
+            },
+            "scaling": {
+              "mode": "",
+              "number": 1,
+              "formula": ""
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "RFhCP8UHnDITaBiT",
+      "name": "Раунд 3",
+      "img": "",
+      "sort": 0,
+      "activation": {
+        "type": "special",
+        "value": null,
+        "condition": "",
+        "override": true,
+        "reaction_conditions": []
+      },
+      "consumption": {
+        "scaling": {
+          "allowed": false,
+          "max": ""
+        },
+        "spell_slot": false,
+        "targets": []
+      },
+      "description": {
+        "chat_flavor": ""
+      },
+      "duration": {
+        "value": null,
+        "units": "inst",
+        "special": "",
+        "concentration": false,
+        "override": true
+      },
+      "flags": {},
+      "range": {
+        "value": null,
+        "units": "self",
+        "special": "",
+        "override": false
+      },
+      "target": {
+        "template": {
+          "count": "",
+          "contiguous": false,
+          "stationary": false,
+          "type": "",
+          "size": "",
+          "width": "",
+          "height": "",
+          "units": "ft"
+        },
+        "affects": {
+          "count": "6",
+          "type": "creature",
+          "choice": false,
+          "special": ""
+        },
+        "override": true,
+        "prompt": true
+      },
+      "uses": {
+        "spent": 0,
+        "max": "",
+        "recovery": []
+      },
+      "visibility": {
+        "identifier": "",
+        "level": {
+          "min": null,
+          "max": null
+        },
+        "require_attunement": false,
+        "require_identification": false,
+        "require_magic": false
+      },
+      "effects": [],
+      "applied_effects": [],
+      "kind": "save",
+      "damage": {
+        "on_save": "half",
+        "parts": [
+          {
+            "number": 8,
+            "denomination": 8,
+            "bonus": "",
+            "types": [
+              "force"
+            ],
+            "custom": {
+              "enabled": false,
+              "formula": ""
+            },
+            "scaling": {
+              "mode": "",
+              "number": 1,
+              "formula": ""
+            }
+          }
+        ]
+      },
+      "save": {
+        "ability": [
+          "dex"
+        ],
+        "dc": {
+          "calculation": "spellcasting",
+          "formula": ""
+        },
+        "ignore_cover": false
+      }
+    },
+    {
+      "id": "yeqlRZFK75QXW4n0",
+      "name": "Раунд 4",
+      "img": "",
+      "sort": 0,
+      "activation": {
+        "type": "special",
+        "value": null,
+        "condition": "",
+        "override": true,
+        "reaction_conditions": []
+      },
+      "consumption": {
+        "scaling": {
+          "allowed": false,
+          "max": ""
+        },
+        "spell_slot": false,
+        "targets": []
+      },
+      "description": {
+        "chat_flavor": ""
+      },
+      "duration": {
+        "value": null,
+        "units": "inst",
+        "special": "",
+        "concentration": false,
+        "override": true
+      },
+      "flags": {},
+      "range": {
+        "value": null,
+        "units": "self",
+        "special": "",
+        "override": false
+      },
+      "target": {
+        "template": {
+          "count": "",
+          "contiguous": false,
+          "stationary": false,
+          "type": "",
+          "size": "",
+          "width": "",
+          "height": "",
+          "units": "ft"
+        },
+        "affects": {
+          "count": "6",
+          "type": "creature",
+          "choice": false,
+          "special": ""
+        },
+        "override": true,
+        "prompt": true
+      },
+      "uses": {
+        "spent": 0,
+        "max": "",
+        "recovery": []
+      },
+      "visibility": {
+        "identifier": "",
+        "level": {
+          "min": null,
+          "max": null
+        },
+        "require_attunement": false,
+        "require_identification": false,
+        "require_magic": false
+      },
+      "effects": [],
+      "applied_effects": [],
+      "kind": "save",
+      "damage": {
+        "on_save": "half",
+        "parts": []
+      },
+      "save": {
+        "ability": [
+          "wis"
+        ],
+        "dc": {
+          "calculation": "spellcasting",
+          "formula": ""
+        },
+        "ignore_cover": false
+      }
+    },
+    {
+      "id": "VP8sXuK5WRz8e34V",
+      "name": "Раунды 5-10",
+      "img": "",
+      "sort": 0,
+      "activation": {
+        "type": "special",
+        "value": null,
+        "condition": "",
+        "override": true,
+        "reaction_conditions": []
+      },
+      "consumption": {
+        "scaling": {
+          "allowed": false,
+          "max": ""
+        },
+        "spell_slot": false,
+        "targets": []
+      },
+      "description": {
+        "chat_flavor": ""
+      },
+      "duration": {
+        "value": null,
+        "units": "inst",
+        "special": "",
+        "concentration": false,
+        "override": true
+      },
+      "flags": {},
+      "range": {
+        "value": null,
+        "units": "self",
+        "special": "",
+        "override": false
+      },
+      "target": {
+        "template": {
+          "count": "",
+          "contiguous": false,
+          "stationary": false,
+          "type": "sphere",
+          "size": "20",
+          "width": "",
+          "height": "",
+          "units": "ft"
+        },
+        "affects": {
+          "count": "",
+          "type": "creature",
+          "choice": false,
+          "special": ""
+        },
+        "override": true,
+        "prompt": true
+      },
+      "uses": {
+        "spent": 0,
+        "max": "",
+        "recovery": []
+      },
+      "visibility": {
+        "identifier": "",
+        "level": {
+          "min": null,
+          "max": null
+        },
+        "require_attunement": false,
+        "require_identification": false,
+        "require_magic": false
+      },
+      "effects": [],
+      "applied_effects": [],
+      "kind": "damage",
+      "damage": {
+        "critical": {
+          "allow": false,
+          "bonus": ""
+        },
+        "parts": [
+          {
+            "number": 4,
+            "denomination": 8,
+            "bonus": "",
+            "types": [
+              "force"
+            ],
+            "custom": {
+              "enabled": false,
+              "formula": ""
+            },
+            "scaling": {
+              "mode": "",
+              "number": 1,
+              "formula": ""
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "zqjAMD8POWhJMpfZ",
+      "name": "Особое",
+      "img": "",
+      "sort": 0,
+      "activation": {
+        "type": "special",
+        "value": null,
+        "condition": "",
+        "override": true,
+        "reaction_conditions": []
+      },
+      "consumption": {
+        "scaling": {
+          "allowed": false,
+          "max": ""
+        },
+        "spell_slot": false,
+        "targets": []
+      },
+      "description": {
+        "chat_flavor": ""
+      },
+      "duration": {
+        "value": null,
+        "units": "inst",
+        "special": "",
+        "concentration": false,
+        "override": true
+      },
+      "flags": {},
+      "range": {
+        "value": null,
+        "units": "self",
+        "special": "",
+        "override": true
+      },
+      "target": {
+        "template": {
+          "count": "",
+          "contiguous": false,
+          "stationary": false,
+          "type": "",
+          "size": "",
+          "width": "",
+          "height": "",
+          "units": "ft"
+        },
+        "affects": {
+          "count": "",
+          "type": "",
+          "choice": false,
+          "special": ""
+        },
+        "override": true,
+        "prompt": true
+      },
+      "uses": {
+        "spent": 0,
+        "max": "",
+        "recovery": []
+      },
+      "visibility": {
+        "identifier": "",
+        "level": {
+          "min": null,
+          "max": null
+        },
+        "require_attunement": false,
+        "require_identification": false,
+        "require_magic": false
+      },
+      "effects": [],
+      "applied_effects": [],
+      "kind": "heal",
+      "healing": {
+        "number": 4,
+        "denomination": 10,
+        "bonus": "",
+        "types": [
+          "healing"
+        ],
+        "custom": {
+          "enabled": false,
+          "formula": ""
+        },
+        "scaling": {
+          "mode": "",
+          "number": 1,
+          "formula": ""
+        }
+      }
+    }
+  ],
+  "passive_effects": [
+    {
+      "id": "FMonZnTjfZXmTjU4",
+      "name": "Буря Лей: глухота",
+      "description": "",
+      "changes": [],
+      "statuses": [
+        "deafened"
+      ],
+      "duration": {
+        "seconds": 300
+      },
+      "disabled": false,
+      "transfer": false
+    }
+  ],
+  "provenance": {
+    "source": "foundry",
+    "source_url": "https://github.com/foundryvtt/dnd5e/blob/965ad2d0cf5d063dac675ba078b5bd3c3c0dd449/packs/_source/laaru-hw-spells/Буря_Лей___Ley_Storm_zXlUA7mQei4bsY0O.yml",
+    "ingest_date": "2026-10-26",
+    "ingest_version": "foundry-translator-v1",
+    "srd_version": [
+      "5.1"
+    ],
+    "license_tag": "CC-BY-4.0"
+  },
+  "review": {
+    "known_divergence": null,
+    "requires_user_decision": false
+  },
+  "entry_kind": "spell"
+}

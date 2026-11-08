@@ -1,0 +1,139 @@
+{
+  "slug": "steal-immortality",
+  "foundry_uuid": "Compendium.dnd5e.laaru-hw-spells.Item.N5JFQ0eKn51n58iH",
+  "name": "Кража бессмертия / Steal Immortality",
+  "description": "Частью сотворения заклинания, вы должны потратить девять костей здоровья, иначе заклинание автоматически проваливается.\n\nЕсли вы это делаете, бросьте потраченные на сотворение заклинания кости здоровья и отметьте результат броска как «пункты здоровья смертного» и существо чьи ПЗ опустились до 0, которое вызвало срабатывание этого заклинания моментально умирает. Если это существо должно было вернуться на свой план существования с 0 ПЗ, то вместо этого оно уничтожается. Смените свой тип существа на тип уничтоженного существа.\n\nПока ваш тип существа изменён этим заклинанием, вы получаете невосприимчивость к состоянию &amp;reference[poisoned]{Отравление} и к болезням, вам больше не надо есть, пить или дышать, вы получаете устойчивость к немагическому урону и получаете преимущество в зависимости от вашего нового типа существа:\n\nНебожитель. Вы получаете устойчивость к лучистому и некротическому урону, а также получаете скорость полёта 30 футов.\n\nЭлементаль. Вы получаете устойчивость к урону кислотой, холодом, огнём, молнией и громом.\n\nФея. В свой ход вы можете бонусным действием стать &amp;reference[invisible]{невидимым} до начала вашего следующего хода или вы можете телепортироваться на 60 футов в любом направлении.\n\nБестия. Вы получаете устойчивость к урону холодом и огнём, а также получаете скорость полета 60 футов.\n\nНежить. Вы получаете невосприимчивость к некротическому урону и состоянию &amp;reference[charmed]{Обворожение} и &amp;reference[frightened]{Испуг}.\n\nВаш тип существа остаётся изменённым пока вы не сотворите заклинание снова, моментально заканчивая его действие или вы получите урон, который опустит ваши ПЗ до 0, что приведёт к тому, что ваш тип существа возвращается в норму и ваши ПЗ становятся равны отмеченным «пунктам здоровья смертного».",
+  "level": 9,
+  "school": "trs",
+  "components": [
+    "M",
+    "S",
+    "V"
+  ],
+  "ritual": false,
+  "concentration": false,
+  "casting_time": {
+    "unit": "reaction",
+    "value": 1,
+    "condition": "совершаемая вами, когда ПЗ существа с типом небожитель, элементаль, фея, бестия или нежить в пределах дистанции, которую вы видите, опускаются до 0"
+  },
+  "range": {
+    "units": "ft",
+    "value": 300,
+    "special": null
+  },
+  "duration": {
+    "units": "inst",
+    "value": null
+  },
+  "materials": {
+    "value": "инкрустированный самоцветами череп гуманоида, стоящий как минимум 1 000 зм, расходуемый заклинанием",
+    "consumed": true,
+    "cost": 1000,
+    "supply": 0
+  },
+  "preparation": {
+    "mode": "prepared",
+    "prepared": false
+  },
+  "activities": [
+    {
+      "id": "dnd5eactivity000",
+      "name": "",
+      "img": "",
+      "sort": 0,
+      "activation": {
+        "type": "action",
+        "value": null,
+        "condition": "",
+        "override": false,
+        "reaction_conditions": []
+      },
+      "consumption": {
+        "scaling": {
+          "allowed": false,
+          "max": ""
+        },
+        "spell_slot": true,
+        "targets": []
+      },
+      "description": {
+        "chat_flavor": ""
+      },
+      "duration": {
+        "value": null,
+        "units": "inst",
+        "special": "",
+        "concentration": false,
+        "override": false
+      },
+      "flags": {},
+      "range": {
+        "value": null,
+        "units": "self",
+        "special": "",
+        "override": false
+      },
+      "target": {
+        "template": {
+          "count": "",
+          "contiguous": false,
+          "stationary": false,
+          "type": "",
+          "size": "",
+          "width": "",
+          "height": "",
+          "units": ""
+        },
+        "affects": {
+          "count": "",
+          "type": "",
+          "choice": false,
+          "special": ""
+        },
+        "override": false,
+        "prompt": true
+      },
+      "uses": {
+        "spent": 0,
+        "max": "",
+        "recovery": []
+      },
+      "visibility": {
+        "identifier": "",
+        "level": {
+          "min": null,
+          "max": null
+        },
+        "require_attunement": false,
+        "require_identification": false,
+        "require_magic": false
+      },
+      "effects": [],
+      "applied_effects": [],
+      "kind": "utility",
+      "roll": {
+        "formula": "",
+        "name": "",
+        "prompt": false,
+        "visible": false
+      }
+    }
+  ],
+  "passive_effects": [],
+  "provenance": {
+    "source": "foundry",
+    "source_url": "https://github.com/foundryvtt/dnd5e/blob/965ad2d0cf5d063dac675ba078b5bd3c3c0dd449/packs/_source/laaru-hw-spells/Кража_бессмертия___Steal_Immortality_N5JFQ0eKn51n58iH.yml",
+    "ingest_date": "2026-10-26",
+    "ingest_version": "foundry-translator-v1",
+    "srd_version": [
+      "5.1"
+    ],
+    "license_tag": "CC-BY-4.0"
+  },
+  "review": {
+    "known_divergence": null,
+    "requires_user_decision": false
+  },
+  "entry_kind": "spell"
+}

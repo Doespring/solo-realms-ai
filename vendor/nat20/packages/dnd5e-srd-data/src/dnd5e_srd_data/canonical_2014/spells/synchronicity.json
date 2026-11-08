@@ -1,0 +1,161 @@
+{
+  "slug": "synchronicity",
+  "foundry_uuid": "Compendium.dnd5e.laaru-hw-spells.Item.VaGoWlx36H29c9bS",
+  "name": "Синхронизация / Synchronicity",
+  "description": "(Техномагия)\n\nСущество, которого вы коснулись, чувствует, как реальность подстраивается в угоду ему. Пока заклинание действует, цели не мешают какие бы то ни было повседневные задержки. На светофоре всегда горит зелёный, лифт как раз подъехал, а за углом стоит такси. Цель может бежать на полной скорости через толпу, и Внеочередные атаки по цели совершаются с помехой.\n\nЦель совершает с преимуществом проверки Ловкости (Скрытность), поскольку у неё всегда есть доступное и удобное укрытие. Кроме того, цель совершает с преимуществом все проверки характеристик при вождении транспорта.\n\nВ случае, если два существа с эффектом заклинания синхронизация встречаются, они вступают в состязание Харизмы каждый раз, когда и эффекты исключают друг друга.",
+  "level": 4,
+  "school": "enc",
+  "components": [
+    "S",
+    "V"
+  ],
+  "ritual": false,
+  "concentration": true,
+  "casting_time": {
+    "unit": "action",
+    "value": 1,
+    "condition": ""
+  },
+  "range": {
+    "units": "touch",
+    "value": null,
+    "special": null
+  },
+  "duration": {
+    "units": "hour",
+    "value": 1
+  },
+  "materials": {
+    "value": "",
+    "consumed": false,
+    "cost": 0,
+    "supply": 0
+  },
+  "preparation": {
+    "mode": "prepared",
+    "prepared": false
+  },
+  "activities": [
+    {
+      "id": "pVvWhY0aXkCX8FGo",
+      "name": "",
+      "img": "",
+      "sort": 0,
+      "activation": {
+        "type": "action",
+        "value": null,
+        "condition": "",
+        "override": false,
+        "reaction_conditions": []
+      },
+      "consumption": {
+        "scaling": {
+          "allowed": false,
+          "max": ""
+        },
+        "spell_slot": true,
+        "targets": []
+      },
+      "description": {
+        "chat_flavor": ""
+      },
+      "duration": {
+        "value": null,
+        "units": "inst",
+        "special": "",
+        "concentration": false,
+        "override": false
+      },
+      "flags": {},
+      "range": {
+        "value": null,
+        "units": "self",
+        "special": "",
+        "override": false
+      },
+      "target": {
+        "template": {
+          "count": "",
+          "contiguous": false,
+          "stationary": false,
+          "type": "",
+          "size": "",
+          "width": "",
+          "height": "",
+          "units": "ft"
+        },
+        "affects": {
+          "count": "1",
+          "type": "creature",
+          "choice": false,
+          "special": ""
+        },
+        "override": false,
+        "prompt": true
+      },
+      "uses": {
+        "spent": 0,
+        "max": "",
+        "recovery": []
+      },
+      "visibility": {
+        "identifier": "",
+        "level": {
+          "min": null,
+          "max": null
+        },
+        "require_attunement": false,
+        "require_identification": false,
+        "require_magic": false
+      },
+      "effects": [
+        {
+          "id": "bZ7sqNUr8nHiYJzf",
+          "level": {
+            "min": null,
+            "max": null
+          },
+          "on_save": null,
+          "riders": null
+        }
+      ],
+      "applied_effects": [],
+      "kind": "utility",
+      "roll": {
+        "formula": "",
+        "name": "",
+        "prompt": false,
+        "visible": false
+      }
+    }
+  ],
+  "passive_effects": [
+    {
+      "id": "bZ7sqNUr8nHiYJzf",
+      "name": "Синхронизация",
+      "description": "",
+      "changes": [],
+      "statuses": [],
+      "duration": {
+        "seconds": 3600
+      },
+      "disabled": false,
+      "transfer": false
+    }
+  ],
+  "provenance": {
+    "source": "foundry",
+    "source_url": "https://github.com/foundryvtt/dnd5e/blob/965ad2d0cf5d063dac675ba078b5bd3c3c0dd449/packs/_source/laaru-hw-spells/Синхронизация___Synchronicity_VaGoWlx36H29c9bS.yml",
+    "ingest_date": "2026-10-26",
+    "ingest_version": "foundry-translator-v1",
+    "srd_version": [
+      "5.1"
+    ],
+    "license_tag": "CC-BY-4.0"
+  },
+  "review": {
+    "known_divergence": null,
+    "requires_user_decision": false
+  },
+  "entry_kind": "spell"
+}

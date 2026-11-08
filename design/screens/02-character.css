@@ -1,0 +1,146 @@
+/* 02 — редактор героя: слева выбор, справа живой лист */
+
+body.char{padding-bottom:0}
+
+.topbar__hide-sm{font-family:var(--font-ui);font-size:13px}
+.saved{display:inline-flex;align-items:center;gap:7px;font-family:var(--font-ui);font-size:12px;color:var(--text-3)}
+.saved__dot{width:6px;height:6px;border-radius:50%;background:var(--moss)}
+
+.char__main{
+  position:relative;z-index:1;max-width:1200px;margin:0 auto;
+  padding:clamp(18px,3vw,44px) clamp(16px,4vw,40px) 40px;
+  display:grid;grid-template-columns:minmax(0,1fr) 372px;gap:clamp(24px,4vw,56px);align-items:start;
+}
+
+/* ── Левая колонка ───────────────────────────────────────────────────────── */
+.editor{min-width:0}
+.steps{display:flex;align-items:center;gap:14px;margin-bottom:22px}
+.steps__bar{display:flex;gap:4px}
+.steps__bar i{display:block;width:26px;height:2px;background:#3A3128}
+.steps__bar i.is-done{background:#6E6455}
+.steps__bar i.is-current{background:var(--candle)}
+
+.editor .h1{margin-bottom:12px}
+.editor__lead{max-width:34ch;margin-bottom:34px}
+
+.editor__name{margin-bottom:34px;max-width:420px}
+
+.group{margin-bottom:36px;padding-top:24px;border-top:1px solid #2A231B}
+.group__head{display:flex;align-items:baseline;justify-content:space-between;gap:16px;margin-bottom:12px;flex-wrap:wrap}
+.group__head .hint{font-size:11.5px}
+
+.choices--2{grid-template-columns:repeat(2,minmax(0,1fr));gap:0 24px}
+
+/* Характеристики: строка на каждую, число крупно, кнопки по 36 px */
+.points b{color:var(--text-2);font-weight:700}
+.stats{display:grid;gap:0}
+.stat{
+  display:grid;grid-template-columns:minmax(0,1fr) 48px auto;align-items:center;gap:12px;
+  padding:9px 0;border-bottom:1px solid #262019;
+}
+.stat__name{font-family:var(--font-ui);font-size:13px;letter-spacing:.04em;color:var(--text-2)}
+.stat__mod{
+  font-family:var(--font-ui);font-size:13px;font-weight:700;color:var(--text-3);
+  font-variant-numeric:tabular-nums;text-align:right;
+}
+.stat__score{display:flex;align-items:center;gap:2px}
+.stat__score b{
+  min-width:38px;text-align:center;font-family:var(--font-book);font-size:24px;font-weight:400;
+  color:var(--text);font-variant-numeric:tabular-nums;
+}
+.stat__btn{
+  width:36px;height:36px;border:1px solid var(--line);border-radius:var(--radius);
+  background:#1B1711;color:var(--text-2);font-family:var(--font-ui);font-size:16px;line-height:1;
+  cursor:pointer;transition:background .15s,border-color .15s,color .15s;
+}
+.stat__btn:hover:not(:disabled){background:var(--ink-750);border-color:var(--line-strong);color:var(--text)}
+.stat__btn:disabled{opacity:.28;cursor:not-allowed}
+.stats__hint{margin-top:14px;max-width:46ch}
+
+/* ── Лист героя на бумаге ────────────────────────────────────────────────── */
+.sheet--hero{
+  position:sticky;top:88px;padding:26px 26px 30px;
+  --paper-accent:#8A5F2E;
+}
+.sheet__head{padding-bottom:16px;border-bottom:1px solid var(--paper-line)}
+.sheet__name{font-family:var(--font-book);font-size:30px;line-height:1.1;margin:8px 0 4px;color:var(--ink-on-paper)}
+.sheet__meta{font-family:var(--font-ui);font-size:11.5px;letter-spacing:.02em;color:var(--ink-on-paper-2)}
+
+.sheet__stats{display:grid;grid-template-columns:repeat(4,1fr);gap:0;padding:16px 0;border-bottom:1px solid var(--paper-line)}
+.sheet__stats > div{
+  display:grid;gap:3px;padding:0 8px;border-left:1px solid #00000014;
+  font-family:var(--font-ui);font-size:12px;color:var(--ink-on-paper-2);
+}
+.sheet__stats > div:first-child{border-left:0;padding-left:0}
+.sheet__stat-label{font-size:9.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-on-paper-3)}
+.sheet__stat{font-family:var(--font-book);font-size:22px;font-weight:500;color:var(--ink-on-paper);line-height:1.05}
+
+.sheet__abilities{display:grid;grid-template-columns:repeat(3,1fr);gap:0;padding:14px 0;border-bottom:1px solid var(--paper-line)}
+.sheet__abilities > div{display:grid;gap:2px;padding:5px 8px 5px 0}
+.sheet__abilities span{font-family:var(--font-ui);font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-on-paper-3)}
+.sheet__abilities b{font-family:var(--font-book);font-size:19px;font-weight:500;color:var(--ink-on-paper);font-variant-numeric:tabular-nums}
+
+.sheet__block{padding-top:16px}
+.sheet__h{font-family:var(--font-ui);font-size:10px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#6E5C42;margin-bottom:8px}
+.sheet__list{display:grid;gap:0}
+.sheet__list li{
+  display:flex;align-items:center;gap:10px;justify-content:space-between;
+  padding:6px 0;border-bottom:1px dotted #0000001F;
+  font-family:var(--font-ui);font-size:12.5px;color:#3E3527;
+}
+.sheet__list b{font-weight:700;color:var(--ink-on-paper);font-variant-numeric:tabular-nums}
+.sheet__list--plain li{justify-content:flex-start;gap:9px;color:#453B2B}
+.sheet__list .icon{color:#7A6647;width:16px;height:16px}
+.sheet__note{
+  margin-top:18px;font-family:var(--font-ui);font-size:11px;line-height:1.55;font-style:normal;
+  color:#6B5941;padding-top:12px;border-top:1px solid var(--paper-line);
+}
+.sheet__folio{
+  position:absolute;right:26px;bottom:10px;font-family:var(--font-book);font-style:italic;font-size:12px;color:#7E6A4C;
+}
+
+/* ── Итоговые действия и компактный лист для телефона ────────────────────── */
+.char__end{
+  max-width:1200px;margin:0 auto;padding:0 clamp(16px,4vw,40px) 44px;
+  display:flex;justify-content:flex-end;gap:10px;flex-wrap:wrap;
+}
+.attrib--tight{max-width:1200px;margin:0 auto;padding:0 clamp(16px,4vw,40px) 34px;text-align:right;font-size:10.5px;color:#8A7D69}
+.mini{display:none}
+.mini__name{font-family:var(--font-book);font-size:17px;color:var(--text);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:12ch}
+.mini span{display:inline-flex;align-items:center;gap:5px;font-family:var(--font-ui);font-size:12px;color:var(--text-3)}
+.mini b{color:var(--text);font-weight:700;font-variant-numeric:tabular-nums}
+
+/* ── Адаптив ─────────────────────────────────────────────────────────────── */
+@media (max-width:1023px){
+  .char__main{grid-template-columns:minmax(0,1fr);gap:32px}
+  .sheet--hero{position:static;max-width:560px}
+  .mini{
+    display:flex;position:sticky;top:64px;z-index:25;align-items:center;gap:14px;
+    padding:8px 16px;background:#17130FF5;border-bottom:1px solid var(--line);
+    backdrop-filter:blur(8px);
+  }
+}
+@media (max-width:760px){
+  .char__main{padding:14px 16px 24px}
+  .stats__hint{margin-bottom:6px}
+  .group{margin-bottom:28px;padding-top:20px}
+  .group__head .hint{font-size:11px}
+  .choices--2{grid-template-columns:minmax(0,1fr);gap:0}
+  .stat{grid-template-columns:minmax(0,1fr) 36px auto;gap:8px;padding:7px 0}
+  .stat__btn{width:40px;height:40px}
+  .stat__score b{font-size:22px;min-width:34px}
+  .sheet--hero{padding:22px 20px 28px}
+  .sheet__stats{grid-template-columns:repeat(2,1fr);gap:12px 0}
+  .sheet__stats > div:nth-child(3){border-left:0;padding-left:0}
+  .sheet__abilities{grid-template-columns:repeat(2,1fr)}
+  .char__end{flex-direction:column-reverse;padding:0 16px 28px}
+  .char__end .btn{width:100%}
+  .attrib--tight{text-align:left;padding:0 16px 24px;font-size:9.5px}
+  .mini{gap:12px;top:56px}
+  .saved{display:none}
+  .topbar__hide-sm{display:none}
+  .topbar__title{font-size:15px}
+}
+@media (max-width:400px){
+  .mini span:nth-child(4){display:none}
+}

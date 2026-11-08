@@ -1,0 +1,121 @@
+{
+  "slug": "circle-of-the-sea",
+  "name": "Circle of the Sea",
+  "description": "Druids of the Circle of the Sea channel the power of waves, tides, and storms. They feel the call of the ocean and answer it with fury and grace in equal measure.",
+  "identifier": "circle-of-the-sea",
+  "class_identifier": "druid",
+  "spellcasting": {
+    "ability": "",
+    "progression": "none"
+  },
+  "advancement": [
+    {
+      "id": "33e0a837",
+      "type": "ItemGrant",
+      "level": 3,
+      "title": "Features",
+      "hint": "",
+      "class_restriction": "",
+      "configuration": {
+        "items": [
+          {
+            "uuid": "phb2024.circle-of-the-sea-spells",
+            "optional": false
+          }
+        ],
+        "optional": false
+      },
+      "value": {}
+    },
+    {
+      "id": "a217f4b9",
+      "type": "ItemGrant",
+      "level": 3,
+      "title": "Features",
+      "hint": "",
+      "class_restriction": "",
+      "configuration": {
+        "items": [
+          {
+            "uuid": "phb2024.wrath-of-the-sea",
+            "optional": false
+          }
+        ],
+        "optional": false
+      },
+      "value": {}
+    },
+    {
+      "id": "4d086444",
+      "type": "ItemGrant",
+      "level": 6,
+      "title": "Features",
+      "hint": "",
+      "class_restriction": "",
+      "configuration": {
+        "items": [
+          {
+            "uuid": "phb2024.aquatic-affinity",
+            "optional": false
+          }
+        ],
+        "optional": false
+      },
+      "value": {}
+    },
+    {
+      "id": "d89592f3",
+      "type": "ItemGrant",
+      "level": 10,
+      "title": "Features",
+      "hint": "",
+      "class_restriction": "",
+      "configuration": {
+        "items": [
+          {
+            "uuid": "phb2024.stormborn",
+            "optional": false
+          }
+        ],
+        "optional": false
+      },
+      "value": {}
+    },
+    {
+      "id": "29e48e34",
+      "type": "ItemGrant",
+      "level": 14,
+      "title": "Features",
+      "hint": "",
+      "class_restriction": "",
+      "configuration": {
+        "items": [
+          {
+            "uuid": "phb2024.oceanic-gift",
+            "optional": false
+          }
+        ],
+        "optional": false
+      },
+      "value": {}
+    }
+  ],
+  "granted_features": [],
+  "feature_choices": [],
+  "provenance": {
+    "source": "foundry",
+    "source_url": "https://www.dndbeyond.com/sources/dnd/phb-2024",
+    "ingest_date": "2026-10-26",
+    "ingest_version": "phb-2024-manual-v1",
+    "srd_version": [
+      "5.2"
+    ],
+    "license_tag": "CC-BY-4.0"
+  },
+  "review": {
+    "requires_user_decision": false,
+    "known_divergence": null,
+    "notes": "authored from PHB 2024 book text"
+  },
+  "entry_kind": "subclass"
+}

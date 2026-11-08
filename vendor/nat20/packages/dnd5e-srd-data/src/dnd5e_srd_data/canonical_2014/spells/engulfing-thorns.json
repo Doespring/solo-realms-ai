@@ -1,0 +1,291 @@
+{
+  "slug": "engulfing-thorns",
+  "foundry_uuid": "Compendium.dnd5e.laaru-hw-spells.Item.s7nM0WixK3NLOIGX",
+  "name": "Заросли терновника / Engulfing Thorns",
+  "description": "Вы вызываете шипастые лозы, которые растут по выбранному направлению от вас вдоль линии шириной 5 футов и длиной 10 футов, оплетая все, на своем пути, делая местность пересечённой. В начале каждого вашего хода эта линия удлиняется на 5 футов в том же направлении.\n\nКогда существо впервые за ход входит в эту область или начинает ход в ней, оно должно пройти испытание Ловкости, иначе получит [[/damage 2d6 piercing]]{2d6 колющего урона} и станет &amp;Reference[restrained]{обездвижено} лозами до окончания действия заклинания. В начале своего хода обездвиженное лозами существо получает [[/damage 2d6 piercing]]{2d6 колющего урона} и сдвигается на 5 футов по направлению роста лоз.\n\nСущество, обездвиженное лозами, может действием совершить проверку Силы или Ловкости по своему выбору, против СЛ испытания от ваших заклинаний. При успехе оно освобождает себя.",
+  "level": 3,
+  "school": "con",
+  "components": [
+    "M",
+    "S",
+    "V"
+  ],
+  "ritual": false,
+  "concentration": true,
+  "casting_time": {
+    "unit": "action",
+    "value": 1,
+    "condition": ""
+  },
+  "range": {
+    "units": "ft",
+    "value": 10,
+    "special": null
+  },
+  "duration": {
+    "units": "minute",
+    "value": 1
+  },
+  "materials": {
+    "value": "шип розы",
+    "consumed": false,
+    "cost": 0,
+    "supply": 0
+  },
+  "preparation": {
+    "mode": "prepared",
+    "prepared": false
+  },
+  "activities": [
+    {
+      "id": "fReRil3irevIBvUt",
+      "name": "",
+      "img": "",
+      "sort": 0,
+      "activation": {
+        "type": "action",
+        "value": null,
+        "condition": "",
+        "override": false,
+        "reaction_conditions": []
+      },
+      "consumption": {
+        "scaling": {
+          "allowed": false,
+          "max": ""
+        },
+        "spell_slot": true,
+        "targets": []
+      },
+      "description": {
+        "chat_flavor": ""
+      },
+      "duration": {
+        "value": null,
+        "units": "inst",
+        "special": "",
+        "concentration": false,
+        "override": false
+      },
+      "flags": {},
+      "range": {
+        "value": null,
+        "units": "self",
+        "special": "",
+        "override": false
+      },
+      "target": {
+        "template": {
+          "count": "",
+          "contiguous": false,
+          "stationary": false,
+          "type": "line",
+          "size": "10",
+          "width": "5",
+          "height": "",
+          "units": "ft"
+        },
+        "affects": {
+          "count": "",
+          "type": "",
+          "choice": false,
+          "special": ""
+        },
+        "override": false,
+        "prompt": true
+      },
+      "uses": {
+        "spent": 0,
+        "max": "",
+        "recovery": []
+      },
+      "visibility": {
+        "identifier": "",
+        "level": {
+          "min": null,
+          "max": null
+        },
+        "require_attunement": false,
+        "require_identification": false,
+        "require_magic": false
+      },
+      "effects": [
+        {
+          "id": "QNBY09LklLQxUAK0",
+          "level": {
+            "min": null,
+            "max": null
+          },
+          "on_save": false,
+          "riders": null
+        }
+      ],
+      "applied_effects": [],
+      "kind": "save",
+      "damage": {
+        "on_save": "half",
+        "parts": [
+          {
+            "number": 2,
+            "denomination": 6,
+            "bonus": "",
+            "types": [
+              "piercing"
+            ],
+            "custom": {
+              "enabled": false,
+              "formula": ""
+            },
+            "scaling": {
+              "mode": "",
+              "number": 1,
+              "formula": ""
+            }
+          }
+        ]
+      },
+      "save": {
+        "ability": [
+          "dex"
+        ],
+        "dc": {
+          "calculation": "spellcasting",
+          "formula": ""
+        },
+        "ignore_cover": false
+      }
+    },
+    {
+      "id": "dftoMLFHhqT9sLOV",
+      "name": "",
+      "img": "",
+      "sort": 0,
+      "activation": {
+        "type": "special",
+        "value": null,
+        "condition": "",
+        "override": true,
+        "reaction_conditions": []
+      },
+      "consumption": {
+        "scaling": {
+          "allowed": false,
+          "max": ""
+        },
+        "spell_slot": false,
+        "targets": []
+      },
+      "description": {
+        "chat_flavor": ""
+      },
+      "duration": {
+        "value": null,
+        "units": "inst",
+        "special": "",
+        "concentration": false,
+        "override": true
+      },
+      "flags": {},
+      "range": {
+        "value": null,
+        "units": "any",
+        "special": "",
+        "override": true
+      },
+      "target": {
+        "template": {
+          "count": "",
+          "contiguous": false,
+          "stationary": false,
+          "type": "",
+          "size": "",
+          "width": "",
+          "height": "",
+          "units": "ft"
+        },
+        "affects": {
+          "count": "",
+          "type": "creature",
+          "choice": false,
+          "special": ""
+        },
+        "override": true,
+        "prompt": true
+      },
+      "uses": {
+        "spent": 0,
+        "max": "",
+        "recovery": []
+      },
+      "visibility": {
+        "identifier": "",
+        "level": {
+          "min": null,
+          "max": null
+        },
+        "require_attunement": false,
+        "require_identification": false,
+        "require_magic": false
+      },
+      "effects": [],
+      "applied_effects": [],
+      "kind": "damage",
+      "damage": {
+        "critical": {
+          "allow": false,
+          "bonus": ""
+        },
+        "parts": [
+          {
+            "number": 2,
+            "denomination": 6,
+            "bonus": "",
+            "types": [
+              "piercing"
+            ],
+            "custom": {
+              "enabled": false,
+              "formula": ""
+            },
+            "scaling": {
+              "mode": "",
+              "number": 1,
+              "formula": ""
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "passive_effects": [
+    {
+      "id": "QNBY09LklLQxUAK0",
+      "name": "Заросли терновника: обездвиженность",
+      "description": "",
+      "changes": [],
+      "statuses": [
+        "restrained"
+      ],
+      "duration": {
+        "seconds": 60
+      },
+      "disabled": false,
+      "transfer": false
+    }
+  ],
+  "provenance": {
+    "source": "foundry",
+    "source_url": "https://github.com/foundryvtt/dnd5e/blob/965ad2d0cf5d063dac675ba078b5bd3c3c0dd449/packs/_source/laaru-hw-spells/Заросли_терновника___Engulfing_Thorns_s7nM0WixK3NLOIGX.yml",
+    "ingest_date": "2026-10-26",
+    "ingest_version": "foundry-translator-v1",
+    "srd_version": [
+      "5.1"
+    ],
+    "license_tag": "CC-BY-4.0"
+  },
+  "review": {
+    "known_divergence": null,
+    "requires_user_decision": false
+  },
+  "entry_kind": "spell"
+}

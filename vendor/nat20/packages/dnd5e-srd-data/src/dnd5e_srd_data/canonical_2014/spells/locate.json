@@ -1,0 +1,135 @@
+{
+  "slug": "locate",
+  "foundry_uuid": "Compendium.dnd5e.laaru-hw-spells.Item.bpx6GVWgOGSawv2c",
+  "name": "Поиск / Locate",
+  "description": "Опишите предмет, который вы видели в радиусе 30 футов хотя бы раз, или опишите предмет определенного типа, например книгу, ключ или меч. Если предмет находится в радиусе 1000 футов, реагент этого заклинания указывает на него, как на компас. Если предмет находится в движении, он указывает на него до тех пор, пока остается в пределах досягаемости.\n\nЭто заклинание не может найти цель, если какое-либо количество свинца или поток проточной воды блокируют прямую линию к цели.\n\nНа высоких кругах. Когда вы творите это заклинание, используя ячейку заклинания 3-го круга или выше, дальность действия заклинания увеличивается на 1000 футов за каждый круг ячейки заклинания выше 2-го круга.\n\nЕсли вы творите это заклинание, используя ячейку заклинания 4-го круга или выше, вы можете описать конкретное существо, которое вы видели, или тип существ, вместо объекта, отслеживая его таким же образом.",
+  "level": 2,
+  "school": "div",
+  "components": [],
+  "ritual": false,
+  "concentration": false,
+  "casting_time": {
+    "unit": "action",
+    "value": 1,
+    "condition": ""
+  },
+  "range": {
+    "units": "self",
+    "value": 0,
+    "special": null
+  },
+  "duration": {
+    "units": "hour",
+    "value": 1
+  },
+  "materials": {
+    "value": "магнит, окунутый в святую воду",
+    "consumed": false,
+    "cost": 0,
+    "supply": 0
+  },
+  "preparation": {
+    "mode": "prepared",
+    "prepared": false
+  },
+  "activities": [
+    {
+      "id": "dnd5eactivity000",
+      "name": "",
+      "img": "",
+      "sort": 0,
+      "activation": {
+        "type": "action",
+        "value": null,
+        "condition": "",
+        "override": false,
+        "reaction_conditions": []
+      },
+      "consumption": {
+        "scaling": {
+          "allowed": false,
+          "max": ""
+        },
+        "spell_slot": true,
+        "targets": []
+      },
+      "description": {
+        "chat_flavor": ""
+      },
+      "duration": {
+        "value": null,
+        "units": "inst",
+        "special": "",
+        "concentration": false,
+        "override": false
+      },
+      "flags": {},
+      "range": {
+        "value": null,
+        "units": "self",
+        "special": "",
+        "override": false
+      },
+      "target": {
+        "template": {
+          "count": "",
+          "contiguous": false,
+          "stationary": false,
+          "type": "",
+          "size": "",
+          "width": "",
+          "height": "",
+          "units": "self"
+        },
+        "affects": {
+          "count": "1",
+          "type": "object",
+          "choice": false,
+          "special": ""
+        },
+        "override": false,
+        "prompt": true
+      },
+      "uses": {
+        "spent": 0,
+        "max": "",
+        "recovery": []
+      },
+      "visibility": {
+        "identifier": "",
+        "level": {
+          "min": null,
+          "max": null
+        },
+        "require_attunement": false,
+        "require_identification": false,
+        "require_magic": false
+      },
+      "effects": [],
+      "applied_effects": [],
+      "kind": "utility",
+      "roll": {
+        "formula": "",
+        "name": "",
+        "prompt": false,
+        "visible": false
+      }
+    }
+  ],
+  "passive_effects": [],
+  "provenance": {
+    "source": "foundry",
+    "source_url": "https://github.com/foundryvtt/dnd5e/blob/965ad2d0cf5d063dac675ba078b5bd3c3c0dd449/packs/_source/laaru-hw-spells/Поиск___Locate_bpx6GVWgOGSawv2c.yml",
+    "ingest_date": "2026-10-26",
+    "ingest_version": "foundry-translator-v1",
+    "srd_version": [
+      "5.1"
+    ],
+    "license_tag": "CC-BY-4.0"
+  },
+  "review": {
+    "known_divergence": null,
+    "requires_user_decision": false
+  },
+  "entry_kind": "spell"
+}

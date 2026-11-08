@@ -1,0 +1,189 @@
+{
+  "slug": "wild-shape",
+  "name": "Wild Shape",
+  "description": "Starting at 2nd level, you can use your action to magically assume the shape of a beast that you have seen before. You can use this feature twice. You regain expended uses when you finish a short or long rest.\n\nYour druid level determines the beasts you can transform into, as shown in the Beast Shapes table. At 2nd level, for example, you can transform into any beast that has a challenge rating of 1/4 or lower that doesn't have a flying or swimming speed.\n\nBeast Shapes\n\nLevel\n\nMax. CR\n\nLimitations\n\nExample\n\n2nd\n\n1/4\n\nNo flying or swimming speed\n\nWolf\n\n4th\n\n1/2\n\nNo flying speed\n\nCrocodile\n\n8th\n\n1\n\n—\n\nGiant Eagle\n\nYou can stay in a beast shape for a number of hours equal to half your druid level (rounded down). You then revert to your normal form unless you expend another use of this feature. You can revert to your normal form earlier by using a bonus action on your turn. You automatically revert if you fall unconscious, drop to 0 hit points, or die.\n\nWhile you are transformed, the following rules apply:\n\nYour game statistics are replaced by the statistics of the beast, but you retain your alignment, personality, and Intelligence, Wisdom, and Charisma scores. You also retain all of your skill and saving throw proficiencies, in addition to gaining those of the creature. If the creature has the same proficiency as you and the bonus in its stat block is higher than yours, use the creature's bonus instead of yours. If the creature has any legendary or lair actions, you can't use them.\n\nWhen you transform, you assume the beast's hit points and Hit Dice. When you revert to your normal form, you return to the number of hit points you had before you transformed. However, if you revert as a result of dropping to 0 hit points, any excess damage carries over to your normal form. For example, if you take 10 damage in animal form and have only 1 hit point left, you revert and take 9 damage. As long as the excess damage doesn't reduce your normal form to 0 hit points, you aren't knocked unconscious.\n\nYou can't cast spells, and your ability to speak or take any action that requires hands is limited to the capabilities of your beast form. Transforming doesn't break your concentration on a spell you've already cast, however, or prevent you from taking actions that are part of a spell, such as call lightning, that you've already cast.\n\nYou retain the benefit of any features from your class, race, or other source and can use them if the new form is physically capable of doing so. However, you can't use any of your special senses, such as darkvision, unless your new form also has that sense.\n\nYou choose whether your equipment falls to the ground in your space, merges into your new form, or is worn by it. Worn equipment functions as normal, but the GM decides whether it is practical for the new form to wear a piece of equipment, based on the creature's shape and size. Your equipment doesn't change size or shape to match the new form, and any equipment that the new form can't wear must either fall to the ground or merge with it. Equipment that merges with the form has no effect until you leave the form.",
+  "feature_type": "class_feature",
+  "foundry_id": "swK0r5TOIxredxWS",
+  "source_slug": "druid",
+  "activities": [
+    {
+      "id": "dnd5eactivity000",
+      "name": "",
+      "img": "",
+      "sort": 0,
+      "activation": {
+        "type": "action",
+        "value": 1,
+        "condition": "",
+        "override": false,
+        "reaction_conditions": []
+      },
+      "consumption": {
+        "scaling": {
+          "allowed": false,
+          "max": ""
+        },
+        "spell_slot": true,
+        "targets": [
+          {
+            "type": "itemUses",
+            "target": "",
+            "value": "1",
+            "scaling": {
+              "mode": "",
+              "formula": ""
+            }
+          }
+        ]
+      },
+      "description": {
+        "chat_flavor": ""
+      },
+      "duration": {
+        "value": "floor(@classes.druid.levels / 2)",
+        "units": "hour",
+        "special": "",
+        "concentration": false,
+        "override": false
+      },
+      "flags": {},
+      "range": {
+        "value": null,
+        "units": "self",
+        "special": "",
+        "override": false
+      },
+      "target": {
+        "template": {
+          "count": "",
+          "contiguous": false,
+          "stationary": false,
+          "type": "",
+          "size": "",
+          "width": "",
+          "height": "",
+          "units": ""
+        },
+        "affects": {
+          "count": "",
+          "type": "self",
+          "choice": false,
+          "special": ""
+        },
+        "override": false,
+        "prompt": true
+      },
+      "uses": {
+        "spent": 0,
+        "max": "",
+        "recovery": []
+      },
+      "visibility": {
+        "identifier": "",
+        "level": {
+          "min": null,
+          "max": null
+        },
+        "require_attunement": false,
+        "require_identification": false,
+        "require_magic": false
+      },
+      "effects": [],
+      "applied_effects": [],
+      "kind": "transform",
+      "profiles": [
+        {
+          "id": "ZpU9q522gmEoHq0Z",
+          "cr": "0.25",
+          "level": {
+            "min": null,
+            "max": 3
+          },
+          "movement": [
+            "fly",
+            "swim"
+          ],
+          "name": "CR ¼",
+          "sizes": [],
+          "types": [
+            "beast"
+          ],
+          "uuid": ""
+        },
+        {
+          "id": "mnIE9O2DcYdFKlM7",
+          "cr": "0.5",
+          "level": {
+            "min": 4,
+            "max": 7
+          },
+          "movement": [
+            "fly"
+          ],
+          "name": "CR ½",
+          "sizes": [],
+          "types": [
+            "beast"
+          ],
+          "uuid": ""
+        },
+        {
+          "id": "nGveIM1zZpa21W33",
+          "cr": "1",
+          "level": {
+            "min": 8,
+            "max": null
+          },
+          "movement": [],
+          "name": "CR 1",
+          "sizes": [],
+          "types": [
+            "beast"
+          ],
+          "uuid": ""
+        }
+      ],
+      "roll": {
+        "formula": "",
+        "name": "",
+        "prompt": false,
+        "visible": false
+      },
+      "settings": null,
+      "transform": {
+        "customize": false,
+        "mode": "cr",
+        "preset": "wildshape",
+        "identifier": "druid"
+      }
+    }
+  ],
+  "passive_effects": [],
+  "advancement": [],
+  "uses": {
+    "max": "@scale.druid.wild-shape-uses",
+    "spent": 0,
+    "recovery": [
+      {
+        "period": "sr",
+        "type": "recoverAll",
+        "formula": ""
+      }
+    ]
+  },
+  "provenance": {
+    "source": "foundry",
+    "source_url": "https://github.com/foundryvtt/dnd5e/blob/965ad2d0cf5d063dac675ba078b5bd3c3c0dd449/packs/_source/classfeatures/Wild_Shape_swK0r5TOIxredxWS.yml",
+    "ingest_date": "2026-10-26",
+    "ingest_version": "foundry-translator-v1",
+    "srd_version": [
+      "5.1"
+    ],
+    "license_tag": "CC-BY-4.0"
+  },
+  "review": {
+    "known_divergence": null,
+    "requires_user_decision": false
+  },
+  "entry_kind": "feature"
+}

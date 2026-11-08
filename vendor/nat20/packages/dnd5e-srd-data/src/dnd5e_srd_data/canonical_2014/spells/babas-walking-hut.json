@@ -1,0 +1,188 @@
+{
+  "slug": "babas-walking-hut",
+  "foundry_uuid": "Compendium.dnd5e.laaru-hw-spells.Item.OmOclIWF6GlXxnwu",
+  "name": "Ходячая избушка Бабы-Яги / Baba’s Walking Hut",
+  "description": "Вы касаетесь хижины, избушки или другого строения размером не более 15 футов в длину, 15 футов в ширину и 10 футов в высоту. По завершении сотворения заклинания у строения вырастают ноги, достаточно большие, чтобы поддерживать его, а также появляется структурная целостность, необходимая для того, чтобы стоять и двигаться, и оно становится существом исполинского размера. Оно имеет 250 пунктов здоровья, КБ 12 и скорость ходьбы 20 футов. Если его пункты здоровья опускаются до 0, заклинание заканчивается.\n\nВ свой ход вы можете приказать ему двигаться (действие не требуется), и оно будет продолжать двигаться по вашему указанию, пока вы не прикажете ему остановиться или пока оно не достигнет места назначения. Оно не может совершать никаких действий, но если оно проходит над Крупным или меньшим существом, вы можете приказать ему попытаться наступить на это существо, и это существо должно преуспеть в испытании Ловкости, иначе оно получит [[/damage 2d10 bludgeoning]]{2d10 дробящего урона} и будет &amp;Reference[prone]{распластано}.\n\nЕсли вы сотворяете это заклинание на одно и то же строение каждый день в течение года, заклинание длится, пока не будет рассеяно, или пока вы не сотворите его на другое строение.",
+  "level": 6,
+  "school": "trs",
+  "components": [
+    "M",
+    "S",
+    "V"
+  ],
+  "ritual": false,
+  "concentration": false,
+  "casting_time": {
+    "unit": "minute",
+    "value": 10,
+    "condition": ""
+  },
+  "range": {
+    "units": "touch",
+    "value": null,
+    "special": null
+  },
+  "duration": {
+    "units": "hour",
+    "value": 24
+  },
+  "materials": {
+    "value": "куриная ножка",
+    "consumed": false,
+    "cost": 0,
+    "supply": 0
+  },
+  "preparation": {
+    "mode": "prepared",
+    "prepared": false
+  },
+  "activities": [
+    {
+      "id": "dnd5eactivity000",
+      "name": "",
+      "img": "",
+      "sort": 0,
+      "activation": {
+        "type": "action",
+        "value": null,
+        "condition": "",
+        "override": false,
+        "reaction_conditions": []
+      },
+      "consumption": {
+        "scaling": {
+          "allowed": false,
+          "max": ""
+        },
+        "spell_slot": true,
+        "targets": []
+      },
+      "description": {
+        "chat_flavor": ""
+      },
+      "duration": {
+        "value": null,
+        "units": "inst",
+        "special": "",
+        "concentration": false,
+        "override": false
+      },
+      "flags": {},
+      "range": {
+        "value": null,
+        "units": "self",
+        "special": "",
+        "override": false
+      },
+      "target": {
+        "template": {
+          "count": "",
+          "contiguous": false,
+          "stationary": false,
+          "type": "",
+          "size": "",
+          "width": "",
+          "height": "",
+          "units": "ft"
+        },
+        "affects": {
+          "count": "",
+          "type": "creature",
+          "choice": false,
+          "special": ""
+        },
+        "override": true,
+        "prompt": true
+      },
+      "uses": {
+        "spent": 0,
+        "max": "",
+        "recovery": []
+      },
+      "visibility": {
+        "identifier": "",
+        "level": {
+          "min": null,
+          "max": null
+        },
+        "require_attunement": false,
+        "require_identification": false,
+        "require_magic": false
+      },
+      "effects": [
+        {
+          "id": "bpSQSj0VBIHTXniD",
+          "level": {
+            "min": null,
+            "max": null
+          },
+          "on_save": false,
+          "riders": null
+        }
+      ],
+      "applied_effects": [],
+      "kind": "save",
+      "damage": {
+        "on_save": "half",
+        "parts": [
+          {
+            "number": 2,
+            "denomination": 10,
+            "bonus": "",
+            "types": [
+              "bludgeoning"
+            ],
+            "custom": {
+              "enabled": false,
+              "formula": ""
+            },
+            "scaling": {
+              "mode": "",
+              "number": 1,
+              "formula": ""
+            }
+          }
+        ]
+      },
+      "save": {
+        "ability": [
+          "dex"
+        ],
+        "dc": {
+          "calculation": "spellcasting",
+          "formula": ""
+        },
+        "ignore_cover": false
+      }
+    }
+  ],
+  "passive_effects": [
+    {
+      "id": "bpSQSj0VBIHTXniD",
+      "name": "Ходячая избушка Бабы-Яги / Baba’s Walking Hut",
+      "description": "",
+      "changes": [],
+      "statuses": [
+        "prone"
+      ],
+      "duration": null,
+      "disabled": false,
+      "transfer": false
+    }
+  ],
+  "provenance": {
+    "source": "foundry",
+    "source_url": "https://github.com/foundryvtt/dnd5e/blob/965ad2d0cf5d063dac675ba078b5bd3c3c0dd449/packs/_source/laaru-hw-spells/Ходячая_избушка_Бабы_Яги___Baba_s_Walking_Hut_OmOclIWF6GlXxnwu.yml",
+    "ingest_date": "2026-10-26",
+    "ingest_version": "foundry-translator-v1",
+    "srd_version": [
+      "5.1"
+    ],
+    "license_tag": "CC-BY-4.0"
+  },
+  "review": {
+    "known_divergence": null,
+    "requires_user_decision": false
+  },
+  "entry_kind": "spell"
+}

@@ -1,0 +1,191 @@
+{
+  "activities": [
+    {
+      "activation": {
+        "condition": "",
+        "override": false,
+        "reaction_conditions": [],
+        "type": "action",
+        "value": null
+      },
+      "applied_effects": [],
+      "consumption": {
+        "scaling": {
+          "allowed": false,
+          "max": ""
+        },
+        "spell_slot": true,
+        "targets": []
+      },
+      "description": {
+        "chat_flavor": ""
+      },
+      "duration": {
+        "concentration": false,
+        "override": false,
+        "special": "",
+        "units": "inst",
+        "value": null
+      },
+      "effects": [
+        {
+          "id": "iopwvJrcnzObDYSR",
+          "level": {
+            "max": null,
+            "min": null
+          },
+          "on_save": null,
+          "riders": {
+            "activity": [],
+            "effect": [],
+            "item": []
+          }
+        }
+      ],
+      "enchant": {
+        "identifier": "",
+        "self": false
+      },
+      "flags": {},
+      "id": "XrCgd1NYy3kQqFsp",
+      "img": "",
+      "kind": "enchant",
+      "name": "Mithral Armor",
+      "range": {
+        "override": false,
+        "special": "",
+        "units": "self",
+        "value": null
+      },
+      "restrictions": {
+        "allow_magical": false,
+        "categories": [],
+        "properties": [],
+        "type": ""
+      },
+      "sort": 0,
+      "target": {
+        "affects": {
+          "choice": false,
+          "count": "",
+          "special": "",
+          "type": ""
+        },
+        "override": false,
+        "prompt": true,
+        "template": {
+          "contiguous": false,
+          "count": "",
+          "height": "",
+          "size": "",
+          "stationary": false,
+          "type": "",
+          "units": "ft",
+          "width": ""
+        }
+      },
+      "uses": {
+        "max": "",
+        "recovery": [],
+        "spent": 0
+      },
+      "visibility": {
+        "identifier": "",
+        "level": {
+          "max": null,
+          "min": null
+        },
+        "require_attunement": false,
+        "require_identification": false,
+        "require_magic": false
+      }
+    }
+  ],
+  "armor_category": "light",
+  "attunement_constraint": null,
+  "base_ac": 10,
+  "cost_gp": 400.0,
+  "description": "Armor (Any Medium or Heavy, Except Hide Armor), Uncommon\n\nMithral is a light, flexible metal. Armor made of this substance can be worn under normal clothes. If the armor normally imposes Disadvantage on Dexterity (Stealth) checks or has a Strength requirement, the mithral version of the armor doesn't.\n\n@Embed[Compendium.dnd5e.content24.JournalEntry.dmgFoundryRefere.JournalEntryPage.Ok4iCgD25ENgoRxE cite=false caption=false classes=\"hide-in-embed\"]",
+  "description_localized": "<p>Мифрал – лёгкий и гибкий металл. Мифральную кольчужную рубаху или нагрудник можно носить под обычной одеждой.</p><p>Если броня должна давать помеху к проверкам Ловкости (Скрытность) или требует определённого значения Силы, то с мифральным вариантом таких проблем нет.</p><p>Этот доспех имеет следующие варианты:</p><ul><li><p>@UUID[Compendium.laaru-dnd5-hw.items.YS9CRHg2yQlOVi3j]{Мифральная кольчуга / Mithral Chain Mail}</p></li><li><p>@UUID[Compendium.laaru-dnd5-hw.items.3h3ZU6qmQs18FfkA]{Мифральная кольчужная рубаха / Mithral Chain Mail}</p></li><li><p>@UUID[Compendium.laaru-dnd5-hw.items.peZ8KSDtL4a3Rbrp]{Мифральный гранитный кольчужно-латный доспех / Mithral Granite Half Plate}</p></li><li><p>@UUID[Compendium.laaru-dnd5-hw.items.tJQXAJx92wL6GM1v]{Мифральный кольчатый доспех / Mithral Ring Mail}</p></li><li><p>@UUID[Compendium.laaru-dnd5-hw.items.qRMQH8lRE42JkugE]{Мифральный кольчужно-латный доспех / Mithral Half Plate Armor}</p></li><li><p>@UUID[Compendium.laaru-dnd5-hw.items.HVpXIU0zZw0a4Fb7]{Мифральный латный доспех / Mithral Plate Armor}</p></li><li><p>@UUID[Compendium.laaru-dnd5-hw.items.CcTGZzQHejxEVLK1]{Мифральный нагрудник / Mithral Breatsplate}</p></li><li><p>@UUID[Compendium.laaru-dnd5-hw.items.GKQSxYvS3m9qKVac]{Мифральный пластинчатый доспех / Mithral Splint Armor}</p></li><li><p>@UUID[Compendium.laaru-dnd5-hw.items.iRDmig2qZ7LdP0ug]{Мифральный чешуйчатый доспех / Mithral Scale Mail}</p></li><li><p>@UUID[Compendium.laaru-dnd5-hw.items.LlEqee8HfIXA1lNj]{Мифральный шипованный доспех / Mithral Spiked Armor}</p></li></ul>",
+  "dex_bonus_max": null,
+  "item_kind": "armor",
+  "magical": true,
+  "magical_bonus": 0,
+  "name": "Мифральный доспех",
+  "passive_effects": [
+    {
+      "changes": [
+        {
+          "key": "name",
+          "mode": 5,
+          "priority": null,
+          "value": "Mithral {}"
+        },
+        {
+          "key": "system.rarity",
+          "mode": 5,
+          "priority": null,
+          "value": "uncommon"
+        },
+        {
+          "key": "system.description.value",
+          "mode": 5,
+          "priority": null,
+          "value": "{}<p>@Embed[Compendium.dnd5e.equipment24.Item.dmgMithralArmor0 caption=false]</p>"
+        },
+        {
+          "key": "system.properties",
+          "mode": 2,
+          "priority": null,
+          "value": "mgc"
+        },
+        {
+          "key": "system.strength",
+          "mode": 3,
+          "priority": null,
+          "value": "0"
+        },
+        {
+          "key": "system.properties",
+          "mode": 2,
+          "priority": null,
+          "value": "-stealthDisadvantage"
+        },
+        {
+          "key": "system.price.value",
+          "mode": 2,
+          "priority": null,
+          "value": "400"
+        }
+      ],
+      "description": "",
+      "disabled": true,
+      "duration": null,
+      "id": "iopwvJrcnzObDYSR",
+      "name": "Mithral Armor",
+      "statuses": [],
+      "transfer": true
+    }
+  ],
+  "provenance": {
+    "ingest_date": "2026-05-30",
+    "ingest_version": "foundry-translator-v1",
+    "license_tag": "CC-BY-4.0",
+    "source": "foundry",
+    "source_url": "https://github.com/foundryvtt/dnd5e/blob/965ad2d0cf5d063dac675ba078b5bd3c3c0dd449/packs/_source/equipment24/armor/magical/mithral-armor.yml",
+    "srd_version": [
+      "5.2"
+    ]
+  },
+  "rarity": "uncommon",
+  "requires_attunement": false,
+  "review": {
+    "known_divergence": null,
+    "requires_user_decision": false
+  },
+  "slug": "mithral-armor",
+  "stealth_disadvantage": false,
+  "strength_min": null,
+  "uses": null,
+  "weight": 0.0
+}

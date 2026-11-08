@@ -1,0 +1,139 @@
+{
+  "slug": "leomunds-tiny-hut-alt",
+  "foundry_uuid": "Compendium.dnd5e.laaru-hw-spells.Item.OPjH13PZN2wmrXGw",
+  "name": "Хижина Леомунда (альт.) / Leomund's Tiny Hut (alt.)",
+  "description": "Неподвижный купол магической силы радиусом 10 футов возникает вокруг и над вами и остается неподвижным в течение всего времени. Действие заклинания прекращается, если вы покидаете его зону.\n\nДевять существ среднего или меньшего размера могут поместиться под куполом вместе с вами. Заклинание не сработает, если в его зоне окажутся Крупные существа или более девяти существ. Существа и объекты, находящиеся под куполом, когда вы сотворяете это заклинание, могут свободно перемещаться сквозь него. Все остальные существа и объекты не могут пройти сквозь него. Заклинания и другие магические эффекты не могут распространяться через купол или сотворяться внутри. Внутри купола царит комфортная и сухая атмосфера, независимо от погоды снаружи.\n\nПока действие заклинания не закончится, вы можете приказать интерьеру быть тускло освещенным или темным. Купол непрозрачен и имеет тусклый цвет, чтобы сливаться с окружающей средой. Изнутри он прозрачен.\n\nПараметры. Купол имеет 100 ПЗ и класс брони, равный вашему СЛ испытаний от заклинаний. Он невосприимчив к яду, психическому урону и немагическому дробящему, колющему и режущему урону, уязвим к урону силой и всему магическому дробящему, колющему и режущему урону, а также устойчив ко всем другим типам урона. Заклинание Дезинтеграция уничтожает его мгновенно.",
+  "level": 3,
+  "school": "abj",
+  "components": [
+    "M",
+    "S",
+    "V"
+  ],
+  "ritual": true,
+  "concentration": false,
+  "casting_time": {
+    "unit": "minute",
+    "value": 1,
+    "condition": ""
+  },
+  "range": {
+    "units": "self",
+    "value": null,
+    "special": null
+  },
+  "duration": {
+    "units": "hour",
+    "value": 8
+  },
+  "materials": {
+    "value": "жемчужина, идеально разрезанная пополам",
+    "consumed": false,
+    "cost": 0,
+    "supply": 0
+  },
+  "preparation": {
+    "mode": "prepared",
+    "prepared": false
+  },
+  "activities": [
+    {
+      "id": "dnd5eactivity000",
+      "name": "",
+      "img": "",
+      "sort": 0,
+      "activation": {
+        "type": "action",
+        "value": null,
+        "condition": "",
+        "override": false,
+        "reaction_conditions": []
+      },
+      "consumption": {
+        "scaling": {
+          "allowed": false,
+          "max": ""
+        },
+        "spell_slot": true,
+        "targets": []
+      },
+      "description": {
+        "chat_flavor": ""
+      },
+      "duration": {
+        "value": null,
+        "units": "inst",
+        "special": "",
+        "concentration": false,
+        "override": false
+      },
+      "flags": {},
+      "range": {
+        "value": null,
+        "units": "self",
+        "special": "",
+        "override": false
+      },
+      "target": {
+        "template": {
+          "count": "",
+          "contiguous": false,
+          "stationary": false,
+          "type": "sphere",
+          "size": "10",
+          "width": "",
+          "height": "",
+          "units": "ft"
+        },
+        "affects": {
+          "count": "",
+          "type": "",
+          "choice": false,
+          "special": ""
+        },
+        "override": false,
+        "prompt": true
+      },
+      "uses": {
+        "spent": 0,
+        "max": "",
+        "recovery": []
+      },
+      "visibility": {
+        "identifier": "",
+        "level": {
+          "min": null,
+          "max": null
+        },
+        "require_attunement": false,
+        "require_identification": false,
+        "require_magic": false
+      },
+      "effects": [],
+      "applied_effects": [],
+      "kind": "utility",
+      "roll": {
+        "formula": "",
+        "name": "",
+        "prompt": false,
+        "visible": false
+      }
+    }
+  ],
+  "passive_effects": [],
+  "provenance": {
+    "source": "foundry",
+    "source_url": "https://github.com/foundryvtt/dnd5e/blob/965ad2d0cf5d063dac675ba078b5bd3c3c0dd449/packs/_source/laaru-hw-spells/Хижина_Леомунда__альт_____Leomund_s_Tiny_Hut__alt___OPjH13PZN2wmrXGw.yml",
+    "ingest_date": "2026-10-26",
+    "ingest_version": "foundry-translator-v1",
+    "srd_version": [
+      "5.1"
+    ],
+    "license_tag": "CC-BY-4.0"
+  },
+  "review": {
+    "known_divergence": null,
+    "requires_user_decision": false
+  },
+  "entry_kind": "spell"
+}

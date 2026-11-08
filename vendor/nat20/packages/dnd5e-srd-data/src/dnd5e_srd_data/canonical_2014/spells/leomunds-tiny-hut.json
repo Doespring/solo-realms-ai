@@ -1,0 +1,139 @@
+{
+  "slug": "leomunds-tiny-hut",
+  "foundry_uuid": "Compendium.dnd5e.laaru-hw-spells.Item.FLAxKwkSoaZVs3OQ",
+  "name": "Хижина Леомунда / Leomund's Tiny Hut",
+  "description": "Неподвижный силовой купол радиусом 10 футов появляется вокруг вас и над вами и остаётся недвижим, пока длится заклинание. Заклинание прекращает действовать, если вы покидаете его область.\n\nВместе с вами под куполом могут уместиться девять существ среднего размера или меньше. Если в области есть существо крупнее среднего или существ больше девяти, заклинание не сработает. Существа и объекты, находившиеся под куполом в момент сотворения, могут свободно проходить сквозь него. Все остальные существа и объекты не могут в него проникнуть. Заклинания и прочие магические эффекты не могут ни проникать сквозь купол, ни быть сотворены сквозь него. Атмосфера под куполом комфортная и сухая вне зависимости от погоды снаружи. Пока длится заклинание, вы можете приказать куполу стать &amp;reference[dimlight]{тускло освещённым} внутри или погрузиться в &amp;reference[darkness]{темноту}. Снаружи купол непрозрачен и имеет цвет, который вы выберете, но изнутри он прозрачен.",
+  "level": 3,
+  "school": "evo",
+  "components": [
+    "M",
+    "S",
+    "V"
+  ],
+  "ritual": true,
+  "concentration": false,
+  "casting_time": {
+    "unit": "minute",
+    "value": 1,
+    "condition": ""
+  },
+  "range": {
+    "units": "spec",
+    "value": null,
+    "special": null
+  },
+  "duration": {
+    "units": "hour",
+    "value": 8
+  },
+  "materials": {
+    "value": "хрустальный шарик",
+    "consumed": false,
+    "cost": 0,
+    "supply": 0
+  },
+  "preparation": {
+    "mode": "prepared",
+    "prepared": false
+  },
+  "activities": [
+    {
+      "id": "dnd5eactivity000",
+      "name": "",
+      "img": "",
+      "sort": 0,
+      "activation": {
+        "type": "action",
+        "value": null,
+        "condition": "",
+        "override": false,
+        "reaction_conditions": []
+      },
+      "consumption": {
+        "scaling": {
+          "allowed": false,
+          "max": ""
+        },
+        "spell_slot": true,
+        "targets": []
+      },
+      "description": {
+        "chat_flavor": ""
+      },
+      "duration": {
+        "value": null,
+        "units": "inst",
+        "special": "",
+        "concentration": false,
+        "override": false
+      },
+      "flags": {},
+      "range": {
+        "value": null,
+        "units": "self",
+        "special": "",
+        "override": false
+      },
+      "target": {
+        "template": {
+          "count": "",
+          "contiguous": false,
+          "stationary": false,
+          "type": "sphere",
+          "size": "10",
+          "width": "",
+          "height": "",
+          "units": "ft"
+        },
+        "affects": {
+          "count": "",
+          "type": "",
+          "choice": false,
+          "special": ""
+        },
+        "override": false,
+        "prompt": true
+      },
+      "uses": {
+        "spent": 0,
+        "max": "",
+        "recovery": []
+      },
+      "visibility": {
+        "identifier": "",
+        "level": {
+          "min": null,
+          "max": null
+        },
+        "require_attunement": false,
+        "require_identification": false,
+        "require_magic": false
+      },
+      "effects": [],
+      "applied_effects": [],
+      "kind": "utility",
+      "roll": {
+        "formula": "",
+        "name": "",
+        "prompt": false,
+        "visible": false
+      }
+    }
+  ],
+  "passive_effects": [],
+  "provenance": {
+    "source": "foundry",
+    "source_url": "https://github.com/foundryvtt/dnd5e/blob/965ad2d0cf5d063dac675ba078b5bd3c3c0dd449/packs/_source/laaru-hw-spells/Хижина_Леомунда___Leomund_s_Tiny_Hut_FLAxKwkSoaZVs3OQ.yml",
+    "ingest_date": "2026-10-26",
+    "ingest_version": "foundry-translator-v1",
+    "srd_version": [
+      "5.1"
+    ],
+    "license_tag": "CC-BY-4.0"
+  },
+  "review": {
+    "known_divergence": null,
+    "requires_user_decision": false
+  },
+  "entry_kind": "spell"
+}

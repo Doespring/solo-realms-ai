@@ -1,0 +1,8 @@
+.inventory-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:14px;margin:18px 0}
+.item-card{border:1px solid var(--line);border-radius:12px;background:var(--surface);padding:18px;display:grid;gap:10px}
+.item-card h3,.item-card p{margin:0}.item-card .button-row{gap:6px}.item-card button{font-size:.82rem}
+.equipment-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:18px 0}
+.equipment-slot{padding:16px;border:1px dashed var(--line);border-radius:12px;background:var(--surface)}
+.trade-offer{align-items:flex-start}.trade-offer small{overflow-wrap:anywhere}
+#inventory>details{margin:18px 0}#inventory form{display:grid;gap:12px}
+@media(max-width:650px){.equipment-grid{grid-template-columns:1fr}.trade-offer{flex-direction:column}}

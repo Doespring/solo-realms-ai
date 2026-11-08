@@ -1,0 +1,251 @@
+{
+  "slug": "gaeas-hand",
+  "foundry_uuid": "Compendium.dnd5e.laaru-hw-spells.Item.nCAUo3h8Y5yzpWdK",
+  "name": "Рука Гаи / Gaea's hand",
+  "description": "На короткое время вы создаете руку из сорняков и ветвей, которая прорастает в указанной видимой вами точке в пределах дистанции. Находясь в пределах 5 футов от руки, вы можете дать ей одноручное оружие ближнего боя (действие не требуется). Оружие, данное ей, должно быть такого размера, с которым вы могли бы обращаться.\n\nБонусным действием в свой ход вы можете приказать руке атаковать противника в пределах 5 футов от неё. Совершите атаку заклинанием в ближнем бою, и при попадании цель получает дробящий урон равный 1d4 + модификатор вашей ключевой характеристики. Если вы передали руке оружие, то вместо этого она использует кость урона оружия и тип его урона.",
+  "level": 1,
+  "school": "con",
+  "components": [
+    "S",
+    "V"
+  ],
+  "ritual": false,
+  "concentration": true,
+  "casting_time": {
+    "unit": "action",
+    "value": 1,
+    "condition": ""
+  },
+  "range": {
+    "units": "self",
+    "value": null,
+    "special": null
+  },
+  "duration": {
+    "units": "minute",
+    "value": 1
+  },
+  "materials": {
+    "value": "",
+    "consumed": false,
+    "cost": 0,
+    "supply": 0
+  },
+  "preparation": {
+    "mode": "prepared",
+    "prepared": false
+  },
+  "activities": [
+    {
+      "id": "JWUhEERsVSIk136E",
+      "name": "Сотворение заклинания",
+      "img": "",
+      "sort": 0,
+      "activation": {
+        "type": "action",
+        "value": null,
+        "condition": "",
+        "override": false,
+        "reaction_conditions": []
+      },
+      "consumption": {
+        "scaling": {
+          "allowed": false,
+          "max": ""
+        },
+        "spell_slot": true,
+        "targets": []
+      },
+      "description": {
+        "chat_flavor": ""
+      },
+      "duration": {
+        "value": null,
+        "units": "inst",
+        "special": "",
+        "concentration": false,
+        "override": false
+      },
+      "flags": {},
+      "range": {
+        "value": null,
+        "units": "self",
+        "special": "",
+        "override": false
+      },
+      "target": {
+        "template": {
+          "count": "",
+          "contiguous": false,
+          "stationary": false,
+          "type": "",
+          "size": "",
+          "width": "",
+          "height": "",
+          "units": "ft"
+        },
+        "affects": {
+          "count": "",
+          "type": "",
+          "choice": false,
+          "special": ""
+        },
+        "override": false,
+        "prompt": true
+      },
+      "uses": {
+        "spent": 0,
+        "max": "",
+        "recovery": []
+      },
+      "visibility": {
+        "identifier": "",
+        "level": {
+          "min": null,
+          "max": null
+        },
+        "require_attunement": false,
+        "require_identification": false,
+        "require_magic": false
+      },
+      "effects": [],
+      "applied_effects": [],
+      "kind": "utility",
+      "roll": {
+        "formula": "",
+        "name": "",
+        "prompt": false,
+        "visible": false
+      }
+    },
+    {
+      "id": "1ELAw0qHnuRBT1E5",
+      "name": "",
+      "img": "",
+      "sort": 0,
+      "activation": {
+        "type": "bonus",
+        "value": null,
+        "condition": "",
+        "override": true,
+        "reaction_conditions": []
+      },
+      "consumption": {
+        "scaling": {
+          "allowed": false,
+          "max": ""
+        },
+        "spell_slot": true,
+        "targets": []
+      },
+      "description": {
+        "chat_flavor": ""
+      },
+      "duration": {
+        "value": null,
+        "units": "inst",
+        "special": "",
+        "concentration": false,
+        "override": false
+      },
+      "flags": {},
+      "range": {
+        "value": null,
+        "units": "any",
+        "special": "",
+        "override": true
+      },
+      "target": {
+        "template": {
+          "count": "",
+          "contiguous": false,
+          "stationary": false,
+          "type": "",
+          "size": "",
+          "width": "",
+          "height": "",
+          "units": "ft"
+        },
+        "affects": {
+          "count": "1",
+          "type": "creature",
+          "choice": false,
+          "special": ""
+        },
+        "override": true,
+        "prompt": true
+      },
+      "uses": {
+        "spent": 0,
+        "max": "",
+        "recovery": []
+      },
+      "visibility": {
+        "identifier": "",
+        "level": {
+          "min": null,
+          "max": null
+        },
+        "require_attunement": false,
+        "require_identification": false,
+        "require_magic": false
+      },
+      "effects": [],
+      "applied_effects": [],
+      "kind": "attack",
+      "attack": {
+        "ability": "",
+        "bonus": "",
+        "critical": {
+          "threshold": null
+        },
+        "flat": false,
+        "type": {
+          "value": "melee",
+          "classification": ""
+        }
+      },
+      "damage": {
+        "critical": {
+          "bonus": ""
+        },
+        "include_base": true,
+        "parts": [
+          {
+            "number": 1,
+            "denomination": 4,
+            "bonus": "@mod",
+            "types": [
+              "bludgeoning"
+            ],
+            "custom": {
+              "enabled": false,
+              "formula": ""
+            },
+            "scaling": {
+              "mode": "",
+              "number": 1,
+              "formula": ""
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "passive_effects": [],
+  "provenance": {
+    "source": "foundry",
+    "source_url": "https://github.com/foundryvtt/dnd5e/blob/965ad2d0cf5d063dac675ba078b5bd3c3c0dd449/packs/_source/laaru-hw-spells/Рука_Гаи___Gaea_s_hand_nCAUo3h8Y5yzpWdK.yml",
+    "ingest_date": "2026-10-26",
+    "ingest_version": "foundry-translator-v1",
+    "srd_version": [
+      "5.1"
+    ],
+    "license_tag": "CC-BY-4.0"
+  },
+  "review": {
+    "known_divergence": null,
+    "requires_user_decision": false
+  },
+  "entry_kind": "spell"
+}

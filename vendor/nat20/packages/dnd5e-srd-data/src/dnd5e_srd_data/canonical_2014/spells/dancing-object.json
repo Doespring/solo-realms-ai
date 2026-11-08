@@ -1,0 +1,251 @@
+{
+  "slug": "dancing-object",
+  "foundry_uuid": "Compendium.dnd5e.laaru-hw-spells.Item.Fvs80cE8OKOdp6iH",
+  "name": "Танцующий объект / Dancing Object",
+  "description": "Вы оживляете Маленький немагический объект, который никто не носит и не держит. Объект использует параметры танцующего объекта.\n\nЕсли объект — это оружие, оно наносит урон, равный костям урона оружия + ваш модификатор Сотворения заклинаний, типом урона этого оружия. Таким образом заклинание может оживить только одноручное оружие без особого свойства.\n\nВ качестве бонусного действия вы можете мысленно командовать оживлённым объектом, пока он находится в пределах 60 футов от вас. Вы решаете, какое действие совершит существо и куда оно переместится в свой следующий ход, или вы можете отдать общую команду, например, охранять определённую комнату или коридор. Если вы не отдаёте команд, существо лишь защищается от враждебных существ. Получив приказ, существо продолжает следовать ему, пока его задача не будет выполнена.\n\nЕсли объект надёжно прикреплён к поверхности или более крупному объекту, например, цепь, прикреплённая к стене, его скорость равна 0. Оно обладает слепозрением с радиусом 30 футов и слепо за пределами этой дистанции. Когда ПЗ оживлённого объекта опускается до 0, он возвращается к своей изначальной форме объекта, и весь оставшийся урон переносится на его изначальную форму.",
+  "level": 2,
+  "school": "trs",
+  "components": [
+    "S",
+    "V"
+  ],
+  "ritual": false,
+  "concentration": true,
+  "casting_time": {
+    "unit": "action",
+    "value": 1,
+    "condition": ""
+  },
+  "range": {
+    "units": "ft",
+    "value": 60,
+    "special": null
+  },
+  "duration": {
+    "units": "minute",
+    "value": 1
+  },
+  "materials": {
+    "value": "",
+    "consumed": false,
+    "cost": 0,
+    "supply": 0
+  },
+  "preparation": {
+    "mode": "prepared",
+    "prepared": false
+  },
+  "activities": [
+    {
+      "id": "dnd5eactivity000",
+      "name": "",
+      "img": "",
+      "sort": 0,
+      "activation": {
+        "type": "action",
+        "value": null,
+        "condition": "",
+        "override": false,
+        "reaction_conditions": []
+      },
+      "consumption": {
+        "scaling": {
+          "allowed": false,
+          "max": ""
+        },
+        "spell_slot": true,
+        "targets": []
+      },
+      "description": {
+        "chat_flavor": ""
+      },
+      "duration": {
+        "value": null,
+        "units": "inst",
+        "special": "",
+        "concentration": false,
+        "override": false
+      },
+      "flags": {},
+      "range": {
+        "value": null,
+        "units": "self",
+        "special": "",
+        "override": false
+      },
+      "target": {
+        "template": {
+          "count": "",
+          "contiguous": false,
+          "stationary": false,
+          "type": "",
+          "size": "",
+          "width": "",
+          "height": "",
+          "units": ""
+        },
+        "affects": {
+          "count": "",
+          "type": "",
+          "choice": false,
+          "special": ""
+        },
+        "override": false,
+        "prompt": true
+      },
+      "uses": {
+        "spent": 0,
+        "max": "",
+        "recovery": []
+      },
+      "visibility": {
+        "identifier": "",
+        "level": {
+          "min": null,
+          "max": null
+        },
+        "require_attunement": false,
+        "require_identification": false,
+        "require_magic": false
+      },
+      "effects": [],
+      "applied_effects": [],
+      "kind": "utility",
+      "roll": {
+        "formula": "",
+        "name": "",
+        "prompt": false,
+        "visible": false
+      }
+    },
+    {
+      "id": "2hffopgdvmfKFT4g",
+      "name": "",
+      "img": "",
+      "sort": 0,
+      "activation": {
+        "type": "action",
+        "value": null,
+        "condition": "",
+        "override": false,
+        "reaction_conditions": []
+      },
+      "consumption": {
+        "scaling": {
+          "allowed": false,
+          "max": ""
+        },
+        "spell_slot": true,
+        "targets": []
+      },
+      "description": {
+        "chat_flavor": ""
+      },
+      "duration": {
+        "value": null,
+        "units": "inst",
+        "special": "",
+        "concentration": false,
+        "override": false
+      },
+      "flags": {},
+      "range": {
+        "value": null,
+        "units": "self",
+        "special": "",
+        "override": false
+      },
+      "target": {
+        "template": {
+          "count": "",
+          "contiguous": false,
+          "stationary": false,
+          "type": "",
+          "size": "",
+          "width": "",
+          "height": "",
+          "units": ""
+        },
+        "affects": {
+          "count": "",
+          "type": "",
+          "choice": false,
+          "special": ""
+        },
+        "override": false,
+        "prompt": true
+      },
+      "uses": {
+        "spent": 0,
+        "max": "",
+        "recovery": []
+      },
+      "visibility": {
+        "identifier": "",
+        "level": {
+          "min": null,
+          "max": null
+        },
+        "require_attunement": false,
+        "require_identification": false,
+        "require_magic": false
+      },
+      "effects": [],
+      "applied_effects": [],
+      "kind": "summon",
+      "bonuses": {
+        "ac": "",
+        "hd": "",
+        "hp": "",
+        "attack_damage": "@mod",
+        "save_damage": "",
+        "healing": ""
+      },
+      "creature_sizes": [],
+      "creature_types": [],
+      "match": {
+        "ability": "",
+        "attacks": true,
+        "disposition": false,
+        "proficiency": false,
+        "saves": false
+      },
+      "profiles": [
+        {
+          "id": "EHWajPmIDhtO9UG1",
+          "count": "",
+          "cr": "",
+          "level": {
+            "min": null,
+            "max": null
+          },
+          "name": "",
+          "types": [],
+          "uuid": "Compendium.laaru-dnd5-hw.monsters2.Actor.e0WsgYeqDfcdV1LR"
+        }
+      ],
+      "summon": {
+        "mode": "",
+        "prompt": true,
+        "identifier": null
+      },
+      "temp_hp": ""
+    }
+  ],
+  "passive_effects": [],
+  "provenance": {
+    "source": "foundry",
+    "source_url": "https://github.com/foundryvtt/dnd5e/blob/965ad2d0cf5d063dac675ba078b5bd3c3c0dd449/packs/_source/laaru-hw-spells/Танцующий_объект___Dancing_Object_Fvs80cE8OKOdp6iH.yml",
+    "ingest_date": "2026-10-26",
+    "ingest_version": "foundry-translator-v1",
+    "srd_version": [
+      "5.1"
+    ],
+    "license_tag": "CC-BY-4.0"
+  },
+  "review": {
+    "known_divergence": null,
+    "requires_user_decision": false
+  },
+  "entry_kind": "spell"
+}

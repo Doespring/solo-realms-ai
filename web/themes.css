@@ -1,0 +1,201 @@
+/* Themes. :root in style.css is the dark base; every named theme restates the
+   same tokens so no rule has to guess a background. Contrast targets: 4.5:1
+   body text, 3:1 large text (WCAG 2.2 AA).
+
+   This sheet is loaded after every theme sheet, so it is also where a theme
+   token that lost contrast inside one region is corrected. Such corrections
+   are scoped to the region, never scoped to the region's own text colour: a
+   scope like `.sidebar{color:X}` outranks `html[data-theme=obsidian]
+   .sidebar{color:Y}` from obsidian.css and silently re-colours the dark
+   sidebar of the light themes, which is why the sidebar tokens below are
+   defined per theme instead. */
+html[data-theme=dark]{color-scheme:dark;--bg:#101210;--surface:#181c19;--surface2:#1e2420;--text:#e2e6dc;--muted:#a3b0a6;--line:#303b31;--gold:#d1ba82;--gold-dark:#2e3024;--input:#121613;--accent:#9baa88;--shadow:0 20px 70px #0005}
+html[data-theme=dark] button.primary{color:#17190f}
+
+/* Sidebar. obsidian.css paints the sidebar dark in every theme ("#202126,
+   #efe1c0"), and the obsidian sidebar is *not* the light obsidian page, so
+   the sidebar keeps its own dark set of colours in every theme. The fill is
+   darkened from #202126 to #1d1f1c (teal-tinted, like the old dark sidebar)
+   so that the tokens shared by all four themes reach 4.5:1 on it; each theme
+   still supplies its own muted tone, because a shared #8e9b91/#a3b0a6 reads
+   3.5:1 on #202126. Measured: muted 6.3-7.5:1, nav 10.2:1, brand 14.7:1. */
+.sidebar{background:#1d1f1c;color:#d9c9a6;--muted:#a3b0a6}
+.sidebar .brand{color:#efe1c0}
+.sidebar .nav,.sidebar summary,.sidebar small{color:#d9c9a6}
+html[data-theme=obsidian] .sidebar{--muted:#a3a094}
+html[data-theme=dark] .sidebar{--muted:#a3b0a6}
+html[data-theme=parchment] .sidebar{--muted:#a9a491}
+html[data-theme=minimal] .sidebar{--muted:#a6b0b5}
+
+/* The hover/active nav item is a state, not just a colour: it also gains a
+   visible fill and a gold edge, so it survives greyscale and colour-blind use. */
+.sidebar .nav:hover,.sidebar .nav.active{color:#f6edda;background:#ffffff0c;border-color:#806845}
+.sidebar .nav:focus-visible,.sidebar summary:focus-visible{outline:2px solid #d1ba82;outline-offset:2px;border-radius:6px}
+
+/* classless buttons appended to the sidebar by creation.js, prototype.js and
+   navigation.js take `button{background:var(--surface2);color:var(--text)}`
+   from style.css, i.e. the page's light colours, on the dark sidebar
+   (dark theme: #e5d2ad fill under #e2e6dc text = 1.17:1). Both halves of that
+   shorthand have to be answered here: setting only the colour left the light
+   fill in place and produced 1.10:1 instead. The fill is the sidebar's own
+   dark tone and the label the sidebar's nav tone, i.e. 9.84:1 on #1d1f1c. */
+.sidebar button:not(.nav):not(.quartz):not(.primary){background:#1a1c19;border-color:#3a3f36;color:#d9c9a6}
+.sidebar button:not(.nav):not(.primary):hover{background:#262a23;border-color:#806845;color:#f6edda}
+.sidebar button:not(.nav):not(.quartz):not(.primary):focus-visible{outline:2px solid #d1ba82;outline-offset:2px}
+
+/* Checkboxes and radios tint only their box, never the text. */
+.sidebar input[type=checkbox],.sidebar input[type=radio]{accent-color:#d1ba82}
+
+/* Muted text must stay legible on the light themes too. */
+html[data-theme=parchment] .hint,html[data-theme=minimal] .hint,html[data-theme=parchment] .quiet,html[data-theme=minimal] .quiet{color:var(--muted)}
+html[data-theme=parchment] summary,html[data-theme=minimal] summary{color:var(--gold)}
+/* ...but not inside the sidebar, which stays dark in every theme: a bronze
+   marker there measured 2.70:1 on #1d1f1c. */
+html[data-theme=parchment] .sidebar summary,html[data-theme=minimal] .sidebar summary{color:#d9c9a6}
+
+/* Light themes: muted text was 3.4-3.9:1 on their own backgrounds
+   (parchment #7d7b68, minimal #7b878c). Darker tones, worst case 4.69:1. */
+html[data-theme=parchment]{--muted:#67624f}
+html[data-theme=minimal]{--muted:#647176}
+
+/* Parchment: gold itself is 3.7:1 on the parchment backgrounds, so the
+   eyebrow labels and summary markers use a darker bronze (>=4.7:1) and the
+   primary button switches its label to ink for 4.86:1 on #856a3c. */
+html[data-theme=parchment] .eyebrow,html[data-theme=parchment] summary{color:#785d33}
+html[data-theme=parchment] .sidebar summary{color:#d9c9a6}
+html[data-theme=parchment] button.primary{background:#856a3c;border-color:#856a3c;color:#fff9ee}
+
+/* Cards and drop zones in chronicles.css/creation.css use a fixed translucent
+   cream (#fff3d22b, #fff3d226) meant for the light themes. On the dark theme
+   that fill lifts the card to about rgb(226,230,220) under near-white text
+   (1.15:1). The fill and its gold edge take the theme's own surface instead. */
+.chronicle-card{background:var(--surface);border-color:var(--line)}
+.creation-drop{background:color-mix(in srgb,var(--gold) 10%,var(--surface))}
+
+/* Legend and summary markers on the light themes use --gold, which is only
+   3.95:1 on parchment's surface; they take the darker bronze used for the
+   eyebrow labels (>=4.7:1 there). */
+html[data-theme=parchment] #api-model-fields legend,html[data-theme=parchment] #api-form summary{color:#785d33}
+
+/* State that is more than colour: a focused control keeps the gold ring and
+   also drops the default keyboard outline in favour of a solid 2px ring with
+   an offset, for buttons, fields, summaries and every link-like control. */
+/* The ring is the accent, not the gold: on the light themes gold reaches only
+   1.35-1.77:1 against the page, below the 3:1 an indicator needs (WCAG 1.4.11).
+   Accent gives 4.5-6.0:1 there and keeps the dark themes well above 3:1. */
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.sidebar :focus-visible{outline-color:#d1ba82}
+button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible,summary:focus-visible,a:focus-visible,[role=tab]:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+
+/* Off-screen help text for controls whose meaning would otherwise be carried
+   only by an icon or a colour. */
+.sr-only{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);clip-path:inset(50%);white-space:nowrap;border:0}
+
+/* Forced colours / high contrast: keep the ring, drop the decorative fills. */
+@media(forced-colors:active){:focus-visible{outline:2px solid Highlight}.sidebar button:not(.nav){border-color:ButtonText}}
+
+/* Parchment sets --accent to #8a7238, and #play's own .speaker rule paints the
+   name in it: 4.22:1 on the parchment card, under the 4.5:1 that small caps
+   text needs. The hero's name sits on the lightest surface in the app, so the
+   accent is darkened here rather than moved globally. */
+html[data-theme=parchment] #play.unified-game .message .speaker{color:#7a6330}
+
+/* On a phone the sidebar leaves its fixed column and stacks above the play
+   area; the navigation groups then take 480px and push the composer below the
+   fold. Cap it so the dialogue and the input stay on one screen. */
+@media(max-width:850px),(max-height:700px){
+  aside.sidebar{max-height:32dvh;overflow-y:auto;padding:8px 12px}
+  .sidebar .nav-group,.sidebar details{margin:2px 0}
+  .sidebar .nav{min-height:30px;padding:5px 8px}
+  #play .workspace-layout{grid-template-columns:minmax(0,1fr)!important;height:auto}
+  #play .workspace-layout{height:100%!important;min-height:0}
+  #play .story-card{height:100%!important;min-height:0;overflow:hidden}
+  #play #chat{flex:1 1 auto!important;min-height:0!important;height:auto!important;max-height:none!important}
+  #play .composer{flex:0 0 auto}
+  .tabletop #play.unified-game{display:flex;flex-direction:column;height:calc(100dvh - 380px)!important;min-height:260px!important}
+  #play .chat{flex:1 1 auto;overflow-y:auto}
+  #play #chat,.chat{min-height:0!important;height:40dvh!important;max-height:40dvh!important}
+  .composer{position:static}
+}
+
+/* The rail sits on the dark sidebar fill in every theme, exactly like the
+   navigation column, so its unclassed buttons need the dark-surface pair too:
+   button{background:var(--surface2);color:var(--text)} otherwise pairs the
+   obsidian fill #e5d2ad with the dark text #e2e6dc (1.17:1). */
+.scene-rail button:not(.nav):not(.quartz):not(.primary){background:#1a1c19;border-color:#3a3f36;color:#d9c9a6}
+.scene-rail button:not(.nav):not(.primary):hover{background:#262a23;border-color:#806845;color:#f6edda}
+.scene-rail button:not(.nav):not(.quartz):not(.primary):focus-visible{outline:2px solid #d1ba82;outline-offset:2px}
+
+/* A 200% zoom on a 683x384 screen leaves 384px of height, and the notice, the
+   stacked sidebar and the header already use 449 of them. The play area keeps
+   the dialogue and the composer; everything above it collapses. */
+@media(max-height:420px){
+  .notice{display:none}
+  /* The navigation must stay reachable: a clipped 56px strip left every nav
+     button outside the box, so the menu scrolls instead of hiding content. */
+  aside.sidebar{height:112px!important;max-height:112px!important;flex:none!important;overflow-y:auto!important;overflow-x:hidden;padding:2px 6px}
+  aside.sidebar .brand{display:none}
+  aside.sidebar button,a.nav{padding:2px 6px!important;font-size:11px!important;min-height:24px!important}
+  .sidebar .nav-group,.sidebar details{display:none}
+  main>header{display:none}
+  .tabletop #play.unified-game{height:calc(100dvh - 120px)!important;min-height:0!important}
+  /* The composer keeps its own row: story-card may not squeeze it out. */
+  #play #chat{min-height:0!important;flex:1 1 auto!important}
+  #play .composer{position:static;flex:0 0 auto!important;min-height:0}
+  /* B0: the play area is the dialogue and its input; the rail is not part of it. */
+  .tabletop #play.unified-game .scene-rail{display:none!important}
+  .tabletop #play.unified-game .workspace-layout{height:100%!important;min-height:0}
+  .tabletop #play.unified-game .story-card{height:100%!important;min-height:0;overflow:hidden}
+  .tabletop #play.unified-game #chat{flex:1 1 auto!important;min-height:0!important}
+}
+/* B0: the play area is the dialogue and its input. On small screens the panels
+   are re-created by game-screen.js and would overlay the composer, so they are
+   hidden there. On a wide screen the rail has room of its own and stays. */
+@media(max-width:850px),(max-height:700px){
+  #play #scene-hero,#play #scene-presence,#play #scene-session{display:none!important}
+}
+
+/* On a phone the menu takes 470 of 844 pixels and pushes the composer off the
+   screen. It becomes a compact scrollable strip so every item stays reachable,
+   and the play area takes the rest of the viewport. */
+@media(max-width:850px){
+  /* The menu used to take 470 of 844 pixels. It is capped and scrolls inside
+     itself, so every item stays reachable and the play area keeps the rest. */
+  aside.sidebar{height:auto!important;max-height:190px!important;flex:none!important;overflow-y:auto!important;-webkit-overflow-scrolling:touch}
+  aside.sidebar .brand{display:none}
+  aside.sidebar button,a.nav{padding:3px 8px!important;min-height:28px!important}
+  .tabletop #play.unified-game{height:calc(100dvh - 140px)!important;min-height:260px!important}
+}
+/* A 200% zoom also matches the phone width query, so the two blocks stack.
+   The short-screen block wins: the menu is a thin strip and the composer fits. */
+@media(max-height:420px){
+  aside.sidebar{max-height:112px!important}
+  .tabletop #play.unified-game{height:calc(100dvh - 128px)!important;min-height:200px!important}
+}
+
+/* game-screen.js moves #scene-hero inside .scene-rail, and game-screen.css hides
+   that rail in the play view. The hero panel therefore became unreachable. On a
+   wide screen it goes back into the play column, above the dialogue. */
+@media(min-width:851px) and (min-height:701px){
+  .tabletop #play.unified-game .workspace-layout>.scene-rail{display:block!important;grid-template-columns:minmax(0,1fr)!important;grid-template-rows:auto!important}
+  .tabletop #play.unified-game .scene-rail>#scene-hero{display:block!important;max-height:190px;overflow:hidden}
+  #play #scene-hero p{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  /* B0: the play area is the dialogue and its input. The hero panel may show
+     the hero, but no controls other than the composer belong here; the roll
+     log and per-event disclosures are mechanical detail, not dialogue. */
+  #play .scene-rail button,#play .scene-rail .button-row{display:none!important}
+  /* The way to the character sheet must survive though: one link, no mechanics. */
+  #play .scene-rail #scene-hero .sheet-link{display:inline-block!important}
+  #play .scene-rail .game-log,#play .scene-rail .game-restore,#play .scene-rail details:not(#scene-hero){display:none!important}
+}
+
+/* The prototype notice sits in the main flow and competes with real errors.
+   It is context, not news: quiet, small, and never louder than a live error. */
+/* No opacity here: a translucent 11px notice measured 2.80:1 in the minimal
+   theme, below the 4.5:1 floor. Quiet comes from size, spacing and colour. */
+.notice{
+  font-size:11px;line-height:1.5;letter-spacing:.08em;text-transform:uppercase;
+  color:var(--muted,#8d8676);background:transparent;border:0;
+  border-bottom:1px solid var(--line,#2a2d26);padding:5px 12px;
+}
+

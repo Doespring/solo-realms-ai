@@ -1,0 +1,91 @@
+{
+  "slug": "wild-magic",
+  "name": "Дикая магия",
+  "description": "Дикая магия | Wild Magic\n\nВаша врождённая магия происходит из безумных сил хаоса, бурлящих за внешним порядком вселенной. Возможно, вы пережили долгое столкновение с неким видом сырой магии, а может, попали через портал в Лимб, на Стихийные планы или в загадочный Дальний Предел. Может, вас благословила могущественная фея или отметил демон. Или же магия появилась у вас случайно при рождении без какой-либо ясной причины. Независимо от происхождения, эта хаотичная магия бурлит в ваших жилах, требуя её выпустить.\n\nУровеньОсобенности\n\n1-й\n\n@Compendium[laaru-dnd5-hw.classfeatures.8JMNjffKaDTpP45B]{Порыв дикой магии}, @Compendium[laaru-dnd5-hw.classfeatures.LyNi6aSA6J53cblj]{Течения хаоса},\n\n6-й\n\n@Compendium[laaru-dnd5-hw.classfeatures.ywX8u1qxGSVxDEv7]{Власть над удачей}\n\n14-й\n\n@Compendium[laaru-dnd5-hw.classfeatures.p1h1L6lOElsNBdGT]{Управляемый хаос}\n\n18-й\n\n@Compendium[laaru-dnd5-hw.classfeatures.lgVloRatBg6JhQgX]{Бомбардировка заклинаниями}",
+  "identifier": "wild-magic",
+  "class_identifier": "sorcerer",
+  "spellcasting": {
+    "ability": "",
+    "progression": "none"
+  },
+  "advancement": [
+    {
+      "id": "of9skwnpym4clgnp",
+      "type": "ItemGrant",
+      "level": 1,
+      "title": "Особенности",
+      "hint": "",
+      "class_restriction": "",
+      "configuration": {
+        "items": [
+          "Compendium.laaru-dnd5-hw.classfeatures.8JMNjffKaDTpP45B",
+          "Compendium.laaru-dnd5-hw.classfeatures.LyNi6aSA6J53cblj"
+        ],
+        "optional": false
+      },
+      "value": {}
+    },
+    {
+      "id": "6zm63gsehwfv724s",
+      "type": "ItemGrant",
+      "level": 6,
+      "title": "Особенность",
+      "hint": "",
+      "class_restriction": "",
+      "configuration": {
+        "items": [
+          "Compendium.laaru-dnd5-hw.classfeatures.ywX8u1qxGSVxDEv7"
+        ],
+        "optional": false
+      },
+      "value": {}
+    },
+    {
+      "id": "nqmmvzwxg0hx89yc",
+      "type": "ItemGrant",
+      "level": 14,
+      "title": "Особенность",
+      "hint": "",
+      "class_restriction": "",
+      "configuration": {
+        "items": [
+          "Compendium.laaru-dnd5-hw.classfeatures.p1h1L6lOElsNBdGT"
+        ],
+        "optional": false
+      },
+      "value": {}
+    },
+    {
+      "id": "8kxlo6jfz7s5h9zk",
+      "type": "ItemGrant",
+      "level": 18,
+      "title": "Особенность",
+      "hint": "",
+      "class_restriction": "",
+      "configuration": {
+        "items": [
+          "Compendium.laaru-dnd5-hw.classfeatures.lgVloRatBg6JhQgX"
+        ],
+        "optional": false
+      },
+      "value": {}
+    }
+  ],
+  "granted_features": [],
+  "feature_choices": [],
+  "provenance": {
+    "source": "foundry",
+    "source_url": "https://github.com/foundryvtt/dnd5e/blob/965ad2d0cf5d063dac675ba078b5bd3c3c0dd449/packs/_source/laaru-hw-subclasses/Дикая_магия_Vtm5EaNpTdL9s4fN.yml",
+    "ingest_date": "2026-10-26",
+    "ingest_version": "foundry-translator-v1",
+    "srd_version": [
+      "5.1"
+    ],
+    "license_tag": "CC-BY-4.0"
+  },
+  "review": {
+    "known_divergence": null,
+    "requires_user_decision": false
+  },
+  "entry_kind": "subclass"
+}

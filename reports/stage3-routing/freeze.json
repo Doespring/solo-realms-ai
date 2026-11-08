@@ -1,0 +1,104 @@
+{
+  "status": "routing_ready_source_frozen",
+  "date": "2026-10-18",
+  "tests": {
+    "tests": 9,
+    "errors": 0,
+    "failures": 0,
+    "skipped": 0
+  },
+  "seconds": 104.02,
+  "single_targeted_run": true,
+  "full_suite": false,
+  "builds": 0,
+  "live_calls": 0,
+  "paid_calls": 0,
+  "resolve_contract": "pure list of scripted Native results; no persistent state or RNG changes",
+  "execute_contract": "single existing Native journal and GameEvent/GameSnapshot atomic commit",
+  "legacy_migration": false,
+  "game_py_changed": false,
+  "pin_runtime_changed": false,
+  "stage2_engine14": "reused separately, not rerun",
+  "cleanup": {
+    "status": "blocked by policy",
+    "path": "reports/stage3-routing/tmp-targeted",
+    "attempts": 1,
+    "workaround_attempted": false,
+    "remaining_files": 22,
+    "remaining_bytes": 6197248,
+    "own_processes_active": 0,
+    "old_stands_touched": false
+  },
+  "files": [
+    {
+      "path": "solo/command_engine.py",
+      "bytes": 15062,
+      "sha256": "4a00952647461993f5caa9f0462e4c23d1e1386d9b7e0303781724ebb9876b2d"
+    },
+    {
+      "path": "solo/command_backend.py",
+      "bytes": 980,
+      "sha256": "a14a17e28814b37b2915ea6e6add973c8081be865bd89456c35a33c263646c13"
+    },
+    {
+      "path": "solo/nat20_api.py",
+      "bytes": 25717,
+      "sha256": "0978f4c9200cfc9e9d26d9ce8f0f068d3608a7a5ff74ad9cfb753c314158cb65"
+    },
+    {
+      "path": "tests/test_nat20_common_routing.py",
+      "bytes": 7963,
+      "sha256": "ccd048a4c5ee77210be8b7c2ab48f689f447e145a93e17ddc4dc866a0d79fee6"
+    },
+    {
+      "path": "tests/test_preview7_acceptance.py",
+      "bytes": 6146,
+      "sha256": "64cd22aad7cfef18a5332bc573f595109700f95d623496171057311fc8fce4f7"
+    },
+    {
+      "path": "tests/test_nat20_command_cycle.py",
+      "bytes": 15591,
+      "sha256": "ad11aa0da9aa21f3b89011c78dcb7c0d69fffc224fa97789d59fe6b6883710d5"
+    },
+    {
+      "path": "docs/NAT20_STAGE3_ROUTING.md",
+      "bytes": 5866,
+      "sha256": "7ab7bf7db665b27e2b39ec8647b77a9d30b53c1d0c36245d32ade41e3691c30a"
+    },
+    {
+      "path": "docs/PROTOTYPE_INTEGRATION.md",
+      "bytes": 39285,
+      "sha256": "068a7247f5c4e28a402115ba29b9c09af407baa53c934634dfc1650e1c598018"
+    },
+    {
+      "path": "reports/stage3-routing/run_targeted.py",
+      "bytes": 1670,
+      "sha256": "9fe9ea87e6d2e023e96111c55d0efa502c7ac1d1eceb259ef9a9d9b4610c993f"
+    },
+    {
+      "path": "reports/stage3-routing/tests.xml",
+      "bytes": 1511,
+      "sha256": "6e8beaa44e9184e6da42f6371b3f6b3b48ec3ba7dbcf4a942de0dfa5045e61bb"
+    },
+    {
+      "path": "reports/stage3-routing/tests.log",
+      "bytes": 1183,
+      "sha256": "a4021df7dc1288dabd81c61c389be3dd9fbc7453b1d96d119cf97121bd8c14ef"
+    },
+    {
+      "path": "reports/stage3-routing/tested-source-sha256.json",
+      "bytes": 615,
+      "sha256": "261f51bc860efb0b2b618f4c533105badce314fc5549b89c27709fb453c7ddec"
+    },
+    {
+      "path": "reports/stage3-routing/cleanup-plan.json",
+      "bytes": 228,
+      "sha256": "9c9846d3d4f71001a5580e0eb2afa1e92b4318cabd8cc9baa40d96dd182f57ca"
+    },
+    {
+      "path": "reports/stage3-routing/cleanup.json",
+      "bytes": 250,
+      "sha256": "83f49bad1a437fbb5e2cacc01810471a47812e6f3063492551502bb5eeeb463c"
+    }
+  ]
+}

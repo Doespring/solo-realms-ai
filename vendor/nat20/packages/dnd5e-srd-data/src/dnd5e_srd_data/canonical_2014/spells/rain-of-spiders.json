@@ -1,0 +1,170 @@
+{
+  "slug": "rain-of-spiders",
+  "foundry_uuid": "Compendium.dnd5e.laaru-hw-spells.Item.1nRiqMZiz8mTPwlk",
+  "name": "Паучий дождь / Rain Of Spiders",
+  "description": "Вертикальная колонна пауков начинает падать дождём в цилиндре радиусом 20 футов и высотой 40 футов, с центром в указанной вами точке. Стая пауков опускается на каждое существо в пределах цилиндра, когда заклинание сотворено.\n\nЭта стая считается карабкающимся по целевому существу и движется вместе с ним, даже если оно покидает область действия, и совершает свой ход сразу после хода этого существа. Существо может использовать своё действие, чтобы попытаться сбросить пауков, совершая проверку Силы (Атлетика) или Ловкости (Акробатика) против СЛ испытания заклинания.\n\nСтая использует модификатор атаки заклинателя при атаке (если он выше его модификатора атаки). Стая будет атаковать существо, на которое оно упало, если сможет, или переместится, чтобы преследовать существо, если его сбросили. Любые пауки, оставшиеся после окончания заклинания, исчезают.",
+  "level": 3,
+  "school": "con",
+  "components": [
+    "M",
+    "S",
+    "V"
+  ],
+  "ritual": false,
+  "concentration": true,
+  "casting_time": {
+    "unit": "bonus",
+    "value": 1,
+    "condition": ""
+  },
+  "range": {
+    "units": "ft",
+    "value": 60,
+    "special": null
+  },
+  "duration": {
+    "units": "minute",
+    "value": 1
+  },
+  "materials": {
+    "value": "паучья лапка",
+    "consumed": false,
+    "cost": 0,
+    "supply": 0
+  },
+  "preparation": {
+    "mode": "prepared",
+    "prepared": false
+  },
+  "activities": [
+    {
+      "id": "UzhXiYrReVpT0FJY",
+      "name": "",
+      "img": "",
+      "sort": 0,
+      "activation": {
+        "type": "action",
+        "value": null,
+        "condition": "",
+        "override": false,
+        "reaction_conditions": []
+      },
+      "consumption": {
+        "scaling": {
+          "allowed": false,
+          "max": ""
+        },
+        "spell_slot": true,
+        "targets": []
+      },
+      "description": {
+        "chat_flavor": ""
+      },
+      "duration": {
+        "value": null,
+        "units": "inst",
+        "special": "",
+        "concentration": false,
+        "override": false
+      },
+      "flags": {},
+      "range": {
+        "value": null,
+        "units": "self",
+        "special": "",
+        "override": false
+      },
+      "target": {
+        "template": {
+          "count": "",
+          "contiguous": false,
+          "stationary": false,
+          "type": "cylinder",
+          "size": "20",
+          "width": "",
+          "height": "40",
+          "units": "ft"
+        },
+        "affects": {
+          "count": "",
+          "type": "",
+          "choice": false,
+          "special": ""
+        },
+        "override": true,
+        "prompt": true
+      },
+      "uses": {
+        "spent": 0,
+        "max": "",
+        "recovery": []
+      },
+      "visibility": {
+        "identifier": "",
+        "level": {
+          "min": null,
+          "max": null
+        },
+        "require_attunement": false,
+        "require_identification": false,
+        "require_magic": false
+      },
+      "effects": [],
+      "applied_effects": [],
+      "kind": "summon",
+      "bonuses": {
+        "ac": "",
+        "hd": "",
+        "hp": "",
+        "attack_damage": "",
+        "save_damage": "",
+        "healing": ""
+      },
+      "creature_sizes": [],
+      "creature_types": [],
+      "match": {
+        "ability": "",
+        "attacks": true,
+        "disposition": false,
+        "proficiency": false,
+        "saves": false
+      },
+      "profiles": [
+        {
+          "id": "yLanZUl16n7WNzxZ",
+          "count": "",
+          "cr": "",
+          "level": {
+            "min": null,
+            "max": null
+          },
+          "name": "",
+          "types": [],
+          "uuid": "Compendium.laaru-dnd5-hw.monsters.Actor.5qxLQGcnqTyqVIMh"
+        }
+      ],
+      "summon": {
+        "mode": "",
+        "prompt": true,
+        "identifier": null
+      },
+      "temp_hp": ""
+    }
+  ],
+  "passive_effects": [],
+  "provenance": {
+    "source": "foundry",
+    "source_url": "https://github.com/foundryvtt/dnd5e/blob/965ad2d0cf5d063dac675ba078b5bd3c3c0dd449/packs/_source/laaru-hw-spells/Паучий_дождь___Rain_Of_Spiders_1nRiqMZiz8mTPwlk.yml",
+    "ingest_date": "2026-10-26",
+    "ingest_version": "foundry-translator-v1",
+    "srd_version": [
+      "5.1"
+    ],
+    "license_tag": "CC-BY-4.0"
+  },
+  "review": {
+    "known_divergence": null,
+    "requires_user_decision": false
+  },
+  "entry_kind": "spell"
+}

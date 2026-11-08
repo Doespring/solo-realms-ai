@@ -1,0 +1,32 @@
+{
+  "component": "stage3 routing",
+  "status": "accepted/copied",
+  "source_hashes_verified": 14,
+  "targeted_tests": {
+    "tests": 9,
+    "errors": 0,
+    "failures": 0,
+    "skipped": 0
+  },
+  "copied_paths": [
+    "solo/command_engine.py",
+    "solo/command_backend.py",
+    "solo/nat20_api.py",
+    "tests/test_nat20_common_routing.py",
+    "tests/test_preview7_acceptance.py",
+    "tests/test_nat20_command_cycle.py",
+    "docs/NAT20_STAGE3_ROUTING.md",
+    "docs/PROTOTYPE_INTEGRATION.md",
+    "reports/stage3-routing/run_targeted.py",
+    "reports/stage3-routing/tests.xml",
+    "reports/stage3-routing/tests.log",
+    "reports/stage3-routing/tested-source-sha256.json",
+    "reports/stage3-routing/cleanup-plan.json",
+    "reports/stage3-routing/cleanup.json",
+    "reports/stage3-routing/freeze.json",
+    "README.md"
+  ],
+  "hash_mismatches": 0,
+  "root_reran_tests": false,
+  "EXE": "unchanged prototype.5"
+}

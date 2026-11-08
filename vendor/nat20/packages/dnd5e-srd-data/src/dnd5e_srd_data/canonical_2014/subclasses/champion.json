@@ -1,0 +1,215 @@
+{
+  "slug": "champion",
+  "name": "Champion",
+  "description": "The archetypal Champion focuses on the development of raw physical power honed to deadly perfection. Those who model themselves on this archetype combine rigorous training with physical excellence to deal devastating blows.",
+  "identifier": "champion",
+  "class_identifier": "fighter",
+  "spellcasting": {
+    "ability": "",
+    "progression": "none"
+  },
+  "advancement": [
+    {
+      "id": "bsdg4f5me0klskxn",
+      "type": "ItemGrant",
+      "level": 3,
+      "title": "Features",
+      "hint": "",
+      "class_restriction": "",
+      "configuration": {
+        "items": [
+          {
+            "uuid": "Compendium.dnd5e.classfeatures.YgLQV1O849wE5TgM",
+            "optional": false
+          }
+        ],
+        "optional": false,
+        "spell": {
+          "ability": [],
+          "preparation": "",
+          "uses": {
+            "max": "",
+            "per": ""
+          }
+        }
+      },
+      "value": {}
+    },
+    {
+      "id": "22ktkhqczogk0jcg",
+      "type": "ItemGrant",
+      "level": 7,
+      "title": "Features",
+      "hint": "",
+      "class_restriction": "",
+      "configuration": {
+        "items": [
+          {
+            "uuid": "Compendium.dnd5e.classfeatures.dHu1yzIjD38BvGGd",
+            "optional": false
+          }
+        ],
+        "optional": false,
+        "spell": {
+          "ability": [],
+          "preparation": "",
+          "uses": {
+            "max": "",
+            "per": ""
+          }
+        }
+      },
+      "value": {}
+    },
+    {
+      "id": "r84l4q20d5aduwlw",
+      "type": "ItemGrant",
+      "level": 10,
+      "title": "Features",
+      "hint": "",
+      "class_restriction": "",
+      "configuration": {
+        "items": [
+          {
+            "uuid": "Compendium.dnd5e.classfeatures.kYJsED0rqqqUcgKz",
+            "optional": false
+          }
+        ],
+        "optional": false,
+        "spell": {
+          "ability": [],
+          "preparation": "",
+          "uses": {
+            "max": "",
+            "per": ""
+          }
+        }
+      },
+      "value": {}
+    },
+    {
+      "id": "p4pxgvxtf206xc35",
+      "type": "ItemGrant",
+      "level": 15,
+      "title": "Features",
+      "hint": "",
+      "class_restriction": "",
+      "configuration": {
+        "items": [
+          {
+            "uuid": "Compendium.dnd5e.classfeatures.aVKH6TLn1AG9hPSA",
+            "optional": false
+          }
+        ],
+        "optional": false,
+        "spell": {
+          "ability": [],
+          "preparation": "",
+          "uses": {
+            "max": "",
+            "per": ""
+          }
+        }
+      },
+      "value": {}
+    },
+    {
+      "id": "y6rlhwedv35dcrsq",
+      "type": "ItemGrant",
+      "level": 18,
+      "title": "Features",
+      "hint": "",
+      "class_restriction": "",
+      "configuration": {
+        "items": [
+          {
+            "uuid": "Compendium.dnd5e.classfeatures.ipG5yx1tRNmeJfSH",
+            "optional": false
+          }
+        ],
+        "optional": false,
+        "spell": {
+          "ability": [],
+          "preparation": "",
+          "uses": {
+            "max": "",
+            "per": ""
+          }
+        }
+      },
+      "value": {}
+    },
+    {
+      "id": "DDqfOiw4IQMv4bAi",
+      "type": "ItemChoice",
+      "level": 0,
+      "title": "Additional Fighting Style",
+      "hint": "Choose a second option from the Fighting Style class feature.",
+      "class_restriction": "",
+      "configuration": {
+        "choices": {
+          "10": {
+            "count": 1,
+            "replacement": false
+          }
+        },
+        "allowDrops": true,
+        "type": "feat",
+        "pool": [
+          {
+            "uuid": "Compendium.dnd5e.classfeatures.8YwPFv3UAPjWVDNf"
+          },
+          {
+            "uuid": "Compendium.dnd5e.classfeatures.zSlV0O2rQMdoq6pB"
+          },
+          {
+            "uuid": "Compendium.dnd5e.classfeatures.hCop9uJrWhF1QPb4"
+          },
+          {
+            "uuid": "Compendium.dnd5e.classfeatures.3Nc6u9pyStByuJsm"
+          },
+          {
+            "uuid": "Compendium.dnd5e.classfeatures.06NVMYf58Z76O85O"
+          },
+          {
+            "uuid": "Compendium.dnd5e.classfeatures.mHcSjcHJ8oZu3hkb"
+          }
+        ],
+        "spell": {
+          "ability": [],
+          "preparation": "",
+          "uses": {
+            "max": "",
+            "per": ""
+          }
+        },
+        "restriction": {
+          "type": "class",
+          "subtype": "fightingStyle",
+          "level": ""
+        }
+      },
+      "value": {
+        "added": {},
+        "replaced": {}
+      }
+    }
+  ],
+  "granted_features": [],
+  "feature_choices": [],
+  "provenance": {
+    "source": "foundry",
+    "source_url": "https://github.com/foundryvtt/dnd5e/blob/965ad2d0cf5d063dac675ba078b5bd3c3c0dd449/packs/_source/subclasses/Champion_sprHbe7cRg9osTzf.yml",
+    "ingest_date": "2026-10-26",
+    "ingest_version": "foundry-translator-v1",
+    "srd_version": [
+      "5.1"
+    ],
+    "license_tag": "CC-BY-4.0"
+  },
+  "review": {
+    "known_divergence": null,
+    "requires_user_decision": false
+  },
+  "entry_kind": "subclass"
+}

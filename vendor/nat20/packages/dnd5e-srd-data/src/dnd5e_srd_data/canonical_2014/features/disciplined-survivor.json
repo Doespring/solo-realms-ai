@@ -1,0 +1,141 @@
+{
+  "slug": "disciplined-survivor",
+  "name": "Diamond Soul",
+  "description": "Beginning at 14th level, your mastery of ki grants you proficiency in all saving throws. Additionally, whenever you make a saving throw and fail, you can spend 1 ki point to reroll it and take the second result.",
+  "feature_type": "class_feature",
+  "foundry_id": "7D2EkLdISwShEDlN",
+  "source_slug": "monk",
+  "activities": [
+    {
+      "id": "dnd5eactivity000",
+      "name": "",
+      "img": "",
+      "sort": 0,
+      "activation": {
+        "type": "",
+        "value": null,
+        "condition": "Whenever you make a saving throw and fail",
+        "override": false,
+        "reaction_conditions": []
+      },
+      "consumption": {
+        "scaling": {
+          "allowed": false,
+          "max": ""
+        },
+        "spell_slot": true,
+        "targets": [
+          {
+            "type": "itemUses",
+            "target": "Compendium.dnd5e.classfeatures.Item.10b6z2W1txNkrGP7",
+            "value": "1",
+            "scaling": {
+              "mode": "",
+              "formula": ""
+            }
+          }
+        ]
+      },
+      "description": {
+        "chat_flavor": ""
+      },
+      "duration": {
+        "value": "",
+        "units": "",
+        "special": "",
+        "concentration": false,
+        "override": false
+      },
+      "flags": {},
+      "range": {
+        "value": null,
+        "units": "",
+        "special": "",
+        "override": false
+      },
+      "target": {
+        "template": {
+          "count": "",
+          "contiguous": false,
+          "stationary": false,
+          "type": "",
+          "size": "",
+          "width": "",
+          "height": "",
+          "units": ""
+        },
+        "affects": {
+          "count": "",
+          "type": "",
+          "choice": false,
+          "special": ""
+        },
+        "override": false,
+        "prompt": true
+      },
+      "uses": {
+        "spent": 0,
+        "max": "",
+        "recovery": []
+      },
+      "visibility": {
+        "identifier": "",
+        "level": {
+          "min": null,
+          "max": null
+        },
+        "require_attunement": false,
+        "require_identification": false,
+        "require_magic": false
+      },
+      "effects": [],
+      "applied_effects": [],
+      "kind": "utility",
+      "roll": {
+        "formula": "",
+        "name": "",
+        "prompt": false,
+        "visible": false
+      }
+    }
+  ],
+  "passive_effects": [
+    {
+      "id": "v6jhyPoAYRIIXBG1",
+      "name": "Diamond Soul",
+      "description": "",
+      "changes": [
+        {
+          "key": "flags.dnd5e.diamondSoul",
+          "mode": 5,
+          "value": "True",
+          "priority": null
+        }
+      ],
+      "statuses": [],
+      "duration": {
+        "units": "seconds",
+        "expired": false
+      },
+      "disabled": false,
+      "transfer": true
+    }
+  ],
+  "advancement": [],
+  "uses": null,
+  "provenance": {
+    "source": "foundry",
+    "source_url": "https://github.com/foundryvtt/dnd5e/blob/965ad2d0cf5d063dac675ba078b5bd3c3c0dd449/packs/_source/classfeatures/Diamond_Soul_7D2EkLdISwShEDlN.yml",
+    "ingest_date": "2026-10-26",
+    "ingest_version": "foundry-translator-v1",
+    "srd_version": [
+      "5.1"
+    ],
+    "license_tag": "CC-BY-4.0"
+  },
+  "review": {
+    "known_divergence": null,
+    "requires_user_decision": false
+  },
+  "entry_kind": "feature"
+}

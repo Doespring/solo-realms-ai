@@ -1,0 +1,284 @@
+{
+  "slug": "summon-star",
+  "foundry_uuid": "Compendium.dnd5e.laaru-hw-spells.Item.Vv6UyYMJbAkvnSwF",
+  "name": "Призыв звезды / Summon Star",
+  "description": "(Иллюминация)\n\nВы призываете с небосвода звезду­-союзника. Она по­ является в форме светящегося гуманоида с длинными белыми волосами в свободном пространстве, которое вы видите в пределах дистанции. Каждое существо, кроме вас, которое видит звезду, должно преуспеть в испытании Мудрости. При провале оно становится &amp;Reference[charmed]{обворожено} звездой, пока длится заклинание. Такое существо повторяет испытание в конце каждого своего хода.\n\nПри успехе оно становится невосприимчиво к обворожению этой звезды. У звезды параметры дэвы.\n\nЕсли вы не даёте никакие команды, она защищает себя и атакует последнее напавшее на неё существо. Звезда исчезает если её ПЗ опустятся до 0, либо после окончания заклинания.",
+  "level": 8,
+  "school": "con",
+  "components": [
+    "S",
+    "V"
+  ],
+  "ritual": false,
+  "concentration": true,
+  "casting_time": {
+    "unit": "action",
+    "value": 1,
+    "condition": ""
+  },
+  "range": {
+    "units": "ft",
+    "value": 90,
+    "special": null
+  },
+  "duration": {
+    "units": "minute",
+    "value": 1
+  },
+  "materials": {
+    "value": "",
+    "consumed": false,
+    "cost": 0,
+    "supply": 0
+  },
+  "preparation": {
+    "mode": "prepared",
+    "prepared": false
+  },
+  "activities": [
+    {
+      "id": "eHqdCu8gXVvoEMJ0",
+      "name": "",
+      "img": "",
+      "sort": 0,
+      "activation": {
+        "type": "special",
+        "value": null,
+        "condition": "",
+        "override": true,
+        "reaction_conditions": []
+      },
+      "consumption": {
+        "scaling": {
+          "allowed": false,
+          "max": ""
+        },
+        "spell_slot": true,
+        "targets": []
+      },
+      "description": {
+        "chat_flavor": ""
+      },
+      "duration": {
+        "value": null,
+        "units": "inst",
+        "special": "",
+        "concentration": false,
+        "override": false
+      },
+      "flags": {},
+      "range": {
+        "value": null,
+        "units": "self",
+        "special": "",
+        "override": false
+      },
+      "target": {
+        "template": {
+          "count": "",
+          "contiguous": false,
+          "stationary": false,
+          "type": "",
+          "size": "",
+          "width": "",
+          "height": "",
+          "units": "ft"
+        },
+        "affects": {
+          "count": "1",
+          "type": "creature",
+          "choice": false,
+          "special": ""
+        },
+        "override": false,
+        "prompt": true
+      },
+      "uses": {
+        "spent": 0,
+        "max": "",
+        "recovery": []
+      },
+      "visibility": {
+        "identifier": "",
+        "level": {
+          "min": null,
+          "max": null
+        },
+        "require_attunement": false,
+        "require_identification": false,
+        "require_magic": false
+      },
+      "effects": [],
+      "applied_effects": [],
+      "kind": "summon",
+      "bonuses": {
+        "ac": "",
+        "hd": "",
+        "hp": "",
+        "attack_damage": "",
+        "save_damage": "",
+        "healing": ""
+      },
+      "creature_sizes": [],
+      "creature_types": [],
+      "match": {
+        "ability": "",
+        "attacks": false,
+        "disposition": false,
+        "proficiency": false,
+        "saves": false
+      },
+      "profiles": [
+        {
+          "id": "mlrgDutxpuh9WhIR",
+          "count": "",
+          "cr": "",
+          "level": {
+            "min": null,
+            "max": null
+          },
+          "name": "",
+          "types": [],
+          "uuid": "Compendium.laaru-dnd5-hw.monsters.Actor.1OU01Rdm79HfHFrY"
+        }
+      ],
+      "summon": {
+        "mode": "",
+        "prompt": true,
+        "identifier": null
+      },
+      "temp_hp": ""
+    },
+    {
+      "id": "NGTsi2NeYtrFmgrl",
+      "name": "",
+      "img": "",
+      "sort": 0,
+      "activation": {
+        "type": "action",
+        "value": null,
+        "condition": "",
+        "override": false,
+        "reaction_conditions": []
+      },
+      "consumption": {
+        "scaling": {
+          "allowed": false,
+          "max": ""
+        },
+        "spell_slot": false,
+        "targets": []
+      },
+      "description": {
+        "chat_flavor": ""
+      },
+      "duration": {
+        "value": null,
+        "units": "inst",
+        "special": "",
+        "concentration": false,
+        "override": false
+      },
+      "flags": {},
+      "range": {
+        "value": null,
+        "units": "self",
+        "special": "",
+        "override": false
+      },
+      "target": {
+        "template": {
+          "count": "",
+          "contiguous": false,
+          "stationary": false,
+          "type": "",
+          "size": "",
+          "width": "",
+          "height": "",
+          "units": "ft"
+        },
+        "affects": {
+          "count": "1",
+          "type": "creature",
+          "choice": false,
+          "special": ""
+        },
+        "override": false,
+        "prompt": true
+      },
+      "uses": {
+        "spent": 0,
+        "max": "",
+        "recovery": []
+      },
+      "visibility": {
+        "identifier": "",
+        "level": {
+          "min": null,
+          "max": null
+        },
+        "require_attunement": false,
+        "require_identification": false,
+        "require_magic": false
+      },
+      "effects": [
+        {
+          "id": "86QspwCXLzQe5hFH",
+          "level": {
+            "min": null,
+            "max": null
+          },
+          "on_save": false,
+          "riders": null
+        }
+      ],
+      "applied_effects": [],
+      "kind": "save",
+      "damage": {
+        "on_save": "half",
+        "parts": []
+      },
+      "save": {
+        "ability": [
+          "wis"
+        ],
+        "dc": {
+          "calculation": "spellcasting",
+          "formula": ""
+        },
+        "ignore_cover": false
+      }
+    }
+  ],
+  "passive_effects": [
+    {
+      "id": "86QspwCXLzQe5hFH",
+      "name": "Призыв звезды",
+      "description": "",
+      "changes": [],
+      "statuses": [
+        "charmed"
+      ],
+      "duration": {
+        "seconds": 60
+      },
+      "disabled": false,
+      "transfer": false
+    }
+  ],
+  "provenance": {
+    "source": "foundry",
+    "source_url": "https://github.com/foundryvtt/dnd5e/blob/965ad2d0cf5d063dac675ba078b5bd3c3c0dd449/packs/_source/laaru-hw-spells/Призыв_звезды___Summon_Star_Vv6UyYMJbAkvnSwF.yml",
+    "ingest_date": "2026-10-26",
+    "ingest_version": "foundry-translator-v1",
+    "srd_version": [
+      "5.1"
+    ],
+    "license_tag": "CC-BY-4.0"
+  },
+  "review": {
+    "known_divergence": null,
+    "requires_user_decision": false
+  },
+  "entry_kind": "spell"
+}

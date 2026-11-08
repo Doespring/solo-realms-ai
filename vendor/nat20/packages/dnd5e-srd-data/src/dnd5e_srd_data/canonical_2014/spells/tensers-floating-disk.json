@@ -1,0 +1,139 @@
+{
+  "slug": "tensers-floating-disk",
+  "foundry_uuid": "Compendium.dnd5e.laaru-hw-spells.Item.zSJB6wEv5myR0wza",
+  "name": "Парящий диск Тензера / Tenser's Floating Disk",
+  "description": "Заклинание создаёт круглый горизонтальный силовой диск диаметром 3 фута и толщиной 1 дюйм. Он парит в 3 футах от земли в незанятом пространстве на ваш выбор, которое вы видите в пределах дистанции. Диск существует, пока длится заклинание, и может выдерживать вес до 500 фунтов. Если на него поместить больший вес, заклинание прекращает действовать и все, что было на диске, падает наземь\n\nДиск неподвижен, пока вы в пределах 20 футов от него. Если вы переместитесь за пределы 20 футов, диск полетит вслед за вами, чтобы оставаться в пределах 20 футов от вас. Он может лететь над пересеченной местностью, вверх и вниз по ступенями склонам, но неспособен преодолеть уступ высотой более 10 футов. К примеру, диск не может перелететь через яму глубиной 10 футов, а если он создан на ее дне — не сможет ее покинуть.\n\nЕсли вы окажетесь более чем в 100 футах от диска (например, потому что он не смог преодолеть препятствие, следуя за вами), заклинание прекращает действовать.",
+  "level": 1,
+  "school": "con",
+  "components": [
+    "M",
+    "S",
+    "V"
+  ],
+  "ritual": true,
+  "concentration": false,
+  "casting_time": {
+    "unit": "action",
+    "value": 1,
+    "condition": ""
+  },
+  "range": {
+    "units": "ft",
+    "value": 30,
+    "special": null
+  },
+  "duration": {
+    "units": "hour",
+    "value": 1
+  },
+  "materials": {
+    "value": "капля ртути",
+    "consumed": false,
+    "cost": 0,
+    "supply": 0
+  },
+  "preparation": {
+    "mode": "prepared",
+    "prepared": false
+  },
+  "activities": [
+    {
+      "id": "dnd5eactivity000",
+      "name": "",
+      "img": "",
+      "sort": 0,
+      "activation": {
+        "type": "action",
+        "value": null,
+        "condition": "",
+        "override": false,
+        "reaction_conditions": []
+      },
+      "consumption": {
+        "scaling": {
+          "allowed": false,
+          "max": ""
+        },
+        "spell_slot": true,
+        "targets": []
+      },
+      "description": {
+        "chat_flavor": ""
+      },
+      "duration": {
+        "value": null,
+        "units": "inst",
+        "special": "",
+        "concentration": false,
+        "override": false
+      },
+      "flags": {},
+      "range": {
+        "value": null,
+        "units": "self",
+        "special": "",
+        "override": false
+      },
+      "target": {
+        "template": {
+          "count": "",
+          "contiguous": false,
+          "stationary": false,
+          "type": "",
+          "size": "",
+          "width": "",
+          "height": "",
+          "units": ""
+        },
+        "affects": {
+          "count": "1",
+          "type": "space",
+          "choice": false,
+          "special": ""
+        },
+        "override": false,
+        "prompt": true
+      },
+      "uses": {
+        "spent": 0,
+        "max": "",
+        "recovery": []
+      },
+      "visibility": {
+        "identifier": "",
+        "level": {
+          "min": null,
+          "max": null
+        },
+        "require_attunement": false,
+        "require_identification": false,
+        "require_magic": false
+      },
+      "effects": [],
+      "applied_effects": [],
+      "kind": "utility",
+      "roll": {
+        "formula": "",
+        "name": "",
+        "prompt": false,
+        "visible": false
+      }
+    }
+  ],
+  "passive_effects": [],
+  "provenance": {
+    "source": "foundry",
+    "source_url": "https://github.com/foundryvtt/dnd5e/blob/965ad2d0cf5d063dac675ba078b5bd3c3c0dd449/packs/_source/laaru-hw-spells/Парящий_диск_Тензера___Tenser_s_Floating_Disk_zSJB6wEv5myR0wza.yml",
+    "ingest_date": "2026-10-26",
+    "ingest_version": "foundry-translator-v1",
+    "srd_version": [
+      "5.1"
+    ],
+    "license_tag": "CC-BY-4.0"
+  },
+  "review": {
+    "known_divergence": null,
+    "requires_user_decision": false
+  },
+  "entry_kind": "spell"
+}

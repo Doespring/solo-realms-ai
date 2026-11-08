@@ -1,0 +1,186 @@
+{
+  "slug": "arcane-weapon",
+  "foundry_uuid": "Compendium.dnd5e.laaru-hw-spells.Item.h7rKCcEP6twqqmAD",
+  "name": "Магическое оружие / Arcane Weapon",
+  "description": "Вы прикасаетесь к оружию и наделяете его магией. В течение длительности, оружие считается магическим оружием и весь наносимый им урон становится уроном Силы. Если вы сотворяете это заклинание на оружие со свойством «боеприпасы». оружие не расходует боеприпасы при выстреле и не требует перезарядки.\n\nНа высоких кругах. Когда вы сотворите это заклинание, используя ячейку заклинания 3-го или 4-го круга, продолжительность становится равной 8 часов. Если вы используете ячейку заклинания 5-го круга или выше, длительность становится 24 часа.\n\nПримечание\n\nДанная особенность настроена как Зачарование.",
+  "level": 1,
+  "school": "trs",
+  "components": [
+    "S",
+    "V"
+  ],
+  "ritual": false,
+  "concentration": false,
+  "casting_time": {
+    "unit": "bonus",
+    "value": 1,
+    "condition": ""
+  },
+  "range": {
+    "units": "touch",
+    "value": null,
+    "special": null
+  },
+  "duration": {
+    "units": "hour",
+    "value": 1
+  },
+  "materials": {
+    "value": "",
+    "consumed": false,
+    "cost": 0,
+    "supply": 0
+  },
+  "preparation": {
+    "mode": "prepared",
+    "prepared": false
+  },
+  "activities": [
+    {
+      "id": "dnd5eactivity000",
+      "name": "",
+      "img": "",
+      "sort": 0,
+      "activation": {
+        "type": "action",
+        "value": null,
+        "condition": "",
+        "override": false,
+        "reaction_conditions": []
+      },
+      "consumption": {
+        "scaling": {
+          "allowed": false,
+          "max": ""
+        },
+        "spell_slot": true,
+        "targets": []
+      },
+      "description": {
+        "chat_flavor": ""
+      },
+      "duration": {
+        "value": null,
+        "units": "inst",
+        "special": "",
+        "concentration": false,
+        "override": false
+      },
+      "flags": {},
+      "range": {
+        "value": null,
+        "units": "self",
+        "special": "",
+        "override": false
+      },
+      "target": {
+        "template": {
+          "count": "",
+          "contiguous": false,
+          "stationary": false,
+          "type": "",
+          "size": "",
+          "width": "",
+          "height": "",
+          "units": ""
+        },
+        "affects": {
+          "count": "",
+          "type": "",
+          "choice": false,
+          "special": ""
+        },
+        "override": false,
+        "prompt": true
+      },
+      "uses": {
+        "spent": 0,
+        "max": "",
+        "recovery": []
+      },
+      "visibility": {
+        "identifier": "",
+        "level": {
+          "min": null,
+          "max": null
+        },
+        "require_attunement": false,
+        "require_identification": false,
+        "require_magic": false
+      },
+      "effects": [
+        {
+          "id": "ojyrIjWZXnPJG1bb",
+          "level": {
+            "min": null,
+            "max": null
+          },
+          "on_save": null,
+          "riders": {
+            "activity": [],
+            "effect": [],
+            "item": []
+          }
+        }
+      ],
+      "applied_effects": [],
+      "kind": "enchant",
+      "enchant": {
+        "self": false,
+        "identifier": ""
+      },
+      "restrictions": {
+        "allow_magical": false,
+        "categories": [],
+        "properties": [],
+        "type": "weapon"
+      }
+    }
+  ],
+  "passive_effects": [
+    {
+      "id": "ojyrIjWZXnPJG1bb",
+      "name": "Магическое оружие / Arcane Weapon",
+      "description": "",
+      "changes": [
+        {
+          "key": "name",
+          "mode": 2,
+          "value": ", магическое оружие",
+          "priority": 20
+        },
+        {
+          "key": "system.properties",
+          "mode": 2,
+          "value": "mgc",
+          "priority": 20
+        },
+        {
+          "key": "system.damage.base.types",
+          "mode": 2,
+          "value": "force",
+          "priority": 20
+        }
+      ],
+      "statuses": [],
+      "duration": null,
+      "disabled": false,
+      "transfer": false
+    }
+  ],
+  "provenance": {
+    "source": "foundry",
+    "source_url": "https://github.com/foundryvtt/dnd5e/blob/965ad2d0cf5d063dac675ba078b5bd3c3c0dd449/packs/_source/laaru-hw-spells/Магическое_оружие___Arcane_Weapon_h7rKCcEP6twqqmAD.yml",
+    "ingest_date": "2026-10-26",
+    "ingest_version": "foundry-translator-v1",
+    "srd_version": [
+      "5.1"
+    ],
+    "license_tag": "CC-BY-4.0"
+  },
+  "review": {
+    "known_divergence": null,
+    "requires_user_decision": false
+  },
+  "entry_kind": "spell"
+}

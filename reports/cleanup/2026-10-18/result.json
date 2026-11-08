@@ -1,0 +1,352 @@
+{
+  "status": "PARTIAL_RECURSIVE_DELETE_BLOCKED_BY_POLICY",
+  "removed": [
+    {
+      "path": "C:\\Users\\iwa41\\Documents\\Codex\\2026-10-13\\files-pasted-by-the-user-solo\\outputs\\SoloRealmsAI\\dist\\SoloRealmsAI-Setup-2.1.4-preview.6.exe",
+      "relative": "dist/SoloRealmsAI-Setup-2.1.4-preview.6.exe",
+      "kind": "old-preview",
+      "files": 1,
+      "bytes": 28099401
+    },
+    {
+      "path": "C:\\Users\\iwa41\\Documents\\Codex\\2026-10-13\\files-pasted-by-the-user-solo\\outputs\\SoloRealmsAI\\dist\\SoloRealmsAI-Windows-2.1.4-preview.6.zip",
+      "relative": "dist/SoloRealmsAI-Windows-2.1.4-preview.6.zip",
+      "kind": "old-preview",
+      "files": 1,
+      "bytes": 34515394
+    },
+    {
+      "path": "C:\\Users\\iwa41\\Documents\\Codex\\2026-10-13\\files-pasted-by-the-user-solo\\outputs\\SoloRealmsAI\\dist\\SoloRealmsAI-Windows-2.1.4-preview.7-mock.zip",
+      "relative": "dist/SoloRealmsAI-Windows-2.1.4-preview.7-mock.zip",
+      "kind": "old-preview",
+      "files": 1,
+      "bytes": 36731740
+    },
+    {
+      "path": "C:\\Users\\iwa41\\Documents\\Codex\\2026-10-13\\files-pasted-by-the-user-solo\\outputs\\SoloRealmsAI\\dist\\SoloRealmsAI-Windows-2.1.4-preview.7-mock.zip.sha256",
+      "relative": "dist/SoloRealmsAI-Windows-2.1.4-preview.7-mock.zip.sha256",
+      "kind": "old-preview",
+      "files": 1,
+      "bytes": 112
+    },
+    {
+      "path": "C:\\Users\\iwa41\\Documents\\Codex\\2026-10-13\\files-pasted-by-the-user-solo\\outputs\\SoloRealmsAI\\dist\\SoloRealmsAI-Windows-2.1.4-preview.8-mock.zip",
+      "relative": "dist/SoloRealmsAI-Windows-2.1.4-preview.8-mock.zip",
+      "kind": "old-preview",
+      "files": 1,
+      "bytes": 36744255
+    },
+    {
+      "path": "C:\\Users\\iwa41\\Documents\\Codex\\2026-10-13\\files-pasted-by-the-user-solo\\outputs\\SoloRealmsAI\\dist\\SoloRealmsAI-Windows-2.1.4-preview.8-mock.zip.sha256",
+      "relative": "dist/SoloRealmsAI-Windows-2.1.4-preview.8-mock.zip.sha256",
+      "kind": "old-preview",
+      "files": 1,
+      "bytes": 113
+    },
+    {
+      "path": "C:\\Users\\iwa41\\Documents\\Codex\\2026-10-13\\files-pasted-by-the-user-solo\\outputs\\SoloRealmsAI\\dist\\SoloRealmsAI-Windows-2.1.4-preview.9-mock.zip",
+      "relative": "dist/SoloRealmsAI-Windows-2.1.4-preview.9-mock.zip",
+      "kind": "old-preview",
+      "files": 1,
+      "bytes": 36746046
+    },
+    {
+      "path": "C:\\Users\\iwa41\\Documents\\Codex\\2026-10-13\\files-pasted-by-the-user-solo\\outputs\\SoloRealmsAI\\dist\\SoloRealmsAI-Windows-2.1.4-preview.9-mock.zip.sha256",
+      "relative": "dist/SoloRealmsAI-Windows-2.1.4-preview.9-mock.zip.sha256",
+      "kind": "old-preview",
+      "files": 1,
+      "bytes": 113
+    }
+  ],
+  "remaining": [
+    {
+      "path": "C:\\Users\\iwa41\\Documents\\Codex\\2026-10-13\\files-pasted-by-the-user-solo\\outputs\\SoloRealmsAI\\.pytest_cache",
+      "relative": ".pytest_cache",
+      "kind": "cache",
+      "files": 5,
+      "bytes": 14317
+    },
+    {
+      "path": "C:\\Users\\iwa41\\Documents\\Codex\\2026-10-13\\files-pasted-by-the-user-solo\\outputs\\SoloRealmsAI\\.test-playable-scene-tmp",
+      "relative": ".test-playable-scene-tmp",
+      "kind": "qa-temporary",
+      "files": 42,
+      "bytes": 18894848
+    },
+    {
+      "path": "C:\\Users\\iwa41\\Documents\\Codex\\2026-10-13\\files-pasted-by-the-user-solo\\outputs\\SoloRealmsAI\\build",
+      "relative": "build",
+      "kind": "build",
+      "files": 16,
+      "bytes": 41898287
+    },
+    {
+      "path": "C:\\Users\\iwa41\\Documents\\Codex\\2026-10-13\\files-pasted-by-the-user-solo\\outputs\\SoloRealmsAI\\reports\\dash-small-window-tmp",
+      "relative": "reports/dash-small-window-tmp",
+      "kind": "qa-temporary",
+      "files": 5,
+      "bytes": 606208
+    },
+    {
+      "path": "C:\\Users\\iwa41\\Documents\\Codex\\2026-10-13\\files-pasted-by-the-user-solo\\outputs\\SoloRealmsAI\\reports\\dash-ui-tmp",
+      "relative": "reports/dash-ui-tmp",
+      "kind": "qa-temporary",
+      "files": 6,
+      "bytes": 1429504
+    },
+    {
+      "path": "C:\\Users\\iwa41\\Documents\\Codex\\2026-10-13\\files-pasted-by-the-user-solo\\outputs\\SoloRealmsAI\\reports\\preview10\\tmp-full",
+      "relative": "reports/preview10/tmp-full",
+      "kind": "qa-temporary",
+      "files": 1941,
+      "bytes": 263958516
+    },
+    {
+      "path": "C:\\Users\\iwa41\\Documents\\Codex\\2026-10-13\\files-pasted-by-the-user-solo\\outputs\\SoloRealmsAI\\reports\\preview10\\tmp-targeted",
+      "relative": "reports/preview10/tmp-targeted",
+      "kind": "qa-temporary",
+      "files": 240,
+      "bytes": 40062523
+    },
+    {
+      "path": "C:\\Users\\iwa41\\Documents\\Codex\\2026-10-13\\files-pasted-by-the-user-solo\\outputs\\SoloRealmsAI\\reports\\preview10\\unpacked",
+      "relative": "reports/preview10/unpacked",
+      "kind": "unpacked-duplicate",
+      "files": 514,
+      "bytes": 69707741
+    },
+    {
+      "path": "C:\\Users\\iwa41\\Documents\\Codex\\2026-10-13\\files-pasted-by-the-user-solo\\outputs\\SoloRealmsAI\\reports\\preview7\\tmp-debug",
+      "relative": "reports/preview7/tmp-debug",
+      "kind": "qa-temporary",
+      "files": 5,
+      "bytes": 610304
+    },
+    {
+      "path": "C:\\Users\\iwa41\\Documents\\Codex\\2026-10-13\\files-pasted-by-the-user-solo\\outputs\\SoloRealmsAI\\reports\\preview7\\tmp-full",
+      "relative": "reports/preview7/tmp-full",
+      "kind": "qa-temporary",
+      "files": 1848,
+      "bytes": 246787822
+    },
+    {
+      "path": "C:\\Users\\iwa41\\Documents\\Codex\\2026-10-13\\files-pasted-by-the-user-solo\\outputs\\SoloRealmsAI\\reports\\preview7\\tmp-readiness-fix",
+      "relative": "reports/preview7/tmp-readiness-fix",
+      "kind": "qa-temporary",
+      "files": 6,
+      "bytes": 1478424
+    },
+    {
+      "path": "C:\\Users\\iwa41\\Documents\\Codex\\2026-10-13\\files-pasted-by-the-user-solo\\outputs\\SoloRealmsAI\\reports\\preview7\\tmp-scene-debug",
+      "relative": "reports/preview7/tmp-scene-debug",
+      "kind": "qa-temporary",
+      "files": 6,
+      "bytes": 2134016
+    },
+    {
+      "path": "C:\\Users\\iwa41\\Documents\\Codex\\2026-10-13\\files-pasted-by-the-user-solo\\outputs\\SoloRealmsAI\\reports\\preview7\\tmp-targeted",
+      "relative": "reports/preview7/tmp-targeted",
+      "kind": "qa-temporary",
+      "files": 30,
+      "bytes": 4755456
+    },
+    {
+      "path": "C:\\Users\\iwa41\\Documents\\Codex\\2026-10-13\\files-pasted-by-the-user-solo\\outputs\\SoloRealmsAI\\reports\\preview7\\tmp-targeted-final",
+      "relative": "reports/preview7/tmp-targeted-final",
+      "kind": "qa-temporary",
+      "files": 63,
+      "bytes": 19816921
+    },
+    {
+      "path": "C:\\Users\\iwa41\\Documents\\Codex\\2026-10-13\\files-pasted-by-the-user-solo\\outputs\\SoloRealmsAI\\reports\\preview7\\tmp-targeted2",
+      "relative": "reports/preview7/tmp-targeted2",
+      "kind": "qa-temporary",
+      "files": 20,
+      "bytes": 4182016
+    },
+    {
+      "path": "C:\\Users\\iwa41\\Documents\\Codex\\2026-10-13\\files-pasted-by-the-user-solo\\outputs\\SoloRealmsAI\\reports\\preview7\\tmp-targeted3",
+      "relative": "reports/preview7/tmp-targeted3",
+      "kind": "qa-temporary",
+      "files": 63,
+      "bytes": 19759577
+    },
+    {
+      "path": "C:\\Users\\iwa41\\Documents\\Codex\\2026-10-13\\files-pasted-by-the-user-solo\\outputs\\SoloRealmsAI\\reports\\preview7\\unpacked",
+      "relative": "reports/preview7/unpacked",
+      "kind": "unpacked-duplicate",
+      "files": 514,
+      "bytes": 69686103
+    },
+    {
+      "path": "C:\\Users\\iwa41\\Documents\\Codex\\2026-10-13\\files-pasted-by-the-user-solo\\outputs\\SoloRealmsAI\\reports\\preview7\\unpacked-final",
+      "relative": "reports/preview7/unpacked-final",
+      "kind": "unpacked-duplicate",
+      "files": 514,
+      "bytes": 69686154
+    },
+    {
+      "path": "C:\\Users\\iwa41\\Documents\\Codex\\2026-10-13\\files-pasted-by-the-user-solo\\outputs\\SoloRealmsAI\\reports\\preview8\\tmp-full",
+      "relative": "reports/preview8/tmp-full",
+      "kind": "qa-temporary",
+      "files": 1873,
+      "bytes": 252672190
+    },
+    {
+      "path": "C:\\Users\\iwa41\\Documents\\Codex\\2026-10-13\\files-pasted-by-the-user-solo\\outputs\\SoloRealmsAI\\reports\\preview8\\tmp-targeted",
+      "relative": "reports/preview8/tmp-targeted",
+      "kind": "qa-temporary",
+      "files": 186,
+      "bytes": 32885749
+    },
+    {
+      "path": "C:\\Users\\iwa41\\Documents\\Codex\\2026-10-13\\files-pasted-by-the-user-solo\\outputs\\SoloRealmsAI\\reports\\preview8\\unpacked",
+      "relative": "reports/preview8/unpacked",
+      "kind": "unpacked-duplicate",
+      "files": 514,
+      "bytes": 69701959
+    },
+    {
+      "path": "C:\\Users\\iwa41\\Documents\\Codex\\2026-10-13\\files-pasted-by-the-user-solo\\outputs\\SoloRealmsAI\\reports\\preview9\\tmp-final-fix",
+      "relative": "reports/preview9/tmp-final-fix",
+      "kind": "qa-temporary",
+      "files": 22,
+      "bytes": 2772760
+    },
+    {
+      "path": "C:\\Users\\iwa41\\Documents\\Codex\\2026-10-13\\files-pasted-by-the-user-solo\\outputs\\SoloRealmsAI\\reports\\preview9\\tmp-fix",
+      "relative": "reports/preview9/tmp-fix",
+      "kind": "qa-temporary",
+      "files": 17,
+      "bytes": 2088728
+    },
+    {
+      "path": "C:\\Users\\iwa41\\Documents\\Codex\\2026-10-13\\files-pasted-by-the-user-solo\\outputs\\SoloRealmsAI\\reports\\preview9\\tmp-red",
+      "relative": "reports/preview9/tmp-red",
+      "kind": "qa-temporary",
+      "files": 5,
+      "bytes": 643072
+    },
+    {
+      "path": "C:\\Users\\iwa41\\Documents\\Codex\\2026-10-13\\files-pasted-by-the-user-solo\\outputs\\SoloRealmsAI\\reports\\preview9\\tmp-red-reproducer",
+      "relative": "reports/preview9/tmp-red-reproducer",
+      "kind": "qa-temporary",
+      "files": 5,
+      "bytes": 643072
+    },
+    {
+      "path": "C:\\Users\\iwa41\\Documents\\Codex\\2026-10-13\\files-pasted-by-the-user-solo\\outputs\\SoloRealmsAI\\reports\\preview9\\tmp-targeted",
+      "relative": "reports/preview9/tmp-targeted",
+      "kind": "qa-temporary",
+      "files": 160,
+      "bytes": 24208046
+    },
+    {
+      "path": "C:\\Users\\iwa41\\Documents\\Codex\\2026-10-13\\files-pasted-by-the-user-solo\\outputs\\SoloRealmsAI\\reports\\preview9\\unpacked",
+      "relative": "reports/preview9/unpacked",
+      "kind": "unpacked-duplicate",
+      "files": 514,
+      "bytes": 69703148
+    },
+    {
+      "path": "C:\\Users\\iwa41\\Documents\\Codex\\2026-10-13\\files-pasted-by-the-user-solo\\outputs\\SoloRealmsAI\\reports\\small-window-evidence-tmp",
+      "relative": "reports/small-window-evidence-tmp",
+      "kind": "qa-temporary",
+      "files": 5,
+      "bytes": 606208
+    },
+    {
+      "path": "C:\\Users\\iwa41\\Documents\\Codex\\2026-10-13\\files-pasted-by-the-user-solo\\outputs\\SoloRealmsAI\\reports\\small-window-final-tmp",
+      "relative": "reports/small-window-final-tmp",
+      "kind": "qa-temporary",
+      "files": 11,
+      "bytes": 1511424
+    },
+    {
+      "path": "C:\\Users\\iwa41\\Documents\\Codex\\2026-10-13\\files-pasted-by-the-user-solo\\outputs\\SoloRealmsAI\\reports\\small-window-regression-tmp",
+      "relative": "reports/small-window-regression-tmp",
+      "kind": "qa-temporary",
+      "files": 10,
+      "bytes": 1473173
+    },
+    {
+      "path": "C:\\Users\\iwa41\\Documents\\Codex\\2026-10-13\\files-pasted-by-the-user-solo\\outputs\\SoloRealmsAI\\reports\\small-window-sticky-final-tmp",
+      "relative": "reports/small-window-sticky-final-tmp",
+      "kind": "qa-temporary",
+      "files": 5,
+      "bytes": 606208
+    },
+    {
+      "path": "C:\\Users\\iwa41\\Documents\\Codex\\2026-10-13\\files-pasted-by-the-user-solo\\outputs\\SoloRealmsAI\\reports\\small-window-ui-tmp",
+      "relative": "reports/small-window-ui-tmp",
+      "kind": "qa-temporary",
+      "files": 5,
+      "bytes": 606208
+    },
+    {
+      "path": "C:\\Users\\iwa41\\Documents\\Codex\\2026-10-13\\files-pasted-by-the-user-solo\\outputs\\SoloRealmsAI\\reports\\small-window-ui-tmp2",
+      "relative": "reports/small-window-ui-tmp2",
+      "kind": "qa-temporary",
+      "files": 5,
+      "bytes": 606208
+    },
+    {
+      "path": "C:\\Users\\iwa41\\Documents\\Codex\\2026-10-13\\files-pasted-by-the-user-solo\\outputs\\SoloRealmsAI\\rules_data\\runtime\\__pycache__",
+      "relative": "rules_data/runtime/__pycache__",
+      "kind": "cache",
+      "files": 4,
+      "bytes": 15850
+    },
+    {
+      "path": "C:\\Users\\iwa41\\Documents\\Codex\\2026-10-13\\files-pasted-by-the-user-solo\\outputs\\SoloRealmsAI\\rules_data\\testing\\__pycache__",
+      "relative": "rules_data/testing/__pycache__",
+      "kind": "cache",
+      "files": 3,
+      "bytes": 13570
+    },
+    {
+      "path": "C:\\Users\\iwa41\\Documents\\Codex\\2026-10-13\\files-pasted-by-the-user-solo\\outputs\\SoloRealmsAI\\scripts\\__pycache__",
+      "relative": "scripts/__pycache__",
+      "kind": "cache",
+      "files": 2,
+      "bytes": 38090
+    },
+    {
+      "path": "C:\\Users\\iwa41\\Documents\\Codex\\2026-10-13\\files-pasted-by-the-user-solo\\outputs\\SoloRealmsAI\\solo\\__pycache__",
+      "relative": "solo/__pycache__",
+      "kind": "cache",
+      "files": 103,
+      "bytes": 1700600
+    },
+    {
+      "path": "C:\\Users\\iwa41\\Documents\\Codex\\2026-10-13\\files-pasted-by-the-user-solo\\outputs\\SoloRealmsAI\\tests\\__pycache__",
+      "relative": "tests/__pycache__",
+      "kind": "cache",
+      "files": 73,
+      "bytes": 3002967
+    },
+    {
+      "path": "C:\\Users\\iwa41\\Documents\\Codex\\2026-10-13\\files-pasted-by-the-user-solo\\outputs\\SoloRealmsAI\\tests\\fixtures\\__pycache__",
+      "relative": "tests/fixtures/__pycache__",
+      "kind": "cache",
+      "files": 1,
+      "bytes": 5028
+    }
+  ],
+  "removed_bytes": 172837174,
+  "remaining_bytes": 1340972995,
+  "protected_files_checked": 48,
+  "protected_files_unchanged": true,
+  "current_preview_files_verified": 514,
+  "current_preview_sha256": "93e543a97faf7181f165f0729bd8ad5bd4555f7caacbc64ffbfc1a182eab8339",
+  "qa_archive": {
+    "path": "C:\\Users\\iwa41\\Documents\\Codex\\2026-10-13\\files-pasted-by-the-user-solo\\outputs\\SoloRealmsAI\\reports\\cleanup\\2026-10-18\\QA-TEMP-EVIDENCE.zip",
+    "files": 6584,
+    "bytes": 49444366,
+    "original_bytes": 945799181,
+    "sha256": "0a18c8b47565c1d32b47a40062f4ed5465e284e5cd3cf7a08e5bba6438265692",
+    "crc": "ok",
+    "all_file_hashes_verified": true
+  },
+  "manual_script_executed": false
+}

@@ -1,0 +1,170 @@
+{
+  "slug": "lock-armor",
+  "foundry_uuid": "Compendium.dnd5e.laaru-hw-spells.Item.sL7s6n10kwiLXLCK",
+  "name": "Заклинивание доспеха / Lock Armor",
+  "description": "(Механомагия)\n\nВы выбираете целью металлический доспех или металлическую Конструкцию. Существо, которое носит доспех, или Конструкция, должно пройти испытание Мудрости. При успехе заклинание не срабатывает.\n\nПри провале заклинание смыкает металлические части так, что их нельзя сдви­нуть относительно друг друга. Это полностью парализует существо, сделанное из металла или облачённое в метал­лическую броню с подвижными частями: например, чешуйчатый доспех заклинит целиком, поскольку чешуйки должны двигаться, а на нагрудник это никак не повлияет. В зависимости от типа доспеха у существа может остаться ограниченная возможность совершать действия (возможность говорить сохраняется почти всегда), но металлические Конструкции полностью &amp;Reference[paralyzed]{парализуются}. Цель повторяет испытание в конце каждого своего хода, прекращая эффект при успехе.\n\nЗаклинание Масло снимает заклинание Заклинивание доспеха со всех попавших под него существах в области своего действия.\n\nНа высоких кругах: Если вы творите это заклинание, используя ячейку 3-го круга или выше, вы можете сделать целью одно дополнительное существо или объект за каждый круг ячейки выше 2-го.",
+  "level": 2,
+  "school": "trs",
+  "components": [
+    "M",
+    "S",
+    "V"
+  ],
+  "ritual": false,
+  "concentration": true,
+  "casting_time": {
+    "unit": "action",
+    "value": 1,
+    "condition": ""
+  },
+  "range": {
+    "units": "ft",
+    "value": 60,
+    "special": null
+  },
+  "duration": {
+    "units": "minute",
+    "value": 1
+  },
+  "materials": {
+    "value": "щепотка ржавчины и металлическая стружка",
+    "consumed": false,
+    "cost": 0,
+    "supply": 0
+  },
+  "preparation": {
+    "mode": "prepared",
+    "prepared": false
+  },
+  "activities": [
+    {
+      "id": "QJj630Jpq0hGJRKG",
+      "name": "",
+      "img": "",
+      "sort": 0,
+      "activation": {
+        "type": "action",
+        "value": null,
+        "condition": "",
+        "override": false,
+        "reaction_conditions": []
+      },
+      "consumption": {
+        "scaling": {
+          "allowed": false,
+          "max": ""
+        },
+        "spell_slot": true,
+        "targets": []
+      },
+      "description": {
+        "chat_flavor": ""
+      },
+      "duration": {
+        "value": null,
+        "units": "inst",
+        "special": "",
+        "concentration": false,
+        "override": false
+      },
+      "flags": {},
+      "range": {
+        "value": null,
+        "units": "self",
+        "special": "",
+        "override": false
+      },
+      "target": {
+        "template": {
+          "count": "",
+          "contiguous": false,
+          "stationary": false,
+          "type": "",
+          "size": "",
+          "width": "",
+          "height": "",
+          "units": "ft"
+        },
+        "affects": {
+          "count": "1",
+          "type": "creatureOrObject",
+          "choice": false,
+          "special": ""
+        },
+        "override": false,
+        "prompt": true
+      },
+      "uses": {
+        "spent": 0,
+        "max": "",
+        "recovery": []
+      },
+      "visibility": {
+        "identifier": "",
+        "level": {
+          "min": null,
+          "max": null
+        },
+        "require_attunement": false,
+        "require_identification": false,
+        "require_magic": false
+      },
+      "effects": [
+        {
+          "id": "ZZzvXHXlisdNcYwl",
+          "level": {
+            "min": null,
+            "max": null
+          },
+          "on_save": false,
+          "riders": null
+        }
+      ],
+      "applied_effects": [],
+      "kind": "save",
+      "damage": {
+        "on_save": "half",
+        "parts": []
+      },
+      "save": {
+        "ability": [
+          "wis"
+        ],
+        "dc": {
+          "calculation": "spellcasting",
+          "formula": ""
+        },
+        "ignore_cover": false
+      }
+    }
+  ],
+  "passive_effects": [
+    {
+      "id": "ZZzvXHXlisdNcYwl",
+      "name": "Заклинивание доспеха",
+      "description": "",
+      "changes": [],
+      "statuses": [],
+      "duration": {
+        "seconds": 60
+      },
+      "disabled": false,
+      "transfer": false
+    }
+  ],
+  "provenance": {
+    "source": "foundry",
+    "source_url": "https://github.com/foundryvtt/dnd5e/blob/965ad2d0cf5d063dac675ba078b5bd3c3c0dd449/packs/_source/laaru-hw-spells/Заклинивание_доспеха___Lock_Armor_sL7s6n10kwiLXLCK.yml",
+    "ingest_date": "2026-10-26",
+    "ingest_version": "foundry-translator-v1",
+    "srd_version": [
+      "5.1"
+    ],
+    "license_tag": "CC-BY-4.0"
+  },
+  "review": {
+    "known_divergence": null,
+    "requires_user_decision": false
+  },
+  "entry_kind": "spell"
+}

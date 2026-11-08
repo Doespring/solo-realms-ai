@@ -1,0 +1,139 @@
+{
+  "slug": "fortunes-favor",
+  "foundry_uuid": "Compendium.dnd5e.laaru-hw-spells.Item.qOT2Yt5J56VcQaoH",
+  "name": "Благосклонность удачи / Fortune's Favor",
+  "description": "Вы наделяете скрытой удачей себя или одно согласное существо, которое вы можете видеть в пределах дистанции. Когда выбранное существо совершает бросок атаки, проверку характеристики или испытание до окончания заклинания, оно может окончить заклинание на себе и бросить дополнительный [[/r d20]] и решить, какой из бросков использовать. В качестве альтернативы, когда по выбранному существу совершается бросок атаки, оно может окончить заклинание на себе и бросить дополнительный [[/r d20]] и решить, какой из бросков использовать: цели или противника.\n\nЕсли оригинальный бросок [[/r d20]] совершался с преимуществом или помехой, существо совершает дополнительный бросок [[/r d20]] после того, как оригинальный бросок был совершён с преимуществом или помехой.\n\nНа высоких кругах. Если вы сотворяете это заклинание, используя ячейку 3-го круга или выше, вы можете сделать целью одно дополнительное существо за каждую ячейку выше второго.",
+  "level": 2,
+  "school": "div",
+  "components": [
+    "M",
+    "S",
+    "V"
+  ],
+  "ritual": false,
+  "concentration": false,
+  "casting_time": {
+    "unit": "minute",
+    "value": 1,
+    "condition": ""
+  },
+  "range": {
+    "units": "ft",
+    "value": 60,
+    "special": null
+  },
+  "duration": {
+    "units": "hour",
+    "value": 1
+  },
+  "materials": {
+    "value": "жемчужина, стоящая как минимум 100 зм, расходуемая заклинанием",
+    "consumed": true,
+    "cost": 100,
+    "supply": 0
+  },
+  "preparation": {
+    "mode": "prepared",
+    "prepared": false
+  },
+  "activities": [
+    {
+      "id": "dnd5eactivity000",
+      "name": "",
+      "img": "",
+      "sort": 0,
+      "activation": {
+        "type": "action",
+        "value": null,
+        "condition": "",
+        "override": false,
+        "reaction_conditions": []
+      },
+      "consumption": {
+        "scaling": {
+          "allowed": false,
+          "max": ""
+        },
+        "spell_slot": true,
+        "targets": []
+      },
+      "description": {
+        "chat_flavor": ""
+      },
+      "duration": {
+        "value": null,
+        "units": "inst",
+        "special": "",
+        "concentration": false,
+        "override": false
+      },
+      "flags": {},
+      "range": {
+        "value": null,
+        "units": "self",
+        "special": "",
+        "override": false
+      },
+      "target": {
+        "template": {
+          "count": "",
+          "contiguous": false,
+          "stationary": false,
+          "type": "",
+          "size": "",
+          "width": "",
+          "height": "",
+          "units": ""
+        },
+        "affects": {
+          "count": "",
+          "type": "",
+          "choice": false,
+          "special": ""
+        },
+        "override": false,
+        "prompt": true
+      },
+      "uses": {
+        "spent": 0,
+        "max": "",
+        "recovery": []
+      },
+      "visibility": {
+        "identifier": "",
+        "level": {
+          "min": null,
+          "max": null
+        },
+        "require_attunement": false,
+        "require_identification": false,
+        "require_magic": false
+      },
+      "effects": [],
+      "applied_effects": [],
+      "kind": "utility",
+      "roll": {
+        "formula": "d20",
+        "name": "",
+        "prompt": false,
+        "visible": false
+      }
+    }
+  ],
+  "passive_effects": [],
+  "provenance": {
+    "source": "foundry",
+    "source_url": "https://github.com/foundryvtt/dnd5e/blob/965ad2d0cf5d063dac675ba078b5bd3c3c0dd449/packs/_source/laaru-hw-spells/Благосклонность_удачи___Fortune_s_Favor_qOT2Yt5J56VcQaoH.yml",
+    "ingest_date": "2026-10-26",
+    "ingest_version": "foundry-translator-v1",
+    "srd_version": [
+      "5.1"
+    ],
+    "license_tag": "CC-BY-4.0"
+  },
+  "review": {
+    "known_divergence": null,
+    "requires_user_decision": false
+  },
+  "entry_kind": "spell"
+}

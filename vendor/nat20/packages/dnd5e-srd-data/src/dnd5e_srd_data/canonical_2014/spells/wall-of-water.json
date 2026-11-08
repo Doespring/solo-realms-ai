@@ -1,0 +1,139 @@
+{
+  "slug": "wall-of-water",
+  "foundry_uuid": "Compendium.dnd5e.laaru-hw-spells.Item.O958kXjMplAN9hsY",
+  "name": "Водяная стена / Wall of Water",
+  "description": "Вы создаёте стену воды в видимой точке на горизонтальной поверхности в пределах дистанции заклинания. Точка должна располагаться на поверхности.\n\nСтена может быть длиной до 30 футов, высотой до 10 футов и толщиной до 1 фута. Или вы можете создать кольцо диаметром 20 футов, высотой 20 футов и толщиной 1 фут.\n\nСтена существует, пока действует заклинание. Стена считается &amp;reference[difficultterrain]{пересечённой местностью}.\n\nВсе атаки дистанционным оружием, траектория которых проходит через пространство стены, совершаются с помехой.\n\nОгненный урон от эффектов, которые прошли через стену, уменьшается вдвое.\n\nЗаклинания, которые причиняют урон холодом, при прохождении через стену замораживают ту область стены, сквозь которую прошли (минимум клетка 5×5 футов). Каждая замёрзшая секция площадью 5×5 футов имеет КБ 5 и 15 ПЗ.\n\nЕсли ПЗ секции уменьшаются до 0, она разрушается. Разрушенные секции стены не заполняются водой повторно.",
+  "level": 3,
+  "school": "evo",
+  "components": [
+    "M",
+    "S",
+    "V"
+  ],
+  "ritual": false,
+  "concentration": true,
+  "casting_time": {
+    "unit": "action",
+    "value": 1,
+    "condition": ""
+  },
+  "range": {
+    "units": "ft",
+    "value": 60,
+    "special": null
+  },
+  "duration": {
+    "units": "minute",
+    "value": 10
+  },
+  "materials": {
+    "value": "капля воды",
+    "consumed": false,
+    "cost": 0,
+    "supply": 0
+  },
+  "preparation": {
+    "mode": "prepared",
+    "prepared": false
+  },
+  "activities": [
+    {
+      "id": "dnd5eactivity000",
+      "name": "",
+      "img": "",
+      "sort": 0,
+      "activation": {
+        "type": "action",
+        "value": null,
+        "condition": "",
+        "override": false,
+        "reaction_conditions": []
+      },
+      "consumption": {
+        "scaling": {
+          "allowed": false,
+          "max": ""
+        },
+        "spell_slot": true,
+        "targets": []
+      },
+      "description": {
+        "chat_flavor": ""
+      },
+      "duration": {
+        "value": null,
+        "units": "inst",
+        "special": "",
+        "concentration": false,
+        "override": false
+      },
+      "flags": {},
+      "range": {
+        "value": null,
+        "units": "self",
+        "special": "",
+        "override": false
+      },
+      "target": {
+        "template": {
+          "count": "",
+          "contiguous": false,
+          "stationary": false,
+          "type": "wall",
+          "size": "30",
+          "width": "",
+          "height": "",
+          "units": "ft"
+        },
+        "affects": {
+          "count": "",
+          "type": "",
+          "choice": false,
+          "special": ""
+        },
+        "override": false,
+        "prompt": true
+      },
+      "uses": {
+        "spent": 0,
+        "max": "",
+        "recovery": []
+      },
+      "visibility": {
+        "identifier": "",
+        "level": {
+          "min": null,
+          "max": null
+        },
+        "require_attunement": false,
+        "require_identification": false,
+        "require_magic": false
+      },
+      "effects": [],
+      "applied_effects": [],
+      "kind": "utility",
+      "roll": {
+        "formula": "",
+        "name": "",
+        "prompt": false,
+        "visible": false
+      }
+    }
+  ],
+  "passive_effects": [],
+  "provenance": {
+    "source": "foundry",
+    "source_url": "https://github.com/foundryvtt/dnd5e/blob/965ad2d0cf5d063dac675ba078b5bd3c3c0dd449/packs/_source/laaru-hw-spells/Водяная_стена___Wall_of_Water_O958kXjMplAN9hsY.yml",
+    "ingest_date": "2026-10-26",
+    "ingest_version": "foundry-translator-v1",
+    "srd_version": [
+      "5.1"
+    ],
+    "license_tag": "CC-BY-4.0"
+  },
+  "review": {
+    "known_divergence": null,
+    "requires_user_decision": false
+  },
+  "entry_kind": "spell"
+}

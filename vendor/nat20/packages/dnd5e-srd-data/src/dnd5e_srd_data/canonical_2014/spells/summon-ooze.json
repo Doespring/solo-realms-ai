@@ -1,0 +1,194 @@
+{
+  "slug": "summon-ooze",
+  "foundry_uuid": "Compendium.dnd5e.laaru-hw-spells.Item.Ao5nfE0DU4YlaolP",
+  "name": "Призыв жижи / Summon Ooze",
+  "description": "Вы призываете магическую жижу. Она появляется в незанятом пространстве, которое вы можете видеть в пределах дистанции. Эта материальная форма использует блок параметров Духа жижи. Когда вы сотворяете заклинание, выберите цвет: зеленый, красный или желтый. Существо напоминает выбранное вами существо, которое определяет некоторые характеристики в его блоке параметров. Существо исчезает, когда его ПЗ падают до 0 или когда заклинание заканчивается.\n\nСущество является союзником для вас и ваших компаньонов. В бою существо использует ваш показатель инициативы, но действует сразу после вас. Оно подчиняется вашим словесным командам (от вас не требуется никаких действий). Если вы не даете ему никаких команд, оно выполняет действие Уклонение и использует свое движение, чтобы избежать опасности.\n\nНа высоких кругах. Когда вы сотворяете это заклинание, используя заклинание 2-го круга или выше, используйте более высокий круг всякий раз, когда круг заклинания появляется в блоке параметров.\n\nПримечание\n\nОсобенность настроена как Призыв.",
+  "level": 1,
+  "school": "con",
+  "components": [
+    "M",
+    "S",
+    "V"
+  ],
+  "ritual": false,
+  "concentration": true,
+  "casting_time": {
+    "unit": "action",
+    "value": 1,
+    "condition": ""
+  },
+  "range": {
+    "units": "ft",
+    "value": 30,
+    "special": null
+  },
+  "duration": {
+    "units": "hour",
+    "value": 1
+  },
+  "materials": {
+    "value": "золотой пузырёк стоимостью не менее 100 зм",
+    "consumed": false,
+    "cost": 0,
+    "supply": 0
+  },
+  "preparation": {
+    "mode": "prepared",
+    "prepared": false
+  },
+  "activities": [
+    {
+      "id": "dnd5eactivity000",
+      "name": "",
+      "img": "",
+      "sort": 0,
+      "activation": {
+        "type": "action",
+        "value": null,
+        "condition": "",
+        "override": false,
+        "reaction_conditions": []
+      },
+      "consumption": {
+        "scaling": {
+          "allowed": false,
+          "max": ""
+        },
+        "spell_slot": true,
+        "targets": []
+      },
+      "description": {
+        "chat_flavor": ""
+      },
+      "duration": {
+        "value": null,
+        "units": "inst",
+        "special": "",
+        "concentration": false,
+        "override": false
+      },
+      "flags": {},
+      "range": {
+        "value": null,
+        "units": "self",
+        "special": "",
+        "override": false
+      },
+      "target": {
+        "template": {
+          "count": "",
+          "contiguous": false,
+          "stationary": false,
+          "type": "",
+          "size": "",
+          "width": "",
+          "height": "",
+          "units": ""
+        },
+        "affects": {
+          "count": "",
+          "type": "",
+          "choice": false,
+          "special": ""
+        },
+        "override": false,
+        "prompt": true
+      },
+      "uses": {
+        "spent": 0,
+        "max": "",
+        "recovery": []
+      },
+      "visibility": {
+        "identifier": "",
+        "level": {
+          "min": null,
+          "max": null
+        },
+        "require_attunement": false,
+        "require_identification": false,
+        "require_magic": false
+      },
+      "effects": [],
+      "applied_effects": [],
+      "kind": "summon",
+      "bonuses": {
+        "ac": "@item.level",
+        "hd": "",
+        "hp": "10*@item.level",
+        "attack_damage": "@item.level",
+        "save_damage": "",
+        "healing": ""
+      },
+      "creature_sizes": [],
+      "creature_types": [],
+      "match": {
+        "ability": "",
+        "attacks": true,
+        "disposition": false,
+        "proficiency": false,
+        "saves": false
+      },
+      "profiles": [
+        {
+          "id": "e2gAsuxVg6By6dMK",
+          "count": "",
+          "cr": "",
+          "level": {
+            "min": null,
+            "max": null
+          },
+          "name": "Жёлтый",
+          "types": [],
+          "uuid": "Compendium.laaru-dnd5-hw.monsters2.Actor.F12mbtot8bWYe0Oe"
+        },
+        {
+          "id": "osSURtX0Cqhl624E",
+          "count": "",
+          "cr": "",
+          "level": {
+            "min": null,
+            "max": null
+          },
+          "name": "Зелёный",
+          "types": [],
+          "uuid": "Compendium.laaru-dnd5-hw.monsters2.Actor.hmUZ2hd9IPpXsEqD"
+        },
+        {
+          "id": "UJyIdCX2Joq4EZGb",
+          "count": "",
+          "cr": "",
+          "level": {
+            "min": null,
+            "max": null
+          },
+          "name": "Красный",
+          "types": [],
+          "uuid": "Compendium.laaru-dnd5-hw.monsters2.Actor.yQ5s6cY7jqjkCIG8"
+        }
+      ],
+      "summon": {
+        "mode": "",
+        "prompt": true,
+        "identifier": ""
+      },
+      "temp_hp": ""
+    }
+  ],
+  "passive_effects": [],
+  "provenance": {
+    "source": "foundry",
+    "source_url": "https://github.com/foundryvtt/dnd5e/blob/965ad2d0cf5d063dac675ba078b5bd3c3c0dd449/packs/_source/laaru-hw-spells/Призыв_жижи___Summon_Ooze_Ao5nfE0DU4YlaolP.yml",
+    "ingest_date": "2026-10-26",
+    "ingest_version": "foundry-translator-v1",
+    "srd_version": [
+      "5.1"
+    ],
+    "license_tag": "CC-BY-4.0"
+  },
+  "review": {
+    "known_divergence": null,
+    "requires_user_decision": false
+  },
+  "entry_kind": "spell"
+}

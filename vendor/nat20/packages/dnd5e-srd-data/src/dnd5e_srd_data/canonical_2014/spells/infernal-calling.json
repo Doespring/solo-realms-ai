@@ -1,0 +1,139 @@
+{
+  "slug": "infernal-calling",
+  "foundry_uuid": "Compendium.dnd5e.laaru-hw-spells.Item.OXW4jmZogIR3gQTz",
+  "name": "Инфернальный зов / Infernal Calling",
+  "description": "Произнося темное заклинание, вы вызываете дьявола из Девяти Преисподних. Вы выбираете тип дьявола, который должен иметь показатель опасности 6 или ниже, например, @Compendium[laaru-dnd5-hw.monsters.dmBS6IZ9befD5mJk]{шипастый} или @Compendium[laaru-dnd5-hw.monsters.bwrvYGku6dZr43cW]{бородатый дьявол}.\n\nДьявол появляется в незанятом пространстве, которое вы видите в радиусе действия. Дьявол исчезает, когда его ПЗ опускаются до 0 или когда заклинание заканчивается. Дьявол недружелюбен к вам и вашим спутникам.\n\nСовершите проверку инициативы за дьявола, который будет совершать свои собственные ходы. Он находится под контролем Мастера и в каждом своем ходу действует в соответствии со своей природой. Дьявол может атаковать вас, если считает, что может победить, или он попытается искусить вас, чтобы вы совершили злой поступок в обмен на небольшую услугу.\n\nКаждый ваш ход вы можете попытаться дать словесную команду дьяволу (действие не требуется). Он подчиняется команде, если вероятный результат соответствует его желаниям, особенно если результат приведет вас ко злу. В противном случае вы должны совершить проверку Харизмы (Обман, Запугивание или Убеждение) против его проверки Мудрости (Проницательность).\n\nВы совершаете проверку с преимуществом, если произносите истинное имя дьявола.\n\nПри провале дьявол становится невосприимчивым к вашим словесным командам на всё время действия заклинания, хотя он всё равно может выполнять ваши команды, если захочет.\n\nПри успехе дьявол будет выполнять вашу команду, например, – «атакуй моих врагов», «исследуй комнату впереди» или «отнеси это сообщение королеве», – пока он не завершит это дело, после чего вернется к вам, чтобы сообщить о выполнении.\n\nЕсли вы теряете концентрацию до того, как заклинание закончится, дьявол не исчезает, если он стал невосприимчив к вашим словесным командам. Вместо этого он действует по своему желанию в течение [[/r 3d6]] минут и только потом исчезает.\n\nЕсли у вас есть талисман конкретного дьявола, вы можете призвать этого дьявола, если он имеет соответствующий показатель опасности плюс 1, и он подчиняется всем вашим командам без каких-либо проверок Харизмы.\n\nНа высоких кругах. Если вы сотворяете это заклинание, используя ячейку 6 круга или выше, показатель опасности увеличивается на 1 за каждый круг ячейки выше 5.",
+  "level": 5,
+  "school": "con",
+  "components": [
+    "M",
+    "S",
+    "V"
+  ],
+  "ritual": false,
+  "concentration": true,
+  "casting_time": {
+    "unit": "minute",
+    "value": 1,
+    "condition": ""
+  },
+  "range": {
+    "units": "ft",
+    "value": 90,
+    "special": null
+  },
+  "duration": {
+    "units": "hour",
+    "value": 1
+  },
+  "materials": {
+    "value": "рубин стоимостью не менее 999 зм",
+    "consumed": false,
+    "cost": 999,
+    "supply": 0
+  },
+  "preparation": {
+    "mode": "prepared",
+    "prepared": false
+  },
+  "activities": [
+    {
+      "id": "dnd5eactivity000",
+      "name": "",
+      "img": "",
+      "sort": 0,
+      "activation": {
+        "type": "action",
+        "value": null,
+        "condition": "",
+        "override": false,
+        "reaction_conditions": []
+      },
+      "consumption": {
+        "scaling": {
+          "allowed": false,
+          "max": ""
+        },
+        "spell_slot": true,
+        "targets": []
+      },
+      "description": {
+        "chat_flavor": ""
+      },
+      "duration": {
+        "value": null,
+        "units": "inst",
+        "special": "",
+        "concentration": false,
+        "override": false
+      },
+      "flags": {},
+      "range": {
+        "value": null,
+        "units": "self",
+        "special": "",
+        "override": false
+      },
+      "target": {
+        "template": {
+          "count": "",
+          "contiguous": false,
+          "stationary": false,
+          "type": "",
+          "size": "",
+          "width": "",
+          "height": "",
+          "units": ""
+        },
+        "affects": {
+          "count": "",
+          "type": "",
+          "choice": false,
+          "special": ""
+        },
+        "override": false,
+        "prompt": true
+      },
+      "uses": {
+        "spent": 0,
+        "max": "",
+        "recovery": []
+      },
+      "visibility": {
+        "identifier": "",
+        "level": {
+          "min": null,
+          "max": null
+        },
+        "require_attunement": false,
+        "require_identification": false,
+        "require_magic": false
+      },
+      "effects": [],
+      "applied_effects": [],
+      "kind": "utility",
+      "roll": {
+        "formula": "3d6",
+        "name": "",
+        "prompt": false,
+        "visible": false
+      }
+    }
+  ],
+  "passive_effects": [],
+  "provenance": {
+    "source": "foundry",
+    "source_url": "https://github.com/foundryvtt/dnd5e/blob/965ad2d0cf5d063dac675ba078b5bd3c3c0dd449/packs/_source/laaru-hw-spells/Инфернальный_зов___Infernal_Calling_OXW4jmZogIR3gQTz.yml",
+    "ingest_date": "2026-10-26",
+    "ingest_version": "foundry-translator-v1",
+    "srd_version": [
+      "5.1"
+    ],
+    "license_tag": "CC-BY-4.0"
+  },
+  "review": {
+    "known_divergence": null,
+    "requires_user_decision": false
+  },
+  "entry_kind": "spell"
+}

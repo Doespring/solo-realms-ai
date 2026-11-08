@@ -1,0 +1,138 @@
+{
+  "slug": "find-vehicle",
+  "foundry_uuid": "Compendium.dnd5e.laaru-hw-spells.Item.mdJc6DK7Joi4klMW",
+  "name": "Поиск транспорта / Find Vehicle",
+  "description": "Вы призываете духа, который принимает вид невоенного наземного транспортного средства, появляясь в свободном пространстве в радиусе действия. Параметры транспорта соответствуют параметрам выбранной формы, хотя на самом деле он является небожителем, феей или бестией (на ваш выбор). Внешний вид транспорта может в некоторой степени отражать его природу. Так, джип-бестия может быть чёрного цвета с тонированными окнами и зловеще выглядящей радиаторной решёткой.\n\nУ вас есть сверхъестественная связь с машиной, которая позволяет вам водить её лучше, чем вы могли бы. Ведя призванный транспорт, вы считаетесь умелым в обращении с подобной техникой и добавляете удвоенный бонус умения к проверкам характеристик, относящихся к вождению. Ведя транспорт, вы также можете сотворить любое заклинание, применимое «на себя», на себя и на транспорт.\n\nКогда ПЗ транспортного средства опускаются до 0, оно исчезает, не оставляя физических обломков. Вы можете также в любое время прогнать машину действием, заставляя её исчезнуть. Повторное применение заклинания призывает транспорт вновь, полностью его восстанавливая.\n\nУ вас не может быть больше одного транспортного средства, призванного этим заклинанием, одновременно. Вы можете действием навсегда отпустить транспортное средство, освободив его от уз и заставляя исчезнуть.\n\nНа высоких кругах. Если вы творите это заклинание, используя ячейку 3 круга или выше, вы можете призвать невоенное водное транспортное средство, достаточно большое, чтобы вместить 6 средних существ. Если вы сотворяете это заклинание, используя ячейку 5 круга или выше, вы можете призвать невоенное воздушное транспортное средство, достаточно большое, чтобы вместить 10 средних существ. Если вы сотворяете это заклинание, используя ячейку 7 круга или выше, вы можете призвать любое транспортное средство, на которое будет согласен Мастер.",
+  "level": 2,
+  "school": "con",
+  "components": [
+    "S",
+    "V"
+  ],
+  "ritual": false,
+  "concentration": false,
+  "casting_time": {
+    "unit": "minute",
+    "value": 10,
+    "condition": ""
+  },
+  "range": {
+    "units": "ft",
+    "value": 30,
+    "special": null
+  },
+  "duration": {
+    "units": "hour",
+    "value": 8
+  },
+  "materials": {
+    "value": "",
+    "consumed": false,
+    "cost": 0,
+    "supply": 0
+  },
+  "preparation": {
+    "mode": "prepared",
+    "prepared": false
+  },
+  "activities": [
+    {
+      "id": "WD1e9w20ndQ6nDad",
+      "name": "",
+      "img": "",
+      "sort": 0,
+      "activation": {
+        "type": "action",
+        "value": null,
+        "condition": "",
+        "override": false,
+        "reaction_conditions": []
+      },
+      "consumption": {
+        "scaling": {
+          "allowed": false,
+          "max": ""
+        },
+        "spell_slot": true,
+        "targets": []
+      },
+      "description": {
+        "chat_flavor": ""
+      },
+      "duration": {
+        "value": null,
+        "units": "inst",
+        "special": "",
+        "concentration": false,
+        "override": false
+      },
+      "flags": {},
+      "range": {
+        "value": null,
+        "units": "self",
+        "special": "",
+        "override": false
+      },
+      "target": {
+        "template": {
+          "count": "",
+          "contiguous": false,
+          "stationary": false,
+          "type": "",
+          "size": "",
+          "width": "",
+          "height": "",
+          "units": "ft"
+        },
+        "affects": {
+          "count": "",
+          "type": "",
+          "choice": false,
+          "special": ""
+        },
+        "override": false,
+        "prompt": true
+      },
+      "uses": {
+        "spent": 0,
+        "max": "",
+        "recovery": []
+      },
+      "visibility": {
+        "identifier": "",
+        "level": {
+          "min": null,
+          "max": null
+        },
+        "require_attunement": false,
+        "require_identification": false,
+        "require_magic": false
+      },
+      "effects": [],
+      "applied_effects": [],
+      "kind": "utility",
+      "roll": {
+        "formula": "",
+        "name": "",
+        "prompt": false,
+        "visible": false
+      }
+    }
+  ],
+  "passive_effects": [],
+  "provenance": {
+    "source": "foundry",
+    "source_url": "https://github.com/foundryvtt/dnd5e/blob/965ad2d0cf5d063dac675ba078b5bd3c3c0dd449/packs/_source/laaru-hw-spells/Поиск_транспорта___Find_Vehicle_mdJc6DK7Joi4klMW.yml",
+    "ingest_date": "2026-10-26",
+    "ingest_version": "foundry-translator-v1",
+    "srd_version": [
+      "5.1"
+    ],
+    "license_tag": "CC-BY-4.0"
+  },
+  "review": {
+    "known_divergence": null,
+    "requires_user_decision": false
+  },
+  "entry_kind": "spell"
+}

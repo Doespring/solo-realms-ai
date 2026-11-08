@@ -1,0 +1,139 @@
+{
+  "activities": [
+    {
+      "activation": {
+        "condition": "",
+        "override": false,
+        "reaction_conditions": [],
+        "type": "action",
+        "value": null
+      },
+      "applied_effects": [],
+      "consumption": {
+        "scaling": {
+          "allowed": false,
+          "max": ""
+        },
+        "spell_slot": true,
+        "targets": []
+      },
+      "description": {
+        "chat_flavor": ""
+      },
+      "duration": {
+        "concentration": false,
+        "override": false,
+        "special": "",
+        "units": "inst",
+        "value": null
+      },
+      "effects": [],
+      "flags": {},
+      "id": "dnd5eactivity000",
+      "img": "",
+      "kind": "utility",
+      "name": "",
+      "range": {
+        "override": false,
+        "special": "",
+        "units": "self",
+        "value": null
+      },
+      "roll": {
+        "formula": "",
+        "name": "",
+        "prompt": false,
+        "visible": false
+      },
+      "sort": 0,
+      "target": {
+        "affects": {
+          "choice": false,
+          "count": "",
+          "special": "",
+          "type": "object"
+        },
+        "override": false,
+        "prompt": true,
+        "template": {
+          "contiguous": false,
+          "count": "",
+          "height": "",
+          "size": "",
+          "stationary": false,
+          "type": "",
+          "units": "",
+          "width": ""
+        }
+      },
+      "uses": {
+        "max": "",
+        "recovery": [],
+        "spent": 0
+      },
+      "visibility": {
+        "identifier": "",
+        "level": {
+          "max": null,
+          "min": null
+        },
+        "require_attunement": false,
+        "require_identification": false,
+        "require_magic": false
+      }
+    }
+  ],
+  "casting_time": {
+    "condition": "",
+    "unit": "minute",
+    "value": 10
+  },
+  "components": [
+    "S",
+    "V"
+  ],
+  "concentration": false,
+  "description": "You convert raw materials into products of the same material. For example, you can fabricate a wooden bridge from a clump of trees, a rope from a patch of hemp, or clothes from flax or wool.\n\nChoose raw materials that you can see within range. You can fabricate a Large or smaller object (contained within a 10-foot Cube or eight connected 5-foot Cubes) given a sufficient quantity of material. If you're working with metal, stone, or another mineral substance, however, the fabricated object can be no larger than Medium (contained within a 5-foot Cube). The quality of any fabricated objects is based on the quality of the raw materials.\n\nCreatures and magic items can't be created by this spell. You also can't use it to create items that require a high degree of skill—such as weapons and armor—unless you have proficiency with the type of Artisan's Tools used to craft such objects.",
+  "description_localized": "<p>Вы превращаете сырьё в готовое изделие, изготовленное из него. К примеру, вы можете создать деревянный мост из брёвен, верёвку из пеньки или одежду из льна или шерсти.</p>\n<p>Выберите сырьё, которое видите в пределах дистанции. Вы можете создать объект крупного &amp;reference[size]{размера} или меньше (он должен поместиться в пределах 10-футового куба или восьми соединённых 5-футовых кубов), причём у вас должно быть достаточно сырья. Если вы работаете с металлом, камнем или иными минералами, изготовленный объект не может быть больше среднего размера (он должен поместиться в пределах одного 5-футового куба). Качество предметов, созданных заклинанием, соответствует качеству сырья.</p>\n<p>С помощью заклинания нельзя создать существ и магические предметы или использовать их в качестве сырья. Вы также не можете создавать предметы, требующие высокого мастерства, например ювелирные украшения, оружие, стекло или броню, если только у вас нет умения в обращении с инструментами ремесленника для создания соответствующих предметов.</p>\n\n<div id=\"gtx-trans\" style=\"position:absolute;left:385px;top:39px\">\n<div class=\"gtx-trans-icon\"> </div>\n</div>",
+  "duration": {
+    "units": "inst",
+    "value": null
+  },
+  "entry_kind": "spell",
+  "foundry_uuid": "Compendium.dnd5e.spells24.Item.phbsplFabricate0",
+  "level": 4,
+  "materials": {
+    "consumed": false,
+    "cost": 0,
+    "supply": 0,
+    "value": ""
+  },
+  "name": "Изготовление",
+  "passive_effects": [],
+  "preparation": {
+    "mode": "prepared",
+    "prepared": false
+  },
+  "provenance": {
+    "ingest_date": "2026-05-30",
+    "ingest_version": "foundry-translator-v1",
+    "license_tag": "CC-BY-4.0",
+    "source": "foundry",
+    "source_url": "https://github.com/foundryvtt/dnd5e/blob/965ad2d0cf5d063dac675ba078b5bd3c3c0dd449/packs/_source/spells24/4th-level/fabricate.yml",
+    "srd_version": [
+      "5.2"
+    ]
+  },
+  "range": {
+    "special": null,
+    "units": "ft",
+    "value": 120
+  },
+  "review": {
+    "known_divergence": null,
+    "requires_user_decision": false
+  },
+  "ritual": false,
+  "school": "trs",
+  "slug": "fabricate"
+}

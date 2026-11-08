@@ -1,0 +1,187 @@
+{
+  "slug": "nether-weapon",
+  "foundry_uuid": "Compendium.dnd5e.laaru-hw-spells.Item.hSvAQfJzkpmhSK2q",
+  "name": "Оружие пустоты / Nether Weapon",
+  "description": "(Пустотное)\n\nВы шепчете на речи Пустоты и касаетесь оружия. Пока заклинание действует, оружие становится иссиня-чёрным, считается магическим (если не было таковым ранее) и наносит дополнительные [[/damage 2d6 necrotic]]{2d6 некротического урона} при попадании. Существо, получившее некротический урон от зачарованного оружия, не может восстанавливать ПЗ до начала вашего следующего хода.\n\nНа высоких кругах. Если вы сотворяете это заклинание, используя ячейку заклинания 5-го круга или выше, урон увеличивается на 1d6 за каждый круг ячейки выше 4-го.\n\nПримечание\n\nЗаклинание настроено как Зачарование. Масштабирование урона не настроено.",
+  "level": 4,
+  "school": "trs",
+  "components": [
+    "M",
+    "S",
+    "V"
+  ],
+  "ritual": false,
+  "concentration": true,
+  "casting_time": {
+    "unit": "action",
+    "value": 1,
+    "condition": ""
+  },
+  "range": {
+    "units": "touch",
+    "value": null,
+    "special": null
+  },
+  "duration": {
+    "units": "hour",
+    "value": 1
+  },
+  "materials": {
+    "value": "",
+    "consumed": false,
+    "cost": 0,
+    "supply": 0
+  },
+  "preparation": {
+    "mode": "prepared",
+    "prepared": false
+  },
+  "activities": [
+    {
+      "id": "xtPMZjDkw9dewLeg",
+      "name": "",
+      "img": "",
+      "sort": 0,
+      "activation": {
+        "type": "action",
+        "value": null,
+        "condition": "",
+        "override": false,
+        "reaction_conditions": []
+      },
+      "consumption": {
+        "scaling": {
+          "allowed": false,
+          "max": ""
+        },
+        "spell_slot": true,
+        "targets": []
+      },
+      "description": {
+        "chat_flavor": ""
+      },
+      "duration": {
+        "value": null,
+        "units": "inst",
+        "special": "",
+        "concentration": false,
+        "override": false
+      },
+      "flags": {},
+      "range": {
+        "value": null,
+        "units": "self",
+        "special": "",
+        "override": false
+      },
+      "target": {
+        "template": {
+          "count": "",
+          "contiguous": false,
+          "stationary": false,
+          "type": "",
+          "size": "",
+          "width": "",
+          "height": "",
+          "units": "ft"
+        },
+        "affects": {
+          "count": "",
+          "type": "",
+          "choice": false,
+          "special": ""
+        },
+        "override": false,
+        "prompt": true
+      },
+      "uses": {
+        "spent": 0,
+        "max": "",
+        "recovery": []
+      },
+      "visibility": {
+        "identifier": "",
+        "level": {
+          "min": null,
+          "max": null
+        },
+        "require_attunement": false,
+        "require_identification": false,
+        "require_magic": false
+      },
+      "effects": [
+        {
+          "id": "qWV7k5coqaSmC85C",
+          "level": {
+            "min": null,
+            "max": null
+          },
+          "on_save": null,
+          "riders": {
+            "activity": [],
+            "effect": [],
+            "item": []
+          }
+        }
+      ],
+      "applied_effects": [],
+      "kind": "enchant",
+      "enchant": {
+        "self": false,
+        "identifier": null
+      },
+      "restrictions": {
+        "allow_magical": false,
+        "categories": [],
+        "properties": [],
+        "type": ""
+      }
+    }
+  ],
+  "passive_effects": [
+    {
+      "id": "qWV7k5coqaSmC85C",
+      "name": "Оружие пустоты",
+      "description": "",
+      "changes": [
+        {
+          "key": "name",
+          "mode": 2,
+          "value": ", пустоты",
+          "priority": 20
+        },
+        {
+          "key": "system.properties",
+          "mode": 2,
+          "value": "mgc",
+          "priority": 20
+        },
+        {
+          "key": "system.damage.parts",
+          "mode": 2,
+          "value": "[[\"2d6\", \"necrotic\"]]",
+          "priority": 20
+        }
+      ],
+      "statuses": [],
+      "duration": null,
+      "disabled": true,
+      "transfer": false
+    }
+  ],
+  "provenance": {
+    "source": "foundry",
+    "source_url": "https://github.com/foundryvtt/dnd5e/blob/965ad2d0cf5d063dac675ba078b5bd3c3c0dd449/packs/_source/laaru-hw-spells/Оружие_пустоты___Nether_Weapon_hSvAQfJzkpmhSK2q.yml",
+    "ingest_date": "2026-10-26",
+    "ingest_version": "foundry-translator-v1",
+    "srd_version": [
+      "5.1"
+    ],
+    "license_tag": "CC-BY-4.0"
+  },
+  "review": {
+    "known_divergence": null,
+    "requires_user_decision": false
+  },
+  "entry_kind": "spell"
+}
