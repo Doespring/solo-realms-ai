@@ -1,0 +1,123 @@
+{
+  "policy_version": "2.1.0",
+  "status": "closed_verified_check_subset_integrated",
+  "pipeline": [
+    {
+      "gate": "source_registry",
+      "owner": "engine",
+      "requires": [
+        "family and source hashes match pinned rule pack",
+        "rule dependencies known",
+        "source verification sufficient for selected branch",
+        "visibility authorized"
+      ]
+    },
+    {
+      "gate": "classification",
+      "owner": "engine",
+      "requires": [
+        "reviewed semantic/formal metadata",
+        "dependency modes propagated",
+        "deterministic branches bypass AI"
+      ]
+    },
+    {
+      "gate": "context_projection",
+      "owner": "engine",
+      "requires": [
+        "necessary facts and rules only",
+        "request schema valid",
+        "duplicate keys/IDs rejected",
+        "private scope and byte budgets enforced",
+        "canonical context digest sealed"
+      ]
+    },
+    {
+      "gate": "semantic_proposal",
+      "owner": "ai",
+      "requires": [
+        "structured response only",
+        "supplied choice/entity/fact/rule references only",
+        "no state mutations or executable code",
+        "unsupported/unclear requests returned without mechanical choices"
+      ]
+    },
+    {
+      "gate": "response_validation",
+      "owner": "engine",
+      "requires": [
+        "response schema valid",
+        "request/context/ruleset match",
+        "current version match",
+        "replay guard",
+        "proposal references allowed"
+      ]
+    },
+    {
+      "gate": "plan_validation",
+      "owner": "engine",
+      "requires": [
+        "choice mapped by trusted private registry, never AI handler name",
+        "source limits and exceptions satisfied",
+        "all required handlers implemented",
+        "resources and action economy valid",
+        "canonical semantic consistency checked or unresolved decision held"
+      ]
+    },
+    {
+      "gate": "local_calculation",
+      "owner": "engine",
+      "requires": [
+        "trusted local RNG",
+        "closed mathematical handlers",
+        "damage types and durations preserved",
+        "no partial application of unsupported parent effects"
+      ]
+    },
+    {
+      "gate": "canonical_commit",
+      "owner": "engine",
+      "requires": [
+        "recheck version/idempotence in existing atomic transaction",
+        "same command signature returns existing event",
+        "trusted transition only",
+        "event retains source/rule revisions, decision and command digests, actual local draws and applied results"
+      ]
+    },
+    {
+      "gate": "narration",
+      "owner": "separate_narrator",
+      "requires": [
+        "committed facts/results only",
+        "no mechanical side effects",
+        "literary text cannot overwrite canon"
+      ]
+    }
+  ],
+  "existing_commit_boundary": {
+    "path": "solo/storage.py",
+    "entrypoint": "Store.engine_event",
+    "modified": false
+  },
+  "limits": {
+    "request_utf8_bytes": 16384,
+    "response_utf8_bytes": 16384,
+    "max_rules": 8,
+    "max_facts": 32
+  },
+  "caching": {
+    "source_cache": "local, by source hash and page",
+    "semantic_key": "private authenticated partition + canonical semantic input + ruleset digest",
+    "cache_hit": "proposal only; rebind/revalidate, rerun current formal checks",
+    "persistent_response_cache_created": false
+  },
+  "narrative_semantics": "No formula for motives, desirability, wording intent or cosmic Wish consequences. Unknown consistency requires clarification/review, not invented arithmetic.",
+  "active_state_write_capability_exposed_to_ai": false,
+  "implemented_operations": [
+    "ability_check",
+    "skill_check",
+    "saving_throw"
+  ],
+  "chapter_coverage": "coverage/phb-01.json",
+  "general_semantic_plan_execution": "not_implemented; proposals remain non-committing"
+}

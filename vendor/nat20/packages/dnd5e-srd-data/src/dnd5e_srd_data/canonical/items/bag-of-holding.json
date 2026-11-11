@@ -1,0 +1,29 @@
+{
+  "activities": [],
+  "attunement_constraint": null,
+  "cost_gp": 400.0,
+  "description": "This bag has an interior space considerably larger than its outside dimensions—roughly 2 feet square and 4 feet deep on the inside. The bag can hold up to 500 pounds, not exceeding a volume of 64 cubic feet. The bag weighs 5 pounds, regardless of its contents. Retrieving an item from the bag requires a Utilize action.\n\nIf the bag is overloaded, pierced, or torn, it is destroyed, and its contents are scattered in the Astral Plane. If the bag is turned inside out, its contents spill forth unharmed, but the bag must be put right before it can be used again. The bag holds enough air for 10 minutes of breathing, divided by the number of breathing creatures inside.\n\nPlacing a Bag of Holding inside an extradimensional space created by a Handy Haversack, Portable Hole, or similar item instantly destroys both items and opens a gate to the Astral Plane. The gate originates where the one item was placed inside the other. Any creature within a 10-foot-radius Sphere centered on the gate is sucked through it to a random location on the Astral Plane. The gate then closes. The gate is one-way and can't be reopened.",
+  "description_localized": "<p>Внутри эта сумка гораздо больше, чем снаружи. На вид она диаметром около <strong>2</strong> футов в горловине и глубиной <strong>4</strong> фута. Но вмещает она до<strong> 500 </strong>фунтов груза объёмом не более <strong>64</strong> кубических футов. Сумка весит <strong>15</strong> фунтов вне зависимости от содержимого. Чтобы достать предмет из сумки, требуется действие.</p><p>Если сумку перегрузить, проткнуть или порвать, она уничтожена, а её содержимое оказывается разбросано по Астральному плану. Если сумку вывернуть наизнанку, её содержимое вывалится, не пострадав, но сумку нужно будет вывернуть обратно, прежде чем снова использовать. Дышащие существа могут прожить в сумке не дольше <strong>10</strong> минут, разделённых на количество существ (минимум <strong>1</strong> минуту), после чего начинают задыхаться.</p><p>Если поместить бездонную сумку в межпространственный карман, созданный @Compendium[laaru-dnd5-hw.items.viRDmCTZf2wWbQx7]{Удобным рюкзаком Хьюварда}, @UUID[Compendium.laaru-dnd5-hw.items.Item.dATyJzva8Y5GaKDy]{Карманной ямой} или аналогичным предметом, это немедленно уничтожит оба предмета и откроет врата на Астральный план. Врата открываются там, где один предмет поместили в другой. Любое существо в пределах <strong>10</strong> футов от врат будет затянуто через них в случайное место на Астральном плане. Затем врата закрываются. Они односторонние, и снова их открыть нельзя.</p>",
+  "item_kind": "magic_item",
+  "name": "Бездонная сумка",
+  "passive_effects": [],
+  "provenance": {
+    "ingest_date": "2026-05-30",
+    "ingest_version": "foundry-translator-v1",
+    "license_tag": "CC-BY-4.0",
+    "source": "foundry",
+    "source_url": "https://github.com/foundryvtt/dnd5e/blob/965ad2d0cf5d063dac675ba078b5bd3c3c0dd449/packs/_source/equipment24/containers/bag-of-holding/_container.yml",
+    "srd_version": [
+      "5.2"
+    ]
+  },
+  "rarity": "uncommon",
+  "requires_attunement": false,
+  "review": {
+    "known_divergence": null,
+    "requires_user_decision": false
+  },
+  "slug": "bag-of-holding",
+  "uses": null,
+  "weight": 5.0
+}

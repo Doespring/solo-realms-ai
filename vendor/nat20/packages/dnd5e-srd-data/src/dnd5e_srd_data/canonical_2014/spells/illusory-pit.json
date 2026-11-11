@@ -1,0 +1,169 @@
+{
+  "slug": "illusory-pit",
+  "foundry_uuid": "Compendium.dnd5e.laaru-hw-spells.Item.wAgdkTdeOeoQA92h",
+  "name": "Иллюзорная яма / Illusory Pit",
+  "description": "Вы создаёте иллюзорную яму радиусом 5 футов в точке на земле, которую вы можете видеть. Каждое существо в области действия заклинания при его сотворении должно преуспеть в испытании Мудрости, иначе оно поверит, что упало в яму. Оно &amp;Reference[prone]{распластывается}, не может встать и не может видеть за пределами радиуса ямы.\n\nСущество может потратить своё действие, чтобы попытаться выбраться из ямы, повторяя своё испытание. При успехе оно тратит всё своё перемещение, чтобы встать, а затем осознаёт, что яма — это иллюзия, и заклинание для него заканчивается. При провале оно продолжает верить, что застряло в яме. Поражённое существо может перемещаться в пределах пространства, считающегося ямой.\n\nСущество со скоростью полёта автоматически преуспевает в своём испытании. Каждый раз, когда существо под действием эффекта получает урон, оно может повторить своё испытание.\n\nНа высоких кругах. Когда вы сотворяете это заклинание, используя ячейку заклинания 2-го круга или выше, радиус ямы увеличивается на 5 футов за каждый круг выше 1-го, до максимума в 20 футов при использовании ячейки заклинания 4-го круга.",
+  "level": 1,
+  "school": "ill",
+  "components": [
+    "S",
+    "V"
+  ],
+  "ritual": false,
+  "concentration": true,
+  "casting_time": {
+    "unit": "action",
+    "value": 1,
+    "condition": ""
+  },
+  "range": {
+    "units": "ft",
+    "value": 60,
+    "special": null
+  },
+  "duration": {
+    "units": "minute",
+    "value": 1
+  },
+  "materials": {
+    "value": "",
+    "consumed": false,
+    "cost": 0,
+    "supply": 0
+  },
+  "preparation": {
+    "mode": "prepared",
+    "prepared": false
+  },
+  "activities": [
+    {
+      "id": "dnd5eactivity000",
+      "name": "",
+      "img": "",
+      "sort": 0,
+      "activation": {
+        "type": "action",
+        "value": null,
+        "condition": "",
+        "override": false,
+        "reaction_conditions": []
+      },
+      "consumption": {
+        "scaling": {
+          "allowed": false,
+          "max": ""
+        },
+        "spell_slot": true,
+        "targets": []
+      },
+      "description": {
+        "chat_flavor": ""
+      },
+      "duration": {
+        "value": null,
+        "units": "inst",
+        "special": "",
+        "concentration": false,
+        "override": false
+      },
+      "flags": {},
+      "range": {
+        "value": null,
+        "units": "self",
+        "special": "",
+        "override": false
+      },
+      "target": {
+        "template": {
+          "count": "",
+          "contiguous": false,
+          "stationary": false,
+          "type": "radius",
+          "size": "5",
+          "width": "",
+          "height": "",
+          "units": "ft"
+        },
+        "affects": {
+          "count": "",
+          "type": "",
+          "choice": false,
+          "special": ""
+        },
+        "override": false,
+        "prompt": true
+      },
+      "uses": {
+        "spent": 0,
+        "max": "",
+        "recovery": []
+      },
+      "visibility": {
+        "identifier": "",
+        "level": {
+          "min": null,
+          "max": null
+        },
+        "require_attunement": false,
+        "require_identification": false,
+        "require_magic": false
+      },
+      "effects": [
+        {
+          "id": "bx9c1ETLUndLQD91",
+          "level": {
+            "min": null,
+            "max": null
+          },
+          "on_save": false,
+          "riders": null
+        }
+      ],
+      "applied_effects": [],
+      "kind": "save",
+      "damage": {
+        "on_save": "half",
+        "parts": []
+      },
+      "save": {
+        "ability": [
+          "wis"
+        ],
+        "dc": {
+          "calculation": "spellcasting",
+          "formula": ""
+        },
+        "ignore_cover": false
+      }
+    }
+  ],
+  "passive_effects": [
+    {
+      "id": "bx9c1ETLUndLQD91",
+      "name": "Иллюзорная яма / Illusory Pit",
+      "description": "",
+      "changes": [],
+      "statuses": [
+        "prone"
+      ],
+      "duration": null,
+      "disabled": false,
+      "transfer": false
+    }
+  ],
+  "provenance": {
+    "source": "foundry",
+    "source_url": "https://github.com/foundryvtt/dnd5e/blob/965ad2d0cf5d063dac675ba078b5bd3c3c0dd449/packs/_source/laaru-hw-spells/Иллюзорная_яма___Illusory_Pit_wAgdkTdeOeoQA92h.yml",
+    "ingest_date": "2026-10-26",
+    "ingest_version": "foundry-translator-v1",
+    "srd_version": [
+      "5.1"
+    ],
+    "license_tag": "CC-BY-4.0"
+  },
+  "review": {
+    "known_divergence": null,
+    "requires_user_decision": false
+  },
+  "entry_kind": "spell"
+}

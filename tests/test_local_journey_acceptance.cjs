@@ -1,0 +1,20 @@
+const {chromium}=require(process.env.SOLO_UI_PLAYWRIGHT||'playwright');
+const assert=require('node:assert/strict');
+const [base,cid]=process.argv.slice(2);
+(async()=>{
+ const browser=await chromium.launch({channel:'msedge',headless:true});
+ const context=await browser.newContext({viewport:{width:1280,height:900}});
+ const page=await context.newPage();
+ const errors=[];page.on('pageerror',e=>errors.push(String(e)));
+ await context.route('**/*',r=>new URL(r.request().url()).origin===base?r.continue():r.abort());
+ await page.goto(base,{waitUntil:'domcontentloaded'});
+ await page.evaluate(id=>{try{localStorage.setItem('solo-campaign',id)}catch(e){}},cid);
+ await page.reload({waitUntil:'domcontentloaded'});
+ await page.waitForTimeout(1500);
+ const chat=await page.locator('#chat').count();
+ assert.ok(chat>0,'chat container is missing');
+ const text=await page.locator('#chat').innerText();
+ assert.ok(text.length>0,'the chat is empty in the browser');
+ assert.deepEqual(errors,[]);
+ await browser.close();console.log('JOURNEY_UI_OK');
+})().catch(e=>{console.error(e);process.exit(1);});

@@ -1,0 +1,28 @@
+{
+  "slug": "branches-of-the-tree",
+  "name": "Branches of the Tree",
+  "description": "While your Rage is active, whenever a creature you can see starts its turn within 30 feet of you, you can take a Reaction to summon spectral branches around it if you aren't Incapacitated. The target must succeed on a Strength saving throw (DC 8 plus your Strength modifier plus your Proficiency Bonus) or be teleported to an unoccupied space you can see within 5 feet of yourself or in the nearest unoccupied space you can see. After the target teleports, you can reduce its Speed to 0 until the end of the current turn.",
+  "feature_type": "subclass_feature",
+  "foundry_id": "c1ce398f3f40a145",
+  "source_slug": "path-of-the-world-tree",
+  "activities": [],
+  "passive_effects": [],
+  "advancement": [],
+  "uses": null,
+  "provenance": {
+    "source": "foundry",
+    "source_url": "https://www.dndbeyond.com/sources/dnd/phb-2024",
+    "ingest_date": "2026-10-26",
+    "ingest_version": "phb-2024-manual-v1",
+    "srd_version": [
+      "5.2"
+    ],
+    "license_tag": "CC-BY-4.0"
+  },
+  "review": {
+    "requires_user_decision": false,
+    "known_divergence": null,
+    "notes": "authored from PHB 2024, mechanic not yet wired to activities"
+  },
+  "entry_kind": "feature"
+}

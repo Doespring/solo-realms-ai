@@ -1,0 +1,154 @@
+{
+  "slug": "tempestuous-blade",
+  "foundry_uuid": "Compendium.dnd5e.laaru-hw-spells.Item.PtK80s4upEXleCj3",
+  "name": "Бурный клинок / Tempestuous Blade",
+  "description": "В качестве бонусного действия вы наделяете оружие ближнего боя, использованное при сотворении этого заклинания, наэлектризованной магией. До начала вашего следующего хода ваши атаки этим оружием наносят урон молнией вместо обычного типа урона оружия.\n\nОдин раз за сотворение, когда вы наносите урон молнией этим заклинанием, вы можете напитать цель электрическим зарядом до начала вашего следующего хода. Если до этого цель использует какое-либо @Compendium[laaru-dnd5-hw.actions.mMwkUE20bEfKeetq]{Ответное действие}, этот бурный заряд высвобождается и наносит [[/r 1d6]] урона молнией.\n\nУрон от молнии, наносимый этим заклинанием, когда существо перемещается на расстояние не менее 5 футов, увеличивается на 5-м уровне ([[/r 1d8]]), 11-м уровне ([[/r 1d10]]) и 17-м уровне ([[/r 1d12]]).",
+  "level": 0,
+  "school": "evo",
+  "components": [],
+  "ritual": false,
+  "concentration": false,
+  "casting_time": {
+    "unit": "bonus",
+    "value": 1,
+    "condition": ""
+  },
+  "range": {
+    "units": "self",
+    "value": 0,
+    "special": null
+  },
+  "duration": {
+    "units": "round",
+    "value": 1
+  },
+  "materials": {
+    "value": "простое или военное оружие ближнего боя",
+    "consumed": false,
+    "cost": 0,
+    "supply": 0
+  },
+  "preparation": {
+    "mode": "always",
+    "prepared": false
+  },
+  "activities": [
+    {
+      "id": "dnd5eactivity000",
+      "name": "",
+      "img": "",
+      "sort": 0,
+      "activation": {
+        "type": "action",
+        "value": null,
+        "condition": "",
+        "override": false,
+        "reaction_conditions": []
+      },
+      "consumption": {
+        "scaling": {
+          "allowed": false,
+          "max": ""
+        },
+        "spell_slot": true,
+        "targets": []
+      },
+      "description": {
+        "chat_flavor": ""
+      },
+      "duration": {
+        "value": null,
+        "units": "inst",
+        "special": "",
+        "concentration": false,
+        "override": false
+      },
+      "flags": {},
+      "range": {
+        "value": null,
+        "units": "self",
+        "special": "",
+        "override": false
+      },
+      "target": {
+        "template": {
+          "count": "",
+          "contiguous": false,
+          "stationary": false,
+          "type": "",
+          "size": "",
+          "width": "",
+          "height": "",
+          "units": "self"
+        },
+        "affects": {
+          "count": "",
+          "type": "",
+          "choice": false,
+          "special": ""
+        },
+        "override": false,
+        "prompt": true
+      },
+      "uses": {
+        "spent": 0,
+        "max": "",
+        "recovery": []
+      },
+      "visibility": {
+        "identifier": "",
+        "level": {
+          "min": null,
+          "max": null
+        },
+        "require_attunement": false,
+        "require_identification": false,
+        "require_magic": false
+      },
+      "effects": [],
+      "applied_effects": [],
+      "kind": "damage",
+      "damage": {
+        "critical": {
+          "allow": false,
+          "bonus": ""
+        },
+        "parts": [
+          {
+            "number": null,
+            "denomination": null,
+            "bonus": "",
+            "types": [
+              "lightning"
+            ],
+            "custom": {
+              "enabled": true,
+              "formula": "1d(2 * floor((@details.level + 19) / 6))"
+            },
+            "scaling": {
+              "mode": "",
+              "number": null,
+              "formula": ""
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "passive_effects": [],
+  "provenance": {
+    "source": "foundry",
+    "source_url": "https://github.com/foundryvtt/dnd5e/blob/965ad2d0cf5d063dac675ba078b5bd3c3c0dd449/packs/_source/laaru-hw-spells/Бурный_клинок___Tempestuous_Blade_PtK80s4upEXleCj3.yml",
+    "ingest_date": "2026-10-26",
+    "ingest_version": "foundry-translator-v1",
+    "srd_version": [
+      "5.1"
+    ],
+    "license_tag": "CC-BY-4.0"
+  },
+  "review": {
+    "known_divergence": null,
+    "requires_user_decision": false
+  },
+  "entry_kind": "spell"
+}

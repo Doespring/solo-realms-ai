@@ -1,0 +1,582 @@
+{
+  "activities": [
+    {
+      "activation": {
+        "condition": "",
+        "override": false,
+        "reaction_conditions": [],
+        "type": "action",
+        "value": null
+      },
+      "applied_effects": [],
+      "consumption": {
+        "scaling": {
+          "allowed": false,
+          "max": ""
+        },
+        "spell_slot": true,
+        "targets": [
+          {
+            "scaling": {
+              "formula": "",
+              "mode": ""
+            },
+            "target": "",
+            "type": "activityUses",
+            "value": "1"
+          }
+        ]
+      },
+      "description": {
+        "chat_flavor": ""
+      },
+      "duration": {
+        "concentration": false,
+        "override": false,
+        "special": "",
+        "units": "inst",
+        "value": null
+      },
+      "effects": [],
+      "flags": {},
+      "id": "CewswcciLrV7wBVN",
+      "img": "",
+      "kind": "utility",
+      "name": "Bullseye Lantern",
+      "range": {
+        "override": false,
+        "special": "",
+        "units": "self",
+        "value": null
+      },
+      "roll": {
+        "formula": "",
+        "name": "",
+        "prompt": false,
+        "visible": false
+      },
+      "sort": 0,
+      "target": {
+        "affects": {
+          "choice": false,
+          "count": "",
+          "special": "",
+          "type": ""
+        },
+        "override": false,
+        "prompt": true,
+        "template": {
+          "contiguous": false,
+          "count": "",
+          "height": "",
+          "size": "",
+          "stationary": false,
+          "type": "",
+          "units": "ft",
+          "width": ""
+        }
+      },
+      "uses": {
+        "max": "2",
+        "recovery": [],
+        "spent": 0
+      },
+      "visibility": {
+        "identifier": "",
+        "level": {
+          "max": null,
+          "min": null
+        },
+        "require_attunement": false,
+        "require_identification": false,
+        "require_magic": true
+      }
+    },
+    {
+      "activation": {
+        "condition": "",
+        "override": false,
+        "reaction_conditions": [],
+        "type": "action",
+        "value": null
+      },
+      "applied_effects": [],
+      "consumption": {
+        "scaling": {
+          "allowed": false,
+          "max": ""
+        },
+        "spell_slot": true,
+        "targets": [
+          {
+            "scaling": {
+              "formula": "",
+              "mode": ""
+            },
+            "target": "",
+            "type": "activityUses",
+            "value": "1"
+          }
+        ]
+      },
+      "description": {
+        "chat_flavor": ""
+      },
+      "duration": {
+        "concentration": false,
+        "override": false,
+        "special": "",
+        "units": "inst",
+        "value": null
+      },
+      "effects": [],
+      "flags": {},
+      "id": "gzkM1WvNfpmo48YP",
+      "img": "",
+      "kind": "utility",
+      "name": "Dagger",
+      "range": {
+        "override": false,
+        "special": "",
+        "units": "self",
+        "value": null
+      },
+      "roll": {
+        "formula": "",
+        "name": "",
+        "prompt": false,
+        "visible": false
+      },
+      "sort": 0,
+      "target": {
+        "affects": {
+          "choice": false,
+          "count": "",
+          "special": "",
+          "type": ""
+        },
+        "override": false,
+        "prompt": true,
+        "template": {
+          "contiguous": false,
+          "count": "",
+          "height": "",
+          "size": "",
+          "stationary": false,
+          "type": "",
+          "units": "ft",
+          "width": ""
+        }
+      },
+      "uses": {
+        "max": "2",
+        "recovery": [],
+        "spent": 0
+      },
+      "visibility": {
+        "identifier": "",
+        "level": {
+          "max": null,
+          "min": null
+        },
+        "require_attunement": false,
+        "require_identification": false,
+        "require_magic": true
+      }
+    },
+    {
+      "activation": {
+        "condition": "",
+        "override": false,
+        "reaction_conditions": [],
+        "type": "action",
+        "value": null
+      },
+      "applied_effects": [],
+      "consumption": {
+        "scaling": {
+          "allowed": false,
+          "max": ""
+        },
+        "spell_slot": true,
+        "targets": [
+          {
+            "scaling": {
+              "formula": "",
+              "mode": ""
+            },
+            "target": "",
+            "type": "activityUses",
+            "value": "1"
+          }
+        ]
+      },
+      "description": {
+        "chat_flavor": ""
+      },
+      "duration": {
+        "concentration": false,
+        "override": false,
+        "special": "",
+        "units": "inst",
+        "value": null
+      },
+      "effects": [],
+      "flags": {},
+      "id": "8714LxXzxWUgz2iy",
+      "img": "",
+      "kind": "utility",
+      "name": "Mirror",
+      "range": {
+        "override": false,
+        "special": "",
+        "units": "self",
+        "value": null
+      },
+      "roll": {
+        "formula": "",
+        "name": "",
+        "prompt": false,
+        "visible": false
+      },
+      "sort": 0,
+      "target": {
+        "affects": {
+          "choice": false,
+          "count": "",
+          "special": "",
+          "type": ""
+        },
+        "override": false,
+        "prompt": true,
+        "template": {
+          "contiguous": false,
+          "count": "",
+          "height": "",
+          "size": "",
+          "stationary": false,
+          "type": "",
+          "units": "ft",
+          "width": ""
+        }
+      },
+      "uses": {
+        "max": "2",
+        "recovery": [],
+        "spent": 0
+      },
+      "visibility": {
+        "identifier": "",
+        "level": {
+          "max": null,
+          "min": null
+        },
+        "require_attunement": false,
+        "require_identification": false,
+        "require_magic": true
+      }
+    },
+    {
+      "activation": {
+        "condition": "",
+        "override": false,
+        "reaction_conditions": [],
+        "type": "action",
+        "value": null
+      },
+      "applied_effects": [],
+      "consumption": {
+        "scaling": {
+          "allowed": false,
+          "max": ""
+        },
+        "spell_slot": true,
+        "targets": [
+          {
+            "scaling": {
+              "formula": "",
+              "mode": ""
+            },
+            "target": "",
+            "type": "activityUses",
+            "value": "1"
+          }
+        ]
+      },
+      "description": {
+        "chat_flavor": ""
+      },
+      "duration": {
+        "concentration": false,
+        "override": false,
+        "special": "",
+        "units": "inst",
+        "value": null
+      },
+      "effects": [],
+      "flags": {},
+      "id": "A0T4ezb8ANRXbNFn",
+      "img": "",
+      "kind": "utility",
+      "name": "Pole",
+      "range": {
+        "override": false,
+        "special": "",
+        "units": "self",
+        "value": null
+      },
+      "roll": {
+        "formula": "",
+        "name": "",
+        "prompt": false,
+        "visible": false
+      },
+      "sort": 0,
+      "target": {
+        "affects": {
+          "choice": false,
+          "count": "",
+          "special": "",
+          "type": ""
+        },
+        "override": false,
+        "prompt": true,
+        "template": {
+          "contiguous": false,
+          "count": "",
+          "height": "",
+          "size": "",
+          "stationary": false,
+          "type": "",
+          "units": "ft",
+          "width": ""
+        }
+      },
+      "uses": {
+        "max": "2",
+        "recovery": [],
+        "spent": 0
+      },
+      "visibility": {
+        "identifier": "",
+        "level": {
+          "max": null,
+          "min": null
+        },
+        "require_attunement": false,
+        "require_identification": false,
+        "require_magic": true
+      }
+    },
+    {
+      "activation": {
+        "condition": "",
+        "override": false,
+        "reaction_conditions": [],
+        "type": "action",
+        "value": null
+      },
+      "applied_effects": [],
+      "consumption": {
+        "scaling": {
+          "allowed": false,
+          "max": ""
+        },
+        "spell_slot": true,
+        "targets": [
+          {
+            "scaling": {
+              "formula": "",
+              "mode": ""
+            },
+            "target": "",
+            "type": "activityUses",
+            "value": "1"
+          }
+        ]
+      },
+      "description": {
+        "chat_flavor": ""
+      },
+      "duration": {
+        "concentration": false,
+        "override": false,
+        "special": "",
+        "units": "inst",
+        "value": null
+      },
+      "effects": [],
+      "flags": {},
+      "id": "oWCkue5qnRqcQGQE",
+      "img": "",
+      "kind": "utility",
+      "name": "Rope (Coiled)",
+      "range": {
+        "override": false,
+        "special": "",
+        "units": "self",
+        "value": null
+      },
+      "roll": {
+        "formula": "",
+        "name": "",
+        "prompt": false,
+        "visible": false
+      },
+      "sort": 0,
+      "target": {
+        "affects": {
+          "choice": false,
+          "count": "",
+          "special": "",
+          "type": ""
+        },
+        "override": false,
+        "prompt": true,
+        "template": {
+          "contiguous": false,
+          "count": "",
+          "height": "",
+          "size": "",
+          "stationary": false,
+          "type": "",
+          "units": "ft",
+          "width": ""
+        }
+      },
+      "uses": {
+        "max": "2",
+        "recovery": [],
+        "spent": 0
+      },
+      "visibility": {
+        "identifier": "",
+        "level": {
+          "max": null,
+          "min": null
+        },
+        "require_attunement": false,
+        "require_identification": false,
+        "require_magic": true
+      }
+    },
+    {
+      "activation": {
+        "condition": "",
+        "override": false,
+        "reaction_conditions": [],
+        "type": "action",
+        "value": null
+      },
+      "applied_effects": [],
+      "consumption": {
+        "scaling": {
+          "allowed": false,
+          "max": ""
+        },
+        "spell_slot": true,
+        "targets": [
+          {
+            "scaling": {
+              "formula": "",
+              "mode": ""
+            },
+            "target": "",
+            "type": "activityUses",
+            "value": "1"
+          }
+        ]
+      },
+      "description": {
+        "chat_flavor": ""
+      },
+      "duration": {
+        "concentration": false,
+        "override": false,
+        "special": "",
+        "units": "inst",
+        "value": null
+      },
+      "effects": [],
+      "flags": {},
+      "id": "GEjvz3xtYjhD50U4",
+      "img": "",
+      "kind": "utility",
+      "name": "Sack",
+      "range": {
+        "override": false,
+        "special": "",
+        "units": "self",
+        "value": null
+      },
+      "roll": {
+        "formula": "",
+        "name": "",
+        "prompt": false,
+        "visible": false
+      },
+      "sort": 0,
+      "target": {
+        "affects": {
+          "choice": false,
+          "count": "",
+          "special": "",
+          "type": ""
+        },
+        "override": false,
+        "prompt": true,
+        "template": {
+          "contiguous": false,
+          "count": "",
+          "height": "",
+          "size": "",
+          "stationary": false,
+          "type": "",
+          "units": "ft",
+          "width": ""
+        }
+      },
+      "uses": {
+        "max": "2",
+        "recovery": [],
+        "spent": 0
+      },
+      "visibility": {
+        "identifier": "",
+        "level": {
+          "max": null,
+          "min": null
+        },
+        "require_attunement": false,
+        "require_identification": false,
+        "require_magic": true
+      }
+    }
+  ],
+  "attunement_constraint": null,
+  "cost_gp": 400.0,
+  "description": "Wondrous Item, Uncommon\n\nThis robe has cloth patches of various shapes and colors covering it. While wearing the robe, you can take a Magic action to detach one of the patches, causing it to become the object or creature it represents. Once the last patch is removed, the robe becomes an ordinary garment.\n\nThe robe has two of each of the following patches:\n\nBullseye Lantern (filled and lit) Dagger Mirror Pole Rope (coiled)\n\nSack\n\nIn addition, the robe has [[/r 4d4]] other patches. The GM chooses the patches or determines them randomly by rolling on the following table. Table @Embed[Compendium.dnd5e.tables24.RollTable.dmgRobeOfUsefulI rollable]\n\nFoundry Note\n\nThis item includes activities for each of the always present patches above which include limited uses for tracking how many are left. They can be duplicated and renamed for the additional patches after rolling for the results.",
+  "description_localized": "<div><p><em>Чудесный предмет</em></p><p>На этой мантии полным-полно нашивок разных размеров и цветов. Пока вы её носите, вы можете использовать действие, чтобы сорвать нашивку, и она превратится в объект или существо, которых изображает. Лишившись последней нашивки, мантия становится простой одеждой.</p><p>На мантии есть по две нашивки каждого вида:</p><ul><li>Кинжал</li><li>Потайной фонарь (заправленный маслом и зажжённый)</li><li>Стальное зеркальце</li><li>10-футовый шест</li><li>Пеньковая верёвка (50 футов в мотке)</li><li>Мешок</li></ul><p>Кроме того, на мантии [[/r 4d4]] других нашивки. Мастер выбирает их или определяет случайным образом.</p><table><thead><tr><th>[[/r d100]]</th><th>Нашивка</th></tr></thead><tbody><tr><td>01-08</td><td>Мешочек со 100 зм</td></tr><tr><td>09-15</td><td>Серебряный ларец (1 фут длиной, 6 дюймов шириной и глубиной) стоимостью 500 зм</td></tr><tr><td>16-22</td><td>Железная дверь (до 10 футов шириной и 10 футов высотой, запертая с любой стороны на ваш выбор), вы можете вставить её в проем в пределах досягаемости; она принимает форму проёма и закрепляется в нем.</td></tr><tr><td>23-30</td><td>10 самоцветов стоимостью по 100 зм каждый</td></tr><tr><td>31-44</td><td>Деревянная лестница (24 фута длиной)</td></tr><tr><td>45-51</td><td>@Compendium[laaru-dnd5-hw.monsters.J7op1VnqYrq8shKw]{Скаковая лошадь} с перемётными сумами</td></tr><tr><td>52-59</td><td>Яма (куб с ребром 10 футов), которую вы можете поместить в землю в пределах 10 футов от себя</td></tr><tr><td>60-68</td><td>4 @Compendium[dnd5e.items.ytlsBjYsZ7OBSEBs]{зелья исцеления}</td></tr><tr><td>69-75</td><td>Лодка (12 футов длиной)</td></tr><tr><td>76-83</td><td>Свиток заклинания с одним заклинанием 1-3-го кругов</td></tr><tr><td>84-90</td><td>2 @Compendium[laaru-dnd5-hw.monsters.xGuwh46ubTwb66oI]{мастифа}</td></tr><tr><td>91-96</td><td>Окно (2 на 4 фута, не более 2 футов глубиной), вы можете поместить его на вертикальную поверхность в пределах досягаемости </td></tr><tr><td>97-00</td><td>@Compendium[dnd5e.items.srTRzwTfWKO5opOo]{Таран ручной}</td></tr></tbody></table></div>",
+  "item_kind": "magic_item",
+  "name": "Мантия полезных вещей",
+  "passive_effects": [],
+  "provenance": {
+    "ingest_date": "2026-05-30",
+    "ingest_version": "foundry-translator-v1",
+    "license_tag": "CC-BY-4.0",
+    "source": "foundry",
+    "source_url": "https://github.com/foundryvtt/dnd5e/blob/965ad2d0cf5d063dac675ba078b5bd3c3c0dd449/packs/_source/equipment24/equipment/robe-of-useful-items.yml",
+    "srd_version": [
+      "5.2"
+    ]
+  },
+  "rarity": "uncommon",
+  "requires_attunement": false,
+  "review": {
+    "known_divergence": null,
+    "requires_user_decision": false
+  },
+  "slug": "robe-of-useful-items",
+  "uses": null,
+  "weight": 0.0
+}

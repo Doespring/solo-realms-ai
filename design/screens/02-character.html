@@ -1,0 +1,300 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Solo Realms AI — герой</title>
+<link rel="stylesheet" href="../assets/icons.css">
+<link rel="stylesheet" href="core.css">
+<link rel="stylesheet" href="02-character.css">
+</head>
+<body class="char">
+
+<header class="topbar">
+  <a class="iconbtn" href="01-start.html" title="Назад">
+    <span class="icon ic-exit"></span><span class="topbar__hide-sm">Назад</span>
+  </a>
+  <span class="topbar__title">Новый герой</span>
+  <span class="topbar__grow"></span>
+  <span class="saved"><span class="saved__dot"></span>Черновик сохранён</span>
+  <button class="btn btn--primary btn--sm" id="done-top" type="button">Готово</button>
+</header>
+
+<div class="mini">
+  <span class="mini__name" id="mini-name">Мирон</span>
+  <span><span class="icon ic-heart icon--sm"></span><b id="mini-hp">9</b></span>
+  <span><span class="icon ic-shield icon--sm"></span><b id="mini-ac">13</b></span>
+  <span><span class="icon ic-compass icon--sm"></span><b id="mini-init">+2</b></span>
+</div>
+
+<main class="char__main">
+
+  <section class="editor" aria-labelledby="editor-title">
+
+    <div class="steps" aria-label="Шаг 3 из 4">
+      <span class="steps__bar"><i class="is-done"></i><i class="is-done"></i><i class="is-current"></i><i></i></span>
+      <span class="eyebrow">шаг 3 из 4 · прошлое</span>
+    </div>
+
+    <h1 class="h1" id="editor-title">Кто идёт в путь</h1>
+    <p class="lead editor__lead">Имя, вид и ремесло. Всё остальное посчитает движок — а ты поправишь, если захочешь.</p>
+
+    <div class="field editor__name">
+      <label class="label" for="hero-name">Имя героя</label>
+      <input class="input" id="hero-name" name="hero-name" value="Мирон" maxlength="40" autocomplete="off"
+             aria-describedby="name-hint">
+      <p class="hint" id="name-hint">Так тебя будут звать в ленте. Имя можно поменять в любой момент.</p>
+    </div>
+
+    <div class="group">
+      <div class="group__head">
+        <h2 class="h3">Вид</h2>
+        <span class="hint">даёт +1 к двум характеристикам</span>
+      </div>
+      <div class="choices choices--2">
+        <button class="choice" type="button" aria-pressed="true">Человек<small>+1 к двум любым</small></button>
+        <button class="choice" type="button" aria-pressed="false">Гном<small>+2 к телосложению</small></button>
+        <button class="choice" type="button" aria-pressed="false">Эльф<small>+2 к ловкости</small></button>
+        <button class="choice" type="button" aria-pressed="false">Ороч<small>+2 к силе</small></button>
+      </div>
+    </div>
+
+    <div class="group">
+      <div class="group__head">
+        <h2 class="h3">Ремесло</h2>
+        <span class="hint">определяет, что ты умеешь с первого дня</span>
+      </div>
+      <div class="choices choices--2">
+        <button class="choice" type="button" aria-pressed="false">Воин<small>тяжёлый доспех, оружие</small></button>
+        <button class="choice" type="button" aria-pressed="true">Плут<small>скрытность, ловкость рук</small></button>
+        <button class="choice" type="button" aria-pressed="false">Волшебник<small>книга заклинаний</small></button>
+        <button class="choice" type="button" aria-pressed="false">Жрец<small>молитвы, лечение</small></button>
+      </div>
+    </div>
+
+    <div class="group">
+      <div class="group__head">
+        <h2 class="h3">Прошлое</h2>
+        <span class="hint">чем ты занимался до приключения</span>
+      </div>
+      <div class="choices choices--2">
+        <button class="choice" type="button" aria-pressed="true">Бродяга<small>знаешь дороги и людей на них</small></button>
+        <button class="choice" type="button" aria-pressed="false">Солдат<small>знаешь строй и приказы</small></button>
+        <button class="choice" type="button" aria-pressed="false">Ремесленник<small>знаешь руки и материал</small></button>
+        <button class="choice" type="button" aria-pressed="false">Ученик<small>знаешь книги и вопросы</small></button>
+      </div>
+    </div>
+
+    <div class="group group--stats">
+      <div class="group__head">
+        <h2 class="h3">Характеристики</h2>
+        <span class="hint points">осталось очков: <b id="points">0</b> · <button class="link" type="button" id="reset">сбросить</button></span>
+      </div>
+
+      <div class="stats" id="stats">
+        <div class="stat" data-key="str" data-mod="0">
+          <span class="stat__name">Сила</span>
+          <span class="stat__mod" data-mod-out>0</span>
+          <span class="stat__score"><button class="stat__btn" type="button" data-delta="-1" aria-label="Уменьшить Силу">−</button><b data-score>10</b><button class="stat__btn" type="button" data-delta="1" aria-label="Увеличить Силу">+</button></span>
+        </div>
+        <div class="stat" data-key="dex" data-mod="2">
+          <span class="stat__name">Ловкость</span>
+          <span class="stat__mod" data-mod-out>+2</span>
+          <span class="stat__score"><button class="stat__btn" type="button" data-delta="-1" aria-label="Уменьшить Ловкость">−</button><b data-score>15</b><button class="stat__btn" type="button" data-delta="1" aria-label="Увеличить Ловкость">+</button></span>
+        </div>
+        <div class="stat" data-key="con" data-mod="1">
+          <span class="stat__name">Телосложение</span>
+          <span class="stat__mod" data-mod-out>+1</span>
+          <span class="stat__score"><button class="stat__btn" type="button" data-delta="-1" aria-label="Уменьшить Телосложение">−</button><b data-score>13</b><button class="stat__btn" type="button" data-delta="1" aria-label="Увеличить Телосложение">+</button></span>
+        </div>
+        <div class="stat" data-key="int" data-mod="1">
+          <span class="stat__name">Интеллект</span>
+          <span class="stat__mod" data-mod-out>+1</span>
+          <span class="stat__score"><button class="stat__btn" type="button" data-delta="-1" aria-label="Уменьшить Интеллект">−</button><b data-score>12</b><button class="stat__btn" type="button" data-delta="1" aria-label="Увеличить Интеллект">+</button></span>
+        </div>
+        <div class="stat" data-key="wis" data-mod="2">
+          <span class="stat__name">Мудрость</span>
+          <span class="stat__mod" data-mod-out>+2</span>
+          <span class="stat__score"><button class="stat__btn" type="button" data-delta="-1" aria-label="Уменьшить Мудрость">−</button><b data-score>14</b><button class="stat__btn" type="button" data-delta="1" aria-label="Увеличить Мудрость">+</button></span>
+        </div>
+        <div class="stat" data-key="cha" data-mod="-1">
+          <span class="stat__name">Харизма</span>
+          <span class="stat__mod" data-mod-out>−1</span>
+          <span class="stat__score"><button class="stat__btn" type="button" data-delta="-1" aria-label="Уменьшить Харизму">−</button><b data-score>8</b><button class="stat__btn" type="button" data-delta="1" aria-label="Увеличить Харизму">+</button></span>
+        </div>
+      </div>
+
+      <p class="hint stats__hint">Модификатор считается сам: (значение − 10) ÷ 2, округляя вниз.
+        Хиты, защита и навыки на листе справа меняются сразу.</p>
+    </div>
+
+  </section>
+
+  <aside class="sheet sheet--hero" aria-label="Лист героя">
+    <div class="sheet__head">
+      <p class="eyebrow">лист героя</p>
+      <h2 class="sheet__name" id="sheet-name">Мирон</h2>
+      <p class="sheet__meta">Человек · Плут · 1-й уровень</p>
+    </div>
+
+    <div class="sheet__stats">
+      <div><span class="sheet__stat-label">Хиты</span><b class="sheet__stat" id="v-hp">9</b>/<span id="v-hp-max">9</span></div>
+      <div><span class="sheet__stat-label">Защита</span><b class="sheet__stat" id="v-ac">13</b></div>
+      <div><span class="sheet__stat-label">Инициатива</span><b class="sheet__stat" id="v-init">+2</b></div>
+      <div><span class="sheet__stat-label">Скорость</span><b class="sheet__stat">9 м</b></div>
+    </div>
+
+    <div class="sheet__abilities" id="sheet-abilities">
+      <div><span>Сила</span><b data-ab="str">0</b></div>
+      <div><span>Ловкость</span><b data-ab="dex">+2</b></div>
+      <div><span>Телосложение</span><b data-ab="con">+1</b></div>
+      <div><span>Интеллект</span><b data-ab="int">+1</b></div>
+      <div><span>Мудрость</span><b data-ab="wis">+2</b></div>
+      <div><span>Харизма</span><b data-ab="cha">−1</b></div>
+    </div>
+
+    <div class="sheet__block">
+      <h3 class="sheet__h">Навыки</h3>
+      <ul class="sheet__list">
+        <li><span>Скрытность</span><b id="v-stealth">+4</b></li>
+        <li><span>Внимательность</span><b id="v-perc">+4</b></li>
+        <li><span>Ловкость рук</span><b>+4</b></li>
+        <li><span>Убеждение</span><b id="v-pers">+1</b></li>
+      </ul>
+    </div>
+
+    <div class="sheet__block">
+      <h3 class="sheet__h">С собой</h3>
+      <ul class="sheet__list sheet__list--plain">
+        <li><span class="icon ic-longsword"></span>Короткий меч</li>
+        <li><span class="icon ic-leather_armor"></span>Кожаный доспех</li>
+        <li><span class="icon ic-rope"></span>Верёвка, 15 м</li>
+        <li><span class="icon ic-coins"></span>12 монет</li>
+      </ul>
+    </div>
+
+    <p class="sheet__note">Считает движок. Поменяешь характеристику — лист пересчитается.</p>
+    <span class="sheet__folio">лист 1</span>
+  </aside>
+
+</main>
+
+<div class="char__end">
+  <a class="btn btn--ghost" href="01-start.html">Вернуться на первый экран</a>
+  <button class="btn btn--primary" id="done" type="button">Готово — в историю</button>
+</div>
+
+<p class="attrib attrib--tight">
+  Иконки: Lorc, Delapouite — game-icons.net, CC BY 3.0.
+  Правила основаны на System Reference Document 5.2 · CC BY 4.0 · Wizards of the Coast LLC.
+</p>
+
+<script>
+(function(){
+  'use strict';
+  var $ = function(s, r){ return (r||document).querySelector(s); };
+  var $$ = function(s, r){ return Array.prototype.slice.call((r||document).querySelectorAll(s)); };
+
+  var POINTS = 27;
+  var COST = {8:0,9:1,10:2,11:3,12:4,13:5,14:7,15:9};
+  var MIN = 8, MAX = 15;
+
+  var stats = $$('.stat');
+  var nameInput = $('#hero-name');
+  var done = $('#done');
+  var doneTop = $('#done-top');
+  var nameHint = $('#name-hint');
+
+  function mod(score){ return Math.floor((score - 10) / 2); }
+  function sign(n){ return (n >= 0 ? '+' : '−') + Math.abs(n); }
+
+  function scoreOf(row){ return parseInt($('[data-score]', row).textContent, 10); }
+
+  function spent(){ return stats.reduce(function(sum, row){ return sum + (COST[scoreOf(row)] || 0); }, 0); }
+
+  function paint(){
+    var dex = 0, con = 0, wis = 0, cha = 0;
+    stats.forEach(function(row){
+      var s = scoreOf(row), m = mod(s);
+      $('[data-mod-out]', row).textContent = sign(m);
+      $('[data-score]', row).textContent = s;
+      $('[data-ab="' + row.dataset.key + '"]').textContent = sign(m);
+      if (row.dataset.key === 'dex') dex = m;
+      if (row.dataset.key === 'con') con = m;
+      if (row.dataset.key === 'wis') wis = m;
+      if (row.dataset.key === 'cha') cha = m;
+    });
+
+    var left = POINTS - spent();
+    $('#points').textContent = left;
+
+    var hp = 8 + con, ac = 11 + dex, init = dex;
+    $('#v-hp').textContent = hp;
+    $('#v-hp-max').textContent = hp;
+    $('#v-ac').textContent = ac;
+    $('#v-init').textContent = sign(init);
+    $('#v-stealth').textContent = sign(dex + 2);
+    $('#v-perc').textContent = sign(wis + 2);
+    $('#v-pers').textContent = sign(cha + 2);
+
+    $('#mini-hp').textContent = hp;
+    $('#mini-ac').textContent = ac;
+    $('#mini-init').textContent = sign(init);
+
+    $$('.stat').forEach(function(row){
+      $$('.stat__btn', row).forEach(function(b){
+        var next = scoreOf(row) + parseInt(b.dataset.delta, 10);
+        b.disabled = next < MIN || next > MAX || (b.dataset.delta === '1' && left <= 0);
+      });
+    });
+
+    var ok = nameInput.value.trim().length > 0;
+    nameInput.setAttribute('aria-invalid', ok ? 'false' : 'true');
+    nameHint.textContent = ok ? 'Так тебя будут звать в ленте. Имя можно поменять в любой момент.'
+                              : 'Без имени герой не сохранится. Буква-другая — уже имя.';
+    nameHint.className = ok ? 'hint' : 'hint hint--error';
+    done.disabled = doneTop.disabled = !ok;
+    document.title = 'Solo Realms AI — ' + (nameInput.value.trim() || 'герой');
+  }
+
+  stats.forEach(function(row){
+    $$('.stat__btn', row).forEach(function(btn){
+      btn.addEventListener('click', function(){
+        var next = scoreOf(row) + parseInt(btn.dataset.delta, 10);
+        if (next < MIN || next > MAX) return;
+        $('[data-score]', row).textContent = next;
+        paint();
+      });
+    });
+  });
+
+  $$('.choices').forEach(function(list){
+    list.addEventListener('click', function(e){
+      var btn = e.target.closest('.choice');
+      if (!btn) return;
+      $$('.choice', list).forEach(function(b){ b.setAttribute('aria-pressed', String(b === btn)); });
+    });
+  });
+
+  $('#reset').addEventListener('click', function(){
+    var base = {str:10, dex:15, con:13, int:12, wis:14, cha:8};
+    stats.forEach(function(row){ $('[data-score]', row).textContent = base[row.dataset.key]; });
+    paint();
+  });
+
+  nameInput.addEventListener('input', function(){
+    var v = nameInput.value.trim();
+    $('#sheet-name').textContent = v || 'Без имени';
+    $('#mini-name').textContent = v || 'Без имени';
+    paint();
+  });
+
+  done.addEventListener('click', go);
+  document.getElementById('done-top').addEventListener('click', go);
+  function go(){ location.href = '03-play.html'; }
+
+  paint();
+})();
+</script>
+</body>
+</html>

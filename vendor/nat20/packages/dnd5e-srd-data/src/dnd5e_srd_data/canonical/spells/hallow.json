@@ -1,0 +1,140 @@
+{
+  "activities": [
+    {
+      "activation": {
+        "condition": "",
+        "override": false,
+        "reaction_conditions": [],
+        "type": "action",
+        "value": null
+      },
+      "applied_effects": [],
+      "consumption": {
+        "scaling": {
+          "allowed": false,
+          "max": ""
+        },
+        "spell_slot": true,
+        "targets": []
+      },
+      "description": {
+        "chat_flavor": ""
+      },
+      "duration": {
+        "concentration": false,
+        "override": false,
+        "special": "",
+        "units": "inst",
+        "value": null
+      },
+      "effects": [],
+      "flags": {},
+      "id": "dnd5eactivity000",
+      "img": "",
+      "kind": "utility",
+      "name": "",
+      "range": {
+        "override": false,
+        "special": "",
+        "units": "self",
+        "value": null
+      },
+      "roll": {
+        "formula": "",
+        "name": "",
+        "prompt": false,
+        "visible": false
+      },
+      "sort": 0,
+      "target": {
+        "affects": {
+          "choice": false,
+          "count": "",
+          "special": "",
+          "type": ""
+        },
+        "override": false,
+        "prompt": true,
+        "template": {
+          "contiguous": false,
+          "count": "",
+          "height": "",
+          "size": "60",
+          "stationary": false,
+          "type": "radius",
+          "units": "ft",
+          "width": ""
+        }
+      },
+      "uses": {
+        "max": "",
+        "recovery": [],
+        "spent": 0
+      },
+      "visibility": {
+        "identifier": "",
+        "level": {
+          "max": null,
+          "min": null
+        },
+        "require_attunement": false,
+        "require_identification": false,
+        "require_magic": false
+      }
+    }
+  ],
+  "casting_time": {
+    "condition": "",
+    "unit": "hour",
+    "value": 24
+  },
+  "components": [
+    "M",
+    "S",
+    "V"
+  ],
+  "concentration": false,
+  "description": "You touch a point and infuse an area around it with holy or unholy power. The area can have a radius up to 60 feet, and the spell fails if the radius includes an area already under the effect of Hallow. The affected area has the following effects.\n\nHallowed Ward. Choose any of these creature types: Aberration, Celestial, Elemental, Fey, Fiend, or Undead. Creatures of the chosen types can't willingly enter the area, and any creature that is possessed by or that has the Charmed or Frightened condition from such creatures isn't possessed, Charmed, or Frightened by them while in the area.\n\nExtra Effect. You bind an extra effect to the area from the list below:\n\nCourage. Creatures of any types you choose can't gain the &amp;Reference[Frightened] condition while in the area.\n\nDarkness. Darkness fills the area. Normal light, as well as magical light created by spells of a level lower than this spell, can't illuminate the area.\n\nDaylight. Bright light fills the area. Magical Darkness created by spells of a level lower than this spell can't extinguish the light.\n\nPeaceful Rest. Dead bodies interred in the area can't be turned into Undead.\n\nExtradimensional Interference. Creatures of any types you choose can't enter or exit the area using teleportation or interplanar travel.\n\nFear. Creatures of any types you choose have the &amp;Reference[Frightened] condition while in the area.\n\nResistance. Creatures of any types you choose have &amp;Reference[damageresistance]{Resistance} to one damage type of your choice while in the area.\n\nSilence. No sound can emanate from within the area, and no sound can reach into it.\n\nTongues. Creatures of any types you choose can communicate with any other creature in the area even if they don't share a common language.\n\nVulnerability. Creatures of any types you choose have &amp;Reference[damagevulnerability]{Vulnerability} to one damage type of your choice while in the area.",
+  "description_localized": "<div><div><div><p>Вы касаетесь некой точки и наделяете область вокруг неё священной (или нечестивой) силой. Область может иметь радиус до бо футов. Заклинание не срабатывает, если в этот радиус уже входит область другого заклинания освящение. В области заклинания действуют следующие эффекты.</p></div><div><p>Бестии, небожители, нежить, феи и элементали не могут входить в область. Они также не могут &amp;reference[charmed]{обворожить}, &amp;reference[frightened]{испугать} или вселиться в существ в пределах области. Любое существо, обвороженное или испуганное таким существом либо в которое такое существо вселилось, избавляется от этого воздействия, войдя в область. Вы можете исключить один или несколько типов существ из этого перечня.</p></div><div><p>Кроме того, вы можете добавить в области дополнительный эффект. Выберите его из списка ниже или добавьте один из вариантов, предложенных вашим мастером. Некоторые эффекты касаются существ, находящихся в области; вы можете указать, влияют ли они на всех существ, на подчиняющихся определённому божеству или лидеру существ или на существ определённого вида вроде орков или троллей. Когда существо, на которое заклинание должно повлиять, входит в его область впервые за ход или начинает в ней свой ход, оно может пройти испытание Харизмы. При успехе дополнительный эффект не действует на существо, пока оно не выйдет из области.</p><ul><li><p><strong>Вечный покой</strong>. Мёртвые тела, захороненные в области, нельзя превратить в нежить.</p></li><li><p><strong>Дневной свет</strong>. Область заполняет @UUID[Compendium.laaru-dnd5-hw.actions.EvGCMCVp1VpUtCbI]{яркий свет}. Магическая тьма, созданная заклинаниями менее высокого круга, чем тот, с использованием ячейки которого вы сотворили это заклинание, не может затмить этот свет.</p></li><li><p><strong>Защита от энергии</strong>. У существ под влиянием заклинания в области появляется @UUID[Compendium.laaru-dnd5-hw.actions.w7WKEM8had6v4vy8]{устойчивость} к одному типу урона на ваш выбор, кроме дробящего, колющего и режущего.</p></li><li><p><strong>Межпространственные помехи</strong>. Существа под влиянием заклинания в области не могут телепортироваться или путешествовать с помощью межпространственных и межпланарных способов.</p></li><li><p><strong>Отвага</strong>. Существ под влиянием заклинания нельзя @UUID[Compendium.laaru-dnd5-hw.actions.bM6mDYvBFw64wDMp]{испугать}, пока они находятся в области.</p></li><li><p><strong>Полиглот</strong>. Существа под влиянием заклинания могут общаться с любым другим существом в области, даже если у них нет общего языка.</p></li><li><p><strong>Страх</strong>. Существа под влиянием заклинания &amp;reference[frightened]{испуганы}, пока находятся в области.</p></li><li><p><strong>Тишина</strong>. Никакой звук не может возникнуть в области, и никакой звук снаружи в нее не проникает.</p></li><li><p><strong>Тьма.</strong> Область заполняет @UUID[Compendium.laaru-dnd5-hw.actions.QaHqDYEkBSnpDwhB]{тьма}. Обычный свет, а также магический свет, созданный заклинаниями менее высокого круга, чем тот, с использованием ячейки которого вы сотворили это заклинание, не может осветить эту тьму.</p></li><li><p><strong>Уязвимость к энергии</strong>. У существ под влиянием заклинания в области появляется @UUID[Compendium.laaru-dnd5-hw.actions.1DDNdECOUhTph3ui]{уязвимость} к одному типу урона на ваш выбор, кроме дробящего, колющего и режущего.</p></li></ul></div></div></div>",
+  "duration": {
+    "units": "disp",
+    "value": null
+  },
+  "entry_kind": "spell",
+  "foundry_uuid": "Compendium.dnd5e.spells24.Item.phbsplHallow0000",
+  "level": 5,
+  "materials": {
+    "consumed": true,
+    "cost": 0,
+    "supply": 0,
+    "value": "incense worth 1,000+ GP, which the spell consumes"
+  },
+  "name": "Освящение",
+  "passive_effects": [],
+  "preparation": {
+    "mode": "prepared",
+    "prepared": false
+  },
+  "provenance": {
+    "ingest_date": "2026-05-30",
+    "ingest_version": "foundry-translator-v1",
+    "license_tag": "CC-BY-4.0",
+    "source": "foundry",
+    "source_url": "https://github.com/foundryvtt/dnd5e/blob/965ad2d0cf5d063dac675ba078b5bd3c3c0dd449/packs/_source/spells24/5th-level/hallow.yml",
+    "srd_version": [
+      "5.2"
+    ]
+  },
+  "range": {
+    "special": null,
+    "units": "touch",
+    "value": null
+  },
+  "review": {
+    "known_divergence": null,
+    "requires_user_decision": false
+  },
+  "ritual": false,
+  "school": "abj",
+  "slug": "hallow"
+}

@@ -1,0 +1,154 @@
+{
+  "slug": "booming-blade-alternate",
+  "foundry_uuid": "Compendium.dnd5e.laaru-hw-spells.Item.SblvhxcdRzPEUmKs",
+  "name": "Громовой клинок (альт.) / Booming Blade (Alternate)",
+  "description": "В качестве бонусного действия вы окутываете оружие ближнего боя, использованное при сотворении этого заклинания, грозовой магией. До начала вашего следующего хода ваши атаки этим оружием наносят урон громом вместо обычного типа урона оружия.\n\nОдин раз за сотворение, когда вы наносите урон громом с помощью этого заклинания, вы можете окутать цель грозовой энергией до начала вашего следующего хода. Если цель добровольно переместится на 5 футов или больше, эта грозовая энергия взорвется, и она получит [[/r 1d6]] урона громом.\n\nУрон громом, наносимый этим заклинанием, когда существо перемещается не менее чем на 5 футов, увеличивается на 5-м уровне ([[/r 1d8]]), 11-м уровне ([[/r 1d10]]) и 17-м уровне ([[/r 1d12]]).",
+  "level": 0,
+  "school": "evo",
+  "components": [],
+  "ritual": false,
+  "concentration": false,
+  "casting_time": {
+    "unit": "bonus",
+    "value": 1,
+    "condition": ""
+  },
+  "range": {
+    "units": "self",
+    "value": 0,
+    "special": null
+  },
+  "duration": {
+    "units": "round",
+    "value": 1
+  },
+  "materials": {
+    "value": "простое или военное оружие ближнего боя",
+    "consumed": false,
+    "cost": 0,
+    "supply": 0
+  },
+  "preparation": {
+    "mode": "always",
+    "prepared": false
+  },
+  "activities": [
+    {
+      "id": "dnd5eactivity000",
+      "name": "",
+      "img": "",
+      "sort": 0,
+      "activation": {
+        "type": "action",
+        "value": null,
+        "condition": "",
+        "override": false,
+        "reaction_conditions": []
+      },
+      "consumption": {
+        "scaling": {
+          "allowed": false,
+          "max": ""
+        },
+        "spell_slot": true,
+        "targets": []
+      },
+      "description": {
+        "chat_flavor": ""
+      },
+      "duration": {
+        "value": null,
+        "units": "inst",
+        "special": "",
+        "concentration": false,
+        "override": false
+      },
+      "flags": {},
+      "range": {
+        "value": null,
+        "units": "self",
+        "special": "",
+        "override": false
+      },
+      "target": {
+        "template": {
+          "count": "",
+          "contiguous": false,
+          "stationary": false,
+          "type": "",
+          "size": "",
+          "width": "",
+          "height": "",
+          "units": "self"
+        },
+        "affects": {
+          "count": "",
+          "type": "",
+          "choice": false,
+          "special": ""
+        },
+        "override": false,
+        "prompt": true
+      },
+      "uses": {
+        "spent": 0,
+        "max": "",
+        "recovery": []
+      },
+      "visibility": {
+        "identifier": "",
+        "level": {
+          "min": null,
+          "max": null
+        },
+        "require_attunement": false,
+        "require_identification": false,
+        "require_magic": false
+      },
+      "effects": [],
+      "applied_effects": [],
+      "kind": "damage",
+      "damage": {
+        "critical": {
+          "allow": false,
+          "bonus": ""
+        },
+        "parts": [
+          {
+            "number": null,
+            "denomination": null,
+            "bonus": "",
+            "types": [
+              "thunder"
+            ],
+            "custom": {
+              "enabled": true,
+              "formula": "1d(2 * floor((@details.level + 19) / 6))"
+            },
+            "scaling": {
+              "mode": "",
+              "number": null,
+              "formula": ""
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "passive_effects": [],
+  "provenance": {
+    "source": "foundry",
+    "source_url": "https://github.com/foundryvtt/dnd5e/blob/965ad2d0cf5d063dac675ba078b5bd3c3c0dd449/packs/_source/laaru-hw-spells/Громовой_клинок__альт_____Booming_Blade__Alternate__SblvhxcdRzPEUmKs.yml",
+    "ingest_date": "2026-10-26",
+    "ingest_version": "foundry-translator-v1",
+    "srd_version": [
+      "5.1"
+    ],
+    "license_tag": "CC-BY-4.0"
+  },
+  "review": {
+    "known_divergence": null,
+    "requires_user_decision": false
+  },
+  "entry_kind": "spell"
+}

@@ -1,0 +1,258 @@
+{
+  "slug": "conjure-familiar",
+  "foundry_uuid": "Compendium.dnd5e.laaru-hw-spells.Item.pnhzEZVbkP0WI3dO",
+  "name": "Призвать фамильяра / Conjure Familiar",
+  "description": "Пожертвовав каплю крови, вы снижаете свой максимум ПЗ на 1, чтобы призвать фамильяра. Он дружелюбен по отношению к вам и повинуется вашим приказам. Ваш фамильяр использует следующие правила:\n\nПараметры. Ваш фамильяр проявляется в виде животного с КО 0 по вашему выбору, но его тип существа — небожитель, фея или бестия. Фамильяры часто отражают истинную природу души заклинателя в облике и мировоззрении. Вы можете иметь только одного фамильяра, но можете провести ритуал снова, чтобы изменить его форму.\n\nКонтроль. В бою фамильяр делит с вами инициативу и действует в ваш ход. Он не может атаковать, но в остальном действует нормально. Если его ПЗ опускаются до 0, фамильяр уничтожается. Если он уничтожен, вы восстанавливаете потраченный максимум ПЗ в конце следующего долгого отдыха.\n\nОтзыв. Действием, вы можете отправить фамильяра в уникальное карманное измерение или отослать его навсегда. Действием, вы можете вызвать фамильяра из карманного измерения, и он появляется в свободном пространстве, которое вы видите в пределах 10 футов.\n\nСвязь душой. Пока ваш фамильяр находится в пределах 100 футов, вы можете общаться с ним телепатически. Действием, вы можете использовать восприятие фамильяра вместо своих собственных, пока не прервёте этот эффект (действие не требуется) или не окажетесь выведенным из строя. Пока вы это делаете, вы слепы и глухи к своему окружению.\n\nСотворение заклинаний. Когда вы сотворяете заклинание с дистанцией касание и ваш фамильяр находится в пределах 100 футов, фамильяр может использовать ответное действие, чтобы доставить это заклинание, применяя вашу заклинательную характеристику.",
+  "level": 1,
+  "school": "con",
+  "components": [
+    "M",
+    "S",
+    "V"
+  ],
+  "ritual": false,
+  "concentration": false,
+  "casting_time": {
+    "unit": "action",
+    "value": 1,
+    "condition": ""
+  },
+  "range": {
+    "units": "ft",
+    "value": 10,
+    "special": null
+  },
+  "duration": {
+    "units": "inst",
+    "value": null
+  },
+  "materials": {
+    "value": "капля крови заклинателя, которая поглощается при сотворении этого заклинания",
+    "consumed": false,
+    "cost": 0,
+    "supply": 0
+  },
+  "preparation": {
+    "mode": "prepared",
+    "prepared": false
+  },
+  "activities": [
+    {
+      "id": "dnd5eactivity000",
+      "name": "",
+      "img": "",
+      "sort": 0,
+      "activation": {
+        "type": "action",
+        "value": null,
+        "condition": "",
+        "override": false,
+        "reaction_conditions": []
+      },
+      "consumption": {
+        "scaling": {
+          "allowed": false,
+          "max": ""
+        },
+        "spell_slot": true,
+        "targets": []
+      },
+      "description": {
+        "chat_flavor": ""
+      },
+      "duration": {
+        "value": null,
+        "units": "inst",
+        "special": "",
+        "concentration": false,
+        "override": false
+      },
+      "flags": {},
+      "range": {
+        "value": null,
+        "units": "self",
+        "special": "",
+        "override": false
+      },
+      "target": {
+        "template": {
+          "count": "",
+          "contiguous": false,
+          "stationary": false,
+          "type": "",
+          "size": "",
+          "width": "",
+          "height": "",
+          "units": ""
+        },
+        "affects": {
+          "count": "",
+          "type": "",
+          "choice": false,
+          "special": ""
+        },
+        "override": false,
+        "prompt": true
+      },
+      "uses": {
+        "spent": 0,
+        "max": "",
+        "recovery": []
+      },
+      "visibility": {
+        "identifier": "",
+        "level": {
+          "min": null,
+          "max": null
+        },
+        "require_attunement": false,
+        "require_identification": false,
+        "require_magic": false
+      },
+      "effects": [],
+      "applied_effects": [],
+      "kind": "utility",
+      "roll": {
+        "formula": "",
+        "name": "",
+        "prompt": false,
+        "visible": false
+      }
+    },
+    {
+      "id": "WjCmfcvuC9ucYZOi",
+      "name": "",
+      "img": "",
+      "sort": 0,
+      "activation": {
+        "type": "action",
+        "value": null,
+        "condition": "",
+        "override": false,
+        "reaction_conditions": []
+      },
+      "consumption": {
+        "scaling": {
+          "allowed": false,
+          "max": ""
+        },
+        "spell_slot": true,
+        "targets": []
+      },
+      "description": {
+        "chat_flavor": ""
+      },
+      "duration": {
+        "value": null,
+        "units": "inst",
+        "special": "",
+        "concentration": false,
+        "override": false
+      },
+      "flags": {},
+      "range": {
+        "value": null,
+        "units": "self",
+        "special": "",
+        "override": false
+      },
+      "target": {
+        "template": {
+          "count": "",
+          "contiguous": false,
+          "stationary": false,
+          "type": "",
+          "size": "",
+          "width": "",
+          "height": "",
+          "units": ""
+        },
+        "affects": {
+          "count": "",
+          "type": "",
+          "choice": false,
+          "special": ""
+        },
+        "override": false,
+        "prompt": true
+      },
+      "uses": {
+        "spent": 0,
+        "max": "",
+        "recovery": []
+      },
+      "visibility": {
+        "identifier": "",
+        "level": {
+          "min": null,
+          "max": null
+        },
+        "require_attunement": false,
+        "require_identification": false,
+        "require_magic": false
+      },
+      "effects": [],
+      "applied_effects": [],
+      "kind": "summon",
+      "bonuses": {
+        "ac": "",
+        "hd": "",
+        "hp": "",
+        "attack_damage": "",
+        "save_damage": "",
+        "healing": ""
+      },
+      "creature_sizes": [],
+      "creature_types": [
+        "fiend",
+        "celestial",
+        "fey"
+      ],
+      "match": {
+        "ability": "",
+        "attacks": false,
+        "disposition": false,
+        "proficiency": false,
+        "saves": false
+      },
+      "profiles": [
+        {
+          "id": "Xkrui5RSQvT463BL",
+          "count": "",
+          "cr": "0",
+          "level": {
+            "min": null,
+            "max": null
+          },
+          "name": "",
+          "types": [
+            "beast"
+          ],
+          "uuid": ""
+        }
+      ],
+      "summon": {
+        "mode": "cr",
+        "prompt": true,
+        "identifier": null
+      },
+      "temp_hp": ""
+    }
+  ],
+  "passive_effects": [],
+  "provenance": {
+    "source": "foundry",
+    "source_url": "https://github.com/foundryvtt/dnd5e/blob/965ad2d0cf5d063dac675ba078b5bd3c3c0dd449/packs/_source/laaru-hw-spells/Призвать_фамильяра___Conjure_Familiar_pnhzEZVbkP0WI3dO.yml",
+    "ingest_date": "2026-10-26",
+    "ingest_version": "foundry-translator-v1",
+    "srd_version": [
+      "5.1"
+    ],
+    "license_tag": "CC-BY-4.0"
+  },
+  "review": {
+    "known_divergence": null,
+    "requires_user_decision": false
+  },
+  "entry_kind": "spell"
+}

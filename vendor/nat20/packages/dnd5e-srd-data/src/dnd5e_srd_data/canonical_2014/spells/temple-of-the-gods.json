@@ -1,0 +1,165 @@
+{
+  "slug": "temple-of-the-gods",
+  "foundry_uuid": "Compendium.dnd5e.laaru-hw-spells.Item.DKM1dQnoid9Xs5xn",
+  "name": "Храм богов / Temple of the Gods",
+  "description": "Вы создаёте храм, появляющийся из мерцающего света на земле в том месте, которое вы можете видеть в пределах дистанции.\n\nХрам должен умещаться в незанятом кубе с длиной ребра до 120 футов. Храм остаётся до тех пор, пока заклинание не закончится. Он посвящен любому богу, пантеону или философии, которые представлены священным символом, используемым при сотворении заклинания.\n\nВы сами решаете, как храм должен выглядеть. Внутреннее пространство храма ограничено полом, стенами и крышей. У храма одна входная дверь, но любое количество окон. Только вы и те существа, которых вы указываете, когда сотворяете заклинание, могут открыть или закрыть дверь. Интерьер храма – это открытое пространство с идолом или алтарём у одной из стен.\n\nВы определяете, освещается ли храм, и является ли этот свет &amp;reference[brightlight]{ярким} или &amp;reference[dimlight]{тусклым}. Внутри воздух наполнен запахом горящих благовоний, а температура комфортная. Храм препятствует существам тех типов, которые вы выбираете, когда сотворяете это заклинание.\n\nВыберите один или несколько из следующих типов: небожители, элементали, феи, бестии или нежить. Если существо выбранного типа пытается войти в храм, оно должно пройти испытание Харизмы. При провале оно не может войти в храм в течение 24 часов. Даже если существо сумело войти в храм, магия этого места является для него помехой; всякий раз, когда оно совершает бросок атаки, проверку способности или испытания внутри храма, существо должно бросить [[/r d4]] и вычесть получившееся число из его броска [[/r d20]].\n\nКроме того, сенсоры, созданные заклинаниями школы Прорицания, не могут появиться внутри храма, а существа внутри него не могут быть целями заклинаний этой школы.\n\nНаконец, всякий раз, когда какое-либо существо в храме восстанавливает ПЗ заклинанием 1 круга или выше, оно дополнительно восстанавливает ПЗ в количестве, равном вашему модификатору Мудрости (минимум 1 ПЗ).\n\nХрам сделан из светонепроницаемого магического поля, которое простирается на Эфирный План, тем самым блокируя межпланарное перемещение внутрь храма.\n\nТакже ничто не может проникнуть в храм физическим путём. Он не может быть развеян @Compendium[laaru-dnd5-hw.spells.ZdDJVUlzYudd4nHO]{Рассеивание магии}, и @Compendium[laaru-dnd5-hw.spells.T9luUO2r6OCYunlU]{Поле антимагии} не оказывает на него никакого эффекта.\n\nЗаклинание @Compendium[laaru-dnd5-hw.spells.KMGALOtvIkVjYggc]{Дезинтеграция} мгновенно разрушает храм.\n\nСотворение этого заклинания на одно и то же место каждый день в течение года делает этот эффект постоянным.",
+  "level": 7,
+  "school": "con",
+  "components": [
+    "M",
+    "S",
+    "V"
+  ],
+  "ritual": false,
+  "concentration": false,
+  "casting_time": {
+    "unit": "hour",
+    "value": 1,
+    "condition": ""
+  },
+  "range": {
+    "units": "ft",
+    "value": 120,
+    "special": null
+  },
+  "duration": {
+    "units": "hour",
+    "value": 24
+  },
+  "materials": {
+    "value": "святой символ, стоимостью не менее 5 зм",
+    "consumed": false,
+    "cost": 5,
+    "supply": 0
+  },
+  "preparation": {
+    "mode": "prepared",
+    "prepared": false
+  },
+  "activities": [
+    {
+      "id": "dnd5eactivity000",
+      "name": "",
+      "img": "",
+      "sort": 0,
+      "activation": {
+        "type": "action",
+        "value": null,
+        "condition": "",
+        "override": false,
+        "reaction_conditions": []
+      },
+      "consumption": {
+        "scaling": {
+          "allowed": false,
+          "max": ""
+        },
+        "spell_slot": true,
+        "targets": []
+      },
+      "description": {
+        "chat_flavor": ""
+      },
+      "duration": {
+        "value": null,
+        "units": "inst",
+        "special": "",
+        "concentration": false,
+        "override": false
+      },
+      "flags": {},
+      "range": {
+        "value": null,
+        "units": "self",
+        "special": "",
+        "override": false
+      },
+      "target": {
+        "template": {
+          "count": "",
+          "contiguous": false,
+          "stationary": false,
+          "type": "cube",
+          "size": "120",
+          "width": "",
+          "height": "",
+          "units": "ft"
+        },
+        "affects": {
+          "count": "",
+          "type": "",
+          "choice": false,
+          "special": ""
+        },
+        "override": false,
+        "prompt": true
+      },
+      "uses": {
+        "spent": 0,
+        "max": "",
+        "recovery": []
+      },
+      "visibility": {
+        "identifier": "",
+        "level": {
+          "min": null,
+          "max": null
+        },
+        "require_attunement": false,
+        "require_identification": false,
+        "require_magic": false
+      },
+      "effects": [],
+      "applied_effects": [],
+      "kind": "save",
+      "damage": {
+        "on_save": "half",
+        "parts": [
+          {
+            "number": null,
+            "denomination": null,
+            "bonus": "",
+            "types": [
+              "healing"
+            ],
+            "custom": {
+              "enabled": true,
+              "formula": "d4"
+            },
+            "scaling": {
+              "mode": "",
+              "number": null,
+              "formula": ""
+            }
+          }
+        ]
+      },
+      "save": {
+        "ability": [
+          "cha"
+        ],
+        "dc": {
+          "calculation": "spellcasting",
+          "formula": ""
+        },
+        "ignore_cover": false
+      }
+    }
+  ],
+  "passive_effects": [],
+  "provenance": {
+    "source": "foundry",
+    "source_url": "https://github.com/foundryvtt/dnd5e/blob/965ad2d0cf5d063dac675ba078b5bd3c3c0dd449/packs/_source/laaru-hw-spells/Храм_богов___Temple_of_the_Gods_DKM1dQnoid9Xs5xn.yml",
+    "ingest_date": "2026-10-26",
+    "ingest_version": "foundry-translator-v1",
+    "srd_version": [
+      "5.1"
+    ],
+    "license_tag": "CC-BY-4.0"
+  },
+  "review": {
+    "known_divergence": null,
+    "requires_user_decision": false
+  },
+  "entry_kind": "spell"
+}

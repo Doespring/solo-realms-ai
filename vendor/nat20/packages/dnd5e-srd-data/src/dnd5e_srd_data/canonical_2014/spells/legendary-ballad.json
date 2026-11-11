@@ -1,0 +1,138 @@
+{
+  "slug": "legendary-ballad",
+  "foundry_uuid": "Compendium.dnd5e.laaru-hw-spells.Item.VVpn7LaCTtdBoCH0",
+  "name": "Легендарная баллада / Legendary Ballad",
+  "description": "Вы исполняете балладу, вдохновляющую тех, кто ее слышит, на легендарные подвиги. Несколько существ по вашему выбору, равных вашему модификатору заклинательной характеристики (минимум 1), которые слышат вас, могут мгновенно провести одну атаку оружием или сотворить заклинание 1-го круга или ниже.\n\nВ качестве бонусного действия на каждом последующем ходу вы можете использовать инструмент, чтобы продолжить эту балладу и дать возможность существу, которое слышит вас в пределах досягаемости, немедленно провести произвести одну атаку оружием или сотворить заклинание 1-го круга или ниже.",
+  "level": 5,
+  "school": "enc",
+  "components": [
+    "M",
+    "V"
+  ],
+  "ritual": false,
+  "concentration": true,
+  "casting_time": {
+    "unit": "action",
+    "value": 1,
+    "condition": ""
+  },
+  "range": {
+    "units": "spec",
+    "value": 0,
+    "special": null
+  },
+  "duration": {
+    "units": "minute",
+    "value": 1
+  },
+  "materials": {
+    "value": "музыкальный инструмент стоимостью не менее 1 зм, в котором вы умелы",
+    "consumed": false,
+    "cost": 1,
+    "supply": 0
+  },
+  "preparation": {
+    "mode": "prepared",
+    "prepared": false
+  },
+  "activities": [
+    {
+      "id": "dnd5eactivity000",
+      "name": "",
+      "img": "",
+      "sort": 0,
+      "activation": {
+        "type": "action",
+        "value": null,
+        "condition": "",
+        "override": false,
+        "reaction_conditions": []
+      },
+      "consumption": {
+        "scaling": {
+          "allowed": false,
+          "max": ""
+        },
+        "spell_slot": true,
+        "targets": []
+      },
+      "description": {
+        "chat_flavor": ""
+      },
+      "duration": {
+        "value": null,
+        "units": "inst",
+        "special": "",
+        "concentration": false,
+        "override": false
+      },
+      "flags": {},
+      "range": {
+        "value": null,
+        "units": "self",
+        "special": "",
+        "override": false
+      },
+      "target": {
+        "template": {
+          "count": "",
+          "contiguous": false,
+          "stationary": false,
+          "type": "radius",
+          "size": "50",
+          "width": "",
+          "height": "",
+          "units": "ft"
+        },
+        "affects": {
+          "count": "",
+          "type": "",
+          "choice": false,
+          "special": ""
+        },
+        "override": false,
+        "prompt": true
+      },
+      "uses": {
+        "spent": 0,
+        "max": "",
+        "recovery": []
+      },
+      "visibility": {
+        "identifier": "",
+        "level": {
+          "min": null,
+          "max": null
+        },
+        "require_attunement": false,
+        "require_identification": false,
+        "require_magic": false
+      },
+      "effects": [],
+      "applied_effects": [],
+      "kind": "utility",
+      "roll": {
+        "formula": "",
+        "name": "",
+        "prompt": false,
+        "visible": false
+      }
+    }
+  ],
+  "passive_effects": [],
+  "provenance": {
+    "source": "foundry",
+    "source_url": "https://github.com/foundryvtt/dnd5e/blob/965ad2d0cf5d063dac675ba078b5bd3c3c0dd449/packs/_source/laaru-hw-spells/Легендарная_баллада___Legendary_Ballad_VVpn7LaCTtdBoCH0.yml",
+    "ingest_date": "2026-10-26",
+    "ingest_version": "foundry-translator-v1",
+    "srd_version": [
+      "5.1"
+    ],
+    "license_tag": "CC-BY-4.0"
+  },
+  "review": {
+    "known_divergence": null,
+    "requires_user_decision": false
+  },
+  "entry_kind": "spell"
+}

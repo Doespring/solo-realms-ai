@@ -1,0 +1,1976 @@
+{
+  "kind": "file",
+  "failed": [],
+  "removed": [
+    {
+      "relative": "dist/SoloRealmsAI-Windows-2.1.4-preview.10-mock.zip",
+      "bytes": 36747474,
+      "files": 1
+    },
+    {
+      "relative": "dist/SoloRealmsAI-Windows-2.1.4-preview.10-mock.zip.sha256",
+      "bytes": 114,
+      "files": 1
+    },
+    {
+      "relative": "dist/SoloRealmsAI-Windows-2.2.0-prototype.1.zip",
+      "bytes": 39838092,
+      "files": 1
+    },
+    {
+      "relative": "dist/SoloRealmsAI-Windows-2.2.0-prototype.1.zip.sha256",
+      "bytes": 110,
+      "files": 1
+    },
+    {
+      "relative": "dist/SoloRealmsAI-Windows-2.2.0-prototype.2.zip",
+      "bytes": 39843265,
+      "files": 1
+    },
+    {
+      "relative": "dist/SoloRealmsAI-Windows-2.2.0-prototype.2.zip.sha256",
+      "bytes": 110,
+      "files": 1
+    },
+    {
+      "relative": "dist/SoloRealmsAI-Windows-2.2.0-prototype.3.zip",
+      "bytes": 39867966,
+      "files": 1
+    },
+    {
+      "relative": "dist/SoloRealmsAI-Windows-2.2.0-prototype.3.zip.sha256",
+      "bytes": 110,
+      "files": 1
+    },
+    {
+      "relative": "dist/SoloRealmsAI-Windows-2.2.0-prototype.4.zip",
+      "bytes": 39889528,
+      "files": 1
+    },
+    {
+      "relative": "dist/SoloRealmsAI-Windows-2.2.0-prototype.4.zip.sha256",
+      "bytes": 110,
+      "files": 1
+    },
+    {
+      "relative": "dist/SoloRealmsAI-Windows-2.2.0-prototype.5.zip",
+      "bytes": 39915258,
+      "files": 1
+    },
+    {
+      "relative": "dist/SoloRealmsAI-Windows-2.2.0-prototype.5.zip.sha256",
+      "bytes": 110,
+      "files": 1
+    },
+    {
+      "relative": "reports/automation-update-input.json",
+      "bytes": 23730,
+      "files": 1
+    },
+    {
+      "relative": "reports/CLOUD_ACCOUNTING-2026-10-17.md",
+      "bytes": 11817,
+      "files": 1
+    },
+    {
+      "relative": "reports/command-cycle.json",
+      "bytes": 26965,
+      "files": 1
+    },
+    {
+      "relative": "reports/DASH_MOCK_MAPPING.md",
+      "bytes": 4046,
+      "files": 1
+    },
+    {
+      "relative": "reports/DASH_UI_ACCEPTANCE.md",
+      "bytes": 7279,
+      "files": 1
+    },
+    {
+      "relative": "reports/EMAIL_DELIVERY.md",
+      "bytes": 1673,
+      "files": 1
+    },
+    {
+      "relative": "reports/EMPTY_MARKER_REPAIR.json",
+      "bytes": 186,
+      "files": 1
+    },
+    {
+      "relative": "reports/FINAL_LOCAL_SOURCE_VERIFICATION.json",
+      "bytes": 146,
+      "files": 1
+    },
+    {
+      "relative": "reports/INDEPENDENT_PREVIEW10_ACCEPTANCE.md",
+      "bytes": 7864,
+      "files": 1
+    },
+    {
+      "relative": "reports/INDEPENDENT_PREVIEW7_ACCEPTANCE.md",
+      "bytes": 17520,
+      "files": 1
+    },
+    {
+      "relative": "reports/INDEPENDENT_PREVIEW8_ACCEPTANCE.md",
+      "bytes": 17875,
+      "files": 1
+    },
+    {
+      "relative": "reports/INDEPENDENT_PREVIEW9_ACCEPTANCE.md",
+      "bytes": 11815,
+      "files": 1
+    },
+    {
+      "relative": "reports/nat20-screen-restart.png",
+      "bytes": 33746,
+      "files": 1
+    },
+    {
+      "relative": "reports/nat20-upstream-repair/latest.json",
+      "bytes": 2777,
+      "files": 1
+    },
+    {
+      "relative": "reports/nat20-upstream-repair/prepare.py",
+      "bytes": 9459,
+      "files": 1
+    },
+    {
+      "relative": "reports/nat20-upstream-repair/run.py",
+      "bytes": 5398,
+      "files": 1
+    },
+    {
+      "relative": "reports/NEXT_BUILD_GATE.md",
+      "bytes": 18326,
+      "files": 1
+    },
+    {
+      "relative": "reports/NEXT_UI_ACCEPTANCE.md",
+      "bytes": 10935,
+      "files": 1
+    },
+    {
+      "relative": "reports/pdf-play-today-ui/continue-server.json",
+      "bytes": 162,
+      "files": 1
+    },
+    {
+      "relative": "reports/pdf-play-today-ui/draft-retry.png",
+      "bytes": 61996,
+      "files": 1
+    },
+    {
+      "relative": "reports/pdf-play-today-ui/good-blocks.json",
+      "bytes": 7211,
+      "files": 1
+    },
+    {
+      "relative": "reports/pdf-play-today-ui/guard-results.json",
+      "bytes": 3170,
+      "files": 1
+    },
+    {
+      "relative": "reports/pdf-play-today-ui/partial-failure.png",
+      "bytes": 203358,
+      "files": 1
+    },
+    {
+      "relative": "reports/pdf-play-today-ui/partial-server.json",
+      "bytes": 165,
+      "files": 1
+    },
+    {
+      "relative": "reports/pdf-play-today-ui/real-path.json",
+      "bytes": 5410,
+      "files": 1
+    },
+    {
+      "relative": "reports/pdf-play-today-ui/real-user-continue.png",
+      "bytes": 161147,
+      "files": 1
+    },
+    {
+      "relative": "reports/pdf-play-today-ui/real-user-save.png",
+      "bytes": 129894,
+      "files": 1
+    },
+    {
+      "relative": "reports/pdf-play-today-ui/resume-server.json",
+      "bytes": 161,
+      "files": 1
+    },
+    {
+      "relative": "reports/pdf-playable-release/build.log",
+      "bytes": 18416,
+      "files": 1
+    },
+    {
+      "relative": "reports/pdf-playable-release/cleanup-plan.json",
+      "bytes": 650,
+      "files": 1
+    },
+    {
+      "relative": "reports/pdf-playable-release/cleanup.json",
+      "bytes": 816,
+      "files": 1
+    },
+    {
+      "relative": "reports/pdf-playable-release/native-continue-pid.txt",
+      "bytes": 7,
+      "files": 1
+    },
+    {
+      "relative": "reports/pdf-playable-release/native-prepare-pid.txt",
+      "bytes": 6,
+      "files": 1
+    },
+    {
+      "relative": "reports/pdf-playable-release/native-state-proof.json",
+      "bytes": 491,
+      "files": 1
+    },
+    {
+      "relative": "reports/pdf-playable-release/original-artifacts.json",
+      "bytes": 2181,
+      "files": 1
+    },
+    {
+      "relative": "reports/pdf-playable-release/regression.log",
+      "bytes": 1299,
+      "files": 1
+    },
+    {
+      "relative": "reports/pdf-playable-release/selected_regression.py",
+      "bytes": 2666,
+      "files": 1
+    },
+    {
+      "relative": "reports/pdf-playable-release/source-snapshot.json",
+      "bytes": 376578,
+      "files": 1
+    },
+    {
+      "relative": "reports/pdf-playable-release/verify_release.py",
+      "bytes": 4531,
+      "files": 1
+    },
+    {
+      "relative": "reports/PDF_READINESS_UI_FIX.md",
+      "bytes": 6529,
+      "files": 1
+    },
+    {
+      "relative": "reports/PDF_SOURCE_RECOVERY_FIX.md",
+      "bytes": 3970,
+      "files": 1
+    },
+    {
+      "relative": "reports/playable-ai-measurements.json",
+      "bytes": 40622,
+      "files": 1
+    },
+    {
+      "relative": "reports/playable-next-release/build.log",
+      "bytes": 18429,
+      "files": 1
+    },
+    {
+      "relative": "reports/playable-next-release/cleanup-plan.json",
+      "bytes": 654,
+      "files": 1
+    },
+    {
+      "relative": "reports/playable-next-release/cleanup.json",
+      "bytes": 863,
+      "files": 1
+    },
+    {
+      "relative": "reports/playable-next-release/native-pid.txt",
+      "bytes": 7,
+      "files": 1
+    },
+    {
+      "relative": "reports/playable-next-release/native-smoke.json",
+      "bytes": 595,
+      "files": 1
+    },
+    {
+      "relative": "reports/playable-next-release/original-artifacts.json",
+      "bytes": 1625,
+      "files": 1
+    },
+    {
+      "relative": "reports/playable-next-release/regression.log",
+      "bytes": 1184,
+      "files": 1
+    },
+    {
+      "relative": "reports/playable-next-release/regression.xml",
+      "bytes": 3479,
+      "files": 1
+    },
+    {
+      "relative": "reports/playable-next-release/release-manifest.json",
+      "bytes": 499957,
+      "files": 1
+    },
+    {
+      "relative": "reports/playable-next-release/RELEASE.md",
+      "bytes": 9912,
+      "files": 1
+    },
+    {
+      "relative": "reports/playable-next-release/root-independent-verification.json",
+      "bytes": 567,
+      "files": 1
+    },
+    {
+      "relative": "reports/playable-next-release/selected_regression.py",
+      "bytes": 2611,
+      "files": 1
+    },
+    {
+      "relative": "reports/playable-next-release/source-snapshot.json",
+      "bytes": 375121,
+      "files": 1
+    },
+    {
+      "relative": "reports/playable-next-release/STATUS.json",
+      "bytes": 2313,
+      "files": 1
+    },
+    {
+      "relative": "reports/playable-next-release/verification.json",
+      "bytes": 699,
+      "files": 1
+    },
+    {
+      "relative": "reports/playable-next-release/verify_release.py",
+      "bytes": 3291,
+      "files": 1
+    },
+    {
+      "relative": "reports/playable-next-release/write_report.py",
+      "bytes": 11393,
+      "files": 1
+    },
+    {
+      "relative": "reports/PLAYABLE_AI_READINESS.md",
+      "bytes": 15343,
+      "files": 1
+    },
+    {
+      "relative": "reports/PLAYABLE_UI_ACCEPTANCE.md",
+      "bytes": 13150,
+      "files": 1
+    },
+    {
+      "relative": "reports/PLAYABLE_UI_COMBAT.jpg",
+      "bytes": 81795,
+      "files": 1
+    },
+    {
+      "relative": "reports/PLAYABLE_UI_REST.jpg",
+      "bytes": 78765,
+      "files": 1
+    },
+    {
+      "relative": "reports/PLAYABLE_UI_RESTORED.jpg",
+      "bytes": 72163,
+      "files": 1
+    },
+    {
+      "relative": "reports/PLAYABLE_UI_TRACE.json",
+      "bytes": 7432,
+      "files": 1
+    },
+    {
+      "relative": "reports/preview10/archive-before-search.json",
+      "bytes": 250,
+      "files": 1
+    },
+    {
+      "relative": "reports/preview10/archive-verification.json",
+      "bytes": 334,
+      "files": 1
+    },
+    {
+      "relative": "reports/preview10/baseline-preview9.zip",
+      "bytes": 36746046,
+      "files": 1
+    },
+    {
+      "relative": "reports/preview10/build-source.json",
+      "bytes": 46079,
+      "files": 1
+    },
+    {
+      "relative": "reports/preview10/build.log",
+      "bytes": 18425,
+      "files": 1
+    },
+    {
+      "relative": "reports/preview10/final-verification.json",
+      "bytes": 653,
+      "files": 1
+    },
+    {
+      "relative": "reports/preview10/frozen-worker.json",
+      "bytes": 1411,
+      "files": 1
+    },
+    {
+      "relative": "reports/preview10/full-source.json",
+      "bytes": 46079,
+      "files": 1
+    },
+    {
+      "relative": "reports/preview10/full.log",
+      "bytes": 2482,
+      "files": 1
+    },
+    {
+      "relative": "reports/preview10/full.xml",
+      "bytes": 153611,
+      "files": 1
+    },
+    {
+      "relative": "reports/preview10/git-before.txt",
+      "bytes": 5331,
+      "files": 1
+    },
+    {
+      "relative": "reports/preview10/latency-isolated.log",
+      "bytes": 955,
+      "files": 1
+    },
+    {
+      "relative": "reports/preview10/measure_isolated.py",
+      "bytes": 2539,
+      "files": 1
+    },
+    {
+      "relative": "reports/preview10/native-checkpoints.json",
+      "bytes": 430,
+      "files": 1
+    },
+    {
+      "relative": "reports/preview10/native-clarification-resolved.json",
+      "bytes": 12800,
+      "files": 1
+    },
+    {
+      "relative": "reports/preview10/native-clarification-resolved.png",
+      "bytes": 82157,
+      "files": 1
+    },
+    {
+      "relative": "reports/preview10/native-new-scene-check.json",
+      "bytes": 11582,
+      "files": 1
+    },
+    {
+      "relative": "reports/preview10/native-new-scene-check.png",
+      "bytes": 82613,
+      "files": 1
+    },
+    {
+      "relative": "reports/preview10/native-old-profile-baseline.json",
+      "bytes": 23773,
+      "files": 1
+    },
+    {
+      "relative": "reports/preview10/native-old-profile-bless-refused.json",
+      "bytes": 34404,
+      "files": 1
+    },
+    {
+      "relative": "reports/preview10/native-old-profile-button-dash.json",
+      "bytes": 24613,
+      "files": 1
+    },
+    {
+      "relative": "reports/preview10/native-old-profile-check-after-refusal.json",
+      "bytes": 34410,
+      "files": 1
+    },
+    {
+      "relative": "reports/preview10/native-old-profile-clarification-pending.json",
+      "bytes": 34412,
+      "files": 1
+    },
+    {
+      "relative": "reports/preview10/native-old-profile-clarification-resolved.json",
+      "bytes": 34413,
+      "files": 1
+    },
+    {
+      "relative": "reports/preview10/native-old-profile-fresh-start.json",
+      "bytes": 34402,
+      "files": 1
+    },
+    {
+      "relative": "reports/preview10/native-old-profile-hero-turn-confirmed.json",
+      "bytes": 23994,
+      "files": 1
+    },
+    {
+      "relative": "reports/preview10/native-old-profile-hero-turn.json",
+      "bytes": 23774,
+      "files": 1
+    },
+    {
+      "relative": "reports/preview10/native-old-profile-opened.json",
+      "bytes": 23771,
+      "files": 1
+    },
+    {
+      "relative": "reports/preview10/native-old-profile-restarted.json",
+      "bytes": 24611,
+      "files": 1
+    },
+    {
+      "relative": "reports/preview10/native-old-profile-restored1280.json",
+      "bytes": 24614,
+      "files": 1
+    },
+    {
+      "relative": "reports/preview10/native-old-profile-restored960.json",
+      "bytes": 24613,
+      "files": 1
+    },
+    {
+      "relative": "reports/preview10/native-old-profile-saved.json",
+      "bytes": 24607,
+      "files": 1
+    },
+    {
+      "relative": "reports/preview10/native-old-profile-text-dash.json",
+      "bytes": 24193,
+      "files": 1
+    },
+    {
+      "relative": "reports/preview10/native-pid.txt",
+      "bytes": 7,
+      "files": 1
+    },
+    {
+      "relative": "reports/preview10/native-pid2.txt",
+      "bytes": 6,
+      "files": 1
+    },
+    {
+      "relative": "reports/preview10/native-pid3.txt",
+      "bytes": 7,
+      "files": 1
+    },
+    {
+      "relative": "reports/preview10/native-restarted.json",
+      "bytes": 24616,
+      "files": 1
+    },
+    {
+      "relative": "reports/preview10/native-restarted.png",
+      "bytes": 106564,
+      "files": 1
+    },
+    {
+      "relative": "reports/preview10/native-restore-dialog-1280.json",
+      "bytes": 2651,
+      "files": 1
+    },
+    {
+      "relative": "reports/preview10/native-restore-dialog-1280.png",
+      "bytes": 49699,
+      "files": 1
+    },
+    {
+      "relative": "reports/preview10/native-restore-dialog-960.json",
+      "bytes": 2652,
+      "files": 1
+    },
+    {
+      "relative": "reports/preview10/native-restore-dialog-960.png",
+      "bytes": 37925,
+      "files": 1
+    },
+    {
+      "relative": "reports/preview10/native-restored-1280.json",
+      "bytes": 26338,
+      "files": 1
+    },
+    {
+      "relative": "reports/preview10/native-restored-1280.png",
+      "bytes": 96663,
+      "files": 1
+    },
+    {
+      "relative": "reports/preview10/native-restored-960.json",
+      "bytes": 26388,
+      "files": 1
+    },
+    {
+      "relative": "reports/preview10/native-restored-960.png",
+      "bytes": 71595,
+      "files": 1
+    },
+    {
+      "relative": "reports/preview10/native-small-open.json",
+      "bytes": 25074,
+      "files": 1
+    },
+    {
+      "relative": "reports/preview10/native-small-open.png",
+      "bytes": 80480,
+      "files": 1
+    },
+    {
+      "relative": "reports/preview10/native-summary.json",
+      "bytes": 328,
+      "files": 1
+    },
+    {
+      "relative": "reports/preview10/native-terminal-pid.txt",
+      "bytes": 7,
+      "files": 1
+    },
+    {
+      "relative": "reports/preview10/native-terminal-profile-baseline.json",
+      "bytes": 24467,
+      "files": 1
+    },
+    {
+      "relative": "reports/preview10/native-terminal-profile-keyboard-blocked.json",
+      "bytes": 24475,
+      "files": 1
+    },
+    {
+      "relative": "reports/preview10/native-terminal-profile-restored.json",
+      "bytes": 10034,
+      "files": 1
+    },
+    {
+      "relative": "reports/preview10/native-terminal-restored.json",
+      "bytes": 18094,
+      "files": 1
+    },
+    {
+      "relative": "reports/preview10/native-terminal-restored.png",
+      "bytes": 92918,
+      "files": 1
+    },
+    {
+      "relative": "reports/preview10/native-terminal.json",
+      "bytes": 24178,
+      "files": 1
+    },
+    {
+      "relative": "reports/preview10/native-terminal.png",
+      "bytes": 92456,
+      "files": 1
+    },
+    {
+      "relative": "reports/preview10/native-text-dash.json",
+      "bytes": 16944,
+      "files": 1
+    },
+    {
+      "relative": "reports/preview10/native-text-dash.png",
+      "bytes": 94868,
+      "files": 1
+    },
+    {
+      "relative": "reports/preview10/preservation.json",
+      "bytes": 1152,
+      "files": 1
+    },
+    {
+      "relative": "reports/preview10/project-data-forensics.json",
+      "bytes": 3540,
+      "files": 1
+    },
+    {
+      "relative": "reports/preview10/protected-before.json",
+      "bytes": 7423,
+      "files": 1
+    },
+    {
+      "relative": "reports/preview10/release-manifest.json",
+      "bytes": 95521,
+      "files": 1
+    },
+    {
+      "relative": "reports/preview10/screen-latency-isolated.json",
+      "bytes": 929,
+      "files": 1
+    },
+    {
+      "relative": "reports/preview10/screen-latency.json",
+      "bytes": 896,
+      "files": 1
+    },
+    {
+      "relative": "reports/preview10/source-before.zip",
+      "bytes": 2107044,
+      "files": 1
+    },
+    {
+      "relative": "reports/preview10/targeted-source.json",
+      "bytes": 46079,
+      "files": 1
+    },
+    {
+      "relative": "reports/preview10/targeted.log",
+      "bytes": 1346,
+      "files": 1
+    },
+    {
+      "relative": "reports/preview10/targeted.xml",
+      "bytes": 10179,
+      "files": 1
+    },
+    {
+      "relative": "reports/preview10/terminal-fixture.json",
+      "bytes": 38294,
+      "files": 1
+    },
+    {
+      "relative": "reports/preview7/baseline-preview6.zip",
+      "bytes": 34515394,
+      "files": 1
+    },
+    {
+      "relative": "reports/preview7/browser-failure-pause.png",
+      "bytes": 182150,
+      "files": 1
+    },
+    {
+      "relative": "reports/preview7/browser-failure-resume.png",
+      "bytes": 32781,
+      "files": 1
+    },
+    {
+      "relative": "reports/preview7/browser-host-error.log",
+      "bytes": 0,
+      "files": 1
+    },
+    {
+      "relative": "reports/preview7/browser-host.log",
+      "bytes": 0,
+      "files": 1
+    },
+    {
+      "relative": "reports/preview7/browser-initial-hidden-panel.json",
+      "bytes": 4525,
+      "files": 1
+    },
+    {
+      "relative": "reports/preview7/browser-midcombat.png",
+      "bytes": 193945,
+      "files": 1
+    },
+    {
+      "relative": "reports/preview7/browser-pause.json",
+      "bytes": 8313,
+      "files": 1
+    },
+    {
+      "relative": "reports/preview7/browser-pause.log",
+      "bytes": 54,
+      "files": 1
+    },
+    {
+      "relative": "reports/preview7/browser-restart-error.log",
+      "bytes": 0,
+      "files": 1
+    },
+    {
+      "relative": "reports/preview7/browser-restart.log",
+      "bytes": 0,
+      "files": 1
+    },
+    {
+      "relative": "reports/preview7/browser-resume.json",
+      "bytes": 6782,
+      "files": 1
+    },
+    {
+      "relative": "reports/preview7/browser-resume.log",
+      "bytes": 56,
+      "files": 1
+    },
+    {
+      "relative": "reports/preview7/browser-state.json",
+      "bytes": 1359,
+      "files": 1
+    },
+    {
+      "relative": "reports/preview7/browser-victory.png",
+      "bytes": 190370,
+      "files": 1
+    },
+    {
+      "relative": "reports/preview7/build-final.log",
+      "bytes": 17911,
+      "files": 1
+    },
+    {
+      "relative": "reports/preview7/build-fixed.log",
+      "bytes": 17109,
+      "files": 1
+    },
+    {
+      "relative": "reports/preview7/build-source-first.json",
+      "bytes": 32154,
+      "files": 1
+    },
+    {
+      "relative": "reports/preview7/build-source-grammar-fix.json",
+      "bytes": 32154,
+      "files": 1
+    },
+    {
+      "relative": "reports/preview7/build-source.json",
+      "bytes": 32154,
+      "files": 1
+    },
+    {
+      "relative": "reports/preview7/build.log",
+      "bytes": 18329,
+      "files": 1
+    },
+    {
+      "relative": "reports/preview7/frozen-worker-ansi-failure.log",
+      "bytes": 1207,
+      "files": 1
+    },
+    {
+      "relative": "reports/preview7/frozen-worker-first.json",
+      "bytes": 1391,
+      "files": 1
+    },
+    {
+      "relative": "reports/preview7/frozen-worker.json",
+      "bytes": 310,
+      "files": 1
+    },
+    {
+      "relative": "reports/preview7/frozen-worker.log",
+      "bytes": 285,
+      "files": 1
+    },
+    {
+      "relative": "reports/preview7/full-test-source.json",
+      "bytes": 32543,
+      "files": 1
+    },
+    {
+      "relative": "reports/preview7/full.log",
+      "bytes": 126101,
+      "files": 1
+    },
+    {
+      "relative": "reports/preview7/full.xml",
+      "bytes": 151844,
+      "files": 1
+    },
+    {
+      "relative": "reports/preview7/git-before.txt",
+      "bytes": 2849,
+      "files": 1
+    },
+    {
+      "relative": "reports/preview7/latency-after.json",
+      "bytes": 52,
+      "files": 1
+    },
+    {
+      "relative": "reports/preview7/latency-before.json",
+      "bytes": 52,
+      "files": 1
+    },
+    {
+      "relative": "reports/preview7/native-acceptance.json",
+      "bytes": 1115,
+      "files": 1
+    },
+    {
+      "relative": "reports/preview7/native-continued.json",
+      "bytes": 21123,
+      "files": 1
+    },
+    {
+      "relative": "reports/preview7/native-restarted.jpg",
+      "bytes": 87580,
+      "files": 1
+    },
+    {
+      "relative": "reports/preview7/native-restarted.json",
+      "bytes": 20936,
+      "files": 1
+    },
+    {
+      "relative": "reports/preview7/native-restored.jpg",
+      "bytes": 84340,
+      "files": 1
+    },
+    {
+      "relative": "reports/preview7/native-restored.json",
+      "bytes": 20935,
+      "files": 1
+    },
+    {
+      "relative": "reports/preview7/native-saved.json",
+      "bytes": 20901,
+      "files": 1
+    },
+    {
+      "relative": "reports/preview7/preservation.json",
+      "bytes": 67,
+      "files": 1
+    },
+    {
+      "relative": "reports/preview7/protected-before.json",
+      "bytes": 7423,
+      "files": 1
+    },
+    {
+      "relative": "reports/preview7/readiness-fix.log",
+      "bytes": 644,
+      "files": 1
+    },
+    {
+      "relative": "reports/preview7/readiness-fix.xml",
+      "bytes": 376,
+      "files": 1
+    },
+    {
+      "relative": "reports/preview7/release-manifest-first.json",
+      "bytes": 95351,
+      "files": 1
+    },
+    {
+      "relative": "reports/preview7/release-manifest-grammar-fix.json",
+      "bytes": 95517,
+      "files": 1
+    },
+    {
+      "relative": "reports/preview7/release-manifest.json",
+      "bytes": 95517,
+      "files": 1
+    },
+    {
+      "relative": "reports/preview7/scene-debug.log",
+      "bytes": 14820,
+      "files": 1
+    },
+    {
+      "relative": "reports/preview7/source-before.zip",
+      "bytes": 1894800,
+      "files": 1
+    },
+    {
+      "relative": "reports/preview7/targeted-before-letter-assertion.log",
+      "bytes": 4855,
+      "files": 1
+    },
+    {
+      "relative": "reports/preview7/targeted-debug.log",
+      "bytes": 1690,
+      "files": 1
+    },
+    {
+      "relative": "reports/preview7/targeted-first.log",
+      "bytes": 7,
+      "files": 1
+    },
+    {
+      "relative": "reports/preview7/targeted.log",
+      "bytes": 1184,
+      "files": 1
+    },
+    {
+      "relative": "reports/preview7/targeted.xml",
+      "bytes": 2783,
+      "files": 1
+    },
+    {
+      "relative": "reports/PREVIEW7_UI_FOLLOWUP.md",
+      "bytes": 8187,
+      "files": 1
+    },
+    {
+      "relative": "reports/preview8/baseline-preview7.zip",
+      "bytes": 36731740,
+      "files": 1
+    },
+    {
+      "relative": "reports/preview8/build-source.json",
+      "bytes": 44685,
+      "files": 1
+    },
+    {
+      "relative": "reports/preview8/build.log",
+      "bytes": 18311,
+      "files": 1
+    },
+    {
+      "relative": "reports/preview8/final-integrity.json",
+      "bytes": 279,
+      "files": 1
+    },
+    {
+      "relative": "reports/preview8/frozen-worker.json",
+      "bytes": 1236,
+      "files": 1
+    },
+    {
+      "relative": "reports/preview8/frozen-worker.log",
+      "bytes": 999,
+      "files": 1
+    },
+    {
+      "relative": "reports/preview8/full-source.json",
+      "bytes": 44685,
+      "files": 1
+    },
+    {
+      "relative": "reports/preview8/full.log",
+      "bytes": 2482,
+      "files": 1
+    },
+    {
+      "relative": "reports/preview8/full.xml",
+      "bytes": 151793,
+      "files": 1
+    },
+    {
+      "relative": "reports/preview8/git-before.txt",
+      "bytes": 3813,
+      "files": 1
+    },
+    {
+      "relative": "reports/preview8/native-acceptance.json",
+      "bytes": 824,
+      "files": 1
+    },
+    {
+      "relative": "reports/preview8/native-old-opened.jpg",
+      "bytes": 92446,
+      "files": 1
+    },
+    {
+      "relative": "reports/preview8/native-old-opened.txt",
+      "bytes": 11742,
+      "files": 1
+    },
+    {
+      "relative": "reports/preview8/native-old-profile-before.json",
+      "bytes": 23675,
+      "files": 1
+    },
+    {
+      "relative": "reports/preview8/native-old-profile-continued.json",
+      "bytes": 23888,
+      "files": 1
+    },
+    {
+      "relative": "reports/preview8/native-old-profile-newscene.json",
+      "bytes": 33556,
+      "files": 1
+    },
+    {
+      "relative": "reports/preview8/native-old-profile-opened.json",
+      "bytes": 23675,
+      "files": 1
+    },
+    {
+      "relative": "reports/preview8/native-old-profile-post-restore-command.json",
+      "bytes": 33780,
+      "files": 1
+    },
+    {
+      "relative": "reports/preview8/native-old-profile-restarted.json",
+      "bytes": 23888,
+      "files": 1
+    },
+    {
+      "relative": "reports/preview8/native-old-profile-restored.json",
+      "bytes": 33557,
+      "files": 1
+    },
+    {
+      "relative": "reports/preview8/native-old-profile-saved.json",
+      "bytes": 23884,
+      "files": 1
+    },
+    {
+      "relative": "reports/preview8/native-old-profile-zero-after-ctrl.json",
+      "bytes": 36526,
+      "files": 1
+    },
+    {
+      "relative": "reports/preview8/native-old-profile-zero.json",
+      "bytes": 36515,
+      "files": 1
+    },
+    {
+      "relative": "reports/preview8/native8-after-restore-command.jpg",
+      "bytes": 101637,
+      "files": 1
+    },
+    {
+      "relative": "reports/preview8/native8-after-restore-command.txt",
+      "bytes": 15978,
+      "files": 1
+    },
+    {
+      "relative": "reports/preview8/native8-mock-wizard.jpg",
+      "bytes": 120814,
+      "files": 1
+    },
+    {
+      "relative": "reports/preview8/native8-mock-wizard.txt",
+      "bytes": 7509,
+      "files": 1
+    },
+    {
+      "relative": "reports/preview8/native8-new-scene.jpg",
+      "bytes": 119884,
+      "files": 1
+    },
+    {
+      "relative": "reports/preview8/native8-new-scene.txt",
+      "bytes": 10458,
+      "files": 1
+    },
+    {
+      "relative": "reports/preview8/native8-restarted.jpg",
+      "bytes": 111772,
+      "files": 1
+    },
+    {
+      "relative": "reports/preview8/native8-restarted.txt",
+      "bytes": 15684,
+      "files": 1
+    },
+    {
+      "relative": "reports/preview8/native8-saved.jpg",
+      "bytes": 101555,
+      "files": 1
+    },
+    {
+      "relative": "reports/preview8/native8-saved.txt",
+      "bytes": 13087,
+      "files": 1
+    },
+    {
+      "relative": "reports/preview8/native8-terminal-ctrl-enter.jpg",
+      "bytes": 121751,
+      "files": 1
+    },
+    {
+      "relative": "reports/preview8/native8-terminal-ctrl-enter.txt",
+      "bytes": 15586,
+      "files": 1
+    },
+    {
+      "relative": "reports/preview8/native8-zero-hp.jpg",
+      "bytes": 119282,
+      "files": 1
+    },
+    {
+      "relative": "reports/preview8/native8-zero-hp.txt",
+      "bytes": 20192,
+      "files": 1
+    },
+    {
+      "relative": "reports/preview8/native8-zero-restored.jpg",
+      "bytes": 97108,
+      "files": 1
+    },
+    {
+      "relative": "reports/preview8/native8-zero-restored.txt",
+      "bytes": 21559,
+      "files": 1
+    },
+    {
+      "relative": "reports/preview8/preservation.json",
+      "bytes": 67,
+      "files": 1
+    },
+    {
+      "relative": "reports/preview8/protected-before.json",
+      "bytes": 7423,
+      "files": 1
+    },
+    {
+      "relative": "reports/preview8/release-manifest.json",
+      "bytes": 95519,
+      "files": 1
+    },
+    {
+      "relative": "reports/preview8/source-before.zip",
+      "bytes": 1865548,
+      "files": 1
+    },
+    {
+      "relative": "reports/preview8/targeted-source.json",
+      "bytes": 44464,
+      "files": 1
+    },
+    {
+      "relative": "reports/preview8/targeted.log",
+      "bytes": 1265,
+      "files": 1
+    },
+    {
+      "relative": "reports/preview8/targeted.xml",
+      "bytes": 9476,
+      "files": 1
+    },
+    {
+      "relative": "reports/preview9/baseline-preview8.zip",
+      "bytes": 36744255,
+      "files": 1
+    },
+    {
+      "relative": "reports/preview9/behavior.diff",
+      "bytes": 2624,
+      "files": 1
+    },
+    {
+      "relative": "reports/preview9/build-source.json",
+      "bytes": 45126,
+      "files": 1
+    },
+    {
+      "relative": "reports/preview9/build.log",
+      "bytes": 18412,
+      "files": 1
+    },
+    {
+      "relative": "reports/preview9/diff-before.json",
+      "bytes": 2,
+      "files": 1
+    },
+    {
+      "relative": "reports/preview9/final-fix.log",
+      "bytes": 1246,
+      "files": 1
+    },
+    {
+      "relative": "reports/preview9/final-fix.xml",
+      "bytes": 913,
+      "files": 1
+    },
+    {
+      "relative": "reports/preview9/final-integrity.json",
+      "bytes": 396,
+      "files": 1
+    },
+    {
+      "relative": "reports/preview9/fix.log",
+      "bytes": 1245,
+      "files": 1
+    },
+    {
+      "relative": "reports/preview9/fix.xml",
+      "bytes": 779,
+      "files": 1
+    },
+    {
+      "relative": "reports/preview9/frozen-worker.json",
+      "bytes": 1237,
+      "files": 1
+    },
+    {
+      "relative": "reports/preview9/frozen-worker.log",
+      "bytes": 1000,
+      "files": 1
+    },
+    {
+      "relative": "reports/preview9/native-acceptance.json",
+      "bytes": 684,
+      "files": 1
+    },
+    {
+      "relative": "reports/preview9/native-final-questions.json",
+      "bytes": 323,
+      "files": 1
+    },
+    {
+      "relative": "reports/preview9/native-profile-after-bless.json",
+      "bytes": 9849,
+      "files": 1
+    },
+    {
+      "relative": "reports/preview9/native-profile-after-replacement.json",
+      "bytes": 9855,
+      "files": 1
+    },
+    {
+      "relative": "reports/preview9/native-profile-after-reproducer.json",
+      "bytes": 9854,
+      "files": 1
+    },
+    {
+      "relative": "reports/preview9/native-profile-answered-after-restart.json",
+      "bytes": 9860,
+      "files": 1
+    },
+    {
+      "relative": "reports/preview9/native-profile-initial.json",
+      "bytes": 9845,
+      "files": 1
+    },
+    {
+      "relative": "reports/preview9/native-profile-pending-before-restart.json",
+      "bytes": 9860,
+      "files": 1
+    },
+    {
+      "relative": "reports/preview9/native-profile-restarted.json",
+      "bytes": 9847,
+      "files": 1
+    },
+    {
+      "relative": "reports/preview9/native-profile-saved.json",
+      "bytes": 9843,
+      "files": 1
+    },
+    {
+      "relative": "reports/preview9/native-restart-after.json",
+      "bytes": 1472,
+      "files": 1
+    },
+    {
+      "relative": "reports/preview9/native-restart-before.json",
+      "bytes": 1472,
+      "files": 1
+    },
+    {
+      "relative": "reports/preview9/native-trace.json",
+      "bytes": 62543,
+      "files": 1
+    },
+    {
+      "relative": "reports/preview9/native9-bless-refused.jpg",
+      "bytes": 125065,
+      "files": 1
+    },
+    {
+      "relative": "reports/preview9/native9-bless-refused.txt",
+      "bytes": 8817,
+      "files": 1
+    },
+    {
+      "relative": "reports/preview9/native9-pending-question.jpg",
+      "bytes": 127659,
+      "files": 1
+    },
+    {
+      "relative": "reports/preview9/native9-pending-question.txt",
+      "bytes": 11155,
+      "files": 1
+    },
+    {
+      "relative": "reports/preview9/native9-replacement-passed.jpg",
+      "bytes": 119049,
+      "files": 1
+    },
+    {
+      "relative": "reports/preview9/native9-replacement-passed.txt",
+      "bytes": 10370,
+      "files": 1
+    },
+    {
+      "relative": "reports/preview9/native9-reproducer-passed.jpg",
+      "bytes": 119669,
+      "files": 1
+    },
+    {
+      "relative": "reports/preview9/native9-reproducer-passed.txt",
+      "bytes": 9421,
+      "files": 1
+    },
+    {
+      "relative": "reports/preview9/native9-restarted.jpg",
+      "bytes": 85702,
+      "files": 1
+    },
+    {
+      "relative": "reports/preview9/native9-restarted.txt",
+      "bytes": 13650,
+      "files": 1
+    },
+    {
+      "relative": "reports/preview9/native9-saved.jpg",
+      "bytes": 122693,
+      "files": 1
+    },
+    {
+      "relative": "reports/preview9/native9-saved.txt",
+      "bytes": 10680,
+      "files": 1
+    },
+    {
+      "relative": "reports/preview9/native9-scene.jpg",
+      "bytes": 119445,
+      "files": 1
+    },
+    {
+      "relative": "reports/preview9/native9-scene.txt",
+      "bytes": 10878,
+      "files": 1
+    },
+    {
+      "relative": "reports/preview9/native9-true-answer-passed.jpg",
+      "bytes": 120433,
+      "files": 1
+    },
+    {
+      "relative": "reports/preview9/native9-true-answer-passed.txt",
+      "bytes": 10588,
+      "files": 1
+    },
+    {
+      "relative": "reports/preview9/preservation.json",
+      "bytes": 67,
+      "files": 1
+    },
+    {
+      "relative": "reports/preview9/protected-before.json",
+      "bytes": 7423,
+      "files": 1
+    },
+    {
+      "relative": "reports/preview9/red-reproducer.log",
+      "bytes": 2566,
+      "files": 1
+    },
+    {
+      "relative": "reports/preview9/red-reproducer.xml",
+      "bytes": 1491,
+      "files": 1
+    },
+    {
+      "relative": "reports/preview9/red.log",
+      "bytes": 2783,
+      "files": 1
+    },
+    {
+      "relative": "reports/preview9/red.xml",
+      "bytes": 1674,
+      "files": 1
+    },
+    {
+      "relative": "reports/preview9/release-manifest.json",
+      "bytes": 95519,
+      "files": 1
+    },
+    {
+      "relative": "reports/preview9/source-before.zip",
+      "bytes": 17745,
+      "files": 1
+    },
+    {
+      "relative": "reports/preview9/source-diff.json",
+      "bytes": 611,
+      "files": 1
+    },
+    {
+      "relative": "reports/preview9/targeted-source.json",
+      "bytes": 45126,
+      "files": 1
+    },
+    {
+      "relative": "reports/preview9/targeted.log",
+      "bytes": 1265,
+      "files": 1
+    },
+    {
+      "relative": "reports/preview9/targeted.xml",
+      "bytes": 7477,
+      "files": 1
+    },
+    {
+      "relative": "reports/PREVIEW9_CLARIFICATION_FIX.md",
+      "bytes": 12108,
+      "files": 1
+    },
+    {
+      "relative": "reports/PREVIEW9_SMALL_WINDOW_REVIEW.md",
+      "bytes": 7628,
+      "files": 1
+    },
+    {
+      "relative": "reports/prototype-3/CLEANUP.md",
+      "bytes": 877,
+      "files": 1
+    },
+    {
+      "relative": "reports/prototype-3/privacy.xml",
+      "bytes": 391,
+      "files": 1
+    },
+    {
+      "relative": "reports/prototype-3/smoke.xml",
+      "bytes": 654,
+      "files": 1
+    },
+    {
+      "relative": "reports/prototype-4/failure.png",
+      "bytes": 58241,
+      "files": 1
+    },
+    {
+      "relative": "reports/prototype-4/new-wizard-1280.png",
+      "bytes": 151606,
+      "files": 1
+    },
+    {
+      "relative": "reports/prototype-4/results.json",
+      "bytes": 2911,
+      "files": 1
+    },
+    {
+      "relative": "reports/prototype-4/rogue-960.png",
+      "bytes": 135642,
+      "files": 1
+    },
+    {
+      "relative": "reports/prototype-4/social-check.json",
+      "bytes": 413,
+      "files": 1
+    },
+    {
+      "relative": "reports/prototype-4/wizard-cast-1280.png",
+      "bytes": 111236,
+      "files": 1
+    },
+    {
+      "relative": "reports/prototype-4/wizard-state-1280.png",
+      "bytes": 115666,
+      "files": 1
+    },
+    {
+      "relative": "reports/prototype-5/archive-verification.json",
+      "bytes": 169,
+      "files": 1
+    },
+    {
+      "relative": "reports/prototype-5/build-launcher-blocked.log",
+      "bytes": 440,
+      "files": 1
+    },
+    {
+      "relative": "reports/prototype-5/build-source.json",
+      "bytes": 48545,
+      "files": 1
+    },
+    {
+      "relative": "reports/prototype-5/build.log",
+      "bytes": 19119,
+      "files": 1
+    },
+    {
+      "relative": "reports/prototype-5/cleanup-plan.json",
+      "bytes": 7886,
+      "files": 1
+    },
+    {
+      "relative": "reports/prototype-5/cleanup-result.json",
+      "bytes": 448,
+      "files": 1
+    },
+    {
+      "relative": "reports/prototype-5/contract-fixes.log",
+      "bytes": 1171,
+      "files": 1
+    },
+    {
+      "relative": "reports/prototype-5/contract-fixes.xml",
+      "bytes": 1150,
+      "files": 1
+    },
+    {
+      "relative": "reports/prototype-5/desktop.log",
+      "bytes": 644,
+      "files": 1
+    },
+    {
+      "relative": "reports/prototype-5/desktop.xml",
+      "bytes": 1117,
+      "files": 1
+    },
+    {
+      "relative": "reports/prototype-5/executable-source.json",
+      "bytes": 48435,
+      "files": 1
+    },
+    {
+      "relative": "reports/prototype-5/final-integration.log",
+      "bytes": 1246,
+      "files": 1
+    },
+    {
+      "relative": "reports/prototype-5/final-integration.xml",
+      "bytes": 1002,
+      "files": 1
+    },
+    {
+      "relative": "reports/prototype-5/final-verification.json",
+      "bytes": 2444,
+      "files": 1
+    },
+    {
+      "relative": "reports/prototype-5/Finish-Prototype-Cleanup.ps1",
+      "bytes": 2561,
+      "files": 1
+    },
+    {
+      "relative": "reports/prototype-5/frozen-probe.log",
+      "bytes": 620,
+      "files": 1
+    },
+    {
+      "relative": "reports/prototype-5/frozen-probe.sqlite3",
+      "bytes": 389120,
+      "files": 1
+    },
+    {
+      "relative": "reports/prototype-5/frozen-worker.json",
+      "bytes": 870,
+      "files": 1
+    },
+    {
+      "relative": "reports/prototype-5/full-source.json",
+      "bytes": 48435,
+      "files": 1
+    },
+    {
+      "relative": "reports/prototype-5/full.log",
+      "bytes": 28134,
+      "files": 1
+    },
+    {
+      "relative": "reports/prototype-5/full.xml",
+      "bytes": 183026,
+      "files": 1
+    },
+    {
+      "relative": "reports/prototype-5/git-before.txt",
+      "bytes": 5795,
+      "files": 1
+    },
+    {
+      "relative": "reports/prototype-5/host-final.log",
+      "bytes": 1267,
+      "files": 1
+    },
+    {
+      "relative": "reports/prototype-5/host-final.xml",
+      "bytes": 740,
+      "files": 1
+    },
+    {
+      "relative": "reports/prototype-5/host-status.json",
+      "bytes": 521,
+      "files": 1
+    },
+    {
+      "relative": "reports/prototype-5/host.log",
+      "bytes": 644,
+      "files": 1
+    },
+    {
+      "relative": "reports/prototype-5/host.xml",
+      "bytes": 603,
+      "files": 1
+    },
+    {
+      "relative": "reports/prototype-5/integration-bound.log",
+      "bytes": 1246,
+      "files": 1
+    },
+    {
+      "relative": "reports/prototype-5/integration-bound.xml",
+      "bytes": 366,
+      "files": 1
+    },
+    {
+      "relative": "reports/prototype-5/integration-fixed.log",
+      "bytes": 6217,
+      "files": 1
+    },
+    {
+      "relative": "reports/prototype-5/integration-fixed.xml",
+      "bytes": 5248,
+      "files": 1
+    },
+    {
+      "relative": "reports/prototype-5/integration.log",
+      "bytes": 4928,
+      "files": 1
+    },
+    {
+      "relative": "reports/prototype-5/integration.xml",
+      "bytes": 3851,
+      "files": 1
+    },
+    {
+      "relative": "reports/prototype-5/native-checked.json",
+      "bytes": 22245,
+      "files": 1
+    },
+    {
+      "relative": "reports/prototype-5/native-cloud-pid.txt",
+      "bytes": 6,
+      "files": 1
+    },
+    {
+      "relative": "reports/prototype-5/native-continued.json",
+      "bytes": 40152,
+      "files": 1
+    },
+    {
+      "relative": "reports/prototype-5/native-hide-refused.json",
+      "bytes": 40155,
+      "files": 1
+    },
+    {
+      "relative": "reports/prototype-5/native-magic-observed.json",
+      "bytes": 41333,
+      "files": 1
+    },
+    {
+      "relative": "reports/prototype-5/native-pid.txt",
+      "bytes": 7,
+      "files": 1
+    },
+    {
+      "relative": "reports/prototype-5/native-restart-comparison.json",
+      "bytes": 122,
+      "files": 1
+    },
+    {
+      "relative": "reports/prototype-5/native-restarted.json",
+      "bytes": 39930,
+      "files": 1
+    },
+    {
+      "relative": "reports/prototype-5/native-saved-confirmed.json",
+      "bytes": 39936,
+      "files": 1
+    },
+    {
+      "relative": "reports/prototype-5/native-saved.json",
+      "bytes": 39853,
+      "files": 1
+    },
+    {
+      "relative": "reports/prototype-5/native-seed.log",
+      "bytes": 576,
+      "files": 1
+    },
+    {
+      "relative": "reports/prototype-5/native-started.json",
+      "bytes": 22245,
+      "files": 1
+    },
+    {
+      "relative": "reports/prototype-5/native-summary.json",
+      "bytes": 1437,
+      "files": 1
+    },
+    {
+      "relative": "reports/prototype-5/native_qa.py",
+      "bytes": 6773,
+      "files": 1
+    },
+    {
+      "relative": "reports/prototype-5/owned-source-before.json",
+      "bytes": 40709,
+      "files": 1
+    },
+    {
+      "relative": "reports/prototype-5/package.log",
+      "bytes": 541,
+      "files": 1
+    },
+    {
+      "relative": "reports/prototype-5/packaging-guard.log",
+      "bytes": 100,
+      "files": 1
+    },
+    {
+      "relative": "reports/prototype-5/packaging-guard.xml",
+      "bytes": 389,
+      "files": 1
+    },
+    {
+      "relative": "reports/prototype-5/preservation.json",
+      "bytes": 67,
+      "files": 1
+    },
+    {
+      "relative": "reports/prototype-5/protected-before.json",
+      "bytes": 9668,
+      "files": 1
+    },
+    {
+      "relative": "reports/prototype-5/README.before.md",
+      "bytes": 6662,
+      "files": 1
+    },
+    {
+      "relative": "reports/prototype-5/release-manifest.json",
+      "bytes": 498937,
+      "files": 1
+    },
+    {
+      "relative": "reports/prototype-5/RELEASE.md",
+      "bytes": 10265,
+      "files": 1
+    },
+    {
+      "relative": "reports/prototype-5/screen-latency.json",
+      "bytes": 724,
+      "files": 1
+    },
+    {
+      "relative": "reports/prototype-5/social-fixed.log",
+      "bytes": 1289,
+      "files": 1
+    },
+    {
+      "relative": "reports/prototype-5/social-fixed.xml",
+      "bytes": 386,
+      "files": 1
+    },
+    {
+      "relative": "reports/prototype-5/social-topic.log",
+      "bytes": 6025,
+      "files": 1
+    },
+    {
+      "relative": "reports/prototype-5/social-topic.xml",
+      "bytes": 4567,
+      "files": 1
+    },
+    {
+      "relative": "reports/prototype-5/social.log",
+      "bytes": 5887,
+      "files": 1
+    },
+    {
+      "relative": "reports/prototype-5/social.xml",
+      "bytes": 4402,
+      "files": 1
+    },
+    {
+      "relative": "reports/prototype-5/source-start.json",
+      "bytes": 1227,
+      "files": 1
+    },
+    {
+      "relative": "reports/prototype-5/STATUS.md",
+      "bytes": 2008,
+      "files": 1
+    },
+    {
+      "relative": "reports/prototype-5/ui-options.json",
+      "bytes": 174066,
+      "files": 1
+    },
+    {
+      "relative": "reports/prototype-5/ui-seam.log",
+      "bytes": 1260,
+      "files": 1
+    },
+    {
+      "relative": "reports/SMALL_WINDOW_UI_FIX.md",
+      "bytes": 7963,
+      "files": 1
+    },
+    {
+      "relative": "reports/stage2-ui/failure.png",
+      "bytes": 128133,
+      "files": 1
+    },
+    {
+      "relative": "reports/stage3-content-cache/before.prof",
+      "bytes": 51994,
+      "files": 1
+    },
+    {
+      "relative": "reports/stage3-content-cache/empty-cache.prof",
+      "bytes": 94829,
+      "files": 1
+    },
+    {
+      "relative": "reports/stage3-content-cache/options-before.prof",
+      "bytes": 88087,
+      "files": 1
+    },
+    {
+      "relative": "reports/stage3-content-cache/persisted-cache.prof",
+      "bytes": 92313,
+      "files": 1
+    },
+    {
+      "relative": "reports/ui-play-screen-smoke.jpg",
+      "bytes": 102932,
+      "files": 1
+    },
+    {
+      "relative": "reports/UI_PLAY_SCREEN.md",
+      "bytes": 7692,
+      "files": 1
+    },
+    {
+      "relative": "reports/WINDOWS_PREVIEW10_ACCEPTANCE.md",
+      "bytes": 13992,
+      "files": 1
+    },
+    {
+      "relative": "reports/WINDOWS_PREVIEW8_ACCEPTANCE.md",
+      "bytes": 13340,
+      "files": 1
+    },
+    {
+      "relative": "reports/WINDOWS_PREVIEW_ACCEPTANCE.md",
+      "bytes": 12812,
+      "files": 1
+    },
+    {
+      "relative": "reports/cleanup/2026-10-18/QA-TEMP-EVIDENCE.zip",
+      "bytes": 49444366,
+      "files": 1
+    },
+    {
+      "relative": "reports/cleanup/2026-10-18/build_windows.before.ps1",
+      "bytes": 2409,
+      "files": 1
+    },
+    {
+      "relative": "reports/cleanup/2026-10-18/Finish-Cleanup.ps1",
+      "bytes": 3644,
+      "files": 1
+    },
+    {
+      "relative": "Очистить TEMP.cmd",
+      "bytes": 196,
+      "files": 1
+    },
+    {
+      "relative": "TRANSFER-README-2026-10-17.md",
+      "bytes": 1629,
+      "files": 1
+    }
+  ]
+}

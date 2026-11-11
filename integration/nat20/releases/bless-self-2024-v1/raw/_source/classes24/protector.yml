@@ -1,0 +1,112 @@
+{
+  "_id": "phbDivineOrderPr",
+  "_stats": {
+    "compendiumSource": null,
+    "coreVersion": "14.366",
+    "createdTime": 1735866373481,
+    "duplicateSource": null,
+    "exportSource": null,
+    "lastModifiedBy": "dnd5ebuilder0000",
+    "modifiedTime": 1745256759459,
+    "systemId": "dnd5e",
+    "systemVersion": "4.4.0"
+  },
+  "effects": [
+    {
+      "_id": "Mvzn4plDBs9fDfph",
+      "_stats": {
+        "compendiumSource": null,
+        "coreVersion": "14.366",
+        "createdTime": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "lastModifiedBy": null,
+        "modifiedTime": null,
+        "systemId": "dnd5e",
+        "systemVersion": "4.2.0"
+      },
+      "description": "",
+      "disabled": false,
+      "duration": {
+        "expired": false,
+        "expiry": null,
+        "units": "seconds",
+        "value": null
+      },
+      "flags": {},
+      "folder": null,
+      "img": "icons/magic/holy/barrier-shield-winged-blue.webp",
+      "name": "Divine Order: Protector",
+      "origin": null,
+      "showIcon": 1,
+      "sort": 0,
+      "start": null,
+      "statuses": [],
+      "system": {
+        "changes": [
+          {
+            "key": "system.traits.weaponProf.value",
+            "priority": null,
+            "type": "add",
+            "value": "mar"
+          },
+          {
+            "key": "system.traits.armorProf.value",
+            "priority": null,
+            "type": "add",
+            "value": "hvy"
+          }
+        ]
+      },
+      "tint": "#ffffff",
+      "transfer": true,
+      "type": "base"
+    }
+  ],
+  "flags": {
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    }
+  },
+  "folder": "3wY92TRgyyyDkpmF",
+  "img": "icons/magic/holy/barrier-shield-winged-blue.webp",
+  "name": "Divine Order: Protector",
+  "ownership": {
+    "default": 0
+  },
+  "sort": 1300000,
+  "system": {
+    "activities": {},
+    "description": {
+      "chat": "",
+      "value": "<p>You have dedicated yourself to the following sacred role:</p><p><strong>Protector.</strong> Trained for battle, you gain proficiency with Martial weapons and training with Heavy armor.</p><section id=\"secret-Tsm148wTyiFWlMFv\" class=\"secret\"><p><strong>Foundry Note</strong></p><p>This feature includes an Active Effect which grants the proficiency and training.</p></section>"
+    },
+    "enchant": {},
+    "identifier": "divine-order-protector",
+    "prerequisites": {
+      "level": 1,
+      "repeatable": false
+    },
+    "properties": [],
+    "requirements": "Cleric",
+    "source": {
+      "book": "",
+      "license": "CC-BY-4.0",
+      "revision": 1,
+      "rules": "2024"
+    },
+    "type": {
+      "subtype": "",
+      "value": "class"
+    },
+    "uses": {
+      "max": "",
+      "recovery": [],
+      "spent": 0
+    }
+  },
+  "type": "feat"
+}

@@ -1,0 +1,209 @@
+/* r235 — one frame for every screen: a 56 px bar, a 64 px rail, one drawer.
+   Loaded last, so it overrides the older shell (`aside.sidebar` in flow,
+   header 70, crumbs, per-screen footers). Sizes come from one scale:
+   12 / 14 / 16 / 20 / 28 / 34 px and 4 / 8 / 12 / 16 / 24 / 32 px. */
+
+body.solo-shell{
+  --fs-12:12px; --fs-14:14px; --fs-16:16px; --fs-20:20px; --fs-28:28px; --fs-34:34px;
+  --s1:4px; --s2:8px; --s3:12px; --s4:16px; --s5:24px; --s6:32px;
+  --tap:44px; --bar:56px; --rail-h:64px;
+}
+body.solo-shell aside.sidebar{display:none}
+/* One screen at a time. Older sheets give #play `display:flex` on its own
+   class, so an inactive game screen stayed on top of the home screen: that is
+   the "two interfaces at once" the owner saw. */
+body.solo-shell section.view:not(.active){display:none!important}
+body.solo-shell main{margin-left:0;padding:0;max-width:none}
+@media(min-width:1101px){body.solo-shell main{margin-left:var(--rail-h)}}
+
+/* ---------- bar ---------- */
+body.solo-shell main>header{
+  height:var(--bar);padding:0 var(--s4);gap:var(--s3);
+  border-bottom:1px solid var(--line);background:var(--bg);
+  display:flex;align-items:center;justify-content:flex-start;
+  position:sticky;top:0;z-index:15}
+body.solo-shell main>header .breadcrumb,
+body.solo-shell main>header .runtime{display:none}
+body.solo-shell main>header .shell-title{margin:0;font-family:ChronicleBook,Georgia,serif;font-size:var(--fs-16);font-weight:700;line-height:1.2;color:var(--text);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.shell-icon-btn{width:var(--tap);height:var(--tap);min-height:var(--tap);padding:0;display:inline-flex;align-items:center;justify-content:center;border:1px solid transparent;background:none;color:var(--text);border-radius:2px;flex:none}
+.shell-icon-btn:hover{background:var(--surface2);border-color:var(--line)}
+.shell-icon-btn img,.shell-icon-btn svg{width:24px;height:24px;object-fit:contain}
+.shell-icon-btn[hidden]{display:none!important}
+.shell-back{display:none}
+body.solo-shell.has-back .shell-back{display:inline-flex}
+.shell-burger{display:none}
+.burger-line{display:block;width:18px;height:2px;background:currentColor;border-radius:1px}
+@media(max-width:1100px){body.solo-shell .shell-burger{display:inline-flex;flex-direction:column;gap:var(--s1)}}
+
+/* ---------- rail (>=1101) ---------- */
+#solo-rail{position:fixed;inset:0 auto 0 0;width:var(--rail-h);display:none;flex-direction:column;align-items:center;
+  gap:var(--s1);padding:var(--s2) 0;background:var(--surface);border-right:1px solid var(--line);z-index:18}
+@media(min-width:1101px){#solo-rail{display:flex}}
+.rail-btn{width:var(--tap);height:var(--tap);min-height:var(--tap);padding:0;display:inline-flex;align-items:center;justify-content:center;
+  border:1px solid transparent;background:none;color:var(--muted);border-radius:2px}
+.rail-btn img{width:24px;height:24px;object-fit:contain;opacity:.85}
+.rail-btn:hover{background:var(--surface2);border-color:var(--line);color:var(--text)}
+.rail-btn.active{background:var(--gold-dark);border-color:var(--gold);color:var(--gold)}
+.rail-btn.active img{opacity:1;filter:none}
+.rail-sep{flex:1}
+
+/* ---------- drawer ---------- */
+#solo-drawer{position:fixed;inset:0;z-index:40;display:none}
+#solo-drawer.open{display:block}
+.drawer-scrim{position:absolute;inset:0;background:#12110fd0}
+.drawer-panel{position:absolute;inset:0 auto 0 0;width:min(360px,88vw);display:flex;flex-direction:column;
+  background:var(--surface);color:var(--text);border-right:1px solid var(--line);border-radius:0 2px 2px 0}
+/* On a phone the same drawer is a bottom sheet, as in design/mobile §1: it is
+   as tall as its content, leaves the top of the screen visible, and the fixed
+   exit stays on its bottom edge. */
+@media(max-width:1100px){
+  body.solo-shell #solo-drawer .drawer-panel{inset:auto 0 0 0;width:100%;max-height:calc(100% - 88px);
+    border-right:0;border-top:1px solid var(--line);border-radius:var(--s3) var(--s3) 0 0}
+}
+.drawer-head{height:var(--tap);flex:none;display:flex;align-items:center;gap:var(--s2);padding:0 var(--s2) 0 var(--s4);border-bottom:1px solid var(--line)}
+body.solo-shell #solo-drawer .drawer-head h2{font-size:var(--fs-16);font-weight:700;margin:0;flex:1;font-family:ChronicleUI,'Segoe UI',sans-serif}
+.drawer-head button{font-size:var(--fs-16)}
+.drawer-tabs{flex:none;display:flex;height:var(--tap);border-bottom:1px solid var(--line)}
+.drawer-tab{flex:1;min-height:var(--tap);border:0;border-radius:0;background:none;color:var(--muted);font-size:var(--fs-14);font-weight:400;padding:0;border-bottom:2px solid transparent}
+.drawer-tab[aria-selected=true]{color:var(--text);border-bottom-color:var(--gold);font-weight:700}
+.drawer-body{flex:1;min-height:0;overflow-y:auto;overscroll-behavior:contain}
+.drawer-pane{display:none}
+.drawer-pane.active{display:block}
+.drawer-row{display:flex;align-items:center;gap:var(--s3);width:100%;min-height:var(--tap);padding:0 var(--s4);margin:0;
+  border:0;border-bottom:1px solid var(--line);border-radius:0;background:none;color:var(--text);
+  font-size:var(--fs-16);font-weight:400;line-height:1.35;text-align:left}
+.drawer-row img{width:20px;height:20px;object-fit:contain;flex:none}
+.drawer-row .nav-text{width:auto;flex:1;min-width:0;overflow-wrap:anywhere;color:inherit;line-height:1.35}
+.drawer-row:hover{background:var(--surface2);color:var(--gold)}
+.drawer-row.active{background:var(--gold-dark);color:var(--gold)}
+.drawer-row:disabled{opacity:1;color:var(--muted);cursor:default}
+.drawer-row:disabled img{opacity:.55}
+.drawer-row:disabled:hover{background:none;color:var(--text)}
+.drawer-pane>.drawer-row:first-child{border-top:0}
+details.drawer-group{border:0;margin:0;padding:0;background:none;border-bottom:1px solid var(--line)}
+details.drawer-group>summary{display:flex;align-items:center;gap:var(--s3);min-height:var(--tap);padding:0 var(--s4);font-size:var(--fs-16);font-weight:400;color:var(--text);cursor:pointer;list-style:none}
+details.drawer-group>summary::-webkit-details-marker{display:none}
+details.drawer-group>summary::after{content:'›';margin-left:auto;color:var(--muted)}
+details.drawer-group[open]>summary::after{content:'⌄'}
+details.drawer-group .drawer-row{padding-left:var(--s6);border-bottom:0}
+/* Older screens append plain buttons into the advanced block; they become rows
+   of the same 44 px height and the same 16 px label. */
+details.drawer-group>button,details.drawer-group>div>button{display:flex;align-items:center;width:100%;min-height:var(--tap);margin:0;padding:0 var(--s4) 0 var(--s6);border:0;border-radius:0;background:none;color:var(--text);font-size:var(--fs-16);text-align:left}
+details.drawer-group>button:hover,details.drawer-group>div>button:hover{background:var(--surface2);color:var(--gold)}
+details.drawer-group .hint,details.drawer-group p{font-size:var(--fs-14);padding:0 var(--s4) 0 var(--s6);margin:var(--s2) 0}
+details.drawer-group .drawer-row:first-of-type{margin-top:0}
+.drawer-section{padding:var(--s3) var(--s4);border-bottom:1px solid var(--line)}
+.drawer-section>label{font-size:var(--fs-14);color:var(--muted);margin:0}
+.drawer-section select{width:100%;margin-top:var(--s2);min-height:var(--tap);font-size:var(--fs-16)}
+.drawer-section .checkline{display:flex;align-items:center;gap:var(--s2);font-size:var(--fs-14);margin:var(--s2) 0 0}
+.drawer-exit{flex:none;border-top:1px solid var(--line);border-bottom:0;min-height:52px;color:var(--muted)}
+/* The exit keeps the same 20 px icon and 16 px label as every other row; the
+   old `.nav-exit` brought 13 px padding, a 3 px margin and a 22 px glyph. */
+body.solo-shell #solo-drawer .drawer-exit{padding:0 var(--s4);margin:0;gap:var(--s3)}
+body.solo-shell #solo-drawer .drawer-exit img{width:20px;height:20px}
+.drawer-note{padding:var(--s3) var(--s4);font-size:var(--fs-14);color:var(--muted);margin:0}
+
+/* ---------- home ---------- */
+body.solo-shell #welcome{padding:var(--s5);position:relative;max-width:none;overflow-x:clip}
+body.solo-shell #welcome>.eyebrow{font-size:var(--fs-14);letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin:0 0 var(--s2)}
+body.solo-shell #welcome>h1{font-size:var(--fs-34);line-height:1.08;margin:0 0 var(--s4)}
+body.solo-shell #welcome .chronicle-start{max-width:720px;margin:0;padding:0;border:0;background:none;text-align:left;position:relative}
+body.solo-shell #welcome .chronicle-start>img{position:absolute;right:-24px;top:-24px;width:240px;height:240px;opacity:.09;pointer-events:none;z-index:0}
+body.solo-shell #welcome .chronicle-start>h2{font-size:var(--fs-28);line-height:1.15;margin:0 0 var(--s3);position:relative}
+body.solo-shell #welcome .chronicle-start>p{font-size:var(--fs-16);line-height:1.55;color:var(--muted);max-width:560px;margin:0 0 var(--s5);position:relative}
+body.solo-shell #welcome .home-start{padding:0;display:flex;flex-direction:column;align-items:flex-start;gap:var(--s2);margin:0 0 var(--s6);position:relative}
+.home-primary{min-height:52px;padding:0 var(--s5);font-size:var(--fs-16);font-weight:700;background:var(--gold);color:#232619;border:1px solid var(--gold);border-radius:2px}
+.home-primary:hover{filter:brightness(1.06)}
+html[data-theme=parchment] .home-primary,html[data-theme=minimal] .home-primary{color:#fff9ee}
+.home-link{padding:var(--s2) 0;min-height:var(--tap);background:none;border:0;color:var(--muted);font-size:var(--fs-14);font-weight:400;text-decoration:underline;text-underline-offset:4px}
+.home-link:hover{color:var(--gold);background:none}
+.home-continue{display:flex;align-items:center;gap:var(--s4);width:100%;min-height:84px;padding:var(--s3) 0;border:0;border-top:1px solid var(--line);border-radius:0;background:none;text-align:left;color:var(--text);font-size:var(--fs-16)}
+.home-continue:hover{background:none;color:var(--gold)}
+.home-continue .continue-text{display:flex;flex-direction:column;gap:var(--s1);min-width:0;flex:1}
+.home-continue .continue-kicker{font-size:var(--fs-14);color:var(--muted);text-transform:uppercase;letter-spacing:.12em}
+.home-continue .continue-name{font-size:var(--fs-20);font-family:ChronicleBook,Georgia,serif;line-height:1.2}
+.home-continue .continue-meta{font-size:var(--fs-14);color:var(--muted)}
+.home-continue .continue-go{font-size:var(--fs-16);color:var(--gold)}
+@media(min-width:1280px){
+  body.solo-shell #welcome .chronicle-start{max-width:none;display:grid;grid-template-columns:minmax(0,720px) 320px;column-gap:var(--s6);align-items:start}
+  body.solo-shell #welcome .chronicle-start>*{grid-column:1}
+  body.solo-shell #welcome .chronicle-start>img{position:static;grid-column:2;grid-row:1/span 10;width:320px;height:320px;opacity:.55;justify-self:center;align-self:start}
+  body.solo-shell #welcome .home-continue{max-width:720px}
+}
+
+/* ---------- one footer line ---------- */
+body.solo-shell main>footer{margin:var(--s6) 0 0;padding:var(--s4) 0;font-size:var(--fs-12);letter-spacing:.04em;color:var(--muted);border-top:1px solid var(--line)}
+body.solo-shell main>footer span{color:var(--muted);margin:0 var(--s1)}
+
+/* ---------- new screens do not draw the old control bar ---------- */
+body.solo-shell .creation-controls{display:none!important}
+
+/* ---------- old glyphs are gone; every menu icon is one 20 px set ---------- */
+body.solo-shell .sidebar .obsidian-icon,
+body.solo-shell .nav .obsidian-icon{width:20px;height:20px}
+
+/* The exit row sits in the fixed foot of the drawer, not in a scroll list. */
+#solo-drawer .drawer-exit{margin-top:0!important;border-radius:0!important;border-left:0;border-right:0;border-bottom:0}
+.drawer-row:focus-visible,.drawer-tab:focus-visible,.rail-btn:focus-visible,.shell-icon-btn:focus-visible{outline:2px solid var(--gold);outline-offset:-2px}
+/* The prototype notice is context, not news: 12 px, one quiet line. */
+body.solo-shell .notice{font-size:var(--fs-12);line-height:1.5;letter-spacing:.08em;padding:var(--s1) var(--s4);border-bottom:1px solid var(--line)}
+
+/* The old theme sheets pin every button to 40 px (`html[data-theme] button`),
+   and a themed selector beats a bare class: the drawer rows must still be 44. */
+html[data-theme] #solo-drawer .drawer-row,
+html[data-theme] #solo-drawer .drawer-tab,
+html[data-theme] #solo-drawer details.drawer-group>summary,
+html[data-theme] #solo-drawer details.drawer-group>button,
+html[data-theme] #solo-drawer details.drawer-group>div>button,
+html[data-theme] #solo-drawer .drawer-exit,
+html[data-theme] #solo-drawer .drawer-section select{min-height:var(--tap)}
+/* The pinned foot action is 52 px, as in design/mobile §1 — the list rows above
+   it are 44 px. */
+html[data-theme] #solo-drawer .drawer-exit{min-height:52px!important}
+/* Group summaries («Кубики», «Дополнительно») carry the same `obsidian-icon`
+   class as the rows, but the old sheet sized them at 22 px because they are not
+   inside `.nav`. One set, one size: 20 px in the menu. */
+body.solo-shell #solo-drawer details.drawer-group>summary img,
+body.solo-shell #solo-drawer .obsidian-icon{width:20px;height:20px;flex:none}
+/* The icon set is drawn in #202126 for light paper. The old sheet only lifted
+   it inside `.sidebar`; the rail and the drawer live outside it, so on the one
+   dark theme their glyphs sank into the background. Same lift, same set. */
+html[data-theme=dark] body.solo-shell #solo-rail .rail-btn img,
+html[data-theme=dark] body.solo-shell #solo-drawer img,
+html[data-theme=dark] body.solo-shell main>header .shell-icon-btn img{filter:invert(90%) sepia(19%) saturate(450%)}
+
+/* The old per-screen footnote is not part of the frame; the footer line below
+   the screen carries it once. */
+body.solo-shell main>p.hint{display:none}
+
+/* Rows that older screens bring with them (the dice form, the developer
+   checkbox, «Последние броски») keep the frame's scale too: 16 px labels and
+   buttons, 14 px secondary text, 44 px rows. Without this the theme sheets
+   push «Бросить» to 15, the form labels to 12 and the nested summary to 13. */
+html[data-theme] body.solo-shell #solo-drawer details.drawer-group>summary,
+body.solo-shell #solo-drawer details.drawer-group>summary{font-size:var(--fs-16);min-height:var(--tap);display:flex;align-items:center}
+body.solo-shell #solo-drawer details.drawer-group>label{display:flex;align-items:center;gap:var(--s2);font-size:var(--fs-14);line-height:1.35;min-height:var(--tap);padding:0 var(--s4) 0 var(--s6);margin:0}
+body.solo-shell #solo-drawer details.drawer-group>form{display:flex;flex-direction:column;gap:0;padding:0 var(--s4) var(--s3)}
+body.solo-shell #solo-drawer details.drawer-group>form label{font-size:var(--fs-14);color:var(--muted)}
+body.solo-shell #solo-drawer details.drawer-group>form input,
+html[data-theme] body.solo-shell #solo-drawer details.drawer-group>form input,
+body.solo-shell #solo-drawer details.drawer-group>form select,
+html[data-theme] body.solo-shell #solo-drawer details.drawer-group>form select,
+body.solo-shell #solo-drawer details.drawer-group>form button,
+html[data-theme] body.solo-shell #solo-drawer details.drawer-group>form button{font-size:var(--fs-16);min-height:var(--tap)}
+body.solo-shell #solo-drawer details.drawer-group>details>summary,
+html[data-theme] body.solo-shell #solo-drawer details.drawer-group>details>summary{display:flex;align-items:center;min-height:var(--tap);font-size:var(--fs-16);color:var(--text)}
+body.solo-shell #solo-drawer details.drawer-group>p,
+body.solo-shell #solo-drawer details.drawer-group>p.hint{font-size:var(--fs-14);line-height:1.45}
+/* Old panels bring their own micro-spacing (6/9/10 px) and an old sheet forces
+   `display:flex` on their submenus, so a closed group still showed its rows.
+   Inside the drawer the grid and the closed state win. */
+body.solo-shell #solo-drawer details.drawer-group:not([open])>*:not(summary){display:none!important}
+body.solo-shell #solo-drawer details.drawer-group{margin:0}
+body.solo-shell #solo-drawer details.drawer-group>summary{padding:0 var(--s4);gap:var(--s3)}
+body.solo-shell #solo-drawer details.drawer-group input[type=checkbox]{margin:0}
+body.solo-shell #solo-drawer details.drawer-group .nav-submenu{padding:0;margin:0}
+body.solo-shell #solo-drawer details.drawer-group .tabletop-secondary{margin:0}
+body.solo-shell #solo-drawer details.drawer-group button.nav{gap:var(--s2)}
+body.solo-shell #solo-drawer .drawer-section select{padding:0 var(--s3)}
+

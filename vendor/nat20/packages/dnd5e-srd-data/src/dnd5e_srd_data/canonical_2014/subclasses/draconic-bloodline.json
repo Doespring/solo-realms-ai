@@ -1,0 +1,157 @@
+{
+  "slug": "draconic-bloodline",
+  "name": "Draconic Bloodline",
+  "description": "Your innate magic comes from draconic magic that was mingled with your blood or that of your ancestors. Most often, sorcerers with this origin trace their descent back to a mighty sorcerer of ancient times who made a bargain with a dragon or who might even have claimed a dragon parent. Some of these bloodlines are well established in the world, but most are obscure. Any given sorcerer could be the first of a new bloodline, as a result of a pact or some other exceptional circumstance.",
+  "identifier": "draconic-bloodline",
+  "class_identifier": "sorcerer",
+  "spellcasting": {
+    "ability": "",
+    "progression": "none"
+  },
+  "advancement": [
+    {
+      "id": "bjbipb2oydq3zsuy",
+      "type": "ItemGrant",
+      "level": 1,
+      "title": "Features",
+      "hint": "",
+      "class_restriction": "",
+      "configuration": {
+        "items": [
+          {
+            "uuid": "Compendium.dnd5e.classfeatures.EZsonMThTNLZq35j",
+            "optional": false
+          },
+          {
+            "uuid": "Compendium.dnd5e.classfeatures.MW1ExvBLm8Hg82aA",
+            "optional": false
+          }
+        ],
+        "optional": false,
+        "spell": {
+          "ability": [],
+          "preparation": "",
+          "uses": {
+            "max": "",
+            "per": ""
+          }
+        }
+      },
+      "value": {}
+    },
+    {
+      "id": "cq0cwgss39pkvjox",
+      "type": "ItemGrant",
+      "level": 6,
+      "title": "Features",
+      "hint": "",
+      "class_restriction": "",
+      "configuration": {
+        "items": [
+          {
+            "uuid": "Compendium.dnd5e.classfeatures.x6eEZ9GUsuOcEa3G",
+            "optional": false
+          }
+        ],
+        "optional": false,
+        "spell": {
+          "ability": [],
+          "preparation": "",
+          "uses": {
+            "max": "",
+            "per": ""
+          }
+        }
+      },
+      "value": {}
+    },
+    {
+      "id": "rfd6o6858pl8k7fl",
+      "type": "ItemGrant",
+      "level": 14,
+      "title": "Features",
+      "hint": "",
+      "class_restriction": "",
+      "configuration": {
+        "items": [
+          {
+            "uuid": "Compendium.dnd5e.classfeatures.3647zjKSE9zFwOXc",
+            "optional": false
+          }
+        ],
+        "optional": false,
+        "spell": {
+          "ability": [],
+          "preparation": "",
+          "uses": {
+            "max": "",
+            "per": ""
+          }
+        }
+      },
+      "value": {}
+    },
+    {
+      "id": "4xrl7vjblpn8zl5t",
+      "type": "ItemGrant",
+      "level": 18,
+      "title": "Features",
+      "hint": "",
+      "class_restriction": "",
+      "configuration": {
+        "items": [
+          {
+            "uuid": "Compendium.dnd5e.classfeatures.Gsha4bl0apxqspFy",
+            "optional": false
+          }
+        ],
+        "optional": false,
+        "spell": {
+          "ability": [],
+          "preparation": "",
+          "uses": {
+            "max": "",
+            "per": ""
+          }
+        }
+      },
+      "value": {}
+    },
+    {
+      "id": "Gg8rCLE8zNfjpGOV",
+      "type": "Trait",
+      "level": 1,
+      "title": "",
+      "hint": "",
+      "class_restriction": "",
+      "configuration": {
+        "mode": "default",
+        "allowReplacements": false,
+        "grants": [
+          "languages:exotic:draconic"
+        ],
+        "choices": []
+      },
+      "value": {
+        "chosen": []
+      }
+    }
+  ],
+  "granted_features": [],
+  "feature_choices": [],
+  "provenance": {
+    "source": "foundry",
+    "source_url": "https://github.com/foundryvtt/dnd5e/blob/965ad2d0cf5d063dac675ba078b5bd3c3c0dd449/packs/_source/subclasses/Draconic_Bloodline_2nadB2MBSHTQ0kcl.yml",
+    "ingest_date": "2026-10-26",
+    "ingest_version": "foundry-translator-v1",
+    "srd_version": [
+      "5.1"
+    ],
+    "license_tag": "CC-BY-4.0"
+  },
+  "review": {
+    "known_divergence": null,
+    "requires_user_decision": false
+  },
+  "entry_kind": "subclass"
+}

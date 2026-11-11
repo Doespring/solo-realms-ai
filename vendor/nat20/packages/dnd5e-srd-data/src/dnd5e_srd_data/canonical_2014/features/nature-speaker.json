@@ -1,0 +1,28 @@
+{
+  "slug": "nature-speaker",
+  "name": "Nature Speaker",
+  "description": "You can cast the Commune with Nature spell, but only as a Ritual. Wisdom is your spellcasting ability for it.",
+  "feature_type": "subclass_feature",
+  "foundry_id": "6ca719d51590af7d",
+  "source_slug": "path-of-the-wild-heart",
+  "activities": [],
+  "passive_effects": [],
+  "advancement": [],
+  "uses": null,
+  "provenance": {
+    "source": "foundry",
+    "source_url": "https://www.dndbeyond.com/sources/dnd/phb-2024",
+    "ingest_date": "2026-10-26",
+    "ingest_version": "phb-2024-manual-v1",
+    "srd_version": [
+      "5.2"
+    ],
+    "license_tag": "CC-BY-4.0"
+  },
+  "review": {
+    "requires_user_decision": false,
+    "known_divergence": null,
+    "notes": "authored from PHB 2024, mechanic not yet wired to activities"
+  },
+  "entry_kind": "feature"
+}

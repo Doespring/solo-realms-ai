@@ -1,0 +1,146 @@
+{
+  "slug": "enemies-abound",
+  "foundry_uuid": "Compendium.dnd5e.laaru-hw-spells.Item.wNxll9lAEN6VCgow",
+  "name": "Изобилие врагов / Enemies Abound",
+  "description": "Вы достигаете сознания одного существа, которое вы можете видеть, и заставляете его пройти испытание Интеллекта. Существо автоматически преуспевает, если оно невосприимчиво к &amp;reference[frightened]{испугу}. В случае неудачного испытания цель теряет способность отличать друзей от врагов, относясь ко всем существам, которых она может видеть, как к врагам, пока заклинание не закончится.\n\nКаждый раз, когда цель получает урон, она может повторно проходить испытание, окончив эффект на себе при успехе.\n\nВсякий раз, когда существо под действием заклинания выбирает другое существо в качестве цели, оно должно выбирать цель случайным образом среди существ, которых она может видеть в пределах дистанции атаки, заклинания или других способностей, которые она использует.\n\nЕсли враг провоцирует @Compendium[laaru-dnd5-hw.actions.VYUx2EEt4eJxOamp]{внеочередную атаку} от существа под действием заклинания, существо должно совершить эту атаку, если это возможно.",
+  "level": 3,
+  "school": "enc",
+  "components": [
+    "S",
+    "V"
+  ],
+  "ritual": false,
+  "concentration": true,
+  "casting_time": {
+    "unit": "action",
+    "value": 1,
+    "condition": ""
+  },
+  "range": {
+    "units": "ft",
+    "value": 120,
+    "special": null
+  },
+  "duration": {
+    "units": "minute",
+    "value": 1
+  },
+  "materials": {
+    "value": "",
+    "consumed": false,
+    "cost": 0,
+    "supply": 0
+  },
+  "preparation": {
+    "mode": "prepared",
+    "prepared": false
+  },
+  "activities": [
+    {
+      "id": "dnd5eactivity000",
+      "name": "",
+      "img": "",
+      "sort": 0,
+      "activation": {
+        "type": "action",
+        "value": null,
+        "condition": "",
+        "override": false,
+        "reaction_conditions": []
+      },
+      "consumption": {
+        "scaling": {
+          "allowed": false,
+          "max": ""
+        },
+        "spell_slot": true,
+        "targets": []
+      },
+      "description": {
+        "chat_flavor": ""
+      },
+      "duration": {
+        "value": null,
+        "units": "inst",
+        "special": "",
+        "concentration": false,
+        "override": false
+      },
+      "flags": {},
+      "range": {
+        "value": null,
+        "units": "self",
+        "special": "",
+        "override": false
+      },
+      "target": {
+        "template": {
+          "count": "",
+          "contiguous": false,
+          "stationary": false,
+          "type": "",
+          "size": "",
+          "width": "",
+          "height": "",
+          "units": ""
+        },
+        "affects": {
+          "count": "",
+          "type": "",
+          "choice": false,
+          "special": ""
+        },
+        "override": false,
+        "prompt": true
+      },
+      "uses": {
+        "spent": 0,
+        "max": "",
+        "recovery": []
+      },
+      "visibility": {
+        "identifier": "",
+        "level": {
+          "min": null,
+          "max": null
+        },
+        "require_attunement": false,
+        "require_identification": false,
+        "require_magic": false
+      },
+      "effects": [],
+      "applied_effects": [],
+      "kind": "save",
+      "damage": {
+        "on_save": "half",
+        "parts": []
+      },
+      "save": {
+        "ability": [
+          "int"
+        ],
+        "dc": {
+          "calculation": "spellcasting",
+          "formula": ""
+        },
+        "ignore_cover": false
+      }
+    }
+  ],
+  "passive_effects": [],
+  "provenance": {
+    "source": "foundry",
+    "source_url": "https://github.com/foundryvtt/dnd5e/blob/965ad2d0cf5d063dac675ba078b5bd3c3c0dd449/packs/_source/laaru-hw-spells/Изобилие_врагов___Enemies_Abound_wNxll9lAEN6VCgow.yml",
+    "ingest_date": "2026-10-26",
+    "ingest_version": "foundry-translator-v1",
+    "srd_version": [
+      "5.1"
+    ],
+    "license_tag": "CC-BY-4.0"
+  },
+  "review": {
+    "known_divergence": null,
+    "requires_user_decision": false
+  },
+  "entry_kind": "spell"
+}

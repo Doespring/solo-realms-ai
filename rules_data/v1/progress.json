@@ -1,0 +1,19 @@
+{
+  "checkpoint_version": "1.0.0",
+  "saved_on": "2026-10-16",
+  "schema_version": "1.0.0",
+  "phase": "first_small_group",
+  "chapters": [
+    {"document_id": "phb_2024_ru", "chapter": "1. Правила игры", "status": "partial", "completed_section": "Преимущество/Помеха", "pdf_pages": [13, 14], "printed_pages": ["12", "13"], "rule_count": 4, "human_review": "pending", "engine_integration": "not_attempted"},
+    {"document_id": "dmg_2024_ru_v1_1", "status": "inventoried_only", "rule_count": 0}
+  ],
+  "next_steps": [
+    "Доверенным существующим тестовым адаптером сопоставить behavior.cases.json с движком без исполнения сгенерированного кода.",
+    "После выбора следующей группы продолжить главу 1 PHB: Владение; не выводить правила из этой очереди без чтения страниц.",
+    "DMG обрабатывать отдельно по полному SHA-256; не присваивать ему секции неполного DMG из rules-knowledge."
+  ],
+  "preserved_evidence": ["evidence/phb-pdf-013-014.txt"],
+  "paid_api_calls": 0,
+  "generated_code_executed": false,
+  "existing_data_modified": false
+}

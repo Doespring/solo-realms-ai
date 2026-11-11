@@ -1,0 +1,20 @@
+{
+  "label": "before-fresh",
+  "profile": "C:\\Users\\iwa41\\Documents\\Codex\\2026-10-13\\files-pasted-by-the-user-solo\\outputs\\SoloRealmsAI\\reports\\stage3-options\\baseline-profile",
+  "import_ms": 1034.513,
+  "runs": [
+    {
+      "options_ms": 1325.697,
+      "sha_files": 1731
+    },
+    {
+      "options_ms": 741.582,
+      "sha_files": 0
+    }
+  ],
+  "dto_sha256": "0c0d3e93c1ec8b55d3ebaf8af6a37e6390dc61e3c8db19c4bc4585f25fdfec35",
+  "bytes": 180070,
+  "paid_calls": 0,
+  "profiler": false,
+  "conditions": "Same OS session; filesystem cache not flushed, imports excluded; new process for persisted measurement"
+}

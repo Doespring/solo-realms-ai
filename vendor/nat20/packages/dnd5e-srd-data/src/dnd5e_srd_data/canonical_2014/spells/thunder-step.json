@@ -1,0 +1,163 @@
+{
+  "slug": "thunder-step",
+  "foundry_uuid": "Compendium.dnd5e.laaru-hw-spells.Item.rojhbxxDHCw8td2t",
+  "name": "Громовой шаг / Thunder Step",
+  "description": "Вы телепортируете себя в незанятое пространство, которое вы можете видеть в пределах дистанции. Сразу после того, как вы исчезли, раздается раскат грома, и каждое существо в радиусе 10 футов от покинутого пространства должно пройти испытание Выносливости, получив [[/r 3d10]] урона громом при провале или половину этого урона при успехе.\n\nГром слышен на расстоянии до 300 футов. Вы можете взять с собой предметы, если их вес позволяет вам их нести. Вы также можете взять с собой одно согласное существо, с размером не больше вашего, которое тоже может нести дозволенный вес предметов.\n\nПри сотворении заклинания существо должно находиться в пределах 5 футов от вас, также должно быть незанятое пространство в пределах 5 футов от вашей точки назначения, где существо должно появиться; в противном случае существо не телепортируется.\n\nНа высоких кругах. Если вы сотворяете это заклинание, используя ячейку 4 круга или выше, урон увеличивается на [[/r 1d10]] за каждый круг ячейки выше 3.",
+  "level": 3,
+  "school": "con",
+  "components": [
+    "V"
+  ],
+  "ritual": false,
+  "concentration": false,
+  "casting_time": {
+    "unit": "action",
+    "value": 1,
+    "condition": ""
+  },
+  "range": {
+    "units": "ft",
+    "value": 90,
+    "special": null
+  },
+  "duration": {
+    "units": "inst",
+    "value": null
+  },
+  "materials": {
+    "value": "",
+    "consumed": false,
+    "cost": 0,
+    "supply": 0
+  },
+  "preparation": {
+    "mode": "prepared",
+    "prepared": false
+  },
+  "activities": [
+    {
+      "id": "dnd5eactivity000",
+      "name": "",
+      "img": "",
+      "sort": 0,
+      "activation": {
+        "type": "action",
+        "value": null,
+        "condition": "",
+        "override": false,
+        "reaction_conditions": []
+      },
+      "consumption": {
+        "scaling": {
+          "allowed": false,
+          "max": ""
+        },
+        "spell_slot": true,
+        "targets": []
+      },
+      "description": {
+        "chat_flavor": ""
+      },
+      "duration": {
+        "value": null,
+        "units": "inst",
+        "special": "",
+        "concentration": false,
+        "override": false
+      },
+      "flags": {},
+      "range": {
+        "value": null,
+        "units": "self",
+        "special": "",
+        "override": false
+      },
+      "target": {
+        "template": {
+          "count": "",
+          "contiguous": false,
+          "stationary": false,
+          "type": "sphere",
+          "size": "10",
+          "width": "",
+          "height": "",
+          "units": "ft"
+        },
+        "affects": {
+          "count": "",
+          "type": "",
+          "choice": false,
+          "special": ""
+        },
+        "override": false,
+        "prompt": true
+      },
+      "uses": {
+        "spent": 0,
+        "max": "",
+        "recovery": []
+      },
+      "visibility": {
+        "identifier": "",
+        "level": {
+          "min": null,
+          "max": null
+        },
+        "require_attunement": false,
+        "require_identification": false,
+        "require_magic": false
+      },
+      "effects": [],
+      "applied_effects": [],
+      "kind": "save",
+      "damage": {
+        "on_save": "half",
+        "parts": [
+          {
+            "number": 3,
+            "denomination": 10,
+            "bonus": "",
+            "types": [
+              "thunder"
+            ],
+            "custom": {
+              "enabled": false,
+              "formula": ""
+            },
+            "scaling": {
+              "mode": "whole",
+              "number": 1,
+              "formula": ""
+            }
+          }
+        ]
+      },
+      "save": {
+        "ability": [
+          "con"
+        ],
+        "dc": {
+          "calculation": "spellcasting",
+          "formula": ""
+        },
+        "ignore_cover": false
+      }
+    }
+  ],
+  "passive_effects": [],
+  "provenance": {
+    "source": "foundry",
+    "source_url": "https://github.com/foundryvtt/dnd5e/blob/965ad2d0cf5d063dac675ba078b5bd3c3c0dd449/packs/_source/laaru-hw-spells/Громовой_шаг___Thunder_Step_rojhbxxDHCw8td2t.yml",
+    "ingest_date": "2026-10-26",
+    "ingest_version": "foundry-translator-v1",
+    "srd_version": [
+      "5.1"
+    ],
+    "license_tag": "CC-BY-4.0"
+  },
+  "review": {
+    "known_divergence": null,
+    "requires_user_decision": false
+  },
+  "entry_kind": "spell"
+}

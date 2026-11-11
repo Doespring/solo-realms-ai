@@ -1,0 +1,27 @@
+.venv/
+__pycache__/
+.pytest_cache/
+data/
+runtime/
+models/
+*.part
+reports/ui-*.png
+reports/first-playable/source-page-8.png
+
+# Локальный снимок существующих пользовательских кампаний.
+reports/pass15/original-campaigns.json
+
+# Активный stdout эксперимента продолжает принимать игровые метрики.
+reports/pass15/runtime-ubatch128.log
+
+# Desktop build outputs and vendor build tools
+build/
+dist/
+build-tools/
+# Локальный рабочий каталог прогонов и браузерных проверок.
+.uitmp/
+
+# Чужой контент и данные из купленных книг — не публикуются.
+integration/nat20/sources/
+integration/nat20/phb-2024/
+runtime/books/

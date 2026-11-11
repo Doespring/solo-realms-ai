@@ -1,0 +1,212 @@
+{
+  "slug": "oath-of-the-ancients",
+  "name": "Клятва древних",
+  "description": "Клятва древних | Oath of the Ancients\n\nЭта клятва такая же древняя, как раса эльфов и ритуалы друидов. Ее паладинов называют рыцарями фей, зелёными рыцарями или рогатыми рыцарями. Они участвуют в космической борьбе света с тьмой, потому что любят красоту и жизнь. При этом они вовсе не обязательно придерживаются принципов чести, отваги и справедливости. Свою броню и одежду они украшают символами роста — листьями, рогами и цветами — чтобы подчеркнуть, что они борются за сохранение жизни и света в мире.\n\nДогмы древних\n\nДогмы древних сохраняются бесчисленные века. Эта клятва подчёркивает, что принципы добра превыше принципиальности или хаоса. Четыре основных догмы довольно просты.\n\nРазжигай свет. Проявляя милосердие, доброту и прощение, зажигай в этом мире свет надежды, отгоняющий отчаяние.\n\nЗащищай свет. Везде, где есть добро, красота, любовь и смех в этом мире, вставай на их защиту от зла, готового их поглотить. Там, где цветёт жизнь, защищай ее от сил, готовых ее истребить.\n\nПоддерживай свой свет. Находи радость в песнях и смехе, в красоте и искусстве. Если позволишь свету умереть в своем сердце, как сможешь ты сохранить его в мире?\n\nБудь светом. Будь сияющим маяком для всех отчаявшихся. Пусть свет твоей радости и отваги сияет во всех твоих делах.\n\nУровеньОсобенности\n\n3-й\n\n@Compendium[laaru-dnd5-hw.classfeatures.FqPG2buI9tCAX6Zg]{Заклинания клятвы древних}, @Compendium[laaru-dnd5-hw.classfeatures.K4ws1dcRlUIpa9oK]{Проведение энергии: Гнев природы}, @Compendium[laaru-dnd5-hw.classfeatures.2VvC38qagntNkvit]{Проведение энергии: Изгнание неверных}\n\n7-й\n\n@Compendium[laaru-dnd5-hw.classfeatures.LBRwwZY4xqOUB7I0]{Аура оберега}\n\n15-й\n\n@Compendium[laaru-dnd5-hw.classfeatures.syPLFXe4mFBOXi5H]{Бессмертный страж}\n\n20-й\n\n@Compendium[laaru-dnd5-hw.classfeatures.pFMRXb2k3Ju82SfZ]{Древний защитник}",
+  "identifier": "oath-of-the-ancients",
+  "class_identifier": "paladin",
+  "spellcasting": {
+    "ability": "",
+    "progression": "none"
+  },
+  "advancement": [
+    {
+      "id": "xaxt8vox5ps4cuz9",
+      "type": "ItemGrant",
+      "level": 3,
+      "title": "1. Особенности",
+      "hint": "",
+      "class_restriction": "",
+      "configuration": {
+        "items": [
+          "Compendium.laaru-dnd5-hw.classfeatures.FqPG2buI9tCAX6Zg",
+          "Compendium.laaru-dnd5-hw.classfeatures.K4ws1dcRlUIpa9oK",
+          "Compendium.laaru-dnd5-hw.classfeatures.2VvC38qagntNkvit"
+        ],
+        "optional": false
+      },
+      "value": {}
+    },
+    {
+      "id": "v3izvra7cpro0sip",
+      "type": "ItemGrant",
+      "level": 7,
+      "title": "Особенность",
+      "hint": "",
+      "class_restriction": "",
+      "configuration": {
+        "items": [
+          "Compendium.laaru-dnd5-hw.classfeatures.LBRwwZY4xqOUB7I0"
+        ],
+        "optional": false
+      },
+      "value": {}
+    },
+    {
+      "id": "s0zimzfsnuoimri5",
+      "type": "ItemGrant",
+      "level": 15,
+      "title": "Особенность",
+      "hint": "",
+      "class_restriction": "",
+      "configuration": {
+        "items": [
+          "Compendium.laaru-dnd5-hw.classfeatures.syPLFXe4mFBOXi5H"
+        ],
+        "optional": false
+      },
+      "value": {}
+    },
+    {
+      "id": "98zf5wgwqpve7oog",
+      "type": "ItemGrant",
+      "level": 20,
+      "title": "Особенность",
+      "hint": "",
+      "class_restriction": "",
+      "configuration": {
+        "items": [
+          "Compendium.laaru-dnd5-hw.classfeatures.pFMRXb2k3Ju82SfZ"
+        ],
+        "optional": false
+      },
+      "value": {}
+    },
+    {
+      "id": "g3ddy9t71jugrv2r",
+      "type": "ItemGrant",
+      "level": 3,
+      "title": "2. Заклинания клятвы древних",
+      "hint": "",
+      "class_restriction": "",
+      "configuration": {
+        "items": [
+          "Compendium.laaru-dnd5-hw.spells.bqeMsrtYhlfQt9yb",
+          "Compendium.laaru-dnd5-hw.spells.OjL2GAHKM47DrEtD"
+        ],
+        "optional": false,
+        "spell": {
+          "ability": "cha",
+          "preparation": "always",
+          "uses": {
+            "max": "",
+            "per": ""
+          }
+        }
+      },
+      "value": {}
+    },
+    {
+      "id": "ujvwpgqifto58sph",
+      "type": "ItemGrant",
+      "level": 5,
+      "title": "Заклинания клятвы древних",
+      "hint": "",
+      "class_restriction": "",
+      "configuration": {
+        "items": [
+          "Compendium.laaru-dnd5-hw.spells.xJrZI9sitEnagzZJ",
+          "Compendium.laaru-dnd5-hw.spells.DulrpjBUeVVgrrNA"
+        ],
+        "optional": false,
+        "spell": {
+          "ability": "cha",
+          "preparation": "always",
+          "uses": {
+            "max": "",
+            "per": ""
+          }
+        }
+      },
+      "value": {}
+    },
+    {
+      "id": "n7uc1lnt75q7o2fk",
+      "type": "ItemGrant",
+      "level": 9,
+      "title": "Заклинания клятвы древних",
+      "hint": "",
+      "class_restriction": "",
+      "configuration": {
+        "items": [
+          "Compendium.laaru-dnd5-hw.spells.hIaHx6K0X5bxyHiM",
+          "Compendium.laaru-dnd5-hw.spells.KiwIzQDXhEMwCro8"
+        ],
+        "optional": false,
+        "spell": {
+          "ability": "cha",
+          "preparation": "always",
+          "uses": {
+            "max": "",
+            "per": ""
+          }
+        }
+      },
+      "value": {}
+    },
+    {
+      "id": "xsrus2bl46l1lfdf",
+      "type": "ItemGrant",
+      "level": 13,
+      "title": "Заклинания клятвы древних",
+      "hint": "",
+      "class_restriction": "",
+      "configuration": {
+        "items": [
+          "Compendium.laaru-dnd5-hw.spells.C1bX7ze3ftVefjUf",
+          "Compendium.laaru-dnd5-hw.spells.RYG0oYTpaqFgTKh3"
+        ],
+        "optional": false,
+        "spell": {
+          "ability": "cha",
+          "preparation": "always",
+          "uses": {
+            "max": "",
+            "per": ""
+          }
+        }
+      },
+      "value": {}
+    },
+    {
+      "id": "cj9uoqhnhd5wgksd",
+      "type": "ItemGrant",
+      "level": 17,
+      "title": "Заклинания клятвы древних",
+      "hint": "",
+      "class_restriction": "",
+      "configuration": {
+        "items": [
+          "Compendium.laaru-dnd5-hw.spells.QwMSSqMQj7PidAV9",
+          "Compendium.laaru-dnd5-hw.spells.qiwCOwR2113jlFPg"
+        ],
+        "optional": false,
+        "spell": {
+          "ability": "cha",
+          "preparation": "always",
+          "uses": {
+            "max": "",
+            "per": ""
+          }
+        }
+      },
+      "value": {}
+    }
+  ],
+  "granted_features": [],
+  "feature_choices": [],
+  "provenance": {
+    "source": "foundry",
+    "source_url": "https://github.com/foundryvtt/dnd5e/blob/965ad2d0cf5d063dac675ba078b5bd3c3c0dd449/packs/_source/laaru-hw-subclasses/Клятва_древних_gNJfrBmeIG72yOjL.yml",
+    "ingest_date": "2026-10-26",
+    "ingest_version": "foundry-translator-v1",
+    "srd_version": [
+      "5.1"
+    ],
+    "license_tag": "CC-BY-4.0"
+  },
+  "review": {
+    "known_divergence": null,
+    "requires_user_decision": false
+  },
+  "entry_kind": "subclass"
+}

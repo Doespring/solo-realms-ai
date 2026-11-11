@@ -1,0 +1,138 @@
+{
+  "slug": "thief",
+  "name": "Thief",
+  "description": "You hone your skills in the larcenous arts. Burglars, bandits, cutpurses, and other criminals typically follow this archetype, but so do rogues who prefer to think of themselves as professional treasure seekers, explorers, delvers, and investigators. In addition to improving your agility and stealth, you learn skills useful for delving into ancient ruins, reading unfamiliar languages, and using magic items you normally couldn't employ.",
+  "identifier": "thief",
+  "class_identifier": "rogue",
+  "spellcasting": {
+    "ability": "",
+    "progression": "none"
+  },
+  "advancement": [
+    {
+      "id": "q1y2nsk2voi9hift",
+      "type": "ItemGrant",
+      "level": 3,
+      "title": "Features",
+      "hint": "",
+      "class_restriction": "",
+      "configuration": {
+        "items": [
+          {
+            "uuid": "Compendium.dnd5e.classfeatures.ga3dt2zrCn2MHK8R",
+            "optional": false
+          },
+          {
+            "uuid": "Compendium.dnd5e.classfeatures.FGrbXs6Ku5qxFK5G",
+            "optional": false
+          }
+        ],
+        "optional": false,
+        "spell": {
+          "ability": [],
+          "preparation": "",
+          "uses": {
+            "max": "",
+            "per": ""
+          }
+        }
+      },
+      "value": {}
+    },
+    {
+      "id": "mn1phw6y8csnul2f",
+      "type": "ItemGrant",
+      "level": 9,
+      "title": "Features",
+      "hint": "",
+      "class_restriction": "",
+      "configuration": {
+        "items": [
+          {
+            "uuid": "Compendium.dnd5e.classfeatures.Ei1Oh4UAA2E30jcD",
+            "optional": false
+          }
+        ],
+        "optional": false,
+        "spell": {
+          "ability": [],
+          "preparation": "",
+          "uses": {
+            "max": "",
+            "per": ""
+          }
+        }
+      },
+      "value": {}
+    },
+    {
+      "id": "5zutrvrhem8ygscb",
+      "type": "ItemGrant",
+      "level": 13,
+      "title": "Features",
+      "hint": "",
+      "class_restriction": "",
+      "configuration": {
+        "items": [
+          {
+            "uuid": "Compendium.dnd5e.classfeatures.NqWyHE7Rpw9lyKWu",
+            "optional": false
+          }
+        ],
+        "optional": false,
+        "spell": {
+          "ability": [],
+          "preparation": "",
+          "uses": {
+            "max": "",
+            "per": ""
+          }
+        }
+      },
+      "value": {}
+    },
+    {
+      "id": "8r4g78wm6s2k9jwo",
+      "type": "ItemGrant",
+      "level": 17,
+      "title": "Features",
+      "hint": "",
+      "class_restriction": "",
+      "configuration": {
+        "items": [
+          {
+            "uuid": "Compendium.dnd5e.classfeatures.LhRm1EeUMvp2EWhV",
+            "optional": false
+          }
+        ],
+        "optional": false,
+        "spell": {
+          "ability": [],
+          "preparation": "",
+          "uses": {
+            "max": "",
+            "per": ""
+          }
+        }
+      },
+      "value": {}
+    }
+  ],
+  "granted_features": [],
+  "feature_choices": [],
+  "provenance": {
+    "source": "foundry",
+    "source_url": "https://github.com/foundryvtt/dnd5e/blob/965ad2d0cf5d063dac675ba078b5bd3c3c0dd449/packs/_source/subclasses/Thief_k8iuefRorWOjb9gR.yml",
+    "ingest_date": "2026-10-26",
+    "ingest_version": "foundry-translator-v1",
+    "srd_version": [
+      "5.1"
+    ],
+    "license_tag": "CC-BY-4.0"
+  },
+  "review": {
+    "known_divergence": null,
+    "requires_user_decision": false
+  },
+  "entry_kind": "subclass"
+}

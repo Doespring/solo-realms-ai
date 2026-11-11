@@ -1,0 +1,36 @@
+{
+  "activities": [],
+  "armor_category": "shield",
+  "attunement_constraint": null,
+  "base_ac": 2,
+  "cost_gp": 0.0,
+  "description": "Armor (Shield), Rare (Requires Attunement)\n\nWhile holding this Shield, you have Resistance to damage from attacks made with Ranged weapons.\n\nCurse. This Shield is cursed. Attuning to it curses you until you are targeted by a Remove Curse spell or similar magic. Removing the Shield fails to end the curse on you. Whenever an attack with a Ranged weapon targets a creature within 10 feet of you, the curse causes you to become the target instead.",
+  "description_localized": "<div><div><p><em>Требуется настроенность</em></p><p>Пока вы держите этот щит, у вас устойчивость к урону дистанционных атак оружием.</p><p><strong>Проклятие</strong>. Этот щит проклят, и настроенность на него передаёт проклятие вам, пока на вас не сотворят заклинание @Compendium[laaru-dnd5-hw.spells.Y5EfiRqmCWKJ7Qhk]{Снятие проклятия} или подобную магию. Если снять щит, это не снимет проклятие. Каждый раз, когда по цели в пределах 10 футов от вас совершают дистанционную атаку оружием, из-за проклятия целью становитесь вы.</p><div><p> </p></div></div></div>",
+  "dex_bonus_max": null,
+  "item_kind": "armor",
+  "magical": true,
+  "magical_bonus": 0,
+  "name": "Щит притяжения снарядов",
+  "passive_effects": [],
+  "provenance": {
+    "ingest_date": "2026-05-30",
+    "ingest_version": "foundry-translator-v1",
+    "license_tag": "CC-BY-4.0",
+    "source": "foundry",
+    "source_url": "https://github.com/foundryvtt/dnd5e/blob/965ad2d0cf5d063dac675ba078b5bd3c3c0dd449/packs/_source/equipment24/armor/magical/shield-of-missile-attraction.yml",
+    "srd_version": [
+      "5.2"
+    ]
+  },
+  "rarity": "rare",
+  "requires_attunement": true,
+  "review": {
+    "known_divergence": null,
+    "requires_user_decision": false
+  },
+  "slug": "shield-of-missile-attraction",
+  "stealth_disadvantage": false,
+  "strength_min": null,
+  "uses": null,
+  "weight": 6.0
+}

@@ -1,0 +1,50 @@
+{
+  "schema_version": "2.0.0",
+  "rules": [
+    {
+      "id": "dnd2024.dmg.test_necessity", "rules_family": "dnd2024", "name": "Нужен ли Тест к20?", "kind": "procedure",
+      "classification": {"mode": "adjudicated", "semantic_required": true, "formal_required": false, "reason": "Тривиальность, невозможность и значимость последствий оцениваются по смыслу ситуации."},
+      "conditions": [], "triggers": ["action.interpreted"], "formal_operations": [],
+      "semantic_questions": ["Возможны ли и успех, и провал?", "Значимы ли последствия провала?", "Является ли задача тривиальной или невозможной?"],
+      "facts": {"outcomes": ["trivial_no_test", "impossible_no_test", "uncertain_meaningful_test", "needs_clarification"]},
+      "constraints": ["Никакой бросок не делает невозможное возможным автоматически.", "Решение о необходимости теста не равно успешному результату и само не изменяет канон."],
+      "exceptions": [], "duration": "per_action", "resources": [],
+      "source": {"document_id": "dmg_2024_ru_v1_1", "sha256": "2fdee6ad8dd6931eaf41b19cdf498d6d86ddca6e54ad9b9c8a5417585c1c526d", "publication_year": 2024, "pdf_page": 24, "printed_page": "24", "section": "Глава 2. Разрешение исходов"},
+      "verification": "source_checked_human_pending", "implementation": "not_implemented", "auto_activate": false
+    },
+    {
+      "id": "dnd2024.dmg.group_check_threshold", "rules_family": "dnd2024", "name": "Порог групповой проверки после выбора процедуры", "kind": "procedure",
+      "classification": {"mode": "deterministic", "semantic_required": false, "formal_required": true, "reason": "При уже назначенной групповой проверке достаточно не менее половины успешных участников."},
+      "conditions": [{"fact": "group_check_authorized", "operator": "eq", "value": true}], "triggers": ["group.checks_completed"],
+      "formal_operations": [{"op": "group_success", "inputs": ["successes", "participants"], "constants": {}}],
+      "semantic_questions": [], "facts": {"threshold_numerator": 1, "threshold_denominator": 2},
+      "constraints": ["Это только порог, а не решение о применимости групповой проверки.", "Если провал одного губителен для группы или достаточно успеха одного, источник рекомендует другую процедуру."],
+      "exceptions": [], "duration": "per_test", "resources": [],
+      "source": {"document_id": "dmg_2024_ru_v1_1", "sha256": "2fdee6ad8dd6931eaf41b19cdf498d6d86ddca6e54ad9b9c8a5417585c1c526d", "publication_year": 2024, "pdf_page": 25, "printed_page": "25", "section": "Глава 2. Групповые проверки"},
+      "verification": "source_checked_human_pending", "implementation": "kernel_only_unexecuted", "auto_activate": false
+    },
+    {
+      "id": "dnd2024.dmg.choose_and_resolve_check", "rules_family": "dnd2024", "name": "Назначение сложности и локальное разрешение", "kind": "procedure",
+      "classification": {"mode": "hybrid", "semantic_required": true, "formal_required": true, "reason": "Мастер выбирает смысловую категорию сложности и тип теста; числовая Сл и сравнение вычисляются локально."},
+      "conditions": [{"fact": "test_required", "operator": "eq", "value": true}], "triggers": ["check.requested"],
+      "formal_operations": [{"op": "lookup_dc", "inputs": ["difficulty_choice"], "constants": {}}, {"op": "compare_threshold", "inputs": ["local_total", "engine_dc"], "constants": {}}],
+      "semantic_questions": ["Из предоставленных допустимых вариантов: какая характеристика, тип проверки и сложность соответствуют действию?"],
+      "facts": {"easy_dc": 10, "moderate_dc": 15, "hard_dc": 20},
+      "constraints": ["Три указанных значения — примеры этого раздела, не исчерпывающий перечень всех Сл в D&D.", "AI не возвращает итог броска или произвольную Сл. Если подходящего проверенного варианта нет, требуется уточнение."],
+      "exceptions": [], "duration": "per_test", "resources": [],
+      "source": {"document_id": "dmg_2024_ru_v1_1", "sha256": "2fdee6ad8dd6931eaf41b19cdf498d6d86ddca6e54ad9b9c8a5417585c1c526d", "publication_year": 2024, "pdf_page": 24, "printed_page": "24", "section": "Глава 2. Какой показатель сложности"},
+      "verification": "source_checked_human_pending", "implementation": "kernel_only_unexecuted", "auto_activate": false
+    },
+    {
+      "id": "dnd2024.dmg.npc_portrayal", "rules_family": "dnd2024", "name": "Мотивы и характер ПМ", "kind": "guidance",
+      "classification": {"mode": "adjudicated", "semantic_required": true, "formal_required": false, "reason": "Смысловое моделирование личности не требует искусственной формулы или обязательной проверки Харизмы."},
+      "conditions": [], "triggers": ["npc.intent_needed"], "formal_operations": [],
+      "semantic_questions": ["Какие намерения и реакция согласуются с известными целями и чертами ПМ?"],
+      "facts": {"social_procedure_varies": true},
+      "constraints": ["Свободный отыгрыш и проверки могут сочетаться. Не назначать проверку для каждой реплики.", "Художественная формулировка сцены выполняется после решения отдельно."],
+      "exceptions": [], "duration": "persistent_guidance", "resources": [],
+      "source": {"document_id": "dmg_2024_ru_v1_1", "sha256": "2fdee6ad8dd6931eaf41b19cdf498d6d86ddca6e54ad9b9c8a5417585c1c526d", "publication_year": 2024, "pdf_page": 29, "printed_page": "29", "section": "Глава 2. Проведение социального взаимодействия"},
+      "verification": "text_checked_human_pending", "implementation": "not_implemented", "auto_activate": false
+    }
+  ]
+}

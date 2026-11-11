@@ -1,0 +1,26 @@
+{
+  "schema_version": "nat20-campaign-registry-v1",
+  "rules_version": "dnd2024",
+  "definitions": {
+    "fighter-road-2024-v1": {
+      "file": "fighter-road-2024-v1.json",
+      "sha256": "d251098de6d2bacd5523c9806722010cacdafe10f9fa9dd210e42d1ffa8668cf",
+      "verification": "behaviorally_verified",
+      "evidence": [
+        "../reports/playable-regression.xml",
+        "../reports/playable-acceptance.xml",
+        "../reports/playable-guards.xml"
+      ]
+    },
+    "fighter-standard-array-2024-v1": {
+      "file": "fighter-standard-array-2024-v1.json",
+      "sha256": "485b0374241639f351f2e99b196affd2f29dc2d2a1f16409498ac8cea2abc3a2",
+      "verification": "behaviorally_verified",
+      "evidence": [
+        "../reports/playable-regression.xml",
+        "../reports/playable-acceptance.xml",
+        "../reports/playable-guards.xml"
+      ]
+    }
+  }
+}

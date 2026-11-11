@@ -1,0 +1,27 @@
+{
+  "slug": "fighting-style",
+  "name": "Fighting Style",
+  "description": "You adopt a particular style of fighting as your specialty. Choose one of the following options from the appropriate class list. You can't take a Fighting Style option more than once, even if you later get to choose again.\n\nArchery\n\nDefense\n\nDueling\n\nTwo Weapon Fighting",
+  "feature_type": "class_feature",
+  "foundry_id": "nJA3ISVmyj3uPRVM",
+  "source_slug": "ranger",
+  "activities": [],
+  "passive_effects": [],
+  "advancement": [],
+  "uses": null,
+  "provenance": {
+    "source": "foundry",
+    "source_url": "https://github.com/foundryvtt/dnd5e/blob/965ad2d0cf5d063dac675ba078b5bd3c3c0dd449/packs/_source/classfeatures/Fighting_Style_nJA3ISVmyj3uPRVM.yml",
+    "ingest_date": "2026-10-26",
+    "ingest_version": "foundry-translator-v1",
+    "srd_version": [
+      "5.1"
+    ],
+    "license_tag": "CC-BY-4.0"
+  },
+  "review": {
+    "known_divergence": null,
+    "requires_user_decision": false
+  },
+  "entry_kind": "feature"
+}

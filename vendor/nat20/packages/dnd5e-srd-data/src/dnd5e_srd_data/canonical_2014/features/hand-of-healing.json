@@ -1,0 +1,28 @@
+{
+  "slug": "hand-of-healing",
+  "name": "Hand of Healing",
+  "description": "As a Magic action, you can expend 1 Focus Point to touch a creature and restore a number of Hit Points equal to a roll of your Martial Arts die plus your Wisdom modifier. When you use your Flurry of Blows, you can replace one of the Unarmed Strikes with a use of this feature.",
+  "feature_type": "subclass_feature",
+  "foundry_id": "67547d252a70536b",
+  "source_slug": "warrior-of-mercy",
+  "activities": [],
+  "passive_effects": [],
+  "advancement": [],
+  "uses": null,
+  "provenance": {
+    "source": "foundry",
+    "source_url": "https://www.dndbeyond.com/sources/dnd/phb-2024",
+    "ingest_date": "2026-10-26",
+    "ingest_version": "phb-2024-manual-v1",
+    "srd_version": [
+      "5.2"
+    ],
+    "license_tag": "CC-BY-4.0"
+  },
+  "review": {
+    "requires_user_decision": false,
+    "known_divergence": null,
+    "notes": "authored from PHB 2024, mechanic not yet wired to activities"
+  },
+  "entry_kind": "feature"
+}

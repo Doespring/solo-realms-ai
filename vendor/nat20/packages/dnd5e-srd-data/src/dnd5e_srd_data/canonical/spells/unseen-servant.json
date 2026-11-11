@@ -1,0 +1,171 @@
+{
+  "activities": [
+    {
+      "activation": {
+        "condition": "",
+        "override": false,
+        "reaction_conditions": [],
+        "type": "action",
+        "value": null
+      },
+      "applied_effects": [],
+      "bonuses": {
+        "ac": "",
+        "attack_damage": "",
+        "hd": "",
+        "healing": "",
+        "hp": "",
+        "save_damage": ""
+      },
+      "consumption": {
+        "scaling": {
+          "allowed": false,
+          "max": ""
+        },
+        "spell_slot": true,
+        "targets": []
+      },
+      "creature_sizes": [],
+      "creature_types": [],
+      "description": {
+        "chat_flavor": ""
+      },
+      "duration": {
+        "concentration": false,
+        "override": false,
+        "special": "",
+        "units": "inst",
+        "value": null
+      },
+      "effects": [],
+      "flags": {},
+      "id": "dnd5eactivity000",
+      "img": "",
+      "kind": "summon",
+      "match": {
+        "ability": "",
+        "attacks": false,
+        "disposition": false,
+        "proficiency": false,
+        "saves": false
+      },
+      "name": "",
+      "profiles": [
+        {
+          "count": "",
+          "cr": "",
+          "id": "BO8ylcAe3C1KmDzY",
+          "level": {
+            "max": null,
+            "min": null
+          },
+          "name": "",
+          "types": [],
+          "uuid": "Compendium.dnd5e.actors24.Actor.phbsplUnseenServ"
+        }
+      ],
+      "range": {
+        "override": false,
+        "special": "",
+        "units": "self",
+        "value": null
+      },
+      "sort": 0,
+      "summon": {
+        "identifier": "",
+        "mode": "",
+        "prompt": true
+      },
+      "target": {
+        "affects": {
+          "choice": false,
+          "count": "1",
+          "special": "",
+          "type": "space"
+        },
+        "override": false,
+        "prompt": true,
+        "template": {
+          "contiguous": false,
+          "count": "",
+          "height": "",
+          "size": "",
+          "stationary": false,
+          "type": "",
+          "units": "",
+          "width": ""
+        }
+      },
+      "temp_hp": "",
+      "uses": {
+        "max": "",
+        "recovery": [],
+        "spent": 0
+      },
+      "visibility": {
+        "identifier": "",
+        "level": {
+          "max": null,
+          "min": null
+        },
+        "require_attunement": false,
+        "require_identification": false,
+        "require_magic": false
+      }
+    }
+  ],
+  "casting_time": {
+    "condition": "",
+    "unit": "action",
+    "value": 1
+  },
+  "components": [
+    "M",
+    "S",
+    "V"
+  ],
+  "concentration": false,
+  "description": "This spell creates an Invisible, mindless, shapeless, Medium force that performs simple tasks at your command until the spell ends. The servant springs into existence in an unoccupied space on the ground within range. It has AC 10, 1 Hit Point, and a Strength of 2, and it can't attack. If it drops to 0 Hit Points, the spell ends.\n\nOnce on each of your turns as a Bonus Action, you can mentally command the servant to move up to 15 feet and interact with an object. The servant can perform simple tasks that a human could do, such as fetching things, cleaning, mending, folding clothes, lighting fires, serving food, and pouring drinks. Once you give the command, the servant performs the task to the best of its ability until it completes the task, then waits for your next command.\n\nIf you command the servant to perform a task that would move it more than 60 feet away from you, the spell ends.",
+  "description_localized": "<p>Заклинание создаёт &amp;reference[invisible]{невидимого}, неразумного и бесформенного слугу среднего размера, выполняющего простые задания согласно вашим приказам, пока длится заклинание. Слуга появляется в незанятом пространстве на земле в пределах дистанции. У него КБ 10, 1 ПЗ и Сила 2, он не может атаковать. Если его ПЗ снижаются до 0, заклинание прекращает действовать.</p><p>Один раз в любой ваш ход в качестве бонусного действия вы можете мысленно приказать слуге переместиться на расстояние до 15 футов и взаимодействовать с объектом. Слуга может выполнять простые задачи подобно слуге-человеку, например приносить вещи, убираться, чинить сломанное, складывать одежду, зажигать пламя, подавать еду и разливать вино. Отданный вами приказ слуга выполняет так хорошо, как может, а после выполнения ждёт новых приказов.</p><p>Если вы приказываете слуге выполнить задание, для которого надо переместиться далее чем на 60 футов от вас, заклинание прекращает действовать.</p>",
+  "duration": {
+    "units": "hour",
+    "value": 1
+  },
+  "entry_kind": "spell",
+  "foundry_uuid": "Compendium.dnd5e.spells24.Item.phbsplUnseenServ",
+  "level": 1,
+  "materials": {
+    "consumed": false,
+    "cost": 0,
+    "supply": 0,
+    "value": "a bit of string and of wood"
+  },
+  "name": "Невидимый слуга",
+  "passive_effects": [],
+  "preparation": {
+    "mode": "prepared",
+    "prepared": false
+  },
+  "provenance": {
+    "ingest_date": "2026-05-30",
+    "ingest_version": "foundry-translator-v1",
+    "license_tag": "CC-BY-4.0",
+    "source": "foundry",
+    "source_url": "https://github.com/foundryvtt/dnd5e/blob/965ad2d0cf5d063dac675ba078b5bd3c3c0dd449/packs/_source/spells24/1st-level/unseen-servant.yml",
+    "srd_version": [
+      "5.2"
+    ]
+  },
+  "range": {
+    "special": null,
+    "units": "ft",
+    "value": 60
+  },
+  "review": {
+    "known_divergence": null,
+    "requires_user_decision": false
+  },
+  "ritual": true,
+  "school": "con",
+  "slug": "unseen-servant"
+}

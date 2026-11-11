@@ -1,0 +1,165 @@
+{
+  "slug": "red-rain",
+  "foundry_uuid": "Compendium.dnd5e.laaru-hw-spells.Item.1ahi3AKr3Y1pGRg3",
+  "name": "Алый дождь / Red Rain",
+  "description": "Частью сотворения заклинания, вы должны потратить восемь костей здоровья иначе заклинание автоматически проваливается. Если вы это делаете, то в течении [[/r 1d6 x 5]] минут небо темнеет и крупные капли крови начинают падать с неба везде в пределах 5 миль от вас.\n\nСущества в пределах 5 миль от вас получают степень &amp;reference[exhaustion]{Утомления} за каждые 10 минут, которые они были подвержены алому дождю напрямую.\n\nКаждый раз, когда существо получает степень утомления оно также получает [[/r 2d10]] некротического урона и его максимум ПЗ уменьшается на такое-же значение пока на нём есть хотя бы одна степень утомления. Пока у существа есть степень утомления от этого заклинания оно автоматически проваливает все испытания от состояния &amp;reference[poisoned]{Отравление} и болезней.\n\nСущества с типом животное и растение в зоне действия заклинания должны пройти испытание Мудрости или будут &amp;reference[frightened]{испуганы}, пока не проведут 1 минуту или более вне зоны действия заклинания. Немагические растения в зоне действия заклинания увядают и умирают если будут подвержены алому дождю напрямую 10 минут или более.\n\nЗа каждый час поддержания концентрации на этом заклинании, бросьте одну из потраченных на сотворение заклинания костей здоровья и суммируйте выпавший результат с другими бросками костей здоровья для этого заклинания. Сумма равна числу дней, через которое животные добровольно вернуться и растения начнут заново расти в зоне действия заклинания.",
+  "level": 8,
+  "school": "con",
+  "components": [
+    "M",
+    "S",
+    "V"
+  ],
+  "ritual": false,
+  "concentration": true,
+  "casting_time": {
+    "unit": "minute",
+    "value": 10,
+    "condition": ""
+  },
+  "range": {
+    "units": "self",
+    "value": null,
+    "special": null
+  },
+  "duration": {
+    "units": "hour",
+    "value": 8
+  },
+  "materials": {
+    "value": "губка, пропитанная кровью",
+    "consumed": false,
+    "cost": 0,
+    "supply": 0
+  },
+  "preparation": {
+    "mode": "prepared",
+    "prepared": false
+  },
+  "activities": [
+    {
+      "id": "dnd5eactivity000",
+      "name": "",
+      "img": "",
+      "sort": 0,
+      "activation": {
+        "type": "action",
+        "value": null,
+        "condition": "",
+        "override": false,
+        "reaction_conditions": []
+      },
+      "consumption": {
+        "scaling": {
+          "allowed": false,
+          "max": ""
+        },
+        "spell_slot": true,
+        "targets": []
+      },
+      "description": {
+        "chat_flavor": ""
+      },
+      "duration": {
+        "value": null,
+        "units": "inst",
+        "special": "",
+        "concentration": false,
+        "override": false
+      },
+      "flags": {},
+      "range": {
+        "value": null,
+        "units": "self",
+        "special": "",
+        "override": false
+      },
+      "target": {
+        "template": {
+          "count": "",
+          "contiguous": false,
+          "stationary": false,
+          "type": "",
+          "size": "",
+          "width": "",
+          "height": "",
+          "units": ""
+        },
+        "affects": {
+          "count": "",
+          "type": "self",
+          "choice": false,
+          "special": ""
+        },
+        "override": false,
+        "prompt": true
+      },
+      "uses": {
+        "spent": 0,
+        "max": "",
+        "recovery": []
+      },
+      "visibility": {
+        "identifier": "",
+        "level": {
+          "min": null,
+          "max": null
+        },
+        "require_attunement": false,
+        "require_identification": false,
+        "require_magic": false
+      },
+      "effects": [],
+      "applied_effects": [],
+      "kind": "save",
+      "damage": {
+        "on_save": "half",
+        "parts": [
+          {
+            "number": 2,
+            "denomination": 10,
+            "bonus": "",
+            "types": [
+              "necrotic"
+            ],
+            "custom": {
+              "enabled": false,
+              "formula": ""
+            },
+            "scaling": {
+              "mode": "",
+              "number": null,
+              "formula": ""
+            }
+          }
+        ]
+      },
+      "save": {
+        "ability": [
+          "wis"
+        ],
+        "dc": {
+          "calculation": "spellcasting",
+          "formula": ""
+        },
+        "ignore_cover": false
+      }
+    }
+  ],
+  "passive_effects": [],
+  "provenance": {
+    "source": "foundry",
+    "source_url": "https://github.com/foundryvtt/dnd5e/blob/965ad2d0cf5d063dac675ba078b5bd3c3c0dd449/packs/_source/laaru-hw-spells/Алый_дождь___Red_Rain_1ahi3AKr3Y1pGRg3.yml",
+    "ingest_date": "2026-10-26",
+    "ingest_version": "foundry-translator-v1",
+    "srd_version": [
+      "5.1"
+    ],
+    "license_tag": "CC-BY-4.0"
+  },
+  "review": {
+    "known_divergence": null,
+    "requires_user_decision": false
+  },
+  "entry_kind": "spell"
+}

@@ -1,0 +1,202 @@
+{
+  "activities": [
+    {
+      "activation": {
+        "condition": "",
+        "override": false,
+        "reaction_conditions": [],
+        "type": "action",
+        "value": null
+      },
+      "applied_effects": [],
+      "bonuses": {
+        "ac": "",
+        "attack_damage": "",
+        "hd": "",
+        "healing": "",
+        "hp": "",
+        "save_damage": ""
+      },
+      "consumption": {
+        "scaling": {
+          "allowed": false,
+          "max": ""
+        },
+        "spell_slot": true,
+        "targets": []
+      },
+      "creature_sizes": [
+        "tiny",
+        "sm",
+        "med",
+        "lg",
+        "huge",
+        "grg"
+      ],
+      "creature_types": [],
+      "description": {
+        "chat_flavor": ""
+      },
+      "duration": {
+        "concentration": false,
+        "override": false,
+        "special": "",
+        "units": "inst",
+        "value": null
+      },
+      "effects": [],
+      "flags": {},
+      "id": "dnd5eactivity000",
+      "img": "",
+      "kind": "summon",
+      "match": {
+        "ability": "",
+        "attacks": false,
+        "disposition": false,
+        "proficiency": false,
+        "saves": false
+      },
+      "name": "",
+      "profiles": [
+        {
+          "count": "",
+          "cr": "",
+          "id": "DNuYnIyrI51SVUoX",
+          "level": {
+            "max": null,
+            "min": null
+          },
+          "name": "",
+          "types": [],
+          "uuid": "Compendium.dnd5e.actors24.Actor.dmgIllusoryCreat"
+        },
+        {
+          "count": "",
+          "cr": "",
+          "id": "j66baQK3jkX3QI8K",
+          "level": {
+            "max": null,
+            "min": null
+          },
+          "name": "",
+          "types": [],
+          "uuid": "Compendium.dnd5e.actors24.Actor.phbiluObject0000"
+        },
+        {
+          "count": "",
+          "cr": "",
+          "id": "3mV55T36Jsc8VF1F",
+          "level": {
+            "max": null,
+            "min": null
+          },
+          "name": "",
+          "types": [],
+          "uuid": "Compendium.dnd5e.actors24.Actor.phbiluSensory000"
+        }
+      ],
+      "range": {
+        "override": false,
+        "special": "",
+        "units": "self",
+        "value": null
+      },
+      "sort": 0,
+      "summon": {
+        "identifier": "",
+        "mode": "",
+        "prompt": true
+      },
+      "target": {
+        "affects": {
+          "choice": false,
+          "count": "1",
+          "special": "",
+          "type": "space"
+        },
+        "override": false,
+        "prompt": true,
+        "template": {
+          "contiguous": false,
+          "count": "",
+          "height": "",
+          "size": "",
+          "stationary": false,
+          "type": "",
+          "units": "",
+          "width": ""
+        }
+      },
+      "temp_hp": "",
+      "uses": {
+        "max": "",
+        "recovery": [],
+        "spent": 0
+      },
+      "visibility": {
+        "identifier": "",
+        "level": {
+          "max": null,
+          "min": null
+        },
+        "require_attunement": false,
+        "require_identification": false,
+        "require_magic": false
+      }
+    }
+  ],
+  "casting_time": {
+    "condition": "",
+    "unit": "action",
+    "value": 1
+  },
+  "components": [
+    "M",
+    "S",
+    "V"
+  ],
+  "concentration": true,
+  "description": "You create the image of an object, a creature, or some other visible phenomenon that is no larger than a 20-foot Cube. The image appears at a spot that you can see within range and lasts for the duration. It seems real, including sounds, smells, and temperature appropriate to the thing depicted, but it can't deal damage or cause conditions.\n\nIf you are within range of the illusion, you can take a Magic action to cause the image to move to any other spot within range. As the image changes location, you can alter its appearance so that its movements appear natural for the image. For example, if you create an image of a creature and move it, you can alter the image so that it appears to be walking. Similarly, you can cause the illusion to make different sounds at different times, even making it carry on a conversation, for example.\n\nPhysical interaction with the image reveals it to be an illusion, for things can pass through it. A creature that takes a Study action to examine the image can determine that it is an illusion with a successful [[/check ability=int skill=inv dc=@attributes.spell.dc]] check against your spell save DC. If a creature discerns the illusion for what it is, the creature can see through the image, and its other sensory qualities become faint to the creature.\n\nUsing a Higher-Level Spell Slot. The spell lasts until dispelled, without requiring Concentration, if cast with a level 4+ spell slot.",
+  "description_localized": "<div class=\"rd__spc-inline-post\">Вы создаёте образ объекта, существа или иного видимого явления, размером не больше 20-футового куба. Образ появляется в точке, которую вы видите в пределах дистанции, и существует, пока длится заклинание. Он кажется абсолютно реальным, производит звуки, запах и подходящую температуру окружающего воздуха. Однако нельзя создать достаточный холод или жар, чтобы нанести урон, достаточно громкий звук, чтобы он наносил урон громом или оглушал, или запах, способный вызвать тошноту (вроде смрада троглодитов).</div>\n<div class=\"rd__spc-inline-post\">Пока вы находитесь в пределах дистанции от иллюзии, вы можете использовать действие, чтобы переместить образ в любую другую точку в пределах дистанции. Когда образ перемещается, вы можете изменять его так, чтобы его движение казалось естественным. К примеру, если вы перемещаете образ существа, можете заставить его перебирать ногами, будто оно идёт. Аналогично вы можете заставить иллюзию издавать разные звуки в разное время и даже изображать, будто она разговаривает.</div>\n<div class=\"rd__spc-inline-post\">Физическое взаимодействие с образом выдаёт, что это иллюзия, потому что предметы проходят сквозь нее.  Существо, которое использует действие, чтобы изучить образ, сможет понять, что это иллюзия, успешно пройдя проверку Интеллекта (Расследование). СЛ проверки равна СЛ испытаний против ваших заклинаний. Если существо распознаёт иллюзию, оно может видеть сквозь образ, а прочие свойства образа становятся для него едва различимыми.</div>\n<div class=\"rd__spc-inline-post\"><strong>На высоких кругах</strong>. Если вы сотворяете это заклинание, используя ячейку 6-го круга или выше, оно длится, пока не рассеяно, и не требует концентрации.</div>",
+  "duration": {
+    "units": "minute",
+    "value": 10
+  },
+  "entry_kind": "spell",
+  "foundry_uuid": "Compendium.dnd5e.spells24.Item.phbsplMajorImage",
+  "level": 3,
+  "materials": {
+    "consumed": false,
+    "cost": 0,
+    "supply": 0,
+    "value": "a bit of fleece"
+  },
+  "name": "Полноценный образ",
+  "passive_effects": [],
+  "preparation": {
+    "mode": "prepared",
+    "prepared": false
+  },
+  "provenance": {
+    "ingest_date": "2026-05-30",
+    "ingest_version": "foundry-translator-v1",
+    "license_tag": "CC-BY-4.0",
+    "source": "foundry",
+    "source_url": "https://github.com/foundryvtt/dnd5e/blob/965ad2d0cf5d063dac675ba078b5bd3c3c0dd449/packs/_source/spells24/3rd-level/major-image.yml",
+    "srd_version": [
+      "5.2"
+    ]
+  },
+  "range": {
+    "special": null,
+    "units": "ft",
+    "value": 120
+  },
+  "review": {
+    "known_divergence": null,
+    "requires_user_decision": false
+  },
+  "ritual": false,
+  "school": "ill",
+  "slug": "major-image"
+}

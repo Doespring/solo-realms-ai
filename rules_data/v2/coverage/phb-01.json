@@ -1,0 +1,3790 @@
+{
+  "schema_version": "1.0.0",
+  "rules_schema_version": "2.1.0",
+  "document_id": "phb_2024_ru",
+  "chapter": 1,
+  "pdf_range": [
+    8,
+    33
+  ],
+  "extraction_complete": true,
+  "execution_complete": false,
+  "rule_count": 131,
+  "bookmarks": [
+    {
+      "title": "Игрок или Мастер?",
+      "pdf_page": 8,
+      "depth": 1,
+      "rule_ids": [
+        "dnd2024.phb01.player_and_gm"
+      ]
+    },
+    {
+      "title": "Ритм игры",
+      "pdf_page": 9,
+      "depth": 1,
+      "rule_ids": [
+        "dnd2024.phb01.play_cycle"
+      ]
+    },
+    {
+      "title": "Продолжительная игра",
+      "pdf_page": 9,
+      "depth": 1,
+      "rule_ids": [
+        "dnd2024.phb01.campaign_structure"
+      ]
+    },
+    {
+      "title": "Кости",
+      "pdf_page": 10,
+      "depth": 1,
+      "rule_ids": [
+        "dnd2024.phb01.d3",
+        "dnd2024.phb01.dice_sum",
+        "dnd2024.phb01.percentage_chance",
+        "dnd2024.phb01.percentile",
+        "dnd2024.phb01.random_tables",
+        "dnd2024.phb01.roll_narration",
+        "dnd2024.phb01.rounding",
+        "dnd2024.phb01.specific_over_general"
+      ]
+    },
+    {
+      "title": "Шесть характеристик",
+      "pdf_page": 11,
+      "depth": 1,
+      "rule_ids": [
+        "dnd2024.phb01.abilities",
+        "dnd2024.phb01.ability_modifier",
+        "dnd2024.phb01.ability_scores"
+      ]
+    },
+    {
+      "title": "Тесты к20",
+      "pdf_page": 11,
+      "depth": 1,
+      "rule_ids": [
+        "dnd2024.phb01.ability_check",
+        "dnd2024.phb01.advantage",
+        "dnd2024.phb01.attack_ability",
+        "dnd2024.phb01.attack_roll",
+        "dnd2024.phb01.base_ac",
+        "dnd2024.phb01.cancellation",
+        "dnd2024.phb01.choose_check",
+        "dnd2024.phb01.difficulty",
+        "dnd2024.phb01.heroic_inspiration",
+        "dnd2024.phb01.saving_throw",
+        "dnd2024.phb01.single_die_replacement",
+        "dnd2024.phb01.voluntary_save_failure"
+      ]
+    },
+    {
+      "title": "Проверки характеристики",
+      "pdf_page": 11,
+      "depth": 2,
+      "rule_ids": [
+        "dnd2024.phb01.ability_check",
+        "dnd2024.phb01.choose_check",
+        "dnd2024.phb01.difficulty"
+      ]
+    },
+    {
+      "title": "Спасброски",
+      "pdf_page": 12,
+      "depth": 2,
+      "rule_ids": [
+        "dnd2024.phb01.save_proficiency",
+        "dnd2024.phb01.saving_throw",
+        "dnd2024.phb01.voluntary_save_failure"
+      ]
+    },
+    {
+      "title": "Броски атаки",
+      "pdf_page": 13,
+      "depth": 2,
+      "rule_ids": [
+        "dnd2024.phb01.attack_ability",
+        "dnd2024.phb01.attack_roll",
+        "dnd2024.phb01.base_ac"
+      ]
+    },
+    {
+      "title": "Преимущество/Помеха",
+      "pdf_page": 13,
+      "depth": 2,
+      "rule_ids": [
+        "dnd2024.phb01.advantage",
+        "dnd2024.phb01.cancellation",
+        "dnd2024.phb01.heroic_inspiration",
+        "dnd2024.phb01.single_die_replacement"
+      ]
+    },
+    {
+      "title": "Владение",
+      "pdf_page": 14,
+      "depth": 1,
+      "rule_ids": [
+        "dnd2024.phb01.proficiency",
+        "dnd2024.phb01.proficiency_once",
+        "dnd2024.phb01.save_proficiency",
+        "dnd2024.phb01.skill_alternate_ability",
+        "dnd2024.phb01.skill_check",
+        "dnd2024.phb01.skills_table",
+        "dnd2024.phb01.tool_proficiency",
+        "dnd2024.phb01.weapon_proficiency"
+      ]
+    },
+    {
+      "title": "Действия",
+      "pdf_page": 16,
+      "depth": 1,
+      "rule_ids": [
+        "dnd2024.phb01.action_attack",
+        "dnd2024.phb01.action_budget",
+        "dnd2024.phb01.action_dash",
+        "dnd2024.phb01.action_disengage",
+        "dnd2024.phb01.action_dodge",
+        "dnd2024.phb01.action_help",
+        "dnd2024.phb01.action_hide",
+        "dnd2024.phb01.action_influence",
+        "dnd2024.phb01.action_magic",
+        "dnd2024.phb01.action_ready",
+        "dnd2024.phb01.action_search",
+        "dnd2024.phb01.action_study",
+        "dnd2024.phb01.action_utilize",
+        "dnd2024.phb01.character_portrayal",
+        "dnd2024.phb01.improvised_action"
+      ]
+    },
+    {
+      "title": "Бонусные действия",
+      "pdf_page": 16,
+      "depth": 2,
+      "rule_ids": [
+        "dnd2024.phb01.bonus_action"
+      ]
+    },
+    {
+      "title": "Реакции",
+      "pdf_page": 16,
+      "depth": 2,
+      "rule_ids": [
+        "dnd2024.phb01.reaction"
+      ]
+    },
+    {
+      "title": "Социальное взаимодействие",
+      "pdf_page": 17,
+      "depth": 1,
+      "rule_ids": [
+        "dnd2024.phb01.npc_attitude",
+        "dnd2024.phb01.roleplay_styles",
+        "dnd2024.phb01.social_check",
+        "dnd2024.phb01.social_example",
+        "dnd2024.phb01.social_roleplay"
+      ]
+    },
+    {
+      "title": "Исследование",
+      "pdf_page": 20,
+      "depth": 1,
+      "rule_ids": [
+        "dnd2024.phb01.carrying_objects",
+        "dnd2024.phb01.destroy_fragile_object",
+        "dnd2024.phb01.exploration_equipment",
+        "dnd2024.phb01.exploration_example",
+        "dnd2024.phb01.free_interaction",
+        "dnd2024.phb01.hazards",
+        "dnd2024.phb01.heavy_obscurement",
+        "dnd2024.phb01.hidden_objects",
+        "dnd2024.phb01.hiding",
+        "dnd2024.phb01.illumination",
+        "dnd2024.phb01.light_obscurement",
+        "dnd2024.phb01.marching_order",
+        "dnd2024.phb01.mounted_travel",
+        "dnd2024.phb01.object_definition",
+        "dnd2024.phb01.object_interaction",
+        "dnd2024.phb01.special_senses",
+        "dnd2024.phb01.travel_abstraction",
+        "dnd2024.phb01.travel_pace",
+        "dnd2024.phb01.vehicles"
+      ]
+    },
+    {
+      "title": "Зрение и свет",
+      "pdf_page": 20,
+      "depth": 2,
+      "rule_ids": [
+        "dnd2024.phb01.heavy_obscurement",
+        "dnd2024.phb01.illumination",
+        "dnd2024.phb01.light_obscurement",
+        "dnd2024.phb01.special_senses"
+      ]
+    },
+    {
+      "title": "Засада",
+      "pdf_page": 20,
+      "depth": 2,
+      "rule_ids": [
+        "dnd2024.phb01.action_hide",
+        "dnd2024.phb01.hiding"
+      ]
+    },
+    {
+      "title": "Взаимодействие с объектами",
+      "pdf_page": 20,
+      "depth": 2,
+      "rule_ids": [
+        "dnd2024.phb01.carrying_objects",
+        "dnd2024.phb01.destroy_fragile_object",
+        "dnd2024.phb01.free_interaction",
+        "dnd2024.phb01.hidden_objects",
+        "dnd2024.phb01.object_definition",
+        "dnd2024.phb01.object_interaction"
+      ]
+    },
+    {
+      "title": "Угрозы",
+      "pdf_page": 21,
+      "depth": 2,
+      "rule_ids": [
+        "dnd2024.phb01.hazards"
+      ]
+    },
+    {
+      "title": "Путешествие",
+      "pdf_page": 21,
+      "depth": 2,
+      "rule_ids": [
+        "dnd2024.phb01.marching_order",
+        "dnd2024.phb01.mounted_travel",
+        "dnd2024.phb01.travel_abstraction",
+        "dnd2024.phb01.travel_pace",
+        "dnd2024.phb01.vehicles"
+      ]
+    },
+    {
+      "title": "Сражение",
+      "pdf_page": 24,
+      "depth": 1,
+      "rule_ids": [
+        "dnd2024.phb01.combat_end",
+        "dnd2024.phb01.combat_order",
+        "dnd2024.phb01.combat_positions",
+        "dnd2024.phb01.initiative",
+        "dnd2024.phb01.initiative_tie",
+        "dnd2024.phb01.surprise",
+        "dnd2024.phb01.turn_budget",
+        "dnd2024.phb01.turn_communication",
+        "dnd2024.phb01.turn_inactivity",
+        "dnd2024.phb01.turn_objects"
+      ]
+    },
+    {
+      "title": "Порядок сражения",
+      "pdf_page": 24,
+      "depth": 2,
+      "rule_ids": [
+        "dnd2024.phb01.combat_end",
+        "dnd2024.phb01.combat_order",
+        "dnd2024.phb01.combat_positions",
+        "dnd2024.phb01.initiative",
+        "dnd2024.phb01.initiative_tie",
+        "dnd2024.phb01.surprise",
+        "dnd2024.phb01.turn_budget",
+        "dnd2024.phb01.turn_communication",
+        "dnd2024.phb01.turn_inactivity",
+        "dnd2024.phb01.turn_objects"
+      ]
+    },
+    {
+      "title": "Перемещение и положение",
+      "pdf_page": 25,
+      "depth": 2,
+      "rule_ids": [
+        "dnd2024.phb01.difficult_terrain",
+        "dnd2024.phb01.drop_prone",
+        "dnd2024.phb01.grid",
+        "dnd2024.phb01.move_through_creatures",
+        "dnd2024.phb01.movement",
+        "dnd2024.phb01.size",
+        "dnd2024.phb01.split_movement"
+      ]
+    },
+    {
+      "title": "Укрытие",
+      "pdf_page": 26,
+      "depth": 2,
+      "rule_ids": [
+        "dnd2024.phb01.cover"
+      ]
+    },
+    {
+      "title": "Дальнобойные атаки",
+      "pdf_page": 27,
+      "depth": 2,
+      "rule_ids": [
+        "dnd2024.phb01.ranged_close",
+        "dnd2024.phb01.ranged_range",
+        "dnd2024.phb01.unseen_attack"
+      ]
+    },
+    {
+      "title": "Рукопашные атаки",
+      "pdf_page": 27,
+      "depth": 2,
+      "rule_ids": [
+        "dnd2024.phb01.melee_reach",
+        "dnd2024.phb01.opportunity_attack",
+        "dnd2024.phb01.unseen_attack"
+      ]
+    },
+    {
+      "title": "Сражение верхом",
+      "pdf_page": 27,
+      "depth": 2,
+      "rule_ids": [
+        "dnd2024.phb01.fall_from_mount",
+        "dnd2024.phb01.mount_control",
+        "dnd2024.phb01.mount_cost",
+        "dnd2024.phb01.mount_eligibility"
+      ]
+    },
+    {
+      "title": "Подводное сражение",
+      "pdf_page": 28,
+      "depth": 2,
+      "rule_ids": [
+        "dnd2024.phb01.underwater_fire",
+        "dnd2024.phb01.underwater_melee",
+        "dnd2024.phb01.underwater_ranged"
+      ]
+    },
+    {
+      "title": "Урон и лечение",
+      "pdf_page": 28,
+      "depth": 1,
+      "rule_ids": [
+        "dnd2024.phb01.bloodied",
+        "dnd2024.phb01.character_death",
+        "dnd2024.phb01.combat_example",
+        "dnd2024.phb01.critical_damage",
+        "dnd2024.phb01.damage_at_zero",
+        "dnd2024.phb01.damage_roll",
+        "dnd2024.phb01.damage_traits",
+        "dnd2024.phb01.damage_types",
+        "dnd2024.phb01.death_saves",
+        "dnd2024.phb01.half_damage",
+        "dnd2024.phb01.healing",
+        "dnd2024.phb01.hit_points",
+        "dnd2024.phb01.immunity",
+        "dnd2024.phb01.instant_death",
+        "dnd2024.phb01.knockout",
+        "dnd2024.phb01.rest_overview",
+        "dnd2024.phb01.shared_damage_roll",
+        "dnd2024.phb01.stabilization",
+        "dnd2024.phb01.temp_hp_absorption",
+        "dnd2024.phb01.temp_hp_choice",
+        "dnd2024.phb01.temp_hp_duration",
+        "dnd2024.phb01.temp_hp_not_healing",
+        "dnd2024.phb01.zero_hp"
+      ]
+    },
+    {
+      "title": "Хиты",
+      "pdf_page": 28,
+      "depth": 2,
+      "rule_ids": [
+        "dnd2024.phb01.bloodied",
+        "dnd2024.phb01.hit_points"
+      ]
+    },
+    {
+      "title": "Броски урона",
+      "pdf_page": 28,
+      "depth": 2,
+      "rule_ids": [
+        "dnd2024.phb01.damage_roll"
+      ]
+    },
+    {
+      "title": "Критические попадания",
+      "pdf_page": 28,
+      "depth": 2,
+      "rule_ids": [
+        "dnd2024.phb01.critical_damage"
+      ]
+    },
+    {
+      "title": "Спасброски и урон",
+      "pdf_page": 29,
+      "depth": 2,
+      "rule_ids": [
+        "dnd2024.phb01.half_damage",
+        "dnd2024.phb01.shared_damage_roll"
+      ]
+    },
+    {
+      "title": "Типы урона",
+      "pdf_page": 29,
+      "depth": 2,
+      "rule_ids": [
+        "dnd2024.phb01.damage_types"
+      ]
+    },
+    {
+      "title": "Сопротивление и Уязвимость",
+      "pdf_page": 29,
+      "depth": 2,
+      "rule_ids": [
+        "dnd2024.phb01.damage_traits"
+      ]
+    },
+    {
+      "title": "Иммунитет",
+      "pdf_page": 29,
+      "depth": 2,
+      "rule_ids": [
+        "dnd2024.phb01.immunity"
+      ]
+    },
+    {
+      "title": "Лечение",
+      "pdf_page": 29,
+      "depth": 2,
+      "rule_ids": [
+        "dnd2024.phb01.healing"
+      ]
+    },
+    {
+      "title": "Опускание Хитов до 0",
+      "pdf_page": 29,
+      "depth": 2,
+      "rule_ids": [
+        "dnd2024.phb01.character_death",
+        "dnd2024.phb01.damage_at_zero",
+        "dnd2024.phb01.death_saves",
+        "dnd2024.phb01.instant_death",
+        "dnd2024.phb01.knockout",
+        "dnd2024.phb01.stabilization",
+        "dnd2024.phb01.zero_hp"
+      ]
+    },
+    {
+      "title": "Временные хиты",
+      "pdf_page": 30,
+      "depth": 2,
+      "rule_ids": [
+        "dnd2024.phb01.temp_hp_absorption",
+        "dnd2024.phb01.temp_hp_choice",
+        "dnd2024.phb01.temp_hp_duration",
+        "dnd2024.phb01.temp_hp_not_healing"
+      ]
+    },
+    {
+      "title": "Состояния",
+      "pdf_page": 30,
+      "depth": 1,
+      "rule_ids": [
+        "dnd2024.phb01.condition_duration",
+        "dnd2024.phb01.conditions"
+      ]
+    }
+  ],
+  "subsections": [
+    {
+      "id": "rounding",
+      "title": "Округление в меньшую сторону",
+      "pdf_page": 9,
+      "rule_ids": [
+        "dnd2024.phb01.rounding"
+      ]
+    },
+    {
+      "id": "specific_over_general",
+      "title": "Исключения заменяют общие правила",
+      "pdf_page": 9,
+      "rule_ids": [
+        "dnd2024.phb01.specific_over_general"
+      ]
+    },
+    {
+      "id": "dice_sum",
+      "title": "Обозначение костей",
+      "pdf_page": 10,
+      "rule_ids": [
+        "dnd2024.phb01.dice_sum"
+      ]
+    },
+    {
+      "id": "percentile",
+      "title": "Процентная кость",
+      "pdf_page": 10,
+      "rule_ids": [
+        "dnd2024.phb01.percentile"
+      ]
+    },
+    {
+      "id": "d3",
+      "title": "к3",
+      "pdf_page": 10,
+      "rule_ids": [
+        "dnd2024.phb01.d3"
+      ]
+    },
+    {
+      "id": "percentage_chance",
+      "title": "Вероятность в процентах",
+      "pdf_page": 10,
+      "rule_ids": [
+        "dnd2024.phb01.percentage_chance"
+      ]
+    },
+    {
+      "id": "random_tables",
+      "title": "Случайные таблицы",
+      "pdf_page": 10,
+      "rule_ids": [
+        "dnd2024.phb01.random_tables"
+      ]
+    },
+    {
+      "id": "roll_narration",
+      "title": "Толкование результатов в рамках сюжета",
+      "pdf_page": 10,
+      "rule_ids": [
+        "dnd2024.phb01.roll_narration"
+      ]
+    },
+    {
+      "id": "abilities",
+      "title": "Шесть характеристик",
+      "pdf_page": 11,
+      "rule_ids": [
+        "dnd2024.phb01.abilities"
+      ]
+    },
+    {
+      "id": "ability_scores",
+      "title": "Характеристики",
+      "pdf_page": 11,
+      "rule_ids": [
+        "dnd2024.phb01.ability_scores"
+      ]
+    },
+    {
+      "id": "ability_modifier",
+      "title": "Модификаторы характеристик",
+      "pdf_page": 11,
+      "rule_ids": [
+        "dnd2024.phb01.ability_modifier"
+      ]
+    },
+    {
+      "id": "ability_check",
+      "title": "Тесты к20 / Проверки характеристики",
+      "pdf_page": 11,
+      "rule_ids": [
+        "dnd2024.phb01.ability_check"
+      ]
+    },
+    {
+      "id": "choose_check",
+      "title": "Проверки характеристики",
+      "pdf_page": 11,
+      "rule_ids": [
+        "dnd2024.phb01.choose_check"
+      ]
+    },
+    {
+      "id": "difficulty",
+      "title": "Типичные Классы сложности",
+      "pdf_page": 12,
+      "rule_ids": [
+        "dnd2024.phb01.difficulty"
+      ]
+    },
+    {
+      "id": "saving_throw",
+      "title": "Спасброски; Модификатор характеристик; Бонус владения (стр. 12)",
+      "pdf_page": 12,
+      "rule_ids": [
+        "dnd2024.phb01.saving_throw"
+      ]
+    },
+    {
+      "id": "voluntary_save_failure",
+      "title": "Спасброски",
+      "pdf_page": 12,
+      "rule_ids": [
+        "dnd2024.phb01.voluntary_save_failure"
+      ]
+    },
+    {
+      "id": "attack_roll",
+      "title": "Броски атаки; Выбрасывание «20» или «1»",
+      "pdf_page": 13,
+      "rule_ids": [
+        "dnd2024.phb01.attack_roll"
+      ]
+    },
+    {
+      "id": "attack_ability",
+      "title": "Характеристики бросков атаки",
+      "pdf_page": 13,
+      "rule_ids": [
+        "dnd2024.phb01.attack_ability"
+      ]
+    },
+    {
+      "id": "base_ac",
+      "title": "Класс Защиты",
+      "pdf_page": 13,
+      "rule_ids": [
+        "dnd2024.phb01.base_ac"
+      ]
+    },
+    {
+      "id": "advantage",
+      "title": "Преимущество/Помеха / Бросок двух к20",
+      "pdf_page": 13,
+      "rule_ids": [
+        "dnd2024.phb01.advantage"
+      ]
+    },
+    {
+      "id": "cancellation",
+      "title": "Преимущества и помехи не складываются (продолжение на стр.13)",
+      "pdf_page": 13,
+      "rule_ids": [
+        "dnd2024.phb01.cancellation"
+      ]
+    },
+    {
+      "id": "single_die_replacement",
+      "title": "Перебрасывание костей",
+      "pdf_page": 14,
+      "rule_ids": [
+        "dnd2024.phb01.single_die_replacement"
+      ]
+    },
+    {
+      "id": "heroic_inspiration",
+      "title": "Героическое вдохновение",
+      "pdf_page": 14,
+      "rule_ids": [
+        "dnd2024.phb01.heroic_inspiration"
+      ]
+    },
+    {
+      "id": "proficiency",
+      "title": "Бонус владения",
+      "pdf_page": 14,
+      "rule_ids": [
+        "dnd2024.phb01.proficiency"
+      ]
+    },
+    {
+      "id": "proficiency_once",
+      "title": "Бонусы не складываются",
+      "pdf_page": 14,
+      "rule_ids": [
+        "dnd2024.phb01.proficiency_once"
+      ]
+    },
+    {
+      "id": "skill_check",
+      "title": "Владение навыками / Список навыков / Определение навыков",
+      "pdf_page": 14,
+      "rule_ids": [
+        "dnd2024.phb01.skill_check"
+      ]
+    },
+    {
+      "id": "skill_alternate_ability",
+      "title": "Навыки с различными характеристиками",
+      "pdf_page": 15,
+      "rule_ids": [
+        "dnd2024.phb01.skill_alternate_ability"
+      ]
+    },
+    {
+      "id": "save_proficiency",
+      "title": "Владение спасбросками",
+      "pdf_page": 15,
+      "rule_ids": [
+        "dnd2024.phb01.save_proficiency"
+      ]
+    },
+    {
+      "id": "weapon_proficiency",
+      "title": "Владение экипировкой / Оружие",
+      "pdf_page": 15,
+      "rule_ids": [
+        "dnd2024.phb01.weapon_proficiency"
+      ]
+    },
+    {
+      "id": "tool_proficiency",
+      "title": "Владение экипировкой / Инструменты",
+      "pdf_page": 15,
+      "rule_ids": [
+        "dnd2024.phb01.tool_proficiency"
+      ]
+    },
+    {
+      "id": "skills_table",
+      "title": "Навыки",
+      "pdf_page": 15,
+      "rule_ids": [
+        "dnd2024.phb01.skills_table"
+      ]
+    },
+    {
+      "id": "player_and_gm",
+      "title": "Игрок или Мастер? / Игрок / Мастер",
+      "pdf_page": 8,
+      "rule_ids": [
+        "dnd2024.phb01.player_and_gm"
+      ]
+    },
+    {
+      "id": "play_cycle",
+      "title": "Ритм игры",
+      "pdf_page": 9,
+      "rule_ids": [
+        "dnd2024.phb01.play_cycle"
+      ]
+    },
+    {
+      "id": "campaign_structure",
+      "title": "Продолжительная игра / Приключения / Кампании (продолжение стр.9)",
+      "pdf_page": 9,
+      "rule_ids": [
+        "dnd2024.phb01.campaign_structure"
+      ]
+    },
+    {
+      "id": "character_portrayal",
+      "title": "Что бы сделал ваш персонаж?",
+      "pdf_page": 16,
+      "rule_ids": [
+        "dnd2024.phb01.character_portrayal"
+      ]
+    },
+    {
+      "id": "action_budget",
+      "title": "Действия / Одно действие за раз",
+      "pdf_page": 16,
+      "rule_ids": [
+        "dnd2024.phb01.action_budget"
+      ]
+    },
+    {
+      "id": "action_attack",
+      "title": "Действия / Атака",
+      "pdf_page": 16,
+      "rule_ids": [
+        "dnd2024.phb01.action_attack"
+      ]
+    },
+    {
+      "id": "action_influence",
+      "title": "Действия / Влияние",
+      "pdf_page": 16,
+      "rule_ids": [
+        "dnd2024.phb01.action_influence"
+      ]
+    },
+    {
+      "id": "action_hide",
+      "title": "Действия / Засада",
+      "pdf_page": 16,
+      "rule_ids": [
+        "dnd2024.phb01.action_hide"
+      ]
+    },
+    {
+      "id": "action_study",
+      "title": "Действия / Изучение",
+      "pdf_page": 16,
+      "rule_ids": [
+        "dnd2024.phb01.action_study"
+      ]
+    },
+    {
+      "id": "action_utilize",
+      "title": "Действия / Использование",
+      "pdf_page": 16,
+      "rule_ids": [
+        "dnd2024.phb01.action_utilize"
+      ]
+    },
+    {
+      "id": "action_magic",
+      "title": "Действия / Магия",
+      "pdf_page": 16,
+      "rule_ids": [
+        "dnd2024.phb01.action_magic"
+      ]
+    },
+    {
+      "id": "action_disengage",
+      "title": "Действия / Отход",
+      "pdf_page": 16,
+      "rule_ids": [
+        "dnd2024.phb01.action_disengage"
+      ]
+    },
+    {
+      "id": "action_ready",
+      "title": "Действия / Подготовка",
+      "pdf_page": 16,
+      "rule_ids": [
+        "dnd2024.phb01.action_ready"
+      ]
+    },
+    {
+      "id": "action_search",
+      "title": "Действия / Поиск",
+      "pdf_page": 16,
+      "rule_ids": [
+        "dnd2024.phb01.action_search"
+      ]
+    },
+    {
+      "id": "action_help",
+      "title": "Действия / Помощь",
+      "pdf_page": 16,
+      "rule_ids": [
+        "dnd2024.phb01.action_help"
+      ]
+    },
+    {
+      "id": "action_dash",
+      "title": "Действия / Рывок",
+      "pdf_page": 16,
+      "rule_ids": [
+        "dnd2024.phb01.action_dash"
+      ]
+    },
+    {
+      "id": "action_dodge",
+      "title": "Действия / Уклонение",
+      "pdf_page": 16,
+      "rule_ids": [
+        "dnd2024.phb01.action_dodge"
+      ]
+    },
+    {
+      "id": "improvised_action",
+      "title": "Действия (после таблицы)",
+      "pdf_page": 16,
+      "rule_ids": [
+        "dnd2024.phb01.improvised_action"
+      ]
+    },
+    {
+      "id": "bonus_action",
+      "title": "Бонусные действия",
+      "pdf_page": 16,
+      "rule_ids": [
+        "dnd2024.phb01.bonus_action"
+      ]
+    },
+    {
+      "id": "reaction",
+      "title": "Реакции",
+      "pdf_page": 16,
+      "rule_ids": [
+        "dnd2024.phb01.reaction"
+      ]
+    },
+    {
+      "id": "npc_attitude",
+      "title": "Социальное взаимодействие",
+      "pdf_page": 17,
+      "rule_ids": [
+        "dnd2024.phb01.npc_attitude"
+      ]
+    },
+    {
+      "id": "social_roleplay",
+      "title": "Отыгрыш",
+      "pdf_page": 17,
+      "rule_ids": [
+        "dnd2024.phb01.social_roleplay"
+      ]
+    },
+    {
+      "id": "social_check",
+      "title": "Проверки характеристик",
+      "pdf_page": 17,
+      "rule_ids": [
+        "dnd2024.phb01.social_check"
+      ]
+    },
+    {
+      "id": "roleplay_styles",
+      "title": "Пример социального взаимодействия / Активный стиль / Описательный стиль",
+      "pdf_page": 18,
+      "rule_ids": [
+        "dnd2024.phb01.roleplay_styles"
+      ]
+    },
+    {
+      "id": "social_example",
+      "title": "Пример социального взаимодействия (стр.17–18)",
+      "pdf_page": 18,
+      "rule_ids": [
+        "dnd2024.phb01.social_example"
+      ]
+    },
+    {
+      "id": "exploration_equipment",
+      "title": "Исследование / Экипировка для приключений",
+      "pdf_page": 20,
+      "rule_ids": [
+        "dnd2024.phb01.exploration_equipment"
+      ]
+    },
+    {
+      "id": "light_obscurement",
+      "title": "Зрение и свет / Заслонённые области",
+      "pdf_page": 20,
+      "rule_ids": [
+        "dnd2024.phb01.light_obscurement"
+      ]
+    },
+    {
+      "id": "heavy_obscurement",
+      "title": "Заслонённые области",
+      "pdf_page": 20,
+      "rule_ids": [
+        "dnd2024.phb01.heavy_obscurement"
+      ]
+    },
+    {
+      "id": "illumination",
+      "title": "Свет / Яркий свет / Тусклый свет / Тьма",
+      "pdf_page": 20,
+      "rule_ids": [
+        "dnd2024.phb01.illumination"
+      ]
+    },
+    {
+      "id": "special_senses",
+      "title": "Особые чувства",
+      "pdf_page": 20,
+      "rule_ids": [
+        "dnd2024.phb01.special_senses"
+      ]
+    },
+    {
+      "id": "hiding",
+      "title": "Засада",
+      "pdf_page": 20,
+      "rule_ids": [
+        "dnd2024.phb01.hiding"
+      ]
+    },
+    {
+      "id": "object_interaction",
+      "title": "Взаимодействие с объектами",
+      "pdf_page": 20,
+      "rule_ids": [
+        "dnd2024.phb01.object_interaction"
+      ]
+    },
+    {
+      "id": "object_definition",
+      "title": "Что такое объект?",
+      "pdf_page": 21,
+      "rule_ids": [
+        "dnd2024.phb01.object_definition"
+      ]
+    },
+    {
+      "id": "free_interaction",
+      "title": "Кратковременные взаимодействия с объектами",
+      "pdf_page": 21,
+      "rule_ids": [
+        "dnd2024.phb01.free_interaction"
+      ]
+    },
+    {
+      "id": "hidden_objects",
+      "title": "Поиск скрытых объектов",
+      "pdf_page": 21,
+      "rule_ids": [
+        "dnd2024.phb01.hidden_objects"
+      ]
+    },
+    {
+      "id": "carrying_objects",
+      "title": "Перенос объектов",
+      "pdf_page": 21,
+      "rule_ids": [
+        "dnd2024.phb01.carrying_objects"
+      ]
+    },
+    {
+      "id": "destroy_fragile_object",
+      "title": "Разрушение объектов",
+      "pdf_page": 21,
+      "rule_ids": [
+        "dnd2024.phb01.destroy_fragile_object"
+      ]
+    },
+    {
+      "id": "hazards",
+      "title": "Угрозы",
+      "pdf_page": 21,
+      "rule_ids": [
+        "dnd2024.phb01.hazards"
+      ]
+    },
+    {
+      "id": "travel_abstraction",
+      "title": "Путешествие",
+      "pdf_page": 21,
+      "rule_ids": [
+        "dnd2024.phb01.travel_abstraction"
+      ]
+    },
+    {
+      "id": "travel_pace",
+      "title": "Темп перемещения",
+      "pdf_page": 21,
+      "rule_ids": [
+        "dnd2024.phb01.travel_pace"
+      ]
+    },
+    {
+      "id": "mounted_travel",
+      "title": "Темп перемещения / Скакуны",
+      "pdf_page": 21,
+      "rule_ids": [
+        "dnd2024.phb01.mounted_travel"
+      ]
+    },
+    {
+      "id": "vehicles",
+      "title": "Транспорт",
+      "pdf_page": 21,
+      "rule_ids": [
+        "dnd2024.phb01.vehicles"
+      ]
+    },
+    {
+      "id": "marching_order",
+      "title": "Походный строй",
+      "pdf_page": 21,
+      "rule_ids": [
+        "dnd2024.phb01.marching_order"
+      ]
+    },
+    {
+      "id": "exploration_example",
+      "title": "Пример исследования (стр.21–22)",
+      "pdf_page": 22,
+      "rule_ids": [
+        "dnd2024.phb01.exploration_example"
+      ]
+    },
+    {
+      "id": "combat_order",
+      "title": "Порядок сражения / Сражение шаг за шагом",
+      "pdf_page": 24,
+      "rule_ids": [
+        "dnd2024.phb01.combat_order"
+      ]
+    },
+    {
+      "id": "combat_positions",
+      "title": "Сражение шаг за шагом / Определение положения",
+      "pdf_page": 24,
+      "rule_ids": [
+        "dnd2024.phb01.combat_positions"
+      ]
+    },
+    {
+      "id": "initiative",
+      "title": "Инициатива",
+      "pdf_page": 24,
+      "rule_ids": [
+        "dnd2024.phb01.initiative"
+      ]
+    },
+    {
+      "id": "surprise",
+      "title": "Инициатива / Застигнутые врасплох",
+      "pdf_page": 24,
+      "rule_ids": [
+        "dnd2024.phb01.surprise"
+      ]
+    },
+    {
+      "id": "initiative_tie",
+      "title": "Инициатива / Ничья",
+      "pdf_page": 24,
+      "rule_ids": [
+        "dnd2024.phb01.initiative_tie"
+      ]
+    },
+    {
+      "id": "turn_budget",
+      "title": "Ваш ход",
+      "pdf_page": 24,
+      "rule_ids": [
+        "dnd2024.phb01.turn_budget"
+      ]
+    },
+    {
+      "id": "turn_communication",
+      "title": "Общение",
+      "pdf_page": 25,
+      "rule_ids": [
+        "dnd2024.phb01.turn_communication"
+      ]
+    },
+    {
+      "id": "turn_objects",
+      "title": "Взаимодействие с вещами",
+      "pdf_page": 25,
+      "rule_ids": [
+        "dnd2024.phb01.turn_objects"
+      ]
+    },
+    {
+      "id": "turn_inactivity",
+      "title": "Бездействие в свой ход",
+      "pdf_page": 25,
+      "rule_ids": [
+        "dnd2024.phb01.turn_inactivity"
+      ]
+    },
+    {
+      "id": "combat_end",
+      "title": "Завершение сражения",
+      "pdf_page": 25,
+      "rule_ids": [
+        "dnd2024.phb01.combat_end"
+      ]
+    },
+    {
+      "id": "movement",
+      "title": "Перемещение и положение",
+      "pdf_page": 25,
+      "rule_ids": [
+        "dnd2024.phb01.movement"
+      ]
+    },
+    {
+      "id": "difficult_terrain",
+      "title": "Труднопроходимая местность (продолжение на стр.25)",
+      "pdf_page": 25,
+      "rule_ids": [
+        "dnd2024.phb01.difficult_terrain"
+      ]
+    },
+    {
+      "id": "split_movement",
+      "title": "Прерывание перемещения",
+      "pdf_page": 26,
+      "rule_ids": [
+        "dnd2024.phb01.split_movement"
+      ]
+    },
+    {
+      "id": "drop_prone",
+      "title": "Падение на землю",
+      "pdf_page": 26,
+      "rule_ids": [
+        "dnd2024.phb01.drop_prone"
+      ]
+    },
+    {
+      "id": "size",
+      "title": "Размер существа и занятое пространство",
+      "pdf_page": 26,
+      "rule_ids": [
+        "dnd2024.phb01.size"
+      ]
+    },
+    {
+      "id": "move_through_creatures",
+      "title": "Передвижение через других существ",
+      "pdf_page": 26,
+      "rule_ids": [
+        "dnd2024.phb01.move_through_creatures"
+      ]
+    },
+    {
+      "id": "attack_procedure",
+      "title": "Совершение атаки",
+      "pdf_page": 26,
+      "rule_ids": [
+        "dnd2024.phb01.attack_procedure"
+      ]
+    },
+    {
+      "id": "cover",
+      "title": "Укрытие (таблица на стр.26)",
+      "pdf_page": 26,
+      "rule_ids": [
+        "dnd2024.phb01.cover"
+      ]
+    },
+    {
+      "id": "grid",
+      "title": "Игра на сетке",
+      "pdf_page": 26,
+      "rule_ids": [
+        "dnd2024.phb01.grid"
+      ]
+    },
+    {
+      "id": "ranged_range",
+      "title": "Дальнобойные атаки / Дистанция",
+      "pdf_page": 27,
+      "rule_ids": [
+        "dnd2024.phb01.ranged_range"
+      ]
+    },
+    {
+      "id": "ranged_close",
+      "title": "Дальнобойные атаки в ближнем бою",
+      "pdf_page": 27,
+      "rule_ids": [
+        "dnd2024.phb01.ranged_close"
+      ]
+    },
+    {
+      "id": "melee_reach",
+      "title": "Рукопашные атаки / Досягаемость",
+      "pdf_page": 27,
+      "rule_ids": [
+        "dnd2024.phb01.melee_reach"
+      ]
+    },
+    {
+      "id": "opportunity_attack",
+      "title": "Провоцированные атаки",
+      "pdf_page": 27,
+      "rule_ids": [
+        "dnd2024.phb01.opportunity_attack"
+      ]
+    },
+    {
+      "id": "unseen_attack",
+      "title": "Невидимые нападающие и цели",
+      "pdf_page": 27,
+      "rule_ids": [
+        "dnd2024.phb01.unseen_attack"
+      ]
+    },
+    {
+      "id": "mount_eligibility",
+      "title": "Сражение верхом",
+      "pdf_page": 27,
+      "rule_ids": [
+        "dnd2024.phb01.mount_eligibility"
+      ]
+    },
+    {
+      "id": "mount_cost",
+      "title": "Посадка и спешивание",
+      "pdf_page": 27,
+      "rule_ids": [
+        "dnd2024.phb01.mount_cost"
+      ]
+    },
+    {
+      "id": "mount_control",
+      "title": "Управление скакуном",
+      "pdf_page": 27,
+      "rule_ids": [
+        "dnd2024.phb01.mount_control"
+      ]
+    },
+    {
+      "id": "fall_from_mount",
+      "title": "Падение со скакуна",
+      "pdf_page": 28,
+      "rule_ids": [
+        "dnd2024.phb01.fall_from_mount"
+      ]
+    },
+    {
+      "id": "underwater_melee",
+      "title": "Подводное сражение / Трудности в использовании оружия",
+      "pdf_page": 28,
+      "rule_ids": [
+        "dnd2024.phb01.underwater_melee"
+      ]
+    },
+    {
+      "id": "underwater_ranged",
+      "title": "Подводное сражение / Трудности в использовании оружия",
+      "pdf_page": 28,
+      "rule_ids": [
+        "dnd2024.phb01.underwater_ranged"
+      ]
+    },
+    {
+      "id": "underwater_fire",
+      "title": "Сопротивление урону Огнём",
+      "pdf_page": 28,
+      "rule_ids": [
+        "dnd2024.phb01.underwater_fire"
+      ]
+    },
+    {
+      "id": "hit_points",
+      "title": "Урон и лечение / Хиты",
+      "pdf_page": 28,
+      "rule_ids": [
+        "dnd2024.phb01.hit_points"
+      ]
+    },
+    {
+      "id": "bloodied",
+      "title": "Хиты / Окровавленный",
+      "pdf_page": 28,
+      "rule_ids": [
+        "dnd2024.phb01.bloodied"
+      ]
+    },
+    {
+      "id": "damage_roll",
+      "title": "Броски урона",
+      "pdf_page": 28,
+      "rule_ids": [
+        "dnd2024.phb01.damage_roll"
+      ]
+    },
+    {
+      "id": "critical_damage",
+      "title": "Критические попадания (продолжение на стр.28)",
+      "pdf_page": 28,
+      "rule_ids": [
+        "dnd2024.phb01.critical_damage"
+      ]
+    },
+    {
+      "id": "shared_damage_roll",
+      "title": "Спасброски и урон / Урон по нескольким целям",
+      "pdf_page": 29,
+      "rule_ids": [
+        "dnd2024.phb01.shared_damage_roll"
+      ]
+    },
+    {
+      "id": "half_damage",
+      "title": "Половина урона",
+      "pdf_page": 29,
+      "rule_ids": [
+        "dnd2024.phb01.half_damage"
+      ]
+    },
+    {
+      "id": "damage_types",
+      "title": "Типы урона",
+      "pdf_page": 29,
+      "rule_ids": [
+        "dnd2024.phb01.damage_types"
+      ]
+    },
+    {
+      "id": "damage_traits",
+      "title": "Сопротивление и Уязвимость / Нет суммирования / Порядок применения",
+      "pdf_page": 29,
+      "rule_ids": [
+        "dnd2024.phb01.damage_traits"
+      ]
+    },
+    {
+      "id": "immunity",
+      "title": "Иммунитет",
+      "pdf_page": 29,
+      "rule_ids": [
+        "dnd2024.phb01.immunity"
+      ]
+    },
+    {
+      "id": "healing",
+      "title": "Лечение",
+      "pdf_page": 29,
+      "rule_ids": [
+        "dnd2024.phb01.healing"
+      ]
+    },
+    {
+      "id": "zero_hp",
+      "title": "Опускание Хитов до 0 / Потеря сознания",
+      "pdf_page": 29,
+      "rule_ids": [
+        "dnd2024.phb01.zero_hp"
+      ]
+    },
+    {
+      "id": "instant_death",
+      "title": "Мгновенная смерть",
+      "pdf_page": 29,
+      "rule_ids": [
+        "dnd2024.phb01.instant_death"
+      ]
+    },
+    {
+      "id": "character_death",
+      "title": "Гибель персонажа",
+      "pdf_page": 29,
+      "rule_ids": [
+        "dnd2024.phb01.character_death"
+      ]
+    },
+    {
+      "id": "death_saves",
+      "title": "Спасброски от смерти / Три успеха/провала / При результате «1» или «20»",
+      "pdf_page": 30,
+      "rule_ids": [
+        "dnd2024.phb01.death_saves"
+      ]
+    },
+    {
+      "id": "damage_at_zero",
+      "title": "Урон при 0 Хитов",
+      "pdf_page": 30,
+      "rule_ids": [
+        "dnd2024.phb01.damage_at_zero"
+      ]
+    },
+    {
+      "id": "stabilization",
+      "title": "Стабилизация персонажа",
+      "pdf_page": 30,
+      "rule_ids": [
+        "dnd2024.phb01.stabilization"
+      ]
+    },
+    {
+      "id": "temp_hp_absorption",
+      "title": "Временные хиты тратятся первыми",
+      "pdf_page": 30,
+      "rule_ids": [
+        "dnd2024.phb01.temp_hp_absorption"
+      ]
+    },
+    {
+      "id": "temp_hp_duration",
+      "title": "Временные хиты / Длительность",
+      "pdf_page": 30,
+      "rule_ids": [
+        "dnd2024.phb01.temp_hp_duration"
+      ]
+    },
+    {
+      "id": "temp_hp_choice",
+      "title": "Временные хиты не складываются",
+      "pdf_page": 30,
+      "rule_ids": [
+        "dnd2024.phb01.temp_hp_choice"
+      ]
+    },
+    {
+      "id": "temp_hp_not_healing",
+      "title": "Не Хиты и не лечение",
+      "pdf_page": 30,
+      "rule_ids": [
+        "dnd2024.phb01.temp_hp_not_healing"
+      ]
+    },
+    {
+      "id": "conditions",
+      "title": "Состояния",
+      "pdf_page": 30,
+      "rule_ids": [
+        "dnd2024.phb01.conditions"
+      ]
+    },
+    {
+      "id": "condition_duration",
+      "title": "Состояния / Длительность / Нет суммирования",
+      "pdf_page": 30,
+      "rule_ids": [
+        "dnd2024.phb01.condition_duration"
+      ]
+    },
+    {
+      "id": "knockout",
+      "title": "Нокаутирование существа",
+      "pdf_page": 30,
+      "rule_ids": [
+        "dnd2024.phb01.knockout"
+      ]
+    },
+    {
+      "id": "rest_overview",
+      "title": "Отдых",
+      "pdf_page": 28,
+      "rule_ids": [
+        "dnd2024.phb01.rest_overview"
+      ]
+    },
+    {
+      "id": "combat_example",
+      "title": "Пример боя и урона (стр.30–31)",
+      "pdf_page": 31,
+      "rule_ids": [
+        "dnd2024.phb01.combat_example"
+      ]
+    }
+  ],
+  "rules": [
+    {
+      "id": "dnd2024.phb01.rounding",
+      "file": "chapters/phb-01/01-core.rules.json",
+      "classification": "deterministic",
+      "dependencies": [],
+      "handler": "math.scale_integer",
+      "test_id": "phb01.rounding",
+      "pytest_node": "tests/test_phb_chapter_one.py::test_catalog_behavior[dnd2024.phb01.rounding]",
+      "test_kind": "formal_behavior",
+      "status": "kernel_verified",
+      "pdf_pages": [
+        9
+      ]
+    },
+    {
+      "id": "dnd2024.phb01.specific_over_general",
+      "file": "chapters/phb-01/01-core.rules.json",
+      "classification": "adjudicated",
+      "dependencies": [],
+      "handler": null,
+      "test_id": "phb01.specific_over_general",
+      "pytest_node": "tests/test_phb_chapter_one.py::test_catalog_behavior[dnd2024.phb01.specific_over_general]",
+      "test_kind": "proposal_boundary",
+      "status": "adjudication_required",
+      "pdf_pages": [
+        9
+      ]
+    },
+    {
+      "id": "dnd2024.phb01.dice_sum",
+      "file": "chapters/phb-01/01-core.rules.json",
+      "classification": "deterministic",
+      "dependencies": [],
+      "handler": "math.sum_dice",
+      "test_id": "phb01.dice_sum",
+      "pytest_node": "tests/test_phb_chapter_one.py::test_catalog_behavior[dnd2024.phb01.dice_sum]",
+      "test_kind": "formal_behavior",
+      "status": "kernel_verified",
+      "pdf_pages": [
+        10
+      ]
+    },
+    {
+      "id": "dnd2024.phb01.percentile",
+      "file": "chapters/phb-01/01-core.rules.json",
+      "classification": "deterministic",
+      "dependencies": [],
+      "handler": "math.percentile",
+      "test_id": "phb01.percentile",
+      "pytest_node": "tests/test_phb_chapter_one.py::test_catalog_behavior[dnd2024.phb01.percentile]",
+      "test_kind": "formal_behavior",
+      "status": "kernel_verified",
+      "pdf_pages": [
+        10
+      ]
+    },
+    {
+      "id": "dnd2024.phb01.d3",
+      "file": "chapters/phb-01/01-core.rules.json",
+      "classification": "deterministic",
+      "dependencies": [],
+      "handler": "math.scale_integer",
+      "test_id": "phb01.d3",
+      "pytest_node": "tests/test_phb_chapter_one.py::test_catalog_behavior[dnd2024.phb01.d3]",
+      "test_kind": "formal_behavior",
+      "status": "kernel_verified",
+      "pdf_pages": [
+        10
+      ]
+    },
+    {
+      "id": "dnd2024.phb01.percentage_chance",
+      "file": "chapters/phb-01/01-core.rules.json",
+      "classification": "deterministic",
+      "dependencies": [],
+      "handler": "math.percentage_event",
+      "test_id": "phb01.percentage_chance",
+      "pytest_node": "tests/test_phb_chapter_one.py::test_catalog_behavior[dnd2024.phb01.percentage_chance]",
+      "test_kind": "formal_behavior",
+      "status": "kernel_verified",
+      "pdf_pages": [
+        10
+      ]
+    },
+    {
+      "id": "dnd2024.phb01.random_tables",
+      "file": "chapters/phb-01/01-core.rules.json",
+      "classification": "hybrid",
+      "dependencies": [
+        "catalog.table_ranges"
+      ],
+      "handler": null,
+      "test_id": "phb01.random_tables",
+      "pytest_node": "tests/test_phb_chapter_one.py::test_catalog_behavior[dnd2024.phb01.random_tables]",
+      "test_kind": "activation_refusal",
+      "status": "blocked",
+      "pdf_pages": [
+        10
+      ]
+    },
+    {
+      "id": "dnd2024.phb01.roll_narration",
+      "file": "chapters/phb-01/01-core.rules.json",
+      "classification": "adjudicated",
+      "dependencies": [],
+      "handler": null,
+      "test_id": "phb01.roll_narration",
+      "pytest_node": "tests/test_phb_chapter_one.py::test_catalog_behavior[dnd2024.phb01.roll_narration]",
+      "test_kind": "proposal_boundary",
+      "status": "adjudication_required",
+      "pdf_pages": [
+        10
+      ]
+    },
+    {
+      "id": "dnd2024.phb01.abilities",
+      "file": "chapters/phb-01/01-core.rules.json",
+      "classification": "deterministic",
+      "dependencies": [],
+      "handler": "Hero.scores",
+      "test_id": "phb01.abilities",
+      "pytest_node": "tests/test_phb_chapter_one.py::test_catalog_behavior[dnd2024.phb01.abilities]",
+      "test_kind": "formal_behavior",
+      "status": "engine_subset_verified",
+      "pdf_pages": [
+        11
+      ]
+    },
+    {
+      "id": "dnd2024.phb01.ability_scores",
+      "file": "chapters/phb-01/01-core.rules.json",
+      "classification": "hybrid",
+      "dependencies": [],
+      "handler": "Hero.scores",
+      "test_id": "phb01.ability_scores",
+      "pytest_node": "tests/test_phb_chapter_one.py::test_catalog_behavior[dnd2024.phb01.ability_scores]",
+      "test_kind": "activation_refusal",
+      "status": "blocked",
+      "pdf_pages": [
+        11
+      ]
+    },
+    {
+      "id": "dnd2024.phb01.ability_modifier",
+      "file": "chapters/phb-01/01-core.rules.json",
+      "classification": "deterministic",
+      "dependencies": [
+        "checks.ability"
+      ],
+      "handler": "RulesetEngine.d20",
+      "test_id": "phb01.ability_modifier",
+      "pytest_node": "tests/test_phb_chapter_one.py::test_catalog_behavior[dnd2024.phb01.ability_modifier]",
+      "test_kind": "formal_behavior",
+      "status": "adapter_verified",
+      "pdf_pages": [
+        11
+      ]
+    },
+    {
+      "id": "dnd2024.phb01.ability_check",
+      "file": "chapters/phb-01/01-core.rules.json",
+      "classification": "deterministic",
+      "dependencies": [
+        "checks.ability",
+        "dnd2024.phb01.ability_modifier"
+      ],
+      "handler": "RulesetEngine.check",
+      "test_id": "phb01.ability_check",
+      "pytest_node": "tests/test_phb_chapter_one.py::test_catalog_behavior[dnd2024.phb01.ability_check]",
+      "test_kind": "formal_behavior",
+      "status": "adapter_verified",
+      "pdf_pages": [
+        11,
+        12
+      ]
+    },
+    {
+      "id": "dnd2024.phb01.choose_check",
+      "file": "chapters/phb-01/01-core.rules.json",
+      "classification": "adjudicated",
+      "dependencies": [],
+      "handler": null,
+      "test_id": "phb01.choose_check",
+      "pytest_node": "tests/test_phb_chapter_one.py::test_catalog_behavior[dnd2024.phb01.choose_check]",
+      "test_kind": "proposal_boundary",
+      "status": "adjudication_required",
+      "pdf_pages": [
+        11
+      ]
+    },
+    {
+      "id": "dnd2024.phb01.difficulty",
+      "file": "chapters/phb-01/01-core.rules.json",
+      "classification": "hybrid",
+      "dependencies": [
+        "dnd2024.phb01.choose_check"
+      ],
+      "handler": null,
+      "test_id": "phb01.difficulty",
+      "pytest_node": "tests/test_phb_chapter_one.py::test_catalog_behavior[dnd2024.phb01.difficulty]",
+      "test_kind": "activation_refusal",
+      "status": "blocked",
+      "pdf_pages": [
+        12
+      ]
+    },
+    {
+      "id": "dnd2024.phb01.saving_throw",
+      "file": "chapters/phb-01/01-core.rules.json",
+      "classification": "deterministic",
+      "dependencies": [
+        "checks.ability",
+        "dnd2024.phb01.ability_modifier"
+      ],
+      "handler": "RulesetEngine.saving_throw",
+      "test_id": "phb01.saving_throw",
+      "pytest_node": "tests/test_phb_chapter_one.py::test_catalog_behavior[dnd2024.phb01.saving_throw]",
+      "test_kind": "formal_behavior",
+      "status": "adapter_verified",
+      "pdf_pages": [
+        12,
+        13
+      ]
+    },
+    {
+      "id": "dnd2024.phb01.voluntary_save_failure",
+      "file": "chapters/phb-01/01-core.rules.json",
+      "classification": "deterministic",
+      "dependencies": [
+        "effect.save"
+      ],
+      "handler": null,
+      "test_id": "phb01.voluntary_save_failure",
+      "pytest_node": "tests/test_phb_chapter_one.py::test_catalog_behavior[dnd2024.phb01.voluntary_save_failure]",
+      "test_kind": "activation_refusal",
+      "status": "blocked",
+      "pdf_pages": [
+        12
+      ]
+    },
+    {
+      "id": "dnd2024.phb01.attack_roll",
+      "file": "chapters/phb-01/01-core.rules.json",
+      "classification": "deterministic",
+      "dependencies": [
+        "combat.weapon_attack"
+      ],
+      "handler": "CombatEngine.attack",
+      "test_id": "phb01.attack_roll",
+      "pytest_node": "tests/test_phb_chapter_one.py::test_catalog_behavior[dnd2024.phb01.attack_roll]",
+      "test_kind": "formal_behavior",
+      "status": "engine_subset_verified",
+      "pdf_pages": [
+        13
+      ]
+    },
+    {
+      "id": "dnd2024.phb01.attack_ability",
+      "file": "chapters/phb-01/01-core.rules.json",
+      "classification": "hybrid",
+      "dependencies": [
+        "catalog.weapon",
+        "catalog.spellcasting"
+      ],
+      "handler": null,
+      "test_id": "phb01.attack_ability",
+      "pytest_node": "tests/test_phb_chapter_one.py::test_catalog_behavior[dnd2024.phb01.attack_ability]",
+      "test_kind": "activation_refusal",
+      "status": "blocked",
+      "pdf_pages": [
+        13
+      ]
+    },
+    {
+      "id": "dnd2024.phb01.base_ac",
+      "file": "chapters/phb-01/01-core.rules.json",
+      "classification": "hybrid",
+      "dependencies": [
+        "catalog.ac_formulas"
+      ],
+      "handler": null,
+      "test_id": "phb01.base_ac",
+      "pytest_node": "tests/test_phb_chapter_one.py::test_catalog_behavior[dnd2024.phb01.base_ac]",
+      "test_kind": "activation_refusal",
+      "status": "blocked",
+      "pdf_pages": [
+        13
+      ]
+    },
+    {
+      "id": "dnd2024.phb01.advantage",
+      "file": "chapters/phb-01/01-core.rules.json",
+      "classification": "deterministic",
+      "dependencies": [
+        "dnd2024.d20.advantage",
+        "dnd2024.d20.disadvantage"
+      ],
+      "handler": "RulesetEngine.d20",
+      "test_id": "phb01.advantage",
+      "pytest_node": "tests/test_phb_chapter_one.py::test_catalog_behavior[dnd2024.phb01.advantage]",
+      "test_kind": "formal_behavior",
+      "status": "engine_subset_verified",
+      "pdf_pages": [
+        13,
+        14
+      ]
+    },
+    {
+      "id": "dnd2024.phb01.cancellation",
+      "file": "chapters/phb-01/01-core.rules.json",
+      "classification": "deterministic",
+      "dependencies": [
+        "dnd2024.d20.cancellation"
+      ],
+      "handler": "RulesetEngine.d20",
+      "test_id": "phb01.cancellation",
+      "pytest_node": "tests/test_phb_chapter_one.py::test_catalog_behavior[dnd2024.phb01.cancellation]",
+      "test_kind": "formal_behavior",
+      "status": "engine_subset_verified",
+      "pdf_pages": [
+        13,
+        14
+      ]
+    },
+    {
+      "id": "dnd2024.phb01.single_die_replacement",
+      "file": "chapters/phb-01/01-core.rules.json",
+      "classification": "deterministic",
+      "dependencies": [
+        "effect.reroll_authorization"
+      ],
+      "handler": "math.replace_draw",
+      "test_id": "phb01.single_die_replacement",
+      "pytest_node": "tests/test_phb_chapter_one.py::test_catalog_behavior[dnd2024.phb01.single_die_replacement]",
+      "test_kind": "activation_refusal",
+      "status": "blocked",
+      "pdf_pages": [
+        14
+      ]
+    },
+    {
+      "id": "dnd2024.phb01.heroic_inspiration",
+      "file": "chapters/phb-01/01-core.rules.json",
+      "classification": "hybrid",
+      "dependencies": [
+        "dnd2024.phb01.single_die_replacement",
+        "catalog.species.human",
+        "resource.heroic_inspiration"
+      ],
+      "handler": null,
+      "test_id": "phb01.heroic_inspiration",
+      "pytest_node": "tests/test_phb_chapter_one.py::test_catalog_behavior[dnd2024.phb01.heroic_inspiration]",
+      "test_kind": "activation_refusal",
+      "status": "blocked",
+      "pdf_pages": [
+        14
+      ]
+    },
+    {
+      "id": "dnd2024.phb01.proficiency",
+      "file": "chapters/phb-01/01-core.rules.json",
+      "classification": "deterministic",
+      "dependencies": [
+        "checks.ability"
+      ],
+      "handler": "RulesetEngine.proficiency",
+      "test_id": "phb01.proficiency",
+      "pytest_node": "tests/test_phb_chapter_one.py::test_catalog_behavior[dnd2024.phb01.proficiency]",
+      "test_kind": "formal_behavior",
+      "status": "adapter_verified",
+      "pdf_pages": [
+        14,
+        15
+      ]
+    },
+    {
+      "id": "dnd2024.phb01.proficiency_once",
+      "file": "chapters/phb-01/01-core.rules.json",
+      "classification": "deterministic",
+      "dependencies": [
+        "checks.ability"
+      ],
+      "handler": "RulesetEngine.d20",
+      "test_id": "phb01.proficiency_once",
+      "pytest_node": "tests/test_phb_chapter_one.py::test_catalog_behavior[dnd2024.phb01.proficiency_once]",
+      "test_kind": "formal_behavior",
+      "status": "engine_subset_verified",
+      "pdf_pages": [
+        14
+      ]
+    },
+    {
+      "id": "dnd2024.phb01.skill_check",
+      "file": "chapters/phb-01/01-core.rules.json",
+      "classification": "deterministic",
+      "dependencies": [
+        "checks.ability",
+        "dnd2024.phb01.proficiency"
+      ],
+      "handler": "RulesetEngine.skill",
+      "test_id": "phb01.skill_check",
+      "pytest_node": "tests/test_phb_chapter_one.py::test_catalog_behavior[dnd2024.phb01.skill_check]",
+      "test_kind": "formal_behavior",
+      "status": "adapter_verified",
+      "pdf_pages": [
+        14,
+        15
+      ]
+    },
+    {
+      "id": "dnd2024.phb01.skill_alternate_ability",
+      "file": "chapters/phb-01/01-core.rules.json",
+      "classification": "hybrid",
+      "dependencies": [
+        "dnd2024.phb01.skill_check"
+      ],
+      "handler": null,
+      "test_id": "phb01.skill_alternate_ability",
+      "pytest_node": "tests/test_phb_chapter_one.py::test_catalog_behavior[dnd2024.phb01.skill_alternate_ability]",
+      "test_kind": "activation_refusal",
+      "status": "blocked",
+      "pdf_pages": [
+        15
+      ]
+    },
+    {
+      "id": "dnd2024.phb01.save_proficiency",
+      "file": "chapters/phb-01/01-core.rules.json",
+      "classification": "deterministic",
+      "dependencies": [
+        "dnd2024.phb01.saving_throw",
+        "dnd2024.phb01.proficiency"
+      ],
+      "handler": "RulesetEngine.saving_throw",
+      "test_id": "phb01.save_proficiency",
+      "pytest_node": "tests/test_phb_chapter_one.py::test_catalog_behavior[dnd2024.phb01.save_proficiency]",
+      "test_kind": "formal_behavior",
+      "status": "adapter_verified",
+      "pdf_pages": [
+        15
+      ]
+    },
+    {
+      "id": "dnd2024.phb01.weapon_proficiency",
+      "file": "chapters/phb-01/01-core.rules.json",
+      "classification": "deterministic",
+      "dependencies": [
+        "combat.weapon_attack"
+      ],
+      "handler": "CombatEngine.attack",
+      "test_id": "phb01.weapon_proficiency",
+      "pytest_node": "tests/test_phb_chapter_one.py::test_catalog_behavior[dnd2024.phb01.weapon_proficiency]",
+      "test_kind": "formal_behavior",
+      "status": "engine_subset_verified",
+      "pdf_pages": [
+        15
+      ]
+    },
+    {
+      "id": "dnd2024.phb01.tool_proficiency",
+      "file": "chapters/phb-01/01-core.rules.json",
+      "classification": "hybrid",
+      "dependencies": [
+        "catalog.tools",
+        "dnd2024.phb01.skill_check"
+      ],
+      "handler": null,
+      "test_id": "phb01.tool_proficiency",
+      "pytest_node": "tests/test_phb_chapter_one.py::test_catalog_behavior[dnd2024.phb01.tool_proficiency]",
+      "test_kind": "activation_refusal",
+      "status": "blocked",
+      "pdf_pages": [
+        15
+      ]
+    },
+    {
+      "id": "dnd2024.phb01.skills_table",
+      "file": "chapters/phb-01/01-core.rules.json",
+      "classification": "deterministic",
+      "dependencies": [
+        "checks.ability"
+      ],
+      "handler": "RulesetEngine.skill",
+      "test_id": "phb01.skills_table",
+      "pytest_node": "tests/test_phb_chapter_one.py::test_catalog_behavior[dnd2024.phb01.skills_table]",
+      "test_kind": "formal_behavior",
+      "status": "engine_subset_verified",
+      "pdf_pages": [
+        15
+      ]
+    },
+    {
+      "id": "dnd2024.phb01.player_and_gm",
+      "file": "chapters/phb-01/02-actions-social.rules.json",
+      "classification": "adjudicated",
+      "dependencies": [],
+      "handler": null,
+      "test_id": "phb01.player_and_gm",
+      "pytest_node": "tests/test_phb_chapter_one.py::test_catalog_behavior[dnd2024.phb01.player_and_gm]",
+      "test_kind": "proposal_boundary",
+      "status": "adjudication_required",
+      "pdf_pages": [
+        8
+      ]
+    },
+    {
+      "id": "dnd2024.phb01.play_cycle",
+      "file": "chapters/phb-01/02-actions-social.rules.json",
+      "classification": "adjudicated",
+      "dependencies": [],
+      "handler": null,
+      "test_id": "phb01.play_cycle",
+      "pytest_node": "tests/test_phb_chapter_one.py::test_catalog_behavior[dnd2024.phb01.play_cycle]",
+      "test_kind": "proposal_boundary",
+      "status": "adjudication_required",
+      "pdf_pages": [
+        9
+      ]
+    },
+    {
+      "id": "dnd2024.phb01.campaign_structure",
+      "file": "chapters/phb-01/02-actions-social.rules.json",
+      "classification": "adjudicated",
+      "dependencies": [],
+      "handler": null,
+      "test_id": "phb01.campaign_structure",
+      "pytest_node": "tests/test_phb_chapter_one.py::test_catalog_behavior[dnd2024.phb01.campaign_structure]",
+      "test_kind": "proposal_boundary",
+      "status": "adjudication_required",
+      "pdf_pages": [
+        9,
+        10
+      ]
+    },
+    {
+      "id": "dnd2024.phb01.character_portrayal",
+      "file": "chapters/phb-01/02-actions-social.rules.json",
+      "classification": "adjudicated",
+      "dependencies": [],
+      "handler": null,
+      "test_id": "phb01.character_portrayal",
+      "pytest_node": "tests/test_phb_chapter_one.py::test_catalog_behavior[dnd2024.phb01.character_portrayal]",
+      "test_kind": "proposal_boundary",
+      "status": "adjudication_required",
+      "pdf_pages": [
+        16
+      ]
+    },
+    {
+      "id": "dnd2024.phb01.action_budget",
+      "file": "chapters/phb-01/02-actions-social.rules.json",
+      "classification": "deterministic",
+      "dependencies": [
+        "combat.turn"
+      ],
+      "handler": "CombatEngine.assert_action",
+      "test_id": "phb01.action_budget",
+      "pytest_node": "tests/test_phb_chapter_one.py::test_catalog_behavior[dnd2024.phb01.action_budget]",
+      "test_kind": "formal_behavior",
+      "status": "engine_subset_verified",
+      "pdf_pages": [
+        16
+      ]
+    },
+    {
+      "id": "dnd2024.phb01.action_attack",
+      "file": "chapters/phb-01/02-actions-social.rules.json",
+      "classification": "deterministic",
+      "dependencies": [
+        "combat.weapon_attack"
+      ],
+      "handler": "CombatEngine.attack",
+      "test_id": "phb01.action_attack",
+      "pytest_node": "tests/test_phb_chapter_one.py::test_catalog_behavior[dnd2024.phb01.action_attack]",
+      "test_kind": "formal_behavior",
+      "status": "engine_subset_verified",
+      "pdf_pages": [
+        16
+      ]
+    },
+    {
+      "id": "dnd2024.phb01.action_influence",
+      "file": "chapters/phb-01/02-actions-social.rules.json",
+      "classification": "hybrid",
+      "dependencies": [
+        "glossary.influence"
+      ],
+      "handler": null,
+      "test_id": "phb01.action_influence",
+      "pytest_node": "tests/test_phb_chapter_one.py::test_catalog_behavior[dnd2024.phb01.action_influence]",
+      "test_kind": "activation_refusal",
+      "status": "blocked",
+      "pdf_pages": [
+        16
+      ]
+    },
+    {
+      "id": "dnd2024.phb01.action_hide",
+      "file": "chapters/phb-01/02-actions-social.rules.json",
+      "classification": "hybrid",
+      "dependencies": [
+        "glossary.hide"
+      ],
+      "handler": null,
+      "test_id": "phb01.action_hide",
+      "pytest_node": "tests/test_phb_chapter_one.py::test_catalog_behavior[dnd2024.phb01.action_hide]",
+      "test_kind": "activation_refusal",
+      "status": "blocked",
+      "pdf_pages": [
+        16
+      ]
+    },
+    {
+      "id": "dnd2024.phb01.action_study",
+      "file": "chapters/phb-01/02-actions-social.rules.json",
+      "classification": "hybrid",
+      "dependencies": [
+        "glossary.study"
+      ],
+      "handler": null,
+      "test_id": "phb01.action_study",
+      "pytest_node": "tests/test_phb_chapter_one.py::test_catalog_behavior[dnd2024.phb01.action_study]",
+      "test_kind": "activation_refusal",
+      "status": "blocked",
+      "pdf_pages": [
+        16
+      ]
+    },
+    {
+      "id": "dnd2024.phb01.action_utilize",
+      "file": "chapters/phb-01/02-actions-social.rules.json",
+      "classification": "hybrid",
+      "dependencies": [
+        "glossary.utilize",
+        "catalog.items"
+      ],
+      "handler": null,
+      "test_id": "phb01.action_utilize",
+      "pytest_node": "tests/test_phb_chapter_one.py::test_catalog_behavior[dnd2024.phb01.action_utilize]",
+      "test_kind": "activation_refusal",
+      "status": "blocked",
+      "pdf_pages": [
+        16
+      ]
+    },
+    {
+      "id": "dnd2024.phb01.action_magic",
+      "file": "chapters/phb-01/02-actions-social.rules.json",
+      "classification": "hybrid",
+      "dependencies": [
+        "glossary.magic",
+        "magic.casting"
+      ],
+      "handler": null,
+      "test_id": "phb01.action_magic",
+      "pytest_node": "tests/test_phb_chapter_one.py::test_catalog_behavior[dnd2024.phb01.action_magic]",
+      "test_kind": "activation_refusal",
+      "status": "blocked",
+      "pdf_pages": [
+        16
+      ]
+    },
+    {
+      "id": "dnd2024.phb01.action_disengage",
+      "file": "chapters/phb-01/02-actions-social.rules.json",
+      "classification": "deterministic",
+      "dependencies": [
+        "combat.turn"
+      ],
+      "handler": "CombatEngine.defend",
+      "test_id": "phb01.action_disengage",
+      "pytest_node": "tests/test_phb_chapter_one.py::test_catalog_behavior[dnd2024.phb01.action_disengage]",
+      "test_kind": "formal_behavior",
+      "status": "engine_subset_verified",
+      "pdf_pages": [
+        16
+      ]
+    },
+    {
+      "id": "dnd2024.phb01.action_ready",
+      "file": "chapters/phb-01/02-actions-social.rules.json",
+      "classification": "hybrid",
+      "dependencies": [
+        "glossary.ready"
+      ],
+      "handler": null,
+      "test_id": "phb01.action_ready",
+      "pytest_node": "tests/test_phb_chapter_one.py::test_catalog_behavior[dnd2024.phb01.action_ready]",
+      "test_kind": "activation_refusal",
+      "status": "blocked",
+      "pdf_pages": [
+        16
+      ]
+    },
+    {
+      "id": "dnd2024.phb01.action_search",
+      "file": "chapters/phb-01/02-actions-social.rules.json",
+      "classification": "hybrid",
+      "dependencies": [
+        "combat.turn"
+      ],
+      "handler": "CombatEngine.search",
+      "test_id": "phb01.action_search",
+      "pytest_node": "tests/test_phb_chapter_one.py::test_catalog_behavior[dnd2024.phb01.action_search]",
+      "test_kind": "activation_refusal",
+      "status": "blocked",
+      "pdf_pages": [
+        16
+      ]
+    },
+    {
+      "id": "dnd2024.phb01.action_help",
+      "file": "chapters/phb-01/02-actions-social.rules.json",
+      "classification": "hybrid",
+      "dependencies": [
+        "glossary.help"
+      ],
+      "handler": null,
+      "test_id": "phb01.action_help",
+      "pytest_node": "tests/test_phb_chapter_one.py::test_catalog_behavior[dnd2024.phb01.action_help]",
+      "test_kind": "activation_refusal",
+      "status": "blocked",
+      "pdf_pages": [
+        16
+      ]
+    },
+    {
+      "id": "dnd2024.phb01.action_dash",
+      "file": "chapters/phb-01/02-actions-social.rules.json",
+      "classification": "deterministic",
+      "dependencies": [
+        "combat.turn"
+      ],
+      "handler": "CombatEngine.defend",
+      "test_id": "phb01.action_dash",
+      "pytest_node": "tests/test_phb_chapter_one.py::test_catalog_behavior[dnd2024.phb01.action_dash]",
+      "test_kind": "formal_behavior",
+      "status": "engine_subset_verified",
+      "pdf_pages": [
+        16
+      ]
+    },
+    {
+      "id": "dnd2024.phb01.action_dodge",
+      "file": "chapters/phb-01/02-actions-social.rules.json",
+      "classification": "deterministic",
+      "dependencies": [
+        "combat.turn"
+      ],
+      "handler": "CombatEngine.defend",
+      "test_id": "phb01.action_dodge",
+      "pytest_node": "tests/test_phb_chapter_one.py::test_catalog_behavior[dnd2024.phb01.action_dodge]",
+      "test_kind": "activation_refusal",
+      "status": "blocked",
+      "pdf_pages": [
+        16
+      ]
+    },
+    {
+      "id": "dnd2024.phb01.improvised_action",
+      "file": "chapters/phb-01/02-actions-social.rules.json",
+      "classification": "adjudicated",
+      "dependencies": [],
+      "handler": null,
+      "test_id": "phb01.improvised_action",
+      "pytest_node": "tests/test_phb_chapter_one.py::test_catalog_behavior[dnd2024.phb01.improvised_action]",
+      "test_kind": "proposal_boundary",
+      "status": "adjudication_required",
+      "pdf_pages": [
+        16
+      ]
+    },
+    {
+      "id": "dnd2024.phb01.bonus_action",
+      "file": "chapters/phb-01/02-actions-social.rules.json",
+      "classification": "deterministic",
+      "dependencies": [
+        "combat.turn",
+        "features.execution"
+      ],
+      "handler": "CombatEngine.bonus",
+      "test_id": "phb01.bonus_action",
+      "pytest_node": "tests/test_phb_chapter_one.py::test_catalog_behavior[dnd2024.phb01.bonus_action]",
+      "test_kind": "formal_behavior",
+      "status": "engine_subset_verified",
+      "pdf_pages": [
+        16
+      ]
+    },
+    {
+      "id": "dnd2024.phb01.reaction",
+      "file": "chapters/phb-01/02-actions-social.rules.json",
+      "classification": "deterministic",
+      "dependencies": [
+        "combat.turn"
+      ],
+      "handler": "CombatEngine.attack",
+      "test_id": "phb01.reaction",
+      "pytest_node": "tests/test_phb_chapter_one.py::test_catalog_behavior[dnd2024.phb01.reaction]",
+      "test_kind": "formal_behavior",
+      "status": "engine_subset_verified",
+      "pdf_pages": [
+        16
+      ]
+    },
+    {
+      "id": "dnd2024.phb01.npc_attitude",
+      "file": "chapters/phb-01/02-actions-social.rules.json",
+      "classification": "adjudicated",
+      "dependencies": [
+        "glossary.attitudes"
+      ],
+      "handler": null,
+      "test_id": "phb01.npc_attitude",
+      "pytest_node": "tests/test_phb_chapter_one.py::test_catalog_behavior[dnd2024.phb01.npc_attitude]",
+      "test_kind": "proposal_boundary",
+      "status": "adjudication_required",
+      "pdf_pages": [
+        17
+      ]
+    },
+    {
+      "id": "dnd2024.phb01.social_roleplay",
+      "file": "chapters/phb-01/02-actions-social.rules.json",
+      "classification": "adjudicated",
+      "dependencies": [],
+      "handler": null,
+      "test_id": "phb01.social_roleplay",
+      "pytest_node": "tests/test_phb_chapter_one.py::test_catalog_behavior[dnd2024.phb01.social_roleplay]",
+      "test_kind": "proposal_boundary",
+      "status": "adjudication_required",
+      "pdf_pages": [
+        17
+      ]
+    },
+    {
+      "id": "dnd2024.phb01.social_check",
+      "file": "chapters/phb-01/02-actions-social.rules.json",
+      "classification": "hybrid",
+      "dependencies": [
+        "dnd2024.phb01.action_influence",
+        "dnd2024.phb01.skill_check"
+      ],
+      "handler": null,
+      "test_id": "phb01.social_check",
+      "pytest_node": "tests/test_phb_chapter_one.py::test_catalog_behavior[dnd2024.phb01.social_check]",
+      "test_kind": "activation_refusal",
+      "status": "blocked",
+      "pdf_pages": [
+        17
+      ]
+    },
+    {
+      "id": "dnd2024.phb01.roleplay_styles",
+      "file": "chapters/phb-01/02-actions-social.rules.json",
+      "classification": "adjudicated",
+      "dependencies": [],
+      "handler": null,
+      "test_id": "phb01.roleplay_styles",
+      "pytest_node": "tests/test_phb_chapter_one.py::test_catalog_behavior[dnd2024.phb01.roleplay_styles]",
+      "test_kind": "proposal_boundary",
+      "status": "adjudication_required",
+      "pdf_pages": [
+        18
+      ]
+    },
+    {
+      "id": "dnd2024.phb01.social_example",
+      "file": "chapters/phb-01/02-actions-social.rules.json",
+      "classification": "hybrid",
+      "dependencies": [
+        "dnd2024.phb01.npc_attitude",
+        "dnd2024.phb01.skill_check",
+        "glossary.influence"
+      ],
+      "handler": null,
+      "test_id": "phb01.social_example",
+      "pytest_node": "tests/test_phb_chapter_one.py::test_catalog_behavior[dnd2024.phb01.social_example]",
+      "test_kind": "activation_refusal",
+      "status": "blocked",
+      "pdf_pages": [
+        18,
+        19
+      ]
+    },
+    {
+      "id": "dnd2024.phb01.exploration_equipment",
+      "file": "chapters/phb-01/03-exploration.rules.json",
+      "classification": "hybrid",
+      "dependencies": [
+        "catalog.items"
+      ],
+      "handler": null,
+      "test_id": "phb01.exploration_equipment",
+      "pytest_node": "tests/test_phb_chapter_one.py::test_catalog_behavior[dnd2024.phb01.exploration_equipment]",
+      "test_kind": "activation_refusal",
+      "status": "blocked",
+      "pdf_pages": [
+        20
+      ]
+    },
+    {
+      "id": "dnd2024.phb01.light_obscurement",
+      "file": "chapters/phb-01/03-exploration.rules.json",
+      "classification": "deterministic",
+      "dependencies": [
+        "checks.ability",
+        "glossary.vision"
+      ],
+      "handler": "CombatEngine.search",
+      "test_id": "phb01.light_obscurement",
+      "pytest_node": "tests/test_phb_chapter_one.py::test_catalog_behavior[dnd2024.phb01.light_obscurement]",
+      "test_kind": "formal_behavior",
+      "status": "engine_subset_verified",
+      "pdf_pages": [
+        20
+      ]
+    },
+    {
+      "id": "dnd2024.phb01.heavy_obscurement",
+      "file": "chapters/phb-01/03-exploration.rules.json",
+      "classification": "hybrid",
+      "dependencies": [
+        "glossary.blinded",
+        "glossary.special_senses"
+      ],
+      "handler": null,
+      "test_id": "phb01.heavy_obscurement",
+      "pytest_node": "tests/test_phb_chapter_one.py::test_catalog_behavior[dnd2024.phb01.heavy_obscurement]",
+      "test_kind": "activation_refusal",
+      "status": "blocked",
+      "pdf_pages": [
+        20
+      ]
+    },
+    {
+      "id": "dnd2024.phb01.illumination",
+      "file": "chapters/phb-01/03-exploration.rules.json",
+      "classification": "deterministic",
+      "dependencies": [
+        "combat.turn"
+      ],
+      "handler": "Geometry.illumination",
+      "test_id": "phb01.illumination",
+      "pytest_node": "tests/test_phb_chapter_one.py::test_catalog_behavior[dnd2024.phb01.illumination]",
+      "test_kind": "formal_behavior",
+      "status": "engine_subset_verified",
+      "pdf_pages": [
+        20
+      ]
+    },
+    {
+      "id": "dnd2024.phb01.special_senses",
+      "file": "chapters/phb-01/03-exploration.rules.json",
+      "classification": "hybrid",
+      "dependencies": [
+        "glossary.special_senses"
+      ],
+      "handler": null,
+      "test_id": "phb01.special_senses",
+      "pytest_node": "tests/test_phb_chapter_one.py::test_catalog_behavior[dnd2024.phb01.special_senses]",
+      "test_kind": "activation_refusal",
+      "status": "blocked",
+      "pdf_pages": [
+        20
+      ]
+    },
+    {
+      "id": "dnd2024.phb01.hiding",
+      "file": "chapters/phb-01/03-exploration.rules.json",
+      "classification": "hybrid",
+      "dependencies": [
+        "dnd2024.phb01.action_hide"
+      ],
+      "handler": null,
+      "test_id": "phb01.hiding",
+      "pytest_node": "tests/test_phb_chapter_one.py::test_catalog_behavior[dnd2024.phb01.hiding]",
+      "test_kind": "activation_refusal",
+      "status": "blocked",
+      "pdf_pages": [
+        20
+      ]
+    },
+    {
+      "id": "dnd2024.phb01.object_interaction",
+      "file": "chapters/phb-01/03-exploration.rules.json",
+      "classification": "adjudicated",
+      "dependencies": [
+        "dnd2024.phb01.free_interaction"
+      ],
+      "handler": null,
+      "test_id": "phb01.object_interaction",
+      "pytest_node": "tests/test_phb_chapter_one.py::test_catalog_behavior[dnd2024.phb01.object_interaction]",
+      "test_kind": "proposal_boundary",
+      "status": "adjudication_required",
+      "pdf_pages": [
+        20
+      ]
+    },
+    {
+      "id": "dnd2024.phb01.object_definition",
+      "file": "chapters/phb-01/03-exploration.rules.json",
+      "classification": "adjudicated",
+      "dependencies": [],
+      "handler": null,
+      "test_id": "phb01.object_definition",
+      "pytest_node": "tests/test_phb_chapter_one.py::test_catalog_behavior[dnd2024.phb01.object_definition]",
+      "test_kind": "proposal_boundary",
+      "status": "adjudication_required",
+      "pdf_pages": [
+        21
+      ]
+    },
+    {
+      "id": "dnd2024.phb01.free_interaction",
+      "file": "chapters/phb-01/03-exploration.rules.json",
+      "classification": "deterministic",
+      "dependencies": [
+        "combat.turn"
+      ],
+      "handler": "CombatEngine.interact",
+      "test_id": "phb01.free_interaction",
+      "pytest_node": "tests/test_phb_chapter_one.py::test_catalog_behavior[dnd2024.phb01.free_interaction]",
+      "test_kind": "formal_behavior",
+      "status": "engine_subset_verified",
+      "pdf_pages": [
+        21
+      ]
+    },
+    {
+      "id": "dnd2024.phb01.hidden_objects",
+      "file": "chapters/phb-01/03-exploration.rules.json",
+      "classification": "hybrid",
+      "dependencies": [
+        "dnd2024.phb01.action_search"
+      ],
+      "handler": "CombatEngine.search",
+      "test_id": "phb01.hidden_objects",
+      "pytest_node": "tests/test_phb_chapter_one.py::test_catalog_behavior[dnd2024.phb01.hidden_objects]",
+      "test_kind": "activation_refusal",
+      "status": "blocked",
+      "pdf_pages": [
+        21
+      ]
+    },
+    {
+      "id": "dnd2024.phb01.carrying_objects",
+      "file": "chapters/phb-01/03-exploration.rules.json",
+      "classification": "hybrid",
+      "dependencies": [
+        "glossary.carrying_capacity"
+      ],
+      "handler": null,
+      "test_id": "phb01.carrying_objects",
+      "pytest_node": "tests/test_phb_chapter_one.py::test_catalog_behavior[dnd2024.phb01.carrying_objects]",
+      "test_kind": "activation_refusal",
+      "status": "blocked",
+      "pdf_pages": [
+        21
+      ]
+    },
+    {
+      "id": "dnd2024.phb01.destroy_fragile_object",
+      "file": "chapters/phb-01/03-exploration.rules.json",
+      "classification": "hybrid",
+      "dependencies": [
+        "glossary.object_damage"
+      ],
+      "handler": null,
+      "test_id": "phb01.destroy_fragile_object",
+      "pytest_node": "tests/test_phb_chapter_one.py::test_catalog_behavior[dnd2024.phb01.destroy_fragile_object]",
+      "test_kind": "activation_refusal",
+      "status": "blocked",
+      "pdf_pages": [
+        21
+      ]
+    },
+    {
+      "id": "dnd2024.phb01.hazards",
+      "file": "chapters/phb-01/03-exploration.rules.json",
+      "classification": "hybrid",
+      "dependencies": [
+        "glossary.burning",
+        "glossary.dehydration",
+        "glossary.suffocation",
+        "glossary.malnutrition",
+        "glossary.falling"
+      ],
+      "handler": null,
+      "test_id": "phb01.hazards",
+      "pytest_node": "tests/test_phb_chapter_one.py::test_catalog_behavior[dnd2024.phb01.hazards]",
+      "test_kind": "activation_refusal",
+      "status": "blocked",
+      "pdf_pages": [
+        21
+      ]
+    },
+    {
+      "id": "dnd2024.phb01.travel_abstraction",
+      "file": "chapters/phb-01/03-exploration.rules.json",
+      "classification": "adjudicated",
+      "dependencies": [],
+      "handler": null,
+      "test_id": "phb01.travel_abstraction",
+      "pytest_node": "tests/test_phb_chapter_one.py::test_catalog_behavior[dnd2024.phb01.travel_abstraction]",
+      "test_kind": "proposal_boundary",
+      "status": "adjudication_required",
+      "pdf_pages": [
+        21
+      ]
+    },
+    {
+      "id": "dnd2024.phb01.travel_pace",
+      "file": "chapters/phb-01/03-exploration.rules.json",
+      "classification": "hybrid",
+      "dependencies": [
+        "dmg.terrain_pace",
+        "dnd2024.phb01.skill_check"
+      ],
+      "handler": null,
+      "test_id": "phb01.travel_pace",
+      "pytest_node": "tests/test_phb_chapter_one.py::test_catalog_behavior[dnd2024.phb01.travel_pace]",
+      "test_kind": "activation_refusal",
+      "status": "blocked",
+      "pdf_pages": [
+        21
+      ]
+    },
+    {
+      "id": "dnd2024.phb01.mounted_travel",
+      "file": "chapters/phb-01/03-exploration.rules.json",
+      "classification": "deterministic",
+      "dependencies": [
+        "catalog.mounts",
+        "resource.mount_fast_travel"
+      ],
+      "handler": null,
+      "test_id": "phb01.mounted_travel",
+      "pytest_node": "tests/test_phb_chapter_one.py::test_catalog_behavior[dnd2024.phb01.mounted_travel]",
+      "test_kind": "activation_refusal",
+      "status": "blocked",
+      "pdf_pages": [
+        21
+      ]
+    },
+    {
+      "id": "dnd2024.phb01.vehicles",
+      "file": "chapters/phb-01/03-exploration.rules.json",
+      "classification": "hybrid",
+      "dependencies": [
+        "catalog.vehicles"
+      ],
+      "handler": null,
+      "test_id": "phb01.vehicles",
+      "pytest_node": "tests/test_phb_chapter_one.py::test_catalog_behavior[dnd2024.phb01.vehicles]",
+      "test_kind": "activation_refusal",
+      "status": "blocked",
+      "pdf_pages": [
+        21
+      ]
+    },
+    {
+      "id": "dnd2024.phb01.marching_order",
+      "file": "chapters/phb-01/03-exploration.rules.json",
+      "classification": "adjudicated",
+      "dependencies": [],
+      "handler": null,
+      "test_id": "phb01.marching_order",
+      "pytest_node": "tests/test_phb_chapter_one.py::test_catalog_behavior[dnd2024.phb01.marching_order]",
+      "test_kind": "proposal_boundary",
+      "status": "adjudication_required",
+      "pdf_pages": [
+        21
+      ]
+    },
+    {
+      "id": "dnd2024.phb01.exploration_example",
+      "file": "chapters/phb-01/03-exploration.rules.json",
+      "classification": "adjudicated",
+      "dependencies": [
+        "catalog.spells",
+        "catalog.trap_effects"
+      ],
+      "handler": null,
+      "test_id": "phb01.exploration_example",
+      "pytest_node": "tests/test_phb_chapter_one.py::test_catalog_behavior[dnd2024.phb01.exploration_example]",
+      "test_kind": "proposal_boundary",
+      "status": "adjudication_required",
+      "pdf_pages": [
+        22,
+        23
+      ]
+    },
+    {
+      "id": "dnd2024.phb01.combat_order",
+      "file": "chapters/phb-01/04-combat.rules.json",
+      "classification": "deterministic",
+      "dependencies": [
+        "combat.turn"
+      ],
+      "handler": "CombatEngine.end_turn",
+      "test_id": "phb01.combat_order",
+      "pytest_node": "tests/test_phb_chapter_one.py::test_catalog_behavior[dnd2024.phb01.combat_order]",
+      "test_kind": "formal_behavior",
+      "status": "engine_subset_verified",
+      "pdf_pages": [
+        24
+      ]
+    },
+    {
+      "id": "dnd2024.phb01.combat_positions",
+      "file": "chapters/phb-01/04-combat.rules.json",
+      "classification": "adjudicated",
+      "dependencies": [
+        "dnd2024.phb01.marching_order"
+      ],
+      "handler": null,
+      "test_id": "phb01.combat_positions",
+      "pytest_node": "tests/test_phb_chapter_one.py::test_catalog_behavior[dnd2024.phb01.combat_positions]",
+      "test_kind": "proposal_boundary",
+      "status": "adjudication_required",
+      "pdf_pages": [
+        24
+      ]
+    },
+    {
+      "id": "dnd2024.phb01.initiative",
+      "file": "chapters/phb-01/04-combat.rules.json",
+      "classification": "deterministic",
+      "dependencies": [
+        "checks.ability"
+      ],
+      "handler": "RulesetEngine.initiative",
+      "test_id": "phb01.initiative",
+      "pytest_node": "tests/test_phb_chapter_one.py::test_catalog_behavior[dnd2024.phb01.initiative]",
+      "test_kind": "formal_behavior",
+      "status": "engine_subset_verified",
+      "pdf_pages": [
+        24
+      ]
+    },
+    {
+      "id": "dnd2024.phb01.surprise",
+      "file": "chapters/phb-01/04-combat.rules.json",
+      "classification": "hybrid",
+      "dependencies": [
+        "dnd2024.phb01.initiative"
+      ],
+      "handler": "RulesetEngine.initiative",
+      "test_id": "phb01.surprise",
+      "pytest_node": "tests/test_phb_chapter_one.py::test_catalog_behavior[dnd2024.phb01.surprise]",
+      "test_kind": "formal_behavior",
+      "status": "adjudication_required",
+      "pdf_pages": [
+        24
+      ]
+    },
+    {
+      "id": "dnd2024.phb01.initiative_tie",
+      "file": "chapters/phb-01/04-combat.rules.json",
+      "classification": "adjudicated",
+      "dependencies": [],
+      "handler": null,
+      "test_id": "phb01.initiative_tie",
+      "pytest_node": "tests/test_phb_chapter_one.py::test_catalog_behavior[dnd2024.phb01.initiative_tie]",
+      "test_kind": "proposal_boundary",
+      "status": "adjudication_required",
+      "pdf_pages": [
+        24
+      ]
+    },
+    {
+      "id": "dnd2024.phb01.turn_budget",
+      "file": "chapters/phb-01/04-combat.rules.json",
+      "classification": "deterministic",
+      "dependencies": [
+        "combat.turn"
+      ],
+      "handler": "CombatEngine.assert_action",
+      "test_id": "phb01.turn_budget",
+      "pytest_node": "tests/test_phb_chapter_one.py::test_catalog_behavior[dnd2024.phb01.turn_budget]",
+      "test_kind": "formal_behavior",
+      "status": "engine_subset_verified",
+      "pdf_pages": [
+        24
+      ]
+    },
+    {
+      "id": "dnd2024.phb01.turn_communication",
+      "file": "chapters/phb-01/04-combat.rules.json",
+      "classification": "hybrid",
+      "dependencies": [
+        "dnd2024.phb01.action_influence"
+      ],
+      "handler": null,
+      "test_id": "phb01.turn_communication",
+      "pytest_node": "tests/test_phb_chapter_one.py::test_catalog_behavior[dnd2024.phb01.turn_communication]",
+      "test_kind": "activation_refusal",
+      "status": "blocked",
+      "pdf_pages": [
+        25
+      ]
+    },
+    {
+      "id": "dnd2024.phb01.turn_objects",
+      "file": "chapters/phb-01/04-combat.rules.json",
+      "classification": "hybrid",
+      "dependencies": [
+        "dnd2024.phb01.free_interaction",
+        "catalog.items"
+      ],
+      "handler": "CombatEngine.interact",
+      "test_id": "phb01.turn_objects",
+      "pytest_node": "tests/test_phb_chapter_one.py::test_catalog_behavior[dnd2024.phb01.turn_objects]",
+      "test_kind": "activation_refusal",
+      "status": "blocked",
+      "pdf_pages": [
+        25
+      ]
+    },
+    {
+      "id": "dnd2024.phb01.turn_inactivity",
+      "file": "chapters/phb-01/04-combat.rules.json",
+      "classification": "deterministic",
+      "dependencies": [
+        "combat.turn"
+      ],
+      "handler": "CombatEngine.end_turn",
+      "test_id": "phb01.turn_inactivity",
+      "pytest_node": "tests/test_phb_chapter_one.py::test_catalog_behavior[dnd2024.phb01.turn_inactivity]",
+      "test_kind": "formal_behavior",
+      "status": "engine_subset_verified",
+      "pdf_pages": [
+        25
+      ]
+    },
+    {
+      "id": "dnd2024.phb01.combat_end",
+      "file": "chapters/phb-01/04-combat.rules.json",
+      "classification": "hybrid",
+      "dependencies": [
+        "combat.turn"
+      ],
+      "handler": null,
+      "test_id": "phb01.combat_end",
+      "pytest_node": "tests/test_phb_chapter_one.py::test_catalog_behavior[dnd2024.phb01.combat_end]",
+      "test_kind": "activation_refusal",
+      "status": "blocked",
+      "pdf_pages": [
+        25
+      ]
+    },
+    {
+      "id": "dnd2024.phb01.movement",
+      "file": "chapters/phb-01/04-combat.rules.json",
+      "classification": "deterministic",
+      "dependencies": [
+        "combat.turn"
+      ],
+      "handler": "CombatEngine.move",
+      "test_id": "phb01.movement",
+      "pytest_node": "tests/test_phb_chapter_one.py::test_catalog_behavior[dnd2024.phb01.movement]",
+      "test_kind": "formal_behavior",
+      "status": "engine_subset_verified",
+      "pdf_pages": [
+        25
+      ]
+    },
+    {
+      "id": "dnd2024.phb01.difficult_terrain",
+      "file": "chapters/phb-01/04-combat.rules.json",
+      "classification": "deterministic",
+      "dependencies": [
+        "combat.turn"
+      ],
+      "handler": "Geometry.edge_cost",
+      "test_id": "phb01.difficult_terrain",
+      "pytest_node": "tests/test_phb_chapter_one.py::test_catalog_behavior[dnd2024.phb01.difficult_terrain]",
+      "test_kind": "formal_behavior",
+      "status": "engine_subset_verified",
+      "pdf_pages": [
+        25,
+        26
+      ]
+    },
+    {
+      "id": "dnd2024.phb01.split_movement",
+      "file": "chapters/phb-01/04-combat.rules.json",
+      "classification": "deterministic",
+      "dependencies": [
+        "combat.turn"
+      ],
+      "handler": "CombatEngine.move",
+      "test_id": "phb01.split_movement",
+      "pytest_node": "tests/test_phb_chapter_one.py::test_catalog_behavior[dnd2024.phb01.split_movement]",
+      "test_kind": "formal_behavior",
+      "status": "engine_subset_verified",
+      "pdf_pages": [
+        26
+      ]
+    },
+    {
+      "id": "dnd2024.phb01.drop_prone",
+      "file": "chapters/phb-01/04-combat.rules.json",
+      "classification": "deterministic",
+      "dependencies": [
+        "glossary.prone"
+      ],
+      "handler": null,
+      "test_id": "phb01.drop_prone",
+      "pytest_node": "tests/test_phb_chapter_one.py::test_catalog_behavior[dnd2024.phb01.drop_prone]",
+      "test_kind": "activation_refusal",
+      "status": "blocked",
+      "pdf_pages": [
+        26
+      ]
+    },
+    {
+      "id": "dnd2024.phb01.size",
+      "file": "chapters/phb-01/04-combat.rules.json",
+      "classification": "deterministic",
+      "dependencies": [
+        "glossary.size"
+      ],
+      "handler": null,
+      "test_id": "phb01.size",
+      "pytest_node": "tests/test_phb_chapter_one.py::test_catalog_behavior[dnd2024.phb01.size]",
+      "test_kind": "activation_refusal",
+      "status": "blocked",
+      "pdf_pages": [
+        26
+      ]
+    },
+    {
+      "id": "dnd2024.phb01.move_through_creatures",
+      "file": "chapters/phb-01/04-combat.rules.json",
+      "classification": "hybrid",
+      "dependencies": [
+        "glossary.size",
+        "glossary.prone"
+      ],
+      "handler": null,
+      "test_id": "phb01.move_through_creatures",
+      "pytest_node": "tests/test_phb_chapter_one.py::test_catalog_behavior[dnd2024.phb01.move_through_creatures]",
+      "test_kind": "activation_refusal",
+      "status": "blocked",
+      "pdf_pages": [
+        26
+      ]
+    },
+    {
+      "id": "dnd2024.phb01.attack_procedure",
+      "file": "chapters/phb-01/04-combat.rules.json",
+      "classification": "hybrid",
+      "dependencies": [
+        "combat.weapon_attack",
+        "catalog.attack_effects"
+      ],
+      "handler": "CombatEngine.attack",
+      "test_id": "phb01.attack_procedure",
+      "pytest_node": "tests/test_phb_chapter_one.py::test_catalog_behavior[dnd2024.phb01.attack_procedure]",
+      "test_kind": "formal_behavior",
+      "status": "adjudication_required",
+      "pdf_pages": [
+        26
+      ]
+    },
+    {
+      "id": "dnd2024.phb01.cover",
+      "file": "chapters/phb-01/04-combat.rules.json",
+      "classification": "hybrid",
+      "dependencies": [
+        "combat.turn"
+      ],
+      "handler": "Geometry.cover",
+      "test_id": "phb01.cover",
+      "pytest_node": "tests/test_phb_chapter_one.py::test_catalog_behavior[dnd2024.phb01.cover]",
+      "test_kind": "formal_behavior",
+      "status": "adjudication_required",
+      "pdf_pages": [
+        26,
+        27
+      ]
+    },
+    {
+      "id": "dnd2024.phb01.grid",
+      "file": "chapters/phb-01/04-combat.rules.json",
+      "classification": "deterministic",
+      "dependencies": [
+        "combat.turn"
+      ],
+      "handler": "Geometry.edge_cost",
+      "test_id": "phb01.grid",
+      "pytest_node": "tests/test_phb_chapter_one.py::test_catalog_behavior[dnd2024.phb01.grid]",
+      "test_kind": "formal_behavior",
+      "status": "engine_subset_verified",
+      "pdf_pages": [
+        26
+      ]
+    },
+    {
+      "id": "dnd2024.phb01.ranged_range",
+      "file": "chapters/phb-01/04-combat.rules.json",
+      "classification": "deterministic",
+      "dependencies": [
+        "combat.weapon_attack"
+      ],
+      "handler": "CombatEngine.attack",
+      "test_id": "phb01.ranged_range",
+      "pytest_node": "tests/test_phb_chapter_one.py::test_catalog_behavior[dnd2024.phb01.ranged_range]",
+      "test_kind": "formal_behavior",
+      "status": "engine_subset_verified",
+      "pdf_pages": [
+        27
+      ]
+    },
+    {
+      "id": "dnd2024.phb01.ranged_close",
+      "file": "chapters/phb-01/04-combat.rules.json",
+      "classification": "deterministic",
+      "dependencies": [
+        "combat.weapon_attack"
+      ],
+      "handler": "CombatEngine.attack",
+      "test_id": "phb01.ranged_close",
+      "pytest_node": "tests/test_phb_chapter_one.py::test_catalog_behavior[dnd2024.phb01.ranged_close]",
+      "test_kind": "activation_refusal",
+      "status": "blocked",
+      "pdf_pages": [
+        27
+      ]
+    },
+    {
+      "id": "dnd2024.phb01.melee_reach",
+      "file": "chapters/phb-01/04-combat.rules.json",
+      "classification": "deterministic",
+      "dependencies": [
+        "combat.weapon_attack"
+      ],
+      "handler": "CombatEngine.attack",
+      "test_id": "phb01.melee_reach",
+      "pytest_node": "tests/test_phb_chapter_one.py::test_catalog_behavior[dnd2024.phb01.melee_reach]",
+      "test_kind": "formal_behavior",
+      "status": "engine_subset_verified",
+      "pdf_pages": [
+        27
+      ]
+    },
+    {
+      "id": "dnd2024.phb01.opportunity_attack",
+      "file": "chapters/phb-01/04-combat.rules.json",
+      "classification": "deterministic",
+      "dependencies": [
+        "combat.turn"
+      ],
+      "handler": "CombatEngine.move",
+      "test_id": "phb01.opportunity_attack",
+      "pytest_node": "tests/test_phb_chapter_one.py::test_catalog_behavior[dnd2024.phb01.opportunity_attack]",
+      "test_kind": "formal_behavior",
+      "status": "engine_subset_verified",
+      "pdf_pages": [
+        27
+      ]
+    },
+    {
+      "id": "dnd2024.phb01.unseen_attack",
+      "file": "chapters/phb-01/04-combat.rules.json",
+      "classification": "deterministic",
+      "dependencies": [
+        "glossary.invisible",
+        "glossary.hide"
+      ],
+      "handler": null,
+      "test_id": "phb01.unseen_attack",
+      "pytest_node": "tests/test_phb_chapter_one.py::test_catalog_behavior[dnd2024.phb01.unseen_attack]",
+      "test_kind": "activation_refusal",
+      "status": "blocked",
+      "pdf_pages": [
+        27
+      ]
+    },
+    {
+      "id": "dnd2024.phb01.mount_eligibility",
+      "file": "chapters/phb-01/04-combat.rules.json",
+      "classification": "hybrid",
+      "dependencies": [
+        "glossary.size",
+        "catalog.mounts"
+      ],
+      "handler": null,
+      "test_id": "phb01.mount_eligibility",
+      "pytest_node": "tests/test_phb_chapter_one.py::test_catalog_behavior[dnd2024.phb01.mount_eligibility]",
+      "test_kind": "activation_refusal",
+      "status": "blocked",
+      "pdf_pages": [
+        27
+      ]
+    },
+    {
+      "id": "dnd2024.phb01.mount_cost",
+      "file": "chapters/phb-01/04-combat.rules.json",
+      "classification": "deterministic",
+      "dependencies": [
+        "dnd2024.phb01.mount_eligibility"
+      ],
+      "handler": "math.scale_integer",
+      "test_id": "phb01.mount_cost",
+      "pytest_node": "tests/test_phb_chapter_one.py::test_catalog_behavior[dnd2024.phb01.mount_cost]",
+      "test_kind": "activation_refusal",
+      "status": "blocked",
+      "pdf_pages": [
+        27
+      ]
+    },
+    {
+      "id": "dnd2024.phb01.mount_control",
+      "file": "chapters/phb-01/04-combat.rules.json",
+      "classification": "hybrid",
+      "dependencies": [
+        "dnd2024.phb01.mount_eligibility"
+      ],
+      "handler": null,
+      "test_id": "phb01.mount_control",
+      "pytest_node": "tests/test_phb_chapter_one.py::test_catalog_behavior[dnd2024.phb01.mount_control]",
+      "test_kind": "activation_refusal",
+      "status": "blocked",
+      "pdf_pages": [
+        27
+      ]
+    },
+    {
+      "id": "dnd2024.phb01.fall_from_mount",
+      "file": "chapters/phb-01/04-combat.rules.json",
+      "classification": "deterministic",
+      "dependencies": [
+        "dnd2024.phb01.saving_throw",
+        "dnd2024.phb01.mount_control",
+        "glossary.prone"
+      ],
+      "handler": null,
+      "test_id": "phb01.fall_from_mount",
+      "pytest_node": "tests/test_phb_chapter_one.py::test_catalog_behavior[dnd2024.phb01.fall_from_mount]",
+      "test_kind": "activation_refusal",
+      "status": "blocked",
+      "pdf_pages": [
+        28
+      ]
+    },
+    {
+      "id": "dnd2024.phb01.underwater_melee",
+      "file": "chapters/phb-01/04-combat.rules.json",
+      "classification": "deterministic",
+      "dependencies": [
+        "catalog.weapon",
+        "glossary.swim_speed"
+      ],
+      "handler": null,
+      "test_id": "phb01.underwater_melee",
+      "pytest_node": "tests/test_phb_chapter_one.py::test_catalog_behavior[dnd2024.phb01.underwater_melee]",
+      "test_kind": "activation_refusal",
+      "status": "blocked",
+      "pdf_pages": [
+        28
+      ]
+    },
+    {
+      "id": "dnd2024.phb01.underwater_ranged",
+      "file": "chapters/phb-01/04-combat.rules.json",
+      "classification": "deterministic",
+      "dependencies": [
+        "catalog.weapon"
+      ],
+      "handler": null,
+      "test_id": "phb01.underwater_ranged",
+      "pytest_node": "tests/test_phb_chapter_one.py::test_catalog_behavior[dnd2024.phb01.underwater_ranged]",
+      "test_kind": "activation_refusal",
+      "status": "blocked",
+      "pdf_pages": [
+        28
+      ]
+    },
+    {
+      "id": "dnd2024.phb01.underwater_fire",
+      "file": "chapters/phb-01/04-combat.rules.json",
+      "classification": "deterministic",
+      "dependencies": [
+        "dnd2024.phb01.damage_traits"
+      ],
+      "handler": null,
+      "test_id": "phb01.underwater_fire",
+      "pytest_node": "tests/test_phb_chapter_one.py::test_catalog_behavior[dnd2024.phb01.underwater_fire]",
+      "test_kind": "activation_refusal",
+      "status": "blocked",
+      "pdf_pages": [
+        28
+      ]
+    },
+    {
+      "id": "dnd2024.phb01.hit_points",
+      "file": "chapters/phb-01/05-damage-conditions.rules.json",
+      "classification": "deterministic",
+      "dependencies": [
+        "combat.weapon_attack"
+      ],
+      "handler": "CombatEngine.damage",
+      "test_id": "phb01.hit_points",
+      "pytest_node": "tests/test_phb_chapter_one.py::test_catalog_behavior[dnd2024.phb01.hit_points]",
+      "test_kind": "formal_behavior",
+      "status": "engine_subset_verified",
+      "pdf_pages": [
+        28
+      ]
+    },
+    {
+      "id": "dnd2024.phb01.bloodied",
+      "file": "chapters/phb-01/05-damage-conditions.rules.json",
+      "classification": "deterministic",
+      "dependencies": [
+        "effect.bloodied"
+      ],
+      "handler": null,
+      "test_id": "phb01.bloodied",
+      "pytest_node": "tests/test_phb_chapter_one.py::test_catalog_behavior[dnd2024.phb01.bloodied]",
+      "test_kind": "activation_refusal",
+      "status": "blocked",
+      "pdf_pages": [
+        28
+      ]
+    },
+    {
+      "id": "dnd2024.phb01.damage_roll",
+      "file": "chapters/phb-01/05-damage-conditions.rules.json",
+      "classification": "deterministic",
+      "dependencies": [
+        "combat.weapon_attack"
+      ],
+      "handler": "CombatEngine.attack",
+      "test_id": "phb01.damage_roll",
+      "pytest_node": "tests/test_phb_chapter_one.py::test_catalog_behavior[dnd2024.phb01.damage_roll]",
+      "test_kind": "formal_behavior",
+      "status": "engine_subset_verified",
+      "pdf_pages": [
+        28
+      ]
+    },
+    {
+      "id": "dnd2024.phb01.critical_damage",
+      "file": "chapters/phb-01/05-damage-conditions.rules.json",
+      "classification": "deterministic",
+      "dependencies": [
+        "combat.weapon_attack"
+      ],
+      "handler": "CombatEngine.attack",
+      "test_id": "phb01.critical_damage",
+      "pytest_node": "tests/test_phb_chapter_one.py::test_catalog_behavior[dnd2024.phb01.critical_damage]",
+      "test_kind": "formal_behavior",
+      "status": "engine_subset_verified",
+      "pdf_pages": [
+        28,
+        29
+      ]
+    },
+    {
+      "id": "dnd2024.phb01.shared_damage_roll",
+      "file": "chapters/phb-01/05-damage-conditions.rules.json",
+      "classification": "deterministic",
+      "dependencies": [
+        "effect.multi_target_damage"
+      ],
+      "handler": null,
+      "test_id": "phb01.shared_damage_roll",
+      "pytest_node": "tests/test_phb_chapter_one.py::test_catalog_behavior[dnd2024.phb01.shared_damage_roll]",
+      "test_kind": "activation_refusal",
+      "status": "blocked",
+      "pdf_pages": [
+        29
+      ]
+    },
+    {
+      "id": "dnd2024.phb01.half_damage",
+      "file": "chapters/phb-01/05-damage-conditions.rules.json",
+      "classification": "deterministic",
+      "dependencies": [],
+      "handler": "math.scale_integer",
+      "test_id": "phb01.half_damage",
+      "pytest_node": "tests/test_phb_chapter_one.py::test_catalog_behavior[dnd2024.phb01.half_damage]",
+      "test_kind": "formal_behavior",
+      "status": "kernel_verified",
+      "pdf_pages": [
+        29
+      ]
+    },
+    {
+      "id": "dnd2024.phb01.damage_types",
+      "file": "chapters/phb-01/05-damage-conditions.rules.json",
+      "classification": "deterministic",
+      "dependencies": [
+        "combat.weapon_attack"
+      ],
+      "handler": "CombatEngine.damage",
+      "test_id": "phb01.damage_types",
+      "pytest_node": "tests/test_phb_chapter_one.py::test_catalog_behavior[dnd2024.phb01.damage_types]",
+      "test_kind": "formal_behavior",
+      "status": "engine_subset_verified",
+      "pdf_pages": [
+        29
+      ]
+    },
+    {
+      "id": "dnd2024.phb01.damage_traits",
+      "file": "chapters/phb-01/05-damage-conditions.rules.json",
+      "classification": "deterministic",
+      "dependencies": [
+        "combat.weapon_attack"
+      ],
+      "handler": "CombatEngine.damage",
+      "test_id": "phb01.damage_traits",
+      "pytest_node": "tests/test_phb_chapter_one.py::test_catalog_behavior[dnd2024.phb01.damage_traits]",
+      "test_kind": "formal_behavior",
+      "status": "engine_subset_verified",
+      "pdf_pages": [
+        29
+      ]
+    },
+    {
+      "id": "dnd2024.phb01.immunity",
+      "file": "chapters/phb-01/05-damage-conditions.rules.json",
+      "classification": "deterministic",
+      "dependencies": [
+        "combat.weapon_attack"
+      ],
+      "handler": "CombatEngine.damage",
+      "test_id": "phb01.immunity",
+      "pytest_node": "tests/test_phb_chapter_one.py::test_catalog_behavior[dnd2024.phb01.immunity]",
+      "test_kind": "formal_behavior",
+      "status": "engine_subset_verified",
+      "pdf_pages": [
+        29
+      ]
+    },
+    {
+      "id": "dnd2024.phb01.healing",
+      "file": "chapters/phb-01/05-damage-conditions.rules.json",
+      "classification": "deterministic",
+      "dependencies": [],
+      "handler": "math.resource_change",
+      "test_id": "phb01.healing",
+      "pytest_node": "tests/test_phb_chapter_one.py::test_catalog_behavior[dnd2024.phb01.healing]",
+      "test_kind": "formal_behavior",
+      "status": "kernel_verified",
+      "pdf_pages": [
+        29
+      ]
+    },
+    {
+      "id": "dnd2024.phb01.zero_hp",
+      "file": "chapters/phb-01/05-damage-conditions.rules.json",
+      "classification": "deterministic",
+      "dependencies": [
+        "dnd2024.phb01.instant_death",
+        "glossary.unconscious"
+      ],
+      "handler": "CombatEngine.damage",
+      "test_id": "phb01.zero_hp",
+      "pytest_node": "tests/test_phb_chapter_one.py::test_catalog_behavior[dnd2024.phb01.zero_hp]",
+      "test_kind": "formal_behavior",
+      "status": "engine_subset_verified",
+      "pdf_pages": [
+        29,
+        30
+      ]
+    },
+    {
+      "id": "dnd2024.phb01.instant_death",
+      "file": "chapters/phb-01/05-damage-conditions.rules.json",
+      "classification": "hybrid",
+      "dependencies": [
+        "combat.weapon_attack"
+      ],
+      "handler": "CombatEngine.damage",
+      "test_id": "phb01.instant_death",
+      "pytest_node": "tests/test_phb_chapter_one.py::test_catalog_behavior[dnd2024.phb01.instant_death]",
+      "test_kind": "activation_refusal",
+      "status": "blocked",
+      "pdf_pages": [
+        29
+      ]
+    },
+    {
+      "id": "dnd2024.phb01.character_death",
+      "file": "chapters/phb-01/05-damage-conditions.rules.json",
+      "classification": "adjudicated",
+      "dependencies": [
+        "catalog.revival_spells",
+        "glossary.dead"
+      ],
+      "handler": null,
+      "test_id": "phb01.character_death",
+      "pytest_node": "tests/test_phb_chapter_one.py::test_catalog_behavior[dnd2024.phb01.character_death]",
+      "test_kind": "proposal_boundary",
+      "status": "adjudication_required",
+      "pdf_pages": [
+        29
+      ]
+    },
+    {
+      "id": "dnd2024.phb01.death_saves",
+      "file": "chapters/phb-01/05-damage-conditions.rules.json",
+      "classification": "deterministic",
+      "dependencies": [
+        "combat.turn",
+        "glossary.unconscious"
+      ],
+      "handler": "CombatEngine.death_save",
+      "test_id": "phb01.death_saves",
+      "pytest_node": "tests/test_phb_chapter_one.py::test_catalog_behavior[dnd2024.phb01.death_saves]",
+      "test_kind": "formal_behavior",
+      "status": "engine_subset_verified",
+      "pdf_pages": [
+        30
+      ]
+    },
+    {
+      "id": "dnd2024.phb01.damage_at_zero",
+      "file": "chapters/phb-01/05-damage-conditions.rules.json",
+      "classification": "deterministic",
+      "dependencies": [
+        "combat.weapon_attack",
+        "dnd2024.phb01.death_saves"
+      ],
+      "handler": "CombatEngine.damage",
+      "test_id": "phb01.damage_at_zero",
+      "pytest_node": "tests/test_phb_chapter_one.py::test_catalog_behavior[dnd2024.phb01.damage_at_zero]",
+      "test_kind": "formal_behavior",
+      "status": "engine_subset_verified",
+      "pdf_pages": [
+        30
+      ]
+    },
+    {
+      "id": "dnd2024.phb01.stabilization",
+      "file": "chapters/phb-01/05-damage-conditions.rules.json",
+      "classification": "deterministic",
+      "dependencies": [
+        "glossary.help",
+        "dnd2024.phb01.skill_check"
+      ],
+      "handler": null,
+      "test_id": "phb01.stabilization",
+      "pytest_node": "tests/test_phb_chapter_one.py::test_catalog_behavior[dnd2024.phb01.stabilization]",
+      "test_kind": "activation_refusal",
+      "status": "blocked",
+      "pdf_pages": [
+        30
+      ]
+    },
+    {
+      "id": "dnd2024.phb01.temp_hp_absorption",
+      "file": "chapters/phb-01/05-damage-conditions.rules.json",
+      "classification": "deterministic",
+      "dependencies": [
+        "combat.weapon_attack"
+      ],
+      "handler": "CombatEngine.damage",
+      "test_id": "phb01.temp_hp_absorption",
+      "pytest_node": "tests/test_phb_chapter_one.py::test_catalog_behavior[dnd2024.phb01.temp_hp_absorption]",
+      "test_kind": "formal_behavior",
+      "status": "engine_subset_verified",
+      "pdf_pages": [
+        30
+      ]
+    },
+    {
+      "id": "dnd2024.phb01.temp_hp_duration",
+      "file": "chapters/phb-01/05-damage-conditions.rules.json",
+      "classification": "deterministic",
+      "dependencies": [
+        "rest.recovery"
+      ],
+      "handler": null,
+      "test_id": "phb01.temp_hp_duration",
+      "pytest_node": "tests/test_phb_chapter_one.py::test_catalog_behavior[dnd2024.phb01.temp_hp_duration]",
+      "test_kind": "activation_refusal",
+      "status": "blocked",
+      "pdf_pages": [
+        30
+      ]
+    },
+    {
+      "id": "dnd2024.phb01.temp_hp_choice",
+      "file": "chapters/phb-01/05-damage-conditions.rules.json",
+      "classification": "hybrid",
+      "dependencies": [
+        "resource.temporary_hp_choice"
+      ],
+      "handler": null,
+      "test_id": "phb01.temp_hp_choice",
+      "pytest_node": "tests/test_phb_chapter_one.py::test_catalog_behavior[dnd2024.phb01.temp_hp_choice]",
+      "test_kind": "activation_refusal",
+      "status": "blocked",
+      "pdf_pages": [
+        30
+      ]
+    },
+    {
+      "id": "dnd2024.phb01.temp_hp_not_healing",
+      "file": "chapters/phb-01/05-damage-conditions.rules.json",
+      "classification": "deterministic",
+      "dependencies": [
+        "combat.weapon_attack"
+      ],
+      "handler": "CombatEngine.damage",
+      "test_id": "phb01.temp_hp_not_healing",
+      "pytest_node": "tests/test_phb_chapter_one.py::test_catalog_behavior[dnd2024.phb01.temp_hp_not_healing]",
+      "test_kind": "formal_behavior",
+      "status": "engine_subset_verified",
+      "pdf_pages": [
+        30
+      ]
+    },
+    {
+      "id": "dnd2024.phb01.conditions",
+      "file": "chapters/phb-01/05-damage-conditions.rules.json",
+      "classification": "hybrid",
+      "dependencies": [
+        "conditions.execution",
+        "glossary.conditions"
+      ],
+      "handler": null,
+      "test_id": "phb01.conditions",
+      "pytest_node": "tests/test_phb_chapter_one.py::test_catalog_behavior[dnd2024.phb01.conditions]",
+      "test_kind": "activation_refusal",
+      "status": "blocked",
+      "pdf_pages": [
+        30
+      ]
+    },
+    {
+      "id": "dnd2024.phb01.condition_duration",
+      "file": "chapters/phb-01/05-damage-conditions.rules.json",
+      "classification": "deterministic",
+      "dependencies": [
+        "effect.condition_instances"
+      ],
+      "handler": null,
+      "test_id": "phb01.condition_duration",
+      "pytest_node": "tests/test_phb_chapter_one.py::test_catalog_behavior[dnd2024.phb01.condition_duration]",
+      "test_kind": "activation_refusal",
+      "status": "blocked",
+      "pdf_pages": [
+        30
+      ]
+    },
+    {
+      "id": "dnd2024.phb01.knockout",
+      "file": "chapters/phb-01/05-damage-conditions.rules.json",
+      "classification": "hybrid",
+      "dependencies": [
+        "combat.weapon_attack",
+        "glossary.unconscious",
+        "rest.recovery"
+      ],
+      "handler": null,
+      "test_id": "phb01.knockout",
+      "pytest_node": "tests/test_phb_chapter_one.py::test_catalog_behavior[dnd2024.phb01.knockout]",
+      "test_kind": "activation_refusal",
+      "status": "blocked",
+      "pdf_pages": [
+        30
+      ]
+    },
+    {
+      "id": "dnd2024.phb01.rest_overview",
+      "file": "chapters/phb-01/05-damage-conditions.rules.json",
+      "classification": "deterministic",
+      "dependencies": [
+        "rest.recovery"
+      ],
+      "handler": "RulesetEngine.rest",
+      "test_id": "phb01.rest_overview",
+      "pytest_node": "tests/test_phb_chapter_one.py::test_catalog_behavior[dnd2024.phb01.rest_overview]",
+      "test_kind": "formal_behavior",
+      "status": "engine_subset_verified",
+      "pdf_pages": [
+        28
+      ]
+    },
+    {
+      "id": "dnd2024.phb01.combat_example",
+      "file": "chapters/phb-01/05-damage-conditions.rules.json",
+      "classification": "adjudicated",
+      "dependencies": [
+        "catalog.spells",
+        "catalog.class_features",
+        "glossary.areas"
+      ],
+      "handler": null,
+      "test_id": "phb01.combat_example",
+      "pytest_node": "tests/test_phb_chapter_one.py::test_catalog_behavior[dnd2024.phb01.combat_example]",
+      "test_kind": "proposal_boundary",
+      "status": "adjudication_required",
+      "pdf_pages": [
+        31,
+        32
+      ]
+    }
+  ],
+  "adapter_rule_ids": [
+    "dnd2024.phb01.ability_modifier",
+    "dnd2024.phb01.ability_check",
+    "dnd2024.phb01.saving_throw",
+    "dnd2024.phb01.proficiency",
+    "dnd2024.phb01.skill_check",
+    "dnd2024.phb01.save_proficiency"
+  ],
+  "external_dependencies": [
+    "catalog.ac_formulas",
+    "catalog.attack_effects",
+    "catalog.class_features",
+    "catalog.items",
+    "catalog.mounts",
+    "catalog.revival_spells",
+    "catalog.species.human",
+    "catalog.spellcasting",
+    "catalog.spells",
+    "catalog.table_ranges",
+    "catalog.tools",
+    "catalog.trap_effects",
+    "catalog.vehicles",
+    "catalog.weapon",
+    "checks.ability",
+    "combat.turn",
+    "combat.weapon_attack",
+    "conditions.execution",
+    "dmg.terrain_pace",
+    "effect.bloodied",
+    "effect.condition_instances",
+    "effect.multi_target_damage",
+    "effect.reroll_authorization",
+    "effect.save",
+    "features.execution",
+    "glossary.areas",
+    "glossary.attitudes",
+    "glossary.blinded",
+    "glossary.burning",
+    "glossary.carrying_capacity",
+    "glossary.conditions",
+    "glossary.dead",
+    "glossary.dehydration",
+    "glossary.falling",
+    "glossary.help",
+    "glossary.hide",
+    "glossary.influence",
+    "glossary.invisible",
+    "glossary.magic",
+    "glossary.malnutrition",
+    "glossary.object_damage",
+    "glossary.prone",
+    "glossary.ready",
+    "glossary.size",
+    "glossary.special_senses",
+    "glossary.study",
+    "glossary.suffocation",
+    "glossary.swim_speed",
+    "glossary.unconscious",
+    "glossary.utilize",
+    "glossary.vision",
+    "magic.casting",
+    "resource.heroic_inspiration",
+    "resource.mount_fast_travel",
+    "resource.temporary_hp_choice",
+    "rest.recovery"
+  ],
+  "unaccounted_bookmarks": [],
+  "evidence": {
+    "text_file": "evidence/phb-008-033.txt",
+    "text_sha256": "3802e8d76beddc013e917f8c7ca30f66ed72c955286c4d30a5e0903b55a83bd5",
+    "pdf_sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+    "toc_file": "evidence/phb-toc.txt",
+    "visual_pages": [
+      11,
+      12,
+      14,
+      15,
+      26,
+      29,
+      30
+    ]
+  },
+  "classification_counts": {
+    "deterministic": 70,
+    "adjudicated": 20,
+    "hybrid": 41
+  },
+  "readiness_counts": {
+    "kernel_verified": 7,
+    "adjudication_required": 23,
+    "blocked": 56,
+    "engine_subset_verified": 39,
+    "adapter_verified": 6
+  },
+  "batches": [
+    {
+      "file": "chapters/phb-01/01-core.rules.json",
+      "rules": 31,
+      "status": "saved"
+    },
+    {
+      "file": "chapters/phb-01/02-actions-social.rules.json",
+      "rules": 25,
+      "status": "saved"
+    },
+    {
+      "file": "chapters/phb-01/03-exploration.rules.json",
+      "rules": 19,
+      "status": "saved"
+    },
+    {
+      "file": "chapters/phb-01/04-combat.rules.json",
+      "rules": 31,
+      "status": "saved"
+    },
+    {
+      "file": "chapters/phb-01/05-damage-conditions.rules.json",
+      "rules": 25,
+      "status": "saved"
+    }
+  ],
+  "exclusions": [
+    {
+      "pdf_page": 33,
+      "reason": "Illustration/caption only; no rule definition."
+    }
+  ],
+  "next": [
+    "Resolve explicit glossary dependencies and PHB/Engine discrepancies; keep unsupported branches inactive.",
+    "Continue PHB chapters 2–7 before DMG 2024 and MM 2025."
+  ],
+  "notes": [
+    "Coverage is chapter extraction, not full automation.",
+    "Behavioral refusal/proposal checks do not certify narrative decisions or blocked mathematics.",
+    "Human source review remains pending; no user campaigns activated."
+  ],
+  "verification_report": "reports/phb-01/summary.json"
+}

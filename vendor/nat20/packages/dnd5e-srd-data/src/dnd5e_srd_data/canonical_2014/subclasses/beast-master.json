@@ -1,0 +1,119 @@
+{
+  "slug": "beast-master",
+  "name": "Повелитель зверей",
+  "description": "Повелитель зверей | Beast Master\n\nАрхетип повелителя зверей воплощает дружбу между цивилизованными расами и дикими животными. Объединяясь, зверь и следопыт работают как единое целое, чтобы бороться с чудовищными врагами, угрожающими как цивилизации, так и природе.\n\nУровень Особенности\n\n3-й\n\n@Compendium[laaru-dnd5-hw.classfeatures.wcSlc8osgFXbiHWt]{Спутник следопыта} или @Compendium[laaru-dnd5-hw.classfeatures.ci3UvWoN712LgmCW]{Первичный спутник (Опционально)}\n\n7-й\n\n@Compendium[laaru-dnd5-hw.classfeatures.4MN1uJAOf8Jfh6T4]{Особая тренировка}\n\n11-й\n\n@Compendium[laaru-dnd5-hw.classfeatures.h7xhxJrBjo4kA9iG]{Звериная ярость}\n\n15-й\n\n@Compendium[laaru-dnd5-hw.classfeatures.x8kuabGTAyb6Z9JH]{Общие заклинания}",
+  "identifier": "beast-master",
+  "class_identifier": "ranger",
+  "spellcasting": {
+    "ability": "",
+    "progression": "none"
+  },
+  "advancement": [
+    {
+      "id": "xtyimss8nyq1rxrg",
+      "type": "ItemGrant",
+      "level": 7,
+      "title": "Особенность",
+      "hint": "",
+      "class_restriction": "",
+      "configuration": {
+        "items": [
+          {
+            "uuid": "Compendium.laaru-dnd5-hw.classfeatures.4MN1uJAOf8Jfh6T4",
+            "optional": false
+          }
+        ],
+        "optional": false,
+        "spell": null
+      },
+      "value": {}
+    },
+    {
+      "id": "cvu0qaatzat7idda",
+      "type": "ItemGrant",
+      "level": 11,
+      "title": "Особенность",
+      "hint": "",
+      "class_restriction": "",
+      "configuration": {
+        "items": [
+          {
+            "uuid": "Compendium.laaru-dnd5-hw.classfeatures.h7xhxJrBjo4kA9iG",
+            "optional": false
+          }
+        ],
+        "optional": false,
+        "spell": null
+      },
+      "value": {}
+    },
+    {
+      "id": "cwaqx4al78lf0vu1",
+      "type": "ItemGrant",
+      "level": 15,
+      "title": "Особенность",
+      "hint": "",
+      "class_restriction": "",
+      "configuration": {
+        "items": [
+          {
+            "uuid": "Compendium.laaru-dnd5-hw.classfeatures.x8kuabGTAyb6Z9JH",
+            "optional": false
+          }
+        ],
+        "optional": false,
+        "spell": null
+      },
+      "value": {}
+    },
+    {
+      "id": "AEopQouxnhcO3dTA",
+      "type": "ItemChoice",
+      "level": 0,
+      "title": "Спутник",
+      "hint": "Выберите одно:\n        Спутник следопыта (книга игрока)\n        Первичный спутник (котёл Таши)",
+      "class_restriction": "",
+      "configuration": {
+        "choices": {
+          "3": {
+            "count": 1,
+            "replacement": false
+          }
+        },
+        "allowDrops": true,
+        "type": null,
+        "pool": [
+          {
+            "uuid": "Compendium.laaru-dnd5-hw.classfeatures.Item.wcSlc8osgFXbiHWt"
+          },
+          {
+            "uuid": "Compendium.laaru-dnd5-hw.classfeatures.Item.ci3UvWoN712LgmCW"
+          }
+        ],
+        "spell": null,
+        "restriction": {}
+      },
+      "value": {
+        "added": {},
+        "replaced": {}
+      }
+    }
+  ],
+  "granted_features": [],
+  "feature_choices": [],
+  "provenance": {
+    "source": "foundry",
+    "source_url": "https://github.com/foundryvtt/dnd5e/blob/965ad2d0cf5d063dac675ba078b5bd3c3c0dd449/packs/_source/laaru-hw-subclasses/Повелитель_зверей_PAH5yUzMdYSq7FBe.yml",
+    "ingest_date": "2026-10-26",
+    "ingest_version": "foundry-translator-v1",
+    "srd_version": [
+      "5.1"
+    ],
+    "license_tag": "CC-BY-4.0"
+  },
+  "review": {
+    "known_divergence": null,
+    "requires_user_decision": false
+  },
+  "entry_kind": "subclass"
+}

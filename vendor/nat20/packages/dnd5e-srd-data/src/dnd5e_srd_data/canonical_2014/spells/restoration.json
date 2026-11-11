@@ -1,0 +1,135 @@
+{
+  "slug": "restoration",
+  "foundry_uuid": "Compendium.dnd5e.laaru-hw-spells.Item.EoEQWa3u5IXSIc2R",
+  "name": "Восстановление / Restoration",
+  "description": "Вы касаетесь желающего существа и мгновенно избавляете его от одной болезни или одного из следующих состояний: &amp;reference[blinded]{Слепота}, &amp;reference[deafened]{Глухота}, &amp;reference[frightened]{Испуг}, &amp;reference[paralyzed]{Паралич} или &amp;reference[poisoned]{Отравление}.\n\nНа высоких кругах. Когда вы сотворяете это заклинание, используя ячейку заклинания 3-го круга или выше, количество состояний и эффектов, которые вы можете прекратить, увеличивается, но заклинание требует, чтобы вы потратили алмазную пыль определенной стоимости, которая расходуется во время сотворения:\n\nКруг ячейкиСтоимостьСостояния/эффекты\n\n3-й\n\n10 зм\n\nОбворожение, Утомление (1 степень)\n\n4-й\n\n50 зм\n\nСнижение на 1 характеристики\n\nили максимального количества ПЗ\n\n5-й\n\n100 зм\n\nОкаменение, Одно проклятие\n\nили Настроенность к проклятому предмету",
+  "level": 2,
+  "school": "abj",
+  "components": [],
+  "ritual": false,
+  "concentration": false,
+  "casting_time": {
+    "unit": "action",
+    "value": 1,
+    "condition": ""
+  },
+  "range": {
+    "units": "touch",
+    "value": null,
+    "special": null
+  },
+  "duration": {
+    "units": "inst",
+    "value": null
+  },
+  "materials": {
+    "value": "",
+    "consumed": false,
+    "cost": 0,
+    "supply": 0
+  },
+  "preparation": {
+    "mode": "prepared",
+    "prepared": false
+  },
+  "activities": [
+    {
+      "id": "dnd5eactivity000",
+      "name": "",
+      "img": "",
+      "sort": 0,
+      "activation": {
+        "type": "action",
+        "value": null,
+        "condition": "",
+        "override": false,
+        "reaction_conditions": []
+      },
+      "consumption": {
+        "scaling": {
+          "allowed": false,
+          "max": ""
+        },
+        "spell_slot": true,
+        "targets": []
+      },
+      "description": {
+        "chat_flavor": ""
+      },
+      "duration": {
+        "value": null,
+        "units": "inst",
+        "special": "",
+        "concentration": false,
+        "override": false
+      },
+      "flags": {},
+      "range": {
+        "value": null,
+        "units": "self",
+        "special": "",
+        "override": false
+      },
+      "target": {
+        "template": {
+          "count": "",
+          "contiguous": false,
+          "stationary": false,
+          "type": "",
+          "size": "",
+          "width": "",
+          "height": "",
+          "units": ""
+        },
+        "affects": {
+          "count": "",
+          "type": "",
+          "choice": false,
+          "special": ""
+        },
+        "override": false,
+        "prompt": true
+      },
+      "uses": {
+        "spent": 0,
+        "max": "",
+        "recovery": []
+      },
+      "visibility": {
+        "identifier": "",
+        "level": {
+          "min": null,
+          "max": null
+        },
+        "require_attunement": false,
+        "require_identification": false,
+        "require_magic": false
+      },
+      "effects": [],
+      "applied_effects": [],
+      "kind": "utility",
+      "roll": {
+        "formula": "",
+        "name": "",
+        "prompt": false,
+        "visible": false
+      }
+    }
+  ],
+  "passive_effects": [],
+  "provenance": {
+    "source": "foundry",
+    "source_url": "https://github.com/foundryvtt/dnd5e/blob/965ad2d0cf5d063dac675ba078b5bd3c3c0dd449/packs/_source/laaru-hw-spells/Восстановление___Restoration_EoEQWa3u5IXSIc2R.yml",
+    "ingest_date": "2026-10-26",
+    "ingest_version": "foundry-translator-v1",
+    "srd_version": [
+      "5.1"
+    ],
+    "license_tag": "CC-BY-4.0"
+  },
+  "review": {
+    "known_divergence": null,
+    "requires_user_decision": false
+  },
+  "entry_kind": "spell"
+}

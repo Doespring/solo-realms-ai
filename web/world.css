@@ -1,0 +1,4 @@
+#world-map{width:100%;border:1px solid var(--line);border-radius:12px;touch-action:none;background:var(--surface)}
+.world-places{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:12px;margin:16px 0}
+.world-place,.world-plan:not(:empty){padding:16px;border:1px solid var(--line);border-radius:12px;background:var(--surface);margin:12px 0}
+#world .disclosure{margin:16px 0}#world label{margin:12px 0}

@@ -1,0 +1,171 @@
+{
+  "activities": [
+    {
+      "activation": {
+        "condition": "",
+        "override": false,
+        "reaction_conditions": [],
+        "type": "action",
+        "value": null
+      },
+      "applied_effects": [],
+      "consumption": {
+        "scaling": {
+          "allowed": false,
+          "max": ""
+        },
+        "spell_slot": true,
+        "targets": []
+      },
+      "damage": {
+        "on_save": "half",
+        "parts": []
+      },
+      "description": {
+        "chat_flavor": ""
+      },
+      "duration": {
+        "concentration": false,
+        "override": false,
+        "special": "",
+        "units": "inst",
+        "value": null
+      },
+      "effects": [
+        {
+          "id": "VxmsgUz9OIUet6WC",
+          "level": {
+            "max": null,
+            "min": null
+          },
+          "on_save": false,
+          "riders": null
+        }
+      ],
+      "flags": {},
+      "id": "dnd5eactivity000",
+      "img": "",
+      "kind": "save",
+      "name": "",
+      "range": {
+        "override": false,
+        "special": "",
+        "units": "self",
+        "value": null
+      },
+      "save": {
+        "ability": [
+          "wis"
+        ],
+        "dc": {
+          "calculation": "spellcasting",
+          "formula": ""
+        },
+        "ignore_cover": false
+      },
+      "sort": 0,
+      "target": {
+        "affects": {
+          "choice": false,
+          "count": "",
+          "special": "",
+          "type": ""
+        },
+        "override": false,
+        "prompt": true,
+        "template": {
+          "contiguous": false,
+          "count": "",
+          "height": "",
+          "size": "@item.level * 5 - 10",
+          "stationary": false,
+          "type": "sphere",
+          "units": "ft",
+          "width": ""
+        }
+      },
+      "uses": {
+        "max": "",
+        "recovery": [],
+        "spent": 0
+      },
+      "visibility": {
+        "identifier": "",
+        "level": {
+          "max": null,
+          "min": null
+        },
+        "require_attunement": false,
+        "require_identification": false,
+        "require_magic": false
+      }
+    }
+  ],
+  "casting_time": {
+    "condition": "",
+    "unit": "action",
+    "value": 1
+  },
+  "components": [
+    "M",
+    "S",
+    "V"
+  ],
+  "concentration": true,
+  "description": "Each creature in a 10-foot-radius Sphere centered on a point you choose within range must succeed on a Wisdom saving throw, or that target can't take Bonus Actions or Reactions and must roll 1d10 at the start of each of its turns to determine its behavior for that turn, consulting the table below.\n\n@Embed[Compendium.dnd5e.tables24.RollTable.phbsplConfusionB rollable cite=false classes=\"caption-top\"]{Behavior for the Turn}\n\nAt the end of each of its turns, an affected target repeats the save, ending the spell on itself on a success.\n\nUsing a Higher-Level Spell Slot. The Sphere's radius increases by 5 feet for each spell slot level above 4.",
+  "description_localized": "<p>Заклинание затуманивает разум существ, вызывая у них бред и провоцируя на неуправляемые действия. Каждое существо в пределах сферы радиусом 10 футов вокруг выбранной вами точки в пределах дистанции должно пройти испытание Мудрости, при провале оно попадает под влияние заклинания.</p><p> Под влиянием заклинания цель не может совершать ответные действия и должна бросать [[/r d10]] в начале каждого своего хода, чтобы определить, как она поведёт себя в этот ход.</p><table class=\"rd__table  stripe-odd-table\"><caption><span style=\"text-align:start\">Поведение замешательства</span></caption><thead><tr><th class=\"col-1 text-center\" data-rd-isroller=\"true\">[[/r d10]]</th><th class=\"col-11\" data-rd-isroller=\"false\"><span style=\"color:#000000;font-weight:400;text-align:start\">Поведение </span></th></tr></thead><tbody><tr><td class=\"col-1 text-center\" data-roll-min=\"1\" data-roll-max=\"1\">1</td><td class=\"col-11\">Цель тратит всю свою скорость на перемещение в случайном направлении. Чтобы определить направление, бросьте [[/r d8]], назначив направление для каждого значения. В этот ход существо не совершает действие. </td></tr><tr><td class=\"col-1 text-center\" data-roll-min=\"2\" data-roll-max=\"6\">2-6</td><td class=\"col-11\">Цель не перемещается и не совершает действий в этот ход.</td></tr><tr><td class=\"col-1 text-center\" data-roll-min=\"7\" data-roll-max=\"8\">7-8</td><td class=\"col-11\">Цель использует действие, чтобы совершить атаку ближнего боя по случайно выбранному существу в пределах зоны досягаемости. Если в зоне досяга емости нет существ, цель ничего не делает в этот ход </td></tr><tr><td class=\"col-1 text-center\" data-roll-min=\"9\" data-roll-max=\"10\">9-10</td><td class=\"col-11\">Цель перемещается и действует как обычно.</td></tr></tbody></table><div class=\"rd__spc-inline-post\"><p>В конце каждого своего хода цель может пройти испытание Мудрости. При успехе заклинание прекращает действовать на неё.</p></div><div class=\"rd__spc-inline-post\"><p><strong>На высоких кругах</strong>. Если вы сотворяете это заклинание, используя ячейку 5-го круга или выше, радиус сферы увеличивается на 5 футов за каждый круг ячейки выше 4-го.</p></div>",
+  "duration": {
+    "units": "minute",
+    "value": 1
+  },
+  "entry_kind": "spell",
+  "foundry_uuid": "Compendium.dnd5e.spells24.Item.phbsplConfusion0",
+  "level": 4,
+  "materials": {
+    "consumed": false,
+    "cost": 0,
+    "supply": 0,
+    "value": "three nut shells"
+  },
+  "name": "Замешательство",
+  "passive_effects": [
+    {
+      "changes": [],
+      "description": "<p>The target can’t take Bonus Actions or Reactions and must roll 1d10 at the start of each of its turns to determine its behavior for that turn, consulting the table below.</p><p>@Embed[Compendium.dnd5e.tables24.RollTable.phbsplConfusionB rollable cite=false classes=\"caption-top\"]{Behavior for the Turn}</p><p>At the end of each of its turns, an affected target repeats the [[/save ability=wis]] save, ending the spell on itself on a success.</p>",
+      "disabled": false,
+      "duration": {
+        "seconds": 60
+      },
+      "id": "VxmsgUz9OIUet6WC",
+      "name": "Confused",
+      "statuses": [],
+      "transfer": false
+    }
+  ],
+  "preparation": {
+    "mode": "prepared",
+    "prepared": false
+  },
+  "provenance": {
+    "ingest_date": "2026-05-30",
+    "ingest_version": "foundry-translator-v1",
+    "license_tag": "CC-BY-4.0",
+    "source": "foundry",
+    "source_url": "https://github.com/foundryvtt/dnd5e/blob/965ad2d0cf5d063dac675ba078b5bd3c3c0dd449/packs/_source/spells24/4th-level/confusion.yml",
+    "srd_version": [
+      "5.2"
+    ]
+  },
+  "range": {
+    "special": null,
+    "units": "ft",
+    "value": 90
+  },
+  "review": {
+    "known_divergence": null,
+    "requires_user_decision": false
+  },
+  "ritual": false,
+  "school": "enc",
+  "slug": "confusion"
+}

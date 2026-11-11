@@ -1,0 +1,171 @@
+{
+  "activities": [
+    {
+      "activation": {
+        "condition": "",
+        "override": false,
+        "reaction_conditions": [],
+        "type": "action",
+        "value": null
+      },
+      "applied_effects": [],
+      "bonuses": {
+        "ac": "@item.level",
+        "attack_damage": "@item.level",
+        "hd": "",
+        "healing": "",
+        "hp": "10 * (@item.level - 5)",
+        "save_damage": ""
+      },
+      "consumption": {
+        "scaling": {
+          "allowed": false,
+          "max": ""
+        },
+        "spell_slot": true,
+        "targets": []
+      },
+      "creature_sizes": [],
+      "creature_types": [],
+      "description": {
+        "chat_flavor": ""
+      },
+      "duration": {
+        "concentration": false,
+        "override": false,
+        "special": "",
+        "units": "inst",
+        "value": null
+      },
+      "effects": [],
+      "flags": {},
+      "id": "gOf4QDymYpUVAvTk",
+      "img": "",
+      "kind": "summon",
+      "match": {
+        "ability": "",
+        "attacks": true,
+        "disposition": false,
+        "proficiency": true,
+        "saves": true
+      },
+      "name": "",
+      "profiles": [
+        {
+          "count": "",
+          "cr": "",
+          "id": "Bi6h3KIV8Sx2zSdH",
+          "level": {
+            "max": null,
+            "min": null
+          },
+          "name": "",
+          "types": [],
+          "uuid": "Compendium.dnd5e.actors24.Actor.phbmobDraconicSp"
+        }
+      ],
+      "range": {
+        "override": false,
+        "special": "",
+        "units": "self",
+        "value": null
+      },
+      "sort": 0,
+      "summon": {
+        "identifier": "",
+        "mode": "",
+        "prompt": true
+      },
+      "target": {
+        "affects": {
+          "choice": false,
+          "count": "1",
+          "special": "",
+          "type": "space"
+        },
+        "override": false,
+        "prompt": true,
+        "template": {
+          "contiguous": false,
+          "count": "",
+          "height": "",
+          "size": "",
+          "stationary": false,
+          "type": "",
+          "units": "",
+          "width": ""
+        }
+      },
+      "temp_hp": "",
+      "uses": {
+        "max": "",
+        "recovery": [],
+        "spent": 0
+      },
+      "visibility": {
+        "identifier": "",
+        "level": {
+          "max": null,
+          "min": null
+        },
+        "require_attunement": false,
+        "require_identification": false,
+        "require_magic": false
+      }
+    }
+  ],
+  "casting_time": {
+    "condition": "",
+    "unit": "action",
+    "value": 1
+  },
+  "components": [
+    "M",
+    "S",
+    "V"
+  ],
+  "concentration": true,
+  "description": "You call forth a Dragon spirit. It manifests in an unoccupied space that you can see within range and uses the Draconic Spirit stat block. The creature disappears when it drops to 0 Hit Points or when the spell ends.\n\nThe creature is an ally to you and your allies. In combat, the creature shares your Initiative count, but it takes its turn immediately after yours. It obeys your verbal commands (no action required by you). If you don't issue any, it takes the Dodge action and uses its movement to avoid danger.\n\nUsing a Higher-Level Spell Slot. Use the spell slot's level for the spell's level in the stat block.\n\n@Embed[Compendium.dnd5e.actors24.Actor.phbmobDraconicSp caption=false statblock]",
+  "description_localized": "<p>Вы вызываете магического духа дракона. Он появляется в незанятом пространстве, которое вы можете видеть в пределах дистанции. Он использует блок параметров духа дракона. Когда вы сотворяете заклинание, выберите цвет из таблицы ниже. Существо напоминает дракона этого цвета, который определяет некоторые характеристики в его блоке параметров в соответствии с таблицей драконов ниже, где они перечислены в характеристиках в его блоке параметров. Существо исчезает, когда его ПЗ падают до 0 или когда заклинание заканчивается.</p><p>Существо является союзником для вас и ваших компаньонов. В бою существо использует ваш показатель инициативы, но ходит сразу после вас. Если вы не даете ему словесных команд (от вас не требуется действий), оно выполняет действие @UUID[Compendium.laaru-dnd5-hw.actions.Item.UMuz44p8fXeLCZn7]{Уклонение} и использует свое движение, чтобы избежать опасности.</p><p><em><strong>На высоких кругах</strong></em>. Когда вы сотворяете это заклинание, используя ячейку заклинаний 3-го круга или выше, используйте более высокий круг всякий раз, когда круг заклинания появляется в блоке параметров.</p><section class=\"secret\" id=\"secret-6CM8Wntw0RjZujdG\"><p><strong>Примечание</strong></p><p>Данное заклинание настроено как Призыв. Вам надо будет вручную изменить КБ дракона и добавить бонусные ПЗ. (см. био. дракона)</p></section><table style=\"width:100%;height:17px\"><thead style=\"text-shadow:1px 1px var(--color-shadow-dark);border-bottom:1px solid var(--color-border-dark)\"><tr style=\"height:17px\"><td style=\"width:24%;height:17px\"><p style=\"text-align:center\"><strong>Дракон</strong></p></td><td style=\"width:18%;height:17px\"><p style=\"text-align:center\"><strong>Стихия</strong></p></td><td style=\"width:58%;height:17px\"><p style=\"text-align:center\"><strong>Область действия дыхания</strong></p></td></tr></thead><tbody><tr><td><p style=\"text-align:center\">@UUID[Compendium.laaru-dnd5-hw.monsters2.Actor.SMBMYIhdV3HRFk5c]{Чёрный}</p></td><td><p style=\"text-align:center\">Кислота</p></td><td><p style=\"text-align:center\">Линия 60 на 5 футов (испытание Ловкости)</p></td></tr><tr><td><p style=\"text-align:center\">@UUID[Compendium.laaru-dnd5-hw.monsters2.Actor.WgNhqDEd02ZXpofJ]{Синий}</p></td><td><p style=\"text-align:center\">Молния</p></td><td><p style=\"text-align:center\">Линия 60 на 5 футов (испытание Ловкости)</p></td></tr><tr><td><p style=\"text-align:center\">@UUID[Compendium.laaru-dnd5-hw.monsters2.Actor.3rViIWa3rAvIP6a6]{Латунный}</p></td><td><p style=\"text-align:center\">Огонь</p></td><td><p style=\"text-align:center\">Линия 60 на 5 футов (испытание Ловкости)</p></td></tr><tr><td><p style=\"text-align:center\">@UUID[Compendium.laaru-dnd5-hw.monsters2.Actor.g0rFmDel7vFGAHCT]{Бронзовый}</p></td><td><p style=\"text-align:center\">Молния</p></td><td><p style=\"text-align:center\">Линия 60 на 5 футов (испытание Ловкости)</p></td></tr><tr><td><p style=\"text-align:center\">@UUID[Compendium.laaru-dnd5-hw.monsters2.Actor.9DMTqTymuzYITIFx]{Медный}</p></td><td><p style=\"text-align:center\">Кислота</p></td><td><p style=\"text-align:center\">Линия 60 на 5 футов (испытание Ловкости)</p></td></tr><tr><td><p style=\"text-align:center\">@UUID[Compendium.laaru-dnd5-hw.monsters2.Actor.tZeBFiEETa8K3m1L]{Золотой}</p></td><td><p style=\"text-align:center\">Огонь</p></td><td><p style=\"text-align:center\">Конус 30 футов (испытание Ловкости)</p></td></tr><tr><td><p style=\"text-align:center\">@UUID[Compendium.laaru-dnd5-hw.monsters2.Actor.hFtJ4gjdlE8a10yX]{Зелёный}</p></td><td><p style=\"text-align:center\">Яд</p></td><td><p style=\"text-align:center\">Конус 30 футов (испытание Выносливости)</p></td></tr><tr><td><p style=\"text-align:center\">@UUID[Compendium.laaru-dnd5-hw.monsters2.Actor.NyyeggfaJlLX6Tze]{Красный}</p></td><td><p style=\"text-align:center\">Огонь</p></td><td><p style=\"text-align:center\">Конус 30 футов (испытание Ловкости)</p></td></tr><tr><td><p style=\"text-align:center\">@UUID[Compendium.laaru-dnd5-hw.monsters2.Actor.cSYGlC7SD9ZvOxjU]{Серебряный}</p></td><td><p style=\"text-align:center\">Холод</p></td><td><p style=\"text-align:center\">Конус 30 футов (испытание Выносливости)</p></td></tr><tr><td><p style=\"text-align:center\">@UUID[Compendium.laaru-dnd5-hw.monsters2.Actor.hMy61SfeL7idqPnc]{Белый}</p></td><td><p style=\"text-align:center\">Холод</p></td><td><p style=\"text-align:center\">Линия 60 на 5 футов (испытание Выносливости)</p></td></tr></tbody></table>",
+  "duration": {
+    "units": "hour",
+    "value": 1
+  },
+  "entry_kind": "spell",
+  "foundry_uuid": "Compendium.dnd5e.spells24.Item.phbsplSummonDrag",
+  "level": 5,
+  "materials": {
+    "consumed": false,
+    "cost": 0,
+    "supply": 0,
+    "value": "an object with the image of a dragon engraved on it worth 500+ GP"
+  },
+  "name": "Призыв дракона",
+  "passive_effects": [],
+  "preparation": {
+    "mode": "prepared",
+    "prepared": false
+  },
+  "provenance": {
+    "ingest_date": "2026-05-30",
+    "ingest_version": "foundry-translator-v1",
+    "license_tag": "CC-BY-4.0",
+    "source": "foundry",
+    "source_url": "https://github.com/foundryvtt/dnd5e/blob/965ad2d0cf5d063dac675ba078b5bd3c3c0dd449/packs/_source/spells24/5th-level/summon-dragon.yml",
+    "srd_version": [
+      "5.2"
+    ]
+  },
+  "range": {
+    "special": null,
+    "units": "ft",
+    "value": 60
+  },
+  "review": {
+    "known_divergence": null,
+    "requires_user_decision": false
+  },
+  "ritual": false,
+  "school": "con",
+  "slug": "summon-dragon"
+}

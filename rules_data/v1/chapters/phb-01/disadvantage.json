@@ -1,0 +1,27 @@
+{
+  "schema_version": "1.0.0",
+  "id": "dnd2024.d20.disadvantage",
+  "revision": 1,
+  "name": "Помеха: выбор меньшего к20",
+  "edition": "dnd2024",
+  "category": "d20_test",
+  "conditions": {"all": [
+    {"fact": "advantage_sources", "operator": "eq", "value": 0},
+    {"fact": "disadvantage_sources", "operator": "gte", "value": 1}
+  ]},
+  "triggers": [{"event": "d20_test.before_roll", "scope": ["ability_check", "saving_throw", "attack_roll"]}],
+  "effects": [{"op": "select_d20_pool", "count": 2, "sides": 20, "keep": "lowest"}],
+  "duration": {"kind": "instantaneous"},
+  "resources": [],
+  "restrictions": [{"code": "non_stacking", "description": "Несколько причин помехи не увеличивают число костей сверх двух.", "source_derived": true}],
+  "sources": [{
+    "document_id": "phb_2024_ru",
+    "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+    "chapter": "1. Правила игры",
+    "section": "Преимущество/Помеха; Бросок двух к20; Преимущества и помехи не складываются",
+    "pages": [{"pdf": 13, "printed": "12"}],
+    "knowledge_section_ids": [59686, 59687]
+  }],
+  "verification": {"status": "source_checked", "method": "pdf_text_and_visual", "checked_on": "2026-10-16", "reviewer": "codex", "human_review": "pending", "evidence": ["evidence/phb-pdf-013-014.txt"]},
+  "engine": {"compatibility": "implemented_subset", "handler": "RulesetEngine.d20", "supported_scope": ["ability_check", "saving_throw", "attack_roll"], "auto_activate": false, "notes": "Статическая сверка rulesets.py:58-66. Итоговая помеха включает вычисляемые движком эффекты истощения и состояния poisoned; это не новые правила из данного подраздела."}
+}

@@ -1,0 +1,11 @@
+{
+  "schema_version": "1.0.0", "id": "dnd2024.test.unknown_effect", "revision": 1,
+  "name": "Negative fixture: unknown executable operation", "edition": "dnd2024", "category": "d20_test",
+  "conditions": {"fact": "advantage_sources", "operator": "gte", "value": 1},
+  "triggers": [{"event": "d20_test.before_roll", "scope": ["ability_check"]}],
+  "effects": [{"op": "execute_code"}],
+  "duration": {"kind": "instantaneous"}, "resources": [], "restrictions": [],
+  "sources": [{"document_id": "phb_2024_ru", "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5", "chapter": "1", "section": "Преимущество/Помеха", "pages": [{"pdf": 13, "printed": "12"}], "knowledge_section_ids": [59686]}],
+  "verification": {"status": "candidate", "method": "none", "checked_on": null, "reviewer": "test_fixture", "human_review": "pending", "evidence": []},
+  "engine": {"compatibility": "reference_only", "handler": null, "supported_scope": [], "auto_activate": false, "notes": "Negative fixture only; not a rule."}
+}

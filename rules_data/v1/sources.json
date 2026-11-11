@@ -1,0 +1,38 @@
+{
+  "manifest_version": "1.0.0",
+  "checked_on": "2026-10-16",
+  "documents": [
+    {
+      "id": "phb_2024_ru",
+      "path": "C:/Users/iwa41/Downloads/Player's Handbook 2024 RUS.pdf",
+      "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+      "edition": "dnd2024", "kind": "phb", "pdf_pages": 388,
+      "rights": "user_private",
+      "knowledge_match": "same_sha256",
+      "index_version": 3,
+      "extracted_scope": [{"chapter": "1. Правила игры", "section": "Преимущество/Помеха", "pdf_pages": [13, 14], "printed_pages": ["12", "13"]}],
+      "text_evidence": "evidence/phb-pdf-013-014.txt"
+    },
+    {
+      "id": "dmg_2024_ru_v1_1",
+      "path": "C:/Users/iwa41/Downloads/Руководство Мастера 2024 v1.1.pdf",
+      "sha256": "2fdee6ad8dd6931eaf41b19cdf498d6d86ddca6e54ad9b9c8a5417585c1c526d",
+      "edition": "dnd2024", "kind": "dmg", "pdf_pages": 342,
+      "rights": "user_private",
+      "knowledge_match": "not_in_rules_knowledge_catalog",
+      "existing_pdf_pipeline_report": "reports/pdf-pipeline-stage1/corpus.json",
+      "existing_pdf_pipeline_status": "342 pages indexed; semantic_status requires_review",
+      "extracted_scope": [],
+      "notes": "Проверены метаданные и SHA-256. Правила DMG в этом пакете не извлекались."
+    }
+  ],
+  "knowledge_catalog_snapshot": [
+    {"kind": "srd", "edition": "dnd2014", "sha256": "2504d2a0abb0a4d491a939be4f17910a2dde0312570ab8d208080225ccf0a1f0", "pages": 403, "partial": false, "indexed_complete": true},
+    {"kind": "dmg", "edition": "dnd2024", "sha256": "19579df9d915aa8b8d574497178a8fa880caa5f98439c72d6c6bd6fab8ba96be", "pages": 185, "partial": true, "indexed_complete": true},
+    {"kind": "phb", "edition": "dnd2024", "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5", "pages": 388, "partial": false, "indexed_complete": true},
+    {"kind": "srd", "edition": "dnd2024", "sha256": "8974902d109d6e63672d7c490bde9ccf052410503d9cfa768237154fbc5e3d87", "pages": 364, "partial": false, "indexed_complete": true}
+  ],
+  "source_instructions_executed": false,
+  "external_links_followed": false,
+  "paid_api_calls": 0
+}

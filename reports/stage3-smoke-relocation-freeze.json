@@ -1,0 +1,176 @@
+{
+  "status": "source-frozen",
+  "date": "2026-10-18",
+  "scope": "Stage 3 smoke relocation only",
+  "checks": {
+    "live_paid_calls": 0,
+    "positive_gate_seconds": 13.81,
+    "built_exe_zip": false,
+    "positive_gate_pass": 1,
+    "full_suite": false,
+    "reused_pass": 6
+  },
+  "cache_dependency": {
+    "manifest": "reports/stage3-content-cache/freeze.json",
+    "sha256": "f0d43732e1243793c1ab44a94b8b34983dfe98a1137d06acdf41241fecf14cfb"
+  },
+  "files": [
+    {
+      "path": "scripts/__init__.py",
+      "sha256": "92df2353ae5ed8d9d40058c8088d4e22fd24477fb8b014e7120c3c91f694d769",
+      "bytes": 86
+    },
+    {
+      "path": "scripts/command_smoke.py",
+      "sha256": "743c29a819af91c985fe3a039c20b471b1437bcc432c0b0b0556dbd7889fe97b",
+      "bytes": 3905
+    },
+    {
+      "path": "scripts/desktop_cloud_smoke.py",
+      "sha256": "3afb637c5ef37230310a72fcb8dff3d8a9f75075aa1fa2e5028b9992638173ec",
+      "bytes": 4347
+    },
+    {
+      "path": "scripts/desktop_creation_smoke.py",
+      "sha256": "d71d35097283db7a0163b571128a1e1d70ebf55aafa4128a1e2fcd512766c33f",
+      "bytes": 6087
+    },
+    {
+      "path": "scripts/smoke_fixture.py",
+      "sha256": "fb94b36369fe608927112be0698d4e7f62f0f09b2592685cce4f771a6845add6",
+      "bytes": 11192
+    },
+    {
+      "path": "scripts/playable_ai_readiness.py",
+      "sha256": "3d1cb08aac78ae0f4c791096e4c288dc77a87da43f574be12e91e99be4645f34",
+      "bytes": 13349
+    },
+    {
+      "path": "desktop_main.py",
+      "sha256": "b1682af0215ec472882f5a234c79139157ba713a522d7b46f6ed2ac71eeb64b5",
+      "bytes": 13727
+    },
+    {
+      "path": "solo/desktop_observations.py",
+      "sha256": "dc0e18e4a11f2af3cfc304681b64f6df7657a7788016b40a16bd67addbfd5350",
+      "bytes": 26260
+    },
+    {
+      "path": "packaging/SoloRealmsAI.spec",
+      "sha256": "d020dd236955663850d8670b0c513f3c16c7ca0973eef5fcebc1c40e24fc5b84",
+      "bytes": 3279
+    },
+    {
+      "path": "tests/test_command_cycle.py",
+      "sha256": "cf0a6daf4a4d9760829ffad724048d3a49dbce9116fee580d419213cb017589e",
+      "bytes": 14257
+    },
+    {
+      "path": "tests/test_playable_ai_readiness.py",
+      "sha256": "77a8c52ecd8175a4d8b0ad4c409123b1830d86c9f43319a31e4425144ecd4ea4",
+      "bytes": 11573
+    },
+    {
+      "path": "tests/test_play_screen.py",
+      "sha256": "a42e662c843168dd7874b147f92476b8f73d01d0828889dcd8c2c1244404622b",
+      "bytes": 5466
+    },
+    {
+      "path": "tests/test_desktop_pdf_smoke.py",
+      "sha256": "a55746e0e648bd6e105cdc1c492237eaf11dbcf9b8d64b37f28f819b31b5c2ff",
+      "bytes": 3086
+    },
+    {
+      "path": "tests/test_frozen_pdf_smoke_fixture.py",
+      "sha256": "fb84f36ef249770bfc9c273f998744fbe98057a939b77b2aa714a95cbd922f21",
+      "bytes": 6157
+    },
+    {
+      "path": "tests/test_smoke_relocation.py",
+      "sha256": "4c3f7f12e878ddc520527016f4de6bbc49f8d5a3f4475fcd38b8f2be1678f38f",
+      "bytes": 2094
+    },
+    {
+      "path": "docs/GM_COMMAND_CYCLE.md",
+      "sha256": "a35f08322c5df87eba417aad90eb1780067b3bbb2277a67cdd7fc4c54a07de8b",
+      "bytes": 13713
+    },
+    {
+      "path": "docs/PDF_FROZEN_SMOKE_FIXTURE.md",
+      "sha256": "e1a9bcf7e28874086a369255a404d696079322cc1c3bde4081edf2ff0d329426",
+      "bytes": 9096
+    },
+    {
+      "path": "reports/STAGE3_SMOKE_RELOCATION.md",
+      "sha256": "573337b7ba3b3f2fe614383ab305a651c0b9136e18497318d50d387bfc129ae7",
+      "bytes": 7780
+    },
+    {
+      "path": "reports/stage3-smoke-move-plan.json",
+      "sha256": "bbff5b97efcb0379bd028686ee9c5369e38b8d7612bd55590a7ae7661c8bdb91",
+      "bytes": 835
+    }
+  ],
+  "removed_paths": [
+    {
+      "removed_path": "solo/command_smoke.py",
+      "removed_sha256": "d84d4ab010cc0ecd898008668b5f01636745e73cbf07b8969d42a35db45096b8",
+      "replacement_path": "scripts/command_smoke.py"
+    },
+    {
+      "removed_path": "solo/desktop_cloud_smoke.py",
+      "removed_sha256": "d10c514909614362e8c3b31ef58953c71926d3626bdab55b4733c14526331fa3",
+      "replacement_path": "scripts/desktop_cloud_smoke.py"
+    },
+    {
+      "removed_path": "solo/desktop_creation_smoke.py",
+      "removed_sha256": "d71d35097283db7a0163b571128a1e1d70ebf55aafa4128a1e2fcd512766c33f",
+      "replacement_path": "scripts/desktop_creation_smoke.py"
+    },
+    {
+      "removed_path": "solo/smoke_fixture.py",
+      "removed_sha256": "c2069a758ab19bc3d63b5e2cb2a66aa48319c11659a70aef33dff1b312ff6e8b",
+      "replacement_path": "scripts/smoke_fixture.py"
+    }
+  ],
+  "remove_policy": "Remove only these old paths if SHA256 matches removed_sha256; stop on external changes",
+  "duplicate_docs": [
+    {
+      "asset": "assets/COMBAT.md",
+      "document": "docs/COMBAT.md",
+      "sha256": "b0237f5e66a7f260f81e8991250e5d41b6caa1ecf2d995f8ad3aee4f4c8013a5",
+      "action": "report-only; preserve runtime assets, root owns documentation decision"
+    },
+    {
+      "asset": "assets/INVENTORY.md",
+      "document": "docs/INVENTORY.md",
+      "sha256": "24562e17f4d1994d188361142110698cec4f4bbbf9ad276ca340e0a13f56d906",
+      "action": "report-only; preserve runtime assets, root owns documentation decision"
+    },
+    {
+      "asset": "assets/MAPS.md",
+      "document": "docs/MAPS.md",
+      "sha256": "4d2f522aea7403312491ea376383bf9dccef96928b48f4b51616309d53656f13",
+      "action": "report-only; preserve runtime assets, root owns documentation decision"
+    },
+    {
+      "asset": "assets/RULESETS.md",
+      "document": "docs/RULESETS.md",
+      "sha256": "054ca32bbb4a843f8bfd9b1e84e49452b8e21eea7ed37aa32c871455feb95581",
+      "action": "report-only; preserve runtime assets, root owns documentation decision"
+    },
+    {
+      "asset": "assets/SRD_ATTRIBUTION.md",
+      "document": "docs/SRD_ATTRIBUTION.md",
+      "sha256": "53edbc51dfa934205d739e21ad736e2a040a2ca5e6b630eb252d89963b2f6ea1",
+      "action": "report-only; preserve runtime assets, root owns documentation decision"
+    },
+    {
+      "asset": "assets/WORLD.md",
+      "document": "docs/WORLD.md",
+      "sha256": "a851797d041a2a2dd21fc41e372d67a246930f1f1134c8f86706814a35dfe947",
+      "action": "report-only; preserve runtime assets, root owns documentation decision"
+    }
+  ],
+  "root_followup": "README.md:67 change python -m solo.command_smoke to python -m scripts.command_smoke; no other shared docs changed"
+}

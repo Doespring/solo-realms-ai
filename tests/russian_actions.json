@@ -1,0 +1,440 @@
+[
+  {
+    "id": 1,
+    "text": "Я атакую стража.",
+    "kinds": [
+      "attack"
+    ],
+    "dispositions": [
+      "now"
+    ]
+  },
+  {
+    "id": 2,
+    "text": "Я собираюсь атаковать стража.",
+    "kinds": [
+      "attack"
+    ],
+    "dispositions": [
+      "intended"
+    ]
+  },
+  {
+    "id": 3,
+    "text": "Я не атакую стража.",
+    "kinds": [
+      "attack"
+    ],
+    "dispositions": [
+      "negated"
+    ]
+  },
+  {
+    "id": 4,
+    "text": "Я атакую стража, только если он нападёт первым.",
+    "kinds": [
+      "attack"
+    ],
+    "dispositions": [
+      "conditional"
+    ]
+  },
+  {
+    "id": 5,
+    "text": "Если дверь открыта, захожу в комнату; иначе жду у порога.",
+    "kinds": [
+      "move",
+      "wait"
+    ],
+    "dispositions": [
+      "conditional",
+      "conditional"
+    ]
+  },
+  {
+    "id": 6,
+    "text": "Сначала осматриваю дверь, затем спрашиваю Ирину о ключе.",
+    "kinds": [
+      "observe",
+      "speak"
+    ],
+    "dispositions": [
+      "now",
+      "now"
+    ]
+  },
+  {
+    "id": 7,
+    "text": "Не открываю сундук, а изучаю петли.",
+    "kinds": [
+      "other",
+      "observe"
+    ],
+    "dispositions": [
+      "negated",
+      "now"
+    ]
+  },
+  {
+    "id": 8,
+    "text": "Говорю стражу: «Я атакую тебя», но меч не достаю.",
+    "kinds": [
+      "speak",
+      "other"
+    ],
+    "dispositions": [
+      "now",
+      "negated"
+    ]
+  },
+  {
+    "id": 9,
+    "text": "Хочу потом поговорить с Ириной, сейчас жду.",
+    "kinds": [
+      "speak",
+      "wait"
+    ],
+    "dispositions": [
+      "intended",
+      "now"
+    ]
+  },
+  {
+    "id": 10,
+    "text": "Если страж отвернётся, попробую пройти мимо него незаметно.",
+    "kinds": [
+      "move"
+    ],
+    "dispositions": [
+      "conditional"
+    ]
+  },
+  {
+    "id": 11,
+    "text": "Спрашиваю Ирину, кто последний видел пропавшего гонца.",
+    "kinds": [
+      "speak"
+    ],
+    "dispositions": [
+      "now"
+    ]
+  },
+  {
+    "id": 12,
+    "text": "Вру стражу, что меня послал капитан.",
+    "kinds": [
+      "speak"
+    ],
+    "dispositions": [
+      "now"
+    ]
+  },
+  {
+    "id": 13,
+    "text": "Я не собираюсь убивать стража.",
+    "kinds": [
+      "attack"
+    ],
+    "dispositions": [
+      "negated"
+    ]
+  },
+  {
+    "id": 14,
+    "text": "Планирую осмотреть башню после заката.",
+    "kinds": [
+      "observe"
+    ],
+    "dispositions": [
+      "intended"
+    ]
+  },
+  {
+    "id": 15,
+    "text": "Если Ирина согласится, передам ей письмо.",
+    "kinds": [
+      "other"
+    ],
+    "dispositions": [
+      "conditional"
+    ]
+  },
+  {
+    "id": 16,
+    "text": "Осматриваю окно, не касаясь стекла.",
+    "kinds": [
+      "observe"
+    ],
+    "dispositions": [
+      "now"
+    ]
+  },
+  {
+    "id": 17,
+    "text": "Прошу Ирину подождать и иду к двери.",
+    "kinds": [
+      "speak",
+      "move"
+    ],
+    "dispositions": [
+      "now",
+      "now"
+    ]
+  },
+  {
+    "id": 18,
+    "text": "Достаю верёвку и привязываю её к столбу.",
+    "kinds": [
+      "use",
+      "use"
+    ],
+    "dispositions": [
+      "now",
+      "now"
+    ]
+  },
+  {
+    "id": 19,
+    "text": "Проверяю замок на двери отмычками.",
+    "kinds": [
+      "check"
+    ],
+    "dispositions": [
+      "now"
+    ]
+  },
+  {
+    "id": 20,
+    "text": "Жду, пока страж уйдёт, после чего подхожу к двери.",
+    "kinds": [
+      "wait",
+      "move"
+    ],
+    "dispositions": [
+      "now",
+      "conditional"
+    ]
+  },
+  {
+    "id": 21,
+    "text": "Не пью зелье, оставляю его на потом.",
+    "kinds": [
+      "use"
+    ],
+    "dispositions": [
+      "negated"
+    ]
+  },
+  {
+    "id": 22,
+    "text": "Пью зелье, только если мои хиты упадут ниже пяти.",
+    "kinds": [
+      "use"
+    ],
+    "dispositions": [
+      "conditional"
+    ]
+  },
+  {
+    "id": 23,
+    "text": "Рассказываю Ирине о следах и показываю письмо.",
+    "kinds": [
+      "speak",
+      "other"
+    ],
+    "dispositions": [
+      "now",
+      "now"
+    ]
+  },
+  {
+    "id": 24,
+    "text": "Говорю: «Если он нападёт, я убегу».",
+    "kinds": [
+      "speak"
+    ],
+    "dispositions": [
+      "now"
+    ]
+  },
+  {
+    "id": 25,
+    "text": "Страж сказал атаковать разбойника. Я отказываюсь.",
+    "kinds": [
+      "speak"
+    ],
+    "dispositions": [
+      "now"
+    ]
+  },
+  {
+    "id": 26,
+    "text": "Собираюсь выпить зелье, но ещё не пью.",
+    "kinds": [
+      "use",
+      "use"
+    ],
+    "dispositions": [
+      "intended",
+      "negated"
+    ]
+  },
+  {
+    "id": 27,
+    "text": "Перехожу к окну и осматриваю улицу.",
+    "kinds": [
+      "move",
+      "observe"
+    ],
+    "dispositions": [
+      "now",
+      "now"
+    ]
+  },
+  {
+    "id": 28,
+    "text": "Если за дверью тихо, слушаю у замка; если слышен бой, отхожу.",
+    "kinds": [
+      "observe",
+      "move"
+    ],
+    "dispositions": [
+      "conditional",
+      "conditional"
+    ]
+  },
+  {
+    "id": 29,
+    "text": "Осматриваю следы у двери и сапоги стража.",
+    "kinds": [
+      "observe",
+      "observe"
+    ],
+    "dispositions": [
+      "now",
+      "now"
+    ]
+  },
+  {
+    "id": 30,
+    "text": "Отвлекаю стража разговором, пока рассматриваю его ключи.",
+    "kinds": [
+      "speak",
+      "observe"
+    ],
+    "dispositions": [
+      "now",
+      "now"
+    ]
+  },
+  {
+    "id": 31,
+    "text": "Пытаюсь убедить Ирину открыть дверь.",
+    "kinds": [
+      "speak"
+    ],
+    "dispositions": [
+      "now"
+    ]
+  },
+  {
+    "id": 32,
+    "text": "Не угрожаю Ирине. Спокойно спрашиваю о башне.",
+    "kinds": [
+      "speak",
+      "speak"
+    ],
+    "dispositions": [
+      "negated",
+      "now"
+    ]
+  },
+  {
+    "id": 33,
+    "text": "Подожду до рассвета, а затем собираюсь идти к башне.",
+    "kinds": [
+      "wait",
+      "move"
+    ],
+    "dispositions": [
+      "now",
+      "intended"
+    ]
+  },
+  {
+    "id": 34,
+    "text": "Я бы атаковал, если бы страж был врагом.",
+    "kinds": [
+      "attack"
+    ],
+    "dispositions": [
+      "conditional"
+    ]
+  },
+  {
+    "id": 35,
+    "text": "Сначала отступаю, и лишь если меня преследуют, атакую.",
+    "kinds": [
+      "move",
+      "attack"
+    ],
+    "dispositions": [
+      "now",
+      "conditional"
+    ]
+  },
+  {
+    "id": 36,
+    "text": "Использую щит как зеркало, чтобы посмотреть за угол.",
+    "kinds": [
+      "use"
+    ],
+    "dispositions": [
+      "now"
+    ]
+  },
+  {
+    "id": 37,
+    "text": "Зову Ирину и стража, прошу обоих рассказать о ночи.",
+    "kinds": [
+      "speak",
+      "speak"
+    ],
+    "dispositions": [
+      "now",
+      "now"
+    ]
+  },
+  {
+    "id": 38,
+    "text": "Подхожу к нему и отдаю это.",
+    "kinds": [
+      "move",
+      "other"
+    ],
+    "dispositions": [
+      "now",
+      "now"
+    ]
+  },
+  {
+    "id": 39,
+    "text": "Не иду к башне, пока Ирина не вернётся.",
+    "kinds": [
+      "move"
+    ],
+    "dispositions": [
+      "negated"
+    ]
+  },
+  {
+    "id": 40,
+    "text": "Попробую открыть дверь, не ломая замок и не привлекая внимания.",
+    "kinds": [
+      "other"
+    ],
+    "dispositions": [
+      "now"
+    ]
+  }
+]
