@@ -1,0 +1,39 @@
+SKIPPED [1] tests/test_builder_subclass_ui.py:22: Local browser runtime required
+SKIPPED [1] tests/test_cloud.py:176: Windows CurrentUser DPAPI
+SKIPPED [1] tests/test_control_ui.py:30: Local browser runtime required
+SKIPPED [1] tests/test_creation_progress_ui.py:23: Local browser runtime required
+SKIPPED [1] tests/test_dash_ui.py:24: Local Node/Playwright runtime required
+SKIPPED [1] tests/test_desktop.py:29: DPAPI доступен только на Windows
+SKIPPED [1] tests/test_desktop.py:70: Windows profile lock
+SKIPPED [1] tests/test_edition_acceptance.py:72: Владелец не импортировал книгу в этом профиле
+SKIPPED [1] tests/test_edition_acceptance.py:83: Владелец не импортировал книгу в этом профиле
+SKIPPED [1] tests/test_edition_acceptance.py:99: Владелец не импортировал книгу в этом профиле
+SKIPPED [1] tests/test_edition_acceptance.py:113: Владелец не импортировал книгу в этом профиле
+SKIPPED [1] tests/test_hybrid_rules_integration.py:17: rules_data.runtime belonged to a withdrawn build; vectors kept as history
+SKIPPED [1] tests/test_hybrid_rules_runtime.py:13: rules_data.runtime belonged to a withdrawn build; vectors kept as history
+SKIPPED [1] tests/test_import_ui.py:23: Local browser runtime required
+SKIPPED [1] tests/test_key_vault_crossplatform.py:269: Windows CurrentUser DPAPI
+SKIPPED [1] tests/test_levelup_ui.py:28: Local browser runtime required
+SKIPPED [1] tests/test_monster_profile_ui.py:22: Local browser runtime required
+SKIPPED [1] tests/test_nat20_item_movement_and_initiative.py:1334: glossary source is outside this checkout
+SKIPPED [1] tests/test_native_parameters_ui.py:22: Local browser runtime required
+SKIPPED [1] tests/test_pdf_nat20_ui.py:24: Local browser runtime required
+SKIPPED [1] tests/test_pdf_nat20_ui_real.py:28: Local browser runtime required
+SKIPPED [1] tests/test_pdf_play_today_real.py:102: Local browser runtime required
+SKIPPED [1] tests/test_pdf_play_today_ui.py:23: Local browser runtime required
+SKIPPED [1] tests/test_pdf_readiness_ui.py:22: Local browser runtime required
+SKIPPED [1] tests/test_preview7_ui_followup.py:23: Set SOLO_UI_NODE and SOLO_UI_PLAYWRIGHT to the local browser-test runtime
+SKIPPED [1] tests/test_printed_rewards.py:33: Владелец не импортировал книгу в этом профиле
+SKIPPED [1] tests/test_printed_rewards.py:44: Владелец не импортировал книгу в этом профиле
+SKIPPED [1] tests/test_printed_rewards.py:88: Владелец не импортировал книгу в этом профиле
+SKIPPED [1] tests/test_progression_ui.py:76: Local browser runtime required
+SKIPPED [1] tests/test_prototype_ui.py:24: Local browser runtime required
+SKIPPED [1] tests/test_second_episode.py:29: Владелец не импортировал книгу в этом профиле
+SKIPPED [1] tests/test_second_episode.py:33: Владелец не импортировал книгу в этом профиле
+SKIPPED [1] tests/test_second_episode.py:42: Владелец не импортировал книгу в этом профиле
+SKIPPED [1] tests/test_second_episode.py:48: Владелец не импортировал книгу в этом профиле
+SKIPPED [1] tests/test_second_episode.py:58: Владелец не импортировал книгу в этом профиле
+SKIPPED [1] tests/test_small_window_ui.py:23: Local Node/Playwright runtime required
+SKIPPED [1] tests/test_stage2_ui.py:22: Local browser runtime required
+SKIPPED [1] tests/test_wizard_ui.py:23: Local browser runtime required
+DONE

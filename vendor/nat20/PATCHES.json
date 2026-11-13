@@ -1,0 +1,184 @@
+{
+  "commit": "e187c813bb4e43c4e4e62942ecd83831f1cdbcaa",
+  "upstream": "https://github.com/tapestria/nat20",
+  "version": "0.9.0+solo.13",
+  "note": "Reviewed SRD 5.2 patches. The advancement module adds a new file. The weapon-mastery patch makes mastery a CHOSEN weapon kind (SRD 5.2 Weapon Mastery) instead of a property of the weapon, so a fighter who chose nothing earns nothing; it also threads the choice from the derived sheet through the party spec into the combatant. solo.2 adds two magic-item seams in build_spec.py: _item_always_on_changes projects a worn/attuned item's transfer passive_effects into the sheet's passive changes, and _check_attunement_constraint enforces the printed 'Requires Attunement by ...' line instead of ignoring it. 0.8.0: CharacterBuildSpec refuses a rules_edition the corpus does not publish (only 5.2); a cast of a spell absent from the loaded corpus now emits CastFailed(reason=unknown_spell) instead of logging only, so the player learns why the turn produced nothing. 0.9.0: starting_equipment.py resolves a background's printed starting equipment from Foundry link keys into corpus item slugs; an ambiguous truncated key is refused rather than guessed. solo.7 adds activities/damage.py: a damage-kind activity whose part is typed `healing` (SRD 5.2 Revivify's \"returns with 1 Hit Point\") restores Hit Points through HealingApplied instead of reaching apply_damage as an invalid damage type and being dropped. solo.8 (r177): five class-mechanic holes closed. Bardic Inspiration's die is now drawn by a SPELL attack (intent flag) and by the holder's own failed saving throw (per-holder sidecar, auto on failure), not only by a weapon attack. Jack of All Trades reaches the in-combat D20-test projection (Combatant.jack_of_all_trades -> actor_stats.check_modifier, half the Proficiency Bonus on a check that does not already add it). Rage refuses activation in heavy armor (cast_failed/heavy_armor), refuses a spell cast while raging (cast_failed/raging) and drops concentration when it lands. Relentless Rage fires on the fall to 0 Hit Points (_emit_apply_damage): CON save DC 10+5 per use, success sets Hit Points to twice the Barbarian level. Turn Undead's Turned effect now drives the creature away from the cleric on its turn (_is_turned + monster flee stance) and expires by its printed minute (10 rounds). solo.10 (r199): a monster's own effect definitions are readable at last. Monster.passive_effects restores the actor-level effects[] array the canonical cut dropped, so an activity's effects[].id ref no longer dangles; the monster attack/cast/legendary/opportunity resolution now hands those definitions to the activity context instead of an empty list. PassiveEffect.escape_dc carries SRD's printed '(escape DC N)' and travels to the victim's ActiveCondition through ActiveEffect.flags, so escape_grapple has a stored DC to roll against. rank_monster_actions gains a control tier (an action whose typed rider lands a condition the target lacks outranks Multiattack; the tier is absent for every monster whose data types no rider, so their selection is unchanged), and a sibling 'Escape Check' activity is no longer resolved on the monster's turn - it is the victim's own action. Grapple with target_id equal to the actor is now refused with target_invalid. solo.11 (r200): three slugs the player saw in English now have Russian wording. FAILURE_REASONS gains heavy_armor (a barbarian in heavy armor cannot start a Rage) and raging (a live Rage forbids casting a spell), the two refusals orchestrator._rage_armor_failure/_raging_cast_failure already emit; GAME_TERMS gains drop_prone, the intent_type r197 emits for the self-prone action. No host-side dictionary was added. solo.12 (r203): ending a grapple clears every condition its effect installed, not only Grappled. A typed monster grapple carries its printed riders in one statuses list (Behir Constrict: Grappled (escape DC 16) + Restrained until the grapple ends; Shambling Mound Engulf adds Blinded), and those riders expire for no other reason than \"until the grapple ends\". _release_grapple_conditions reads live.conditions_by_effect and emits one ConditionRemoved per rider after the effect leaves active_effects (the stacking guard needs that order); both release paths (a successful escape_grapple and the grappler becoming Incapacitated) use it. Measured r203: a successful escape used to leave the victim Blinded and Restrained for the rest of the fight. solo.13 (r204): a monster command is priced by the stat-block action's own typed activation. A Bonus Action activity (the pirate captain's Captain's Charm, the elephant's Trample) used to spend action_available, leave bonus_action_available True and block the Action the monster still had; _classify_action_cost now reads activation.type through _stat_block_action_is_bonus, _consume_intent_budget pays the Bonus Action, and a second bonus command is refused with no_action_economy on the attack surface. A commanded save action that places a template (a breath weapon cone, a fear aura radius) is now gated by its own geometry: _stat_block_target_out_of_range reads _monster_area + area_cells from the monster's cell, so a named target 60 ft away is refused out_of_range instead of taking the breath, and _area_plan lets such a command area-expand like the same action on the monster's own turn.",
+  "files": [
+    {
+      "path": "packages/dnd5e-engine/src/dnd5e_engine/__init__.py",
+      "sha256": "ca79f6a3adafae2735634ab6a538db83b1ddde02345b2274e0b9641ce09c1408",
+      "kind": "modified"
+    },
+    {
+      "path": "packages/dnd5e-engine/src/dnd5e_engine/activities/actor_stats.py",
+      "kind": "modified",
+      "sha256": "e849bcd1cb4ebf3b75d2d672fe8702a2201fdcadfdd47ce7811024d2311e1f49"
+    },
+    {
+      "path": "packages/dnd5e-engine/src/dnd5e_engine/activities/apply.py",
+      "sha256": "ba8e92d42ac92e8de1317345c9e310f72c113ef5fb9e3012cec204988905a5c0",
+      "kind": "modified"
+    },
+    {
+      "path": "packages/dnd5e-engine/src/dnd5e_engine/activities/attack.py",
+      "kind": "modified",
+      "sha256": "1cdb0672604ade5b589c1525cc2bea6b7d4477f606fd4bee96f1a61d2f31cb54"
+    },
+    {
+      "path": "packages/dnd5e-engine/src/dnd5e_engine/activities/build_context.py",
+      "kind": "modified",
+      "sha256": "0e6ef7d00464f94eb607c7b3b74075ce09783fd8a80af8ebd5c44636cb489289"
+    },
+    {
+      "path": "packages/dnd5e-engine/src/dnd5e_engine/activities/cast.py",
+      "sha256": "92a6ae10db1bb809f4a8ed2ec18791ca0c20ef1a0685b2f65264efebc3e5a101",
+      "kind": "modified"
+    },
+    {
+      "path": "packages/dnd5e-engine/src/dnd5e_engine/activities/conjuration.py",
+      "sha256": "7d42d4c6a0f02b33959a9064fef70ea4ac9051ac0e8f92618479c813cc9df7f1",
+      "kind": "modified"
+    },
+    {
+      "path": "packages/dnd5e-engine/src/dnd5e_engine/activities/context.py",
+      "kind": "modified",
+      "sha256": "f5c8a0eb5241c82445e3b4eedd47d92b06cb16dff871c37e6f669163648f1a53"
+    },
+    {
+      "path": "packages/dnd5e-engine/src/dnd5e_engine/activities/damage.py",
+      "sha256": "2c181aa83338182dbf3d749a1148464e5c74d247b5a33f988dfc3a9062ca4868",
+      "kind": "modified"
+    },
+    {
+      "path": "packages/dnd5e-engine/src/dnd5e_engine/activities/dice.py",
+      "sha256": "8a938d784f0a69dc2f584a4f02897a96f1754bb6f0178feeb2e842917e4556c8",
+      "kind": "modified"
+    },
+    {
+      "path": "packages/dnd5e-engine/src/dnd5e_engine/activities/effects.py",
+      "sha256": "6560d6128a66dbc31e9a4ab255d0c401bde504411fdebb62d9d215a90679d95b",
+      "kind": "modified"
+    },
+    {
+      "path": "packages/dnd5e-engine/src/dnd5e_engine/activities/formula.py",
+      "sha256": "e3048baf183e9ac8dab8911e7b05d0ff09600f09a5c5a64469b5c3f8cd51a4f7",
+      "kind": "modified"
+    },
+    {
+      "path": "packages/dnd5e-engine/src/dnd5e_engine/activities/mastery.py",
+      "sha256": "14e0cb48c6c72d771d8190f4cb4b870930e0e744453b4bcc0b2b3fa2571a1483",
+      "kind": "modified"
+    },
+    {
+      "path": "packages/dnd5e-engine/src/dnd5e_engine/activities/monster_actions.py",
+      "sha256": "7750eba728a83520ea4b124209e555dcaadedd257c36e2b95c1b1866172d1d28",
+      "kind": "modified"
+    },
+    {
+      "path": "packages/dnd5e-engine/src/dnd5e_engine/activities/passive_stats.py",
+      "sha256": "ce01f72746802baae3d575e9fe540f34e603c0f8855f427ff388f4b6bfb69a8c",
+      "kind": "modified"
+    },
+    {
+      "path": "packages/dnd5e-engine/src/dnd5e_engine/activities/resolver.py",
+      "sha256": "fada8dc0b794bc65cf80b3f62f84944020bfc1b166ab3bee3253fbaaf01c2fc8",
+      "kind": "modified"
+    },
+    {
+      "path": "packages/dnd5e-engine/src/dnd5e_engine/activities/save.py",
+      "sha256": "b0056be52a0e9fd023efb97ae7a3b24da83c9b9edc9bf801e63012dc792106c2",
+      "kind": "modified"
+    },
+    {
+      "path": "packages/dnd5e-engine/src/dnd5e_engine/activities/save_primitive.py",
+      "kind": "modified",
+      "sha256": "02cc2ac29bca96dfb808f43efaeb5fac8ea1e11e943f0cb5e135df965216310d"
+    },
+    {
+      "path": "packages/dnd5e-engine/src/dnd5e_engine/build_party.py",
+      "sha256": "de98f84ecb9b23b86fce1a07fdab65670a28c85a75296c81519c920a44959a4d",
+      "kind": "modified"
+    },
+    {
+      "path": "packages/dnd5e-engine/src/dnd5e_engine/build_spec.py",
+      "sha256": "5116a6f61aefe5736089e94688f1e0c3c284a162c5a97c6c7117df6bc86fa6d5",
+      "kind": "modified"
+    },
+    {
+      "path": "packages/dnd5e-engine/src/dnd5e_engine/check.py",
+      "kind": "modified",
+      "sha256": "9e8a771b5181dd5c34b00c972cf64a0f804a1fbabeba742fed642c800d9908ee"
+    },
+    {
+      "path": "packages/dnd5e-engine/src/dnd5e_engine/events.py",
+      "sha256": "1507b3bafc641bec59fdb7ca3d8c8721fb3892fc43dbe3d528f1b845276774db",
+      "kind": "modified"
+    },
+    {
+      "path": "packages/dnd5e-engine/src/dnd5e_engine/labels.py",
+      "sha256": "4d6c7585847342a48e37143d5674db1c685438c839a9e99a86e95a7c7f62ee15",
+      "kind": "added"
+    },
+    {
+      "path": "packages/dnd5e-engine/src/dnd5e_engine/orchestrator.py",
+      "sha256": "1c466b5e3166b3a6319726dfe1f0e24a50c998b284de8c006062130ba873358c",
+      "kind": "modified"
+    },
+    {
+      "path": "packages/dnd5e-engine/src/dnd5e_engine/rest.py",
+      "sha256": "fa457b6551814e522095675bb4f0f49f6a940906ef0f83dfc89e6a724f31018b",
+      "kind": "modified"
+    },
+    {
+      "path": "packages/dnd5e-engine/src/dnd5e_engine/rules/advancement.py",
+      "sha256": "0ee05923f1d42a3f40516ac9e89509503f44f2d483429eb458b52b933b765e0e",
+      "kind": "added"
+    },
+    {
+      "path": "packages/dnd5e-engine/src/dnd5e_engine/rules/character.py",
+      "kind": "modified",
+      "sha256": "cc66b7ae8a53581f6ef5c39ba75424092f77ef4f46c65deaa7b894aa94e32bf1"
+    },
+    {
+      "path": "packages/dnd5e-engine/src/dnd5e_engine/rules/choices.py",
+      "kind": "modified",
+      "sha256": "2f988026479bea0c5629c1d783bdf3d0128fc01ed5df0f86c71b57579e6e25b9"
+    },
+    {
+      "path": "packages/dnd5e-engine/src/dnd5e_engine/rules/conditions.py",
+      "sha256": "f32d1e82ea64a5630db3224a5adb59ab413c5d8e2dc16ab5a7f3f0cc38012baa",
+      "kind": "modified"
+    },
+    {
+      "path": "packages/dnd5e-engine/src/dnd5e_engine/spatial.py",
+      "sha256": "2e93672db9456dfb65f02f4fd91f4e0245c706b3773149312ba27af212f1805f",
+      "kind": "modified"
+    },
+    {
+      "path": "packages/dnd5e-engine/src/dnd5e_engine/specs.py",
+      "sha256": "f941978c4fc25a76deff10e8f12bd59141628df2dd892494b2a1626f4faed0f4",
+      "kind": "modified"
+    },
+    {
+      "path": "packages/dnd5e-engine/src/dnd5e_engine/starting_equipment.py",
+      "sha256": "f71f5955d077aea2209a05a526aa3222fde34ba89e555f9f18d295b7d3172ceb",
+      "kind": "added"
+    },
+    {
+      "path": "packages/dnd5e-engine/src/dnd5e_engine/types/combat.py",
+      "sha256": "481719bbffa7f7ce8cae77e00abf4d1359c1846c3081336cfd7b513fc8e02298",
+      "kind": "modified"
+    },
+    {
+      "path": "packages/dnd5e-srd-data/src/dnd5e_srd_data/schema/common.py",
+      "kind": "modified",
+      "sha256": "4bc28ec74c15c2ed5f80e757a00fc0b86f784f43ee72398051a03b111a9f67d9"
+    },
+    {
+      "path": "packages/dnd5e-srd-data/src/dnd5e_srd_data/schema/monster.py",
+      "kind": "modified",
+      "sha256": "fc187940606acb28194865fd4f72873e624f66c41aabdb8a276a26a14d001a91"
+    }
+  ],
+  "version_label": "0.9.0+solo.4"
+}

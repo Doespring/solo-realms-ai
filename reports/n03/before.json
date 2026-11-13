@@ -1,0 +1,30 @@
+{
+  "task": "n03 — экран игры",
+  "measured": "2026-11-07, Chromium 375x812 dpr2, свой инстанс (runtime/n03, mock-модель, порт 42505)",
+  "state": "после одного настоящего хода: реплика + ответ мастера + бросок",
+  "375": {
+    "documentScrollWidth": 375,
+    "innerWidth": 375,
+    "visibleInteractive": 6,
+    "list": [
+      "button#mobile-burger.m-burger «Меню» 44x44",
+      "button.themetoggle «Тёмная тема» 44x44",
+      "button#sheet-toggle.iconbtn «Лист» 52x44",
+      "button.roll__die «Показать бросок крупно» 44x44",
+      "textarea#player-input 347x58",
+      "button#send.primary «Сказать» 347x44"
+    ],
+    "composerDock": 130,
+    "chat": {"w": 375, "h": 580},
+    "placeholder": "Что делает или говорит ваш герой?"
+  },
+  "1440": {
+    "documentScrollWidth": 1425,
+    "chatBlock": 692,
+    "chatContent": 660,
+    "composer": 660,
+    "textarea": 632,
+    "rows": ["верхняя полоса nav (бренд, кампания, «Мои приключения», «Мои миры», «Ещё», тема, хиты, статус mock)", "вторая полоса шапки: пустой бургер + «Игра» + крошки + тема + статус", "лента", "поле ввода + подсказка Ctrl+Enter + «Сказать»", "правая колонка: карточка героя 288px"]
+  },
+  "console": "после хода: 200 command-turn, 200 screen, 200 character, 200 health, 200 telemetry — 4xx/5xx нет"
+}

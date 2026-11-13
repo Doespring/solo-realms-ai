@@ -1,0 +1,263 @@
+<!doctype html>
+<html lang="ru" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<title>r234 — полоса подготовки книги: «Стол и лист»</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="dark light">
+<link rel="stylesheet" href="mock.css">
+</head>
+<body>
+
+<!--
+  Макет полосы подготовки книги. Никакой сборки: открывается с диска.
+
+  Вся витрина:               mock.html
+  Один размер и одна тема:   mock.html?w=375&theme=dark
+  Одна сцена:                mock.html?w=1440&theme=light&only=failure
+
+  Сцены: start · middle · failure · failure-one · many · assembling ·
+  playable · done · done-failed. Числа и правила — SPEC.md, правки для
+  кодера — HANDOFF.md.
+  Внутри панели нет ни одной картинки: только CSS, две гарнитуры и токены.
+-->
+
+<div id="root"></div>
+
+<script>
+'use strict';
+const Q = new URLSearchParams(location.search);
+const W = Number(Q.get('w')) || 0;                  // 0 — витрина
+const THEME = Q.get('theme') === 'light' ? 'light' : 'dark';
+const ONLY = Q.get('only') || '';
+
+/* Высота кадра витрины, если браузер не отдал contentDocument (file://). */
+const FRAME_FALLBACK = {'375': 3315, '1440': 2925};
+
+/* ── Сцены ─────────────────────────────────────────────────────────────────
+   Поля повторяют run.progress, из которого живёт панель:
+   phase, done, total, failed, eta, elapsed. Остальное — вывод из них, как в
+   web/prepare-progress.js: макет и код не должны разъезжаться. */
+const SCENES = [
+  {
+    id: 'start',
+    label: 'Только начали · 0 из 12 · ETA ещё нет',
+    note: 'Прошло 3 секунды, остаток неизвестен. Строки «осталось» нет вовсе — вместо неё не показывается «≈0:00». Корешок уже свечной: работа идёт.',
+    phase: 0, title: 'Читаю книгу', clock: '0:03',
+    done: 0, total: 12, failed: 0, eta: null,
+    caption: 'Перелистываю страницы…',
+    meta: ['Часть 1 из 12']
+  },
+  {
+    id: 'middle',
+    label: 'Середина · 7 из 12 · ETA есть',
+    note: 'Обычный ход. Фраза меняется раз в 2,6 с, панель при этом не двигается: поле фразы на две строки зарезервировано заранее.',
+    phase: 1, title: 'Разбираю книгу на части', clock: '1:47',
+    done: 7, total: 12, failed: 0, eta: 130,
+    caption: 'Раскладываю карту на столе…',
+    meta: ['Часть 8 из 12', 'осталось ≈2:10']
+  },
+  {
+    id: 'failure',
+    label: 'Сбой двух блоков · 7 готово, 2 не вышло',
+    note: 'Прогон не остановлен. Засечки упавших блоков — медные, внизу листа медная плашка с числом; в корешке и подзаголовке ошибка не дублируется словами.',
+    phase: 1, title: 'Разбираю книгу на части', clock: '2:58',
+    done: 7, total: 12, failed: 2, eta: 95,
+    caption: 'Сверяю проверки и спасброски…',
+    meta: ['Часть 10 из 12', 'осталось ≈1:35', 'не вышло: 2'],
+    alert: '2 блока не разобрались — остальные идут дальше.',
+    cls: 'is-failed'
+  },
+  {
+    id: 'failure-one',
+    label: 'Сбой одного блока · 8 готово, 1 не вышло',
+    note: 'Тот же ход, но упал один блок: форма единственного числа — «1 блок не разобрался». Засечка упавшего — медная, остальные идут дальше.',
+    phase: 1, title: 'Разбираю книгу на части', clock: '2:12',
+    done: 8, total: 12, failed: 1, eta: 140,
+    caption: 'Собираю сцены и события…',
+    meta: ['Часть 10 из 12', 'осталось ≈2:20', 'не вышло: 1'],
+    alert: '1 блок не разобрался — остальные идут дальше.',
+    cls: 'is-failed'
+  },
+  {
+    id: 'many',
+    label: 'Большая книга · 79 из 120 → 40 засечек',
+    note: 'Засечек не больше 48: при 120 блоках одна засечка — три блока. Иначе ряд становится сплошной линией и перестаёт что-либо значить.',
+    phase: 1, title: 'Разбираю книгу на части', clock: '8:32',
+    done: 79, total: 120, failed: 0, eta: 360,
+    caption: 'Собираю сцены и события…',
+    meta: ['Часть 80 из 120', 'осталось ≈6:00']
+  },
+  {
+    id: 'assembling',
+    label: 'Сборка · 12 из 12 частей разобрано',
+    note: 'Все блоки прочитаны, идёт свод. Заливка полная, засечки все свечные, «сейчас» уже не подсвечивается — работать не над чем, кроме склейки.',
+    phase: 2, title: 'Свожу части вместе', clock: '2:34',
+    done: 12, total: 12, failed: 0, eta: null,
+    caption: 'Свожу блоки в один мир…',
+    meta: ['Часть 12 из 12']
+  },
+  {
+    id: 'playable',
+    label: 'Можно играть · глава 1 собрана, книга ещё читается',
+    note: 'r237: вход открыт, но работа идёт. Корешок зеленеет, заголовок говорит правду, числа остаются на месте — полосу не прячем.',
+    phase: 1, title: 'Можно играть', clock: '3:12',
+    done: 8, total: 12, failed: 0, eta: 200,
+    caption: 'Выписываю имена тех, кто встретится…',
+    meta: ['готово 8 из 12, остальное готовится'],
+    cls: 'is-playable'
+  },
+  {
+    id: 'done',
+    label: 'Готово · 12 из 12 · без сбоев',
+    note: 'Конец: корешок и заголовок зеленеют, строка фразы убрана, часы замирают на фактическом времени. Панель живёт 6 с и уходит.',
+    phase: 2, title: 'Части собраны', clock: '2:34',
+    done: 12, total: 12, failed: 0, eta: null,
+    caption: '', meta: ['12 частей из 12'],
+    cls: 'is-finished'
+  },
+  {
+    id: 'done-failed',
+    label: 'Готово со сбоем · 11 из 12',
+    note: 'Тот же конец, но один блок не вышел: корешок, подзаголовок и заголовок медные, плашка остаётся на листе — видно, что часть книги потерялась.',
+    phase: 2, title: 'Часть блоков не вышла', clock: '3:21',
+    done: 11, total: 12, failed: 1, eta: null,
+    caption: '', meta: ['11 частей из 12', 'не вышло: 1'],
+    alert: '1 блок не разобрался. Остальные части собраны.',
+    cls: 'is-finished is-failed'
+  }
+];
+
+const STEP_NAMES = ['Чтение', 'Разбор', 'Сборка'];
+
+const esc = s => String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+
+/* Засечки: одна на блок до 48 блоков, дальше — группа блоков.
+   Клетка «готова», только когда прочитаны все её блоки; медная — если внутри
+   есть упавший; дышит та, в которой сейчас идёт работа. */
+function ticks(done, total, failed, running) {
+  const unit = total > 48 ? Math.ceil(total / 48) : 1;
+  const cells = Math.ceil(total / unit);
+  const processed = Math.min(total, done + failed);
+  let out = '';
+  for (let i = 0; i < cells; i++) {
+    const from = i * unit, to = Math.min(total, from + unit);
+    let cls = 'prep-tick';
+    if (Math.min(to, processed) > Math.max(from, done)) cls += ' is-failed';
+    else if (to <= done) cls += ' is-done';
+    else if (running && from <= processed && processed < to) cls += ' is-active';
+    out += '<span class="' + cls + '"></span>';
+  }
+  return out;
+}
+
+function steps(phase, running) {
+  return STEP_NAMES.map((name, i) => {
+    let cls = 'prep-step';
+    if (i < phase || (i === phase && !running)) cls += ' is-done';
+    else if (i === phase) cls += ' is-current';
+    const cur = i === phase && running ? ' aria-current="step"' : '';
+    return '<span class="' + cls + '"' + cur + '>' + name + '</span>';
+  }).join('<span class="prep-arrow" aria-hidden="true">→</span>');
+}
+
+function meta(parts) {
+  return parts.map((p, i) =>
+    (i ? '<span class="sep" aria-hidden="true">·</span>' : '') +
+    '<span>' + esc(p) + '</span>'
+  ).join('');
+}
+
+function panel(s) {
+  const total = s.total || 0;
+  const percent = total ? Math.min(100, Math.round(s.done / total * 100)) : 0;
+  const running = !String(s.cls || '').includes('is-finished');
+  return '' +
+    '<div class="prep-panel ' + (s.cls || '') + '" role="group" aria-label="Ход подготовки приключения"' +
+      (percent === 0 ? ' data-empty="1"' : '') +
+      ' data-failed="' + (s.failed || 0) + '" data-running="' + (running ? '1' : '0') + '">' +
+      '<div class="prep-head">' +
+        '<p class="prep-eyebrow">Подготовка книги</p>' +
+        '<p class="prep-clock">' + esc(s.clock) + '</p>' +
+        '<p class="prep-title">' + esc(s.title) + '</p>' +
+      '</div>' +
+      '<p class="prep-steps" aria-label="Шаги подготовки">' + steps(s.phase, running) + '</p>' +
+      '<div class="prep-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" ' +
+        'aria-valuenow="' + percent + '" aria-valuetext="' + s.done + ' из ' + total + ' частей">' +
+        '<div class="prep-fill" style="width:' + percent + '%"></div>' +
+      '</div>' +
+      '<div class="prep-ticks" aria-hidden="true">' +
+        ticks(s.done, total, s.failed, running) + '</div>' +
+      '<p class="prep-caption' + (s.caption ? ' is-in' : '') + '" aria-live="off">' + esc(s.caption) + '</p>' +
+      '<p class="prep-meta" aria-live="polite">' + meta(s.meta) + '</p>' +
+      '<p class="prep-alert"' + (s.alert ? '' : ' hidden') + '>' + esc(s.alert || '') + '</p>' +
+    '</div>';
+}
+
+function scene(s) {
+  return '<section class="scene" data-scene="' + s.id + '">' +
+    '<p class="scene__label"><b>' + esc(s.label) + '</b> — ' + esc(s.note) + '</p>' +
+    panel(s) + '</section>';
+}
+
+const root = document.getElementById('root');
+
+if (W) {
+  /* ── Один размер и одна тема: так снимаются скриншоты ─────────────────── */
+  document.documentElement.setAttribute('data-theme', THEME);
+  const list = ONLY ? SCENES.filter(s => s.id === ONLY) : SCENES;
+  const other = THEME === 'light' ? 'dark' : 'light';
+  const base = 'mock.html?w=' + W + (ONLY ? '&only=' + ONLY : '');
+  root.innerHTML =
+    '<div class="view__head">' +
+      '<b>' + W + ' px · ' + (THEME === 'light' ? 'светлая тема' : 'тёмная тема') + '</b>' +
+      '<span>сцены подряд; подписи — обзор, в приложение не идут</span>' +
+      '<a href="' + base + '&theme=' + other + '">' + (THEME === 'light' ? 'тёмная' : 'светлая') + ' тема</a>' +
+      '<a href="' + base + '&theme=' + THEME + '">сбросить сцену</a>' +
+      '<a href="mock.html">вся витрина</a>' +
+    '</div>' +
+    '<div class="stage"><div class="scenes">' + list.map(scene).join('') + '</div></div>';
+} else {
+  /* ── Витрина: две ширины × две темы, четыре живых кадра ────────────────── */
+  document.documentElement.setAttribute('data-theme', 'dark');
+  const frame = (w, theme) =>
+    '<figure class="frame">' +
+      '<figcaption>' + w + ' px · ' + (theme === 'light' ? 'светлая тема' : 'тёмная тема') +
+        ' — <a href="mock.html?w=' + w + '&theme=' + theme + '">открыть отдельно</a></figcaption>' +
+      '<iframe src="mock.html?w=' + w + '&theme=' + theme + '" width="' + w + '" height="' + FRAME_FALLBACK[w] + '" ' +
+        'title="Полоса подготовки ' + w + ' px, ' + theme + '"></iframe>' +
+    '</figure>';
+  root.innerHTML =
+    '<div class="wall">' +
+      '<header class="wall__head">' +
+        '<h1>Полоса подготовки книги: «Стол и лист»</h1>' +
+        '<p><b>Лист на столе.</b> Слева корешок 3 px: свеча — идёт работа, зелень — можно играть или готово, ' +
+          'медь — блок не вышел. Полоса — линейка между двумя волосяными линиями, заливка с закладкой на переднем крае. ' +
+          'Ниже стежки блоков: готово, сейчас, сбой. Крупные числа — служебная строка 14 px, фраза — курсив книги.</p>' +
+        '<p>Девять сцен: только начали (ETA ещё нет) · середина · сбой одного блока · сбой двух блоков · большая книга на 120 частей · ' +
+          'сборка · «можно играть» · готово · готово со сбоем. Числа и правила — <b>SPEC.md</b>, ' +
+          'что менять в приложении — <b>HANDOFF.md</b>.</p>' +
+      '</header>' +
+      '<div class="wall__row">' + frame(375, 'dark') + frame(375, 'light') + '</div>' +
+      '<div class="wall__row">' + frame(1440, 'dark') + '</div>' +
+      '<div class="wall__row">' + frame(1440, 'light') + '</div>' +
+    '</div>';
+  /* Кадр по высоте содержимого: числа в витрине не устаревают вслед за
+     правкой макета. Ждём load каждого кадра — один requestAnimationFrame
+     срабатывает раньше, и витрина обрезала нижние сцены. На file:// доступ к
+     contentDocument может быть закрыт — тогда остаётся запасная высота выше. */
+  const fit = fr => {
+    try {
+      const h = fr.contentDocument.documentElement.scrollHeight;
+      if (h > 200) fr.height = h;
+    } catch (e) { /* file:// — остаётся запасная высота */ }
+  };
+  document.querySelectorAll('.frame iframe').forEach(fr => {
+    fr.addEventListener('load', () => fit(fr));
+    fit(fr);
+    setTimeout(() => fit(fr), 800);
+  });
+}
+</script>
+</body>
+</html>

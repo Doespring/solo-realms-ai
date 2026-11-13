@@ -1,0 +1,59 @@
+{
+  "activities": [],
+  "advancement": [
+    {
+      "class_restriction": "",
+      "configuration": {
+        "cap": null,
+        "fixed": {
+          "cha": 0,
+          "con": 4,
+          "dex": 0,
+          "int": 0,
+          "str": 4,
+          "wis": 0
+        },
+        "locked": [
+          "str",
+          "dex",
+          "con",
+          "int",
+          "wis",
+          "cha"
+        ],
+        "max": 25,
+        "points": 0,
+        "recommendation": null
+      },
+      "hint": "You embody primal power. Your Strength and Constitution scores increase by 4, to a maximum of 25.",
+      "id": "apkonPAaBjVFh5eF",
+      "level": 20,
+      "title": "Primal Champion",
+      "type": "AbilityScoreImprovement",
+      "value": {}
+    }
+  ],
+  "description": "You embody primal power. Your Strength and Constitution scores increase by 4, to a maximum of 25.",
+  "entry_kind": "feature",
+  "feature_type": "class_feature",
+  "foundry_id": "phbbrbPrimalCham",
+  "name": "Primal Champion",
+  "passive_effects": [],
+  "provenance": {
+    "ingest_date": "2026-05-30",
+    "ingest_version": "foundry-translator-v1",
+    "license_tag": "CC-BY-4.0",
+    "source": "foundry",
+    "source_url": "https://github.com/foundryvtt/dnd5e/blob/965ad2d0cf5d063dac675ba078b5bd3c3c0dd449/packs/_source/classes24/barbarian/class-features/primal-champion.yml",
+    "srd_version": [
+      "5.2"
+    ]
+  },
+  "review": {
+    "known_divergence": null,
+    "requires_user_decision": false
+  },
+  "slug": "primal-champion",
+  "source_slug": "barbarian",
+  "uses": null
+}

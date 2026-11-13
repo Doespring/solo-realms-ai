@@ -1,0 +1,15 @@
+{
+  "stand": "runtime/a01-live (свой стенд, порт 19277), база кампании + одна запись checkpoints с несуществующей кампанией",
+  "screen": "Настройки → Данные и копии",
+  "backup_button": {
+    "toast": "Копия создана: manual-20261108T045047Z-d5df995c. Замечания: Файл solo.sqlite3: нарушено внешних связей — 1 (таблицы: checkpoints); записи не удалены. Отчёт integrity-report.json лежит рядом с копией.",
+    "list_line": "manual-20261108T045047Z-d5df995c · 2026-11-08T04:50:48+00:00 · нарушено связей: 1",
+    "live_md5_before": "до нажатия",
+    "live_md5_same": true
+  },
+  "export_button": {
+    "toast": "Данные скачаны. Внешние связи в базе нарушены: в архиве отчёт integrity-report.json с таблицей, rowid и родителем каждой записи. Записи не удалялись.",
+    "downloaded": "SoloRealmsAI-data.zip"
+  },
+  "screenshot": "browser-harness tmp shot.png (экран «Данные и копии» после нажатия)"
+}

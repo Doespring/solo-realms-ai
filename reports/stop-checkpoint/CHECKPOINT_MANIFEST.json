@@ -1,0 +1,71 @@
+{
+  "status": "STOPPED_BY_OWNER",
+  "date": "2026-10-19",
+  "base_manifest": "../SOURCE_MANIFEST.json",
+  "changes": [
+    {
+      "path": "AGENTS.md",
+      "sha256": "52aa6f2791bed46adb816512315866aaaf6eadba780408fce11e38aadd77072e",
+      "bytes": 5566,
+      "previous_accepted_sha256": "e29f4f91955c0cff2e6bba6979c13c9600c4d62c73363c1a303dfdf816e90607",
+      "status": "unverified change/new file or stop documentation; not a release"
+    },
+    {
+      "path": "docs/BUILDER_UI_FIX.md",
+      "sha256": "68ff86abe6105addf2c89ebafadb38aa1a562db71280b186fd909691553f5ad1",
+      "bytes": 1484,
+      "previous_accepted_sha256": null,
+      "status": "unverified change/new file or stop documentation; not a release"
+    },
+    {
+      "path": "reports/PROJECT_AUDIT_STOP-2026-10-19.md",
+      "sha256": "ed6d49022f7a7ee1e178bb26930910c2205cf7d4b6596d970c654651b82ca2b7",
+      "bytes": 7518,
+      "previous_accepted_sha256": null,
+      "status": "unverified change/new file or stop documentation; not a release"
+    },
+    {
+      "path": "ROADMAP.md",
+      "sha256": "487797df4a395b5b2086451135b023158bd2c1c765483fc1c4f91a731879d607",
+      "bytes": 46797,
+      "previous_accepted_sha256": "037315c608c78a5f882039a05bbfddf6a48f026039f36457c84222bc3b8b77d5",
+      "status": "unverified change/new file or stop documentation; not a release"
+    },
+    {
+      "path": "solo/preparation_contracts.py",
+      "sha256": "80b98e7897eb8147de7232695a29681c3e9d6acd802bc773193fd15ed0c0f839",
+      "bytes": 3885,
+      "previous_accepted_sha256": "df767a93f5f5ba4d269f692b1a032ad08461b77d313ad0bbeeded7c6782f7717",
+      "status": "unverified change/new file or stop documentation; not a release"
+    },
+    {
+      "path": "web/creation.js",
+      "sha256": "77510cfd263f9f6c55f395230db9f3bdc8a0e7a3dc8a7e834533e07195831386",
+      "bytes": 27985,
+      "previous_accepted_sha256": "5f2fac209248df36122b9599c4ba3d47faaa8d5a6811d1a9b426cddf65aac1a1",
+      "status": "unverified change/new file or stop documentation; not a release"
+    },
+    {
+      "path": "web/prototype.css",
+      "sha256": "7eaf84a2761ba99aa8bf2f9013a8c0d7579342e5109569fabe527cc4eaecdd69",
+      "bytes": 1931,
+      "previous_accepted_sha256": "fd1f0f307f285b605dbc410e23477ba90024bb3be4a65a80dfef4aafba5a6936",
+      "status": "unverified change/new file or stop documentation; not a release"
+    },
+    {
+      "path": "web/prototype.js",
+      "sha256": "b23dd34cf7d0c88719eed55da5c4cb4fc7ed05b623ebc4006e1858c644fce9bd",
+      "bytes": 24680,
+      "previous_accepted_sha256": "45097b360718b41b6e7f1566da7945286346054d13df567cfaf8482464412a65",
+      "status": "unverified change/new file or stop documentation; not a release"
+    }
+  ],
+  "excluded_potential_secrets": [],
+  "additional_specification": {
+    "path": "INPUT-SOLO-REALMS-AI-4.1.txt",
+    "sha256": "074de0d48cd8e02017e095880b699bbeac2bd7fa4a79d0cf35eda2b7c2b6a812"
+  },
+  "tests_run_during_collection": 0,
+  "project_archive_created": false,
+  "personal_data_copied": false
+}

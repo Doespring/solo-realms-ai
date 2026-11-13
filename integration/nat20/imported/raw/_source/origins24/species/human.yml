@@ -1,0 +1,163 @@
+{
+  "_id": "phbspHuman000000",
+  "_stats": {
+    "coreVersion": "13.344",
+    "createdTime": 1735866697989,
+    "duplicateSource": null,
+    "exportSource": null,
+    "lastModifiedBy": "dnd5ebuilder0000",
+    "modifiedTime": 1747071019574,
+    "systemId": "dnd5e",
+    "systemVersion": "4.4.3"
+  },
+  "effects": [],
+  "flags": {},
+  "folder": "Ulvo8nbygUegLa59",
+  "img": "icons/environment/people/commoner.webp",
+  "name": "Human",
+  "ownership": {
+    "default": 0
+  },
+  "sort": 0,
+  "system": {
+    "advancement": [
+      {
+        "_id": "dLxv96vt2B2KOEe2",
+        "configuration": {
+          "sizes": [
+            "sm",
+            "med"
+          ]
+        },
+        "hint": "Medium (about 4-7 feet tall) or Small (about 2-4 feet tall), chosen when you select this species",
+        "level": 0,
+        "title": "",
+        "type": "Size",
+        "value": {}
+      },
+      {
+        "_id": "2H3yQa0PfjBgXw2W",
+        "configuration": {
+          "items": [
+            {
+              "optional": false,
+              "uuid": "Compendium.dnd5e.origins24.Item.phbsptResourcefu"
+            },
+            {
+              "optional": false,
+              "uuid": "Compendium.dnd5e.origins24.Item.phbsptSkillful00"
+            },
+            {
+              "optional": false,
+              "uuid": "Compendium.dnd5e.origins24.Item.phbsptVersatile0"
+            }
+          ],
+          "optional": false,
+          "spell": null
+        },
+        "hint": "",
+        "level": 0,
+        "title": "Human Traits",
+        "type": "ItemGrant",
+        "value": {}
+      },
+      {
+        "_id": "xIdIaWtTj1cBERln",
+        "configuration": {
+          "allowReplacements": false,
+          "choices": [
+            {
+              "count": 1,
+              "pool": [
+                "skills:*"
+              ]
+            }
+          ],
+          "grants": [],
+          "mode": "default"
+        },
+        "hint": "You gain proficiency in one skill of your choice.",
+        "level": 0,
+        "title": "Skillful",
+        "type": "Trait",
+        "value": {
+          "chosen": []
+        }
+      },
+      {
+        "_id": "KB8IQLwyuL6SOFnv",
+        "configuration": {
+          "allowDrops": true,
+          "choices": {
+            "0": {
+              "count": 1,
+              "replacement": false
+            }
+          },
+          "pool": [
+            {
+              "uuid": "Compendium.dnd5e.feats24.Item.phbftAlert000000"
+            },
+            {
+              "uuid": "Compendium.dnd5e.feats24.Item.phbftMagicInitia"
+            },
+            {
+              "uuid": "Compendium.dnd5e.feats24.Item.phbftSavageAttac"
+            },
+            {
+              "uuid": "Compendium.dnd5e.feats24.Item.phbftSkilled0000"
+            }
+          ],
+          "restriction": {
+            "subtype": "origin",
+            "type": "feat"
+          },
+          "spell": null,
+          "type": "feat"
+        },
+        "hint": "You gain an Origin feat of your choice. Skillful is recommended.",
+        "title": "Versatile",
+        "type": "ItemChoice",
+        "value": {
+          "added": {},
+          "replaced": {}
+        }
+      }
+    ],
+    "description": {
+      "chat": "",
+      "value": "<p>@Embed[Compendium.dnd5e.content24.JournalEntry.phbAppendixSpeci.JournalEntryPage.phbspHuman000000 inline classes=\"free-rules-embed\"]</p><h3 data-anchor=\"human-traits\">Human Traits</h3><p><strong>Creature Type: </strong>Humanoid</p><p><strong>Size: </strong>Medium (about 4–7 feet tall) or Small (about 2–4 feet tall), chosen when you select this species</p><p><strong>Speed: </strong>30 feet</p><p>As a Human, you have these special traits.</p><p><strong>Resourceful. </strong>You gain Heroic Inspiration whenever you finish a Long Rest.</p><p><strong>Skillful. </strong>You gain proficiency in one skill of your choice.</p><p><strong>Versatile.</strong> You gain an Origin feat of your choice (see chapter 5). Skilled is recommended.</p>"
+    },
+    "identifier": "human",
+    "movement": {
+      "burrow": null,
+      "climb": null,
+      "fly": null,
+      "hover": false,
+      "swim": null,
+      "units": null,
+      "walk": 30
+    },
+    "senses": {
+      "blindsight": null,
+      "darkvision": null,
+      "special": "",
+      "tremorsense": null,
+      "truesight": null,
+      "units": null
+    },
+    "source": {
+      "book": "",
+      "custom": "",
+      "license": "CC-BY-4.0",
+      "revision": 1,
+      "rules": "2024"
+    },
+    "type": {
+      "custom": "",
+      "subtype": "Human",
+      "value": "humanoid"
+    }
+  },
+  "type": "race"
+}

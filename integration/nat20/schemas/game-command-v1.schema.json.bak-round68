@@ -1,0 +1,696 @@
+{
+  "$defs": {
+    "Attack": {
+      "additionalProperties": false,
+      "properties": {
+        "kind": {
+          "const": "attack",
+          "title": "Kind",
+          "type": "string"
+        },
+        "target": {
+          "maxLength": 80,
+          "minLength": 1,
+          "title": "Target",
+          "type": "string"
+        }
+      },
+      "required": [
+        "kind",
+        "target"
+      ],
+      "title": "Attack",
+      "type": "object"
+    },
+    "CastSpell": {
+      "additionalProperties": false,
+      "properties": {
+        "kind": {
+          "const": "cast_spell",
+          "title": "Kind",
+          "type": "string"
+        },
+        "spell_id": {
+          "const": "bless",
+          "title": "Spell Id",
+          "type": "string"
+        },
+        "target": {
+          "const": "hero",
+          "title": "Target",
+          "type": "string"
+        }
+      },
+      "required": [
+        "kind",
+        "spell_id",
+        "target"
+      ],
+      "title": "CastSpell",
+      "type": "object"
+    },
+    "Check": {
+      "additionalProperties": false,
+      "properties": {
+        "check_id": {
+          "maxLength": 120,
+          "minLength": 1,
+          "title": "Check Id",
+          "type": "string"
+        },
+        "kind": {
+          "const": "check",
+          "title": "Kind",
+          "type": "string"
+        }
+      },
+      "required": [
+        "kind",
+        "check_id"
+      ],
+      "title": "Check",
+      "type": "object"
+    },
+    "Dash": {
+      "additionalProperties": false,
+      "properties": {
+        "kind": {
+          "const": "dash",
+          "title": "Kind",
+          "type": "string"
+        }
+      },
+      "required": [
+        "kind"
+      ],
+      "title": "Dash",
+      "type": "object"
+    },
+    "DropConcentration": {
+      "additionalProperties": false,
+      "properties": {
+        "kind": {
+          "const": "drop_concentration",
+          "title": "Kind",
+          "type": "string"
+        }
+      },
+      "required": [
+        "kind"
+      ],
+      "title": "DropConcentration",
+      "type": "object"
+    },
+    "EndCombat": {
+      "additionalProperties": false,
+      "properties": {
+        "kind": {
+          "const": "end_combat",
+          "title": "Kind",
+          "type": "string"
+        }
+      },
+      "required": [
+        "kind"
+      ],
+      "title": "EndCombat",
+      "type": "object"
+    },
+    "EndTurn": {
+      "additionalProperties": false,
+      "properties": {
+        "kind": {
+          "const": "end_turn",
+          "title": "Kind",
+          "type": "string"
+        }
+      },
+      "required": [
+        "kind"
+      ],
+      "title": "EndTurn",
+      "type": "object"
+    },
+    "GridPosition": {
+      "additionalProperties": false,
+      "properties": {
+        "x": {
+          "maximum": 79,
+          "minimum": 0,
+          "title": "X",
+          "type": "integer"
+        },
+        "y": {
+          "maximum": 79,
+          "minimum": 0,
+          "title": "Y",
+          "type": "integer"
+        },
+        "z": {
+          "maximum": 20,
+          "minimum": -6,
+          "title": "Z",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "x",
+        "y",
+        "z"
+      ],
+      "title": "GridPosition",
+      "type": "object"
+    },
+    "LongRest": {
+      "additionalProperties": false,
+      "properties": {
+        "food_water": {
+          "title": "Food Water",
+          "type": "boolean"
+        },
+        "kind": {
+          "const": "long_rest",
+          "title": "Kind",
+          "type": "string"
+        }
+      },
+      "required": [
+        "kind",
+        "food_water"
+      ],
+      "title": "LongRest",
+      "type": "object"
+    },
+    "Move": {
+      "additionalProperties": false,
+      "properties": {
+        "kind": {
+          "const": "move",
+          "title": "Kind",
+          "type": "string"
+        },
+        "position": {
+          "$ref": "#/$defs/GridPosition"
+        }
+      },
+      "required": [
+        "kind",
+        "position"
+      ],
+      "title": "Move",
+      "type": "object"
+    },
+    "NativeAction": {
+      "additionalProperties": false,
+      "description": "Public native choices only; never accepts roll/stat/formula overrides.",
+      "properties": {
+        "activity_id": {
+          "anyOf": [
+            {
+              "maxLength": 120,
+              "minLength": 1,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Activity Id"
+        },
+        "as_ritual": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "As Ritual"
+        },
+        "charges_to_spend": {
+          "anyOf": [
+            {
+              "maximum": 1000,
+              "minimum": 1,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Charges To Spend"
+        },
+        "direction": {
+          "anyOf": [
+            {
+              "items": {
+                "type": "integer"
+              },
+              "maxItems": 2,
+              "minItems": 2,
+              "type": "array"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Direction"
+        },
+        "excluded_target_ids": {
+          "anyOf": [
+            {
+              "items": {
+                "type": "string"
+              },
+              "maxItems": 100,
+              "type": "array"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Excluded Target Ids"
+        },
+        "feature_id": {
+          "anyOf": [
+            {
+              "maxLength": 120,
+              "minLength": 1,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Feature Id"
+        },
+        "form_id": {
+          "anyOf": [
+            {
+              "maxLength": 120,
+              "minLength": 1,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Form Id"
+        },
+        "item_id": {
+          "anyOf": [
+            {
+              "maxLength": 120,
+              "minLength": 1,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Item Id"
+        },
+        "kind": {
+          "const": "native_action",
+          "title": "Kind",
+          "type": "string"
+        },
+        "operation": {
+          "enum": [
+            "attack",
+            "cast_spell",
+            "use_item",
+            "move",
+            "dash",
+            "dodge",
+            "disengage",
+            "hide",
+            "help",
+            "ready",
+            "reaction",
+            "move_mark",
+            "use_feature",
+            "pass",
+            "drop_concentration",
+            "grapple",
+            "shove",
+            "stand_up",
+            "escape_grapple"
+          ],
+          "title": "Operation",
+          "type": "string"
+        },
+        "pool_points": {
+          "anyOf": [
+            {
+              "maximum": 1000,
+              "minimum": 1,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Pool Points"
+        },
+        "position": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/GridPosition"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "reaction_trigger": {
+          "anyOf": [
+            {
+              "enum": [
+                "cast_spell",
+                "hit_by_attack",
+                "targeted_by_magic_missile"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Reaction Trigger"
+        },
+        "redeem_granted_die": {
+          "anyOf": [
+            {
+              "const": "feature_grant:bardic-inspiration",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Redeem Granted Die"
+        },
+        "shove_push": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Shove Push"
+        },
+        "slot_level": {
+          "anyOf": [
+            {
+              "maximum": 9,
+              "minimum": 0,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Slot Level"
+        },
+        "spell_id": {
+          "anyOf": [
+            {
+              "maxLength": 120,
+              "minLength": 1,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Spell Id"
+        },
+        "stat_block_action_id": {
+          "anyOf": [
+            {
+              "maxLength": 120,
+              "minLength": 1,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Stat Block Action Id"
+        },
+        "target_id": {
+          "anyOf": [
+            {
+              "maxLength": 120,
+              "minLength": 1,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Target Id"
+        },
+        "target_ids": {
+          "anyOf": [
+            {
+              "items": {
+                "type": "string"
+              },
+              "maxItems": 100,
+              "type": "array"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Target Ids"
+        },
+        "two_handed": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Two Handed"
+        },
+        "use_bonus_action": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Use Bonus Action"
+        },
+        "weapon_id": {
+          "anyOf": [
+            {
+              "maxLength": 120,
+              "minLength": 1,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Weapon Id"
+        }
+      },
+      "required": [
+        "kind",
+        "operation"
+      ],
+      "title": "NativeAction",
+      "type": "object"
+    },
+    "ShortRest": {
+      "additionalProperties": false,
+      "properties": {
+        "hit_dice": {
+          "maximum": 20,
+          "minimum": 0,
+          "title": "Hit Dice",
+          "type": "integer"
+        },
+        "kind": {
+          "const": "short_rest",
+          "title": "Kind",
+          "type": "string"
+        }
+      },
+      "required": [
+        "kind",
+        "hit_dice"
+      ],
+      "title": "ShortRest",
+      "type": "object"
+    },
+    "StartCombat": {
+      "additionalProperties": false,
+      "properties": {
+        "encounter_id": {
+          "pattern": "^[a-z][a-z0-9-]{0,79}$",
+          "title": "Encounter Id",
+          "type": "string"
+        },
+        "kind": {
+          "const": "start_combat",
+          "title": "Kind",
+          "type": "string"
+        }
+      },
+      "required": [
+        "kind",
+        "encounter_id"
+      ],
+      "title": "StartCombat",
+      "type": "object"
+    },
+    "UseFeature": {
+      "additionalProperties": false,
+      "properties": {
+        "feature_id": {
+          "const": "second-wind",
+          "title": "Feature Id",
+          "type": "string"
+        },
+        "kind": {
+          "const": "use_feature",
+          "title": "Kind",
+          "type": "string"
+        }
+      },
+      "required": [
+        "kind",
+        "feature_id"
+      ],
+      "title": "UseFeature",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "action": {
+      "discriminator": {
+        "mapping": {
+          "attack": "#/$defs/Attack",
+          "cast_spell": "#/$defs/CastSpell",
+          "check": "#/$defs/Check",
+          "dash": "#/$defs/Dash",
+          "drop_concentration": "#/$defs/DropConcentration",
+          "end_combat": "#/$defs/EndCombat",
+          "end_turn": "#/$defs/EndTurn",
+          "long_rest": "#/$defs/LongRest",
+          "move": "#/$defs/Move",
+          "native_action": "#/$defs/NativeAction",
+          "short_rest": "#/$defs/ShortRest",
+          "start_combat": "#/$defs/StartCombat",
+          "use_feature": "#/$defs/UseFeature"
+        },
+        "propertyName": "kind"
+      },
+      "oneOf": [
+        {
+          "$ref": "#/$defs/Check"
+        },
+        {
+          "$ref": "#/$defs/StartCombat"
+        },
+        {
+          "$ref": "#/$defs/Move"
+        },
+        {
+          "$ref": "#/$defs/Attack"
+        },
+        {
+          "$ref": "#/$defs/Dash"
+        },
+        {
+          "$ref": "#/$defs/EndTurn"
+        },
+        {
+          "$ref": "#/$defs/ShortRest"
+        },
+        {
+          "$ref": "#/$defs/LongRest"
+        },
+        {
+          "$ref": "#/$defs/EndCombat"
+        },
+        {
+          "$ref": "#/$defs/UseFeature"
+        },
+        {
+          "$ref": "#/$defs/CastSpell"
+        },
+        {
+          "$ref": "#/$defs/DropConcentration"
+        },
+        {
+          "$ref": "#/$defs/NativeAction"
+        }
+      ],
+      "title": "Action"
+    },
+    "contract_version": {
+      "const": "nat20-command-v1",
+      "default": "nat20-command-v1",
+      "title": "Contract Version",
+      "type": "string"
+    },
+    "expected_version": {
+      "minimum": 0,
+      "title": "Expected Version",
+      "type": "integer"
+    },
+    "request_id": {
+      "pattern": "^[a-zA-Z0-9_.-]{1,80}$",
+      "title": "Request Id",
+      "type": "string"
+    },
+    "rules_version": {
+      "const": "dnd2024",
+      "default": "dnd2024",
+      "title": "Rules Version",
+      "type": "string"
+    }
+  },
+  "required": [
+    "request_id",
+    "expected_version",
+    "action"
+  ],
+  "title": "GameCommand",
+  "type": "object"
+}

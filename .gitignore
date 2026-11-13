@@ -1,0 +1,29 @@
+.venv/
+__pycache__/
+.pytest_cache/
+data/
+runtime/
+models/
+*.part
+reports/ui-*.png
+reports/first-playable/source-page-8.png
+
+# Локальный снимок существующих пользовательских кампаний.
+reports/pass15/original-campaigns.json
+
+# Активный stdout эксперимента продолжает принимать игровые метрики.
+reports/pass15/runtime-ubatch128.log
+
+# r147: дословный текст PHB 2024 — купленная книга, в git не едет.
+# Собирается scripts/build_phb_subclasses.py из rules_data/v2/evidence.
+integration/nat20/phb-2024/
+
+# Desktop build outputs and vendor build tools
+build/
+dist/
+build-tools/
+
+# пакетные логи прогонов: имена падений и цифры лежат в results.jsonl
+reports/r*/logs/
+site/data/
+site/data/*.db*

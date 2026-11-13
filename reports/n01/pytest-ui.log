@@ -1,0 +1,83 @@
+F                                                                        [100%]
+=================================== FAILURES ===================================
+___________________ test_conflict_does_not_storm_the_server ____________________
+
+tmp_path = PosixPath('/home/hermes/.hermes/profiles/coder/cache/scratch/pytest-of-hermes/pytest-1456/test_conflict_does_not_storm_t0')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x70291580a650>
+
+    def test_conflict_does_not_storm_the_server(tmp_path, monkeypatch):
+        node = os.environ.get('SOLO_UI_NODE') or shutil.which('node')
+        playwright = os.environ.get('SOLO_UI_PLAYWRIGHT')
+        browser = os.environ.get('SOLO_UI_BROWSER')
+        if not node or not playwright or not browser or not Path(playwright).exists() or not Path(browser).is_file():
+            pytest.skip('Нужен локальный Node + Playwright + Chromium (SOLO_UI_* переменные)')
+    
+        connect = socket.socket.connect
+    
+        def local_only(sock, address):
+            assert address[0] in ('127.0.0.1', '::1'), 'External calls forbidden'
+            return connect(sock, address)
+    
+        monkeypatch.setattr(socket.socket, 'connect', local_only)
+        sock = socket.socket()
+        sock.bind(('127.0.0.1', 0))
+        port = sock.getsockname()[1]
+        app = create_app(tmp_path / 'conflict.sqlite3', MockLLM(), local_port=port)
+        campaign = app.state.store.create('Conflict · UI fixture', Hero(name='Мирон'))
+        server = uvicorn.Server(uvicorn.Config(app, log_level='error', access_log=False))
+        thread = threading.Thread(target=server.run, kwargs={'sockets': [sock]}, daemon=True)
+        thread.start()
+        try:
+            deadline = time.monotonic() + 20
+            while not server.started and thread.is_alive() and time.monotonic() < deadline:
+                time.sleep(.02)
+            assert server.started
+>           result = subprocess.run(
+                [str(node), str(Path(__file__).with_suffix('.cjs')),
+                 f'http://127.0.0.1:{port}', campaign['id'], str(tmp_path)],
+                env={**os.environ, 'SOLO_UI_PLAYWRIGHT': str(playwright)},
+                capture_output=True, text=True, encoding='utf-8', timeout=120,
+            )
+
+tests/test_conflict_recovery_ui.py:50: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../../.hermes/tools/python-3.14.9+20261021-linux-x64/lib/python3.14/subprocess.py:557: in run
+    stdout, stderr = process.communicate(input, timeout=timeout)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+../../.hermes/tools/python-3.14.9+20261021-linux-x64/lib/python3.14/subprocess.py:1221: in communicate
+    stdout, stderr = self._communicate(input, endtime, timeout)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+../../.hermes/tools/python-3.14.9+20261021-linux-x64/lib/python3.14/subprocess.py:2154: in _communicate
+    self._check_timeout(endtime, orig_timeout, stdout, stderr)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <Popen: returncode: -9 args: ['/home/hermes/.hermes/tools/node-26.12.1-linux...>
+endtime = 647214.61810848, orig_timeout = 120, stdout_seq = [], stderr_seq = []
+skip_check_and_raise = False
+
+    def _check_timeout(self, endtime, orig_timeout, stdout_seq, stderr_seq,
+                       skip_check_and_raise=False):
+        """Convenience for checking if a timeout has expired."""
+        if endtime is None:
+            return
+        if skip_check_and_raise or _time() > endtime:
+>           raise TimeoutExpired(
+                    self.args, orig_timeout,
+                    output=b''.join(stdout_seq) if stdout_seq else None,
+                    stderr=b''.join(stderr_seq) if stderr_seq else None)
+E           subprocess.TimeoutExpired: Command '['/home/hermes/.hermes/tools/node-26.12.1-linux-x64/bin/node', '/home/hermes/projects/SoloRealmsAI-Nat20/tests/test_conflict_recovery_ui.cjs', 'http://127.0.0.1:35643', 'c92a0b78-128e-48eb-af66-9c2ae9ab0ed2', '/home/hermes/.hermes/profiles/coder/cache/scratch/pytest-of-hermes/pytest-1456/test_conflict_does_not_storm_t0']' timed out after 120 seconds
+
+../../.hermes/tools/python-3.14.9+20261021-linux-x64/lib/python3.14/subprocess.py:1268: TimeoutExpired
+=============================== warnings summary ===============================
+tests/test_conflict_recovery_ui.py::test_conflict_does_not_storm_the_server
+  /home/hermes/projects/SoloRealmsAI-Nat20/.venv/lib/python3.14/site-packages/lark/utils.py:176: DeprecationWarning: module 'sre_parse' is deprecated
+    import sre_parse
+
+tests/test_conflict_recovery_ui.py::test_conflict_does_not_storm_the_server
+  /home/hermes/projects/SoloRealmsAI-Nat20/.venv/lib/python3.14/site-packages/lark/utils.py:177: DeprecationWarning: module 'sre_constants' is deprecated
+    import sre_constants
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/test_conflict_recovery_ui.py::test_conflict_does_not_storm_the_server
+1 failed, 2 warnings in 126.05s (0:02:06)

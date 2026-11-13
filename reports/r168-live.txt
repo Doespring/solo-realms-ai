@@ -1,0 +1,5 @@
+health 2.2.0-prototype.5
+{"phrase": "Показываю игрокам карту лагеря", "http": 200, "status": "resolved", "narrative": "«Карта лагеря» на столе, стр. 19.", "materials": [["map-camp", "Карта лагеря", "map"]]}
+{"phrase": "Показываю игрокам ту карту, где водопад", "http": 200, "status": "resolved", "narrative": "«План пещеры» на столе, стр. 40.", "materials": [["map-camp", "Карта лагеря", "map"], ["map-cave", "План пещеры", "map"]]}
+{"phrase": "Раздаю письмо со стр. 21", "http": 200, "status": "resolved", "narrative": "«Письмо барона» на столе, стр. 21.", "materials": [["map-camp", "Карта лагеря", "map"], ["map-cave", "План пещеры", "map"], ["letter-baron", "Письмо барона", "handout"]]}
+{"phrase": "Раздаю письмо старосты", "http": 200, "status": "unsupported", "narrative": "Материал «Письмо старосты о реке» (стр. 23) ещё ждёт подтверждения человеком в проверке комплекта: показать его сейчас нельзя.", "materials": [["map-camp", "Карта лагеря", "map"], ["map-cave", "План пещеры", "map"], ["letter-baron", "Письмо барона", "handout"]]}

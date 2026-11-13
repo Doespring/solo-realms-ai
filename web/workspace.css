@@ -1,0 +1,34 @@
+/* One shared component vocabulary for the RPG panels and desktop shell. */
+:root{--radius:12px;--space:16px;--prose-size:18px;--ui-zoom:1;--panel-shadow:var(--shadow-soft)}
+header{height:64px}.nav{display:flex;align-items:center;gap:9px;font-size:12px;white-space:nowrap}.nav span{width:16px;flex-shrink:0;font-size:16px}.nav .solo-icon{width:18px;height:18px;flex:0 0 18px;object-fit:contain}.nav .nav-text{width:auto;flex:1 1 auto;min-width:0;white-space:normal;line-height:1.25;overflow-wrap:anywhere}.nav:not(:has(.nav-text)){white-space:normal;overflow-wrap:anywhere;text-align:left}.view{padding-top:20px}.view#play .composer textarea{min-height:72px;height:76px}
+body{zoom:var(--ui-zoom)}button{min-height:36px;border-radius:8px}button:disabled{cursor:default}.story-card,.settings-card,.metric,.list-card,#api-form{border-radius:var(--radius);box-shadow:var(--panel-shadow)}
+.view#play{max-width:1400px}.workspace-layout{display:grid;grid-template-columns:minmax(0,1fr) 230px;gap:24px}.literary-column{min-width:0}.scene-rail{min-width:0}.disclosure{margin:0 0 16px;border:1px solid var(--line);border-radius:var(--radius);background:var(--surface);padding:16px}.disclosure summary{cursor:pointer;color:var(--gold);font-size:13px;font-weight:600;list-style-position:outside;margin-left:16px}.disclosure[open] summary{margin-bottom:16px}.disclosure p:last-child{margin-bottom:0}.disclosure-body{margin-top:12px}.scene-rail h3{font-size:22px}.scene-rail p{font-size:12px}.view#play .chat{padding:26px 32px;min-height:40vh;max-height:52vh}.view#play .prose,.prose{font-family:Georgia,serif;font-size:var(--prose-size);line-height:1.85;white-space:pre-wrap;overflow-wrap:anywhere}.view#play .message.player .prose{font-family:'Segoe UI',sans-serif;font-size:14px}.view#play .composer{padding:18px 24px}.shell-preferences{position:relative;margin:16px 0 0;padding:8px 12px;background:transparent;max-width:460px}.shell-preferences summary{font-size:11px;font-weight:400}.shell-preferences .disclosure-body{display:grid;grid-template-columns:1fr auto;gap:10px;align-items:center}.shell-preferences button{grid-column:1/-1}.shell-preferences label input{padding:0;accent-color:var(--gold)}.reading-focus .scene-rail{display:none}.reading-focus .workspace-layout{grid-template-columns:minmax(0,1fr)}.reading-focus #play{max-width:1050px}.scores-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin:0 0 24px}#character{max-width:1000px}#character .metrics-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.wizard-progress{color:var(--gold);font-size:12px;border-bottom:1px solid var(--line);padding-bottom:12px}#master-form>.disclosure{background:var(--surface2)}#master-form>.disclosure>p{margin-top:10px}.effects button,.effects .disclosure{transition:border-color .15s ease,background .15s ease}.scene-heading h1{font-size:34px!important}#profile-library-history:empty{display:none}#profile-library-history{max-width:900px}
+/* n08 — лист героя (макет `hero`, SPEC §9.1): мета 14 и четыре витальные
+   ячейки 2×2 вместо строки «HP · КД · скорость». Число 22, подпись 14 —
+   те же две ступени шкалы (14 / 16 / 22 / 30), что и на остальных экранах. */
+#character .hero-meta{margin:0 0 16px;font-family:var(--font-ui);font-size:14px;line-height:1.35;color:var(--muted)}
+/* n4 — иерархия листа героя: имя 28/600 (24–28 или вес 600), значения
+   характеристик 22/400 — имя звучит главным, числа тише. Витальные числа
+   20/400: они были 22/500 и перебивали имя. */
+#character #character-content>h2{margin:0 0 4px;font-size:28px;font-weight:600;line-height:1.1}
+#character .sheet-vitals{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));margin:0 0 24px;border-top:1px solid var(--line-strong);border-bottom:1px solid var(--line-strong)}
+#character .sheet-vitals__cell{min-height:67px;padding:10px 0;box-sizing:border-box}
+#character .sheet-vitals__cell:nth-child(odd){padding-right:12px}
+#character .sheet-vitals__cell:nth-child(even){padding-left:12px;border-left:1px solid var(--line)}
+#character .sheet-vitals__cell:nth-child(n+3){border-top:1px solid var(--line)}
+#character .sheet-vitals__cell strong{display:block;font-family:var(--font-book);font-size:20px;font-weight:400;line-height:1.1;font-variant-numeric:tabular-nums;color:var(--text)}
+#character .sheet-vitals__cell small{display:block;margin-top:2px;font-family:var(--font-ui);font-size:14px;letter-spacing:0;color:var(--muted)}
+
+@media(max-width:1180px){.workspace-layout{grid-template-columns:minmax(0,1fr) 190px;gap:16px}.view#play .chat{padding:22px}.scene-rail .disclosure{padding:12px}header{gap:12px}}
+@media(max-width:980px){.workspace-layout{grid-template-columns:minmax(0,1fr)}.scene-rail{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}.scene-rail .disclosure{margin-bottom:0}.view#play .chat{max-height:48vh;min-height:300px}.scene-heading{margin-bottom:18px}}
+.scene-rail{grid-template-columns:1fr}.scores-grid{grid-template-columns:repeat(2,minmax(0,1fr))}#character .metrics-grid{grid-template-columns:1fr}header .breadcrumb{max-width:50%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.form-grid{grid-template-columns:1fr}.scene-heading h1{font-size:28px!important}.view#play .chat{padding:18px}.composer-footer{align-items:flex-start;flex-direction:column}.inline-form{flex-wrap:wrap}.inline-form select{width:100%}.list-card{flex-wrap:wrap}}
+@media(prefers-reduced-motion:reduce){.effects button,.effects .disclosure{transition:none}}
+.view#play .chat{min-height:180px;height:calc(100dvh - 475px);max-height:560px}.view#play .scene-heading{margin-bottom:18px}
+@media(max-width:980px){.view#play .chat{height:260px}}
+.skills-editor{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-bottom:20px}.skills-editor label{display:flex;align-items:center;gap:8px}.skills-editor input{width:auto;margin:0;accent-color:var(--gold)}#hero-editor input{max-width:100%}#rulesets{max-width:1050px}#rulesets>.inline-form,#rulesets>.button-row{margin-bottom:20px}#rulesets>.disclosure{margin-top:20px}#rulesets input[type=checkbox]{width:auto;display:inline;margin:0 0 0 10px}#hero-advanced,#rule-json{font:13px/1.7 Consolas,monospace;margin:12px 0}#hero-editor .form-grid{margin:15px 0}.disclosure-body input[type=checkbox]{width:auto;display:inline}
+@media(max-width:600px){.skills-editor{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+/* r224: на телефоне в шапке остаётся имя кампании, а не служебный префикс.
+   Правила стоят последними: прежний .breadcrumb{max-width:50%;white-space:nowrap}
+   из медиа-блока выше иначе обрезал именно название. */
+@media(max-width:600px){header .breadcrumb{display:flex;align-items:center;min-width:0;max-width:64%;font-size:0;letter-spacing:0}header .breadcrumb #campaign-label{display:block;flex:0 1 auto;min-width:0;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:10px;letter-spacing:1.2px;margin:0}}

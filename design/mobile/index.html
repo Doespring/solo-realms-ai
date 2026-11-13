@@ -1,0 +1,599 @@
+<!doctype html>
+<html lang="ru" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<title>r231 — мобильные макеты «Стол и лист» 375×812 и 390×844</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="dark light">
+<link rel="stylesheet" href="icons.css">
+<link rel="stylesheet" href="mobile.css">
+</head>
+<body class="review">
+
+<!--
+  Обзорный лист макетов r231. Каждый экран повторён четыре раза:
+  375×812 тёмная · 375×812 светлая · 390×844 тёмная · 390×844 светлая.
+  Телефон — рамка устройства: статус 44 px и home indicator 34 px принадлежат
+  iOS, а не приложению; их не считать в размерах шапки и дока.
+
+  Числа и правила — в SPEC.md. Съёмка и замеры — tools/shoot.py.
+  Адрес с фильтром: index.html?only=game&theme=light&w=390
+-->
+
+<header class="review__head">
+  <p class="review__legend">r231 · дизайн-пакет, не код</p>
+  <h1 class="review__h">«Стол и лист» на телефоне: один экран, одна шапка 56</h1>
+  <p class="review__p">Десять состояний на 375×812 и 390×844, обе темы, 40 кадров. Каждая зона имеет размер:
+    шапка 56, отступ экрана 16, строка списка 44 минимум (46,6 одна строка / 67,5 две), зона нажатия не меньше 44, поле ввода прижато к низу.
+    Старое меню — одно действие «бургер» 44×44 в шапке; все 19 пунктов живого nav живут в шторке снизу,
+    двумя вкладками «Кампания» и «Приложение», а «Выход из игры» закреплён внизу шторки.</p>
+  <p class="review__legend"><b>Как читать:</b> серая полоса сверху — статус iOS (44), чёрная пилюля — Dynamic Island,
+    полоска снизу — home indicator. Лента и списки обрезаны снизу намеренно: это место прокрутки.</p>
+</header>
+
+<div id="wall"></div>
+
+<script>
+/* ── Сборка витрины ────────────────────────────────────────────────────────
+   Один шаблон на экран, четыре рамки. Никакой логики приложения: только
+   клонирование разметки, чтобы 40 кадров не расходились вручную.
+   Собираем после разбора документа: шаблоны лежат ниже этого блока. */
+document.addEventListener('DOMContentLoaded', () => {
+
+const SCREENS = [
+  {id:'home',     title:'1. Главный экран',            kb:false,
+   note:'Шапка 56: имя слева, одно действие «бургер» 44×44 справа. Никакого второго меню 174 px. Главное действие «Начать историю» — на y≈302, выше сгиба. Под ним «Продолжить» одной строкой и подвал с обещанием локальности.'},
+  {id:'menu',     title:'2. Шторка меню: вкладка «Кампания» (было nav 174 px)', kb:false, sheet:'campaign', base:'home',
+   note:'Вход — бургер 44×44 в шапке. Шторка: голова 44, вкладки 45, строки 44, закреплённый «Выход из игры» 52. Вкладка «Кампания» — 10 пунктов текущей кампании; шторка 658 px (81 %), прокрутки нет. Закрытие: тап по затемнению, смахивание вниз, Esc.'},
+  {id:'menu-app', title:'3. Шторка меню: вкладка «Приложение»', kb:false, sheet:'app', base:'home',
+   note:'Та же шторка, вторая вкладка: «Мои приключения», «Настройки приложения» (первым — владелец ищет его один раз и не находит), «Нейросети и API», «Расходы API», «Производительность», «О проекте»; ниже «Библиотеки» и «Оформление». Шторка 688 px (85 %), всё в первом кадре, без прокрутки.'},
+  {id:'new',      title:'4. Новое приключение: форма и материалы', kb:false,
+   note:'Назад 44 в шапке, бургер 44 справа — старые кнопки .creation-controls («Назад», «Сохранить и выйти») больше не лежат поверх формы. Поле 17 px, материалы строками 64, главное действие в доке — всегда на экране.'},
+  {id:'prep',     title:'5. Подготовка книги: прогресс и свёрнутый журнал', kb:false,
+   note:'Прогресс: число 78 / 120 и полоса 8 px. Журнал ошибок свёрнут в одну строку 48 px с числом — вместо раскрытого лога на пол-экрана. Раскрывается в шторку (следующий кадр).'},
+  {id:'prep-log', title:'6. Журнал ошибок в шторке', kb:false,
+   note:'Та же подготовка, журнал открыт: строки 64 (блок, сообщение, что сделано), прокрутка внутри шторки, «Скопировать журнал» внизу. Экран под шторкой не прыгает.'},
+  {id:'game',     title:'7. Игра: лента, поле ввода, кубик', kb:false, scroll:'bottom',
+   note:'Шапка 56: назад, название и глава, хиты и защита числами, лист 44. Свёрнутая история — липкая строка 48 сверху ленты. Поле 58 прижато к низу, «Сказать» 44×44, кнопка d20 44×44. Лента = 554 px.'},
+  {id:'game-kb',  title:'8. Игра при открытой клавиатуре', kb:true, scroll:'bottom',
+   note:'Клавиатура 336: шапка сжимается до 44, второй ряд поля (кубик и подсказка) убирается. Остаётся лента 316 px ≈ 11 строк рассказа — число видно на кадре.'},
+  {id:'hero',     title:'9. Герой: лист', kb:false,
+   note:'Лист — бумага на столе: радиус 0, кромка 1 px. Имя 28/30,8, мета 14, статы 2×2 по 66,4, характеристики 3×2 по 68,4, навыки строками 46,6, «Последний бросок» 84,4. Лист 840,7 прокручивается в теле 712. Бургер справа в шапке — вход в меню из кампании.'},
+  {id:'notes',    title:'10. Блокнот: записи и события', kb:false,
+   note:'Вкладки 45 (кнопки 44), поле записи 204,5 (7 строк), главное действие «Сохранить запись» в доке 102. События свёрнуты: последнее строкой 67,5 + строка 48 «Ещё 12 событий · показать все» — всё в первом кадре, без обрезки. Служебный текст не мельче 14.'}
+];
+const SIZES = [{w:375,h:812},{w:390,h:844}];
+const THEMES = ['dark','light'];
+const THEME_RU = {dark:'тёмная', light:'светлая'};
+
+const params = new URLSearchParams(location.search);
+const only = params.get('only');
+const onlyTheme = params.get('theme');
+const onlyW = Number(params.get('w')) || 0;
+
+/* Статус — iOS, не приложение. Часы, Dynamic Island, индикаторы. */
+const STATUS = `
+  <div class="status" aria-hidden="true">
+    <span>20:14</span>
+    <span class="status__island"></span>
+    <span class="status__right">
+      <span class="status__bars"><i></i><i></i><i></i><i></i></span>
+      <span class="status__bat"></span>
+    </span>
+  </div>`;
+
+/* Клавиатура: зона 336 px. Раскладку не рисуем — важна высота, по ней
+   считается остаток ленты. */
+const KB = `
+  <div class="kb" aria-hidden="true">
+    <div class="kb__bar"><i></i><i></i><i></i></div>
+    <div class="kb__row kb__row--1"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+    <div class="kb__row kb__row--2"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+    <div class="kb__row kb__row--3"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+    <div class="kb__row kb__row--4"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+  </div>`;
+
+/* Кубик: тот же гранёный силуэт, что в принятой игре (core.css, .die). */
+const DIE = n => `<svg class="die" viewBox="0 0 36 36" aria-hidden="true">
+  <polygon class="die__hull" points="1.60,18.29 9.85,4.00 26.35,4.00 34.60,18.29 26.35,32.58 9.85,32.58"/>
+  <text class="die__num" x="17.77" y="24.89" font-size="22">${n}</text></svg>`;
+
+const wall = document.getElementById('wall');
+
+for (const screen of SCREENS) {
+  if (only && only !== screen.id) continue;
+  const tpl = document.getElementById('tpl-' + (screen.base || screen.id));
+  const sheetTpl = screen.sheet ? document.getElementById('tpl-sheet-menu') : null;
+  const sec = document.createElement('section');
+  sec.className = 'screensec';
+  sec.id = 's-' + screen.id;
+  sec.innerHTML = `<h2 class="screensec__h">${screen.title}</h2><p class="screensec__n">${screen.note}</p>`;
+  const frames = document.createElement('div');
+  frames.className = 'frames';
+
+  for (const theme of THEMES) {
+    if (onlyTheme && onlyTheme !== theme) continue;
+    for (const size of SIZES) {
+      if (onlyW && onlyW !== size.w) continue;
+      const wrap = document.createElement('div');
+      wrap.className = 'frame';
+      const phone = document.createElement('div');
+      phone.className = 'phone';
+      phone.dataset.screen = screen.id;
+      phone.dataset.w = String(size.w);
+      phone.dataset.theme = theme;
+      if (screen.kb) phone.dataset.kb = '';
+      /* Кадр показывает ленту на последнем сообщении: tools/shoot.py ставит
+         скролл перед съёмкой (SPEC §8.3), иначе в срезе видно начало ленты. */
+      if (screen.scroll) phone.dataset.scroll = screen.scroll;
+      phone.innerHTML = STATUS + tpl.innerHTML + (sheetTpl ? sheetTpl.innerHTML : '') +
+                        (screen.kb ? KB : '') + '<span class="homebar" aria-hidden="true"></span>';
+      if (sheetTpl) {
+        /* Одна шторка на оба кадра: вкладка выбирается атрибутом, ровно как
+           в приложении будет выбирать панель. */
+        phone.querySelector('.sheetmodal').dataset.pane = screen.sheet;
+        for (const tab of phone.querySelectorAll('.menu-tabs [role="tab"]'))
+          tab.setAttribute('aria-selected', String(tab.dataset.tab === screen.sheet));
+        /* Переключатель темы показывает тему кадра, а не фиксированное «тёмное». */
+        for (const b of phone.querySelectorAll('.seg button'))
+          b.setAttribute('aria-pressed', String(b.dataset.theme === theme));
+      }
+      wrap.append(phone);
+      const cap = document.createElement('p');
+      cap.className = 'frame__cap';
+      cap.textContent = `${size.w}×${size.h} · ${THEME_RU[theme]}`;
+      wrap.append(cap);
+      frames.append(wrap);
+    }
+  }
+  sec.append(frames);
+  wall.append(sec);
+}
+
+/* Кубик: пометка броска и строка «последний бросок» в листе. */
+for (const host of document.querySelectorAll('.roll__die')) host.innerHTML = DIE(8);
+for (const host of document.querySelectorAll('.sheet__roll')) host.insertAdjacentHTML('afterbegin', DIE(8));
+
+}); /* DOMContentLoaded */
+</script>
+
+<!-- ══ 1. ГЛАВНЫЙ ЭКРАН ═══════════════════════════════════════════════════ -->
+<template id="tpl-home">
+<header class="topbar topbar--home" data-zone="bar">
+  <span class="brand">Solo&nbsp;Realms <b>AI</b></span>
+  <button class="bar-btn bar-btn--menu" type="button" aria-label="Меню приложения" aria-haspopup="dialog" aria-expanded="false">
+    <span class="burger" aria-hidden="true"><i></i></span>
+  </button>
+</header>
+<main class="body" data-zone="body">
+  <p class="eyebrow">одиночное приключение</p>
+  <h1 class="h1 home-h1">Тихая история на целый вечер</h1>
+  <p class="lead home-lead">Мастер помнит, что было вчера. Правила считает движок, слова — рассказчик.</p>
+
+  <div class="home-actions">
+    <button class="btn btn--primary btn--block" type="button" data-primary>Начать историю</button>
+    <button class="btn btn--ghost btn--block" type="button"><span class="icon ic-book" aria-hidden="true"></span>Загрузить книгу</button>
+  </div>
+
+  <button class="continue" type="button">
+    <span class="continue__kicker">продолжить</span>
+    <span class="continue__title">Тайна трёх сосен</span>
+    <span class="continue__meta">Мирон, 3-й уровень · глава II · вчера, 22:14</span>
+  </button>
+
+  <div class="home-foot">
+    <span class="home-foot__local"><span class="icon ic-save" aria-hidden="true"></span>Истории и книги остаются на телефоне</span>
+    <span>Прототип · сборка 2.2.0</span>
+  </div>
+</main>
+</template>
+
+<!-- ══ 2–3. ШТОРКА МЕНЮ (обе вкладки; кадр выбирает вкладку атрибутом) ═════ -->
+<!--
+  Все 19 пунктов живого nav (web/index.html + obsidian.js + adventure.js +
+  chronicle.js) и «Выход из игры» (obsidian.js:86) — здесь. Две панели:
+  «Кампания» (10 пунктов, видны только при открытой кампании) и
+  «Приложение» (6 + 3 библиотеки + оформление). Вкладки — тот же .tabs,
+  что в блокноте: одна манера на весь телефон.
+-->
+<template id="tpl-sheet-menu">
+<div class="modal" data-zone="modal">
+  <div class="modal__scrim" aria-hidden="true"></div>
+  <div class="sheetmodal sheetmodal--menu" role="dialog" aria-modal="true" aria-label="Меню приложения" data-pane="campaign">
+    <span class="sheetmodal__grab" aria-hidden="true"></span>
+    <div class="sheetmodal__head">
+      <span class="sheetmodal__title">Меню</span>
+      <button class="bar-btn" type="button" aria-label="Закрыть">✕</button>
+    </div>
+    <nav class="tabs menu-tabs" role="tablist" aria-label="Разделы меню">
+      <button type="button" role="tab" aria-selected="true" data-tab="campaign">Кампания</button>
+      <button type="button" role="tab" aria-selected="false" data-tab="app">Приложение</button>
+    </nav>
+    <div class="sheetmodal__body">
+      <div class="menu-pane menu-pane--campaign">
+        <p class="sheetmodal__group">Кампания · <span class="menu-group__name">Тайна трёх сосен</span></p>
+        <button class="menu-row" type="button" aria-current="page"><span class="icon ic-compass" aria-hidden="true"></span>Игровая сцена</button>
+        <button class="menu-row" type="button"><span class="icon ic-person" aria-hidden="true"></span>Персонаж</button>
+        <button class="menu-row" type="button"><span class="icon ic-skills" aria-hidden="true"></span>Навыки и способности</button>
+        <button class="menu-row" type="button"><span class="icon ic-inventory" aria-hidden="true"></span>Инвентарь и экипировка</button>
+        <button class="menu-row" type="button"><span class="icon ic-map" aria-hidden="true"></span>Карта мира</button>
+        <button class="menu-row" type="button"><span class="icon ic-journal" aria-hidden="true"></span>Блокнот</button>
+        <button class="menu-row" type="button"><span class="icon ic-chest" aria-hidden="true"></span>Раздатки и карты</button>
+        <button class="menu-row" type="button"><span class="icon ic-save" aria-hidden="true"></span>Сохранения<span class="menu-row__n">4</span></button>
+        <button class="menu-row" type="button"><span class="icon ic-book" aria-hidden="true"></span>Правила кампании</button>
+        <button class="menu-row" type="button"><span class="icon ic-settings" aria-hidden="true"></span>Параметры кампании</button>
+      </div>
+      <div class="menu-pane menu-pane--app">
+        <p class="sheetmodal__group">Приложение</p>
+        <button class="menu-row" type="button"><span class="icon ic-chronicle" aria-hidden="true"></span>Мои приключения</button>
+        <button class="menu-row" type="button"><span class="icon ic-settings" aria-hidden="true"></span>Настройки приложения</button>
+        <button class="menu-row" type="button"><span class="icon ic-wizard" aria-hidden="true"></span>Нейросети и API</button>
+        <button class="menu-row" type="button"><span class="icon ic-coins" aria-hidden="true"></span>Расходы API<span class="menu-row__n">1,84 $</span></button>
+        <button class="menu-row" type="button"><span class="icon ic-heart" aria-hidden="true"></span>Производительность</button>
+        <button class="menu-row" type="button"><span class="icon ic-torch" aria-hidden="true"></span>О проекте</button>
+        <p class="sheetmodal__group">Библиотеки</p>
+        <button class="menu-row" type="button"><span class="icon ic-book" aria-hidden="true"></span>Библиотека правил</button>
+        <button class="menu-row" type="button"><span class="icon ic-chest" aria-hidden="true"></span>Библиотека приключений</button>
+        <button class="menu-row" type="button"><span class="icon ic-feather" aria-hidden="true"></span>Профили Мастера</button>
+        <div class="theme-row">
+          <span>Оформление</span>
+          <span class="seg" role="group" aria-label="Оформление">
+            <button type="button" data-theme="dark" aria-pressed="true">тёмное</button>
+            <button type="button" data-theme="light" aria-pressed="false">светлое</button>
+          </span>
+        </div>
+      </div>
+    </div>
+    <button class="menu-exit" type="button"><span class="icon ic-exit" aria-hidden="true"></span>Выход из игры</button>
+  </div>
+</div>
+</template>
+
+<!-- ══ 3. НОВОЕ ПРИКЛЮЧЕНИЕ ═══════════════════════════════════════════════ -->
+<template id="tpl-new">
+<header class="topbar topbar--back" data-zone="bar">
+  <button class="bar-btn" type="button" aria-label="Назад"><span class="icon ic-exit" aria-hidden="true"></span></button>
+  <div class="topbar__t"><span class="topbar__title">Новое приключение</span></div>
+  <button class="bar-btn bar-btn--menu" type="button" aria-label="Меню приложения" aria-haspopup="dialog" aria-expanded="false"><span class="burger" aria-hidden="true"><i></i></span></button>
+</header>
+<main class="body" data-zone="body">
+  <p class="eyebrow">ваша новая история</p>
+  <div class="form-gap">
+    <label class="label" for="desc">Каким будет приключение?</label>
+    <textarea class="field__input" id="desc" rows="5" placeholder="Например: проведи приключение по приложенной книге. Или: хочу мрачную историю на севере о пропавшем караване."></textarea>
+    <p class="ui ui--3">Текст сохраняется дословно. Материалы можно не прикладывать.</p>
+  </div>
+
+  <section class="sect">
+    <div class="sect__h">
+      <span class="label">Материалы</span>
+      <span class="ui ui--3">2 файла</span>
+    </div>
+    <button class="btn btn--ghost btn--block" type="button"><span class="icon ic-book" aria-hidden="true"></span>Добавить файлы</button>
+    <div class="file-row">
+      <div>
+        <span class="file-row__name">книга севера.pdf</span>
+        <small class="file-row__meta">12,4 МиБ · материалы извлечены</small>
+      </div>
+      <button class="file-row__x" type="button" aria-label="Убрать файл книга севера.pdf">✕</button>
+    </div>
+    <div class="file-row">
+      <div>
+        <span class="file-row__name">карта перевала.jpg</span>
+        <small class="file-row__meta">2,1 МиБ · извлекаем · 40 %</small>
+        <div class="prog prog--mini"><span class="prog__fill" style="width:40%"></span></div>
+      </div>
+      <button class="file-row__x" type="button" aria-label="Убрать файл карта перевала.jpg">✕</button>
+    </div>
+  </section>
+
+  <section class="sect">
+    <div class="sect__h"><span class="label">Дальше</span></div>
+    <p class="ui ui--3">Мир из материалов → герой → правила игры. Герой выбирается только после проверки мира.</p>
+  </section>
+</main>
+<div class="dock" data-zone="dock">
+  <button class="btn btn--primary btn--block" type="button" data-primary>Подготовить приключение</button>
+</div>
+</template>
+
+<!-- ══ 4. ПОДГОТОВКА КНИГИ ════════════════════════════════════════════════ -->
+<template id="tpl-prep">
+<header class="topbar topbar--back" data-zone="bar">
+  <button class="bar-btn" type="button" aria-label="Назад"><span class="icon ic-exit" aria-hidden="true"></span></button>
+  <div class="topbar__t"><span class="topbar__title">Подготовка книги</span></div>
+  <button class="bar-btn bar-btn--menu" type="button" aria-label="Меню приложения" aria-haspopup="dialog" aria-expanded="false"><span class="burger" aria-hidden="true"><i></i></span></button>
+</header>
+<main class="body" data-zone="body">
+  <p class="eyebrow">книга севера.pdf</p>
+
+  <div class="prep-head" style="margin-top:12px">
+    <div class="prep-line"><b>Готовим блоки</b><span class="num">78 / 120</span></div>
+    <div class="prog"><span class="prog__fill" style="width:65%"></span></div>
+    <p class="prep-meta">осталось 42 блока · примерно 6 минут</p>
+  </div>
+
+  <div class="prep-now">
+    <span class="label">сейчас</span>
+    <span class="row__title">Блок 79 · локации таверны</span>
+    <span class="row__meta">извлекаем сцены и имена</span>
+  </div>
+
+  <button class="fold" type="button" aria-expanded="false" aria-controls="log" style="margin-top:16px">
+    <span>Ошибки и журнал подготовки</span>
+    <span style="display:inline-flex;align-items:center;gap:8px"><span class="chip chip--bad">4</span><span class="row__go" aria-hidden="true">›</span></span>
+  </button>
+
+  <section class="sect">
+    <p class="ui ui--3">Подготовка не останавливается из-за ошибок: 4 блока пропущены, остальные собираются. Пока идёт подготовка, выйти можно — черновик сохранится.</p>
+  </section>
+</main>
+<div class="dock" data-zone="dock">
+  <button class="btn btn--quiet btn--block" type="button">Отменить подготовку</button>
+</div>
+</template>
+
+<!-- ══ 5. ЖУРНАЛ ОШИБОК В ШТОРКЕ ══════════════════════════════════════════ -->
+<template id="tpl-prep-log">
+<header class="topbar topbar--back" data-zone="bar">
+  <button class="bar-btn" type="button" aria-label="Назад"><span class="icon ic-exit" aria-hidden="true"></span></button>
+  <div class="topbar__t"><span class="topbar__title">Подготовка книги</span></div>
+  <button class="bar-btn bar-btn--menu" type="button" aria-label="Меню приложения" aria-haspopup="dialog" aria-expanded="false"><span class="burger" aria-hidden="true"><i></i></span></button>
+</header>
+<main class="body" data-zone="body">
+  <p class="eyebrow">книга севера.pdf</p>
+  <div class="prep-head" style="margin-top:12px">
+    <div class="prep-line"><b>Готовим блоки</b><span class="num">78 / 120</span></div>
+    <div class="prog"><span class="prog__fill" style="width:65%"></span></div>
+    <p class="prep-meta">осталось 42 блока · примерно 6 минут</p>
+  </div>
+</main>
+<div class="modal" data-zone="modal">
+  <div class="modal__scrim" aria-hidden="true"></div>
+  <div class="sheetmodal" id="log" role="dialog" aria-modal="true" aria-label="Журнал подготовки">
+    <span class="sheetmodal__grab" aria-hidden="true"></span>
+    <div class="sheetmodal__head">
+      <span class="sheetmodal__title">Ошибки и журнал · 4</span>
+      <button class="bar-btn" type="button" aria-label="Закрыть">✕</button>
+    </div>
+    <div class="sheetmodal__body">
+      <div class="log-row">
+        <span class="log-row__where">блок 12 · сцена</span>
+        <span class="log-row__h">Не найдено поле «Место действия»</span>
+        <span class="log-row__m">Взято из заголовка раздела</span>
+      </div>
+      <div class="log-row">
+        <span class="log-row__where">блок 31 · NPC</span>
+        <span class="log-row__h">Имя «Лада» встречается в двух ролях</span>
+        <span class="log-row__m">Оставлена первая роль, вторая ждёт проверки</span>
+      </div>
+      <div class="log-row">
+        <span class="log-row__where">блок 58 · проверки</span>
+        <span class="log-row__h">Сложность 28 выше предела</span>
+        <span class="log-row__m">Снижена до 25 — предел правил</span>
+      </div>
+      <div class="log-row">
+        <span class="log-row__where">блок 74 · локации</span>
+        <span class="log-row__h">Ссылка на сцену, которой нет в книге</span>
+        <span class="log-row__m">Ссылка пропущена, блок собран без неё</span>
+      </div>
+      <div class="log-row">
+        <span class="log-row__where">повторы</span>
+        <span class="log-row__h">3 × NPC без имени</span>
+        <span class="log-row__m">Названы по роли: стражник, трактирщица, возчик</span>
+      </div>
+      <div class="log-foot">
+        <button class="btn btn--ghost btn--block" type="button">Скопировать журнал</button>
+      </div>
+    </div>
+  </div>
+</div>
+</template>
+
+<!-- ══ 6. ИГРА ════════════════════════════════════════════════════════════ -->
+<template id="tpl-game">
+<header class="topbar topbar--game" data-zone="bar">
+  <button class="bar-btn" type="button" aria-label="К списку приключений"><span class="icon ic-exit" aria-hidden="true"></span></button>
+  <div class="topbar__t">
+    <span class="topbar__title">Тайна трёх сосен</span>
+    <span class="topbar__sub">глава II · трактир</span>
+  </div>
+  <span class="vitals" aria-label="Хиты 11 из 11, защита 15">
+    <span><span class="icon ic-heart" aria-hidden="true"></span><b>11</b></span>
+    <span><span class="icon ic-shield" aria-hidden="true"></span><b>15</b></span>
+  </span>
+  <button class="bar-btn" type="button" aria-label="Лист героя"><span class="icon ic-person" aria-hidden="true"></span></button>
+</header>
+<main class="body body--feed" data-zone="body">
+  <div class="feed">
+    <button class="fold fold--sticky" type="button">
+      <span>Ещё 12 ходов</span><span class="fold__n">показать</span>
+    </button>
+
+    <div class="chapter"><span class="chapter__rule"></span><span class="chapter__label">глава II · три сосны</span><span class="chapter__rule"></span></div>
+
+    <article class="message message--master">
+      <div class="speaker"><span class="icon ic-feather" aria-hidden="true"></span>Мастер</div>
+      <div class="prose">
+        <p>Дверь закрывается за спиной, и дождь остаётся снаружи. Внутри пахнет мокрой шерстью, дымом и луком. У очага спит собака, положив голову на чью-то куртку.</p>
+      </div>
+    </article>
+
+    <article class="message message--you">
+      <div class="speaker"><span class="icon ic-person" aria-hidden="true"></span>Ты</div>
+      <div class="prose">
+        <p>Подхожу к стойке, кладу две монеты и спрашиваю про караван.</p>
+      </div>
+      <div class="roll" aria-label="Проверка Харизмы: нужно 12, выпало 8, модификатор +1, итого 9, мимо">
+        <div class="roll__die">DIE8</div>
+        <div class="roll__name"><p class="roll__kicker">Проверка Харизмы · d20</p></div>
+        <div class="roll__tag"><span class="roll__verdict" data-out="miss">мимо</span></div>
+        <div class="roll__nums"><span><b>12</b> нужно · <b>8</b> выпало · <b>+1</b></span><span class="roll__sum">= 9</span></div>
+      </div>
+    </article>
+
+    <article class="message message--master">
+      <div class="speaker"><span class="icon ic-feather" aria-hidden="true"></span>Мастер</div>
+      <div class="prose">
+        <p>Женщина накрывает кружку ладонью.</p>
+        <p class="say">— Караван, — повторяет она. — Ты не первый, кто спрашивает. И, судя по сапогам, не последний.</p>
+      </div>
+    </article>
+  </div>
+</main>
+<div class="dock" data-zone="dock">
+  <form class="composer" onsubmit="return false">
+    <div class="composer__frame">
+      <label class="sr-only" for="say" hidden>Что ты делаешь</label>
+      <textarea class="composer__input" id="say" rows="1" placeholder="Что ты делаешь? Опиши словами."></textarea>
+      <button class="composer__send" type="submit" aria-label="Сказать"><span class="icon ic-feather" aria-hidden="true"></span></button>
+    </div>
+    <div class="composer__row">
+      <button class="die-btn" type="button" aria-label="Бросить d20">d20</button>
+      <span class="composer__hint">ход 14 · сохранено</span>
+    </div>
+  </form>
+</div>
+</template>
+
+<!-- ══ 7. ИГРА ПРИ КЛАВИАТУРЕ ═════════════════════════════════════════════ -->
+<template id="tpl-game-kb">
+<header class="topbar topbar--game" data-zone="bar">
+  <button class="bar-btn" type="button" aria-label="К списку приключений"><span class="icon ic-exit" aria-hidden="true"></span></button>
+  <div class="topbar__t">
+    <span class="topbar__title">Тайна трёх сосен</span>
+  </div>
+  <span class="vitals" aria-label="Хиты 11 из 11, защита 15">
+    <span><span class="icon ic-heart" aria-hidden="true"></span><b>11</b></span>
+    <span><span class="icon ic-shield" aria-hidden="true"></span><b>15</b></span>
+  </span>
+  <button class="bar-btn" type="button" aria-label="Лист героя"><span class="icon ic-person" aria-hidden="true"></span></button>
+</header>
+<main class="body body--feed" data-zone="body">
+  <div class="feed">
+    <button class="fold fold--sticky" type="button">
+      <span>Ещё 12 ходов</span><span class="fold__n">показать</span>
+    </button>
+
+    <article class="message message--you">
+      <div class="speaker"><span class="icon ic-person" aria-hidden="true"></span>Ты</div>
+      <div class="prose"><p>Подхожу к стойке, кладу две монеты и спрашиваю про караван.</p></div>
+      <div class="roll" aria-label="Проверка Харизмы: нужно 12, выпало 8, модификатор +1, итого 9, мимо">
+        <div class="roll__die">DIE8</div>
+        <div class="roll__name"><p class="roll__kicker">Проверка Харизмы · d20</p></div>
+        <div class="roll__tag"><span class="roll__verdict" data-out="miss">мимо</span></div>
+        <div class="roll__nums"><span><b>12</b> нужно · <b>8</b> выпало · <b>+1</b></span><span class="roll__sum">= 9</span></div>
+      </div>
+    </article>
+    <article class="message message--master">
+      <div class="speaker"><span class="icon ic-feather" aria-hidden="true"></span>Мастер</div>
+      <div class="prose">
+        <p>Женщина накрывает кружку ладонью.</p>
+        <p class="say">— Караван, — повторяет она. — Ты не первый, кто спрашивает. И, судя по сапогам, не последний.</p>
+      </div>
+    </article>
+  </div>
+</main>
+<div class="dock" data-zone="dock">
+  <form class="composer" onsubmit="return false">
+    <div class="composer__frame">
+      <label class="sr-only" for="say-kb" hidden>Что ты делаешь</label>
+      <textarea class="composer__input" id="say-kb" rows="1" placeholder="Что ты делаешь?">Иду к дальнему столу.</textarea>
+      <button class="composer__send" type="submit" aria-label="Сказать"><span class="icon ic-feather" aria-hidden="true"></span></button>
+    </div>
+    <div class="composer__row">
+      <button class="die-btn" type="button" aria-label="Бросить d20">d20</button>
+      <span class="composer__hint">ход 14 · сохранено</span>
+    </div>
+  </form>
+</div>
+</template>
+
+<!-- ══ 8. ГЕРОЙ ══════════════════════════════════════════════════════════ -->
+<template id="tpl-hero">
+<header class="topbar topbar--back" data-zone="bar">
+  <button class="bar-btn" type="button" aria-label="Назад"><span class="icon ic-exit" aria-hidden="true"></span></button>
+  <div class="topbar__t"><span class="topbar__title">Лист героя</span></div>
+  <button class="bar-btn bar-btn--menu" type="button" aria-label="Меню приложения" aria-haspopup="dialog" aria-expanded="false"><span class="burger" aria-hidden="true"><i></i></span></button>
+</header>
+<main class="body" data-zone="body">
+  <section class="sheet">
+    <p class="eyebrow" style="color:var(--sheet-ink-3)">лист героя</p>
+    <h1 class="sheet__name">Мирон</h1>
+    <p class="sheet__meta">Человек · Плут · 3-й уровень</p>
+
+    <div class="sheet__stats">
+      <div class="sheet__stat"><span class="sheet__stat-label">Хиты</span><span class="sheet__stat-val">11<small>/11</small></span></div>
+      <div class="sheet__stat"><span class="sheet__stat-label">Защита</span><span class="sheet__stat-val">15</span></div>
+      <div class="sheet__stat"><span class="sheet__stat-label">Инициатива</span><span class="sheet__stat-val">+3</span></div>
+      <div class="sheet__stat"><span class="sheet__stat-label">Скорость</span><span class="sheet__stat-val">9 <small>м</small></span></div>
+    </div>
+
+    <div class="sheet__abils">
+      <div class="sheet__abil"><span>Сила</span><b>0</b></div>
+      <div class="sheet__abil"><span>Ловкость</span><b>+3</b></div>
+      <div class="sheet__abil"><span>Телосложение</span><b>+1</b></div>
+      <div class="sheet__abil"><span>Интеллект</span><b>+1</b></div>
+      <div class="sheet__abil"><span>Мудрость</span><b>+1</b></div>
+      <div class="sheet__abil"><span>Харизма</span><b>+1</b></div>
+    </div>
+
+    <h2 class="sheet__h">Навыки</h2>
+    <ul class="sheet__list">
+      <li><span>Скрытность</span><b>+5</b></li>
+      <li><span>Ловкость рук</span><b>+5</b></li>
+      <li><span>Внимательность</span><b>+3</b></li>
+      <li><span>Убеждение</span><b>+3</b></li>
+    </ul>
+
+    <h2 class="sheet__h">Полезное</h2>
+    <ul class="sheet__list">
+      <li><span>Состояние</span><b>свеж · 11/11</b></li>
+      <li><span>Эффекты</span><b>нет</b></li>
+      <li><span>Последний бросок</span>
+        <span class="sheet__roll">DIE8 Харизма · <b>9</b> · <span class="is-miss">мимо</span></span></li>
+    </ul>
+  </section>
+</main>
+</template>
+
+<!-- ══ 9. БЛОКНОТ ════════════════════════════════════════════════════════ -->
+<template id="tpl-notes">
+<header class="topbar topbar--back" data-zone="bar">
+  <button class="bar-btn" type="button" aria-label="Назад"><span class="icon ic-exit" aria-hidden="true"></span></button>
+  <div class="topbar__t"><span class="topbar__title">Блокнот</span></div>
+  <button class="bar-btn bar-btn--menu" type="button" aria-label="Меню приложения" aria-haspopup="dialog" aria-expanded="false"><span class="burger" aria-hidden="true"><i></i></span></button>
+</header>
+<nav class="tabs" aria-label="Разделы блокнота">
+  <button type="button" role="tab" aria-selected="true">События и записи</button>
+  <button type="button" role="tab" aria-selected="false">Контрольные точки</button>
+</nav>
+<main class="body" data-zone="body">
+  <h1 class="h2" style="margin-top:16px">Мои записи</h1>
+  <p class="ui ui--3" style="margin-top:6px">Ваши догадки и планы. Записи не становятся фактами мира и не передаются Мастеру.</p>
+  <textarea class="field__input note-input" style="margin-top:12px" rows="7">Лада врёт про караван: на карте есть перевал, которого нет в её рассказе. Спросить у проигравшего, ходил ли он с ними.</textarea>
+  <div class="note-foot">
+    <span class="ui ui--3">черновик сохранён</span>
+    <span class="ui ui--3 num">1 240 знаков</span>
+  </div>
+
+  <section class="sect">
+    <div class="sect__h"><span class="label">События</span><span class="ui ui--3">глава II</span></div>
+    <button class="row row--tap" type="button">
+      <span class="row__main"><span class="row__title">Договорились с Ладой о ночлеге</span><span class="row__meta">вчера, 22:14 · ход 12</span></span>
+      <span class="row__go" aria-hidden="true">›</span>
+    </button>
+    <button class="row row--tap row--48" type="button">
+      <span class="row__main"><span class="row__title">Ещё 12 событий</span></span>
+      <span class="row__go--text">показать все</span>
+    </button>
+  </section>
+</main>
+<div class="dock" data-zone="dock">
+  <button class="btn btn--primary btn--block" type="button" data-primary>Сохранить запись</button>
+</div>
+</template>
+
+<style>.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}</style>
+</body>
+</html>

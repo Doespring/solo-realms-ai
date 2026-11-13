@@ -1,0 +1,166 @@
+/* r223: палитры тем переехали в design-tokens.css — здесь остались только
+   раскладка и состояния (боковая колонка, кольцо фокуса, телефоны).
+   Четыре темы (dark/obsidian/parchment/minimal) сведены к двум: dark и light.
+   Ни одного #hex: все цвета — токены «Стол и лист». */
+
+/* Боковая колонка живёт на своём оттенке стола: в тёмной теме это почти чёрный
+   --ink-900, в светлой — та же бумага. Все цвета — токены, поэтому колонка
+   переключается вместе с приложением и контраст держится в обеих темах. */
+.sidebar{background:var(--ink-900);color:var(--text-2);--muted:var(--text-3)}
+.sidebar .brand{color:var(--text)}
+.sidebar .nav,.sidebar summary,.sidebar small{color:var(--text-2)}
+
+/* The hover/active nav item is a state, not just a colour: it also gains a
+   visible fill and a gold edge, so it survives greyscale and colour-blind use. */
+.sidebar .nav:hover,.sidebar .nav.active{color:var(--text);background:color-mix(in srgb,var(--text) 6%,transparent);border-color:var(--line-strong)}
+.sidebar .nav:focus-visible,.sidebar summary:focus-visible{outline:2px solid var(--candle);outline-offset:2px;border-radius:6px}
+
+/* Кнопки без класса, которые дописывают в колонку creation.js, prototype.js и
+   navigation.js, берут общий `button{background:var(--surface2);color:var(--text)}`
+   из style.css — это цвета страницы, а не колонки. Отвечаем обеими половинами
+   сокращения, иначе светлая заливка остаётся под светлой подписью. */
+.sidebar button:not(.nav):not(.quartz):not(.primary){background:var(--ink-850);border-color:var(--line);color:var(--text-2)}
+.sidebar button:not(.nav):not(.primary):hover{background:var(--ink-800);border-color:var(--candle);color:var(--text)}
+.sidebar button:not(.nav):not(.quartz):not(.primary):focus-visible{outline:2px solid var(--candle);outline-offset:2px}
+
+/* Checkboxes and radios tint only their box, never the text. */
+.sidebar input[type=checkbox],.sidebar input[type=radio]{accent-color:var(--candle)}
+
+/* r223: карточки хроник и зона перетаскивания берут цвета из своих файлов
+   (chronicles.css, creation.css) — здесь больше нет подмены под светлые темы. */
+
+/* State that is more than colour: a focused control keeps the gold ring and
+   also drops the default keyboard outline in favour of a solid 2px ring with
+   an offset, for buttons, fields, summaries and every link-like control. */
+/* The ring is the accent, not the gold: on the light themes gold reaches only
+   1.35-1.77:1 against the page, below the 3:1 an indicator needs (WCAG 1.4.11).
+   Accent gives 4.5-6.0:1 there and keeps the dark themes well above 3:1. */
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.sidebar :focus-visible{outline-color:var(--candle)}
+button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible,summary:focus-visible,a:focus-visible,[role=tab]:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+
+/* r223: длинные русские заголовки («Производительность») на 375 шире колонки
+   и растягивали всю страницу вбок. Слово переносится, а не расширяет layout. */
+h1,h2,h3{overflow-wrap:break-word}
+/* n08 — шкала кеглей: 14 (служебный) / 16 (основной) / 22 (H2) / 30 (H1).
+   Замер 1440 показал 10, 10.5, 11, 12 и 13 px у подписей и мет; ниже 14 —
+   нельзя (design/mobile/SPEC.md §2). Блок стоит последним в этом файле,
+   чтобы перекрыть легаси-шкалу style.css (9/10/11/12/13) одним местом. */
+body{font-size:16px}
+h1{font-size:30px}
+h2{font-size:22px}
+h3{font-size:16px}
+small,.eyebrow,.hint,.subtext,label,th,footer,.quiet,.panel-heading,#story-status,.ability,#rolls,.roll-entry small,.button-row button,.metric small,.runtime,.side-bottom,.nav-label,table,.tabletop-tabs button,.disclosure summary{font-size:14px;letter-spacing:normal}
+main>header{font-size:14px;letter-spacing:normal}
+.metric strong{font-size:22px}
+.metric small{font-size:14px}
+.eyebrow{letter-spacing:.12em}
+small{letter-spacing:.01em}
+
+/* Off-screen help text for controls whose meaning would otherwise be carried
+   only by an icon or a colour. */
+.sr-only{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);clip-path:inset(50%);white-space:nowrap;border:0}
+
+/* Forced colours / high contrast: keep the ring, drop the decorative fills. */
+@media(forced-colors:active){:focus-visible{outline:2px solid Highlight}.sidebar button:not(.nav){border-color:ButtonText}}
+
+/* On a phone the sidebar leaves its fixed column and stacks above the play
+   area; the navigation groups then take 480px and push the composer below the
+   fold. Cap it so the dialogue and the input stay on one screen. */
+@media(max-width:850px),(max-height:700px){
+  aside.sidebar{max-height:32dvh;overflow-y:auto;padding:8px 12px}
+  .sidebar .nav-group,.sidebar details{margin:2px 0}
+  .sidebar .nav{min-height:30px;padding:5px 8px}
+  #play .workspace-layout{grid-template-columns:minmax(0,1fr)!important;height:auto}
+  #play .workspace-layout{height:100%!important;min-height:0}
+  #play .story-card{height:100%!important;min-height:0;overflow:hidden}
+  #play #chat{flex:1 1 auto!important;min-height:0!important;height:auto!important;max-height:none!important}
+  #play .composer{flex:0 0 auto}
+  /* r222: без `.active` это правило включало игровой экран на телефоне поверх
+     первого экрана — вход уезжал под ленту (замер 375: кнопка «Начать историю»
+     на y=1061). display у #play уже даёт `#play.active{display:flex}`. */
+  .tabletop #play.unified-game.active{display:flex;flex-direction:column;height:calc(100dvh - 380px)!important;min-height:260px!important}
+  #play .chat{flex:1 1 auto;overflow-y:auto}
+  #play #chat,.chat{min-height:0!important;height:40dvh!important;max-height:40dvh!important}
+  .composer{position:static}
+}
+
+/* Боковая панель сцены стоит на том же оттенке, что и колонка навигации,
+   поэтому её кнопки без класса нуждаются в той же паре цветов. */
+.scene-rail button:not(.nav):not(.quartz):not(.primary){background:var(--ink-850);border-color:var(--line);color:var(--text-2)}
+.scene-rail button:not(.nav):not(.primary):hover{background:var(--ink-800);border-color:var(--candle);color:var(--text)}
+.scene-rail button:not(.nav):not(.quartz):not(.primary):focus-visible{outline:2px solid var(--candle);outline-offset:2px}
+
+/* A 200% zoom on a 683x384 screen leaves 384px of height, and the notice, the
+   stacked sidebar and the header already use 449 of them. The play area keeps
+   the dialogue and the composer; everything above it collapses. */
+@media(max-height:420px){
+  .notice{display:none}
+  /* The navigation must stay reachable: a clipped 56px strip left every nav
+     button outside the box, so the menu scrolls instead of hiding content. */
+  aside.sidebar{height:112px!important;max-height:112px!important;flex:none!important;overflow-y:auto!important;overflow-x:hidden;padding:2px 6px}
+  aside.sidebar .brand{display:none}
+  aside.sidebar button,a.nav{padding:2px 6px!important;font-size:11px!important;min-height:24px!important}
+  .sidebar .nav-group,.sidebar details{display:none}
+  main>header{display:none}
+  .tabletop #play.unified-game{height:calc(100dvh - 120px)!important;min-height:0!important}
+  /* The composer keeps its own row: story-card may not squeeze it out. */
+  #play #chat{min-height:0!important;flex:1 1 auto!important}
+  #play .composer{position:static;flex:0 0 auto!important;min-height:0}
+  /* B0: the play area is the dialogue and its input; the rail is not part of it. */
+  .tabletop #play.unified-game .scene-rail{display:none!important}
+  .tabletop #play.unified-game .workspace-layout{height:100%!important;min-height:0}
+  .tabletop #play.unified-game .story-card{height:100%!important;min-height:0;overflow:hidden}
+  .tabletop #play.unified-game #chat{flex:1 1 auto!important;min-height:0!important}
+}
+/* B0: the play area is the dialogue and its input. On small screens the panels
+   are re-created by game-screen.js and would overlay the composer, so they are
+   hidden there. On a wide screen the rail has room of its own and stays. */
+@media(max-width:850px),(max-height:700px){
+  #play #scene-hero,#play #scene-presence,#play #scene-session{display:none!important}
+}
+
+/* On a phone the menu takes 470 of 844 pixels and pushes the composer off the
+   screen. It becomes a compact scrollable strip so every item stays reachable,
+   and the play area takes the rest of the viewport. */
+@media(max-width:850px){
+  /* The menu used to take 470 of 844 pixels. It is capped and scrolls inside
+     itself, so every item stays reachable and the play area keeps the rest. */
+  aside.sidebar{height:auto!important;max-height:190px!important;flex:none!important;overflow-y:auto!important;-webkit-overflow-scrolling:touch}
+  aside.sidebar .brand{display:none}
+  aside.sidebar button,a.nav{padding:3px 8px!important;min-height:28px!important}
+  .tabletop #play.unified-game{height:calc(100dvh - 140px)!important;min-height:260px!important}
+}
+/* A 200% zoom also matches the phone width query, so the two blocks stack.
+   The short-screen block wins: the menu is a thin strip and the composer fits. */
+@media(max-height:420px){
+  aside.sidebar{max-height:112px!important}
+  .tabletop #play.unified-game{height:calc(100dvh - 128px)!important;min-height:200px!important}
+}
+
+/* game-screen.js moves #scene-hero inside .scene-rail, and game-screen.css hides
+   that rail in the play view. The hero panel therefore became unreachable. On a
+   wide screen it goes back into the play column, above the dialogue. */
+@media(min-width:851px) and (min-height:701px){
+  .tabletop #play.unified-game .workspace-layout>.scene-rail{display:block!important;grid-template-columns:minmax(0,1fr)!important;grid-template-rows:auto!important}
+  .tabletop #play.unified-game .scene-rail>#scene-hero{display:block!important;max-height:190px;overflow:hidden}
+  #play #scene-hero p{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  /* B0: the play area is the dialogue and its input. The hero panel may show
+     the hero, but no controls other than the composer belong here; the roll
+     log and per-event disclosures are mechanical detail, not dialogue. */
+  #play .scene-rail button,#play .scene-rail .button-row{display:none!important}
+  /* The way to the character sheet must survive though: one link, no mechanics. */
+  #play .scene-rail #scene-hero .sheet-link{display:inline-block!important}
+  #play .scene-rail .game-log,#play .scene-rail .game-restore,#play .scene-rail details:not(#scene-hero){display:none!important}
+}
+
+/* The prototype notice sits in the main flow and competes with real errors.
+   It is context, not news: quiet, small, and never louder than a live error. */
+/* No opacity here: a translucent 11px notice measured 2.80:1 in the minimal
+   theme, below the 4.5:1 floor. Quiet comes from size, spacing and colour. */
+.notice{
+  font-size:11px;line-height:1.5;letter-spacing:.08em;text-transform:uppercase;
+  color:var(--text-3);background:transparent;border:0;
+  border-bottom:1px solid var(--line);padding:5px 12px;
+}
+

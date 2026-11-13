@@ -1,0 +1,94 @@
+{
+  "schema_version": "1.0.0",
+  "checked_on": "2026-10-17",
+  "status": "passed",
+  "backend_selector": "solo.command_backend.command_backend",
+  "validation_runs": [
+    {
+      "report": "gm-command-cycle.junit.xml",
+      "tests": 58,
+      "failures": 0,
+      "errors": 0,
+      "seconds": 104.6
+    },
+    {
+      "report": "gm-command-cycle-compat.junit.xml",
+      "tests": 24,
+      "failures": 0,
+      "errors": 0,
+      "seconds": 26.745
+    }
+  ],
+  "earlier_native_api_regression": {
+    "tests": 7,
+    "passed": 7,
+    "context": "Included in the 27-test command_cycle + nat20_api run, 118.74 s; not counted twice"
+  },
+  "unique_targeted_cases": 65,
+  "shared_contracts": [
+    "game_commands.GameCommand",
+    "engine_memory_contracts.GameEvent",
+    "engine_memory_contracts.GameSnapshot"
+  ],
+  "verified": [
+    "HTTP mock AI + real Nat20 check/start/move/attack/save/new process/continue/end combat/short+long rest",
+    "Repeat old result after later commands without RNG/AI",
+    "Strict older Nat20 command envelope read compatibility",
+    "Stale state before and after Interpreter",
+    "Atomic rollback on Memory projection failure; undo/branch excludes abandoned facts",
+    "NPC resource ACL; no durable recipe, seed or raw native results in public projections",
+    "Ordinary Solo command cycle; no automatic campaign migration",
+    "Edition and unverified scene/world guards preserved"
+  ],
+  "changed_files": [
+    "solo/command_backend.py",
+    "solo/game.py",
+    "solo/command_engine.py",
+    "solo/nat20_api.py",
+    "solo/nat20_content.py",
+    "solo/nat20_worker.py",
+    "solo/combat_view.py",
+    "solo/world.py",
+    "tests/test_nat20_command_cycle.py",
+    "integration/nat20/README.md",
+    "docs/GM_COMMAND_CYCLE.md",
+    "docs/MEMORY_ENGINE.md"
+  ],
+  "sha256": {
+    "solo/command_backend.py": "bba464c7ce769c711923bd680af927fc32159722229a0b3fe0419dea4e7e02b4",
+    "solo/game.py": "f1e404e86929a00eef5cff075b083f33101dc08949e1b468eb512eeada42eca2",
+    "solo/command_engine.py": "116e5b1a144672b7e17929e92ca50d8e9cfb4ec43ecbfd8fe2292a416198caa7",
+    "solo/nat20_api.py": "b91fa4743772afacebca04691d68f959d0741d68efe8dacef77cf5d3dc3eea78",
+    "solo/nat20_content.py": "8ca4658505812adc75c320328927c3b45e24eadf57c492f4e8404bdff5d49854",
+    "solo/nat20_worker.py": "9ee94a39c1b0ef6b93ecff26f96b3be4f38d630a22d5af184fc5bfbeead11b53",
+    "solo/combat_view.py": "e4783012e5d4a4b5120a798d119f0e483d71a14f9630a2c255e8ee861fa53959",
+    "solo/world.py": "047c3c74a915c934bf17c2d72418b312fef36e58efbb5167f04b463b19ae6e67",
+    "tests/test_nat20_command_cycle.py": "fb7c8c7ce8c036bddea02c04fda3e84a70d557f83f499745c88a71dca2178674",
+    "integration/nat20/README.md": "12de7750a3820208f46ea4661f0bade9435aad9be54bdcb7a58193491fc55882",
+    "docs/GM_COMMAND_CYCLE.md": "391d020b897034ebfe5e01b8003a30fecbeee6f18c97414188f4bf1ad5ca640a",
+    "docs/MEMORY_ENGINE.md": "210e049b40c86248f872a5faf7779af0842445a840a082353f638f9c0ece7c50"
+  },
+  "temporary_directories_removed": [
+    ".test-tmp-gm-nat20-base",
+    ".test-tmp-gm-nat20-http",
+    ".test-tmp-gm-nat20-final",
+    ".test-tmp-gm-nat20-compat"
+  ],
+  "paid_api_calls": 0,
+  "exe_builds": 0,
+  "ui_changed_by_this_task": false,
+  "cloud_accounting_changed_by_this_task": false,
+  "vendor_nat20_changed_by_this_task": false,
+  "user_campaigns_used_in_tests": false,
+  "limitations": [
+    "One fixed level-one fighter/goblin profile and three registered checks",
+    "256-command replay limit; worker timeout 45 s; upstream auto-end-turn semantics unchanged",
+    "Mock AI validation only; no live provider validation",
+    "Legacy /play and UI command buttons are outside this integration; use existing command-turn for this profile",
+    "Full suite and EXE build not run"
+  ],
+  "warnings": [
+    "Existing Starlette/httpx deprecation",
+    "Existing lark sre_parse/sre_constants deprecations"
+  ]
+}

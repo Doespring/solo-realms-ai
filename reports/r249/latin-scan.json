@@ -1,0 +1,125 @@
+{
+ "before": {
+  "drafts": 33,
+  "steps": {
+   "species": 33,
+   "class": 33,
+   "background": 33,
+   "scores": 33,
+   "equipment": 33,
+   "final": 33,
+   "lineage": 22,
+   "skills": 138,
+   "magic": 13,
+   "subclass": 16
+  },
+  "latin": {
+   "species": {
+    "names": 9,
+    "sample": [
+     "Dragonborn",
+     "Dwarf",
+     "Elf",
+     "Gnome",
+     "Goliath"
+    ]
+   },
+   "class": {
+    "names": 12,
+    "sample": [
+     "Barbarian",
+     "Bard",
+     "Cleric",
+     "Druid",
+     "Fighter"
+    ]
+   },
+   "background": {
+    "names": 4,
+    "sample": [
+     "Acolyte",
+     "Criminal",
+     "Sage",
+     "Soldier"
+    ]
+   },
+   "lineage": {
+    "names": 8,
+    "sample": [
+     "Elf, Drow",
+     "Elf, High",
+     "Elf, Wood",
+     "Gnome, Forest",
+     "Gnome, Rock"
+    ]
+   },
+   "magic": {
+    "names": 183,
+    "sample": [
+     "Acid Arrow",
+     "Acid Splash",
+     "Aid",
+     "Alarm",
+     "Alter Self"
+    ]
+   },
+   "skills": {
+    "names": 63,
+    "sample": [
+     "Agonizing Blast",
+     "Armor of Shadows",
+     "Ascendant Step",
+     "Blessed Warrior",
+     "Careful Spell"
+    ]
+   },
+   "subclass": {
+    "names": 12,
+    "sample": [
+     "Champion",
+     "Circle of the Land",
+     "College of Lore",
+     "Draconic Sorcery",
+     "Evoker"
+    ]
+   }
+  }
+ },
+ "after": {
+  "drafts": 33,
+  "steps": {
+   "species": 33,
+   "class": 33,
+   "background": 33,
+   "scores": 33,
+   "equipment": 33,
+   "final": 33,
+   "lineage": 22,
+   "skills": 138,
+   "magic": 13,
+   "subclass": 16
+  },
+  "latin": {
+   "magic": {
+    "names": 183,
+    "sample": [
+     "Acid Arrow",
+     "Acid Splash",
+     "Aid",
+     "Alarm",
+     "Alter Self"
+    ]
+   },
+   "skills": {
+    "names": 63,
+    "sample": [
+     "Agonizing Blast",
+     "Armor of Shadows",
+     "Ascendant Step",
+     "Blessed Warrior",
+     "Careful Spell"
+    ]
+   }
+  }
+ }
+}

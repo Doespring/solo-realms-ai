@@ -1,0 +1,251 @@
+{
+  "base": "http://127.0.0.1:19343/",
+  "steps": [
+    {
+      "name": "play-opened",
+      "how": "already"
+    },
+    {
+      "name": "feed-loaded",
+      "articles": 2,
+      "errorsAfterLoad": 4
+    },
+    {
+      "name": "layout-1440",
+      "viewport": [
+        1440,
+        900
+      ],
+      "scrollWidth": 1440,
+      "clientWidth": 1440,
+      "horizontalScroll": false,
+      "headerOverlapsFeed": false,
+      "headerHeight": 64,
+      "chatWidth": 692,
+      "chatPadX": [
+        "16px",
+        "16px"
+      ],
+      "chatFontSize": "20px",
+      "chatLineHeight": "32px",
+      "messageFontSize": "20px",
+      "messageLineHeight": "32px",
+      "sentButton": "Сказать",
+      "railVisible": true,
+      "railWidth": 288,
+      "sheetToggleShown": false,
+      "radiusToken": "2px",
+      "inkToken": "#14110D",
+      "vitals": null,
+      "overflowing": []
+    },
+    {
+      "name": "turn-sent",
+      "before": 2,
+      "after": 4,
+      "roll": true
+    },
+    {
+      "name": "roll-plaque",
+      "rolling": true,
+      "animations": [
+        {
+          "name": "r220-roll-show",
+          "dur": 130
+        }
+      ],
+      "zones": [
+        {
+          "zone": "roll__die",
+          "present": true,
+          "width": 48
+        },
+        {
+          "zone": "roll__name",
+          "present": true,
+          "width": 86
+        },
+        {
+          "zone": "roll__nums",
+          "present": true,
+          "width": 59
+        },
+        {
+          "zone": "roll__tag",
+          "present": true,
+          "width": 59
+        }
+      ],
+      "svgFaces": 10,
+      "svgEdges": 18,
+      "dieNumber": "10",
+      "verdict": "успех",
+      "numsWhiteSpace": "normal",
+      "ariaLabel": "Проверка, выпало 10, итого 13, успех"
+    },
+    {
+      "name": "layout-375",
+      "viewport": [
+        375,
+        812
+      ],
+      "scrollWidth": 375,
+      "clientWidth": 375,
+      "horizontalScroll": false,
+      "headerOverlapsFeed": false,
+      "headerHeight": 52,
+      "chatWidth": 339,
+      "chatPadX": [
+        "16px",
+        "16px"
+      ],
+      "chatFontSize": "20px",
+      "chatLineHeight": "32px",
+      "messageFontSize": "20px",
+      "messageLineHeight": "32px",
+      "sentButton": "Сказать",
+      "railVisible": false,
+      "railWidth": 0,
+      "sheetToggleShown": true,
+      "radiusToken": "2px",
+      "inkToken": "#14110D",
+      "vitals": "Хиты 12 / 12",
+      "overflowing": []
+    },
+    {
+      "name": "sheet-by-button",
+      "open": true,
+      "railWidth": 375,
+      "aria": "true"
+    },
+    {
+      "name": "wide-sheet",
+      "railVisible": true,
+      "railWidth": 288,
+      "vitals": "Хиты 12 / 12"
+    },
+    {
+      "name": "errors-total",
+      "count": 4
+    }
+  ],
+  "errors": [
+    {
+      "kind": "console",
+      "text": "Applying inline style violates the following Content Security Policy directive 'style-src 'self''. Either the 'unsafe-inline' keyword, a hash ('sha256-QtLc5uBVH+QBp01WthV2UYBdMRijs+JGa3O93rUR57g='), or a nonce ('nonce-..",
+      "url": "http://127.0.0.1:19343/"
+    },
+    {
+      "kind": "pageerror",
+      "text": "identity is not defined",
+      "stack": "ReferenceError: identity is not defined |     at http://127.0.0.1:19343/static/rulesets.js?v=nat20-screen-2:30:117"
+    },
+    {
+      "kind": "pageerror",
+      "text": "identity is not defined",
+      "stack": "ReferenceError: identity is not defined |     at http://127.0.0.1:19343/static/world.js?v=2.1.4-preview.6:14:143"
+    },
+    {
+      "kind": "console",
+      "text": "Failed to load resource: the server responded with a status of 404 (Not Found)",
+      "url": "http://127.0.0.1:19343/favicon.ico"
+    }
+  ],
+  "layouts": {
+    "375": {
+      "viewport": [
+        375,
+        812
+      ],
+      "scrollWidth": 375,
+      "clientWidth": 375,
+      "horizontalScroll": false,
+      "headerOverlapsFeed": false,
+      "headerHeight": 52,
+      "chatWidth": 339,
+      "chatPadX": [
+        "16px",
+        "16px"
+      ],
+      "chatFontSize": "20px",
+      "chatLineHeight": "32px",
+      "messageFontSize": "20px",
+      "messageLineHeight": "32px",
+      "sentButton": "Сказать",
+      "railVisible": false,
+      "railWidth": 0,
+      "sheetToggleShown": true,
+      "radiusToken": "2px",
+      "inkToken": "#14110D",
+      "vitals": "Хиты 12 / 12",
+      "overflowing": []
+    },
+    "1440": {
+      "viewport": [
+        1440,
+        900
+      ],
+      "scrollWidth": 1440,
+      "clientWidth": 1440,
+      "horizontalScroll": false,
+      "headerOverlapsFeed": false,
+      "headerHeight": 64,
+      "chatWidth": 692,
+      "chatPadX": [
+        "16px",
+        "16px"
+      ],
+      "chatFontSize": "20px",
+      "chatLineHeight": "32px",
+      "messageFontSize": "20px",
+      "messageLineHeight": "32px",
+      "sentButton": "Сказать",
+      "railVisible": true,
+      "railWidth": 288,
+      "sheetToggleShown": false,
+      "radiusToken": "2px",
+      "inkToken": "#14110D",
+      "vitals": null,
+      "overflowing": []
+    }
+  },
+  "dive": {
+    "rolling": true,
+    "animations": [
+      {
+        "name": "r220-roll-show",
+        "dur": 130
+      }
+    ],
+    "zones": [
+      {
+        "zone": "roll__die",
+        "present": true,
+        "width": 48
+      },
+      {
+        "zone": "roll__name",
+        "present": true,
+        "width": 86
+      },
+      {
+        "zone": "roll__nums",
+        "present": true,
+        "width": 59
+      },
+      {
+        "zone": "roll__tag",
+        "present": true,
+        "width": 59
+      }
+    ],
+    "svgFaces": 10,
+    "svgEdges": 18,
+    "dieNumber": "10",
+    "verdict": "успех",
+    "numsWhiteSpace": "normal",
+    "ariaLabel": "Проверка, выпало 10, итого 13, успех"
+  },
+  "ok": true,
+  "freshErrors": 0
+}

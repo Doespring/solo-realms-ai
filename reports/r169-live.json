@@ -1,0 +1,351 @@
+{
+  "phb2024.barbarian.put_dikogo_serdtsa": {
+    "campaign": "318e246b-1b08-428c-ac48-9a1cadcfdd10",
+    "class_slug": "barbarian",
+    "level": 3,
+    "class_name": "barbarian",
+    "granted": [
+      "phb2024.barbarian.put_dikogo_serdtsa.govoriashchii_s_zhivotnymi",
+      "phb2024.barbarian.put_dikogo_serdtsa.iarost_dikoi_prirody",
+      "phb2024.barbarian.put_dikogo_serdtsa.aspekt_dikoi_prirody",
+      "phb2024.barbarian.put_dikogo_serdtsa.govoriashchii_s_prirodoi",
+      "phb2024.barbarian.put_dikogo_serdtsa.sila_dikoi_prirody"
+    ],
+    "on_sheet": [
+      "phb2024.barbarian.put_dikogo_serdtsa.govoriashchii_s_zhivotnymi",
+      "phb2024.barbarian.put_dikogo_serdtsa.iarost_dikoi_prirody"
+    ],
+    "player_sees": [
+      {
+        "id": "phb2024.barbarian.put_dikogo_serdtsa.govoriashchii_s_zhivotnymi",
+        "name": "Говорящий с животными",
+        "source": "PHB 2024, стр. 65"
+      },
+      {
+        "id": "phb2024.barbarian.put_dikogo_serdtsa.iarost_dikoi_prirody",
+        "name": "Ярость дикой природы",
+        "source": "PHB 2024, стр. 65"
+      }
+    ]
+  },
+  "phb2024.bard.dance": {
+    "campaign": "0c9d86aa-58bc-42bd-a172-e6b9839f26d2",
+    "class_slug": "bard",
+    "level": 3,
+    "class_name": "bard",
+    "granted": [
+      "phb2024.bard.dance.dazzling-footwork",
+      "phb2024.bard.dance.inspiring-movement",
+      "phb2024.bard.dance.tandem-footwork",
+      "phb2024.bard.dance.leading-evasion"
+    ],
+    "on_sheet": [
+      "phb2024.bard.dance.dazzling-footwork"
+    ],
+    "player_sees": [
+      {
+        "id": "phb2024.bard.dance.dazzling-footwork",
+        "name": "Ослепительные фуэте",
+        "source": "PHB 2024, стр. 59"
+      }
+    ]
+  },
+  "phb2024.cleric.domen_obmana": {
+    "campaign": "af64aaca-f617-448d-bb5f-3bc50cd2c794",
+    "class_slug": "cleric",
+    "level": 3,
+    "class_name": "cleric",
+    "granted": [
+      "phb2024.cleric.domen_obmana.blagoslovenie_obmanshchika",
+      "phb2024.cleric.domen_obmana.dvulichnost",
+      "phb2024.cleric.domen_obmana.zaklinaniia_domena_obmana",
+      "phb2024.cleric.domen_obmana.obmannaia_rokirovka",
+      "phb2024.cleric.domen_obmana.uluchshennaia_dvulichnost"
+    ],
+    "on_sheet": [
+      "phb2024.cleric.domen_obmana.blagoslovenie_obmanshchika",
+      "phb2024.cleric.domen_obmana.dvulichnost",
+      "phb2024.cleric.domen_obmana.zaklinaniia_domena_obmana"
+    ],
+    "player_sees": [
+      {
+        "id": "phb2024.cleric.domen_obmana.blagoslovenie_obmanshchika",
+        "name": "Благословение обманщика",
+        "source": "PHB 2024, стр. 109"
+      },
+      {
+        "id": "phb2024.cleric.domen_obmana.dvulichnost",
+        "name": "Двуличность",
+        "source": "PHB 2024, стр. 109"
+      },
+      {
+        "id": "phb2024.cleric.domen_obmana.zaklinaniia_domena_obmana",
+        "name": "Заклинания Домена обмана",
+        "source": "PHB 2024, стр. 110"
+      }
+    ]
+  },
+  "phb2024.druid.krug_luny": {
+    "campaign": "982753dd-46f8-4539-98d9-aa43378be4a9",
+    "class_slug": "druid",
+    "level": 3,
+    "class_name": "druid",
+    "granted": [
+      "phb2024.druid.krug_luny.obliki_kruga",
+      "phb2024.druid.krug_luny.zaklinaniia_kruga_luny",
+      "phb2024.druid.krug_luny.uluchshennye_obliki_kruga",
+      "phb2024.druid.krug_luny.shag_v_lunnyi_svet",
+      "phb2024.druid.krug_luny.lunnyi_oblik"
+    ],
+    "on_sheet": [
+      "phb2024.druid.krug_luny.obliki_kruga",
+      "phb2024.druid.krug_luny.zaklinaniia_kruga_luny"
+    ],
+    "player_sees": [
+      {
+        "id": "phb2024.druid.krug_luny.obliki_kruga",
+        "name": "Облики круга",
+        "source": "PHB 2024, стр. 99"
+      },
+      {
+        "id": "phb2024.druid.krug_luny.zaklinaniia_kruga_luny",
+        "name": "Заклинания Круга луны",
+        "source": "PHB 2024, стр. 99"
+      }
+    ]
+  },
+  "phb2024.fighter.master_boia": {
+    "campaign": "10a1cb46-4d55-42b4-b43f-16358498553e",
+    "class_slug": "fighter",
+    "level": 3,
+    "class_name": "fighter",
+    "granted": [
+      "phb2024.fighter.master_boia.boevoe_prevoskhodstvo",
+      "phb2024.fighter.master_boia.uchenik_voiny",
+      "phb2024.fighter.master_boia.poznai_svoego_vraga",
+      "phb2024.fighter.master_boia.uluchshennoe_boevoe_prevoskhodstvo",
+      "phb2024.fighter.master_boia.neoslabevaiushchii",
+      "phb2024.fighter.master_boia.absoliutnoe_boevoe_prevoskhodstvo"
+    ],
+    "on_sheet": [
+      "phb2024.fighter.master_boia.boevoe_prevoskhodstvo",
+      "phb2024.fighter.master_boia.uchenik_voiny"
+    ],
+    "player_sees": [
+      {
+        "id": "phb2024.fighter.master_boia.boevoe_prevoskhodstvo",
+        "name": "Боевое превосходство",
+        "source": "PHB 2024, стр. 71, 72, 73"
+      },
+      {
+        "id": "phb2024.fighter.master_boia.uchenik_voiny",
+        "name": "Ученик войны",
+        "source": "PHB 2024, стр. 71"
+      }
+    ]
+  },
+  "phb2024.monk.voin_miloserdiia": {
+    "campaign": "a421c66a-12af-4338-aaf7-b30b5abce4f2",
+    "class_slug": "monk",
+    "level": 3,
+    "class_name": "monk",
+    "granted": [
+      "phb2024.monk.voin_miloserdiia.kalechashchaia_ruka",
+      "phb2024.monk.voin_miloserdiia.istseliaiushchaia_ruka",
+      "phb2024.monk.voin_miloserdiia.orudiia_miloserdiia",
+      "phb2024.monk.voin_miloserdiia.prikosnovenie_tselitelia",
+      "phb2024.monk.voin_miloserdiia.shkval_istseleniia_i_boli",
+      "phb2024.monk.voin_miloserdiia.ruka_absoliutnogo_miloserdiia"
+    ],
+    "on_sheet": [
+      "phb2024.monk.voin_miloserdiia.kalechashchaia_ruka",
+      "phb2024.monk.voin_miloserdiia.istseliaiushchaia_ruka",
+      "phb2024.monk.voin_miloserdiia.orudiia_miloserdiia"
+    ],
+    "player_sees": [
+      {
+        "id": "phb2024.monk.voin_miloserdiia.kalechashchaia_ruka",
+        "name": "Калечащая рука",
+        "source": "PHB 2024, стр. 128"
+      },
+      {
+        "id": "phb2024.monk.voin_miloserdiia.istseliaiushchaia_ruka",
+        "name": "Исцеляющая рука",
+        "source": "PHB 2024, стр. 128"
+      },
+      {
+        "id": "phb2024.monk.voin_miloserdiia.orudiia_miloserdiia",
+        "name": "Орудия милосердия",
+        "source": "PHB 2024, стр. 128"
+      }
+    ]
+  },
+  "phb2024.paladin.kliatva_drevnikh": {
+    "campaign": "4f96d887-cc6e-4459-8ba9-a3e78eeed2fe",
+    "class_slug": "paladin",
+    "level": 3,
+    "class_name": "paladin",
+    "granted": [
+      "phb2024.paladin.kliatva_drevnikh.gnev_prirody",
+      "phb2024.paladin.kliatva_drevnikh.zaklinaniia_kliatvy_drevnikh",
+      "phb2024.paladin.kliatva_drevnikh.aura_opeki",
+      "phb2024.paladin.kliatva_drevnikh.bessmertnyi_strazh",
+      "phb2024.paladin.kliatva_drevnikh.drevnii_chempion"
+    ],
+    "on_sheet": [
+      "phb2024.paladin.kliatva_drevnikh.gnev_prirody",
+      "phb2024.paladin.kliatva_drevnikh.zaklinaniia_kliatvy_drevnikh"
+    ],
+    "player_sees": [
+      {
+        "id": "phb2024.paladin.kliatva_drevnikh.gnev_prirody",
+        "name": "Гнев природы",
+        "source": "PHB 2024, стр. 138"
+      },
+      {
+        "id": "phb2024.paladin.kliatva_drevnikh.zaklinaniia_kliatvy_drevnikh",
+        "name": "Заклинания Клятвы древних",
+        "source": "PHB 2024, стр. 139"
+      }
+    ]
+  },
+  "phb2024.ranger.povelitel_zverei": {
+    "campaign": "0868429c-e361-4507-aec7-604054fc2b2f",
+    "class_slug": "ranger",
+    "level": 3,
+    "class_name": "ranger",
+    "granted": [
+      "phb2024.ranger.povelitel_zverei.pervichnyi_sputnik",
+      "phb2024.ranger.povelitel_zverei.iskliuchitelnaia_dressirovka",
+      "phb2024.ranger.povelitel_zverei.zverinaia_iarost",
+      "phb2024.ranger.povelitel_zverei.obshchie_zaklinaniia"
+    ],
+    "on_sheet": [
+      "phb2024.ranger.povelitel_zverei.pervichnyi_sputnik"
+    ],
+    "player_sees": [
+      {
+        "id": "phb2024.ranger.povelitel_zverei.pervichnyi_sputnik",
+        "name": "Первичный спутник",
+        "source": "PHB 2024, стр. 157, 158"
+      }
+    ]
+  },
+  "phb2024.rogue.klinok_dush": {
+    "campaign": "2418a896-95bf-412a-9b3f-c57d10721820",
+    "class_slug": "rogue",
+    "level": 3,
+    "class_name": "rogue",
+    "granted": [
+      "phb2024.rogue.klinok_dush.psionicheskaia_sila",
+      "phb2024.rogue.klinok_dush.psikhicheskie_klinki",
+      "phb2024.rogue.klinok_dush.klinki_dushi",
+      "phb2024.rogue.klinok_dush.psikhicheskaia_zavesa",
+      "phb2024.rogue.klinok_dush.razdiranie_razuma"
+    ],
+    "on_sheet": [
+      "phb2024.rogue.klinok_dush.psionicheskaia_sila",
+      "phb2024.rogue.klinok_dush.psikhicheskie_klinki"
+    ],
+    "player_sees": [
+      {
+        "id": "phb2024.rogue.klinok_dush.psionicheskaia_sila",
+        "name": "Псионическая сила",
+        "source": "PHB 2024, стр. 147"
+      },
+      {
+        "id": "phb2024.rogue.klinok_dush.psikhicheskie_klinki",
+        "name": "Психические клинки",
+        "source": "PHB 2024, стр. 148"
+      }
+    ]
+  },
+  "phb2024.sorcerer.aberrantnoe_charodeistvo": {
+    "campaign": "408698c9-60b3-40be-bea3-92ef4170c9f3",
+    "class_slug": "sorcerer",
+    "level": 3,
+    "class_name": "sorcerer",
+    "granted": [
+      "phb2024.sorcerer.aberrantnoe_charodeistvo.psionicheskie_zaklinaniia",
+      "phb2024.sorcerer.aberrantnoe_charodeistvo.telepaticheskaia_rech",
+      "phb2024.sorcerer.aberrantnoe_charodeistvo.psionicheskoe_charodeistvo",
+      "phb2024.sorcerer.aberrantnoe_charodeistvo.psikhicheskaia_zashchita",
+      "phb2024.sorcerer.aberrantnoe_charodeistvo.otkrovenie_vo_ploti",
+      "phb2024.sorcerer.aberrantnoe_charodeistvo.iskazhaiushchee_skhlopyvanie"
+    ],
+    "on_sheet": [
+      "phb2024.sorcerer.aberrantnoe_charodeistvo.psionicheskie_zaklinaniia",
+      "phb2024.sorcerer.aberrantnoe_charodeistvo.telepaticheskaia_rech"
+    ],
+    "player_sees": [
+      {
+        "id": "phb2024.sorcerer.aberrantnoe_charodeistvo.psionicheskie_zaklinaniia",
+        "name": "Псионические заклинания",
+        "source": "PHB 2024, стр. 169"
+      },
+      {
+        "id": "phb2024.sorcerer.aberrantnoe_charodeistvo.telepaticheskaia_rech",
+        "name": "Телепатическая речь",
+        "source": "PHB 2024, стр. 169"
+      }
+    ]
+  },
+  "phb2024.warlock.pokrovitelstvo_arkhifei": {
+    "campaign": "71815c1a-4fe8-411f-ab6f-f560b0629a2b",
+    "class_slug": "warlock",
+    "level": 3,
+    "class_name": "warlock",
+    "granted": [
+      "phb2024.warlock.pokrovitelstvo_arkhifei.zaklinaniia_arkhifei",
+      "phb2024.warlock.pokrovitelstvo_arkhifei.shagi_fei",
+      "phb2024.warlock.pokrovitelstvo_arkhifei.tumannoe_ischeznovenie",
+      "phb2024.warlock.pokrovitelstvo_arkhifei.charuiushchaia_zashchita",
+      "phb2024.warlock.pokrovitelstvo_arkhifei.zavorazhivaiushchaia_magiia"
+    ],
+    "on_sheet": [
+      "phb2024.warlock.pokrovitelstvo_arkhifei.zaklinaniia_arkhifei",
+      "phb2024.warlock.pokrovitelstvo_arkhifei.shagi_fei"
+    ],
+    "player_sees": [
+      {
+        "id": "phb2024.warlock.pokrovitelstvo_arkhifei.zaklinaniia_arkhifei",
+        "name": "Заклинания Архифеи",
+        "source": "PHB 2024, стр. 119"
+      },
+      {
+        "id": "phb2024.warlock.pokrovitelstvo_arkhifei.shagi_fei",
+        "name": "Шаги феи",
+        "source": "PHB 2024, стр. 119"
+      }
+    ]
+  },
+  "phb2024.wizard.illiuzionist": {
+    "campaign": "59bd4fb7-457b-4e48-a370-25b17325083b",
+    "class_slug": "wizard",
+    "level": 3,
+    "class_name": "wizard",
+    "granted": [
+      "phb2024.wizard.illiuzionist.spetsialist_shkoly_illiuzii",
+      "phb2024.wizard.illiuzionist.uluchshennye_illiuzii",
+      "phb2024.wizard.illiuzionist.illiuzornye_sushchestva",
+      "phb2024.wizard.illiuzionist.sobstvennaia_illiuzornost",
+      "phb2024.wizard.illiuzionist.illiuzornaia_realnost"
+    ],
+    "on_sheet": [
+      "phb2024.wizard.illiuzionist.spetsialist_shkoly_illiuzii",
+      "phb2024.wizard.illiuzionist.uluchshennye_illiuzii"
+    ],
+    "player_sees": [
+      {
+        "id": "phb2024.wizard.illiuzionist.spetsialist_shkoly_illiuzii",
+        "name": "Специалист школы Иллюзии",
+        "source": "PHB 2024, стр. 86"
+      },
+      {
+        "id": "phb2024.wizard.illiuzionist.uluchshennye_illiuzii",
+        "name": "Улучшенные иллюзии",
+        "source": "PHB 2024, стр. 86"
+      }
+    ]
+  }
+}

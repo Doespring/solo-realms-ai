@@ -1,0 +1,6 @@
+# Необязательное хранилище ключей API: системный секрет-сервис
+# (SecretService/KWallet на Linux, Credential Manager на Windows).
+# Без этого файла cloud_settings выбирает keyring, только если модуль уже есть;
+# иначе ключи идут в шифрованный файл (cryptography, requirements.txt).
+-r requirements.txt
+keyring==25.7.0

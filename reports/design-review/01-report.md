@@ -1,0 +1,106 @@
+# n07 — замер интерфейса приложения (10 состояний × 2 ширины × 2 темы)
+
+Коммит: `5b394e5b` · кадров: **40** · приложение: `http://127.0.0.1:59931` · профиль: `/home/hermes/projects/SoloRealmsAI-Nat20/runtime/n07-audit` · браузер: Chromium (ms-playwright 1248) по CDP
+
+Замеры сняты с живого приложения (FastAPI + Chromium): тема — ключ `solo-theme`, кампании посеяны движком Nat20. Живой профиль `runtime/web-local/` и порт 19215 не использовались. «Видимых интерактивных» — элементы в кадре, не за его краем; обрезанные (`scrollWidth > clientWidth + 1`) ищутся по всему документу. Порог тап-таргета 44 px — телефонный (рубрика, критерий 5); на 1440 он приведён справочно, чтобы видеть разницу между полосой наведения и пальцем.
+
+## Таблица 40 кадров
+
+| состояние | тема | ширина | перелив по X | мин. кегль | тап-таргетов < 44 | контраст < 4.5 | видимых интерактивных | разных кеглей | обрезано |
+|---|---|---|---|---|---|---|---|---|---|
+| home | dark | 375 | 0 | 14 | 0 / 9 | 0 | 9 | 3 | 0 |
+| new | dark | 375 | 0 | 16 | 0 / 8 | 0 | 8 | 3 | 0 |
+| hero | dark | 375 | 0 | 14 | 0 / 5 | 0 | 5 | 5 | 0 |
+| prep ⚠ | dark | 375 | 0 | 16 | 0 / 8 | 0 | 8 | 3 | 0 |
+| prep-log ⚠ | dark | 375 | 0 | 16 | 0 / 8 | 0 | 8 | 3 | 0 |
+| game | dark | 375 | 0 | 14 | 0 / 4 | 0 | 4 | 3 | 0 |
+| game-kb | dark | 375 | 0 | 14 | 0 / 4 | 0 | 4 | 3 | 0 |
+| menu | dark | 375 | 0 | 14 | 0 / 23 | 0 | 23 | 4 | 0 |
+| menu-app | dark | 375 | 0 | 14 | 0 / 25 | 0 | 25 | 3 | 0 |
+| notes | dark | 375 | 0 | 16 | 0 / 7 | 0 | 7 | 3 | 0 |
+| home | light | 375 | 0 | 14 | 0 / 9 | 0 | 9 | 3 | 0 |
+| new | light | 375 | 0 | 16 | 0 / 8 | 0 | 8 | 3 | 0 |
+| hero | light | 375 | 0 | 14 | 0 / 5 | 0 | 5 | 5 | 0 |
+| prep ⚠ | light | 375 | 0 | 16 | 0 / 8 | 0 | 8 | 3 | 0 |
+| prep-log ⚠ | light | 375 | 0 | 16 | 0 / 8 | 0 | 8 | 3 | 0 |
+| game | light | 375 | 0 | 14 | 0 / 4 | 0 | 4 | 3 | 0 |
+| game-kb | light | 375 | 0 | 14 | 0 / 4 | 0 | 4 | 3 | 0 |
+| menu | light | 375 | 0 | 14 | 0 / 23 | 0 | 23 | 4 | 0 |
+| menu-app | light | 375 | 0 | 14 | 0 / 25 | 0 | 25 | 3 | 0 |
+| notes | light | 375 | 0 | 16 | 0 / 7 | 0 | 7 | 3 | 0 |
+| home | dark | 1440 | 0 | 13 | 6 / 21 | 0 | 21 | 4 | 20 |
+| new | dark | 1440 | 0 | 10 | 13 / 14 | 0 | 14 | 8 | 0 |
+| hero | dark | 1440 | 0 | 10 | 11 / 11 | 0 | 11 | 10 | 0 |
+| prep ⚠ | dark | 1440 | 0 | 10 | 13 / 14 | 0 | 14 | 8 | 0 |
+| prep-log ⚠ | dark | 1440 | 0 | 10 | 13 / 14 | 0 | 14 | 8 | 0 |
+| game | dark | 1440 | 0 | 10 | 9 / 11 | 0 | 11 | 9 | 0 |
+| game-kb | dark | 1440 | 0 | 10 | 9 / 11 | 0 | 11 | 9 | 0 |
+| menu | dark | 1440 | 0 | 11 | 22 / 37 | 0 | 37 | 5 | 20 |
+| menu-app | dark | 1440 | 0 | 11 | 22 / 37 | 0 | 37 | 5 | 20 |
+| notes | dark | 1440 | 0 | 10 | 12 / 13 | 0 | 13 | 8 | 0 |
+| home | light | 1440 | 0 | 13 | 6 / 21 | 1 (min 3.05) | 21 | 4 | 20 |
+| new | light | 1440 | 0 | 10 | 13 / 14 | 0 | 14 | 8 | 0 |
+| hero | light | 1440 | 0 | 10 | 11 / 11 | 0 | 11 | 10 | 0 |
+| prep ⚠ | light | 1440 | 0 | 10 | 13 / 14 | 0 | 14 | 8 | 0 |
+| prep-log ⚠ | light | 1440 | 0 | 10 | 13 / 14 | 0 | 14 | 8 | 0 |
+| game | light | 1440 | 0 | 10 | 9 / 11 | 1 (min 3.05) | 11 | 9 | 0 |
+| game-kb | light | 1440 | 0 | 10 | 9 / 11 | 1 (min 3.05) | 11 | 9 | 0 |
+| menu | light | 1440 | 0 | 11 | 22 / 37 | 1 (min 3.05) | 37 | 5 | 20 |
+| menu-app | light | 1440 | 0 | 11 | 22 / 37 | 1 (min 3.05) | 37 | 5 | 20 |
+| notes | light | 1440 | 0 | 10 | 12 / 13 | 0 | 13 | 8 | 0 |
+
+⚠ `prep` / `prep-log` — снят экран создания приключения: панель подготовки книги (`#creation-progress-panel .prep-panel`) в изолированном профиле не появляется. Mock-Мастер книги не готовит (`prepare.disabled = true`), настоящая подготовка требует настроенного облачного провайдера — в тестовом профиле его нет и платных вызовов не делалось.
+
+`game-kb` — клавиатура смоделирована так же, как её видит `web/mobile.js`: кадр сжат до 476 px (812 − 336) и выставлен класс `kb-open`. Системной клавиатуры в headless Chromium нет, поэтому полоса клавиатуры на снимке не рисуется — измеряется только сжатое состояние экрана.
+
+Стенд: кампании посеяны движком Nat20, а он инициализирует героя именем кампании (`solo/nat20_api.py:454`), поэтому на кадре `hero` в заголовке листа стоит название истории. Это свойство сида, а не вёрстки; на оценку кеглей и сетки не влияет.
+
+## Что не открылось и почему
+
+- `prep-dark-375`: экран создания открыт, панели подготовки книги нет: mock-Мастер книги не готовит, облачный провайдер в изолированном профиле не настроен
+- `prep-log-dark-375`: экран создания открыт, панели подготовки книги нет: mock-Мастер книги не готовит, облачный провайдер в изолированном профиле не настроен
+- `prep-light-375`: экран создания открыт, панели подготовки книги нет: mock-Мастер книги не готовит, облачный провайдер в изолированном профиле не настроен
+- `prep-log-light-375`: экран создания открыт, панели подготовки книги нет: mock-Мастер книги не готовит, облачный провайдер в изолированном профиле не настроен
+- `prep-dark-1440`: экран создания открыт, панели подготовки книги нет: mock-Мастер книги не готовит, облачный провайдер в изолированном профиле не настроен
+- `prep-log-dark-1440`: экран создания открыт, панели подготовки книги нет: mock-Мастер книги не готовит, облачный провайдер в изолированном профиле не настроен
+- `prep-light-1440`: экран создания открыт, панели подготовки книги нет: mock-Мастер книги не готовит, облачный провайдер в изолированном профиле не настроен
+- `prep-log-light-1440`: экран создания открыт, панели подготовки книги нет: mock-Мастер книги не готовит, облачный провайдер в изолированном профиле не настроен
+
+## Где именно болит (по числам)
+
+- горизонтальный перелив: **0 px во всех 40 кадрах** (`scrollWidth` равен ширине окна)
+- тап-таргеты < 44 px: **22** из 37 — `menu` 1440 (в 2 темах); худшие: `html > body.effects.tabletop > aside.sidebar.show-more > a.brand` 115.6×21; `body.effects.tabletop > aside.sidebar.show-more > nav > div.nav-bar:nth-of-type(1) > button.nav:nth-of-type(1)` 68×38; `body.effects.tabletop > aside.sidebar.show-more > nav > div.nav-bar:nth-of-type(1) > button.nav:nth-of-type(2)` 111×38
+- тап-таргеты < 44 px: **22** из 37 — `menu-app` 1440 (в 2 темах); худшие: `html > body.effects.tabletop > aside.sidebar.show-more > a.brand` 115.6×21; `body.effects.tabletop > aside.sidebar.show-more > nav > div.nav-bar:nth-of-type(1) > button.nav:nth-of-type(1)` 68×38; `body.effects.tabletop > aside.sidebar.show-more > nav > div.nav-bar:nth-of-type(1) > button.nav:nth-of-type(2)` 111×38
+- тап-таргеты < 44 px: **13** из 14 — `new` 1440 (в 2 темах); худшие: `html > body.effects.tabletop > aside.sidebar > a.brand` 115.6×21; `body.effects.tabletop > aside.sidebar > nav > div.nav-bar:nth-of-type(1) > button.nav:nth-of-type(1)` 68×38; `body.effects.tabletop > aside.sidebar > nav > div.nav-bar:nth-of-type(1) > button.nav:nth-of-type(2)` 111×38
+- тап-таргеты < 44 px: **13** из 14 — `prep` 1440 (в 2 темах); худшие: `html > body.effects.tabletop > aside.sidebar > a.brand` 115.6×21; `body.effects.tabletop > aside.sidebar > nav > div.nav-bar:nth-of-type(1) > button.nav:nth-of-type(1)` 68×38; `body.effects.tabletop > aside.sidebar > nav > div.nav-bar:nth-of-type(1) > button.nav:nth-of-type(2)` 111×38
+- тап-таргеты < 44 px: **13** из 14 — `prep-log` 1440 (в 2 темах); худшие: `html > body.effects.tabletop > aside.sidebar > a.brand` 115.6×21; `body.effects.tabletop > aside.sidebar > nav > div.nav-bar:nth-of-type(1) > button.nav:nth-of-type(1)` 68×38; `body.effects.tabletop > aside.sidebar > nav > div.nav-bar:nth-of-type(1) > button.nav:nth-of-type(2)` 111×38
+- тап-таргеты < 44 px: **12** из 13 — `notes` 1440 (в 2 темах); худшие: `html > body.effects.tabletop > aside.sidebar > a.brand` 115.6×21; `body.effects.tabletop > aside.sidebar > nav > div.nav-bar:nth-of-type(1) > button.nav:nth-of-type(1)` 68×38; `body.effects.tabletop > aside.sidebar > nav > div.nav-bar:nth-of-type(1) > button.nav:nth-of-type(2)` 111×38
+- контраст < 4.5:1: **1** текстов — `home` 1440 (в 2 темах); худшие: `section#welcome > div.start__main:nth-of-type(1) > div.start__copy:nth-of-type(1) > div.start__actions > button.start__btn.start__btn--primary:nth-of-type(1)` 3.05:1
+- контраст < 4.5:1: **1** текстов — `game` 1440 (в 2 темах); худшие: `button#send` 3.05:1
+- контраст < 4.5:1: **1** текстов — `game-kb` 1440 (в 2 темах); худшие: `button#send` 3.05:1
+- контраст < 4.5:1: **1** текстов — `menu` 1440 (в 2 темах); худшие: `section#welcome > div.start__main:nth-of-type(1) > div.start__copy:nth-of-type(1) > div.start__actions > button.start__btn.start__btn--primary:nth-of-type(1)` 3.05:1
+- контраст < 4.5:1: **1** текстов — `menu-app` 1440 (в 2 темах); худшие: `section#welcome > div.start__main:nth-of-type(1) > div.start__copy:nth-of-type(1) > div.start__actions > button.start__btn.start__btn--primary:nth-of-type(1)` 3.05:1
+- минимальный кегль **10 px** — `new` 1440 (в 2 темах, кеглей на экране: 8); `html > body.effects.tabletop > main > header > div.breadcrumb:nth-of-type(1)` 10 px «ОДИНОЧНОЕ ПРИКЛЮЧЕНИЕ»; `body.effects.tabletop > main > header > div.breadcrumb:nth-of-type(1) > span:nth-of-type(1)` 10 px «/»; `span#campaign-label` 10 px «Тайна трёх сосен»
+- минимальный кегль **10 px** — `hero` 1440 (в 2 темах, кеглей на экране: 10); `html > body.effects.tabletop > main > header > div.breadcrumb:nth-of-type(1)` 10 px «ОДИНОЧНОЕ ПРИКЛЮЧЕНИЕ»; `body.effects.tabletop > main > header > div.breadcrumb:nth-of-type(1) > span:nth-of-type(1)` 10 px «/»; `span#campaign-label` 10 px «Тайна трёх сосен»
+- минимальный кегль **10 px** — `prep` 1440 (в 2 темах, кеглей на экране: 8); `html > body.effects.tabletop > main > header > div.breadcrumb:nth-of-type(1)` 10 px «ОДИНОЧНОЕ ПРИКЛЮЧЕНИЕ»; `body.effects.tabletop > main > header > div.breadcrumb:nth-of-type(1) > span:nth-of-type(1)` 10 px «/»; `span#campaign-label` 10 px «Тайна трёх сосен»
+- минимальный кегль **10 px** — `prep-log` 1440 (в 2 темах, кеглей на экране: 8); `html > body.effects.tabletop > main > header > div.breadcrumb:nth-of-type(1)` 10 px «ОДИНОЧНОЕ ПРИКЛЮЧЕНИЕ»; `body.effects.tabletop > main > header > div.breadcrumb:nth-of-type(1) > span:nth-of-type(1)` 10 px «/»; `span#campaign-label` 10 px «Тайна трёх сосен»
+- минимальный кегль **10 px** — `game` 1440 (в 2 темах, кеглей на экране: 9); `details#scene-hero > summary` 10 px «Ваш герой»; `div#chat > article.message.master > div.speaker:nth-of-type(1)` 10.5 px «МАСТЕР»; `form#action-form > div.composer-footer:nth-of-type(2) > span` 12 px «Enter — отправить · Shift + Ente»
+- минимальный кегль **10 px** — `game-kb` 1440 (в 2 темах, кеглей на экране: 9); `details#scene-hero > summary` 10 px «Ваш герой»; `div#chat > article.message.master > div.speaker:nth-of-type(1)` 10.5 px «МАСТЕР»; `form#action-form > div.composer-footer:nth-of-type(2) > span` 12 px «Enter — отправить · Shift + Ente»
+- обрезано (scrollWidth > clientWidth + 1): **20** элементов — `home` 1440 (в 2 темах); `section#welcome > div.start__feed:nth-of-type(2) > button.start__continue > span.start__continue-meta:nth-of-type(3) > span.story-where:nth-of-type(1)` 222>208; `div.start__stories > div.start__list > button.story:nth-of-type(2) > span.story-meta:nth-of-type(2) > span.story-where:nth-of-type(1)` 207>204; `div.start__stories > div.start__list > button.story:nth-of-type(4) > span.story-meta:nth-of-type(2) > span.story-where:nth-of-type(1)` 207>204
+- обрезано (scrollWidth > clientWidth + 1): **20** элементов — `menu` 1440 (в 2 темах); `section#welcome > div.start__feed:nth-of-type(2) > button.start__continue > span.start__continue-meta:nth-of-type(3) > span.story-where:nth-of-type(1)` 222>208; `div.start__stories > div.start__list > button.story:nth-of-type(2) > span.story-meta:nth-of-type(2) > span.story-where:nth-of-type(1)` 207>204; `div.start__stories > div.start__list > button.story:nth-of-type(4) > span.story-meta:nth-of-type(2) > span.story-where:nth-of-type(1)` 207>204
+- обрезано (scrollWidth > clientWidth + 1): **20** элементов — `menu-app` 1440 (в 2 темах); `section#welcome > div.start__feed:nth-of-type(2) > button.start__continue > span.start__continue-meta:nth-of-type(3) > span.story-where:nth-of-type(1)` 222>208; `div.start__stories > div.start__list > button.story:nth-of-type(2) > span.story-meta:nth-of-type(2) > span.story-where:nth-of-type(1)` 207>204; `div.start__stories > div.start__list > button.story:nth-of-type(4) > span.story-meta:nth-of-type(2) > span.story-where:nth-of-type(1)` 207>204
+- шторка `menu` 375: высота 1013 при окне 812, строк 18, групп 2 (Кампания, Приложение), прокрутка 514 px (scrollTop 0)
+- шторка `menu-app` 375: высота 1013 при окне 812, строк 18, групп 2 (Кампания, Приложение), прокрутка 514 px (scrollTop 514)
+- шторка `menu` 1440: высота 741 при окне 900, строк 17, групп 2 (Кампания, Приложение), прокрутка 0 px (scrollTop 0)
+- шторка `menu-app` 1440: высота 741 при окне 900, строк 17, групп 2 (Кампания, Приложение), прокрутка 0 px (scrollTop 0)
+
+## Цвета вне `web/design-tokens.css`
+
+- все вычисленные цвета текста, фона и рамок входят в палитру `web/design-tokens.css` (белый и чёрный считаются допустимыми).
+
+## Как повторить
+
+```
+.venv/bin/python tools/ui_audit.py            # 40 кадров + 01-measures.json + 01-report.md
+```
+

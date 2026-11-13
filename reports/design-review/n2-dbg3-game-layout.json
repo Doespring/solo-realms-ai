@@ -1,0 +1,346 @@
+{
+ "base": "http://127.0.0.1:52765",
+ "frames": [
+  {
+   "frame": "game-1440",
+   "measured": {
+    "viewport": {
+     "w": 1440,
+     "h": 900
+    },
+    "play": {
+     "x": 32,
+     "y": 112,
+     "w": 1376,
+     "h": 788,
+     "bottom": 900,
+     "right": 1408
+    },
+    "chat": {
+     "x": 230,
+     "y": 112,
+     "w": 692,
+     "h": 577.6,
+     "bottom": 689.6,
+     "right": 922
+    },
+    "lastMessage": {
+     "x": 246,
+     "y": 508.7,
+     "w": 660,
+     "h": 173,
+     "bottom": 681.6,
+     "right": 906
+    },
+    "composer": {
+     "x": 246,
+     "y": 689.6,
+     "w": 660,
+     "h": 160.4,
+     "bottom": 850,
+     "right": 906
+    },
+    "form": {
+     "x": 246,
+     "y": 689.6,
+     "w": 660,
+     "h": 160.4,
+     "bottom": 850,
+     "right": 906
+    },
+    "input": {
+     "x": 263,
+     "y": 700.6,
+     "w": 632,
+     "h": 52,
+     "bottom": 752.6,
+     "right": 895
+    },
+    "send": {
+     "x": 529.4,
+     "y": 795,
+     "w": 99.3,
+     "h": 44,
+     "bottom": 839,
+     "right": 628.6
+    },
+    "card": {
+     "x": 246,
+     "y": 562,
+     "w": 660,
+     "h": 105.6,
+     "bottom": 667.6,
+     "right": 906
+    },
+    "formPadding": [
+     "10px",
+     "10px",
+     "10px",
+     "16px"
+    ],
+    "composerPadding": [
+     "10px",
+     "10px",
+     "10px",
+     "16px"
+    ],
+    "textToInput": 8,
+    "chatToForm": 0,
+    "bottomGap": 50,
+    "header": {
+     "x": 32,
+     "y": 56,
+     "w": 1376,
+     "h": 56,
+     "bottom": 112,
+     "right": 1408
+    },
+    "title": null,
+    "sub": null,
+    "vitals": {
+     "x": 1185.4,
+     "y": 71.5,
+     "w": 190.6,
+     "h": 24,
+     "bottom": 95.5,
+     "right": 1376
+    },
+    "navDebug": {
+     "found": true,
+     "cls": "nav active",
+     "w": 68,
+     "h": 38,
+     "minH": "36px",
+     "height": "38px",
+     "pad": "8px 13px",
+     "inAside": true,
+     "parent": "nav-bar",
+     "mq900": true,
+     "mq701": true
+    },
+    "vitalsDebug": {
+     "display": "flex",
+     "font": "16px",
+     "gap": "14px",
+     "flex": "0 0 auto",
+     "html": "<div class=\"vitals\" aria-label=\"хиты 12/12, защита 18\"><span><b>12/12</b><span class=\"vitals__label\"> хиты</span></span><span class=\"vitals__sep\">·</span><span><b>18</b><span class=\"vitals__label\"> защита</span></span></div>",
+     "kids": [
+      {
+       "cls": "",
+       "disp": "block",
+       "w": 83.8,
+       "h": 24
+      },
+      {
+       "cls": "vitals__sep",
+       "disp": "block",
+       "w": 4.3,
+       "h": 24
+      },
+      {
+       "cls": "",
+       "disp": "block",
+       "w": 74.5,
+       "h": 24
+      }
+     ]
+    },
+    "taps": [
+     {
+      "id": "themetoggle",
+      "w": 44,
+      "h": 44
+     }
+    ],
+    "boxes": {
+     "chatRect": {
+      "#chat": {
+       "padding": "36px 16px 8px",
+       "display": "flex",
+       "justify": "normal",
+       "direction": "column"
+      }
+     },
+     "body > main": {
+      "x": 0,
+      "y": 56,
+      "w": 1440,
+      "h": 844,
+      "bottom": 900,
+      "right": 1440
+     },
+     "body > aside.sidebar": {
+      "x": 0,
+      "y": 0,
+      "w": 1440,
+      "h": 56,
+      "bottom": 56,
+      "right": 1440
+     },
+     ".workspace-layout": {
+      "x": 32,
+      "y": 112,
+      "w": 1376,
+      "h": 788,
+      "bottom": 900,
+      "right": 1408
+     },
+     ".story-card": {
+      "x": 230,
+      "y": 112,
+      "w": 692,
+      "h": 788,
+      "bottom": 900,
+      "right": 922
+     },
+     ".literary-column": {
+      "x": 32,
+      "y": 112,
+      "w": 1088,
+      "h": 788,
+      "bottom": 900,
+      "right": 1120
+     },
+     "#chat": {
+      "x": 230,
+      "y": 112,
+      "w": 692,
+      "h": 577.6,
+      "bottom": 689.6,
+      "right": 922
+     },
+     "chat > .message": {
+      "x": 246,
+      "y": 508.7,
+      "w": 660,
+      "h": 173,
+      "bottom": 681.6,
+      "right": 906
+     },
+     ".scene-rail": {
+      "x": 1120,
+      "y": 128,
+      "w": 288,
+      "h": 772,
+      "bottom": 900,
+      "right": 1408
+     },
+     "#scene-hero": {
+      "x": 1135,
+      "y": 142,
+      "w": 259,
+      "h": 292,
+      "bottom": 434,
+      "right": 1394
+     }
+    },
+    "headerKids": [
+     {
+      "cls": "themetoggle",
+      "x": 64,
+      "w": 44,
+      "h": 44,
+      "order": "0",
+      "text": ""
+     },
+     {
+      "cls": "vitals",
+      "x": 1185.4,
+      "w": 190.6,
+      "h": 24,
+      "order": "0",
+      "text": "12/12 хиты\n·\n18 защита"
+     }
+    ],
+    "interactive": [
+     {
+      "cls": "brand",
+      "id": "",
+      "w": 115.6,
+      "h": 21,
+      "text": "SOLO REALMS"
+     },
+     {
+      "cls": "nav active",
+      "id": "",
+      "w": 68,
+      "h": 38,
+      "text": "Игра"
+     },
+     {
+      "cls": "nav",
+      "id": "",
+      "w": 111,
+      "h": 38,
+      "text": "Кампании"
+     },
+     {
+      "cls": "nav",
+      "id": "",
+      "w": 113,
+      "h": 38,
+      "text": "Персонаж"
+     },
+     {
+      "cls": "nav",
+      "id": "",
+      "w": 90,
+      "h": 38,
+      "text": "Мастер"
+     },
+     {
+      "cls": "nav more-toggle",
+      "id": "nav-more",
+      "w": 59,
+      "h": 44,
+      "text": "Ещё"
+     },
+     {
+      "cls": "themetoggle",
+      "id": "",
+      "w": 44,
+      "h": 44,
+      "text": "Светлая тема"
+     },
+     {
+      "cls": "TEXTAREA",
+      "id": "player-input",
+      "w": 632,
+      "h": 52,
+      "text": "Ваша реплика"
+     },
+     {
+      "cls": "primary",
+      "id": "send",
+      "w": 99.3,
+      "h": 44,
+      "text": "Сказать"
+     },
+     {
+      "cls": "SUMMARY",
+      "id": "",
+      "w": 225,
+      "h": 18.9,
+      "text": "ВАШ ГЕРОЙ"
+     },
+     {
+      "cls": "quiet sheet-link",
+      "id": "",
+      "w": 82,
+      "h": 30.4,
+      "text": "Лист героя"
+     }
+    ],
+    "sheet": {
+     "minHeight": "26px",
+     "height": "30.3906px",
+     "display": "inline-block",
+     "parent": "disclosure-body",
+     "inHero": true,
+     "inPlay": true
+    }
+   },
+   "jsErrors": []
+  }
+ ]
+}

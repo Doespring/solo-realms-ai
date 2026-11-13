@@ -1,0 +1,87 @@
+FF.F..................................                                   [100%]
+=================================== FAILURES ===================================
+_________ test_screen_probes_are_read_only_and_commands_are_versioned __________
+
+tmp_path = PosixPath('/home/hermes/.hermes/profiles/coder/cache/scratch/pytest-of-hermes/pytest-1488/test_screen_probes_are_read_on0')
+
+    def test_screen_probes_are_read_only_and_commands_are_versioned(tmp_path):
+        app=create_app(tmp_path/'solo.sqlite3',MockLLM());store=app.state.store
+        cid=store.create('UI',Hero(name='Мирон',weapon_proficiencies=['martial'],resources={'second_wind':dict(current=1,maximum=1)}))['id']
+        CombatService(store,rng=Dice(20,1)).start(cid,StartEncounter(request_id='start',confirm=True,hero_weapon='longsword',imported_map=rectangular_map(5,5),hero_position=Position(x=1,y=1),enemy_position=Position(x=2,y=1)))
+        before=copy.deepcopy(store.campaign(cid));history=store.history(cid)
+        with TestClient(app) as client:
+            url='/api/campaigns/'+cid+'/screen';packet=client.get(url).json()
+            assert packet==client.get(url).json() and store.campaign(cid)==before and store.history(cid)==history
+            assert packet['snapshot']['hero']['resources'][0]['current']==1
+            assert any(c['parameters'].get('kind')=='attack' for c in packet['commands'])
+            assert not any(c['parameters'].get('kind')=='npc_turn' for c in packet['commands'])
+            command=next(c for c in packet['commands'] if c['parameters'].get('kind')=='end_turn')
+            body={k:command[k] for k in ('kind','parameters','expected_version')};body['request_id']='end'
+>           applied=client.post(url+'/commands',json=body);assert applied.status_code==200,applied.text
+                                                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E           AssertionError: {"detail":{"code":"legacy_campaign_unsupported","message":"Эта кампания создана в прежней версии и не открывается: ручной калькулятор отключён, режима совместимости нет. Начните новую кампанию."}}
+E           assert 409 == 200
+E            +  where 409 = <Response [409 Conflict]>.status_code
+
+tests/test_play_screen.py:26: AssertionError
+_________________ test_screen_check_rest_restore_and_feedback __________________
+
+tmp_path = PosixPath('/home/hermes/.hermes/profiles/coder/cache/scratch/pytest-of-hermes/pytest-1488/test_screen_check_rest_restore0')
+
+    def test_screen_check_rest_restore_and_feedback(tmp_path):
+        app=create_app(tmp_path/'solo.sqlite3',MockLLM());store=app.state.store;cid=store.create('UI',Hero(name='Мирон',hp=6,max_hp=12))['id']
+        action=store.stage(cid,'check','Осматриваю дорогу',Plan(summary='Проверка',steps=[Step(kind='check',text='Проверка',ability='wisdom',dc=10)]),0,{})
+        store.apply(action['id'],rng=Dice(15));checkpoint=store.save(cid,'До отдыха')
+        with TestClient(app) as client:
+            url='/api/campaigns/'+cid+'/screen';packet=client.get(url).json();assert packet['snapshot']['last_roll']['success']
+            body=dict(request_id='rest',kind='rest',expected_version=packet['snapshot']['version'],parameters=dict(kind='long'))
+>           assert client.post(url+'/commands',json=body).status_code==200
+E           AssertionError: assert 409 == 200
+E            +  where 409 = <Response [409 Conflict]>.status_code
+E            +    where <Response [409 Conflict]> = post(('/api/campaigns/c47ba270-85fd-4af6-94bc-7da265e05b52/screen' + '/commands'), json={'request_id': 'rest', 'kind': 'rest', 'expected_version': 1, 'parameters': {'kind': 'long'}})
+E            +      where post = <starlette.testclient.TestClient object at 0x713ecc62d6d0>.post
+
+tests/test_play_screen.py:41: AssertionError
+__________ test_screen_uses_engine_commands_and_projects_engine_rolls __________
+
+tmp_path = PosixPath('/home/hermes/.hermes/profiles/coder/cache/scratch/pytest-of-hermes/pytest-1488/test_screen_uses_engine_comman0')
+
+    def test_screen_uses_engine_commands_and_projects_engine_rolls(tmp_path):
+        from scripts.command_smoke import setup
+        from solo.game import Game
+        store,cid,game=setup(tmp_path)
+        app=create_app(tmp_path/'commands.sqlite3',game.llm)
+        before=copy.deepcopy(store.campaign(cid))
+        with TestClient(app) as client:
+            url='/api/campaigns/'+cid+'/screen'
+            packet=client.get(url).json()
+            assert packet['snapshot']['command_turn']
+            assert store.campaign(cid)==before and store.history(cid)==[]
+            command=next(c for c in packet['commands'] if c['parameters']['kind']=='check')
+            body={k:command[k] for k in ('kind','parameters','expected_version')};body['request_id']='screen-check'
+            applied=client.post(url+'/commands',json=body)
+>           assert applied.status_code==200,applied.text
+E           AssertionError: {"detail":{"code":"legacy_campaign_unsupported","message":"Эта кампания создана в прежней версии и не открывается: ручной калькулятор отключён, режима совместимости нет. Начните новую кампанию."}}
+E           assert 409 == 200
+E            +  where 409 = <Response [409 Conflict]>.status_code
+
+tests/test_play_screen.py:74: AssertionError
+=============================== warnings summary ===============================
+.venv/lib/python3.14/site-packages/fastapi/testclient.py:1
+  /home/hermes/projects/SoloRealmsAI-Nat20/.venv/lib/python3.14/site-packages/fastapi/testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+    from starlette.testclient import TestClient as TestClient  # noqa
+
+.venv/lib/python3.14/site-packages/lark/utils.py:176
+  /home/hermes/projects/SoloRealmsAI-Nat20/.venv/lib/python3.14/site-packages/lark/utils.py:176: DeprecationWarning: module 'sre_parse' is deprecated
+    import sre_parse
+
+.venv/lib/python3.14/site-packages/lark/utils.py:177
+  /home/hermes/projects/SoloRealmsAI-Nat20/.venv/lib/python3.14/site-packages/lark/utils.py:177: DeprecationWarning: module 'sre_constants' is deprecated
+    import sre_constants
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/test_play_screen.py::test_screen_probes_are_read_only_and_commands_are_versioned
+FAILED tests/test_play_screen.py::test_screen_check_rest_restore_and_feedback
+FAILED tests/test_play_screen.py::test_screen_uses_engine_commands_and_projects_engine_rolls
+3 failed, 35 passed, 3 warnings in 37.44s

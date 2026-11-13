@@ -1,0 +1,156 @@
+{
+ "base": "http://127.0.0.1:19317",
+ "database": "/home/hermes/projects/SoloRealmsAI-Nat20/runtime/r166-live/solo.sqlite3",
+ "started": "2026-11-01T19:33:59Z",
+ "health": {
+  "product": "Solo Realms AI",
+  "llm": {
+   "result": "MockLLM (тест)",
+   "mock": true
+  },
+  "version": "2.2.0-prototype.5",
+  "offline": true,
+  "cloud_only": false,
+  "experimental": true,
+  "build": "2bd108144ea5",
+  "commit": "93e1d84",
+  "readiness": {
+   "status": "configured"
+  },
+  "risk_limitation": "Риск фиксируется перед началом столкновения. Без заранее объявленного серьёзного риска необратимая смерть останавливается; механический результат сохраняется. Поздняя отметка не действует задним числом."
+ },
+ "library": {
+  "bundle": "c79de9f2-41a1-4453-8623-08622c851b32",
+  "reused": true,
+  "modules": 8
+ },
+ "materials": {
+  "total": 44,
+  "maps": 3,
+  "confirmed": {
+   "id": "e955c0d1bb13ddcc197f5c594f54b6c5",
+   "page": 19,
+   "name": "Карта · стр. 19"
+  },
+  "waiting": {
+   "id": "d40b9e28fc73e8986dcb66aae88dd78c",
+   "page": 5,
+   "name": "Тарбо Найтхилл"
+  }
+ },
+ "binding": {
+  "campaign": "6b3992dc-e9a9-4b1f-8533-331f4e92038a",
+  "module": "auto-7ad6e955-01",
+  "title": "Эпизод 1: Гринест в огне",
+  "modules": 8,
+  "ready": 8,
+  "pages": [
+   [
+    8,
+    15
+   ]
+  ]
+ },
+ "turns": 20,
+ "errors": [],
+ "version_regressions": [],
+ "deferred_left": [],
+ "refusals": [
+  {
+   "turn": 8,
+   "label": "неподтверждённый",
+   "status": "unsupported",
+   "narrative": "Материал на стр. 5 ещё ждёт подтверждения человеком: показать его сейчас нельзя."
+  }
+ ],
+ "timing": {
+  "median": 1.765,
+  "maximum": 2.114,
+  "minimum": 0.147,
+  "total": 27.9
+ },
+ "save_restore": {
+  "save_id": "98eb5d32-b3cb-4f5d-b41c-5d27707595d3",
+  "saved": {
+   "version": 19,
+   "journal": 19,
+   "known_media": [
+    "e955c0d1bb13ddcc197f5c594f54b6c5"
+   ],
+   "materials": [
+    "e955c0d1bb13ddcc197f5c594f54b6c5"
+   ],
+   "deferred": [],
+   "hp": 12,
+   "hp_max": 12,
+   "resources": 0,
+   "level": 1,
+   "turn": 19,
+   "state_hash": "bf8877f2ba4d7c1291dfb144aaaf8c3f9ca2b7de58fcec4775995e31c98464b5"
+  },
+  "undo": {
+   "version": 20,
+   "journal": 18,
+   "known_media": [
+    "e955c0d1bb13ddcc197f5c594f54b6c5"
+   ],
+   "materials": [
+    "e955c0d1bb13ddcc197f5c594f54b6c5"
+   ],
+   "deferred": [],
+   "hp": 12,
+   "hp_max": 12,
+   "resources": 0,
+   "level": 1,
+   "turn": 18,
+   "state_hash": "a785428569e8e85bd09d900b79b97d93b7b6f822f6227af5799f0f7ee837a984"
+  },
+  "restored": {
+   "version": 21,
+   "journal": 19,
+   "known_media": [
+    "e955c0d1bb13ddcc197f5c594f54b6c5"
+   ],
+   "materials": [
+    "e955c0d1bb13ddcc197f5c594f54b6c5"
+   ],
+   "deferred": [],
+   "hp": 12,
+   "hp_max": 12,
+   "resources": 0,
+   "level": 1,
+   "turn": 19,
+   "state_hash": "bf8877f2ba4d7c1291dfb144aaaf8c3f9ca2b7de58fcec4775995e31c98464b5"
+  },
+  "state_restored": true,
+  "version_saved": 19,
+  "version_undo": 20,
+  "version_restored": 21,
+  "next_turn": {
+   "turn": 21,
+   "label": "ход после восстановления",
+   "request_id": "r166-t21",
+   "kind": "text",
+   "issued": "Осматриваюсь",
+   "http": 200,
+   "status": "observation",
+   "version_before": 21,
+   "version_after": 22,
+   "journal": 20,
+   "known_media": [
+    "e955c0d1bb13ddcc197f5c594f54b6c5"
+   ],
+   "materials": [
+    "e955c0d1bb13ddcc197f5c594f54b6c5"
+   ],
+   "deferred": [],
+   "hp": 12,
+   "hp_max": 12,
+   "resources": 0,
+   "turn_no": 20,
+   "seconds": 0.425,
+   "narrative": "У сторожевого поста гоблин перекрыл тропу — Нового ничего не заметно.",
+   "event": null
+  }
+ }
+}

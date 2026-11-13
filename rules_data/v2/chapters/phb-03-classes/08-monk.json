@@ -1,0 +1,1748 @@
+{
+  "schema_version": "2.1.0",
+  "rules": [
+    {
+      "id": "phb2024.phb03.monk.class_attributes",
+      "rules_family": "dnd2024",
+      "name": "Монах: Ключевые атрибуты",
+      "kind": "procedure",
+      "classification": {
+        "mode": "deterministic",
+        "semantic_required": false,
+        "formal_required": true,
+        "reason": "Таблица «Ключевые атрибуты» задаёт точные значения (Кость хитов, спасброски, владения) без выбора Мастера"
+      },
+      "conditions": [],
+      "triggers": [
+        "monk.class_attributes"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "procedure_id": "monk_class_attributes"
+          }
+        }
+      ],
+      "semantic_questions": [],
+      "facts": {
+        "hit_die": "к8",
+        "primary": "Ловкость и Мудрость",
+        "saves": [
+          "Сила",
+          "Ловкость"
+        ],
+        "weapons": "Простое оружие и Воинское оружие со свойством Лёгкое",
+        "tools": "Ремесленные инструменты или Музыкальный инструмент",
+        "armor": "Отсутствует",
+        "subclass_level": 3,
+        "subclasses": [
+          "Воин милосердия",
+          "Воин открытой ладони",
+          "Воин стихий",
+          "Воин тени"
+        ],
+        "pdf_span": [
+          125,
+          132
+        ]
+      },
+      "rule_parameters": {
+        "class_resources": {
+          "1": "Очки сосредоточенности",
+          "2": "Кость боевых искусств"
+        }
+      },
+      "constraints": [],
+      "exceptions": [],
+      "duration": "not_applicable",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "kind": "phb",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 126,
+        "printed_page": "125",
+        "section": "Монах, глава 3 «Классы персонажей»: Выбор Монаха..."
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "existing_engine_subset",
+      "auto_activate": false,
+      "dependencies": [],
+      "behavior_tests": [
+        "phb03.monk.class_attributes"
+      ],
+      "readiness": {
+        "status": "engine_subset_verified",
+        "handler": null,
+        "scope": "Проецирование классовых атрибутов на лист персонажа",
+        "blockers": []
+      },
+      "revision": 1
+    },
+    {
+      "id": "phb2024.phb03.monk.boevye_iskusstva",
+      "rules_family": "dnd2024",
+      "name": "Монах: Боевые искусства",
+      "kind": "procedure",
+      "classification": {
+        "mode": "deterministic",
+        "semantic_required": false,
+        "formal_required": true,
+        "reason": "Числа и порядок шагов заданы текстом PHB 2024 (см. facts)"
+      },
+      "conditions": [],
+      "triggers": [
+        "monk.boevye_iskusstva"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "bonus_unarmed_strike": true,
+            "dex_instead_of_strength": true,
+            "dex_for_grapple_dc": true,
+            "no_armor_no_shield": true,
+            "procedure_id": "monk_boevye_iskusstva"
+          }
+        }
+      ],
+      "semantic_questions": [],
+      "facts": {
+        "bonus_unarmed_strike": true,
+        "dex_instead_of_strength": true,
+        "dex_for_grapple_dc": true,
+        "no_armor_no_shield": true
+      },
+      "rule_parameters": {
+        "martial_arts_die_by_level": {
+          "1": "к6",
+          "5": "к8",
+          "11": "к10",
+          "17": "к12"
+        }
+      },
+      "constraints": [],
+      "exceptions": [],
+      "duration": "per_action",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "kind": "phb",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 126,
+        "printed_page": "125",
+        "section": "Монах, глава 3 «Классы персонажей»: Боевые искусства"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "existing_engine_subset",
+      "auto_activate": false,
+      "dependencies": [
+        "phb2024.phb02.unarmed_strike"
+      ],
+      "behavior_tests": [
+        "phb03.monk.boevye_iskusstva",
+        "nat20.class_features_reach_game.boevye_iskusstva"
+      ],
+      "readiness": {
+        "status": "engine_subset_verified",
+        "handler": "nat20_content.feature_gate",
+        "scope": "Хост: безоружный удар отправляется как атака безоружным оружием (движок знает его как оружие, инвентарь тут не при чём), бонусный — с пометкой «бонусным действием». Движок: кость монаха вместо обычного урона и Ловкость вместо Силы. Вендорный остаток: защита бонусным действием (уклонение не попадает в боевое состояние)",
+        "blockers": []
+      },
+      "revision": 2
+    },
+    {
+      "id": "phb2024.phb03.monk.zashita_bez_dospehov",
+      "rules_family": "dnd2024",
+      "name": "Монах: Защита без доспехов (Монах)",
+      "kind": "procedure",
+      "classification": {
+        "mode": "deterministic",
+        "semantic_required": false,
+        "formal_required": true,
+        "reason": "Числа и порядок шагов заданы текстом PHB 2024 (см. facts)"
+      },
+      "conditions": [],
+      "triggers": [
+        "monk.zashita_bez_dospehov"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "ac_base": 10,
+            "add_dex": true,
+            "add_wis": true,
+            "no_armor_or_shield": true,
+            "procedure_id": "monk_zashita_bez_dospehov"
+          }
+        }
+      ],
+      "semantic_questions": [],
+      "facts": {
+        "ac_base": 10,
+        "add_dex": true,
+        "add_wis": true,
+        "no_armor_or_shield": true
+      },
+      "rule_parameters": {},
+      "constraints": [],
+      "exceptions": [],
+      "duration": "per_action",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "kind": "phb",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 126,
+        "printed_page": "125",
+        "section": "Монах, глава 3 «Классы персонажей»: Защита без доспехов (Монах)"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "existing_engine_subset",
+      "auto_activate": false,
+      "dependencies": [
+        "phb2024.phb01.ability_modifier"
+      ],
+      "behavior_tests": [
+        "phb03.monk.zashita_bez_dospehov"
+      ],
+      "readiness": {
+        "status": "engine_subset_verified",
+        "handler": null,
+        "scope": "Монах: Защита без доспехов (Монах)",
+        "blockers": []
+      },
+      "revision": 1
+    },
+    {
+      "id": "phb2024.phb03.monk.monasheskaya_sosredotochennost",
+      "rules_family": "dnd2024",
+      "name": "Монах: Монашеская сосредоточенность",
+      "kind": "procedure",
+      "classification": {
+        "mode": "hybrid",
+        "semantic_required": true,
+        "formal_required": true,
+        "reason": "Числа берутся из текста PHB 2024 (см. facts); применение к существу и выбранные варианты требуют решения Мастера"
+      },
+      "conditions": [],
+      "triggers": [
+        "monk.monasheskaya_sosredotochennost"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "dc": "8 + модификатор Мудрости + Бонус владения",
+            "recharge": "Короткий или Долгий отдых",
+            "procedure_id": "monk_monasheskaya_sosredotochennost"
+          }
+        }
+      ],
+      "semantic_questions": [
+        "Какое умение за Очко сосредоточенности применяется?"
+      ],
+      "facts": {
+        "options_start": [
+          "Шквал ударов",
+          "Терпеливая оборона",
+          "Поступь ветра"
+        ],
+        "dc": "8 + модификатор Мудрости + Бонус владения",
+        "recharge": "Короткий или Долгий отдых"
+      },
+      "rule_parameters": {
+        "points_by_level": {
+          "2": "2",
+          "3": "3",
+          "4": "4",
+          "5": "5",
+          "6": "6",
+          "7": "7",
+          "8": "8",
+          "9": "9",
+          "10": "10",
+          "11": "11",
+          "12": "12",
+          "13": "13",
+          "14": "14",
+          "15": "15",
+          "16": "16",
+          "17": "17",
+          "18": "18",
+          "19": "19",
+          "20": "20"
+        }
+      },
+      "constraints": [],
+      "exceptions": [],
+      "duration": "per_action",
+      "resources": [
+        {
+          "id": "focus_points",
+          "handling": "dependency_not_extracted"
+        }
+      ],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "kind": "phb",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 126,
+        "printed_page": "125",
+        "section": "Монах, глава 3 «Классы персонажей»: Монашеская сосредоточенность"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "existing_engine_subset",
+      "auto_activate": false,
+      "dependencies": [],
+      "behavior_tests": [
+        "phb03.monk.monasheskaya_sosredotochennost",
+        "nat20.class_features_reach_game.monasheskaya_sosredotochennost"
+      ],
+      "readiness": {
+        "status": "engine_subset_verified",
+        "handler": "nat20_content.feature_gate",
+        "scope": "Хост: экран предъявляет четыре варианта (их идентификаторы читаются из данных умения), без выбора — отказ со списком. Движок: трата Очка фокуса и эффект выбранного варианта. Вендорный остаток: Терпеливая оборона (уклонение не попадает в боевое состояние) и Поступь ветра (Рывок бонусным действием)",
+        "blockers": []
+      },
+      "revision": 2
+    },
+    {
+      "id": "phb2024.phb03.monk.shkval_udarov",
+      "rules_family": "dnd2024",
+      "name": "Монах: Шквал ударов",
+      "kind": "procedure",
+      "classification": {
+        "mode": "deterministic",
+        "semantic_required": false,
+        "formal_required": true,
+        "reason": "Числа и порядок шагов заданы текстом PHB 2024 (см. facts)"
+      },
+      "conditions": [],
+      "triggers": [
+        "monk.shkval_udarov"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "cost": 1,
+            "bonus_action": true,
+            "unarmed_strikes": 2,
+            "procedure_id": "monk_shkval_udarov"
+          }
+        }
+      ],
+      "semantic_questions": [],
+      "facts": {
+        "cost": 1,
+        "bonus_action": true,
+        "unarmed_strikes": 2
+      },
+      "rule_parameters": {},
+      "constraints": [],
+      "exceptions": [],
+      "duration": "per_action",
+      "resources": [
+        {
+          "id": "focus_points",
+          "handling": "dependency_not_extracted"
+        }
+      ],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "kind": "phb",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 127,
+        "printed_page": "126",
+        "section": "Монах, глава 3 «Классы персонажей»: Шквал ударов"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "existing_engine_subset",
+      "auto_activate": false,
+      "dependencies": [],
+      "behavior_tests": [
+        "phb03.monk.shkval_udarov",
+        "nat20.class_features_reach_game.shkval_udarov"
+      ],
+      "readiness": {
+        "status": "engine_subset_verified",
+        "handler": null,
+        "scope": "Движок: после Шквала подряд проходят безоружные удары сверх обычных — два, на 10-м уровне три (счётчик ударов Шквала 3 → 0 в проекции), если слать безоружные удары, а не оружие; повторный Шквал в том же ходу не тратит Очко фокуса второй раз. Хост: экран даёт безоружный удар отдельной кнопкой",
+        "blockers": []
+      },
+      "revision": 2
+    },
+    {
+      "id": "phb2024.phb03.monk.terpelivaya_oborona",
+      "rules_family": "dnd2024",
+      "name": "Монах: Терпеливая оборона",
+      "kind": "procedure",
+      "classification": {
+        "mode": "deterministic",
+        "semantic_required": false,
+        "formal_required": true,
+        "reason": "Числа и порядок шагов заданы текстом PHB 2024 (см. facts)"
+      },
+      "conditions": [],
+      "triggers": [
+        "monk.terpelivaya_oborona"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "cost": 1,
+            "bonus_action": true,
+            "procedure_id": "monk_terpelivaya_oborona"
+          }
+        }
+      ],
+      "semantic_questions": [],
+      "facts": {
+        "cost": 1,
+        "bonus_action": true,
+        "actions": [
+          "Отход",
+          "Уклонение"
+        ]
+      },
+      "rule_parameters": {},
+      "constraints": [],
+      "exceptions": [],
+      "duration": "per_action",
+      "resources": [
+        {
+          "id": "focus_points",
+          "handling": "dependency_not_extracted"
+        }
+      ],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "kind": "phb",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 127,
+        "printed_page": "126",
+        "section": "Монах, глава 3 «Классы персонажей»: Терпеливая оборона"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "existing_engine_subset",
+      "auto_activate": false,
+      "dependencies": [],
+      "behavior_tests": [
+        "phb03.monk.terpelivaya_oborona"
+      ],
+      "readiness": {
+        "status": "adjudication_required",
+        "handler": null,
+        "scope": "Монах: Терпеливая оборона",
+        "blockers": [
+          "эффект применяется, но состояние «уклонение» от Терпеливой обороны движком не выдаётся"
+        ]
+      },
+      "revision": 1
+    },
+    {
+      "id": "phb2024.phb03.monk.postup_vetra",
+      "rules_family": "dnd2024",
+      "name": "Монах: Поступь ветра",
+      "kind": "procedure",
+      "classification": {
+        "mode": "deterministic",
+        "semantic_required": false,
+        "formal_required": true,
+        "reason": "Числа и порядок шагов заданы текстом PHB 2024 (см. facts)"
+      },
+      "conditions": [],
+      "triggers": [
+        "monk.postup_vetra"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "cost": 1,
+            "bonus_action": true,
+            "jump_distance_doubled": true,
+            "procedure_id": "monk_postup_vetra"
+          }
+        }
+      ],
+      "semantic_questions": [],
+      "facts": {
+        "cost": 1,
+        "bonus_action": true,
+        "actions": [
+          "Отход",
+          "Рывок"
+        ],
+        "jump_distance_doubled": true
+      },
+      "rule_parameters": {},
+      "constraints": [],
+      "exceptions": [],
+      "duration": "per_action",
+      "resources": [
+        {
+          "id": "focus_points",
+          "handling": "dependency_not_extracted"
+        }
+      ],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "kind": "phb",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 127,
+        "printed_page": "126",
+        "section": "Монах, глава 3 «Классы персонажей»: Поступь ветра"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "existing_engine_subset",
+      "auto_activate": false,
+      "dependencies": [],
+      "behavior_tests": [
+        "phb03.monk.postup_vetra"
+      ],
+      "readiness": {
+        "status": "adjudication_required",
+        "handler": null,
+        "scope": "Монах: Поступь ветра",
+        "blockers": [
+          "эффект применяется, но Рывок по Поступи ветра не исполняется"
+        ]
+      },
+      "revision": 1
+    },
+    {
+      "id": "phb2024.phb03.monk.dvizhenie_bez_dospehov",
+      "rules_family": "dnd2024",
+      "name": "Монах: Движение без доспехов",
+      "kind": "procedure",
+      "classification": {
+        "mode": "deterministic",
+        "semantic_required": false,
+        "formal_required": true,
+        "reason": "Числа и порядок шагов заданы текстом PHB 2024 (см. facts)"
+      },
+      "conditions": [],
+      "triggers": [
+        "monk.dvizhenie_bez_dospehov"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "unless_armor_or_shield": true,
+            "procedure_id": "monk_dvizhenie_bez_dospehov"
+          }
+        }
+      ],
+      "semantic_questions": [],
+      "facts": {
+        "unless_armor_or_shield": true
+      },
+      "rule_parameters": {
+        "bonus_by_level": {
+          "2": "10",
+          "6": "15",
+          "10": "20",
+          "14": "25",
+          "18": "30"
+        }
+      },
+      "constraints": [],
+      "exceptions": [],
+      "duration": "per_action",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "kind": "phb",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 127,
+        "printed_page": "126",
+        "section": "Монах, глава 3 «Классы персонажей»: Движение без доспехов"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "not_implemented",
+      "auto_activate": false,
+      "dependencies": [],
+      "behavior_tests": [
+        "phb03.monk.dvizhenie_bez_dospehov"
+      ],
+      "readiness": {
+        "status": "blocked",
+        "handler": null,
+        "scope": "Монах: Движение без доспехов",
+        "blockers": [
+          "прибавка к скорости не попадает на лист: базовая скорость 30 и на 2, и на 9 уровне"
+        ]
+      },
+      "revision": 1
+    },
+    {
+      "id": "phb2024.phb03.monk.fenomenalnyi_metabolizm",
+      "rules_family": "dnd2024",
+      "name": "Монах: Феноменальный метаболизм",
+      "kind": "procedure",
+      "classification": {
+        "mode": "deterministic",
+        "semantic_required": false,
+        "formal_required": true,
+        "reason": "Числа и порядок шагов заданы текстом PHB 2024 (см. facts)"
+      },
+      "conditions": [],
+      "triggers": [
+        "monk.fenomenalnyi_metabolizm"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "on_initiative": true,
+            "restore_all_focus": true,
+            "heal": "уровень Монаха + Кость боевых искусств",
+            "once_per_long_rest": true,
+            "procedure_id": "monk_fenomenalnyi_metabolizm"
+          }
+        }
+      ],
+      "semantic_questions": [],
+      "facts": {
+        "on_initiative": true,
+        "restore_all_focus": true,
+        "heal": "уровень Монаха + Кость боевых искусств",
+        "once_per_long_rest": true
+      },
+      "rule_parameters": {},
+      "constraints": [],
+      "exceptions": [],
+      "duration": "per_action",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "kind": "phb",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 127,
+        "printed_page": "126",
+        "section": "Монах, глава 3 «Классы персонажей»: Феноменальный метаболизм"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "existing_engine_subset",
+      "auto_activate": false,
+      "dependencies": [],
+      "behavior_tests": [
+        "phb03.monk.fenomenalnyi_metabolizm"
+      ],
+      "readiness": {
+        "status": "engine_subset_verified",
+        "handler": null,
+        "scope": "Монах: Феноменальный метаболизм",
+        "blockers": []
+      },
+      "revision": 1
+    },
+    {
+      "id": "phb2024.phb03.monk.otrazhenie_atak",
+      "rules_family": "dnd2024",
+      "name": "Монах: Отражение атак",
+      "kind": "procedure",
+      "classification": {
+        "mode": "hybrid",
+        "semantic_required": true,
+        "formal_required": true,
+        "reason": "Числа берутся из текста PHB 2024 (см. facts); применение к существу и выбранные варианты требуют решения Мастера"
+      },
+      "conditions": [],
+      "triggers": [
+        "monk.otrazhenie_atak"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "reduction": "1к10 + модификатор Ловкости + уровень Монаха",
+            "redirect_cost": 1,
+            "redirect_damage": "две Кости боевых искусств + модификатор Ловкости",
+            "procedure_id": "monk_otrazhenie_atak"
+          }
+        }
+      ],
+      "semantic_questions": [
+        "Какая атака по Монаху уменьшается и кому перенаправляется урон?"
+      ],
+      "facts": {
+        "reduction": "1к10 + модификатор Ловкости + уровень Монаха",
+        "redirect_cost": 1,
+        "redirect_range_feet": [
+          "5",
+          "60"
+        ],
+        "redirect_damage": "две Кости боевых искусств + модификатор Ловкости",
+        "damage_types": [
+          "Дробящий",
+          "Колющий",
+          "Рубящий"
+        ]
+      },
+      "rule_parameters": {},
+      "constraints": [],
+      "exceptions": [],
+      "duration": "per_action",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "kind": "phb",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 127,
+        "printed_page": "126",
+        "section": "Монах, глава 3 «Классы персонажей»: Отражение атак"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "existing_engine_subset",
+      "auto_activate": false,
+      "dependencies": [],
+      "behavior_tests": [
+        "phb03.monk.otrazhenie_atak"
+      ],
+      "readiness": {
+        "status": "adjudication_required",
+        "handler": null,
+        "scope": "Монах: Отражение атак",
+        "blockers": [
+          "снижение урона исполняется, но перенаправление атаки за Очко фокуса не подтверждено"
+        ]
+      },
+      "revision": 1
+    },
+    {
+      "id": "phb2024.phb03.monk.podklass_monaha",
+      "rules_family": "dnd2024",
+      "name": "Монах: Подкласс Монаха",
+      "kind": "procedure",
+      "classification": {
+        "mode": "deterministic",
+        "semantic_required": false,
+        "formal_required": true,
+        "reason": "Числа и порядок шагов заданы текстом PHB 2024 (см. facts)"
+      },
+      "conditions": [],
+      "triggers": [
+        "monk.podklass_monaha"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "subclass_level": 3,
+            "procedure_id": "monk_podklass_monaha"
+          }
+        }
+      ],
+      "semantic_questions": [],
+      "facts": {
+        "subclass_level": 3,
+        "subclasses": [
+          "Воин милосердия",
+          "Воин открытой ладони",
+          "Воин стихий",
+          "Воин тени"
+        ]
+      },
+      "rule_parameters": {},
+      "constraints": [],
+      "exceptions": [],
+      "duration": "per_action",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "kind": "phb",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 127,
+        "printed_page": "126",
+        "section": "Монах, глава 3 «Классы персонажей»: Подкласс Монаха"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "existing_engine_subset",
+      "auto_activate": false,
+      "dependencies": [],
+      "behavior_tests": [
+        "phb03.monk.podklass_monaha"
+      ],
+      "readiness": {
+        "status": "engine_subset_verified",
+        "handler": null,
+        "scope": "Монах: Подкласс Монаха",
+        "blockers": []
+      },
+      "revision": 1
+    },
+    {
+      "id": "phb2024.phb03.monk.uvelichenie_harakteristik",
+      "rules_family": "dnd2024",
+      "name": "Монах: Увеличение характеристик",
+      "kind": "procedure",
+      "classification": {
+        "mode": "deterministic",
+        "semantic_required": false,
+        "formal_required": true,
+        "reason": "Числа и порядок шагов заданы текстом PHB 2024 (см. facts)"
+      },
+      "conditions": [],
+      "triggers": [
+        "monk.uvelichenie_harakteristik"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "procedure_id": "monk_uvelichenie_harakteristik"
+          }
+        }
+      ],
+      "semantic_questions": [],
+      "facts": {
+        "levels": [
+          "4",
+          "8",
+          "12",
+          "16"
+        ]
+      },
+      "rule_parameters": {},
+      "constraints": [],
+      "exceptions": [],
+      "duration": "per_action",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "kind": "phb",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 128,
+        "printed_page": "127",
+        "section": "Монах, глава 3 «Классы персонажей»: Увеличение характеристик"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "existing_engine_subset",
+      "auto_activate": false,
+      "dependencies": [
+        "phb2024.phb05.ability_score_improvement"
+      ],
+      "behavior_tests": [
+        "phb03.monk.uvelichenie_harakteristik"
+      ],
+      "readiness": {
+        "status": "engine_subset_verified",
+        "handler": null,
+        "scope": "Монах: Увеличение характеристик",
+        "blockers": []
+      },
+      "revision": 1
+    },
+    {
+      "id": "phb2024.phb03.monk.medlennoe_padenie",
+      "rules_family": "dnd2024",
+      "name": "Монах: Медленное падение",
+      "kind": "procedure",
+      "classification": {
+        "mode": "deterministic",
+        "semantic_required": false,
+        "formal_required": true,
+        "reason": "Числа и порядок шагов заданы текстом PHB 2024 (см. facts)"
+      },
+      "conditions": [],
+      "triggers": [
+        "monk.medlennoe_padenie"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "reduction": "пятикратный уровень Монаха",
+            "reaction": true,
+            "procedure_id": "monk_medlennoe_padenie"
+          }
+        }
+      ],
+      "semantic_questions": [],
+      "facts": {
+        "reduction": "пятикратный уровень Монаха",
+        "reaction": true
+      },
+      "rule_parameters": {},
+      "constraints": [],
+      "exceptions": [],
+      "duration": "per_action",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "kind": "phb",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 128,
+        "printed_page": "127",
+        "section": "Монах, глава 3 «Классы персонажей»: Медленное падение"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "existing_engine_subset",
+      "auto_activate": false,
+      "dependencies": [],
+      "behavior_tests": [
+        "phb03.monk.medlennoe_padenie"
+      ],
+      "readiness": {
+        "status": "engine_subset_verified",
+        "handler": null,
+        "scope": "Монах: Медленное падение",
+        "blockers": []
+      },
+      "revision": 1
+    },
+    {
+      "id": "phb2024.phb03.monk.dopolnitelnaya_ataka",
+      "rules_family": "dnd2024",
+      "name": "Монах: Дополнительная атака",
+      "kind": "procedure",
+      "classification": {
+        "mode": "deterministic",
+        "semantic_required": false,
+        "formal_required": true,
+        "reason": "Числа и порядок шагов заданы текстом PHB 2024 (см. facts)"
+      },
+      "conditions": [],
+      "triggers": [
+        "monk.dopolnitelnaya_ataka"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "attacks_per_attack_action": 2,
+            "unlock_level": 5,
+            "procedure_id": "monk_dopolnitelnaya_ataka"
+          }
+        }
+      ],
+      "semantic_questions": [],
+      "facts": {
+        "attacks_per_attack_action": 2,
+        "unlock_level": 5
+      },
+      "rule_parameters": {},
+      "constraints": [],
+      "exceptions": [],
+      "duration": "per_action",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "kind": "phb",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 128,
+        "printed_page": "127",
+        "section": "Монах, глава 3 «Классы персонажей»: Дополнительная атака"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "existing_engine_subset",
+      "auto_activate": false,
+      "dependencies": [
+        "phb2024.phb02.attack_action"
+      ],
+      "behavior_tests": [
+        "phb03.monk.dopolnitelnaya_ataka"
+      ],
+      "readiness": {
+        "status": "engine_subset_verified",
+        "handler": null,
+        "scope": "Монах: Дополнительная атака",
+        "blockers": []
+      },
+      "revision": 1
+    },
+    {
+      "id": "phb2024.phb03.monk.oshelomlyayushii_udar",
+      "rules_family": "dnd2024",
+      "name": "Монах: Ошеломляющий удар",
+      "kind": "procedure",
+      "classification": {
+        "mode": "hybrid",
+        "semantic_required": true,
+        "formal_required": true,
+        "reason": "Числа берутся из текста PHB 2024 (см. facts); применение к существу и выбранные варианты требуют решения Мастера"
+      },
+      "conditions": [],
+      "triggers": [
+        "monk.oshelomlyayushii_udar"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "cost": 1,
+            "once_per_turn": true,
+            "save": "Телосложение",
+            "fail_condition": "Ошеломлённый до начала следующего хода",
+            "success": "скорость вдвое, следующий бросок атаки по цели с Преимуществом",
+            "procedure_id": "monk_oshelomlyayushii_udar"
+          }
+        }
+      ],
+      "semantic_questions": [
+        "Какая цель и какой бросок попадания под Ошеломляющий удар?"
+      ],
+      "facts": {
+        "cost": 1,
+        "once_per_turn": true,
+        "save": "Телосложение",
+        "fail_condition": "Ошеломлённый до начала следующего хода",
+        "success": "скорость вдвое, следующий бросок атаки по цели с Преимуществом"
+      },
+      "rule_parameters": {},
+      "constraints": [],
+      "exceptions": [],
+      "duration": "per_action",
+      "resources": [
+        {
+          "id": "focus_points",
+          "handling": "dependency_not_extracted"
+        }
+      ],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "kind": "phb",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 128,
+        "printed_page": "127",
+        "section": "Монах, глава 3 «Классы персонажей»: Ошеломляющий удар"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "existing_engine_subset",
+      "auto_activate": false,
+      "dependencies": [],
+      "behavior_tests": [
+        "phb03.monk.oshelomlyayushii_udar"
+      ],
+      "readiness": {
+        "status": "adjudication_required",
+        "handler": null,
+        "scope": "Монах: Ошеломляющий удар",
+        "blockers": [
+          "умение срабатывает отдельным Действием, а не на попадании: повтор во втором интенте того же хода отвергнут no_action_economy",
+          "ограничение «раз в ход» подменено бюджетом Действий"
+        ]
+      },
+      "revision": 1
+    },
+    {
+      "id": "phb2024.phb03.monk.usilennye_udary",
+      "rules_family": "dnd2024",
+      "name": "Монах: Усиленные удары",
+      "kind": "procedure",
+      "classification": {
+        "mode": "deterministic",
+        "semantic_required": false,
+        "formal_required": true,
+        "reason": "Числа и порядок шагов заданы текстом PHB 2024 (см. facts)"
+      },
+      "conditions": [],
+      "triggers": [
+        "monk.usilennye_udary"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "procedure_id": "monk_usilennye_udary"
+          }
+        }
+      ],
+      "semantic_questions": [],
+      "facts": {
+        "damage_type_choice": [
+          "обычный тип",
+          "Чистая сила"
+        ]
+      },
+      "rule_parameters": {},
+      "constraints": [],
+      "exceptions": [],
+      "duration": "per_action",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "kind": "phb",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 128,
+        "printed_page": "127",
+        "section": "Монах, глава 3 «Классы персонажей»: Усиленные удары"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "existing_engine_subset",
+      "auto_activate": false,
+      "dependencies": [],
+      "behavior_tests": [
+        "phb03.monk.usilennye_udary"
+      ],
+      "readiness": {
+        "status": "engine_subset_verified",
+        "handler": null,
+        "scope": "Монах: Усиленные удары",
+        "blockers": []
+      },
+      "revision": 1
+    },
+    {
+      "id": "phb2024.phb03.monk.uvertlivost",
+      "rules_family": "dnd2024",
+      "name": "Монах: Увёртливость (Монах)",
+      "kind": "procedure",
+      "classification": {
+        "mode": "deterministic",
+        "semantic_required": false,
+        "formal_required": true,
+        "reason": "Числа и порядок шагов заданы текстом PHB 2024 (см. facts)"
+      },
+      "conditions": [],
+      "triggers": [
+        "monk.uvertlivost"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "procedure_id": "monk_uvertlivost"
+          }
+        }
+      ],
+      "semantic_questions": [],
+      "facts": {},
+      "rule_parameters": {},
+      "constraints": [],
+      "exceptions": [],
+      "duration": "per_action",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "kind": "phb",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 128,
+        "printed_page": "127",
+        "section": "Монах, глава 3 «Классы персонажей»: Увёртливость (Монах)"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "not_implemented",
+      "auto_activate": false,
+      "dependencies": [
+        "phb2024.phb02.dexterity_save_half_damage"
+      ],
+      "behavior_tests": [
+        "phb03.monk.uvertlivost"
+      ],
+      "readiness": {
+        "status": "blocked",
+        "handler": null,
+        "scope": "Монах: Увёртливость (Монах)",
+        "blockers": [
+          "у умения нет ни активности, ни поля листа: уклонение от урона области не исполняется"
+        ]
+      },
+      "revision": 1
+    },
+    {
+      "id": "phb2024.phb03.monk.akrobatichnoe_peremeshenie",
+      "rules_family": "dnd2024",
+      "name": "Монах: Акробатичное перемещение",
+      "kind": "procedure",
+      "classification": {
+        "mode": "deterministic",
+        "semantic_required": false,
+        "formal_required": true,
+        "reason": "Числа и порядок шагов заданы текстом PHB 2024 (см. facts)"
+      },
+      "conditions": [],
+      "triggers": [
+        "monk.akrobatichnoe_peremeshenie"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "vertical_surfaces": true,
+            "liquids": true,
+            "no_armor_or_shield": true,
+            "procedure_id": "monk_akrobatichnoe_peremeshenie"
+          }
+        }
+      ],
+      "semantic_questions": [],
+      "facts": {
+        "vertical_surfaces": true,
+        "liquids": true,
+        "no_armor_or_shield": true
+      },
+      "rule_parameters": {},
+      "constraints": [],
+      "exceptions": [],
+      "duration": "per_action",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "kind": "phb",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 128,
+        "printed_page": "127",
+        "section": "Монах, глава 3 «Классы персонажей»: Акробатичное перемещение"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "not_implemented",
+      "auto_activate": false,
+      "dependencies": [],
+      "behavior_tests": [
+        "phb03.monk.akrobatichnoe_peremeshenie"
+      ],
+      "readiness": {
+        "status": "blocked",
+        "handler": null,
+        "scope": "Монах: Акробатичное перемещение",
+        "blockers": [
+          "у умения нет активности: ходьба по стенам и воде не исполняется"
+        ]
+      },
+      "revision": 1
+    },
+    {
+      "id": "phb2024.phb03.monk.povyshennaya_sosredotochennost",
+      "rules_family": "dnd2024",
+      "name": "Монах: Повышенная сосредоточенность",
+      "kind": "procedure",
+      "classification": {
+        "mode": "deterministic",
+        "semantic_required": false,
+        "formal_required": true,
+        "reason": "Числа и порядок шагов заданы текстом PHB 2024 (см. facts)"
+      },
+      "conditions": [],
+      "triggers": [
+        "monk.povyshennaya_sosredotochennost"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "flurry_strikes": 3,
+            "patient_defense_temp_hp": "две Кости боевых искусств",
+            "step_of_wind_companion_size_max": "Большой",
+            "companion_range_feet": 5,
+            "procedure_id": "monk_povyshennaya_sosredotochennost"
+          }
+        }
+      ],
+      "semantic_questions": [],
+      "facts": {
+        "flurry_strikes": 3,
+        "patient_defense_temp_hp": "две Кости боевых искусств",
+        "step_of_wind_companion_size_max": "Большой",
+        "companion_range_feet": 5
+      },
+      "rule_parameters": {},
+      "constraints": [],
+      "exceptions": [],
+      "duration": "per_action",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "kind": "phb",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 128,
+        "printed_page": "127",
+        "section": "Монах, глава 3 «Классы персонажей»: Повышенная сосредоточенность"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "existing_engine_subset",
+      "auto_activate": false,
+      "dependencies": [],
+      "behavior_tests": [
+        "phb03.monk.povyshennaya_sosredotochennost"
+      ],
+      "readiness": {
+        "status": "engine_subset_verified",
+        "handler": null,
+        "scope": "Монах: Повышенная сосредоточенность",
+        "blockers": []
+      },
+      "revision": 1
+    },
+    {
+      "id": "phb2024.phb03.monk.samovosstanovlenie",
+      "rules_family": "dnd2024",
+      "name": "Монах: Самовосстановление",
+      "kind": "procedure",
+      "classification": {
+        "mode": "deterministic",
+        "semantic_required": false,
+        "formal_required": true,
+        "reason": "Числа и порядок шагов заданы текстом PHB 2024 (см. facts)"
+      },
+      "conditions": [],
+      "triggers": [
+        "monk.samovosstanovlenie"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "no_food_water_exhaustion": true,
+            "procedure_id": "monk_samovosstanovlenie"
+          }
+        }
+      ],
+      "semantic_questions": [],
+      "facts": {
+        "conditions": [
+          "Испуганный",
+          "Отравленный",
+          "Очарованный"
+        ],
+        "no_food_water_exhaustion": true
+      },
+      "rule_parameters": {},
+      "constraints": [],
+      "exceptions": [],
+      "duration": "per_action",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "kind": "phb",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 128,
+        "printed_page": "127",
+        "section": "Монах, глава 3 «Классы персонажей»: Самовосстановление"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "not_implemented",
+      "auto_activate": false,
+      "dependencies": [],
+      "behavior_tests": [
+        "phb03.monk.samovosstanovlenie"
+      ],
+      "readiness": {
+        "status": "blocked",
+        "handler": null,
+        "scope": "Монах: Самовосстановление",
+        "blockers": [
+          "умения нет в корпусе этого движка: лист его не выдаёт ни на одном уровне"
+        ]
+      },
+      "revision": 1
+    },
+    {
+      "id": "phb2024.phb03.monk.otrazhenie_energii",
+      "rules_family": "dnd2024",
+      "name": "Монах: Отражение энергий",
+      "kind": "procedure",
+      "classification": {
+        "mode": "deterministic",
+        "semantic_required": false,
+        "formal_required": true,
+        "reason": "Числа и порядок шагов заданы текстом PHB 2024 (см. facts)"
+      },
+      "conditions": [],
+      "triggers": [
+        "monk.otrazhenie_energii"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "any_damage_type": true,
+            "procedure_id": "monk_otrazhenie_energii"
+          }
+        }
+      ],
+      "semantic_questions": [],
+      "facts": {
+        "any_damage_type": true
+      },
+      "rule_parameters": {},
+      "constraints": [],
+      "exceptions": [],
+      "duration": "per_action",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "kind": "phb",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 128,
+        "printed_page": "127",
+        "section": "Монах, глава 3 «Классы персонажей»: Отражение энергий"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "existing_engine_subset",
+      "auto_activate": false,
+      "dependencies": [],
+      "behavior_tests": [
+        "phb03.monk.otrazhenie_energii"
+      ],
+      "readiness": {
+        "status": "engine_subset_verified",
+        "handler": null,
+        "scope": "Монах: Отражение энергий",
+        "blockers": []
+      },
+      "revision": 1
+    },
+    {
+      "id": "phb2024.phb03.monk.obuchennyi_vyzhivat",
+      "rules_family": "dnd2024",
+      "name": "Монах: Обученный выживать",
+      "kind": "procedure",
+      "classification": {
+        "mode": "deterministic",
+        "semantic_required": false,
+        "formal_required": true,
+        "reason": "Числа и порядок шагов заданы текстом PHB 2024 (см. facts)"
+      },
+      "conditions": [],
+      "triggers": [
+        "monk.obuchennyi_vyzhivat"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "all_saves_proficiency": true,
+            "reroll_cost": 1,
+            "must_use_new_result": true,
+            "procedure_id": "monk_obuchennyi_vyzhivat"
+          }
+        }
+      ],
+      "semantic_questions": [],
+      "facts": {
+        "all_saves_proficiency": true,
+        "reroll_cost": 1,
+        "must_use_new_result": true
+      },
+      "rule_parameters": {},
+      "constraints": [],
+      "exceptions": [],
+      "duration": "per_action",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "kind": "phb",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 128,
+        "printed_page": "127",
+        "section": "Монах, глава 3 «Классы персонажей»: Обученный выживать"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "existing_engine_subset",
+      "auto_activate": false,
+      "dependencies": [],
+      "behavior_tests": [
+        "phb03.monk.obuchennyi_vyzhivat"
+      ],
+      "readiness": {
+        "status": "adjudication_required",
+        "handler": null,
+        "scope": "Монах: Обученный выживать",
+        "blockers": [
+          "движок принимает умение, но снятие состояний на отдыхе не наблюдается"
+        ]
+      },
+      "revision": 1
+    },
+    {
+      "id": "phb2024.phb03.monk.polnaya_sosredotochennost",
+      "rules_family": "dnd2024",
+      "name": "Монах: Полная сосредоточенность",
+      "kind": "procedure",
+      "classification": {
+        "mode": "deterministic",
+        "semantic_required": false,
+        "formal_required": true,
+        "reason": "Числа и порядок шагов заданы текстом PHB 2024 (см. facts)"
+      },
+      "conditions": [],
+      "triggers": [
+        "monk.polnaya_sosredotochennost"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "on_initiative_restore_to": 4,
+            "threshold": 3,
+            "procedure_id": "monk_polnaya_sosredotochennost"
+          }
+        }
+      ],
+      "semantic_questions": [],
+      "facts": {
+        "on_initiative_restore_to": 4,
+        "threshold": 3
+      },
+      "rule_parameters": {},
+      "constraints": [],
+      "exceptions": [],
+      "duration": "per_action",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "kind": "phb",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 128,
+        "printed_page": "127",
+        "section": "Монах, глава 3 «Классы персонажей»: Полная сосредоточенность"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "not_implemented",
+      "auto_activate": false,
+      "dependencies": [],
+      "behavior_tests": [
+        "phb03.monk.polnaya_sosredotochennost"
+      ],
+      "readiness": {
+        "status": "blocked",
+        "handler": null,
+        "scope": "Монах: Полная сосредоточенность",
+        "blockers": [
+          "у умения нет типизированной активности: восстановление Очков фокуса не исполняется"
+        ]
+      },
+      "revision": 1
+    },
+    {
+      "id": "phb2024.phb03.monk.sovershennaya_zashita",
+      "rules_family": "dnd2024",
+      "name": "Монах: Совершенная защита",
+      "kind": "procedure",
+      "classification": {
+        "mode": "deterministic",
+        "semantic_required": false,
+        "formal_required": true,
+        "reason": "Числа и порядок шагов заданы текстом PHB 2024 (см. facts)"
+      },
+      "conditions": [],
+      "triggers": [
+        "monk.sovershennaya_zashita"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "cost": 3,
+            "duration_minutes": 1,
+            "resistance": "весь урон, кроме Чистой силы",
+            "procedure_id": "monk_sovershennaya_zashita"
+          }
+        }
+      ],
+      "semantic_questions": [],
+      "facts": {
+        "cost": 3,
+        "duration_minutes": 1,
+        "resistance": "весь урон, кроме Чистой силы"
+      },
+      "rule_parameters": {},
+      "constraints": [],
+      "exceptions": [],
+      "duration": "per_action",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "kind": "phb",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 128,
+        "printed_page": "127",
+        "section": "Монах, глава 3 «Классы персонажей»: Совершенная защита"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "existing_engine_subset",
+      "auto_activate": false,
+      "dependencies": [],
+      "behavior_tests": [
+        "phb03.monk.sovershennaya_zashita"
+      ],
+      "readiness": {
+        "status": "engine_subset_verified",
+        "handler": null,
+        "scope": "Монах: Совершенная защита",
+        "blockers": []
+      },
+      "revision": 1
+    },
+    {
+      "id": "phb2024.phb03.monk.epicheskii_dar",
+      "rules_family": "dnd2024",
+      "name": "Монах: Эпический дар",
+      "kind": "procedure",
+      "classification": {
+        "mode": "deterministic",
+        "semantic_required": false,
+        "formal_required": true,
+        "reason": "Числа и порядок шагов заданы текстом PHB 2024 (см. facts)"
+      },
+      "conditions": [],
+      "triggers": [
+        "monk.epicheskii_dar"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "procedure_id": "monk_epicheskii_dar"
+          }
+        }
+      ],
+      "semantic_questions": [],
+      "facts": {},
+      "rule_parameters": {},
+      "constraints": [],
+      "exceptions": [],
+      "duration": "per_action",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "kind": "phb",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 128,
+        "printed_page": "127",
+        "section": "Монах, глава 3 «Классы персонажей»: Эпический дар"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "existing_engine_subset",
+      "auto_activate": false,
+      "dependencies": [
+        "phb2024.phb05.epic_boon"
+      ],
+      "behavior_tests": [
+        "phb03.monk.epicheskii_dar"
+      ],
+      "readiness": {
+        "status": "adjudication_required",
+        "handler": null,
+        "scope": "Монах: Эпический дар",
+        "blockers": [
+          "дар не входит в репертуар ни одного класса: use_feature даёт CastFailed(not_in_repertoire)",
+          "выгод дара нет: activities и passive_effects пусты в данных, слово epic в ядре встречается только в labels.py"
+        ]
+      },
+      "revision": 1
+    },
+    {
+      "id": "phb2024.phb03.monk.telo_i_razum",
+      "rules_family": "dnd2024",
+      "name": "Монах: Тело и разум",
+      "kind": "procedure",
+      "classification": {
+        "mode": "deterministic",
+        "semantic_required": false,
+        "formal_required": true,
+        "reason": "Числа и порядок шагов заданы текстом PHB 2024 (см. facts)"
+      },
+      "conditions": [],
+      "triggers": [
+        "monk.telo_i_razum"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "dexterity_bonus": 4,
+            "wisdom_bonus": 4,
+            "cap": 25,
+            "procedure_id": "monk_telo_i_razum"
+          }
+        }
+      ],
+      "semantic_questions": [],
+      "facts": {
+        "dexterity_bonus": 4,
+        "wisdom_bonus": 4,
+        "cap": 25
+      },
+      "rule_parameters": {},
+      "constraints": [],
+      "exceptions": [],
+      "duration": "per_action",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "kind": "phb",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 128,
+        "printed_page": "127",
+        "section": "Монах, глава 3 «Классы персонажей»: Тело и разум"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "existing_engine_subset",
+      "auto_activate": false,
+      "dependencies": [],
+      "behavior_tests": [
+        "phb03.monk.telo_i_razum"
+      ],
+      "readiness": {
+        "status": "adjudication_required",
+        "handler": null,
+        "scope": "Монах: Тело и разум",
+        "blockers": [
+          "увеличение Ловкости и Мудрости до 25 движком не применяется: растут только ASI-черты с пределом 20"
+        ]
+      },
+      "revision": 1
+    }
+  ]
+}

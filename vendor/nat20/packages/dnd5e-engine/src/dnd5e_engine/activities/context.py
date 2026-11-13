@@ -1,0 +1,680 @@
+from __future__ import annotations
+
+import random
+from collections.abc import Callable, Sequence
+from dataclasses import dataclass, field
+from typing import TYPE_CHECKING, Any
+
+from dnd5e_engine.events import CombatEvent
+from dnd5e_engine.types.combat import Combatant
+
+if TYPE_CHECKING:
+    from dnd5e_srd_data.schema.common import PassiveEffect
+    from dnd5e_srd_data.schema.spell import Spell
+
+    from dnd5e_engine.activities.conjuration import (
+        ConjurationCarrier,
+        ConstructRequest,
+        StatBlockMagnitudes,
+        SummonRequest,
+        TransformRequest,
+    )
+    from dnd5e_engine.types.effects import ActiveEffect
+
+
+@dataclass(frozen=True)
+class ActivityResolutionContext:
+    """Caster/target state + seeded RNG + event sink for one activity resolution.
+
+    Built directly by golden-corpus tests, and by the orchestrator from live
+    combat state. Caster-derived magnitudes (ability mods,
+    proficiency, spellcasting ability) live here because the typed Activity only
+    declares WHICH ability/DC-calc to use, not the caster's numbers.
+    """
+
+    rng: random.Random
+    caster: Combatant
+    targets: list[Combatant]
+    event_emitter: Callable[[CombatEvent], None]
+    caster_abilities: dict[str, int]  # {"str":..,"dex":..,...} six scores
+    caster_proficiency_bonus: int = 2
+    # Caster's total character level, drives cantrip damage scaling (SRD §Cantrips:
+    # 1 die ≤4, 2 dice 5–10, 3 dice 11–16, 4 dice 17+). Only consulted for cantrips
+    # (``base_spell_level == 0``); inert for leveled spells and weapon attacks.
+    caster_level: int = 1
+    spellcasting_ability: str | None = None  # for save.dc.calculation == "spellcasting"
+    is_proficient_attack: bool = True
+    # The casting spell's concentration flag (``Spell.concentration``). Threaded
+    # into each rider ``ActiveEffect.flags`` as ``{"concentration": True}`` so the
+    # orchestrator can key concentration-drop + repeat-save lineage off
+    # it. Supplied by golden fixtures now; threaded by the orchestrator (from the
+    # spell's typed ``concentration``) at cutover. Inert for non-spell activities.
+    concentration: bool = False
+    # The item slug a use_item intent activated, when there is one. Its
+    # effects are stamped flags={"item": <slug>} so a repeat activation of the
+    # SAME item switches its effect off (SRD 5.2 Boots of Speed: "If you click
+    # your heels together again, you end the effect") instead of stacking a
+    # second copy. None for every spell and feature activity.
+    item_id: str | None = None
+    slot_level: int | None = None
+    # The spell's BASE level (lowest castable slot). Upcast scaling adds
+    # ``max(0, slot_level - base_spell_level)`` steps. Supplied by golden
+    # fixtures now; by the orchestrator (from the spell's typed level) at
+    # cutover. ``None`` disables upcast scaling (a non-spell activity).
+    base_spell_level: int | None = None
+    # Fixed save DC from a cast wrapper's challenge override (Foundry
+    # `spell.challenge.override` + `save`): when set, the save handler uses this
+    # verbatim DC instead of the spellcasting/flat calculation. Set by resolve_cast
+    # from the item's fixed challenge; None for normal (caster-stat) casting.
+    save_dc_override: int | None = None
+    # Fixed attack bonus from a cast wrapper's challenge override
+    # (`spell.challenge.override` + `attack`): when set, the attack handler uses
+    # this verbatim to-hit instead of ability + proficiency + weapon. None otherwise.
+    attack_bonus_override: int | None = None
+    # Cast level forced by a variable-charge item invocation (wand upcast):
+    # ``base activity level + extra charges``. When set, resolve_cast uses it
+    # verbatim (bounds-checked) instead of the activity/spell level. None for
+    # every non-item cast.
+    cast_level_override: int | None = None
+    # Player-supplied damage-type choice per activity id, for parts that offer a
+    # CHOICE of damage type (``DamagePartBlock.types`` with >1 entry — e.g.
+    # Chromatic Orb's [acid, cold, fire, ...]). Keyed by activity id; the chosen
+    # value must be one of the part's listed types. Absent → the first listed
+    # type is used (logged at INFO). Supplied by player intent at cutover.
+    damage_type_choices: dict[str, str] = field(default_factory=dict)
+    # Reuse the engine's EXISTING passive-damage sidecar shape
+    # (entity_id -> {"resistances","immunities","vulnerabilities"}), mirroring
+    # effects/damage.py `_read_passive_modifiers`. Do NOT invent a separate
+    # target_vulnerabilities carrier.
+    passive_damage_modifiers: dict[str, dict[str, list[str]]] = field(default_factory=dict)
+    # Per-target saving-throw modifier sidecar, keyed entity_id -> {ability ->
+    # resolved save bonus}. Mirrors how ``effects/save.py`` sources the target
+    # save modifier (``_save_modifiers[target_id]["saves"][ability]``)
+    # — the resolved per-ability integer, NOT rebuilt from ability score +
+    # proficiency. ``Combatant`` carries no per-ability save table, so the save
+    # handler reads this sidecar; an absent target / ability contributes +0
+    # (mirrors ``_read_save_modifier``'s 0 fallback). Supplied by the orchestrator
+    # (from target stat blocks) at cutover; by golden fixtures now.
+    passive_save_modifiers: dict[str, dict[str, int]] = field(default_factory=dict)
+    # Per-target additive save bonus, keyed entity_id -> a signed dice-expression
+    # STRING (e.g. ``"+1d4"`` for Bless, ``"-1d4"`` for Bane; stacked sources
+    # pre-joined as ``"a + b"``). Mirrors the legacy evaluator path's
+    # ``_save_modifiers[id]["passive_save_bonus"]`` (orchestrator
+    # hydration, ``_build_hydration_payload``); rolled through ``ctx.rng`` so the
+    # bless/bane d4 lands in the same seed stream as the save d20. Absent target →
+    # +0 (no bonus). Empty default keeps the golden corpus identical.
+    passive_save_bonus: dict[str, str] = field(default_factory=dict)
+    # Per-ATTACKER additive to-hit bonus, keyed entity_id -> a signed
+    # dice-expression STRING (``"+1d4"`` Bless, ``"-1d4"`` Bane; stacked sources
+    # pre-joined). The attacker-side analogue of ``passive_save_bonus``: SRD §Bane
+    # /§Bless apply the d4 to the affected creature's own attack rolls, so this is
+    # keyed on the attacker (``ctx.caster``), not the target. Sourced from the
+    # orchestrator's ``passive_damage_modifiers[id]["passive_to_hit_bonus"]``
+    # projection; rolled through ``ctx.rng`` so the d4 lands in the same seed
+    # stream as the attack d20. Absent → +0. Empty default keeps the golden
+    # corpus identical.
+    passive_attack_bonus: dict[str, str] = field(default_factory=dict)
+    # Per-ATTACKER additive WEAPON-ONLY to-hit bonus, keyed entity_id -> a
+    # signed dice-expression STRING. The to-hit analogue of
+    # ``passive_weapon_damage_bonus``: a +N weapon / weapon-tagged
+    # (``applicable_action_types == ["attack"]``) ``attack.roll.bonus``
+    # change applies to a weapon swing only, unlike ``passive_attack_bonus``
+    # (Bless/Bane), which buffs weapon AND spell attacks alike. Sourced from
+    # the orchestrator's action-type-tagged
+    # ``passive_damage_modifiers[id]["passive_weapon_to_hit_bonus"]``
+    # projection (``_fold_active_effect_changes``'s ``weapon_only`` branch);
+    # consumed in ``attack.py`` gated on a weapon being present, symmetric
+    # with ``passive_weapon_damage_bonus``. Absent attacker → +0. Empty
+    # default keeps the golden corpus identical.
+    passive_weapon_attack_bonus: dict[str, str] = field(default_factory=dict)
+    # Per-ATTACKER additive MELEE-WEAPON damage bonus, keyed entity_id -> a signed
+    # numeric/dice STRING (Rage's ``+2`` at L5; stacked sources pre-joined). The
+    # melee-damage analogue of ``passive_attack_bonus``: Foundry's
+    # ``system.bonuses.mwak.damage`` (melee weapon attack damage) buffs the
+    # attacker's MELEE weapon damage only — NOT ranged or spell. Folded from the
+    # caster's active effects in the orchestrator's ``_build_hydration_payload``
+    # and consumed in ``attack.py:_apply_on_hit_damage`` gated to a melee weapon.
+    # Absent attacker → +0. Empty default keeps the golden corpus identical.
+    passive_melee_damage_bonus: dict[str, str] = field(default_factory=dict)
+    # Per-ATTACKER additive WEAPON damage bonus, keyed entity_id -> a signed
+    # numeric/dice STRING (a +N weapon / weapon-tagged buff's ``damage.bonus``
+    # change; stacked sources pre-joined). SRD §Making an Attack / §Magic
+    # Items: a magic weapon's bonus applies to BOTH the attack roll and the
+    # damage roll made with it. Applies to ANY weapon swing (melee or ranged) —
+    # unlike ``passive_melee_damage_bonus`` (Rage), which is melee-only.
+    # Sourced from the orchestrator's action-type-tagged
+    # ``passive_damage_modifiers[id]["passive_weapon_damage_bonus"]``
+    # projection (``_fold_active_effect_changes``'s ``weapon_only`` branch);
+    # consumed in ``attack.py:_apply_on_hit_damage`` gated on a weapon being
+    # present. Absent attacker → +0. Empty default keeps the golden corpus
+    # identical.
+    passive_weapon_damage_bonus: dict[str, str] = field(default_factory=dict)
+    # Per-ATTACKER additive RANGED-WEAPON damage bonus, keyed entity_id -> a
+    # signed numeric/dice STRING. Foundry's ``system.bonuses.rwak.damage``
+    # (ranged weapon attack damage) — the ranged analog of
+    # ``passive_melee_damage_bonus`` (Rage's melee-only ``mwak.damage``).
+    # Folded from the caster's active effects in the orchestrator's
+    # ``_build_hydration_payload`` and consumed in
+    # ``attack.py:_apply_on_hit_damage`` gated to a ranged weapon. Absent
+    # attacker -> +0. Empty default keeps the golden corpus identical.
+    passive_ranged_damage_bonus: dict[str, str] = field(default_factory=dict)
+    # Per-ATTACKER additive MELEE-SPELL-ATTACK damage bonus, keyed entity_id ->
+    # a signed numeric/dice STRING. Foundry's ``system.bonuses.msak.damage``
+    # (melee spell attack damage — e.g. Shocking Grasp). Consumed in
+    # ``attack.py`` gated on a no-weapon melee-classified attack activity.
+    # Absent attacker -> +0.
+    passive_melee_spell_damage_bonus: dict[str, str] = field(default_factory=dict)
+    # Per-ATTACKER additive RANGED-SPELL-ATTACK damage bonus, keyed entity_id ->
+    # a signed numeric/dice STRING. Foundry's ``system.bonuses.rsak.damage``
+    # (ranged spell attack damage — e.g. Fire Bolt). Consumed in ``attack.py``
+    # gated on a no-weapon ranged-classified attack activity. Absent
+    # attacker -> +0.
+    passive_ranged_spell_damage_bonus: dict[str, str] = field(default_factory=dict)
+    # Per-target save-advantage / -disadvantage ability-code lists (UPPER-case:
+    # ``"STR"``, ``"DEX"``, ...), keyed entity_id -> list[ability]. Mirrors the
+    # OLD path's ``passive_save_adv`` / ``passive_save_dis`` (Faerie Fire,
+    # Restrained, etc.). An ability present in both cancels to normal
+    # (the legacy evaluator ``reconcile_adv``). Empty defaults keep the golden corpus identical.
+    passive_save_adv: dict[str, list[str]] = field(default_factory=dict)
+    passive_save_dis: dict[str, list[str]] = field(default_factory=dict)
+    # Per-target auto-fail ability-code list (UPPER-case), keyed entity_id ->
+    # list[ability]. SRD §Conditions: Paralyzed / Stunned / Petrified /
+    # Unconscious creatures auto-fail STR + DEX saves; Restrained does not. When
+    # the rolled ability is listed the save short-circuits to failure with NO d20
+    # draw (matching ``effects/save.py`` + ``conditions.py`` semantics), so the
+    # deterministic rng stream is not perturbed. Empty default = no auto-fail.
+    passive_save_auto_fail: dict[str, list[str]] = field(default_factory=dict)
+    # Per-TARGET SRD 5.2 §Cover degree ("none"/"half"/"three_quarters"/
+    # "total"), keyed entity_id -> degree. Computed once per activity
+    # resolution by the orchestrator (``_target_cover_map``) from the
+    # caster's and target's cells via ``SpatialTopology.cover_between``.
+    # Consumed in ``attack.py`` (folds +2/+5 onto the target's AC before the
+    # hit comparison) and ``save.py``/``save_primitive.py`` (folds the SAME
+    # +2/+5 onto a DEXTERITY save's total only — SRD: cover grants "a bonus
+    # to AC and Dexterity saving throws"). Absent target -> "none" (+0).
+    # Empty default keeps the golden corpus identical (no cover geometry).
+    target_cover: dict[str, str] = field(default_factory=dict)
+    # C16b — SRD 5.2 "Unseen Attackers and Targets". Per-target visibility
+    # projected by the orchestrator (``_target_visibility_maps`` via
+    # ``SpatialTopology.can_see`` + ``Combatant.senses``). ``target_unseen[id]``
+    # True ⇒ the attacker cannot see that target ⇒ ``"unseen"`` disadvantage;
+    # ``attacker_unseen_by[id]`` True ⇒ that target cannot see the attacker ⇒
+    # ``"unseen"`` advantage. Both present cancel to normal (``resolve_mode``).
+    # Empty defaults ⇒ normal (golden corpus unchanged).
+    target_unseen: dict[str, bool] = field(default_factory=dict)
+    attacker_unseen_by: dict[str, bool] = field(default_factory=dict)
+    # Per-TARGET attacker→target distance in feet (``SpatialTopology.distance_ft``),
+    # computed once per resolution by the orchestrator (``_target_distance_map``).
+    # Consumed by ``attack.py`` for the SRD 5.2 Prone target row (advantage
+    # within 5 ft, disadvantage otherwise). Absent target -> unknown -> that row
+    # stays inert.
+    target_distance_ft: dict[str, int] = field(default_factory=dict)
+    # SRD 5.2 §Range: "Your attack roll has Disadvantage when
+    # your target is beyond normal range, and you can't attack a target
+    # beyond long range." Per-TARGET flag — True iff the attacker→target
+    # distance is beyond the weapon's NORMAL band but still within its MAX
+    # (long) band, projected once per resolution by the orchestrator from
+    # ``_weapon_attack_range_ft`` + the live distance. The MAX-band reject
+    # itself happens upstream (``_pc_attack_out_of_range``), before this
+    # context is even built, so a target reaching ``attack.py`` with this
+    # flag set is always a LEGAL, merely disadvantaged, attack. Consumed in
+    # ``attack.py``, which appends the ``"range:long"`` disadvantage source.
+    # Empty default keeps the golden corpus identical (no range geometry).
+    target_beyond_normal_range: dict[str, bool] = field(default_factory=dict)
+    # SRD 5.2 "Ranged Attacks in Close Combat": "you have
+    # Disadvantage on the roll if you are within 5 feet of an enemy who can
+    # see you and doesn't have the Incapacitated condition." Per-ATTACKER
+    # (not per-target) flag — True iff a qualifying hostile is adjacent to
+    # THIS caster, projected once per resolution by the orchestrator
+    # (``_hostile_adjacent_to_attacker``). Consumed in ``attack.py``, which
+    # folds it into disadvantage only for an attack that is itself
+    # effectively ranged (ranged-category weapon, or a thrown melee weapon
+    # beyond its own reach) — an ordinary melee swing is never penalized.
+    # Default ``False`` keeps the golden corpus identical (no adjacency
+    # geometry).
+    attacker_ranged_in_melee: bool = False
+    # SRD 5.2 §Actions in Combat — Dodge. Per-TARGET whether the
+    # Dodge benefit is currently active (``dodging`` AND not Incapacitated
+    # AND Speed > 0 — the SRD loss clause), projected once per resolution by
+    # the orchestrator (``_dodge_benefit_active``). Consumed in
+    # ``attack.py``, which folds it into disadvantage on an attack roll
+    # against that target. SRD also conditions the attack-disadvantage half
+    # of Dodge on "if you can see the attacker" — this map's value is now
+    # "dodging AND the dodger can see this attacker" (C16b: computed
+    # orchestrator-side via ``_combatant_can_see`` before the map is built);
+    # the DEX-save advantage half has no such conjunct and is folded
+    # separately via ``passive_save_adv`` in the hydration payload. Empty
+    # default keeps the golden corpus identical (no dodge geometry).
+    target_dodging: dict[str, bool] = field(default_factory=dict)
+    # C16b — SRD 5.2 Invisible "can somehow see you" carve-out:
+    # per-TARGET, does that target's own Blindsight/Truesight reach the
+    # ATTACKER (and line of sight hold) — i.e. does the target pierce the
+    # attacker's Invisible condition? Projected once per resolution by the
+    # orchestrator (``_invisibility_pierced_maps`` / ``_pierces_invisibility``).
+    # Consumed in ``attack.py``, passed as
+    # ``conditions_grant_advantage_on_attack(..., attacker_invisibility_pierced=...)``
+    # to drop the attacker's Invisible advantage against that one target.
+    # Empty default keeps the golden corpus identical (no vision model wired).
+    attacker_invisibility_pierced_by: dict[str, bool] = field(default_factory=dict)
+    # C16b — the reverse direction: per-TARGET, does the ATTACKER's own
+    # Blindsight/Truesight reach that (Invisible) target — i.e. does the
+    # attacker pierce the target's Invisible condition? Consumed in
+    # ``attack.py`` as ``target_invisibility_pierced=...`` to drop the
+    # attacker's Invisible-target disadvantage against that one target. Empty
+    # default keeps the golden corpus identical.
+    target_invisibility_pierced: dict[str, bool] = field(default_factory=dict)
+    # C16b — SRD 5.2 Frightened line-of-sight gate: is the
+    # ATTACKER's own fear source in sight (or unknown/dead/untracked, in
+    # which case the penalty stays — SRD-conservative)? A single flag, not a
+    # per-target map: Frightened's disadvantage is a property of the
+    # attacker's own perception, not of which target is being attacked.
+    # Projected once per resolution by the orchestrator
+    # (``_fear_source_in_sight``). Consumed in ``attack.py`` as
+    # ``conditions_grant_advantage_on_attack(..., fear_source_in_sight=...)``
+    # on the ATTACKER-side call only. Default ``True`` keeps the golden
+    # corpus identical (no vision model wired ⇒ penalty always stays).
+    attacker_fear_source_in_sight: bool = True
+    # SRD 5.2 §Actions in Combat — Help, Assist an Attack Roll.
+    # Per-TARGET: does an outstanding Help grant against this target belong
+    # to an ALLY of the attacker resolving THIS activity? Projected once per
+    # resolution by the orchestrator (``live.help_grants`` cross-referenced
+    # against the attacker's side); consumed in ``attack.py``, which folds it
+    # into advantage on an attack roll against that target. The one-use pop
+    # (the grant is spent even on a miss, or when cancelled to normal by a
+    # disadvantage source — "the next attack roll") is an orchestrator-side
+    # write after resolution, not this pure resolver's concern. Empty default
+    # keeps the golden corpus identical (no Help geometry).
+    target_help_advantage: dict[str, bool] = field(default_factory=dict)
+    # The entity grappling the ATTACKER (SRD 5.2 Grappled: disadvantage on
+    # attack rolls against any target other than the grappler). ``None`` when
+    # not grappled or the grappler is unknown -> row inert.
+    attacker_grappler_id: str | None = None
+    # Per-ENTITY signed flat modifier applied to EVERY D20 Test the entity makes
+    # (SRD 5.2 Exhaustion: "the roll is reduced by 2 times your Exhaustion
+    # level" — ``rules.conditions.d20_test_penalty``). Keyed by entity_id; the
+    # attacker reads its own entry in ``attack.py``, the saving creature in
+    # ``save_primitive.py``, the checking actor in ``check.py``. Absent -> 0.
+    # A flat modifier never adds a draw, so seeded streams are unmoved.
+    d20_test_penalty: dict[str, int] = field(default_factory=dict)
+    # Per-TARGET flat AC bonus from an active effect (Shield's +5, keyed
+    # ``"system.attributes.ac.bonus"`` in the Foundry source data, aliased to
+    # the engine's ``"ac.bonus"`` fold key). Mirrors ``passive_save_modifiers``'s
+    # per-target int shape. Computed once per activity resolution by the
+    # orchestrator (folded from ``live.active_effects`` via
+    # ``_fold_active_effect_changes`` + extracted in ``build_activity_context``);
+    # consumed in ``attack.py`` alongside the cover-AC fold, before the
+    # ``total >= target_ac`` comparison. Absent target -> +0. Empty default
+    # keeps the golden corpus identical.
+    passive_ac_bonus: dict[str, int] = field(default_factory=dict)
+    # Per-TARGET Armor Class REPLACED by an active effect, when the effect asks
+    # for an alternate calculation (SRD 5.2 Mage Armor: ``ac.calc = mage`` →
+    # "the target's base AC becomes 13 plus its Dexterity modifier"). The
+    # orchestrator reports the requested mode, ``build_context`` re-derives the
+    # number through the sheet's own ``armor_class``. ``attack.py`` prefers
+    # this over ``Combatant.ac`` for the ``total >= AC`` comparison; absent
+    # target -> the combatant's own AC, so an empty default leaves every
+    # combat without such an effect byte-identical.
+    target_ac: dict[str, int] = field(default_factory=dict)
+    # Targets whose Critical Hits are downgraded to normal hits (SRD 5.2
+    # Adamantine Armor: "any Critical Hit against you becomes a normal hit").
+    # A SET, not a bonus: the attack still lands, only the doubling is
+    # cancelled, so it cannot ride the numeric sidecars. Folded from
+    # ``critical.hit.immune`` on the target's active effects; empty default
+    # keeps the golden corpus identical.
+    critical_hit_immunity: set[str] = field(default_factory=set)
+    # Per-actor ability/skill-check modifier sidecar, mirroring
+    # ``effects/check.py:_read_check_modifiers``'s shape
+    # ``{entity_id: {"skills": {slug: mod}, "ability_mods": {ability: mod},
+    # "disadvantage": bool}}``. The RESOLVED per-skill / per-ability integer
+    # (ability modifier + proficiency bonus, doubled with Expertise), NOT rebuilt
+    # here from ability score + proficiency; an absent actor / skill / ability
+    # contributes +0. Projected by the orchestrator off the live ``Combatant``
+    # (``_project_target_modifiers`` via ``activities.actor_stats.check_modifier``)
+    # and threaded in by ``build_activity_context`` (F1d). ``disadvantage`` is the
+    # condition-derived flag (Frightened / Poisoned / Exhaustion); since F2c it
+    # is CONSUMED by ``check.py``, which feeds it to ``roll_d20_test`` as the
+    # ``"condition:attacker"`` source (a flagged actor draws two d20s and keeps
+    # the lower).
+    # Heterogeneous by construction, hence the ``Any`` value type.
+    check_modifiers: dict[str, dict[str, Any]] = field(default_factory=dict)
+    # Effect definitions riding the activity's applied-effect refs, to be
+    # translated into runtime ``ActiveEffect``s (one per target) via
+    # ``activities/effects.passive_effect_to_active_effect``. Supplied by golden
+    # fixtures now; by the orchestrator (resolving ``activity.effects[].id`` →
+    # the spell's typed ``passive_effects``) at cutover.
+    source_passive_effects: list[PassiveEffect] = field(default_factory=list)
+    # Spell lookup table for `cast` delegation, keyed by Foundry spell uuid →
+    # the typed Spell. A `cast` activity resolves `spell.uuid` here, then
+    # re-enters resolve_activity for each of the referenced spell's activities.
+    # Supplied by golden fixtures now; by the orchestrator (from the caster's
+    # known spells) at cutover.
+    spell_book: dict[str, Spell] = field(default_factory=dict)
+    # Recursion guard for `cast`: the chain of spell uuids already being cast
+    # this resolution. A uuid already present means a spell-within-itself cycle —
+    # the cast handler logs and no-ops rather than recursing infinitely.
+    parent_chain: tuple[str, ...] = ()
+    # Pre-resolved ScaleValue magnitudes for the caster's class/subclass/species,
+    # keyed by the full dotted ``@scale.*`` token suffix
+    # (``"barbarian.rage-damage"`` -> 2, ``"rogue.sneak-attack"`` -> ``"3d6"``,
+    # ``"rogue.sneak-attack.number"`` -> 3). Int for number/distance scales and
+    # dice ``.number`` counts; dice-expr STRING for bare/``.die`` dice scales.
+    # Resolved at the orchestrator/build-party seam (loader access there) by
+    # ``activities/scale.build_scale_values`` and passed in as plain data — the
+    # ``@scale.*`` formula branch never touches a loader (purity). Empty default
+    # keeps the golden corpus identical.
+    scale_values: dict[str, int | str] = field(default_factory=dict)
+    # Pre-resolved class levels keyed by class slug (``{"fighter": 5}``) for the
+    # ``@classes.<class>.levels`` token (Second Wind's HP heal scales by Fighter
+    # level). Resolved at the same seam from the caster's class/level. Empty
+    # default keeps the golden corpus identical.
+    class_levels: dict[str, int] = field(default_factory=dict)
+    #: The character level, for ``@details.level`` (SRD 5.2 True Strike's
+    #: extra damage steps at levels 5, 11 and 17). ``0`` keeps a carrier that
+    #: never set it reading as "no extra damage".
+    character_level: int = 0
+    #: Typed damage parts an ACTIVE EFFECT contributes to this attack, as
+    #: ``(dice_formula, damage_type)`` pairs. SRD 5.2 True Strike carries its
+    #: extra damage as an effect rider (``system.damage.parts``), not as a part
+    #: of the attack activity, so the attack has to read it from here.
+    extra_damage_parts: tuple[tuple[str, str], ...] = ()
+    #: Foundry's ``@item.uses.spent``: how many times the resolved activity
+    #: has already been used. SRD 5.2 Overchannel scales its backlash off it
+    #: (``(2 + @item.uses.spent - 1)d12``). 0 when nothing has been spent.
+    item_uses_spent: int = 0
+    #: Foundry's ``@item.uses.value`` / ``@item.uses.max``: charges LEFT and
+    #: the cap. SRD 5.2 Staff of Power scales its retributive strike off the
+    #: charges remaining (``16 * @item.uses.value``), Mysterious Deck's own
+    #: maximum is ``@item.uses.value`` (deck size set outside the schema).
+    #: ``None`` when the item declares no cap: the formula then cannot be
+    #: resolved and the engine refuses instead of inventing a number.
+    item_uses_value: int | None = None
+    item_uses_max: int | None = None
+    #: Foundry's ``@attributes.hd.spent`` / ``@attributes.hd.total`` — Hit
+    #: Point Dice already expended this rest cycle and the size of the pool.
+    #: SRD 5.2 Arcane Vigor: "Roll one or two of your unexpended Hit Point
+    #: Dice" (``2d@attributes.hd.largestFace``), then "Those dice are then
+    #: expended." ``None`` when the creature holds no Hit Dice: the formula
+    #: then cannot be resolved and the engine refuses instead of inventing a
+    #: die size.
+    hit_dice_spent: int | None = None
+    hit_dice_total: int | None = None
+    hit_dice_largest_face: int | None = None
+    # The CASTER's own active effects, consulted by ``attack.py`` for the
+    # attacker-side ``flags.advantage.attack`` / ``flags.disadvantage.attack``
+    # override changes (SRD §Advantage and Disadvantage). Mirrors the
+    # attacker-flag half of ``rules/combat.py``'s already-implemented (but live-
+    # path-orphaned) reconciliation. Supplied by the orchestrator (projected
+    # from ``live.active_effects[caster_id]``) at cutover; by golden/e2e
+    # fixtures now. Empty default keeps the golden corpus identical (no
+    # advantage producer ⇒ every attack rolls ``normal``, as before).
+    active_effects: Sequence[ActiveEffect] = ()
+    # F2b — SRD §Advantage and Disadvantage, condition-derived half. The
+    # CASTER's own active condition NAMES (``rules/conditions.active_condition_names``)
+    # and the same per-target projection keyed by ``entity_id``. Consumed by
+    # ``attack.py`` via ``rules/conditions.conditions_grant_advantage_on_attack``
+    # (Invisible/Blinded/Poisoned/Frightened/Restrained on the attacker;
+    # Paralyzed/Stunned/Unconscious/Blinded on the target). Filled by
+    # ``build_activity_context`` from ``Combatant.conditions``; empty defaults
+    # leave every attack at ``normal``, byte-identical to the pre-F2b stream.
+    attacker_conditions: list[str] = field(default_factory=list)
+    target_conditions: dict[str, list[str]] = field(default_factory=dict)
+    # SRD §Sneak Attack (Rogue), "Once per turn" — per-ATTACKER gate keyed by
+    # ``entity_id`` (mirrors ``passive_melee_damage_bonus``'s per-caster shape).
+    # ``True`` means the caster has ALREADY landed a Sneak Attack rider this
+    # turn, so the injection point in ``attack.py:_apply_on_hit_damage`` skips
+    # the fold. The orchestrator populates it per intent from the live
+    # ``Combatant.sneak_attack_spent_this_turn`` flag and clears that flag at
+    # ``TurnStarted``. Absent caster ⇒ not spent (rider may fire). Empty default
+    # keeps the golden corpus identical.
+    sneak_attack_spent: dict[str, bool] = field(default_factory=dict)
+    # SRD §Sneak Attack (Rogue), ally-adjacent alternative — per-TARGET flag
+    # keyed by the target's ``entity_id``. ``True`` means at least one of the
+    # caster's allies is within 5 ft of THAT target and is not Incapacitated,
+    # so a Sneak Attack rider may fire without Advantage (provided the attacker
+    # is not at Disadvantage). Computed once per resolution by the orchestrator
+    # (a new consumer of the ``spatial.py`` distance seam, over the caster's
+    # party allies) and passed in as plain data — the pure resolver never
+    # touches the spatial seam. Absent target ⇒ no adjacent ally. Empty default
+    # keeps the golden corpus identical.
+    sneak_attack_ally_adjacent: dict[str, bool] = field(default_factory=dict)
+    # SRD 5.2 Savage Attacker: "Once per turn when you hit a target with a
+    # weapon, you can roll the weapon's damage dice twice and use either roll
+    # against the target." Per-ATTACKER, keyed by ``entity_id``: ``True`` once
+    # the attacker has used it this turn. ``orchestrator.py`` projects it from
+    # ``Combatant.savage_attacker_spent_this_turn``; ``attack.py`` sets the
+    # attacker's entry when it rolls the second time (dict mutation on the
+    # frozen dataclass, like ``mastery_procs``), so a Cleave's second hit in
+    # the same resolution rolls once, and ``orchestrator.py`` reads the entry
+    # back to record the use. Absent caster ⇒ not spent.
+    savage_attacker_spent: dict[str, bool] = field(default_factory=dict)
+    # C18 §Monster action economy — SRD 5.2 Legendary Resistance: "If the
+    # monster fails a saving throw, it can choose to succeed instead." The
+    # engine has no mid-resolution round-trip to a host, so the choice is a
+    # PRE-ARMED declaration (``resolve_legendary_resistance``, orchestrator
+    # public seam) consulted by ``activities/save_primitive.roll_save`` the
+    # next time THAT entity's save fails. Keyed by the SAVING entity's
+    # ``entity_id`` -> the number of armed-but-not-yet-consumed uses (mirrors
+    # ``_LiveCombat.legendary_resistance_armed``, projected fresh by
+    # ``_build_hydration_payload`` for every resolution). Empty default keeps
+    # every combat without an armed declaration byte-identical.
+    legendary_resistance_armed: dict[str, int] = field(default_factory=dict)
+    # The same entity's REMAINING per-day pool (mirrors
+    # ``Combatant.legendary_resistances_remaining``), consulted alongside
+    # ``legendary_resistance_armed`` so a conversion never drops a pool
+    # already exhausted by another resolution earlier in the SAME hydration
+    # payload's lifetime. Decremented in lockstep with ``legendary_resistance_
+    # armed`` by the conversion; the orchestrator reconciles the authoritative
+    # ``Combatant`` field afterward via ``_sync_legendary_resistance``. Empty
+    # default keeps every non-bearer byte-identical.
+    legendary_resistances_remaining_by_entity: dict[str, int] = field(default_factory=dict)
+    # C18 §Monster action economy — SRD 5.2 stat-block trait "Pack Tactics":
+    # "Advantage on an attack roll against a creature if at least one of the
+    # [monster]'s allies is within 5 feet of the creature and the ally
+    # doesn't have the Incapacitated condition." Per-TARGET flag, PRE-
+    # RESOLVED by the orchestrator (``_pack_tactics_map``, a spatial-seam
+    # consumer mirroring ``sneak_attack_ally_adjacent``'s geometry) so this
+    # pure resolver never touches ``spatial.py`` itself. Absent target ⇒ no
+    # qualifying ally. Empty default keeps every non-bearer byte-identical.
+    pack_tactics_ally_adjacent: dict[str, bool] = field(default_factory=dict)
+    # SRD 5.2 Grappler: "You have Advantage on attack rolls against a creature
+    # Grappled by you." Per-TARGET flag, PRE-RESOLVED in ``orchestrator.py``
+    # (``_grappled_by_map``): is that target Grappled by the attacker?
+    # ``attack.py`` applies it only to an attacker with the feat. Empty default
+    # keeps the golden corpus identical.
+    target_grappled_by_attacker: dict[str, bool] = field(default_factory=dict)
+    # C18 §Monster action economy — SRD 5.2 stat-block trait "Sunlight
+    # Sensitivity" (bundled corpus text): "While in sunlight, the monster
+    # has Disadvantage on ability checks and attack rolls." Read for the
+    # attack-roll half only. A scene-wide flag (whole-scene
+    # sunlight; per-cell sunlight is a later additive field on
+    # ``GridScene``) projected by the orchestrator from ``live.scene_
+    # sunlight``. ``False`` default keeps every combat without a sunlit
+    # scene byte-identical.
+    attacker_in_sunlight: bool = False
+    # C18 §Monster action economy — SRD 5.2 stat-block trait
+    # "Undead Fortitude": the live-combat WRITE-BACK half of the trait.
+    # ``activities/apply.py`` sets ``undead_fortitude_holds[target_id] =
+    # True`` the instant a bearer's CON save succeeds against damage that
+    # would drop it to 0 (and ``target.hp_current`` is set to 1 on this same
+    # snapshot Combatant, for a caller that inspects it directly — the pure/
+    # golden-corpus harness). The orchestrator threads THE SAME dict object
+    # it stores on ``_LiveCombat.undead_fortitude_holds`` into every context
+    # build (not a disposable copy — a genuine shared reference), so
+    # ``_emit_apply_damage`` can pop this flag at the exact synchronous
+    # moment it is about to fold the very ``DamageApplied`` this save just
+    # produced into the authoritative ``tracked_hp``/Death decision, and
+    # floor the live HP at 1 instead of firing Death. A private
+    # resolver<->orchestrator handshake — never surfaced on any public event
+    # or view. Empty default keeps a context with no live-combat wiring
+    # behind it (pure/golden-corpus tests) inert — the flag is simply never
+    # read back by anyone.
+    undead_fortitude_holds: dict[str, bool] = field(default_factory=dict)
+    # Test-determinism seams (our own code): variables["force_d20"],
+    # variables["force_save_d20"], variables["in_crit"].
+    variables: dict[str, int] = field(default_factory=dict)
+    # SRD 5.2 §Two-Weapon Fighting / Light property — "you don't add your
+    # ability modifier to the extra attack's damage unless that modifier is
+    # negative." Set True by the orchestrator only for an off-hand swing;
+    # ``_roll_base_weapon_damage`` (attack.py) zeroes a POSITIVE
+    # governing-ability mod when this is set — a negative mod still applies.
+    # False default keeps every other swing (main-hand, monster, spell)
+    # byte-identical to before this field existed.
+    suppress_positive_ability_damage_mod: bool = False
+    # SRD 5.2 Versatile property — "The weapon deals that damage when used
+    # with two hands to make a melee attack." Set True by the orchestrator
+    # only when the player intent requests a two-handed grip
+    # (``PlayerIntent.two_handed``) AND the weapon carries
+    # ``WeaponProperty.VERSATILE`` AND the swing is a melee attack (a
+    # two-handed grip on a thrown/ranged use of the weapon is ignored).
+    # ``_roll_base_weapon_damage`` (attack.py) rolls ``Weapon.versatile_damage``
+    # instead of ``Weapon.damage_parts`` when this is set. False default keeps
+    # every other swing byte-identical to before this field existed.
+    use_versatile_damage: bool = False
+    # SRD 5.2 §Weapon Mastery — Vex: "If you hit a creature with
+    # this weapon and deal damage to the creature, you have Advantage on your
+    # next attack roll against that creature before the end of your next
+    # turn." Per-TARGET flag for the ATTACKER resolving THIS activity — is
+    # there a live Vex grant (this attacker -> that target) still
+    # outstanding? Projected by the orchestrator from ``live.vex_grants``
+    # immediately before resolution; consumed in ``attack.py``, which folds
+    # it into advantage via the existing ``"trait"`` AdvantageSource (no
+    # dedicated mastery-rider token exists — the Literal is closed) AND
+    # feeds the SAME boolean ``sneak_attack_triggers`` reads as
+    # ``attacker_has_advantage`` (a vex-advantaged Rogue swing can Sneak
+    # Attack). The one-use pop (mirrors ``target_help_advantage``'s
+    # ``_pop_help_grant``) is an orchestrator-side write after resolution.
+    # Empty default keeps the golden corpus identical (no mastery geometry).
+    attacker_vex_advantage: dict[str, bool] = field(default_factory=dict)
+    # SRD 5.2 §Weapon Mastery — Sap: "If you hit a creature with
+    # this weapon, that creature has Disadvantage on its next attack roll
+    # before the start of your next turn." Per-ATTACKER (the caster
+    # resolving THIS activity, who may be the SAPPED creature) — True iff a
+    # live Sap mark (``live.sap_marks``) is outstanding against THIS caster,
+    # projected by the orchestrator immediately before resolution. Consumed
+    # in ``attack.py``, which folds it into disadvantage via the SAME
+    # ``"trait"`` AdvantageSource. The one-use pop is an orchestrator-side
+    # write after resolution. Default ``False`` keeps the golden corpus
+    # identical (no mastery geometry).
+    attacker_sapped: bool = False
+    # SRD 5.2 §Weapon Mastery — Vex / Sap proc writeback channel. Mastery
+    # resolvers (``activities/mastery.py``)
+    # APPEND ``(mastery_slug, target_id)`` here when a hit qualifies for a
+    # lingering rider (vex: hit AND damage DEALT > 0, post-immunity; sap:
+    # hit alone) — they never touch live combat state directly (purity
+    # boundary). The orchestrator reads this list AFTER resolution and folds
+    # each entry into ``live.vex_grants`` / ``live.sap_marks`` (non-stacking
+    # — a re-proc REFRESHES the grant/mark's expiry rather than stacking).
+    # Mutated via ``list.append`` despite the frozen
+    # dataclass (list mutation, not field reassignment, is fine); empty
+    # default keeps the golden corpus identical.
+    mastery_procs: list[tuple[str, str]] = field(default_factory=list)
+    # SRD 5.2 §Weapon Mastery — Cleave: "If you hit a creature
+    # with a melee attack roll using this weapon, you can make a melee attack
+    # roll with the weapon against a second creature within 5 feet of the
+    # first that is also within your reach. ... You can make this extra
+    # attack only once per turn." Both halves are PRE-RESOLVED by the
+    # orchestrator (spatial + per-turn state reads it owns):
+    # ``cleave_available`` — the swung weapon carries ``cleave``, the swing is
+    # a melee attack within reach, and the attacker has not already cleaved
+    # this turn (``Combatant.cleave_spent_this_turn``); ``cleave_candidate``
+    # — the deterministic second creature (a LIVING
+    # hostile within 5 ft of the first target AND within the attacker's
+    # reach, excluding the first target; nearest to the ATTACKER, ties broken
+    # by ascending entity_id), or ``None`` when no creature qualifies.
+    # ``attack.py`` chains ONE extra attack roll against the candidate after
+    # a main-target HIT when both are set, and reports that it fired by
+    # appending ``("cleave", candidate_id)`` to ``mastery_procs`` (the
+    # orchestrator folds that marker into the per-turn cap). Defaults keep
+    # the golden corpus identical (no chain, no extra draws).
+    cleave_available: bool = False
+    cleave_candidate: Combatant | None = None
+    # Foundry's ``@scaling`` for this resolution — the scaling value the caster
+    # chose. Set only for a feature activity that scales its own-pool cost by
+    # amount (Lay on Hands' Heal: the points drawn). ``None`` keeps ``@scaling``
+    # an unhandled token, so a spell formula that names it still fails loudly.
+    scaling_value: int | None = None
+    # SRD 5.2 Martial Arts is active for the attacker: it has the feature and
+    # wears no armor and wields no Shield (orchestrator-checked). ``attack.py``
+    # applies it to an Unarmed Strike or a Monk weapon only.
+    martial_arts: bool = False
+    # SRD 5.2 Bardic Inspiration: "when the creature fails a D20 Test, the
+    # creature can roll the Bardic Inspiration die and add the number rolled to
+    # the d20". The die an ``attack`` intent redeems (``"1d6"`` … ``"1d12"``,
+    # sized by the orchestrator from the granting bard), or ``None``.
+    # ``attack.py`` rolls it at most once, only after a failed attack roll that
+    # isn't a natural 1, and appends the roll to ``granted_die_rolls`` — the
+    # writeback the orchestrator reads to expend the die (list mutation on the
+    # frozen dataclass, like ``mastery_procs``).
+    granted_die: str | None = None
+    granted_die_rolls: list[int] = field(default_factory=list)
+    # The same dice, keyed by the creature HOLDING them (``{"pc2": "1d8"}``),
+    # for the D20 Tests whose roller is not the acting creature: a saving
+    # throw forced by somebody else's spell (``activities/save_primitive.py``
+    # draws it on a failed save). SRD 5.2 Bardic Inspiration: "when the
+    # creature fails a D20 Test, the creature can roll the Bardic Inspiration
+    # die and add the number rolled to the d20". ``granted_dice_rolls`` is
+    # the writeback the orchestrator reads to expend the die.
+    granted_dices: dict[str, str] = field(default_factory=dict)
+    granted_dice_rolls: dict[str, list[int]] = field(default_factory=dict)
+    # The orchestrator's pre-validated inputs for an allowlisted conjuration
+    # (``activities/conjuration.py``, C21): the weapon Magic Weapon touches,
+    # the form Wild Shape takes, the cell Spiritual Weapon's force appears in.
+    # ``None`` keeps every summon / enchant / transform activity narrative;
+    # the resolver never decides legality.
+    conjuration: ConjurationCarrier | None = None
+    # What an allowlisted conjuration asks the orchestrator to fold after
+    # resolution: a construct to register, a creature to shape-shift, a
+    # creature to seat in the initiative order (list mutation on the frozen
+    # dataclass, like ``mastery_procs``).
+    construct_requests: list[ConstructRequest] = field(default_factory=list)
+    transform_requests: list[TransformRequest] = field(default_factory=list)
+    summon_requests: list[SummonRequest] = field(default_factory=list)
+    # SRD 5.2 Magic Weapon: "a +1 bonus to attack rolls and damage rolls". The
+    # part of an enchanted weapon's bonus a host-pinned to-hit would drop
+    # (``_attack_bonus`` returns a pinned override verbatim, before the
+    # weapon's ``magical_bonus``); 0 unless the attacker's bonus is pinned.
+    weapon_enchantment_to_hit: int = 0
+    #: Shillelagh: "you can use your spellcasting ability instead of
+    #: Strength for the attack and damage rolls of melee attacks using that
+    #: weapon". When an enchantment on the wielded weapon says so, the
+    #: governing ability is the caster's spellcasting ability, not the
+    #: weapon's default.
+    weapon_enchantment_spellcasting: bool = False
+    #: The caster's spellcasting ability for THAT enchantment (Shillelagh):
+    #: ``spellcasting_ability`` above is the stat-block/construct path and is
+    #: ``None`` for a player character, so the enchantment carries its own.
+    weapon_enchantment_ability: str | None = None
+    # SRD 5.2 Wild Shape / Polymorph: the transformed creature's stat-block
+    # scores and Proficiency Bonus. ``build_activity_context`` projects them
+    # onto ``caster_abilities`` / ``caster_proficiency_bonus``; ``None`` keeps
+    # the entity-type model.
+    stat_block_magnitudes: StatBlockMagnitudes | None = None
+    #: Slot level at which the spell that summoned this attacker was cast.
+    #: A conjured stat block writes its damage off it (Animated Object:
+    #: "(@flags.dnd5e.summon.level - 4)d4 + @mod"). ``None`` for every other
+    #: creature, which leaves the token unresolved rather than guessed.
+    summon_level: int | None = None
+    # SRD 5.2 §Movement — the caster's own non-walk movement ratings (a
+    # species' Climb/Swim Speed, Roving, Slippers of Spider Climbing). A
+    # corpus change written "@attributes.movement.walk" ("a Climb Speed equal
+    # to your Speed") has nothing to resolve against without them: the
+    # activity layer only sees the live combatant it is handed, and the
+    # orchestrator owns the projection of permanent and live speed bonuses.
+    # "None" means "not supplied" and keeps the change unresolved.
+    movement_modes: CombatantMovementModes | None = None
+    #: That same Speed the movement-mode tokens measure against: the
+    #: combatant's effective walking Speed with every permanent and live
+    #: bonus folded in ("orchestrator._effective_speed").
+    movement_walk_speed: int | None = None
+    #: Effect ids whose movement change is written as the bare value "1",
+    #: the source's mark for "equal to your Speed" (Alter Self, Aquatic
+    #: Adaptation). Resolved against the walk speed when the effect lands.
+    speed_ratio_effects: frozenset[str] = frozenset()
+    # SRD 5.2 Opportunity Attacks: "take a Reaction to make one melee attack
+    # with a weapon or an Unarmed Strike against the provoking creature". True
+    # only for the resolution an opportunity attack runs; ``attack.py`` stamps
+    # it on every ``AttackRolled`` that resolution emits.
+    is_opportunity_attack: bool = False
+
+    def ability_mod(self, ability: str) -> int:
+        return (self.caster_abilities.get(ability, 10) - 10) // 2

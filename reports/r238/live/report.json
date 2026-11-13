@@ -1,0 +1,76 @@
+{
+  "document": "fed0a540d18504088dfa17217e3f92ebebdab342f6f1de526bd8ddd8ec4202c3",
+  "name": "Out of the Abyss RUS.pdf",
+  "pages": 80,
+  "characters": 366531,
+  "run": "8e41ea3d-2581-4c73-b383-b4522b624ca3",
+  "status": "partial",
+  "done": 96,
+  "total": 97,
+  "message": "Готово 106 из 108 блоков. 1 не разобрался: блок 3 (страница 5): Фрагмент книги (страница 5, 1483 символов) уже меньше минимальной части (2000 символов) и не уложился в ответ при потолке ответа 98304 байт (max_tokens=2048). Разделите книгу по главам или поднимите m. Кнопка «Добить» повторит только их.",
+  "before": {
+    "state": {
+      "status": "running",
+      "done": 6,
+      "total": 86,
+      "worker": "2398825-5db32943",
+      "heartbeat": 1793878549.5064883,
+      "message": "Обработаны блоки: 6 / 86. Результаты сохранены.",
+      "validated": 6
+    },
+    "calls": {
+      "total": 10,
+      "ok": 7,
+      "invalid": 0,
+      "limit": 2,
+      "spent": 0.711
+    }
+  },
+  "after": {
+    "state": {
+      "status": "partial",
+      "done": 96,
+      "total": 97,
+      "worker": "",
+      "heartbeat": 1793879850.245268,
+      "message": "Готово 106 из 108 блоков. 1 не разобрался: блок 3 (страница 5): Фрагмент книги (страница 5, 1483 символов) уже меньше минимальной части (2000 символов) и не уложился в ответ при потолке ответа 98304 байт (max_tokens=2048). Разделите книгу по главам или поднимите m. Кнопка «Добить» повторит только их.",
+      "validated": 106
+    },
+    "calls": {
+      "total": 132,
+      "ok": 126,
+      "invalid": 0,
+      "limit": 5,
+      "spent": 10.3671
+    }
+  },
+  "calls_after_restart": 122,
+  "blocks_remaining_at_restart": 80,
+  "raised": [
+    "r238: поднял после перезапуска 1 прогон(ов) подготовки: 8e41ea3d-2581-4c73-b383-b4522b624ca3"
+  ],
+  "retry": {
+    "done": 106,
+    "total": 108,
+    "pending": 1,
+    "failed": 1,
+    "exhausted": 0,
+    "can_retry": true,
+    "blocks": [
+      {
+        "block": 3,
+        "pages": "страница 5",
+        "reason": "source_section_too_large",
+        "message": "Фрагмент книги (страница 5, 1483 символов) уже меньше минимальной части (2000 символов) и не уложился в ответ при потолке ответа 98304 байт (max_tokens=2048). Разделите книгу по главам или поднимите m",
+        "attempts": 1,
+        "exhausted": false
+      }
+    ]
+  },
+  "paid_blocks_at_restart": 6,
+  "repayed_blocks": [],
+  "refuse_share": 0.0,
+  "limit_share": 0.038,
+  "calls_per_block": 1.38,
+  "watchdog_log": []
+}

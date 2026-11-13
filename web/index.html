@@ -1,0 +1,129 @@
+﻿<!doctype html>
+<html lang="ru" data-theme="dark"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Solo Realms AI</title><link rel="stylesheet" href="/static/style.css?v=r223"><link rel="stylesheet" href="/static/workspace.css?v=r223"><link rel="stylesheet" href="/static/combat.css?v=2.1.4-preview.6"><link rel="stylesheet" href="/static/inventory.css?v=2.1.4-preview.6"><script src="/static/play.js?v=n17" defer></script><script src="/static/focus.js?v=a07" defer></script><script src="/static/campaign-settings.js?v=r217" defer></script><script src="/static/cloud.js?v=cost-1" defer></script><script src="/static/workspace.js?v=n02" defer></script><script src="/static/rulesets.js?v=nat20-screen-2" defer></script><script src="/static/combat.js?v=2.1.4-preview.6" defer></script><script src="/static/inventory.js?v=2.1.4-preview.6" defer></script><link rel="stylesheet" href="/static/world.css?v=2.1.4-preview.6"><script src="/static/world.js?v=2.1.4-preview.6" defer></script><script src="/static/desktop.js?v=2.1.4-preview.6" defer></script><script src="/static/obsidian.js?v=n18" defer></script><link rel="icon" type="image/svg+xml" href="/static/visual/icons/compass.svg"><link rel="stylesheet" href="/static/mobile.css?v=n18"><script src="/static/mobile.js?v=n17" defer></script></head>
+<body>
+<!-- chat-only:cut --><aside class="sidebar"><a class="brand" href="/" aria-label="Solo Realms AI"><span class="sigil">✧</span><span>SOLO REALMS<small>ОБЛАЧНЫЙ МАСТЕР · ВАШ МИР</small></span></a>
+<p class="nav-label">ВАШЕ ПРИКЛЮЧЕНИЕ</p><nav>
+<button class="nav active" data-view="play">Игра</button>
+<button class="nav" data-view="campaigns">Кампании</button>
+<button class="nav" data-view="saves">Сохранения</button>
+<button class="nav" data-view="master">Мастер</button>
+<button class="nav more-item" data-view="cloud">Подключение Мастера</button>
+<button class="nav more-item" data-view="costs">Расходы</button>
+<button class="nav more-item" data-view="journal">Журнал</button>
+<button class="nav more-item" data-view="performance">Скорость</button>
+<button class="nav more-item" data-view="about">О проекте</button>
+<button class="nav more-toggle" type="button" id="nav-more" aria-expanded="false" aria-controls="nav-more-list">Ещё</button>
+</nav><div class="side-bottom"><span class="local-dot"></span> Сохранения остаются на ноутбуке<small>SOLO REALMS AI 2.0 · PREVIEW 1</small><label for="theme">Оформление</label><select id="theme" aria-label="Оформление"><option value="dark">Тёмная тема</option><option value="light">Светлая тема</option></select><label class="checkline"><input id="effects" type="checkbox" checked> Мягкие переходы</label></div></aside><!-- /chat-only:cut -->
+<main><!-- chat-only:cut --><header><div class="breadcrumb">ОДИНОЧНОЕ ПРИКЛЮЧЕНИЕ <span>/</span> <span id="campaign-label">Новая история</span></div><span id="chapter-label" hidden></span><span id="place-label" hidden></span><button class="themetoggle" type="button" aria-label="Светлая тема" aria-pressed="false" title="Переключить тему"><span class="themetoggle__ic" aria-hidden="true"></span></button><div class="runtime"><span id="model-dot" class="local-dot"></span><span id="model-status">Проверяем Мастера…</span></div></header><!-- /chat-only:cut -->
+<section id="play" class="view active">
+<div class="story-card"><div class="panel-heading"><span>ИСТОРИЯ</span><span id="story-status" role="status">Мастер ждёт вашей реплики</span></div>
+<div id="chat" class="chat" aria-live="polite"><div class="welcome"><div class="compass">✧</div><h2>Ваша история, ваш выбор</h2><p>Говорите с персонажами, исследуйте мир и отправляйтесь в путь. Просто напишите, что вы хотите сделать.</p><button id="begin" class="primary">Начать приключение</button></div></div>
+<p id="scene-risk" class="hint" hidden>Серьёзный смертельный риск объявлен заранее. Предупреждение фиксируется перед началом боя.</p>
+<form id="action-form" class="composer"><textarea id="player-input" aria-label="Ваша реплика" placeholder="Что вы делаете?" enterkeyhint="send" autocapitalize="sentences" rows="3" maxlength="4000"></textarea><div class="composer-footer"><span>Enter — отправить · Shift + Enter — новая строка</span><div><button id="stop" type="button" hidden>Остановить ответ</button><button id="send" class="primary" type="submit">Сказать</button></div></div></form></div>
+</section>
+<!-- chat-only:cut --><section id="journal" class="view"><p class="eyebrow">ПАМЯТЬ ГЕРОЯ</p><h1>Журнал</h1><p id="hero-details" class="subtext"></p><div id="abilities" class="abilities"></div><div id="rolls"></div></section>
+<section id="campaigns" class="view"><p class="eyebrow">ВАШИ МИРЫ</p><h1>Мои приключения</h1><p class="subtext">Один главный герой в каждой истории. Продолжите сохранённое приключение.</p><button id="new-campaign" class="primary">+ Новая кампания</button><div id="campaign-list" class="cards-list"></div></section>
+<section id="saves" class="view"><p class="eyebrow">ПАМЯТЬ ПРИКЛЮЧЕНИЯ</p><h1>Сохранения</h1><p class="subtext">Каждый ход сохраняется автоматически. Контрольная точка хранит состояние героя и мира.</p><form id="save-form" class="inline-form"><input id="save-name" placeholder="Название контрольной точки" maxlength="100" required><button class="primary">Сохранить</button></form><div id="save-list" class="cards-list"></div></section>
+<section id="master" class="view"><p class="eyebrow">СТИЛЬ ПРИКЛЮЧЕНИЯ</p><h1>Настройки Мастера</h1><p class="subtext">Ваш текст сохраняется буквально. Художественные инструкции не изменяют результаты правил.</p>
+<div class="inline-form"><select id="profile-select" aria-label="Сохранённый профиль Мастера"></select><button id="profile-apply">Выбрать профиль</button></div><p class="hint">Выбор сохраняет прежнюю конфигурацию в истории. Предпочтения мира и памяти NPC не заменяют ещё не реализованные системы.</p>
+<form id="master-form" class="settings-card">
+<label>Название профиля<input id="profile_name" maxlength="100"></label>
+<label>Системные инструкции<textarea id="system_prompt" rows="3" maxlength="6000"></textarea></label>
+<label>Повествование<textarea id="narrative_prompt" rows="3" maxlength="6000"></textarea></label>
+<label>Персонажи<textarea id="character_prompt" rows="2" maxlength="3000"></textarea></label>
+<label>Инструкции кампании<textarea id="instructions" rows="2" maxlength="3000"></textarea></label>
+<label>Литературный стиль<input id="style" maxlength="600"></label><label>Личные границы<textarea id="boundaries" rows="2" maxlength="1200"></textarea></label>
+<label class="checkline"><input id="hide_mechanics" type="checkbox"> Скрывать числовую механику в художественном повествовании</label>
+<label>Подробность романтики взрослых<select id="romance_detail"><option>сдержанно</option><option>умеренно</option><option>подробно</option></select></label>
+<label class="checkline"><input id="declared_lethal_risk" type="checkbox"> Смертельный риск в текущей сцене заранее объявлен</label>
+<p class="hint">Предупреждение фиксируется при начале столкновения. Поздняя отметка не разрешает смерть задним числом; без предупреждения необратимый исход останавливается.</p>
+<div class="form-grid"><label>Режим<select id="mode"><option>Fast</option><option>Balanced</option><option>Cinematic</option></select></label><label>Температура<input id="temperature" type="number" min="0" max="1.5" step="0.1"></label><label>Максимум токенов<input id="max_tokens" type="number" min="80" max="900"></label></div>
+<div class="button-row"><button class="primary">Сохранить настройки</button><button id="profile-save" type="button">Сохранить отдельный профиль</button><button id="master-export" type="button">Экспорт JSON</button><label class="file-button">Импорт JSON<input id="master-import" type="file" accept=".json" hidden></label><button id="prompt-preview" type="button">Просмотр промпта последнего хода</button></div></form><h3>Правила кампании</h3>
+<div class="settings-card" id="campaign-rules">
+<p class="hint">Эти три правила выбираете вы, а не Мастер. Изменение пишется в журнал кампании; сложность меняет числа подготовки столкновения и пороги проверок, а не текст повествования.</p>
+<label>Смерть<select id="rules-death"><option value="off">выключена — герой выбывает, но не умирает</option><option value="agreed" selected>по договорённости — Мастер спрашивает перед необратимым</option><option value="on">включена — правила как есть</option></select></label>
+<label>Сложность<select id="rules-difficulty"><option value="solo_softer">соло-мягче</option><option value="as_is" selected>как есть</option><option value="harder">жёстче</option></select></label>
+<label>Награды<select id="rules-rewards"><option value="normal">обычные</option><option value="sparse">скупые</option><option value="generous">щедрые</option></select></label>
+<p class="hint" id="rules-effects"></p>
+<div class="button-row"><button class="primary" id="rules-save" type="button" disabled>Сохранить правила</button></div>
+</div>
+<h3>Предыдущие версии</h3><div id="master-history" class="cards-list"></div><pre id="prompt-text" hidden></pre></section>
+<section id="performance" class="view"><p class="eyebrow">ФАКТИЧЕСКИЕ ИЗМЕРЕНИЯ</p><h1>Скорость</h1><p class="subtext">Облачные ответы и ресурсы локального приложения. Здесь доступны измерения для диагностики.</p><button id="performance-refresh">Обновить измерения</button><div id="performance-stats" class="metrics-grid"></div><h3>Последние обращения к модели</h3><div class="table-scroll"><table><thead><tr><th>Режим</th><th>Контекст</th><th>Первый токен</th><th>Время</th><th>Токенов/с*</th><th>Статус</th></tr></thead><tbody id="calls"></tbody></table></div><p class="hint">* Токены ответа / полное время запроса, включая обработку промпта. После перезапуска история вызовов доступна в журнале ходов; таблица показывает текущий процесс. Показатели карты появятся после реализации тактической сцены.</p><h3>Метрики сохранённых ходов</h3><pre id="turn-metrics"></pre></section>
+<section id="about" class="view"><div class="about__main">
+<header class="about__head"><p class="eyebrow">колофон</p><h1 class="about__title">О проекте</h1>
+<p class="about__lead">Solo Realms AI — одиночное приключение с ИИ-мастером: правила считает движок, слова пишет рассказчик, состояние героя живёт вне чата. Здесь — всё, что раньше стояло мелким шрифтом в подвале игры.</p>
+<p class="about__meta">Прототип · сборка 2.2.0 · ноябрь 2026</p></header>
+<section class="ablock"><h2 class="ablock__h">Правила</h2>
+<p class="ablock__text">Механика основана на <b>System Reference Document 5.2</b>, © Wizards of the Coast LLC, лицензия <a class="ablock__link" href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener">CC BY 4.0</a>. Тексты, производные от этого документа, используются на тех же условиях.</p>
+<p class="ablock__note">Solo Realms AI — самостоятельный проект. Он не связан с Wizards of the Coast, не одобрен и не спонсируется ими; в интерфейсе нет чужих логотипов и фирменных названий чужих игр. Названия третьих лиц принадлежат их владельцам.</p></section>
+<section class="ablock"><h2 class="ablock__h">Иконки</h2>
+<p class="ablock__text">Набор <a class="ablock__link" href="https://game-icons.net" target="_blank" rel="noopener">game-icons.net</a>, авторы <b>Lorc</b> и <b>Delapouite</b>, лицензия <a class="ablock__link" href="https://creativecommons.org/licenses/by/3.0/" target="_blank" rel="noopener">CC BY 3.0</a>. Иконки перекрашены в цвет интерфейса, форма не менялась. Кубик на столе нарисован в этом же проекте — пути SVG, ни одной взятой картинки.</p>
+<p class="ablock__note">Полная атрибуция импортированных ресурсов и сведения о преобразованиях — в настройках приложения, раздел «О программе».</p></section>
+<section class="ablock"><h2 class="ablock__h">Шрифты</h2>
+<ul class="ablock__list"><li><span>Book — тексты истории и лист</span><span>EB Garamond · SIL OFL 1.1</span></li><li><span>UI — подписи, числа, кнопки</span><span>PT Sans · SIL OFL 1.1</span></li></ul>
+<p class="ablock__note">Оба шрифта свободные: их можно использовать и в продукте, и в печатных материалах.</p></section>
+<section class="ablock"><h2 class="ablock__h">Данные</h2>
+<p class="ablock__text">Истории, книги и сохранения лежат на этом <span class="only-phone">телефоне</span><span class="only-desktop">компьютере</span>. Наружу уходят только текстовые запросы к модели — ни файлы книг, ни лист героя не загружаются целиком. Удаление истории удаляет её локально.</p></section>
+<div class="about__foot"><span>Solo Realms AI</span><span>атрибуция SRD и иконок — на этой странице</span></div>
+</div></section>
+<!-- /chat-only:cut --><!-- chat-only:cut --><p class="hint">Мастер может ошибаться. Описание можно исправить или повторить; результаты игры сохраняются отдельно.</p><footer>SOLO REALMS AI <span>✧</span> Ваши документы и история остаются локально.</footer><!-- /chat-only:cut --></main>
+<div id="toast" role="status" hidden></div>
+<!-- chat-only:cut --><dialog id="narrative-edit-dialog"><form id="narrative-edit-form"><p class="eyebrow">ИСПРАВЛЕНИЕ ОТЫГРЫША</p><h2>Исправить описание</h2><p class="hint">Изменяется только художественный текст. Броски и состояние героя сохраняются. Прежний текст остаётся в истории исправлений.</p><textarea id="narrative-correction" rows="10" maxlength="12000" required></textarea><div class="button-row"><button class="primary">Сохранить исправление</button><button id="narrative-edit-close" type="button">Отмена</button></div></form></dialog><!-- /chat-only:cut -->
+<dialog id="create-dialog"><form id="create-form"><div id="begin-steps"></div><template id="chat-begin-steps">
+<div id="begin-source"><p class="eyebrow">ПЕРВАЯ СТРАНИЦА</p><h2>Начать приключение</h2>
+<p class="hint">Есть готовое приключение? Загрузите его — программа сама разберёт места, NPC и проверки. Нет файла — начнём с чистого листа.</p>
+<label class="file-button">Загрузить приключение (PDF или текст)<input id="source-file" type="file" accept=".pdf,.txt,.md" hidden></label>
+<p id="source-status" class="hint" role="status"></p><div id="source-summary" hidden></div>
+<div class="button-row"><button id="source-next" class="primary" type="button" hidden>Дальше: герой →</button><button id="source-skip" type="button">Начать с чистого листа</button><button id="source-close" type="button">Закрыть</button></div></div>
+<div id="begin-hero" hidden><p class="eyebrow">ВТОРАЯ СТРАНИЦА</p><h2>Ваш герой</h2>
+<p id="hero-note" class="hint">Соберите героя: вид, класс, предыстория, характеристики и снаряжение. Правила считает сервер — в браузере их нет.</p>
+<div class="button-row"><button id="hero-editor" class="primary" type="button">Собрать героя</button><button id="hero-back" type="button">Другой файл</button><button id="hero-close" type="button">Закрыть</button></div>
+<p id="hero-status" class="hint" role="status"></p></div>
+</template></form></dialog>
+<!-- chat-only:cut --><template id="cloud-panel-template">
+<section id="cloud" class="view"><p class="eyebrow">ОБЛАЧНЫЙ МАСТЕР</p><h1>Подключение Мастера</h1><p class="subtext">Правила и сохранения остаются здесь. Провайдер получает только компактный контекст текущей сцены.</p>
+<div class="button-row"><select id="api-profile-list" aria-label="Профиль подключения"></select><button id="api-new" type="button">Новый профиль</button><button id="api-activate" type="button">Использовать</button><button id="api-delete" type="button">Удалить профиль</button></div>
+<form id="api-form"><div class="form-grid"><label>Название профиля<input id="api-name" maxlength="100" required></label><label>Провайдер<input id="api-provider" maxlength="100" required></label></div>
+<label>Base URL<input id="api-url" type="url" placeholder="HTTPS-адрес из документации провайдера" required></label><button id="api-groq-preset" type="button">Новый профиль Groq</button><button id="api-router-preset" type="button">Новый профиль RouterAI</button>
+<label>Новый API-ключ<input id="api-key" type="password" autocomplete="new-password" spellcheck="false" maxlength="4096" placeholder="Оставьте пустым, чтобы сохранить прежний"></label><p id="api-key-state" class="hint"></p>
+<div class="button-row"><button id="api-catalog" type="button">Получить каталог моделей</button><button id="api-same-model" type="button">Одна модель для обеих задач</button></div><datalist id="api-models"></datalist>
+<div id="api-model-fields" class="form-grid"></div>
+<details><summary>Параметры подключения и бюджеты</summary><div class="form-grid"><label>Валюта тарифов<input id="api-currency" maxlength="3" value="RUB" required></label><label>Контекст, токены<input id="api-context" type="number" min="2048" max="1048576" value="16384"></label><label>Таймаут, секунды<input id="api-timeout" type="number" min="5" max="240" value="90"></label><label>Лимит одного запроса<input id="api-request-budget" type="number" min="0" step="0.01" value="0"></label><label>Лимит сессии<input id="api-session-budget" type="number" min="0" step="0.01" value="0"></label><label>Дневной лимит<input id="api-day-budget" type="number" min="0" step="0.01" value="0"></label></div>
+<label class="checkline"><input id="api-stream" type="checkbox" checked> Потоковый ответ</label><label class="checkline"><input id="api-stream-usage" type="checkbox"> Провайдер поддерживает usage в потоке</label><label class="checkline"><input id="api-enabled" type="checkbox"> Разрешить обращения к выбранному API</label>
+<label class="checkline"><input id="api-free-only" type="checkbox"> Только подтверждённый бесплатный тариф Groq</label>
+<label class="checkline"><input id="api-free-confirmed" type="checkbox"> Я проверил бесплатный тариф аккаунта Groq и отсутствие платного биллинга</label>
+<p class="hint">Нулевой тариф в приложении — подтверждение пользователя, не проверка биллинга провайдера. Модель выбирается из полученного /models. GPT-OSS: thinking полностью не выключается, используйте low. Qwen 3.8: none поддерживается по документации. Старый скомпрометированный ключ не использовать.</p>
+<div class="form-grid"><label>Локальный предел запросов в минуту<input id="api-rpm" type="number" min="1" max="1000" value="5"></label><label>Локальный предел запросов за 24 часа<input id="api-rpd" type="number" min="1" max="1000000" value="200"></label><label>Локальный предел токенов в минуту<input id="api-tpm" type="number" min="100" max="10000000" value="8000"></label><label>Повтор Groq после 429 (0 или 1)<input id="api-retry-429" type="number" min="0" max="1" value="0"></label></div>
+<p class="hint">Повтор возможен только для подтверждённого бесплатного профиля, до начала ответа и при Retry-After не более 10 секунд. Отмена или частичный ответ не повторяются.</p><button id="api-quota-refresh" type="button">Проверить сохранённую квоту</button><pre id="api-quota-status"></pre>
+<label>Валюта поля usage.cost, если подтверждена провайдером<select id="api-usage-currency"><option value="">Неизвестна — стоимость только рассчитывается</option><option value="RUB">RUB</option><option value="USD">USD</option><option value="EUR">EUR</option></select></label>
+<p class="hint">Нулевые бюджеты блокируют ненулевую оценку. Перед отправкой резервируется сумма по настроенным тарифам; это оценка, а не гарантия внешнего списания. При отсутствии usage резерв остаётся отмеченным как оценка. Температура и длина из настроек кампании используются в повествовании внутри лимита API.</p></details>
+<div class="button-row"><button class="primary">Сохранить подключение</button><button id="api-probe" type="button">Короткий тест генерации — по тарифу API</button></div><p id="api-feedback" role="status" class="hint"></p></form></section>
+<section id="costs" class="view"><p class="eyebrow">КОНТРОЛЬ РАСХОДОВ</p><h1>Расходы Мастера</h1><button id="cost-refresh">Обновить</button><div id="cost-summary" class="metrics-grid"></div><p class="hint">«Сообщено провайдером» означает значение usage. Расчёт по токенам и резерв при отсутствии usage показываются отдельно. Отмена хода не отменяет уже оплаченный запрос.</p><div id="cost-approvals"></div><div class="table-scroll"><table><thead><tr><th>Модель / задача</th><th>Токены вход / выход</th><th>Стоимость</th><th>Источник</th><th>Статус</th></tr></thead><tbody id="cost-calls"></tbody></table></div></section>
+</template><!-- /chat-only:cut -->
+<script src="/static/chronicle.js?v=n03" defer></script>
+<script src="/static/preparation.js?v=2.1.4-preview.6" defer></script>
+<script src="/static/adventure.js?v=lib-3" defer></script>
+<script src="/static/adventure-geometry.js?v=adventure-1" defer></script>
+<link rel="stylesheet" href="/static/tabletop.css?v=r223"><script src="/static/tabletop.js?v=n03" defer></script>
+<script src="/static/navigation.js?v=critical-1" defer></script>
+<link rel="stylesheet" href="/static/creation.css?v=n16"><link rel="stylesheet" href="/static/prepare-progress.css?v=n16"><script src="/static/prepare-progress.js?v=n16" defer></script><script src="/static/creation.js?v=n16" defer></script>
+<!-- Второй редактор отключён (единый путь: мастер Nat20). Строка сохранена закомментированной, чтобы отключение было обратимым. -->
+<!-- <link rel="stylesheet" href="/static/character-creation.css?v=critical-5"><script src="/static/character-creation.js?v=critical-5" defer></script> -->
+<link rel="stylesheet" href="/static/chronicles.css?v=r223"><script src="/static/chronicles.js?v=list-3" defer></script>
+<script src="/static/game-screen.js?v=n15" defer></script>
+<link rel="stylesheet" href="/static/prototype.css?v=r223"><script src="/static/prototype.js?v=prototype-3" defer></script>
+
+<link rel="stylesheet" href="/static/wizard.css?v=n05"><link rel="stylesheet" href="/static/themes.css?v=r223"><script src="/static/telemetry.js?v=trace-1" defer></script><script src="/static/wizard.js?v=n05" defer></script>
+<!-- r220: токены «Стол и лист» и игровой экран подключаются последними: их
+     правила должны идти после themes.css, иначе !important-правила телефона
+     выигрывают каскад и лента остаётся 40dvh вместо экрана. -->
+<link rel="stylesheet" href="/static/design-tokens.css?v=r223"><link rel="stylesheet" href="/static/game-screen.css?v=n17">
+<!-- r221: разбор книги и колофон «О проекте» — тот же язык «Стол и лист». -->
+<link rel="stylesheet" href="/static/design-screens.css?v=screens-2"><link rel="stylesheet" href="/static/design-table.css?v=n16"><script src="/static/board.js?v=board-1" defer></script>
+<!-- r242: «Мои миры» — библиотека готовых миров. Стили и скрипт идут последними,
+     чтобы кнопка меню встала после того, как оформление навигации собрано. -->
+<link rel="stylesheet" href="/static/worlds.css?v=r242"><script src="/static/worlds-panel.js?v=r242" defer></script>
+<!-- r251: оболочка — горизонтальное меню сверху на ПК, вертикальная шторка на телефоне.
+     Подключается последней: переопределяет фиксированный сайдбар из style.css. -->
+<link rel="stylesheet" href="/static/chrome.css?v=n18"><script src="/static/chrome.js?v=n18" defer></script>
+</body></html>

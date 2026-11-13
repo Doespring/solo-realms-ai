@@ -1,0 +1,32 @@
+{
+  "source": "reports/r237/live-final.log + reports/r237/live6/*.sqlite3 (живой прогон 05.11)",
+  "document": "ffdf632462bfe2666132456f6a81f312475950b2501a28e8362c0fff7e2581d7",
+  "name": "Icewind Dale - Rime of the Frostmaiden RUS.pdf",
+  "pages": 109,
+  "characters": 428404,
+  "run": "d0970b86-be93-4fe2-8f0f-7859a69f17f1",
+  "plan_blocks": 17,
+  "status": "ready",
+  "done": 17,
+  "total": 17,
+  "playable_at_s": 7.8,
+  "playable_done": 1,
+  "playable_total": 17,
+  "playable_blocks": 1,
+  "playable_scene": "Восточная Гавань",
+  "full_at_s": 167.0,
+  "parse_elapsed_s": 118.7,
+  "calls": {
+    "total": 17,
+    "ok": 17,
+    "invalid": 0,
+    "limit": 0,
+    "spent": 1.0219
+  },
+  "calls_per_block": 1.0,
+  "split_sections": 0,
+  "limit_hits": 0,
+  "world_scope": "entry",
+  "world_ready": true,
+  "note": "Полный мир собран (127 локаций, 184 маршрута), но канон-гейт не пропустил его целиком; игра открывается входом (осмотр, лист героя, сохранение)."
+}

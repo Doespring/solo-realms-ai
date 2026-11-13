@@ -1,0 +1,294 @@
+{
+ "meta": {
+  "commit": "64a57ad0",
+  "frames": 2,
+  "base": "http://127.0.0.1:55179",
+  "data_dir": "/home/hermes/projects/SoloRealmsAI-Nat20/runtime/n11-audit4",
+  "tag": "t11a"
+ },
+ "frames": [
+  {
+   "viewport": {
+    "w": 375,
+    "h": 812,
+    "dpr": 1
+   },
+   "scrollWidth": 375,
+   "scrollHeight": 812,
+   "overflowX": 0,
+   "activeView": "creation",
+   "campaignOpen": true,
+   "kbOpen": false,
+   "textElements": 26,
+   "fontMin": 0,
+   "smallText": [
+    {
+     "sel": "div#creation-progress-panel > div.prep-panel.is-failed > div.prep-ticks:nth-of-type(3) > span.prep-tick.is-done:nth-of-type(1)",
+     "px": 0,
+     "text": "1"
+    },
+    {
+     "sel": "div#creation-progress-panel > div.prep-panel.is-failed > div.prep-ticks:nth-of-type(3) > span.prep-tick.is-done:nth-of-type(2)",
+     "px": 0,
+     "text": "2"
+    },
+    {
+     "sel": "div#creation-progress-panel > div.prep-panel.is-failed > div.prep-ticks:nth-of-type(3) > span.prep-tick.is-done:nth-of-type(3)",
+     "px": 0,
+     "text": "3"
+    },
+    {
+     "sel": "div#creation-progress-panel > div.prep-panel.is-failed > div.prep-ticks:nth-of-type(3) > span.prep-tick.is-failed:nth-of-type(4)",
+     "px": 0,
+     "text": "4"
+    },
+    {
+     "sel": "div#creation-progress-panel > div.prep-panel.is-failed > div.prep-ticks:nth-of-type(3) > span.prep-tick.is-active:nth-of-type(5)",
+     "px": 0,
+     "text": "5"
+    }
+   ],
+   "fontDistinct": 3,
+   "fontSizes": {
+    "0": 5,
+    "16": 20,
+    "30": 1
+   },
+   "tapCount": 6,
+   "tapsBad": [],
+   "tapsBadCount": 0,
+   "contrastBad": [
+    {
+     "sel": "div#creation-progress-panel > div.prep-panel.is-failed > div.prep-ticks:nth-of-type(3) > span.prep-tick.is-active:nth-of-type(5)",
+     "text": "5",
+     "ratio": 1.49,
+     "fg": "rgb(237,227,206)",
+     "bg": "rgb(209,186,130)",
+     "px": 0
+    },
+    {
+     "sel": "div#creation-progress-panel > div.prep-panel.is-failed > p.prep-steps:nth-of-type(1) > span.prep-arrow:nth-of-type(2)",
+     "text": "→",
+     "ratio": 1.67,
+     "fg": "rgb(74,62,48)",
+     "bg": "rgb(30,26,20)",
+     "px": 16
+    },
+    {
+     "sel": "div#creation-progress-panel > div.prep-panel.is-failed > p.prep-steps:nth-of-type(1) > span.prep-arrow:nth-of-type(4)",
+     "text": "→",
+     "ratio": 1.67,
+     "fg": "rgb(74,62,48)",
+     "bg": "rgb(30,26,20)",
+     "px": 16
+    },
+    {
+     "sel": "div#creation-progress-panel > div.prep-panel.is-failed > div.prep-ticks:nth-of-type(3) > span.prep-tick.is-done:nth-of-type(1)",
+     "text": "1",
+     "ratio": 2.03,
+     "fg": "rgb(237,227,206)",
+     "bg": "rgb(143,169,122)",
+     "px": 0
+    },
+    {
+     "sel": "div#creation-progress-panel > div.prep-panel.is-failed > div.prep-ticks:nth-of-type(3) > span.prep-tick.is-done:nth-of-type(2)",
+     "text": "2",
+     "ratio": 2.03,
+     "fg": "rgb(237,227,206)",
+     "bg": "rgb(143,169,122)",
+     "px": 0
+    },
+    {
+     "sel": "div#creation-progress-panel > div.prep-panel.is-failed > div.prep-ticks:nth-of-type(3) > span.prep-tick.is-done:nth-of-type(3)",
+     "text": "3",
+     "ratio": 2.03,
+     "fg": "rgb(237,227,206)",
+     "bg": "rgb(143,169,122)",
+     "px": 0
+    },
+    {
+     "sel": "div#creation-progress-panel > div.prep-panel.is-failed > div.prep-ticks:nth-of-type(3) > span.prep-tick.is-failed:nth-of-type(4)",
+     "text": "4",
+     "ratio": 2.58,
+     "fg": "rgb(237,227,206)",
+     "bg": "rgb(217,112,79)",
+     "px": 0
+    }
+   ],
+   "contrastBadCount": 7,
+   "contrastMin": 1.49,
+   "interactiveVisible": 6,
+   "clipped": [],
+   "clippedCount": 0,
+   "colorsOutsideCount": 0,
+   "colorsOutside": [],
+   "drawer": null,
+   "state": "prep",
+   "theme": "dark",
+   "width": 375,
+   "height": 812,
+   "prep": {
+    "view": true
+   },
+   "reached": true,
+   "prep_panel": {
+    "text": "Разбираю книгу на части\n\n1:46\n\nЧтение\n→\nРазбор\n→\nСборка\n\n1\n2\n3\n4\n5\n\nСвеча догорает, а дело идёт…\n\nЧасть 5 из 5 · осталось ≈3:00 · не вышло: 1\n\nОдин блок не разобрался — остальные части готовы\n\nБлок 4 (стр. 1): поле name пришло числом вместо строки",
+    "title": "Разбираю книгу на части",
+    "caption": "Свеча догорает, а дело идёт…",
+    "steps": "Чтение → Разбор → Сборка",
+    "barValue": "60",
+    "barText": "3 из 5 частей",
+    "fillWidth": "190.188px",
+    "failed": true,
+    "failedRows": 1,
+    "journalOpen": false
+   },
+   "file": "t11a-prep-dark-375.png",
+   "jsErrors": []
+  },
+  {
+   "viewport": {
+    "w": 375,
+    "h": 812,
+    "dpr": 1
+   },
+   "scrollWidth": 375,
+   "scrollHeight": 812,
+   "overflowX": 0,
+   "activeView": "creation",
+   "campaignOpen": true,
+   "kbOpen": false,
+   "textElements": 30,
+   "fontMin": 0,
+   "smallText": [
+    {
+     "sel": "div#creation-progress-panel > div.prep-panel.is-failed > div.prep-ticks:nth-of-type(3) > span.prep-tick.is-done:nth-of-type(1)",
+     "px": 0,
+     "text": "1"
+    },
+    {
+     "sel": "div#creation-progress-panel > div.prep-panel.is-failed > div.prep-ticks:nth-of-type(3) > span.prep-tick.is-done:nth-of-type(2)",
+     "px": 0,
+     "text": "2"
+    },
+    {
+     "sel": "div#creation-progress-panel > div.prep-panel.is-failed > div.prep-ticks:nth-of-type(3) > span.prep-tick.is-done:nth-of-type(3)",
+     "px": 0,
+     "text": "3"
+    },
+    {
+     "sel": "div#creation-progress-panel > div.prep-panel.is-failed > div.prep-ticks:nth-of-type(3) > span.prep-tick.is-failed:nth-of-type(4)",
+     "px": 0,
+     "text": "4"
+    },
+    {
+     "sel": "div#creation-progress-panel > div.prep-panel.is-failed > div.prep-ticks:nth-of-type(3) > span.prep-tick.is-active:nth-of-type(5)",
+     "px": 0,
+     "text": "5"
+    }
+   ],
+   "fontDistinct": 4,
+   "fontSizes": {
+    "0": 5,
+    "14": 1,
+    "16": 23,
+    "22": 1
+   },
+   "tapCount": 8,
+   "tapsBad": [],
+   "tapsBadCount": 0,
+   "contrastBad": [
+    {
+     "sel": "div#creation-progress-panel > div.prep-panel.is-failed > div.prep-ticks:nth-of-type(3) > span.prep-tick.is-active:nth-of-type(5)",
+     "text": "5",
+     "ratio": 1.49,
+     "fg": "rgb(237,227,206)",
+     "bg": "rgb(209,186,130)",
+     "px": 0
+    },
+    {
+     "sel": "div#creation-progress-panel > div.prep-panel.is-failed > p.prep-steps:nth-of-type(1) > span.prep-arrow:nth-of-type(2)",
+     "text": "→",
+     "ratio": 1.67,
+     "fg": "rgb(74,62,48)",
+     "bg": "rgb(30,26,20)",
+     "px": 16
+    },
+    {
+     "sel": "div#creation-progress-panel > div.prep-panel.is-failed > p.prep-steps:nth-of-type(1) > span.prep-arrow:nth-of-type(4)",
+     "text": "→",
+     "ratio": 1.67,
+     "fg": "rgb(74,62,48)",
+     "bg": "rgb(30,26,20)",
+     "px": 16
+    },
+    {
+     "sel": "div#creation-progress-panel > div.prep-panel.is-failed > div.prep-ticks:nth-of-type(3) > span.prep-tick.is-done:nth-of-type(1)",
+     "text": "1",
+     "ratio": 2.03,
+     "fg": "rgb(237,227,206)",
+     "bg": "rgb(143,169,122)",
+     "px": 0
+    },
+    {
+     "sel": "div#creation-progress-panel > div.prep-panel.is-failed > div.prep-ticks:nth-of-type(3) > span.prep-tick.is-done:nth-of-type(2)",
+     "text": "2",
+     "ratio": 2.03,
+     "fg": "rgb(237,227,206)",
+     "bg": "rgb(143,169,122)",
+     "px": 0
+    },
+    {
+     "sel": "div#creation-progress-panel > div.prep-panel.is-failed > div.prep-ticks:nth-of-type(3) > span.prep-tick.is-done:nth-of-type(3)",
+     "text": "3",
+     "ratio": 2.03,
+     "fg": "rgb(237,227,206)",
+     "bg": "rgb(143,169,122)",
+     "px": 0
+    },
+    {
+     "sel": "div#creation-progress-panel > div.prep-panel.is-failed > div.prep-ticks:nth-of-type(3) > span.prep-tick.is-failed:nth-of-type(4)",
+     "text": "4",
+     "ratio": 2.58,
+     "fg": "rgb(237,227,206)",
+     "bg": "rgb(217,112,79)",
+     "px": 0
+    }
+   ],
+   "contrastBadCount": 7,
+   "contrastMin": 1.49,
+   "interactiveVisible": 8,
+   "clipped": [],
+   "clippedCount": 0,
+   "colorsOutsideCount": 0,
+   "colorsOutside": [],
+   "drawer": null,
+   "state": "prep-log",
+   "theme": "dark",
+   "width": 375,
+   "height": 812,
+   "prep": {
+    "view": true
+   },
+   "reached": true,
+   "prep_log": {
+    "details": true,
+    "rows": 1
+   },
+   "prep_panel": {
+    "text": "Разбираю книгу на части\n\n1:37\n\nЧтение\n→\nРазбор\n→\nСборка\n\n1\n2\n3\n4\n5\n\nИщу локации на карте…\n\nЧасть 5 из 5 · осталось ≈3:00 · не вышло: 1\n\nОдин блок не разобрался — остальные части готовы\n\nБлок 4 (стр. 1): поле name пришло числом вместо строки",
+    "title": "Разбираю книгу на части",
+    "caption": "Ищу локации на карте…",
+    "steps": "Чтение → Разбор → Сборка",
+    "barValue": "60",
+    "barText": "3 из 5 частей",
+    "fillWidth": "190.188px",
+    "failed": true,
+    "failedRows": 1,
+    "journalOpen": true
+   },
+   "file": "t11a-prep-log-dark-375.png",
+   "jsErrors": []
+  }
+ ]
+}

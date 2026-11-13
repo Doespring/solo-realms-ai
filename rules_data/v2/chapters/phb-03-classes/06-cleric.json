@@ -1,0 +1,972 @@
+{
+  "schema_version": "2.1.0",
+  "rules": [
+    {
+      "id": "phb2024.phb03.cleric.class_attributes",
+      "rules_family": "dnd2024",
+      "name": "Жрец: Ключевые атрибуты",
+      "kind": "procedure",
+      "classification": {
+        "mode": "deterministic",
+        "semantic_required": false,
+        "formal_required": true,
+        "reason": "Таблица «Ключевые атрибуты» задаёт точные значения (Кость хитов, спасброски, владения) без выбора Мастера"
+      },
+      "conditions": [],
+      "triggers": [
+        "cleric.class_attributes"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "procedure_id": "cleric_class_attributes"
+          }
+        }
+      ],
+      "semantic_questions": [],
+      "facts": {
+        "hit_die": "к8",
+        "primary": "Мудрость",
+        "saves": [
+          "Мудрость",
+          "Харизма"
+        ],
+        "weapons": "Простое оружие",
+        "armor": "Лёгкие и Средние доспехи и Щиты",
+        "subclass_level": 3,
+        "subclasses": [
+          "Домен войны",
+          "Домен жизни",
+          "Домен света",
+          "Домен обмана"
+        ],
+        "pdf_span": [
+          103,
+          112
+        ]
+      },
+      "rule_parameters": {
+        "class_resources": {
+          "1": "использования Проведения божественности",
+          "2": "ячейки заклинаний"
+        }
+      },
+      "constraints": [],
+      "exceptions": [],
+      "duration": "not_applicable",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "kind": "phb",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 104,
+        "printed_page": "103",
+        "section": "Жрец, глава 3 «Классы персонажей»: Выбор Жреца..."
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "existing_engine_subset",
+      "auto_activate": false,
+      "dependencies": [],
+      "behavior_tests": [
+        "phb03.cleric.class_attributes"
+      ],
+      "readiness": {
+        "status": "engine_subset_verified",
+        "handler": null,
+        "scope": "Проецирование классовых атрибутов на лист персонажа",
+        "blockers": []
+      },
+      "revision": 1
+    },
+    {
+      "id": "phb2024.phb03.cleric.sotvorenie_zaklinanii",
+      "rules_family": "dnd2024",
+      "name": "Жрец: Сотворение заклинаний (Жрец)",
+      "kind": "procedure",
+      "classification": {
+        "mode": "deterministic",
+        "semantic_required": false,
+        "formal_required": true,
+        "reason": "Числа и порядок шагов заданы текстом PHB 2024 (см. facts)"
+      },
+      "conditions": [],
+      "triggers": [
+        "cleric.sotvorenie_zaklinanii"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "cantrips_start": 3,
+            "prepared_level_1": 4,
+            "spellcasting_ability": "Мудрость",
+            "replace_prepared": "любое количество на Долгом отдыхе",
+            "procedure_id": "cleric_sotvorenie_zaklinanii"
+          }
+        }
+      ],
+      "semantic_questions": [],
+      "facts": {
+        "cantrips_start": 3,
+        "cantrip_levels": [
+          "4",
+          "10"
+        ],
+        "prepared_level_1": 4,
+        "spellcasting_ability": "Мудрость",
+        "replace_prepared": "любое количество на Долгом отдыхе"
+      },
+      "rule_parameters": {},
+      "constraints": [],
+      "exceptions": [],
+      "duration": "per_action",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "kind": "phb",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 104,
+        "printed_page": "103",
+        "section": "Жрец, глава 3 «Классы персонажей»: Сотворение заклинаний (Жрец)"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "existing_engine_subset",
+      "auto_activate": false,
+      "dependencies": [
+        "phb2024.phb01.spell_slots"
+      ],
+      "behavior_tests": [
+        "phb03.cleric.sotvorenie_zaklinanii"
+      ],
+      "readiness": {
+        "status": "engine_subset_verified",
+        "handler": null,
+        "scope": "Жрец: Сотворение заклинаний (Жрец)",
+        "blockers": []
+      },
+      "revision": 1
+    },
+    {
+      "id": "phb2024.phb03.cleric.bozhestvennyi_orden",
+      "rules_family": "dnd2024",
+      "name": "Жрец: Божественный орден",
+      "kind": "procedure",
+      "classification": {
+        "mode": "hybrid",
+        "semantic_required": true,
+        "formal_required": true,
+        "reason": "Числа берутся из текста PHB 2024 (см. facts); применение к существу и выбранные варианты требуют решения Мастера"
+      },
+      "conditions": [],
+      "triggers": [
+        "cleric.bozhestvennyi_orden"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "cantrip_bonus": 1,
+            "bonus_source": "модификатор Мудрости, минимум +1",
+            "protector_armor": "Тяжёлые доспехи",
+            "protector_weapons": "Воинское оружие",
+            "procedure_id": "cleric_bozhestvennyi_orden"
+          }
+        }
+      ],
+      "semantic_questions": [
+        "Какой орден выбран — Защитник или Чудотворец?"
+      ],
+      "facts": {
+        "cantrip_bonus": 1,
+        "bonus_skills": [
+          "Тайная магия",
+          "Религия"
+        ],
+        "bonus_source": "модификатор Мудрости, минимум +1",
+        "protector_armor": "Тяжёлые доспехи",
+        "protector_weapons": "Воинское оружие"
+      },
+      "rule_parameters": {},
+      "constraints": [],
+      "exceptions": [],
+      "duration": "per_action",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "kind": "phb",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 105,
+        "printed_page": "104",
+        "section": "Жрец, глава 3 «Классы персонажей»: Божественный орден"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "not_implemented",
+      "auto_activate": false,
+      "dependencies": [
+        "phb2024.phb01.ability_modifier"
+      ],
+      "behavior_tests": [
+        "phb03.cleric.bozhestvennyi_orden"
+      ],
+      "readiness": {
+        "status": "blocked",
+        "handler": null,
+        "scope": "Жрец: Божественный орден",
+        "blockers": [
+          "выбор ордена не доходит до листа: у умения нет ни активности, ни поля"
+        ]
+      },
+      "revision": 1
+    },
+    {
+      "id": "phb2024.phb03.cleric.provedenie_bozhestvennosti",
+      "rules_family": "dnd2024",
+      "name": "Жрец: Проведение божественности (Жрец)",
+      "kind": "procedure",
+      "classification": {
+        "mode": "hybrid",
+        "semantic_required": true,
+        "formal_required": true,
+        "reason": "Числа берутся из текста PHB 2024 (см. facts); применение к существу и выбранные варианты требуют решения Мастера"
+      },
+      "conditions": [],
+      "triggers": [
+        "cleric.provedenie_bozhestvennosti"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "recharge": "одно за Короткий отдых, все за Долгий",
+            "dc": "Сл спасброска заклинаний Жреца",
+            "procedure_id": "cleric_provedenie_bozhestvennosti"
+          }
+        }
+      ],
+      "semantic_questions": [
+        "Какой эффект Проведения божественности создаётся?"
+      ],
+      "facts": {
+        "effects_start": [
+          "Божественная искра",
+          "Изгнание нежити"
+        ],
+        "recharge": "одно за Короткий отдых, все за Долгий",
+        "dc": "Сл спасброска заклинаний Жреца"
+      },
+      "rule_parameters": {
+        "uses_by_level": {
+          "2": "2",
+          "6": "3",
+          "18": "4"
+        }
+      },
+      "constraints": [],
+      "exceptions": [],
+      "duration": "per_action",
+      "resources": [
+        {
+          "id": "channel_divinity_uses",
+          "handling": "dependency_not_extracted"
+        }
+      ],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "kind": "phb",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 105,
+        "printed_page": "104",
+        "section": "Жрец, глава 3 «Классы персонажей»: Проведение божественности (Жрец)"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "existing_engine_subset",
+      "auto_activate": false,
+      "dependencies": [],
+      "behavior_tests": [
+        "phb03.cleric.provedenie_bozhestvennosti"
+      ],
+      "readiness": {
+        "status": "engine_subset_verified",
+        "handler": null,
+        "scope": "Жрец: Проведение божественности (Жрец)",
+        "blockers": []
+      },
+      "revision": 1
+    },
+    {
+      "id": "phb2024.phb03.cleric.bozhestvennaya_iskra",
+      "rules_family": "dnd2024",
+      "name": "Жрец: Божественная искра",
+      "kind": "procedure",
+      "classification": {
+        "mode": "hybrid",
+        "semantic_required": true,
+        "formal_required": true,
+        "reason": "Числа берутся из текста PHB 2024 (см. facts); применение к существу и выбранные варианты требуют решения Мастера"
+      },
+      "conditions": [],
+      "triggers": [
+        "cleric.bozhestvennaya_iskra"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "range_feet": 30,
+            "action": "Магия",
+            "die": "1к8",
+            "add": "модификатор Мудрости",
+            "save": "Телосложение",
+            "half_on_success": "floor",
+            "procedure_id": "cleric_bozhestvennaya_iskra"
+          }
+        }
+      ],
+      "semantic_questions": [
+        "Исцеление или урон, и какой тип урона выбирает Жрец?"
+      ],
+      "facts": {
+        "range_feet": 30,
+        "action": "Магия",
+        "die": "1к8",
+        "add": "модификатор Мудрости",
+        "save": "Телосложение",
+        "damage_types": [
+          "Некротическая энергия",
+          "Излучение"
+        ],
+        "half_on_success": "floor"
+      },
+      "rule_parameters": {
+        "die_by_level": {
+          "1": "1к8",
+          "7": "2к8",
+          "13": "3к8",
+          "18": "4к8"
+        }
+      },
+      "constraints": [],
+      "exceptions": [],
+      "duration": "per_action",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "kind": "phb",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 106,
+        "printed_page": "105",
+        "section": "Жрец, глава 3 «Классы персонажей»: Божественная искра"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "existing_engine_subset",
+      "auto_activate": false,
+      "dependencies": [
+        "phb2024.phb01.half_damage"
+      ],
+      "behavior_tests": [
+        "phb03.cleric.bozhestvennaya_iskra"
+      ],
+      "readiness": {
+        "status": "engine_subset_verified",
+        "handler": null,
+        "scope": "Жрец: Божественная искра",
+        "blockers": []
+      },
+      "revision": 1
+    },
+    {
+      "id": "phb2024.phb03.cleric.izgnanie_nezheti",
+      "rules_family": "dnd2024",
+      "name": "Жрец: Изгнание нежити",
+      "kind": "procedure",
+      "classification": {
+        "mode": "hybrid",
+        "semantic_required": true,
+        "formal_required": true,
+        "reason": "Числа берутся из текста PHB 2024 (см. facts); применение к существу и выбранные варианты требуют решения Мастера"
+      },
+      "conditions": [],
+      "triggers": [
+        "cleric.izgnanie_nezheti"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "range_feet": 30,
+            "action": "Магия",
+            "save": "Мудрость",
+            "duration_minutes": 1,
+            "flee_each_turn": true,
+            "procedure_id": "cleric_izgnanie_nezheti"
+          }
+        }
+      ],
+      "semantic_questions": [
+        "Какие именно нежить в пределах 30 футов попадают под Изгнание?"
+      ],
+      "facts": {
+        "range_feet": 30,
+        "action": "Магия",
+        "save": "Мудрость",
+        "conditions": [
+          "Испуганный",
+          "Недееспособный"
+        ],
+        "duration_minutes": 1,
+        "flee_each_turn": true
+      },
+      "rule_parameters": {},
+      "constraints": [],
+      "exceptions": [],
+      "duration": "per_action",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "kind": "phb",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 106,
+        "printed_page": "105",
+        "section": "Жрец, глава 3 «Классы персонажей»: Изгнание нежити"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "existing_engine_subset",
+      "auto_activate": false,
+      "dependencies": [],
+      "behavior_tests": [
+        "phb03.cleric.izgnanie_nezheti",
+        "nat20.class_features_reach_game.izgnanie_nezheti"
+      ],
+      "readiness": {
+        "status": "engine_subset_verified",
+        "handler": "nat20_content.feature_gate",
+        "scope": "Хост: цель фильтруется по типу «нежить» и 30 футам до отправки интента; тип цели приходит из сценария, и незаполненный тип считается неизвестным. Движок: спасбросок Мудрости и на провале состояния «Испуганный» и «Недееспособный». r177: эффект «Turned» держится 1 минуту (10 раундов, тик на конце хода жреца) и на своём ходу цель уходит прочь от жреца. Вендорный остаток: тип цели движок не сверяет (фильтр на хосте)",
+        "blockers": []
+      },
+      "revision": 2
+    },
+    {
+      "id": "phb2024.phb03.cleric.podklass_zheretsa",
+      "rules_family": "dnd2024",
+      "name": "Жрец: Подкласс Жреца",
+      "kind": "procedure",
+      "classification": {
+        "mode": "deterministic",
+        "semantic_required": false,
+        "formal_required": true,
+        "reason": "Числа и порядок шагов заданы текстом PHB 2024 (см. facts)"
+      },
+      "conditions": [],
+      "triggers": [
+        "cleric.podklass_zheretsa"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "subclass_level": 3,
+            "procedure_id": "cleric_podklass_zheretsa"
+          }
+        }
+      ],
+      "semantic_questions": [],
+      "facts": {
+        "subclass_level": 3,
+        "subclasses": [
+          "Домен войны",
+          "Домен жизни",
+          "Домен света",
+          "Домен обмана"
+        ]
+      },
+      "rule_parameters": {},
+      "constraints": [],
+      "exceptions": [],
+      "duration": "per_action",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "kind": "phb",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 106,
+        "printed_page": "105",
+        "section": "Жрец, глава 3 «Классы персонажей»: Подкласс Жреца"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "existing_engine_subset",
+      "auto_activate": false,
+      "dependencies": [],
+      "behavior_tests": [
+        "phb03.cleric.podklass_zheretsa"
+      ],
+      "readiness": {
+        "status": "engine_subset_verified",
+        "handler": null,
+        "scope": "Жрец: Подкласс Жреца",
+        "blockers": []
+      },
+      "revision": 1
+    },
+    {
+      "id": "phb2024.phb03.cleric.uvelichenie_harakteristik",
+      "rules_family": "dnd2024",
+      "name": "Жрец: Увеличение характеристик",
+      "kind": "procedure",
+      "classification": {
+        "mode": "deterministic",
+        "semantic_required": false,
+        "formal_required": true,
+        "reason": "Числа и порядок шагов заданы текстом PHB 2024 (см. facts)"
+      },
+      "conditions": [],
+      "triggers": [
+        "cleric.uvelichenie_harakteristik"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "procedure_id": "cleric_uvelichenie_harakteristik"
+          }
+        }
+      ],
+      "semantic_questions": [],
+      "facts": {
+        "levels": [
+          "4",
+          "8",
+          "12",
+          "16"
+        ]
+      },
+      "rule_parameters": {},
+      "constraints": [],
+      "exceptions": [],
+      "duration": "per_action",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "kind": "phb",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 106,
+        "printed_page": "105",
+        "section": "Жрец, глава 3 «Классы персонажей»: Увеличение характеристик"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "existing_engine_subset",
+      "auto_activate": false,
+      "dependencies": [
+        "phb2024.phb05.ability_score_improvement"
+      ],
+      "behavior_tests": [
+        "phb03.cleric.uvelichenie_harakteristik"
+      ],
+      "readiness": {
+        "status": "engine_subset_verified",
+        "handler": null,
+        "scope": "Жрец: Увеличение характеристик",
+        "blockers": []
+      },
+      "revision": 1
+    },
+    {
+      "id": "phb2024.phb03.cleric.ispeplenie_nezheti",
+      "rules_family": "dnd2024",
+      "name": "Жрец: Испепеление нежити",
+      "kind": "procedure",
+      "classification": {
+        "mode": "deterministic",
+        "semantic_required": false,
+        "formal_required": true,
+        "reason": "Числа и порядок шагов заданы текстом PHB 2024 (см. facts)"
+      },
+      "conditions": [],
+      "triggers": [
+        "cleric.ispeplenie_nezheti"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "dice": "к8 в количестве модификатора Мудрости, минимум 1",
+            "damage_type": "Излучение",
+            "ends_effect": false,
+            "procedure_id": "cleric_ispeplenie_nezheti"
+          }
+        }
+      ],
+      "semantic_questions": [],
+      "facts": {
+        "dice": "к8 в количестве модификатора Мудрости, минимум 1",
+        "damage_type": "Излучение",
+        "ends_effect": false
+      },
+      "rule_parameters": {},
+      "constraints": [],
+      "exceptions": [],
+      "duration": "per_action",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "kind": "phb",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 106,
+        "printed_page": "105",
+        "section": "Жрец, глава 3 «Классы персонажей»: Испепеление нежити"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "existing_engine_subset",
+      "auto_activate": false,
+      "dependencies": [],
+      "behavior_tests": [
+        "phb03.cleric.ispeplenie_nezheti"
+      ],
+      "readiness": {
+        "status": "engine_subset_verified",
+        "handler": null,
+        "scope": "Жрец: Испепеление нежити",
+        "blockers": []
+      },
+      "revision": 1
+    },
+    {
+      "id": "phb2024.phb03.cleric.blagoslovlennye_udary",
+      "rules_family": "dnd2024",
+      "name": "Жрец: Благословлённые удары",
+      "kind": "procedure",
+      "classification": {
+        "mode": "hybrid",
+        "semantic_required": true,
+        "formal_required": true,
+        "reason": "Числа берутся из текста PHB 2024 (см. facts); применение к существу и выбранные варианты требуют решения Мастера"
+      },
+      "conditions": [],
+      "triggers": [
+        "cleric.blagoslovlennye_udary"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "divine_strike_die": "1к8",
+            "spell_damage_bonus": "модификатор Мудрости",
+            "once_per_turn": true,
+            "procedure_id": "cleric_blagoslovlennye_udary"
+          }
+        }
+      ],
+      "semantic_questions": [
+        "Какой вариант Благословлённых ударов выбран?"
+      ],
+      "facts": {
+        "divine_strike_die": "1к8",
+        "damage_types": [
+          "Излучение",
+          "Некротическая энергия"
+        ],
+        "spell_damage_bonus": "модификатор Мудрости",
+        "once_per_turn": true
+      },
+      "rule_parameters": {},
+      "constraints": [],
+      "exceptions": [],
+      "duration": "per_action",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "kind": "phb",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 106,
+        "printed_page": "105",
+        "section": "Жрец, глава 3 «Классы персонажей»: Благословлённые удары"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "not_implemented",
+      "auto_activate": false,
+      "dependencies": [],
+      "behavior_tests": [
+        "phb03.cleric.blagoslovlennye_udary"
+      ],
+      "readiness": {
+        "status": "blocked",
+        "handler": null,
+        "scope": "Жрец: Благословлённые удары",
+        "blockers": [
+          "у умения нет типизированной активности: выбор урона Благословлённых ударов не исполняется"
+        ]
+      },
+      "revision": 1
+    },
+    {
+      "id": "phb2024.phb03.cleric.bozhestvennoe_vmeshatelstvo",
+      "rules_family": "dnd2024",
+      "name": "Жрец: Божественное вмешательство",
+      "kind": "procedure",
+      "classification": {
+        "mode": "deterministic",
+        "semantic_required": false,
+        "formal_required": true,
+        "reason": "Числа и порядок шагов заданы текстом PHB 2024 (см. facts)"
+      },
+      "conditions": [],
+      "triggers": [
+        "cleric.bozhestvennoe_vmeshatelstvo"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "spell_level_max": 5,
+            "no_reaction_spells": true,
+            "no_slot": true,
+            "once_per_long_rest": true,
+            "procedure_id": "cleric_bozhestvennoe_vmeshatelstvo"
+          }
+        }
+      ],
+      "semantic_questions": [],
+      "facts": {
+        "spell_level_max": 5,
+        "no_reaction_spells": true,
+        "no_slot": true,
+        "once_per_long_rest": true
+      },
+      "rule_parameters": {},
+      "constraints": [],
+      "exceptions": [],
+      "duration": "per_action",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "kind": "phb",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 106,
+        "printed_page": "105",
+        "section": "Жрец, глава 3 «Классы персонажей»: Божественное вмешательство"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "existing_engine_subset",
+      "auto_activate": false,
+      "dependencies": [],
+      "behavior_tests": [
+        "phb03.cleric.bozhestvennoe_vmeshatelstvo"
+      ],
+      "readiness": {
+        "status": "adjudication_required",
+        "handler": null,
+        "scope": "Жрец: Божественное вмешательство",
+        "blockers": [
+          "движок принимает умение и тратит использование, но исполнение заклинания вмешательством не наблюдается"
+        ]
+      },
+      "revision": 1
+    },
+    {
+      "id": "phb2024.phb03.cleric.uluchshennye_blagoslovlennye_udary",
+      "rules_family": "dnd2024",
+      "name": "Жрец: Улучшенные Благословлённые удары",
+      "kind": "procedure",
+      "classification": {
+        "mode": "deterministic",
+        "semantic_required": false,
+        "formal_required": true,
+        "reason": "Числа и порядок шагов заданы текстом PHB 2024 (см. facts)"
+      },
+      "conditions": [],
+      "triggers": [
+        "cleric.uluchshennye_blagoslovlennye_udary"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "divine_strike_die": "2к8",
+            "temp_hp": "удвоенный модификатор Мудрости",
+            "range_feet": 60,
+            "procedure_id": "cleric_uluchshennye_blagoslovlennye_udary"
+          }
+        }
+      ],
+      "semantic_questions": [],
+      "facts": {
+        "divine_strike_die": "2к8",
+        "temp_hp": "удвоенный модификатор Мудрости",
+        "range_feet": 60
+      },
+      "rule_parameters": {},
+      "constraints": [],
+      "exceptions": [],
+      "duration": "per_action",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "kind": "phb",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 106,
+        "printed_page": "105",
+        "section": "Жрец, глава 3 «Классы персонажей»: Улучшенные Благословлённые удары"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "existing_engine_subset",
+      "auto_activate": false,
+      "dependencies": [],
+      "behavior_tests": [
+        "phb03.cleric.uluchshennye_blagoslovlennye_udary"
+      ],
+      "readiness": {
+        "status": "engine_subset_verified",
+        "handler": null,
+        "scope": "Жрец: Улучшенные Благословлённые удары",
+        "blockers": []
+      },
+      "revision": 1
+    },
+    {
+      "id": "phb2024.phb03.cleric.epicheskii_dar",
+      "rules_family": "dnd2024",
+      "name": "Жрец: Эпический дар",
+      "kind": "procedure",
+      "classification": {
+        "mode": "deterministic",
+        "semantic_required": false,
+        "formal_required": true,
+        "reason": "Числа и порядок шагов заданы текстом PHB 2024 (см. facts)"
+      },
+      "conditions": [],
+      "triggers": [
+        "cleric.epicheskii_dar"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "procedure_id": "cleric_epicheskii_dar"
+          }
+        }
+      ],
+      "semantic_questions": [],
+      "facts": {},
+      "rule_parameters": {},
+      "constraints": [],
+      "exceptions": [],
+      "duration": "per_action",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "kind": "phb",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 106,
+        "printed_page": "105",
+        "section": "Жрец, глава 3 «Классы персонажей»: Эпический дар"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "existing_engine_subset",
+      "auto_activate": false,
+      "dependencies": [
+        "phb2024.phb05.epic_boon"
+      ],
+      "behavior_tests": [
+        "phb03.cleric.epicheskii_dar"
+      ],
+      "readiness": {
+        "status": "adjudication_required",
+        "handler": null,
+        "scope": "Жрец: Эпический дар",
+        "blockers": [
+          "дар не входит в репертуар ни одного класса: use_feature даёт CastFailed(not_in_repertoire)",
+          "выгод дара нет: activities и passive_effects пусты в данных, слово epic в ядре встречается только в labels.py"
+        ]
+      },
+      "revision": 1
+    },
+    {
+      "id": "phb2024.phb03.cleric.velikoe_bozhestvennoe_vmeshatelstvo",
+      "rules_family": "dnd2024",
+      "name": "Жрец: Великое божественное вмешательство",
+      "kind": "procedure",
+      "classification": {
+        "mode": "deterministic",
+        "semantic_required": false,
+        "formal_required": true,
+        "reason": "Числа и порядок шагов заданы текстом PHB 2024 (см. facts)"
+      },
+      "conditions": [],
+      "triggers": [
+        "cleric.velikoe_bozhestvennoe_vmeshatelstvo"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "spell": "Желание",
+            "recharge": "2к4 Долгих отдыха",
+            "procedure_id": "cleric_velikoe_bozhestvennoe_vmeshatelstvo"
+          }
+        }
+      ],
+      "semantic_questions": [],
+      "facts": {
+        "spell": "Желание",
+        "recharge": "2к4 Долгих отдыха"
+      },
+      "rule_parameters": {},
+      "constraints": [],
+      "exceptions": [],
+      "duration": "per_action",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "kind": "phb",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 106,
+        "printed_page": "105",
+        "section": "Жрец, глава 3 «Классы персонажей»: Великое божественное вмешательство"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "existing_engine_subset",
+      "auto_activate": false,
+      "dependencies": [],
+      "behavior_tests": [
+        "phb03.cleric.velikoe_bozhestvennoe_vmeshatelstvo"
+      ],
+      "readiness": {
+        "status": "adjudication_required",
+        "handler": null,
+        "scope": "Жрец: Великое божественное вмешательство",
+        "blockers": [
+          "движок принимает умение и тратит использование, но выбор заклинания вмешательством не наблюдается"
+        ]
+      },
+      "revision": 1
+    }
+  ]
+}

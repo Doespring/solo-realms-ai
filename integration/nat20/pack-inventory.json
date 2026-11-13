@@ -1,0 +1,1077 @@
+{
+  "schema_version": "1.0.0",
+  "checked_on": "2026-10-17",
+  "packs": [
+    {
+      "id": "foundry.dnd5e.heroes",
+      "pack": "heroes",
+      "type": "Actor",
+      "source": "Foundry dnd5e 5.3.3 / SRD 5.1",
+      "rules_version": "dnd2014",
+      "version_basis": "manifest sourceBook=SRD 5.1",
+      "locale": "en",
+      "license": {
+        "content": "CC-BY-4.0 (SRD material)",
+        "code": "MIT",
+        "evidence": "dnd5e/README.md:12-24; dnd5e/LICENSE.txt",
+        "assets": "separate terms; no images imported"
+      },
+      "provenance": {
+        "archive": "C:\\Users\\iwa41\\Documents\\Codex\\2026-10-13\\Материалы\\systems.7z",
+        "archive_sha256": "e881cac7ac36e12def29f80b19aceef6c890b9f7621eed357152b06554c3f2f6",
+        "manifest_sha256": "b49e9ca38efacfb1e98761fb59d47b6f4b8709d92653a31dd6434e16677c7e0e",
+        "path": "packs/heroes"
+      },
+      "storage": "LevelDB",
+      "archive_files": 7,
+      "archive_bytes": 483451,
+      "import_status": "indexed_only",
+      "imported_documents": 0
+    },
+    {
+      "id": "foundry.dnd5e.monsters",
+      "pack": "monsters",
+      "type": "Actor",
+      "source": "Foundry dnd5e 5.3.3 / SRD 5.1",
+      "rules_version": "dnd2014",
+      "version_basis": "manifest sourceBook=SRD 5.1",
+      "locale": "en",
+      "license": {
+        "content": "CC-BY-4.0 (SRD material)",
+        "code": "MIT",
+        "evidence": "dnd5e/README.md:12-24; dnd5e/LICENSE.txt",
+        "assets": "separate terms; no images imported"
+      },
+      "provenance": {
+        "archive": "C:\\Users\\iwa41\\Documents\\Codex\\2026-10-13\\Материалы\\systems.7z",
+        "archive_sha256": "e881cac7ac36e12def29f80b19aceef6c890b9f7621eed357152b06554c3f2f6",
+        "manifest_sha256": "b49e9ca38efacfb1e98761fb59d47b6f4b8709d92653a31dd6434e16677c7e0e",
+        "path": "packs/monsters"
+      },
+      "storage": "LevelDB",
+      "archive_files": 8,
+      "archive_bytes": 2702642,
+      "import_status": "indexed_only",
+      "imported_documents": 0
+    },
+    {
+      "id": "foundry.dnd5e.items",
+      "pack": "items",
+      "type": "Item",
+      "source": "Foundry dnd5e 5.3.3 / SRD 5.1",
+      "rules_version": "dnd2014",
+      "version_basis": "manifest sourceBook=SRD 5.1",
+      "locale": "en",
+      "license": {
+        "content": "CC-BY-4.0 (SRD material)",
+        "code": "MIT",
+        "evidence": "dnd5e/README.md:12-24; dnd5e/LICENSE.txt",
+        "assets": "separate terms; no images imported"
+      },
+      "provenance": {
+        "archive": "C:\\Users\\iwa41\\Documents\\Codex\\2026-10-13\\Материалы\\systems.7z",
+        "archive_sha256": "e881cac7ac36e12def29f80b19aceef6c890b9f7621eed357152b06554c3f2f6",
+        "manifest_sha256": "b49e9ca38efacfb1e98761fb59d47b6f4b8709d92653a31dd6434e16677c7e0e",
+        "path": "packs/items"
+      },
+      "storage": "LevelDB",
+      "archive_files": 7,
+      "archive_bytes": 1070714,
+      "import_status": "indexed_only",
+      "imported_documents": 0
+    },
+    {
+      "id": "foundry.dnd5e.tradegoods",
+      "pack": "tradegoods",
+      "type": "Item",
+      "source": "Foundry dnd5e 5.3.3 / SRD 5.1",
+      "rules_version": "dnd2014",
+      "version_basis": "manifest sourceBook=SRD 5.1",
+      "locale": "en",
+      "license": {
+        "content": "CC-BY-4.0 (SRD material)",
+        "code": "MIT",
+        "evidence": "dnd5e/README.md:12-24; dnd5e/LICENSE.txt",
+        "assets": "separate terms; no images imported"
+      },
+      "provenance": {
+        "archive": "C:\\Users\\iwa41\\Documents\\Codex\\2026-10-13\\Материалы\\systems.7z",
+        "archive_sha256": "e881cac7ac36e12def29f80b19aceef6c890b9f7621eed357152b06554c3f2f6",
+        "manifest_sha256": "b49e9ca38efacfb1e98761fb59d47b6f4b8709d92653a31dd6434e16677c7e0e",
+        "path": "packs/tradegoods"
+      },
+      "storage": "LevelDB",
+      "archive_files": 7,
+      "archive_bytes": 13175,
+      "import_status": "indexed_only",
+      "imported_documents": 0
+    },
+    {
+      "id": "foundry.dnd5e.spells",
+      "pack": "spells",
+      "type": "Item",
+      "source": "Foundry dnd5e 5.3.3 / SRD 5.1",
+      "rules_version": "dnd2014",
+      "version_basis": "manifest sourceBook=SRD 5.1",
+      "locale": "en",
+      "license": {
+        "content": "CC-BY-4.0 (SRD material)",
+        "code": "MIT",
+        "evidence": "dnd5e/README.md:12-24; dnd5e/LICENSE.txt",
+        "assets": "separate terms; no images imported"
+      },
+      "provenance": {
+        "archive": "C:\\Users\\iwa41\\Documents\\Codex\\2026-10-13\\Материалы\\systems.7z",
+        "archive_sha256": "e881cac7ac36e12def29f80b19aceef6c890b9f7621eed357152b06554c3f2f6",
+        "manifest_sha256": "b49e9ca38efacfb1e98761fb59d47b6f4b8709d92653a31dd6434e16677c7e0e",
+        "path": "packs/spells"
+      },
+      "storage": "LevelDB",
+      "archive_files": 7,
+      "archive_bytes": 506707,
+      "import_status": "indexed_only",
+      "imported_documents": 0
+    },
+    {
+      "id": "foundry.dnd5e.backgrounds",
+      "pack": "backgrounds",
+      "type": "Item",
+      "source": "Foundry dnd5e 5.3.3 / SRD 5.1",
+      "rules_version": "dnd2014",
+      "version_basis": "manifest sourceBook=SRD 5.1",
+      "locale": "en",
+      "license": {
+        "content": "CC-BY-4.0 (SRD material)",
+        "code": "MIT",
+        "evidence": "dnd5e/README.md:12-24; dnd5e/LICENSE.txt",
+        "assets": "separate terms; no images imported"
+      },
+      "provenance": {
+        "archive": "C:\\Users\\iwa41\\Documents\\Codex\\2026-10-13\\Материалы\\systems.7z",
+        "archive_sha256": "e881cac7ac36e12def29f80b19aceef6c890b9f7621eed357152b06554c3f2f6",
+        "manifest_sha256": "b49e9ca38efacfb1e98761fb59d47b6f4b8709d92653a31dd6434e16677c7e0e",
+        "path": "packs/backgrounds"
+      },
+      "storage": "LevelDB",
+      "archive_files": 7,
+      "archive_bytes": 5851,
+      "import_status": "indexed_only",
+      "imported_documents": 0
+    },
+    {
+      "id": "foundry.dnd5e.classes",
+      "pack": "classes",
+      "type": "Item",
+      "source": "Foundry dnd5e 5.3.3 / SRD 5.1",
+      "rules_version": "dnd2014",
+      "version_basis": "manifest sourceBook=SRD 5.1",
+      "locale": "en",
+      "license": {
+        "content": "CC-BY-4.0 (SRD material)",
+        "code": "MIT",
+        "evidence": "dnd5e/README.md:12-24; dnd5e/LICENSE.txt",
+        "assets": "separate terms; no images imported"
+      },
+      "provenance": {
+        "archive": "C:\\Users\\iwa41\\Documents\\Codex\\2026-10-13\\Материалы\\systems.7z",
+        "archive_sha256": "e881cac7ac36e12def29f80b19aceef6c890b9f7621eed357152b06554c3f2f6",
+        "manifest_sha256": "b49e9ca38efacfb1e98761fb59d47b6f4b8709d92653a31dd6434e16677c7e0e",
+        "path": "packs/classes"
+      },
+      "storage": "LevelDB",
+      "archive_files": 7,
+      "archive_bytes": 61344,
+      "import_status": "indexed_only",
+      "imported_documents": 0
+    },
+    {
+      "id": "foundry.dnd5e.subclasses",
+      "pack": "subclasses",
+      "type": "Item",
+      "source": "Foundry dnd5e 5.3.3 / SRD 5.1",
+      "rules_version": "dnd2014",
+      "version_basis": "manifest sourceBook=SRD 5.1",
+      "locale": "en",
+      "license": {
+        "content": "CC-BY-4.0 (SRD material)",
+        "code": "MIT",
+        "evidence": "dnd5e/README.md:12-24; dnd5e/LICENSE.txt",
+        "assets": "separate terms; no images imported"
+      },
+      "provenance": {
+        "archive": "C:\\Users\\iwa41\\Documents\\Codex\\2026-10-13\\Материалы\\systems.7z",
+        "archive_sha256": "e881cac7ac36e12def29f80b19aceef6c890b9f7621eed357152b06554c3f2f6",
+        "manifest_sha256": "b49e9ca38efacfb1e98761fb59d47b6f4b8709d92653a31dd6434e16677c7e0e",
+        "path": "packs/subclasses"
+      },
+      "storage": "LevelDB",
+      "archive_files": 7,
+      "archive_bytes": 19152,
+      "import_status": "indexed_only",
+      "imported_documents": 0
+    },
+    {
+      "id": "foundry.dnd5e.classfeatures",
+      "pack": "classfeatures",
+      "type": "Item",
+      "source": "Foundry dnd5e 5.3.3 / SRD 5.1",
+      "rules_version": "dnd2014",
+      "version_basis": "manifest sourceBook=SRD 5.1",
+      "locale": "en",
+      "license": {
+        "content": "CC-BY-4.0 (SRD material)",
+        "code": "MIT",
+        "evidence": "dnd5e/README.md:12-24; dnd5e/LICENSE.txt",
+        "assets": "separate terms; no images imported"
+      },
+      "provenance": {
+        "archive": "C:\\Users\\iwa41\\Documents\\Codex\\2026-10-13\\Материалы\\systems.7z",
+        "archive_sha256": "e881cac7ac36e12def29f80b19aceef6c890b9f7621eed357152b06554c3f2f6",
+        "manifest_sha256": "b49e9ca38efacfb1e98761fb59d47b6f4b8709d92653a31dd6434e16677c7e0e",
+        "path": "packs/classfeatures"
+      },
+      "storage": "LevelDB",
+      "archive_files": 7,
+      "archive_bytes": 206842,
+      "import_status": "indexed_only",
+      "imported_documents": 0
+    },
+    {
+      "id": "foundry.dnd5e.races",
+      "pack": "races",
+      "type": "Item",
+      "source": "Foundry dnd5e 5.3.3 / SRD 5.1",
+      "rules_version": "dnd2014",
+      "version_basis": "manifest sourceBook=SRD 5.1",
+      "locale": "en",
+      "license": {
+        "content": "CC-BY-4.0 (SRD material)",
+        "code": "MIT",
+        "evidence": "dnd5e/README.md:12-24; dnd5e/LICENSE.txt",
+        "assets": "separate terms; no images imported"
+      },
+      "provenance": {
+        "archive": "C:\\Users\\iwa41\\Documents\\Codex\\2026-10-13\\Материалы\\systems.7z",
+        "archive_sha256": "e881cac7ac36e12def29f80b19aceef6c890b9f7621eed357152b06554c3f2f6",
+        "manifest_sha256": "b49e9ca38efacfb1e98761fb59d47b6f4b8709d92653a31dd6434e16677c7e0e",
+        "path": "packs/races"
+      },
+      "storage": "LevelDB",
+      "archive_files": 7,
+      "archive_bytes": 50047,
+      "import_status": "indexed_only",
+      "imported_documents": 0
+    },
+    {
+      "id": "foundry.dnd5e.monsterfeatures",
+      "pack": "monsterfeatures",
+      "type": "Item",
+      "source": "Foundry dnd5e 5.3.3 / SRD 5.1",
+      "rules_version": "dnd2014",
+      "version_basis": "manifest sourceBook=SRD 5.1",
+      "locale": "en",
+      "license": {
+        "content": "CC-BY-4.0 (SRD material)",
+        "code": "MIT",
+        "evidence": "dnd5e/README.md:12-24; dnd5e/LICENSE.txt",
+        "assets": "separate terms; no images imported"
+      },
+      "provenance": {
+        "archive": "C:\\Users\\iwa41\\Documents\\Codex\\2026-10-13\\Материалы\\systems.7z",
+        "archive_sha256": "e881cac7ac36e12def29f80b19aceef6c890b9f7621eed357152b06554c3f2f6",
+        "manifest_sha256": "b49e9ca38efacfb1e98761fb59d47b6f4b8709d92653a31dd6434e16677c7e0e",
+        "path": "packs/monsterfeatures"
+      },
+      "storage": "LevelDB",
+      "archive_files": 7,
+      "archive_bytes": 191250,
+      "import_status": "indexed_only",
+      "imported_documents": 0
+    },
+    {
+      "id": "foundry.dnd5e.rules",
+      "pack": "rules",
+      "type": "JournalEntry",
+      "source": "Foundry dnd5e 5.3.3 / rules",
+      "rules_version": "unknown",
+      "version_basis": "manifest lacks an explicit source edition; no automatic import",
+      "locale": "en",
+      "license": {
+        "content": "CC-BY-4.0 (SRD material)",
+        "code": "MIT",
+        "evidence": "dnd5e/README.md:12-24; dnd5e/LICENSE.txt",
+        "assets": "separate terms; no images imported"
+      },
+      "provenance": {
+        "archive": "C:\\Users\\iwa41\\Documents\\Codex\\2026-10-13\\Материалы\\systems.7z",
+        "archive_sha256": "e881cac7ac36e12def29f80b19aceef6c890b9f7621eed357152b06554c3f2f6",
+        "manifest_sha256": "b49e9ca38efacfb1e98761fb59d47b6f4b8709d92653a31dd6434e16677c7e0e",
+        "path": "packs/rules"
+      },
+      "storage": "LevelDB",
+      "archive_files": 7,
+      "archive_bytes": 358167,
+      "import_status": "indexed_only",
+      "imported_documents": 0
+    },
+    {
+      "id": "foundry.dnd5e.tables",
+      "pack": "tables",
+      "type": "RollTable",
+      "source": "Foundry dnd5e 5.3.3 / tables",
+      "rules_version": "unknown",
+      "version_basis": "manifest lacks an explicit source edition; no automatic import",
+      "locale": "en",
+      "license": {
+        "content": "CC-BY-4.0 (SRD material)",
+        "code": "MIT",
+        "evidence": "dnd5e/README.md:12-24; dnd5e/LICENSE.txt",
+        "assets": "separate terms; no images imported"
+      },
+      "provenance": {
+        "archive": "C:\\Users\\iwa41\\Documents\\Codex\\2026-10-13\\Материалы\\systems.7z",
+        "archive_sha256": "e881cac7ac36e12def29f80b19aceef6c890b9f7621eed357152b06554c3f2f6",
+        "manifest_sha256": "b49e9ca38efacfb1e98761fb59d47b6f4b8709d92653a31dd6434e16677c7e0e",
+        "path": "packs/tables"
+      },
+      "storage": "LevelDB",
+      "archive_files": 7,
+      "archive_bytes": 53108,
+      "import_status": "indexed_only",
+      "imported_documents": 0
+    },
+    {
+      "id": "foundry.dnd5e.content24",
+      "pack": "content24",
+      "type": "JournalEntry",
+      "source": "Foundry dnd5e 5.3.3 / content24",
+      "rules_version": "dnd2024",
+      "version_basis": "explicit Foundry *24 rules/table pack; check document edition before import",
+      "locale": "en",
+      "license": {
+        "content": "CC-BY-4.0 (SRD material)",
+        "code": "MIT",
+        "evidence": "dnd5e/README.md:12-24; dnd5e/LICENSE.txt",
+        "assets": "separate terms; no images imported"
+      },
+      "provenance": {
+        "archive": "C:\\Users\\iwa41\\Documents\\Codex\\2026-10-13\\Материалы\\systems.7z",
+        "archive_sha256": "e881cac7ac36e12def29f80b19aceef6c890b9f7621eed357152b06554c3f2f6",
+        "manifest_sha256": "b49e9ca38efacfb1e98761fb59d47b6f4b8709d92653a31dd6434e16677c7e0e",
+        "path": "packs/content24"
+      },
+      "storage": "LevelDB",
+      "archive_files": 7,
+      "archive_bytes": 716422,
+      "import_status": "indexed_only",
+      "imported_documents": 0
+    },
+    {
+      "id": "foundry.dnd5e.classes24",
+      "pack": "classes24",
+      "type": "Item",
+      "source": "Foundry dnd5e 5.3.3 / SRD 5.2",
+      "rules_version": "dnd2024",
+      "version_basis": "manifest sourceBook=SRD 5.2",
+      "locale": "en",
+      "license": {
+        "content": "CC-BY-4.0 (SRD material)",
+        "code": "MIT",
+        "evidence": "dnd5e/README.md:12-24; dnd5e/LICENSE.txt",
+        "assets": "separate terms; no images imported"
+      },
+      "provenance": {
+        "archive": "C:\\Users\\iwa41\\Documents\\Codex\\2026-10-13\\Материалы\\systems.7z",
+        "archive_sha256": "e881cac7ac36e12def29f80b19aceef6c890b9f7621eed357152b06554c3f2f6",
+        "manifest_sha256": "b49e9ca38efacfb1e98761fb59d47b6f4b8709d92653a31dd6434e16677c7e0e",
+        "path": "packs/classes24"
+      },
+      "storage": "LevelDB",
+      "archive_files": 7,
+      "archive_bytes": 392016,
+      "import_status": "partial_imported",
+      "imported_documents": 4
+    },
+    {
+      "id": "foundry.dnd5e.origins24",
+      "pack": "origins24",
+      "type": "Item",
+      "source": "Foundry dnd5e 5.3.3 / SRD 5.2",
+      "rules_version": "dnd2024",
+      "version_basis": "manifest sourceBook=SRD 5.2",
+      "locale": "en",
+      "license": {
+        "content": "CC-BY-4.0 (SRD material)",
+        "code": "MIT",
+        "evidence": "dnd5e/README.md:12-24; dnd5e/LICENSE.txt",
+        "assets": "separate terms; no images imported"
+      },
+      "provenance": {
+        "archive": "C:\\Users\\iwa41\\Documents\\Codex\\2026-10-13\\Материалы\\systems.7z",
+        "archive_sha256": "e881cac7ac36e12def29f80b19aceef6c890b9f7621eed357152b06554c3f2f6",
+        "manifest_sha256": "b49e9ca38efacfb1e98761fb59d47b6f4b8709d92653a31dd6434e16677c7e0e",
+        "path": "packs/origins24"
+      },
+      "storage": "LevelDB",
+      "archive_files": 7,
+      "archive_bytes": 76780,
+      "import_status": "partial_imported",
+      "imported_documents": 4
+    },
+    {
+      "id": "foundry.dnd5e.feats24",
+      "pack": "feats24",
+      "type": "Item",
+      "source": "Foundry dnd5e 5.3.3 / SRD 5.2",
+      "rules_version": "dnd2024",
+      "version_basis": "manifest sourceBook=SRD 5.2",
+      "locale": "en",
+      "license": {
+        "content": "CC-BY-4.0 (SRD material)",
+        "code": "MIT",
+        "evidence": "dnd5e/README.md:12-24; dnd5e/LICENSE.txt",
+        "assets": "separate terms; no images imported"
+      },
+      "provenance": {
+        "archive": "C:\\Users\\iwa41\\Documents\\Codex\\2026-10-13\\Материалы\\systems.7z",
+        "archive_sha256": "e881cac7ac36e12def29f80b19aceef6c890b9f7621eed357152b06554c3f2f6",
+        "manifest_sha256": "b49e9ca38efacfb1e98761fb59d47b6f4b8709d92653a31dd6434e16677c7e0e",
+        "path": "packs/feats24"
+      },
+      "storage": "LevelDB",
+      "archive_files": 7,
+      "archive_bytes": 18289,
+      "import_status": "indexed_only",
+      "imported_documents": 0
+    },
+    {
+      "id": "foundry.dnd5e.spells24",
+      "pack": "spells24",
+      "type": "Item",
+      "source": "Foundry dnd5e 5.3.3 / SRD 5.2",
+      "rules_version": "dnd2024",
+      "version_basis": "manifest sourceBook=SRD 5.2",
+      "locale": "en",
+      "license": {
+        "content": "CC-BY-4.0 (SRD material)",
+        "code": "MIT",
+        "evidence": "dnd5e/README.md:12-24; dnd5e/LICENSE.txt",
+        "assets": "separate terms; no images imported"
+      },
+      "provenance": {
+        "archive": "C:\\Users\\iwa41\\Documents\\Codex\\2026-10-13\\Материалы\\systems.7z",
+        "archive_sha256": "e881cac7ac36e12def29f80b19aceef6c890b9f7621eed357152b06554c3f2f6",
+        "manifest_sha256": "b49e9ca38efacfb1e98761fb59d47b6f4b8709d92653a31dd6434e16677c7e0e",
+        "path": "packs/spells24"
+      },
+      "storage": "LevelDB",
+      "archive_files": 7,
+      "archive_bytes": 609609,
+      "import_status": "indexed_only",
+      "imported_documents": 0
+    },
+    {
+      "id": "foundry.dnd5e.equipment24",
+      "pack": "equipment24",
+      "type": "Item",
+      "source": "Foundry dnd5e 5.3.3 / SRD 5.2",
+      "rules_version": "dnd2024",
+      "version_basis": "manifest sourceBook=SRD 5.2",
+      "locale": "en",
+      "license": {
+        "content": "CC-BY-4.0 (SRD material)",
+        "code": "MIT",
+        "evidence": "dnd5e/README.md:12-24; dnd5e/LICENSE.txt",
+        "assets": "separate terms; no images imported"
+      },
+      "provenance": {
+        "archive": "C:\\Users\\iwa41\\Documents\\Codex\\2026-10-13\\Материалы\\systems.7z",
+        "archive_sha256": "e881cac7ac36e12def29f80b19aceef6c890b9f7621eed357152b06554c3f2f6",
+        "manifest_sha256": "b49e9ca38efacfb1e98761fb59d47b6f4b8709d92653a31dd6434e16677c7e0e",
+        "path": "packs/equipment24"
+      },
+      "storage": "LevelDB",
+      "archive_files": 7,
+      "archive_bytes": 916625,
+      "import_status": "partial_imported",
+      "imported_documents": 3
+    },
+    {
+      "id": "foundry.dnd5e.tables24",
+      "pack": "tables24",
+      "type": "RollTable",
+      "source": "Foundry dnd5e 5.3.3 / tables24",
+      "rules_version": "dnd2024",
+      "version_basis": "explicit Foundry *24 rules/table pack; check document edition before import",
+      "locale": "en",
+      "license": {
+        "content": "CC-BY-4.0 (SRD material)",
+        "code": "MIT",
+        "evidence": "dnd5e/README.md:12-24; dnd5e/LICENSE.txt",
+        "assets": "separate terms; no images imported"
+      },
+      "provenance": {
+        "archive": "C:\\Users\\iwa41\\Documents\\Codex\\2026-10-13\\Материалы\\systems.7z",
+        "archive_sha256": "e881cac7ac36e12def29f80b19aceef6c890b9f7621eed357152b06554c3f2f6",
+        "manifest_sha256": "b49e9ca38efacfb1e98761fb59d47b6f4b8709d92653a31dd6434e16677c7e0e",
+        "path": "packs/tables24"
+      },
+      "storage": "LevelDB",
+      "archive_files": 7,
+      "archive_bytes": 121983,
+      "import_status": "indexed_only",
+      "imported_documents": 0
+    },
+    {
+      "id": "foundry.dnd5e.actors24",
+      "pack": "actors24",
+      "type": "Actor",
+      "source": "Foundry dnd5e 5.3.3 / SRD 5.2",
+      "rules_version": "dnd2024",
+      "version_basis": "manifest sourceBook=SRD 5.2",
+      "locale": "en",
+      "license": {
+        "content": "CC-BY-4.0 (SRD material)",
+        "code": "MIT",
+        "evidence": "dnd5e/README.md:12-24; dnd5e/LICENSE.txt",
+        "assets": "separate terms; no images imported"
+      },
+      "provenance": {
+        "archive": "C:\\Users\\iwa41\\Documents\\Codex\\2026-10-13\\Материалы\\systems.7z",
+        "archive_sha256": "e881cac7ac36e12def29f80b19aceef6c890b9f7621eed357152b06554c3f2f6",
+        "manifest_sha256": "b49e9ca38efacfb1e98761fb59d47b6f4b8709d92653a31dd6434e16677c7e0e",
+        "path": "packs/actors24"
+      },
+      "storage": "LevelDB",
+      "archive_files": 10,
+      "archive_bytes": 8402767,
+      "import_status": "partial_imported",
+      "imported_documents": 1
+    },
+    {
+      "id": "foundry.dnd5e.monsterfeatures24",
+      "pack": "monsterfeatures24",
+      "type": "Item",
+      "source": "Foundry dnd5e 5.3.3 / SRD 5.2",
+      "rules_version": "dnd2024",
+      "version_basis": "manifest sourceBook=SRD 5.2",
+      "locale": "en",
+      "license": {
+        "content": "CC-BY-4.0 (SRD material)",
+        "code": "MIT",
+        "evidence": "dnd5e/README.md:12-24; dnd5e/LICENSE.txt",
+        "assets": "separate terms; no images imported"
+      },
+      "provenance": {
+        "archive": "C:\\Users\\iwa41\\Documents\\Codex\\2026-10-13\\Материалы\\systems.7z",
+        "archive_sha256": "e881cac7ac36e12def29f80b19aceef6c890b9f7621eed357152b06554c3f2f6",
+        "manifest_sha256": "b49e9ca38efacfb1e98761fb59d47b6f4b8709d92653a31dd6434e16677c7e0e",
+        "path": "packs/monsterfeatures24"
+      },
+      "storage": "LevelDB",
+      "archive_files": 7,
+      "archive_bytes": 427720,
+      "import_status": "indexed_only",
+      "imported_documents": 0
+    },
+    {
+      "id": "laaru.backgrounds",
+      "pack": "backgrounds",
+      "type": "Item",
+      "source": "Laaru 4.3.0 / DnD14 + HB/UA",
+      "rules_version": "mixed_2014_homebrew",
+      "version_basis": "DnD14 title; sourceBooks PHB/DMG/MM explicitly say 2014; other sources are mixed",
+      "locale": "ru-RU",
+      "license": {
+        "content": "unverified",
+        "code": "unverified",
+        "evidence": "module.json authors/sourceBooks; no grant of redistribution inferred"
+      },
+      "provenance": {
+        "manifest": "C:\\Users\\iwa41\\Downloads\\FoundryVTT_Win\\Moduls\\laaru-dnd5-13_14\\laaru-dnd5-hw\\module.json",
+        "manifest_sha256": "1c410132d3730d78638f012b585173a27018f04c8432e5da7ca052c424bd10c9",
+        "path": "packs/backgrounds"
+      },
+      "storage": "LevelDB",
+      "archive_files": 7,
+      "archive_bytes": 581624,
+      "import_status": "indexed_quarantined",
+      "imported_documents": 0
+    },
+    {
+      "id": "laaru.classes",
+      "pack": "classes",
+      "type": "Item",
+      "source": "Laaru 4.3.0 / DnD14 + HB/UA",
+      "rules_version": "mixed_2014_homebrew",
+      "version_basis": "DnD14 title; sourceBooks PHB/DMG/MM explicitly say 2014; other sources are mixed",
+      "locale": "ru-RU",
+      "license": {
+        "content": "unverified",
+        "code": "unverified",
+        "evidence": "module.json authors/sourceBooks; no grant of redistribution inferred"
+      },
+      "provenance": {
+        "manifest": "C:\\Users\\iwa41\\Downloads\\FoundryVTT_Win\\Moduls\\laaru-dnd5-13_14\\laaru-dnd5-hw\\module.json",
+        "manifest_sha256": "1c410132d3730d78638f012b585173a27018f04c8432e5da7ca052c424bd10c9",
+        "path": "packs/classes"
+      },
+      "storage": "LevelDB",
+      "archive_files": 9,
+      "archive_bytes": 686300,
+      "import_status": "indexed_quarantined",
+      "imported_documents": 0
+    },
+    {
+      "id": "laaru.subclasses",
+      "pack": "subclasses",
+      "type": "Item",
+      "source": "Laaru 4.3.0 / DnD14 + HB/UA",
+      "rules_version": "mixed_2014_homebrew",
+      "version_basis": "DnD14 title; sourceBooks PHB/DMG/MM explicitly say 2014; other sources are mixed",
+      "locale": "ru-RU",
+      "license": {
+        "content": "unverified",
+        "code": "unverified",
+        "evidence": "module.json authors/sourceBooks; no grant of redistribution inferred"
+      },
+      "provenance": {
+        "manifest": "C:\\Users\\iwa41\\Downloads\\FoundryVTT_Win\\Moduls\\laaru-dnd5-13_14\\laaru-dnd5-hw\\module.json",
+        "manifest_sha256": "1c410132d3730d78638f012b585173a27018f04c8432e5da7ca052c424bd10c9",
+        "path": "packs/subclasses"
+      },
+      "storage": "LevelDB",
+      "archive_files": 11,
+      "archive_bytes": 2176827,
+      "import_status": "indexed_quarantined",
+      "imported_documents": 0
+    },
+    {
+      "id": "laaru.classfeatures",
+      "pack": "classfeatures",
+      "type": "Item",
+      "source": "Laaru 4.3.0 / DnD14 + HB/UA",
+      "rules_version": "mixed_2014_homebrew",
+      "version_basis": "DnD14 title; sourceBooks PHB/DMG/MM explicitly say 2014; other sources are mixed",
+      "locale": "ru-RU",
+      "license": {
+        "content": "unverified",
+        "code": "unverified",
+        "evidence": "module.json authors/sourceBooks; no grant of redistribution inferred"
+      },
+      "provenance": {
+        "manifest": "C:\\Users\\iwa41\\Downloads\\FoundryVTT_Win\\Moduls\\laaru-dnd5-13_14\\laaru-dnd5-hw\\module.json",
+        "manifest_sha256": "1c410132d3730d78638f012b585173a27018f04c8432e5da7ca052c424bd10c9",
+        "path": "packs/classfeatures"
+      },
+      "storage": "LevelDB",
+      "archive_files": 13,
+      "archive_bytes": 11011504,
+      "import_status": "indexed_quarantined",
+      "imported_documents": 0
+    },
+    {
+      "id": "laaru.classfeatures2",
+      "pack": "classfeatures2",
+      "type": "Item",
+      "source": "Laaru 4.3.0 / DnD14 + HB/UA",
+      "rules_version": "mixed_2014_homebrew",
+      "version_basis": "DnD14 title; sourceBooks PHB/DMG/MM explicitly say 2014; other sources are mixed",
+      "locale": "ru-RU",
+      "license": {
+        "content": "unverified",
+        "code": "unverified",
+        "evidence": "module.json authors/sourceBooks; no grant of redistribution inferred"
+      },
+      "provenance": {
+        "manifest": "C:\\Users\\iwa41\\Downloads\\FoundryVTT_Win\\Moduls\\laaru-dnd5-13_14\\laaru-dnd5-hw\\module.json",
+        "manifest_sha256": "1c410132d3730d78638f012b585173a27018f04c8432e5da7ca052c424bd10c9",
+        "path": "packs/classfeatures2"
+      },
+      "storage": "LevelDB",
+      "archive_files": 7,
+      "archive_bytes": 2541699,
+      "import_status": "indexed_quarantined",
+      "imported_documents": 0
+    },
+    {
+      "id": "laaru.races",
+      "pack": "races",
+      "type": "Item",
+      "source": "Laaru 4.3.0 / DnD14 + HB/UA",
+      "rules_version": "mixed_2014_homebrew",
+      "version_basis": "DnD14 title; sourceBooks PHB/DMG/MM explicitly say 2014; other sources are mixed",
+      "locale": "ru-RU",
+      "license": {
+        "content": "unverified",
+        "code": "unverified",
+        "evidence": "module.json authors/sourceBooks; no grant of redistribution inferred"
+      },
+      "provenance": {
+        "manifest": "C:\\Users\\iwa41\\Downloads\\FoundryVTT_Win\\Moduls\\laaru-dnd5-13_14\\laaru-dnd5-hw\\module.json",
+        "manifest_sha256": "1c410132d3730d78638f012b585173a27018f04c8432e5da7ca052c424bd10c9",
+        "path": "packs/races"
+      },
+      "storage": "LevelDB",
+      "archive_files": 7,
+      "archive_bytes": 1354075,
+      "import_status": "indexed_quarantined",
+      "imported_documents": 0
+    },
+    {
+      "id": "laaru.racesMPMM",
+      "pack": "racesMPMM",
+      "type": "Item",
+      "source": "Laaru 4.3.0 / DnD14 + HB/UA",
+      "rules_version": "mixed_2014_homebrew",
+      "version_basis": "DnD14 title; sourceBooks PHB/DMG/MM explicitly say 2014; other sources are mixed",
+      "locale": "ru-RU",
+      "license": {
+        "content": "unverified",
+        "code": "unverified",
+        "evidence": "module.json authors/sourceBooks; no grant of redistribution inferred"
+      },
+      "provenance": {
+        "manifest": "C:\\Users\\iwa41\\Downloads\\FoundryVTT_Win\\Moduls\\laaru-dnd5-13_14\\laaru-dnd5-hw\\module.json",
+        "manifest_sha256": "1c410132d3730d78638f012b585173a27018f04c8432e5da7ca052c424bd10c9",
+        "path": "packs/racesmpmm"
+      },
+      "storage": "LevelDB",
+      "archive_files": 7,
+      "archive_bytes": 278411,
+      "import_status": "indexed_quarantined",
+      "imported_documents": 0
+    },
+    {
+      "id": "laaru.actions",
+      "pack": "actions",
+      "type": "Item",
+      "source": "Laaru 4.3.0 / DnD14 + HB/UA",
+      "rules_version": "mixed_2014_homebrew",
+      "version_basis": "DnD14 title; sourceBooks PHB/DMG/MM explicitly say 2014; other sources are mixed",
+      "locale": "ru-RU",
+      "license": {
+        "content": "unverified",
+        "code": "unverified",
+        "evidence": "module.json authors/sourceBooks; no grant of redistribution inferred"
+      },
+      "provenance": {
+        "manifest": "C:\\Users\\iwa41\\Downloads\\FoundryVTT_Win\\Moduls\\laaru-dnd5-13_14\\laaru-dnd5-hw\\module.json",
+        "manifest_sha256": "1c410132d3730d78638f012b585173a27018f04c8432e5da7ca052c424bd10c9",
+        "path": "packs/actions"
+      },
+      "storage": "LevelDB",
+      "archive_files": 7,
+      "archive_bytes": 111367,
+      "import_status": "indexed_quarantined",
+      "imported_documents": 0
+    },
+    {
+      "id": "laaru.spells",
+      "pack": "spells",
+      "type": "Item",
+      "source": "Laaru 4.3.0 / DnD14 + HB/UA",
+      "rules_version": "mixed_2014_homebrew",
+      "version_basis": "DnD14 title; sourceBooks PHB/DMG/MM explicitly say 2014; other sources are mixed",
+      "locale": "ru-RU",
+      "license": {
+        "content": "unverified",
+        "code": "unverified",
+        "evidence": "module.json authors/sourceBooks; no grant of redistribution inferred"
+      },
+      "provenance": {
+        "manifest": "C:\\Users\\iwa41\\Downloads\\FoundryVTT_Win\\Moduls\\laaru-dnd5-13_14\\laaru-dnd5-hw\\module.json",
+        "manifest_sha256": "1c410132d3730d78638f012b585173a27018f04c8432e5da7ca052c424bd10c9",
+        "path": "packs/spells"
+      },
+      "storage": "LevelDB",
+      "archive_files": 9,
+      "archive_bytes": 2730966,
+      "import_status": "indexed_quarantined",
+      "imported_documents": 0
+    },
+    {
+      "id": "laaru.monsters",
+      "pack": "monsters",
+      "type": "Actor",
+      "source": "Laaru 4.3.0 / DnD14 + HB/UA",
+      "rules_version": "mixed_2014_homebrew",
+      "version_basis": "DnD14 title; sourceBooks PHB/DMG/MM explicitly say 2014; other sources are mixed",
+      "locale": "ru-RU",
+      "license": {
+        "content": "unverified",
+        "code": "unverified",
+        "evidence": "module.json authors/sourceBooks; no grant of redistribution inferred"
+      },
+      "provenance": {
+        "manifest": "C:\\Users\\iwa41\\Downloads\\FoundryVTT_Win\\Moduls\\laaru-dnd5-13_14\\laaru-dnd5-hw\\module.json",
+        "manifest_sha256": "1c410132d3730d78638f012b585173a27018f04c8432e5da7ca052c424bd10c9",
+        "path": "packs/monsters"
+      },
+      "storage": "LevelDB",
+      "archive_files": 29,
+      "archive_bytes": 43157516,
+      "import_status": "indexed_quarantined",
+      "imported_documents": 0
+    },
+    {
+      "id": "laaru.monsters2",
+      "pack": "monsters2",
+      "type": "Actor",
+      "source": "Laaru 4.3.0 / DnD14 + HB/UA",
+      "rules_version": "mixed_2014_homebrew",
+      "version_basis": "DnD14 title; sourceBooks PHB/DMG/MM explicitly say 2014; other sources are mixed",
+      "locale": "ru-RU",
+      "license": {
+        "content": "unverified",
+        "code": "unverified",
+        "evidence": "module.json authors/sourceBooks; no grant of redistribution inferred"
+      },
+      "provenance": {
+        "manifest": "C:\\Users\\iwa41\\Downloads\\FoundryVTT_Win\\Moduls\\laaru-dnd5-13_14\\laaru-dnd5-hw\\module.json",
+        "manifest_sha256": "1c410132d3730d78638f012b585173a27018f04c8432e5da7ca052c424bd10c9",
+        "path": "packs/monsters2"
+      },
+      "storage": "LevelDB",
+      "archive_files": 17,
+      "archive_bytes": 23320218,
+      "import_status": "indexed_quarantined",
+      "imported_documents": 0
+    },
+    {
+      "id": "laaru.intro",
+      "pack": "intro",
+      "type": "JournalEntry",
+      "source": "Laaru 4.3.0 / DnD14 + HB/UA",
+      "rules_version": "mixed_2014_homebrew",
+      "version_basis": "DnD14 title; sourceBooks PHB/DMG/MM explicitly say 2014; other sources are mixed",
+      "locale": "ru-RU",
+      "license": {
+        "content": "unverified",
+        "code": "unverified",
+        "evidence": "module.json authors/sourceBooks; no grant of redistribution inferred"
+      },
+      "provenance": {
+        "manifest": "C:\\Users\\iwa41\\Downloads\\FoundryVTT_Win\\Moduls\\laaru-dnd5-13_14\\laaru-dnd5-hw\\module.json",
+        "manifest_sha256": "1c410132d3730d78638f012b585173a27018f04c8432e5da7ca052c424bd10c9",
+        "path": "packs/intro"
+      },
+      "storage": "LevelDB",
+      "archive_files": 7,
+      "archive_bytes": 1612462,
+      "import_status": "indexed_quarantined",
+      "imported_documents": 0
+    },
+    {
+      "id": "laaru.list",
+      "pack": "list",
+      "type": "JournalEntry",
+      "source": "Laaru 4.3.0 / DnD14 + HB/UA",
+      "rules_version": "mixed_2014_homebrew",
+      "version_basis": "DnD14 title; sourceBooks PHB/DMG/MM explicitly say 2014; other sources are mixed",
+      "locale": "ru-RU",
+      "license": {
+        "content": "unverified",
+        "code": "unverified",
+        "evidence": "module.json authors/sourceBooks; no grant of redistribution inferred"
+      },
+      "provenance": {
+        "manifest": "C:\\Users\\iwa41\\Downloads\\FoundryVTT_Win\\Moduls\\laaru-dnd5-13_14\\laaru-dnd5-hw\\module.json",
+        "manifest_sha256": "1c410132d3730d78638f012b585173a27018f04c8432e5da7ca052c424bd10c9",
+        "path": "packs/list"
+      },
+      "storage": "LevelDB",
+      "archive_files": 7,
+      "archive_bytes": 541106,
+      "import_status": "indexed_quarantined",
+      "imported_documents": 0
+    },
+    {
+      "id": "laaru.items",
+      "pack": "items",
+      "type": "Item",
+      "source": "Laaru 4.3.0 / DnD14 + HB/UA",
+      "rules_version": "mixed_2014_homebrew",
+      "version_basis": "DnD14 title; sourceBooks PHB/DMG/MM explicitly say 2014; other sources are mixed",
+      "locale": "ru-RU",
+      "license": {
+        "content": "unverified",
+        "code": "unverified",
+        "evidence": "module.json authors/sourceBooks; no grant of redistribution inferred"
+      },
+      "provenance": {
+        "manifest": "C:\\Users\\iwa41\\Downloads\\FoundryVTT_Win\\Moduls\\laaru-dnd5-13_14\\laaru-dnd5-hw\\module.json",
+        "manifest_sha256": "1c410132d3730d78638f012b585173a27018f04c8432e5da7ca052c424bd10c9",
+        "path": "packs/items"
+      },
+      "storage": "LevelDB",
+      "archive_files": 7,
+      "archive_bytes": 6242075,
+      "import_status": "indexed_quarantined",
+      "imported_documents": 0
+    },
+    {
+      "id": "laaru.goods",
+      "pack": "goods",
+      "type": "Item",
+      "source": "Laaru 4.3.0 / DnD14 + HB/UA",
+      "rules_version": "mixed_2014_homebrew",
+      "version_basis": "DnD14 title; sourceBooks PHB/DMG/MM explicitly say 2014; other sources are mixed",
+      "locale": "ru-RU",
+      "license": {
+        "content": "unverified",
+        "code": "unverified",
+        "evidence": "module.json authors/sourceBooks; no grant of redistribution inferred"
+      },
+      "provenance": {
+        "manifest": "C:\\Users\\iwa41\\Downloads\\FoundryVTT_Win\\Moduls\\laaru-dnd5-13_14\\laaru-dnd5-hw\\module.json",
+        "manifest_sha256": "1c410132d3730d78638f012b585173a27018f04c8432e5da7ca052c424bd10c9",
+        "path": "packs/goods"
+      },
+      "storage": "LevelDB",
+      "archive_files": 7,
+      "archive_bytes": 1397073,
+      "import_status": "indexed_quarantined",
+      "imported_documents": 0
+    },
+    {
+      "id": "laaru.tables-extra",
+      "pack": "tables-extra",
+      "type": "RollTable",
+      "source": "Laaru 4.3.0 / DnD14 + HB/UA",
+      "rules_version": "mixed_2014_homebrew",
+      "version_basis": "DnD14 title; sourceBooks PHB/DMG/MM explicitly say 2014; other sources are mixed",
+      "locale": "ru-RU",
+      "license": {
+        "content": "unverified",
+        "code": "unverified",
+        "evidence": "module.json authors/sourceBooks; no grant of redistribution inferred"
+      },
+      "provenance": {
+        "manifest": "C:\\Users\\iwa41\\Downloads\\FoundryVTT_Win\\Moduls\\laaru-dnd5-13_14\\laaru-dnd5-hw\\module.json",
+        "manifest_sha256": "1c410132d3730d78638f012b585173a27018f04c8432e5da7ca052c424bd10c9",
+        "path": "packs/tables-extra"
+      },
+      "storage": "LevelDB",
+      "archive_files": 7,
+      "archive_bytes": 1725658,
+      "import_status": "indexed_quarantined",
+      "imported_documents": 0
+    },
+    {
+      "id": "laaru.tables",
+      "pack": "tables",
+      "type": "RollTable",
+      "source": "Laaru 4.3.0 / DnD14 + HB/UA",
+      "rules_version": "mixed_2014_homebrew",
+      "version_basis": "DnD14 title; sourceBooks PHB/DMG/MM explicitly say 2014; other sources are mixed",
+      "locale": "ru-RU",
+      "license": {
+        "content": "unverified",
+        "code": "unverified",
+        "evidence": "module.json authors/sourceBooks; no grant of redistribution inferred"
+      },
+      "provenance": {
+        "manifest": "C:\\Users\\iwa41\\Downloads\\FoundryVTT_Win\\Moduls\\laaru-dnd5-13_14\\laaru-dnd5-hw\\module.json",
+        "manifest_sha256": "1c410132d3730d78638f012b585173a27018f04c8432e5da7ca052c424bd10c9",
+        "path": "packs/tables"
+      },
+      "storage": "LevelDB",
+      "archive_files": 7,
+      "archive_bytes": 690129,
+      "import_status": "indexed_quarantined",
+      "imported_documents": 0
+    },
+    {
+      "id": "laaru.macro",
+      "pack": "macro",
+      "type": "Macro",
+      "source": "Laaru 4.3.0 / DnD14 + HB/UA",
+      "rules_version": "mixed_2014_homebrew",
+      "version_basis": "DnD14 title; sourceBooks PHB/DMG/MM explicitly say 2014; other sources are mixed",
+      "locale": "ru-RU",
+      "license": {
+        "content": "unverified",
+        "code": "unverified",
+        "evidence": "module.json authors/sourceBooks; no grant of redistribution inferred"
+      },
+      "provenance": {
+        "manifest": "C:\\Users\\iwa41\\Downloads\\FoundryVTT_Win\\Moduls\\laaru-dnd5-13_14\\laaru-dnd5-hw\\module.json",
+        "manifest_sha256": "1c410132d3730d78638f012b585173a27018f04c8432e5da7ca052c424bd10c9",
+        "path": "packs/macro"
+      },
+      "storage": "LevelDB",
+      "archive_files": 7,
+      "archive_bytes": 112964,
+      "import_status": "excluded_executable",
+      "imported_documents": 0
+    }
+  ],
+  "components": [
+    {
+      "source": "Laaru 4.3.0 spellGiver",
+      "rules_version": "dnd2014",
+      "locale": "ru-RU",
+      "license": "unverified",
+      "provenance": {
+        "path": "C:\\Users\\iwa41\\Downloads\\FoundryVTT_Win\\Moduls\\laaru-dnd5-13_14\\laaru-dnd5-hw\\scripts\\spellGiver.mjs",
+        "sha256": "40aab1ffb85690cdcec394ab4aa012f73902240e902da056fee0ef175c7c195a",
+        "source_books": {
+          "PHB": "Player's Handbook (2014)",
+          "DMG": "Dungeon Master's Guide (2014)",
+          "MM": "Monster Manual (2014)",
+          "BG3": "Baldur's Gate 3",
+          "KTHB": "KibblesTasty Homebrew",
+          "TCE": "Tasha's Cauldron of Everything",
+          "LLK": "Lost Laboratory of Kwalish",
+          "VSS": "Valda's Spire of Secrets",
+          "UA:E": "Unearthed Arcana — Eberron",
+          "MCDM": "MCDM - The Illrigger",
+          "UA:MoS": "Unearthed Arcana: Mages of Strixhaven",
+          "SCAG": "Sword Coast Adventurer's Guide",
+          "XGE": "Xanathar's Guide to Everything",
+          "GH:PG": "Grim Hollow’s The Players Guide",
+          "RK": "The Runekeeper (Dungeon Masters Guild)",
+          "TDCSR": "Tal’Dorei Compaing Setting",
+          "BGG": "Bigby Presents: Glory of the Giants",
+          "CR": "Critical Role",
+          "CR:LS": "Critical Role",
+          "ExE": "Exploring Eberron",
+          "MoMi": "Morgrave Miscellany",
+          "SCPC": "Sprouting Chaos Player's Companion",
+          "CoE": "Chronicles of Eberron",
+          "SGttEH": "Steinhardt's Guide to the Eldritch Hunt",
+          "HCS": "Humblewood Campaign Setting",
+          "ODL": "Odyssey of the Dragon Lords",
+          "XLNE": "Xanathar's Lost Notes to Everything Else",
+          "DMItM": "Dread Metrol: Into the Mists",
+          "DSotDQ": "Dragonlance: Shadow of the Dragon Queen",
+          "MHH": "Midgard Heroes Handbook",
+          "EGW": "Explorer’s Guide to Wildemount",
+          "FTD": "Fizban's Treasury of Dragons",
+          "LR:DTB": "Legends of Runeterra: Dark Tides of Bilgewater",
+          "CoN": "Chronicles of Naimiria",
+          "VRGR": "Van Richten's Guide to Ravenloft",
+          "Unk": "Unknown (источник неизвестен)",
+          "DMsG": "Dungeon Masters Guild",
+          "BMT": "The Book of Many Things",
+          "HB:R": "Homebrew: Reddit",
+          "UA": "Unearthed Arcana",
+          "DM:VM": "Deep Magic: Void Magic (KoboldPress)",
+          "PS:A": "Plane Shift: Amonkhet",
+          "LCM": "Lost City of Mezro",
+          "TLtRW": "Thay: Land of the Red Wizards",
+          "{WH} RG": "{Walrock Homebrew} Rogues Gallery",
+          "СГ": "Сады Гесперид",
+          "ToH": "Tome of Heroes",
+          "DMGi": "Dungeon Masters Guild",
+          "LL": "Laserllama"
+        }
+      },
+      "import_status": "excluded_executable",
+      "executed": false
+    }
+  ],
+  "source_code_executed": false,
+  "silent_edition_conversion": false
+}

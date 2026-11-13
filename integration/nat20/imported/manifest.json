@@ -1,0 +1,256 @@
+{
+  "documents": [
+    {
+      "category": "classes",
+      "deferred_dependencies": [
+        {
+          "level": 2,
+          "uuid": "Compendium.dnd5e.classes24.Item.phbftrActionSurg"
+        },
+        {
+          "level": 2,
+          "uuid": "Compendium.dnd5e.classes24.Item.phbftrTacticalMi"
+        },
+        {
+          "level": 5,
+          "uuid": "Compendium.dnd5e.classes24.Item.phbftrExtraAttac"
+        },
+        {
+          "level": 5,
+          "uuid": "Compendium.dnd5e.classes24.Item.phbftrTacticalSh"
+        },
+        {
+          "level": 9,
+          "uuid": "Compendium.dnd5e.classes24.Item.phbftrIndomitabl"
+        },
+        {
+          "level": 9,
+          "uuid": "Compendium.dnd5e.classes24.Item.phbftrTacticalMa"
+        },
+        {
+          "level": 11,
+          "uuid": "Compendium.dnd5e.classes24.Item.phbftrTwoExtraAt"
+        },
+        {
+          "level": 13,
+          "uuid": "Compendium.dnd5e.classes24.Item.phbftrStudiedAtt"
+        },
+        {
+          "level": 20,
+          "uuid": "Compendium.dnd5e.classes24.Item.phbftrThreeExtra"
+        },
+        {
+          "choice": "EmTANp6x6GfXFTmU",
+          "level": 0,
+          "status": "player_choice_not_imported"
+        }
+      ],
+      "file": "canonical/classes/fighter.json",
+      "foundry_id": "phbftrFighter000",
+      "foundry_pack": "classes24",
+      "import_status": "translated_typed_data",
+      "license": "CC-BY-4.0",
+      "locale": "en",
+      "mechanics": "Nat20 0.7.0, no JS execution; not certification of every feature",
+      "raw_file": "raw/_source/classes24/fighter/fighter.yml",
+      "raw_sha256": "11564e58269b3c18a283ba797d81196b8612e030182b76b5c3f1531e2b112d1b",
+      "rules_version": "dnd2024",
+      "sha256": "4c38ea4963e30fe9bd8c6e010203e7051da4cf04c4e136f0a1cc299ae088e387",
+      "slug": "fighter"
+    },
+    {
+      "category": "features",
+      "deferred_dependencies": [],
+      "file": "canonical/features/fighting-style.json",
+      "foundry_id": "phbftrFightingSt",
+      "foundry_pack": "classes24",
+      "import_status": "translated_typed_data",
+      "license": "CC-BY-4.0",
+      "locale": "en",
+      "mechanics": "Nat20 0.7.0, no JS execution; not certification of every feature",
+      "raw_file": "raw/_source/classes24/fighter/class-features/fighting-style.yml",
+      "raw_sha256": "b19f83b7c28e4bdbef1be7ca3ab2426153913e9c58f7157191d1103b08d578a6",
+      "rules_version": "dnd2024",
+      "sha256": "3ee61065a19f63cbf8fa649925684a579073b00112ebdb84d1db3d158e6f5156",
+      "slug": "fighting-style"
+    },
+    {
+      "category": "features",
+      "deferred_dependencies": [],
+      "file": "canonical/features/second-wind.json",
+      "foundry_id": "phbftrSecondWind",
+      "foundry_pack": "classes24",
+      "import_status": "translated_typed_data",
+      "license": "CC-BY-4.0",
+      "locale": "en",
+      "mechanics": "Nat20 0.7.0, no JS execution; not certification of every feature",
+      "raw_file": "raw/_source/classes24/fighter/class-features/second-wind.yml",
+      "raw_sha256": "c0e8b50853d780c635f58348ce75eb6d6ed11930fe29ae2c5fce7f0e83d6eef8",
+      "rules_version": "dnd2024",
+      "sha256": "d42c0e3ad67dfa1e9dcea2700449c19de9a17241c409c8d9d1c6b9eacf479749",
+      "slug": "second-wind"
+    },
+    {
+      "category": "features",
+      "deferred_dependencies": [],
+      "file": "canonical/features/weapon-mastery.json",
+      "foundry_id": "phbftrWeaponMast",
+      "foundry_pack": "classes24",
+      "import_status": "translated_typed_data",
+      "license": "CC-BY-4.0",
+      "locale": "en",
+      "mechanics": "Nat20 0.7.0, no JS execution; not certification of every feature",
+      "raw_file": "raw/_source/classes24/fighter/class-features/weapon-mastery.yml",
+      "raw_sha256": "39c178831f69ecbbf1c055bd2f3e76c023b183025a5a50da30ff2914fb1f1959",
+      "rules_version": "dnd2024",
+      "sha256": "4fee83f4e830650092991e070d4d5a4c0edab2d30882648a4e5196d1f6a3eda9",
+      "slug": "weapon-mastery"
+    },
+    {
+      "category": "species",
+      "deferred_dependencies": [
+        {
+          "choice": "KB8IQLwyuL6SOFnv",
+          "level": 0,
+          "status": "player_choice_not_imported"
+        }
+      ],
+      "file": "canonical/species/human.json",
+      "foundry_id": "phbspHuman000000",
+      "foundry_pack": "origins24",
+      "import_status": "translated_typed_data",
+      "license": "CC-BY-4.0",
+      "locale": "en",
+      "mechanics": "Nat20 0.7.0, no JS execution; not certification of every feature",
+      "raw_file": "raw/_source/origins24/species/human.yml",
+      "raw_sha256": "5a9891ead35d050117eab4ed619b7108d54d68c48054c43491263613a155ec44",
+      "rules_version": "dnd2024",
+      "sha256": "bf483d36b87af1ae7d18663a6937d87a1ff565925049175840c714cb3ebc2046",
+      "slug": "human"
+    },
+    {
+      "category": "features",
+      "deferred_dependencies": [],
+      "file": "canonical/features/resourceful.json",
+      "foundry_id": "phbsptResourcefu",
+      "foundry_pack": "origins24",
+      "import_status": "translated_typed_data",
+      "license": "CC-BY-4.0",
+      "locale": "en",
+      "mechanics": "Nat20 0.7.0, no JS execution; not certification of every feature",
+      "raw_file": "raw/_source/origins24/species/traits/human/resourceful.yml",
+      "raw_sha256": "4f8d8dd668960954905f5ea35c9fe876a28b067bcdf9338d4422b3cd3c62efd4",
+      "rules_version": "dnd2024",
+      "sha256": "26ad8615abdb1ff2d64ead86ad43c8c25484bb09ca19dc136ee32f0cac93b43b",
+      "slug": "resourceful"
+    },
+    {
+      "category": "features",
+      "deferred_dependencies": [],
+      "file": "canonical/features/skillful.json",
+      "foundry_id": "phbsptSkillful00",
+      "foundry_pack": "origins24",
+      "import_status": "translated_typed_data",
+      "license": "CC-BY-4.0",
+      "locale": "en",
+      "mechanics": "Nat20 0.7.0, no JS execution; not certification of every feature",
+      "raw_file": "raw/_source/origins24/species/traits/human/skillful.yml",
+      "raw_sha256": "005a0e1aeeedf49ff56a60e8da8079a65175079fbda88e63a1a352b1cc2ba3c4",
+      "rules_version": "dnd2024",
+      "sha256": "e29a31db60b75d58c8d13549a5d483e0714f2c2e2be1a5934b0818795efbf722",
+      "slug": "skillful"
+    },
+    {
+      "category": "features",
+      "deferred_dependencies": [],
+      "file": "canonical/features/versatile.json",
+      "foundry_id": "phbsptVersatile0",
+      "foundry_pack": "origins24",
+      "import_status": "translated_typed_data",
+      "license": "CC-BY-4.0",
+      "locale": "en",
+      "mechanics": "Nat20 0.7.0, no JS execution; not certification of every feature",
+      "raw_file": "raw/_source/origins24/species/traits/human/versatile.yml",
+      "raw_sha256": "ba8ecc789f0477a55433cfda1009afd69ea93c12e16e5e663ed7292a8249dbd3",
+      "rules_version": "dnd2024",
+      "sha256": "40b11941c0552bff803404238898922e3d21e17fe95da5d362462fd03d7578e7",
+      "slug": "versatile"
+    },
+    {
+      "category": "items",
+      "deferred_dependencies": [],
+      "file": "canonical/items/longsword.json",
+      "foundry_id": "phbwepLongsword0",
+      "foundry_pack": "equipment24",
+      "import_status": "translated_typed_data",
+      "license": "CC-BY-4.0",
+      "locale": "en",
+      "mechanics": "Nat20 0.7.0, no JS execution; not certification of every feature",
+      "raw_file": "raw/_source/equipment24/longsword.yml",
+      "raw_sha256": "a383a183caf4253e03f66c22e4d287637084083d196f344cfdcc75c85aa322c7",
+      "rules_version": "dnd2024",
+      "sha256": "979f311419465596799ed4210ca9cad6d075ed470740384a46e6400915c6c591",
+      "slug": "longsword"
+    },
+    {
+      "category": "items",
+      "deferred_dependencies": [],
+      "file": "canonical/items/chain-mail.json",
+      "foundry_id": "phbarmChainMail0",
+      "foundry_pack": "equipment24",
+      "import_status": "translated_typed_data",
+      "license": "CC-BY-4.0",
+      "locale": "en",
+      "mechanics": "Nat20 0.7.0, no JS execution; not certification of every feature",
+      "raw_file": "raw/_source/equipment24/chain-mail.yml",
+      "raw_sha256": "c6580705ff6d5d0462558a3cf12441310140b21c9b4e1503222932b155744758",
+      "rules_version": "dnd2024",
+      "sha256": "3d62efcb6dd7aa0137d7b99e755e99f115d3898350dd395cfd7493e092316ee0",
+      "slug": "chain-mail"
+    },
+    {
+      "category": "items",
+      "deferred_dependencies": [],
+      "file": "canonical/items/shield.json",
+      "foundry_id": "phbarmShield0000",
+      "foundry_pack": "equipment24",
+      "import_status": "translated_typed_data",
+      "license": "CC-BY-4.0",
+      "locale": "en",
+      "mechanics": "Nat20 0.7.0, no JS execution; not certification of every feature",
+      "raw_file": "raw/_source/equipment24/shield.yml",
+      "raw_sha256": "57ce1732584ec3d4b9cf5e0b6bacba5742a91f5bf91a314a2edf72eee6c34ec3",
+      "rules_version": "dnd2024",
+      "sha256": "2e810d810de9fc714241692d405987ca6ad5f4ca5a7ef99817096cc24a8d445c",
+      "slug": "shield"
+    },
+    {
+      "category": "monsters",
+      "deferred_dependencies": [],
+      "file": "canonical/monsters/goblin-warrior.json",
+      "foundry_id": "mmGoblinWarrior0",
+      "foundry_pack": "actors24",
+      "import_status": "translated_typed_data",
+      "license": "CC-BY-4.0",
+      "locale": "en",
+      "mechanics": "Nat20 0.7.0, no JS execution; not certification of every feature",
+      "raw_file": "raw/_source/actors24/goblin-warrior.yml",
+      "raw_sha256": "8d3dbbba959f16b3453ae5605456096c7a6ae4429f04720e46ec3a184e1ede45",
+      "rules_version": "dnd2024",
+      "sha256": "508e27ec6dc727e6e04384751c4728abf8f4268f2e24e437efef6a7c1c6161ab",
+      "slug": "goblin-warrior"
+    }
+  ],
+  "encounter_profile": {
+    "file": "encounter-profile.json",
+    "sha256": "d962ffd2b15d17702abb579963968e4a0cd41b332672d98a815e4f161d7a2a94"
+  },
+  "foundry_version": "5.3.3",
+  "laaru_imported": false,
+  "nat20_version": "0.7.0",
+  "rules_version": "dnd2024",
+  "schema_version": "1.0.0",
+  "scope": "level-one human fighter, equipment and goblin-warrior; action capability allowlist remains narrow",
+  "source_code_executed": false,
+  "translator": "vendored Nat20 tools/translators/foundry.py"
+}

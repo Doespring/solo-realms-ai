@@ -1,0 +1,214 @@
+/* r220 — язык «Стол и лист»: один файл токенов для приложения.
+   Источник — `design/screens/core.css` (утверждённый макет, итерация 5).
+   Перенесено без новых цветов: только значения из концепции.
+
+   r223: палитра переехала на `:root`. В r220 токены висели на областях
+   нового языка (#play, #wizard, #about, #welcome, .booksheet), потому что в
+   style.css и themes.css уже были свои `--text`/`--line`/`--radius`, и
+   глобальная подмена перекрасила бы остальные экраны. Теперь перекрасить их
+   и есть задача: «ни одного экрана на старом оформлении». Одна палитра,
+   одно переключение темы, ни одного `#hex` в остальных файлах `web/*.css` —
+   старые имена (--bg, --surface, --gold, --input, --accent, --muted, --shadow)
+   объявлены здесь же с прежними значениями, чтобы оболочка не потеряла вид.
+
+   Светлая тема — только переопределение значений на `[data-theme="light"]`,
+   ни одного нового имени токена. Значения и контрасты взяты из
+   `design/screens/theme-light.css` (13.21 / 7.47 / 5.86:1). */
+
+@font-face{
+  font-family:"Book";src:url("/static/visual/fonts/book-regular.ttf") format("truetype");
+  font-weight:300 800;font-style:normal;font-display:swap;
+}
+@font-face{
+  font-family:"Book";src:url("/static/visual/fonts/book-italic.ttf") format("truetype");
+  font-weight:300 800;font-style:italic;font-display:swap;
+}
+@font-face{
+  font-family:"UI";src:url("/static/visual/fonts/ui-regular.ttf") format("truetype");
+  font-weight:400;font-style:normal;font-display:swap;
+}
+@font-face{
+  font-family:"UI";src:url("/static/visual/fonts/ui-bold.ttf") format("truetype");
+  font-weight:700;font-style:normal;font-display:swap;
+}
+
+/* ── Тёмная тема: база приложения ────────────────────────────────────────── */
+:root{
+  color-scheme:dark;
+
+  /* стол: тёмные тона, на них читается рассказ */
+  --ink-950:#0D0B08;
+  --ink-900:#14110D;
+  --ink-850:#191510;
+  --ink-800:#1F1A14;
+  --ink-750:#262019;
+  --ink-700:#2E2720;
+  --ink-600:#3A3128;
+  --line:#332B22;
+  --line-strong:#4A3E30;
+
+  --text:#EDE3CE;
+  --text-2:#BEB097;
+  --text-3:#A2957B;
+
+  /* свеча: единственный акцент действия */
+  --candle:#D8A05C;
+  --candle-hi:#EDBB79;
+  --candle-deep:#B98A4E;
+  --candle-fill:#D8A05C;
+  --candle-ink:#1B1207;
+
+  --moss:#8FA97A;      /* успех, «прочитано» */
+  --ember:#D9704F;     /* опасность, ошибка */
+
+  /* Вердикт броска — плотная плашка с тёмными чернилами. */
+  --roll-bg:#1B1711;
+  --roll-line:#4A3E30;
+  --roll-num:#C6B89C;
+  --out-hit:#93AE72;      --out-hit-ink:#0F1408;
+  --out-miss:#D9704F;     --out-miss-ink:#170C07;
+  --out-crit:#D8A05C;     --out-crit-ink:#1B1207;
+
+  /* Лист — тот же стол, на котором лежит документ (ΔL* к столу 4.30). */
+  --sheet-bg:#1E1A14;
+  --sheet-bg-2:#221D16;
+  --sheet-line:#3A3128;
+  --sheet-line-soft:#2E2720;
+  --sheet-ink:#E8DDC7;
+  --sheet-ink-2:#C6B89C;
+  --sheet-ink-3:#A2957B;
+  --sheet-note:#B0A186;
+  --sheet-meta:#A2957B;
+  --sheet-ok:#93AE72;
+  --sheet-warn:#D8A05C;
+  --sheet-bad:#D9704F;
+  --sheet-bad-ink:#E58D6C;
+
+  --sheet-inset:10px;
+
+  --font-book:"Book","EB Garamond",Georgia,"Times New Roman",serif;
+  --font-ui:"UI","PT Sans",-apple-system,"Segoe UI",Roboto,sans-serif;
+
+  /* шкала, шаг 4 px */
+  --s1:4px; --s2:8px; --s3:12px; --s4:16px; --s5:24px; --s6:32px; --s7:48px; --s8:64px;
+  --measure:660px;
+  --radius:2px;
+
+  /* Словарь оболочки (style.css/themes.css до r223): те же значения, что
+     были в `:root` style.css и `html[data-theme=dark]` themes.css. Имена
+     остались — их читают десятки правил в workspace/cloud/tabletop/… */
+  --bg:#101210;
+  --surface:#181C19;
+  --surface2:#1E2420;
+  --muted:#A3B0A6;
+  --gold:#D1BA82;
+  --gold-dark:#2E3024;
+  --input:#121613;
+  --control-line:#806C4A; /* n18: граница полей и кнопок — 3.13:1 на surface2, 3.73:1 на столе.
+                             `--line` (1.14:1) остаётся для декоративных разделителей: WCAG 1.4.11
+                             требует 3:1 только от границ активных контролов. */
+  --accent:#9BAA88;
+  --on-gold:#232619;      /* чернила на золотой заливке кнопки */
+  --shadow:0 20px 70px #0005;
+  --shadow-soft:0 6px 24px #00000010;
+  --overlay:#171A1EAA;    /* подложка модальных окон */
+}
+
+/* ── Светлая тема ────────────────────────────────────────────────────────── */
+/* Правила слоя (из макета): только переопределение значений, без новых имён;
+   без градиентов, теней и полупрозрачных заливок; геометрия и кегли те же. */
+[data-theme="light"]{
+  color-scheme:light;
+
+  /* стол: тёплая бумага, на ней читается рассказ */
+  --ink-950:#E4D6BE;
+  --ink-900:#F3ECE0;
+  --ink-850:#EFE7D9;
+  --ink-800:#E9DFCE;
+  --ink-750:#E3D6BF;
+  --ink-700:#DACCB2;
+  --ink-600:#8A724E;     /* n18: 3.89:1 на столе — скроллбар и стена на доске */
+  --line:#826B48;        /* n18: 4.31:1 на ink-900, 3.84:1 на ink-800, 3.53:1 на ink-750 —
+                            граница контрола по WCAG 1.4.11 ≥ 3:1 на всех трёх фонах */
+  --line-strong:#63513A; /* n18: 5.75:1 на ink-800 — рамка композера и «строгая» линия */
+
+  --text:#2A231A;        /* 13.21:1 на столе */
+  --text-2:#57483A;      /*  7.47:1 */
+  --text-3:#6A5740;      /*  5.86:1 */
+
+  /* свеча: акцент действия. В светлой теме — густая охра: как краска.
+     Заливки кнопок берут отдельный --candle-fill. */
+  --candle:#8A5714;      /* 5.18:1 — годится и в текст, и в линию */
+  --candle-hi:#C08033;   /* заливка при наведении */
+  --candle-deep:#6E4410;
+  --candle-fill:#B0722A; /* заливка основной кнопки, чернила #191207 — 4.67:1 */
+  --candle-ink:#191207;
+
+  --moss:#476127;        /* успех, «прочитано» — 5.95:1 */
+  --ember:#A33C22;       /* опасность, ошибка — 5.54:1 */
+
+  /* Вердикт броска: та же модель, что в тёмной теме. */
+  --roll-bg:#EAE0CE;
+  --roll-line:#846D4A;   /* n18: 3.76:1 на плашке — было 1.62:1 */
+  --roll-num:#6B5A44;    /* 5.06:1 на плашке */
+  --out-hit:#7E9B56;     --out-hit-ink:#0F1408;
+  --out-miss:#C86A4C;    --out-miss-ink:#1A0C06;
+  --out-crit:#C08A3E;    --out-crit-ink:#1B1207;
+
+  /* Лист — бумага на столе: на 3.04 L* светлее стола, кромка 1 px. */
+  --sheet-bg:#FBF5E8;
+  --sheet-bg-2:#F6EEDF;
+  --sheet-line:#8C7450;      /* n18: 4.09:1 на листе — было 1.47:1 */
+  --sheet-line-soft:#9B835E; /* n18: 3.33:1 на листе — было 1.24:1 */
+  --sheet-ink:#2A231A;   /* 14.28:1 на листе */
+  --sheet-ink-2:#57483A; /*  8.08:1 */
+  --sheet-ink-3:#6A5740; /*  6.34:1 */
+  --sheet-note:#5F4D39;
+  --sheet-meta:#6A5740;
+  --sheet-ok:#476127;
+  --sheet-warn:#8A5714;
+  --sheet-bad:#A33C22;
+  --sheet-bad-ink:#8C2F19;
+
+  /* Словарь оболочки в светлой теме. */
+  --bg:#F3ECE0;
+  --surface:#FBF5E8;
+  --surface2:#F6EEDF;
+  --muted:#6A5740;
+  --gold:#8A5714;
+  --gold-dark:#E3D6BF;
+  --input:#F6EEDF;
+  --control-line:#826B48; /* n18: 4.0:1 на фоне поля — граница контрола по WCAG 1.4.11 */
+  --accent:#476127;
+  --on-gold:#FBF5E8;
+  --shadow:none;
+  --shadow-soft:none;
+  --overlay:#2A231A55;
+}
+
+/* n4: плейсхолдер — часть палитры, а не браузерный серый. Браузерный
+   `#757575` давал 4.00:1 при 16 px (ниже AA 4.5); `--text-3` в светлой теме
+   5.97:1, в тёмной — 6.19:1. `opacity:1` — иначе Firefox гасит подсказку
+   до 0.54 и контраст снова падает. */
+::placeholder{color:var(--text-3);opacity:1}
+
+/* ── Переключатель темы ──────────────────────────────────────────────────── */
+/* Кнопка одна на все экраны. В тёмной теме на ней солнце (действие —
+   «сделать светло»), в светлой — луна. Иконка нарисована маской в цвет
+   текста, как весь остальной набор иконок; отдельных файлов не нужно. */
+.themetoggle{
+  --icon:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23fff' stroke-width='1.7' stroke-linecap='round'%3E%3Ccircle cx='12' cy='12' r='4.1'/%3E%3Cpath d='M12 2.4v2.3M12 19.3v2.3M2.4 12h2.3M19.3 12h2.3M5.2 5.2l1.6 1.6M17.2 17.2l1.6 1.6M18.8 5.2l-1.6 1.6M6.8 17.2l-1.6 1.6'/%3E%3C/svg%3E");
+  display:inline-flex;align-items:center;justify-content:center;
+  width:34px;height:34px;min-height:0;padding:0;flex:none;
+  border:1px solid var(--line);border-radius:6px;
+  background:transparent;color:var(--text);
+}
+.themetoggle:hover{border-color:var(--gold);background:var(--gold-dark)}
+.themetoggle__ic{
+  width:17px;height:17px;background:currentColor;
+  -webkit-mask:var(--icon) center/contain no-repeat;
+  mask:var(--icon) center/contain no-repeat;
+}
+[data-theme="light"] .themetoggle{
+  --icon:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23fff' d='M20.4 14.9A8.6 8.6 0 0 1 9.1 3.6 8.8 8.8 0 1 0 20.4 14.9Z'/%3E%3C/svg%3E");
+}

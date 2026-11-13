@@ -1,0 +1,641 @@
+/* Limited to the existing play screen. Keep the established theme and controls. */
+.nat20-game .developer-only,.nat20-game [data-tabletop-link="world"],.nat20-game [data-tabletop-link="adventure-handouts"]{display:none!important}
+#nat20-create-dialog form{display:grid;gap:12px;max-width:560px}#nat20-create-dialog input{width:100%}
+.nat20-game #character>p.hint,.nat20-game #chat .event-buttons,.nat20-game #scene-hero .button-row{display:none!important}
+.game-movement{font-size:13px;width:100%}.game-movement button{display:block;margin:4px 0}
+.tabletop #play.unified-game .workspace-layout{display:flex;flex-direction:column;gap:0;align-items:stretch;height:calc(100dvh - 120px);min-height:420px}
+/* The game screen is one conversation. The old right-hand rail duplicated the
+   scene and the event log that the transcript already shows, so it is removed
+   rather than merely hidden: nothing renders there any more. */
+.tabletop #play.unified-game .workspace-layout>.scene-rail{display:none}
+#play.unified-game .scene-rail>#scene-presence,#play.unified-game .scene-rail>#scene-session,#play.unified-game .scene-rail>.scene-context{display:none}
+.tabletop.tabletop-scene-open #play.unified-game .scene-rail>#scene-presence,.tabletop.tabletop-scene-open #play.unified-game .scene-rail>#scene-session,.tabletop.tabletop-scene-open #play.unified-game .scene-rail>.scene-context{display:block}
+#play.unified-game .scene-heading{margin-bottom:8px}#play.unified-game .scene-heading h1{font-size:28px!important}#play.unified-game .scene-heading .eyebrow{margin:4px 0}
+.tabletop #play.unified-game .chat{flex:1 1 auto;min-height:220px;max-height:none;overflow-y:auto;padding:14px 18px}
+#play.unified-game .composer{position:sticky;bottom:0;z-index:5;padding:10px 18px;background:var(--surface);border-top:1px solid var(--line)}#play.unified-game .composer textarea{height:58px;min-height:58px}
+#play.unified-game .game-actions{gap:6px;margin:8px 0;padding:0 12px 8px}#play.unified-game .game-actions button{font-size:13px;min-height:36px;padding:6px 9px}
+#play.unified-game #scene-hero h3{margin:4px 0}#play.unified-game .game-hp{font-size:20px;margin:6px 0}#play.unified-game #scene-hero p{margin:5px 0}
+#play.unified-game .game-last-roll{padding:8px 18px;margin:0;border-top:1px solid var(--line);font-size:14px}
+.game-feedback{padding:10px 16px;background:var(--surface2);border-left:3px solid var(--gold);font-size:14px}.game-feedback button{margin:4px 8px}.game-feedback[data-state=conflict],.game-feedback[data-state=error]{border-color:var(--accent)}
+.game-log>div{max-height:180px;overflow:auto}.game-event summary{font-size:13px;white-space:normal;overflow-wrap:anywhere;margin:7px 0}.game-event p{white-space:pre-wrap}
+#play.unified-game #battle-map{height:160px}#play.unified-game .battle-content{gap:5px}#play.unified-game .battle-content>p{font-size:12px}#play.unified-game .battle-content .battle-actors button{font-size:12px}
+#play.unified-game .game-restore select{width:100%;margin:6px 0}
+#play.unified-game .game-save-name{overflow-wrap:anywhere;margin:0 0 8px}
+#play.unified-game .undone-history{border:1px dashed var(--line);padding:8px 10px;margin:10px 0;background:var(--surface2)}
+#play.unified-game .undone-history>summary{position:sticky;top:0;z-index:1;padding:4px 0;background:var(--surface2);font-size:12px;color:var(--muted);cursor:pointer;overflow-wrap:anywhere}
+#play.unified-game .undone-history[open]>summary{margin-bottom:12px}
+#play.unified-game .undone-history .message.undone{opacity:1;color:var(--muted)}
+#play.unified-game .scene-rail .disclosure{padding:10px 14px;margin-bottom:10px}
+#play.unified-game .scene-rail summary,#play.unified-game #battle-panel>summary{font-size:15px;line-height:1.35}
+#play.unified-game #scene-hero h3{font-size:20px}#play.unified-game .battle-actors{gap:3px}
+#play.unified-game .game-log>div{max-height:90px}
+#play.unified-game{padding-top:0}#play.unified-game .scene-heading .eyebrow{display:none}
+#play.unified-game .tabletop-tabs{margin:6px 0}#play.unified-game #scene-description{margin:8px 0}
+#play.unified-game .scene-rail .disclosure[open]>summary{margin-bottom:6px}
+#play.unified-game #scene-hero .disclosure-body{margin-top:4px}
+#play.unified-game #scene-hero p{line-height:1.3;font-size:14px}
+#play.unified-game #scene-hero .game-hp{font-size:22px}
+/* Тесные кнопки карточки места — 26 px. Ссылка «Лист героя» исключена: она
+   тоже `button`, но это единственный путь к листу со стола и на телефоне,
+   поэтому у неё своя норма 44 (#play #scene-hero .sheet-link ниже). Без
+   `:not(...)` это правило выигрывало по специфичности и оставляло зону 82×30. */
+#play.unified-game #scene-hero button:not(.sheet-link){min-height:26px;padding:3px 6px}
+#play.unified-game .battle-content{padding:4px 0;gap:4px}
+#play.unified-game .battle-content>p{margin:4px 0;line-height:1.35}
+#play.unified-game .battle-actors button{padding:4px 6px;min-height:28px;line-height:1.3}
+#play.unified-game .battle-content>.game-actions{padding:0;margin:4px 0}
+@media(max-width:1100px){
+ .tabletop #play.unified-game .workspace-layout{grid-template-columns:minmax(0,1fr) 230px;gap:12px}
+ #play.unified-game .scene-rail .disclosure{padding:8px}
+ body.tabletop:has(#play.unified-game.active) main{padding-left:18px;padding-right:18px}
+ body.tabletop:has(#play.unified-game.active) main>header{height:52px}
+ #play.unified-game .scene-heading h1{font-size:24px!important}
+ #play.unified-game .panel-heading{padding:8px 12px}
+ .tabletop #play.unified-game .chat{padding:10px 12px}
+ #play.unified-game .message{padding-bottom:12px;margin-bottom:12px}
+ #play.unified-game .message .speaker{margin-bottom:6px}
+ #play.unified-game .composer{padding:8px 12px}
+ #play.unified-game .composer textarea{height:58px;min-height:58px;padding:10px}
+ #play.unified-game .composer-footer{margin-top:6px}
+ #play.unified-game .game-actions{gap:4px;margin:4px 0;padding:0 8px 6px}
+ #play.unified-game .game-actions button{font-size:12px;padding:5px 7px}
+ #play.unified-game .game-feedback,#play.unified-game .game-last-roll{padding:6px 12px}
+}
+/* r220: раньше на узком экране лист раскладывался сеткой прямо под лентой.
+   По макету он живёт за кнопкой «Лист» (position:fixed в @media max-width:1279),
+   поэтому display:grid отсюда убран, иначе он снова виден всегда. */
+@media(max-width:850px){.tabletop #play.unified-game .workspace-layout{grid-template-columns:1fr}}
+
+/* ── Блок B: игра — это разговор ─────────────────────────────────────────────
+   The owner asked for one transcript plus an input. Everything that restated
+   the scene above the transcript, listed engine events, or offered buttons for
+   checks and rests is gone: those actions are typed in the input instead. */
+#play.unified-game .scene-heading{display:none}
+#play.unified-game .game-actions,#play.unified-game #battle-panel,
+#play.unified-game .game-last-roll,#play.unified-game #chat .game-event{display:none!important}
+#play.unified-game #chat{display:flex;flex-direction:column;gap:10px}
+/* n17 ставил `margin-top:auto` на псевдо-первый элемент и прижимал короткую
+   ленту к низу. Замер n16: текст начинался с y=251, под шапкой оставалось
+   439 px пустоты — 54 % кадра на 375×812. Макет `design/mobile/shots/game-375`
+   держит текст от шапки, свободное место остаётся ПОД последним сообщением.
+   Правило отменено целиком: `content:none` убирает и сам псевдоэлемент. */
+#play #chat::before{content:none;display:none}
+#play.unified-game .chat article.message{max-width:min(72ch,100%)}
+
+/* Tidy the remaining stragglers so the transcript plus input fit one screen. */
+#play.unified-game .story-card{display:flex;flex-direction:column;height:100%}
+#play.unified-game .literary-column{height:100%;min-height:0}
+#play.unified-game .panel-heading{display:none}
+#play.unified-game .chat{padding-top:8px}
+#play.unified-game .workspace-layout{height:calc(100dvh - 96px)}
+
+/* The note under the game and the footer repeated instructions the chat now
+   carries; they cost the transcript 46 px of height. */
+#play.unified-game ~ p.hint,.view#play ~ p.hint,body > footer{display:none}
+#play.unified-game{height:calc(100dvh - 110px);min-height:380px}
+/* Narrow windows and browser zoom (125–200%) pushed the composer past the
+   viewport: #chat kept a fixed 220–300 px height inside a fixed 100dvh column, so
+   the input ended up below the fold. Keep the transcript in a bounded, flowing
+   box instead of a fixed one, and let the composer sit after it, so the input and
+   the send button stay on screen at any window size. */
+@media(max-width:900px),(max-height:700px){
+ .tabletop #play.unified-game .workspace-layout,#play.unified-game .workspace-layout{display:flex;flex-direction:column;height:auto;min-height:0}
+ .tabletop #play.unified-game{height:auto;min-height:0}
+ #play.unified-game{height:auto;min-height:0}
+ #play.unified-game .story-card{height:auto;min-height:0;flex:0 0 auto}
+ #play.unified-game .literary-column{height:auto;min-height:0;display:flex;flex-direction:column}
+ #play.unified-game .composer{position:static;flex:0 0 auto}
+ /* n17: лента занимает ВЕСЬ остаток экрана. Фиксированные 420 px оставляли
+    между последним сообщением и полем 420 px пустоты на 375 (норма макета —
+    67): короткая история читалась как пустой экран. Композер стоит после
+    ленты и прижат к низу, потому что лента тянется, а не обрезается. */
+ #play.unified-game #chat{min-height:0;height:auto;max-height:none;flex:1 1 auto;overflow-y:auto}
+}
+
+
+/* ── r220: «Стол и лист» ────────────────────────────────────────────────────
+   Игровой экран переведён на утверждённый макет `design/screens/03-play`:
+   тёмный стол, лента 660 px, кегль 20/32, поле ввода с кнопкой «Сказать»,
+   шапка со статами, правая колонка с листом от 1280 px, лист по кнопке на
+   телефоне. Правила висят на `#play`: остальные экраны приложения живут на
+   своих токенах (style.css, themes.css) и вид не меняют.
+   Ссылка на этот файл стоит ПОСЛЕ themes.css: там !important-правила для
+   телефона, и при обратном порядке лента оставалась 40dvh вместо экрана. */
+
+#play{
+  flex-direction:column;min-height:0;height:calc(100dvh - 64px);
+  max-width:none;margin:0;padding:0;
+  background:var(--ink-900);color:var(--text);
+  font-family:var(--font-book);font-size:20px;line-height:1.6;
+  overflow:hidden;
+}
+#play.active{display:flex}
+html[data-ui="chat"] #play{height:100dvh}
+#play .workspace-layout{
+  display:grid;grid-template-columns:minmax(0,1fr);gap:0;
+  height:100%;min-height:0;align-items:stretch;
+}
+#play .literary-column{display:flex;flex-direction:column;min-width:0;min-height:0;height:100%}
+#play .story-card{
+  display:flex;flex-direction:column;flex:1 1 auto;min-height:0;height:auto;
+  max-width:none;margin:0;
+  background:none;border:0;border-radius:0;box-shadow:none;overflow:visible;
+}
+#play .panel-heading,#play .bottom-note{display:none}
+
+/* ── Лента: одна колонка 660 px, блоки разделены волосяной линией ────────── */
+/* n17: низ ленты — воздух между последней репликой и рамкой поля. В макете
+   `game` этот зазор 67 px: текст не касается рамки, и палец не бьёт по краю
+   ввода, когда лента прокручена до конца. 32 px на столе — та же роль при
+   строке 20/32. */
+#play #chat{
+  flex:1 1 auto;min-height:0;height:auto;max-height:none;
+  display:block;overflow-y:auto;
+  padding:clamp(18px,4vh,52px) 16px 32px;
+  scrollbar-width:thin;scrollbar-color:var(--ink-600) transparent;
+}
+#play #chat::-webkit-scrollbar{width:10px}
+#play #chat::-webkit-scrollbar-thumb{background:var(--ink-700);border:3px solid var(--ink-900);border-radius:6px}
+#play #chat .message{
+  position:relative;max-width:var(--measure);margin:0 auto;padding:22px 0;
+  border:0;border-radius:0;background:none;box-shadow:none;
+}
+#play #chat .message:last-child{padding-bottom:14px}
+#play #chat .message+.message,
+#play #chat .message+.proposal{border-top:1px solid var(--line)}
+#play #chat .message .speaker{
+  display:flex;align-items:center;gap:8px;margin:0 0 9px;
+  font-family:var(--font-ui);font-size:14px;font-weight:400;letter-spacing:.09em;
+  text-transform:uppercase;color:var(--text-3);
+}
+#play #chat .message.player .speaker{color:var(--candle-deep)}
+#play #chat .message .prose{
+  font-family:var(--font-book);font-size:22px;line-height:1.6;color:var(--text);
+  white-space:pre-wrap;overflow-wrap:anywhere;
+}
+#play #chat .message.master .prose{font-size:22px}
+#play #chat .message.player .prose{font-family:var(--font-book);font-style:italic;font-size:22px;color:var(--sheet-ink)}
+#play #chat .message.gm .prose{font-family:var(--font-ui);font-size:14px;line-height:1.6;color:var(--text-2)}
+#play #chat .message.undone{opacity:.45}
+#play #chat .proposal{
+  max-width:var(--measure);margin:0 auto;padding:14px 16px;
+  border:1px dashed var(--line-strong);border-radius:0;background:var(--ink-800);
+  font-family:var(--font-ui);font-size:14px;color:var(--text-2);
+}
+#play #chat .proposal button{
+  margin:10px 8px 0 0;min-height:36px;padding:0 12px;border-radius:var(--radius);
+  border:1px solid var(--line-strong);background:none;color:var(--text);
+  font-family:var(--font-ui);font-size:14px;
+}
+#play #chat .proposal button:hover{background:var(--ink-750);border-color:var(--line-strong)}
+#play #chat #load-older{
+  display:block;margin:0 auto 16px;padding:0 12px;min-height:36px;
+  border:1px solid var(--line);border-radius:var(--radius);background:none;
+  color:var(--text-3);font-family:var(--font-ui);font-size:14px;letter-spacing:.04em;
+}
+#play #chat #load-older:hover{border-color:var(--line-strong);color:var(--text)}
+/* Пустая сцена до первого хода */
+#play #chat .welcome{max-width:var(--measure);margin:0 auto;text-align:left;padding:0}
+#play #chat .welcome .compass{font-size:64px;height:auto;color:var(--candle);opacity:.8;line-height:1}
+#play #chat .welcome h2{font-family:var(--font-book);font-size:30px;font-weight:400;color:var(--text);margin:8px 0}
+#play #chat .welcome p{color:var(--text-2);font-size:16px;max-width:none;margin:0 0 18px}
+#play .primary{
+  display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:0 20px;
+  border:1px solid transparent;border-radius:var(--radius);
+  background:var(--candle-fill);color:var(--candle-ink);font-family:var(--font-ui);font-size:16px;font-weight:700;
+}
+#play .primary:hover{background:var(--candle-hi);border-color:var(--candle-hi)}
+#play .hint,#play #entry-readiness{font-family:var(--font-ui);font-size:14px;line-height:1.55;color:var(--text-3)}
+#play #scene-risk{
+  max-width:var(--measure);margin:0 auto;padding:10px 14px;
+  font-family:var(--font-ui);font-size:14px;color:var(--text-2);
+  background:var(--ink-800);border-left:2px solid var(--ember);
+}
+#play #game-feedback{
+  max-width:var(--measure);margin:0 auto;padding:10px 14px;
+  font-family:var(--font-ui);font-size:14px;color:var(--text-2);
+  background:var(--ink-800);border-left:2px solid var(--candle);
+}
+#play #game-feedback[data-state="error"],#play #game-feedback[data-state="conflict"]{border-left-color:var(--ember)}
+#play #game-feedback button{
+  margin-left:10px;min-height:32px;padding:0 10px;border-radius:var(--radius);
+  border:1px solid var(--line-strong);background:none;color:var(--text);font-size:14px;
+}
+/* L02: сверка уровня героя с книгой — ход Мастера текстом до первого броска.
+   Стоит на месте строки состояния: тот же ритм, но это слова Мастера, а не
+   служебная ошибка, поэтому подпись «МАСТЕР» и обычный цвет текста. */
+#play #game-gate{
+  max-width:var(--measure);margin:0 auto;padding:10px 14px;box-sizing:border-box;
+  font-family:var(--font-ui);font-size:14px;color:var(--text-2);
+  background:var(--ink-800);border-left:2px solid var(--candle);
+}
+#play #game-gate .game-gate__text{margin:6px 0 0;font-size:15px;color:var(--text)}
+#play #game-gate .speaker{
+  margin:0;font-family:var(--font-ui);font-size:12px;line-height:1.4;
+  letter-spacing:.08em;text-transform:uppercase;color:var(--candle-deep);
+}
+#play #game-gate .hint{margin:6px 0 0}
+/* A02: совместимость старой записи. Строка Мастера — когда кампанию уже можно
+   играть, а события прежнего обработчика помечены историческими. Блок выбора —
+   когда запись не открывается: причина, что не сошлось и три пути. Ввод в этом
+   случае заперт сервером (terminal), а не спрятанным CSS. */
+#play #game-compat{
+  max-width:var(--measure);margin:0 auto;padding:10px 14px;
+  font-family:var(--font-ui);font-size:14px;color:var(--text-2);
+  background:var(--ink-800);border-left:2px solid var(--candle);
+}
+#play #game-compat[data-state="needs-choice"]{border-left-color:var(--ember)}
+#play #game-compat .speaker{
+  margin:0;font-family:var(--font-ui);font-size:12px;line-height:1.4;
+  letter-spacing:.08em;text-transform:uppercase;color:var(--candle-deep);
+}
+#play #game-compat .game-compat__text{margin:6px 0 0;font-size:15px;color:var(--text)}
+#play #game-compat .game-compat__check{margin:6px 0 0}
+#play #game-compat .game-compat__actions{margin:10px 0 0}
+#play #game-compat .game-compat__actions button{
+  min-height:32px;padding:0 12px;border-radius:var(--radius);
+  border:1px solid var(--line-strong);background:none;color:var(--text);font-size:14px;
+}
+#play #game-compat .game-compat__actions button:disabled{opacity:.5;cursor:not-allowed}
+
+/* ── Пометка броска: полоса в ленте, три жёсткие колонки ─────────────────── */
+/* Кубик · название · числа · вердикт. Название — единственная тянущаяся
+   колонка: переносится и ограничено двумя строками. Числа и вердикт стоят
+   в своих колонках и не съезжают, строка чисел не переносится. */
+#play .roll{
+  --roll-dur:620ms;
+  display:grid;grid-template-columns:44px minmax(0,1fr) auto auto;
+  grid-template-areas:"die name nums verdict";align-items:center;column-gap:14px;
+  margin:14px 0 2px;padding:12px 14px;border-radius:0;
+  border-top:1px solid var(--roll-line);border-bottom:1px solid var(--roll-line);
+  background:var(--roll-bg);font-family:var(--font-ui);
+}
+#play .roll__die{grid-area:die;display:grid;place-items:center;align-self:center;
+  width:44px;height:44px;padding:0;border:0;background:none;color:inherit;cursor:zoom-in}
+#play .roll__die:focus-visible{outline:2px solid var(--candle);outline-offset:2px}
+#play .roll__name{grid-area:name;min-width:0}
+#play .roll__kicker{
+  display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;
+  margin:0;font-size:14px;line-height:1.35;color:var(--roll-num);
+  overflow-wrap:anywhere;hyphens:auto;
+}
+/* r226: знак кубика из design/dice — чип 24/36 в ленте, гранёный d20 64/120
+   на экране броска. Штрих и посадка числа — из dice/sign.css дизайнера
+   (число по чернилам, а не по em-квадрату). Цвет исхода — токены темы:
+   --moss/--ember/--candle в тёмной и светлой дают замеренные дизайнером
+   7.28:1 и 5.95:1 к плашке, новых цветов здесь нет. */
+.die{display:block;flex:none;overflow:visible;color:var(--roll-num)}
+.die--36{width:36px;height:36px}
+.die--120{width:120px;height:120px}
+.die__num{fill:currentColor;font-family:var(--font-book);font-weight:600;
+  text-anchor:middle;font-variant-numeric:tabular-nums}
+.die--36 .die__num{font-size:22px;transform:translate(17.77px,24.89px)}
+.die--120 .die__num{font-size:30px;transform:translate(59.97px,68.73px)}
+.o-hit{color:var(--moss)}
+.o-miss{color:var(--ember)}
+.o-crit{color:var(--candle)}
+#play .roll__nums{grid-area:nums;display:grid;gap:2px;justify-items:start;min-width:0;font-variant-numeric:tabular-nums}
+#play .roll__need{font-size:14px;line-height:1.3;color:var(--roll-num);white-space:nowrap;margin:0}
+#play .roll__need b{color:var(--text);font-weight:700}
+#play .roll__sum{display:flex;align-items:baseline;gap:6px;line-height:1;margin:0}
+#play .roll__sum span{font-size:15px;line-height:1;color:var(--text-3);text-transform:none}
+#play .roll__sum b{
+  font-family:var(--font-book);font-size:30px;line-height:.92;font-weight:500;
+  color:var(--text);font-variant-numeric:tabular-nums;
+}
+#play .roll__tag{
+  grid-area:verdict;position:relative;align-self:center;justify-self:end;
+  display:flex;align-items:center;justify-content:flex-end;line-height:0;
+}
+#play .roll__verdict{
+  display:inline-block;padding:5px 9px 4px;border-radius:2px;
+  font-size:14px;font-weight:700;line-height:1;letter-spacing:.06em;text-transform:uppercase;
+  background:var(--out-miss);color:var(--out-miss-ink);
+}
+#play .roll__verdict[data-out="hit"]{background:var(--out-hit);color:var(--out-hit-ink)}
+#play .roll__verdict[data-out="crit"]{background:var(--out-crit);color:var(--out-crit-ink)}
+
+/* Бросок: подброс по дуге, три оборота и посадка. Пока кубик в воздухе,
+   числа и вердикт скрыты — результат появляется после посадки. Телефон —
+   два оборота за 420 мс. Движение выключено — сразу результат. */
+#play .roll.is-rolling .roll__die{animation:r220-die-toss var(--roll-dur) linear both}
+#play .roll.is-rolling .roll__nums{animation:r220-roll-show 130ms ease-out calc(var(--roll-dur) - 40ms) both}
+#play .roll.is-rolling .roll__tag{animation:r220-roll-show 130ms ease-out calc(var(--roll-dur) + 30ms) both}
+@keyframes r220-die-toss{
+  0%  {transform:translateY(0) rotate(0deg) scale(1)}
+  12% {transform:translateY(-9px) rotate(130deg) scale(.93)}
+  46% {transform:translateY(-13px) rotate(500deg) scale(.88)}
+  80% {transform:translateY(-5px) rotate(930deg) scale(.96)}
+  93% {transform:translateY(0) rotate(1060deg) scale(1.04,.94)}
+  100%{transform:translateY(0) rotate(1080deg) scale(1)}
+}
+@keyframes r220-roll-show{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}
+@media(max-width:600px){
+  #play .roll{--roll-dur:420ms}
+  #play .roll.is-rolling .roll__die{animation-name:r220-die-toss-sm}
+}
+@keyframes r220-die-toss-sm{
+  0%  {transform:translateY(0) rotate(0deg) scale(1)}
+  12% {transform:translateY(-7px) rotate(90deg) scale(.93)}
+  46% {transform:translateY(-10px) rotate(340deg) scale(.89)}
+  80% {transform:translateY(-4px) rotate(620deg) scale(.96)}
+  93% {transform:translateY(0) rotate(706deg) scale(1.04,.94)}
+  100%{transform:translateY(0) rotate(720deg) scale(1)}
+}
+@media(prefers-reduced-motion:reduce){
+  #play .roll{--roll-dur:0ms}
+  #play .roll.is-rolling .roll__die,
+  #play .roll.is-rolling .roll__nums,
+  #play .roll.is-rolling .roll__tag{animation:none}
+}
+
+/* ── Поле ввода: рамка вокруг пары «поле + кнопка», кнопка «Сказать» ─────── */
+#play .composer{
+  position:sticky;bottom:0;z-index:5;flex:none;
+  padding:10px 16px max(14px,env(safe-area-inset-bottom));
+  border-top:1px solid var(--line);background:var(--ink-900);
+  box-shadow:none;
+}
+#play #action-form{
+  width:100%;max-width:var(--measure);margin:0 auto;
+  padding:10px 10px 10px 16px;background:var(--ink-850);
+  border:1px solid var(--line-strong);border-radius:var(--radius);
+  transition:border-color .16s;
+}
+#play #action-form:focus-within{border-color:var(--line-strong);outline:2px solid var(--accent);outline-offset:2px}
+#play #action-form textarea{
+  display:block;width:100%;height:52px;min-height:52px;max-height:170px;
+  margin:0;padding:2px 0;border:0;border-radius:0;background:none;box-shadow:none;
+  color:var(--text);font-family:var(--font-book);font-size:19px;line-height:1.45;
+  resize:none;outline:none;
+}
+#play #action-form textarea::placeholder{color:var(--text-3);font-style:italic}
+#play .composer-footer{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:8px}
+#play .composer-footer>span{
+  order:1;font-family:var(--font-ui);font-size:14px;color:var(--text-3);
+}
+#play .composer-footer>div{order:2;display:flex;gap:8px;flex:none}
+#play #action-form button{
+  min-height:44px;padding:0 20px;border:1px solid transparent;border-radius:var(--radius);
+  font-family:var(--font-ui);font-size:16px;font-weight:700;line-height:1;letter-spacing:.02em;
+  background:var(--candle-fill);color:var(--candle-ink);
+}
+#play #action-form button:hover{background:var(--candle-hi);border-color:var(--candle-hi)}
+#play #action-form #stop{background:none;border-color:var(--line-strong);color:var(--text);font-weight:400}
+#play #action-form #stop:hover{background:var(--ink-750);border-color:var(--line-strong)}
+#play #action-form button:disabled{opacity:.38;cursor:not-allowed}
+/* Спрайт силуэтов кубика (DICE_SYMBOLS) вставляется в конец body. Пустой
+   инлайновый svg даёт строку 21 px и лишнюю прокрутку страницы — на 1440
+   появлялся второй скролл: колесо двигало страницу, а не ленту. Разметку
+   спрайта не трогаем: тест test_dice_sign сверяет её с файлом дизайнера,
+   поэтому это единственный svg верхнего уровня с focusable="false". */
+body > svg[focusable="false"]{position:absolute;width:0;height:0;overflow:hidden}
+
+/* ── n03: шапка игрового экрана — одно действие и статы ────────────────────
+   Крошки «ОДИНОЧНОЕ ПРИКЛЮЧЕНИЕ / …» дублируют название кампании, которое уже
+   стоит в полосе меню, а «Тестовые данные · mock» — статус модели: его место в
+   «Расходах API» (design/mobile/SPEC.md §10). Оба — служебные строки над
+   лентой, поэтому на игровом экране их нет. Правила висят на `:has(#play.active)`:
+   остальные экраны сохраняют свою шапку. */
+body.tabletop:has(#play.active)>main>header .runtime{display:none}
+/* Подвал «SOLO REALMS AI · сборка …» под игрой даёт 69 px и вторую прокрутку
+   страницы: колесо двигает всё, а не ленту. По макету `game` подвала нет. */
+body.tabletop:has(#play.active)>main>footer{display:none}
+
+/* ── Шапка со статами (только полный интерфейс: в режиме чата её нет) ────── */
+body.tabletop:has(#play.active)>main>header{
+  position:sticky;top:0;z-index:30;
+  height:64px;min-height:64px;padding:0 clamp(12px,2.4vw,32px);
+  display:flex;align-items:center;gap:14px;
+  background:var(--ink-900);border-bottom:1px solid var(--line);
+  font-family:var(--font-ui);font-size:14px;letter-spacing:.02em;color:var(--text-3);
+  backdrop-filter:saturate(110%) blur(10px);
+}
+body.tabletop:has(#play.active)>main>header .breadcrumb{
+  flex:1 1 auto;min-width:0;display:flex;align-items:center;gap:8px;
+  font-size:14px;letter-spacing:.09em;text-transform:uppercase;color:var(--text-3);
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+}
+body.tabletop:has(#play.active)>main>header .breadcrumb span{flex:none}
+body.tabletop:has(#play.active)>main>header #campaign-label{
+  min-width:0;overflow:hidden;text-overflow:ellipsis;
+  font-size:17px;font-weight:700;letter-spacing:.005em;text-transform:none;color:var(--text);
+}
+body.tabletop:has(#play.active)>main>header .vitals{
+  display:flex;align-items:center;gap:14px;flex:none;
+  font-size:16px;color:var(--text-2);white-space:nowrap;
+}
+body.tabletop:has(#play.active)>main>header .vitals b{
+  color:var(--text);font-weight:700;font-variant-numeric:tabular-nums;
+}
+body.tabletop:has(#play.active)>main>header .runtime{flex:none;font-size:14px;color:var(--text-3);white-space:nowrap}
+body.tabletop:has(#play.active)>main>header .iconbtn{
+  display:inline-flex;align-items:center;justify-content:center;gap:8px;
+  min-width:40px;height:40px;padding:0 10px;border:0;border-radius:var(--radius);
+  background:none;color:var(--text-2);font-family:var(--font-ui);font-size:14px;
+}
+body.tabletop:has(#play.active)>main>header .iconbtn:hover{background:var(--ink-800);color:var(--text)}
+/* n03: 56, а не 64 — как шапка макета `game`. Ставится после основного блока
+   намеренно: тот же селектор, побеждает порядок. */
+body.tabletop:has(#play.active)>main>header{height:56px;min-height:56px}
+/* Крошки прячутся здесь, а не в блоке выше: в блоке ниже (основной вид шапки)
+   тот же селектор задаёт им display:flex, и при равной специфичности побеждает
+   порядок. */
+body.tabletop:has(#play.active)>main>header .breadcrumb{display:none}
+/* Шапка стала 56, поэтому экран игры занимает остаток: полоса меню 56 +
+   шапка 56. Иначе #play сохранял прежние 100dvh-64 и страница прокручивалась
+   второй раз — колесом двигалось всё, а не лента. Только стол: на телефоне
+   высоту считает mobile.css по visualViewport. */
+@media(min-width:901px){
+  body.tabletop:has(#play.active) #play{height:calc(100dvh - 112px)}
+}
+
+/* ── Лист героя: колонка справа от 1280 px, по кнопке — уже ──────────────── */
+#play #scene-hero{
+  padding:18px 16px 20px;border-radius:0;
+  background:var(--sheet-bg);border:1px solid var(--sheet-line);color:var(--sheet-ink);
+}
+#play #scene-hero>summary{
+  /* n17: строка-переключатель листа — тоже зона нажатия 44 (было 19). */
+  display:flex;align-items:center;min-height:44px;
+  list-style:none;margin:0 0 6px;cursor:pointer;
+  font-family:var(--font-ui);font-size:14px;letter-spacing:.09em;text-transform:uppercase;
+  color:var(--sheet-ink-3);
+}
+#play #scene-hero>summary::-webkit-details-marker{display:none}
+#play #scene-hero .disclosure-body>h3{
+  margin:0 0 4px;font-family:var(--font-book);font-size:30px;font-weight:400;
+  line-height:1.1;color:var(--sheet-ink);
+}
+#play #scene-hero .game-hp{
+  margin:8px 0;font-family:var(--font-book);font-size:22px;font-weight:500;
+  color:var(--sheet-ink);font-variant-numeric:tabular-nums;
+}
+#play #scene-hero .hint{
+  margin:0;padding:6px 0;border-top:1px solid var(--sheet-line-soft);
+  font-family:var(--font-ui);font-size:14px;line-height:1.5;color:var(--sheet-meta);
+  white-space:normal;overflow:visible;text-overflow:clip;
+}
+#play #scene-hero .sheet-link{
+  margin-top:14px;min-height:44px;padding:0 12px;
+  border:1px solid var(--sheet-line);border-radius:var(--radius);background:none;
+  color:var(--sheet-ink-2);font-family:var(--font-ui);font-size:14px;
+}
+/* n4: в светлой теме --sheet-line (декоративная кромка листа) даёт 1.47:1 —
+   для рамки контрола мало. Меняем только светлую тему: в тёмной границу
+   держит заливка, и токен трогать нельзя. */
+[data-theme="light"] #play #scene-hero .sheet-link{border-color:var(--line)}
+#play #scene-hero .sheet-link:hover{background:var(--sheet-bg-2);color:var(--sheet-ink)}
+#play .sheet-close{
+  display:none;width:100%;margin:0 0 12px;min-height:40px;padding:0 12px;
+  border:1px solid var(--line-strong);border-radius:var(--radius);background:none;
+  color:var(--text-2);font-family:var(--font-ui);font-size:14px;
+}
+
+@media(min-width:1280px){
+  /* r220: колонка листа появляется только здесь. Без display:grid правило
+     grid-template-columns молча игнорировалось: контейнер оставался flex-column,
+     и лист вставал под лентой вместо правой колонки (замер 1440: rail y=636). */
+  body.tabletop #play.unified-game .workspace-layout{display:grid;grid-template-columns:minmax(0,1fr) 288px;height:100%}
+  body.tabletop #play.unified-game .workspace-layout>.scene-rail{
+    display:flex!important;flex-direction:column;min-height:0;
+    background:var(--ink-900);border-left:1px solid var(--line);
+    padding:14px 14px 22px;overflow-y:auto;
+    scrollbar-width:thin;scrollbar-color:var(--ink-600) transparent;
+  }
+  body.tabletop #play.unified-game .scene-rail>#scene-hero{display:block!important;max-height:none;overflow:visible}
+  #play #scene-hero .sheet-link{display:inline-flex!important}
+  body.tabletop:has(#play.active)>main>header .sheet-toggle{display:none}
+}
+
+@media(max-width:1279px){
+  #play .workspace-layout>.scene-rail{display:none}
+  body.sheet-open #play .workspace-layout>.scene-rail{
+    display:block!important;position:fixed;inset:0;z-index:70;
+    background:var(--ink-900);padding:16px;overflow-y:auto;
+  }
+  body.sheet-open #play .scene-rail>#scene-hero{display:block!important;max-height:none;overflow:visible}
+  body.sheet-open #play .sheet-close{display:block}
+  body.sheet-open{overflow:hidden}
+}
+
+/* ── Телефон и узкое окно: страница не должна скроллиться вбок ──────────── */
+@media(max-width:900px){
+  body.tabletop #play.unified-game{height:calc(100dvh - 52px - 190px)!important;min-height:320px!important}
+  body.tabletop #play.unified-game .story-card{height:auto!important;min-height:0!important;overflow:visible!important}
+  #play #chat{height:auto!important;max-height:none!important;min-height:0!important}
+  #play .composer{position:static}
+  #play #action-form textarea{height:46px;min-height:46px;font-size:17px}
+  #play #action-form button{min-height:40px;padding:0 14px;font-size:13px}
+  #play #chat .message{padding:16px 0}
+  #play #chat .message .prose,#play #chat .message.master .prose{font-size:18px;line-height:1.62}
+  #play .roll{grid-template-columns:44px minmax(0,1fr) auto;grid-template-areas:"die name verdict" "nums nums nums";row-gap:8px;margin-top:12px}
+  #play .roll__nums{grid-area:nums;display:flex;align-items:baseline;gap:10px}
+  #play .roll__sum b{font-size:27px}
+  body.tabletop:has(#play.active)>main>header{height:56px;min-height:56px;gap:8px}
+  body.tabletop:has(#play.active)>main>header .breadcrumb{font-size:0;letter-spacing:0}
+  body.tabletop:has(#play.active)>main>header #campaign-label{font-size:17px;font-weight:700}
+  body.tabletop:has(#play.active)>main>header .runtime{display:none}
+  body.tabletop:has(#play.active)>main>header .vitals{font-size:16px;gap:10px;flex:none;order:3}
+  /* n08: порядок шапки телефона — бургер, название, числа, «Лист»;
+     без order статы вставали первыми и выталкивали «Лист» за край. */
+  body.tabletop:has(#play.active)>main>header #sheet-toggle{order:4}
+  body>main>header .vitals__sep{color:var(--text-3)}
+  /* n13: подписи статов на телефоне — короткое слово ПОСЛЕ числа
+     («12/12 хиты · 18 защита»). Числа остаются 16/700, слово — служебное 14:
+     строка целиком влезает в шапку 375, название кампании обрезается
+     многоточием. Без подписи игрок в бою не отличал 12/12 от 18
+     (замечание №2 критика). */
+  body.tabletop:has(#play.active)>main>header .vitals__label{display:inline;font-size:14px}
+  /* Клавиатура: ряд d20 на телефоне скрыт (SPEC §8) — поле остаётся одно. */
+  body.kb-open #play .dice-row{display:none}
+}
+
+/* ── r226: экран броска — крупный d20 120 px, те же числа, что в ленте ────── */
+dialog.roll-view{
+  width:min(420px,calc(100vw - 32px));padding:22px 22px 18px;border:1px solid var(--line-strong);
+  border-radius:var(--radius);background:var(--ink-900);color:var(--text);font-family:var(--font-ui);
+  box-shadow:0 18px 60px rgb(0 0 0 / .45);
+}
+dialog.roll-view::backdrop{background:rgb(8 6 4 / .62)}
+dialog.roll-view h2{
+  margin:0 0 10px;font-family:var(--font-book);font-size:20px;font-weight:500;line-height:1.2;
+}
+.roll-view__die{display:grid;place-items:center;padding:6px 0 12px}
+.roll-view__figures{margin:0;font-size:13.5px;line-height:1.4;color:var(--roll-num);
+  font-variant-numeric:tabular-nums}
+.roll-view__figures b{color:var(--text);font-weight:700}
+.roll-view__sum{display:flex;align-items:baseline;gap:8px;margin:6px 0 0;line-height:1}
+.roll-view__sum span{font-size:16px;line-height:1;color:var(--text-3)}
+.roll-view__sum b{
+  font-family:var(--font-book);font-size:44px;line-height:.95;font-weight:500;
+  color:var(--text);font-variant-numeric:tabular-nums;
+}
+.roll-view__verdict{margin:12px 0 0;line-height:1}
+dialog.roll-view button{margin-top:16px}
+
+/* ── n08: статы героя только на игровом экране ─────────────────────────────
+   Строка «Хиты / 12» стояла в шапке каждого экрана и на создании приключения
+   читалась как технический шум 10 px (замер №4). Там, где игры нет, её нет;
+   вход в лист — кнопка «Лист» игрового экрана, на остальных она лишняя. */
+body>main>header .vitals{display:none}
+body>main>header .sheet-toggle{display:none!important}
+body.tabletop:has(#play.active)>main>header .vitals{display:flex}
+/* «Лист» — кнопка игрового экрана; от 1280 px лист стоит колонкой справа,
+   и кнопка там скрыта правилом выше по файлу (оно остаётся в силе). */
+@media(max-width:1279px){
+  body.tabletop:has(#play.active)>main>header .sheet-toggle{display:inline-flex!important}
+}
+
+/* ── n17: зоны нажатия стола — 44 px ───────────────────────────────────────
+   На 1440 из 11 интерактивных девять были ниже 44: пункты полосы меню 68×38
+   (`themes.css` держит там 24–28 px ради тесноты), «Ещё» 59×36, переключатель
+   темы 34×34. Норма «44 на всё, что нажимают» одна на обе ширины; тесные
+   режимы (зум 200 %, окно ниже 700 px) остаются как были — они про нехватку
+   места, а не про размер пальца. */
+@media(min-width:901px) and (min-height:701px){
+  body.tabletop aside.sidebar :is(button.nav,a.nav,summary){min-height:44px!important}
+  body.tabletop aside.sidebar #nav-more{min-height:44px!important}
+  /* Переключатель темы — не `body.tabletop`: в состоянии с открытой
+     клавиатурой класс `.tabletop` на body не стоит, и кнопка оставалась
+     34×34. Условие «на экране игра» точнее и не задевает остальные экраны. */
+  body:has(#play.active)>main>header .themetoggle{width:44px;height:44px;min-width:44px;min-height:44px}
+}
+
+/* ── n08: ряд дока — ручной d20 и подпись «ход N · сохранено» (SPEC §7) ────
+   Кубик 44×44, подпись 14. Бросок считает сервер (`/campaigns/{id}/dice`,
+   тот же путь, что у «Кубиков» в блокноте): браузер показывает число в уже
+   существующем экране броска и ничего не прибавляет. */
+#play .dice-row{
+  display:flex;align-items:center;gap:12px;
+  width:100%;max-width:var(--measure);margin:6px auto 0;min-height:44px;
+}
+#play .dice-row__note{font-family:var(--font-ui);font-size:14px;line-height:1.35;color:var(--text-3)}
+/* Подсказку «Enter — отправить» на телефоне заменяет ряд d20 (SPEC §7). */
+@media(max-width:900px){
+  #play .composer-footer>span{display:none}
+}
+
+/* ── n17: виталы телефона — двумя строками у правого края шапки ───────────
+   В одну строку «12/12 хиты · 18 защита» занимали 174 px из 375, и названию
+   кампании оставалось 49 px при нужных 107 («Тайна…» вместо «Тайна трёх
+   сосен»). Столбиком те же числа занимают ~85 px; название получает ~145 и
+   влезает целиком. Подписи «хиты»/«защита» остаются: без них в бою не
+   отличить одно число от другого (n13, замечание №2 критика).
+   Правило стоит ЗДЕСЬ, в конце файла: выше `body.tabletop:has(#play.active)
+   >main>header .vitals{display:flex}` возвращает флекс, и при равной
+   специфичности побеждает порядок. */
+@media(max-width:900px){
+  body.tabletop:has(#play.active)>main>header .vitals{
+    display:grid;grid-template-columns:auto;justify-items:end;
+    align-content:center;gap:1px;font-size:16px;line-height:1.25;
+  }
+  /* `:not(.vitals__sep)` обязателен: без него это правило перебивает
+     `display:none` у разделителя (у обоих специфичность выше и та же), и
+     «·» встаёт третьей строкой — шапка 56 не держит 63 px. */
+  body.tabletop:has(#play.active)>main>header .vitals>span:not(.vitals__sep){
+    display:flex;justify-content:flex-end;align-items:baseline;gap:5px;
+    line-height:1.25;
+  }
+  body.tabletop:has(#play.active)>main>header .vitals>.vitals__sep{display:none}
+}

@@ -1,0 +1,80 @@
+{
+  "lore": {
+    "campaign": "ed826f3b-cfc0-44ff-9bd8-e0bfc6927bea",
+    "level": 3,
+    "class_name": "bard",
+    "features": [
+      "bonus-proficiencies",
+      "cutting-words"
+    ],
+    "player_sees": [
+      {
+        "id": "bonus-proficiencies",
+        "name": "Bonus Proficiencies",
+        "source": null
+      },
+      {
+        "id": "cutting-words",
+        "name": "Cutting Words",
+        "source": null
+      }
+    ]
+  },
+  "phb2024.bard.valor": {
+    "campaign": "12261976-80ab-4077-9a44-1418dcab1e76",
+    "level": 3,
+    "class_name": "bard",
+    "features": [
+      "phb2024.bard.valor.combat-inspiration",
+      "phb2024.bard.valor.martial-training"
+    ],
+    "player_sees": [
+      {
+        "id": "phb2024.bard.valor.combat-inspiration",
+        "name": "Боевое вдохновение",
+        "source": "PHB 2024, стр. 56"
+      },
+      {
+        "id": "phb2024.bard.valor.martial-training",
+        "name": "Боевая подготовка",
+        "source": "PHB 2024, стр. 56"
+      }
+    ]
+  },
+  "phb2024.bard.glamour": {
+    "campaign": "c48ec63d-c1b4-4216-8344-e570015b40d6",
+    "level": 3,
+    "class_name": "bard",
+    "features": [
+      "phb2024.bard.glamour.beguiling-magic",
+      "phb2024.bard.glamour.mantle-of-inspiration"
+    ],
+    "player_sees": [
+      {
+        "id": "phb2024.bard.glamour.beguiling-magic",
+        "name": "Чарующая магия",
+        "source": "PHB 2024, стр. 58"
+      },
+      {
+        "id": "phb2024.bard.glamour.mantle-of-inspiration",
+        "name": "Мантия вдохновения",
+        "source": "PHB 2024, стр. 58"
+      }
+    ]
+  },
+  "phb2024.bard.dance": {
+    "campaign": "10807195-ec5d-414a-aa36-051cdd6e1411",
+    "level": 3,
+    "class_name": "bard",
+    "features": [
+      "phb2024.bard.dance.dazzling-footwork"
+    ],
+    "player_sees": [
+      {
+        "id": "phb2024.bard.dance.dazzling-footwork",
+        "name": "Ослепительные фуэте",
+        "source": "PHB 2024, стр. 59"
+      }
+    ]
+  }
+}

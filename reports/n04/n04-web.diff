@@ -1,0 +1,383 @@
+diff --git a/web/design-table.css b/web/design-table.css
+index b71a5683..0ac53919 100644
+--- a/web/design-table.css
++++ b/web/design-table.css
+@@ -13,38 +13,44 @@
+ #welcome{
+   background:var(--ink-900);color:var(--text);
+   font-family:var(--font-book);
+-  padding:clamp(24px,5vh,64px) clamp(18px,4vw,64px) clamp(20px,4vh,40px);
++  padding:clamp(20px,3.4vh,40px) clamp(18px,4vw,64px) clamp(16px,3vh,32px);
+   min-height:calc(100dvh - 64px);
+ }
+-#welcome.active{display:flex;flex-direction:column;justify-content:space-between;gap:clamp(28px,7vh,64px)}
++#welcome.active{display:flex;flex-direction:column;justify-content:space-between;gap:clamp(20px,4vh,40px)}
+ /* Шапка приложения (крошки, «Тестовые данные», кнопка «Лист») принадлежит
+    игровому экрану: на входе её нет — у макета свой верх. */
+ body:has(#welcome.active)>main>header{display:none}
+-body:has(#welcome.active) #welcome{min-height:100dvh}
++/* На столе сверху sticky-полоса 56 px (chrome.css). 100dvh считал её
++   лишними 56 px и добавлял странице прокрутку. Подвал приложения на первом
++   экране не нужен: это техническая строка, а не часть макета. */
++body:has(#welcome.active) #welcome{min-height:calc(100dvh - 56px)}
++body:has(#welcome.active)>main>footer{display:none}
+ #welcome .start__main{
+-  display:grid;grid-template-columns:minmax(0,1fr) minmax(0,min(40vw,420px));
++  display:grid;grid-template-columns:minmax(0,1fr) minmax(0,min(34vw,360px));
+   align-items:center;gap:clamp(24px,4vw,56px);
+-  max-width:1180px;margin:0 auto;width:100%;
++  max-width:960px;margin:0 auto;width:100%;
+ }
+-#welcome .start__copy{min-width:0;max-width:36ch}
++#welcome .start__copy{min-width:0;max-width:50ch}
+ #welcome .eyebrow{
+-  margin:0;font-family:var(--font-ui);font-size:10px;letter-spacing:.2em;
++  margin:0;font-family:var(--font-ui);font-size:14px;letter-spacing:.14em;
+   text-transform:uppercase;color:var(--text-3);
+ }
++/* n04: три кегля на весь экран — 34 (заголовок), 16 (подзаголовок и названия
++   историй), 14 (подписи). Больше нет. */
+ #welcome .start__title{
+   margin:14px 0 0;font-family:var(--font-book);font-weight:400;
+-  font-size:clamp(30px,4.2vw,52px);line-height:1.04;letter-spacing:-.004em;
++  font-size:clamp(28px,3vw,34px);line-height:1.08;letter-spacing:-.004em;
+   color:var(--text);
+ }
+ #welcome .start__lead{
+   margin:18px 0 0;max-width:34ch;font-family:var(--font-book);font-style:italic;
+-  font-size:clamp(16px,1.4vw,19px);line-height:1.55;color:var(--text-2);
++  font-size:16px;line-height:1.55;color:var(--text-2);
+ }
+ #welcome .start__actions{display:flex;flex-wrap:wrap;align-items:center;gap:10px 12px;margin-top:clamp(20px,3vh,30px)}
+ #welcome .start__btn{
+   display:inline-flex;align-items:center;justify-content:center;gap:8px;
+   min-height:46px;padding:0 20px;border-radius:var(--radius);
+-  font-family:var(--font-ui);font-size:14px;font-weight:700;letter-spacing:.01em;
++  font-family:var(--font-ui);font-size:16px;font-weight:700;letter-spacing:.01em;
+   border:1px solid transparent;cursor:pointer;
+ }
+ #welcome .start__btn--primary{background:var(--candle);border-color:var(--candle);color:var(--candle-ink)}
+@@ -54,21 +60,56 @@ body:has(#welcome.active) #welcome{min-height:100dvh}
+ #welcome .start__btn .solo-icon{width:16px;height:16px;opacity:.8}
+ 
+ /* «Продолжить»: одна строка с названием и датой, без карточки-плитки. */
++#welcome .start__feed{width:100%;max-width:960px;margin:0 auto;min-width:0}
++/* minmax(0,1fr): колонка не растягивается под max-content строки с датой,
++   иначе мета вылезала за кнопку на 28 px. */
+ #welcome .start__continue{
+-  display:grid;gap:3px;width:100%;max-width:34ch;margin-top:clamp(18px,3vh,26px);
++  display:grid;grid-template-columns:minmax(0,1fr);gap:3px;width:100%;max-width:44ch;margin-top:clamp(14px,2.4vh,22px);
+   padding:12px 0 0;border:0;border-top:1px solid var(--line);border-radius:0;
+   background:none;color:var(--text);text-align:left;cursor:pointer;
+ }
+ #welcome .start__continue:hover .start__continue-title{color:var(--candle-hi)}
+ #welcome .start__continue-kicker{
+-  font-family:var(--font-ui);font-size:10px;letter-spacing:.18em;
++  font-family:var(--font-ui);font-size:14px;letter-spacing:.14em;
+   text-transform:uppercase;color:var(--text-3);
+ }
+ #welcome .start__continue-title{
+-  font-family:var(--font-book);font-size:19px;line-height:1.25;color:var(--text);
++  font-family:var(--font-book);font-size:16px;line-height:1.25;color:var(--text);
+ }
+-#welcome .start__continue-meta{
+-  font-family:var(--font-ui);font-size:11.5px;line-height:1.45;color:var(--text-3);
++/* Место остановки сжимается, дата — нет: строка остаётся одной. */
++#welcome .start__continue-meta,
++#welcome .story-meta{
++  display:flex;min-width:0;gap:10px;align-items:baseline;justify-content:space-between;
++  font-family:var(--font-ui);font-size:14px;line-height:1.45;color:var(--text-3);
++}
++#welcome .story-where{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
++#welcome .story-when{flex:none;white-space:nowrap}
++
++/* n04: прошлые истории — строки в один столбец на телефоне и сеткой не больше
++   трёх в ряд на столе. Дата и место остановки — одной строкой 14 px. */
++#welcome .start__stories{width:100%;margin-top:clamp(14px,2.4vh,20px);border-top:1px solid var(--line)}
++#welcome .start__stories-kicker{
++  margin:12px 0 0;font-family:var(--font-ui);font-size:14px;
++  letter-spacing:.14em;text-transform:uppercase;color:var(--text-3);
++}
++/* Два ряда — шесть историй в кадре; остальные прокручиваются внутри списка,
++   иначе первый экран растёт вместе с архивом. */
++#welcome .start__list{
++  display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0 24px;
++  max-height:132px;overflow-y:auto;overscroll-behavior:contain;
++}
++#welcome .story{
++  display:flex;flex-direction:column;gap:3px;width:100%;min-height:64px;padding:10px 0;
++  border:0;border-bottom:1px solid var(--line);border-radius:0;background:none;
++  color:var(--text);text-align:left;cursor:pointer;
++}
++#welcome .story:hover .story-title{color:var(--candle-hi)}
++#welcome .story-title{font-family:var(--font-book);font-size:16px;line-height:1.25}
++
++#welcome .start__empty{
++  margin:clamp(18px,3vh,26px) 0 0;padding-top:12px;max-width:34ch;
++  border-top:1px solid var(--line);font-family:var(--font-book);
++  font-size:16px;line-height:1.55;color:var(--text-2);
+ }
+ 
+ #welcome .start__art{display:grid;place-items:center;min-width:0}
+@@ -79,27 +120,22 @@ body:has(#welcome.active) #welcome{min-height:100dvh}
+ 
+ #welcome .start__foot{
+   display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;
+-  gap:8px 20px;max-width:1180px;margin:0 auto;width:100%;
++  gap:8px 20px;max-width:960px;margin:0 auto;width:100%;
+   padding-top:12px;border-top:1px solid var(--line);
+-  font-family:var(--font-ui);font-size:11.5px;color:var(--text-3);
++  font-family:var(--font-ui);font-size:14px;color:var(--text-3);
+ }
+ #welcome .start__local{display:inline-flex;align-items:center;gap:8px;margin:0}
+ #welcome .start__local .solo-icon{width:14px;height:14px;opacity:.7}
+-#welcome .start__about{
+-  margin:0;padding:0;border:0;background:none;cursor:pointer;
+-  font-family:var(--font-ui);font-size:11.5px;color:var(--text-2);
+-  border-bottom:1px solid var(--line);
+-}
+-#welcome .start__about:hover{color:var(--text);border-color:var(--line-strong)}
+ 
+ @media(max-width:900px){
+   #welcome{min-height:calc(100dvh - 52px);padding:22px 18px 18px}
+   #welcome .start__main{grid-template-columns:minmax(0,1fr);gap:18px}
+   #welcome .start__art{display:none}
+   #welcome .start__copy{max-width:none}
+-  #welcome .start__title{font-size:clamp(28px,8vw,36px)}
+-  #welcome .start__lead{font-size:16.5px}
++  #welcome .start__title{font-size:clamp(28px,8vw,34px)}
++  #welcome .start__lead{font-size:16px}
+   #welcome .start__btn{min-height:48px}
++  #welcome .start__list{grid-template-columns:minmax(0,1fr);gap:0}
+   #welcome .start__foot{flex-direction:column;align-items:flex-start;gap:6px}
+ }
+ 
+diff --git a/web/index.html b/web/index.html
+index 4fe18f5c..70880dda 100644
+--- a/web/index.html
++++ b/web/index.html
+@@ -1,5 +1,5 @@
+ ﻿<!doctype html>
+-<html lang="ru" data-theme="dark"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Solo Realms AI</title><link rel="stylesheet" href="/static/style.css?v=r223"><link rel="stylesheet" href="/static/workspace.css?v=r223"><link rel="stylesheet" href="/static/combat.css?v=2.1.4-preview.6"><link rel="stylesheet" href="/static/inventory.css?v=2.1.4-preview.6"><script src="/static/play.js?v=n03" defer></script><script src="/static/campaign-settings.js?v=r217" defer></script><script src="/static/cloud.js?v=cost-1" defer></script><script src="/static/workspace.js?v=n02" defer></script><script src="/static/rulesets.js?v=nat20-screen-2" defer></script><script src="/static/combat.js?v=2.1.4-preview.6" defer></script><script src="/static/inventory.js?v=2.1.4-preview.6" defer></script><link rel="stylesheet" href="/static/world.css?v=2.1.4-preview.6"><script src="/static/world.js?v=2.1.4-preview.6" defer></script><script src="/static/desktop.js?v=2.1.4-preview.6" defer></script><script src="/static/obsidian.js?v=n03" defer></script><link rel="icon" type="image/svg+xml" href="/static/visual/icons/compass.svg"><link rel="stylesheet" href="/static/mobile.css?v=n03"><script src="/static/mobile.js?v=n03" defer></script></head>
++<html lang="ru" data-theme="dark"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Solo Realms AI</title><link rel="stylesheet" href="/static/style.css?v=r223"><link rel="stylesheet" href="/static/workspace.css?v=r223"><link rel="stylesheet" href="/static/combat.css?v=2.1.4-preview.6"><link rel="stylesheet" href="/static/inventory.css?v=2.1.4-preview.6"><script src="/static/play.js?v=n04" defer></script><script src="/static/campaign-settings.js?v=r217" defer></script><script src="/static/cloud.js?v=cost-1" defer></script><script src="/static/workspace.js?v=n02" defer></script><script src="/static/rulesets.js?v=nat20-screen-2" defer></script><script src="/static/combat.js?v=2.1.4-preview.6" defer></script><script src="/static/inventory.js?v=2.1.4-preview.6" defer></script><link rel="stylesheet" href="/static/world.css?v=2.1.4-preview.6"><script src="/static/world.js?v=2.1.4-preview.6" defer></script><script src="/static/desktop.js?v=2.1.4-preview.6" defer></script><script src="/static/obsidian.js?v=n04" defer></script><link rel="icon" type="image/svg+xml" href="/static/visual/icons/compass.svg"><link rel="stylesheet" href="/static/mobile.css?v=n04"><script src="/static/mobile.js?v=n04" defer></script></head>
+ <body>
+ <!-- chat-only:cut --><aside class="sidebar"><a class="brand" href="/" aria-label="Solo Realms AI"><span class="sigil">✧</span><span>SOLO REALMS<small>ОБЛАЧНЫЙ МАСТЕР · ВАШ МИР</small></span></a>
+ <p class="nav-label">ВАШЕ ПРИКЛЮЧЕНИЕ</p><nav>
+@@ -119,7 +119,7 @@
+      выигрывают каскад и лента остаётся 40dvh вместо экрана. -->
+ <link rel="stylesheet" href="/static/design-tokens.css?v=r223"><link rel="stylesheet" href="/static/game-screen.css?v=n03">
+ <!-- r221: разбор книги и колофон «О проекте» — тот же язык «Стол и лист». -->
+-<link rel="stylesheet" href="/static/design-screens.css?v=screens-1"><link rel="stylesheet" href="/static/design-table.css?v=r223"><script src="/static/board.js?v=board-1" defer></script>
++<link rel="stylesheet" href="/static/design-screens.css?v=screens-1"><link rel="stylesheet" href="/static/design-table.css?v=n04"><script src="/static/board.js?v=board-1" defer></script>
+ <!-- r242: «Мои миры» — библиотека готовых миров. Стили и скрипт идут последними,
+      чтобы кнопка меню встала после того, как оформление навигации собрано. -->
+ <link rel="stylesheet" href="/static/worlds.css?v=r242"><script src="/static/worlds-panel.js?v=r242" defer></script>
+diff --git a/web/mobile.css b/web/mobile.css
+index 9f8525bc..f1d9f3ba 100644
+--- a/web/mobile.css
++++ b/web/mobile.css
+@@ -48,6 +48,10 @@
+      Переключатель темы — служебный: он есть в шторке («Оформление»), а над
+      лентой занимал 44 px рядом с пальцем. */
+   body:has(#play.active) > main > header > .themetoggle { display: none !important; }
++  /* n04: на главной в шапке только меню и имя приложения. «Лист» принадлежит
++     игровому экрану, тема живёт в шторке — на первом экране им места нет. */
++  body:has(#welcome.active) > main > header > .themetoggle,
++  body:not(:has(#play.active)) > main > header > #sheet-toggle { display: none !important; }
+ 
+   /* Заголовок шапки — имя открытого экрана, одна строка с многоточием. */
+   .m-title {
+@@ -60,6 +64,9 @@
+      истории, единственная строка, по которой видно, где вы. Остальные экраны
+      r251 оставил без дублирующего заголовка, и здесь он не появляется. */
+   body:has(#play.active) > main > header > .m-title { display: block !important; }
++  /* n04: на главной подпись — имя приложения, кегль 16 (тот же, что у текста
++     экрана), иначе на первом экране появлялся четвёртый размер шрифта. */
++  body:has(#welcome.active) > main > header > .m-title { display: block !important; font-size: 16px; }
+   .m-burger {
+     order: 1; flex: none; width: var(--mtap); height: var(--mtap); min-height: var(--mtap);
+     padding: 0; display: inline-flex; flex-direction: column; align-items: center;
+@@ -310,28 +317,46 @@
+   body.kb-open .prototype-action-panel { display: none !important; }
+   body.kb-open > main > .view#play .composer { padding-bottom: 8px; }
+ 
+-  /* ── 7. Главная: главное действие в нижней трети ────────────────────────── */
+-  body > main > .view#welcome.active { display: flex; flex-direction: column; overflow-y: auto; }
++  /* ── 7. Главная: один призыв, одна строка состояния, список историй ──────── */
++  /* min-height:100dvh с шапкой 56 даёт 868 px и уводит подвал за кадр:
++     у главной высота — остаток под шапкой, а не весь экран. */
++  body > main > .view#welcome.active { display: flex; flex-direction: column; justify-content: flex-start; gap: 0; overflow-y: auto; min-height: 0 !important; }
+   body #welcome .start__main {
+-    flex: 1 1 auto; min-height: 0; display: flex; flex-direction: column;
++    flex: none; min-height: 0; display: flex; flex-direction: column;
+     grid-template-columns: minmax(0, 1fr) !important; gap: 0;
+     padding: 0 0 calc(16px + env(safe-area-inset-bottom));
+   }
+-  body #welcome .start__copy { display: flex; flex-direction: column; flex: 1 1 auto; min-height: 0; padding: 24px 0 0; }
++  body #welcome .start__copy { display: flex; flex-direction: column; flex: none; min-height: 0; padding: 24px 0 0; max-width: none; }
++  body #welcome .start__feed { flex: none; }
++  body #welcome .eyebrow { font-size: 14px !important; }
+   body #welcome .start__title { font-size: 30px !important; margin: 8px 0 12px; }
+   body #welcome .start__lead { margin: 0 0 16px; font-size: 16px !important; }
++  /* На телефоне текст занимает всю ширину экрана: 34ch оставляли справа
++     пустую полосу, а вводная шла в три строки вместо двух. */
++  body #welcome :is(.start__lead, .start__continue, .start__empty) { max-width: none; }
+   body #welcome .start__actions {
+-    order: 2; margin-top: auto; display: flex; flex-direction: column; align-items: stretch; gap: 8px;
++    display: flex; flex-direction: column; align-items: stretch; gap: 8px;
++    margin-top: 8px;
+   }
+-  /* «Продолжить» стоит ПОСЛЕ главной кнопки в разметке, из-за чего кнопка
+-     остаётся на 52 % экрана. Порядком меняем местами: строка продолжения
+-     выше, главное действие — у нижней кромки (68 %). */
+-  body #welcome .start__continue { order: 1; }
+   body #welcome .start__btn { min-height: 52px !important; width: 100%; justify-content: center; font-size: 16px !important; }
+-  body #welcome .start__continue { width: 100%; min-height: 52px; text-align: left; }
+-  body #welcome .start__continue-title { font-size: 19px !important; }
++  body #welcome .start__continue { width: 100%; min-height: 44px; text-align: left; margin-top: 20px; }
++  body #welcome .start__continue-title { font-size: 16px !important; }
++  /* Подписи — один кегль на весь экран, 14: кикеры, мета, подвал. */
++  body #welcome :is(.start__continue-kicker, .start__continue-meta, .start__stories-kicker,
++                    .story-meta, .start__foot, .start__foot *) { font-size: 14px !important; }
++  body #welcome .story-title { font-size: 16px !important; }
++  body #welcome .story { width: 100%; min-height: 64px !important; text-align: left; }
++  /* Прошлые истории прокручиваются внутри себя: первый экран не растёт вместе
++     с числом кампаний и не уводит главную кнопку за кадр. */
++  body #welcome .start__stories { margin-top: 20px; }
++  body #welcome .start__list {
++    grid-template-columns: minmax(0, 1fr) !important; gap: 0;
++    max-height: 64px; overflow-y: auto;
++  }
++  body #welcome .start__empty { font-size: 16px !important; }
+   body #welcome .start__art { display: none; }
+-  body #welcome .start__foot { font-size: 14px !important; margin: 16px 0 0; }
++  /* Строка состояния прижата к низу экрана, но остаётся в кадре. */
++  body #welcome .start__foot { margin: auto 0 0; padding-top: 12px; }
+ 
+   /* ── 8. Кубик: число читается с вытянутой руки ──────────────────────────── */
+   /* Форма кубика в прежнем листе — сетка 1fr 1fr: на 375 поле и кнопка по 115 px. */
+diff --git a/web/mobile.js b/web/mobile.js
+index bb73442b..8e6f6795 100644
+--- a/web/mobile.js
++++ b/web/mobile.js
+@@ -134,7 +134,10 @@
+     // n03: на игровом экране подпись — название истории, а не слово «Игра»:
+     // по макету `game` шапка называет приключение, в котором вы находитесь.
+     const story = name === 'play' ? (document.querySelector('#campaign-label')?.textContent || '') : '';
+-    title.textContent = (story || (named ? named.innerText : heading ? heading.innerText : name)).trim();
++    // n04: на главной шапка называет приложение (макет `home`), а не повторяет
++    // заголовок «Тихая история на целый вечер» второй раз.
++    const home = name === 'welcome' ? 'Solo Realms AI' : '';
++    title.textContent = (story || home || (named ? named.innerText : heading ? heading.innerText : name)).trim();
+   }
+ 
+   /* ---------- 3. Лента игры: к последнему сообщению ---------- */
+diff --git a/web/obsidian.js b/web/obsidian.js
+index 99d4ed84..2f3c467f 100644
+--- a/web/obsidian.js
++++ b/web/obsidian.js
+@@ -25,7 +25,7 @@
+  eyebrow.textContent='одиночное приключение';
+  heading.className='start__title';
+  heading.append(document.createTextNode('Тихая история'),el('br'),document.createTextNode('на целый вечер'));
+- const startLead=el('p','Мастер помнит, что было вчера. Правила считает движок, слова — рассказчик. Ты играешь один, но не в одиночестве.','start__lead');
++ const startLead=el('p','Мастер помнит, что было вчера. Правила считает движок, слова — рассказчик.','start__lead');
+  const startActions=el('div',undefined,'start__actions');
+  const beginStory=el('button','Начать историю','start__btn start__btn--primary'),loadBook=el('button',undefined,'start__btn start__btn--ghost');
+  beginStory.type=loadBook.type='button';
+@@ -34,26 +34,79 @@
+  loadBook.onclick=()=>view('adventure-library');
+  startActions.append(beginStory,loadBook);
+  const resume=el('button',undefined,'start__continue');resume.type='button';resume.hidden=true;
+- const startFoot=el('div',undefined,'start__foot'),localNote=el('p',undefined,'start__local'),aboutLink=el('button','О проекте','start__about');
++ // n04: прошлые истории — строки, а не карточки-плитки: на телефоне один столбец,
++ // на столе не больше трёх в ряд (design-table.css). Список ограничен по высоте,
++ // поэтому первый экран не растёт вместе с числом кампаний.
++ const stories=el('div',undefined,'start__stories'),storyList=el('div',undefined,'start__list');
++ stories.hidden=true;
++ const empty=el('p','У вас пока нет историй. Начните с книги или загрузите свою','start__empty');empty.hidden=true;
++ const startFoot=el('div',undefined,'start__foot'),localNote=el('p',undefined,'start__local');
+  localNote.append(icon('save'),document.createTextNode('Сохранения и книги остаются на этом компьютере'));
+- aboutLink.type='button';aboutLink.onclick=()=>view('about');
+- startFoot.append(localNote,aboutLink);
+- startCopy.append(eyebrow,heading,startLead,startActions,resume);
++ startFoot.append(localNote);
++ // n04: истории живут НЕ в колонке текста. Внутри неё на столе оставалось 350 px,
++ // и три истории сжимались до 101 px; теперь у блока своя ширина — 960.
++ const feed=el('div',undefined,'start__feed');
++ feed.append(resume,stories,empty);
++ startCopy.append(eyebrow,heading,startLead,startActions);
+  startMain.append(startCopy,startArt);
+- start.append(startMain,startFoot);
+- // «Продолжить»: строка о последней кампании. Нет кампаний — строки нет.
+- async function loadResume(){
+-  let rows=[];
+-  try{rows=await api('/campaigns');}catch(error){return;}
+-  const supported=(rows||[]).filter(row=>row.backend==='nat20');
+-  const recent=supported.find(row=>row.id===localStorage.getItem('solo-campaign'))||supported[0];
+-  if(!recent){resume.hidden=true;return;}
+-  const when=recent.created?new Date(recent.created*1000).toLocaleDateString('ru-RU'):'';
+-  resume.replaceChildren(el('span','продолжить','start__continue-kicker'),el('span',recent.name,'start__continue-title'),el('span','вернуться в сохранённую историю'+(when?' · '+when:''),'start__continue-meta'));
++ start.append(startMain,feed,startFoot);
++ // «Продолжить» и прошлые истории. Данные — /api/chronicles: там уже есть имя
++ // героя, уровень и место остановки, и это лёгкая проекция без ленты ходов.
++ // В строке — место остановки и герой; уровень в неё не влезает вместе с датой
++ // (замер 375: 343 px на 14 px — это ~45 знаков), а нужен он на экране игры.
++ const placeOf=row=>[row.scene||'',row.hero||''].filter(Boolean).join(' · ');
++ // «вчера, 22:14» читается быстрее, чем дата; дальше — обычная дата.
++ function whenText(ts){
++  if(!ts)return '';
++  const date=new Date(ts*1000),now=new Date(),pad=n=>String(n).padStart(2,'0');
++  const same=(a,b)=>a.getFullYear()===b.getFullYear()&&a.getMonth()===b.getMonth()&&a.getDate()===b.getDate();
++  const yesterday=new Date(now.getFullYear(),now.getMonth(),now.getDate()-1);
++  if(same(date,now))return 'сегодня, '+pad(date.getHours())+':'+pad(date.getMinutes());
++  if(same(date,yesterday))return 'вчера, '+pad(date.getHours())+':'+pad(date.getMinutes());
++  return date.toLocaleDateString('ru-RU');
++ }
++ // Дата и «где остановились» — одна строка 14 px, но так, чтобы дата не
++ // обрезалась: место остановки сжимается многоточием, дата остаётся целиком.
++ function metaNode(row,cls){
++  const line=el('span',undefined,cls);
++  line.append(el('span',placeOf(row),'story-where'),el('span',whenText(row.updated||row.created),'story-when'));
++  return line;
++ }
++ function openStory(row){
++  return protect(async()=>{if(busy)throw new Error('Дождитесь завершения текущего ответа.');campaignId=row.id;localStorage.setItem('solo-campaign',row.id);await refresh();view('play');});
++ }
++ function storyRow(row){
++  const button=el('button',undefined,'story');
++  button.type='button';
++  button.append(el('span',row.name,'story-title'),metaNode(row,'story-meta'));
++  button.onclick=openStory(row);
++  return button;
++ }
++ // Старый список кампаний остаётся запасным путём: без него отказ /chronicles
++ // оставил бы главную без единой истории.
++ async function readStories(){
++  try{const data=await api('/chronicles');if(data&&Array.isArray(data.campaigns))return data.campaigns;}catch(error){}
++  try{const list=await api('/campaigns');return (list||[]).map(row=>({...row,updated:row.created}));}catch(error){return [];}
++ }
++ async function loadStories(){
++  const rows=(await readStories()).filter(row=>row.backend==='nat20');
++  resume.hidden=true;stories.hidden=true;empty.hidden=true;
++  resume.replaceChildren();stories.replaceChildren();storyList.replaceChildren();
++  if(!rows.length){empty.hidden=false;return;}
++  const recent=rows.find(row=>row.id===localStorage.getItem('solo-campaign'))||rows[0];
++  resume.replaceChildren(el('span','Продолжить','start__continue-kicker'),
++   el('span',recent.name,'start__continue-title'),metaNode(recent,'start__continue-meta'));
++  resume.onclick=openStory(recent);
+   resume.hidden=false;
+-  resume.onclick=protect(async()=>{if(busy)throw new Error('Дождитесь завершения текущего ответа.');campaignId=recent.id;localStorage.setItem('solo-campaign',recent.id);await refresh();view('play');});
++  const past=rows.filter(row=>row.id!==recent.id);
++  if(!past.length)return;
++  // Подпись стоит ВНЕ прокручиваемого списка: внутри она занимала кадр
++  // скролла, и первая история показывалась без строки «где остановились».
++  storyList.append(...past.map(storyRow));
++  stories.append(el('p','Прошлые истории','start__stories-kicker'),storyList);
++  stories.hidden=false;
+  }
+- loadResume();
++ loadStories().catch(()=>{});
+  const settings=section('settings','Настройки приложения'),tabs=el('div',undefined,'settings-tabs'),contents=el('div');settings.append(tabs,contents);const panes={};
+  function settingsPane(id,title){const b=el('button',title),p=el('div',undefined,'settings-page');b.setAttribute('role','tab');b.setAttribute('aria-selected','false');b.onclick=()=>{for(const[key,value]of Object.entries(panes)){value.panel.hidden=key!==id;value.button.setAttribute('aria-selected',String(key===id));}};p.dataset.settingsPane=id;p.hidden=true;tabs.append(b);contents.append(p);panes[id]={panel:p,button:b};return p;}
+  const general=settingsPane('general','Общие'),appearance=settingsPane('appearance','Внешний вид'),windowPane=settingsPane('window','Окно и экран'),controls=settingsPane('controls','Управление'),data=settingsPane('data','Данные и копии'),about=settingsPane('about','О программе');panes.general.button.click();

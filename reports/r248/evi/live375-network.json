@@ -1,0 +1,590 @@
+[
+ {
+  "at": 1793950168469,
+  "kind": "request",
+  "method": "GET",
+  "url": "/api/campaigns",
+  "body": ""
+ },
+ {
+  "at": 1793950171346,
+  "kind": "request",
+  "method": "GET",
+  "url": "/api/prototype/status",
+  "body": ""
+ },
+ {
+  "at": 1793950176841,
+  "kind": "response",
+  "status": 200,
+  "url": "/api/campaigns",
+  "body": "[{\"id\":\"0e30f28f-b22b-4466-853c-0895c2c93497\",\"name\":\"Ирма Пеплосвет\",\"version\":0,\"created\":1793949039.459684,\"backend\":\"nat20\"},{\"id\":\"c3ea9c0c-2ca8-427e-9a04-722ec06ef225\",\"name\":\"Алрик Тихий\",\"version\":1,\"created\":1793948543.6978593,\"backend\":\"nat20\"},{\"id\":\"af6f339a-7b17-4525-80af-e0db17cc1a18\",\"name\":\"Р239 Проверка\",\"version\":2,\"created\":1793941320.3770728,\"backend\":\"nat20\"},{\"id\":\"b753145c-50e7-4cce-bbbc-e9ab5748f534\",\"name\":\"Проверка стенда r192\",\"version\":2,\"created\":1793658496.5796828,\"backend\":\"nat20\"}]"
+ },
+ {
+  "at": 1793950177646,
+  "kind": "response",
+  "status": 200,
+  "url": "/api/prototype/status",
+  "body": "{\"experimental\":true,\"offline_mock\":false,\"components\":{\"register_prototype_ui_api\":\"registered\",\"register_prototype_gm_api\":\"registered\"},\"preserved_data_incident\":\"open\",\"live_ai_tested\":false}"
+ },
+ {
+  "at": 1793950185810,
+  "kind": "request",
+  "method": "POST",
+  "url": "/api/prototype/wizard/contract",
+  "body": "{\"draft\":{\"species_slug\":null,\"species_base\":null,\"class_slug\":null,\"subclass_slug\":null,\"background_slug\":null,\"level\":1,\"ability_score_method\":null,\"ability_scores\":{},\"selected_choices\":[],\"equipment_kits\":{},\"kit_picks\":{},\"prepared_spells\":[],\"name\":\"\",\"backstory\":\"\",\"choices\":{}},\"answers\":{}}"
+ },
+ {
+  "at": 1793950189378,
+  "kind": "response",
+  "status": 200,
+  "url": "/api/prototype/wizard/contract",
+  "body": "{\"version\":1,\"release\":\"95ccb98deeca8009aa02ef77069d3d9aa112e4e813954e98be888e7f583640aa\",\"draft\":{\"species_slug\":null,\"species_base\":null,\"class_slug\":null,\"subclass_slug\":null,\"background_slug\":null,\"level\":1,\"ability_score_method\":null,\"ability_scores\":{},\"selected_choices\":[],\"choices\":{},\"equipment_kits\":{},\"kit_picks\":{},\"prepared_spells\":[],\"equipment\":[],\"advancement\":false,\"name\":\"\",\"backstory\":\"\"},\"build\":null,\"ready\":false,\"confirm_ready\":false,\"confirm_issues\":[\"Впишите имя героя: без него герой не создаётся.\"],\"steps\":[{\"id\":\"species\",\"title\":\"Вид\",\"status\":\"empty\",\"required\":true,\"count\":1,\"missing\":1,\"chosen\":[],\"options\":[{\"id\":\"Dragonborn\",\"name\":\"Dragonborn\",\"disabled_reason\":null,\"detail\":\"Dragonborn\",\"lineage_required\":false,\"variants\":[{\"slug\":\"dragonborn\",\"name\":\"Dragonborn\"}]},{\"id\":\"Dwarf\",\"name\":\"Dwarf\",\"disabled_reason\":null,\"detail\":\"Dwarf\",\"lineage_required\":f…"
+ },
+ {
+  "at": 1793950193778,
+  "kind": "request",
+  "method": "POST",
+  "url": "/api/prototype/wizard/contract",
+  "body": "{\"draft\":{\"species_slug\":\"human\",\"species_base\":\"Human\",\"class_slug\":null,\"subclass_slug\":null,\"background_slug\":null,\"level\":1,\"ability_score_method\":null,\"ability_scores\":{},\"selected_choices\":[],\"equipment_kits\":{},\"kit_picks\":{},\"prepared_spells\":[],\"name\":\"\",\"backstory\":\"\",\"choices\":{}},\"answers\":{}}"
+ },
+ {
+  "at": 1793950196812,
+  "kind": "response",
+  "status": 200,
+  "url": "/api/prototype/wizard/contract",
+  "body": "{\"version\":1,\"release\":\"95ccb98deeca8009aa02ef77069d3d9aa112e4e813954e98be888e7f583640aa\",\"draft\":{\"species_slug\":\"human\",\"species_base\":\"Human\",\"class_slug\":null,\"subclass_slug\":null,\"background_slug\":null,\"level\":1,\"ability_score_method\":null,\"ability_scores\":{},\"selected_choices\":[],\"choices\":{},\"equipment_kits\":{},\"kit_picks\":{},\"prepared_spells\":[],\"equipment\":[],\"advancement\":false,\"name\":\"\",\"backstory\":\"\"},\"build\":null,\"ready\":false,\"confirm_ready\":false,\"confirm_issues\":[\"Впишите имя героя: без него герой не создаётся.\"],\"steps\":[{\"id\":\"species\",\"title\":\"Вид\",\"status\":\"complete\",\"required\":true,\"count\":1,\"missing\":0,\"chosen\":[\"Human\"],\"options\":[{\"id\":\"Dragonborn\",\"name\":\"Dragonborn\",\"disabled_reason\":null,\"detail\":\"Dragonborn\",\"lineage_required\":false,\"variants\":[{\"slug\":\"dragonborn\",\"name\":\"Dragonborn\"}]},{\"id\":\"Dwarf\",\"name\":\"Dwarf\",\"disabled_reason\":null,\"detail\":\"Dwarf\",\"lin…"
+ },
+ {
+  "at": 1793950201985,
+  "kind": "request",
+  "method": "POST",
+  "url": "/api/prototype/wizard/contract",
+  "body": "{\"draft\":{\"species_slug\":\"human\",\"species_base\":\"Human\",\"class_slug\":\"wizard\",\"subclass_slug\":null,\"background_slug\":null,\"level\":1,\"ability_score_method\":null,\"ability_scores\":{},\"selected_choices\":[],\"equipment_kits\":{},\"kit_picks\":{},\"prepared_spells\":[],\"name\":\"\",\"backstory\":\"\",\"choices\":{}},\"answers\":{}}"
+ },
+ {
+  "at": 1793950205670,
+  "kind": "request",
+  "method": "POST",
+  "url": "/api/prototype/wizard/contract",
+  "body": "{\"draft\":{\"species_slug\":\"human\",\"species_base\":\"Human\",\"class_slug\":\"wizard\",\"subclass_slug\":null,\"background_slug\":null,\"level\":1,\"ability_score_method\":null,\"ability_scores\":{},\"selected_choices\":[],\"equipment_kits\":{\"class:wizard\":\"A\"},\"kit_picks\":{},\"prepared_spells\":[],\"name\":\"\",\"backstory\":\"\",\"choices\":{}},\"answers\":{}}"
+ },
+ {
+  "at": 1793950206840,
+  "kind": "response",
+  "status": 200,
+  "url": "/api/prototype/wizard/contract",
+  "body": "{\"version\":1,\"release\":\"95ccb98deeca8009aa02ef77069d3d9aa112e4e813954e98be888e7f583640aa\",\"draft\":{\"species_slug\":\"human\",\"species_base\":\"Human\",\"class_slug\":\"wizard\",\"subclass_slug\":null,\"background_slug\":null,\"level\":1,\"ability_score_method\":null,\"ability_scores\":{},\"selected_choices\":[],\"choices\":{},\"equipment_kits\":{},\"kit_picks\":{},\"prepared_spells\":[],\"equipment\":[],\"advancement\":false,\"name\":\"\",\"backstory\":\"\"},\"build\":{\"species_slug\":\"human\",\"class_slug\":\"wizard\",\"level\":1,\"selected_choices\":[],\"equipment\":[]},\"ready\":false,\"confirm_ready\":false,\"confirm_issues\":[\"Впишите имя героя: без него герой не создаётся.\"],\"steps\":[{\"id\":\"species\",\"title\":\"Вид\",\"status\":\"complete\",\"required\":true,\"count\":1,\"missing\":0,\"chosen\":[\"Human\"],\"options\":[{\"id\":\"Dragonborn\",\"name\":\"Dragonborn\",\"disabled_reason\":null,\"detail\":\"Dragonborn\",\"lineage_required\":false,\"variants\":[{\"slug\":\"dragonborn\",\"na…"
+ },
+ {
+  "at": 1793950210411,
+  "kind": "response",
+  "status": 200,
+  "url": "/api/prototype/wizard/contract",
+  "body": "{\"version\":1,\"release\":\"95ccb98deeca8009aa02ef77069d3d9aa112e4e813954e98be888e7f583640aa\",\"draft\":{\"species_slug\":\"human\",\"species_base\":\"Human\",\"class_slug\":\"wizard\",\"subclass_slug\":null,\"background_slug\":null,\"level\":1,\"ability_score_method\":null,\"ability_scores\":{},\"selected_choices\":[],\"choices\":{},\"equipment_kits\":{\"class:wizard\":\"A\"},\"kit_picks\":{},\"prepared_spells\":[],\"equipment\":[],\"advancement\":false,\"name\":\"\",\"backstory\":\"\"},\"build\":{\"species_slug\":\"human\",\"class_slug\":\"wizard\",\"level\":1,\"selected_choices\":[],\"equipment\":[\"dagger\",\"robe\",\"scholars-pack\",\"staff\"]},\"ready\":false,\"confirm_ready\":false,\"confirm_issues\":[\"Впишите имя героя: без него герой не создаётся.\"],\"steps\":[{\"id\":\"species\",\"title\":\"Вид\",\"status\":\"complete\",\"required\":true,\"count\":1,\"missing\":0,\"chosen\":[\"Human\"],\"options\":[{\"id\":\"Dragonborn\",\"name\":\"Dragonborn\",\"disabled_reason\":null,\"detail\":\"Dragonborn\",\"lin…"
+ },
+ {
+  "at": 1793950223750,
+  "kind": "request",
+  "method": "POST",
+  "url": "/api/prototype/wizard/contract",
+  "body": "{\"draft\":{\"species_slug\":\"human\",\"species_base\":\"Human\",\"class_slug\":\"wizard\",\"subclass_slug\":null,\"background_slug\":\"sage\",\"level\":1,\"ability_score_method\":null,\"ability_scores\":{},\"selected_choices\":[],\"equipment_kits\":{\"class:wizard\":\"A\"},\"kit_picks\":{},\"prepared_spells\":[],\"name\":\"\",\"backstory\":\"\",\"choices\":{}},\"answers\":{}}"
+ },
+ {
+  "at": 1793950227442,
+  "kind": "request",
+  "method": "POST",
+  "url": "/api/prototype/wizard/contract",
+  "body": "{\"draft\":{\"species_slug\":\"human\",\"species_base\":\"Human\",\"class_slug\":\"wizard\",\"subclass_slug\":null,\"background_slug\":\"sage\",\"level\":1,\"ability_score_method\":null,\"ability_scores\":{},\"selected_choices\":[],\"equipment_kits\":{\"class:wizard\":\"A\",\"background:sage\":\"A\"},\"kit_picks\":{},\"prepared_spells\":[],\"name\":\"\",\"backstory\":\"\",\"choices\":{}},\"answers\":{}}"
+ },
+ {
+  "at": 1793950228199,
+  "kind": "response",
+  "status": 200,
+  "url": "/api/prototype/wizard/contract",
+  "body": "{\"version\":1,\"release\":\"95ccb98deeca8009aa02ef77069d3d9aa112e4e813954e98be888e7f583640aa\",\"draft\":{\"species_slug\":\"human\",\"species_base\":\"Human\",\"class_slug\":\"wizard\",\"subclass_slug\":null,\"background_slug\":\"sage\",\"level\":1,\"ability_score_method\":null,\"ability_scores\":{},\"selected_choices\":[],\"choices\":{},\"equipment_kits\":{\"class:wizard\":\"A\"},\"kit_picks\":{},\"prepared_spells\":[],\"equipment\":[],\"advancement\":false,\"name\":\"\",\"backstory\":\"\"},\"build\":{\"species_slug\":\"human\",\"class_slug\":\"wizard\",\"level\":1,\"selected_choices\":[],\"equipment\":[\"dagger\",\"robe\",\"scholars-pack\",\"staff\"],\"background_slug\":\"sage\"},\"ready\":false,\"confirm_ready\":false,\"confirm_issues\":[\"Впишите имя героя: без него герой не создаётся.\"],\"steps\":[{\"id\":\"species\",\"title\":\"Вид\",\"status\":\"complete\",\"required\":true,\"count\":1,\"missing\":0,\"chosen\":[\"Human\"],\"options\":[{\"id\":\"Dragonborn\",\"name\":\"Dragonborn\",\"disabled_reason\":null…"
+ },
+ {
+  "at": 1793950231703,
+  "kind": "response",
+  "status": 200,
+  "url": "/api/prototype/wizard/contract",
+  "body": "{\"version\":1,\"release\":\"95ccb98deeca8009aa02ef77069d3d9aa112e4e813954e98be888e7f583640aa\",\"draft\":{\"species_slug\":\"human\",\"species_base\":\"Human\",\"class_slug\":\"wizard\",\"subclass_slug\":null,\"background_slug\":\"sage\",\"level\":1,\"ability_score_method\":null,\"ability_scores\":{},\"selected_choices\":[],\"choices\":{},\"equipment_kits\":{\"class:wizard\":\"A\",\"background:sage\":\"A\"},\"kit_picks\":{},\"prepared_spells\":[],\"equipment\":[],\"advancement\":false,\"name\":\"\",\"backstory\":\"\"},\"build\":{\"species_slug\":\"human\",\"class_slug\":\"wizard\",\"level\":1,\"selected_choices\":[],\"equipment\":[\"book\",\"calligraphers-supplies\",\"parchment\",\"quarterstaff\",\"robe\",\"dagger\",\"scholars-pack\",\"staff\"],\"background_slug\":\"sage\"},\"ready\":false,\"confirm_ready\":false,\"confirm_issues\":[\"Впишите имя героя: без него герой не создаётся.\"],\"steps\":[{\"id\":\"species\",\"title\":\"Вид\",\"status\":\"complete\",\"required\":true,\"count\":1,\"missing\":0,\"chosen\":[…"
+ },
+ {
+  "at": 1793950242139,
+  "kind": "request",
+  "method": "POST",
+  "url": "/api/prototype/wizard/contract",
+  "body": "{\"draft\":{\"species_slug\":\"human\",\"species_base\":\"Human\",\"class_slug\":\"wizard\",\"subclass_slug\":null,\"background_slug\":\"sage\",\"level\":1,\"ability_score_method\":\"point_buy\",\"ability_scores\":{},\"selected_choices\":[],\"equipment_kits\":{\"class:wizard\":\"A\",\"background:sage\":\"A\"},\"kit_picks\":{},\"prepared_spells\":[],\"name\":\"\",\"backstory\":\"\",\"choices\":{}},\"answers\":{}}"
+ },
+ {
+  "at": 1793950250361,
+  "kind": "response",
+  "status": 200,
+  "url": "/api/prototype/wizard/contract",
+  "body": "{\"version\":1,\"release\":\"95ccb98deeca8009aa02ef77069d3d9aa112e4e813954e98be888e7f583640aa\",\"draft\":{\"species_slug\":\"human\",\"species_base\":\"Human\",\"class_slug\":\"wizard\",\"subclass_slug\":null,\"background_slug\":\"sage\",\"level\":1,\"ability_score_method\":\"point_buy\",\"ability_scores\":{},\"selected_choices\":[],\"choices\":{},\"equipment_kits\":{\"class:wizard\":\"A\",\"background:sage\":\"A\"},\"kit_picks\":{},\"prepared_spells\":[],\"equipment\":[],\"advancement\":false,\"name\":\"\",\"backstory\":\"\"},\"build\":{\"species_slug\":\"human\",\"class_slug\":\"wizard\",\"level\":1,\"selected_choices\":[],\"equipment\":[\"book\",\"calligraphers-supplies\",\"parchment\",\"quarterstaff\",\"robe\",\"dagger\",\"scholars-pack\",\"staff\"],\"background_slug\":\"sage\",\"ability_score_method\":\"point_buy\"},\"ready\":false,\"confirm_ready\":false,\"confirm_issues\":[\"Впишите имя героя: без него герой не создаётся.\"],\"steps\":[{\"id\":\"species\",\"title\":\"Вид\",\"status\":\"complete\",\"requi…"
+ },
+ {
+  "at": 1793950256277,
+  "kind": "request",
+  "method": "POST",
+  "url": "/api/prototype/wizard/contract",
+  "body": "{\"draft\":{\"species_slug\":\"human\",\"species_base\":\"Human\",\"class_slug\":\"wizard\",\"subclass_slug\":null,\"background_slug\":\"sage\",\"level\":1,\"ability_score_method\":\"point_buy\",\"ability_scores\":{\"strength\":15},\"selected_choices\":[],\"equipment_kits\":{\"class:wizard\":\"A\",\"background:sage\":\"A\"},\"kit_picks\":{},\"prepared_spells\":[],\"name\":\"\",\"backstory\":\"\",\"choices\":{}},\"answers\":{}}"
+ },
+ {
+  "at": 1793950263229,
+  "kind": "response",
+  "status": 200,
+  "url": "/api/prototype/wizard/contract",
+  "body": "{\"version\":1,\"release\":\"95ccb98deeca8009aa02ef77069d3d9aa112e4e813954e98be888e7f583640aa\",\"draft\":{\"species_slug\":\"human\",\"species_base\":\"Human\",\"class_slug\":\"wizard\",\"subclass_slug\":null,\"background_slug\":\"sage\",\"level\":1,\"ability_score_method\":\"point_buy\",\"ability_scores\":{\"strength\":15},\"selected_choices\":[],\"choices\":{},\"equipment_kits\":{\"class:wizard\":\"A\",\"background:sage\":\"A\"},\"kit_picks\":{},\"prepared_spells\":[],\"equipment\":[],\"advancement\":false,\"name\":\"\",\"backstory\":\"\"},\"build\":{\"species_slug\":\"human\",\"class_slug\":\"wizard\",\"level\":1,\"selected_choices\":[],\"equipment\":[\"book\",\"calligraphers-supplies\",\"parchment\",\"quarterstaff\",\"robe\",\"dagger\",\"scholars-pack\",\"staff\"],\"background_slug\":\"sage\",\"ability_score_method\":\"point_buy\",\"ability_scores\":{\"strength\":15}},\"ready\":false,\"confirm_ready\":false,\"confirm_issues\":[\"Впишите имя героя: без него герой не создаётся.\"],\"steps\":[{\"id\":\"spe…"
+ },
+ {
+  "at": 1793950267474,
+  "kind": "request",
+  "method": "POST",
+  "url": "/api/prototype/wizard/contract",
+  "body": "{\"draft\":{\"species_slug\":\"human\",\"species_base\":\"Human\",\"class_slug\":\"wizard\",\"subclass_slug\":null,\"background_slug\":\"sage\",\"level\":1,\"ability_score_method\":\"point_buy\",\"ability_scores\":{\"strength\":15,\"dexterity\":14},\"selected_choices\":[],\"equipment_kits\":{\"class:wizard\":\"A\",\"background:sage\":\"A\"},\"kit_picks\":{},\"prepared_spells\":[],\"name\":\"\",\"backstory\":\"\",\"choices\":{}},\"answers\":{}}"
+ },
+ {
+  "at": 1793950272618,
+  "kind": "response",
+  "status": 200,
+  "url": "/api/prototype/wizard/contract",
+  "body": "{\"version\":1,\"release\":\"95ccb98deeca8009aa02ef77069d3d9aa112e4e813954e98be888e7f583640aa\",\"draft\":{\"species_slug\":\"human\",\"species_base\":\"Human\",\"class_slug\":\"wizard\",\"subclass_slug\":null,\"background_slug\":\"sage\",\"level\":1,\"ability_score_method\":\"point_buy\",\"ability_scores\":{\"strength\":15,\"dexterity\":14},\"selected_choices\":[],\"choices\":{},\"equipment_kits\":{\"class:wizard\":\"A\",\"background:sage\":\"A\"},\"kit_picks\":{},\"prepared_spells\":[],\"equipment\":[],\"advancement\":false,\"name\":\"\",\"backstory\":\"\"},\"build\":{\"species_slug\":\"human\",\"class_slug\":\"wizard\",\"level\":1,\"selected_choices\":[],\"equipment\":[\"book\",\"calligraphers-supplies\",\"parchment\",\"quarterstaff\",\"robe\",\"dagger\",\"scholars-pack\",\"staff\"],\"background_slug\":\"sage\",\"ability_score_method\":\"point_buy\",\"ability_scores\":{\"strength\":15,\"dexterity\":14}},\"ready\":false,\"confirm_ready\":false,\"confirm_issues\":[\"Впишите имя героя: без него герой не со…"
+ },
+ {
+  "at": 1793950274298,
+  "kind": "request",
+  "method": "POST",
+  "url": "/api/prototype/wizard/contract",
+  "body": "{\"draft\":{\"species_slug\":\"human\",\"species_base\":\"Human\",\"class_slug\":\"wizard\",\"subclass_slug\":null,\"background_slug\":\"sage\",\"level\":1,\"ability_score_method\":\"point_buy\",\"ability_scores\":{\"strength\":15,\"dexterity\":14,\"constitution\":13},\"selected_choices\":[],\"equipment_kits\":{\"class:wizard\":\"A\",\"background:sage\":\"A\"},\"kit_picks\":{},\"prepared_spells\":[],\"name\":\"\",\"backstory\":\"\",\"choices\":{}},\"answers\":{}}"
+ },
+ {
+  "at": 1793950278803,
+  "kind": "response",
+  "status": 200,
+  "url": "/api/prototype/wizard/contract",
+  "body": "{\"version\":1,\"release\":\"95ccb98deeca8009aa02ef77069d3d9aa112e4e813954e98be888e7f583640aa\",\"draft\":{\"species_slug\":\"human\",\"species_base\":\"Human\",\"class_slug\":\"wizard\",\"subclass_slug\":null,\"background_slug\":\"sage\",\"level\":1,\"ability_score_method\":\"point_buy\",\"ability_scores\":{\"strength\":15,\"dexterity\":14,\"constitution\":13},\"selected_choices\":[],\"choices\":{},\"equipment_kits\":{\"class:wizard\":\"A\",\"background:sage\":\"A\"},\"kit_picks\":{},\"prepared_spells\":[],\"equipment\":[],\"advancement\":false,\"name\":\"\",\"backstory\":\"\"},\"build\":{\"species_slug\":\"human\",\"class_slug\":\"wizard\",\"level\":1,\"selected_choices\":[],\"equipment\":[\"book\",\"calligraphers-supplies\",\"parchment\",\"quarterstaff\",\"robe\",\"dagger\",\"scholars-pack\",\"staff\"],\"background_slug\":\"sage\",\"ability_score_method\":\"point_buy\",\"ability_scores\":{\"strength\":15,\"dexterity\":14,\"constitution\":13}},\"ready\":false,\"confirm_ready\":false,\"confirm_issues\":[\"Впи…"
+ },
+ {
+  "at": 1793950281950,
+  "kind": "request",
+  "method": "POST",
+  "url": "/api/prototype/wizard/contract",
+  "body": "{\"draft\":{\"species_slug\":\"human\",\"species_base\":\"Human\",\"class_slug\":\"wizard\",\"subclass_slug\":null,\"background_slug\":\"sage\",\"level\":1,\"ability_score_method\":\"point_buy\",\"ability_scores\":{\"strength\":15,\"dexterity\":14,\"constitution\":13,\"intelligence\":12},\"selected_choices\":[],\"equipment_kits\":{\"class:wizard\":\"A\",\"background:sage\":\"A\"},\"kit_picks\":{},\"prepared_spells\":[],\"name\":\"\",\"backstory\":\"\",\"choices\":{}},\"answers\":{}}"
+ },
+ {
+  "at": 1793950284457,
+  "kind": "response",
+  "status": 200,
+  "url": "/api/prototype/wizard/contract",
+  "body": "{\"version\":1,\"release\":\"95ccb98deeca8009aa02ef77069d3d9aa112e4e813954e98be888e7f583640aa\",\"draft\":{\"species_slug\":\"human\",\"species_base\":\"Human\",\"class_slug\":\"wizard\",\"subclass_slug\":null,\"background_slug\":\"sage\",\"level\":1,\"ability_score_method\":\"point_buy\",\"ability_scores\":{\"strength\":15,\"dexterity\":14,\"constitution\":13,\"intelligence\":12},\"selected_choices\":[],\"choices\":{},\"equipment_kits\":{\"class:wizard\":\"A\",\"background:sage\":\"A\"},\"kit_picks\":{},\"prepared_spells\":[],\"equipment\":[],\"advancement\":false,\"name\":\"\",\"backstory\":\"\"},\"build\":{\"species_slug\":\"human\",\"class_slug\":\"wizard\",\"level\":1,\"selected_choices\":[],\"equipment\":[\"book\",\"calligraphers-supplies\",\"parchment\",\"quarterstaff\",\"robe\",\"dagger\",\"scholars-pack\",\"staff\"],\"background_slug\":\"sage\",\"ability_score_method\":\"point_buy\",\"ability_scores\":{\"strength\":15,\"dexterity\":14,\"constitution\":13,\"intelligence\":12}},\"ready\":false,\"confirm…"
+ },
+ {
+  "at": 1793950285754,
+  "kind": "request",
+  "method": "POST",
+  "url": "/api/prototype/wizard/contract",
+  "body": "{\"draft\":{\"species_slug\":\"human\",\"species_base\":\"Human\",\"class_slug\":\"wizard\",\"subclass_slug\":null,\"background_slug\":\"sage\",\"level\":1,\"ability_score_method\":\"point_buy\",\"ability_scores\":{\"strength\":15,\"dexterity\":14,\"constitution\":13,\"intelligence\":12,\"wisdom\":10},\"selected_choices\":[],\"equipment_kits\":{\"class:wizard\":\"A\",\"background:sage\":\"A\"},\"kit_picks\":{},\"prepared_spells\":[],\"name\":\"\",\"backstory\":\"\",\"choices\":{}},\"answers\":{}}"
+ },
+ {
+  "at": 1793950289183,
+  "kind": "response",
+  "status": 200,
+  "url": "/api/prototype/wizard/contract",
+  "body": "{\"version\":1,\"release\":\"95ccb98deeca8009aa02ef77069d3d9aa112e4e813954e98be888e7f583640aa\",\"draft\":{\"species_slug\":\"human\",\"species_base\":\"Human\",\"class_slug\":\"wizard\",\"subclass_slug\":null,\"background_slug\":\"sage\",\"level\":1,\"ability_score_method\":\"point_buy\",\"ability_scores\":{\"strength\":15,\"dexterity\":14,\"constitution\":13,\"intelligence\":12,\"wisdom\":10},\"selected_choices\":[],\"choices\":{},\"equipment_kits\":{\"class:wizard\":\"A\",\"background:sage\":\"A\"},\"kit_picks\":{},\"prepared_spells\":[],\"equipment\":[],\"advancement\":false,\"name\":\"\",\"backstory\":\"\"},\"build\":{\"species_slug\":\"human\",\"class_slug\":\"wizard\",\"level\":1,\"selected_choices\":[],\"equipment\":[\"book\",\"calligraphers-supplies\",\"parchment\",\"quarterstaff\",\"robe\",\"dagger\",\"scholars-pack\",\"staff\"],\"background_slug\":\"sage\",\"ability_score_method\":\"point_buy\",\"ability_scores\":{\"strength\":15,\"dexterity\":14,\"constitution\":13,\"intelligence\":12,\"wisdom\":10}…"
+ },
+ {
+  "at": 1793950291716,
+  "kind": "request",
+  "method": "POST",
+  "url": "/api/prototype/wizard/contract",
+  "body": "{\"draft\":{\"species_slug\":\"human\",\"species_base\":\"Human\",\"class_slug\":\"wizard\",\"subclass_slug\":null,\"background_slug\":\"sage\",\"level\":1,\"ability_score_method\":\"point_buy\",\"ability_scores\":{\"strength\":15,\"dexterity\":14,\"constitution\":13,\"intelligence\":12,\"wisdom\":10,\"charisma\":8},\"selected_choices\":[],\"equipment_kits\":{\"class:wizard\":\"A\",\"background:sage\":\"A\"},\"kit_picks\":{},\"prepared_spells\":[],\"name\":\"\",\"backstory\":\"\",\"choices\":{}},\"answers\":{}}"
+ },
+ {
+  "at": 1793950299217,
+  "kind": "response",
+  "status": 200,
+  "url": "/api/prototype/wizard/contract",
+  "body": "{\"version\":1,\"release\":\"95ccb98deeca8009aa02ef77069d3d9aa112e4e813954e98be888e7f583640aa\",\"draft\":{\"species_slug\":\"human\",\"species_base\":\"Human\",\"class_slug\":\"wizard\",\"subclass_slug\":null,\"background_slug\":\"sage\",\"level\":1,\"ability_score_method\":\"point_buy\",\"ability_scores\":{\"strength\":15,\"dexterity\":14,\"constitution\":13,\"intelligence\":12,\"wisdom\":10,\"charisma\":8},\"selected_choices\":[],\"choices\":{},\"equipment_kits\":{\"class:wizard\":\"A\",\"background:sage\":\"A\"},\"kit_picks\":{},\"prepared_spells\":[],\"equipment\":[],\"advancement\":false,\"name\":\"\",\"backstory\":\"\"},\"build\":{\"species_slug\":\"human\",\"class_slug\":\"wizard\",\"level\":1,\"selected_choices\":[],\"equipment\":[\"book\",\"calligraphers-supplies\",\"parchment\",\"quarterstaff\",\"robe\",\"dagger\",\"scholars-pack\",\"staff\"],\"background_slug\":\"sage\",\"ability_score_method\":\"point_buy\",\"ability_scores\":{\"strength\":15,\"dexterity\":14,\"constitution\":13,\"intelligence\":12…"
+ },
+ {
+  "at": 1793950305508,
+  "kind": "request",
+  "method": "POST",
+  "url": "/api/prototype/wizard/contract",
+  "body": "{\"draft\":{\"species_slug\":\"human\",\"species_base\":\"Human\",\"class_slug\":\"wizard\",\"subclass_slug\":null,\"background_slug\":\"sage\",\"level\":1,\"ability_score_method\":\"point_buy\",\"ability_scores\":{\"strength\":15,\"dexterity\":14,\"constitution\":13,\"intelligence\":12,\"wisdom\":10,\"charisma\":8},\"selected_choices\":[],\"equipment_kits\":{\"class:wizard\":\"A\",\"background:sage\":\"A\"},\"kit_picks\":{},\"prepared_spells\":[],\"name\":\"\",\"backstory\":\"\",\"choices\":{\"background:sage:increase:0:Sage\":{\"constitution\":1}}},\"answers\":{\"background:sage:increase:0:Sage\":{\"constitution\":1}}}"
+ },
+ {
+  "at": 1793950307459,
+  "kind": "response",
+  "status": 200,
+  "url": "/api/prototype/wizard/contract",
+  "body": "{\"version\":1,\"release\":\"95ccb98deeca8009aa02ef77069d3d9aa112e4e813954e98be888e7f583640aa\",\"draft\":{\"species_slug\":\"human\",\"species_base\":\"Human\",\"class_slug\":\"wizard\",\"subclass_slug\":null,\"background_slug\":\"sage\",\"level\":1,\"ability_score_method\":\"point_buy\",\"ability_scores\":{\"strength\":15,\"dexterity\":14,\"constitution\":13,\"intelligence\":12,\"wisdom\":10,\"charisma\":8},\"selected_choices\":[],\"choices\":{\"background:sage:increase:0:Sage\":{\"constitution\":1}},\"equipment_kits\":{\"class:wizard\":\"A\",\"background:sage\":\"A\"},\"kit_picks\":{},\"prepared_spells\":[],\"equipment\":[],\"advancement\":false,\"name\":\"\",\"backstory\":\"\"},\"build\":{\"species_slug\":\"human\",\"class_slug\":\"wizard\",\"level\":1,\"selected_choices\":[],\"equipment\":[\"book\",\"calligraphers-supplies\",\"parchment\",\"quarterstaff\",\"robe\",\"dagger\",\"scholars-pack\",\"staff\"],\"background_slug\":\"sage\",\"ability_score_method\":\"point_buy\",\"ability_scores\":{\"strength\":1…"
+ },
+ {
+  "at": 1793950307651,
+  "kind": "request",
+  "method": "POST",
+  "url": "/api/prototype/wizard/contract",
+  "body": "{\"draft\":{\"species_slug\":\"human\",\"species_base\":\"Human\",\"class_slug\":\"wizard\",\"subclass_slug\":null,\"background_slug\":\"sage\",\"level\":1,\"ability_score_method\":\"point_buy\",\"ability_scores\":{\"strength\":15,\"dexterity\":14,\"constitution\":13,\"intelligence\":12,\"wisdom\":10,\"charisma\":8},\"selected_choices\":[],\"equipment_kits\":{\"class:wizard\":\"A\",\"background:sage\":\"A\"},\"kit_picks\":{},\"prepared_spells\":[],\"name\":\"\",\"backstory\":\"\",\"choices\":{\"background:sage:increase:0:Sage\":{\"constitution\":2}}},\"answers\":{\"background:sage:increase:0:Sage\":{\"constitution\":2}}}"
+ },
+ {
+  "at": 1793950309405,
+  "kind": "response",
+  "status": 200,
+  "url": "/api/prototype/wizard/contract",
+  "body": "{\"version\":1,\"release\":\"95ccb98deeca8009aa02ef77069d3d9aa112e4e813954e98be888e7f583640aa\",\"draft\":{\"species_slug\":\"human\",\"species_base\":\"Human\",\"class_slug\":\"wizard\",\"subclass_slug\":null,\"background_slug\":\"sage\",\"level\":1,\"ability_score_method\":\"point_buy\",\"ability_scores\":{\"strength\":15,\"dexterity\":14,\"constitution\":13,\"intelligence\":12,\"wisdom\":10,\"charisma\":8},\"selected_choices\":[],\"choices\":{\"background:sage:increase:0:Sage\":{\"constitution\":2}},\"equipment_kits\":{\"class:wizard\":\"A\",\"background:sage\":\"A\"},\"kit_picks\":{},\"prepared_spells\":[],\"equipment\":[],\"advancement\":false,\"name\":\"\",\"backstory\":\"\"},\"build\":{\"species_slug\":\"human\",\"class_slug\":\"wizard\",\"level\":1,\"selected_choices\":[],\"equipment\":[\"book\",\"calligraphers-supplies\",\"parchment\",\"quarterstaff\",\"robe\",\"dagger\",\"scholars-pack\",\"staff\"],\"background_slug\":\"sage\",\"ability_score_method\":\"point_buy\",\"ability_scores\":{\"strength\":1…"
+ },
+ {
+  "at": 1793950309760,
+  "kind": "request",
+  "method": "POST",
+  "url": "/api/prototype/wizard/contract",
+  "body": "{\"draft\":{\"species_slug\":\"human\",\"species_base\":\"Human\",\"class_slug\":\"wizard\",\"subclass_slug\":null,\"background_slug\":\"sage\",\"level\":1,\"ability_score_method\":\"point_buy\",\"ability_scores\":{\"strength\":15,\"dexterity\":14,\"constitution\":13,\"intelligence\":12,\"wisdom\":10,\"charisma\":8},\"selected_choices\":[],\"equipment_kits\":{\"class:wizard\":\"A\",\"background:sage\":\"A\"},\"kit_picks\":{},\"prepared_spells\":[],\"name\":\"\",\"backstory\":\"\",\"choices\":{\"background:sage:increase:0:Sage\":{\"constitution\":2,\"intelligence\":1}}},\"answers\":{\"background:sage:increase:0:Sage\":{\"constitution\":2,\"intelligence\":1}}}"
+ },
+ {
+  "at": 1793950311302,
+  "kind": "response",
+  "status": 200,
+  "url": "/api/prototype/wizard/contract",
+  "body": "{\"version\":1,\"release\":\"95ccb98deeca8009aa02ef77069d3d9aa112e4e813954e98be888e7f583640aa\",\"draft\":{\"species_slug\":\"human\",\"species_base\":\"Human\",\"class_slug\":\"wizard\",\"subclass_slug\":null,\"background_slug\":\"sage\",\"level\":1,\"ability_score_method\":\"point_buy\",\"ability_scores\":{\"strength\":15,\"dexterity\":14,\"constitution\":13,\"intelligence\":12,\"wisdom\":10,\"charisma\":8},\"selected_choices\":[\"background:constitution+2,intelligence+1\"],\"choices\":{\"background:sage:increase:0:Sage\":{\"constitution\":2,\"intelligence\":1}},\"equipment_kits\":{\"class:wizard\":\"A\",\"background:sage\":\"A\"},\"kit_picks\":{},\"prepared_spells\":[],\"equipment\":[],\"advancement\":false,\"name\":\"\",\"backstory\":\"\"},\"build\":{\"species_slug\":\"human\",\"class_slug\":\"wizard\",\"level\":1,\"selected_choices\":[\"background:constitution+2,intelligence+1\"],\"equipment\":[\"book\",\"calligraphers-supplies\",\"parchment\",\"quarterstaff\",\"robe\",\"dagger\",\"scholars-pack…"
+ },
+ {
+  "at": 1793950311940,
+  "kind": "request",
+  "method": "POST",
+  "url": "/api/prototype/wizard/contract",
+  "body": "{\"draft\":{\"species_slug\":\"human\",\"species_base\":\"Human\",\"class_slug\":\"wizard\",\"subclass_slug\":null,\"background_slug\":\"sage\",\"level\":1,\"ability_score_method\":\"point_buy\",\"ability_scores\":{\"strength\":15,\"dexterity\":14,\"constitution\":13,\"intelligence\":12,\"wisdom\":10,\"charisma\":8},\"selected_choices\":[\"background:constitution+2,intelligence+1\"],\"equipment_kits\":{\"class:wizard\":\"A\",\"background:sage\":\"A\"},\"kit_picks\":{},\"prepared_spells\":[],\"name\":\"\",\"backstory\":\"\",\"choices\":{\"background:sage:increase:0:Sage\":{\"constitution\":2,\"intelligence\":1},\"class:wizard:skill:1:Skill Proficiencies\":[\"insight\"]}},\"answers\":{\"background:sage:increase:0:Sage\":{\"constitution\":2,\"intelligence\":1},\"class:wizard:skill:1:Skill Proficiencies\":[\"insight\"]}}"
+ },
+ {
+  "at": 1793950313432,
+  "kind": "response",
+  "status": 200,
+  "url": "/api/prototype/wizard/contract",
+  "body": "{\"version\":1,\"release\":\"95ccb98deeca8009aa02ef77069d3d9aa112e4e813954e98be888e7f583640aa\",\"draft\":{\"species_slug\":\"human\",\"species_base\":\"Human\",\"class_slug\":\"wizard\",\"subclass_slug\":null,\"background_slug\":\"sage\",\"level\":1,\"ability_score_method\":\"point_buy\",\"ability_scores\":{\"strength\":15,\"dexterity\":14,\"constitution\":13,\"intelligence\":12,\"wisdom\":10,\"charisma\":8},\"selected_choices\":[\"background:constitution+2,intelligence+1\",\"skill:insight\"],\"choices\":{\"background:sage:increase:0:Sage\":{\"constitution\":2,\"intelligence\":1},\"class:wizard:skill:1:Skill Proficiencies\":[\"insight\"]},\"equipment_kits\":{\"class:wizard\":\"A\",\"background:sage\":\"A\"},\"kit_picks\":{},\"prepared_spells\":[],\"equipment\":[],\"advancement\":false,\"name\":\"\",\"backstory\":\"\"},\"build\":{\"species_slug\":\"human\",\"class_slug\":\"wizard\",\"level\":1,\"selected_choices\":[\"background:constitution+2,intelligence+1\",\"skill:insight\"],\"equipment\":[\"b…"
+ },
+ {
+  "at": 1793950313965,
+  "kind": "request",
+  "method": "POST",
+  "url": "/api/prototype/wizard/contract",
+  "body": "{\"draft\":{\"species_slug\":\"human\",\"species_base\":\"Human\",\"class_slug\":\"wizard\",\"subclass_slug\":null,\"background_slug\":\"sage\",\"level\":1,\"ability_score_method\":\"point_buy\",\"ability_scores\":{\"strength\":15,\"dexterity\":14,\"constitution\":13,\"intelligence\":12,\"wisdom\":10,\"charisma\":8},\"selected_choices\":[\"background:constitution+2,intelligence+1\",\"skill:insight\"],\"equipment_kits\":{\"class:wizard\":\"A\",\"background:sage\":\"A\"},\"kit_picks\":{},\"prepared_spells\":[],\"name\":\"\",\"backstory\":\"\",\"choices\":{\"background:sage:increase:0:Sage\":{\"constitution\":2,\"intelligence\":1},\"class:wizard:skill:1:Skill Proficiencies\":[\"insight\",\"investigation\"]}},\"answers\":{\"background:sage:increase:0:Sage\":{\"constitution\":2,\"intelligence\":1},\"class:wizard:skill:1:Skill Proficiencies\":[\"insight\",\"investigation\"]}}"
+ },
+ {
+  "at": 1793950315736,
+  "kind": "response",
+  "status": 200,
+  "url": "/api/prototype/wizard/contract",
+  "body": "{\"version\":1,\"release\":\"95ccb98deeca8009aa02ef77069d3d9aa112e4e813954e98be888e7f583640aa\",\"draft\":{\"species_slug\":\"human\",\"species_base\":\"Human\",\"class_slug\":\"wizard\",\"subclass_slug\":null,\"background_slug\":\"sage\",\"level\":1,\"ability_score_method\":\"point_buy\",\"ability_scores\":{\"strength\":15,\"dexterity\":14,\"constitution\":13,\"intelligence\":12,\"wisdom\":10,\"charisma\":8},\"selected_choices\":[\"background:constitution+2,intelligence+1\",\"skill:insight\",\"skill:investigation\"],\"choices\":{\"background:sage:increase:0:Sage\":{\"constitution\":2,\"intelligence\":1},\"class:wizard:skill:1:Skill Proficiencies\":[\"insight\",\"investigation\"]},\"equipment_kits\":{\"class:wizard\":\"A\",\"background:sage\":\"A\"},\"kit_picks\":{},\"prepared_spells\":[],\"equipment\":[],\"advancement\":false,\"name\":\"\",\"backstory\":\"\"},\"build\":{\"species_slug\":\"human\",\"class_slug\":\"wizard\",\"level\":1,\"selected_choices\":[\"background:constitution+2,intelligen…"
+ },
+ {
+  "at": 1793950316156,
+  "kind": "request",
+  "method": "POST",
+  "url": "/api/prototype/wizard/contract",
+  "body": "{\"draft\":{\"species_slug\":\"human\",\"species_base\":\"Human\",\"class_slug\":\"wizard\",\"subclass_slug\":null,\"background_slug\":\"sage\",\"level\":1,\"ability_score_method\":\"point_buy\",\"ability_scores\":{\"strength\":15,\"dexterity\":14,\"constitution\":13,\"intelligence\":12,\"wisdom\":10,\"charisma\":8},\"selected_choices\":[\"background:constitution+2,intelligence+1\",\"skill:insight\",\"skill:investigation\"],\"equipment_kits\":{\"class:wizard\":\"A\",\"background:sage\":\"A\"},\"kit_picks\":{},\"prepared_spells\":[],\"name\":\"\",\"backstory\":\"\",\"choices\":{\"background:sage:increase:0:Sage\":{\"constitution\":2,\"intelligence\":1},\"class:wizard:skill:1:Skill Proficiencies\":[\"insight\",\"investigation\"],\"species:human:skill:0:Skillful\":[\"acrobatics\"]}},\"answers\":{\"background:sage:increase:0:Sage\":{\"constitution\":2,\"intelligence\":1},\"class:wizard:skill:1:Skill Proficiencies\":[\"insight\",\"investigation\"],\"species:human:skill:0:Skillful\":[\"acrobatics…"
+ },
+ {
+  "at": 1793950317456,
+  "kind": "response",
+  "status": 200,
+  "url": "/api/prototype/wizard/contract",
+  "body": "{\"version\":1,\"release\":\"95ccb98deeca8009aa02ef77069d3d9aa112e4e813954e98be888e7f583640aa\",\"draft\":{\"species_slug\":\"human\",\"species_base\":\"Human\",\"class_slug\":\"wizard\",\"subclass_slug\":null,\"background_slug\":\"sage\",\"level\":1,\"ability_score_method\":\"point_buy\",\"ability_scores\":{\"strength\":15,\"dexterity\":14,\"constitution\":13,\"intelligence\":12,\"wisdom\":10,\"charisma\":8},\"selected_choices\":[\"background:constitution+2,intelligence+1\",\"skill:insight\",\"skill:investigation\",\"skill:acrobatics\"],\"choices\":{\"background:sage:increase:0:Sage\":{\"constitution\":2,\"intelligence\":1},\"class:wizard:skill:1:Skill Proficiencies\":[\"insight\",\"investigation\"],\"species:human:skill:0:Skillful\":[\"acrobatics\"]},\"equipment_kits\":{\"class:wizard\":\"A\",\"background:sage\":\"A\"},\"kit_picks\":{},\"prepared_spells\":[],\"equipment\":[],\"advancement\":false,\"name\":\"\",\"backstory\":\"\"},\"build\":{\"species_slug\":\"human\",\"class_slug\":\"wizard\",…"
+ },
+ {
+  "at": 1793950317924,
+  "kind": "request",
+  "method": "POST",
+  "url": "/api/prototype/wizard/contract",
+  "body": "{\"draft\":{\"species_slug\":\"human\",\"species_base\":\"Human\",\"class_slug\":\"wizard\",\"subclass_slug\":null,\"background_slug\":\"sage\",\"level\":1,\"ability_score_method\":\"point_buy\",\"ability_scores\":{\"strength\":15,\"dexterity\":14,\"constitution\":13,\"intelligence\":12,\"wisdom\":10,\"charisma\":8},\"selected_choices\":[\"background:constitution+2,intelligence+1\",\"skill:insight\",\"skill:investigation\",\"skill:acrobatics\"],\"equipment_kits\":{\"class:wizard\":\"A\",\"background:sage\":\"A\"},\"kit_picks\":{},\"prepared_spells\":[],\"name\":\"\",\"backstory\":\"\",\"choices\":{\"background:sage:increase:0:Sage\":{\"constitution\":2,\"intelligence\":1},\"class:wizard:skill:1:Skill Proficiencies\":[\"insight\",\"investigation\"],\"species:human:skill:0:Skillful\":[\"acrobatics\"],\"species:human:feature:0:origin\":[\"alert\"]}},\"answers\":{\"background:sage:increase:0:Sage\":{\"constitution\":2,\"intelligence\":1},\"class:wizard:skill:1:Skill Proficiencies\":[\"insight\",…"
+ },
+ {
+  "at": 1793950319601,
+  "kind": "response",
+  "status": 200,
+  "url": "/api/prototype/wizard/contract",
+  "body": "{\"version\":1,\"release\":\"95ccb98deeca8009aa02ef77069d3d9aa112e4e813954e98be888e7f583640aa\",\"draft\":{\"species_slug\":\"human\",\"species_base\":\"Human\",\"class_slug\":\"wizard\",\"subclass_slug\":null,\"background_slug\":\"sage\",\"level\":1,\"ability_score_method\":\"point_buy\",\"ability_scores\":{\"strength\":15,\"dexterity\":14,\"constitution\":13,\"intelligence\":12,\"wisdom\":10,\"charisma\":8},\"selected_choices\":[\"background:constitution+2,intelligence+1\",\"skill:insight\",\"skill:investigation\",\"alert\",\"skill:acrobatics\"],\"choices\":{\"background:sage:increase:0:Sage\":{\"constitution\":2,\"intelligence\":1},\"class:wizard:skill:1:Skill Proficiencies\":[\"insight\",\"investigation\"],\"species:human:skill:0:Skillful\":[\"acrobatics\"],\"species:human:feature:0:origin\":[\"alert\"]},\"equipment_kits\":{\"class:wizard\":\"A\",\"background:sage\":\"A\"},\"kit_picks\":{},\"prepared_spells\":[],\"equipment\":[],\"advancement\":false,\"name\":\"\",\"backstory\":\"\"},\"bu…"
+ },
+ {
+  "at": 1793950320251,
+  "kind": "request",
+  "method": "POST",
+  "url": "/api/prototype/wizard/contract",
+  "body": "{\"draft\":{\"species_slug\":\"human\",\"species_base\":\"Human\",\"class_slug\":\"wizard\",\"subclass_slug\":null,\"background_slug\":\"sage\",\"level\":1,\"ability_score_method\":\"point_buy\",\"ability_scores\":{\"strength\":15,\"dexterity\":14,\"constitution\":13,\"intelligence\":12,\"wisdom\":10,\"charisma\":8},\"selected_choices\":[\"background:constitution+2,intelligence+1\",\"skill:insight\",\"skill:investigation\",\"alert\",\"skill:acrobatics\"],\"equipment_kits\":{\"class:wizard\":\"A\",\"background:sage\":\"A\"},\"kit_picks\":{},\"prepared_spells\":[\"acid-splash\"],\"name\":\"\",\"backstory\":\"\",\"choices\":{\"background:sage:increase:0:Sage\":{\"constitution\":2,\"intelligence\":1},\"class:wizard:skill:1:Skill Proficiencies\":[\"insight\",\"investigation\"],\"species:human:skill:0:Skillful\":[\"acrobatics\"],\"species:human:feature:0:origin\":[\"alert\"]}},\"answers\":{\"background:sage:increase:0:Sage\":{\"constitution\":2,\"intelligence\":1},\"class:wizard:skill:1:Skill Profi…"
+ },
+ {
+  "at": 1793950321680,
+  "kind": "response",
+  "status": 200,
+  "url": "/api/prototype/wizard/contract",
+  "body": "{\"version\":1,\"release\":\"95ccb98deeca8009aa02ef77069d3d9aa112e4e813954e98be888e7f583640aa\",\"draft\":{\"species_slug\":\"human\",\"species_base\":\"Human\",\"class_slug\":\"wizard\",\"subclass_slug\":null,\"background_slug\":\"sage\",\"level\":1,\"ability_score_method\":\"point_buy\",\"ability_scores\":{\"strength\":15,\"dexterity\":14,\"constitution\":13,\"intelligence\":12,\"wisdom\":10,\"charisma\":8},\"selected_choices\":[\"background:constitution+2,intelligence+1\",\"skill:insight\",\"skill:investigation\",\"alert\",\"skill:acrobatics\"],\"choices\":{\"background:sage:increase:0:Sage\":{\"constitution\":2,\"intelligence\":1},\"class:wizard:skill:1:Skill Proficiencies\":[\"insight\",\"investigation\"],\"species:human:skill:0:Skillful\":[\"acrobatics\"],\"species:human:feature:0:origin\":[\"alert\"]},\"equipment_kits\":{\"class:wizard\":\"A\",\"background:sage\":\"A\"},\"kit_picks\":{},\"prepared_spells\":[\"acid-splash\"],\"equipment\":[],\"advancement\":false,\"name\":\"\",\"backs…"
+ },
+ {
+  "at": 1793950322178,
+  "kind": "request",
+  "method": "POST",
+  "url": "/api/prototype/wizard/contract",
+  "body": "{\"draft\":{\"species_slug\":\"human\",\"species_base\":\"Human\",\"class_slug\":\"wizard\",\"subclass_slug\":null,\"background_slug\":\"sage\",\"level\":1,\"ability_score_method\":\"point_buy\",\"ability_scores\":{\"strength\":15,\"dexterity\":14,\"constitution\":13,\"intelligence\":12,\"wisdom\":10,\"charisma\":8},\"selected_choices\":[\"background:constitution+2,intelligence+1\",\"skill:insight\",\"skill:investigation\",\"alert\",\"skill:acrobatics\"],\"equipment_kits\":{\"class:wizard\":\"A\",\"background:sage\":\"A\"},\"kit_picks\":{},\"prepared_spells\":[\"acid-splash\",\"chill-touch\"],\"name\":\"\",\"backstory\":\"\",\"choices\":{\"background:sage:increase:0:Sage\":{\"constitution\":2,\"intelligence\":1},\"class:wizard:skill:1:Skill Proficiencies\":[\"insight\",\"investigation\"],\"species:human:skill:0:Skillful\":[\"acrobatics\"],\"species:human:feature:0:origin\":[\"alert\"]}},\"answers\":{\"background:sage:increase:0:Sage\":{\"constitution\":2,\"intelligence\":1},\"class:wizard:skill…"
+ },
+ {
+  "at": 1793950323612,
+  "kind": "response",
+  "status": 200,
+  "url": "/api/prototype/wizard/contract",
+  "body": "{\"version\":1,\"release\":\"95ccb98deeca8009aa02ef77069d3d9aa112e4e813954e98be888e7f583640aa\",\"draft\":{\"species_slug\":\"human\",\"species_base\":\"Human\",\"class_slug\":\"wizard\",\"subclass_slug\":null,\"background_slug\":\"sage\",\"level\":1,\"ability_score_method\":\"point_buy\",\"ability_scores\":{\"strength\":15,\"dexterity\":14,\"constitution\":13,\"intelligence\":12,\"wisdom\":10,\"charisma\":8},\"selected_choices\":[\"background:constitution+2,intelligence+1\",\"skill:insight\",\"skill:investigation\",\"alert\",\"skill:acrobatics\"],\"choices\":{\"background:sage:increase:0:Sage\":{\"constitution\":2,\"intelligence\":1},\"class:wizard:skill:1:Skill Proficiencies\":[\"insight\",\"investigation\"],\"species:human:skill:0:Skillful\":[\"acrobatics\"],\"species:human:feature:0:origin\":[\"alert\"]},\"equipment_kits\":{\"class:wizard\":\"A\",\"background:sage\":\"A\"},\"kit_picks\":{},\"prepared_spells\":[\"acid-splash\",\"chill-touch\"],\"equipment\":[],\"advancement\":false,\"n…"
+ },
+ {
+  "at": 1793950324204,
+  "kind": "request",
+  "method": "POST",
+  "url": "/api/prototype/wizard/contract",
+  "body": "{\"draft\":{\"species_slug\":\"human\",\"species_base\":\"Human\",\"class_slug\":\"wizard\",\"subclass_slug\":null,\"background_slug\":\"sage\",\"level\":1,\"ability_score_method\":\"point_buy\",\"ability_scores\":{\"strength\":15,\"dexterity\":14,\"constitution\":13,\"intelligence\":12,\"wisdom\":10,\"charisma\":8},\"selected_choices\":[\"background:constitution+2,intelligence+1\",\"skill:insight\",\"skill:investigation\",\"alert\",\"skill:acrobatics\"],\"equipment_kits\":{\"class:wizard\":\"A\",\"background:sage\":\"A\"},\"kit_picks\":{},\"prepared_spells\":[\"acid-splash\",\"chill-touch\",\"dancing-lights\"],\"name\":\"\",\"backstory\":\"\",\"choices\":{\"background:sage:increase:0:Sage\":{\"constitution\":2,\"intelligence\":1},\"class:wizard:skill:1:Skill Proficiencies\":[\"insight\",\"investigation\"],\"species:human:skill:0:Skillful\":[\"acrobatics\"],\"species:human:feature:0:origin\":[\"alert\"]}},\"answers\":{\"background:sage:increase:0:Sage\":{\"constitution\":2,\"intelligence\":1},\"c…"
+ },
+ {
+  "at": 1793950325983,
+  "kind": "response",
+  "status": 200,
+  "url": "/api/prototype/wizard/contract",
+  "body": "{\"version\":1,\"release\":\"95ccb98deeca8009aa02ef77069d3d9aa112e4e813954e98be888e7f583640aa\",\"draft\":{\"species_slug\":\"human\",\"species_base\":\"Human\",\"class_slug\":\"wizard\",\"subclass_slug\":null,\"background_slug\":\"sage\",\"level\":1,\"ability_score_method\":\"point_buy\",\"ability_scores\":{\"strength\":15,\"dexterity\":14,\"constitution\":13,\"intelligence\":12,\"wisdom\":10,\"charisma\":8},\"selected_choices\":[\"background:constitution+2,intelligence+1\",\"skill:insight\",\"skill:investigation\",\"alert\",\"skill:acrobatics\"],\"choices\":{\"background:sage:increase:0:Sage\":{\"constitution\":2,\"intelligence\":1},\"class:wizard:skill:1:Skill Proficiencies\":[\"insight\",\"investigation\"],\"species:human:skill:0:Skillful\":[\"acrobatics\"],\"species:human:feature:0:origin\":[\"alert\"]},\"equipment_kits\":{\"class:wizard\":\"A\",\"background:sage\":\"A\"},\"kit_picks\":{},\"prepared_spells\":[\"acid-splash\",\"chill-touch\",\"dancing-lights\"],\"equipment\":[],\"adva…"
+ },
+ {
+  "at": 1793950327554,
+  "kind": "request",
+  "method": "POST",
+  "url": "/api/prototype/wizard/contract",
+  "body": "{\"draft\":{\"species_slug\":\"human\",\"species_base\":\"Human\",\"class_slug\":\"wizard\",\"subclass_slug\":null,\"background_slug\":\"sage\",\"level\":1,\"ability_score_method\":\"point_buy\",\"ability_scores\":{\"strength\":15,\"dexterity\":14,\"constitution\":13,\"intelligence\":12,\"wisdom\":10,\"charisma\":8},\"selected_choices\":[\"background:constitution+2,intelligence+1\",\"skill:insight\",\"skill:investigation\",\"alert\",\"skill:acrobatics\"],\"equipment_kits\":{\"class:wizard\":\"A\",\"background:sage\":\"A\"},\"kit_picks\":{},\"prepared_spells\":[\"acid-splash\",\"chill-touch\",\"dancing-lights\",\"alarm\"],\"name\":\"\",\"backstory\":\"\",\"choices\":{\"background:sage:increase:0:Sage\":{\"constitution\":2,\"intelligence\":1},\"class:wizard:skill:1:Skill Proficiencies\":[\"insight\",\"investigation\"],\"species:human:skill:0:Skillful\":[\"acrobatics\"],\"species:human:feature:0:origin\":[\"alert\"]}},\"answers\":{\"background:sage:increase:0:Sage\":{\"constitution\":2,\"intelligenc…"
+ },
+ {
+  "at": 1793950330106,
+  "kind": "response",
+  "status": 200,
+  "url": "/api/prototype/wizard/contract",
+  "body": "{\"version\":1,\"release\":\"95ccb98deeca8009aa02ef77069d3d9aa112e4e813954e98be888e7f583640aa\",\"draft\":{\"species_slug\":\"human\",\"species_base\":\"Human\",\"class_slug\":\"wizard\",\"subclass_slug\":null,\"background_slug\":\"sage\",\"level\":1,\"ability_score_method\":\"point_buy\",\"ability_scores\":{\"strength\":15,\"dexterity\":14,\"constitution\":13,\"intelligence\":12,\"wisdom\":10,\"charisma\":8},\"selected_choices\":[\"background:constitution+2,intelligence+1\",\"skill:insight\",\"skill:investigation\",\"alert\",\"skill:acrobatics\"],\"choices\":{\"background:sage:increase:0:Sage\":{\"constitution\":2,\"intelligence\":1},\"class:wizard:skill:1:Skill Proficiencies\":[\"insight\",\"investigation\"],\"species:human:skill:0:Skillful\":[\"acrobatics\"],\"species:human:feature:0:origin\":[\"alert\"]},\"equipment_kits\":{\"class:wizard\":\"A\",\"background:sage\":\"A\"},\"kit_picks\":{},\"prepared_spells\":[\"acid-splash\",\"chill-touch\",\"dancing-lights\",\"alarm\"],\"equipment\":…"
+ },
+ {
+  "at": 1793950331456,
+  "kind": "request",
+  "method": "POST",
+  "url": "/api/prototype/wizard/contract",
+  "body": "{\"draft\":{\"species_slug\":\"human\",\"species_base\":\"Human\",\"class_slug\":\"wizard\",\"subclass_slug\":null,\"background_slug\":\"sage\",\"level\":1,\"ability_score_method\":\"point_buy\",\"ability_scores\":{\"strength\":15,\"dexterity\":14,\"constitution\":13,\"intelligence\":12,\"wisdom\":10,\"charisma\":8},\"selected_choices\":[\"background:constitution+2,intelligence+1\",\"skill:insight\",\"skill:investigation\",\"alert\",\"skill:acrobatics\"],\"equipment_kits\":{\"class:wizard\":\"A\",\"background:sage\":\"A\"},\"kit_picks\":{},\"prepared_spells\":[\"acid-splash\",\"chill-touch\",\"dancing-lights\",\"alarm\",\"burning-hands\"],\"name\":\"\",\"backstory\":\"\",\"choices\":{\"background:sage:increase:0:Sage\":{\"constitution\":2,\"intelligence\":1},\"class:wizard:skill:1:Skill Proficiencies\":[\"insight\",\"investigation\"],\"species:human:skill:0:Skillful\":[\"acrobatics\"],\"species:human:feature:0:origin\":[\"alert\"]}},\"answers\":{\"background:sage:increase:0:Sage\":{\"constitution…"
+ },
+ {
+  "at": 1793950333502,
+  "kind": "response",
+  "status": 200,
+  "url": "/api/prototype/wizard/contract",
+  "body": "{\"version\":1,\"release\":\"95ccb98deeca8009aa02ef77069d3d9aa112e4e813954e98be888e7f583640aa\",\"draft\":{\"species_slug\":\"human\",\"species_base\":\"Human\",\"class_slug\":\"wizard\",\"subclass_slug\":null,\"background_slug\":\"sage\",\"level\":1,\"ability_score_method\":\"point_buy\",\"ability_scores\":{\"strength\":15,\"dexterity\":14,\"constitution\":13,\"intelligence\":12,\"wisdom\":10,\"charisma\":8},\"selected_choices\":[\"background:constitution+2,intelligence+1\",\"skill:insight\",\"skill:investigation\",\"alert\",\"skill:acrobatics\"],\"choices\":{\"background:sage:increase:0:Sage\":{\"constitution\":2,\"intelligence\":1},\"class:wizard:skill:1:Skill Proficiencies\":[\"insight\",\"investigation\"],\"species:human:skill:0:Skillful\":[\"acrobatics\"],\"species:human:feature:0:origin\":[\"alert\"]},\"equipment_kits\":{\"class:wizard\":\"A\",\"background:sage\":\"A\"},\"kit_picks\":{},\"prepared_spells\":[\"acid-splash\",\"chill-touch\",\"dancing-lights\",\"alarm\",\"burning-hand…"
+ },
+ {
+  "at": 1793950340037,
+  "kind": "request",
+  "method": "POST",
+  "url": "/api/prototype/wizard/contract",
+  "body": "{\"draft\":{\"species_slug\":\"human\",\"species_base\":\"Human\",\"class_slug\":\"wizard\",\"subclass_slug\":null,\"background_slug\":\"sage\",\"level\":1,\"ability_score_method\":\"point_buy\",\"ability_scores\":{\"strength\":15,\"dexterity\":14,\"constitution\":13,\"intelligence\":12,\"wisdom\":10,\"charisma\":8},\"selected_choices\":[\"background:constitution+2,intelligence+1\",\"skill:insight\",\"skill:investigation\",\"alert\",\"skill:acrobatics\"],\"equipment_kits\":{\"class:wizard\":\"A\",\"background:sage\":\"A\"},\"kit_picks\":{},\"prepared_spells\":[\"acid-splash\",\"chill-touch\",\"dancing-lights\",\"alarm\",\"burning-hands\",\"charm-person\"],\"name\":\"\",\"backstory\":\"\",\"choices\":{\"background:sage:increase:0:Sage\":{\"constitution\":2,\"intelligence\":1},\"class:wizard:skill:1:Skill Proficiencies\":[\"insight\",\"investigation\"],\"species:human:skill:0:Skillful\":[\"acrobatics\"],\"species:human:feature:0:origin\":[\"alert\"]}},\"answers\":{\"background:sage:increase:0:Sage\"…"
+ },
+ {
+  "at": 1793950343208,
+  "kind": "response",
+  "status": 200,
+  "url": "/api/prototype/wizard/contract",
+  "body": "{\"version\":1,\"release\":\"95ccb98deeca8009aa02ef77069d3d9aa112e4e813954e98be888e7f583640aa\",\"draft\":{\"species_slug\":\"human\",\"species_base\":\"Human\",\"class_slug\":\"wizard\",\"subclass_slug\":null,\"background_slug\":\"sage\",\"level\":1,\"ability_score_method\":\"point_buy\",\"ability_scores\":{\"strength\":15,\"dexterity\":14,\"constitution\":13,\"intelligence\":12,\"wisdom\":10,\"charisma\":8},\"selected_choices\":[\"background:constitution+2,intelligence+1\",\"skill:insight\",\"skill:investigation\",\"alert\",\"skill:acrobatics\"],\"choices\":{\"background:sage:increase:0:Sage\":{\"constitution\":2,\"intelligence\":1},\"class:wizard:skill:1:Skill Proficiencies\":[\"insight\",\"investigation\"],\"species:human:skill:0:Skillful\":[\"acrobatics\"],\"species:human:feature:0:origin\":[\"alert\"]},\"equipment_kits\":{\"class:wizard\":\"A\",\"background:sage\":\"A\"},\"kit_picks\":{},\"prepared_spells\":[\"acid-splash\",\"chill-touch\",\"dancing-lights\",\"alarm\",\"burning-hand…"
+ },
+ {
+  "at": 1793950344464,
+  "kind": "request",
+  "method": "POST",
+  "url": "/api/prototype/wizard/contract",
+  "body": "{\"draft\":{\"species_slug\":\"human\",\"species_base\":\"Human\",\"class_slug\":\"wizard\",\"subclass_slug\":null,\"background_slug\":\"sage\",\"level\":1,\"ability_score_method\":\"point_buy\",\"ability_scores\":{\"strength\":15,\"dexterity\":14,\"constitution\":13,\"intelligence\":12,\"wisdom\":10,\"charisma\":8},\"selected_choices\":[\"background:constitution+2,intelligence+1\",\"skill:insight\",\"skill:investigation\",\"alert\",\"skill:acrobatics\"],\"equipment_kits\":{\"class:wizard\":\"A\",\"background:sage\":\"A\"},\"kit_picks\":{},\"prepared_spells\":[\"acid-splash\",\"chill-touch\",\"dancing-lights\",\"alarm\",\"burning-hands\",\"charm-person\",\"chromatic-orb\"],\"name\":\"\",\"backstory\":\"\",\"choices\":{\"background:sage:increase:0:Sage\":{\"constitution\":2,\"intelligence\":1},\"class:wizard:skill:1:Skill Proficiencies\":[\"insight\",\"investigation\"],\"species:human:skill:0:Skillful\":[\"acrobatics\"],\"species:human:feature:0:origin\":[\"alert\"]}},\"answers\":{\"background:sage:…"
+ },
+ {
+  "at": 1793950347380,
+  "kind": "response",
+  "status": 200,
+  "url": "/api/prototype/wizard/contract",
+  "body": "{\"version\":1,\"release\":\"95ccb98deeca8009aa02ef77069d3d9aa112e4e813954e98be888e7f583640aa\",\"draft\":{\"species_slug\":\"human\",\"species_base\":\"Human\",\"class_slug\":\"wizard\",\"subclass_slug\":null,\"background_slug\":\"sage\",\"level\":1,\"ability_score_method\":\"point_buy\",\"ability_scores\":{\"strength\":15,\"dexterity\":14,\"constitution\":13,\"intelligence\":12,\"wisdom\":10,\"charisma\":8},\"selected_choices\":[\"background:constitution+2,intelligence+1\",\"skill:insight\",\"skill:investigation\",\"alert\",\"skill:acrobatics\"],\"choices\":{\"background:sage:increase:0:Sage\":{\"constitution\":2,\"intelligence\":1},\"class:wizard:skill:1:Skill Proficiencies\":[\"insight\",\"investigation\"],\"species:human:skill:0:Skillful\":[\"acrobatics\"],\"species:human:feature:0:origin\":[\"alert\"]},\"equipment_kits\":{\"class:wizard\":\"A\",\"background:sage\":\"A\"},\"kit_picks\":{},\"prepared_spells\":[\"acid-splash\",\"chill-touch\",\"dancing-lights\",\"alarm\",\"burning-hand…"
+ },
+ {
+  "at": 1793950348753,
+  "kind": "request",
+  "method": "POST",
+  "url": "/api/prototype/wizard/contract",
+  "body": "{\"draft\":{\"species_slug\":\"human\",\"species_base\":\"Human\",\"class_slug\":\"wizard\",\"subclass_slug\":null,\"background_slug\":\"sage\",\"level\":1,\"ability_score_method\":\"point_buy\",\"ability_scores\":{\"strength\":15,\"dexterity\":14,\"constitution\":13,\"intelligence\":12,\"wisdom\":10,\"charisma\":8},\"selected_choices\":[\"background:constitution+2,intelligence+1\",\"skill:insight\",\"skill:investigation\",\"alert\",\"skill:acrobatics\"],\"equipment_kits\":{\"class:wizard\":\"A\",\"background:sage\":\"A\"},\"kit_picks\":{},\"prepared_spells\":[\"acid-splash\",\"chill-touch\",\"dancing-lights\",\"alarm\",\"burning-hands\",\"charm-person\",\"chromatic-orb\"],\"name\":\"Брин Тихий\",\"backstory\":\"\",\"choices\":{\"background:sage:increase:0:Sage\":{\"constitution\":2,\"intelligence\":1},\"class:wizard:skill:1:Skill Proficiencies\":[\"insight\",\"investigation\"],\"species:human:skill:0:Skillful\":[\"acrobatics\"],\"species:human:feature:0:origin\":[\"alert\"]}},\"answers\":{\"backgr…"
+ },
+ {
+  "at": 1793950351633,
+  "kind": "response",
+  "status": 200,
+  "url": "/api/prototype/wizard/contract",
+  "body": "{\"version\":1,\"release\":\"95ccb98deeca8009aa02ef77069d3d9aa112e4e813954e98be888e7f583640aa\",\"draft\":{\"species_slug\":\"human\",\"species_base\":\"Human\",\"class_slug\":\"wizard\",\"subclass_slug\":null,\"background_slug\":\"sage\",\"level\":1,\"ability_score_method\":\"point_buy\",\"ability_scores\":{\"strength\":15,\"dexterity\":14,\"constitution\":13,\"intelligence\":12,\"wisdom\":10,\"charisma\":8},\"selected_choices\":[\"background:constitution+2,intelligence+1\",\"skill:insight\",\"skill:investigation\",\"alert\",\"skill:acrobatics\"],\"choices\":{\"background:sage:increase:0:Sage\":{\"constitution\":2,\"intelligence\":1},\"class:wizard:skill:1:Skill Proficiencies\":[\"insight\",\"investigation\"],\"species:human:skill:0:Skillful\":[\"acrobatics\"],\"species:human:feature:0:origin\":[\"alert\"]},\"equipment_kits\":{\"class:wizard\":\"A\",\"background:sage\":\"A\"},\"kit_picks\":{},\"prepared_spells\":[\"acid-splash\",\"chill-touch\",\"dancing-lights\",\"alarm\",\"burning-hand…"
+ },
+ {
+  "at": 1793950353175,
+  "kind": "request",
+  "method": "POST",
+  "url": "/api/prototype/wizard/contract",
+  "body": "{\"draft\":{\"species_slug\":\"human\",\"species_base\":\"Human\",\"class_slug\":\"wizard\",\"subclass_slug\":null,\"background_slug\":\"sage\",\"level\":1,\"ability_score_method\":\"point_buy\",\"ability_scores\":{\"strength\":15,\"dexterity\":14,\"constitution\":13,\"intelligence\":12,\"wisdom\":10,\"charisma\":8},\"selected_choices\":[\"background:constitution+2,intelligence+1\",\"skill:insight\",\"skill:investigation\",\"alert\",\"skill:acrobatics\"],\"equipment_kits\":{\"class:wizard\":\"A\",\"background:sage\":\"A\"},\"kit_picks\":{},\"prepared_spells\":[\"acid-splash\",\"chill-touch\",\"dancing-lights\",\"alarm\",\"burning-hands\",\"charm-person\",\"chromatic-orb\"],\"name\":\"Брин Тихий\",\"backstory\":\"Ищет следы старой башни и не доверяет страже.\",\"choices\":{\"background:sage:increase:0:Sage\":{\"constitution\":2,\"intelligence\":1},\"class:wizard:skill:1:Skill Proficiencies\":[\"insight\",\"investigation\"],\"species:human:skill:0:Skillful\":[\"acrobatics\"],\"species:human:fea…"
+ },
+ {
+  "at": 1793950355798,
+  "kind": "response",
+  "status": 200,
+  "url": "/api/prototype/wizard/contract",
+  "body": "{\"version\":1,\"release\":\"95ccb98deeca8009aa02ef77069d3d9aa112e4e813954e98be888e7f583640aa\",\"draft\":{\"species_slug\":\"human\",\"species_base\":\"Human\",\"class_slug\":\"wizard\",\"subclass_slug\":null,\"background_slug\":\"sage\",\"level\":1,\"ability_score_method\":\"point_buy\",\"ability_scores\":{\"strength\":15,\"dexterity\":14,\"constitution\":13,\"intelligence\":12,\"wisdom\":10,\"charisma\":8},\"selected_choices\":[\"background:constitution+2,intelligence+1\",\"skill:insight\",\"skill:investigation\",\"alert\",\"skill:acrobatics\"],\"choices\":{\"background:sage:increase:0:Sage\":{\"constitution\":2,\"intelligence\":1},\"class:wizard:skill:1:Skill Proficiencies\":[\"insight\",\"investigation\"],\"species:human:skill:0:Skillful\":[\"acrobatics\"],\"species:human:feature:0:origin\":[\"alert\"]},\"equipment_kits\":{\"class:wizard\":\"A\",\"background:sage\":\"A\"},\"kit_picks\":{},\"prepared_spells\":[\"acid-splash\",\"chill-touch\",\"dancing-lights\",\"alarm\",\"burning-hand…"
+ },
+ {
+  "at": 1793950362190,
+  "kind": "request",
+  "method": "POST",
+  "url": "/api/prototype/campaigns",
+  "body": "{\"name\":\"Брин Тихий\",\"build\":{\"species_slug\":\"human\",\"class_slug\":\"wizard\",\"level\":1,\"selected_choices\":[\"background:constitution+2,intelligence+1\",\"skill:insight\",\"skill:investigation\",\"alert\",\"skill:acrobatics\"],\"equipment\":[\"book\",\"calligraphers-supplies\",\"parchment\",\"quarterstaff\",\"robe\",\"dagger\",\"scholars-pack\",\"staff\"],\"background_slug\":\"sage\",\"ability_score_method\":\"point_buy\",\"ability_scores\":{\"strength\":15,\"dexterity\":14,\"constitution\":13,\"intelligence\":12,\"wisdom\":10,\"charisma\":8}},\"prepared_spells\":[\"acid-splash\",\"chill-touch\",\"dancing-lights\",\"alarm\",\"burning-hands\",\"charm-person\",\"chromatic-orb\"],\"adventure\":\"sandbox\",\"description\":\"\",\"encounter_monsters\":[],\"mechanics_ruleset\":\"dnd2024\",\"rules_confirmed\":true,\"hero_confirmed\":true,\"background_confirmed\":true,\"hero_background\":\"Ищет следы старой башни и не доверяет страже.\",\"request_id\":\"1b72cb6c-c805-4636-a3c5-7d2b4f1696f4\"…"
+ },
+ {
+  "at": 1793950368744,
+  "kind": "request",
+  "method": "GET",
+  "url": "/api/campaigns/0d0f05fc-5115-4066-b3bf-93e1d507f660",
+  "body": ""
+ },
+ {
+  "at": 1793950368800,
+  "kind": "response",
+  "status": 200,
+  "url": "/api/prototype/campaigns",
+  "body": "{\"id\":\"0d0f05fc-5115-4066-b3bf-93e1d507f660\",\"name\":\"Брин Тихий\",\"backend\":\"nat20\"}"
+ },
+ {
+  "at": 1793950369485,
+  "kind": "request",
+  "method": "GET",
+  "url": "/api/campaigns/0d0f05fc-5115-4066-b3bf-93e1d507f660/character",
+  "body": ""
+ },
+ {
+  "at": 1793950369513,
+  "kind": "request",
+  "method": "GET",
+  "url": "/api/campaigns/0d0f05fc-5115-4066-b3bf-93e1d507f660/screen",
+  "body": ""
+ },
+ {
+  "at": 1793950369513,
+  "kind": "request",
+  "method": "GET",
+  "url": "/api/campaigns/0d0f05fc-5115-4066-b3bf-93e1d507f660/prototype",
+  "body": ""
+ },
+ {
+  "at": 1793950369545,
+  "kind": "response",
+  "status": 200,
+  "url": "/api/campaigns/0d0f05fc-5115-4066-b3bf-93e1d507f660",
+  "body": "{\"id\":\"0d0f05fc-5115-4066-b3bf-93e1d507f660\",\"name\":\"Брин Тихий\",\"state\":{\"location\":\"Брин Тихий\",\"turn\":0,\"facts\":[],\"deferred\":[],\"locations\":[{\"name\":\"Брин Тихий\",\"description\":\"Открытая песочница.\",\"objects\":[],\"interactions\":[],\"facts\":[],\"checks\":{},\"npc\":[]}],\"preparation\":{\"background_confirmed\":true,\"source\":\"hero-backstory\"},\"hero\":{\"name\":\"Брин Тихий\",\"background\":\"Ищет следы старой башни и не доверяет страже.\",\"level\":1,\"hp\":8,\"max_hp\":8,\"temp_hp\":0,\"ac\":12,\"species\":\"human\",\"class_name\":\"wizard\",\"origin\":\"\",\"subclass\":\"\",\"languages\":[],\"personality\":\"\",\"appearance\":\"\",\"alignment\":\"\",\"goals\":[],\"bonds\":\"\",\"ideals\":\"\",\"flaws\":\"\",\"skill_proficiencies\":[\"acrobatics\",\"arcana\",\"history\",\"insight\",\"investigation\"],\"expertise\":[],\"saving_throw_proficiencies\":[\"intelligence\",\"wisdom\"],\"weapon_proficiencies\":[],\"specific_weapon_proficiencies\":[],\"tool_proficiencies\":[],\"tool_expertise…"
+ },
+ {
+  "at": 1793950391754,
+  "kind": "response",
+  "status": 200,
+  "url": "/api/campaigns/0d0f05fc-5115-4066-b3bf-93e1d507f660/screen",
+  "body": "{\"contract_version\":\"screen-v1\",\"feedback\":null,\"snapshot\":{\"campaign_id\":\"0d0f05fc-5115-4066-b3bf-93e1d507f660\",\"version\":0,\"command_turn\":true,\"hero\":{\"name\":\"Брин Тихий\",\"hp\":8,\"max_hp\":8,\"conditions\":[],\"hit_dice\":1,\"resources\":[{\"id\":\"experience\",\"label\":\"Опыт\",\"current\":0,\"maximum\":null},{\"id\":\"spell_slot:1\",\"label\":\"Ячейки 1 круга\",\"current\":2,\"maximum\":null},{\"id\":\"concentration\",\"label\":\"Концентрация\",\"current\":0,\"maximum\":null}]},\"combat\":null,\"last_roll\":null,\"backend\":\"nat20\",\"terminal\":null,\"settings\":{\"death\":\"agreed\",\"difficulty\":\"as_is\",\"rewards\":\"normal\",\"death_label\":\"по договорённости\",\"difficulty_label\":\"как есть\",\"rewards_label\":\"обычные\",\"death_text\":\"Мастер спрашивает перед необратимым исходом. Без заранее объявленного риска смерть останавливается, механический результат сохраняется; согласие даётся до боя, а не задним числом.\",\"difficulty_text\":\"Числа как в правил…"
+ },
+ {
+  "at": 1793950392758,
+  "kind": "response",
+  "status": 200,
+  "url": "/api/campaigns/0d0f05fc-5115-4066-b3bf-93e1d507f660/prototype",
+  "body": "{\"version\":0,\"experimental\":true,\"actions\":[{\"id\":\"actions:attack\",\"slug\":\"attack\",\"name\":\"attack\",\"category\":\"actions\",\"rules_version\":\"dnd2024\",\"source\":{\"runtime\":\"Nat20 0.7.0\"},\"execution_status\":\"native_experimental\",\"known_issue\":null,\"parameters\":{\"$defs\":{\"GridPosition\":{\"additionalProperties\":false,\"properties\":{\"x\":{\"maximum\":79,\"minimum\":0,\"title\":\"X\",\"type\":\"integer\"},\"y\":{\"maximum\":79,\"minimum\":0,\"title\":\"Y\",\"type\":\"integer\"},\"z\":{\"maximum\":20,\"minimum\":-6,\"title\":\"Z\",\"type\":\"integer\"}},\"required\":[\"x\",\"y\",\"z\"],\"title\":\"GridPosition\",\"type\":\"object\"}},\"additionalProperties\":false,\"description\":\"Public native choices only; never accepts roll/stat/formula overrides.\",\"properties\":{\"kind\":{\"const\":\"native_action\",\"title\":\"Kind\",\"type\":\"string\"},\"operation\":{\"enum\":[\"attack\",\"cast_spell\",\"use_item\",\"move\",\"dash\",\"dodge\",\"disengage\",\"hide\",\"help\",\"ready\",\"reaction\",\"move_mark\",\"u…"
+ },
+ {
+  "at": 1793950392785,
+  "kind": "response",
+  "status": 200,
+  "url": "/api/campaigns/0d0f05fc-5115-4066-b3bf-93e1d507f660/character",
+  "body": "{\"backend\":\"nat20\",\"version\":0,\"sheet\":{\"ability_scores\":{\"strength\":15,\"dexterity\":14,\"constitution\":15,\"intelligence\":13,\"wisdom\":10,\"charisma\":8},\"ability_modifiers\":{\"strength\":2,\"dexterity\":2,\"constitution\":2,\"intelligence\":1,\"wisdom\":0,\"charisma\":-1},\"proficiency_bonus\":2,\"base_speed\":30,\"movement_modes\":{\"climb\":null,\"swim\":null,\"fly\":null,\"burrow\":null},\"ignored_difficult_terrain\":[],\"languages\":[\"common\"],\"initiative_advantage\":0,\"senses\":{\"darkvision\":null,\"blindsight\":null,\"tremorsense\":null,\"truesight\":null},\"damage_resistances\":[],\"damage_immunities\":[],\"condition_immunities\":[],\"save_proficiencies\":[\"int\",\"wis\"],\"skill_proficiencies\":[\"acrobatics\",\"arcana\",\"history\",\"insight\",\"investigation\"],\"skill_expertise\":[],\"tool_proficiencies\":[\"art:calligrapher\"],\"weapon_proficiencies\":[\"simple_melee\",\"simple_ranged\"],\"weapon_masteries\":[],\"armor_training\":[],\"passive_perception\":10…"
+ },
+ {
+  "at": 1793950396456,
+  "kind": "request",
+  "method": "POST",
+  "url": "/api/campaigns/0d0f05fc-5115-4066-b3bf-93e1d507f660/command-turn",
+  "body": "{\"request_id\":\"39a6494e-4a20-406e-a558-bb446cb525db\",\"expected_version\":0,\"text\":\"Осматриваюсь по сторонам.\"}"
+ },
+ {
+  "at": 1793950408142,
+  "kind": "request",
+  "method": "GET",
+  "url": "/api/campaigns/0d0f05fc-5115-4066-b3bf-93e1d507f660",
+  "body": ""
+ },
+ {
+  "at": 1793950408495,
+  "kind": "response",
+  "status": 200,
+  "url": "/api/campaigns/0d0f05fc-5115-4066-b3bf-93e1d507f660/command-turn",
+  "body": "{\"status\":\"observation\",\"command\":null,\"events\":[],\"state_version\":1,\"snapshot\":{\"event_id\":\"initial\",\"branch_id\":\"main\",\"sequence\":1,\"location\":\"Брин Тихий\",\"actors\":[{\"id\":\"hero\",\"kind\":\"hero\",\"name\":\"Брин Тихий\",\"resources\":{\"hit_dice\":1,\"experience\":0,\"spell_slot:1\":2,\"concentration\":0},\"conditions\":[],\"hp\":{\"current\":8,\"maximum\":8},\"position\":[1,1,0]}],\"combat\":{\"id\":\"none\",\"active\":false,\"round\":0,\"turn\":null},\"available_checks\":[\"acrobatics\",\"animal_handling\",\"arcana\",\"athletics\",\"cha\",\"con\",\"deception\",\"dex\",\"history\",\"insight\",\"int\",\"intimidation\",\"investigation\",\"medicine\",\"nature\",\"perception\",\"performance\",\"persuasion\",\"religion\",\"save-cha\",\"save-con\",\"save-dex\",\"save-int\",\"save-str\",\"save-wis\",\"sleight_of_hand\",\"stealth\",\"str\",\"survival\",\"wis\"],\"effects\":[]},\"narrative\":\"Открытая песочница — Нового ничего не заметно.\",\"narrative_policy\":\"engine_rejected\",\"narrative_reason\":\"…"
+ },
+ {
+  "at": 1793950408613,
+  "kind": "request",
+  "method": "GET",
+  "url": "/api/campaigns/0d0f05fc-5115-4066-b3bf-93e1d507f660/character",
+  "body": ""
+ },
+ {
+  "at": 1793950408614,
+  "kind": "request",
+  "method": "GET",
+  "url": "/api/campaigns/0d0f05fc-5115-4066-b3bf-93e1d507f660/screen",
+  "body": ""
+ },
+ {
+  "at": 1793950408614,
+  "kind": "request",
+  "method": "GET",
+  "url": "/api/campaigns/0d0f05fc-5115-4066-b3bf-93e1d507f660/prototype",
+  "body": ""
+ },
+ {
+  "at": 1793950408614,
+  "kind": "request",
+  "method": "GET",
+  "url": "/api/campaigns/0d0f05fc-5115-4066-b3bf-93e1d507f660/screen",
+  "body": ""
+ },
+ {
+  "at": 1793950408679,
+  "kind": "response",
+  "status": 200,
+  "url": "/api/campaigns/0d0f05fc-5115-4066-b3bf-93e1d507f660",
+  "body": "{\"id\":\"0d0f05fc-5115-4066-b3bf-93e1d507f660\",\"name\":\"Брин Тихий\",\"state\":{\"location\":\"Брин Тихий\",\"turn\":1,\"facts\":[],\"deferred\":[],\"locations\":[{\"name\":\"Брин Тихий\",\"description\":\"Открытая песочница.\",\"objects\":[],\"interactions\":[],\"facts\":[],\"checks\":{},\"npc\":[]}],\"preparation\":{\"background_confirmed\":true,\"source\":\"hero-backstory\"},\"hero\":{\"name\":\"Брин Тихий\",\"background\":\"Ищет следы старой башни и не доверяет страже.\",\"level\":1,\"hp\":8,\"max_hp\":8,\"temp_hp\":0,\"ac\":12,\"species\":\"human\",\"class_name\":\"wizard\",\"origin\":\"\",\"subclass\":\"\",\"languages\":[],\"personality\":\"\",\"appearance\":\"\",\"alignment\":\"\",\"goals\":[],\"bonds\":\"\",\"ideals\":\"\",\"flaws\":\"\",\"skill_proficiencies\":[\"acrobatics\",\"arcana\",\"history\",\"insight\",\"investigation\"],\"expertise\":[],\"saving_throw_proficiencies\":[\"intelligence\",\"wisdom\"],\"weapon_proficiencies\":[],\"specific_weapon_proficiencies\":[],\"tool_proficiencies\":[],\"tool_expertise…"
+ },
+ {
+  "at": 1793950409386,
+  "kind": "response",
+  "status": 200,
+  "url": "/api/campaigns/0d0f05fc-5115-4066-b3bf-93e1d507f660/character",
+  "body": "{\"backend\":\"nat20\",\"version\":1,\"sheet\":{\"ability_scores\":{\"strength\":15,\"dexterity\":14,\"constitution\":15,\"intelligence\":13,\"wisdom\":10,\"charisma\":8},\"ability_modifiers\":{\"strength\":2,\"dexterity\":2,\"constitution\":2,\"intelligence\":1,\"wisdom\":0,\"charisma\":-1},\"proficiency_bonus\":2,\"base_speed\":30,\"movement_modes\":{\"climb\":null,\"swim\":null,\"fly\":null,\"burrow\":null},\"ignored_difficult_terrain\":[],\"languages\":[\"common\"],\"initiative_advantage\":0,\"senses\":{\"darkvision\":null,\"blindsight\":null,\"tremorsense\":null,\"truesight\":null},\"damage_resistances\":[],\"damage_immunities\":[],\"condition_immunities\":[],\"save_proficiencies\":[\"int\",\"wis\"],\"skill_proficiencies\":[\"acrobatics\",\"arcana\",\"history\",\"insight\",\"investigation\"],\"skill_expertise\":[],\"tool_proficiencies\":[\"art:calligrapher\"],\"weapon_proficiencies\":[\"simple_melee\",\"simple_ranged\"],\"weapon_masteries\":[],\"armor_training\":[],\"passive_perception\":10…"
+ },
+ {
+  "at": 1793950410528,
+  "kind": "response",
+  "status": 200,
+  "url": "/api/campaigns/0d0f05fc-5115-4066-b3bf-93e1d507f660/prototype",
+  "body": "{\"version\":1,\"experimental\":true,\"actions\":[{\"id\":\"actions:attack\",\"slug\":\"attack\",\"name\":\"attack\",\"category\":\"actions\",\"rules_version\":\"dnd2024\",\"source\":{\"runtime\":\"Nat20 0.7.0\"},\"execution_status\":\"native_experimental\",\"known_issue\":null,\"parameters\":{\"$defs\":{\"GridPosition\":{\"additionalProperties\":false,\"properties\":{\"x\":{\"maximum\":79,\"minimum\":0,\"title\":\"X\",\"type\":\"integer\"},\"y\":{\"maximum\":79,\"minimum\":0,\"title\":\"Y\",\"type\":\"integer\"},\"z\":{\"maximum\":20,\"minimum\":-6,\"title\":\"Z\",\"type\":\"integer\"}},\"required\":[\"x\",\"y\",\"z\"],\"title\":\"GridPosition\",\"type\":\"object\"}},\"additionalProperties\":false,\"description\":\"Public native choices only; never accepts roll/stat/formula overrides.\",\"properties\":{\"kind\":{\"const\":\"native_action\",\"title\":\"Kind\",\"type\":\"string\"},\"operation\":{\"enum\":[\"attack\",\"cast_spell\",\"use_item\",\"move\",\"dash\",\"dodge\",\"disengage\",\"hide\",\"help\",\"ready\",\"reaction\",\"move_mark\",\"u…"
+ },
+ {
+  "at": 1793950413742,
+  "kind": "response",
+  "status": 200,
+  "url": "/api/campaigns/0d0f05fc-5115-4066-b3bf-93e1d507f660/screen",
+  "body": "{\"contract_version\":\"screen-v1\",\"feedback\":{\"kind\":\"observation\",\"text\":\"Открытая песочница — Нового ничего не заметно.\"},\"snapshot\":{\"campaign_id\":\"0d0f05fc-5115-4066-b3bf-93e1d507f660\",\"version\":1,\"command_turn\":true,\"hero\":{\"name\":\"Брин Тихий\",\"hp\":8,\"max_hp\":8,\"conditions\":[],\"hit_dice\":1,\"resources\":[{\"id\":\"experience\",\"label\":\"Опыт\",\"current\":0,\"maximum\":null},{\"id\":\"spell_slot:1\",\"label\":\"Ячейки 1 круга\",\"current\":2,\"maximum\":null},{\"id\":\"concentration\",\"label\":\"Концентрация\",\"current\":0,\"maximum\":null}]},\"combat\":null,\"last_roll\":null,\"backend\":\"nat20\",\"terminal\":null,\"settings\":{\"death\":\"agreed\",\"difficulty\":\"as_is\",\"rewards\":\"normal\",\"death_label\":\"по договорённости\",\"difficulty_label\":\"как есть\",\"rewards_label\":\"обычные\",\"death_text\":\"Мастер спрашивает перед необратимым исходом. Без заранее объявленного риска смерть останавливается, механический результат сохраняется; согласие…"
+ },
+ {
+  "at": 1793950413743,
+  "kind": "response",
+  "status": 200,
+  "url": "/api/campaigns/0d0f05fc-5115-4066-b3bf-93e1d507f660/screen",
+  "body": "{\"contract_version\":\"screen-v1\",\"feedback\":{\"kind\":\"observation\",\"text\":\"Открытая песочница — Нового ничего не заметно.\"},\"snapshot\":{\"campaign_id\":\"0d0f05fc-5115-4066-b3bf-93e1d507f660\",\"version\":1,\"command_turn\":true,\"hero\":{\"name\":\"Брин Тихий\",\"hp\":8,\"max_hp\":8,\"conditions\":[],\"hit_dice\":1,\"resources\":[{\"id\":\"experience\",\"label\":\"Опыт\",\"current\":0,\"maximum\":null},{\"id\":\"spell_slot:1\",\"label\":\"Ячейки 1 круга\",\"current\":2,\"maximum\":null},{\"id\":\"concentration\",\"label\":\"Концентрация\",\"current\":0,\"maximum\":null}]},\"combat\":null,\"last_roll\":null,\"backend\":\"nat20\",\"terminal\":null,\"settings\":{\"death\":\"agreed\",\"difficulty\":\"as_is\",\"rewards\":\"normal\",\"death_label\":\"по договорённости\",\"difficulty_label\":\"как есть\",\"rewards_label\":\"обычные\",\"death_text\":\"Мастер спрашивает перед необратимым исходом. Без заранее объявленного риска смерть останавливается, механический результат сохраняется; согласие…"
+ }
+]

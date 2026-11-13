@@ -1,0 +1,120 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "branch_id": {
+      "maxLength": 120,
+      "minLength": 1,
+      "title": "Branch Id",
+      "type": "string"
+    },
+    "campaign_id": {
+      "minLength": 1,
+      "title": "Campaign Id",
+      "type": "string"
+    },
+    "contract_version": {
+      "const": "memory-v1",
+      "default": "memory-v1",
+      "title": "Contract Version",
+      "type": "string"
+    },
+    "game_minutes": {
+      "minimum": 0,
+      "title": "Game Minutes",
+      "type": "integer"
+    },
+    "id": {
+      "maxLength": 120,
+      "minLength": 1,
+      "title": "Id",
+      "type": "string"
+    },
+    "known_by": {
+      "items": {
+        "type": "string"
+      },
+      "maxItems": 100,
+      "minItems": 1,
+      "title": "Known By",
+      "type": "array"
+    },
+    "parent_event_id": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Parent Event Id"
+    },
+    "payload": {
+      "additionalProperties": true,
+      "title": "Payload",
+      "type": "object"
+    },
+    "scope": {
+      "enum": [
+        "public",
+        "private",
+        "secret",
+        "gm"
+      ],
+      "title": "Scope",
+      "type": "string"
+    },
+    "sequence": {
+      "minimum": 1,
+      "title": "Sequence",
+      "type": "integer"
+    },
+    "source_ref": {
+      "maxLength": 400,
+      "minLength": 1,
+      "title": "Source Ref",
+      "type": "string"
+    },
+    "subjects": {
+      "items": {
+        "type": "string"
+      },
+      "maxItems": 100,
+      "minItems": 1,
+      "title": "Subjects",
+      "type": "array"
+    },
+    "type": {
+      "enum": [
+        "roll",
+        "damage",
+        "healing",
+        "resource",
+        "condition",
+        "movement",
+        "combat_started",
+        "combat_ended",
+        "command_resolved",
+        "effect"
+      ],
+      "title": "Type",
+      "type": "string"
+    }
+  },
+  "required": [
+    "scope",
+    "known_by",
+    "id",
+    "campaign_id",
+    "branch_id",
+    "sequence",
+    "parent_event_id",
+    "type",
+    "payload",
+    "subjects",
+    "source_ref",
+    "game_minutes"
+  ],
+  "title": "GameEvent",
+  "type": "object"
+}

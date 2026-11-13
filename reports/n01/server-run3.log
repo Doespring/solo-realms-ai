@@ -1,0 +1,9 @@
+Traceback (most recent call last):
+  File "/home/hermes/.hermes/scripts/serve_solo.py", line 46, in <module>
+    raise SystemExit(main())
+                     ~~~~^^
+  File "/home/hermes/.hermes/scripts/serve_solo.py", line 33, in main
+    data = prepare_profile(root / args.data_dir, offline=args.offline_mock)
+  File "/home/hermes/projects/SoloRealmsAI-Nat20/solo/prototype_profile.py", line 30, in prepare_profile
+    raise ValueError('Нужен новый пустой каталог. Старые профили автоматически не импортируются.')
+ValueError: Нужен новый пустой каталог. Старые профили автоматически не импортируются.

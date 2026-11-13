@@ -1,0 +1,777 @@
+{
+ "base": "http://127.0.0.1:19342",
+ "campaign": "d1fdeb18-6ded-4cad-97df-251ae22cebbd",
+ "phrase": "начинаю бой",
+ "steps": [
+  {
+   "name": "start-1440",
+   "present": true,
+   "active": true,
+   "width": 1126,
+   "height": 900,
+   "background": "rgb(20, 17, 13)",
+   "font": "Book, \"EB Garamond\", Georgia, \"Times New Roman\", serif",
+   "buttons": [
+    {
+     "text": "Начать историю",
+     "w": 145,
+     "h": 46
+    },
+    {
+     "text": "Загрузить книгу",
+     "w": 168,
+     "h": 46
+    }
+   ],
+   "primaryRadius": "2px",
+   "primaryColor": "rgb(216, 160, 92)",
+   "heading": "Тихая историяна целый вечер",
+   "lead": "Мастер помнит, что было вчера. Правила считает движок, слова — рассказчик. Ты играешь один, но не в одиночестве.",
+   "continueShown": true,
+   "overflow": {
+    "scroll": 1440,
+    "client": 1440
+   },
+   "images": 2,
+   "box": {
+    "x": 339.59375,
+    "y": 480.5625,
+    "width": 144.96875,
+    "height": 46,
+    "top": 480.5625,
+    "right": 484.5625,
+    "bottom": 526.5625,
+    "left": 339.59375
+   }
+  },
+  {
+   "name": "start-375",
+   "present": true,
+   "active": true,
+   "width": 339,
+   "height": 812,
+   "background": "rgb(20, 17, 13)",
+   "font": "Book, \"EB Garamond\", Georgia, \"Times New Roman\", serif",
+   "buttons": [
+    {
+     "text": "Начать историю",
+     "w": 145,
+     "h": 48
+    },
+    {
+     "text": "Загрузить книгу",
+     "w": 168,
+     "h": 48
+    }
+   ],
+   "primaryRadius": "2px",
+   "primaryColor": "rgb(216, 160, 92)",
+   "heading": "Тихая историяна целый вечер",
+   "lead": "Мастер помнит, что было вчера. Правила считает движок, слова — рассказчик. Ты играешь один, но не в одиночестве.",
+   "continueShown": true,
+   "overflow": {
+    "scroll": 375,
+    "client": 375
+   },
+   "images": 2,
+   "box": {
+    "x": 36,
+    "y": 491.984375,
+    "width": 144.96875,
+    "height": 48,
+    "top": 491.984375,
+    "right": 180.96875,
+    "bottom": 539.984375,
+    "left": 36
+   }
+  },
+  {
+   "name": "play-opened",
+   "how": "already"
+  },
+  {
+   "name": "layout-1440-before",
+   "viewport": [
+    1440,
+    900
+   ],
+   "scrollWidth": 1440,
+   "clientWidth": 1440,
+   "horizontalScroll": false,
+   "play": {
+    "x": 282,
+    "y": 92,
+    "w": 1126,
+    "h": 790,
+    "shown": true
+   },
+   "feed": {
+    "x": 355,
+    "y": 92,
+    "w": 692,
+    "h": 632,
+    "shown": true
+   },
+   "board": {
+    "x": 0,
+    "y": 0,
+    "w": 0,
+    "h": 0,
+    "shown": false
+   },
+   "boardMap": null,
+   "boardCells": 0,
+   "cell": null,
+   "gridColumns": 1,
+   "turns": [],
+   "legend": [],
+   "startShown": false,
+   "startButtons": [
+    "Начать историю",
+    "Загрузить книгу"
+   ],
+   "overflowing": []
+  },
+  {
+   "name": "turn-sent",
+   "before": 1,
+   "after": 3,
+   "boardShown": true
+  },
+  {
+   "name": "layout-1440",
+   "viewport": [
+    1440,
+    900
+   ],
+   "scrollWidth": 1440,
+   "clientWidth": 1440,
+   "horizontalScroll": false,
+   "play": {
+    "x": 282,
+    "y": 92,
+    "w": 1126,
+    "h": 790,
+    "shown": true
+   },
+   "feed": {
+    "x": 327,
+    "y": 92,
+    "w": 692,
+    "h": 592,
+    "shown": true
+   },
+   "board": {
+    "x": 1064,
+    "y": 92,
+    "w": 344,
+    "h": 790,
+    "shown": true
+   },
+   "boardMap": null,
+   "boardCells": 0,
+   "cell": null,
+   "gridColumns": 1,
+   "turns": [
+    "1Goblin Warrior10/10",
+    "2Тени у тракта12/12"
+   ],
+   "legend": [
+    "ты",
+    "противник"
+   ],
+   "boardMeta": "раунд 1",
+   "startShown": false,
+   "startButtons": [
+    "Начать историю",
+    "Загрузить книгу"
+   ],
+   "overflowing": []
+  },
+  {
+   "name": "map-move",
+   "moved": {
+    "target": {
+     "x": 1,
+     "y": 0,
+     "z": 0
+    },
+    "label": "Перейти: 2, 1",
+    "before": 5,
+    "after": 7
+   },
+   "passes": 1,
+   "marked": 0
+  },
+  {
+   "name": "layout-375",
+   "viewport": [
+    375,
+    812
+   ],
+   "scrollWidth": 375,
+   "clientWidth": 375,
+   "horizontalScroll": false,
+   "play": {
+    "x": 18,
+    "y": 286,
+    "w": 339,
+    "h": 1488,
+    "shown": true
+   },
+   "feed": {
+    "x": 18,
+    "y": 565,
+    "w": 339,
+    "h": 972,
+    "shown": true
+   },
+   "board": {
+    "x": 18,
+    "y": 286,
+    "w": 339,
+    "h": 267,
+    "shown": true
+   },
+   "boardMap": null,
+   "boardCells": 0,
+   "cell": null,
+   "gridColumns": 1,
+   "turns": [
+    "1Goblin Warrior10/10",
+    "2Тени у тракта5/12"
+   ],
+   "legend": [
+    "ты",
+    "противник",
+    "можно дойти"
+   ],
+   "boardMeta": "раунд 1",
+   "startShown": false,
+   "startButtons": [
+    "Начать историю",
+    "Загрузить книгу"
+   ],
+   "overflowing": []
+  },
+  {
+   "name": "synthetic-grid-1440",
+   "viewport": [
+    1440,
+    900
+   ],
+   "scrollWidth": 1440,
+   "clientWidth": 1440,
+   "horizontalScroll": false,
+   "play": {
+    "x": 282,
+    "y": 92,
+    "w": 1126,
+    "h": 790,
+    "shown": true
+   },
+   "feed": {
+    "x": 327,
+    "y": 92,
+    "w": 692,
+    "h": 592,
+    "shown": true
+   },
+   "board": {
+    "x": 1064,
+    "y": 92,
+    "w": 344,
+    "h": 790,
+    "shown": true
+   },
+   "boardMap": {
+    "x": 1065,
+    "y": 283,
+    "w": 343,
+    "h": 237,
+    "shown": true
+   },
+   "boardCells": 35,
+   "cell": {
+    "w": 44,
+    "h": 44
+   },
+   "gridColumns": 1,
+   "turns": [
+    "1Мирон12/12",
+    "2Разбойник4/9схвачен"
+   ],
+   "legend": [
+    "ты",
+    "укрытие",
+    "непроходимо"
+   ],
+   "boardMeta": "раунд 2 · 7 × 5 · клетка 5 футов · укрытие: половинное",
+   "boardNote": "Клетка — 5 футов. Идти можно только в подсвеченные клетки: их назвал движок.",
+   "startShown": false,
+   "startButtons": [
+    "Начать историю",
+    "Загрузить книгу"
+   ],
+   "overflowing": []
+  },
+  {
+   "name": "synthetic-grid-375",
+   "viewport": [
+    375,
+    812
+   ],
+   "scrollWidth": 375,
+   "clientWidth": 375,
+   "horizontalScroll": false,
+   "play": {
+    "x": 18,
+    "y": 286,
+    "w": 339,
+    "h": 1666,
+    "shown": true
+   },
+   "feed": {
+    "x": 18,
+    "y": 744,
+    "w": 339,
+    "h": 972,
+    "shown": true
+   },
+   "board": {
+    "x": 18,
+    "y": 286,
+    "w": 339,
+    "h": 446,
+    "shown": true
+   },
+   "boardMap": {
+    "x": 18,
+    "y": 467,
+    "w": 339,
+    "h": 234,
+    "shown": true
+   },
+   "boardCells": 35,
+   "cell": {
+    "w": 43,
+    "h": 43
+   },
+   "gridColumns": 1,
+   "turns": [
+    "1Мирон12/12",
+    "2Разбойник4/9схвачен"
+   ],
+   "legend": [
+    "ты",
+    "укрытие",
+    "непроходимо"
+   ],
+   "boardMeta": "раунд 2 · 7 × 5 · клетка 5 футов · укрытие: половинное",
+   "boardNote": "Клетка — 5 футов. Идти можно только в подсвеченные клетки: их назвал движок.",
+   "startShown": false,
+   "startButtons": [
+    "Начать историю",
+    "Загрузить книгу"
+   ],
+   "overflowing": []
+  }
+ ],
+ "errors": [],
+ "layouts": {
+  "375": {
+   "viewport": [
+    375,
+    812
+   ],
+   "scrollWidth": 375,
+   "clientWidth": 375,
+   "horizontalScroll": false,
+   "play": {
+    "x": 18,
+    "y": 286,
+    "w": 339,
+    "h": 1488,
+    "shown": true
+   },
+   "feed": {
+    "x": 18,
+    "y": 565,
+    "w": 339,
+    "h": 972,
+    "shown": true
+   },
+   "board": {
+    "x": 18,
+    "y": 286,
+    "w": 339,
+    "h": 267,
+    "shown": true
+   },
+   "boardMap": null,
+   "boardCells": 0,
+   "cell": null,
+   "gridColumns": 1,
+   "turns": [
+    "1Goblin Warrior10/10",
+    "2Тени у тракта5/12"
+   ],
+   "legend": [
+    "ты",
+    "противник",
+    "можно дойти"
+   ],
+   "boardMeta": "раунд 1",
+   "startShown": false,
+   "startButtons": [
+    "Начать историю",
+    "Загрузить книгу"
+   ],
+   "overflowing": []
+  },
+  "1440": {
+   "viewport": [
+    1440,
+    900
+   ],
+   "scrollWidth": 1440,
+   "clientWidth": 1440,
+   "horizontalScroll": false,
+   "play": {
+    "x": 282,
+    "y": 92,
+    "w": 1126,
+    "h": 790,
+    "shown": true
+   },
+   "feed": {
+    "x": 327,
+    "y": 92,
+    "w": 692,
+    "h": 592,
+    "shown": true
+   },
+   "board": {
+    "x": 1064,
+    "y": 92,
+    "w": 344,
+    "h": 790,
+    "shown": true
+   },
+   "boardMap": null,
+   "boardCells": 0,
+   "cell": null,
+   "gridColumns": 1,
+   "turns": [
+    "1Goblin Warrior10/10",
+    "2Тени у тракта12/12"
+   ],
+   "legend": [
+    "ты",
+    "противник"
+   ],
+   "boardMeta": "раунд 1",
+   "startShown": false,
+   "startButtons": [
+    "Начать историю",
+    "Загрузить книгу"
+   ],
+   "overflowing": []
+  },
+  "1440-before-turn": {
+   "viewport": [
+    1440,
+    900
+   ],
+   "scrollWidth": 1440,
+   "clientWidth": 1440,
+   "horizontalScroll": false,
+   "play": {
+    "x": 282,
+    "y": 92,
+    "w": 1126,
+    "h": 790,
+    "shown": true
+   },
+   "feed": {
+    "x": 355,
+    "y": 92,
+    "w": 692,
+    "h": 632,
+    "shown": true
+   },
+   "board": {
+    "x": 0,
+    "y": 0,
+    "w": 0,
+    "h": 0,
+    "shown": false
+   },
+   "boardMap": null,
+   "boardCells": 0,
+   "cell": null,
+   "gridColumns": 1,
+   "turns": [],
+   "legend": [],
+   "startShown": false,
+   "startButtons": [
+    "Начать историю",
+    "Загрузить книгу"
+   ],
+   "overflowing": []
+  },
+  "1440-move": {
+   "viewport": [
+    1440,
+    900
+   ],
+   "scrollWidth": 1440,
+   "clientWidth": 1440,
+   "horizontalScroll": false,
+   "play": {
+    "x": 282,
+    "y": 92,
+    "w": 1126,
+    "h": 790,
+    "shown": true
+   },
+   "feed": {
+    "x": 327,
+    "y": 92,
+    "w": 692,
+    "h": 592,
+    "shown": true
+   },
+   "board": {
+    "x": 1064,
+    "y": 92,
+    "w": 344,
+    "h": 790,
+    "shown": true
+   },
+   "boardMap": null,
+   "boardCells": 0,
+   "cell": null,
+   "gridColumns": 1,
+   "turns": [
+    "1Goblin Warrior10/10",
+    "2Тени у тракта5/12"
+   ],
+   "legend": [
+    "ты",
+    "противник",
+    "можно дойти"
+   ],
+   "boardMeta": "раунд 1",
+   "startShown": false,
+   "startButtons": [
+    "Начать историю",
+    "Загрузить книгу"
+   ],
+   "overflowing": []
+  },
+  "1440-grid": {
+   "viewport": [
+    1440,
+    900
+   ],
+   "scrollWidth": 1440,
+   "clientWidth": 1440,
+   "horizontalScroll": false,
+   "play": {
+    "x": 282,
+    "y": 92,
+    "w": 1126,
+    "h": 790,
+    "shown": true
+   },
+   "feed": {
+    "x": 327,
+    "y": 92,
+    "w": 692,
+    "h": 592,
+    "shown": true
+   },
+   "board": {
+    "x": 1064,
+    "y": 92,
+    "w": 344,
+    "h": 790,
+    "shown": true
+   },
+   "boardMap": {
+    "x": 1065,
+    "y": 283,
+    "w": 343,
+    "h": 237,
+    "shown": true
+   },
+   "boardCells": 35,
+   "cell": {
+    "w": 44,
+    "h": 44
+   },
+   "gridColumns": 1,
+   "turns": [
+    "1Мирон12/12",
+    "2Разбойник4/9схвачен"
+   ],
+   "legend": [
+    "ты",
+    "укрытие",
+    "непроходимо"
+   ],
+   "boardMeta": "раунд 2 · 7 × 5 · клетка 5 футов · укрытие: половинное",
+   "boardNote": "Клетка — 5 футов. Идти можно только в подсвеченные клетки: их назвал движок.",
+   "startShown": false,
+   "startButtons": [
+    "Начать историю",
+    "Загрузить книгу"
+   ],
+   "overflowing": []
+  },
+  "375-grid": {
+   "viewport": [
+    375,
+    812
+   ],
+   "scrollWidth": 375,
+   "clientWidth": 375,
+   "horizontalScroll": false,
+   "play": {
+    "x": 18,
+    "y": 286,
+    "w": 339,
+    "h": 1666,
+    "shown": true
+   },
+   "feed": {
+    "x": 18,
+    "y": 744,
+    "w": 339,
+    "h": 972,
+    "shown": true
+   },
+   "board": {
+    "x": 18,
+    "y": 286,
+    "w": 339,
+    "h": 446,
+    "shown": true
+   },
+   "boardMap": {
+    "x": 18,
+    "y": 467,
+    "w": 339,
+    "h": 234,
+    "shown": true
+   },
+   "boardCells": 35,
+   "cell": {
+    "w": 43,
+    "h": 43
+   },
+   "gridColumns": 1,
+   "turns": [
+    "1Мирон12/12",
+    "2Разбойник4/9схвачен"
+   ],
+   "legend": [
+    "ты",
+    "укрытие",
+    "непроходимо"
+   ],
+   "boardMeta": "раунд 2 · 7 × 5 · клетка 5 футов · укрытие: половинное",
+   "boardNote": "Клетка — 5 футов. Идти можно только в подсвеченные клетки: их назвал движок.",
+   "startShown": false,
+   "startButtons": [
+    "Начать историю",
+    "Загрузить книгу"
+   ],
+   "overflowing": []
+  }
+ },
+ "start": {
+  "375": {
+   "present": true,
+   "active": true,
+   "width": 339,
+   "height": 812,
+   "background": "rgb(20, 17, 13)",
+   "font": "Book, \"EB Garamond\", Georgia, \"Times New Roman\", serif",
+   "buttons": [
+    {
+     "text": "Начать историю",
+     "w": 145,
+     "h": 48
+    },
+    {
+     "text": "Загрузить книгу",
+     "w": 168,
+     "h": 48
+    }
+   ],
+   "primaryRadius": "2px",
+   "primaryColor": "rgb(216, 160, 92)",
+   "heading": "Тихая историяна целый вечер",
+   "lead": "Мастер помнит, что было вчера. Правила считает движок, слова — рассказчик. Ты играешь один, но не в одиночестве.",
+   "continueShown": true,
+   "overflow": {
+    "scroll": 375,
+    "client": 375
+   },
+   "images": 2,
+   "box": {
+    "x": 36,
+    "y": 491.984375,
+    "width": 144.96875,
+    "height": 48,
+    "top": 491.984375,
+    "right": 180.96875,
+    "bottom": 539.984375,
+    "left": 36
+   }
+  },
+  "1440": {
+   "present": true,
+   "active": true,
+   "width": 1126,
+   "height": 900,
+   "background": "rgb(20, 17, 13)",
+   "font": "Book, \"EB Garamond\", Georgia, \"Times New Roman\", serif",
+   "buttons": [
+    {
+     "text": "Начать историю",
+     "w": 145,
+     "h": 46
+    },
+    {
+     "text": "Загрузить книгу",
+     "w": 168,
+     "h": 46
+    }
+   ],
+   "primaryRadius": "2px",
+   "primaryColor": "rgb(216, 160, 92)",
+   "heading": "Тихая историяна целый вечер",
+   "lead": "Мастер помнит, что было вчера. Правила считает движок, слова — рассказчик. Ты играешь один, но не в одиночестве.",
+   "continueShown": true,
+   "overflow": {
+    "scroll": 1440,
+    "client": 1440
+   },
+   "images": 2,
+   "box": {
+    "x": 339.59375,
+    "y": 480.5625,
+    "width": 144.96875,
+    "height": 46,
+    "top": 480.5625,
+    "right": 484.5625,
+    "bottom": 526.5625,
+    "left": 339.59375
+   }
+  }
+ },
+ "ok": true
+}

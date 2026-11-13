@@ -1,0 +1,61 @@
+{
+  "_id": "phbftrFightingSt",
+  "_stats": {
+    "coreVersion": "13.344",
+    "createdTime": 1735866361253,
+    "duplicateSource": null,
+    "exportSource": null,
+    "lastModifiedBy": "dnd5ebuilder0000",
+    "modifiedTime": 1745256761597,
+    "systemId": "dnd5e",
+    "systemVersion": "4.4.0"
+  },
+  "effects": [],
+  "flags": {
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    }
+  },
+  "folder": "xggTDaiQq26ZrVzJ",
+  "img": "icons/skills/melee/hand-grip-staff-blue.webp",
+  "name": "Fighting Style",
+  "ownership": {
+    "default": 0
+  },
+  "sort": 0,
+  "system": {
+    "activities": {},
+    "description": {
+      "chat": "",
+      "value": "<p>You have honed your martial prowess and gain a @UUID[Compendium.dnd5e.content24.JournalEntry.phbFeats00000000.JournalEntryPage.sbHImaCB8ZMEHYkb]{Fighting Style feat} of your choice. @UUID[Compendium.dnd5e.feats24.Item.phbfstDefense000]{Defense} is recommended.</p><p>Whenever you gain a Fighter level, you can replace the feat you chose with a different Fighting Style feat.</p>"
+    },
+    "enchant": {},
+    "identifier": "fighting-style",
+    "prerequisites": {
+      "level": 1,
+      "repeatable": false
+    },
+    "properties": [],
+    "requirements": "",
+    "source": {
+      "book": "",
+      "custom": "",
+      "license": "CC-BY-4.0",
+      "revision": 1,
+      "rules": "2024"
+    },
+    "type": {
+      "subtype": "",
+      "value": "class"
+    },
+    "uses": {
+      "max": "",
+      "recovery": [],
+      "spent": 0
+    }
+  },
+  "type": "feat"
+}

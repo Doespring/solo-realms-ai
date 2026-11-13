@@ -1,0 +1,53 @@
+{
+  "_id": "phbsptResourcefu",
+  "_stats": {
+    "coreVersion": "13.344",
+    "createdTime": 1735866697989,
+    "duplicateSource": null,
+    "exportSource": null,
+    "lastModifiedBy": "dnd5ebuilder0000",
+    "modifiedTime": 1740680089952,
+    "systemId": "dnd5e",
+    "systemVersion": "4.4.0"
+  },
+  "effects": [],
+  "flags": {},
+  "folder": "uCr9wkkriM8r4C9R",
+  "img": "icons/tools/hand/hammer-and-nail.webp",
+  "name": "Resourceful",
+  "ownership": {
+    "default": 0
+  },
+  "sort": 100000,
+  "system": {
+    "activities": {},
+    "description": {
+      "chat": "",
+      "value": "<p>You gain Heroic Inspiration whenever you finish a Long Rest.</p>"
+    },
+    "enchant": {},
+    "identifier": "resourceful",
+    "prerequisites": {
+      "level": null,
+      "repeatable": false
+    },
+    "properties": [],
+    "requirements": "Human",
+    "source": {
+      "book": "",
+      "license": "CC-BY-4.0",
+      "revision": 1,
+      "rules": "2024"
+    },
+    "type": {
+      "subtype": "",
+      "value": "race"
+    },
+    "uses": {
+      "max": "",
+      "recovery": [],
+      "spent": 0
+    }
+  },
+  "type": "feat"
+}

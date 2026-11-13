@@ -1,0 +1,38 @@
+=== r199 BEFORE: тесты на старом vendor (правки не применены) ===
+solo/nat20_api.py:367: ValueError
+=============================== warnings summary ===============================
+.venv/lib/python3.14/site-packages/lark/utils.py:176
+  /home/hermes/projects/SoloRealmsAI-Nat20/.venv/lib/python3.14/site-packages/lark/utils.py:176: DeprecationWarning: module 'sre_parse' is deprecated
+    import sre_parse
+
+.venv/lib/python3.14/site-packages/lark/utils.py:177
+  /home/hermes/projects/SoloRealmsAI-Nat20/.venv/lib/python3.14/site-packages/lark/utils.py:177: DeprecationWarning: module 'sre_constants' is deprecated
+    import sre_constants
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/test_nat20_monster_grapple.py::test_the_corpus_types_the_grapple_the_stat_block_prints
+FAILED tests/test_nat20_monster_grapple.py::test_the_monster_grapple_lands_on_the_hero_with_the_printed_escape_dc[bugbear-stalker]
+FAILED tests/test_nat20_monster_grapple.py::test_the_monster_grapple_lands_on_the_hero_with_the_printed_escape_dc[constrictor-snake]
+FAILED tests/test_nat20_monster_grapple.py::test_the_monster_turn_does_not_roll_the_victims_escape_check
+FAILED tests/test_nat20_monster_grapple.py::test_escape_succeeds_and_fails_on_fixed_seeds
+FAILED tests/test_nat20_monster_grapple.py::test_the_selector_prefers_the_control_action_only_while_it_lands_something
+FAILED tests/test_nat20_monster_grapple.py::test_the_selection_of_every_monster_without_typed_effects_is_unchanged
+FAILED tests/test_nat20_monster_grapple.py::test_grappling_yourself_is_refused_without_spending_the_action
+FAILED tests/test_escape_grapple_screen.py::test_the_escape_button_names_the_creature_that_holds_the_hero
+FAILED tests/test_escape_grapple_screen.py::test_the_button_is_still_offered_when_the_grappler_is_out_of_reach
+FAILED tests/test_escape_grapple_screen.py::test_the_roll_decides_and_both_outcomes_happen_on_a_fixed_seed
+FAILED tests/test_escape_grapple_screen.py::test_a_failed_escape_keeps_the_condition_and_says_so
+12 failed, 2 passed, 2 warnings in 82.07s (0:01:22)
+
+=== r199 BEFORE: живой HTTP-прогон на старом vendor ===
+
+== bugbear-stalker (сид 1): существо против героя
+start_combat → 200 Бой начат.
+ИТОГ: захват не встал: ["unconscious"]
+
+== constrictor-snake (сид 1): существо против героя
+start_combat → 200 Бой начат.
+ИТОГ: захват не встал: ["unconscious"]
+
+ИТОГ: [{"monster": "bugbear-stalker", "landed": false}, {"monster": "constrictor-snake", "landed": false}]

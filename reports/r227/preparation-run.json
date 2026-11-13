@@ -1,0 +1,173 @@
+{
+  "raws": 33,
+  "status": "blocked",
+  "ready": false,
+  "done": 9,
+  "total": 9,
+  "structure": {
+    "calls": 9,
+    "modes": {
+      "none": 9
+    },
+    "dropped_keys": 25,
+    "repairs": 0,
+    "duration_ms": 0.0
+  },
+  "repair_calls": 0,
+  "model_calls": 9,
+  "old_direct_decode_failures": 33,
+  "old_failure_reasons": [
+    "ValidationError: 2 validation errors for PreparationBatch\nentities.2.problems\n  Extra inputs are ",
+    "ValidationError: 3 validation errors for PreparationBatch\nentities.7.problems\n  Extra inputs are ",
+    "ValueError: Повтор JSON-поля: kind",
+    "ValueError: Повтор JSON-поля: location",
+    "ValueError: Повтор JSON-поля: key",
+    "ValidationError: 4 validation errors for PreparationBatch\nentities.6.routes\n  Extra inputs are no",
+    "ValueError: Повтор JSON-поля: data",
+    "ValueError: Повтор JSON-поля: kind",
+    "ValidationError: 2 validation errors for PreparationBatch\nroutes\n  Extra inputs are not permitted",
+    "SourceReferenceError: Неизвестный идентификатор фрагмента источника",
+    "ValidationError: 4 validation errors for PreparationBatch\nlocations\n  Extra inputs are not permit",
+    "ValueError: Повтор JSON-поля: location",
+    "JSONDecodeError: Unterminated string starting at: line 1 column 9388 (char 9387)",
+    "ValidationError: 1 validation error for PreparationBatch\nroutes\n  Extra inputs are not permitted ",
+    "ValidationError: 3 validation errors for PreparationBatch\nentities.0.problems\n  Extra inputs are ",
+    "ValueError: Повтор JSON-поля: key",
+    "ValidationError: 1 validation error for PreparationBatch\nentities.2.kind\n  Input should be 'locat",
+    "ValueError: Повтор JSON-поля: key",
+    "ValidationError: 1 validation error for PreparationBatch\nentities.12.kind\n  Input should be 'loca",
+    "ValidationError: 13 validation errors for PreparationBatch\nentities.15.private_knowledge\n  Extra ",
+    "ValidationError: 1 validation error for PreparationBatch\nentities.5.kind\n  Input should be 'locat",
+    "ValueError: Повтор JSON-поля: entities",
+    "ValueError: Повтор JSON-поля: kind",
+    "ValidationError: 1 validation error for PreparationBatch\nentities\n  List should have at most 80 i",
+    "ValidationError: 3 validation errors for PreparationBatch\nentities.3.problems\n  Extra inputs are ",
+    "ValueError: Повтор JSON-поля: start",
+    "ValidationError: 3 validation errors for PreparationBatch\nentities.6.problems\n  Extra inputs are ",
+    "ValueError: Повтор JSON-поля: kind",
+    "ValidationError: 3 validation errors for PreparationBatch\nentities.3.objects\n  Extra inputs are n",
+    "ValidationError: 2 validation errors for PreparationBatch\nentities.6.kind\n  Input should be 'loca",
+    "ValueError: Повтор JSON-поля: entities",
+    "ValidationError: 1 validation error for PreparationBatch\nentities.4.kind\n  Input should be 'locat",
+    "ValidationError: 1 validation error for PreparationBatch\nentities.1\n  Input should be a valid dic"
+  ],
+  "parts": [
+    {
+      "status": "validated",
+      "schema_mode": "none",
+      "repairs": 0,
+      "dropped": [
+        "entities.2.problems",
+        "entities.3",
+        "entities.3"
+      ],
+      "bytes": 1308,
+      "duration_ms": 0
+    },
+    {
+      "status": "validated",
+      "schema_mode": "none",
+      "repairs": 0,
+      "dropped": [
+        "entities.7.problems",
+        "entities.7.metadata_evidence",
+        "entities.8",
+        "entities.8"
+      ],
+      "bytes": 3290,
+      "duration_ms": 0
+    },
+    {
+      "status": "validated",
+      "schema_mode": "none",
+      "repairs": 0,
+      "dropped": [
+        "entities.6.},{"
+      ],
+      "bytes": 14783,
+      "duration_ms": 0
+    },
+    {
+      "status": "validated",
+      "schema_mode": "none",
+      "repairs": 0,
+      "dropped": [
+        "entities.0.Mister_Light",
+        "entities.0.Carnival_of_Twilight_Light",
+        "entities.0.start"
+      ],
+      "bytes": 9720,
+      "duration_ms": 0
+    },
+    {
+      "status": "validated",
+      "schema_mode": "none",
+      "repairs": 0,
+      "dropped": [],
+      "bytes": 11255,
+      "duration_ms": 0
+    },
+    {
+      "status": "validated",
+      "schema_mode": "none",
+      "repairs": 0,
+      "dropped": [
+        "entities.6.routes",
+        "entities.6.problems",
+        "entities.7",
+        "entities.7",
+        "entities.8",
+        "entities.8"
+      ],
+      "bytes": 3801,
+      "duration_ms": 0
+    },
+    {
+      "status": "validated",
+      "schema_mode": "none",
+      "repairs": 0,
+      "dropped": [
+        "entities.0.problems",
+        "entities.1",
+        "entities.1",
+        "entities.2",
+        "entities.2"
+      ],
+      "bytes": 10885,
+      "duration_ms": 0
+    },
+    {
+      "status": "validated",
+      "schema_mode": "none",
+      "repairs": 0,
+      "dropped": [
+        "entities.3.},{"
+      ],
+      "bytes": 13706,
+      "duration_ms": 0
+    },
+    {
+      "status": "validated",
+      "schema_mode": "none",
+      "repairs": 0,
+      "dropped": [
+        "routes",
+        "events"
+      ],
+      "bytes": 7265,
+      "duration_ms": 0
+    }
+  ],
+  "structural_errors": [],
+  "extra_inputs_present": false,
+  "source_replay": {
+    "answers": 33,
+    "valid": 30,
+    "dropped": 272,
+    "failures": [
+      "JSONDecodeError",
+      "SourceReferenceError",
+      "ValidationError"
+    ]
+  }
+}

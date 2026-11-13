@@ -1,0 +1,408 @@
+{
+  "base": "http://127.0.0.1:19226/",
+  "themes": {
+    "dark": {
+      "375": {
+        "found": true,
+        "href": "#sg-chip-36",
+        "viewBox": "0 0 36 36",
+        "box": {
+          "w": 44,
+          "h": 44,
+          "x": 65,
+          "y": -41
+        },
+        "svg": {
+          "w": 36,
+          "h": 36,
+          "x": 69,
+          "y": -37
+        },
+        "useInk": {
+          "w": 33,
+          "h": 28.58
+        },
+        "color": "rgb(217, 112, 79)",
+        "class": "die die--36 o-miss",
+        "number": "4",
+        "numberFontSize": "22px",
+        "numberInk": {
+          "w": 12,
+          "h": 29,
+          "x": 12.27,
+          "y": 2.89
+        },
+        "numberInsideHull": true,
+        "figures": "12 нужно · 4 выпало · +3",
+        "total": "= 7",
+        "verdict": {
+          "text": "мимо",
+          "color": "rgb(23, 12, 7)",
+          "out": "miss"
+        },
+        "rowText": "4 Проверка · d20 12 нужно · 4 выпало · +3 = 7 МИМО",
+        "horizontalScroll": false,
+        "theme": "dark",
+        "requestedTheme": "dark",
+        "renderedTheme": "dark",
+        "viewport": [
+          375,
+          2
+        ],
+        "devicePixelRatio": 2,
+        "colors": {
+          "hit": "rgb(143, 169, 122)",
+          "miss": "rgb(217, 112, 79)",
+          "crit": "rgb(216, 160, 92)",
+          "plaqueBg": "rgb(27, 23, 17)",
+          "stampColor": "rgb(23, 12, 7)",
+          "stampBg": "rgb(217, 112, 79)",
+          "pageBg": "rgb(16, 18, 16)"
+        },
+        "view": {
+          "found": true,
+          "open": true,
+          "href": "#sg-d20-120",
+          "size": {
+            "w": 120,
+            "h": 120
+          },
+          "number": "4",
+          "numberFontSize": "30px",
+          "numberInk": {
+            "w": 16,
+            "h": 39,
+            "x": 52.47,
+            "y": 38.73
+          },
+          "numberInsideHull": true,
+          "figures": "12 нужно · 4 выпало · +3",
+          "sum": "= 7",
+          "verdict": {
+            "text": "мимо",
+            "color": "rgb(237, 227, 206)"
+          },
+          "closeButton": true
+        },
+        "errors": []
+      },
+      "1440": {
+        "found": true,
+        "href": "#sg-chip-36",
+        "viewBox": "0 0 36 36",
+        "box": {
+          "w": 44,
+          "h": 44,
+          "x": 508,
+          "y": 69
+        },
+        "svg": {
+          "w": 36,
+          "h": 36,
+          "x": 512,
+          "y": 73
+        },
+        "useInk": {
+          "w": 33,
+          "h": 28.58
+        },
+        "color": "rgb(217, 112, 79)",
+        "class": "die die--36 o-miss",
+        "number": "4",
+        "numberFontSize": "22px",
+        "numberInk": {
+          "w": 12,
+          "h": 29,
+          "x": 12.27,
+          "y": 2.89
+        },
+        "numberInsideHull": true,
+        "figures": "12 нужно · 4 выпало · +3",
+        "total": "= 7",
+        "verdict": {
+          "text": "мимо",
+          "color": "rgb(23, 12, 7)",
+          "out": "miss"
+        },
+        "rowText": "4 Проверка · d20 12 нужно · 4 выпало · +3 = 7 МИМО",
+        "horizontalScroll": false,
+        "theme": "dark",
+        "requestedTheme": "dark",
+        "renderedTheme": "dark",
+        "viewport": [
+          1440,
+          1
+        ],
+        "devicePixelRatio": 1,
+        "colors": {
+          "hit": "rgb(143, 169, 122)",
+          "miss": "rgb(217, 112, 79)",
+          "crit": "rgb(216, 160, 92)",
+          "plaqueBg": "rgb(27, 23, 17)",
+          "stampColor": "rgb(23, 12, 7)",
+          "stampBg": "rgb(217, 112, 79)",
+          "pageBg": "rgb(16, 18, 16)"
+        },
+        "view": {
+          "found": true,
+          "open": true,
+          "href": "#sg-d20-120",
+          "size": {
+            "w": 120,
+            "h": 120
+          },
+          "number": "4",
+          "numberFontSize": "30px",
+          "numberInk": {
+            "w": 16,
+            "h": 39,
+            "x": 52.47,
+            "y": 38.73
+          },
+          "numberInsideHull": true,
+          "figures": "12 нужно · 4 выпало · +3",
+          "sum": "= 7",
+          "verdict": {
+            "text": "мимо",
+            "color": "rgb(237, 227, 206)"
+          },
+          "closeButton": true
+        },
+        "errors": []
+      }
+    },
+    "light": {
+      "375": {
+        "found": true,
+        "href": "#sg-chip-36",
+        "viewBox": "0 0 36 36",
+        "box": {
+          "w": 44,
+          "h": 44,
+          "x": 65,
+          "y": -41
+        },
+        "svg": {
+          "w": 36,
+          "h": 36,
+          "x": 69,
+          "y": -37
+        },
+        "useInk": {
+          "w": 33,
+          "h": 28.58
+        },
+        "color": "rgb(163, 60, 34)",
+        "class": "die die--36 o-miss",
+        "number": "4",
+        "numberFontSize": "22px",
+        "numberInk": {
+          "w": 12,
+          "h": 29,
+          "x": 12.27,
+          "y": 2.89
+        },
+        "numberInsideHull": true,
+        "figures": "12 нужно · 4 выпало · +3",
+        "total": "= 7",
+        "verdict": {
+          "text": "мимо",
+          "color": "rgb(26, 12, 6)",
+          "out": "miss"
+        },
+        "rowText": "4 Проверка · d20 12 нужно · 4 выпало · +3 = 7 МИМО",
+        "horizontalScroll": false,
+        "theme": "light",
+        "requestedTheme": "light",
+        "renderedTheme": "light",
+        "viewport": [
+          375,
+          2
+        ],
+        "devicePixelRatio": 2,
+        "colors": {
+          "hit": "rgb(71, 97, 39)",
+          "miss": "rgb(163, 60, 34)",
+          "crit": "rgb(138, 87, 20)",
+          "plaqueBg": "rgb(234, 224, 206)",
+          "stampColor": "rgb(26, 12, 6)",
+          "stampBg": "rgb(200, 106, 76)",
+          "pageBg": "rgb(243, 236, 224)"
+        },
+        "view": {
+          "found": true,
+          "open": true,
+          "href": "#sg-d20-120",
+          "size": {
+            "w": 120,
+            "h": 120
+          },
+          "number": "4",
+          "numberFontSize": "30px",
+          "numberInk": {
+            "w": 16,
+            "h": 39,
+            "x": 52.47,
+            "y": 38.73
+          },
+          "numberInsideHull": true,
+          "figures": "12 нужно · 4 выпало · +3",
+          "sum": "= 7",
+          "verdict": {
+            "text": "мимо",
+            "color": "rgb(42, 35, 26)"
+          },
+          "closeButton": true
+        },
+        "errors": []
+      },
+      "1440": {
+        "found": true,
+        "href": "#sg-chip-36",
+        "viewBox": "0 0 36 36",
+        "box": {
+          "w": 44,
+          "h": 44,
+          "x": 508,
+          "y": 69
+        },
+        "svg": {
+          "w": 36,
+          "h": 36,
+          "x": 512,
+          "y": 73
+        },
+        "useInk": {
+          "w": 33,
+          "h": 28.58
+        },
+        "color": "rgb(163, 60, 34)",
+        "class": "die die--36 o-miss",
+        "number": "4",
+        "numberFontSize": "22px",
+        "numberInk": {
+          "w": 12,
+          "h": 29,
+          "x": 12.27,
+          "y": 2.89
+        },
+        "numberInsideHull": true,
+        "figures": "12 нужно · 4 выпало · +3",
+        "total": "= 7",
+        "verdict": {
+          "text": "мимо",
+          "color": "rgb(26, 12, 6)",
+          "out": "miss"
+        },
+        "rowText": "4 Проверка · d20 12 нужно · 4 выпало · +3 = 7 МИМО",
+        "horizontalScroll": false,
+        "theme": "light",
+        "requestedTheme": "light",
+        "renderedTheme": "light",
+        "viewport": [
+          1440,
+          1
+        ],
+        "devicePixelRatio": 1,
+        "colors": {
+          "hit": "rgb(71, 97, 39)",
+          "miss": "rgb(163, 60, 34)",
+          "crit": "rgb(138, 87, 20)",
+          "plaqueBg": "rgb(234, 224, 206)",
+          "stampColor": "rgb(26, 12, 6)",
+          "stampBg": "rgb(200, 106, 76)",
+          "pageBg": "rgb(243, 236, 224)"
+        },
+        "view": {
+          "found": true,
+          "open": true,
+          "href": "#sg-d20-120",
+          "size": {
+            "w": 120,
+            "h": 120
+          },
+          "number": "4",
+          "numberFontSize": "30px",
+          "numberInk": {
+            "w": 16,
+            "h": 39,
+            "x": 52.47,
+            "y": 38.73
+          },
+          "numberInsideHull": true,
+          "figures": "12 нужно · 4 выпало · +3",
+          "sum": "= 7",
+          "verdict": {
+            "text": "мимо",
+            "color": "rgb(42, 35, 26)"
+          },
+          "closeButton": true
+        },
+        "errors": []
+      }
+    }
+  },
+  "errors": [],
+  "ok": true,
+  "freshErrors": [],
+  "chipSizes": [
+    [
+      "dark-375",
+      36,
+      36
+    ],
+    [
+      "dark-1440",
+      36,
+      36
+    ],
+    [
+      "light-375",
+      36,
+      36
+    ],
+    [
+      "light-1440",
+      36,
+      36
+    ]
+  ],
+  "contrast": {
+    "dark-375": {
+      "plaqueBg": "rgb(27, 23, 17)",
+      "hit": 6.9,
+      "miss": 5.42,
+      "crit": 7.73,
+      "verdict": 5.84
+    },
+    "dark-1440": {
+      "plaqueBg": "rgb(27, 23, 17)",
+      "hit": 6.9,
+      "miss": 5.42,
+      "crit": 7.73,
+      "verdict": 5.84
+    },
+    "light-375": {
+      "plaqueBg": "rgb(234, 224, 206)",
+      "hit": 5.34,
+      "miss": 4.97,
+      "crit": 4.65,
+      "verdict": 5.11
+    },
+    "light-1440": {
+      "plaqueBg": "rgb(234, 224, 206)",
+      "hit": 5.34,
+      "miss": 4.97,
+      "crit": 4.65,
+      "verdict": 5.11
+    }
+  },
+  "summary": {
+    "chipOk": true,
+    "viewsOk": true,
+    "hrefOk": true,
+    "insideOk": true,
+    "scrollOk": true,
+    "freshErrors": 0
+  }
+}

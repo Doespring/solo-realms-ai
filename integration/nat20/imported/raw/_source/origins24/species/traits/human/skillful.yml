@@ -1,0 +1,53 @@
+{
+  "_id": "phbsptSkillful00",
+  "_stats": {
+    "coreVersion": "13.344",
+    "createdTime": 1735866697989,
+    "duplicateSource": null,
+    "exportSource": null,
+    "lastModifiedBy": "dnd5ebuilder0000",
+    "modifiedTime": 1740680089956,
+    "systemId": "dnd5e",
+    "systemVersion": "4.4.0"
+  },
+  "effects": [],
+  "flags": {},
+  "folder": "uCr9wkkriM8r4C9R",
+  "img": "icons/commodities/treasure/medal-ribbon-silver-blue.webp",
+  "name": "Skillful",
+  "ownership": {
+    "default": 0
+  },
+  "sort": 200000,
+  "system": {
+    "activities": {},
+    "description": {
+      "chat": "",
+      "value": "<p>You gain proficiency in one skill of your choice.</p><section id=\"secret-lvP62g2xTxkz2VN3\" class=\"secret\"><p><strong>Foundry Note</strong></p><p>You will be prompted for this choice when you select this Species.</p></section>"
+    },
+    "enchant": {},
+    "identifier": "skillful",
+    "prerequisites": {
+      "level": null,
+      "repeatable": false
+    },
+    "properties": [],
+    "requirements": "Human",
+    "source": {
+      "book": "",
+      "license": "CC-BY-4.0",
+      "revision": 1,
+      "rules": "2024"
+    },
+    "type": {
+      "subtype": "",
+      "value": "race"
+    },
+    "uses": {
+      "max": "",
+      "recovery": [],
+      "spent": 0
+    }
+  },
+  "type": "feat"
+}

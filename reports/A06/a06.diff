@@ -1,0 +1,1864 @@
+diff --git a/scripts/probe_a06_tiamat.py b/scripts/probe_a06_tiamat.py
+new file mode 100644
+index 00000000..50e7614f
+--- /dev/null
++++ b/scripts/probe_a06_tiamat.py
+@@ -0,0 +1,153 @@
++"""A06 на живой книге: приложения Тиамат — справочник, а вход эпизода назван книгой.
++
++Прогон локальный и бесплатный: PDF читает наш же воркер импорта, нарезку делает
++`AdventureLibrary.auto_split`, модель не зовётся.
++
++    PYTHONPATH=. .venv/bin/python scripts/probe_a06_tiamat.py
++
++Что печатает (и кладёт в reports/A06/tiamat.json):
++
++* сколько модулей книга дала и сколько из них с кнопкой старта;
++* `entry_scene` первого эпизода («Совет Глубоководья») и совпадает ли он с названием;
++* долю сущностей со страницей-источником;
++* что правка типа человеком переживает повторную нарезку.
++"""
++import json
++import os
++import subprocess
++import sys
++import time
++from pathlib import Path
++
++os.environ.setdefault('SOLO_TEST', '1')
++
++ROOT = Path(__file__).resolve().parents[1]
++sys.path.insert(0, str(ROOT))
++
++from solo.adventure_library import AUTO_SPLIT_KEY, AdventureLibrary  # noqa: E402
++from solo.prepared_world import source_span  # noqa: E402
++
++BOOK = ROOT / 'runtime' / 'books' / 'The Rise of Tiamat RUS.pdf'
++OUT = ROOT / 'reports' / 'A06'
++
++
++def new_library(name):
++    data = ROOT / 'runtime' / 'a06-probe' / name
++    data.mkdir(parents=True, exist_ok=True)
++    return AdventureLibrary(data)
++
++
++def parse(library):
++    """Импорт книги тем же путём, каким его делает приложение (воркер)."""
++    bundle = library.create('The Rise of Tiamat (A06)', {AUTO_SPLIT_KEY: True, 'edition': '2014'})['id']
++    job = library.enqueue(bundle, BOOK, BOOK.name, 'book')
++    worker = [sys.executable, '-m', 'solo.adventure_worker', str(library.data), job['id']]
++    done = subprocess.run(worker, cwd=ROOT, capture_output=True, text=True, timeout=900)
++    record = library.job(job['id'])
++    if record['status'] != 'complete':
++        raise SystemExit('Импорт не завершился: %s %s %s' % (record['status'], record['message'],
++                                                            done.stderr[-2000:]))
++    return bundle, job['document'], record['message']
++
++
++def rows_of(scene):
++    return [*(scene.get('locations') or []), *(scene.get('npcs') or []),
++            *(scene.get('checks') or []), *(scene.get('reference') or [])]
++
++
++def coverage(library, bundle, document, modules):
++    """Сколько сущностей называют свою страницу и несут напечатанную цитату."""
++    total = missing = unproven = 0
++    examples = []
++    for module in modules:
++        scene = module['scene']
++        for row in rows_of(scene):
++            total += 1
++            provenance = row.get('provenance') or {}
++            page = provenance.get('page') or row.get('page') or 0
++            quote = provenance.get('quote') or row.get('quote') or ''
++            if page < 1 or not (provenance.get('document') or row.get('document')):
++                missing += 1
++                examples.append(dict(module=module['id'], name=row.get('name'), why='нет страницы'))
++                continue
++            text = library.page_text(bundle, provenance.get('document') or document, int(page))
++            if not quote or not source_span(text, quote):
++                unproven += 1
++                examples.append(dict(module=module['id'], name=row.get('name'), page=page,
++                                     why='цитаты нет на названной странице'))
++    return dict(total=total, with_page=total - missing - unproven, missing_page=missing,
++                quote_not_on_page=unproven, share=round((total - missing - unproven) / total, 4)
++                if total else 0, examples=examples[:5])
++
++
++def main():
++    if not BOOK.is_file():
++        raise SystemExit('Нет книги: ' + str(BOOK))
++    library = new_library(time.strftime('tiamat-%Y%m%d-%H%M%S'))
++    started = time.monotonic()
++    bundle, document, message = parse(library)
++    modules = library.modules(bundle)
++
++    kinds = {}
++    for module in modules:
++        kinds[module['kind']] = kinds.get(module['kind'], 0) + 1
++    appendices = [module for module in modules if module['kind'] == 'appendix']
++    report = dict(
++        book=BOOK.name, bundle=bundle, document=document, job_message=message,
++        seconds=round(time.monotonic() - started, 1), modules=len(modules), kinds=kinds,
++        modules_titles=[module['title'] for module in modules],
++        appendices=[dict(id=module['id'], title=module['title'], reference=module['reference'],
++                         startable=module['startable'], entries=module['reference_entries'],
++                         locations=module['locations'])
++                    for module in appendices],
++        appendices_with_start=len([module for module in appendices if module['startable']]),
++        reference_entries=sum(module['reference_entries'] for module in appendices),
++    )
++
++    # Приёмка 2: вход эпизода — то, что книга назвала эпизодом.
++    episode = next((module for module in modules
++                    if 'Совет Глубоководья' in module['title']), None)
++    if episode is None:
++        report['entry_scene'] = dict(found=False, titles=report['modules_titles'][:6])
++    else:
++        entry = episode['entry_scene']
++        same = entry.get('name', '').strip().casefold() in episode['title'].casefold()
++        report['entry_scene'] = dict(found=True, module=episode['id'], title=episode['title'],
++                                     entry=entry, matches_title=same,
++                                     first_place=(episode['scene'].get('locations') or [{}])[0].get('name'))
++
++    report['provenance'] = coverage(library, bundle, document, modules)
++
++    # Приёмка 4: правка типа человеком переживает повторную нарезку.
++    source = None
++    for module in modules:
++        if module['kind'] != 'adventure':
++            continue
++        for row in module['scene'].get('locations') or []:
++            if (row.get('provenance') or {}).get('page'):
++                source = (module, row)
++                break
++        if source:
++            break
++    if source:
++        module, row = source
++        page = int(row['provenance']['page'])
++        library.edit_entity(bundle, module['id'], document, page, 'location', row['name'], 'monster')
++        library.auto_split(bundle, document)
++        again = next(item for item in library.modules(bundle) if item['id'] == module['id'])
++        moved = [item for item in again['scene'].get('reference') or []
++                 if item['name'] == row['name']]
++        report['correction'] = dict(module=module['id'], name=row['name'], page=page,
++                                    stayed_out_of_places=row['name'] not in
++                                    [item['name'] for item in again['scene'].get('locations') or []],
++                                    moved_to_reference=bool(moved),
++                                    entity_type=moved[0].get('entity_type') if moved else '',
++                                    edited=bool(moved[0].get('edited')) if moved else False,
++                                    edits=len(again['scene'].get('edits') or []))
++    OUT.mkdir(parents=True, exist_ok=True)
++    (OUT / 'tiamat.json').write_text(json.dumps(report, ensure_ascii=False, indent=1), encoding='utf-8')
++    print(json.dumps(report, ensure_ascii=False, indent=1))
++
++
++if __name__ == '__main__':
++    main()
+diff --git a/solo/adventure_api.py b/solo/adventure_api.py
+index 1f29c49c..d1e8afe3 100644
+--- a/solo/adventure_api.py
++++ b/solo/adventure_api.py
+@@ -39,6 +39,15 @@ class CollectionSplit(Strict):
+     document: str=Field(max_length=80)
+     entries: list[dict]=Field(min_length=1,max_length=100)
+     confirmed: bool=False
++class EntityEdit(Strict):
++    #: A person corrects the type of one line the parser read: the module it
++    #: stands in, the page it is printed on, its printed name and what it is.
++    module: str=Field(min_length=1,max_length=120)
++    document: str=Field(min_length=1,max_length=80)
++    page: int=Field(ge=1,le=5000)
++    entity: str=Field(min_length=1,max_length=20)
++    name: str=Field(default='',max_length=200)
++    value: str=Field(min_length=1,max_length=20)
+ class EncounterCompletion(Strict):
+     encounter: str=Field(min_length=1,max_length=160)
+     request_id: str=Field(min_length=1,max_length=80)
+@@ -103,6 +112,13 @@ def register_adventure_api(app,store,game):
+         sessions.pop(request.cookies.get('solo_adventure_review',''),None);response=JSONResponse({'review_open':False});response.delete_cookie('solo_adventure_review',path='/api/adventure/review');return response
+     @app.get('/api/adventure/review/library/{bundle}')
+     def review(bundle:str,request:Request):review_access(request);return library.review(bundle)
++    @app.put('/api/adventure/review/library/{bundle}/entities')
++    async def entity(bundle:str,body:EntityEdit,request:Request):
++        # The correction is stored by page and printed name, so a repeated
++        # parse applies it again instead of asking the person twice.
++        review_access(request)
++        async with game.operation:
++            return library.edit_entity(bundle,body.module,body.document,body.page,body.entity,body.name,body.value)
+     @app.post('/api/adventure/review/library/{bundle}/collection')
+     async def collection(bundle:str,body:CollectionSplit,request:Request):
+         review_access(request)
+diff --git a/solo/adventure_engine.py b/solo/adventure_engine.py
+index 5465f2c6..b67a8581 100644
+--- a/solo/adventure_engine.py
++++ b/solo/adventure_engine.py
+@@ -473,9 +473,21 @@ def after_transition(state,results,*,rng=None,before=None,mechanics=True,drain_d
+ 
+ class AdventureService:
+     def __init__(self,store,library):self.store,self.library=store,library
++    def startable(self,bundle,module=None):
++        """An appendix is a reference: no adventure begins inside a bestiary.
++
++        `startable` in the review card is what the screen draws, but the screen is
++        not the rule — a request that names an appendix module is refused here,
++        where the start actually happens. The type is read from the parsed scene,
++        not from the instructions a person may rewrite.
++        """
++        if not module:return
++        row=next((item for item in self.library.modules(bundle) if item['id']==module),None)
++        if row and row.get('kind')=='appendix':
++            raise ValueError('Приложение книги — справочник: приключение с него не начинается')
+     def attach(self,campaign,bundle,request_id,confirm,module=None):
+         if not confirm:raise ValueError('Подтвердите применение проверенного сценария')
+-        definition=self.library.definition(bundle,module)
++        definition=self.library.definition(bundle,module);self.startable(bundle,module)
+         def transition(state):
+             if state.get('adventure'):raise ValueError('Используйте проверенный переход к следующему модулю; активное прохождение не перезаписывается')
+             initialize(state,bundle,definition,self.library)
+@@ -483,7 +495,7 @@ class AdventureService:
+         return self.store.record_scenario(campaign,request_id,'Подтверждаю подготовленный сценарий',transition)
+     def continue_module(self,campaign,bundle,module,request_id,confirm,standalone=False):
+         if not confirm:raise ValueError('Подтвердите переход к выбранному модулю')
+-        definition=self.library.definition(bundle,module)
++        definition=self.library.definition(bundle,module);self.startable(bundle,module)
+         def transition(state):
+             previous=copy.deepcopy(state.get('adventure') or {})
+             complete=previous.get('completed_modules',[])
+diff --git a/solo/adventure_library.py b/solo/adventure_library.py
+index f783485e..950c7bda 100644
+--- a/solo/adventure_library.py
++++ b/solo/adventure_library.py
+@@ -209,6 +209,7 @@ class AdventureLibrary:
+             CREATE TABLE IF NOT EXISTS definitions(bundle TEXT PRIMARY KEY REFERENCES bundles(id),body TEXT NOT NULL,revision INTEGER NOT NULL DEFAULT 1);
+             CREATE TABLE IF NOT EXISTS adventure_modules(bundle TEXT NOT NULL REFERENCES bundles(id),id TEXT NOT NULL,body TEXT NOT NULL,revision INTEGER NOT NULL DEFAULT 1,PRIMARY KEY(bundle,id));
+             CREATE TABLE IF NOT EXISTS module_scenes(bundle TEXT NOT NULL REFERENCES bundles(id),module TEXT NOT NULL,body TEXT NOT NULL,revision INTEGER NOT NULL DEFAULT 1,PRIMARY KEY(bundle,module));
++            CREATE TABLE IF NOT EXISTS scene_edits(bundle TEXT NOT NULL REFERENCES bundles(id),document TEXT NOT NULL,page INTEGER NOT NULL,entity TEXT NOT NULL,name_key TEXT NOT NULL,name TEXT NOT NULL DEFAULT '',value TEXT NOT NULL,created REAL NOT NULL DEFAULT 0,PRIMARY KEY(bundle,document,page,entity,name_key));
+             CREATE TABLE IF NOT EXISTS analysis_cache(key TEXT PRIMARY KEY,body TEXT NOT NULL,created REAL NOT NULL);
+             CREATE TABLE IF NOT EXISTS jobs(id TEXT PRIMARY KEY,bundle TEXT NOT NULL REFERENCES bundles(id),document TEXT NOT NULL REFERENCES documents(id),original_name TEXT NOT NULL,purpose TEXT NOT NULL,status TEXT NOT NULL,done INTEGER NOT NULL DEFAULT 0,total INTEGER NOT NULL DEFAULT 0,message TEXT NOT NULL DEFAULT '',created REAL NOT NULL);
+             PRAGMA user_version=1;''')
+@@ -489,8 +490,16 @@ class AdventureLibrary:
+         result=[]
+         for r in rows:
+             scene=scenes.get(r['id']) or {}
+-            kind=(r.get('alternate_flags') or {}).get('kind') or 'adventure'
++            flags=r.get('alternate_flags') or {}
++            section=scene.get('section') if isinstance(scene.get('section'),dict) else {}
++            # Тип раздела живёт в разборе страниц, а не только в теле инструкций:
++            # тело мастер правит, и перезапись не должна оживлять старт справочника.
++            kind=section.get('kind') if section.get('kind') in ('appendix','adventure') else (flags.get('kind') or 'adventure')
++            entry=scene.get('entry') if isinstance(scene.get('entry'),dict) else {}
++            reference=flags.get('reference') or section.get('reference') or ''
+             result.append(dict(id=r['id'],title=r['title'],kind=kind,ready=bool(r['reviewed'] and not r['unsupported']),
++                startable=kind!='appendix',reference=reference,entry_scene=entry,
++                reference_entries=len(scene.get('reference') or []),edits=list(scene.get('edits') or []),
+                 ruleset=r['ruleset'],ruleset_version=r['ruleset_version'],minimum_level=r.get('minimum_level'),
+                 maximum_level=r.get('maximum_level'),recommended_party=r.get('recommended_party'),
+                 source_pages=[[s.get('first_page'),s.get('last_page')] for s in r.get('source_ranges') or []],
+@@ -498,6 +507,128 @@ class AdventureLibrary:
+                 locations=len(scene.get('locations') or []),npcs=len(scene.get('npcs') or []),
+                 checks=len(scene.get('checks') or [])))
+         return result
++
++    def entity_edits(self,bundle):
++        """What a person corrected in this book, by document, page and printed name."""
++        self.get(bundle)
++        with self.db() as db:
++            rows=db.execute('SELECT document,page,entity,name_key,name,value,created FROM scene_edits '
++                            'WHERE bundle=? ORDER BY created',(bundle,)).fetchall()
++        return [dict(row) for row in rows]
++
++    def edit_entity(self,bundle,module,document,page,entity,name,value):
++        """Store a person's correction of one entity type and apply it again.
++
++        The correction lives apart from the parsed scene: the page, the printed
++        name and the new type. A repeated parse re-reads the book, applies every
++        stored correction, and nobody fixes the same line twice.
++        """
++        from . import scene_edits
++        if entity not in scene_edits.ENTITIES:raise ValueError('Правка называет неизвестный вид строки: '+str(entity))
++        if value not in scene_edits.VALUES or value not in scene_edits.ALLOWED.get(entity,()):
++            raise ValueError('Правка называет недопустимый тип сущности: '+str(entity)+' → '+str(value))
++        page=int(page or 0)
++        if page<1:raise ValueError('Правка должна называть страницу книги')
++        self.get(bundle)
++        with self.db() as db:
++            row=db.execute('SELECT body FROM module_scenes WHERE bundle=? AND module=?',(bundle,module)).fetchone()
++        if row is None:raise ValueError('Модуль книги не разобран: правка не к чему')
++        scene=json.loads(row['body'])
++        if scene_edits.find(scene,entity,name,page) is None:
++            raise ValueError('Такой сущности нет в сцене модуля: «'+str(name)+'», стр. '+str(page))
++        # Источник правки — сцена модуля, а не поле запроса: строка, записанная под
++        # чужим документом, не применилась бы уже никогда.
++        document=str(scene.get('document') or document)
++        # Сначала что получится, потом запись: правка, из которой не собирается
++        # сцена, отклоняется до базы.
++        scene_edits.apply(scene,[dict(entity=entity,name=name,page=page,value=value,document=document)])
++        with self.db() as db:
++            previous=db.execute('SELECT value,created FROM scene_edits WHERE bundle=? AND document=? AND page=? '
++                                'AND entity=? AND name_key=?',(bundle,document,page,entity,scene_edits.key(name))).fetchone()
++        try:
++            with self.db() as db:
++                db.execute('INSERT INTO scene_edits VALUES(?,?,?,?,?,?,?,?) '
++                           'ON CONFLICT(bundle,document,page,entity,name_key) DO UPDATE SET value=excluded.value,'
++                           'name=excluded.name,created=excluded.created',
++                           (bundle,document,page,entity,scene_edits.key(name),name,value,time.time()))
++            self.rebuild(bundle)
++        except BaseException:
++            # Сборка не прошла: правка возвращается к прежнему значению (или
++            # снимается, если её не было) — работа человека не теряется, книга
++            # остаётся разбираемой, а причину отказа он видит.
++            with self.db() as db:
++                if previous:
++                    db.execute('UPDATE scene_edits SET value=?,created=? WHERE bundle=? AND document=? AND page=? '
++                               'AND entity=? AND name_key=?',
++                               (previous['value'],previous['created'],bundle,document,page,entity,scene_edits.key(name)))
++                else:
++                    db.execute('DELETE FROM scene_edits WHERE bundle=? AND document=? AND page=? AND entity=? AND name_key=?',
++                               (bundle,document,page,entity,scene_edits.key(name)))
++            raise
++        return next((row for row in self.modules(bundle) if row['id']==module),{})
++
++    def rebuild(self,bundle):
++        """Re-apply every stored correction to the scenes and the worlds built from them.
++
++        Correcting a monster read as a place must also take it out of the world of
++        every episode that borrowed the appendix's places, so the worlds are built
++        again from the corrected scenes instead of patched in one of them.
++        """
++        from . import scene_edits
++        from .adventure_contracts import AdventureDefinition
++        from .book_scene import entry_scene,scene_world,with_reference
++        edits=self.entity_edits(bundle)
++        texts={}
++        def page_texts(document):
++            if document not in texts:texts[document]=self.page_texts(document)
++            return texts[document]
++        with self.db() as db:
++            modules=[(r['id'],r['body']) for r in db.execute('SELECT id,body FROM adventure_modules WHERE bundle=? ORDER BY id',(bundle,))]
++            scenes={r['module']:r['body'] for r in db.execute('SELECT module,body FROM module_scenes WHERE bundle=?',(bundle,))}
++        built={};definitions={}
++        for identifier,body in modules:
++            raw=scenes.get(identifier)
++            if raw is None:continue
++            scene=json.loads(raw);window=scene.get('pages') or [0,0]
++            definition=json.loads(body)
++            applied=[edit for edit in edits
++                if edit['document']==scene.get('document') and int(window[0])<=int(edit['page'] or 0)<=int(window[1])]
++            scene=scene_edits.apply(scene,applied)
++            if applied:
++                # Правка могла снять само место входа: оно пересчитывается по тем же
++                # правилам, что и при разборе, а не остаётся указателем в пустоту.
++                document=str(scene.get('document') or '')
++                left,right=int(window[0]),int(window[1])
++                scene['entry']=entry_scene(str(definition.get('title') or ''),scene.get('locations') or [],
++                                           {number:text for number,text in page_texts(document).items()
++                                            if left<=number<=right},document)
++            built[identifier]=scene;definitions[identifier]=definition
++        appendix=[scene_world(definitions[id]['title'],built[id])[0] for id in built
++                  if (definitions[id].get('alternate_flags') or {}).get('kind')=='appendix']
++        appendix=[world for world in appendix if world is not None]
++        for identifier,scene in built.items():
++            definition=definitions[identifier]
++            world=scene_world(definition['title'],scene)[0]
++            if world is not None and (definition.get('alternate_flags') or {}).get('kind')!='appendix':
++                world=with_reference(world,appendix)
++            definition['world']=world.model_dump(by_alias=True) if world is not None else None
++            AdventureDefinition.model_validate(definition)
++        with self.db() as db:
++            for identifier,definition in definitions.items():
++                db.execute('UPDATE adventure_modules SET body=?,revision=revision+1 WHERE bundle=? AND id=?',
++                           (json.dumps(definition,ensure_ascii=False),bundle,identifier))
++                db.execute('UPDATE module_scenes SET body=?,revision=revision+1 WHERE bundle=? AND module=?',
++                           (json.dumps(built[identifier],ensure_ascii=False),bundle,identifier))
++            # Проверенный сценарий комплекта читается и без имени модуля: его
++            # собранный мир обязан быть тем же, что у исправленного модуля.
++            aggregate=db.execute('SELECT body FROM definitions WHERE bundle=?',(bundle,)).fetchone()
++            if aggregate:
++                value=json.loads(aggregate['body'])
++                if value.get('id') in definitions:
++                    db.execute('UPDATE definitions SET body=?,revision=revision+1 WHERE bundle=?',
++                               (json.dumps(definitions[value['id']],ensure_ascii=False),bundle))
++            db.execute('UPDATE bundles SET revision=revision+1 WHERE id=?',(bundle,))
++        return self.modules(bundle)
+     def page_text(self,bundle,document,number):
+         """One page exactly as the extractor read it; '' for an image page.
+ 
+@@ -566,18 +697,21 @@ class AdventureLibrary:
+         is not offered as ready.
+         """
+         from .adventure_contracts import AdventureDefinition,SourceRange
+-        from .book_scene import module_scene,scene_world
++        from .book_scene import entry_scene,module_scene,scene_world
+         if not confirm:raise ValueError('Подтвердите границы модулей, а не порядок их прохождения')
+         with self.db() as db:
+             row=db.execute('SELECT d.pages,d.status FROM documents d JOIN bundle_files f ON f.document=d.id WHERE f.bundle=? AND d.id=?',(bundle,document)).fetchone()
+         if not row or row['status']!='extracted' or not 1<=row['pages']<=2000:raise ValueError('Нет извлечённого сборника для нарезки')
+         pages=row['pages'];starts=self.chapters(document);spans=module_spans(starts,pages)
+-        # A reference volume (a bestiary, an item catalogue) has no episode at all;
+-        # it keeps the old fallback of one whole-document module that says it is not
+-        # a scenario, instead of becoming a library of appendices nobody can start.
++        # A reference volume (a bestiary, an item catalogue) has no episode at all.
++        # Its sections stay appendices: the old fallback of one whole-document
++        # «module» gave the catalogue a start button under another name.
+         episodes=[span for span in spans if not is_reference(span[2])]
+         reference=[span for span in spans if is_reference(span[2])]
+-        if spans and not episodes:episodes,reference=list(spans),[]
++        # Книга, в которой нет ни одного эпизода, — бестиарий или каталог: её
++        # разделы остаются приложениями. Подмена «приложения → эпизод» давала
++        # справочнику кнопку старта, то есть тот же дефект другим именем.
++        if spans and not episodes:reference=list(spans)
+         # What a book prints in front of its first chapter — a cover, credits, a
+         # table of contents — is that chapter's material and not an episode of its
+         # own: The Rise of Tiamat used to open on fourteen pages of title and
+@@ -589,13 +723,29 @@ class AdventureLibrary:
+         front=episodes[0][0] if episodes and episodes[0][0]>1 else 0
+         unsupported=[]
+         if not spans:
+-            episodes=[(1,pages,'Весь документ: '+str(pages)+' стр.')]
+-            unsupported=['Границы глав не найдены: один модуль на весь документ']
++            from .book_sections import reference_kind
++            # Документ без заголовков, но со статблоками или ценами на первой
++            # странице — справочник, а не «эпизод на весь документ»: старт с него
++            # не начинается, и раздел назван приложением.
++            if reference_kind('',self.page_text(bundle,document,1) or '')=='reference':
++                episodes=[(1,pages,'Весь документ: '+str(pages)+' стр.')]
++                unsupported=['Границы глав не найдены: один модуль на весь документ']
++            else:
++                reference=[(1,pages,'Приложение: весь документ, '+str(pages)+' стр.')]
+             starts=[]
+         rule=str(ruleset or 'dnd2024');version=max(1,int(ruleset_version or 1));prefix='auto-'+document[:8]+'-'
+         scenes={}
++        edits=self.entity_edits(bundle)
++        # Страницы книги читаются один раз: и справочник, и пересчёт входа после
++        # правки смотрят в один и тот же текст.
++        texts=None
++        def page_texts():
++            nonlocal texts
++            if texts is None:texts=self.page_texts(document)
++            return texts
+         def build(rows,kind):
+             """Page ranges of one kind: an episode, or an appendix of the book."""
++            nonlocal texts
+             built=[]
+             for index,(first,last,title) in enumerate(rows,1):
+                 identifier=prefix+(('apx-' if kind=='appendix' else '')+str(index).zfill(2))
+@@ -615,7 +765,7 @@ class AdventureLibrary:
+                                party=None,continuation=None,counts=dict(locations=0,npcs=0,checks=0))
+                     world=None
+                 else:
+-                    scene=module_scene(self,document,first,last,title=title)
++                    scene=module_scene(self,document,first,last,title=title,reference=kind=='appendix')
+                     # Титульные страницы перед первой главой — материал первого
+                     # эпизода: книга печатает там «для персонажей 8–15 уровня» и
+                     # «идеальный размер группы — 4 персонажа». Места, люди и
+@@ -624,6 +774,36 @@ class AdventureLibrary:
+                     if kind!='appendix' and index==1 and front:
+                         from .book_scene import with_front_requirements
+                         scene=with_front_requirements(self,document,1,front-1,scene)
++                    # Типы разделов — раньше сущностей. Приложение книги это
++                    # справочник (монстры, предметы, таблицы), а не эпизод: его
++                    # страницы индексируются как справка, каждый вход со своей
++                    # страницей и цитатой, и старт отсюда не начинается никогда.
++                    if kind=='appendix':
++                        from .book_sections import entries as reference_entries
++                        from .book_sections import reference_kind
++                        reference=reference_kind(name,self.page_text(bundle,document,first) or '')
++                        scene['section']=dict(kind='appendix',reference=reference)
++                        found,dropped=reference_entries({number:text for number,text in page_texts().items()
++                                                         if first<=number<=last},reference,document)
++                        scene['reference'],scene['reference_rejected']=found,dropped
++                        for row in [*scene['locations'],*scene['npcs'],*scene['checks'],*scene['reference']]:
++                            row['scope']='reference'
++                    else:
++                        scene['section']=dict(kind='adventure',reference='')
++                    # Правка человека применяется и после повторного разбора: она
++                    # хранится по странице и напечатанному имени, а не в сцене.
++                    from . import scene_edits
++                    applied=[edit for edit in edits
++                        if edit['document']==document and first<=int(edit['page'] or 0)<=last]
++                    scene=scene_edits.apply(scene,applied)
++                    if applied:
++                        # Правка могла снять место входа: оно пересчитывается, а не
++                        # остаётся указателем на место, которого больше нет.
++                        # Только страницы модуля: строка содержания книги называет
++                        # эпизод, но вход в него — не оглавление.
++                        scene['entry']=entry_scene(title,scene.get('locations') or [],
++                            {number:text for number,text in page_texts().items()
++                             if first<=number<=last},document)
+                     # Приложение тоже получает мир: его места — настоящие места
+                     # книги. Стартом оно не станет (kind='appendix'), но эпизод
+                     # получает их ниже, чтобы в них можно было прийти.
+@@ -641,7 +821,7 @@ class AdventureLibrary:
+                 built.append(AdventureDefinition(id=identifier,title=name[:150],ruleset=rule,ruleset_version=version,
+                     source_ruleset=rule,source_ruleset_version=version,source_ranges=ranges,world=world,
+                     minimum_level=minimum,maximum_level=maximum,recommended_party=size,reviewed=True,
+-                    unsupported=list(notes),alternate_flags=({'kind':'appendix'} if kind=='appendix' else {})))
++                    unsupported=list(notes),alternate_flags=({'kind':'appendix','reference':scene['section'].get('reference') or 'reference'} if kind=='appendix' else {})))
+             return built
+         modules=build(episodes,'adventure');appendices=build(reference,'appendix');all_modules=modules+appendices
+         # Места приложений уезжают в каждый эпизод как места книги: справочные
+diff --git a/solo/book_readiness.py b/solo/book_readiness.py
+index 31c1c445..c0fa26a8 100644
+--- a/solo/book_readiness.py
++++ b/solo/book_readiness.py
+@@ -74,7 +74,10 @@ def _module_rows(db, bundle):
+         rows.append(dict(
+             id=identifier,
+             title=str(body.get('title') or ''),
+-            kind='appendix' if flags.get('kind') == 'appendix' else 'adventure',
++            # Тип раздела берётся из разбора страниц: тело инструкций мастер правит,
++            # и правка не должна превращать справочник в стартуемое приключение.
++            kind='appendix' if (scene.get('section') or {}).get('kind') == 'appendix'
++            or flags.get('kind') == 'appendix' else 'adventure',
+             # Границы, сверенные при нарезке, — не то же самое, что сверенные
+             # игровые инструкции. Одно поле отвечает за одно.
+             boundaries=bool(body.get('reviewed')),
+diff --git a/solo/book_scene.py b/solo/book_scene.py
+index e36f5dc2..21fcaa0d 100644
+--- a/solo/book_scene.py
++++ b/solo/book_scene.py
+@@ -601,7 +601,7 @@ def _frequency(pages, names):
+             if needle: counts[name] += len(re.findall(r'(?<!\w)' + re.escape(needle) + r'(?!\w)', low))
+     return counts
+ 
+-def module_scene(library, document, first, last, title=''):
++def module_scene(library, document, first, last, title='', reference=False):
+     """Read one page range as a scene: its places, its people, its checks.
+ 
+     Nothing is asked of a model here. A chapter whose pages print none of the
+@@ -616,6 +616,8 @@ def module_scene(library, document, first, last, title=''):
+                               levels=dict(minimum=None, maximum=None, quote='', minimum_quote='', maximum_quote='',
+                                           minimum_page=None, maximum_page=None),
+                               party=None, continuation=None, rejected=[],
++                              entry=entry_scene(title, [], {}, document),
++                              section=dict(kind='adventure', reference=''), reference=[], edits=[],
+                               counts=dict(locations=0, npcs=0, checks=0))
+     place_candidates = []
+     # The chapter, not one page, says whether a word is a name of its own: the
+@@ -704,7 +706,9 @@ def module_scene(library, document, first, last, title=''):
+             shorter['forms'].add(item['name'])
+             continue
+         if longer:
+-            longer.update(name=item['name'], kind=item['kind'] or longer['kind'], page=item['page'], quote=item['quote'])
++            longer.update(name=item['name'], kind=item['kind'] or longer['kind'], page=item['page'], quote=item['quote'],
++                          provenance=dict(document=document, page=item['page'], quote=item['quote'],
++                                          source='title' if item.get('source')=='title' else 'printed'))
+             longer['forms'].add(item['name'])
+             continue
+         # The provenance is what the candidate came from: a place the chapter's own
+@@ -712,7 +716,10 @@ def module_scene(library, document, first, last, title=''):
+         # tell a headline from a sentence.
+         locations.append(dict(name=item['name'], kind=item['kind'], gloss=item['gloss'], page=item['page'], document=document,
+                               quote=item['quote'], forms={item['name']},
+-                              binding='title' if item.get('source')=='title' else 'printed'))
++                              binding='title' if item.get('source')=='title' else 'printed',
++                              entity_type='place', scope='scenario',
++                              provenance=dict(document=document, page=item['page'], quote=item['quote'],
++                                              source='title' if item.get('source')=='title' else 'printed')))
+     # `mentions` is how often the chapter prints the place, counted once per
+     # spelling. Adding the chapter-wide frequency on every alias encounter read
+     # «Замок Неритар» as 499 mentions where the chapter prints it 31 times
+@@ -727,7 +734,7 @@ def module_scene(library, document, first, last, title=''):
+     # The fallback is taken only from a line the chapter itself printed: a title
+     # that occurs nowhere in its pages names no place, and the scene stays empty
+     # rather than inventing one.
+-    if not locations and title.strip():
++    if not locations and title.strip() and not reference:
+         wanted = normalized(title)
+         for number in sorted(pages):
+             line = next((line.strip() for line in str(pages[number]).splitlines()
+@@ -743,7 +750,8 @@ def module_scene(library, document, first, last, title=''):
+                             '', title.strip(), flags=re.I) or title.strip()
+             locations.append(dict(name=phrase[:120], kind='chapter', gloss='', page=number,
+                                   document=document, quote=quote, mentions=_frequency(pages, [title])[title] or 1,
+-                                  binding='title'))
++                                  binding='title', entity_type='chapter', scope='scenario',
++                                  provenance=dict(document=document, page=number, quote=quote, source='title')))
+             break
+     primary = locations[0]['name'] if locations else ''
+ 
+@@ -772,7 +780,10 @@ def module_scene(library, document, first, last, title=''):
+     accepted_checks, rejected_checks = grounded(pages, check_candidates)
+     rejected += rejected_checks
+     npcs = [dict(name=item['name'], gloss=item.get('gloss', ''), page=item['page'], document=document,
+-                 quote=item['quote'], location=item['location'], binding=item['binding']) for item in npcs]
++                 quote=item['quote'], location=item['location'], binding=item['binding'],
++                 entity_type='npc', scope='scenario',
++                 provenance=dict(document=document, page=item['page'], quote=item['quote'],
++                                 source='printed')) for item in npcs]
+     # One person named on two pages is one person: the world contract refuses two
+     # NPCs with one name (import_package raises «Имена новых NPC должны однозначно
+     # определять личность»), so a chapter that introduces Леосин twice would make
+@@ -796,7 +807,10 @@ def module_scene(library, document, first, last, title=''):
+         unique_checks.append(dict(ability=item['ability'], skill=item['skill'], dc=item['dc'],
+                                   saving_throw=item['saving_throw'], trigger=item['trigger'],
+                                   page=item['page'], document=document, quote=item['quote'],
+-                                  location=item['location'], binding=item['binding']))
++                                  location=item['location'], binding=item['binding'],
++                                  entity_type='check', scope='scenario',
++                                  provenance=dict(document=document, page=item['page'], quote=item['quote'],
++                                                  source='printed')))
+     level = merge_levels([dict(levels(pages[number]), page=number) for number in sorted(pages)])
+     # The party size and the continuation condition are the book's own printed
+     # requirements, read the same way a check DC is: a sentence that is really on
+@@ -813,6 +827,8 @@ def module_scene(library, document, first, last, title=''):
+     after = afters[0] if afters else None
+     return dict(document=document, pages=[first, last], locations=locations, npcs=unique_npcs,
+                 checks=unique_checks, levels=level, party=size, continuation=after, rejected=rejected,
++                entry=entry_scene(title, locations, pages, document),
++                section=dict(kind='adventure', reference=''), reference=[], edits=[],
+                 counts=dict(locations=len(locations), npcs=len(unique_npcs), checks=len(unique_checks)))
+ 
+ def requirements(scene, module=''):
+@@ -883,6 +899,71 @@ def title_place(title):
+         return phrase
+     return ''
+ 
++def _title_phrase(title):
++    """The module's own name, without the book's numbering («Эпизод 1: …»)."""
++    text = ' '.join(str(title or '').split())
++    match = _TITLE.match(text)
++    phrase = match['title'] if match else text
++    return ' '.join(phrase.split())[:120]
++
++
++def _printed_title_line(pages, title):
++    """The line where the chapter prints its own heading, and the page, or ''."""
++    wanted = normalized(title)
++    if not wanted:
++        return '', 0
++    for number in sorted(pages):
++        for line in str(pages[number]).splitlines():
++            if normalized(line) == wanted or re.fullmatch(re.escape(wanted) + r'\s*\d{0,4}', normalized(line)):
++                return line.strip(), number
++    return '', 0
++
++
++def entry_scene(title, locations, pages, document=''):
++    """Where the module opens, checked against the module's own name.
++
++    The first place a chapter mentions is not where it starts. «Эпизод 1: Совет
++    Глубоководья» prints «Башня Ксонтала» on its pages, and a castle mentioned
++    often is not the council the episode is about — yet the editor used to show
++    the castle as the entry and nothing said that was a guess.
++
++    Two facts are kept apart. `name` is the scene the book itself names: the
++    printed heading of the module, or the place a heading that names a toponym
++    («Эпизод 7: Башня Ксонтала») points at. `place` is the ground the hero stands
++    on, which is that toponym when the title names one and the most-mentioned
++    printed place otherwise. `confidence` says the name is printed, and
++    `place_confidence` says whether the ground is printed or a guess — so the
++    editor can mark the guess instead of hiding it.
++    """
++    phrase = _title_phrase(title)
++    named = title_place(title)
++    line, number = _printed_title_line(pages, title)
++    by_name = {normalized(place.get('name') or ''): place for place in locations}
++    primary = locations[0] if locations else None
++    page = number or (primary['page'] if primary else 0)
++    quote = line or ''
++    if named and named in by_name:
++        found = by_name[named]
++        return dict(name=found['name'], title=str(title or ''), place=found['name'],
++                    page=found['page'], quote=found.get('quote') or '', document=document,
++                    binding='title', confidence='printed', place_confidence='printed')
++    if phrase:
++        return dict(name=phrase, title=str(title or ''),
++                    place=primary['name'] if primary else '',
++                    page=page, quote=quote, document=document,
++                    binding='title' if line else 'chapter',
++                    confidence='printed' if line else 'check',
++                    place_confidence='check' if primary else 'check',
++                    note='' if primary else 'Название модуля не называет место, и страницы не печатают ни одного')
++    if primary:
++        return dict(name=primary['name'], title=str(title or ''), place=primary['name'],
++                    page=primary['page'], quote=primary.get('quote') or '', document=document,
++                    binding='chapter', confidence='check', place_confidence='check',
++                    note='Название модуля не называет место: стартовая сцена — первое найденное место')
++    return dict(name='Сцена из книги', title=str(title or ''), place='', page=0, quote='',
++                document=document, binding='chapter', confidence='check', place_confidence='check')
++
++
+ def with_reference(world, extras):
+     """The book's appendix places, added to an episode's world.
+ 
+@@ -931,14 +1012,20 @@ def scene_world(title, scene):
+     from .source_checks import SourceCheck
+     from .world import ScenarioPackage, WorldLocation, WorldNPC, WorldNode
+     document = scene.get('document') or ''
++    entry = scene.get('entry') if isinstance(scene.get('entry'), dict) else {}
++    # The ground the hero stands on is the entry's own `place`, not whatever the
++    # page mentioned first: the entry records which of them the book named and
++    # which one is only a guess.
++    entry_place = normalized(str(entry.get('place') or entry.get('name') or '')) if entry else ''
+     places = []
+     index = {}
+     for position, place in enumerate(scene.get('locations') or [], 1):
+         slug = 'l' + str(position)
+         index[normalized(place['name'])] = slug
++        known = normalized(place['name']) == entry_place if entry_place else position == 1
+         places.append(WorldLocation(name=place['name'],
+                                     sealed_text=(place.get('quote') or '')[:3000],
+-                                    known_to_hero=position == 1))
++                                    known_to_hero=known))
+     if not places: return None, []
+     by_slug = {slug: place for slug, place in zip(index.values(), places)}
+     for npc in scene.get('npcs') or []:
+@@ -965,7 +1052,7 @@ def scene_world(title, scene):
+         by_slug[slug].checks[key] = value; stored += 1
+     nodes = [WorldNode(id='scene-' + str(position), name=place.name,
+                        coordinates=[2 + (position - 1) % 10 * 2, 2 + (position - 1) // 10 * 2],
+-                       known=position == 1)
++                       known=place.known_to_hero)
+              for position, place in enumerate(places, 1)]
+     package = ScenarioPackage(name=str(title)[:120] or 'Сцена из книги', source='book-scene-v1',
+                               locations=places, nodes=nodes)
+diff --git a/solo/book_sections.py b/solo/book_sections.py
+new file mode 100644
+index 00000000..9ee3ca11
+--- /dev/null
++++ b/solo/book_sections.py
+@@ -0,0 +1,180 @@
++"""What kind of section a printed heading opens, and what a reference indexes.
++
++A book's appendix is not an adventure. «Приложение А: Монстры» prints stat
++blocks, «Приложение Б: Магические предметы» prints item entries and a table
++appendix prints tables: a reader looks a monster up by its page, and no start
++ever begins inside a bestiary. The type is read from the printed heading and,
++when the heading alone does not say it, from the cues the pages themselves
++print («Класс Доспеха», a price in «зм», a «Таблица 3» line). Nothing here asks
++a model, so the same pages give the same answer twice.
++
++Every indexed entry keeps the page and the printed line it was read from; a
++line that its own page does not contain is reported instead of stored.
++"""
++import re
++
++from .prepared_world import normalized, source_span
++
++#: The words a book prints in front of its reference sections. The appendix is
++#: the only section type that is not a scenario; a chapter is an adventure even
++#: when its title says nothing about play.
++APPENDIX_WORDS = {'приложение', 'appendix'}
++
++#: What a reference section indexes, in the book's own words. The first match
++#: wins: «Приложение А: Монстры и предметы» indexes monsters.
++REFERENCE_WORDS = (
++    ('monsters', ('монстр', 'бестиарий', 'чудовищ', 'monster', 'bestiary')),
++    ('items', ('предмет', 'сокровищ', 'магическ', 'item', 'treasure')),
++    ('tables', ('таблиц', 'table', 'random')),
++)
++
++#: Printed cues of a stat block, an item entry and a table. The name stands on
++#: the line above, which is why the anchor is the label and not the name.
++_MONSTER_ANCHOR = re.compile(r'^(?:класс доспеха|опасность\b|хиты\b)', re.I)
++_ITEM_ANCHOR = re.compile(r'^(?:оружие|доспех|щит|чудесный предмет|волшебный предмет|зелье|снаряжение|'
++                          r'инструмент|кольцо|жезл|посох|свиток|боеприпас|драгоценный камень)\b', re.I)
++_TABLE_ANCHOR = re.compile(r'^таблица\s*[\dа-яa-z]', re.I)
++#: A name line is short and does not end a sentence; everything else on a stat
++#: block is a label, a number or the prose of the block itself.
++_LABEL = re.compile(r'^(?:класс доспеха|хиты|скорость|опасность|сопротивлени|иммунитет|'
++                    r'чувства|языки|испытания|навыки|размер|тип|мировоззрение|бонус|'
++                    r'спасброс|восприяти|атака|урон|попадание|эффект)', re.I)
++#: Строка типа под именем монстра: «Средний гуманоид (человек), нейтрально-злой».
++#: Книга печатает её между именем и «Класс Доспеха», поэтому имя — строкой выше,
++#: а без этого пропуска в справочник попадал тип: «Средний гуманоид…» вместо имени.
++_TYPE = re.compile(r'^(?:крошечн|маленьк|средн|больш|огромн|громадн|'
++                   r'tiny|small|medium|large|huge|gargantuan)\w*\b', re.I)
++
++
++def _type_line(line):
++    """Whether a line is the monster's type, not its name.
++
++    «Большой медведь» is a name and «Большой зверь, без мировоззрения» is a type
++    line: the book separates the type with a comma or a parenthesis after the
++    size word. Skipping every line that starts with a size word lost monsters
++    whose names begin with one.
++    """
++    return bool(_TYPE.match(line)) and (',' in line or '(' in line)
++
++_HEADING = re.compile(r'^(?:глава|эпизод|часть|приложение|введение|пролог|chapter|episode|'
++                      r'part|appendix)\b', re.I)
++_NUMBER = re.compile(r'^\d{1,4}$')
++#: A reference volume prints hundreds of entries; the index stops before a
++#: merged mega-document turns one appendix into a whole library of its own.
++MAX_ENTRIES = 500
++#: The section says what the appendix indexes in the plural («монстры»), the row
++#: says what the entry itself is: one monster, one item, one table. The editor's
++#: list of types is in the singular, so the row keeps the singular too.
++SINGULAR = {'monsters': 'monster', 'items': 'item', 'tables': 'table'}
++
++
++def is_reference(title):
++    """Whether a printed heading opens an appendix instead of an episode."""
++    words = normalized(title).split()
++    return bool(words and words[0].strip(':.') in APPENDIX_WORDS)
++
++
++def section(title):
++    """The section a heading opens: an episode or an appendix."""
++    return 'appendix' if is_reference(title) else 'adventure'
++
++
++def reference_kind(title, text=''):
++    """What an appendix indexes: `monsters`, `items`, `tables` or `reference`.
++
++    The heading decides when it names the kind. A heading that does not («Приложение
++    В») is read from its own pages: a stat block, a price in «зм» and a dice table
++    are printed cues, and counting them is cheaper and steadier than guessing.
++    """
++    heading = normalized(title)
++    for kind, words in REFERENCE_WORDS:
++        if any(word in heading for word in words):
++            return kind
++    sample = str(text or '')
++    if len(_MONSTER_ANCHOR.findall(sample)) >= 2:
++        return 'monsters'
++    if len(re.findall(r'(?<!\w)зм(?!\w)', sample)) >= 2:
++        return 'items'
++    if len(re.findall(r'(?<!\w)к\d{1,2}(?!\w)', sample.lower())) >= 3:
++        return 'tables'
++    return 'reference'
++
++
++def _lines(text):
++    return [(position, line.strip()) for position, line in enumerate(str(text or '').splitlines())
++            if line.strip()]
++
++
++def _name_line(lines, index):
++    """The printed name above a stat block or an item entry, or ''.
++
++    The book prints the name on the line just above the label, but a running
++    header or an empty line may stand in between, so the walk goes back a few
++    lines and stops at the first thing that is a name: short, not a sentence and
++    not a bold label of the block itself.
++    """
++    for position in range(index - 1, max(-1, index - 6), -1):
++        line = lines[position][1]
++        if _LABEL.match(line) or _type_line(line) or _HEADING.match(line) or _NUMBER.match(line):
++            continue
++        if len(line) > 70 or line.endswith(('.', ':', ';')):
++            continue
++        if not line[:1].isalpha() or not line[:1].isupper():
++            continue
++        if len(re.findall(r'\w', line)) < 3:
++            continue
++        return line
++    return ''
++
++
++def _anchor(lines, pattern):
++    """Lines that open an entry of one kind, with the name printed above them."""
++    found = []
++    for index, (_position, line) in enumerate(lines):
++        if pattern.match(line):
++            name = _name_line(lines, index)
++            if name:
++                found.append((name, line))
++    return found
++
++
++def entries(pages, kind, document=''):
++    """Index one appendix: `(accepted, rejected)`, each entry with its page.
++
++    `pages` maps a page number to the text the extractor read from it. A monster
++    is named by the line printed above its stat block, an item by the line above
++    its type line, a table by the «Таблица N» line itself. The quote is restored
++    to the page's own spelling, and an entry whose line is not on its page is
++    rejected instead of being stored.
++    """
++    accepted, rejected, seen = [], [], set()
++    for number in sorted(pages):
++        text = pages[number]
++        lines = _lines(text)
++        if kind == 'monsters':
++            found = _anchor(lines, _MONSTER_ANCHOR)
++        elif kind == 'items':
++            found = _anchor(lines, _ITEM_ANCHOR)
++        elif kind == 'tables':
++            found = [(line, line) for _position, line in lines if _TABLE_ANCHOR.match(line)]
++        else:
++            found = []
++        for name, line in found:
++            key = (kind, normalized(name))
++            if key in seen:
++                continue
++            try:
++                quote = source_span(text, line)
++            except ValueError:
++                rejected.append(dict(name=name, kind=kind, page=number, quote=line,
++                                     reason='Цитата не найдена на странице'))
++                continue
++            seen.add(key)
++            accepted.append(dict(name=name[:120], kind=kind, entity_type=SINGULAR.get(kind, kind),
++                                 page=number, document=document, quote=quote, scope='reference',
++                                 source='printed',
++                                 provenance=dict(document=document, page=number, quote=quote,
++                                                 source='printed')))
++            if len(accepted) >= MAX_ENTRIES:
++                return accepted, rejected
++    return accepted, rejected
+diff --git a/solo/prototype_prepared.py b/solo/prototype_prepared.py
+index 019d0f9a..9a781cfc 100644
+--- a/solo/prototype_prepared.py
++++ b/solo/prototype_prepared.py
+@@ -516,7 +516,18 @@ def bind_library_module(preparation,campaign,draft_id):
+     # no place, no person and no check to act on.
+     from .world import WorldLocation,WorldNode,import_package
+     package=definition.world if definition and definition.world and definition.world.locations else None
+-    place=package.locations[0] if package else None
++    # Where the hero stands is not the first place the pages mention. «Эпизод 1:
++    # Совет Глубоководья» prints «Башня Ксонтала» on its own pages, and a start in
++    # the castle is not the episode the book named. The entry scene comes from the
++    # parse of this module and keeps its confidence, so an unproven guess is not
++    # dressed up as the book's own scene.
++    entry=next((row.get('entry_scene') or {} for row in modules if row['id']==chosen['id']),{})
++    ground=entry.get('place') or entry.get('name') or ''
++    place=next((p for p in package.locations if p.name==ground),None) if package and ground else None
++    # Названного места может не оказаться в мире: книгу исправили, место убрали
++    # или страница его не напечатала. Тогда герой встаёт на первое место сцены —
++    # это честная догадка, и метка входа уже сказала, что название не напечатано.
++    if place is None:place=package.locations[0] if package else None
+     # A03/F01: the master asked the player where the story starts and what the
+     # opening says, and the player confirmed it. The book's first page fills that
+     # scene in; it does not overrule the answer the launch was approved with.
+diff --git a/solo/scene_edits.py b/solo/scene_edits.py
+new file mode 100644
+index 00000000..a2a4c15a
+--- /dev/null
++++ b/solo/scene_edits.py
+@@ -0,0 +1,190 @@
++"""What a person corrected in a parsed scene, and how the correction is applied.
++
++A parser reads the printed forms it knows; a person reads the book. When a line
++the parser typed as a place is really a monster of an appendix — or a name it
++read as a person is a town — the correction belongs to the book, not to one
++parse: it is stored by document, page and name, and applied again after the book
++is cut anew. That is the difference between an edit and a temporary patch.
++
++The correction never becomes evidence: the entity keeps its own quote, page and
++`provenance`, and only `entity_type` / `scope` change, with `edited` saying a
++person, not the page, decided the type.
++"""
++from .prepared_world import normalized
++
++#: What a person may say a row is. `ignore` keeps the row out of the scene and
++#: the world entirely — a line the book prints, but not a thing of this story.
++VALUES = ('place', 'npc', 'monster', 'item', 'table', 'ignore')
++#: Which list of the scene an edit addresses.
++ENTITIES = ('location', 'npc', 'check', 'reference')
++#: Not every row can become everything. A check has no printed name of its own,
++#: so «сделать проверку местом» would build a place called '' and the book would
++#: stop parsing; a person may only keep it or drop it.
++ALLOWED = {'location': ('place', 'npc', 'monster', 'item', 'table', 'ignore'),
++           'npc': ('npc', 'place', 'monster', 'item', 'table', 'ignore'),
++           'check': ('check', 'ignore'),
++           'reference': ('monster', 'item', 'table', 'place', 'npc', 'ignore')}
++
++
++def check_name(row):
++    """The stable name of a printed check, so a person can point at one of them.
++
++    The place is part of the name: two «Ловкость (Скрытность) Сл 10» printed in
++    different rooms are two checks, and a name without the room would make the
++    second one impossible to correct.
++    """
++    return ('check:' + str(row.get('location') or '') + ':' +
++            str(row.get('skill') or row.get('ability') or '') + ':' + str(row.get('dc') or ''))
++
++
++def key(name):
++    """How an edit remembers the printed name it corrects."""
++    return normalized(str(name or ''))
++
++
++def find(scene, entity, name, page):
++    """The row of the scene a correction points at, or None."""
++    key_name = 'reference' if entity == 'reference' else {'location': 'locations', 'npc': 'npcs',
++                                                          'check': 'checks'}.get(entity, '')
++    rows = scene.get(key_name) or []
++    return _find(list(rows), entity, key(name), int(page or 0))
++
++
++def _provenance(row, entity):
++    """What the page proves about this row, kept apart from its type."""
++    known = row.get('provenance') if isinstance(row.get('provenance'), dict) else {}
++    source = known.get('source') or ('title' if row.get('binding') == 'title' else 'printed')
++    return dict(document=known.get('document') or row.get('document') or '',
++                page=known.get('page') or row.get('page') or 0,
++                quote=known.get('quote') or row.get('quote') or '', source=source)
++
++
++def _base(row, entity):
++    provenance = _provenance(row, entity)
++    return dict(name=row.get('name') or '', page=provenance['page'], document=provenance['document'],
++                quote=provenance['quote'], provenance=provenance, edited=True)
++
++
++def _as_location(row, entity):
++    name = str(row.get('name') or '').strip()
++    if not name:
++        # A row without a printed name cannot stand in the world: the place would
++        # be nameless, and the contract refuses it after the edit is already
++        # stored, leaving the book unparseable. Refuse before writing anything.
++        raise ValueError('У этой строки нет напечатанного названия: местом она стать не может')
++    kind = row.get('kind') if entity == 'location' else ''
++    if kind in (None, '', 'chapter'):
++        kind = 'place'
++    return dict(_base(row, entity), name=name, kind=kind,
++                gloss=row.get('gloss') or '', mentions=1, binding='edited',
++                entity_type='place', scope='scenario')
++
++
++def _as_npc(row, entity):
++    return dict(_base(row, entity), gloss=row.get('gloss') or '',
++                location=row.get('location') or '', binding='edited', mentions=1,
++                entity_type='npc', scope='scenario')
++
++
++def _as_reference(row, entity, value):
++    return dict(_base(row, entity), kind=value, entity_type=value, scope='reference', source='printed')
++
++
++def _find(rows, entity, name, page):
++    """The row an edit means: same printed name, and the same page when named."""
++    for row in rows:
++        row_name = check_name(row) if entity == 'check' else str(row.get('name') or '')
++        if normalized(row_name) != name:
++            continue
++        if page and int(row.get('page') or 0) != page:
++            continue
++        return row
++    return None
++
++
++def _row_key(entity, row):
++    """The key the parser de-duplicates a list with, so an edit does not merge rows.
++
++    Checks were keyed by place, ability, skill, saving throw and DC — two printed
++    «Ловкость (Скрытность) Сл 10» in different rooms are two checks. De-duplicating
++    by name alone silently collapsed them on every parse.
++    """
++    if entity == 'check':
++        return (normalized(str(row.get('location') or '')), str(row.get('ability') or ''),
++                str(row.get('skill') or ''), bool(row.get('saving_throw')), str(row.get('dc') or ''))
++    if entity == 'reference':
++        return (str(row.get('entity_type') or row.get('kind') or ''),
++                normalized(str(row.get('name') or '')))
++    return normalized(str(row.get('name') or ''))
++
++
++def _unique(rows, entity):
++    seen, result = set(), []
++    for row in rows:
++        key = _row_key(entity, row)
++        if key in seen:
++            continue
++        seen.add(key)
++        result.append(row)
++    return result
++
++
++def apply(scene, edits):
++    """The scene with every stored correction applied, or the same scene.
++
++    An edit whose row is no longer printed (a page range changed, or the parser
++    reads the line differently now) is skipped instead of inventing the row: the
++    correction stays stored and applies again if the book prints the line again.
++    """
++    scene = dict(scene)
++    rows = {entity: list(scene.get(key) or []) for entity, key in
++            (('location', 'locations'), ('npc', 'npcs'), ('check', 'checks'), ('reference', 'reference'))}
++    applied, skipped = [], []
++    for edit in edits or []:
++        entity = str(edit.get('entity') or '')
++        value = str(edit.get('value') or '')
++        # A row stored by an older version (or by a version with a wider list of
++        # types) is reported, not thrown at the person as a broken book: the rest
++        # of the corrections still apply and the page range still parses.
++        if entity not in ENTITIES:
++            skipped.append(dict(edit=dict(edit), reason='неизвестный вид строки: ' + entity))
++            continue
++        if value not in VALUES or value not in ALLOWED.get(entity, ()):
++            skipped.append(dict(edit=dict(edit), reason='недопустимый тип сущности: '
++                                + entity + ' → ' + value))
++            continue
++        source = _find(rows[entity], entity, normalized(str(edit.get('name') or '')),
++                       int(edit.get('page') or 0))
++        if source is None:
++            skipped.append(dict(edit=dict(edit), reason='строки больше нет в сцене'))
++            continue
++        rows[entity].remove(source)
++        try:
++            if value == 'place':
++                rows['location'].append(_as_location(source, entity))
++            elif value == 'npc':
++                rows['npc'].append(_as_npc(source, entity))
++            elif value in ('monster', 'item', 'table'):
++                rows['reference'].append(_as_reference(source, entity, value))
++        except ValueError as error:
++            # Строка не годится в новый вид: возвращаем её как была и говорим,
++            # почему правка не применилась.
++            rows[entity].append(source)
++            skipped.append(dict(edit=dict(edit), reason=str(error)))
++            continue
++        applied.append(dict(entity=entity, name=edit.get('name') or '', page=edit.get('page'),
++                            value=value, document=edit.get('document') or ''))
++    scene['locations'] = _unique(rows['location'], 'location')
++    scene['npcs'] = _unique(rows['npc'], 'npc')
++    scene['checks'] = _unique(rows['check'], 'check')
++    scene['reference'] = _unique(rows['reference'], 'reference')
++    scene['edits'] = applied
++    if skipped:
++        scene['edits_rejected'] = skipped
++    else:
++        scene.pop('edits_rejected', None)
++    counts = dict(scene.get('counts') or {})
++    counts.update(locations=len(scene['locations']), npcs=len(scene['npcs']),
++                  checks=len(scene['checks']), reference=len(scene['reference']))
++    scene['counts'] = counts
++    return scene
+diff --git a/tests/test_a06_reference_entities.py b/tests/test_a06_reference_entities.py
+new file mode 100644
+index 00000000..2af37b47
+--- /dev/null
++++ b/tests/test_a06_reference_entities.py
+@@ -0,0 +1,429 @@
++"""A06/F10 — приложения книги это справочник, а вход в модуль называет книга.
++
++Что здесь закреплено:
++
++* приложение («Приложение А: Монстры») индексируется как справочник —
++  монстры, предметы, таблицы, — и кнопки старта у него нет ни при каком
++  состоянии разбора (0 приложений со стартом);
++* у каждого входа справочника есть страница и цитата, которая на этой
++  странице напечатана (100 %);
++* `entry_scene` модуля сверяется с его названием: «Эпизод 1: Совет
++  Глубоководья» начинается на совете, а не на Башне Ксонтала, которую его
++  страницы поминают чаще всего; метка уверенности отличает напечатанное
++  название от догадки «первое найденное место»;
++* правка типа сущности человеком сохраняется отдельно от текста сцены и
++  переживает повторный разбор книги.
++"""
++import hashlib
++import json
++import os
++
++import pytest
++
++os.environ.setdefault('SOLO_TEST', '1')
++
++from fastapi.testclient import TestClient
++
++from solo.adventure_library import AUTO_SPLIT_KEY, AdventureLibrary
++from solo.app import create_app
++from solo.preview_mock import PreviewMock
++from solo import scene_edits
++from solo.adventure_engine import AdventureService
++from solo.book_sections import entries as reference_entries
++from solo.prepared_world import normalized, source_span
++
++DOCUMENT = hashlib.sha256(b'a06-tiamat-like-fixture').hexdigest()
++
++#: Заголовки, которые книга печатает в начале своих разделов, и их страницы:
++#: колонтитул повторяется на каждой странице раздела, как в настоящей книге.
++CHAPTERS = [(19, 23, 'Эпизод 1: Совет Глубоководья'),
++            (24, 26, 'Приложение А: Монстры'),
++            (27, 29, 'Приложение Б: Магические предметы')]
++
++PROSE = ('Башня Ксонтала стоит над городом, и зал совета ждёт героев в Башне '
++         'Ксонтала. Башня Ксонтала охраняется стражей. Городок Врата лежит у её '
++         'подножия. ')
++
++
++def pages():
++    book = {number: 'Пролог без названных мест. ' * 4 for number in range(1, 19)}
++    book[1] = 'The Rise of Tiamat'
++    book[5] = '\n'.join(['Содержание'] + ['Эпизод 1: Совет Глубоководья',
++                                          'Приложение А: Монстры',
++                                          'Приложение Б: Магические предметы'])
++    book[19] = '\n'.join(['Эпизод 1: Совет Глубоководья', PROSE, PROSE,
++                          'Монах по имени Леосин Эрлантар приходит на совет.'])
++    book[20] = '\n'.join(['Эпизод 1: Совет Глубоководья', PROSE, PROSE,
++                          'Каждый персонаж должен пройти проверку на Ловкость (Скрытность) Сл 10.'])
++    for number in (21, 22, 23):
++        book[number] = '\n'.join(['Эпизод 1: Совет Глубоководья', PROSE, PROSE])
++    book[24] = '\n'.join(['Приложение А: Монстры', 'ВЗРОСЛЫЙ СИНИЙ ДРАКОН',
++                          'Класс Доспеха 19', 'Хиты 225', 'Скорость 40 футов, полёт 80 футов',
++                          'Опасность 16'])
++    book[25] = '\n'.join(['Приложение А: Монстры', 'КУЛЬТИСТ',
++                          'Класс Доспеха 13', 'Хиты 33', 'Опасность 2'])
++    book[26] = '\n'.join(['Приложение А: Монстры', 'Ледяной тролль',
++                          'Класс Доспеха 15', 'Хиты 84', 'Опасность 8'])
++    book[27] = '\n'.join(['Приложение Б: Магические предметы', 'ДЛИННЫЙ МЕЧ',
++                          'Оружие (длинный меч), цена 15 зм'])
++    book[28] = '\n'.join(['Приложение Б: Магические предметы', 'ПЛАЩ ЗАЩИТЫ',
++                          'Чудесный предмет, редкий'])
++    book[29] = '\n'.join(['Приложение Б: Магические предметы', 'ЗЕЛЬЕ ЛЕЧЕНИЯ',
++                          'Зелье, обычное'])
++    return book
++
++
++def book(library):
++    bundle = library.create('The Rise of Tiamat (образец)', {AUTO_SPLIT_KEY: True})['id']
++    text = pages()
++    with library.db() as db:
++        db.execute('INSERT INTO documents(id,format,bytes,status,pages) VALUES(?,?,?,?,?)',
++                   (DOCUMENT, '.pdf', 1, 'extracted', max(text)))
++        db.execute('INSERT INTO bundle_files VALUES(?,?,?,?,?)',
++                   (bundle, DOCUMENT, 'The Rise of Tiamat.pdf', 'book', ''))
++        for number, content in text.items():
++            db.execute('INSERT INTO pages(document,number,label,content) VALUES(?,?,?,?)',
++                       (DOCUMENT, number, str(number), content))
++        for first, last, heading in CHAPTERS:
++            for number in range(first, last + 1):
++                db.execute('INSERT INTO candidates(id,document,page,kind,title,body) VALUES(?,?,?,?,?,?)',
++                           (hashlib.sha256(('%s:%s' % (number, heading)).encode()).hexdigest()[:32],
++                            DOCUMENT, number, 'chapter', heading, '{}'))
++    return bundle
++
++
++def split(tmp_path):
++    client = TestClient(create_app(tmp_path / 'solo.sqlite3', PreviewMock(),
++                                   experimental=True, offline_mock=True))
++    library = client.app.state.adventures
++    bundle = book(library)
++    library.auto_split(bundle, DOCUMENT)
++    return client, library, bundle
++
++
++def by_title(modules, title):
++    return next(row for row in modules if row['title'] == title)
++
++
++def test_an_appendix_is_a_reference_and_never_offers_a_start(tmp_path):
++    _client, _library, bundle = split(tmp_path)
++    modules = _library.modules(bundle)
++    assert [row['kind'] for row in modules] == ['adventure', 'appendix', 'appendix'], modules
++    # Кнопку старта рисует `startable`: у приложения её нет ни при каком
++    # состоянии разбора, поэтому «приложений с кнопкой старта» — ноль.
++    assert [row['id'] for row in modules if row['kind'] == 'appendix' and row['startable']] == []
++    assert [row['id'] for row in modules if row['kind'] == 'adventure' and not row['startable']] == []
++    monsters = by_title(modules, 'Приложение А: Монстры')
++    assert monsters['reference'] == 'monsters' and monsters['ready'] is False
++    assert [row['name'] for row in monsters['scene']['reference']] == [
++        'ВЗРОСЛЫЙ СИНИЙ ДРАКОН', 'КУЛЬТИСТ', 'Ледяной тролль'], monsters['scene']['reference']
++    items = by_title(modules, 'Приложение Б: Магические предметы')
++    assert items['reference'] == 'items'
++    assert [row['name'] for row in items['scene']['reference']] == [
++        'ДЛИННЫЙ МЕЧ', 'ПЛАЩ ЗАЩИТЫ', 'ЗЕЛЬЕ ЛЕЧЕНИЯ'], items['scene']['reference']
++    # Справочник не становится сценой: его входы не попадают в список мест.
++    assert monsters['locations'] == 0 and monsters['npcs'] == 0
++
++
++def test_every_extracted_entity_keeps_the_page_it_is_printed_on(tmp_path):
++    _client, library, bundle = split(tmp_path)
++    text = pages()
++    checked = 0
++    for module in library.modules(bundle):
++        scene = module['scene']
++        rows = [*(scene.get('locations') or []), *(scene.get('npcs') or []),
++                *(scene.get('checks') or []), *(scene.get('reference') or [])]
++        for row in rows:
++            provenance = row['provenance']
++            # Страница-источник есть у каждой сущности, и цитата действительно
++            # напечатана на этой странице, а не собрана из другой.
++            assert provenance['page'] >= 1, (module['id'], row)
++            assert provenance['document'] == DOCUMENT
++            assert source_span(text[provenance['page']], provenance['quote'])
++            checked += 1
++    assert checked >= 7, checked
++
++
++def test_the_entry_scene_is_the_modules_own_name_not_the_first_place(tmp_path):
++    _client, library, bundle = split(tmp_path)
++    modules = library.modules(bundle)
++    episode = by_title(modules, 'Эпизод 1: Совет Глубоководья')
++    entry = episode['entry_scene']
++    # «Совет Глубоководья» — то, что книга назвала эпизодом. Башня Ксонтала
++    # упоминается чаще, поэтому она остаётся местом входа, но метка уверенности
++    # говорит, что это догадка: книга назвала эпизод, а не это место.
++    assert entry['name'] == 'Совет Глубоководья', entry
++    assert entry['place'] == 'Башня Ксонтала' and entry['place_confidence'] == 'check'
++    assert entry['confidence'] == 'printed' and entry['binding'] == 'title'
++    assert entry['page'] == 19
++    assert 'Башня Ксонтала' in [row['name'] for row in episode['scene']['locations']]
++    # Мир открывается на сцене, названной книгой, и она единственная известная.
++    world = episode['scene']
++    assert world['entry'] == entry
++    from solo.book_scene import scene_world
++    package = scene_world(episode['title'], episode['scene'])[0]
++    assert package.locations[0].name == 'Башня Ксонтала'
++    known = [place.name for place in package.locations if place.known_to_hero]
++    assert known == ['Башня Ксонтала'], known
++
++
++def test_a_place_the_title_does_not_name_is_marked_as_the_fallback(tmp_path):
++    """Модуль без названного места честно говорит, что вход — догадка."""
++    from solo.book_scene import entry_scene
++    scene = dict(locations=[dict(name='Соляные амбары', page=3, quote='Соляные амбары у воды.',
++                                 document=DOCUMENT, provenance=dict(page=3))])
++    fallback = entry_scene('', scene['locations'], {3: 'Соляные амбары у воды.'})
++    assert fallback['name'] == 'Соляные амбары' and fallback['confidence'] == 'check'
++    assert fallback['note']
++
++
++def test_a_person_corrects_a_type_and_the_correction_survives_a_new_parse(tmp_path):
++    client, library, bundle = split(tmp_path)
++    modules = library.modules(bundle)
++    episode = by_title(modules, 'Эпизод 1: Совет Глубоководья')
++    tower = next(row for row in episode['scene']['locations'] if row['name'] == 'Башня Ксонтала')
++    assert tower['page'] == 19
++
++    client.post('/api/adventure/review/session', json={'confirm_spoilers': True})
++    answer = client.put('/api/adventure/review/library/' + bundle + '/entities',
++                        json=dict(module=episode['id'], document=DOCUMENT, page=19,
++                                  entity='location', name='Башня Ксонтала', value='monster'))
++    assert answer.status_code == 200, answer.text
++    corrected = answer.json()
++    # Правка меняет тип и область действия, но оставляет цитату и страницу.
++    assert 'Башня Ксонтала' not in [row['name'] for row in corrected['scene']['locations']]
++    moved = next(row for row in corrected['scene']['reference'] if row['name'] == 'Башня Ксонтала')
++    assert (moved['entity_type'], moved['scope'], moved['edited']) == ('monster', 'reference', True)
++    assert source_span(pages()[19], moved['provenance']['quote'])
++    # Мир, собранный из сцены, больше не начинает и не содержит башню как место.
++    from solo.adventure_contracts import AdventureDefinition
++    world = AdventureDefinition.model_validate_json(
++        library.definition(bundle, episode['id']).model_dump_json()).world
++    assert 'Башня Ксонтала' not in [place.name for place in world.locations]
++
++    # Повторный разбор книги: сцена строится заново, правка применяется снова.
++    library.auto_split(bundle, DOCUMENT)
++    again = by_title(library.modules(bundle), 'Эпизод 1: Совет Глубоководья')
++    assert 'Башня Ксонтала' not in [row['name'] for row in again['scene']['locations']]
++    kept = next(row for row in again['scene']['reference'] if row['name'] == 'Башня Ксонтала')
++    assert (kept['entity_type'], kept['edited']) == ('monster', True)
++    assert again['edits'], 'сцена не помнит, что тип исправил человек'
++
++
++def test_a_correction_points_at_a_printed_row_only(tmp_path):
++    client, library, bundle = split(tmp_path)
++    episode = by_title(library.modules(bundle), 'Эпизод 1: Совет Глубоководья')
++    client.post('/api/adventure/review/session', json={'confirm_spoilers': True})
++    answer = client.put('/api/adventure/review/library/' + bundle + '/entities',
++                        json=dict(module=episode['id'], document=DOCUMENT, page=20,
++                                  entity='location', name='Башня Ксонтала', value='ignore'))
++    # Строка напечатана на странице 19, а не 20: правка не угадывает строку.
++    assert answer.status_code in (400, 409) and 'нет в сцене' in answer.text
++
++
++def test_a_monsters_name_is_the_line_above_its_type_line():
++    """Книга печатает имя, строку типа и только потом «Класс Доспеха».
++
++    Раньше индекс брал строку прямо над статблоком, и в справочник попадало
++    «Средний гуманоид (человек), нейтрально-злой» вместо имени монстра.
++    """
++    page = ('Приложение А: Монстры\n'
++            'Драконий Клык [Dragonfang]\n'
++            'Средний гуманоид (человек), нейтрально-злой\n'
++            'Класс Доспеха 15\nХиты 33\nОпасность 2')
++    found, rejected = reference_entries({91: page}, 'monsters', DOCUMENT)
++    assert [row['name'] for row in found] == ['Драконий Клык [Dragonfang]'], found
++    assert rejected == []
++    # Строка раздела называет вид во множественном числе, сама запись — в
++    # единственном: список типов в редакторе нарисован в единственном.
++    assert found[0]['kind'] == 'monsters' and found[0]['entity_type'] == 'monster'
++
++
++def appendix_only(tmp_path):
++    """Книга без эпизодов: один бестиарий на две страницы."""
++    client = TestClient(create_app(tmp_path / 'solo.sqlite3', PreviewMock(),
++                                   experimental=True, offline_mock=True))
++    library = client.app.state.adventures
++    bundle = library.create('Бестиарий (образец)', {AUTO_SPLIT_KEY: True})['id']
++    # Страница с заголовком считается границей раздела только когда на ней есть
++    # текст, поэтому у страниц приложения есть проза без имён.
++    prose = 'Холодный ветер шёл над водой, и берега не было видно. ' * 4
++    text = {1: '\n'.join(['Приложение А: Монстры', prose, 'ВЗРОСЛЫЙ СИНИЙ ДРАКОН',
++                           'Класс Доспеха 19', 'Хиты 225', 'Опасность 16']),
++            2: '\n'.join(['Приложение А: Монстры', prose, 'КУЛЬТИСТ',
++                           'Класс Доспеха 13', 'Хиты 33', 'Опасность 2']),
++            3: '\n'.join(['Приложение А: Монстры', prose, 'ЛЕДЯНОЙ ТРОЛЛЬ',
++                           'Класс Доспеха 15', 'Хиты 84', 'Опасность 8'])}
++    with library.db() as db:
++        db.execute('INSERT INTO documents(id,format,bytes,status,pages) VALUES(?,?,?,?,?)',
++                   (DOCUMENT, '.pdf', 1, 'extracted', 3))
++        db.execute('INSERT INTO bundle_files VALUES(?,?,?,?,?)',
++                   (bundle, DOCUMENT, 'Бестиарий.pdf', 'book', ''))
++        for number, content in text.items():
++            db.execute('INSERT INTO pages(document,number,label,content) VALUES(?,?,?,?)',
++                       (DOCUMENT, number, str(number), content))
++            db.execute('INSERT INTO candidates(id,document,page,kind,title,body) VALUES(?,?,?,?,?,?)',
++                       (hashlib.sha256(('apx:%s' % number).encode()).hexdigest()[:32],
++                        DOCUMENT, number, 'chapter', 'Приложение А: Монстры', '{}'))
++    library.auto_split(bundle, DOCUMENT)
++    return library, bundle
++
++
++def test_a_book_of_appendices_only_is_still_a_reference(tmp_path):
++    """Бестиарий без эпизодов не становится «эпизодом» с кнопкой старта."""
++    library, bundle = appendix_only(tmp_path)
++    modules = library.modules(bundle)
++    assert [row['kind'] for row in modules] == ['appendix'], modules
++    module = modules[0]
++    assert module['startable'] is False and module['reference'] == 'monsters'
++    assert module['locations'] == 0 and module['npcs'] == 0
++    assert [row['name'] for row in module['scene']['reference']] == [
++        'ВЗРОСЛЫЙ СИНИЙ ДРАКОН', 'КУЛЬТИСТ', 'ЛЕДЯНОЙ ТРОЛЛЬ'], module['scene']['reference']
++    # Старт с приложения не начинается и через службу, а не только на экране.
++    with pytest.raises(ValueError):
++        AdventureService(None, library).attach('campaign', bundle, 'r1', True, module=module['id'])
++    with pytest.raises(ValueError):
++        AdventureService(None, library).continue_module('campaign', bundle, module['id'], 'r2', True)
++
++
++def test_a_check_cannot_become_a_place_and_the_book_still_parses(tmp_path):
++    """У проверки нет напечатанного имени: «сделать её местом» сломало бы книгу."""
++    client, library, bundle = split(tmp_path)
++    episode = by_title(library.modules(bundle), 'Эпизод 1: Совет Глубоководья')
++    check = episode['scene']['checks'][0]
++    name = scene_edits.check_name(check)
++    client.post('/api/adventure/review/session', json={'confirm_spoilers': True})
++    refused = client.put('/api/adventure/review/library/' + bundle + '/entities',
++                         json=dict(module=episode['id'], document=DOCUMENT, page=check['page'],
++                                   entity='check', name=name, value='place'))
++    assert refused.status_code in (400, 409), refused.text
++    # Отказ не оставил в книге правку, из-за которой не собирается мир:
++    # повторный разбор проходит, и настоящая правка после него применяется.
++    library.auto_split(bundle, DOCUMENT)
++    answer = client.put('/api/adventure/review/library/' + bundle + '/entities',
++                        json=dict(module=episode['id'], document=DOCUMENT, page=19,
++                                  entity='location', name='Башня Ксонтала', value='monster'))
++    assert answer.status_code == 200, answer.text
++    # В книге ровно одна правка — настоящая; отказанная не оставила строки.
++    assert [row['entity'] for row in library.entity_edits(bundle)] == ['location']
++
++
++def test_a_correction_uses_the_documents_page_of_the_scene(tmp_path):
++    """Источник правки берётся из сцены: чужой `document` в запросе её не теряет."""
++    client, library, bundle = split(tmp_path)
++    episode = by_title(library.modules(bundle), 'Эпизод 1: Совет Глубоководья')
++    client.post('/api/adventure/review/session', json={'confirm_spoilers': True})
++    answer = client.put('/api/adventure/review/library/' + bundle + '/entities',
++                        json=dict(module=episode['id'], document='0' * 64, page=19,
++                                  entity='location', name='Башня Ксонтала', value='monster'))
++    assert answer.status_code == 200, answer.text
++    assert [row['document'] for row in library.entity_edits(bundle)] == [DOCUMENT]
++    corrected = by_title(library.modules(bundle), 'Эпизод 1: Совет Глубоководья')
++    assert 'Башня Ксонтала' not in [row['name'] for row in corrected['scene']['locations']]
++
++
++def test_an_empty_edit_does_not_merge_two_printed_checks():
++    """Разные проверки главы не схлопываются, когда правок нет вовсе."""
++    scene = dict(locations=[], npcs=[], reference=[],
++                 checks=[dict(skill='stealth', ability='dexterity', dc=10, location='Зал совета'),
++                         dict(skill='stealth', ability='dexterity', dc=10, location='Двор')])
++    kept = scene_edits.apply(scene, [])
++    assert len(kept['checks']) == 2, kept['checks']
++
++
++def test_removing_the_entry_place_moves_the_entry_scene(tmp_path):
++    """Правка входа пересчитывает сцену: место входа не остаётся указателем в пустоту."""
++    client, library, bundle = split(tmp_path)
++    episode = by_title(library.modules(bundle), 'Эпизод 1: Совет Глубоководья')
++    assert episode['entry_scene']['place'] == 'Башня Ксонтала'
++    client.post('/api/adventure/review/session', json={'confirm_spoilers': True})
++    answer = client.put('/api/adventure/review/library/' + bundle + '/entities',
++                        json=dict(module=episode['id'], document=DOCUMENT, page=19,
++                                  entity='location', name='Башня Ксонтала', value='monster'))
++    assert answer.status_code == 200, answer.text
++    corrected = answer.json()
++    assert corrected['entry_scene']['name'] == 'Совет Глубоководья'
++    assert corrected['entry_scene']['place'] == 'Городок Врата', corrected['entry_scene']
++    from solo.book_scene import scene_world
++    package = scene_world(corrected['title'], corrected['scene'])[0]
++    known = [place.name for place in package.locations if place.known_to_hero]
++    assert known == ['Городок Врата'], known
++
++
++def test_a_failed_rebuild_restores_the_previous_correction(tmp_path, monkeypatch):
++    """Правка не должна терять работу человека: сбой сборки возвращает прежний тип."""
++    client, library, bundle = split(tmp_path)
++    episode = by_title(library.modules(bundle), 'Эпизод 1: Совет Глубоководья')
++    client.post('/api/adventure/review/session', json={'confirm_spoilers': True})
++    first = client.put('/api/adventure/review/library/' + bundle + '/entities',
++                       json=dict(module=episode['id'], document=DOCUMENT, page=19,
++                                 entity='location', name='Башня Ксонтала', value='item'))
++    assert first.status_code == 200, first.text
++    assert [row['value'] for row in library.entity_edits(bundle)] == ['item']
++
++    def broken(bundle):
++        raise RuntimeError('сборка мира не собралась')
++    monkeypatch.setattr(type(library), 'rebuild', broken)
++    second = client.put('/api/adventure/review/library/' + bundle + '/entities',
++                        json=dict(module=episode['id'], document=DOCUMENT, page=19,
++                                  entity='location', name='Башня Ксонтала', value='table'))
++    assert second.status_code >= 400
++    monkeypatch.undo()
++    # Прежняя правка на месте, новой нет, и книга по-прежнему разбирается.
++    assert [row['value'] for row in library.entity_edits(bundle)] == ['item']
++    again = by_title(library.modules(bundle), 'Эпизод 1: Совет Глубоководья')
++    moved = next(row for row in again['scene']['reference'] if row['name'] == 'Башня Ксонтала')
++    assert moved['entity_type'] == 'item'
++
++
++def test_the_entry_scene_stays_inside_the_module_pages(tmp_path):
++    """Строка содержания называет эпизод, но вход в него — не оглавление."""
++    client, library, bundle = split(tmp_path)
++    episode = by_title(library.modules(bundle), 'Эпизод 1: Совет Глубоководья')
++    client.post('/api/adventure/review/session', json={'confirm_spoilers': True})
++    answer = client.put('/api/adventure/review/library/' + bundle + '/entities',
++                        json=dict(module=episode['id'], document=DOCUMENT, page=19,
++                                  entity='location', name='Башня Ксонтала', value='monster'))
++    assert answer.status_code == 200, answer.text
++    entry = answer.json()['entry_scene']
++    assert entry['page'] == 19, entry
++    assert 19 <= entry['page'] <= 23, entry
++
++
++def test_an_appendix_stays_an_appendix_when_its_instructions_are_rewritten(tmp_path):
++    """Тип раздела — из разбора страниц: перезапись инструкций не оживляет старт."""
++    _client, library, bundle = split(tmp_path)
++    appendix = next(row for row in library.modules(bundle) if row['kind'] == 'appendix')
++    with library.db() as db:
++        body = json.loads(db.execute('SELECT body FROM adventure_modules WHERE bundle=? AND id=?',
++                                     (bundle, appendix['id'])).fetchone()['body'])
++        body['alternate_flags'] = {}
++        db.execute('UPDATE adventure_modules SET body=? WHERE bundle=? AND id=?',
++                   (json.dumps(body, ensure_ascii=False), bundle, appendix['id']))
++    again = next(row for row in library.modules(bundle) if row['id'] == appendix['id'])
++    assert again['kind'] == 'appendix' and again['startable'] is False
++    with pytest.raises(ValueError):
++        AdventureService(None, library).attach('campaign', bundle, 'r3', True, module=appendix['id'])
++
++
++def test_two_checks_in_different_rooms_are_corrected_one_at_a_time(tmp_path):
++    """У проверки есть место: правка одной комнаты не снимает проверку другой."""
++    client, library, bundle = split(tmp_path)
++    episode = by_title(library.modules(bundle), 'Эпизод 1: Совет Глубоководья')
++    scene = episode['scene']
++    scene['checks'] = [dict(skill='stealth', ability='dexterity', dc=10, location='Зал совета',
++                            page=20, document=DOCUMENT, quote='проверка'),
++                       dict(skill='stealth', ability='dexterity', dc=10, location='Двор',
++                            page=20, document=DOCUMENT, quote='проверка')]
++    with library.db() as db:
++        db.execute('UPDATE module_scenes SET body=? WHERE bundle=? AND module=?',
++                   (json.dumps(scene, ensure_ascii=False), bundle, episode['id']))
++    client.post('/api/adventure/review/session', json={'confirm_spoilers': True})
++    name = scene_edits.check_name(scene['checks'][1])
++    assert 'Двор' in name
++    answer = client.put('/api/adventure/review/library/' + bundle + '/entities',
++                        json=dict(module=episode['id'], document=DOCUMENT, page=20,
++                                  entity='check', name=name, value='ignore'))
++    assert answer.status_code == 200, answer.text
++    left = [row.get('location') for row in answer.json()['scene']['checks']]
++    assert left == ['Зал совета'], left
+diff --git a/tests/test_a06_reference_ui.cjs b/tests/test_a06_reference_ui.cjs
+new file mode 100644
+index 00000000..7156d86e
+--- /dev/null
++++ b/tests/test_a06_reference_ui.cjs
+@@ -0,0 +1,114 @@
++// A06/F10: разбор книги на экране мастера.
++//  * у приложения книги нет кнопки старта, и оно названо справочником;
++//  * у каждой находки видна цитата со страницы и список типа сущности;
++//  * правка типа человеком сохраняется: место уходит из «Мест» в «Справочник».
++const {chromium}=require(process.env.SOLO_UI_PLAYWRIGHT||'playwright');
++const assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path');
++const [base,temp]=process.argv.slice(2),out=process.env.SOLO_UI_EVIDENCE||temp;fs.mkdirSync(out,{recursive:true});
++(async()=>{
++ const binary=process.env.SOLO_UI_BROWSER||undefined;
++ const browser=await chromium.launch({executablePath:binary,headless:true});
++ let page;
++ try{
++  const context=await browser.newContext({viewport:{width:1280,height:900}});
++  page=await context.newPage();page.setDefaultTimeout(30000);
++  const errors=[];page.on('pageerror',error=>errors.push(String(error)));
++  await context.route('**/*',route=>new URL(route.request().url()).origin===base?route.continue():route.abort());
++  await page.goto(base,{waitUntil:'domcontentloaded'});
++  await page.waitForFunction(()=>typeof window.soloOpenAdventureLibrary==='function');
++  await page.evaluate(()=>window.soloOpenAdventureLibrary());
++  await page.waitForFunction(()=>document.querySelector('#adventure-library .page-card button'));
++  await page.locator('#adventure-library .page-card button').first().click();
++  await page.waitForFunction(()=>document.querySelector('#adventure-library .readiness'));
++  const review=page.locator('#adventure-library button',{hasText:'Подготовка Мастера'});
++  await review.first().click();
++  await page.waitForFunction(()=>document.querySelector('.cards-list .page-card'));
++
++  // 1. Приложение — справочник без кнопки старта.
++  const appendix=page.locator('.cards-list .page-card',{hasText:'приложение'});
++  assert.equal(await appendix.count(),1,'на экране нет карточки приложения');
++  const appendixText=await appendix.first().innerText();
++  assert.match(appendixText,/Справочник:/,'приложение не названо справочником: '+appendixText);
++  // У приложения нет стартовой сцены: строка «Стартовая сцена: “Приложение…”»
++  // над «старт отсюда не начинается» противоречила сама себе.
++  assert.doesNotMatch(appendixText,/Стартовая сцена/,'у приложения нарисована стартовая сцена: '+appendixText);
++  const startLabels=['Создать героя','Продолжить с текущим героем','Подключить сценарий к кампании'];
++  for(const label of startLabels){
++   assert.equal(await appendix.first().locator('button',{hasText:label}).count(),0,
++    'у приложения есть кнопка старта: '+label);
++  }
++
++  // 2. У находки есть цитата со страницы и выбор типа сущности.
++  const placeRow=page.locator('.items .item',{hasText:'Соляные амбары'}).first();
++  assert.equal(await placeRow.count(),1,'в «Местах» нет разобранного места');
++  const disclosure=placeRow.locator('details',{hasText:'Цитата со страницы'});
++  assert.equal(await disclosure.count(),1,'у места нет цитаты со страницы');
++  // Цитата живёт в свёрнутом блоке: человек открывает её сам, поэтому проба
++  // сначала нажимает заголовок, а не читает скрытый текст.
++  await disclosure.first().locator('summary').click();
++  const quote=await disclosure.first().innerText();
++  assert.match(quote,/Соляные амбары стояли у воды/,'цитата не показывает напечатанный текст: '+quote);
++  const select=placeRow.locator('select');
++  assert.equal(await select.count(),1,'у сущности нет выбора типа');
++
++  // Раздел ищем по ТОЧНОМУ заголовку: `hasText` в Playwright ищет подстроку без
++  // учёта регистра, и слово «справочник» есть ещё в выборе типа у «Мест».
++  const sectionText=title=>page.evaluate(wanted=>{
++   const box=[...document.querySelectorAll('.bsec')].find(b=>b.querySelector('.bsec__title')?.textContent===wanted);
++   return box?box.innerText:'';
++  },title);
++  // Строки раздела считаем по `.item`, а не по вхождениям имени: имя, пояснение
++  // и цитата строки содержат его трижды.
++  const sectionRows=(title,name)=>page.evaluate(([wanted,needle])=>{
++   const box=[...document.querySelectorAll('.bsec')].find(b=>b.querySelector('.bsec__title')?.textContent===wanted);
++   return box?[...box.querySelectorAll('.items .item')].filter(item=>item.textContent.includes(needle)).length:0;
++  },[title,name]);
++  // 3. Правка типа сохраняется и меняет раздел: место становится справочником.
++  const beforePlaces=await sectionRows('Места','Соляные амбары');
++  await page.evaluate(()=>{
++   const row=[...document.querySelectorAll('.items .item')].find(item=>item.textContent.includes('Соляные амбары'));
++   const control=row.querySelector('select');control.value='monster';
++   control.dispatchEvent(new Event('change',{bubbles:true}));
++  });
++  await page.waitForFunction(()=>{
++   const sections=[...document.querySelectorAll('.bsec')];
++   const reference=sections.find(box=>box.querySelector('.bsec__title')?.textContent==='Справочник');
++   return reference&&reference.textContent.includes('Соляные амбары');
++  },{timeout:30000});
++  const saved=await sectionText('Справочник');
++  assert.match(saved,/Соляные амбары/,'правка не попала в справочник: '+saved);
++  assert.match(saved,/монстр|исправлено человеком/,'правка не показана в справочнике: '+saved);
++  // Выбор типа показывает сохранённый тип, а не пустое поле: у записи
++  // справочника `entity_type` в единственном числе и совпадает с option.
++  const referenceType=await page.evaluate(()=>{
++   const box=[...document.querySelectorAll('.bsec')].find(b=>b.querySelector('.bsec__title')?.textContent==='Справочник');
++   const row=box&&[...box.querySelectorAll('.items .item')].find(item=>item.textContent.includes('Соляные амбары'));
++   const select=row&&row.querySelector('select');
++   return select?select.value:'';
++  });
++  assert.equal(referenceType,'monster','тип записи справочника не выбран в списке: '+referenceType);
++  // Одно и то же имя книга печатает в нескольких модулях страницы: правка
++  // снимает ОДНУ строку (ту, у которой названа страница), а не все сразу.
++  const seen=await sectionRows('Места','Соляные амбары');
++  assert.equal(seen,beforePlaces-1,'место не ушло из «Мест»: было '+beforePlaces+', стало '+seen);
++  await page.screenshot({path:path.join(out,'reference-editor-1280.png'),fullPage:true});
++
++  // 4. После перезагрузки экрана правка на месте: она хранится, а не живёт в DOM.
++  await page.reload({waitUntil:'domcontentloaded'});
++  await page.waitForFunction(()=>typeof window.soloOpenAdventureLibrary==='function');
++  await page.evaluate(()=>window.soloOpenAdventureLibrary());
++  await page.waitForFunction(()=>document.querySelector('#adventure-library .page-card button'));
++  await page.locator('#adventure-library .page-card button').first().click();
++  await page.waitForFunction(()=>document.querySelector('#adventure-library .readiness'));
++  await page.locator('#adventure-library button',{hasText:'Подготовка Мастера'}).first().click();
++  await page.waitForFunction(()=>document.querySelector('.cards-list .page-card'));
++  await page.waitForFunction(()=>{
++   const sections=[...document.querySelectorAll('.bsec')];
++   const reference=sections.find(box=>box.querySelector('.bsec__title')?.textContent==='Справочник');
++   return reference&&reference.textContent.includes('Соляные амбары');
++  },{timeout:30000});
++  assert.deepEqual(errors,[],'ошибки страницы: '+errors.join(' | '));
++  console.log(JSON.stringify({appendix:appendixText.split('\n')[0],quote:quote.split('\n')[0],
++   checks:['приложение без старта','цитата со страницы','выбор типа','правка сохранена после перезагрузки']}));
++ } finally { await browser.close(); }
++})().catch(error=>{console.error(error);process.exit(1);});
+diff --git a/tests/test_a06_reference_ui.py b/tests/test_a06_reference_ui.py
+new file mode 100644
+index 00000000..ac47be4e
+--- /dev/null
++++ b/tests/test_a06_reference_ui.py
+@@ -0,0 +1,52 @@
++"""Экран мастера: приложение — справочник, цитата и правка типа на месте."""
++import os
++
++os.environ.setdefault('SOLO_TEST', '1')
++
++from pathlib import Path
++import socket
++import subprocess
++import threading
++import time
++
++import pytest
++import uvicorn
++
++from solo.app import create_app
++from solo.preview_mock import PreviewMock
++
++
++def test_the_review_screen_indexes_appendices_and_keeps_a_persons_correction(tmp_path, monkeypatch):
++    node = os.environ.get('SOLO_UI_NODE') or ''
++    playwright = os.environ.get('SOLO_UI_PLAYWRIGHT') or ''
++    if not Path(node).is_file() or not Path(playwright).exists():
++        pytest.skip('Local browser runtime required')
++    original = socket.socket.connect
++
++    def local_only(sock, address):
++        assert address[0] in ('127.0.0.1', '::1'), 'External calls forbidden'
++        return original(sock, address)
++
++    monkeypatch.setattr(socket.socket, 'connect', local_only)
++    import sys
++    sys.path.insert(0, str(Path(__file__).parent))
++    from test_book_readiness import library_with_book
++    library, bundle = library_with_book(tmp_path, episodes=2, appendices=1)
++    sock = socket.socket(); sock.bind(('127.0.0.1', 0)); port = sock.getsockname()[1]
++    app = create_app(tmp_path / 'solo.sqlite3', PreviewMock(), local_port=port,
++                     experimental=True, offline_mock=True)
++    server = uvicorn.Server(uvicorn.Config(app, log_level='error', access_log=False))
++    thread = threading.Thread(target=server.run, kwargs={'sockets': [sock]}, daemon=True); thread.start()
++    try:
++        deadline = time.monotonic() + 20
++        while not server.started and time.monotonic() < deadline:
++            time.sleep(.02)
++        assert server.started
++        result = subprocess.run(
++            [node, str(Path(__file__).with_suffix('.cjs')), f'http://127.0.0.1:{port}', str(tmp_path)],
++            env={**os.environ, 'SOLO_UI_PLAYWRIGHT': playwright}, capture_output=True, text=True,
++            encoding='utf-8', timeout=300)
++        assert result.returncode == 0, result.stdout + result.stderr
++        print(result.stdout.strip())
++    finally:
++        server.should_exit = True; thread.join(10); sock.close(); assert not thread.is_alive()
+diff --git a/web/adventure.js b/web/adventure.js
+index 1de52d79..80cdb20b 100644
+--- a/web/adventure.js
++++ b/web/adventure.js
+@@ -98,6 +98,11 @@
+   // заводит собственного счёта готовности.
+   if(reviewData.readiness)body.append(readinessPanel(reviewData.readiness,{full:true,id}));
+   const metadata=el('details',undefined,'disclosure');metadata.append(el('summary','Название, серия и редакция'));const title=el('input');title.value=reviewData.bundle.title;const edition=el('select');for(const value of ['', '2014','2024']){const o=el('option',value||'Не подтверждена');o.value=value;edition.append(o);}edition.value=reviewData.bundle.metadata.edition||'';metadata.append(field('Название на русском',title),field('Редакция источника',edition),button('Сохранить сведения',async()=>{await api('/adventure/library/'+id,{title:title.value,metadata:{...reviewData.bundle.metadata,edition:edition.value}},'PUT');await showReview(id);}));body.append(metadata);
++  // Разбор модулей нужен карточкам: он один говорит, приложение это или
++  // эпизод, какая сцена у модуля стартовая и можно ли с него начинать.
++  let scenes=[];
++  try{scenes=await api('/adventure/library/'+id+'/modules');}catch(error){scenes=null;}
++  const parsed=new Map((scenes||[]).map(row=>[row.id,row]));
+   if(reviewData.modules?.length){const modules=el('div',undefined,'cards-list');
+    // Список модулей говорит те же слова, что агрегат: «границы сверены» — факт
+    // нарезки, «старт возможен» — факт сцены. Слова «инструкции проверены» здесь
+@@ -108,16 +113,32 @@
+     :need.kind==='maximum_level'?('уровень героя до '+need.value)
+     :need.kind==='recommended_party'?('группа из '+need.value+(need.maximum&&need.maximum!==need.value?'–'+need.maximum:'')+' героев')
+     :need.kind==='continuation'?(need.text||'продолжение другого приключения'):'';
+-   for(const item of reviewData.modules){const state=rows.get(item.id)||{},appendix=state.kind==='appendix';
++   for(const item of reviewData.modules){const state=rows.get(item.id)||{},known=parsed.get(item.id)||{},appendix=state.kind==='appendix'||known.kind==='appendix';
++    // Кнопку старта рисует серверное поле, а не догадка клиента: приложение
++    // книги это справочник, и старт с него не начинается никогда.
++    const startable=known.startable!==undefined?Boolean(known.startable):!appendix;
+     const card=el('article',undefined,'page-card');
+     card.append(el('h3',item.body.title+' · '+item.id+(appendix?' · приложение':'')),
+      el('p',appendix?'Приложение книги: справочные страницы. Места приложения перенесены в мир эпизодов, но старт отсюда не начинается.'
+       :'Границы сверены: '+(state.boundaries?'да':'нет')+' · эпизод готов открыть старт: '+(state.ready?'да, если сцена цела':'нет'),'hint'));
++    const entry=known.entry_scene||{};
++    // Стартовая сцена — у того, с чего начинают. У приложения её нет: строка
++    // «Стартовая сцена: “Приложение А: Монстры”» над «старт отсюда не начинается»
++    // противоречила сама себе.
++    if(startable&&entry.name){const ground=entry.place&&entry.place!==entry.name?'«'+entry.place+'»':'';
++     const mark=entry.confidence==='check'?'название модуля не напечатано':'название напечатано в книге';
++     const groundMark=entry.place_confidence==='printed'?'место напечатано':(entry.place?'место входа — догадка, стоит проверить':'');
++     card.append(el('p','Стартовая сцена: «'+entry.name+'»'+(ground?', место входа: '+ground:'')+
++      (entry.page?', стр. '+entry.page:'')+' · '+mark+(groundMark?' · '+groundMark:''),'hint'));}
++    // Раздел приложения книга называет во множественном числе («Монстры»), а
++    // строка — в единственном; на экране оба слова русские.
++    if(appendix)card.append(el('p','Справочник: '+({monsters:'монстр',items:'предмет',tables:'таблица'}[known.reference]||'приложение')+'; входов '+Number(known.reference_entries||0)+'.',
++     'hint'));
+     for(const need of state.requirements||[]){const words=requireWords(need);if(!words)continue;
+      const line=el('p','Книга просит: '+words+(need.page?', стр. '+need.page:''),'hint');if(need.quote)line.title=need.quote;card.append(line);}
+     card.append(button('Открыть инструкции модуля',()=>{const box=body.querySelector('textarea[aria-label="Проверенные инструкции приключения"]');box.value=JSON.stringify(item.body,null,2);box.closest('details').open=true;}));
+-    if(!appendix&&window.soloChooseAdventure)card.append(button('Создать героя',()=>window.soloChooseAdventure(id,item.id)));
+-    if(!appendix&&state.ready&&current){const alone=el('input');alone.type='checkbox';
++    if(startable&&window.soloChooseAdventure)card.append(button('Создать героя',()=>window.soloChooseAdventure(id,item.id)));
++    if(startable&&state.ready&&current){const alone=el('input');alone.type='checkbox';
+      card.append(field('Самостоятельный старт вместо переноса предыдущей книги',alone),button('Продолжить с текущим героем',async()=>{await api('/adventure/review/campaigns/'+campaignId+'/continue',{bundle:id,module:item.id,request_id:crypto.randomUUID(),confirm:true,standalone:alone.checked});await refresh();await showReview(id);toast('Переход выполнен. Герой и последствия сохранены.');}));
+      card.append(button('Подключить сценарий к кампании',async()=>{await api('/adventure/review/campaigns/'+campaignId+'/attach',{bundle:id,module:item.id,request_id:crypto.randomUUID(),confirm:true});await refresh();toast('Сценарий подключён к кампании: карты и раздатки доступны в игре.');}));}
+     modules.append(card);}
+@@ -128,8 +149,6 @@
+   // Сцена модуля уже хранит находки вместе с напечатанной страницей, а строка,
+   // которой нет на её странице, отброшена импортом. Здесь только разметка:
+   // названия, числа и страницы приходят с сервера, ничего не угадывается.
+-  let scenes=[];
+-  try{scenes=await api('/adventure/library/'+id+'/modules');}catch(error){scenes=null;}
+   const abilities={strength:'Сила',dexterity:'Ловкость',constitution:'Телосложение',intelligence:'Интеллект',wisdom:'Мудрость',charisma:'Харизма'};
+   const skills={acrobatics:'Акробатика',animal_handling:'Обращение с животными',arcana:'Магия',athletics:'Атлетика',deception:'Обман',history:'История',insight:'Проницательность',intimidation:'Запугивание',investigation:'Расследование',medicine:'Медицина',nature:'Природа',perception:'Внимательность',performance:'Выступление',persuasion:'Убеждение',religion:'Религия',sleight_of_hand:'Ловкость рук',stealth:'Скрытность',survival:'Выживание'};
+   // Уверенность не выдумывается: страница, которую извлекатель пометил
+@@ -138,12 +157,21 @@
+   const brief=text=>String(text||'').replace(/\s+/g,' ').trim().slice(0,180);
+   // «3 страниц» — не по-русски: число страниц склоняется как обычное.
+   const pagesWord=n=>{const tail=n%100,last=n%10;return last===1&&tail!==11?'страница':last>=2&&last<=4&&(tail<10||tail>=20)?'страницы':'страниц';};
+-  const rows={places:[],people:[],checks:[],left:[]};
++  // Ключ проверки включает место: две одинаковые проверки в разных комнатах —
++  // две строки, и править их надо по отдельности (тот же ключ у сервера).
++  const checkKey=row=>'check:'+(row.location||'')+':'+(row.skill||row.ability||'')+':'+row.dc;
++  const typeLabel={place:'место',npc:'человек',monster:'монстр',item:'предмет',table:'таблица',check:'проверка',
++   monsters:'монстр',items:'предмет',tables:'таблица',reference:'справочник'};
++  const rows={places:[],people:[],checks:[],reference:[],left:[]};
+   for(const module of scenes||[]){const scene=module.scene||{};
+-   for(const row of scene.locations||[])rows.places.push({name:row.name,note:row.gloss||brief(row.quote),page:row.page,document:row.document});
+-   for(const row of scene.npcs||[])rows.people.push({name:row.name,note:row.gloss||brief(row.quote),page:row.page,document:row.document});
+-   for(const row of scene.checks||[])rows.checks.push({name:(row.saving_throw?'Спасбросок · '+abilities[row.ability]:skills[row.skill]||abilities[row.ability]||'Проверка')+' · нужно '+row.dc+' на d20',note:brief(row.trigger),page:row.page,document:row.document});
++   for(const row of scene.locations||[])rows.places.push({name:row.name,label:row.name,note:row.gloss||brief(row.quote),page:row.page,document:row.document||scene.document,module:module.id,entity:'location',type:row.entity_type||'place',quote:row.quote,edited:row.edited});
++   for(const row of scene.npcs||[])rows.people.push({name:row.name,label:row.name,note:row.gloss||brief(row.quote),page:row.page,document:row.document||scene.document,module:module.id,entity:'npc',type:'npc',quote:row.quote,edited:row.edited});
++   for(const row of scene.checks||[])rows.checks.push({name:checkKey(row),label:(row.saving_throw?'Спасбросок · '+abilities[row.ability]:skills[row.skill]||abilities[row.ability]||'Проверка')+' · нужно '+row.dc+' на d20',note:brief(row.trigger),page:row.page,document:row.document||scene.document,module:module.id,entity:'check',type:'check',quote:row.quote,edited:row.edited});
++   for(const row of scene.reference||[])rows.reference.push({name:row.name,label:row.name,note:(typeLabel[row.entity_type||row.kind]||'справочник')+(row.edited?' · исправлено человеком':''),page:row.page,document:row.document||scene.document,module:module.id,entity:'reference',type:row.entity_type||row.kind||'monster',quote:row.quote,edited:row.edited});
++   // Строку справочника, чьей цитаты нет на названной странице, импорт тоже
++   // отбросил: она обязана попасть в счёт «не разобрано», а не исчезнуть.
+    for(const row of scene.rejected||[])rows.left.push(row);
++   for(const row of scene.reference_rejected||[])rows.left.push(row);
+   }
+   const fromScene=rows.places.length+rows.people.length+rows.checks.length;
+   // Книгу без глав импорт не режет на модули, и сцены у неё нет. Тогда в
+@@ -153,25 +181,36 @@
+   const leftKinds=['location','scene','chapter','adventure','npc','opponent','check'];
+   const rest=fromScene?[]:(reviewData.candidates||[]).filter(c=>!leftKinds.includes(c.kind));
+   const sheet=el('div',undefined,'booksheet'),top=el('div',undefined,'parse-head');
+-  top.append(el('p','разбор книги','eyebrow'),el('h2','Что мастер понял','parse-title'),el('p','«'+reviewData.bundle.title+'» · '+(reviewData.documents||[]).map(d=>d.pages+' '+pagesWord(d.pages)).join(' + ')+' · находок '+(rows.places.length+rows.people.length+rows.checks.length)+(fromScene?'':' · книга не разрезана на главы'),'parse-sub'));
++  top.append(el('p','разбор книги','eyebrow'),el('h2','Что мастер понял','parse-title'),el('p','«'+reviewData.bundle.title+'» · '+(reviewData.documents||[]).map(d=>d.pages+' '+pagesWord(d.pages)).join(' + ')+' · находок '+(rows.places.length+rows.people.length+rows.checks.length+rows.reference.length)+(fromScene?'':' · книга не разрезана на главы'),'parse-sub'));
+   const legend=el('ul',undefined,'conf');
+   for(const [mark,label] of [['ok','прочитано точно'],['check','стоит проверить'],['bad','не разобрано']]){const line=el('li'),dot=el('span',undefined,'dot');dot.dataset.conf=mark;line.append(dot,document.createTextNode(label));legend.append(line);}
+   top.append(legend);sheet.append(top);
++  const typeOptions={location:[['place','Место'],['npc','Человек'],['monster','Монстр (справочник)'],['item','Предмет (справочник)'],['table','Таблица (справочник)'],['ignore','Не сущность']],
++   npc:[['npc','Человек'],['place','Место'],['monster','Монстр (справочник)'],['item','Предмет (справочник)'],['table','Таблица (справочник)'],['ignore','Не сущность']],
++   check:[['check','Проверка'],['ignore','Не сущность']],
++   reference:[['monster','Монстр'],['item','Предмет'],['table','Таблица'],['place','Место'],['npc','Человек'],['ignore','Не сущность']]};
++  const editControl=item=>{const select=el('select');select.setAttribute('aria-label','Тип сущности: '+(item.label||item.name));for(const[value,text]of typeOptions[item.entity]||[]){const o=el('option',text);o.value=value;select.append(o);}select.value=item.type||'';select.onchange=protect(async()=>{select.disabled=true;try{await api('/adventure/review/library/'+id+'/entities',{module:item.module,document:item.document,page:item.page,entity:item.entity,name:item.name,value:select.value},'PUT');toast('Тип сущности сохранён: правка переживёт повторный разбор.');await showReview(id);}finally{select.disabled=false;}});return select;};
+   const parseSection=(title,items,empty)=>{const box=el('section',undefined,'bsec'),heading=el('div',undefined,'bsec__head');
+    heading.append(el('h3',title,'bsec__title'),el('span',String(items.length),'bsec__count'));box.append(heading);
+    if(!items.length)box.append(el('p',empty,'bsec__note'));
+    else{const list=el('ul',undefined,'items');
+     for(const item of items.slice(0,60)){const conf=partial.has(item.document+':'+item.page)?'check':'ok';const line=el('li',undefined,'item'+(conf==='check'?' item--check':'')),dot=el('span',undefined,'dot'),content=el('span',undefined,'item__body');
+      dot.dataset.conf=conf;dot.setAttribute('aria-label',conf==='check'?'стоит проверить':'прочитано точно');
+-     content.append(el('span',item.name,'item__name'));if(item.note)content.append(el('span',item.note,'item__note'));
++     content.append(el('span',item.label||item.name,'item__name'));if(item.note)content.append(el('span',item.note,'item__note'));
++     if(item.quote){const quote=el('details',undefined,'item__quote');quote.append(el('summary','Цитата со страницы'),el('p','«'+brief(item.quote)+'»','hint'),el('p','стр. '+item.page+' · '+(partial.has(item.document+':'+item.page)?'прочитано частично':'прочитано целиком'),'hint'));content.append(quote);}
++     if(item.module&&item.entity)content.append(editControl(item));
+      line.append(dot,content,el('span','стр. '+item.page,'item__page'));list.append(line);}
+     box.append(list);if(items.length>60)box.append(el('p','Показаны первые 60 из '+items.length+'.','bsec__note'));}
+    return box;};
+   sheet.append(parseSection('Места',rows.places,'Пока пусто: в этой книге мастер не нашёл названных мест.'),
+                parseSection('Люди',rows.people,'Пока пусто: в этой книге мастер не встретил людей по имени.'),
+-               parseSection('Проверки',rows.checks,'Пока пусто: книга не печатает проверок с числом.'));
++               parseSection('Проверки',rows.checks,'Пока пусто: книга не печатает проверок с числом.'),
++               parseSection('Справочник',rows.reference,'Пока пусто: в этой книге нет приложений-справочников.'));
+   const gaps=[];
+   for(const d of reviewData.documents||[]){const quality=d.quality||{};if(quality.blank_pages)gaps.push([d.original_name+': '+quality.blank_pages+' страниц без уверенного текста','Мастер их не прочитал. Если там что-то важное — распознайте текст и загрузите снова.']);}
++  const skipped=[];for(const module of scenes||[])for(const row of (module.scene||{}).edits_rejected||[])skipped.push(row);
++  if(skipped.length)gaps.push([skipped.length+' правок человека не применилось',
++   'Правка сохранена, но строки с таким именем и страницей в сцене больше нет: книга перечитана иначе. Проверьте строку вручную.']);
+   if(rows.left.length)gaps.push([rows.left.length+' находок отброшено при сверке','Строка не нашлась на своей странице, поэтому в мир она не попала. Откройте страницу и проверьте её вручную.']);
+   const gapSection=el('section',undefined,'bsec'),gapHead=el('div',undefined,'bsec__head');gapHead.append(el('h3','Чего не хватило','bsec__title'),el('span',String(gaps.length),'bsec__count'));gapSection.append(gapHead);
+   if(!gaps.length)gapSection.append(el('p','Все страницы прочитаны уверенно.','bsec__note'));

@@ -1,0 +1,976 @@
+{
+  "schema_version": "2.1.0",
+  "rules": [
+    {
+      "id": "phb2024.phb03.druid.class_attributes",
+      "rules_family": "dnd2024",
+      "name": "Друид: Ключевые атрибуты",
+      "kind": "procedure",
+      "classification": {
+        "mode": "deterministic",
+        "semantic_required": false,
+        "formal_required": true,
+        "reason": "Таблица «Ключевые атрибуты» задаёт точные значения (Кость хитов, спасброски, владения) без выбора Мастера"
+      },
+      "conditions": [],
+      "triggers": [
+        "druid.class_attributes"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "procedure_id": "druid_class_attributes"
+          }
+        }
+      ],
+      "semantic_questions": [],
+      "facts": {
+        "hit_die": "к8",
+        "primary": "Мудрость",
+        "saves": [
+          "Интеллект",
+          "Мудрость"
+        ],
+        "weapons": "Простое оружие",
+        "tools": "Набор травника",
+        "armor": "Лёгкие доспехи и Щиты",
+        "subclass_level": 3,
+        "subclasses": [
+          "Круг звёзд",
+          "Круг земли",
+          "Круг луны",
+          "Круг моря"
+        ],
+        "pdf_span": [
+          91,
+          102
+        ]
+      },
+      "rule_parameters": {
+        "class_resources": {
+          "1": "использования Дикого облика",
+          "2": "ячейки заклинаний"
+        }
+      },
+      "constraints": [],
+      "exceptions": [],
+      "duration": "not_applicable",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "kind": "phb",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 92,
+        "printed_page": "91",
+        "section": "Друид, глава 3 «Классы персонажей»: Выбор Друида..."
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "existing_engine_subset",
+      "auto_activate": false,
+      "dependencies": [],
+      "behavior_tests": [
+        "phb03.druid.class_attributes"
+      ],
+      "readiness": {
+        "status": "engine_subset_verified",
+        "handler": null,
+        "scope": "Проецирование классовых атрибутов на лист персонажа",
+        "blockers": []
+      },
+      "revision": 1
+    },
+    {
+      "id": "phb2024.phb03.druid.sotvorenie_zaklinanii",
+      "rules_family": "dnd2024",
+      "name": "Друид: Сотворение заклинаний (Друид)",
+      "kind": "procedure",
+      "classification": {
+        "mode": "deterministic",
+        "semantic_required": false,
+        "formal_required": true,
+        "reason": "Числа и порядок шагов заданы текстом PHB 2024 (см. facts)"
+      },
+      "conditions": [],
+      "triggers": [
+        "druid.sotvorenie_zaklinanii"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "cantrips_start": 2,
+            "prepared_level_1": 4,
+            "spellcasting_ability": "Мудрость",
+            "replace_prepared": "любое количество на Долгом отдыхе",
+            "procedure_id": "druid_sotvorenie_zaklinanii"
+          }
+        }
+      ],
+      "semantic_questions": [],
+      "facts": {
+        "cantrips_start": 2,
+        "cantrip_levels": [
+          "4",
+          "10"
+        ],
+        "prepared_level_1": 4,
+        "spellcasting_ability": "Мудрость",
+        "replace_prepared": "любое количество на Долгом отдыхе"
+      },
+      "rule_parameters": {},
+      "constraints": [],
+      "exceptions": [],
+      "duration": "per_action",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "kind": "phb",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 92,
+        "printed_page": "91",
+        "section": "Друид, глава 3 «Классы персонажей»: Сотворение заклинаний (Друид)"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "existing_engine_subset",
+      "auto_activate": false,
+      "dependencies": [
+        "phb2024.phb01.spell_slots"
+      ],
+      "behavior_tests": [
+        "phb03.druid.sotvorenie_zaklinanii"
+      ],
+      "readiness": {
+        "status": "engine_subset_verified",
+        "handler": null,
+        "scope": "Друид: Сотворение заклинаний (Друид)",
+        "blockers": []
+      },
+      "revision": 1
+    },
+    {
+      "id": "phb2024.phb03.druid.druidicheskii_yazyk",
+      "rules_family": "dnd2024",
+      "name": "Друид: Друидический язык",
+      "kind": "procedure",
+      "classification": {
+        "mode": "deterministic",
+        "semantic_required": false,
+        "formal_required": true,
+        "reason": "Числа и порядок шагов заданы текстом PHB 2024 (см. facts)"
+      },
+      "conditions": [],
+      "triggers": [
+        "druid.druidicheskii_yazyk"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "investigation_dc": 15,
+            "ability": "Интеллект",
+            "procedure_id": "druid_druidicheskii_yazyk"
+          }
+        }
+      ],
+      "semantic_questions": [],
+      "facts": {
+        "always_prepared": [
+          "Разговор с животными"
+        ],
+        "investigation_dc": 15,
+        "ability": "Интеллект"
+      },
+      "rule_parameters": {},
+      "constraints": [],
+      "exceptions": [],
+      "duration": "per_action",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "kind": "phb",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 93,
+        "printed_page": "92",
+        "section": "Друид, глава 3 «Классы персонажей»: Друидический язык"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "not_implemented",
+      "auto_activate": false,
+      "dependencies": [],
+      "behavior_tests": [
+        "phb03.druid.druidicheskii_yazyk"
+      ],
+      "readiness": {
+        "status": "blocked",
+        "handler": null,
+        "scope": "Друид: Друидический язык",
+        "blockers": [
+          "у умения нет ни активности, ни поля листа: язык и общение со зверями не исполняются"
+        ]
+      },
+      "revision": 1
+    },
+    {
+      "id": "phb2024.phb03.druid.pervozdannyi_orden",
+      "rules_family": "dnd2024",
+      "name": "Друид: Первозданный орден",
+      "kind": "procedure",
+      "classification": {
+        "mode": "hybrid",
+        "semantic_required": true,
+        "formal_required": true,
+        "reason": "Числа берутся из текста PHB 2024 (см. facts); применение к существу и выбранные варианты требуют решения Мастера"
+      },
+      "conditions": [],
+      "triggers": [
+        "druid.pervozdannyi_orden"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "cantrip_bonus": 1,
+            "bonus_source": "модификатор Мудрости, минимум +1",
+            "guardian_armor": "Средние доспехи",
+            "guardian_weapons": "Воинское оружие",
+            "procedure_id": "druid_pervozdannyi_orden"
+          }
+        }
+      ],
+      "semantic_questions": [
+        "Какой орден выбран — Волхв или Смотритель?"
+      ],
+      "facts": {
+        "cantrip_bonus": 1,
+        "bonus_skills": [
+          "Тайная магия",
+          "Природа"
+        ],
+        "bonus_source": "модификатор Мудрости, минимум +1",
+        "guardian_armor": "Средние доспехи",
+        "guardian_weapons": "Воинское оружие"
+      },
+      "rule_parameters": {},
+      "constraints": [],
+      "exceptions": [],
+      "duration": "per_action",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "kind": "phb",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 93,
+        "printed_page": "92",
+        "section": "Друид, глава 3 «Классы персонажей»: Первозданный орден"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "not_implemented",
+      "auto_activate": false,
+      "dependencies": [
+        "phb2024.phb01.ability_modifier"
+      ],
+      "behavior_tests": [
+        "phb03.druid.pervozdannyi_orden"
+      ],
+      "readiness": {
+        "status": "blocked",
+        "handler": null,
+        "scope": "Друид: Первозданный орден",
+        "blockers": [
+          "выбор ордена не доходит до листа: у умения нет ни активности, ни поля"
+        ]
+      },
+      "revision": 1
+    },
+    {
+      "id": "phb2024.phb03.druid.dikii_oblik",
+      "rules_family": "dnd2024",
+      "name": "Друид: Дикий облик",
+      "kind": "procedure",
+      "classification": {
+        "mode": "hybrid",
+        "semantic_required": true,
+        "formal_required": true,
+        "reason": "Числа берутся из текста PHB 2024 (см. facts); применение к существу и выбранные варианты требуют решения Мастера"
+      },
+      "conditions": [],
+      "triggers": [
+        "druid.dikii_oblik"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "bonus_action": true,
+            "hours": "половина уровня Друида",
+            "uses_start": 2,
+            "recharge": "одно за Короткий отдых, все за Долгий",
+            "known_shapes_start": 4,
+            "max_cr_start": "1/4",
+            "no_fly_speed_until_level": 8,
+            "temp_hp": "равно уровню Друида",
+            "procedure_id": "druid_dikii_oblik"
+          }
+        }
+      ],
+      "semantic_questions": [
+        "В какого известного Зверя перевоплощение подтверждено и есть ли подходящий блок статистики?"
+      ],
+      "facts": {
+        "bonus_action": true,
+        "hours": "половина уровня Друида",
+        "uses_start": 2,
+        "recharge": "одно за Короткий отдых, все за Долгий",
+        "known_shapes_start": 4,
+        "max_cr_start": "1/4",
+        "no_fly_speed_until_level": 8,
+        "temp_hp": "равно уровню Друида",
+        "keep": [
+          "тип существа",
+          "Хиты",
+          "Кости хитов",
+          "Интеллект",
+          "Мудрость",
+          "Харизма",
+          "классовые умения",
+          "языки",
+          "черты"
+        ]
+      },
+      "rule_parameters": {
+        "shapes_by_level": {
+          "2": "known=4|max_cr=1/4|fly=False",
+          "4": "known=6|max_cr=1/2|fly=False",
+          "8": "known=8|max_cr=1|fly=True"
+        }
+      },
+      "constraints": [],
+      "exceptions": [],
+      "duration": "per_action",
+      "resources": [
+        {
+          "id": "wild_shape_uses",
+          "handling": "dependency_not_extracted"
+        }
+      ],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "kind": "phb",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 93,
+        "printed_page": "92",
+        "section": "Друид, глава 3 «Классы персонажей»: Дикий облик"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "existing_engine_subset",
+      "auto_activate": false,
+      "dependencies": [
+        "mm_2025_ru_v1_1.beast_blocks"
+      ],
+      "behavior_tests": [
+        "phb03.druid.dikii_oblik",
+        "nat20.class_features_reach_game.dikii_oblik"
+      ],
+      "readiness": {
+        "status": "engine_subset_verified",
+        "handler": "nat20_content.feature_gate",
+        "scope": "Хост: формы перечисляются по таблице «Формы зверя» самого движка (предел Опасности и полёт по уровню Друида), выбранная передаётся в форму, выход из формы тоже проходит; вместо отказа «недопустимая форма» игрок получает список. Движок: форма, временные хиты, трата применения и запрет заклинаний в форме. Известных форм 4/6/8 по таблице книги: хост берёт их по Опасности и набор монотонен по уровням, поэтому экран перечисляет формы, а не весь бестиарий; «видел это животное» и замену известной формы после Долгого отдыха ведёт Мастер вне хоста — хост набор известных форм не расширяет. Не закрыто: «Заклинания зверя» круга Луны и предметы в форме",
+        "blockers": []
+      },
+      "revision": 2
+    },
+    {
+      "id": "phb2024.phb03.druid.dikii_sputnik",
+      "rules_family": "dnd2024",
+      "name": "Друид: Дикий спутник",
+      "kind": "procedure",
+      "classification": {
+        "mode": "deterministic",
+        "semantic_required": false,
+        "formal_required": true,
+        "reason": "Числа и порядок шагов заданы текстом PHB 2024 (см. facts)"
+      },
+      "conditions": [],
+      "triggers": [
+        "druid.dikii_sputnik"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "action": "Магия",
+            "spell": "Обретение фамильяра",
+            "no_material": true,
+            "familiar_type": "Фея",
+            "expires": "после Долгого отдыха",
+            "procedure_id": "druid_dikii_sputnik"
+          }
+        }
+      ],
+      "semantic_questions": [],
+      "facts": {
+        "action": "Магия",
+        "costs": [
+          "ячейка заклинаний",
+          "использование Дикого облика"
+        ],
+        "spell": "Обретение фамильяра",
+        "no_material": true,
+        "familiar_type": "Фея",
+        "expires": "после Долгого отдыха"
+      },
+      "rule_parameters": {},
+      "constraints": [],
+      "exceptions": [],
+      "duration": "per_action",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "kind": "phb",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 94,
+        "printed_page": "93",
+        "section": "Друид, глава 3 «Классы персонажей»: Дикий спутник"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "existing_engine_subset",
+      "auto_activate": false,
+      "dependencies": [],
+      "behavior_tests": [
+        "phb03.druid.dikii_sputnik"
+      ],
+      "readiness": {
+        "status": "adjudication_required",
+        "handler": null,
+        "scope": "Друид: Дикий спутник",
+        "blockers": [
+          "движок принимает умение и тратит использование Дикого облика, но призыв спутника не разрешается: активность призыва вне белого списка"
+        ]
+      },
+      "revision": 1
+    },
+    {
+      "id": "phb2024.phb03.druid.podklass_druida",
+      "rules_family": "dnd2024",
+      "name": "Друид: Подкласс Друида",
+      "kind": "procedure",
+      "classification": {
+        "mode": "deterministic",
+        "semantic_required": false,
+        "formal_required": true,
+        "reason": "Числа и порядок шагов заданы текстом PHB 2024 (см. facts)"
+      },
+      "conditions": [],
+      "triggers": [
+        "druid.podklass_druida"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "subclass_level": 3,
+            "procedure_id": "druid_podklass_druida"
+          }
+        }
+      ],
+      "semantic_questions": [],
+      "facts": {
+        "subclass_level": 3,
+        "subclasses": [
+          "Круг звёзд",
+          "Круг земли",
+          "Круг луны",
+          "Круг моря"
+        ]
+      },
+      "rule_parameters": {},
+      "constraints": [],
+      "exceptions": [],
+      "duration": "per_action",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "kind": "phb",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 94,
+        "printed_page": "93",
+        "section": "Друид, глава 3 «Классы персонажей»: Подкласс Друида"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "existing_engine_subset",
+      "auto_activate": false,
+      "dependencies": [],
+      "behavior_tests": [
+        "phb03.druid.podklass_druida"
+      ],
+      "readiness": {
+        "status": "engine_subset_verified",
+        "handler": null,
+        "scope": "Друид: Подкласс Друида",
+        "blockers": []
+      },
+      "revision": 1
+    },
+    {
+      "id": "phb2024.phb03.druid.uvelichenie_harakteristik",
+      "rules_family": "dnd2024",
+      "name": "Друид: Увеличение характеристик",
+      "kind": "procedure",
+      "classification": {
+        "mode": "deterministic",
+        "semantic_required": false,
+        "formal_required": true,
+        "reason": "Числа и порядок шагов заданы текстом PHB 2024 (см. facts)"
+      },
+      "conditions": [],
+      "triggers": [
+        "druid.uvelichenie_harakteristik"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "procedure_id": "druid_uvelichenie_harakteristik"
+          }
+        }
+      ],
+      "semantic_questions": [],
+      "facts": {
+        "levels": [
+          "4",
+          "8",
+          "12",
+          "16"
+        ]
+      },
+      "rule_parameters": {},
+      "constraints": [],
+      "exceptions": [],
+      "duration": "per_action",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "kind": "phb",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 94,
+        "printed_page": "93",
+        "section": "Друид, глава 3 «Классы персонажей»: Увеличение характеристик"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "existing_engine_subset",
+      "auto_activate": false,
+      "dependencies": [
+        "phb2024.phb05.ability_score_improvement"
+      ],
+      "behavior_tests": [
+        "phb03.druid.uvelichenie_harakteristik"
+      ],
+      "readiness": {
+        "status": "engine_subset_verified",
+        "handler": null,
+        "scope": "Друид: Увеличение характеристик",
+        "blockers": []
+      },
+      "revision": 1
+    },
+    {
+      "id": "phb2024.phb03.druid.dikoe_vosstanovlenie",
+      "rules_family": "dnd2024",
+      "name": "Друид: Дикое восстановление",
+      "kind": "procedure",
+      "classification": {
+        "mode": "deterministic",
+        "semantic_required": false,
+        "formal_required": true,
+        "reason": "Числа и порядок шагов заданы текстом PHB 2024 (см. facts)"
+      },
+      "conditions": [],
+      "triggers": [
+        "druid.dikoe_vosstanovlenie"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "slot_to_use": true,
+            "use_to_slot_level": 1,
+            "once_per_long_rest": true,
+            "procedure_id": "druid_dikoe_vosstanovlenie"
+          }
+        }
+      ],
+      "semantic_questions": [],
+      "facts": {
+        "slot_to_use": true,
+        "use_to_slot_level": 1,
+        "once_per_long_rest": true
+      },
+      "rule_parameters": {},
+      "constraints": [],
+      "exceptions": [],
+      "duration": "per_action",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "kind": "phb",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 94,
+        "printed_page": "93",
+        "section": "Друид, глава 3 «Классы персонажей»: Дикое восстановление"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "existing_engine_subset",
+      "auto_activate": false,
+      "dependencies": [],
+      "behavior_tests": [
+        "phb03.druid.dikoe_vosstanovlenie"
+      ],
+      "readiness": {
+        "status": "adjudication_required",
+        "handler": null,
+        "scope": "Друид: Дикое восстановление",
+        "blockers": [
+          "движок принимает умение и тратит использование, но обмен ячейки на форму не наблюдается"
+        ]
+      },
+      "revision": 1
+    },
+    {
+      "id": "phb2024.phb03.druid.yarost_stihii",
+      "rules_family": "dnd2024",
+      "name": "Друид: Ярость стихий",
+      "kind": "procedure",
+      "classification": {
+        "mode": "hybrid",
+        "semantic_required": true,
+        "formal_required": true,
+        "reason": "Числа берутся из текста PHB 2024 (см. facts); применение к существу и выбранные варианты требуют решения Мастера"
+      },
+      "conditions": [],
+      "triggers": [
+        "druid.yarost_stihii"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "nature_strike_extra_damage": "1к8",
+            "spell_damage_bonus": "модификатор Мудрости",
+            "procedure_id": "druid_yarost_stihii"
+          }
+        }
+      ],
+      "semantic_questions": [
+        "Какой вариант Ярости стихий выбран — Могущественное колдовство или Удар природы?"
+      ],
+      "facts": {
+        "nature_strike_extra_damage": "1к8",
+        "damage_types": [
+          "Звук",
+          "Огонь",
+          "Холод",
+          "Электричество"
+        ],
+        "spell_damage_bonus": "модификатор Мудрости"
+      },
+      "rule_parameters": {},
+      "constraints": [],
+      "exceptions": [],
+      "duration": "per_action",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "kind": "phb",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 94,
+        "printed_page": "93",
+        "section": "Друид, глава 3 «Классы персонажей»: Ярость стихий"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "not_implemented",
+      "auto_activate": false,
+      "dependencies": [],
+      "behavior_tests": [
+        "phb03.druid.yarost_stihii"
+      ],
+      "readiness": {
+        "status": "blocked",
+        "handler": null,
+        "scope": "Друид: Ярость стихий",
+        "blockers": [
+          "у умения нет типизированной активности: прибавка урона стихией не исполняется"
+        ]
+      },
+      "revision": 1
+    },
+    {
+      "id": "phb2024.phb03.druid.uluchshennaya_yarost_stihii",
+      "rules_family": "dnd2024",
+      "name": "Друид: Улучшенная ярость стихий",
+      "kind": "procedure",
+      "classification": {
+        "mode": "deterministic",
+        "semantic_required": false,
+        "formal_required": true,
+        "reason": "Числа и порядок шагов заданы текстом PHB 2024 (см. facts)"
+      },
+      "conditions": [],
+      "triggers": [
+        "druid.uluchshennaya_yarost_stihii"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "range_bonus_feet": 300,
+            "nature_strike_extra_damage": "2к8",
+            "procedure_id": "druid_uluchshennaya_yarost_stihii"
+          }
+        }
+      ],
+      "semantic_questions": [],
+      "facts": {
+        "range_bonus_feet": 300,
+        "nature_strike_extra_damage": "2к8"
+      },
+      "rule_parameters": {},
+      "constraints": [],
+      "exceptions": [],
+      "duration": "per_action",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "kind": "phb",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 95,
+        "printed_page": "94",
+        "section": "Друид, глава 3 «Классы персонажей»: Улучшенная ярость стихий"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "not_implemented",
+      "auto_activate": false,
+      "dependencies": [],
+      "behavior_tests": [
+        "phb03.druid.uluchshennaya_yarost_stihii"
+      ],
+      "readiness": {
+        "status": "blocked",
+        "handler": null,
+        "scope": "Друид: Улучшенная ярость стихий",
+        "blockers": [
+          "у умения нет активности: дальность и урон Ярости стихий не исполняются"
+        ]
+      },
+      "revision": 1
+    },
+    {
+      "id": "phb2024.phb03.druid.zaklinaniya_zverya",
+      "rules_family": "dnd2024",
+      "name": "Друид: Заклинания зверя",
+      "kind": "procedure",
+      "classification": {
+        "mode": "deterministic",
+        "semantic_required": false,
+        "formal_required": true,
+        "reason": "Числа и порядок шагов заданы текстом PHB 2024 (см. facts)"
+      },
+      "conditions": [],
+      "triggers": [
+        "druid.zaklinaniya_zverya"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "forbidden": "Материальный компонент, расходуемый заклинанием, или указанная цена",
+            "procedure_id": "druid_zaklinaniya_zverya"
+          }
+        }
+      ],
+      "semantic_questions": [],
+      "facts": {
+        "forbidden": "Материальный компонент, расходуемый заклинанием, или указанная цена"
+      },
+      "rule_parameters": {},
+      "constraints": [],
+      "exceptions": [],
+      "duration": "per_action",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "kind": "phb",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 95,
+        "printed_page": "94",
+        "section": "Друид, глава 3 «Классы персонажей»: Заклинания зверя"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "not_implemented",
+      "auto_activate": false,
+      "dependencies": [],
+      "behavior_tests": [
+        "phb03.druid.zaklinaniya_zverya"
+      ],
+      "readiness": {
+        "status": "blocked",
+        "handler": null,
+        "scope": "Друид: Заклинания зверя",
+        "blockers": [
+          "заклинания в форме зверя не смоделированы (матрица апстрима: Beast Spells not modelled)"
+        ]
+      },
+      "revision": 1
+    },
+    {
+      "id": "phb2024.phb03.druid.epicheskii_dar",
+      "rules_family": "dnd2024",
+      "name": "Друид: Эпический дар",
+      "kind": "procedure",
+      "classification": {
+        "mode": "deterministic",
+        "semantic_required": false,
+        "formal_required": true,
+        "reason": "Числа и порядок шагов заданы текстом PHB 2024 (см. facts)"
+      },
+      "conditions": [],
+      "triggers": [
+        "druid.epicheskii_dar"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "procedure_id": "druid_epicheskii_dar"
+          }
+        }
+      ],
+      "semantic_questions": [],
+      "facts": {},
+      "rule_parameters": {},
+      "constraints": [],
+      "exceptions": [],
+      "duration": "per_action",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "kind": "phb",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 95,
+        "printed_page": "94",
+        "section": "Друид, глава 3 «Классы персонажей»: Эпический дар"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "existing_engine_subset",
+      "auto_activate": false,
+      "dependencies": [
+        "phb2024.phb05.epic_boon"
+      ],
+      "behavior_tests": [
+        "phb03.druid.epicheskii_dar"
+      ],
+      "readiness": {
+        "status": "adjudication_required",
+        "handler": null,
+        "scope": "Друид: Эпический дар",
+        "blockers": [
+          "дар не входит в репертуар ни одного класса: use_feature даёт CastFailed(not_in_repertoire)",
+          "выгод дара нет: activities и passive_effects пусты в данных, слово epic в ядре встречается только в labels.py"
+        ]
+      },
+      "revision": 1
+    },
+    {
+      "id": "phb2024.phb03.druid.arhidruid",
+      "rules_family": "dnd2024",
+      "name": "Друид: Архидруид",
+      "kind": "procedure",
+      "classification": {
+        "mode": "deterministic",
+        "semantic_required": false,
+        "formal_required": true,
+        "reason": "Числа и порядок шагов заданы текстом PHB 2024 (см. facts)"
+      },
+      "conditions": [],
+      "triggers": [
+        "druid.arhidruid"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "restore_one_use_on_initiative": true,
+            "use_to_slot_level_step": 2,
+            "once_per_long_rest": true,
+            "aging": "1 год за каждые 10 лет",
+            "procedure_id": "druid_arhidruid"
+          }
+        }
+      ],
+      "semantic_questions": [],
+      "facts": {
+        "restore_one_use_on_initiative": true,
+        "use_to_slot_level_step": 2,
+        "once_per_long_rest": true,
+        "aging": "1 год за каждые 10 лет"
+      },
+      "rule_parameters": {},
+      "constraints": [],
+      "exceptions": [],
+      "duration": "per_action",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "kind": "phb",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 95,
+        "printed_page": "94",
+        "section": "Друид, глава 3 «Классы персонажей»: Архидруид"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "existing_engine_subset",
+      "auto_activate": false,
+      "dependencies": [],
+      "behavior_tests": [
+        "phb03.druid.arhidruid"
+      ],
+      "readiness": {
+        "status": "adjudication_required",
+        "handler": null,
+        "scope": "Друид: Архидруид",
+        "blockers": [
+          "движок принимает умение и тратит использование, но бесконечные применения Дикого облика не наблюдаются"
+        ]
+      },
+      "revision": 1
+    }
+  ]
+}

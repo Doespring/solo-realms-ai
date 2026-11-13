@@ -1,0 +1,52 @@
+книга Icewind Dale - Rime of the Frostmaiden RUS.pdf страниц 109 знаков 428404
+/home/hermes/projects/SoloRealmsAI-Nat20/.venv/lib/python3.14/site-packages/fastapi/testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+  from starlette.testclient import TestClient as TestClient  # noqa
+прогон fde291af-d702-48fc-bb1b-b9196230bc36 план 0
+20:40:23 running 0 / 17 
+20:40:29 running 1 / 17 
+r237: вход по 1 блок(ов) не собирается: Открытая стартовая сцена и её обязательные зависимости ещё не подтверждены. Продолжить можно после проверки конкретной сцены; исходники и блоки сохранены.
+20:40:35 running 2 / 17 
+r237: вход по 2 блок(ов) не собирается: Открытая стартовая сцена и её обязательные зависимости ещё не подтверждены. Продолжить можно после проверки конкретной сцены; исходники и блоки сохранены.
+20:40:42 running 3 / 17 
+20:40:48 running 4 / 17 
+20:40:55 running 5 / 17 
+20:41:14 running 6 / 18 
+20:41:20 running 7 / 18 
+20:41:41 running 8 / 19 
+20:42:00 running 9 / 20 
+20:42:07 running 10 / 20 
+20:42:19 running 11 / 20 
+20:42:28 running 12 / 20 
+20:42:35 running 13 / 20 
+20:42:54 running 14 / 21 
+20:43:05 running 15 / 21 
+20:43:16 running 16 / 21 
+20:43:21 running 17 / 21 
+20:43:35 running 18 / 21 
+20:43:41 running 19 / 21 
+20:43:48 running 20 / 21 
+20:43:54 running 21 / 21 
+20:45:08 blocked 21 / 21 
+{
+  "plan_blocks": 0,
+  "status": "blocked",
+  "done": 21,
+  "total": 21,
+  "playable_at_s": null,
+  "playable_done": null,
+  "playable_total": null,
+  "full_at_s": 285.3,
+  "calls_per_block": 1.19,
+  "refused_share": 0.0,
+  "split_sections": 4,
+  "world_readiness": {
+    "status": 200,
+    "ready": false,
+    "world_ready": false,
+    "reasons": [
+      "Старт мира заблокирован: Текстовое сведение не подтверждено цитатой (поле name); Число не подтверждено цитатой; Противоречивые версии одного элемента; id: Field required; category: Field required; name: Extra inputs are not permitted; description: Extra inputs are not permitted; id: Field required; npc: Field required; name: Extra inputs are not permitted; name: Field required; id: Field required"
+    ]
+  },
+  "confirmed_during_run": null
+}
+отчёт reports/r237/live-after.json

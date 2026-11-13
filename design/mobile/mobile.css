@@ -1,0 +1,506 @@
+/* r231 — мобильный «Стол и лист»: слой макетов для 375×812 и 390×844.
+   Это НЕ код приложения. Файл существует, чтобы кодер видел те же числа,
+   что записаны в SPEC.md: каждая зона — размер, отступ, поведение.
+
+   Правила слоя — те же, что у принятого компьютерного вида (r224):
+   ноль градиентов, теней и полупрозрачных подложек (кроме `--overlay` из
+   токенов, он у модальных окон), один радиус 2 px, волосяная линия 1 px,
+   шкала отступов 4 px; 2 и 6 — только внутри блока, не между блоками.
+
+   Токены повторены значениями из web/design-tokens.css, чтобы макет
+   открывался с диска без сервера. В приложении брать готовый файл
+   токенов, а не копию: это единственное расхождение с кодом. */
+
+/* ── Шрифты (локальные копии из web/visual/fonts, SIL OFL) ───────────────── */
+@font-face{
+  font-family:"Book";src:url("../../web/visual/fonts/book-regular.ttf") format("truetype");
+  font-weight:300 800;font-style:normal;font-display:swap;
+}
+@font-face{
+  font-family:"Book";src:url("../../web/visual/fonts/book-italic.ttf") format("truetype");
+  font-weight:300 800;font-style:italic;font-display:swap;
+}
+@font-face{
+  font-family:"UI";src:url("../../web/visual/fonts/ui-regular.ttf") format("truetype");
+  font-weight:400;font-style:normal;font-display:swap;
+}
+@font-face{
+  font-family:"UI";src:url("../../web/visual/fonts/ui-bold.ttf") format("truetype");
+  font-weight:700;font-style:normal;font-display:swap;
+}
+
+/* ── Токены: ровно значения web/design-tokens.css ─────────────────────────── */
+:root{
+  color-scheme:dark;
+  --ink-950:#0D0B08; --ink-900:#14110D; --ink-850:#191510; --ink-800:#1F1A14;
+  --ink-750:#262019; --ink-700:#2E2720; --ink-600:#3A3128;
+  --line:#332B22; --line-strong:#4A3E30;
+  --text:#EDE3CE; --text-2:#BEB097; --text-3:#A2957B;
+  --candle:#D8A05C; --candle-hi:#EDBB79; --candle-deep:#B98A4E;
+  --candle-fill:#D8A05C; --candle-ink:#1B1207;
+  --moss:#8FA97A; --ember:#D9704F;
+  --roll-bg:#1B1711; --roll-line:#4A3E30; --roll-num:#C6B89C;
+  --out-hit:#93AE72; --out-hit-ink:#0F1408;
+  --out-miss:#D9704F; --out-miss-ink:#170C07;
+  --out-crit:#D8A05C; --out-crit-ink:#1B1207;
+  --sheet-bg:#1E1A14; --sheet-bg-2:#221D16;
+  --sheet-line:#3A3128; --sheet-line-soft:#2E2720;
+  --sheet-ink:#E8DDC7; --sheet-ink-2:#C6B89C; --sheet-ink-3:#A2957B;
+  --sheet-note:#B0A186; --sheet-meta:#A2957B;
+  --sheet-ok:#93AE72; --sheet-warn:#D8A05C; --sheet-bad:#D9704F; --sheet-bad-ink:#E58D6C;
+  --overlay:#171A1EAA;
+
+  --font-book:"Book","EB Garamond",Georgia,"Times New Roman",serif;
+  --font-ui:"UI","PT Sans",-apple-system,"Segoe UI",Roboto,sans-serif;
+}
+[data-theme="light"]{
+  color-scheme:light;
+  --ink-950:#E4D6BE; --ink-900:#F3ECE0; --ink-850:#EFE7D9; --ink-800:#E9DFCE;
+  --ink-750:#E3D6BF; --ink-700:#DACCB2; --ink-600:#C9B79A;
+  --line:#D9CBAF; --line-strong:#B49F7D;
+  --text:#2A231A; --text-2:#57483A; --text-3:#6A5740;
+  --candle:#8A5714; --candle-hi:#C08033; --candle-deep:#6E4410;
+  --candle-fill:#B0722A; --candle-ink:#191207;
+  --moss:#476127; --ember:#A33C22;
+  --roll-bg:#EAE0CE; --roll-line:#C4B08C; --roll-num:#6B5A44;
+  --out-hit:#7E9B56; --out-hit-ink:#0F1408;
+  --out-miss:#C86A4C; --out-miss-ink:#1A0C06;
+  --out-crit:#C08A3E; --out-crit-ink:#1B1207;
+  --sheet-bg:#FBF5E8; --sheet-bg-2:#F6EEDF;
+  --sheet-line:#DCCBA9; --sheet-line-soft:#E9DDC6;
+  --sheet-ink:#2A231A; --sheet-ink-2:#57483A; --sheet-ink-3:#6A5740;
+  --sheet-note:#5F4D39; --sheet-meta:#6A5740;
+  --sheet-ok:#476127; --sheet-warn:#8A5714; --sheet-bad:#A33C22; --sheet-bad-ink:#8C2F19;
+  --overlay:#2A231A55;
+}
+
+/* ── Мобильная шкала ──────────────────────────────────────────────────────
+   Числа — из SPEC.md, раздел «Числа». Шаг 4 px, ни одного «на глаз». */
+:root{
+  --bar:56px;          /* шапка экрана: 56 ≤ 64 */
+  --bar-kb:44px;       /* шапка при открытой клавиатуре */
+  --pad:16px;          /* боковой отступ экрана */
+  --tap:44px;          /* минимальная зона нажатия */
+  --row:44px;          /* минимум строки списка (= --tap); высоту задаёт контент: 46,6 одна строка, 67,5 две */
+  --dock-h:52px;       /* высота главной кнопки в доке */
+  --safe-bottom:34px;  /* зона home indicator, кнопки туда не ставим */
+  --r:2px;
+  --s1:4px; --s2:8px; --s3:12px; --s4:16px; --s5:24px; --s6:32px;
+
+  --fs-prose:17px; --lh-prose:1.62;   /* рассказ: 27.5 px строка */
+  --fs-body:16px;  --lh-body:1.55;    /* основной текст */
+  --fs-ui:14px;    --lh-ui:1.4;       /* служебный: подписи, мета, ошибки */
+  --fs-btn:16px;                      /* кнопка = основной кегль: в «основной ≥ 16» без исключений */
+  --fs-h1:30px; --lh-h1:1.08;
+  --fs-h2:22px; --lh-h2:1.18;
+  --fs-h3:17px; --lh-h3:1.3;
+  --fs-num:22px;
+  --fs-eyebrow:14px;                  /* не мельче 14: владелец ругал 12–13 */
+}
+
+/* ── База ─────────────────────────────────────────────────────────────────── */
+*,*::before,*::after{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{background:#0B0A08;color:var(--text);font-family:var(--font-ui)}
+button{font:inherit;color:inherit;background:none;border:0;margin:0;padding:0;cursor:pointer;text-align:left}
+a{color:inherit;text-decoration:none}
+p{margin:0}
+h1,h2,h3{margin:0;font-weight:400}
+::placeholder{color:var(--text-3);font-style:italic;opacity:1}
+[hidden]{display:none!important}
+
+/* ── Иконки: маска по SVG из web/visual/icons, цвет — из текста ───────────── */
+.icon{display:inline-block;flex:none;width:20px;height:20px;background:currentColor;
+  -webkit-mask:var(--icon) center/contain no-repeat;mask:var(--icon) center/contain no-repeat}
+
+/* ── Каркас макета: телефон и его зоны ────────────────────────────────────── */
+/* Рамка устройства в макеты не входит: кадр — ровно экран, без скруглений.
+   Статус 44 и home indicator 34 внутри кадра — iOS, не приложение. */
+.phone{--w:375px;--h:812px;position:relative;display:flex;flex-direction:column;
+  width:var(--w);height:var(--h);overflow:hidden;background:var(--ink-900);color:var(--text)}
+.phone[data-w="390"]{--w:390px;--h:844px}
+/* 390 шире на 18 px: заголовок на 2 px крупнее, отступы те же. Сетка сама
+   не «дышит» — числа остаются одинаковыми, меняется только кегль H1. */
+.phone[data-w="390"] .h1{font-size:32px}
+
+/* Статус устройства: 44 px, часы слева, Dynamic Island по центру. */
+.status{flex:none;height:44px;display:flex;align-items:center;justify-content:space-between;
+  padding:0 22px;font:700 15px/1 var(--font-ui);color:var(--text);position:relative;z-index:5}
+.status__island{position:absolute;left:50%;top:9px;transform:translateX(-50%);
+  width:118px;height:26px;border-radius:13px;background:#000}
+.phone[data-theme="light"] .status__island{background:#2A231A}
+.status__right{display:flex;align-items:center;gap:5px;color:var(--text)}
+.status__bars{display:flex;align-items:flex-end;gap:2px;height:10px}
+.status__bars i{display:block;width:3px;background:currentColor;border-radius:1px}
+.status__bars i:nth-child(1){height:4px}.status__bars i:nth-child(2){height:6px}
+.status__bars i:nth-child(3){height:8px}.status__bars i:nth-child(4){height:10px}
+.status__bat{width:22px;height:11px;border:1px solid currentColor;border-radius:2px;position:relative}
+.status__bat::before{content:"";position:absolute;inset:1px 5px 1px 1px;background:currentColor}
+.status__bat::after{content:"";position:absolute;right:-3px;top:3px;width:2px;height:5px;background:currentColor;border-radius:0 1px 1px 0}
+
+/* Home indicator — поверх содержимого, никаких кнопок в этой полосе. */
+.homebar{position:absolute;left:50%;bottom:8px;transform:translateX(-50%);
+  width:134px;height:5px;border-radius:3px;background:var(--text-3);opacity:.55;z-index:40;pointer-events:none}
+
+/* Шапка экрана. 56 px: 44 px кнопка + 6 px воздуха сверху и снизу. */
+.topbar{flex:none;height:var(--bar);display:grid;align-items:center;gap:var(--s2);
+  padding:0 var(--s2) 0 var(--s1);background:var(--ink-900);border-bottom:1px solid var(--line);z-index:20}
+.topbar--home{grid-template-columns:minmax(0,1fr) var(--tap)}
+.topbar--back{grid-template-columns:var(--tap) minmax(0,1fr) var(--tap);padding-right:var(--s1)}
+.topbar--game{grid-template-columns:var(--tap) minmax(0,1fr) auto var(--tap)}
+.topbar__t{min-width:0}
+.topbar__title{display:block;font:700 17px/1.2 var(--font-ui);color:var(--text);
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.topbar__sub{display:block;font:400 var(--fs-ui)/1.2 var(--font-ui);color:var(--text-3);
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.brand{display:flex;align-items:baseline;gap:6px;padding-left:var(--s3);
+  font:400 19px/1 var(--font-book);color:var(--text);letter-spacing:.01em}
+.brand b{font:700 14px/1 var(--font-ui);letter-spacing:.16em;text-transform:uppercase;color:var(--text-3)}
+
+/* Кнопка в шапке: 44×44, иконка 20. Это единственный размер кнопки-иконки. */
+.bar-btn{width:var(--tap);height:var(--tap);display:inline-flex;align-items:center;justify-content:center;
+  border-radius:var(--r);color:var(--text-2)}
+.bar-btn:active{background:var(--ink-800);color:var(--text)}
+.bar-btn--menu{justify-self:end}
+/* Бургер нарисован линиями, чтобы не тащить ещё один SVG: 18×12, штрих 2. */
+.burger{position:relative;width:18px;height:12px}
+.burger::before,.burger::after,.burger i{content:"";position:absolute;left:0;right:0;height:2px;background:currentColor}
+.burger::before{top:0}.burger i{top:5px}.burger::after{bottom:0}
+
+/* Полоса состояния героя в шапке игры: ХП и КД, только числа. */
+.vitals{display:inline-flex;align-items:center;gap:var(--s2);height:var(--tap);
+  font:700 16px/1 var(--font-ui);color:var(--text);font-variant-numeric:tabular-nums}
+.vitals span{display:inline-flex;align-items:center;gap:var(--s1);color:var(--text-2)}
+.vitals .icon{width:15px;height:15px}
+.vitals b{color:var(--text)}
+
+/* Тело экрана: единственная прокручиваемая зона. Именно она получает
+   overscroll-behavior:contain, а не страница. */
+.body{flex:1 1 auto;min-height:0;overflow-y:auto;overflow-x:hidden;
+  padding:var(--s5) var(--pad) var(--safe-bottom);overscroll-behavior:contain;
+  scrollbar-width:none}
+/* В макете полосы прокрутки не рисуем: на iOS её нет до начала жеста,
+   а в кадре она съедала бы 8 px ширины колонки. */
+.body::-webkit-scrollbar,.sheetmodal__body::-webkit-scrollbar{width:0;height:0}
+.phone[data-kb] .body{overscroll-behavior:none}
+
+/* Док: нижняя полоса с главным действием. Всегда прижата к низу, высота
+   считается от --dock-h + 8 + safe area. */
+.dock{flex:none;padding:var(--s2) var(--pad) calc(var(--s2) + var(--safe-bottom));
+  background:var(--ink-900);z-index:15}
+/* Поле ввода док не дублирует отступ: рамка начинается сразу под линией. */
+.dock .composer{padding-top:0;border-top:0}
+
+/* ── Типографика ──────────────────────────────────────────────────────────── */
+.eyebrow{font:400 var(--fs-eyebrow)/1.3 var(--font-ui);letter-spacing:.12em;
+  text-transform:uppercase;color:var(--text-3)}
+.h1{font-family:var(--font-book);font-size:var(--fs-h1);line-height:var(--lh-h1);color:var(--text);letter-spacing:-.004em}
+.h2{font-family:var(--font-book);font-size:var(--fs-h2);line-height:var(--lh-h2);color:var(--text)}
+.h3{font-family:var(--font-ui);font-size:var(--fs-h3);line-height:var(--lh-h3);font-weight:700;color:var(--text)}
+.lead{font-family:var(--font-book);font-style:italic;font-size:var(--fs-body);
+  line-height:1.55;color:var(--text-2)}
+.ui{font:400 var(--fs-ui)/var(--lh-ui) var(--font-ui);color:var(--text-2)}
+.ui--3{color:var(--text-3)}
+.label{font:700 var(--fs-ui)/var(--lh-ui) var(--font-ui);color:var(--text-2)}
+.num{font-family:var(--font-ui);font-variant-numeric:tabular-nums;letter-spacing:.01em}
+
+/* ── Кнопки ───────────────────────────────────────────────────────────────── */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:var(--s2);
+  min-height:var(--tap);padding:0 var(--s4);border:1px solid transparent;border-radius:var(--r);
+  font:700 var(--fs-btn)/1 var(--font-ui);letter-spacing:.01em;color:var(--text)}
+.btn--block{width:100%}
+.btn--primary{background:var(--candle-fill);border-color:var(--candle-fill);color:var(--candle-ink);min-height:var(--dock-h)}
+.btn--primary:active{background:var(--candle-hi);border-color:var(--candle-hi)}
+.btn--ghost{border-color:var(--line-strong);color:var(--text);min-height:var(--dock-h)}
+.btn--quiet{color:var(--text-2);min-height:var(--tap);font-weight:400;padding:0 var(--s3)}
+.btn--quiet:active{color:var(--text);background:var(--ink-800)}
+.btn .icon{width:18px;height:18px}
+
+/* ── Строки списков: 56 px, разделитель — волосяная линия ─────────────────── */
+.row{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:var(--s3);
+  width:100%;min-height:var(--row);padding:var(--s3) 0;border-top:1px solid var(--line);
+  color:var(--text)}
+.row:first-child{border-top:0}
+.row__main{min-width:0}
+.row__title{display:block;font:400 16px/1.35 var(--font-ui);color:var(--text);
+  overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.row__meta{display:block;margin-top:2px;font:400 var(--fs-ui)/1.35 var(--font-ui);color:var(--text-3)}
+.row__go{font:400 20px/1 var(--font-ui);color:var(--text-3)}
+.row__go--text{font:400 var(--fs-ui)/1.2 var(--font-ui);color:var(--text-2);white-space:nowrap}
+.row--tap{min-height:var(--row)}
+.row--tap:active{background:var(--ink-850)}
+.row--48{min-height:48px;padding:var(--s2) 0}
+.row--wrap .row__title{white-space:normal;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical}
+
+/* ── Поля ─────────────────────────────────────────────────────────────────── */
+.field{display:block}
+.field__input{display:block;width:100%;min-height:120px;padding:var(--s3);
+  border:1px solid var(--line-strong);border-radius:var(--r);background:var(--ink-850);
+  color:var(--text);font:400 var(--fs-prose)/1.5 var(--font-book);resize:none;outline:none}
+.field__input:focus{border-color:var(--candle-deep)}
+.field__input::placeholder{color:var(--text-3)}
+.field--sm .field__input{min-height:var(--tap);padding:var(--s2) var(--s3);font-family:var(--font-ui);font-size:var(--fs-body)}
+
+/* ── Прогресс: 8 px, заливка свечой, дорожка — линия ──────────────────────── */
+.prog{height:8px;border-radius:var(--r);background:var(--ink-800);overflow:hidden}
+.prog__fill{display:block;height:100%;background:var(--candle);border-radius:var(--r)}
+.prog--mini{height:4px}
+
+/* ── Чип-метка (счётчик, вердикт) ─────────────────────────────────────────── */
+.chip{display:inline-flex;align-items:center;justify-content:center;min-height:24px;
+  padding:0 8px;border-radius:var(--r);background:var(--ink-800);
+  font:700 var(--fs-ui)/1 var(--font-ui);color:var(--text-2);font-variant-numeric:tabular-nums}
+.chip--bad{background:var(--out-miss);color:var(--out-miss-ink)}
+.chip--crit{background:var(--out-crit);color:var(--out-crit-ink)}
+.chip--ok{background:var(--out-hit);color:var(--out-hit-ink)}
+
+/* ── Карточка-раздел: не «плитка», а лист на столе ─────────────────────────── */
+.sect{margin-top:var(--s5)}
+.sect__h{display:flex;align-items:baseline;justify-content:space-between;gap:var(--s3);margin-bottom:var(--s2)}
+.hr{height:1px;background:var(--line);border:0;margin:var(--s4) 0}
+
+/* ══ ЭКРАН 1: главный ═══════════════════════════════════════════════════════ */
+.home-lead{margin-top:var(--s3)}
+.home-h1{margin-top:var(--s2)}
+.home-lead{margin-top:var(--s3)}
+.home-actions{display:grid;gap:var(--s2);margin-top:var(--s5)}
+.home-mark{font-family:var(--font-book);font-size:20px;color:var(--candle);line-height:1}
+
+/* Продолжить: одна строка на листе, без плитки и без тени. */
+.continue{display:grid;gap:2px;margin-top:var(--s5);padding-top:var(--s4);
+  border-top:1px solid var(--line);min-height:var(--tap);width:100%}
+.continue__kicker{font:400 var(--fs-ui)/1.3 var(--font-ui);letter-spacing:.12em;
+  text-transform:uppercase;color:var(--text-3)}
+.continue__title{font:400 19px/1.25 var(--font-book);color:var(--text)}
+.continue__meta{margin-top:2px;font:400 var(--fs-ui)/1.35 var(--font-ui);color:var(--text-3)}
+.continue:active .continue__title{color:var(--candle-hi)}
+
+.home-foot{margin-top:var(--s5);padding-top:var(--s4);border-top:1px solid var(--line);
+  display:grid;gap:var(--s2);font:400 var(--fs-ui)/1.45 var(--font-ui);color:var(--text-3)}
+.home-foot .icon{width:16px;height:16px;color:var(--text-3)}
+.home-foot__local{display:inline-flex;align-items:center;gap:var(--s2)}
+
+/* ══ ЭКРАН 2: «Новое приключение» ══════════════════════════════════════════ */
+.form-gap{display:grid;gap:var(--s2);margin-top:var(--s3)}
+.file-row{display:grid;grid-template-columns:minmax(0,1fr) var(--tap);align-items:center;
+  gap:var(--s2);min-height:64px;padding:var(--s2) 0;border-top:1px solid var(--line)}
+.file-row__name{font:700 16px/1.3 var(--font-ui);color:var(--text);
+  overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.file-row__meta{display:block;margin-top:2px;font:400 var(--fs-ui)/1.3 var(--font-ui);color:var(--text-3)}
+.file-row__x{width:var(--tap);height:var(--tap);display:inline-flex;align-items:center;justify-content:center;
+  color:var(--text-3);font-size:18px;border-radius:var(--r)}
+.file-row__x:active{background:var(--ink-800);color:var(--text)}
+.file-row .prog{margin-top:6px}
+
+/* ══ ЭКРАН 3: подготовка книги ═════════════════════════════════════════════ */
+.prep-head{display:grid;gap:var(--s2)}
+.prep-line{display:flex;align-items:baseline;justify-content:space-between;gap:var(--s3)}
+.prep-line b{font:700 var(--fs-h3)/1 var(--font-ui);color:var(--text)}
+.prep-line .num{font:700 var(--fs-h3)/1 var(--font-ui);color:var(--text)}
+.prep-meta{font:400 var(--fs-ui)/1.4 var(--font-ui);color:var(--text-3)}
+.prep-now{margin-top:var(--s4);display:grid;gap:2px;padding:var(--s3) 0;border-top:1px solid var(--line)}
+
+/* ══ ЭКРАН 4: игра ═════════════════════════════════════════════════════════ */
+/* Лента: одна колонка, поля 16, текст не шире 343 (на 390 — 358).
+   Прокручивается только .feed, поэтому поле ввода не уезжает. */
+.feed{display:flex;flex-direction:column;gap:0;padding-top:0}
+.chapter{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:var(--s3);padding:var(--s4) 0 var(--s2)}
+.chapter__rule{height:1px;background:var(--line)}
+.chapter__label{font:400 var(--fs-ui)/1.3 var(--font-ui);letter-spacing:.14em;text-transform:uppercase;color:var(--text-3);white-space:nowrap}
+
+.message{padding:var(--s4) 0}
+.message+.message{border-top:1px solid var(--line)}
+.speaker{display:flex;align-items:center;gap:6px;margin-bottom:6px;
+  font:400 var(--fs-ui)/1.2 var(--font-ui);letter-spacing:.14em;text-transform:uppercase;color:var(--text-3)}
+.speaker .icon{width:15px;height:15px}
+.message--you .speaker{color:var(--candle-deep)}
+.prose{font-family:var(--font-book);font-size:var(--fs-prose);line-height:var(--lh-prose);color:var(--text);max-width:34ch}
+.prose p+p{margin-top:var(--s3)}
+.message--you .prose{font-style:italic;color:var(--text-2)}
+.prose .say{color:var(--text)}
+
+/* Пометка броска на 375: две строки. В одну не влезает:
+   40 + название + «12 нужно · 8 выпало · +1 = 9» + вердикт > 343. */
+.roll{margin-top:var(--s3);padding:var(--s3);background:var(--roll-bg);
+  border-top:1px solid var(--roll-line);border-bottom:1px solid var(--roll-line);
+  display:grid;grid-template-columns:40px minmax(0,1fr) auto;grid-template-areas:"die name tag" "nums nums nums";
+  align-items:center;column-gap:var(--s3);row-gap:var(--s2);font-family:var(--font-ui)}
+.roll__die{grid-area:die;display:grid;place-items:center}
+.roll__name{grid-area:name;min-width:0}
+.roll__kicker{font:400 var(--fs-ui)/1.3 var(--font-ui);color:var(--roll-num);
+  display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.roll__tag{grid-area:tag;justify-self:end}
+.roll__verdict{display:inline-block;padding:var(--s1) var(--s2);border-radius:var(--r);
+  font:700 var(--fs-ui)/1 var(--font-ui);letter-spacing:.06em;text-transform:uppercase;
+  background:var(--out-miss);color:var(--out-miss-ink)}
+.roll__verdict[data-out="hit"]{background:var(--out-hit);color:var(--out-hit-ink)}
+.roll__verdict[data-out="crit"]{background:var(--out-crit);color:var(--out-crit-ink)}
+.roll__nums{grid-area:nums;display:flex;align-items:baseline;gap:var(--s2);
+  font:400 var(--fs-ui)/1.2 var(--font-ui);color:var(--roll-num);white-space:nowrap}
+.roll__nums b{color:var(--text);font-weight:700;font-variant-numeric:tabular-nums}
+.roll__sum{font:400 20px/1 var(--font-book);color:var(--text);font-variant-numeric:tabular-nums}
+
+/* Кубик: чип 36 в ленте (как на ПК) — это знак броска, не кнопка. */
+.die{width:36px;height:36px;color:var(--roll-num);display:block}
+.die__hull{fill:none;stroke:currentColor;stroke-width:2;stroke-linejoin:round}
+.die__num{fill:currentColor;font-family:var(--font-book);font-weight:600;text-anchor:middle;font-variant-numeric:tabular-nums}
+
+.thinking{display:flex;align-items:center;gap:var(--s2);padding:var(--s3) 0;
+  font:400 var(--fs-ui)/1.3 var(--font-ui);color:var(--text-3)}
+.dots{display:inline-flex;gap:4px}
+.dots i{width:5px;height:5px;border-radius:50%;background:var(--text-3);display:block}
+
+/* Свёрнутая история: одна строка 48 вместо ленты на пол-экрана. */
+.fold{display:flex;align-items:center;justify-content:space-between;gap:var(--s3);
+  width:100%;min-height:48px;padding:0 var(--s3);border:1px solid var(--line);
+  border-radius:var(--r);font:400 var(--fs-ui)/1.3 var(--font-ui);color:var(--text-2)}
+.fold:active{background:var(--ink-850)}
+.fold__n{color:var(--text-3);font-variant-numeric:tabular-nums}
+/* Липкая строка истории — шапка ленты, а не её первый абзац: во всю ширину,
+   непрозрачная (под ней не просвечивает рассказ) и вплотную к шапке экрана.
+   Поэтому у тела игры верхнего отступа нет — воздух даёт сама полоса. */
+.body--feed{padding-top:0}
+.fold--sticky{position:sticky;top:0;z-index:3;width:auto;margin:0 calc(-1 * var(--pad)) var(--s2);
+  padding-left:var(--pad);padding-right:var(--pad);
+  border-left:0;border-right:0;border-radius:0;background:var(--ink-900)}
+
+/* Поле ввода: рамка 1 px, поле 56, кнопка «Сказать» 44, второй ряд 44. */
+.composer{display:grid;gap:6px;padding-top:var(--s2);border-top:1px solid var(--line)}
+.composer__frame{display:grid;grid-template-columns:minmax(0,1fr) var(--tap);align-items:end;gap:var(--s2);
+  padding:6px 6px 6px var(--s3);border:1px solid var(--line-strong);border-radius:var(--r);background:var(--ink-850)}
+.composer__input{width:100%;min-height:44px;max-height:104px;border:0;outline:none;background:none;
+  resize:none;color:var(--text);font:400 var(--fs-prose)/1.34 var(--font-book);padding:6px 0}
+.composer__send{width:var(--tap);height:var(--tap);align-self:end;display:inline-flex;align-items:center;justify-content:center;
+  border-radius:var(--r);background:var(--candle-fill);color:var(--candle-ink)}
+.composer__row{display:flex;align-items:center;gap:var(--s2)}
+.composer__hint{flex:1 1 auto;min-width:0;font:400 var(--fs-ui)/1.3 var(--font-ui);color:var(--text-3);
+  overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.die-btn{width:var(--tap);height:var(--tap);display:inline-flex;align-items:center;justify-content:center;
+  gap:4px;border:1px solid var(--line);border-radius:var(--r);color:var(--text-2)}
+.die-btn .die{width:28px;height:28px;color:var(--text-2)}
+.die-btn:active{border-color:var(--candle-deep);color:var(--candle)}
+
+/* Клавиатура: в макете показана зона 336 px — по ней считается остаток ленты. */
+.kb{flex:none;height:336px;background:var(--ink-800);border-top:1px solid var(--line);
+  padding:var(--s2) 3px var(--safe-bottom);display:grid;gap:6px;
+  grid-template-rows:36px repeat(4,minmax(0,1fr))}
+.kb__bar{height:36px;display:grid;grid-template-columns:repeat(3,1fr);gap:6px;padding:0 3px}
+.kb__bar i{background:var(--ink-700);border-radius:var(--r)}
+.kb__row{display:grid;gap:6px;justify-items:stretch;min-height:0}
+.kb__row i{height:100%;min-height:0;background:var(--ink-700);border-radius:4px}
+.kb__row--1{grid-template-columns:repeat(10,1fr)}
+.kb__row--2{grid-template-columns:repeat(9,1fr);padding:0 12px}
+.kb__row--3{grid-template-columns:34px repeat(7,1fr) 34px}
+.kb__row--4{grid-template-columns:44px repeat(5,1fr) 44px;padding:0 2px}
+/* при клавиатуре второй ряд поля и подсказка убираются: остаётся одно поле */
+.phone[data-kb] .topbar{height:var(--bar-kb)}
+.phone[data-kb] .composer__row{display:none}
+.phone[data-kb] .dock{padding-bottom:6px}
+.phone[data-kb] .body{padding-bottom:var(--s2)}
+
+/* ══ ЭКРАН 5: лист героя ═══════════════════════════════════════════════════ */
+/* Лист — бумага на столе: светлее фона на 3 L*, кромка 1 px, радиус 0. */
+.sheet{background:var(--sheet-bg);border:1px solid var(--sheet-line);color:var(--sheet-ink);
+  padding:var(--s4);border-radius:0}
+.sheet__name{margin-top:6px;font:400 28px/1.1 var(--font-book);color:var(--sheet-ink)}
+.sheet__meta{margin-top:4px;font:400 var(--fs-ui)/1.35 var(--font-ui);color:var(--sheet-ink-3)}
+.sheet__stats{display:grid;grid-template-columns:1fr 1fr;margin-top:var(--s4);
+  border-top:1px solid var(--sheet-line);border-bottom:1px solid var(--sheet-line)}
+.sheet__stat{padding:var(--s3) 0}
+.sheet__stat:nth-child(odd){border-right:1px solid var(--sheet-line-soft)}
+.sheet__stat:nth-child(n+3){border-top:1px solid var(--sheet-line-soft)}
+.sheet__stat:nth-child(even){padding-left:var(--s3)}
+.sheet__stat-label{display:block;font:400 var(--fs-ui)/1.3 var(--font-ui);color:var(--sheet-ink-3)}
+.sheet__stat-val{margin-top:2px;font:400 var(--fs-num)/1.1 var(--font-book);color:var(--sheet-ink);
+  font-variant-numeric:tabular-nums}
+.sheet__stat-val small{font-size:var(--fs-ui);color:var(--sheet-ink-3)}
+.sheet__abils{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;
+  border-bottom:1px solid var(--sheet-line)}
+.sheet__abil{padding:var(--s3) 0;min-width:0}
+.sheet__abil:not(:nth-child(3n)){border-right:1px solid var(--sheet-line-soft);padding-right:var(--s2)}
+.sheet__abil:nth-child(3n+2),.sheet__abil:nth-child(3n+3){padding-left:var(--s3)}
+.sheet__abil:nth-child(n+4){border-top:1px solid var(--sheet-line-soft)}
+.sheet__abil span{display:block;font:400 var(--fs-ui)/1.3 var(--font-ui);color:var(--sheet-ink-3);
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.sheet__abil b{display:block;margin-top:2px;font:400 22px/1.1 var(--font-book);
+  color:var(--sheet-ink);font-variant-numeric:tabular-nums}
+.sheet__h{margin:var(--s4) 0 var(--s1);font:400 var(--fs-ui)/1.3 var(--font-ui);
+  letter-spacing:.12em;text-transform:uppercase;color:var(--sheet-ink-3)}
+.sheet__list{list-style:none;margin:0;padding:0}
+.sheet__list li{display:flex;align-items:baseline;justify-content:space-between;gap:var(--s3);
+  min-height:var(--tap);padding:var(--s3) 0;border-top:1px solid var(--sheet-line-soft);
+  font:400 var(--fs-body)/1.35 var(--font-ui);color:var(--sheet-ink)}
+.sheet__list li:first-child{border-top:0}
+.sheet__list b{font-variant-numeric:tabular-nums;color:var(--sheet-ink)}
+.sheet__roll{display:inline-flex;align-items:center;gap:6px;font:400 var(--fs-ui)/1.3 var(--font-ui);color:var(--sheet-ink-2)}
+.sheet__roll .die{width:28px;height:28px}
+.sheet__roll .is-miss{color:var(--sheet-bad)}
+
+/* ══ ЭКРАН 6: блокнот ══════════════════════════════════════════════════════ */
+.tabs{display:grid;grid-template-columns:1fr 1fr;gap:0;border-bottom:1px solid var(--line)}
+.tabs button{min-height:var(--tap);padding:0 var(--pad);font:400 var(--fs-ui)/1.2 var(--font-ui);color:var(--text-3);
+  border-bottom:2px solid transparent}
+.tabs button[aria-selected="true"]{color:var(--text);border-bottom-color:var(--candle)}
+.note-input{min-height:200px}
+.note-foot{display:flex;align-items:center;justify-content:space-between;gap:var(--s3);margin-top:var(--s2)}
+
+/* ══ Шторка: меню и журнал ошибок ══════════════════════════════════════════ */
+.modal{position:absolute;inset:0;z-index:60;display:grid;align-items:end}
+.modal__scrim{position:absolute;inset:0;background:var(--overlay)}
+.sheetmodal{position:relative;background:var(--ink-850);border-top:1px solid var(--line-strong);
+  border-radius:var(--r) var(--r) 0 0;max-height:calc(100% - 96px);display:flex;flex-direction:column}
+.sheetmodal__grab{width:40px;height:4px;border-radius:2px;background:var(--line-strong);margin:6px auto 2px}
+.sheetmodal__head{display:grid;grid-template-columns:minmax(0,1fr) var(--tap);align-items:center;
+  gap:var(--s2);min-height:var(--tap);padding:0 var(--s3) 0 var(--pad)}
+.sheetmodal__title{font:700 var(--fs-h3)/1.2 var(--font-ui);color:var(--text)}
+.sheetmodal__body{overflow-y:auto;padding:0 var(--pad) calc(var(--s2) + var(--safe-bottom));overscroll-behavior:contain}
+.sheetmodal__group{margin:0;padding:6px 0 2px;font:400 var(--fs-ui)/1.3 var(--font-ui);
+  letter-spacing:.12em;text-transform:uppercase;color:var(--text-3)}
+.menu-row{display:flex;align-items:center;gap:var(--s3);width:100%;min-height:var(--tap);
+  padding:0 var(--s2);border-top:1px solid var(--line);color:var(--text);font:400 16px/1.3 var(--font-ui)}
+.menu-row .icon{width:18px;height:18px;color:var(--text-3)}
+.menu-row:active{background:var(--ink-800)}
+.menu-row__n{margin-left:auto;font:400 var(--fs-ui)/1 var(--font-ui);color:var(--text-3);font-variant-numeric:tabular-nums}
+.theme-row{display:flex;align-items:center;justify-content:space-between;gap:var(--s3);min-height:48px;
+  border-top:1px solid var(--line);padding:0 var(--s2);font:400 16px/1.3 var(--font-ui);color:var(--text)}
+.seg{display:inline-flex;border:1px solid var(--line-strong);border-radius:var(--r);overflow:hidden}
+.seg button{min-height:var(--tap);padding:0 var(--s3);font:700 var(--fs-ui)/1 var(--font-ui);color:var(--text-2)}
+.seg button[aria-pressed="true"]{background:var(--candle-fill);color:var(--candle-ink)}
+
+/* ── Шторка меню: вкладки + закреплённый выход ────────────────────────────
+   Высота шторки — по содержимому; max-height на 88 px меньше кадра, чтобы
+   затемнение сверху оставалось видимым и по нему можно было закрыть.
+   Вкладки — тот же .tabs, что в блокноте: 44, подчёркивание свечой.
+   «Выход из игры» не скроллится вместе с содержимым: он закреплён ниже
+   прокручиваемой панели, поэтому до него всегда один тап. */
+.sheetmodal--menu{max-height:calc(100% - 88px);padding-bottom:var(--safe-bottom)}
+.sheetmodal--menu .sheetmodal__body{padding-bottom:var(--s1)}
+.menu-tabs{flex:none}
+.sheetmodal[data-pane="campaign"] .menu-pane--app{display:none}
+.sheetmodal[data-pane="app"] .menu-pane--campaign{display:none}
+.menu-group__name{text-transform:none;letter-spacing:0;font-weight:700;color:var(--text-2)}
+.menu-exit{flex:none;display:flex;align-items:center;gap:var(--s3);min-height:52px;padding:0 var(--pad);
+  border-top:1px solid var(--line);font:400 16px/1.3 var(--font-ui);color:var(--text-2)}
+.menu-exit .icon{width:18px;height:18px;color:var(--text-3)}
+.menu-exit:active{background:var(--ink-800)}
+
+.log-row{display:grid;gap:2px;padding:var(--s3) 0;border-top:1px solid var(--line);min-height:64px}
+.log-row__h{font:700 16px/1.3 var(--font-ui);color:var(--text)}
+.log-row__m{font:400 var(--fs-ui)/1.35 var(--font-ui);color:var(--text-2)}
+.log-row__where{font:400 var(--fs-ui)/1.3 var(--font-ui);color:var(--text-3)}
+.log-foot{position:sticky;bottom:0;padding:var(--s2) 0 calc(var(--s2) + var(--safe-bottom));
+  background:var(--ink-850);border-top:1px solid var(--line)}
+
+/* ── Витрина: как макеты лежат на странице обзора ─────────────────────────── */
+.review{padding:var(--s6) var(--s6) 96px;max-width:1760px;margin:0 auto}
+.review__head{display:grid;gap:var(--s2);margin-bottom:var(--s6);max-width:70ch}
+.review__h{font-family:var(--font-book);font-size:34px;line-height:1.1;color:var(--text)}
+.review__p{font:400 15px/1.6 var(--font-ui);color:var(--text-2)}
+.review__legend{font:400 var(--fs-ui)/1.6 var(--font-ui);color:var(--text-3)}
+.review__legend b{color:var(--text-2)}
+.screensec{padding-top:var(--s6);margin-top:var(--s6);border-top:1px solid #241F19}
+.screensec__h{font-family:var(--font-book);font-size:24px;color:var(--text)}
+.screensec__n{font:400 var(--fs-ui)/1.5 var(--font-ui);color:var(--text-3);margin-top:4px;max-width:80ch}
+.frames{display:flex;flex-wrap:wrap;gap:var(--s5);margin-top:var(--s5);align-items:flex-start}
+.frame{display:grid;gap:var(--s2);justify-items:start}
+.frame__cap{font:400 var(--fs-ui)/1.4 var(--font-ui);color:var(--text-3);font-variant-numeric:tabular-nums}

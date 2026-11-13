@@ -1,0 +1,450 @@
+/* n06 — оболочка в минимализме.
+ *
+ * ПК (>=761px): сверху одна горизонтальная полоса — бренд и четыре главных
+ * пункта. Всё остальное уезжает в шторку «Ещё»: две группы («Кампания»,
+ * «Приложение») и «Выход» последней строкой. Состав меню собирает chrome.js —
+ * здесь только вид: полоса, шторка, столбец на телефоне.
+ *
+ * Телефон (<=760px): та же разметка, но шторка на весь экран одним столбцом —
+ * открытие и затемнение живут в mobile.js, вид — здесь. Полосы на телефоне нет
+ * вовсе: меню открывается бургером в шапке.
+ *
+ * Иконки-картинки в меню не нужны: при 13–14 px они читались как точки,
+ * подпись понятнее. Подписи ставит chrome.js, поэтому <img> в кнопках нет.
+ */
+
+/* ——— ПК: горизонтальная полоса ——— */
+/* Порог 761 px — тот же, на котором mobile.css (760) и бургер mobile.js
+   включают телефонный слой. Было 900: в диапазоне 761–900 полосы нет, а
+   бургера ещё нет — меню исчезало целиком. */
+@media (min-width: 761px) {
+  body > aside.sidebar {
+    position: sticky;
+    inset: auto;
+    top: 0;
+    width: auto;
+    height: 56px;
+    flex-direction: row;
+    align-items: center;
+    gap: 18px;
+    padding: 0 24px;
+    border-right: 0;
+    border-bottom: 1px solid var(--line);
+    overflow: visible;
+    z-index: 60;
+    background: var(--bg, #14100c);
+  }
+
+  body > aside.sidebar .brand {
+    margin: 0;
+    font-size: 14px;
+    letter-spacing: .6px;
+    gap: 8px;
+    white-space: nowrap;
+    /* n17: бренд — ссылка на главную, зона нажатия тоже 44 (было 21). */
+    min-height: 44px;
+  }
+
+  /* Знак-символ из полосы убран: остаётся название. */
+  body > aside.sidebar .brand small { display: none; }
+  body > aside.sidebar .nav-label { display: none; }
+  body > aside.sidebar .side-bottom { display: none; }
+
+  body > aside.sidebar nav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 2px;
+    height: 56px;
+    min-width: 0;
+  }
+
+  body > aside.sidebar .nav-bar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 2px;
+  }
+
+  body > aside.sidebar .nav-bar > :is(button.nav, a.nav) {
+    display: inline-flex;
+    align-items: center;
+    width: auto;
+    margin: 0;
+    padding: 8px 13px !important;
+    min-height: 44px !important;
+    font-size: 14px !important;
+    line-height: 1.2;
+    text-align: center;
+    border-radius: 8px;
+    white-space: nowrap;
+  }
+
+  /* ——— Шторка «Ещё»: панель под полосой ——— */
+  body > aside.sidebar .nav-drawer { display: none; }
+
+  body > aside.sidebar.show-more .nav-drawer {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    position: fixed;
+    top: 56px;
+    left: 0;
+    width: 320px;
+    max-height: calc(100vh - 56px);
+    overflow-y: auto;
+    padding: 14px 16px 24px;
+    background: var(--bg, #14100c);
+    border-right: 1px solid var(--line);
+    box-shadow: 0 24px 48px rgb(0 0 0 / 45%);
+    z-index: 59;
+  }
+
+  body > aside.sidebar .nav-block {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    width: 100%;
+  }
+
+  /* n14: вкладки шторки — «Кампания» / «Приложение» (замечание №3 критика).
+     Показывается одна группа: 18 строк сразу были нечитаемы, а состояния
+     «Приложение» в кадре не существовало. */
+  /* n14: строка вкладок; на ПК крестик закрытия скрыт — колонка одна. */
+  body > aside.sidebar .nav-head {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0;
+    margin: 2px 0 8px;
+  }
+
+  body > aside.sidebar .nav-tabs {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 4px;
+    margin: 0;
+  }
+
+  body > aside.sidebar .nav-tabs button.nav-tab {
+    min-height: 40px;
+    padding: 0 10px;
+    font-size: 16px;
+    line-height: 1.2;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    background: none;
+    color: var(--muted);
+  }
+
+  body > aside.sidebar .nav-tabs button.nav-tab[aria-selected="true"] {
+    border-color: var(--gold);
+    background: var(--gold-dark);
+    color: var(--gold);
+  }
+
+  body > aside.sidebar .nav-drawer[data-tab="campaign"] > .nav-block--app,
+  body > aside.sidebar .nav-drawer[data-tab="app"] > .nav-block--campaign {
+    display: none !important;
+  }
+
+  body > aside.sidebar .nav-group-label {
+    margin: 10px 4px 4px;
+    font-size: 14px;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  body > aside.sidebar .nav-drawer :is(button.nav, a.nav) {
+    display: inline-flex;
+    align-items: center;
+    width: 100%;
+    margin: 0;
+    padding: 8px 12px !important;
+    min-height: 44px !important;
+    font-size: 14px !important;
+    line-height: 1.25;
+    text-align: left;
+    border-radius: 8px;
+  }
+
+  /* n14: подпись группы в шторке больше не нужна — её называет вкладка
+     («Кампания» / «Приложение»). Дубль занимал строку в каждой вкладке,
+     и «Приложение» на 375 упиралось в низ окна (замечание №3 критика). */
+  body > aside.sidebar .nav-drawer .nav-block > .nav-group-label {
+    display: none;
+  }
+
+  /* «Закрыть» — ряд телефонной шторки; на ПК шторку закрывает клик вне меню
+     и Escape, отдельная строка в панели не нужна. */
+  body > aside.sidebar .nav-close { display: none !important; }
+
+  body > aside.sidebar .nav-drawer .nav-exit {
+    margin-top: 10px;
+    border-top: 1px solid var(--line);
+    border-radius: 0 0 8px 8px;
+    padding-top: 12px !important;
+  }
+
+  main {
+    margin-left: 0;
+    padding: 0 32px;
+    max-width: 1440px;
+  }
+
+  main > header {
+    height: 56px;
+    border-bottom: 0;
+  }
+}
+
+/* ——— Иконки-символы из меню убраны целиком ———
+ * Подписи ставит chrome.js, знак бренда «✧» — единственная оставшаяся
+ * иконка-символ в оболочке. Он не читается ни на 13 px, ни на телефоне:
+ * остаётся название приложения. */
+body > aside.sidebar .brand .sigil,
+body > aside.sidebar nav img,
+body > aside.sidebar nav .obsidian-icon,
+body > aside.sidebar nav .solo-icon {
+  display: none !important;
+}
+
+/* ——— Служебная строка режима уходит с первого экрана ———
+ * «ЭКСПЕРИМЕНТАЛЬНЫЙ ПРОТОТИП · ОБЛАЧНЫЙ МАСТЕР · …» приезжала отдельной
+ * полосой над меню и ломала горизонталь. Режим по-прежнему виден
+ * в «Настройках» и в «О проекте». */
+body > .notice {
+  display: none !important;
+}
+
+/* ——— Телефон: шторка на весь экран, один столбец ——— */
+@media (max-width: 760px) {
+  /* Шторка на весь экран: mobile.css держит min(88vw, 380px) — на 375 это
+     330 px, и справа оставалась полоса контента под пальцем. */
+  body > aside.sidebar {
+    width: 100%;
+    border-right: 0;
+  }
+
+  /* n14: крестик закрытия живёт в строке вкладок (см. chrome.js). Раньше это
+     была отдельная строка «Закрыть», и в «Приложении» строк становилось 12.
+     n18: шапка шторки (вкладки + крестик) закреплена сверху листа: на
+     «Приложении» 10 строк не помещаются в лист, и вкладки уезжали вместе со
+     списком — вернуться на «Кампанию» можно было только прокруткой наверх. */
+  body > aside.sidebar .nav-head {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 44px;
+    gap: 6px;
+    align-items: stretch;
+    margin: 0;
+    position: sticky;
+    top: 0;
+    z-index: 3;
+    background: var(--sheet-bg);
+  }
+
+  /* n18: крестик — иконка без рамки (эталон `menu-dark-375`): рамка
+     `--line` на листе давала 1.2:1, а для границы контрола норма 3:1.
+     Знак читается цветом `--text-3` — 5.87:1, зона нажатия та же 44×44. */
+  body > aside.sidebar .nav-head .nav-close {
+    display: block;
+    width: 44px;
+    min-height: 44px;
+    padding: 0;
+    border: 0 !important;
+    border-radius: 0;
+    background: none !important;
+    color: var(--text-3) !important;
+    font-size: 22px;
+    line-height: 1;
+  }
+
+  /* Шапка на 375 px не помещалась: «ОДИНОЧНОЕ ПРИКЛЮЧЕНИЕ / <название>»
+   * обрезалось на середине слова, а само название и так стоит заголовком
+   * экрана. Убираем строку целиком — в шапке остаются бургер, тема и «Лист». */
+  body header .breadcrumb { display: none; }
+
+  /* Мобильный заголовок в шапке дублировал h1 первого экрана и обрезался
+   * на середине слова. Убираем: в шапке остаются меню, тема и «Лист». */
+  body header .m-title { display: none; }
+
+  /* «Облачный профиль настроен» — служебная строка, место дорого. */
+  body header .runtime { display: none; }
+
+  /* Полосы на телефоне нет: и главные, и вторичные пункты — строки столбца,
+     который открывает бургер (mobile.js). */
+  body > aside.sidebar nav,
+  body > aside.sidebar .nav-bar,
+  body > aside.sidebar .nav-drawer,
+  body > aside.sidebar .nav-block {
+    display: flex !important;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 2px;
+    width: 100%;
+    height: auto;
+    position: static;
+    max-height: none;
+    overflow: visible;
+    padding: 0;
+    background: none;
+    border: 0;
+    box-shadow: none;
+  }
+
+  body > aside.sidebar .nav-group-label {
+    margin: 12px 4px 2px;
+    font-size: 14px;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  /* n14: шторка разведена на вкладки «Кампания» / «Приложение» (замечание
+     №3 критика). Одна колонка и одна группа за раз: 6 строк в «Кампании»,
+     9 + строка темы в «Приложении» — 18 строк в две колонки больше не нужны.
+     Полоса (4 пункта) остаётся в два столбца: это не строки шторки. */
+  body > aside.sidebar .nav-bar {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 6px;
+    align-content: start;
+  }
+
+  body > aside.sidebar .nav-block {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr);
+    align-content: start;
+  }
+
+  body > aside.sidebar .nav-drawer[data-tab="campaign"] > .nav-block--app,
+  body > aside.sidebar .nav-drawer[data-tab="app"] > .nav-block--campaign {
+    display: none !important;
+  }
+
+  /* n18: вкладки — тот же `.tabs`, что в блокноте и в эталоне: подчёркивание
+     2 px свечой. Прежние вкладки-коробки: у невыбранной рамка `#29231C` на
+     листе давала 1.17:1 — пары не было видно, норма для границы контрола 3:1.
+     Подчёркивание выбранной — 7.51:1, подпись невыбранной `--text-3` — 5.87:1. */
+  body > aside.sidebar .nav-tabs {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0;
+    margin: 0;
+    border-bottom: 1px solid var(--line);
+  }
+
+  /* `!important` — `themes.css` рисует все кнопки в меню, кроме `.nav`:
+     `.sidebar button:not(.nav):not(.quartz):not(.primary)` (0,4,1) красил
+     вкладку заливкой `--ink-850` и подписью `--text-2`. Вкладка — плоская
+     строка, как в блокноте и в эталоне: заливки нет, состояние показывает
+     подчёркивание. */
+  body > aside.sidebar .nav-tabs button.nav-tab {
+    min-height: 44px;
+    padding: 0 10px;
+    font-size: 16px;
+    line-height: 1.2;
+    border: 0 !important;
+    border-bottom: 2px solid transparent !important;
+    border-radius: 0;
+    background: none !important;
+    color: var(--text-3) !important;
+  }
+
+  body > aside.sidebar .nav-tabs button.nav-tab[aria-selected="true"] {
+    border-bottom-color: var(--candle) !important;
+    background: none !important;
+    color: var(--text) !important;
+  }
+
+  /* n18: имя вкладки не повторяется капсом под вкладками: «КАМПАНИЯ» стояла
+     сразу под вкладкой «Кампания» (замечание №3). Группа одна на вкладку —
+     её называет сама вкладка; на столе эта подпись скрыта с n14. */
+  body > aside.sidebar .nav-block > .nav-group-label,
+  body > aside.sidebar .nav-block .nav-group-label {
+    display: none !important;
+  }
+
+  /* Замер 02: шторка 649 px при окне 812, но верх шторки — 193 px (бренд и
+     полоса), и «Выход» упирался в край на 46 px. Уплотняем шапку шторки и
+     зазоры рядов: сами строки остаются 44 px, ни одна не спрятана. */
+  body > aside.sidebar { gap: 0; padding: 0 12px 0; }
+  body > aside.sidebar .brand { margin: 0; }
+  body > aside.sidebar .nav-drawer,
+  body > aside.sidebar .nav-bar,
+  body > aside.sidebar .nav-block { gap: 0; }
+
+  /* n18: строки списка стоят плотно, как в эталоне (`.menu-row` 44 px с
+     волосяной линией между соседями): шаг 50 px (44 + 3+3 от `style.css`)
+     отнимал у «Приложения» 60 px, и две последние строки — «Профили Мастера»
+     и «Оформление» — уезжали под закреплённый «Выход». Зона нажатия остаётся
+     44, между строками теперь линия, а не пустая полоса. */
+  body > aside.sidebar .nav-drawer :is(button.nav, a.nav):not(.nav-exit) {
+    margin: 0 !important;
+    border-top-color: var(--line);
+    border-radius: 0;
+  }
+
+  /* n18: прокручивается список, а не весь лист: бренд и полоса четырёх
+     экранов стоят на месте, шапка вкладок закреплена, «Выход» закреплён снизу.
+     Лист держит высоту 666…680 (см. mobile.css §2), и на «Приложении» 10 строк
+     в неё не входят — раньше они уезжали за низ окна вместе с «Выходом». */
+  body > aside.sidebar > nav {
+    flex: 1 1 auto; min-height: 0;
+    display: flex !important; flex-direction: column;
+    gap: 0;
+  }
+  body > aside.sidebar > nav > .nav-bar { flex: 0 0 auto; }
+  body > aside.sidebar .nav-drawer {
+    flex: 1 1 auto; min-height: 0;
+    overflow-y: auto; overscroll-behavior: contain;
+  }
+  body > aside.sidebar .nav-block { flex: 0 0 auto; }
+
+  body > aside.sidebar :is(button.nav, a.nav) {
+    width: 100%;
+    min-height: 44px;
+    padding: 0 10px !important;
+    text-align: left;
+    justify-content: flex-start;
+    /* Разрыв только по словам: `anywhere` рубил «Производительно/сть»
+       посередине (замечание №5 критика). */
+    overflow-wrap: break-word;
+  }
+
+  /* n18: «Выход из игры» — закреплённая строка у нижнего края листа (SPEC §1:
+     «до неё всегда один тап»). `margin-top: auto` ставит её вниз на коротком
+     списке «Кампании», `position: sticky` держит внизу на длинном
+     «Приложении». Зазор до соседней строки — 12 px рамки+отступа вместо 5,
+     до системной полосы — 12 px + safe-area. */
+  body > aside.sidebar .nav-drawer .nav-exit {
+    position: sticky; bottom: 0; z-index: 2;
+    display: flex; align-items: center;
+    min-height: 52px;
+    /* `!important` — `tabletop.css` держит `.tabletop .sidebar .nav-exit
+       {margin-top:2px!important}`: без важности автополе не работало, и
+       «Выход» стоял в 5 px от «Сохранений» и в 98 px от низа листа. */
+    margin-top: auto !important;
+    margin-bottom: 0 !important;
+    border-top: 1px solid var(--line-strong);
+    border-radius: 0;
+    background: var(--sheet-bg);
+    padding: 12px 10px calc(12px + env(safe-area-inset-bottom)) !important;
+  }
+
+  /* Бренд-подпись и «Оформление» в select — служебное; на телефоне в шапке
+     остаются бургер и «Лист», тема — строкой шторки. */
+  body > aside.sidebar .side-bottom { display: none; }
+
+  /* «Ещё» на телефоне не нужен: шторку открывает бургер. */
+  body > aside.sidebar .more-toggle { display: none !important; }
+}
+
+/* n14: выбранная вкладка в светлой теме. `--gold` (#8A5714) на заливке
+   `--gold-dark` (#E3D6BF) даёт 4,24:1 — ниже порога 4.5 (замер n14b:
+   `button.nav-tab[aria-selected="true"]`, кегль 16). В тёмной теме та же пара
+   проходит; в светлой текущую вкладку называют граница и заливка, а текст
+   берёт обычные чернила (13,21:1). */
+[data-theme="light"] body > aside.sidebar .nav-tabs button.nav-tab[aria-selected="true"] {
+  color: var(--text);
+}

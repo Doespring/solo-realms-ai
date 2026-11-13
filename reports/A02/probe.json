@@ -1,0 +1,684 @@
+{
+ "database": "/home/hermes/projects/SoloRealmsAI-Nat20/runtime/a02/probe.sqlite3",
+ "live": "/home/hermes/projects/SoloRealmsAI-Nat20/runtime/web-local/solo.sqlite3",
+ "campaigns": {
+  "Тест Тиамат 08.11": {
+   "campaign": "4c11debb-862f-4e91-b508-845f2e350bf7",
+   "name": "Тест Тиамат 08.11",
+   "version": 2,
+   "history": 2,
+   "before": {
+    "status": "ok",
+    "migratable": false,
+    "checks": [
+     {
+      "id": "schema",
+      "label": "Схема состояния",
+      "ok": true,
+      "detail": "Схема nat20-state-v1 поддерживается текущим циклом."
+     },
+     {
+      "id": "state",
+      "label": "Состояние движка",
+      "ok": true,
+      "detail": "Состояние читается текущим циклом."
+     },
+     {
+      "id": "ruleset",
+      "label": "Набор правил",
+      "ok": true,
+      "detail": "D&D 2024."
+     },
+     {
+      "id": "registration",
+      "label": "Регистрация сценария",
+      "ok": true,
+      "detail": "Совпадает с проверенной регистрацией.",
+      "code": "registered"
+     },
+     {
+      "id": "revision",
+      "label": "Ревизия мира",
+      "ok": true,
+      "detail": "Совпадает с закреплённой ревизией содержимого.",
+      "code": "pinned"
+     }
+    ],
+    "events": {
+     "format": "world-events-list-v0",
+     "historical": true,
+     "blocking": false,
+     "count": 9,
+     "triggered": 1,
+     "items": [
+      {
+       "id": "foe-printed-kobold",
+       "title": "Противник из источника: kobold",
+       "kind": "encounter",
+       "location": "Совет Глубоководья",
+       "happened": false
+      },
+      {
+       "id": "foe-printed-3416d71e828c24f0",
+       "title": "Противник из источника: культист",
+       "kind": "encounter",
+       "location": "Глубоководье",
+       "happened": false
+      },
+      {
+       "id": "foe-printed-e82e89fc34d71c1c",
+       "title": "Противник из источника: ветеран",
+       "kind": "encounter",
+       "location": "Совет Глубоководья",
+       "happened": false
+      },
+      {
+       "id": "foe-printed-guard",
+       "title": "Противник из источника: guard",
+       "kind": "encounter",
+       "location": "Совет Глубоководья",
+       "happened": false
+      },
+      {
+       "id": "foe-printed-cultist",
+       "title": "Противник из источника: cultist",
+       "kind": "encounter",
+       "location": "Совет Глубоководья",
+       "happened": false
+      },
+      {
+       "id": "foe-printed-mage",
+       "title": "Противник из источника: mage",
+       "kind": "encounter",
+       "location": "Совет Глубоководья",
+       "happened": false
+      },
+      {
+       "id": "foe-printed-cc32083fe81cde32",
+       "title": "Противник из источника: дворянин",
+       "kind": "encounter",
+       "location": "Совет Глубоководья",
+       "happened": true
+      },
+      {
+       "id": "foe-printed-commoner",
+       "title": "Противник из источника: commoner",
+       "kind": "encounter",
+       "location": "Совет Глубоководья",
+       "happened": false
+      },
+      {
+       "id": "foe-printed-ffa09687e56ec33d",
+       "title": "Противник из источника: фанатик культа",
+       "kind": "encounter",
+       "location": "Совет Глубоководья",
+       "happened": false
+      }
+     ],
+     "broken": 0,
+     "partial": 0,
+     "reason": "События прежнего обработчика (9) прочитаны как исторические: 1 из них уже сработали и записаны в истории, остальные этим циклом не исполняются. Действия героя они больше не запирают."
+    },
+    "actions": [],
+    "summary": "Кампания совместима с текущим циклом."
+   },
+   "screen": {
+    "backend": "nat20",
+    "commands": 42,
+    "events": 2,
+    "terminal": null,
+    "compatibility": "ok",
+    "compatibility_actions": [],
+    "compatibility_summary": "Кампания совместима с текущим циклом.",
+    "english": [],
+    "english_mixed": []
+   },
+   "restore": "ok",
+   "export": {
+    "events": 2,
+    "messages": 0,
+    "bytes": 169668,
+    "format": "solo-campaign-export-v1"
+   },
+   "verify": {
+    "ok": true,
+    "campaign": "4c11debb-862f-4e91-b508-845f2e350bf7",
+    "version": 2,
+    "integrity": "ok",
+    "broken_links": 80,
+    "broken_tables": [
+     "memory_access",
+     "memory_entities",
+     "memory_subjects"
+    ],
+    "counts": {
+     "events": 2,
+     "actions": 2,
+     "gm_messages": 0,
+     "conversations": 3
+    },
+    "last_event": {
+     "seq": 15,
+     "id": "ab91f08d-8d7e-4342-8c0b-41168f25a201",
+     "undone": 0
+    },
+    "compatibility": {
+     "status": "ok",
+     "migratable": false,
+     "checks": [
+      {
+       "id": "schema",
+       "label": "Схема состояния",
+       "ok": true,
+       "detail": "Схема nat20-state-v1 поддерживается текущим циклом."
+      },
+      {
+       "id": "state",
+       "label": "Состояние движка",
+       "ok": true,
+       "detail": "Состояние читается текущим циклом."
+      },
+      {
+       "id": "ruleset",
+       "label": "Набор правил",
+       "ok": true,
+       "detail": "D&D 2024."
+      },
+      {
+       "id": "registration",
+       "label": "Регистрация сценария",
+       "ok": true,
+       "detail": "Совпадает с проверенной регистрацией.",
+       "code": "registered"
+      },
+      {
+       "id": "revision",
+       "label": "Ревизия мира",
+       "ok": true,
+       "detail": "Совпадает с закреплённой ревизией содержимого.",
+       "code": "pinned"
+      }
+     ],
+     "events": {
+      "format": "world-events-list-v0",
+      "historical": true,
+      "blocking": false,
+      "count": 9,
+      "triggered": 1,
+      "items": [
+       {
+        "id": "foe-printed-kobold",
+        "title": "Противник из источника: kobold",
+        "kind": "encounter",
+        "location": "Совет Глубоководья",
+        "happened": false
+       },
+       {
+        "id": "foe-printed-3416d71e828c24f0",
+        "title": "Противник из источника: культист",
+        "kind": "encounter",
+        "location": "Глубоководье",
+        "happened": false
+       },
+       {
+        "id": "foe-printed-e82e89fc34d71c1c",
+        "title": "Противник из источника: ветеран",
+        "kind": "encounter",
+        "location": "Совет Глубоководья",
+        "happened": false
+       },
+       {
+        "id": "foe-printed-guard",
+        "title": "Противник из источника: guard",
+        "kind": "encounter",
+        "location": "Совет Глубоководья",
+        "happened": false
+       },
+       {
+        "id": "foe-printed-cultist",
+        "title": "Противник из источника: cultist",
+        "kind": "encounter",
+        "location": "Совет Глубоководья",
+        "happened": false
+       },
+       {
+        "id": "foe-printed-mage",
+        "title": "Противник из источника: mage",
+        "kind": "encounter",
+        "location": "Совет Глубоководья",
+        "happened": false
+       },
+       {
+        "id": "foe-printed-cc32083fe81cde32",
+        "title": "Противник из источника: дворянин",
+        "kind": "encounter",
+        "location": "Совет Глубоководья",
+        "happened": true
+       },
+       {
+        "id": "foe-printed-commoner",
+        "title": "Противник из источника: commoner",
+        "kind": "encounter",
+        "location": "Совет Глубоководья",
+        "happened": false
+       },
+       {
+        "id": "foe-printed-ffa09687e56ec33d",
+        "title": "Противник из источника: фанатик культа",
+        "kind": "encounter",
+        "location": "Совет Глубоководья",
+        "happened": false
+       }
+      ],
+      "broken": 0,
+      "partial": 0,
+      "reason": "События прежнего обработчика (9) прочитаны как исторические: 1 из них уже сработали и записаны в истории, остальные этим циклом не исполняются. Действия героя они больше не запирают."
+     },
+     "actions": [],
+     "summary": "Кампания совместима с текущим циклом."
+    },
+    "summary": "Целостность базы в порядке; записей истории: 2. Нарушенных внешних связей в других таблицах: 80. История кампании и её герой не затронуты: находки в других таблицах, перечень — в отчёте проверки копии профиля."
+   },
+   "dodge": {
+    "encounters": [
+     "first-blood"
+    ],
+    "started": "first-blood",
+    "dodge": {
+     "ok": true,
+     "events": 1,
+     "text": "Уклонение: атаки по герою идут с помехой до начала его следующего хода.",
+     "effects": [
+      {
+       "type": "resource",
+       "payload": {
+        "target": "hero",
+        "resource": "action_available",
+        "before": 1,
+        "after": 0
+       }
+      }
+     ]
+    }
+   }
+  },
+  "Проверка стенда r192": {
+   "campaign": "b753145c-50e7-4cce-bbbc-e9ab5748f534",
+   "name": "Проверка стенда r192",
+   "version": 2,
+   "history": 2,
+   "before": {
+    "status": "needs_choice",
+    "migratable": true,
+    "checks": [
+     {
+      "id": "schema",
+      "label": "Схема состояния",
+      "ok": true,
+      "detail": "Схема nat20-state-v1 поддерживается текущим циклом."
+     },
+     {
+      "id": "state",
+      "label": "Состояние движка",
+      "ok": true,
+      "detail": "Состояние читается текущим циклом."
+     },
+     {
+      "id": "ruleset",
+      "label": "Набор правил",
+      "ok": true,
+      "detail": "D&D 2024."
+     },
+     {
+      "id": "registration",
+      "label": "Регистрация сценария",
+      "ok": false,
+      "detail": "Сохранённое определение кампании отличается от проверенной регистрации: авторская сцена (сетка боя, проверки, награды) изменилась после сборки кампании. Без обновления на копии кампания не продолжается — история и герой при этом целы.",
+      "code": "registration_changed"
+     },
+     {
+      "id": "revision",
+      "label": "Ревизия мира",
+      "ok": true,
+      "detail": "Совпадает с закреплённой ревизией содержимого.",
+      "code": "pinned"
+     }
+    ],
+    "events": {
+     "format": "none",
+     "historical": false,
+     "blocking": false,
+     "count": 0,
+     "triggered": 0,
+     "items": [],
+     "reason": ""
+    },
+    "actions": [
+     {
+      "id": "migrate",
+      "label": "Сделать копию и обновить",
+      "hint": "Сначала снимок профиля в backups, потом кампания переходит на текущую версию. История и герой сохраняются."
+     },
+     {
+      "id": "verify",
+      "label": "Проверить базу",
+      "hint": "Целостность SQLite и число записей истории. Кампанию не меняет."
+     },
+     {
+      "id": "export",
+      "label": "Экспортировать кампанию",
+      "hint": "Файл JSON со всей историей и состоянием. Работает при любом исходе."
+     }
+    ],
+    "summary": "Сохранённое определение кампании отличается от проверенной регистрации: авторская сцена (сетка боя, проверки, награды) изменилась после сборки кампании. Без обновления на копии кампания не продолжается — история и герой при этом целы."
+   },
+   "screen": {
+    "backend": "nat20",
+    "commands": 0,
+    "events": 2,
+    "terminal": "compatibility_required",
+    "compatibility": "needs_choice",
+    "compatibility_actions": [
+     "Сделать копию и обновить",
+     "Проверить базу",
+     "Экспортировать кампанию"
+    ],
+    "compatibility_summary": "Сохранённое определение кампании отличается от проверенной регистрации: авторская сцена (сетка боя, проверки, награды) изменилась после сборки кампании. Без обновления на копии кампания не продолжается — история и герой при этом целы.",
+    "english": [],
+    "english_mixed": []
+   },
+   "restore": "отказ: Сохранённое определение кампании отличается от проверенной регистрации: авторская сцена (сетка боя, проверки, награды) изменилась после сборки кампании. Без обновления на копии кампания не продолжается — история и герой при этом целы.",
+   "export": {
+    "events": 2,
+    "messages": 0,
+    "bytes": 80031,
+    "format": "solo-campaign-export-v1"
+   },
+   "verify": {
+    "ok": true,
+    "campaign": "b753145c-50e7-4cce-bbbc-e9ab5748f534",
+    "version": 2,
+    "integrity": "ok",
+    "broken_links": 59,
+    "broken_tables": [
+     "memory_access",
+     "memory_entities",
+     "memory_subjects"
+    ],
+    "counts": {
+     "events": 2,
+     "actions": 2,
+     "gm_messages": 0,
+     "conversations": 0
+    },
+    "last_event": {
+     "seq": 6,
+     "id": "ac1ed9f0-c6f0-43ae-beac-5da4fe1ad24e",
+     "undone": 0
+    },
+    "compatibility": {
+     "status": "needs_choice",
+     "migratable": true,
+     "checks": [
+      {
+       "id": "schema",
+       "label": "Схема состояния",
+       "ok": true,
+       "detail": "Схема nat20-state-v1 поддерживается текущим циклом."
+      },
+      {
+       "id": "state",
+       "label": "Состояние движка",
+       "ok": true,
+       "detail": "Состояние читается текущим циклом."
+      },
+      {
+       "id": "ruleset",
+       "label": "Набор правил",
+       "ok": true,
+       "detail": "D&D 2024."
+      },
+      {
+       "id": "registration",
+       "label": "Регистрация сценария",
+       "ok": false,
+       "detail": "Сохранённое определение кампании отличается от проверенной регистрации: авторская сцена (сетка боя, проверки, награды) изменилась после сборки кампании. Без обновления на копии кампания не продолжается — история и герой при этом целы.",
+       "code": "registration_changed"
+      },
+      {
+       "id": "revision",
+       "label": "Ревизия мира",
+       "ok": true,
+       "detail": "Совпадает с закреплённой ревизией содержимого.",
+       "code": "pinned"
+      }
+     ],
+     "events": {
+      "format": "none",
+      "historical": false,
+      "blocking": false,
+      "count": 0,
+      "triggered": 0,
+      "items": [],
+      "reason": ""
+     },
+     "actions": [
+      {
+       "id": "migrate",
+       "label": "Сделать копию и обновить",
+       "hint": "Сначала снимок профиля в backups, потом кампания переходит на текущую версию. История и герой сохраняются."
+      },
+      {
+       "id": "verify",
+       "label": "Проверить базу",
+       "hint": "Целостность SQLite и число записей истории. Кампанию не меняет."
+      },
+      {
+       "id": "export",
+       "label": "Экспортировать кампанию",
+       "hint": "Файл JSON со всей историей и состоянием. Работает при любом исходе."
+      }
+     ],
+     "summary": "Сохранённое определение кампании отличается от проверенной регистрации: авторская сцена (сетка боя, проверки, награды) изменилась после сборки кампании. Без обновления на копии кампания не продолжается — история и герой при этом целы."
+    },
+    "summary": "Целостность базы в порядке; записей истории: 2. Нарушенных внешних связей в других таблицах: 59. История кампании и её герой не затронуты: находки в других таблицах, перечень — в отчёте проверки копии профиля."
+   },
+   "migration": {
+    "status": "ok",
+    "migrated": true,
+    "event": "abddebe9-1fd3-495b-a5cb-a036d00b2d4a",
+    "backup": "/home/hermes/projects/SoloRealmsAI-Nat20/runtime/a02/backups/before-a02-migration-20261108T135239Z-df7be873",
+    "changes": [
+     {
+      "kind": "registration",
+      "label": "Регистрация сценария",
+      "before": "7afc1e70312fa4d1",
+      "after": "1e713381c482b66f",
+      "text": "Определение «fighter-standard-array-2024-v1» перепривязано к текущей проверенной регистрации; герой, опыт и история не тронуты."
+     }
+    ],
+    "message": "Кампания обновлена до текущей версии: Определение «fighter-standard-array-2024-v1» перепривязано к текущей проверенной регистрации; герой, опыт и история не тронуты.",
+    "problems": [],
+    "before": {
+     "version": 2,
+     "counts": {
+      "events": 2,
+      "actions": 2,
+      "gm_messages": 0,
+      "conversations": 0
+     },
+     "integrity": "ok",
+     "broken_links": 59,
+     "state_sha256": "41d6abfde5dc86f8"
+    },
+    "after": {
+     "version": 3,
+     "counts": {
+      "events": 3,
+      "actions": 3,
+      "gm_messages": 0,
+      "conversations": 0
+     },
+     "integrity": "ok",
+     "broken_links": 59,
+     "state_sha256": "d50b10819d083552"
+    },
+    "history_kept": true,
+    "integrity_ok": true
+   },
+   "after_open": {
+    "campaign": "b753145c-50e7-4cce-bbbc-e9ab5748f534",
+    "name": "Проверка стенда r192",
+    "version": 3,
+    "history": 3,
+    "before": {
+     "status": "ok",
+     "migratable": false,
+     "checks": [
+      {
+       "id": "schema",
+       "label": "Схема состояния",
+       "ok": true,
+       "detail": "Схема nat20-state-v1 поддерживается текущим циклом."
+      },
+      {
+       "id": "state",
+       "label": "Состояние движка",
+       "ok": true,
+       "detail": "Состояние читается текущим циклом."
+      },
+      {
+       "id": "ruleset",
+       "label": "Набор правил",
+       "ok": true,
+       "detail": "D&D 2024."
+      },
+      {
+       "id": "registration",
+       "label": "Регистрация сценария",
+       "ok": true,
+       "detail": "Совпадает с проверенной регистрацией.",
+       "code": "registered"
+      },
+      {
+       "id": "revision",
+       "label": "Ревизия мира",
+       "ok": true,
+       "detail": "Совпадает с закреплённой ревизией содержимого.",
+       "code": "pinned"
+      }
+     ],
+     "events": {
+      "format": "none",
+      "historical": false,
+      "blocking": false,
+      "count": 0,
+      "triggered": 0,
+      "items": [],
+      "reason": ""
+     },
+     "actions": [],
+     "summary": "Кампания совместима с текущим циклом."
+    },
+    "screen": {
+     "backend": "nat20",
+     "commands": 20,
+     "events": 3,
+     "terminal": null,
+     "compatibility": "ok",
+     "compatibility_actions": [],
+     "compatibility_summary": "Кампания совместима с текущим циклом.",
+     "english": [],
+     "english_mixed": []
+    },
+    "restore": "ok"
+   },
+   "after_verify": {
+    "ok": true,
+    "campaign": "b753145c-50e7-4cce-bbbc-e9ab5748f534",
+    "version": 3,
+    "integrity": "ok",
+    "broken_links": 59,
+    "broken_tables": [
+     "memory_access",
+     "memory_entities",
+     "memory_subjects"
+    ],
+    "counts": {
+     "events": 3,
+     "actions": 3,
+     "gm_messages": 0,
+     "conversations": 0
+    },
+    "last_event": {
+     "seq": 21,
+     "id": "abddebe9-1fd3-495b-a5cb-a036d00b2d4a",
+     "undone": 0
+    },
+    "compatibility": {
+     "status": "ok",
+     "migratable": false,
+     "checks": [
+      {
+       "id": "schema",
+       "label": "Схема состояния",
+       "ok": true,
+       "detail": "Схема nat20-state-v1 поддерживается текущим циклом."
+      },
+      {
+       "id": "state",
+       "label": "Состояние движка",
+       "ok": true,
+       "detail": "Состояние читается текущим циклом."
+      },
+      {
+       "id": "ruleset",
+       "label": "Набор правил",
+       "ok": true,
+       "detail": "D&D 2024."
+      },
+      {
+       "id": "registration",
+       "label": "Регистрация сценария",
+       "ok": true,
+       "detail": "Совпадает с проверенной регистрацией.",
+       "code": "registered"
+      },
+      {
+       "id": "revision",
+       "label": "Ревизия мира",
+       "ok": true,
+       "detail": "Совпадает с закреплённой ревизией содержимого.",
+       "code": "pinned"
+      }
+     ],
+     "events": {
+      "format": "none",
+      "historical": false,
+      "blocking": false,
+      "count": 0,
+      "triggered": 0,
+      "items": [],
+      "reason": ""
+     },
+     "actions": [],
+     "summary": "Кампания совместима с текущим циклом."
+    },
+    "summary": "Целостность базы в порядке; записей истории: 3. Нарушенных внешних связей в других таблицах: 59. История кампании и её герой не затронуты: находки в других таблицах, перечень — в отчёте проверки копии профиля."
+   }
+  }
+ },
+ "new_campaign": {
+  "campaign": "e03d88a1-49e6-429a-b7df-0402e36808fe",
+  "name": "A02 · новая кампания",
+  "screen": {
+   "backend": "nat20",
+   "commands": 9,
+   "terminal": null,
+   "compatibility": "ok",
+   "english": [],
+   "english_mixed": []
+  },
+  "action": "прошло"
+ }
+}

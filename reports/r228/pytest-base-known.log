@@ -1,0 +1,118 @@
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF [ 72%]
+FFFFFFFFFFFFFFFFFFFFFFFFFFFF                                             [100%]
+=============================== warnings summary ===============================
+../../home/hermes/projects/SoloRealmsAI-Nat20/.venv/lib/python3.14/site-packages/fastapi/testclient.py:1
+  /home/hermes/projects/SoloRealmsAI-Nat20/.venv/lib/python3.14/site-packages/fastapi/testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+    from starlette.testclient import TestClient as TestClient  # noqa
+
+../../home/hermes/projects/SoloRealmsAI-Nat20/.venv/lib/python3.14/site-packages/lark/utils.py:176
+  /home/hermes/projects/SoloRealmsAI-Nat20/.venv/lib/python3.14/site-packages/lark/utils.py:176: DeprecationWarning: module 'sre_parse' is deprecated
+    import sre_parse
+
+../../home/hermes/projects/SoloRealmsAI-Nat20/.venv/lib/python3.14/site-packages/lark/utils.py:177
+  /home/hermes/projects/SoloRealmsAI-Nat20/.venv/lib/python3.14/site-packages/lark/utils.py:177: DeprecationWarning: module 'sre_constants' is deprecated
+    import sre_constants
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/test_hybrid_rules_production.py::test_acl_rechecked_inside_commit_boundary[False]
+FAILED tests/test_hybrid_rules_production.py::test_acl_rechecked_inside_commit_boundary[True]
+FAILED tests/test_hybrid_rules_production.py::test_causes_are_bound_to_existing_engine[0-0-\u043e\u0431\u044b\u0447\u043d\u044b\u0439-1]
+FAILED tests/test_hybrid_rules_production.py::test_causes_are_bound_to_existing_engine[0-3-\u043f\u043e\u043c\u0435\u0445\u0430-2]
+FAILED tests/test_hybrid_rules_production.py::test_causes_are_bound_to_existing_engine[1-1-\u043e\u0431\u044b\u0447\u043d\u044b\u0439-1]
+FAILED tests/test_hybrid_rules_production.py::test_causes_are_bound_to_existing_engine[1-3-\u043e\u0431\u044b\u0447\u043d\u044b\u0439-1]
+FAILED tests/test_hybrid_rules_production.py::test_causes_are_bound_to_existing_engine[3-0-\u043f\u0440\u0435\u0438\u043c\u0443\u0449\u0435\u0441\u0442\u0432\u043e-2]
+FAILED tests/test_hybrid_rules_production.py::test_causes_are_bound_to_existing_engine[3-1-\u043e\u0431\u044b\u0447\u043d\u044b\u0439-1]
+FAILED tests/test_hybrid_rules_production.py::test_changed_or_missing_dependencies_fail_closed[definition_pin]
+FAILED tests/test_hybrid_rules_production.py::test_changed_or_missing_dependencies_fail_closed[dependency]
+FAILED tests/test_hybrid_rules_production.py::test_changed_or_missing_dependencies_fail_closed[engine_pin]
+FAILED tests/test_hybrid_rules_production.py::test_concurrent_commands_cannot_both_commit_the_same_state_version
+FAILED tests/test_hybrid_rules_production.py::test_edition_is_checked_in_data_and_campaign
+FAILED tests/test_hybrid_rules_production.py::test_exact_replay_and_changed_command_replay
+FAILED tests/test_hybrid_rules_production.py::test_explicit_confirmation_and_strict_types[advantage_sources-True]
+FAILED tests/test_hybrid_rules_production.py::test_explicit_confirmation_and_strict_types[confirm-1]
+FAILED tests/test_hybrid_rules_production.py::test_explicit_confirmation_and_strict_types[confirm-False]
+FAILED tests/test_hybrid_rules_production.py::test_explicit_confirmation_and_strict_types[dc-15]
+FAILED tests/test_hybrid_rules_production.py::test_grants_do_not_survive_restart
+FAILED tests/test_hybrid_rules_production.py::test_internal_condition_stays_in_engine
+FAILED tests/test_hybrid_rules_production.py::test_missing_definition_fails_closed
+FAILED tests/test_hybrid_rules_production.py::test_native_command_copy_cannot_bypass_operation_validation
+FAILED tests/test_hybrid_rules_production.py::test_origin_policy_applies_to_new_routes
+FAILED tests/test_hybrid_rules_production.py::test_proposal_never_commits_or_executes_text
+FAILED tests/test_hybrid_rules_production.py::test_raw_ai_mechanics_and_definition_uploads_are_not_accepted[extra0]
+FAILED tests/test_hybrid_rules_production.py::test_raw_ai_mechanics_and_definition_uploads_are_not_accepted[extra1]
+FAILED tests/test_hybrid_rules_production.py::test_raw_ai_mechanics_and_definition_uploads_are_not_accepted[extra2]
+FAILED tests/test_hybrid_rules_production.py::test_raw_ai_mechanics_and_definition_uploads_are_not_accepted[extra3]
+FAILED tests/test_hybrid_rules_production.py::test_real_http_roll_event_save_and_reopen_without_private_data
+FAILED tests/test_hybrid_rules_production.py::test_replay_after_undo_is_rejected
+FAILED tests/test_hybrid_rules_production.py::test_revoked_access_never_returns_an_old_event[expiry]
+FAILED tests/test_hybrid_rules_production.py::test_revoked_access_never_returns_an_old_event[grant]
+FAILED tests/test_hybrid_rules_production.py::test_revoked_access_never_returns_an_old_event[session]
+FAILED tests/test_hybrid_rules_production.py::test_rollback_and_retry_use_existing_transaction
+FAILED tests/test_hybrid_rules_production.py::test_ruleset_version_change_invalidates_existing_grant
+FAILED tests/test_hybrid_rules_production.py::test_session_and_campaign_acl_is_enforced_on_reads_and_replays
+FAILED tests/test_hybrid_rules_production.py::test_unregistered_operations_are_rejected_by_http_contract[eval]
+FAILED tests/test_hybrid_rules_production.py::test_unregistered_operations_are_rejected_by_http_contract[exec]
+FAILED tests/test_hybrid_rules_production.py::test_unregistered_operations_are_rejected_by_http_contract[registered_bonus_action]
+FAILED tests/test_hybrid_rules_production.py::test_unregistered_operations_are_rejected_by_http_contract[wish_stress]
+FAILED tests/test_hybrid_rules_production.py::test_versions_and_fingerprints_rejected_before_rng[expected_version-99]
+FAILED tests/test_hybrid_rules_production.py::test_versions_and_fingerprints_rejected_before_rng[rule_pack_digest-ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff]
+FAILED tests/test_hybrid_rules_production.py::test_versions_and_fingerprints_rejected_before_rng[ruleset_digest-ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff]
+FAILED tests/test_nat20_companion_turns_r215.py::test_the_master_does_not_repeat_rage_while_it_is_active
+FAILED tests/test_nat20_dash.py::test_closed_contract_old_fixture_and_legacy_boundary
+FAILED tests/test_nat20_stage2.py::test_standalone_poisoned_advantage_cancels_effect_bonus_and_exhaustion
+FAILED tests/test_one_turn_one_exchange.py::test_linked_conversation_row_is_not_a_second_exchange
+FAILED tests/test_one_turn_one_exchange.py::test_two_identical_lines_stay_two_exchanges
+FAILED tests/test_one_turn_one_exchange.py::test_unlinked_conversation_row_is_not_swallowed
+FAILED tests/test_phb_chapter_one_production.py::test_causes_use_same_existing_d20_for_new_operations[0-4-\u043f\u043e\u043c\u0435\u0445\u0430-2-saving_throw]
+FAILED tests/test_phb_chapter_one_production.py::test_causes_use_same_existing_d20_for_new_operations[0-4-\u043f\u043e\u043c\u0435\u0445\u0430-2-skill_check]
+FAILED tests/test_phb_chapter_one_production.py::test_causes_use_same_existing_d20_for_new_operations[1-4-\u043e\u0431\u044b\u0447\u043d\u044b\u0439-1-saving_throw]
+FAILED tests/test_phb_chapter_one_production.py::test_causes_use_same_existing_d20_for_new_operations[1-4-\u043e\u0431\u044b\u0447\u043d\u044b\u0439-1-skill_check]
+FAILED tests/test_phb_chapter_one_production.py::test_causes_use_same_existing_d20_for_new_operations[4-0-\u043f\u0440\u0435\u0438\u043c\u0443\u0449\u0435\u0441\u0442\u0432\u043e-2-saving_throw]
+FAILED tests/test_phb_chapter_one_production.py::test_causes_use_same_existing_d20_for_new_operations[4-0-\u043f\u0440\u0435\u0438\u043c\u0443\u0449\u0435\u0441\u0442\u0432\u043e-2-skill_check]
+FAILED tests/test_phb_chapter_one_production.py::test_causes_use_same_existing_d20_for_new_operations[4-1-\u043e\u0431\u044b\u0447\u043d\u044b\u0439-1-saving_throw]
+FAILED tests/test_phb_chapter_one_production.py::test_causes_use_same_existing_d20_for_new_operations[4-1-\u043e\u0431\u044b\u0447\u043d\u044b\u0439-1-skill_check]
+FAILED tests/test_phb_chapter_one_production.py::test_chapter_source_release_fails_closed[chapter_missing]
+FAILED tests/test_phb_chapter_one_production.py::test_chapter_source_release_fails_closed[chapter_pin]
+FAILED tests/test_phb_chapter_one_production.py::test_native_proposal_copy_cannot_bypass_validation
+FAILED tests/test_phb_chapter_one_production.py::test_new_ai_proposals_remain_inert[saving_throw]
+FAILED tests/test_phb_chapter_one_production.py::test_new_ai_proposals_remain_inert[skill_check]
+FAILED tests/test_phb_chapter_one_production.py::test_new_operation_roll_event_checkpoint_reopen_and_visibility[saving_throw-5]
+FAILED tests/test_phb_chapter_one_production.py::test_new_operation_roll_event_checkpoint_reopen_and_visibility[skill_check-8]
+FAILED tests/test_phb_chapter_one_production.py::test_new_operations_reject_before_rng_or_canonical_write[campaign_acl-saving_throw]
+FAILED tests/test_phb_chapter_one_production.py::test_new_operations_reject_before_rng_or_canonical_write[campaign_acl-skill_check]
+FAILED tests/test_phb_chapter_one_production.py::test_new_operations_reject_before_rng_or_canonical_write[edition-saving_throw]
+FAILED tests/test_phb_chapter_one_production.py::test_new_operations_reject_before_rng_or_canonical_write[edition-skill_check]
+FAILED tests/test_phb_chapter_one_production.py::test_new_operations_reject_before_rng_or_canonical_write[fingerprint-saving_throw]
+FAILED tests/test_phb_chapter_one_production.py::test_new_operations_reject_before_rng_or_canonical_write[fingerprint-skill_check]
+FAILED tests/test_phb_chapter_one_production.py::test_new_operations_reject_before_rng_or_canonical_write[raw_delta-saving_throw]
+FAILED tests/test_phb_chapter_one_production.py::test_new_operations_reject_before_rng_or_canonical_write[raw_delta-skill_check]
+FAILED tests/test_phb_chapter_one_production.py::test_new_operations_reject_before_rng_or_canonical_write[stale-saving_throw]
+FAILED tests/test_phb_chapter_one_production.py::test_new_operations_reject_before_rng_or_canonical_write[stale-skill_check]
+FAILED tests/test_phb_chapter_one_production.py::test_new_operations_reject_before_rng_or_canonical_write[unconfirmed-saving_throw]
+FAILED tests/test_phb_chapter_one_production.py::test_new_operations_reject_before_rng_or_canonical_write[unconfirmed-skill_check]
+FAILED tests/test_phb_chapter_one_production.py::test_new_operations_rollback_replay_change_and_undo[saving_throw]
+FAILED tests/test_phb_chapter_one_production.py::test_new_operations_rollback_replay_change_and_undo[skill_check]
+FAILED tests/test_phb_chapter_one_production.py::test_poisoned_saving_throw_does_not_inherit_ability_check_disadvantage
+FAILED tests/test_phb_chapter_one_production.py::test_sheet_bindings_and_unsupported_consequences_cannot_be_overridden[changes0]
+FAILED tests/test_phb_chapter_one_production.py::test_sheet_bindings_and_unsupported_consequences_cannot_be_overridden[changes1]
+FAILED tests/test_phb_chapter_one_production.py::test_sheet_bindings_and_unsupported_consequences_cannot_be_overridden[changes2]
+FAILED tests/test_phb_chapter_one_production.py::test_sheet_bindings_and_unsupported_consequences_cannot_be_overridden[changes3]
+FAILED tests/test_phb_chapter_one_production.py::test_sheet_bindings_and_unsupported_consequences_cannot_be_overridden[changes4]
+FAILED tests/test_phb_chapter_one_production.py::test_sheet_bindings_and_unsupported_consequences_cannot_be_overridden[changes5]
+FAILED tests/test_phb_chapter_one_production.py::test_sheet_bindings_and_unsupported_consequences_cannot_be_overridden[changes6]
+FAILED tests/test_play_screen.py::test_screen_check_rest_restore_and_feedback
+FAILED tests/test_play_screen.py::test_screen_probes_are_read_only_and_commands_are_versioned
+FAILED tests/test_play_screen.py::test_screen_uses_engine_commands_and_projects_engine_rolls
+FAILED tests/test_playable_ai_readiness.py::test_real_packets_roles_schemas_context_and_estimates
+FAILED tests/test_preview8_release.py::test_frozen_flags_cannot_enable_stand
+FAILED tests/test_preview8_release.py::test_pending_is_not_a_normal_capability
+FAILED tests/test_preview8_release.py::test_real_preview7_fighter_restores_and_continues_without_stand
+FAILED tests/test_preview9_clarification.py::test_cloud_mock_transport_preserves_joined_context_and_contract
+FAILED tests/test_preview_dash_mapping.py::test_exact_phrase_and_pending_magic_stays_hidden
+FAILED tests/test_refusal_reasons.py::test_legacy_campaign_scene_action_names_the_missing_engine
+FAILED tests/test_server_restart_real.py::test_a_running_game_survives_a_real_server_restart
+FAILED tests/test_sse_503_ui.py::test_a_public_event_route_still_turns_unavailable_model_into_503
+FAILED tests/test_sse_503_ui.py::test_unavailable_model_during_narration_answers_200_with_error_frame
+FAILED tests/test_world.py::test_unknown_world_data_hidden_until_explicit_exploration
+100 failed, 3 warnings in 129.69s (0:02:09)

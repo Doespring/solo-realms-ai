@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="1" skipped="0" tests="1" time="19.821" timestamp="2026-10-18T02:14:05.891077+04:00" hostname="Doespring"><testcase classname="tests.test_nat20_bless" name="test_http_cast_slot_memory_acl_new_process_replay_undo_and_atomicity" time="18.248"><failure message="AssertionError: Regex pattern did not match.&#10;  Expected regex: 'no_slot'&#10;  Actual message: 'Bless cast produced no mechanical effect; no state committed'">tests\test_nat20_bless.py:159: in test_http_cast_slot_memory_acl_new_process_replay_undo_and_atomicity
+    with pytest.raises(ValueError, match='no_slot'): run(api, cid, 'exhausted', **CAST)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   AssertionError: Regex pattern did not match.
+E     Expected regex: 'no_slot'
+E     Actual message: 'Bless cast produced no mechanical effect; no state committed'</failure></testcase></testsuite></testsuites>

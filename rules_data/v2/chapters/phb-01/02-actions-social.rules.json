@@ -1,0 +1,1619 @@
+{
+ "schema_version": "2.1.0",
+ "rules": [
+  {
+   "id": "phb2024.phb01.player_and_gm",
+   "rules_family": "dnd2024",
+   "name": "Роли игроков и Мастера",
+   "kind": "guidance",
+   "classification": {
+    "mode": "adjudicated",
+    "semantic_required": true,
+    "formal_required": false,
+    "reason": "Formal consequences need confirmed inputs; narrative applicability is a GM proposal."
+   },
+   "conditions": [],
+   "triggers": [
+    "player_and_gm.requested"
+   ],
+   "formal_operations": [],
+   "semantic_questions": [
+    "Роли игроков и Мастера — какие обстоятельства и решение подтверждены Мастером?"
+   ],
+   "facts": {
+    "player": "character_choices",
+    "gm": [
+     "adventures",
+     "world_portrayal",
+     "rule_adjudication"
+    ],
+    "recommended_players_min": 3,
+    "recommended_players_max": 6
+   },
+   "constraints": [],
+   "exceptions": [],
+   "duration": "persistent_guidance",
+   "resources": [],
+   "source": {
+    "document_id": "phb_2024_ru",
+    "kind": "phb",
+    "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+    "publication_year": 2024,
+    "pdf_page": 8,
+    "printed_page": "7",
+    "section": "Игрок или Мастер? / Игрок / Мастер"
+   },
+   "verification": "source_checked_human_pending",
+   "implementation": "not_implemented",
+   "auto_activate": false,
+   "dependencies": [],
+   "behavior_tests": [
+    "phb01.player_and_gm"
+   ],
+   "readiness": {
+    "status": "adjudication_required",
+    "handler": null,
+    "scope": "Роли игроков и Мастера",
+    "blockers": []
+   },
+   "revision": 1
+  },
+  {
+   "id": "phb2024.phb01.play_cycle",
+   "rules_family": "dnd2024",
+   "name": "Цикл сцена — намерение — последствия",
+   "kind": "guidance",
+   "classification": {
+    "mode": "adjudicated",
+    "semantic_required": true,
+    "formal_required": false,
+    "reason": "Formal consequences need confirmed inputs; narrative applicability is a GM proposal."
+   },
+   "conditions": [],
+   "triggers": [
+    "play_cycle.requested"
+   ],
+   "formal_operations": [],
+   "semantic_questions": [
+    "Цикл сцена — намерение — последствия — какие обстоятельства и решение подтверждены Мастером?"
+   ],
+   "facts": {
+    "cycle": [
+     "gm_scene",
+     "player_intent",
+     "gm_consequences"
+    ],
+    "engine_commit": "trusted_engine_only"
+   },
+   "constraints": [],
+   "exceptions": [],
+   "duration": "persistent_guidance",
+   "resources": [],
+   "source": {
+    "document_id": "phb_2024_ru",
+    "kind": "phb",
+    "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+    "publication_year": 2024,
+    "pdf_page": 9,
+    "printed_page": "8",
+    "section": "Ритм игры"
+   },
+   "verification": "source_checked_human_pending",
+   "implementation": "not_implemented",
+   "auto_activate": false,
+   "dependencies": [],
+   "behavior_tests": [
+    "phb01.play_cycle"
+   ],
+   "readiness": {
+    "status": "adjudication_required",
+    "handler": null,
+    "scope": "Цикл сцена — намерение — последствия",
+    "blockers": []
+   },
+   "revision": 1
+  },
+  {
+   "id": "phb2024.phb01.campaign_structure",
+   "rules_family": "dnd2024",
+   "name": "Сессия, приключение и кампания",
+   "kind": "guidance",
+   "classification": {
+    "mode": "adjudicated",
+    "semantic_required": true,
+    "formal_required": false,
+    "reason": "Formal consequences need confirmed inputs; narrative applicability is a GM proposal."
+   },
+   "conditions": [],
+   "triggers": [
+    "campaign_structure.requested"
+   ],
+   "formal_operations": [],
+   "semantic_questions": [
+    "Сессия, приключение и кампания — какие обстоятельства и решение подтверждены Мастером?"
+   ],
+   "facts": {
+    "session": "one_play_meeting",
+    "adventure": "one_or_more_sessions",
+    "campaign": "linked_adventures"
+   },
+   "constraints": [],
+   "exceptions": [],
+   "duration": "persistent_guidance",
+   "resources": [],
+   "source": {
+    "document_id": "phb_2024_ru",
+    "kind": "phb",
+    "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+    "publication_year": 2024,
+    "pdf_page": 9,
+    "printed_page": "8",
+    "section": "Продолжительная игра / Приключения / Кампании (продолжение стр.9)"
+   },
+   "verification": "source_checked_human_pending",
+   "implementation": "not_implemented",
+   "auto_activate": false,
+   "dependencies": [],
+   "behavior_tests": [
+    "phb01.campaign_structure"
+   ],
+   "readiness": {
+    "status": "adjudication_required",
+    "handler": null,
+    "scope": "Сессия, приключение и кампания",
+    "blockers": []
+   },
+   "revision": 1
+  },
+  {
+   "id": "phb2024.phb01.character_portrayal",
+   "rules_family": "dnd2024",
+   "name": "Отыгрыш намерений персонажа",
+   "kind": "guidance",
+   "classification": {
+    "mode": "adjudicated",
+    "semantic_required": true,
+    "formal_required": false,
+    "reason": "Formal consequences need confirmed inputs; narrative applicability is a GM proposal."
+   },
+   "conditions": [],
+   "triggers": [
+    "character_portrayal.requested"
+   ],
+   "formal_operations": [],
+   "semantic_questions": [
+    "Отыгрыш намерений персонажа — какие обстоятельства и решение подтверждены Мастером?"
+   ],
+   "facts": {
+    "basis": [
+     "motivation",
+     "circumstances"
+    ],
+    "respect_other_players": true
+   },
+   "constraints": [],
+   "exceptions": [],
+   "duration": "persistent_guidance",
+   "resources": [],
+   "source": {
+    "document_id": "phb_2024_ru",
+    "kind": "phb",
+    "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+    "publication_year": 2024,
+    "pdf_page": 16,
+    "printed_page": "15",
+    "section": "Что бы сделал ваш персонаж?"
+   },
+   "verification": "source_checked_human_pending",
+   "implementation": "not_implemented",
+   "auto_activate": false,
+   "dependencies": [],
+   "behavior_tests": [
+    "phb01.character_portrayal"
+   ],
+   "readiness": {
+    "status": "adjudication_required",
+    "handler": null,
+    "scope": "Отыгрыш намерений персонажа",
+    "blockers": []
+   },
+   "revision": 1
+  },
+  {
+   "id": "phb2024.phb01.action_budget",
+   "rules_family": "dnd2024",
+   "name": "Одно действие за раз",
+   "kind": "procedure",
+   "classification": {
+    "mode": "deterministic",
+    "semantic_required": false,
+    "formal_required": true,
+    "reason": "Closed formal branch with explicit preconditions."
+   },
+   "conditions": [
+    {
+     "fact": "actor.own_turn",
+     "operator": "eq",
+     "value": true
+    },
+    {
+     "fact": "actor.incapacitated",
+     "operator": "eq",
+     "value": false
+    }
+   ],
+   "triggers": [
+    "turn.action_requested"
+   ],
+   "formal_operations": [
+    {
+     "op": "registered_procedure",
+     "inputs": [],
+     "constants": {
+      "procedure_id": "action_budget"
+     }
+    }
+   ],
+   "semantic_questions": [],
+   "facts": {
+    "simultaneous_actions": 1,
+    "combat_actions_per_turn": 1
+   },
+   "constraints": [
+    "Outside combat, sequence is adjudicated; no artificial simultaneous multi-action."
+   ],
+   "exceptions": [],
+   "duration": "per_action",
+   "resources": [],
+   "source": {
+    "document_id": "phb_2024_ru",
+    "kind": "phb",
+    "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+    "publication_year": 2024,
+    "pdf_page": 16,
+    "printed_page": "15",
+    "section": "Действия / Одно действие за раз"
+   },
+   "verification": "source_checked_human_pending",
+   "implementation": "existing_engine_subset",
+   "auto_activate": false,
+   "dependencies": [
+    "combat.turn"
+   ],
+   "behavior_tests": [
+    "phb01.action_budget"
+   ],
+   "readiness": {
+    "status": "engine_subset_verified",
+    "handler": "CombatEngine.assert_action",
+    "scope": "Outside combat, sequence is adjudicated; no artificial simultaneous multi-action.",
+    "blockers": []
+   },
+   "revision": 1
+  },
+  {
+   "id": "phb2024.phb01.action_attack",
+   "rules_family": "dnd2024",
+   "name": "Атака",
+   "kind": "procedure",
+   "classification": {
+    "mode": "deterministic",
+    "semantic_required": false,
+    "formal_required": true,
+    "reason": "Closed formal branch with explicit preconditions."
+   },
+   "conditions": [
+    {
+     "fact": "actor.own_turn",
+     "operator": "eq",
+     "value": true
+    },
+    {
+     "fact": "actor.incapacitated",
+     "operator": "eq",
+     "value": false
+    }
+   ],
+   "triggers": [
+    "turn.action_requested"
+   ],
+   "formal_operations": [
+    {
+     "op": "registered_procedure",
+     "inputs": [],
+     "constants": {
+      "procedure_id": "action_attack"
+     }
+    }
+   ],
+   "semantic_questions": [],
+   "facts": {
+    "effect": "one_weapon_or_unarmed_attack"
+   },
+   "constraints": [],
+   "exceptions": [],
+   "duration": "per_action",
+   "resources": [],
+   "source": {
+    "document_id": "phb_2024_ru",
+    "kind": "phb",
+    "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+    "publication_year": 2024,
+    "pdf_page": 16,
+    "printed_page": "15",
+    "section": "Действия / Атака"
+   },
+   "verification": "source_checked_human_pending",
+   "implementation": "existing_engine_subset",
+   "auto_activate": false,
+   "dependencies": [
+    "combat.weapon_attack"
+   ],
+   "behavior_tests": [
+    "phb01.action_attack"
+   ],
+   "readiness": {
+    "status": "engine_subset_verified",
+    "handler": "CombatEngine.attack",
+    "scope": "Атака",
+    "blockers": []
+   },
+   "revision": 1
+  },
+  {
+   "id": "phb2024.phb01.action_influence",
+   "rules_family": "dnd2024",
+   "name": "Влияние",
+   "kind": "procedure",
+   "classification": {
+    "mode": "hybrid",
+    "semantic_required": true,
+    "formal_required": true,
+    "reason": "Formal consequences need confirmed inputs; narrative applicability is a GM proposal."
+   },
+   "conditions": [],
+   "triggers": [
+    "action_influence.requested"
+   ],
+   "formal_operations": [
+    {
+     "op": "registered_procedure",
+     "inputs": [],
+     "constants": {
+      "procedure_id": "action_influence"
+     }
+    }
+   ],
+   "semantic_questions": [
+    "Влияние — какие обстоятельства и решение подтверждены Мастером?"
+   ],
+   "facts": {
+    "abilities": [
+     "charisma",
+     "wisdom"
+    ],
+    "charisma_skills": [
+     "performance",
+     "intimidation",
+     "deception",
+     "persuasion"
+    ],
+    "wisdom_skill": "animal_handling"
+   },
+   "constraints": [],
+   "exceptions": [],
+   "duration": "per_action",
+   "resources": [],
+   "source": {
+    "document_id": "phb_2024_ru",
+    "kind": "phb",
+    "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+    "publication_year": 2024,
+    "pdf_page": 16,
+    "printed_page": "15",
+    "section": "Действия / Влияние"
+   },
+   "verification": "source_checked_human_pending",
+   "implementation": "existing_engine_subset",
+   "auto_activate": false,
+   "dependencies": [
+    "glossary.influence"
+   ],
+   "behavior_tests": [
+    "phb01.action_influence"
+   ],
+   "readiness": {
+    "status": "engine_subset_verified",
+    "handler": "nat20_worker.resolve_state_check",
+    "scope": "Влияние: вне боя сценное действие scene_action (influence + навыки книги, стр. 15: Выступление, Запугивание, Обман, Убеждение, Уход за животными). Рабочий процесс Nat20 катит проверку навыка через resolve_state_check с Сл из definition.checks сцены, а без такой записи — из реестра хоста (15; книга своего Сл Влияния не печатает). С r179 успех двигает отношение НИПа на ступень к дружелюбию, провал — от него; согласие, помощь и мотив НИПа этой проверкой не назначаются.",
+    "blockers": []
+   },
+   "revision": 2
+  },
+  {
+   "id": "phb2024.phb01.action_hide",
+   "rules_family": "dnd2024",
+   "name": "Засада",
+   "kind": "procedure",
+   "classification": {
+    "mode": "hybrid",
+    "semantic_required": true,
+    "formal_required": true,
+    "reason": "Formal consequences need confirmed inputs; narrative applicability is a GM proposal."
+   },
+   "conditions": [],
+   "triggers": [
+    "action_hide.requested"
+   ],
+   "formal_operations": [
+    {
+     "op": "registered_procedure",
+     "inputs": [],
+     "constants": {
+      "procedure_id": "action_hide"
+     }
+    }
+   ],
+   "semantic_questions": [
+    "Засада — какие обстоятельства и решение подтверждены Мастером?"
+   ],
+   "facts": {
+    "ability": "dexterity",
+    "skill": "stealth",
+    "dc": 15,
+    "requires": [
+     "three_quarters_or_total_cover",
+     "heavy_obscurement",
+     "darkness"
+    ],
+    "grants": "invisible_while_hidden",
+    "action_spent": false
+   },
+   "constraints": [],
+   "exceptions": [],
+   "duration": "per_action",
+   "resources": [],
+   "source": {
+    "document_id": "phb_2024_ru",
+    "kind": "phb",
+    "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+    "publication_year": 2024,
+    "pdf_page": 16,
+    "printed_page": "15",
+    "section": "Действия / Засада"
+   },
+   "verification": "source_checked_human_pending",
+   "implementation": "existing_engine_subset",
+   "auto_activate": false,
+   "dependencies": [
+    "glossary.hide"
+   ],
+   "behavior_tests": [
+    "phb01.action_hide"
+   ],
+   "readiness": {
+    "status": "blocked",
+    "handler": null,
+    "scope": "Засада: движок Nat20 исполняет проверку Ловкости (Скрытность) DC 15, ставит Invisible и hidden_entities и снимает их атакой или словесным заклинанием, но не тратит Действие (замерено: action_available остаётся true), поэтому хост отказывает операции до патча апстрима.",
+    "blockers": [
+     "Вендор: пин движка не расходует требуемое Действие на Засаду (замерено в r129), поэтому nat20_prototype.known_issue закрывает операцию на хосте. Спецификация патча: списание action economy в hide-интенте vendor/nat20; до патча host-путь остаётся отказом."
+    ]
+   },
+   "revision": 2
+  },
+  {
+   "id": "phb2024.phb01.action_study",
+   "rules_family": "dnd2024",
+   "name": "Изучение",
+   "kind": "procedure",
+   "classification": {
+    "mode": "hybrid",
+    "semantic_required": true,
+    "formal_required": true,
+    "reason": "Formal consequences need confirmed inputs; narrative applicability is a GM proposal."
+   },
+   "conditions": [],
+   "triggers": [
+    "action_study.requested"
+   ],
+   "formal_operations": [
+    {
+     "op": "registered_procedure",
+     "inputs": [],
+     "constants": {
+      "procedure_id": "action_study"
+     }
+    }
+   ],
+   "semantic_questions": [
+    "Изучение — какие обстоятельства и решение подтверждены Мастером?"
+   ],
+   "facts": {
+    "ability": "intelligence",
+    "skills": [
+     "history",
+     "nature",
+     "investigation",
+     "religion",
+     "arcana"
+    ]
+   },
+   "constraints": [],
+   "exceptions": [],
+   "duration": "per_action",
+   "resources": [],
+   "source": {
+    "document_id": "phb_2024_ru",
+    "kind": "phb",
+    "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+    "publication_year": 2024,
+    "pdf_page": 16,
+    "printed_page": "15",
+    "section": "Действия / Изучение"
+   },
+   "verification": "source_checked_human_pending",
+   "implementation": "existing_engine_subset",
+   "auto_activate": false,
+   "dependencies": [
+    "glossary.study"
+   ],
+   "behavior_tests": [
+    "phb01.action_study"
+   ],
+   "readiness": {
+    "status": "engine_subset_verified",
+    "handler": "nat20_worker.resolve_state_check",
+    "scope": "Изучение: вне боя сценное действие scene_action (study). Проверка навыка идёт через resolve_state_check; успех открывает один уже существующий факт текущей сцены (facts места или подтверждённые факты кампании) и записывает его как показанный. Нет факта — хост отказывает до броска; выдуманного знания не появляется. Сл: definition.checks сцены, иначе реестр хоста (15).",
+    "blockers": []
+   },
+   "revision": 1
+  },
+  {
+   "id": "phb2024.phb01.action_utilize",
+   "rules_family": "dnd2024",
+   "name": "Использование",
+   "kind": "procedure",
+   "classification": {
+    "mode": "hybrid",
+    "semantic_required": true,
+    "formal_required": true,
+    "reason": "Formal consequences need confirmed inputs; narrative applicability is a GM proposal."
+   },
+   "conditions": [],
+   "triggers": [
+    "action_utilize.requested"
+   ],
+   "formal_operations": [
+    {
+     "op": "registered_procedure",
+     "inputs": [],
+     "constants": {
+      "procedure_id": "action_utilize"
+     }
+    }
+   ],
+   "semantic_questions": [
+    "Использование — какие обстоятельства и решение подтверждены Мастером?"
+   ],
+   "facts": {
+    "target": "nonmagical_object"
+   },
+   "constraints": [],
+   "exceptions": [],
+   "duration": "per_action",
+   "resources": [],
+   "source": {
+    "document_id": "phb_2024_ru",
+    "kind": "phb",
+    "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+    "publication_year": 2024,
+    "pdf_page": 16,
+    "printed_page": "15",
+    "section": "Действия / Использование"
+   },
+   "verification": "source_checked_human_pending",
+   "implementation": "not_implemented",
+   "auto_activate": false,
+   "dependencies": [
+    "glossary.utilize",
+    "catalog.items"
+   ],
+   "behavior_tests": [
+    "phb01.action_utilize"
+   ],
+   "readiness": {
+    "status": "blocked",
+    "handler": null,
+    "scope": "Использование",
+    "blockers": [
+     "Вендор: общего исполнителя Использования нет — зарегистрированы только двери и свет. Спецификация: операция use_object(object_id) с последствием из каталога сцены; свободный текст движок не исполняет."
+    ]
+   },
+   "revision": 1
+  },
+  {
+   "id": "phb2024.phb01.action_magic",
+   "rules_family": "dnd2024",
+   "name": "Магия",
+   "kind": "procedure",
+   "classification": {
+    "mode": "hybrid",
+    "semantic_required": true,
+    "formal_required": true,
+    "reason": "Formal consequences need confirmed inputs; narrative applicability is a GM proposal."
+   },
+   "conditions": [],
+   "triggers": [
+    "action_magic.requested"
+   ],
+   "formal_operations": [
+    {
+     "op": "registered_procedure",
+     "inputs": [],
+     "constants": {
+      "procedure_id": "action_magic"
+     }
+    }
+   ],
+   "semantic_questions": [
+    "Магия — какие обстоятельства и решение подтверждены Мастером?"
+   ],
+   "facts": {
+    "effects": [
+     "spell",
+     "magic_item",
+     "magic_feature"
+    ]
+   },
+   "constraints": [],
+   "exceptions": [],
+   "duration": "per_action",
+   "resources": [],
+   "source": {
+    "document_id": "phb_2024_ru",
+    "kind": "phb",
+    "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+    "publication_year": 2024,
+    "pdf_page": 16,
+    "printed_page": "15",
+    "section": "Действия / Магия"
+   },
+   "verification": "source_checked_human_pending",
+   "implementation": "not_implemented",
+   "auto_activate": false,
+   "dependencies": [
+    "glossary.magic",
+    "magic.casting"
+   ],
+   "behavior_tests": [
+    "phb01.action_magic"
+   ],
+   "readiness": {
+    "status": "blocked",
+    "handler": null,
+    "scope": "Магия",
+    "blockers": [
+     "Вендор: нужен зарегистрированный эффект/интент (activity с типизированным effect) в каталоге; свободный текст не исполняется никогда. До этого Магия на хосте — честный отказ."
+    ]
+   },
+   "revision": 1
+  },
+  {
+   "id": "phb2024.phb01.action_disengage",
+   "rules_family": "dnd2024",
+   "name": "Отход",
+   "kind": "procedure",
+   "classification": {
+    "mode": "deterministic",
+    "semantic_required": false,
+    "formal_required": true,
+    "reason": "Closed formal branch with explicit preconditions."
+   },
+   "conditions": [
+    {
+     "fact": "actor.own_turn",
+     "operator": "eq",
+     "value": true
+    },
+    {
+     "fact": "actor.incapacitated",
+     "operator": "eq",
+     "value": false
+    }
+   ],
+   "triggers": [
+    "turn.action_requested"
+   ],
+   "formal_operations": [
+    {
+     "op": "registered_procedure",
+     "inputs": [],
+     "constants": {
+      "procedure_id": "action_disengage"
+     }
+    }
+   ],
+   "semantic_questions": [],
+   "facts": {
+    "prevents": "opportunity_attacks",
+    "until": "end_of_current_turn"
+   },
+   "constraints": [],
+   "exceptions": [],
+   "duration": "per_action",
+   "resources": [],
+   "source": {
+    "document_id": "phb_2024_ru",
+    "kind": "phb",
+    "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+    "publication_year": 2024,
+    "pdf_page": 16,
+    "printed_page": "15",
+    "section": "Действия / Отход"
+   },
+   "verification": "source_checked_human_pending",
+   "implementation": "existing_engine_subset",
+   "auto_activate": false,
+   "dependencies": [
+    "combat.turn"
+   ],
+   "behavior_tests": [
+    "phb01.action_disengage"
+   ],
+   "readiness": {
+    "status": "engine_subset_verified",
+    "handler": "CombatEngine.defend",
+    "scope": "Отход",
+    "blockers": []
+   },
+   "revision": 1
+  },
+  {
+   "id": "phb2024.phb01.action_ready",
+   "rules_family": "dnd2024",
+   "name": "Подготовка",
+   "kind": "procedure",
+   "classification": {
+    "mode": "hybrid",
+    "semantic_required": true,
+    "formal_required": true,
+    "reason": "Formal consequences need confirmed inputs; narrative applicability is a GM proposal."
+   },
+   "conditions": [],
+   "triggers": [
+    "action_ready.requested"
+   ],
+   "formal_operations": [
+    {
+     "op": "registered_procedure",
+     "inputs": [],
+     "constants": {
+      "procedure_id": "action_ready"
+     }
+    }
+   ],
+   "semantic_questions": [
+    "Подготовка — какие обстоятельства и решение подтверждены Мастером?"
+   ],
+   "facts": {
+    "effect": "prepare_action_for_declared_trigger",
+    "triggers": [
+     "cast_spell",
+     "hit_by_attack",
+     "targeted_by_magic_missile"
+    ],
+    "custom_trigger": "not_modelled",
+    "action_spent": true,
+    "turn_ends": false,
+    "readied_weapon_attack": "pops_without_resolution"
+   },
+   "constraints": [],
+   "exceptions": [],
+   "duration": "per_action",
+   "resources": [],
+   "source": {
+    "document_id": "phb_2024_ru",
+    "kind": "phb",
+    "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+    "publication_year": 2024,
+    "pdf_page": 16,
+    "printed_page": "15",
+    "section": "Действия / Подготовка"
+   },
+   "verification": "source_checked_human_pending",
+   "implementation": "existing_engine_subset",
+   "auto_activate": false,
+   "dependencies": [
+    "glossary.ready"
+   ],
+   "behavior_tests": [
+    "phb01.action_ready"
+   ],
+   "readiness": {
+    "status": "engine_subset_verified",
+    "handler": null,
+    "scope": "Подготовка: движок Nat20 регистрирует _PendingReaction только для предустановленных триггеров cast_spell, hit_by_attack и targeted_by_magic_missile; Действие тратится, ход не заканчивается. Разрешается только подготовленное заклинание: подготовленная атака оружием снимается триггером без исполнения. Handler пуст: перечисление схемы не называет хендлеры оркестратора Nat20.",
+    "blockers": [
+     "Произвольный триггер (SRD «Ready an action with a custom trigger») не смоделирован",
+     "Подготовленная атака оружием снимается из очереди без разрешения"
+    ]
+   },
+   "revision": 2
+  },
+  {
+   "id": "phb2024.phb01.action_search",
+   "rules_family": "dnd2024",
+   "name": "Поиск",
+   "kind": "procedure",
+   "classification": {
+    "mode": "hybrid",
+    "semantic_required": true,
+    "formal_required": true,
+    "reason": "Formal consequences need confirmed inputs; narrative applicability is a GM proposal."
+   },
+   "conditions": [],
+   "triggers": [
+    "action_search.requested"
+   ],
+   "formal_operations": [
+    {
+     "op": "registered_procedure",
+     "inputs": [],
+     "constants": {
+      "procedure_id": "action_search"
+     }
+    }
+   ],
+   "semantic_questions": [
+    "Поиск — какие обстоятельства и решение подтверждены Мастером?"
+   ],
+   "facts": {
+    "ability": "wisdom",
+    "skills": [
+     "insight",
+     "medicine",
+     "perception",
+     "survival"
+    ]
+   },
+   "constraints": [],
+   "exceptions": [],
+   "duration": "per_action",
+   "resources": [],
+   "source": {
+    "document_id": "phb_2024_ru",
+    "kind": "phb",
+    "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+    "publication_year": 2024,
+    "pdf_page": 16,
+    "printed_page": "15",
+    "section": "Действия / Поиск"
+   },
+   "verification": "source_checked_human_pending",
+   "implementation": "existing_engine_subset",
+   "auto_activate": false,
+   "dependencies": [
+    "combat.turn"
+   ],
+   "behavior_tests": [
+    "phb01.action_search"
+   ],
+   "readiness": {
+    "status": "engine_subset_verified",
+    "handler": "nat20_worker.resolve_state_check",
+    "scope": "Поиск: вне боя сценное действие scene_action (search + Восприятие/Расследование). Проверка идёт через resolve_state_check с Сл из definition.checks сцены, иначе из реестра хоста (Восприятие 12, Расследование 15). Находка не назначается: для неё нужен зарегистрированный объект сцены. Список навыков этого правила в facts корпуса перечисляет набор иной редакции; хост следует проверенной постановке r130 — Восприятие и Расследование.",
+    "blockers": []
+   },
+   "revision": 1
+  },
+  {
+   "id": "phb2024.phb01.action_help",
+   "rules_family": "dnd2024",
+   "name": "Помощь",
+   "kind": "procedure",
+   "classification": {
+    "mode": "hybrid",
+    "semantic_required": true,
+    "formal_required": true,
+    "reason": "Formal consequences need confirmed inputs; narrative applicability is a GM proposal."
+   },
+   "conditions": [],
+   "triggers": [
+    "action_help.requested"
+   ],
+   "formal_operations": [
+    {
+     "op": "registered_procedure",
+     "inputs": [],
+     "constants": {
+      "procedure_id": "action_help"
+     }
+    }
+   ],
+   "semantic_questions": [
+    "Помощь — какие обстоятельства и решение подтверждены Мастером?"
+   ],
+   "facts": {
+    "uses": [
+     "ability_check",
+     "attack_roll",
+     "first_aid"
+    ],
+    "target": "enemy_within_5_ft",
+    "grant": "advantage_on_next_ally_attack",
+    "expires": "start_of_helper_next_turn",
+    "modelled_variant": "assist_an_attack_roll"
+   },
+   "constraints": [],
+   "exceptions": [],
+   "duration": "per_action",
+   "resources": [],
+   "source": {
+    "document_id": "phb_2024_ru",
+    "kind": "phb",
+    "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+    "publication_year": 2024,
+    "pdf_page": 16,
+    "printed_page": "15",
+    "section": "Действия / Помощь"
+   },
+   "verification": "source_checked_human_pending",
+   "implementation": "existing_engine_subset",
+   "auto_activate": false,
+   "dependencies": [
+    "glossary.help"
+   ],
+   "behavior_tests": [
+    "phb01.action_help"
+   ],
+   "readiness": {
+    "status": "engine_subset_verified",
+    "handler": null,
+    "scope": "Помощь (Assist an Attack Roll): движок Nat20 пишет грант help на цель-врага в 5 фт и снимает его следующей атакой союзника с преимуществом. Грант истекает на собственном TurnStarted помощника, поэтому без второго члена отряда экран кнопку не предлагает. Handler пуст потому, что перечисление схемы называет хендлеры прежнего CombatEngine, а не оркестратор Nat20; правило исполняется.",
+    "blockers": [
+     "Assist an Ability Check и First Aid (SRD 5.2 Help) движком не смоделированы"
+    ]
+   },
+   "revision": 2
+  },
+  {
+   "id": "phb2024.phb01.action_dash",
+   "rules_family": "dnd2024",
+   "name": "Рывок",
+   "kind": "procedure",
+   "classification": {
+    "mode": "deterministic",
+    "semantic_required": false,
+    "formal_required": true,
+    "reason": "Closed formal branch with explicit preconditions."
+   },
+   "conditions": [
+    {
+     "fact": "actor.own_turn",
+     "operator": "eq",
+     "value": true
+    },
+    {
+     "fact": "actor.incapacitated",
+     "operator": "eq",
+     "value": false
+    }
+   ],
+   "triggers": [
+    "turn.action_requested"
+   ],
+   "formal_operations": [
+    {
+     "op": "registered_procedure",
+     "inputs": [],
+     "constants": {
+      "procedure_id": "action_dash"
+     }
+    }
+   ],
+   "semantic_questions": [],
+   "facts": {
+    "extra_movement": "speed",
+    "until": "end_of_current_turn"
+   },
+   "constraints": [],
+   "exceptions": [],
+   "duration": "per_action",
+   "resources": [],
+   "source": {
+    "document_id": "phb_2024_ru",
+    "kind": "phb",
+    "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+    "publication_year": 2024,
+    "pdf_page": 16,
+    "printed_page": "15",
+    "section": "Действия / Рывок"
+   },
+   "verification": "source_checked_human_pending",
+   "implementation": "existing_engine_subset",
+   "auto_activate": false,
+   "dependencies": [
+    "combat.turn"
+   ],
+   "behavior_tests": [
+    "phb01.action_dash"
+   ],
+   "readiness": {
+    "status": "engine_subset_verified",
+    "handler": "CombatEngine.defend",
+    "scope": "Рывок",
+    "blockers": []
+   },
+   "revision": 1
+  },
+  {
+   "id": "phb2024.phb01.action_dodge",
+   "rules_family": "dnd2024",
+   "name": "Уклонение",
+   "kind": "procedure",
+   "classification": {
+    "mode": "deterministic",
+    "semantic_required": false,
+    "formal_required": true,
+    "reason": "Closed formal branch with explicit preconditions."
+   },
+   "conditions": [
+    {
+     "fact": "actor.own_turn",
+     "operator": "eq",
+     "value": true
+    },
+    {
+     "fact": "actor.incapacitated",
+     "operator": "eq",
+     "value": false
+    }
+   ],
+   "triggers": [
+    "turn.action_requested"
+   ],
+   "formal_operations": [
+    {
+     "op": "registered_procedure",
+     "inputs": [],
+     "constants": {
+      "procedure_id": "action_dodge"
+     }
+    }
+   ],
+   "semantic_questions": [],
+   "facts": {
+    "dexterity_saves": "advantage",
+    "attacks_against": "disadvantage",
+    "until": "start_of_next_turn",
+    "ends_if": [
+     "incapacitated",
+     "speed_zero"
+    ]
+   },
+   "constraints": [],
+   "exceptions": [],
+   "duration": "per_action",
+   "resources": [],
+   "source": {
+    "document_id": "phb_2024_ru",
+    "kind": "phb",
+    "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+    "publication_year": 2024,
+    "pdf_page": 16,
+    "printed_page": "15",
+    "section": "Действия / Уклонение"
+   },
+   "verification": "source_checked_human_pending",
+   "implementation": "existing_engine_subset",
+   "auto_activate": false,
+   "dependencies": [
+    "combat.turn"
+   ],
+   "behavior_tests": [
+    "phb01.action_dodge"
+   ],
+   "readiness": {
+    "status": "engine_subset_verified",
+    "handler": "CombatEngine.defend",
+    "scope": "Уклонение: помеха на атаку по уклоняющемуся (движок) и преимущество на спасброски Ловкости (host, dexterity_save_advantage)",
+    "blockers": []
+   },
+   "revision": 1
+  },
+  {
+   "id": "phb2024.phb01.improvised_action",
+   "rules_family": "dnd2024",
+   "name": "Действие вне каталога",
+   "kind": "guidance",
+   "classification": {
+    "mode": "adjudicated",
+    "semantic_required": true,
+    "formal_required": false,
+    "reason": "Formal consequences need confirmed inputs; narrative applicability is a GM proposal."
+   },
+   "conditions": [],
+   "triggers": [
+    "improvised_action.requested"
+   ],
+   "formal_operations": [],
+   "semantic_questions": [
+    "Действие вне каталога — какие обстоятельства и решение подтверждены Мастером?"
+   ],
+   "facts": {
+    "gm_decides": [
+     "possibility",
+     "test_if_needed"
+    ],
+    "unregistered_execution": false
+   },
+   "constraints": [],
+   "exceptions": [],
+   "duration": "per_action",
+   "resources": [],
+   "source": {
+    "document_id": "phb_2024_ru",
+    "kind": "phb",
+    "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+    "publication_year": 2024,
+    "pdf_page": 16,
+    "printed_page": "15",
+    "section": "Действия (после таблицы)"
+   },
+   "verification": "source_checked_human_pending",
+   "implementation": "not_implemented",
+   "auto_activate": false,
+   "dependencies": [],
+   "behavior_tests": [
+    "phb01.improvised_action"
+   ],
+   "readiness": {
+    "status": "adjudication_required",
+    "handler": "social.declaration_prompt",
+    "scope": "Действие вне каталога не отклоняется молча: интерпретатор обязан спросить, что именно делает герой (solo/model_protocol.py), а ответ хоста на отказ добавляет ту же просьбу (solo/social.declaration_prompt). Возможность действия и необходимость Теста к20 остаются за Мастером (книга, стр. 15); Сл и исход модель не выдумывает.",
+    "blockers": []
+   },
+   "revision": 2
+  },
+  {
+   "id": "phb2024.phb01.bonus_action",
+   "rules_family": "dnd2024",
+   "name": "Одно разрешённое бонусное действие в свой ход",
+   "kind": "procedure",
+   "classification": {
+    "mode": "deterministic",
+    "semantic_required": false,
+    "formal_required": true,
+    "reason": "Closed formal branch with explicit preconditions."
+   },
+   "conditions": [
+    {
+     "fact": "actor.own_turn",
+     "operator": "eq",
+     "value": true
+    },
+    {
+     "fact": "actor.incapacitated",
+     "operator": "eq",
+     "value": false
+    }
+   ],
+   "triggers": [
+    "turn.action_requested"
+   ],
+   "formal_operations": [
+    {
+     "op": "registered_procedure",
+     "inputs": [],
+     "constants": {
+      "procedure_id": "bonus_action"
+     }
+    }
+   ],
+   "semantic_questions": [],
+   "facts": {
+    "per_turn": 1,
+    "requires_explicit_feature": true,
+    "timing": "during_own_turn_unless_specified",
+    "action_prevented": "bonus_action_prevented"
+   },
+   "constraints": [
+    "Only registered cunning_action Dash/Disengage; no inferred features."
+   ],
+   "exceptions": [],
+   "duration": "per_action",
+   "resources": [],
+   "source": {
+    "document_id": "phb_2024_ru",
+    "kind": "phb",
+    "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+    "publication_year": 2024,
+    "pdf_page": 16,
+    "printed_page": "15",
+    "section": "Бонусные действия"
+   },
+   "verification": "source_checked_human_pending",
+   "implementation": "existing_engine_subset",
+   "auto_activate": false,
+   "dependencies": [
+    "combat.turn",
+    "features.execution"
+   ],
+   "behavior_tests": [
+    "phb01.bonus_action"
+   ],
+   "readiness": {
+    "status": "engine_subset_verified",
+    "handler": "CombatEngine.bonus",
+    "scope": "Only registered cunning_action Dash/Disengage; no inferred features.",
+    "blockers": []
+   },
+   "revision": 1
+  },
+  {
+   "id": "phb2024.phb01.reaction",
+   "rules_family": "dnd2024",
+   "name": "Реакция после триггера и восстановление",
+   "kind": "procedure",
+   "classification": {
+    "mode": "deterministic",
+    "semantic_required": false,
+    "formal_required": true,
+    "reason": "Closed formal branch with explicit preconditions."
+   },
+   "conditions": [],
+   "triggers": [
+    "reaction.requested"
+   ],
+   "formal_operations": [
+    {
+     "op": "registered_procedure",
+     "inputs": [],
+     "constants": {
+      "procedure_id": "reaction"
+     }
+    }
+   ],
+   "semantic_questions": [],
+   "facts": {
+    "available_until_refresh": 1,
+    "refresh": "start_of_own_next_turn",
+    "timing": "immediately_after_trigger_unless_exception",
+    "interrupted_turn": "resumes_after_reaction"
+   },
+   "constraints": [
+    "Only opportunity-attack reaction implemented. Specific timing exceptions stay with effect."
+   ],
+   "exceptions": [],
+   "duration": "per_action",
+   "resources": [],
+   "source": {
+    "document_id": "phb_2024_ru",
+    "kind": "phb",
+    "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+    "publication_year": 2024,
+    "pdf_page": 16,
+    "printed_page": "15",
+    "section": "Реакции"
+   },
+   "verification": "source_checked_human_pending",
+   "implementation": "existing_engine_subset",
+   "auto_activate": false,
+   "dependencies": [
+    "combat.turn"
+   ],
+   "behavior_tests": [
+    "phb01.reaction"
+   ],
+   "readiness": {
+    "status": "engine_subset_verified",
+    "handler": "CombatEngine.attack",
+    "scope": "Only opportunity-attack reaction implemented. Specific timing exceptions stay with effect.",
+    "blockers": []
+   },
+   "revision": 1
+  },
+  {
+   "id": "phb2024.phb01.npc_attitude",
+   "rules_family": "dnd2024",
+   "name": "Отношение НИПа",
+   "kind": "guidance",
+   "classification": {
+    "mode": "adjudicated",
+    "semantic_required": true,
+    "formal_required": false,
+    "reason": "Formal consequences need confirmed inputs; narrative applicability is a GM proposal."
+   },
+   "conditions": [],
+   "triggers": [
+    "npc_attitude.requested"
+   ],
+   "formal_operations": [],
+   "semantic_questions": [
+    "Отношение НИПа — какие обстоятельства и решение подтверждены Мастером?"
+   ],
+   "facts": {
+    "attitudes": [
+     "hostile",
+     "indifferent",
+     "friendly"
+    ],
+    "advantage_when": "friendly",
+    "printed_page": 16,
+    "gm_role": "npc_portrayal"
+   },
+   "constraints": [],
+   "exceptions": [],
+   "duration": "per_action",
+   "resources": [],
+   "source": {
+    "document_id": "phb_2024_ru",
+    "kind": "phb",
+    "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+    "publication_year": 2024,
+    "pdf_page": 17,
+    "printed_page": "16",
+    "section": "Социальное взаимодействие"
+   },
+   "verification": "source_checked_human_pending",
+   "implementation": "not_implemented",
+   "auto_activate": false,
+   "dependencies": [
+    "glossary.attitudes"
+   ],
+   "behavior_tests": [
+    "phb01.npc_attitude"
+   ],
+   "readiness": {
+    "status": "engine_subset_verified",
+    "handler": "social.attitude_change",
+    "scope": "Отношение НИПа — состояние кампании (hostile / indifferent / friendly), а не слово в прозе рассказчика. Успех Влияния двигает его на одну ступень к дружелюбию, провал — на одну от него; шаг и направление провала — правило хоста, книга печатает только, что Влияние «меняет отношение существа» (стр. 15). Дружелюбие даёт преимущество на проверку Влияния (книга, стр. 18; передаётся в движок через solo/nat20_api._social). Отношение видно в сцене (solo/world.public_npc). Три ступени — из книги (стр. 16); пятиступенчатый список карточки r179 не вводился, старые имена читаются как синонимы.",
+    "blockers": []
+   },
+   "revision": 2
+  },
+  {
+   "id": "phb2024.phb01.social_roleplay",
+   "rules_family": "dnd2024",
+   "name": "Реакция НИПа по мотивам и намерениям",
+   "kind": "guidance",
+   "classification": {
+    "mode": "adjudicated",
+    "semantic_required": true,
+    "formal_required": false,
+    "reason": "Formal consequences need confirmed inputs; narrative applicability is a GM proposal."
+   },
+   "conditions": [],
+   "triggers": [
+    "social_roleplay.requested"
+   ],
+   "formal_operations": [],
+   "semantic_questions": [
+    "Реакция НИПа по мотивам и намерениям — какие обстоятельства и решение подтверждены Мастером?"
+   ],
+   "facts": {
+    "inputs": [
+     "npc_personality",
+     "player_intent",
+     "npc_goals"
+    ],
+    "numeric_coercion": false
+   },
+   "constraints": [],
+   "exceptions": [],
+   "duration": "per_action",
+   "resources": [],
+   "source": {
+    "document_id": "phb_2024_ru",
+    "kind": "phb",
+    "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+    "publication_year": 2024,
+    "pdf_page": 17,
+    "printed_page": "16",
+    "section": "Отыгрыш"
+   },
+   "verification": "source_checked_human_pending",
+   "implementation": "not_implemented",
+   "auto_activate": false,
+   "dependencies": [],
+   "behavior_tests": [
+    "phb01.social_roleplay"
+   ],
+   "readiness": {
+    "status": "adjudication_required",
+    "handler": null,
+    "scope": "Реакция НИПа по мотивам и намерениям",
+    "blockers": []
+   },
+   "revision": 1
+  },
+  {
+   "id": "phb2024.phb01.social_check",
+   "rules_family": "dnd2024",
+   "name": "Социальная проверка при неопределённой реакции",
+   "kind": "procedure",
+   "classification": {
+    "mode": "hybrid",
+    "semantic_required": true,
+    "formal_required": true,
+    "reason": "Formal consequences need confirmed inputs; narrative applicability is a GM proposal."
+   },
+   "conditions": [],
+   "triggers": [
+    "social_check.requested"
+   ],
+   "formal_operations": [
+    {
+     "op": "registered_procedure",
+     "inputs": [],
+     "constants": {
+      "procedure_id": "social_check"
+     }
+    }
+   ],
+   "semantic_questions": [
+    "Социальная проверка при неопределённой реакции — какие обстоятельства и решение подтверждены Мастером?"
+   ],
+   "facts": {
+    "decision_to_roll": "gm",
+    "usual_action": "influence"
+   },
+   "constraints": [],
+   "exceptions": [],
+   "duration": "per_action",
+   "resources": [],
+   "source": {
+    "document_id": "phb_2024_ru",
+    "kind": "phb",
+    "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+    "publication_year": 2024,
+    "pdf_page": 17,
+    "printed_page": "16",
+    "section": "Проверки характеристик"
+   },
+   "verification": "source_checked_human_pending",
+   "implementation": "not_implemented",
+   "auto_activate": false,
+   "dependencies": [
+    "phb2024.phb01.action_influence",
+    "phb2024.phb01.skill_check"
+   ],
+   "behavior_tests": [
+    "phb01.social_check"
+   ],
+   "readiness": {
+    "status": "engine_subset_verified",
+    "handler": "social.check_needed",
+    "scope": "Нужна ли социальная проверка, решает хост по состоянию НИПа: реакция уже подтверждена сценой (согласие или отказ) — кость не бросается; реакция не определена — бросок идёт через nat20_worker.resolve_state_check, Сл берётся из записи сцены либо из реестра хоста (15), и журнал называет источник Сл. Книга оставляет решение о костях Мастеру (стр. 16) и не печатает Сл Влияния.",
+    "blockers": []
+   },
+   "revision": 2
+  },
+  {
+   "id": "phb2024.phb01.roleplay_styles",
+   "rules_family": "dnd2024",
+   "name": "Активный и описательный отыгрыш",
+   "kind": "guidance",
+   "classification": {
+    "mode": "adjudicated",
+    "semantic_required": true,
+    "formal_required": false,
+    "reason": "Formal consequences need confirmed inputs; narrative applicability is a GM proposal."
+   },
+   "conditions": [],
+   "triggers": [
+    "roleplay_styles.requested"
+   ],
+   "formal_operations": [],
+   "semantic_questions": [
+    "Активный и описательный отыгрыш — какие обстоятельства и решение подтверждены Мастером?"
+   ],
+   "facts": {
+    "styles": [
+     "active",
+     "descriptive"
+    ],
+    "requires_exact_acting": false
+   },
+   "constraints": [],
+   "exceptions": [],
+   "duration": "persistent_guidance",
+   "resources": [],
+   "source": {
+    "document_id": "phb_2024_ru",
+    "kind": "phb",
+    "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+    "publication_year": 2024,
+    "pdf_page": 18,
+    "printed_page": "17",
+    "section": "Пример социального взаимодействия / Активный стиль / Описательный стиль"
+   },
+   "verification": "source_checked_human_pending",
+   "implementation": "not_implemented",
+   "auto_activate": false,
+   "dependencies": [],
+   "behavior_tests": [
+    "phb01.roleplay_styles"
+   ],
+   "readiness": {
+    "status": "adjudication_required",
+    "handler": null,
+    "scope": "Активный и описательный отыгрыш",
+    "blockers": []
+   },
+   "revision": 1
+  },
+  {
+   "id": "phb2024.phb01.social_example",
+   "rules_family": "dnd2024",
+   "name": "Пример: Проницательность и Убеждение",
+   "kind": "procedure",
+   "classification": {
+    "mode": "hybrid",
+    "semantic_required": true,
+    "formal_required": true,
+    "reason": "Formal consequences need confirmed inputs; narrative applicability is a GM proposal."
+   },
+   "conditions": [],
+   "triggers": [
+    "social_example.requested"
+   ],
+   "formal_operations": [
+    {
+     "op": "registered_procedure",
+     "inputs": [],
+     "constants": {
+      "procedure_id": "social_example"
+     }
+    }
+   ],
+   "semantic_questions": [
+    "Пример: Проницательность и Убеждение — какие обстоятельства и решение подтверждены Мастером?"
+   ],
+   "facts": {
+    "insight_dc": 15,
+    "insight_total": 18,
+    "persuasion_dice": [
+     7,
+     10
+    ],
+    "persuasion_bonus": 5,
+    "friendly_example_advantage": true,
+    "example_only": true
+   },
+   "constraints": [],
+   "exceptions": [],
+   "duration": "per_action",
+   "resources": [],
+   "source": {
+    "document_id": "phb_2024_ru",
+    "kind": "phb",
+    "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+    "publication_year": 2024,
+    "pdf_page": 18,
+    "printed_page": "17",
+    "section": "Пример социального взаимодействия (стр.17–18)"
+   },
+   "verification": "source_checked_human_pending",
+   "implementation": "not_implemented",
+   "auto_activate": false,
+   "dependencies": [
+    "phb2024.phb01.npc_attitude",
+    "phb2024.phb01.skill_check",
+    "glossary.influence"
+   ],
+   "behavior_tests": [
+    "phb01.social_example"
+   ],
+   "readiness": {
+    "status": "blocked",
+    "handler": null,
+    "scope": "Пример: Проницательность и Убеждение",
+    "blockers": [
+     "Пример — регрессионная фикстура, а не универсальный Сл и не формула дружбы: его числа (Проницательность Сл 15; Убеждение 10 + 5 = 15 с преимуществом за дружелюбие) воспроизводятся в tests/test_social_attitude_and_checks.py; универсального Сл Влияния книга не печатает (стр. 16)."
+    ]
+   },
+   "revision": 1
+  }
+ ]
+}

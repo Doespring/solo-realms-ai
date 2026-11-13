@@ -1,0 +1,92 @@
+{
+  "steps": [
+    {
+      "name": "loaded",
+      "title": "Solo Realms AI — Obsidian Chronicle",
+      "scripts": 2
+    },
+    {
+      "name": "editor_script",
+      "wizard": 1
+    },
+    {
+      "name": "dialog",
+      "open": true,
+      "fileInput": 1,
+      "manualHidden": true,
+      "visibleButtons": [
+        "Начать с чистого листа",
+        "Закрыть"
+      ],
+      "hint": "Есть готовое приключение? Загрузите его — программа сама разберёт места, NPC и проверки. Нет файла — начнём с чистого ли"
+    },
+    {
+      "name": "understood",
+      "status": "«obsidian-scenario.md» принят.",
+      "summary": [
+        "Прочитано: 1 страница, 613 символов.",
+        "Понято: мест 2, NPC 1, событий 1."
+      ],
+      "nextVisible": true,
+      "dialogOpen": true
+    },
+    {
+      "name": "hero_step",
+      "heroVisible": true,
+      "note": "Источник «obsidian-scenario.md» разобран и сохранён в подготовку приключения. Теперь соберите героя: вид, класс, предыстория, характеристики"
+    },
+    {
+      "name": "editor",
+      "visible": true,
+      "title": "Создание героя",
+      "steps": [
+        "○\nВид\nОсталось: 1",
+        "○\nКласс\nОсталось: 1",
+        "○\nПредыстория\nОсталось: 1",
+        "○\nХарактеристики\nОсталось: 6",
+        "○\nИтог и имя\nОсталось: 1"
+      ],
+      "stage": "Вид\n\nНаследие выбирается отдельным шагом, если корпус делит вид.\n\nDragonborn\nDwarf\nElf\nElf, Drow, Elf, High, Elf, Wood\nGnome\nGnome, Forest, Gnome, Rock\nGoliath\nHalfling\nHuman\nOrc\nTiefling\nTiefling, Abyssal, Tiefling, Chthonic, Tiefling, Infernal",
+      "heroStatus": "",
+      "dialogOpen": false
+    },
+    {
+      "name": "refused_format",
+      "status": "Не удалось прочитать «scan.docx»: Поддерживаются PDF, TXT, Markdown и JSON сценария. Выберите другой файл — диалог остаётся открытым.",
+      "dialogOpen": true,
+      "sourceStepVisible": true,
+      "nextVisible": false
+    },
+    {
+      "name": "refused_size",
+      "status": "Не удалось прочитать «huge.md»: файл больше 8 МБ. Выберите другой файл — диалог остаётся открытым.",
+      "dialogOpen": true
+    },
+    {
+      "name": "stored_but_unreadable",
+      "status": "«scan.txt» прочитан, но текста в нём нет.",
+      "nextVisible": false,
+      "summary": [
+        "Текст не извлечён: 1 страница, 16 символов.",
+        "Читаемый текст не извлечён. Возможен скан; OCR здесь не выполняется. Подготовка по этому источнику заблокирована.",
+        "Текст сохранён и проиндексирован. Без разметки стартовой сцены или JSON-сценария NPC, события и маршруты не назначаются автоматически."
+      ]
+    },
+    {
+      "name": "retry_after_refusal",
+      "status": "«obsidian-scenario.md» принят.",
+      "sourceStepVisible": true,
+      "summaryVisible": true,
+      "summary": [
+        "Прочитано: 1 страница, 613 символов.",
+        "Понято: мест 2, NPC 1, событий 1."
+      ]
+    }
+  ],
+  "errors": [],
+  "ok": true,
+  "consoleErrors": [
+    "Applying inline style violates the following Content Security Policy directive 'style-src 'self''. Either the 'unsafe-inline' keyword, a hash ('sha256-QtLc5uBVH+QBp01WthV2UYBdMRijs+JGa3O93rUR57g='), o",
+    "Failed to load resource: the server responded with a status of 409 (Conflict)"
+  ]
+}

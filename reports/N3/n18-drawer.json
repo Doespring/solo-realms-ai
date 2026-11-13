@@ -1,0 +1,588 @@
+{
+ "base": "http://127.0.0.1:52205",
+ "frames": [
+  {
+   "viewport": {
+    "w": 375,
+    "h": 812
+   },
+   "open": true,
+   "sheet": {
+    "x": 0,
+    "y": 146,
+    "w": 375,
+    "h": 666,
+    "bottom": 812,
+    "right": 375
+   },
+   "sheetStyle": {
+    "background": "rgb(30, 26, 20)",
+    "borderTop": "1px rgb(74, 62, 48)",
+    "radius": "12px",
+    "minHeight": "calc(100% - 146px)",
+    "maxHeight": "calc(100% - 124px)",
+    "paddingBottom": "0px",
+    "overflow": "auto"
+   },
+   "topGap": 146,
+   "bottomGap": 0,
+   "scrim": {
+    "rect": {
+     "x": 0,
+     "y": 0,
+     "w": 375,
+     "h": 812,
+     "bottom": 812,
+     "right": 375
+    },
+    "opacity": "1",
+    "opacityNum": 1,
+    "zIndex": "94",
+    "pointer": "auto",
+    "background": "rgba(0, 0, 0, 0.6)"
+   },
+   "pageBg": "rgb(16, 18, 16)",
+   "above": {
+    "cls": "m-scrim",
+    "text": "",
+    "view": null
+   },
+   "head": {
+    "x": 12,
+    "y": 199,
+    "w": 351,
+    "h": 45,
+    "bottom": 244,
+    "right": 363
+   },
+   "tabs": {
+    "rect": {
+     "x": 12,
+     "y": 199,
+     "w": 301,
+     "h": 45,
+     "bottom": 244,
+     "right": 313
+    },
+    "borderBottom": "1px rgb(51, 43, 34)"
+   },
+   "tabItems": [
+    {
+     "text": "Кампания",
+     "selected": true,
+     "rect": {
+      "x": 12,
+      "y": 199,
+      "w": 150.5,
+      "h": 44,
+      "bottom": 243,
+      "right": 162.5
+     },
+     "color": "rgb(237, 227, 206)",
+     "background": "rgba(0, 0, 0, 0)",
+     "border": "0px rgb(237, 227, 206)",
+     "borderBottom": "2px rgb(216, 160, 92)"
+    },
+    {
+     "text": "Приложение",
+     "selected": false,
+     "rect": {
+      "x": 162.5,
+      "y": 199,
+      "w": 150.5,
+      "h": 44,
+      "bottom": 243,
+      "right": 313
+     },
+     "color": "rgb(162, 149, 123)",
+     "background": "rgba(0, 0, 0, 0)",
+     "border": "0px rgb(162, 149, 123)",
+     "borderBottom": "2px rgba(0, 0, 0, 0)"
+    }
+   ],
+   "groupLabels": 0,
+   "drawer": {
+    "rect": {
+     "x": 12,
+     "y": 199,
+     "w": 351,
+     "h": 613,
+     "bottom": 812,
+     "right": 363
+    },
+    "scroll": 613,
+    "client": 613,
+    "overflow": 0,
+    "scrollTop": 0
+   },
+   "rows": [
+    {
+     "text": "Игра",
+     "y": 244,
+     "h": 44,
+     "bottom": 288,
+     "font": "16px"
+    },
+    {
+     "text": "Персонаж",
+     "y": 288,
+     "h": 44,
+     "bottom": 332,
+     "font": "16px"
+    },
+    {
+     "text": "Навыки",
+     "y": 332,
+     "h": 44,
+     "bottom": 376,
+     "font": "16px"
+    },
+    {
+     "text": "Инвентарь",
+     "y": 376,
+     "h": 44,
+     "bottom": 420,
+     "font": "16px"
+    },
+    {
+     "text": "Карта мира",
+     "y": 420,
+     "h": 44,
+     "bottom": 464,
+     "font": "16px"
+    },
+    {
+     "text": "Блокнот",
+     "y": 464,
+     "h": 44,
+     "bottom": 508,
+     "font": "16px"
+    },
+    {
+     "text": "Раздатки и карты",
+     "y": 508,
+     "h": 44,
+     "bottom": 552,
+     "font": "16px"
+    },
+    {
+     "text": "Сохранения",
+     "y": 552,
+     "h": 44,
+     "bottom": 596,
+     "font": "16px"
+    },
+    {
+     "text": "Правила",
+     "y": 596,
+     "h": 44,
+     "bottom": 640,
+     "font": "16px"
+    },
+    {
+     "text": "Мастер",
+     "y": 640,
+     "h": 44,
+     "bottom": 684,
+     "font": "16px"
+    },
+    {
+     "text": "Выход из игры",
+     "y": 766,
+     "h": 46,
+     "bottom": 812,
+     "font": "16px"
+    }
+   ],
+   "exit": {
+    "rect": {
+     "x": 12,
+     "y": 766,
+     "w": 351,
+     "h": 46,
+     "bottom": 812,
+     "right": 363
+    },
+    "text": "Выход из игры",
+    "style": {
+     "position": "sticky",
+     "bottom": "0px",
+     "padding": "12px 10px",
+     "minHeight": "44px",
+     "background": "rgb(30, 26, 20)",
+     "borderTop": "1px rgb(74, 62, 48)"
+    }
+   },
+   "rowToExit": 82,
+   "exitToBottom": 0,
+   "fonts": {
+    "exit": "16px"
+   },
+   "debug": {
+    "exitMargin": [
+     "82px",
+     "0px"
+    ],
+    "exitParent": "nav-drawer",
+    "tabletop": true,
+    "rowMargin": [
+     "0px",
+     "0px"
+    ],
+    "rowDisplay": "flex",
+    "blockGap": "0px",
+    "blockDisplay": "grid",
+    "drawerDisplay": "flex",
+    "drawerGap": "0px",
+    "drawerKids": [
+     "nav-head",
+     "nav-block",
+     "nav-block",
+     "nav"
+    ]
+   },
+   "errors": [],
+   "tab": "campaign",
+   "contrast": {
+    "sheet/page": 1.09,
+    "sheetEdge/sheet": 1.67,
+    "tabUnselectedText/sheet": 5.87,
+    "tabSelectedUnderline/sheet": 7.5,
+    "tabSelectedText/sheet": 13.59
+   },
+   "file": "reports/N3/menu-campaign-dark-375.png"
+  },
+  {
+   "viewport": {
+    "w": 375,
+    "h": 812
+   },
+   "open": true,
+   "sheet": {
+    "x": 0,
+    "y": 146,
+    "w": 375,
+    "h": 666,
+    "bottom": 812,
+    "right": 375
+   },
+   "sheetStyle": {
+    "background": "rgb(30, 26, 20)",
+    "borderTop": "1px rgb(74, 62, 48)",
+    "radius": "12px",
+    "minHeight": "calc(100% - 146px)",
+    "maxHeight": "calc(100% - 124px)",
+    "paddingBottom": "0px",
+    "overflow": "auto"
+   },
+   "topGap": 146,
+   "bottomGap": 0,
+   "scrim": {
+    "rect": {
+     "x": 0,
+     "y": 0,
+     "w": 375,
+     "h": 812,
+     "bottom": 812,
+     "right": 375
+    },
+    "opacity": "1",
+    "opacityNum": 1,
+    "zIndex": "94",
+    "pointer": "auto",
+    "background": "rgba(0, 0, 0, 0.6)"
+   },
+   "pageBg": "rgb(16, 18, 16)",
+   "above": {
+    "cls": "m-scrim",
+    "text": "",
+    "view": null
+   },
+   "head": {
+    "x": 12,
+    "y": 199,
+    "w": 351,
+    "h": 45,
+    "bottom": 244,
+    "right": 363
+   },
+   "tabs": {
+    "rect": {
+     "x": 12,
+     "y": 199,
+     "w": 301,
+     "h": 45,
+     "bottom": 244,
+     "right": 313
+    },
+    "borderBottom": "1px rgb(51, 43, 34)"
+   },
+   "tabItems": [
+    {
+     "text": "Кампания",
+     "selected": false,
+     "rect": {
+      "x": 12,
+      "y": 199,
+      "w": 150.5,
+      "h": 44,
+      "bottom": 243,
+      "right": 162.5
+     },
+     "color": "rgb(162, 149, 123)",
+     "background": "rgba(0, 0, 0, 0)",
+     "border": "0px rgb(162, 149, 123)",
+     "borderBottom": "2px rgba(0, 0, 0, 0)"
+    },
+    {
+     "text": "Приложение",
+     "selected": true,
+     "rect": {
+      "x": 162.5,
+      "y": 199,
+      "w": 150.5,
+      "h": 44,
+      "bottom": 243,
+      "right": 313
+     },
+     "color": "rgb(237, 227, 206)",
+     "background": "rgba(0, 0, 0, 0)",
+     "border": "0px rgb(237, 227, 206)",
+     "borderBottom": "2px rgb(216, 160, 92)"
+    }
+   ],
+   "groupLabels": 0,
+   "drawer": {
+    "rect": {
+     "x": 12,
+     "y": 199,
+     "w": 351,
+     "h": 613,
+     "bottom": 812,
+     "right": 363
+    },
+    "scroll": 613,
+    "client": 613,
+    "overflow": 0,
+    "scrollTop": 0
+   },
+   "rows": [
+    {
+     "text": "Кампании",
+     "y": 244,
+     "h": 44,
+     "bottom": 288,
+     "font": "16px"
+    },
+    {
+     "text": "Настройки",
+     "y": 288,
+     "h": 44,
+     "bottom": 332,
+     "font": "16px"
+    },
+    {
+     "text": "Подключение Мастера",
+     "y": 332,
+     "h": 44,
+     "bottom": 376,
+     "font": "16px"
+    },
+    {
+     "text": "Расходы на Мастера",
+     "y": 376,
+     "h": 44,
+     "bottom": 420,
+     "font": "16px"
+    },
+    {
+     "text": "Скорость ответа",
+     "y": 420,
+     "h": 44,
+     "bottom": 464,
+     "font": "16px"
+    },
+    {
+     "text": "О проекте",
+     "y": 464,
+     "h": 44,
+     "bottom": 508,
+     "font": "16px"
+    },
+    {
+     "text": "Мои миры",
+     "y": 508,
+     "h": 44,
+     "bottom": 552,
+     "font": "16px"
+    },
+    {
+     "text": "Книги",
+     "y": 552,
+     "h": 44,
+     "bottom": 596,
+     "font": "16px"
+    },
+    {
+     "text": "Профили Мастера",
+     "y": 596,
+     "h": 44,
+     "bottom": 640,
+     "font": "16px"
+    },
+    {
+     "text": "Оформление: тёмное",
+     "y": 640,
+     "h": 44,
+     "bottom": 684,
+     "font": "16px"
+    },
+    {
+     "text": "Выход из игры",
+     "y": 766,
+     "h": 46,
+     "bottom": 812,
+     "font": "16px"
+    }
+   ],
+   "exit": {
+    "rect": {
+     "x": 12,
+     "y": 766,
+     "w": 351,
+     "h": 46,
+     "bottom": 812,
+     "right": 363
+    },
+    "text": "Выход из игры",
+    "style": {
+     "position": "sticky",
+     "bottom": "0px",
+     "padding": "12px 10px",
+     "minHeight": "44px",
+     "background": "rgb(30, 26, 20)",
+     "borderTop": "1px rgb(74, 62, 48)"
+    }
+   },
+   "rowToExit": 82,
+   "exitToBottom": 0,
+   "fonts": {
+    "exit": "16px"
+   },
+   "debug": {
+    "exitMargin": [
+     "82px",
+     "0px"
+    ],
+    "exitParent": "nav-drawer",
+    "tabletop": true,
+    "rowMargin": [
+     "0px",
+     "0px"
+    ],
+    "rowDisplay": "flex",
+    "blockGap": "0px",
+    "blockDisplay": "none",
+    "drawerDisplay": "flex",
+    "drawerGap": "0px",
+    "drawerKids": [
+     "nav-head",
+     "nav-block",
+     "nav-block",
+     "nav"
+    ]
+   },
+   "errors": [],
+   "tab": "app",
+   "contrast": {
+    "sheet/page": 1.09,
+    "sheetEdge/sheet": 1.67,
+    "tabUnselectedText/sheet": 5.87,
+    "tabSelectedUnderline/sheet": 7.5,
+    "tabSelectedText/sheet": 13.59
+   },
+   "file": "reports/N3/menu-app-dark-375.png"
+  }
+ ],
+ "checks": {
+  "turn": {
+   "status": 200,
+   "turn": null
+  },
+  "gameNote": {
+   "text": "сохранено",
+   "noteTop": 783,
+   "noteBottom": 802,
+   "rowBottom": 812,
+   "gapToScreen": 0,
+   "noteGapToScreen": 10
+  },
+  "gameNoteShot": "reports/N3/game-dock-dark-375.png",
+  "tapOutside": {
+   "under": {
+    "cls": "m-scrim",
+    "view": null
+   },
+   "before": {
+    "hasDialog": true,
+    "dialogOpen": false,
+    "dialogMarkup": "ВЫХОД ИЗ ИГРЫВыйти из кампании?Прогресс сохранён. Вернуться можно кнопкой «Продолжить» на главной.ВыйтиОтмена",
+    "modal": false,
+    "exitRow": 1,
+    "campaignOpen": true,
+    "playActive": true,
+    "welcomeActive": false,
+    "campaignIdStored": "f690cb21-022e-4876-bff4-defce4ec7126"
+   },
+   "after": {
+    "open": false,
+    "activeView": "play",
+    "exitDialog": false
+   }
+  },
+  "exitAsked": {
+   "hasDialog": true,
+   "dialogOpen": true,
+   "dialogMarkup": "ВЫХОД ИЗ ИГРЫ Выйти из кампании? Прогресс сохранён. Вернуться можно кнопкой «Продолжить» на главной. Выйти Отмена",
+   "modal": true,
+   "exitRow": 1,
+   "campaignOpen": true,
+   "playActive": true,
+   "welcomeActive": false,
+   "campaignIdStored": "f690cb21-022e-4876-bff4-defce4ec7126",
+   "rect": {
+    "x": 16,
+    "y": 282,
+    "w": 343,
+    "h": 247,
+    "bottom": 530,
+    "yes": true,
+    "no": true
+   },
+   "file": "reports/N3/exit-confirm-dark-375.png"
+  },
+  "exitCancelled": {
+   "hasDialog": true,
+   "dialogOpen": false,
+   "dialogMarkup": "ВЫХОД ИЗ ИГРЫВыйти из кампании?Прогресс сохранён. Вернуться можно кнопкой «Продолжить» на главной.ВыйтиОтмена",
+   "modal": false,
+   "exitRow": 1,
+   "campaignOpen": true,
+   "playActive": true,
+   "welcomeActive": false,
+   "campaignIdStored": "f690cb21-022e-4876-bff4-defce4ec7126"
+  },
+  "exitConfirmed": {
+   "hasDialog": true,
+   "dialogOpen": false,
+   "dialogMarkup": "ВЫХОД ИЗ ИГРЫВыйти из кампании?Прогресс сохранён. Вернуться можно кнопкой «Продолжить» на главной.ВыйтиОтмена",
+   "modal": false,
+   "exitRow": 1,
+   "campaignOpen": false,
+   "playActive": false,
+   "welcomeActive": true,
+   "campaignIdStored": "f690cb21-022e-4876-bff4-defce4ec7126"
+  }
+ },
+ "jsErrors": []
+}

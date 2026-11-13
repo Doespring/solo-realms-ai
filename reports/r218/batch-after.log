@@ -1,0 +1,420 @@
+..........F...........................                                   [100%]
+=================================== FAILURES ===================================
+  + Exception Group Traceback (most recent call last):
+  |   File "/home/hermes/projects/SoloRealmsAI-Nat20/.venv/lib/python3.14/site-packages/starlette/_utils.py", line 107, in create_collapsing_task_group
+  |     async with anyio.create_task_group() as tg:
+  |                ~~~~~~~~~~~~~~~~~~~~~~~^^
+  |   File "/home/hermes/projects/SoloRealmsAI-Nat20/.venv/lib/python3.14/site-packages/anyio/_backends/_asyncio.py", line 847, in __aexit__
+  |     raise BaseExceptionGroup(
+  |         "unhandled errors in a TaskGroup", self._exceptions
+  |     ) from None
+  | ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)
+  +-+---------------- 1 ----------------
+    | Traceback (most recent call last):
+    |   File "/home/hermes/projects/SoloRealmsAI-Nat20/.venv/lib/python3.14/site-packages/_pytest/runner.py", line 361, in from_call
+    |     result: TResult | None = func()
+    |                              ~~~~^^
+    |   File "/home/hermes/projects/SoloRealmsAI-Nat20/.venv/lib/python3.14/site-packages/_pytest/runner.py", line 250, in <lambda>
+    |     lambda: runtest_hook(item=item, **kwds),
+    |             ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+    |   File "/home/hermes/projects/SoloRealmsAI-Nat20/.venv/lib/python3.14/site-packages/pluggy/_hooks.py", line 512, in __call__
+    |     return self._hookexec(self.name, self._hookimpls.copy(), kwargs, firstresult)
+    |            ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "/home/hermes/projects/SoloRealmsAI-Nat20/.venv/lib/python3.14/site-packages/pluggy/_manager.py", line 120, in _hookexec
+    |     return self._inner_hookexec(hook_name, methods, kwargs, firstresult)
+    |            ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "/home/hermes/projects/SoloRealmsAI-Nat20/.venv/lib/python3.14/site-packages/pluggy/_callers.py", line 167, in _multicall
+    |     raise exception
+    |   File "/home/hermes/projects/SoloRealmsAI-Nat20/.venv/lib/python3.14/site-packages/pluggy/_callers.py", line 139, in _multicall
+    |     teardown.throw(exception)
+    |     ~~~~~~~~~~~~~~^^^^^^^^^^^
+    |   File "/home/hermes/projects/SoloRealmsAI-Nat20/.venv/lib/python3.14/site-packages/_pytest/logging.py", line 865, in pytest_runtest_call
+    |     yield
+    |   File "/home/hermes/projects/SoloRealmsAI-Nat20/.venv/lib/python3.14/site-packages/pluggy/_callers.py", line 139, in _multicall
+    |     teardown.throw(exception)
+    |     ~~~~~~~~~~~~~~^^^^^^^^^^^
+    |   File "/home/hermes/projects/SoloRealmsAI-Nat20/.venv/lib/python3.14/site-packages/_pytest/capture.py", line 900, in pytest_runtest_call
+    |     return (yield)
+    |             ^^^^^
+    |   File "/home/hermes/projects/SoloRealmsAI-Nat20/.venv/lib/python3.14/site-packages/pluggy/_callers.py", line 139, in _multicall
+    |     teardown.throw(exception)
+    |     ~~~~~~~~~~~~~~^^^^^^^^^^^
+    |   File "/home/hermes/projects/SoloRealmsAI-Nat20/.venv/lib/python3.14/site-packages/_pytest/skipping.py", line 268, in pytest_runtest_call
+    |     return (yield)
+    |             ^^^^^
+    |   File "/home/hermes/projects/SoloRealmsAI-Nat20/.venv/lib/python3.14/site-packages/pluggy/_callers.py", line 121, in _multicall
+    |     res = hook_impl.function(*args)
+    |   File "/home/hermes/projects/SoloRealmsAI-Nat20/.venv/lib/python3.14/site-packages/_pytest/runner.py", line 184, in pytest_runtest_call
+    |     item.runtest()
+    |     ~~~~~~~~~~~~^^
+    |   File "/home/hermes/projects/SoloRealmsAI-Nat20/.venv/lib/python3.14/site-packages/_pytest/python.py", line 1707, in runtest
+    |     self.ihook.pytest_pyfunc_call(pyfuncitem=self)
+    |     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+    |   File "/home/hermes/projects/SoloRealmsAI-Nat20/.venv/lib/python3.14/site-packages/pluggy/_hooks.py", line 512, in __call__
+    |     return self._hookexec(self.name, self._hookimpls.copy(), kwargs, firstresult)
+    |            ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "/home/hermes/projects/SoloRealmsAI-Nat20/.venv/lib/python3.14/site-packages/pluggy/_manager.py", line 120, in _hookexec
+    |     return self._inner_hookexec(hook_name, methods, kwargs, firstresult)
+    |            ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "/home/hermes/projects/SoloRealmsAI-Nat20/.venv/lib/python3.14/site-packages/pluggy/_callers.py", line 167, in _multicall
+    |     raise exception
+    |   File "/home/hermes/projects/SoloRealmsAI-Nat20/.venv/lib/python3.14/site-packages/pluggy/_callers.py", line 121, in _multicall
+    |     res = hook_impl.function(*args)
+    |   File "/home/hermes/projects/SoloRealmsAI-Nat20/.venv/lib/python3.14/site-packages/_pytest/python.py", line 167, in pytest_pyfunc_call
+    |     result = testfunction(**testargs)
+    |   File "/home/hermes/projects/SoloRealmsAI-Nat20/tests/test_pdf_world_reaches_campaign.py", line 170, in test_a_retry_of_the_same_start_returns_the_same_campaign
+    |     first=campaign(client,draft_id,build,request_id)
+    |   File "/home/hermes/projects/SoloRealmsAI-Nat20/tests/test_pdf_world_reaches_campaign.py", line 60, in campaign
+    |     return client.post('/api/prototype/campaigns',json=dict(name='Лира',request_id=request_id,build=build,
+    |            ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |         adventure='sandbox',preparation_draft=draft_id,encounter_monsters=[]))
+    |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "/home/hermes/projects/SoloRealmsAI-Nat20/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1144, in post
+    |     return self.request(
+    |            ~~~~~~~~~~~~^
+    |         "POST",
+    |         ^^^^^^^
+    |     ...<11 lines>...
+    |         extensions=extensions,
+    |         ^^^^^^^^^^^^^^^^^^^^^^
+    |     )
+    |     ^
+    |   File "/home/hermes/projects/SoloRealmsAI-Nat20/.venv/lib/python3.14/site-packages/starlette/testclient.py", line 463, in request
+    |     return super().request(
+    |            ~~~~~~~~~~~~~~~^
+    |         method,
+    |         ^^^^^^^
+    |     ...<11 lines>...
+    |         extensions=extensions,
+    |         ^^^^^^^^^^^^^^^^^^^^^^
+    |     )
+    |     ^
+    |   File "/home/hermes/projects/SoloRealmsAI-Nat20/.venv/lib/python3.14/site-packages/httpx/_client.py", line 825, in request
+    |     return self.send(request, auth=auth, follow_redirects=follow_redirects)
+    |            ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "/home/hermes/projects/SoloRealmsAI-Nat20/.venv/lib/python3.14/site-packages/httpx/_client.py", line 914, in send
+    |     response = self._send_handling_auth(
+    |         request,
+    |     ...<2 lines>...
+    |         history=[],
+    |     )
+    |   File "/home/hermes/projects/SoloRealmsAI-Nat20/.venv/lib/python3.14/site-packages/httpx/_client.py", line 942, in _send_handling_auth
+    |     response = self._send_handling_redirects(
+    |         request,
+    |         follow_redirects=follow_redirects,
+    |         history=history,
+    |     )
+    |   File "/home/hermes/projects/SoloRealmsAI-Nat20/.venv/lib/python3.14/site-packages/httpx/_client.py", line 979, in _send_handling_redirects
+    |     response = self._send_single_request(request)
+    |   File "/home/hermes/projects/SoloRealmsAI-Nat20/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1014, in _send_single_request
+    |     response = transport.handle_request(request)
+    |   File "/home/hermes/projects/SoloRealmsAI-Nat20/.venv/lib/python3.14/site-packages/starlette/testclient.py", line 360, in handle_request
+    |     raise exc
+    |   File "/home/hermes/projects/SoloRealmsAI-Nat20/.venv/lib/python3.14/site-packages/starlette/testclient.py", line 357, in handle_request
+    |     portal.call(self.app, scope, receive, send)
+    |     ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "/home/hermes/projects/SoloRealmsAI-Nat20/.venv/lib/python3.14/site-packages/anyio/from_thread.py", line 340, in call
+    |     return cast(T_Retval, self.start_task_soon(func, *args).result())
+    |                           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+    |   File "/home/hermes/.hermes/tools/python-3.14.9+20261021-linux-x64/lib/python3.14/concurrent/futures/_base.py", line 454, in result
+    |     return self.__get_result()
+    |            ~~~~~~~~~~~~~~~~~^^
+    |   File "/home/hermes/.hermes/tools/python-3.14.9+20261021-linux-x64/lib/python3.14/concurrent/futures/_base.py", line 396, in __get_result
+    |     raise self._exception
+    |   File "/home/hermes/projects/SoloRealmsAI-Nat20/.venv/lib/python3.14/site-packages/anyio/from_thread.py", line 265, in _call_func
+    |     retval = await retval_or_awaitable
+    |              ^^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "/home/hermes/projects/SoloRealmsAI-Nat20/.venv/lib/python3.14/site-packages/fastapi/applications.py", line 1216, in __call__
+    |     await super().__call__(scope, receive, send)
+    |   File "/home/hermes/projects/SoloRealmsAI-Nat20/.venv/lib/python3.14/site-packages/starlette/applications.py", line 96, in __call__
+    |     await self.middleware_stack(scope, receive, send)
+    |   File "/home/hermes/projects/SoloRealmsAI-Nat20/.venv/lib/python3.14/site-packages/starlette/middleware/errors.py", line 186, in __call__
+    |     raise exc
+    |   File "/home/hermes/projects/SoloRealmsAI-Nat20/.venv/lib/python3.14/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    |     await self.app(scope, receive, _send)
+    |   File "/home/hermes/projects/SoloRealmsAI-Nat20/.venv/lib/python3.14/site-packages/fastapi/telemetry/_asgi.py", line 151, in __call__
+    |     await self.app(scope, receive, send)
+    |   File "/home/hermes/projects/SoloRealmsAI-Nat20/solo/upload_limit.py", line 13, in __call__
+    |     if not upload:return await self.app(scope,receive,send)
+    |                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "/home/hermes/projects/SoloRealmsAI-Nat20/.venv/lib/python3.14/site-packages/starlette/middleware/base.py", line 197, in __call__
+    |     response = await self.dispatch_func(request, call_next)
+    |                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "/home/hermes/projects/SoloRealmsAI-Nat20/solo/playable_ui.py", line 193, in one_backend
+    |     return await call_next(request)
+    |            ^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "/home/hermes/projects/SoloRealmsAI-Nat20/.venv/lib/python3.14/site-packages/starlette/middleware/base.py", line 173, in call_next
+    |     raise app_exc from app_exc.__cause__ or app_exc.__context__
+    |   File "/home/hermes/projects/SoloRealmsAI-Nat20/.venv/lib/python3.14/site-packages/starlette/middleware/base.py", line 149, in coro
+    |     await self.app(scope, receive_or_disconnect, send_no_error)
+    |   File "/home/hermes/projects/SoloRealmsAI-Nat20/.venv/lib/python3.14/site-packages/starlette/middleware/base.py", line 197, in __call__
+    |     response = await self.dispatch_func(request, call_next)
+    |                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "/home/hermes/projects/SoloRealmsAI-Nat20/solo/app.py", line 139, in local_only
+    |     response = await call_next(request)
+    |                ^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "/home/hermes/projects/SoloRealmsAI-Nat20/.venv/lib/python3.14/site-packages/starlette/middleware/base.py", line 173, in call_next
+    |     raise app_exc from app_exc.__cause__ or app_exc.__context__
+    |   File "/home/hermes/projects/SoloRealmsAI-Nat20/.venv/lib/python3.14/site-packages/starlette/middleware/base.py", line 149, in coro
+    |     await self.app(scope, receive_or_disconnect, send_no_error)
+    |   File "/home/hermes/projects/SoloRealmsAI-Nat20/.venv/lib/python3.14/site-packages/starlette/middleware/trustedhost.py", line 57, in __call__
+    |     await self.app(scope, receive, send)
+    |   File "/home/hermes/projects/SoloRealmsAI-Nat20/.venv/lib/python3.14/site-packages/starlette/middleware/exceptions.py", line 63, in __call__
+    |     await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+    |   File "/home/hermes/projects/SoloRealmsAI-Nat20/.venv/lib/python3.14/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    |     raise exc
+    |   File "/home/hermes/projects/SoloRealmsAI-Nat20/.venv/lib/python3.14/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    |     await app(scope, receive, sender)
+    |   File "/home/hermes/projects/SoloRealmsAI-Nat20/.venv/lib/python3.14/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    |     await self.app(scope, receive, send)
+    |   File "/home/hermes/projects/SoloRealmsAI-Nat20/.venv/lib/python3.14/site-packages/starlette/routing.py", line 676, in __call__
+    |     await self.middleware_stack(scope, receive, send)
+    |   File "/home/hermes/projects/SoloRealmsAI-Nat20/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 2786, in app
+    |     await route.handle(scope, receive, send)
+    |   File "/home/hermes/projects/SoloRealmsAI-Nat20/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 1310, in handle
+    |     await super().handle(scope, receive, send)
+    |   File "/home/hermes/projects/SoloRealmsAI-Nat20/.venv/lib/python3.14/site-packages/starlette/routing.py", line 282, in handle
+    |     await self.app(scope, receive, send)
+    |   File "/home/hermes/projects/SoloRealmsAI-Nat20/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 165, in app
+    |     await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+    |   File "/home/hermes/projects/SoloRealmsAI-Nat20/.venv/lib/python3.14/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    |     raise exc
+    |   File "/home/hermes/projects/SoloRealmsAI-Nat20/.venv/lib/python3.14/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    |     await app(scope, receive, sender)
+    |   File "/home/hermes/projects/SoloRealmsAI-Nat20/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 151, in app
+    |     response = await f(request)
+    |                ^^^^^^^^^^^^^^^^
+    |   File "/home/hermes/projects/SoloRealmsAI-Nat20/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 727, in app
+    |     raw_response = await run_endpoint_function(
+    |                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |     ...<3 lines>...
+    |     )
+    |     ^
+    |   File "/home/hermes/projects/SoloRealmsAI-Nat20/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 360, in run_endpoint_function
+    |     return await dependant.call(**values)
+    |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "/home/hermes/projects/SoloRealmsAI-Nat20/solo/prototype_ui.py", line 504, in create
+    |     result=await asyncio.to_thread(Nat20GameEngine(store).create_experimental_campaign,body.name.strip(),
+    |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |     ...<2 lines>...
+    |     description=body.description or ('Открытая песочница.' if body.adventure=='sandbox' else 'Приключение по описанию игрока.'))
+    |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "/home/hermes/.hermes/tools/python-3.14.9+20261021-linux-x64/lib/python3.14/asyncio/threads.py", line 26, in to_thread
+    |     return await loop.run_in_executor(None, func_call)
+    |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "/home/hermes/.hermes/tools/python-3.14.9+20261021-linux-x64/lib/python3.14/concurrent/futures/thread.py", line 86, in run
+    |     result = ctx.run(self.task)
+    |   File "/home/hermes/.hermes/tools/python-3.14.9+20261021-linux-x64/lib/python3.14/concurrent/futures/thread.py", line 73, in run
+    |     return fn(*args, **kwargs)
+    |   File "/home/hermes/projects/SoloRealmsAI-Nat20/solo/nat20_api.py", line 85, in create_experimental_campaign
+    |     runtime=self._worker(dict(mode='initialize',name=name,seed=seed,definition=definition.model_dump(mode='json')))['state']
+    |             ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "/home/hermes/projects/SoloRealmsAI-Nat20/solo/nat20_api.py", line 392, in _worker
+    |     process = subprocess.run(invocation,
+    |         input=canonical(payload), text=True, encoding="utf-8", capture_output=True, cwd=ROOT,
+    |         env=environment, timeout=45, creationflags=subprocess.CREATE_NO_WINDOW if os.name == 'nt' else 0)
+    |   File "/home/hermes/.hermes/tools/python-3.14.9+20261021-linux-x64/lib/python3.14/subprocess.py", line 557, in run
+    |     stdout, stderr = process.communicate(input, timeout=timeout)
+    |                      ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "/home/hermes/.hermes/tools/python-3.14.9+20261021-linux-x64/lib/python3.14/subprocess.py", line 1221, in communicate
+    |     stdout, stderr = self._communicate(input, endtime, timeout)
+    |                      ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "/home/hermes/.hermes/tools/python-3.14.9+20261021-linux-x64/lib/python3.14/subprocess.py", line 2154, in _communicate
+    |     self._check_timeout(endtime, orig_timeout, stdout, stderr)
+    |     ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "/home/hermes/.hermes/tools/python-3.14.9+20261021-linux-x64/lib/python3.14/subprocess.py", line 1268, in _check_timeout
+    |     raise TimeoutExpired(
+    |     ...<2 lines>...
+    |             stderr=b''.join(stderr_seq) if stderr_seq else None)
+    | subprocess.TimeoutExpired: Command '['/home/hermes/projects/SoloRealmsAI-Nat20/.venv/bin/python', '-X', 'utf8', '-B', '-m', 'solo.nat20_worker']' timed out after 45 seconds
+    +------------------------------------
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/hermes/projects/SoloRealmsAI-Nat20/tests/test_pdf_world_reaches_campaign.py", line 170, in test_a_retry_of_the_same_start_returns_the_same_campaign
+    first=campaign(client,draft_id,build,request_id)
+  File "/home/hermes/projects/SoloRealmsAI-Nat20/tests/test_pdf_world_reaches_campaign.py", line 60, in campaign
+    return client.post('/api/prototype/campaigns',json=dict(name='Лира',request_id=request_id,build=build,
+           ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        adventure='sandbox',preparation_draft=draft_id,encounter_monsters=[]))
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hermes/projects/SoloRealmsAI-Nat20/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1144, in post
+    return self.request(
+           ~~~~~~~~~~~~^
+        "POST",
+        ^^^^^^^
+    ...<11 lines>...
+        extensions=extensions,
+        ^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/hermes/projects/SoloRealmsAI-Nat20/.venv/lib/python3.14/site-packages/starlette/testclient.py", line 463, in request
+    return super().request(
+           ~~~~~~~~~~~~~~~^
+        method,
+        ^^^^^^^
+    ...<11 lines>...
+        extensions=extensions,
+        ^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/hermes/projects/SoloRealmsAI-Nat20/.venv/lib/python3.14/site-packages/httpx/_client.py", line 825, in request
+    return self.send(request, auth=auth, follow_redirects=follow_redirects)
+           ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hermes/projects/SoloRealmsAI-Nat20/.venv/lib/python3.14/site-packages/httpx/_client.py", line 914, in send
+    response = self._send_handling_auth(
+        request,
+    ...<2 lines>...
+        history=[],
+    )
+  File "/home/hermes/projects/SoloRealmsAI-Nat20/.venv/lib/python3.14/site-packages/httpx/_client.py", line 942, in _send_handling_auth
+    response = self._send_handling_redirects(
+        request,
+        follow_redirects=follow_redirects,
+        history=history,
+    )
+  File "/home/hermes/projects/SoloRealmsAI-Nat20/.venv/lib/python3.14/site-packages/httpx/_client.py", line 979, in _send_handling_redirects
+    response = self._send_single_request(request)
+  File "/home/hermes/projects/SoloRealmsAI-Nat20/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1014, in _send_single_request
+    response = transport.handle_request(request)
+  File "/home/hermes/projects/SoloRealmsAI-Nat20/.venv/lib/python3.14/site-packages/starlette/testclient.py", line 360, in handle_request
+    raise exc
+  File "/home/hermes/projects/SoloRealmsAI-Nat20/.venv/lib/python3.14/site-packages/starlette/testclient.py", line 357, in handle_request
+    portal.call(self.app, scope, receive, send)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hermes/projects/SoloRealmsAI-Nat20/.venv/lib/python3.14/site-packages/anyio/from_thread.py", line 340, in call
+    return cast(T_Retval, self.start_task_soon(func, *args).result())
+                          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/hermes/.hermes/tools/python-3.14.9+20261021-linux-x64/lib/python3.14/concurrent/futures/_base.py", line 454, in result
+    return self.__get_result()
+           ~~~~~~~~~~~~~~~~~^^
+  File "/home/hermes/.hermes/tools/python-3.14.9+20261021-linux-x64/lib/python3.14/concurrent/futures/_base.py", line 396, in __get_result
+    raise self._exception
+  File "/home/hermes/projects/SoloRealmsAI-Nat20/.venv/lib/python3.14/site-packages/anyio/from_thread.py", line 265, in _call_func
+    retval = await retval_or_awaitable
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hermes/projects/SoloRealmsAI-Nat20/.venv/lib/python3.14/site-packages/fastapi/applications.py", line 1216, in __call__
+    await super().__call__(scope, receive, send)
+  File "/home/hermes/projects/SoloRealmsAI-Nat20/.venv/lib/python3.14/site-packages/starlette/applications.py", line 96, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/home/hermes/projects/SoloRealmsAI-Nat20/.venv/lib/python3.14/site-packages/starlette/middleware/errors.py", line 186, in __call__
+    raise exc
+  File "/home/hermes/projects/SoloRealmsAI-Nat20/.venv/lib/python3.14/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "/home/hermes/projects/SoloRealmsAI-Nat20/.venv/lib/python3.14/site-packages/fastapi/telemetry/_asgi.py", line 151, in __call__
+    await self.app(scope, receive, send)
+  File "/home/hermes/projects/SoloRealmsAI-Nat20/solo/upload_limit.py", line 13, in __call__
+    if not upload:return await self.app(scope,receive,send)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hermes/projects/SoloRealmsAI-Nat20/.venv/lib/python3.14/site-packages/starlette/middleware/base.py", line 197, in __call__
+    response = await self.dispatch_func(request, call_next)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hermes/projects/SoloRealmsAI-Nat20/solo/playable_ui.py", line 193, in one_backend
+    return await call_next(request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hermes/projects/SoloRealmsAI-Nat20/.venv/lib/python3.14/site-packages/starlette/middleware/base.py", line 173, in call_next
+    raise app_exc from app_exc.__cause__ or app_exc.__context__
+  File "/home/hermes/projects/SoloRealmsAI-Nat20/.venv/lib/python3.14/site-packages/starlette/middleware/base.py", line 149, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "/home/hermes/projects/SoloRealmsAI-Nat20/.venv/lib/python3.14/site-packages/starlette/middleware/base.py", line 197, in __call__
+    response = await self.dispatch_func(request, call_next)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hermes/projects/SoloRealmsAI-Nat20/solo/app.py", line 139, in local_only
+    response = await call_next(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hermes/projects/SoloRealmsAI-Nat20/.venv/lib/python3.14/site-packages/starlette/middleware/base.py", line 173, in call_next
+    raise app_exc from app_exc.__cause__ or app_exc.__context__
+  File "/home/hermes/projects/SoloRealmsAI-Nat20/.venv/lib/python3.14/site-packages/starlette/middleware/base.py", line 149, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "/home/hermes/projects/SoloRealmsAI-Nat20/.venv/lib/python3.14/site-packages/starlette/middleware/trustedhost.py", line 57, in __call__
+    await self.app(scope, receive, send)
+  File "/home/hermes/projects/SoloRealmsAI-Nat20/.venv/lib/python3.14/site-packages/starlette/middleware/exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/home/hermes/projects/SoloRealmsAI-Nat20/.venv/lib/python3.14/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/home/hermes/projects/SoloRealmsAI-Nat20/.venv/lib/python3.14/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/home/hermes/projects/SoloRealmsAI-Nat20/.venv/lib/python3.14/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/home/hermes/projects/SoloRealmsAI-Nat20/.venv/lib/python3.14/site-packages/starlette/routing.py", line 676, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/home/hermes/projects/SoloRealmsAI-Nat20/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 2786, in app
+    await route.handle(scope, receive, send)
+  File "/home/hermes/projects/SoloRealmsAI-Nat20/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 1310, in handle
+    await super().handle(scope, receive, send)
+  File "/home/hermes/projects/SoloRealmsAI-Nat20/.venv/lib/python3.14/site-packages/starlette/routing.py", line 282, in handle
+    await self.app(scope, receive, send)
+  File "/home/hermes/projects/SoloRealmsAI-Nat20/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 165, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/home/hermes/projects/SoloRealmsAI-Nat20/.venv/lib/python3.14/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/home/hermes/projects/SoloRealmsAI-Nat20/.venv/lib/python3.14/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/home/hermes/projects/SoloRealmsAI-Nat20/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 151, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/home/hermes/projects/SoloRealmsAI-Nat20/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 727, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "/home/hermes/projects/SoloRealmsAI-Nat20/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 360, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hermes/projects/SoloRealmsAI-Nat20/solo/prototype_ui.py", line 504, in create
+    result=await asyncio.to_thread(Nat20GameEngine(store).create_experimental_campaign,body.name.strip(),
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<2 lines>...
+    description=body.description or ('Открытая песочница.' if body.adventure=='sandbox' else 'Приключение по описанию игрока.'))
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hermes/.hermes/tools/python-3.14.9+20261021-linux-x64/lib/python3.14/asyncio/threads.py", line 26, in to_thread
+    return await loop.run_in_executor(None, func_call)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hermes/.hermes/tools/python-3.14.9+20261021-linux-x64/lib/python3.14/concurrent/futures/thread.py", line 86, in run
+    result = ctx.run(self.task)
+  File "/home/hermes/.hermes/tools/python-3.14.9+20261021-linux-x64/lib/python3.14/concurrent/futures/thread.py", line 73, in run
+    return fn(*args, **kwargs)
+  File "/home/hermes/projects/SoloRealmsAI-Nat20/solo/nat20_api.py", line 85, in create_experimental_campaign
+    runtime=self._worker(dict(mode='initialize',name=name,seed=seed,definition=definition.model_dump(mode='json')))['state']
+            ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hermes/projects/SoloRealmsAI-Nat20/solo/nat20_api.py", line 392, in _worker
+    process = subprocess.run(invocation,
+        input=canonical(payload), text=True, encoding="utf-8", capture_output=True, cwd=ROOT,
+        env=environment, timeout=45, creationflags=subprocess.CREATE_NO_WINDOW if os.name == 'nt' else 0)
+  File "/home/hermes/.hermes/tools/python-3.14.9+20261021-linux-x64/lib/python3.14/subprocess.py", line 557, in run
+    stdout, stderr = process.communicate(input, timeout=timeout)
+                     ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hermes/.hermes/tools/python-3.14.9+20261021-linux-x64/lib/python3.14/subprocess.py", line 1221, in communicate
+    stdout, stderr = self._communicate(input, endtime, timeout)
+                     ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hermes/.hermes/tools/python-3.14.9+20261021-linux-x64/lib/python3.14/subprocess.py", line 2154, in _communicate
+    self._check_timeout(endtime, orig_timeout, stdout, stderr)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hermes/.hermes/tools/python-3.14.9+20261021-linux-x64/lib/python3.14/subprocess.py", line 1268, in _check_timeout
+    raise TimeoutExpired(
+    ...<2 lines>...
+            stderr=b''.join(stderr_seq) if stderr_seq else None)
+subprocess.TimeoutExpired: Command '['/home/hermes/projects/SoloRealmsAI-Nat20/.venv/bin/python', '-X', 'utf8', '-B', '-m', 'solo.nat20_worker']' timed out after 45 seconds
+
+The above exception was the direct cause of the following exception:
+E   subprocess.TimeoutExpired: Command '['/home/hermes/projects/SoloRealmsAI-Nat20/.venv/bin/python', '-X', 'utf8', '-B', '-m', 'solo.nat20_worker']' timed out after 45 seconds
+/home/hermes/.hermes/tools/python-3.14.9+20261021-linux-x64/lib/python3.14/subprocess.py:1268: subprocess.TimeoutExpired: Command '['/home/hermes/projects/SoloRealmsAI-Nat20/.venv/bin/python', '-X', 'utf8', '-B', '-m', 'solo.nat20_worker']' timed out after 45 seconds
+=============================== warnings summary ===============================
+.venv/lib/python3.14/site-packages/fastapi/testclient.py:1
+  /home/hermes/projects/SoloRealmsAI-Nat20/.venv/lib/python3.14/site-packages/fastapi/testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+    from starlette.testclient import TestClient as TestClient  # noqa
+
+.venv/lib/python3.14/site-packages/lark/utils.py:176
+  /home/hermes/projects/SoloRealmsAI-Nat20/.venv/lib/python3.14/site-packages/lark/utils.py:176: DeprecationWarning: module 'sre_parse' is deprecated
+    import sre_parse
+
+.venv/lib/python3.14/site-packages/lark/utils.py:177
+  /home/hermes/projects/SoloRealmsAI-Nat20/.venv/lib/python3.14/site-packages/lark/utils.py:177: DeprecationWarning: module 'sre_constants' is deprecated
+    import sre_constants
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/test_pdf_world_reaches_campaign.py::test_a_retry_of_the_same_start_returns_the_same_campaign
+1 failed, 37 passed, 3 warnings in 774.03s (0:12:54)

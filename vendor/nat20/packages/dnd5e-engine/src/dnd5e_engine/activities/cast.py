@@ -1,0 +1,146 @@
+"""``cast`` kind handler for the Activity resolver.
+
+A Foundry ``CastActivity`` (``cast-data.mjs``) wraps another spell by
+``spell.uuid`` — a scroll or wand "casts" a referenced spell. The handler looks
+the spell up in ``ctx.spell_book``, builds a CHILD context (propagating the cast
+level, the referenced spell's base level / concentration flag / own
+``passive_effects``, and a recursion-guard chain), then RE-ENTERS
+``resolve_activity`` for each activity on the referenced spell. ``cast`` emits
+NOTHING itself — the delegated child activities emit their own events.
+
+MIRRORS, does not import from, ``effects/spell.py`` (the legacy ``type:
+"spell"`` analogue). Reproduces its semantics with the typed lib shapes:
+
+* Spell-within-itself cycle guard FIRST (cheap, before the lookup): a ``uuid``
+  already in ``ctx.parent_chain`` logs ``cast_spell_cycle`` and no-ops, never
+  recursing infinitely (mirrors ``effects/spell.py``'s ``"spell" in parent_chain``
+  guard).
+* Spell lookup is a LOUD no-op on a miss — an unresolved ``uuid`` logs
+  ``cast_spell_unresolved`` and returns rather than silently skipping.
+* Cast-level resolution: ``spell.level`` override when set, else the referenced
+  spell's own ``level`` (SRD §Spellcasting — Casting a Spell at a Higher Level:
+  "the spell assumes the higher level for that casting").
+
+Scroll DC / attack overrides (``spell.challenge`` with ``override=True``) ARE
+honored: 42 canonical cast activities (Dragon Orb DC 18, Circlet of Blasting +5,
+…) carry a FIXED save DC or attack bonus. The handler threads the fixed value
+into the child context (``save_dc_override`` / ``attack_bonus_override``); the
+delegated save/attack handler uses it verbatim instead of the wielder's stats.
+A non-override cast still CLEARS the field for a NESTED cast (a grandchild
+never inherits a parent scroll's DC) — but a TOP-LEVEL item wrapper (nothing
+above it in ``ctx.parent_chain``) has no ``spellcasting_ability`` of its own,
+so clearing unconditionally would strip the blanket flat DC / attack bonus
+``build_activity_context`` computed for the item path, and the delegated
+save/attack handler would either raise (``save.py``, ``calculation ==
+"spellcasting"`` with no ability) or silently drop the ability-mod term
+(``attack.py``). A top-level wrapper without its own override therefore
+FALLS BACK to the inherited ``ctx`` value instead of clearing.
+"""
+
+from __future__ import annotations
+
+import dataclasses
+import logging
+from typing import TYPE_CHECKING
+
+if TYPE_CHECKING:
+    from dnd5e_srd_data.schema.common import CastActivity
+
+    from .context import ActivityResolutionContext
+
+_LOGGER = logging.getLogger(__name__)
+
+
+#: The ability a cast spell's ADD-TO-ROLL formulas (``@mod``) use when it is
+#: cast through an item and neither the spell nor the hero names one. 2024
+#: magic items state their spell save DC and attack bonus, not an ability; a
+#: formula that reaches for ``@mod`` under such a cast would otherwise crash.
+#: Only items whose formula demands an ability the data does not name see it.
+_ITEM_CAST_ABILITY: Final = "charisma"
+
+def resolve_cast(activity: CastActivity, ctx: ActivityResolutionContext) -> None:
+    """Delegate a ``cast`` activity to its referenced spell's activities."""
+    uuid = activity.spell.uuid
+    # 1. Cycle guard FIRST (cheap, before lookup).
+    if uuid in ctx.parent_chain:
+        _LOGGER.warning("cast_spell_cycle uuid=%s chain=%s", uuid, ctx.parent_chain)
+        return
+    # 2. Lookup (loud no-op on miss — never silently skip).
+    spell = ctx.spell_book.get(uuid)
+    if spell is None:
+        _LOGGER.warning("cast_spell_unresolved uuid=%s", uuid)
+        return
+    # 3. Cast-level resolution + bounds (SRD §Casting a Spell at a Higher Level;
+    #    mirrors effects/spell.py's ``base_level <= cast_level <= 9`` invariant).
+    #    A cantrip's base level is 0 (``0 <= 0 <= 9`` passes). An out-of-range
+    #    cast (e.g. a scroll forged at level 10, or below the spell's base) is a
+    #    LOUD no-op — never an absurd upcast (cure-wounds at level 10 → 20d8).
+    if ctx.cast_level_override is not None:
+        cast_level = ctx.cast_level_override
+    elif activity.spell.level is not None:
+        cast_level = activity.spell.level
+    else:
+        cast_level = spell.level
+    if not (spell.level <= cast_level <= 9):
+        _LOGGER.warning(
+            "cast_invalid_level uuid=%s cast_level=%s base_level=%s",
+            uuid,
+            cast_level,
+            spell.level,
+        )
+        return
+    # 4. Build the child context and delegate. ``spell.ability`` is the ability
+    #    the wrapper casts the referenced spell with (a scroll/wand may force
+    #    e.g. "wis"); Foundry stores "" to mean "use the caster's default", so a
+    #    non-empty value overrides and an empty value inherits the parent's.
+    #
+    #    A fixed item challenge (``spell.challenge.override``) threads a verbatim
+    #    save DC / attack bonus into the child so the delegated save/attack handler
+    #    uses the item's number, not the wielder's stats (Dragon Orb DC 18, Circlet
+    #    of Blasting +5). An override is honored for THIS wrapper. Absent an
+    #    override: a NESTED cast (``ctx.parent_chain`` non-empty — this wrapper is
+    #    itself inside another cast's delegation) CLEARS the field so a grandchild
+    #    never inherits a parent scroll's DC; a TOP-LEVEL wrapper (nothing above us
+    #    in the chain) has no ``spellcasting_ability`` to fall through to, so it
+    #    INHERITS ``ctx``'s value — the item-path blanket DC / attack bonus
+    #    ``build_activity_context`` already computed for it.
+    from .resolver import resolve_activity  # function-local: breaks the resolver↔cast import cycle
+
+    challenge = activity.spell.challenge
+    # A spell cast through an ITEM (Dragon Orb -> Cure Wounds, Staff of
+    # Healing, Necklace of Prayer Beads) has no class spellcasting ability on
+    # the hero that a formula can read: an item's magic is the item's. The
+    # 2024 saving-throw DC and attack bonus of such an item are the item's own
+    # (``challenge``) or a blanket DC the orchestrator already resolved; the
+    # ADD-TO-ROLL formulas (``@mod``) still need SOME ability, and the item's
+    # own ``spell.ability`` supplies it when the hero has none. Falling back to
+    # a hero ability would invent a number (§2); leaving it ``None`` crashed the
+    # whole cast (``ValueError: @mod requires a governing ability``).
+    child_ctx = dataclasses.replace(
+        ctx,
+        spellcasting_ability=(
+            activity.spell.ability or ctx.spellcasting_ability or _ITEM_CAST_ABILITY
+        ),
+        slot_level=cast_level,
+        base_spell_level=spell.level,
+        concentration=spell.concentration,
+        source_passive_effects=spell.passive_effects,
+        save_dc_override=(
+            challenge.save
+            if challenge.override
+            else (ctx.save_dc_override if not ctx.parent_chain else None)
+        ),
+        attack_bonus_override=(
+            challenge.attack
+            if challenge.override
+            else (ctx.attack_bonus_override if not ctx.parent_chain else None)
+        ),
+        # M1: a nested cast must never inherit the item wrapper's forced cast
+        # level (``use_item`` charges_to_spend upcast) — only the wrapper's own
+        # ``CastActivity`` consumes it; the referenced spell's own activities
+        # cast at ``cast_level`` computed above, not the raw override again.
+        cast_level_override=None,
+        parent_chain=(*ctx.parent_chain, uuid),
+    )
+    for child_activity in spell.activities:
+        resolve_activity(child_activity, child_ctx)

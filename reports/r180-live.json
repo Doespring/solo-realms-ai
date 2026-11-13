@@ -1,0 +1,206 @@
+{
+ "base": "http://127.0.0.1:19319",
+ "started": "2026-11-02T16:11:19Z",
+ "health": {
+  "product": "Solo Realms AI",
+  "llm": {
+   "result": "MockLLM (тест)",
+   "mock": true
+  },
+  "version": "2.2.0-prototype.5",
+  "offline": true,
+  "cloud_only": false,
+  "experimental": true,
+  "build": "3c314a3e6b3c",
+  "commit": "e25d387a",
+  "readiness": {
+   "status": "configured"
+  },
+  "risk_limitation": "Риск фиксируется перед началом столкновения. Без заранее объявленного серьёзного риска необратимая смерть останавливается; механический результат сохраняется. Поздняя отметка не действует задним числом."
+ },
+ "witchlight": {
+  "draft": "0596b108-4c31-49a0-b64a-19d3c7005143",
+  "bundle": "2bd57d0d-9cef-4210-bbf9-4bf627bdf767",
+  "job": "complete",
+  "states": [
+   "queued",
+   "running",
+   "complete"
+  ],
+  "seconds": 71.8,
+  "message": "Извлечено страниц: 256. Модулей: 10. Игровые инструкции по-прежнему требуют проверки.",
+  "pages": null,
+  "chapters": 10,
+  "modules": [
+   {
+    "title": "Глава 1 | Карнавал Сумеречного света",
+    "pages": [
+     [
+      24,
+      57
+     ]
+    ],
+    "ready": true
+   },
+   {
+    "title": "Глава 2 | Тута",
+    "pages": [
+     [
+      58,
+      99
+     ]
+    ],
+    "ready": true
+   },
+   {
+    "title": "Глава 3 | Здеся",
+    "pages": [
+     [
+      100,
+      133
+     ]
+    ],
+    "ready": true
+   },
+   {
+    "title": "Глава 4 | Тама",
+    "pages": [
+     [
+      134,
+      171
+     ]
+    ],
+    "ready": true
+   },
+   {
+    "title": "Глава 5 | Дворец сокровенных желаний",
+    "pages": [
+     [
+      172,
+      208
+     ]
+    ],
+    "ready": true
+   },
+   {
+    "title": "Приложение А | Магические предметы",
+    "pages": [
+     [
+      209,
+      215
+     ]
+    ],
+    "ready": true
+   },
+   {
+    "title": "Приложение B | Фракции",
+    "pages": [
+     [
+      216,
+      229
+     ]
+    ],
+    "ready": true
+   },
+   {
+    "title": "Приложение C | Существа",
+    "pages": [
+     [
+      230,
+      242
+     ]
+    ],
+    "ready": true
+   },
+   {
+    "title": "Приложение D | Карточки для отыгрыша",
+    "pages": [
+     [
+      243,
+      250
+     ]
+    ],
+    "ready": true
+   },
+   {
+    "title": "Приложение E | Реплики Глоссофобия",
+    "pages": [
+     [
+      251,
+      256
+     ]
+    ],
+    "ready": true
+   }
+  ],
+  "ranges": [
+   [
+    24,
+    57
+   ],
+   [
+    58,
+    99
+   ],
+   [
+    100,
+    133
+   ],
+   [
+    134,
+    171
+   ],
+   [
+    172,
+    208
+   ],
+   [
+    209,
+    215
+   ],
+   [
+    216,
+    229
+   ],
+   [
+    230,
+    242
+   ],
+   [
+    243,
+    250
+   ],
+   [
+    251,
+    256
+   ]
+  ],
+  "matches_card": true
+ },
+ "regression": {
+  "Hoard of the Dragon Queen RUS.pdf": {
+   "modules": 8,
+   "chapters": 8,
+   "seconds": 38.9,
+   "message": "Извлечено страниц: 107. Модулей: 8. Игровые инструкции по-прежнему требуют проверки.",
+   "baseline": 8,
+   "kept": true
+  },
+  "The Rise of Tiamat RUS.pdf": {
+   "modules": 12,
+   "chapters": 12,
+   "seconds": 40.6,
+   "message": "Извлечено страниц: 99. Модулей: 12. Игровые инструкции по-прежнему требуют проверки.",
+   "baseline": 12,
+   "kept": true
+  },
+  "Icewind Dale - Rime of the Frostmaiden RUS.pdf": {
+   "modules": 11,
+   "chapters": 12,
+   "seconds": 92.3,
+   "message": "Извлечено страниц: 323. Модулей: 11. Игровые инструкции по-прежнему требуют проверки.",
+   "baseline": 8,
+   "kept": true
+  }
+ }
+}

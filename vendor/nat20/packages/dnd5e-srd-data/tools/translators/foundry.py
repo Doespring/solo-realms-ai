@@ -1,0 +1,3093 @@
+"""Foundry pack YAML → canonical Pydantic. Deterministic per pack-pin."""
+
+from __future__ import annotations
+
+import functools
+import json
+import math
+import re
+import sys
+from collections.abc import Iterable, Mapping, Sequence
+from dataclasses import dataclass
+from datetime import date
+from pathlib import Path
+from typing import Any, Literal, TypeVar
+
+import yaml
+from pydantic import BaseModel
+
+from dnd5e_srd_data import (
+    AbilityScores,
+    Activity,
+    AdvancementEntry,
+    AdvancementType,
+    Armor,
+    ArmorCategory,
+    AttackActivity,
+    Background,
+    BackgroundAbilityChoice,
+    CastActivity,
+    CastingTime,
+    CastingTimeUnit,
+    CheckActivity,
+    Class,
+    CreatureKind,
+    CreatureSize,
+    CreatureType,
+    CreatureTypeRef,
+    DamageActivity,
+    DamagePart,
+    DamagePartBlock,
+    EnchantActivity,
+    Feat,
+    FeatCategory,
+    FeatPrerequisite,
+    Feature,
+    FeatureUses,
+    GrantRef,
+    HealActivity,
+    HitDie,
+    Item,
+    ItemRarity,
+    ItemUses,
+    MagicItem,
+    Monster,
+    MonsterAction,
+    MonsterActionKind,
+    MonsterTrait,
+    MonsterTraitMechanic,
+    Movement,
+    PassiveEffect,
+    PassiveEffectChange,
+    PrimaryAbility,
+    Provenance,
+    Range,
+    RangeUnits,
+    RecoveryRule,
+    ReviewState,
+    SaveActivity,
+    SavingThrowProficiencies,
+    Senses,
+    SkillProficiencies,
+    Species,
+    Spell,
+    Spellcasting,
+    SpellcastingProgression,
+    SpellComponent,
+    SpellDuration,
+    SpellDurationUnits,
+    SpellMaterials,
+    SpellPreparation,
+    SpellRange,
+    SpellRangeUnits,
+    SpellSchool,
+    Subclass,
+    SummonActivity,
+    TransformActivity,
+    UtilityActivity,
+    Weapon,
+    WeaponProperty,
+)
+from dnd5e_srd_data.schema.common import ReactionCondition, ReactionTriggerKind
+from tools.translators.prose_cleanup import cleanup_prose
+
+ROOT = Path(__file__).resolve().parent.parent.parent
+
+
+_WEAPON_TYPE_MAP = {
+    "simpleM": "simple_melee",
+    "simpleR": "simple_ranged",
+    "martialM": "martial_melee",
+    "martialR": "martial_ranged",
+    # Full forms occasionally appear in newer pack revisions.
+    "simpleMelee": "simple_melee",
+    "simpleRanged": "simple_ranged",
+    "martialMelee": "martial_melee",
+    "martialRanged": "martial_ranged",
+}
+
+_WEAPON_PROPERTY_MAP = {
+    "amm": WeaponProperty.AMMUNITION,
+    "fin": WeaponProperty.FINESSE,
+    "hvy": WeaponProperty.HEAVY,
+    "lgt": WeaponProperty.LIGHT,
+    "lod": WeaponProperty.LOADING,
+    "rch": WeaponProperty.REACH,
+    "spc": WeaponProperty.SPECIAL,
+    "thr": WeaponProperty.THROWN,
+    "two": WeaponProperty.TWO_HANDED,
+    "ver": WeaponProperty.VERSATILE,
+}
+
+_ARMOR_TYPE_MAP = {
+    "light": ArmorCategory.LIGHT,
+    "medium": ArmorCategory.MEDIUM,
+    "heavy": ArmorCategory.HEAVY,
+    "shield": ArmorCategory.SHIELD,
+}
+
+_CAMEL_BOUNDARY = re.compile(r"(?<!^)(?=[A-Z])")
+
+
+# SRD versatile dice — Foundry doesn't structurally encode the upgraded die
+# (it relies on user choice at roll time). The mapping below is sourced from
+# 5e-bits' `5e-SRD-Equipment.json` two_handed_damage.damage_dice for every
+# SRD weapon with the `versatile` property. Lookup by Foundry baseItem slug.
+_SRD_VERSATILE_DICE: dict[str, str] = {
+    "battleaxe": "1d10",
+    "longsword": "1d10",
+    "warhammer": "1d10",
+    "trident": "1d8",
+    "quarterstaff": "1d8",
+    "spear": "1d8",
+}
+
+
+# ---------------------------------------------------------------------------
+# Activity translator (Phase 7b PR A — task A4).
+#
+# Foundry stores ``system.activities`` as ``{activity_id: activity_dict}``.
+# Each activity_dict's ``type`` discriminator selects the per-kind Pydantic
+# model (AttackActivity / SaveActivity / …); ``_translate_activities`` returns
+# a deterministic list[Activity] in Foundry's source order (Python 3.7+ dict
+# iteration preserves insertion order, which matches the YAML write order).
+#
+# The translator is a near-pass-through: Foundry's nested field structure
+# survives unchanged; only camelCase identifiers map to the schema's
+# snake_case names. The mapping is closed (see ``_ACTIVITY_CAMEL_TO_SNAKE``);
+# any future Foundry-side new camelCase field must be added here AND surface
+# in the activity oracle so the fidelity test catches the drift.
+#
+# ---------------------------------------------------------------------------
+
+
+_ACTIVITY_CAMEL_TO_SNAKE: dict[str, str] = {
+    "appliedEffects": "applied_effects",
+    "spellSlot": "spell_slot",
+    "chatFlavor": "chat_flavor",
+    "includeBase": "include_base",
+    "onSave": "on_save",
+    "requireAttunement": "require_attunement",
+    "requireIdentification": "require_identification",
+    "requireMagic": "require_magic",
+    "creatureSizes": "creature_sizes",
+    "creatureTypes": "creature_types",
+    "tempHP": "temp_hp",
+    "attackDamage": "attack_damage",
+    "saveDamage": "save_damage",
+    "allowMagical": "allow_magical",
+}
+
+# Foundry-side fields we deliberately drop because the A3 schema cannot
+# represent them losslessly. Recorded here so `_normalize_activity_dict` can
+# drop them with intent (vs accidentally). Currently empty — ``appliedEffects``
+# (the last occupant) is now modeled as ``applied_effects`` for round-trip
+# fidelity.
+_ACTIVITY_DROP_KEYS: frozenset[str] = frozenset()
+
+
+_ACTIVITY_KIND_TO_CLASS: dict[str, type[BaseModel]] = {
+    "attack": AttackActivity,
+    "cast": CastActivity,
+    "check": CheckActivity,
+    "damage": DamageActivity,
+    "enchant": EnchantActivity,
+    "heal": HealActivity,
+    "save": SaveActivity,
+    "summon": SummonActivity,
+    "transform": TransformActivity,
+    "utility": UtilityActivity,
+}
+
+
+# Foundry serializes "no die" damage/healing fields as ``""`` rather than null
+# (e.g. mass-heal's flat 700-HP heal: ``denomination: ''``). The schema types
+# these as ``NonNegativeInt | None``, so the empty string must become None.
+_NULLABLE_INT_KEYS: frozenset[str] = frozenset({"number", "denomination"})
+
+
+def _normalize_activity_dict(obj: Any, *, drop_keys: frozenset[str] = _ACTIVITY_DROP_KEYS) -> Any:
+    """Recursively rename Foundry's camelCase activity keys to the schema's
+    snake_case names. List elements are walked; primitives pass through.
+
+    ``drop_keys`` defaults to the legacy keys not representable in A3 (see
+    ``_ACTIVITY_DROP_KEYS``). Tests that want the pure camelCase rewrite
+    without the schema-driven drop can pass ``drop_keys=frozenset()``."""
+    if isinstance(obj, dict):
+        out: dict[str, Any] = {}
+        for k, v in obj.items():
+            if k in drop_keys:
+                continue
+            mapped = _ACTIVITY_CAMEL_TO_SNAKE.get(k, k)
+            if mapped in _NULLABLE_INT_KEYS and v == "":
+                out[mapped] = None
+                continue
+            out[mapped] = _normalize_activity_dict(v, drop_keys=drop_keys)
+        return out
+    if isinstance(obj, list):
+        return [_normalize_activity_dict(x, drop_keys=drop_keys) for x in obj]
+    return obj
+
+
+def _coerce_save_ability(save: Any) -> Any:
+    """Foundry's ``save.ability`` is a ``SetField(StringField)``; the YAML pack
+    serializes it as either a scalar string (~90% of entries) or a list. The
+    A3 schema types it as ``list[str]``. Promote scalar → single-element list
+    so both shapes validate."""
+    if not isinstance(save, dict):
+        return save
+    ability = save.get("ability")
+    if isinstance(ability, str):
+        save = dict(save)
+        save["ability"] = [ability] if ability else []
+    return save
+
+
+def _coerce_check_associated(check: Any) -> Any:
+    """Foundry's ``check.associated`` is a ``SetField(StringField)``; the YAML
+    pack serializes it as a scalar string (e.g. maze's ``associated: 'inv'``)
+    or a list. The A3 schema types it as ``list[str]``. Promote scalar →
+    single-element list (empty string → empty list) so both shapes validate."""
+    if not isinstance(check, dict):
+        return check
+    associated = check.get("associated")
+    if isinstance(associated, str):
+        check = dict(check)
+        check["associated"] = [associated] if associated else []
+    return check
+
+
+def _coerce_enchant_effect_riders(effects: Any) -> Any:
+    """Foundry's ``enchant.effects[*].riders`` is a ``SchemaField`` (dict). The
+    YAML pack occasionally ships ``riders: []`` (the empty-list placeholder
+    for an unset schema), which fails A3's ``EnchantEffectRiders`` validator.
+    Coerce ONLY the empty-list placeholder → default empty dict; any
+    non-empty list shape (a future Foundry revision or homebrew enchant) is
+    left intact so EnchantEffectRiders' validator raises loud rather than
+    the translator silently dropping rider IDs."""
+    if not isinstance(effects, list):
+        return effects
+    out = []
+    for e in effects:
+        if isinstance(e, dict) and e.get("riders") == []:
+            e = dict(e)
+            e["riders"] = {}
+        out.append(e)
+    return out
+
+
+def _inherit_item_target(raw: dict[str, Any], item_target: dict[str, Any]) -> dict[str, Any]:
+    """Foundry's ``ActivityData#target`` getter resolves the effective target
+    by *inheriting* the owning item's ``system.target`` whenever the activity's
+    own ``target.override`` is false (the common case). Only an activity that
+    sets ``override: true`` carries its own template/affects. The YAML pack
+    serializes the un-overridden activity ``target`` as a near-empty stub
+    (``{template: {…units}, affects: {choice}, override: false}``) and leaves
+    the real measured-template / affects data at the item level.
+
+    Surface that inheritance here so the typed activity carries the AoE shape
+    (e.g. fireball's ``sphere/20``) instead of an empty template. When
+    ``override`` is true (e.g. detect-thoughts' save activity narrowing to a
+    single creature), the activity's own target wins untouched."""
+    target = raw.get("target")
+    if not isinstance(target, dict) or target.get("override"):
+        return raw
+    if not isinstance(item_target, dict):
+        return raw
+    merged_target = dict(target)
+    for block in ("template", "affects"):
+        item_block = item_target.get(block)
+        if isinstance(item_block, dict):
+            merged_target[block] = item_block
+    raw = dict(raw)
+    raw["target"] = merged_target
+    return raw
+
+
+_WITHIN_FEET = re.compile(r"within (\d+) feet", re.IGNORECASE)
+_TARGETED_BY_SPELL = re.compile(r"targeted by the (?P<spell>[A-Za-z' ]+?) spell", re.IGNORECASE)
+
+#: Ordered phrase → trigger-kind table (Foundry ``activation.condition`` is
+#: free text; every SRD 5.2 reaction spell's phrase is quoted in
+#: ``ReactionTriggerKind``). Entries are emitted in table order; a phrase that
+#: matches nothing yields ``[]`` (catch-all — the prose is still shipped).
+_REACTION_TRIGGER_PATTERNS: tuple[tuple[re.Pattern[str], ReactionTriggerKind], ...] = (
+    (re.compile(r"\bhit by an attack roll\b", re.IGNORECASE), ReactionTriggerKind.HIT_BY_ATTACK),
+    (_TARGETED_BY_SPELL, ReactionTriggerKind.TARGETED_BY_SPELL),
+    (re.compile(r"\bcasting a spell\b", re.IGNORECASE), ReactionTriggerKind.SEES_SPELL_CAST),
+    (re.compile(r"\btak(?:ing|es?) damage\b", re.IGNORECASE), ReactionTriggerKind.TAKES_DAMAGE),
+    (re.compile(r"\bfalls\b", re.IGNORECASE), ReactionTriggerKind.CREATURE_FALLS),
+)
+
+
+def reaction_conditions_from_text(text: str) -> list[ReactionCondition]:
+    """Typed OR-list of triggers for one ``activation.condition`` string."""
+    condition = " ".join(str(text or "").split())
+    if not condition:
+        return []
+    range_match = _WITHIN_FEET.search(condition)
+    max_range_ft = int(range_match.group(1)) if range_match else None
+    out: list[ReactionCondition] = []
+    for pattern, kind in _REACTION_TRIGGER_PATTERNS:
+        match = pattern.search(condition)
+        if match is None:
+            continue
+        is_spell_trigger = kind is ReactionTriggerKind.TARGETED_BY_SPELL
+        target_spell_slug = _slug_from_name(match.group("spell")) if is_spell_trigger else None
+        out.append(
+            ReactionCondition(
+                kind=kind,
+                max_range_ft=max_range_ft if not is_spell_trigger else None,
+                target_spell_slug=target_spell_slug,
+                condition_text=condition,
+            )
+        )
+    return out
+
+
+def _effective_activation(
+    raw: dict[str, Any], item_activation: dict[str, Any] | None
+) -> dict[str, Any]:
+    """Foundry: an activity whose ``activation.override`` is false inherits the
+    owning item's ``system.activation``; ``override: true`` carries its own."""
+    own = raw.get("activation") if isinstance(raw.get("activation"), dict) else {}
+    if own.get("override") or not isinstance(item_activation, dict):
+        return own
+    return item_activation
+
+
+def _build_activity(
+    activity_id: str,
+    raw: dict[str, Any],
+    *,
+    item_target: dict[str, Any] | None = None,
+    item_activation: dict[str, Any] | None = None,
+) -> Activity | None:
+    """Build one per-kind Activity Pydantic model from a Foundry activity
+    dict. Returns ``None`` if the discriminator is missing or maps to a kind
+    not in the schema (Foundry's ``order`` / ``forward`` kinds aren't yet
+    modeled). The activity fidelity oracle captures EVERY kind (no filter),
+    so an unhandled kind that appears in SRD content will fail
+    test_every_oracle_activity_builds — making the silent drop CI-visible.
+    A warning here gives a louder signal during regen itself.
+
+    ``item_target`` is the owning item's ``system.target`` block, inherited
+    into the activity's target when the activity does not override it (see
+    ``_inherit_item_target``)."""
+    if item_target is not None:
+        raw = _inherit_item_target(raw, item_target)
+    raw_kind = str(raw.get("type") or "").strip()
+    cls = _ACTIVITY_KIND_TO_CLASS.get(raw_kind)
+    if cls is None:
+        print(
+            f"[foundry-translator] WARN: dropping activity {activity_id!r} "
+            f"with unmodeled kind {raw_kind!r}",
+            file=sys.stderr,
+        )
+        return None
+    normalized = _normalize_activity_dict(raw)
+    # Foundry's YAML occasionally serializes the optional top-level string
+    # fields ``img`` / ``name`` as ``null`` (vs the schema-default empty
+    # string). Coerce to empty string so validation passes without losing the
+    # upstream "field was present but empty" signal.
+    for str_field in ("img", "name"):
+        if normalized.get(str_field) is None and str_field in normalized:
+            normalized[str_field] = ""
+    # Per-kind shape coercions for Foundry → Pydantic-schema mismatches that
+    # are too narrow to bake into A3 but too common to defer.
+    if raw_kind == "save" and "save" in normalized:
+        normalized["save"] = _coerce_save_ability(normalized["save"])
+    if raw_kind == "check" and "check" in normalized:
+        normalized["check"] = _coerce_check_associated(normalized["check"])
+    if raw_kind == "enchant" and "effects" in normalized:
+        normalized["effects"] = _coerce_enchant_effect_riders(normalized["effects"])
+    # ``_id`` is the canonical Foundry identifier (Pydantic field name ``id``
+    # with alias ``_id``; populate_by_name=True). _normalize_activity_dict
+    # never renames ``_id`` and never produces ``id``, so a single setdefault
+    # on the alias suffices when Foundry omits the inline ``_id`` field
+    # (rare; the outer dict key carries the same value).
+    normalized.setdefault("_id", activity_id)
+    effective = _effective_activation(raw, item_activation)
+    if str(effective.get("type") or "").strip().lower() == "reaction":
+        activation_block = normalized.setdefault("activation", {})
+        if isinstance(activation_block, dict):
+            condition_text = str(effective.get("condition") or "")
+            activation_block["reaction_conditions"] = [
+                c.model_dump(mode="json") for c in reaction_conditions_from_text(condition_text)
+            ]
+    return cls.model_validate(normalized)  # type: ignore[return-value]
+
+
+def _translate_activities(system: dict[str, Any]) -> list[Activity]:
+    """Translate ``system.activities`` (Foundry's id-keyed dict) into a
+    deterministic ``list[Activity]`` preserving Foundry's source order.
+
+    Foundry's source YAML uses ordered mappings; PyYAML's ``safe_load``
+    preserves insertion order, so iterating ``activities.items()`` is the
+    canonical order. No sorting — see PR A spec §C (determinism: preserve
+    Foundry order; do not introduce alphabetical reordering)."""
+    activities_raw = system.get("activities") if isinstance(system, dict) else None
+    if not isinstance(activities_raw, dict):
+        return []
+    item_target = system.get("target") if isinstance(system, dict) else None
+    item_activation = system.get("activation") if isinstance(system, dict) else None
+    out: list[Activity] = []
+    for activity_id, raw in activities_raw.items():
+        if not isinstance(raw, dict):
+            continue
+        built = _build_activity(
+            str(activity_id),
+            raw,
+            item_target=item_target if isinstance(item_target, dict) else None,
+            item_activation=item_activation if isinstance(item_activation, dict) else None,
+        )
+        if built is None:
+            continue
+        out.append(built)
+    return out
+
+
+def _load_yaml(yaml_path: Path) -> dict[str, Any]:
+    return yaml.safe_load(yaml_path.read_text(encoding="utf-8"))
+
+
+_INDEX_PACK_REF_TYPE: dict[str, str] = {
+    "classes24": "feature",
+    "origins24": "feature",
+    "feats24": "feat",
+    "spells24": "spell",
+    "equipment24": "equipment",
+}
+
+# Feature-bearing packs hold non-feature docs (class/subclass/weapon under
+# classes24; species/background under origins24) alongside the ``type:feat``
+# docs that are the only ones emitted to ``canonical/features``. Restrict their
+# index to ``type:feat`` so a packed UUID in the index ⟺ an emitted SRD feature;
+# the other ref-type packs (feats24/spells24/equipment24) index all SRD docs.
+_FEATURE_PACKS: frozenset[str] = frozenset({"classes24", "origins24"})
+
+
+def _is_srd_doc(doc: dict[str, Any]) -> bool:
+    if doc.get("flags", {}).get("srd"):
+        return True
+    source = (doc.get("system") or {}).get("source") or {}
+    return (source.get("license") or "") == "CC-BY-4.0" and (source.get("rules") or "") in (
+        "2014",
+        "2024",
+    )
+
+
+def _index_pack(packs_root: Path, pack: str) -> dict[str, GrantRef]:
+    """``build_feature_index`` for one pack: the compendium UUID of each SRD
+    document in ``packs_root / pack`` → its canonical ref."""
+    index: dict[str, GrantRef] = {}
+    src = packs_root / pack
+    if not src.is_dir():
+        return index
+    ref_type = _INDEX_PACK_REF_TYPE[pack]
+    for yaml_path in sorted(src.rglob("*.yml")):
+        if yaml_path.name.startswith("_"):
+            continue
+        doc = _load_yaml(yaml_path)
+        if not isinstance(doc, dict) or not _is_srd_doc(doc):
+            continue
+        if pack in _FEATURE_PACKS and doc.get("type") != "feat":
+            continue
+        doc_id = str(doc.get("_id") or "")
+        if not doc_id:
+            continue
+        uuid = f"Compendium.dnd5e.{pack}.Item.{doc_id}"
+        slug = _feature_slug(doc, yaml_path) if pack in _FEATURE_PACKS else _slug(doc, yaml_path)
+        index[uuid] = GrantRef(ref_type=ref_type, slug=slug)
+    return index
+
+
+def build_feature_index(packs_root: Path) -> dict[str, GrantRef]:
+    index: dict[str, GrantRef] = {}
+    for pack in _INDEX_PACK_REF_TYPE:
+        index.update(_index_pack(packs_root, pack))
+    return index
+
+
+# Read once per pack: every background resolves its feat grant in ``feats24``.
+_cached_pack_index = functools.cache(_index_pack)
+
+
+@functools.cache
+def _foundry_pinned_sha() -> str:
+    """Foundry pack pinned SHA from PINS.json. Embedded in provenance URLs so
+    ``source_url`` stays stable as upstream evolves."""
+    pins_path = ROOT / "raw_sources" / "PINS.json"
+    pins = json.loads(pins_path.read_text(encoding="utf-8"))
+    return str(pins["foundry"]["commit"])
+
+
+def _provenance(yaml_path: Path, ingest_date: date, ingest_version: str) -> Provenance:
+    # Preserve the full path layout under `_source/` so nested pack dirs
+    # (items/weapon/, monsters/aberration/, …) appear in the provenance URL
+    # exactly as they do upstream.
+    parts = yaml_path.parts
+    try:
+        idx = parts.index("_source")
+        relative = "/".join(parts[idx + 1 :])
+    except ValueError:
+        relative = f"{yaml_path.parent.name}/{yaml_path.name}"
+    sha = _foundry_pinned_sha()
+    return Provenance(
+        source="foundry",
+        source_url=f"https://github.com/foundryvtt/dnd5e/blob/{sha}/packs/_source/{relative}",
+        ingest_date=ingest_date,
+        ingest_version=ingest_version,
+        srd_version=frozenset({"5.2"}),
+    )
+
+
+def _slug(doc: dict[str, Any], fallback: Path) -> str:
+    # Prefer system.identifier (a clean kebab slug in real Foundry items, e.g.
+    # "longsword"). Monsters lack a top-level identifier and their _id is a
+    # random 16-char mixed-case alphanumeric blob (e.g. "shhHtE7b92PefCWB") —
+    # in that case the clean SRD slug lives in the filename. Legacy fixture
+    # docs may use _id as a clean slug (e.g. "longsword", "chainShirt").
+    system = doc.get("system") or {}
+    identifier = system.get("identifier")
+    if identifier:
+        raw: str = str(identifier)
+    else:
+        _id = doc.get("_id")
+        if _id and _is_foundry_random_id(str(_id)):
+            raw = fallback.stem
+        else:
+            raw = str(_id) if _id else fallback.stem
+    # Split on camelCase boundaries before normalizing separators so legacy
+    # camelCase _ids (chainShirt → chain-shirt) kebab cleanly. Real
+    # identifiers are already kebab and pass through unchanged.
+    kebab = _CAMEL_BOUNDARY.sub("-", raw)
+    return kebab.lower().replace("_", "-").replace(" ", "-")
+
+
+# Foundry reuses a class-feature ``identifier`` across classes. Where the two
+# documents carry DIFFERENT mechanics, the later class's copy would overwrite
+# the earlier one in canonical/features/. Each entry scopes one class's copy;
+# the other class keeps the bare identifier, the slug consumers already use.
+_CLASS_SCOPED_FEATURE_SLUGS: dict[tuple[str, str], str] = {
+    ("unarmored-defense", "monk"): "unarmored-defense-monk",
+}
+
+
+def _feature_slug(doc: dict[str, Any], yaml_path: Path) -> str:
+    slug = _slug(doc, yaml_path)
+    parts = yaml_path.parts
+    if "classes24" not in parts:
+        return slug
+    owner = parts[parts.index("classes24") + 1]
+    return _CLASS_SCOPED_FEATURE_SLUGS.get((slug, owner), slug)
+
+
+def _is_foundry_random_id(value: str) -> bool:
+    # Foundry random IDs are exactly 16 alphanumeric characters with no
+    # separators (e.g. "shhHtE7b92PefCWB", "6oc29m5uzzzb0pk3"). Real SRD slugs
+    # at that length always contain a separator (e.g. "chain-shirt-of-thorns").
+    # Legacy fixture _ids like "longsword" (9) or "chainShirt" (10) are
+    # shorter than 16 and pass through.
+    return len(value) == 16 and value.isalnum()
+
+
+def _description(doc: dict[str, Any]) -> str:
+    raw = doc.get("system", {}).get("description", {}).get("value", "") or ""
+    return cleanup_prose(raw)
+
+
+def _weight(system: dict[str, Any]) -> float:
+    """Foundry weight is either a scalar (legacy/fixture) or
+    ``{value, units}`` dict (real pack). Units are always lb in SRD content."""
+    w = system.get("weight")
+    if isinstance(w, dict):
+        return float(w.get("value") or 0)
+    return float(w or 0)
+
+
+_DENOM_TO_GP = {"cp": 0.01, "sp": 0.1, "ep": 0.5, "gp": 1.0, "pp": 10.0}
+
+
+def _price_gp(system: dict[str, Any]) -> float | None:
+    """Convert Foundry price to gp, honoring denomination. Returns ``None`` when
+    no usable price ships (e.g. magic items without a listed cost)."""
+    price = system.get("price")
+    if price is None:
+        return None
+    if isinstance(price, dict):
+        value = price.get("value")
+        if value is None:
+            return None
+        denom = (price.get("denomination") or "gp").lower()
+        rate = _DENOM_TO_GP.get(denom, 1.0)
+        return float(value) * rate
+    # Legacy scalar fallback (fixture compatibility) — assumed gp.
+    return float(price)
+
+
+def _weapon_type_code(system: dict[str, Any]) -> str:
+    """Weapon category code lives at either ``system.weaponType`` (legacy/
+    fixture) or ``system.type.value`` (real pack)."""
+    if system.get("weaponType"):
+        return str(system["weaponType"])
+    t = system.get("type")
+    if isinstance(t, dict) and t.get("value"):
+        return str(t["value"])
+    return "simpleM"
+
+
+def _armor_category_code(system: dict[str, Any]) -> str:
+    """Armor category code lives at either ``system.armor.type`` (legacy/
+    fixture) or ``system.type.value`` (real pack)."""
+    armor = system.get("armor") or {}
+    if armor.get("type"):
+        return str(armor["type"])
+    t = system.get("type")
+    if isinstance(t, dict) and t.get("value"):
+        return str(t["value"])
+    return "light"
+
+
+def _damage_parts(damage: dict[str, Any]) -> list[DamagePart]:
+    """Damage parts. Foundry ships three observed shapes (per shape catalog):
+
+    1. Legacy/fixture: ``parts: [[dice, type], ...]``.
+    2. Real pack standard die: ``base: {number, denomination, types: [...], bonus}``.
+    3. Real pack bonus-only (e.g. blowgun): ``base: {number: null,
+       denomination: 0, bonus: "1", types: [...]}`` — flat damage, no roll.
+
+    Magic weapons with empty ``types`` (e.g. vicious-mace) defer their damage
+    type to the base weapon (looked up via ``system.type.baseItem``). The
+    caller's overall pipeline doesn't have cross-item resolution yet, so we
+    fall back to bludgeoning/slashing/piercing only when the slug is one of
+    the few SRD magic weapons we care about; otherwise the damage_parts list
+    stays empty and validation_report flags the gap.
+    """
+    raw_parts = damage.get("parts")
+    if raw_parts:
+        return [DamagePart(dice=dice, damage_type=dtype) for dice, dtype in raw_parts]
+    base = damage.get("base") or {}
+    number = base.get("number")
+    denom = base.get("denomination")
+    bonus_raw = base.get("bonus")
+    types = base.get("types") or []
+    if not types:
+        return []
+    dtype = str(types[0])
+    if number and denom:
+        dice = f"{number}d{denom}"
+        if bonus_raw not in (None, "", 0, "0"):
+            try:
+                bonus = int(bonus_raw)
+                if bonus:
+                    dice = f"{dice}{'+' if bonus > 0 else ''}{bonus}"
+            except (TypeError, ValueError):
+                pass
+        return [DamagePart(dice=dice, damage_type=dtype)]
+    # Bonus-only (blowgun): number/denom absent, bonus carries the flat damage.
+    if bonus_raw not in (None, "", 0, "0"):
+        try:
+            bonus = int(bonus_raw)
+            if bonus > 0:
+                return [DamagePart(dice=str(bonus), damage_type=dtype)]
+        except (TypeError, ValueError):
+            pass
+    return []
+
+
+#: SRD 5.2 weapons whose base damage Foundry ships only as a roll-data
+#: ``custom.formula`` (which ``_damage_parts`` cannot carry), with the SRD
+#: sentence that sets it. Unarmed Strike, Rules Glossary: "On a hit, the target
+#: takes Bludgeoning damage equal to 1 plus your Strength modifier." The engine
+#: adds the governing ability modifier to a weapon's first damage part, so the
+#: part is the flat 1; Foundry's ``@mod + @prof`` is not the SRD rule. A
+#: correction only fills an EMPTY part list: once a Foundry pin ships structured
+#: base damage, upstream wins and the entry goes inert.
+_WEAPON_BASE_DAMAGE_CORRECTIONS: dict[str, DamagePart] = {
+    "unarmed-strike": DamagePart(dice="1", damage_type="bludgeoning"),
+}
+
+
+def _weapon_base_damage_correction(slug: str) -> list[DamagePart]:
+    correction = _WEAPON_BASE_DAMAGE_CORRECTIONS.get(slug)
+    return [correction] if correction is not None else []
+
+
+def _versatile_damage_srd(slug: str, parts: list[DamagePart]) -> DamagePart | None:
+    """SRD fallback: when Foundry's ``versatile`` block is empty but the
+    weapon has the ``versatile`` property, look up the upgraded die from the
+    SRD table by base-weapon slug."""
+    dice = _SRD_VERSATILE_DICE.get(slug)
+    if dice is None:
+        return None
+    damage_type = parts[0].damage_type if parts else "slashing"
+    return DamagePart(dice=dice, damage_type=damage_type)
+
+
+def _versatile_damage(damage: dict[str, Any], parts: list[DamagePart]) -> DamagePart | None:
+    versatile = damage.get("versatile")
+    if isinstance(versatile, str) and versatile:
+        return DamagePart(
+            dice=versatile,
+            damage_type=parts[0].damage_type if parts else "slashing",
+        )
+    if isinstance(versatile, dict):
+        number = versatile.get("number")
+        denom = versatile.get("denomination")
+        if number and denom:
+            types = versatile.get("types") or []
+            damage_type = (
+                str(types[0]) if types else (parts[0].damage_type if parts else "slashing")
+            )
+            return DamagePart(dice=f"{number}d{denom}", damage_type=damage_type)
+    return None
+
+
+_ATTUNEMENT_DESC_RE = re.compile(
+    r"requires attunement\s*(by [^).]*)?",
+    re.IGNORECASE,
+)
+
+
+def _attunement(system: dict[str, Any]) -> tuple[bool, str | None]:
+    """Foundry's ``system.attunement`` is a BOOL-shaped flag ('required',
+    'optional', '') — it says whether attunement is needed, not by whom.
+
+    Some Foundry magic items leave ``attunement`` blank even when the SRD
+    description states "requires attunement" (e.g. arrow-catching-shield).
+    Fall back to parsing the description prose: if it contains the phrase
+    "requires attunement", flip the bool true and capture the optional
+    "by ..." constraint for ``attunement_constraint``.
+    """
+    raw = system.get("attunement")
+    raw_str = str(raw or "").strip().lower()
+    flag_required = raw_str not in {"", "none", "false"}
+
+    # Always probe the description — it's authoritative when Foundry's flag is
+    # blank, and it carries the "by ..." constraint phrase the flag never has.
+    desc_raw = (system.get("description") or {}).get("value") or ""
+    # Strip HTML before matching so tags don't split the phrase.
+    desc_plain = re.sub(r"<[^>]+>", " ", desc_raw)
+    match = _ATTUNEMENT_DESC_RE.search(desc_plain)
+    constraint: str | None = None
+    if match:
+        flag_required = True
+        captured = match.group(1)
+        if captured:
+            constraint = re.sub(r"\s+", " ", captured).strip().rstrip(".")
+    return flag_required, constraint
+
+
+def _passive_effects(doc: dict[str, Any]) -> list[PassiveEffect]:
+    """Translate Foundry's top-level ``effects[]`` into ``PassiveEffect``
+    entries. Foundry-side ActiveEffect docs carry passive modifiers (e.g.
+    Cloak of Protection's AC+1 / save+1, Gauntlets of Ogre Power's
+    Strength=19) as a ``changes[]`` array of key/mode/value triples.
+
+    Per-entry ``origin``, ``tint``, ``flags``, ``_stats``, ``img``,
+    ``sort``, ``type``, ``system`` etc. are Foundry bookkeeping that don't
+    carry SRD semantics — we drop them. ``_id`` and ``statuses`` are
+    preserved: the resolver keys condition application off the Foundry
+    status slug and needs a stable per-effect id. The surviving fields are
+    the ones a resolver needs to apply the effect.
+    """
+    raw_effects = doc.get("effects")
+    if not isinstance(raw_effects, list):
+        return []
+    out: list[PassiveEffect] = []
+    for entry in raw_effects:
+        if not isinstance(entry, dict):
+            continue
+        raw_changes = entry.get("changes") or []
+        changes: list[PassiveEffectChange] = []
+        if isinstance(raw_changes, list):
+            for ch in raw_changes:
+                if not isinstance(ch, dict):
+                    continue
+                key = ch.get("key")
+                if not key:
+                    continue
+                try:
+                    mode = int(ch.get("mode") or 0)
+                except (TypeError, ValueError):
+                    mode = 0
+                value = ch.get("value")
+                priority_raw = ch.get("priority")
+                try:
+                    priority = int(priority_raw) if priority_raw is not None else None
+                except (TypeError, ValueError):
+                    priority = None
+                changes.append(
+                    PassiveEffectChange(
+                        key=str(key),
+                        mode=mode,
+                        value="" if value is None else str(value),
+                        priority=priority,
+                    )
+                )
+        duration_raw = entry.get("duration")
+        duration: dict[str, Any] | None = None
+        if isinstance(duration_raw, dict):
+            # Drop nulls/empty strings so byte-stable JSON stays compact.
+            duration = {k: v for k, v in duration_raw.items() if v not in (None, "")}
+            if not duration:
+                duration = None
+        raw_statuses = entry.get("statuses")
+        statuses = [str(s) for s in raw_statuses] if isinstance(raw_statuses, list) else []
+        out.append(
+            PassiveEffect(
+                id=str(entry.get("_id") or ""),
+                name=str(entry.get("name") or ""),
+                description=str(entry.get("description") or ""),
+                changes=changes,
+                statuses=statuses,
+                duration=duration,
+                disabled=bool(entry.get("disabled") or False),
+                transfer=bool(entry.get("transfer") if "transfer" in entry else True),
+            )
+        )
+    return out
+
+
+def _activity_range_value(system: dict[str, Any]) -> int | None:
+    """Foundry hides reach-weapon range (10 ft for glaive/halberd/whip) in
+    the *activity's* range block, not at ``system.range``. Probe the first
+    weapon-attack activity's range and return ``value`` as int when present.
+    Returns None when the activity tree has no usable range value."""
+    activities = system.get("activities")
+    if not isinstance(activities, dict):
+        return None
+    for entry in activities.values():
+        if not isinstance(entry, dict):
+            continue
+        rng = entry.get("range")
+        if not isinstance(rng, dict):
+            continue
+        val = rng.get("value")
+        if val in (None, ""):
+            continue
+        try:
+            return int(val)
+        except (TypeError, ValueError):
+            continue
+    return None
+
+
+def _rarity(doc: dict[str, Any]) -> ItemRarity:
+    raw = doc.get("system", {}).get("rarity") or "common"
+    # Foundry uses camelCase ("veryRare"); enum is snake_case ("very_rare").
+    normalised = re.sub(r"(?<=[a-z])(?=[A-Z])", "_", raw).lower()
+    try:
+        return ItemRarity(normalised)
+    except ValueError:
+        return ItemRarity.COMMON
+
+
+def translate_weapon_yaml(
+    yaml_path: Path,
+    *,
+    ingest_date: date,
+    ingest_version: str,
+) -> Weapon:
+    doc = _load_yaml(yaml_path)
+    system = doc["system"]
+    damage = system.get("damage", {}) or {}
+    slug_str = _slug(doc, yaml_path)
+    parts = _damage_parts(damage) or _weapon_base_damage_correction(slug_str)
+    versatile_damage = _versatile_damage(damage, parts)
+    weapon_type = _WEAPON_TYPE_MAP.get(_weapon_type_code(system), "simple_melee")
+    raw_props = system.get("properties") or []
+    if isinstance(raw_props, dict):
+        # Newer Foundry sometimes uses {"ver": true, "fin": true, ...}
+        raw_props = [k for k, v in raw_props.items() if v]
+    props = frozenset(_WEAPON_PROPERTY_MAP[p] for p in raw_props if p in _WEAPON_PROPERTY_MAP)
+    # ``mgc`` is an item-level property, not a WeaponProperty member: read it
+    # straight off the raw list (it was silently filtered out before C22).
+    magical = "mgc" in raw_props
+    if versatile_damage is None and WeaponProperty.VERSATILE in props:
+        # Foundry didn't structurally encode the upgraded die — fall back to
+        # the SRD table.
+        base_item = (
+            ((system.get("type") or {}).get("baseItem"))
+            if isinstance(system.get("type"), dict)
+            else None
+        )
+        lookup_key = str(base_item or slug_str).lower()
+        versatile_damage = _versatile_damage_srd(lookup_key, parts)
+    range_doc = system.get("range") or {}
+    range_val = range_doc.get("value")
+    range_long = range_doc.get("long")
+    has_thrown = WeaponProperty.THROWN in props
+    # Foundry stashes non-default weapon range on the *activity's* range block
+    # rather than at ``system.range``. This covers two cases:
+    #   * Reach weapons (glaive, halberd, pike, lance, whip) — range.value=10
+    #   * Magic weapons that attack at extended range (dancing-rapier 30 ft,
+    #     longsword-of-sharpness 10 ft, hammer-of-thunderbolts 20 ft)
+    # Pull the activity range forward when system.range is missing so canonical
+    # preserves the structural value, regardless of which property triggered it.
+    if range_val is None or range_val == 0:
+        activity_val = _activity_range_value(system)
+        if activity_val is not None and activity_val > 5:
+            range_val = activity_val
+    if weapon_type.endswith("ranged") or (has_thrown and range_val is not None):
+        # Thrown melee weapons keep kind="melee" — semantically still melee
+        # weapons that *can* be thrown — but preserve their range value/long.
+        rng_kind = "ranged" if weapon_type.endswith("ranged") else "melee"
+        rng = Range(
+            kind=rng_kind,
+            value=range_val,
+            units=RangeUnits.FEET if range_val is not None else None,
+            long=range_long,
+        )
+    elif range_val is not None and range_val > 5:
+        # Melee reach weapon (no THROWN prop) — preserve range.value at melee kind.
+        rng = Range(
+            kind="melee",
+            value=range_val,
+            units=RangeUnits.FEET,
+            long=range_long,
+        )
+    else:
+        rng = Range(kind="melee")
+    requires_attunement, attunement_constraint = _attunement(system)
+    magical_bonus_raw = system.get("magicalBonus")
+    try:
+        magical_bonus = int(magical_bonus_raw or 0)
+    except (TypeError, ValueError):
+        magical_bonus = 0
+    # 2024 SRD weapon mastery — flat slug at ``system.mastery`` ("sap", "graze",
+    # "nick", …). Empty string (unarmed-strike, magic weapons) and absence both
+    # mean "no mastery" → None.
+    mastery_raw = system.get("mastery")
+    mastery = mastery_raw.strip() or None if isinstance(mastery_raw, str) else None
+    return Weapon(
+        slug=slug_str,
+        name=doc["name"],
+        description=_description(doc),
+        weight=_weight(system),
+        cost_gp=_price_gp(system),
+        rarity=_rarity(doc),
+        requires_attunement=requires_attunement,
+        attunement_constraint=attunement_constraint,
+        weapon_category=weapon_type,
+        damage_parts=parts,
+        versatile_damage=versatile_damage,
+        properties=props,
+        range=rng,
+        magical_bonus=max(0, magical_bonus),
+        magical=magical,
+        mastery=mastery,
+        uses=_item_uses(system),
+        activities=_apply_affects_corrections(slug_str, _translate_activities(system)),
+        passive_effects=_passive_effects(doc),
+        provenance=_provenance(yaml_path, ingest_date, ingest_version),
+        review=ReviewState(),
+    )
+
+
+def translate_armor_yaml(
+    yaml_path: Path,
+    *,
+    ingest_date: date,
+    ingest_version: str,
+) -> Armor:
+    doc = _load_yaml(yaml_path)
+    system = doc["system"]
+    armor = system.get("armor", {}) or {}
+    requires_attunement, attunement_constraint = _attunement(system)
+    armor_magical_bonus_raw = armor.get("magicalBonus")
+    try:
+        armor_magical_bonus = int(armor_magical_bonus_raw or 0)
+    except (TypeError, ValueError):
+        armor_magical_bonus = 0
+    armor_props = system.get("properties") or []
+    if isinstance(armor_props, dict):
+        armor_props = [k for k, v in armor_props.items() if v]
+    armor_magical = "mgc" in armor_props
+    return Armor(
+        slug=_slug(doc, yaml_path),
+        name=doc["name"],
+        description=_description(doc),
+        weight=_weight(system),
+        cost_gp=_price_gp(system),
+        rarity=_rarity(doc),
+        requires_attunement=requires_attunement,
+        attunement_constraint=attunement_constraint,
+        armor_category=_ARMOR_TYPE_MAP.get(_armor_category_code(system), ArmorCategory.LIGHT),
+        base_ac=int(armor.get("value") or 10),
+        dex_bonus_max=armor.get("dex"),
+        # Foundry ships stealth disadvantage as a tagged entry in
+        # ``system.properties`` (e.g. ``properties: [stealthDisadvantage]``)
+        # for the 2014 SRD pack. Legacy fixtures use the boolean
+        # ``system.stealth``. Accept either signal.
+        stealth_disadvantage=(
+            "stealthDisadvantage" in (system.get("properties") or []) or bool(system.get("stealth"))
+        ),
+        strength_min=system.get("strength"),
+        magical_bonus=max(0, armor_magical_bonus),
+        magical=armor_magical,
+        uses=_item_uses(system),
+        activities=_translate_activities(system),
+        passive_effects=_passive_effects(doc),
+        provenance=_provenance(yaml_path, ingest_date, ingest_version),
+        review=ReviewState(),
+    )
+
+
+_SIZE_MAP = {
+    "tiny": CreatureSize.TINY,
+    "sm": CreatureSize.SMALL,
+    "med": CreatureSize.MEDIUM,
+    "lg": CreatureSize.LARGE,
+    "huge": CreatureSize.HUGE,
+    "grg": CreatureSize.GARGANTUAN,
+}
+
+_SKILL_KEY_MAP = {
+    "acr": "acrobatics",
+    "ani": "animal_handling",
+    "arc": "arcana",
+    "ath": "athletics",
+    "dec": "deception",
+    "his": "history",
+    "ins": "insight",
+    "itm": "intimidation",
+    "inv": "investigation",
+    "med": "medicine",
+    "nat": "nature",
+    "prc": "perception",
+    "prf": "performance",
+    "per": "persuasion",
+    "rel": "religion",
+    "slt": "sleight_of_hand",
+    "ste": "stealth",
+    "sur": "survival",
+}
+
+# Each skill's governing ability (5e SRD). Used to compute the bonus from
+# Foundry's rank (0/1/2) since Foundry doesn't ship the final modifier.
+_SKILL_ABILITY = {
+    "acr": "dex",
+    "ani": "wis",
+    "arc": "int",
+    "ath": "str",
+    "dec": "cha",
+    "his": "int",
+    "ins": "wis",
+    "itm": "cha",
+    "inv": "int",
+    "med": "wis",
+    "nat": "int",
+    "prc": "wis",
+    "prf": "cha",
+    "per": "cha",
+    "rel": "int",
+    "slt": "dex",
+    "ste": "dex",
+    "sur": "wis",
+}
+
+
+def _ability_mod(score: int) -> int:
+    return (score - 10) // 2
+
+
+# SRD 5.2 spellcasting is always Intelligence, Wisdom, Charisma, or (rarely —
+# Sea Hag, Stone Golem) Constitution. Foundry's top-level
+# ``system.attributes.spellcasting`` NPC field is a UI dropdown left at an
+# unfilled placeholder ("str", occasionally "dex", or "") for the large
+# majority of non-spellcasting monsters rather than left blank — e.g. the
+# Zombie (CON 16, no spells) carries ``spellcasting: str`` — so it is only a
+# fallback signal, never the primary one. The primary signal is each cast
+# activity's own ``spell.ability`` (Ghost/Sprite/Doppelganger/Imp carry the
+# real ability there — cha — while their top-level field is the "str"
+# placeholder; Cloaker's is wis with an empty top-level field). We only ever
+# emit a value for monsters with at least one ``cast``-kind activity;
+# everyone else gets ``None``. One residual: Mummy Lord's spellcasting
+# ability is stated only in its trait prose, not in any structured field
+# (top-level "str" placeholder, every cast activity's ability is empty) — it
+# resolves to ``None`` (tracked in BACKLOG.md as upstream data debt).
+_VALID_SPELLCASTING_ABILITIES = {"int", "wis", "cha", "con"}
+
+
+def _cast_activities(actions: Iterable[MonsterAction]) -> list[CastActivity]:
+    return [
+        activity
+        for action in actions
+        for activity in action.activities
+        if isinstance(activity, CastActivity)
+    ]
+
+
+def _spellcasting_ability(
+    attrs: dict[str, Any],
+    actions: list[MonsterAction],
+    legendary_actions: list[MonsterAction],
+    special_abilities: list[MonsterAction],
+) -> str | None:
+    cast_activities = [
+        *_cast_activities(actions),
+        *_cast_activities(legendary_actions),
+        *_cast_activities(special_abilities),
+    ]
+    if not cast_activities:
+        return None
+    counts: dict[str, int] = {}
+    first_seen: list[str] = []
+    for activity in cast_activities:
+        ability = activity.spell.ability
+        if ability not in _VALID_SPELLCASTING_ABILITIES:
+            continue
+        if ability not in counts:
+            counts[ability] = 0
+            first_seen.append(ability)
+        counts[ability] += 1
+    if first_seen:
+        # `max` returns the first item achieving the max when iterating a
+        # list, so ties resolve to first occurrence in `first_seen` order.
+        return max(first_seen, key=lambda ability: counts[ability])
+    top_level = attrs.get("spellcasting")
+    return top_level if top_level in _VALID_SPELLCASTING_ABILITIES else None
+
+
+def _resource_max(system: dict[str, Any], key: str) -> int | None:
+    """``system.resources.<key>.max`` as a positive int, else ``None``.
+
+    Foundry types the SRD 5.2 legendary pools here — ``legres`` (Legendary
+    Resistance N/Day) and ``legact`` (Legendary Action Uses) — and ships 0 on
+    every NPC without one; 0 maps to ``None`` ("no pool")."""
+    entry = (system.get("resources") or {}).get(key) or {}
+    try:
+        value = int(entry.get("max") or 0)
+    except (TypeError, ValueError):
+        return None
+    return value if value > 0 else None
+
+
+def _sense_value(raw: Any) -> int | None:
+    """Foundry ships 0 for senses the creature lacks. Schema uses None as
+    'unavailable'; 0 would falsely say 'has the sense with range 0 ft'."""
+    if raw is None:
+        return None
+    try:
+        val = int(raw)
+    except (TypeError, ValueError):
+        return None
+    return val if val > 0 else None
+
+
+_LANGUAGE_SLUG_EXPAND = {
+    "deep": "Deep Speech",
+    "cant": "Thieves' Cant",
+    "druidic": "Druidic",
+    "undercommon": "Undercommon",
+    "abyssal": "Abyssal",
+    "celestial": "Celestial",
+    "common": "Common",
+    "draconic": "Draconic",
+    "dwarvish": "Dwarvish",
+    "elvish": "Elvish",
+    "giant": "Giant",
+    "gnomish": "Gnomish",
+    "goblin": "Goblin",
+    "halfling": "Halfling",
+    "infernal": "Infernal",
+    "orc": "Orc",
+    "primordial": "Primordial",
+    "sylvan": "Sylvan",
+    "auran": "Auran",
+    "aquan": "Aquan",
+    "ignan": "Ignan",
+    "terran": "Terran",
+}
+
+
+def _languages(traits: dict[str, Any]) -> list[str]:
+    """Foundry languages ship as a nested dict::
+
+        languages:
+          value: ["abyssal"]            # structured slug list
+          custom: ""                     # free text overrides / extras
+          communication:
+            telepathy: {value: 120, units: ft}
+
+    All three sources flow into canonical ``languages: list[str]``. Short
+    slugs in ``value`` expand to full SRD names (``deep`` → ``Deep Speech``).
+    Telepathy renders as ``"telepathy 120 ft."`` (matches the SRD wording
+    5e-bits ships). The literal ``"custom"`` sentinel that some packs leak
+    into ``value`` is filtered.
+    """
+    raw = traits.get("languages")
+    if raw is None:
+        return []
+    if isinstance(raw, dict):
+        out: list[str] = []
+        value = raw.get("value")
+        if isinstance(value, list):
+            for v in value:
+                s = str(v).strip()
+                if not s or s == "custom":
+                    continue
+                out.append(_LANGUAGE_SLUG_EXPAND.get(s.lower(), s))
+        custom = raw.get("custom")
+        if custom and isinstance(custom, str) and custom.strip():
+            # Split on common separators so combined ``"Giant Eagle; Common..."``
+            # custom blobs surface as discrete language entries (matches the
+            # 5e-bits per-language list shape).
+            for chunk in re.split(r"[;,]\s*", custom.strip()):
+                chunk = chunk.strip()
+                if chunk:
+                    out.append(chunk)
+        communication = raw.get("communication") or {}
+        telepathy = communication.get("telepathy") or {}
+        if isinstance(telepathy, dict):
+            tval = telepathy.get("value")
+            units = telepathy.get("units") or "ft"
+            if tval:
+                out.append(f"telepathy {tval} {units}.")
+        return out
+    if isinstance(raw, list):
+        return [str(v) for v in raw if v and str(v) != "custom"]
+    return []
+
+
+def _trait_list(traits: dict[str, Any], key: str) -> list[str]:
+    """Foundry traits ship as either bare lists (legacy fixture) or
+    ``{value: [...], bypasses: [...], custom: ...}`` dicts (real pack). The
+    canonical layer wants the actual type strings — read ``.value`` when the
+    shape is a dict, never the dict keys."""
+    raw = traits.get(key)
+    if raw is None:
+        return []
+    if isinstance(raw, dict):
+        value = raw.get("value") or []
+        return [str(v) for v in value]
+    if isinstance(raw, list):
+        return [str(v) for v in raw]
+    return []
+
+
+#: Foundry ``CONFIG.DND5E.armorClasses`` base for the ``mage`` calculation
+#: ("13 + @abilities.dex.mod"): SRD 5.2 Mage Armor, "the target's base AC
+#: becomes 13 plus its Dexterity modifier".
+_MAGE_ARMOR_BASE_AC = 13
+#: The effect key and Foundry ``CONST.ACTIVE_EFFECT_MODES.OVERRIDE`` mode that
+#: replace an actor's AC calculation.
+_AC_CALC_KEY = "system.attributes.ac.calc"
+_EFFECT_MODE_OVERRIDE = 5
+_BODY_ARMOR_TYPES = frozenset({"light", "medium", "heavy"})
+#: SRD 5.2 Medium Armor: "Dex modifier (max 2)" — used when an item omits its cap.
+_MEDIUM_ARMOR_DEX_CAP = 2
+
+
+def _dex_mod(abilities: dict[str, Any]) -> int:
+    return _ability_mod(int((abilities.get("dex") or {}).get("value") or 10))
+
+
+def _first_equipped(items: list[dict[str, Any]], types: frozenset[str]) -> dict[str, Any] | None:
+    """The first equipped equipment item of one of ``types``. SRD 5.2: "A
+    creature can wear only one suit of armor at a time and wield only one Shield
+    at a time"; Foundry's ``prepareArmorClass`` likewise reads ``armors[0]`` and
+    ``shields[0]``."""
+    for item in items:
+        system = item.get("system") or {}
+        kind = (system.get("type") or {}).get("value")
+        if item.get("type") == "equipment" and system.get("equipped") and kind in types:
+            return system
+    return None
+
+
+def _default_ac(abilities: dict[str, Any], items: list[dict[str, Any]]) -> int:
+    """Foundry's ``calc: default`` Armor Class ("@attributes.ac.armor +
+    @attributes.ac.dex"): 10 + the DEX modifier without body armor ("Without
+    armor or a shield, your base Armor Class is 10 plus your Dexterity
+    modifier"); with it, the armor's ``armor.value`` plus the DEX modifier
+    (Light), the modifier capped by the item's ``armor.dex`` (Medium: "Dex
+    modifier (max 2)") or nothing (Heavy); plus an equipped Shield's
+    ``armor.value`` ("+2")."""
+    dex = _dex_mod(abilities)
+    armor = _first_equipped(items, _BODY_ARMOR_TYPES)
+    if armor is None:
+        base = 10 + dex
+    else:
+        value = int((armor.get("armor") or {}).get("value") or 0)
+        kind = (armor.get("type") or {}).get("value")
+        if kind == "light":
+            base = value + dex
+        elif kind == "medium":
+            cap = (armor.get("armor") or {}).get("dex")
+            base = value + min(dex, _MEDIUM_ARMOR_DEX_CAP if cap is None else int(cap))
+        else:
+            base = value
+    shield = _first_equipped(items, frozenset({"shield"}))
+    return base + (int((shield.get("armor") or {}).get("value") or 0) if shield else 0)
+
+
+def _with_actor_ac_calc(ac_doc: dict[str, Any], effects: list[dict[str, Any]]) -> dict[str, Any]:
+    """The actor's AC block after its own enabled effects that override the AC
+    calculation: Foundry applies an actor's effects before it prepares AC, so
+    the SRD 5.2 Mage's Mage Armor effect (``calc`` → ``mage``) gives its
+    "Armor Class: 15". Foundry applies every change in ascending priority (an
+    unset one defaults to its mode × 10), in order within a priority, so of
+    several overrides the last one applied wins."""
+    overrides = [
+        change
+        for effect in effects
+        if not effect.get("disabled")
+        for change in effect.get("changes") or []
+        if change.get("key") == _AC_CALC_KEY and change.get("mode") == _EFFECT_MODE_OVERRIDE
+    ]
+    if not overrides:
+        return ac_doc
+    applied = sorted(overrides, key=_change_priority)
+    return {**ac_doc, "calc": applied[-1].get("value")}
+
+
+def _change_priority(change: dict[str, Any]) -> int:
+    """Foundry's application priority for one effect change: its own
+    ``priority``, else its mode × 10."""
+    priority = change.get("priority")
+    return int(priority) if priority is not None else int(change.get("mode") or 0) * 10
+
+
+def _monster_ac(
+    ac_doc: dict[str, Any], *, abilities: dict[str, Any], items: list[dict[str, Any]]
+) -> int | None:
+    """The monster's Armor Class: Foundry's flat value (``flat`` / ``natural``)
+    or an integer ``formula`` when it ships one; otherwise derived from the
+    calculation Foundry would run — ``default`` (armor and DEX, see
+    ``_default_ac``) or ``mage`` (13 + DEX). ``None`` for any other
+    calculation, rather than a guessed 10."""
+    flat = ac_doc.get("flat")
+    if isinstance(flat, int) and flat > 0:
+        return flat
+    formula = ac_doc.get("formula")
+    if isinstance(formula, str) and formula.strip():
+        try:
+            parsed = int(formula.strip())
+        except ValueError:
+            return None
+        if parsed > 0:
+            return parsed
+    calc = ac_doc.get("calc")
+    if calc == "default":
+        return _default_ac(abilities, items)
+    if calc == "mage":
+        return _MAGE_ARMOR_BASE_AC + _dex_mod(abilities)
+    return None
+
+
+def _proficiency_bonus(attrs: dict[str, Any], cr: float) -> int:
+    """SRD proficiency bonus scales with CR: +2 (CR 0-4), +3 (5-8), +4 (9-12),
+    +5 (13-16), +6 (17-20), +7 (21-24), +8 (25-28), +9 (29-30)."""
+    prof = attrs.get("prof")
+    if isinstance(prof, int) and prof > 0:
+        return prof
+    cr_ceil = math.ceil(max(cr, 0))
+    return 2 + max(0, (cr_ceil - 1) // 4)
+
+
+_ACTIVATION_TYPE_TO_KIND: dict[str, MonsterActionKind] = {
+    "action": MonsterActionKind.ACTION,
+    "bonus": MonsterActionKind.BONUS_ACTION,
+    "reaction": MonsterActionKind.REACTION,
+    "legendary": MonsterActionKind.LEGENDARY,
+    "lair": MonsterActionKind.LAIR,
+    "regional": MonsterActionKind.REGIONAL,
+    "special": MonsterActionKind.SPECIAL,
+    # Crew, mythic, and other niche signals fall through to SPECIAL via the
+    # heuristic on the caller side.
+}
+
+
+def _slug_from_name(name: str) -> str:
+    kebab = _CAMEL_BOUNDARY.sub("-", name)
+    cleaned = re.sub(r"[^A-Za-z0-9]+", "-", kebab).strip("-")
+    return cleaned.lower()
+
+
+def _first_activation(activities: Any) -> dict[str, Any] | None:
+    """Foundry stores activities as a dict keyed by activity id. The activation
+    signal (action/bonus/reaction/legendary/lair) lives on the first entry's
+    ``activation`` block. Returns the activation dict or ``None`` for passive
+    traits whose ``activities`` is an empty dict."""
+    if not isinstance(activities, dict) or not activities:
+        return None
+    for entry in activities.values():
+        if isinstance(entry, dict):
+            activation = entry.get("activation")
+            if isinstance(activation, dict):
+                return activation
+    return None
+
+
+def _recharge_formula(uses: dict[str, Any]) -> str | None:
+    """Foundry encodes recharge as a recovery entry with ``period == 'recharge'``
+    and ``formula`` carrying the threshold (e.g. ``'5'`` → recharge on 5-6).
+    Surface the formula as ``"5-6"`` / ``"6"`` so consumers don't reinvent the
+    SRD shorthand."""
+    recovery = uses.get("recovery")
+    if not isinstance(recovery, list):
+        return None
+    for entry in recovery:
+        if not isinstance(entry, dict):
+            continue
+        if entry.get("period") != "recharge":
+            continue
+        # Foundry's ``UsesField.prepareData``: ``recovery.formula ??= "6"`` —
+        # a recharge entry with no formula recharges on a 6.
+        raw_formula = entry.get("formula")
+        formula = "6" if raw_formula is None else str(raw_formula).strip()
+        if not formula:
+            continue
+        try:
+            low = int(formula)
+        except ValueError:
+            return formula
+        return f"{low}-6" if low < 6 else "6"
+    return None
+
+
+def _daily_uses_max(uses: dict[str, Any]) -> int | None:
+    """Foundry encodes per-day usage caps as ``system.uses.max`` (string int,
+    e.g. ``"3"``) with a recovery entry ``{period: "day", type: "recoverAll"}``.
+    Surface the cap as an int so downstream consumers can rate-limit. Returns
+    None when the item isn't day-limited."""
+    recovery = uses.get("recovery")
+    if not isinstance(recovery, list):
+        return None
+    if not any(isinstance(e, dict) and e.get("period") == "day" for e in recovery):
+        return None
+    raw_max = uses.get("max")
+    if raw_max in (None, ""):
+        return None
+    try:
+        value = int(str(raw_max).strip())
+    except (TypeError, ValueError):
+        return None
+    return value if value > 0 else None
+
+
+def _resolve_monster_activities(system: dict[str, Any]) -> list[Activity]:
+    """Translate an embedded monster item's ``system.activities`` and resolve
+    weapon base damage inline.
+
+    2024 ``actors24`` weapon items keep their attack damage at
+    ``system.damage.base`` and the attack activity defers to it via
+    ``damage.includeBase: true``. The 2014 UUID-reference deferral no longer
+    applies — the base damage is local — so we fold the resolved
+    ``system.damage.base`` into the attack activity's ``parts`` to produce a
+    self-contained canonical activity.
+
+    An attack may carry BOTH base weapon damage and rider parts (e.g. Wight's
+    Necrotic Sword: slashing base + necrotic rider). ``includeBase`` is the
+    sole trigger for base injection — it is not gated on ``parts`` being empty —
+    so the base part is preserved alongside any riders. Ordering is
+    deterministic: base first, then the activity's existing rider parts."""
+    activities = _translate_activities(system)
+    base = (system.get("damage") or {}).get("base")
+    if not isinstance(base, dict):
+        return activities
+    resolved_part = DamagePartBlock(
+        number=base.get("number"),
+        denomination=base.get("denomination"),
+        bonus=str(base.get("bonus") or ""),
+        types=list(base.get("types") or []),
+    )
+    out: list[Activity] = []
+    for activity in activities:
+        if isinstance(activity, AttackActivity) and activity.damage.include_base:
+            merged_parts = [resolved_part, *activity.damage.parts]
+            new_damage = activity.damage.model_copy(update={"parts": merged_parts})
+            activity = activity.model_copy(update={"damage": new_damage})
+        out.append(activity)
+    return out
+
+
+#: Embedded-trait ``system.identifier`` → typed mechanic. Rows quote the SRD
+#: 5.2 trait text (identical across every carrier; ``[[lookup @name]]`` is
+#: the creature's name). Names not listed keep ``mechanic=None`` (prose).
+_TRAIT_MECHANICS: dict[str, MonsterTraitMechanic] = {
+    # "has Advantage on saving throws against spells and other magical effects."
+    "magic-resistance": MonsterTraitMechanic.MAGIC_RESISTANCE,
+    # "If the <monster> fails a saving throw, it can choose to succeed instead …"
+    "legendary-resistance": MonsterTraitMechanic.LEGENDARY_RESISTANCE,
+    # "can breathe air and water."
+    "amphibious": MonsterTraitMechanic.AMPHIBIOUS,
+    # "has Advantage on an attack roll against a creature if at least one of
+    # the <monster>'s allies is within 5 feet of the creature and the ally
+    # doesn't have the Incapacitated condition."
+    "pack-tactics": MonsterTraitMechanic.PACK_TACTICS,
+    # "can climb difficult surfaces, including along ceilings, without needing
+    # to make an ability check."
+    "spider-climb": MonsterTraitMechanic.SPIDER_CLIMB,
+    # "can breathe only underwater." / "can breathe underwater."
+    "water-breathing": MonsterTraitMechanic.WATER_BREATHING,
+    # "The swarm can occupy another creature's space and vice versa …"
+    "swarm": MonsterTraitMechanic.SWARM,
+    # "If the <monster> dies outside the Nine Hells, its body dissolves … a new
+    # body in 1d10 days" — one mechanic, several plane-flavoured names.
+    "diabolical-restoration": MonsterTraitMechanic.RESTORATION,
+    "demonic-restoration": MonsterTraitMechanic.RESTORATION,
+    "celestial-restoration": MonsterTraitMechanic.RESTORATION,
+    "eldritch-restoration": MonsterTraitMechanic.RESTORATION,
+    "elemental-restoration": MonsterTraitMechanic.RESTORATION,
+    "exalted-restoration": MonsterTraitMechanic.RESTORATION,
+    "fiendish-restoration": MonsterTraitMechanic.RESTORATION,
+    "hellish-restoration": MonsterTraitMechanic.RESTORATION,
+    "undead-restoration": MonsterTraitMechanic.RESTORATION,
+    # "doesn't provoke an Opportunity Attack when it flies out of an enemy's reach."
+    "flyby": MonsterTraitMechanic.FLYBY,
+    # "can hold its breath for a period (minutes or hours)."
+    "hold-breath": MonsterTraitMechanic.HOLD_BREATH,
+    # "While in sunlight, the <monster> has Disadvantage on ability checks and attack rolls."
+    "sunlight-sensitivity": MonsterTraitMechanic.SUNLIGHT_SENSITIVITY,
+    # "If damage reduces the <monster> to 0 Hit Points, it makes a Constitution
+    # saving throw (DC 5 plus the damage taken) unless the damage is Radiant or
+    # from a Critical Hit. On a successful save, the <monster> drops to 1 Hit Point instead."
+    "undead-fortitude": MonsterTraitMechanic.UNDEAD_FORTITUDE,
+    # "regains N Hit Points at the start of each of its turns …"
+    "regeneration": MonsterTraitMechanic.REGENERATION,
+    # "can move through other creatures and objects as if they were Difficult Terrain …"
+    "incorporeal-movement": MonsterTraitMechanic.INCORPOREAL_MOVEMENT,
+}
+
+# ``[[lookup @name lowercase]]{monster}`` — Foundry's name enricher. Monster
+# action prose keeps the token (the engine's multiattack join tolerates it);
+# the de-duplicated ``traits/`` entries have no owning creature, so the label
+# text is substituted there.
+_LOOKUP_ENRICHER = re.compile(r"\[\[lookup[^\]]*\]\]\{([^}]*)\}")
+
+
+def substitute_lookup_labels(text: str) -> str:
+    return _LOOKUP_ENRICHER.sub(r"\1", text)
+
+
+# A bare Foundry item enricher ``[[/item .<id>]]`` NOT followed by ``{Label}``.
+_BARE_ITEM_TOKEN = re.compile(r"\[\[/item \.(?P<id>[A-Za-z0-9]+)\]\](?!\{)")
+
+
+def _label_bare_item_tokens(description: str, item_names: Mapping[str, str]) -> str:
+    """Rewrite ``[[/item .<id>]]`` → ``[[/item .<id>]]{<name>}`` when ``<id>``
+    is a sibling item of the same actor. Applied corpus-wide: it labels every
+    bare sibling token in every embedded item description across the corpus
+    (139 monster/trait files), not just the five monsters that motivated it.
+    Five SRD 5.2 monsters (bandit-captain, doppelganger, chain-devil, scout,
+    ettin) reference their attacks by opaque key with no label and were the
+    motivating cases; the engine's multiattack join reads the label (see
+    ``dnd5e_engine/activities/monster_actions.py``). Unknown ids pass through."""
+
+    def _sub(match: re.Match[str]) -> str:
+        name = item_names.get(match.group("id"))
+        return f"{match.group(0)}{{{name}}}" if name else match.group(0)
+
+    return _BARE_ITEM_TOKEN.sub(_sub, description)
+
+
+def _build_monster_action(
+    item: dict[str, Any], *, item_names: Mapping[str, str] | None = None
+) -> tuple[MonsterAction, MonsterActionKind]:
+    """Translate one embedded item document into a ``MonsterAction``. Returns
+    the action plus its resolved kind so the caller can bucket it."""
+    name = str(item.get("name") or "Unnamed")
+    system = item.get("system") or {}
+    activation = _first_activation(system.get("activities")) or {}
+    raw_type = str(activation.get("type") or "").strip().lower()
+    kind = _ACTIVATION_TYPE_TO_KIND.get(raw_type, MonsterActionKind.SPECIAL)
+    raw_description = ((system.get("description") or {}).get("value")) or ""
+    if item_names:
+        raw_description = _label_bare_item_tokens(str(raw_description), item_names)
+    description = cleanup_prose(raw_description)
+    identifier = system.get("identifier") or _slug_from_name(name)
+    uses = system.get("uses") or {}
+    recharge = _recharge_formula(uses)
+    uses_per_day = _daily_uses_max(uses)
+    legendary_cost: int | None = None
+    if kind is MonsterActionKind.LEGENDARY:
+        cost_raw = activation.get("value")
+        try:
+            cost_int = int(cost_raw) if cost_raw not in (None, "") else 1
+        except (TypeError, ValueError):
+            cost_int = 1
+        legendary_cost = max(1, cost_int)
+    mechanic = _TRAIT_MECHANICS.get(str(identifier)) if kind is MonsterActionKind.SPECIAL else None
+    action = MonsterAction(
+        slug=str(identifier),
+        name=name,
+        kind=kind,
+        description=description,
+        activities=_resolve_monster_activities(system),
+        recharge=recharge,
+        uses_per_day=uses_per_day,
+        legendary_cost=legendary_cost,
+        mechanic=mechanic,
+    )
+    return action, kind
+
+
+@dataclass(frozen=True)
+class _ActionCorrection:
+    """The SRD 5.2 values a monster action's pinned Foundry data gets wrong:
+    its recharge, and its area activity's template and affected creatures."""
+
+    recharge: str | None = None
+    template_type: str | None = None
+    template_size: str | None = None
+    affects_type: str | None = None
+
+
+# SRD 5.2 corrections for monster area actions whose pinned Foundry data
+# disagrees with the SRD 5.2 stat block (quoted per row from the SRD 5.2
+# creature text). Keyed by ``(monster slug, action slug)``; the pins live in
+# ``tests/test_area_targeting_corrections.py``.
+_MONSTER_ACTION_CORRECTIONS: dict[tuple[str, str], _ActionCorrection] = {
+    # "Lightning Breath (Recharge 5–6). ... each creature in a 90-foot-long,
+    # 5-foot-wide Line."
+    ("adult-blue-dragon", "lightning-breath"): _ActionCorrection(recharge="5-6"),
+    # "Acid Breath (Recharge 5–6). ... each creature in an 60-foot-long,
+    # 5-foot-wide Line."
+    ("adult-copper-dragon", "acid-breath"): _ActionCorrection(recharge="5-6", template_size="60"),
+    # "Acid Breath (Recharge 5–6). ... each creature in an 90-foot-long,
+    # 10-foot-wide Line."
+    ("ancient-copper-dragon", "acid-breath"): _ActionCorrection(recharge="5-6"),
+    # "Fire Breath (Recharge 5–6). ... each creature in a 90-foot Cone."
+    ("ancient-gold-dragon", "fire-breath"): _ActionCorrection(
+        recharge="5-6", template_type="cone", template_size="90"
+    ),
+    # "Poison Breath (Recharge 5–6). ... each creature in a 90-foot Cone."
+    ("ancient-green-dragon", "poison-breath"): _ActionCorrection(
+        recharge="5-6", template_size="90", affects_type="creature"
+    ),
+    # "Fire Breath (Recharge 5–6). ... each creature in a 30-foot Cone."
+    ("young-red-dragon", "fire-breath"): _ActionCorrection(recharge="5-6"),
+    # "Fire Breath (Recharge 5–6). ... each creature in a 60-foot Cone."
+    ("adult-gold-dragon", "fire-breath"): _ActionCorrection(
+        template_type="cone", template_size="60"
+    ),
+    # "Fire Breath (Recharge 5–6). ... each creature in a 15-foot Cone."
+    ("gold-dragon-wyrmling", "fire-breath"): _ActionCorrection(template_type="cone"),
+    # "Fire Breath (Recharge 6). ... each creature in a 15-foot Cone."
+    ("magma-mephit", "fire-breath"): _ActionCorrection(template_type="cone"),
+    # "Poison Breath (Recharge 5–6). ... each creature in a 60-foot Cone."
+    ("adult-green-dragon", "poison-breath"): _ActionCorrection(affects_type="creature"),
+    # "Poison Breath (Recharge 5–6). ... each creature in a 15-foot Cone."
+    ("green-dragon-wyrmling", "poison-breath"): _ActionCorrection(affects_type="creature"),
+    # "Poison Breath (Recharge 5–6). ... each creature in a 30-foot Cone."
+    ("young-green-dragon", "poison-breath"): _ActionCorrection(affects_type="creature"),
+    # "Poison Breath (Recharge 6). ... each creature in a 60-foot Cone."
+    ("iron-golem", "poison-breath"): _ActionCorrection(affects_type="creature"),
+    # "Trampling Charge (Recharge 5–6)." Foundry's recharge carries no formula,
+    # which its default reads as a 6.
+    ("centaur-trooper", "trampling-charge"): _ActionCorrection(recharge="5-6"),
+    # "Thunderous Bellow (Recharge 5–6). ... each creature and each object
+    # that isn't being worn or carried in a 150-foot Cone."
+    ("tarrasque", "thunderous-bellow"): _ActionCorrection(recharge="5-6"),
+}
+
+
+def _apply_monster_action_corrections(
+    monster_slug: str, actions: list[MonsterAction]
+) -> list[MonsterAction]:
+    """Apply ``_MONSTER_ACTION_CORRECTIONS``: the recharge on the action, the
+    template and affected creatures on its templated activities. Copy-on-write."""
+    out: list[MonsterAction] = []
+    for action in actions:
+        fix = _MONSTER_ACTION_CORRECTIONS.get((monster_slug, action.slug))
+        if fix is None:
+            out.append(action)
+            continue
+        template_update = {
+            k: v for k, v in (("type", fix.template_type), ("size", fix.template_size)) if v
+        }
+        if fix.template_type == "cone":
+            # A Cone has no width; the Line it replaces did.
+            template_update["width"] = ""
+        activities: list[Activity] = []
+        for act in action.activities:
+            if act.target.template.type:
+                target = act.target.model_copy(
+                    update={
+                        "template": act.target.template.model_copy(update=template_update),
+                        "affects": act.target.affects.model_copy(
+                            update={"type": fix.affects_type} if fix.affects_type else {}
+                        ),
+                    }
+                )
+                act = act.model_copy(update={"target": target})
+            activities.append(act)
+        update: dict[str, Any] = {"activities": activities}
+        if fix.recharge:
+            update["recharge"] = fix.recharge
+        out.append(action.model_copy(update=update))
+    return out
+
+
+def _monster_actions(
+    doc: dict[str, Any],
+) -> tuple[list[MonsterAction], list[MonsterAction], list[MonsterAction], list[MonsterAction]]:
+    """Partition a monster's embedded ``items[]`` into the four canonical
+    action buckets. Foundry NPC packs store actions/traits/legendary actions
+    as sub-documents in a top-level ``items`` array; each carries a
+    ``system.activities.<key>.activation.type`` signal that maps to the SRD
+    action category. Equipment items (``type: equipment``) are excluded — they
+    represent worn gear, not actions."""
+    actions: list[MonsterAction] = []
+    legendary_actions: list[MonsterAction] = []
+    lair_actions: list[MonsterAction] = []
+    special_abilities: list[MonsterAction] = []
+    raw_items = doc.get("items")
+    if not isinstance(raw_items, list):
+        return actions, legendary_actions, lair_actions, special_abilities
+    item_names: dict[str, str] = {
+        str(item["_id"]): str(item["name"])
+        for item in raw_items
+        if isinstance(item, dict) and item.get("_id") and item.get("name")
+    }
+    for item in raw_items:
+        if not isinstance(item, dict):
+            continue
+        item_type = item.get("type")
+        # Equipment is gear the monster wears (armor, shields), not an action.
+        # Spells are deferred — spellcasting integration is engine-side work.
+        if item_type in {"equipment", "spell", "container", "consumable"}:
+            continue
+        if item_type not in {"weapon", "feat"}:
+            continue
+        action, kind = _build_monster_action(item, item_names=item_names)
+        if kind is MonsterActionKind.LEGENDARY:
+            legendary_actions.append(action)
+        elif kind is MonsterActionKind.LAIR or kind is MonsterActionKind.REGIONAL:
+            lair_actions.append(action)
+        elif kind is MonsterActionKind.SPECIAL:
+            special_abilities.append(action)
+        else:
+            actions.append(action)
+    return actions, legendary_actions, lair_actions, special_abilities
+
+
+def _licensed_trait_identifiers(doc: dict[str, Any]) -> set[str]:
+    """``system.identifier`` values of embedded ``feat`` items that carry the
+    SRD ``CC-BY-4.0`` license tag on this actor document. Not every embedded
+    special ability tags ``system.properties: [trait]`` (e.g.
+    ``demonic-restoration``, ``swallow``), so the license + item-type gate is
+    the sole admission test — ``_monster_actions`` already does the real
+    "is this a trait" classification via activation type."""
+    return {
+        str((item.get("system") or {}).get("identifier") or "")
+        for item in (doc.get("items") or [])
+        if isinstance(item, dict)
+        and item.get("type") == "feat"
+        and (((item.get("system") or {}).get("source") or {}).get("license")) == "CC-BY-4.0"
+    }
+
+
+def translate_monster_traits(
+    actor_yaml_paths: Sequence[Path],
+    *,
+    ingest_date: date,
+    ingest_version: str,
+) -> list[MonsterTrait]:
+    """Build the de-duplicated ``traits/`` category from the SRD actors'
+    embedded special-ability feat items. First occurrence (by the caller's
+    path order — regen passes a sorted list) wins, so output is
+    deterministic. Items without ``system.source.license == "CC-BY-4.0"``
+    are skipped."""
+    by_slug: dict[str, MonsterTrait] = {}
+    for yaml_path in actor_yaml_paths:
+        doc = _load_yaml(yaml_path)
+        _, _, _, special_abilities = _monster_actions(doc)
+        licensed = _licensed_trait_identifiers(doc)
+        for ability in special_abilities:
+            if ability.slug == "new-feature":
+                # Foundry authoring placeholder identifier; never a real
+                # trait (seen on apparatus-of-the-crab items).
+                continue
+            if ability.slug in by_slug or ability.slug not in licensed:
+                continue
+            by_slug[ability.slug] = MonsterTrait(
+                slug=ability.slug,
+                name=ability.name,
+                description=substitute_lookup_labels(ability.description),
+                mechanic=ability.mechanic,
+                provenance=_provenance(yaml_path, ingest_date, ingest_version),
+                review=ReviewState(),
+            )
+    return [by_slug[slug] for slug in sorted(by_slug)]
+
+
+def translate_monster_yaml(
+    yaml_path: Path,
+    *,
+    ingest_date: date,
+    ingest_version: str,
+) -> Monster:
+    doc = _load_yaml(yaml_path)
+    system = doc["system"]
+    details = system.get("details", {})
+    attrs = system.get("attributes", {})
+    traits = system.get("traits", {})
+    abilities = system.get("abilities", {})
+
+    creature_type_raw = (details.get("type", {}).get("value") or "humanoid").lower()
+    creature_type = CreatureType(creature_type_raw)
+    creature_size = _SIZE_MAP.get(traits.get("size") or "med", CreatureSize.MEDIUM)
+
+    ability_scores = AbilityScores(
+        str=abilities.get("str", {}).get("value", 10),
+        dex=abilities.get("dex", {}).get("value", 10),
+        con=abilities.get("con", {}).get("value", 10),
+        int=abilities.get("int", {}).get("value", 10),
+        wis=abilities.get("wis", {}).get("value", 10),
+        cha=abilities.get("cha", {}).get("value", 10),
+    )
+
+    cr_value = float(details.get("cr") or 0)
+    prof_bonus = _proficiency_bonus(attrs, cr_value)
+
+    # Foundry saves: abilities.<ab>.proficient is 0/1; the actual save bonus
+    # is NOT pre-computed at abilities.<ab>.save (which stays null). Derive
+    # it: ability_mod + prof when proficient, else None ("not proficient").
+    save_kwargs: dict[str, int] = {}
+    for ab in ("str", "dex", "con", "int", "wis", "cha"):
+        entry = abilities.get(ab) or {}
+        if int(entry.get("proficient") or 0) >= 1:
+            score = int(entry.get("value") or 10)
+            bonus_extra = int(((entry.get("bonuses") or {}).get("save") or 0) or 0)
+            save_kwargs[ab] = _ability_mod(score) + prof_bonus + bonus_extra
+    saving_throws = SavingThrowProficiencies(**save_kwargs)
+
+    # Foundry skills: system.skills.<short>.value is a rank (0=not proficient,
+    # 1=proficient, 2=expertise), NOT the SRD bonus. Compute the bonus and
+    # OMIT skills the creature isn't proficient in (rank == 0).
+    skill_kwargs: dict[str, int] = {}
+    for short, entry in (system.get("skills") or {}).items():
+        canonical = _SKILL_KEY_MAP.get(short)
+        if canonical is None:
+            continue
+        rank = int(entry.get("value") or 0)
+        if rank <= 0:
+            continue
+        ability = _SKILL_ABILITY.get(short)
+        if ability is None:
+            continue
+        ability_score = int((abilities.get(ability) or {}).get("value") or 10)
+        skill_bonus_extra = int(entry.get("bonus") or 0)
+        skill_kwargs[canonical] = (
+            _ability_mod(ability_score) + rank * prof_bonus + skill_bonus_extra
+        )
+    skills = SkillProficiencies(**skill_kwargs)
+
+    movement_doc = attrs.get("movement", {}) or {}
+    movement = Movement(
+        walk=movement_doc.get("walk"),
+        fly=movement_doc.get("fly"),
+        swim=movement_doc.get("swim"),
+        burrow=movement_doc.get("burrow"),
+        climb=movement_doc.get("climb"),
+        hover=bool(movement_doc.get("hover")),
+    )
+
+    senses_doc = attrs.get("senses", {}) or {}
+    # 2024 actors24 nest the per-sense ranges under ``senses.ranges`` while the
+    # legacy 2014 packs put them flat on ``senses``. Prefer the nested 2024
+    # shape, then fall back so both editions resolve.
+    sense_ranges = senses_doc.get("ranges") or senses_doc
+    # Foundry doesn't ship passive_perception; derive from 10 + perception
+    # bonus (if proficient) or 10 + wis_mod (if not).
+    wis_score = int((abilities.get("wis") or {}).get("value") or 10)
+    perception_bonus = skill_kwargs.get("perception")
+    if perception_bonus is not None:
+        passive_perception = 10 + perception_bonus
+    else:
+        passive_perception = 10 + _ability_mod(wis_score)
+    senses = Senses(
+        darkvision=_sense_value(sense_ranges.get("darkvision")),
+        blindsight=_sense_value(sense_ranges.get("blindsight")),
+        tremorsense=_sense_value(sense_ranges.get("tremorsense")),
+        truesight=_sense_value(sense_ranges.get("truesight")),
+        passive_perception=passive_perception,
+    )
+
+    ac_doc = _with_actor_ac_calc(attrs.get("ac", {}) or {}, doc.get("effects") or [])
+    hp_doc = attrs.get("hp", {}) or {}
+
+    actions, legendary_actions, lair_actions, special_abilities = _monster_actions(doc)
+    slug = _slug(doc, yaml_path)
+    actions = _apply_monster_action_corrections(slug, actions)
+
+    return Monster(
+        slug=slug,
+        name=doc["name"],
+        description=_description(doc),
+        creature_type=creature_type,
+        creature_size=creature_size,
+        alignment=details.get("alignment"),
+        ac=_monster_ac(ac_doc, abilities=abilities, items=doc.get("items") or []),
+        hp=int(hp_doc.get("value") or hp_doc.get("max") or 1),
+        hp_dice=hp_doc.get("formula") or "",
+        ability_scores=ability_scores,
+        movement=movement,
+        senses=senses,
+        cr=cr_value,
+        proficiency_bonus=prof_bonus,
+        spellcasting_ability=_spellcasting_ability(
+            attrs, actions, legendary_actions, special_abilities
+        ),
+        legendary_resistance_uses=_resource_max(system, "legres"),
+        legendary_action_uses=_resource_max(system, "legact"),
+        saving_throws=saving_throws,
+        skills=skills,
+        damage_resistances=_trait_list(traits, "dr"),
+        damage_immunities=_trait_list(traits, "di"),
+        damage_vulnerabilities=_trait_list(traits, "dv"),
+        condition_immunities=_trait_list(traits, "ci"),
+        languages=_languages(traits),
+        actions=actions,
+        legendary_actions=legendary_actions,
+        lair_actions=lair_actions,
+        special_abilities=special_abilities,
+        provenance=_provenance(yaml_path, ingest_date, ingest_version),
+        review=ReviewState(),
+    )
+
+
+# Pack-subdir → item kind. The Foundry pack layout puts magic-item categories
+# (potion, scroll, wand, ring, rod) in their own subdirs; mundane gear lives in
+# equipment/tool/loot/ammunition/food/poison/spellcasting-focus. Trinket is
+# heterogeneous (mixes magic figurines with mundane curios) so it falls back to
+# the rarity+attunement heuristic. ``None`` signals "decide per-entry".
+_ITEM_KIND_BY_PACK_SUBDIR: dict[str, str | None] = {
+    "potion": "magic_item",
+    "scroll": "magic_item",
+    "wand": "magic_item",
+    "ring": "magic_item",
+    "rod": "magic_item",
+    "equipment": "item",
+    "tool": "item",
+    "loot": "item",
+    "ammunition": "item",
+    "food": "item",
+    "poison": "item",
+    "spellcasting-focus": "item",
+    # Container pack mixes mundane sacks/quivers (Item) with attuned magic
+    # bags (Bag of Holding, Handy Haversack) — fall back to the heuristic per
+    # entry so attunement/rarity promotes the right ones.
+    "container": None,
+    "trinket": None,  # rarity+attunement heuristic
+}
+
+
+def _pack_subdir(yaml_path: Path) -> str | None:
+    """Pack subdir under ``packs/_source/items/`` (e.g. ``potion``, ``trinket``).
+
+    Real Foundry layout: ``.../packs/_source/items/<subdir>/<slug>.yml``.
+    Test fixtures may flatten or vary; return None when we can't identify."""
+    parts = yaml_path.parts
+    if "items" in parts:
+        idx = parts.index("items")
+        if idx + 1 < len(parts) - 1:  # there's at least one dir between items/ and the file
+            return parts[idx + 1]
+    return None
+
+
+def translate_generic_item_yaml(
+    yaml_path: Path,
+    *,
+    ingest_date: date,
+    ingest_version: str,
+) -> Item | MagicItem:
+    """Translator for non-weapon, non-armor item categories (trinket, equipment,
+    loot, potion, tool, ring, ammunition, wand, spellcasting-focus, scroll, rod,
+    poison, food).
+
+    Classification is by pack-subdir taxonomy (``_ITEM_KIND_BY_PACK_SUBDIR``):
+    known magic-item categories (potion/scroll/wand/ring/rod) emit ``MagicItem``
+    regardless of rarity (a common Potion of Healing is still a magic item per
+    the SRD). Known mundane categories emit ``Item``. ``trinket`` is mixed and
+    falls back to the rarity+attunement heuristic.
+
+    The explicit ``item_kind`` discriminator field round-trips through JSON so
+    the loader recovers the correct Python type without structural sniffing.
+    """
+    doc = _load_yaml(yaml_path)
+    system = doc.get("system") or {}
+    requires_attunement, attunement_constraint = _attunement(system)
+    rarity = _rarity(doc)
+
+    base_kwargs: dict[str, Any] = dict(
+        slug=_slug(doc, yaml_path),
+        name=doc.get("name", ""),
+        description=_description(doc),
+        weight=_weight(system),
+        cost_gp=_price_gp(system),
+        rarity=rarity,
+        provenance=_provenance(yaml_path, ingest_date, ingest_version),
+        review=ReviewState(),
+        activities=_translate_activities(system),
+        passive_effects=_passive_effects(doc),
+        requires_attunement=requires_attunement,
+        attunement_constraint=attunement_constraint,
+        uses=_item_uses(system),
+    )
+
+    subdir = _pack_subdir(yaml_path)
+    mapped_kind = _ITEM_KIND_BY_PACK_SUBDIR.get(subdir) if subdir is not None else None
+    # Magic-item subdirs (potion/scroll/wand/ring/rod) — always magic_item.
+    if mapped_kind == "magic_item":
+        return MagicItem(**base_kwargs)
+    # Mundane-baseline subdirs (equipment/tool/loot/ammunition/food/poison/
+    # spellcasting-focus) + unknown/trinket: rarity/attunement promotes to
+    # magic_item. Catches Foundry-mixed packs where magic items sit alongside
+    # mundane gear — amulet-of-health (uncommon) and ioun-stone-of-absorption
+    # (rare) live in equipment/ but are clearly magic items by SRD.
+    if requires_attunement or rarity != ItemRarity.COMMON:
+        return MagicItem(**base_kwargs)
+    return Item(**base_kwargs)
+
+
+# ---------------------------------------------------------------------------
+# Spells / classes / subclasses / species (Phase 7a PR 2)
+# ---------------------------------------------------------------------------
+
+
+def _name(doc: dict[str, Any]) -> str:
+    return str(doc.get("name") or "")
+
+
+_SPELL_COMPONENT_PROPS = {
+    "vocal": SpellComponent.VOCAL,
+    "somatic": SpellComponent.SOMATIC,
+    "material": SpellComponent.MATERIAL,
+}
+
+
+def _spell_components(props: list[Any]) -> tuple[frozenset[SpellComponent], bool, bool]:
+    """Parse Foundry's ``system.properties`` list into the V/S/M frozenset plus
+    ``ritual`` and ``concentration`` flags. Unknown property tokens are silently
+    dropped — they're either future-pack metadata or already-handled
+    activity-level signals (e.g. ``mgc`` for "is magical")."""
+    components: set[SpellComponent] = set()
+    ritual = False
+    concentration = False
+    for prop in props or []:
+        p = str(prop).lower()
+        if p in _SPELL_COMPONENT_PROPS:
+            components.add(_SPELL_COMPONENT_PROPS[p])
+        elif p == "ritual":
+            ritual = True
+        elif p == "concentration":
+            concentration = True
+    return frozenset(components), ritual, concentration
+
+
+def _casting_time(activation: dict[str, Any]) -> CastingTime:
+    raw_type = str(activation.get("type") or "action").lower()
+    try:
+        unit = CastingTimeUnit(raw_type)
+    except ValueError:
+        unit = CastingTimeUnit.SPECIAL
+    value_raw = activation.get("value")
+    try:
+        value = int(value_raw) if value_raw not in (None, "") else 1
+    except (TypeError, ValueError):
+        value = 1
+    condition = str(activation.get("condition") or "")
+    return CastingTime(unit=unit, value=max(0, value), condition=condition)
+
+
+_SPELL_RANGE_UNITS_MAP = {
+    "self": SpellRangeUnits.SELF,
+    "touch": SpellRangeUnits.TOUCH,
+    "ft": SpellRangeUnits.FEET,
+    "mi": SpellRangeUnits.MILES,
+    "any": SpellRangeUnits.ANY,
+    "spec": SpellRangeUnits.SPECIAL,
+    # Foundry sometimes emits an empty string for self/touch spells where
+    # `special` carries the human label. Treat empty as SPECIAL so we still
+    # round-trip without a schema error.
+    "": SpellRangeUnits.SPECIAL,
+}
+
+
+def _spell_range(range_doc: dict[str, Any]) -> SpellRange:
+    units_raw = str(range_doc.get("units") or "").lower()
+    units = _SPELL_RANGE_UNITS_MAP.get(units_raw, SpellRangeUnits.SPECIAL)
+    value_raw = range_doc.get("value")
+    value: int | None = None
+    if value_raw not in (None, ""):
+        try:
+            value = int(value_raw)
+        except (TypeError, ValueError):
+            value = None
+    special = range_doc.get("special")
+    special_str = str(special).strip() if special not in (None, "") else None
+    return SpellRange(units=units, value=value, special=special_str)
+
+
+_SPELL_DURATION_UNITS_MAP = {
+    "inst": SpellDurationUnits.INSTANT,
+    "round": SpellDurationUnits.ROUND,
+    "minute": SpellDurationUnits.MINUTE,
+    "hour": SpellDurationUnits.HOUR,
+    "day": SpellDurationUnits.DAY,
+    "disp": SpellDurationUnits.UNTIL_DISPELLED,
+    "dstr": SpellDurationUnits.UNTIL_DESTROYED,
+    "perm": SpellDurationUnits.PERMANENT,
+    "spec": SpellDurationUnits.SPECIAL,
+    "": SpellDurationUnits.SPECIAL,
+}
+
+
+def _spell_duration(duration_doc: dict[str, Any]) -> SpellDuration:
+    units_raw = str(duration_doc.get("units") or "").lower()
+    units = _SPELL_DURATION_UNITS_MAP.get(units_raw, SpellDurationUnits.SPECIAL)
+    value_raw = duration_doc.get("value")
+    value: int | None = None
+    if value_raw not in (None, ""):
+        try:
+            value = int(value_raw)
+        except (TypeError, ValueError):
+            value = None
+    return SpellDuration(units=units, value=value)
+
+
+def _spell_materials(materials_doc: dict[str, Any]) -> SpellMaterials:
+    cost_raw = materials_doc.get("cost")
+    try:
+        cost = int(cost_raw) if cost_raw not in (None, "") else 0
+    except (TypeError, ValueError):
+        cost = 0
+    supply_raw = materials_doc.get("supply")
+    try:
+        supply = int(supply_raw) if supply_raw not in (None, "") else 0
+    except (TypeError, ValueError):
+        supply = 0
+    return SpellMaterials(
+        value=str(materials_doc.get("value") or ""),
+        consumed=bool(materials_doc.get("consumed") or False),
+        cost=max(0, cost),
+        supply=max(0, supply),
+    )
+
+
+def _spell_preparation(preparation_doc: dict[str, Any]) -> SpellPreparation:
+    return SpellPreparation(
+        mode=str(preparation_doc.get("mode") or ""),
+        prepared=bool(preparation_doc.get("prepared") or False),
+    )
+
+
+# SRD 5.2 damage-type corrections. The pinned Foundry raw sources ship
+# ``types: []`` for these spell damage parts even though each spell's own SRD
+# 5.2 description names the type — the description text is the rules ground
+# truth, so canonical deliberately diverges from the raw activity block here.
+# Keyed by ``(spell slug, activity _id, damage.parts index)`` → damage type.
+# Each entry cites its grounding description text; the pins live in
+# ``tests/test_spell_damage_type_corrections.py``. A correction only fills an
+# EMPTY ``types`` list — if a future Foundry pin ships a real type, upstream
+# wins and the entry goes inert (delete it at that pin bump).
+_SPELL_DAMAGE_TYPE_CORRECTIONS: dict[tuple[str, str, int], str] = {
+    # "taking 3d10 Lightning damage on a failed save ... you can take a Magic
+    # action to call down lightning in that way again" — the repeat bolt.
+    ("call-lightning", "dnd5eactivity200", 0): "lightning",
+    # "taking 10d6 Cold damage on failed save" — "Cast and Fire"; the thrown
+    # globe "shatters on impact, with the same effect as a normal casting".
+    ("freezing-sphere", "adCBWrctRmLQmb8M", 0): "cold",
+    ("freezing-sphere", "NKBsnjBBIgsaOPaY", 0): "cold",
+    # "The stone's complete destruction ... deals [[/damage 50 type=force]]
+    # damage to you" — SRD 5.2 changed this from 5.1's bludgeoning.
+    ("meld-into-stone", "dnd5eactivity200", 0): "force",
+}
+
+
+def _apply_spell_damage_type_corrections(slug: str, activities: list[Activity]) -> list[Activity]:
+    """Fill SRD-corrected damage types per ``_SPELL_DAMAGE_TYPE_CORRECTIONS``.
+
+    Copy-on-write: activities without a mapped, still-untyped part pass
+    through unchanged (blocks are frozen models, so corrected parts are
+    rebuilt via ``model_copy``)."""
+    out: list[Activity] = []
+    for act in activities:
+        damage = getattr(act, "damage", None)
+        parts = getattr(damage, "parts", None) or []
+        new_parts = list(parts)
+        changed = False
+        for idx, part in enumerate(parts):
+            damage_type = _SPELL_DAMAGE_TYPE_CORRECTIONS.get((slug, act.id, idx))
+            if damage_type is not None and not part.types:
+                new_parts[idx] = part.model_copy(update={"types": [damage_type]})
+                changed = True
+        if changed:
+            act = act.model_copy(update={"damage": damage.model_copy(update={"parts": new_parts})})
+        out.append(act)
+    return out
+
+
+# SRD 5.2 "of your choice" / "up to six creatures" corrections. The pinned
+# Foundry sources leave ``target.affects.choice`` false and ``count`` blank on
+# these activities, although each entry's own SRD 5.2 text chooses its
+# creatures. Keyed by ``(entry slug, activity _id)`` → the ``affects`` fields
+# the text gives; the pins live in ``tests/test_area_targeting_corrections.py``.
+_AFFECTS_CORRECTIONS: dict[tuple[str, str], dict[str, bool | str]] = {
+    # "Each creature of your choice in a 5-foot-radius Sphere centered on a
+    # point within range must succeed on a Wisdom saving throw"
+    ("sleep", "dnd5eactivity000"): {"choice": True},
+    # "You alter time around up to six creatures of your choice in a 40-foot
+    # Cube within range."
+    ("slow", "dnd5eactivity000"): {"choice": True, "count": "6"},
+    # "Choose up to six creatures in a 30-foot-radius Sphere centered on that
+    # point."
+    ("mass-cure-wounds", "dnd5eactivity000"): {"choice": True, "count": "6"},
+    # "Each creature of your choice within 30 feet of you must succeed on a DC
+    # 15 Wisdom saving throw"
+    ("mace-of-terror", "owojSA2KZWmv61Nj"): {"choice": True},
+}
+
+
+def _apply_affects_corrections(slug: str, activities: list[Activity]) -> list[Activity]:
+    """Set the ``target.affects`` fields ``_AFFECTS_CORRECTIONS`` maps.
+    Copy-on-write like ``_apply_spell_damage_type_corrections``."""
+    out: list[Activity] = []
+    for act in activities:
+        fields = _AFFECTS_CORRECTIONS.get((slug, act.id))
+        if fields is not None:
+            target = act.target.model_copy(
+                update={"affects": act.target.affects.model_copy(update=fields)}
+            )
+            act = act.model_copy(update={"target": target})
+        out.append(act)
+    return out
+
+
+#: Spell slug → the SRD 5.2 sentence that removes cover from the save. Foundry
+#: has no field for this; the sentence is the only source. Re-verify with
+#: ``grep -rl "benefit from" packs/_source/spells24`` when refreshing upstream.
+_SPELL_SAVE_IGNORE_COVER: dict[str, str] = {
+    "sacred-flame": (
+        "The target gains no benefit from Half Cover or Three-Quarters Cover for this save."
+    ),
+}
+
+
+def _apply_spell_save_cover_overrides(slug: str, activities: list[Activity]) -> list[Activity]:
+    """Set ``save.ignore_cover`` on every save activity of an allowlisted spell.
+    Copy-on-write like ``_apply_spell_damage_type_corrections``."""
+    if slug not in _SPELL_SAVE_IGNORE_COVER:
+        return activities
+    out: list[Activity] = []
+    for act in activities:
+        if isinstance(act, SaveActivity):
+            new_save = act.save.model_copy(update={"ignore_cover": True})
+            act = act.model_copy(update={"save": new_save})
+        out.append(act)
+    return out
+
+
+def translate_spell_yaml(
+    yaml_path: Path,
+    *,
+    ingest_date: date,
+    ingest_version: str,
+) -> Spell:
+    doc = _load_yaml(yaml_path)
+    system = doc.get("system") or {}
+    components, ritual, concentration = _spell_components(system.get("properties") or [])
+    school_raw = str(system.get("school") or "").lower()
+    try:
+        school = SpellSchool(school_raw)
+    except ValueError:
+        # Unknown school code: default to evocation to keep regen moving;
+        # validation_report flags the gap.
+        school = SpellSchool.EVOCATION
+    level_raw = system.get("level")
+    try:
+        level = int(level_raw) if level_raw is not None else 0
+    except (TypeError, ValueError):
+        level = 0
+    slug = _slug(doc, yaml_path)
+    return Spell(
+        slug=slug,
+        name=_name(doc),
+        description=_description(doc),
+        level=max(0, level),
+        school=school,
+        components=components,
+        ritual=ritual,
+        concentration=concentration,
+        casting_time=_casting_time(system.get("activation") or {}),
+        range=_spell_range(system.get("range") or {}),
+        duration=_spell_duration(system.get("duration") or {}),
+        materials=_spell_materials(system.get("materials") or {}),
+        preparation=_spell_preparation(system.get("preparation") or {}),
+        activities=_apply_affects_corrections(
+            slug,
+            _apply_spell_save_cover_overrides(
+                slug, _apply_spell_damage_type_corrections(slug, _translate_activities(system))
+            ),
+        ),
+        passive_effects=_passive_effects(doc),
+        provenance=_provenance(yaml_path, ingest_date, ingest_version),
+        review=ReviewState(),
+        foundry_uuid=_spell_foundry_uuid(yaml_path, doc),
+    )
+
+
+# --- advancement (shared by class/subclass/race) ---
+
+_ADVANCEMENT_TYPE_VALUES = {a.value for a in AdvancementType}
+
+
+def _advancement(system: dict[str, Any]) -> list[AdvancementEntry]:
+    """Parse Foundry's ``system.advancement[]`` array into typed entries.
+
+    Unknown ``type`` values are skipped rather than crashing the whole entity —
+    a Foundry-side schema bump that introduces a new advancement variant
+    shouldn't break canonical regen for every class/subclass/species.
+    """
+    raw = system.get("advancement")
+    # Most class/subclass docs serialize advancement as a list; the 2024 ranger
+    # ships it as an ``_id``-keyed mapping. PyYAML preserves insertion order, so
+    # taking the dict's values keeps Foundry's source order (deterministic).
+    if isinstance(raw, dict):
+        raw = list(raw.values())
+    if not isinstance(raw, list):
+        return []
+    out: list[AdvancementEntry] = []
+    for entry in raw:
+        if not isinstance(entry, dict):
+            continue
+        adv_type = str(entry.get("type") or "")
+        if adv_type not in _ADVANCEMENT_TYPE_VALUES:
+            continue
+        level_raw = entry.get("level")
+        try:
+            level = int(level_raw) if level_raw is not None else 0
+        except (TypeError, ValueError):
+            level = 0
+        out.append(
+            AdvancementEntry(
+                _id=str(entry.get("_id") or ""),
+                type=AdvancementType(adv_type),
+                level=max(0, level),
+                title=str(entry.get("title") or ""),
+                hint=str(entry.get("hint") or ""),
+                class_restriction=str(entry.get("classRestriction") or ""),
+                configuration=entry.get("configuration") or {},
+                value=entry.get("value") or {},
+            )
+        )
+    return out
+
+
+_RECOVERY_PERIOD_VALUES = {"sr", "lr", "day", "recharge", "initiative"}
+_RECOVERY_TYPE_VALUES = {"recoverAll", "formula"}
+
+
+def _feature_uses(system: dict[str, Any]) -> FeatureUses | None:
+    """Parse Foundry's top-level ``system.uses`` into a typed ``FeatureUses``.
+
+    Returns ``None`` when the feature has no meaningful cap — i.e. no ``max``
+    expression AND no ``recovery`` entries — so features without a limited-use pool
+    serialize ``"uses": null`` rather than an empty, engine-inert block. Recovery
+    entries whose ``period`` / ``type`` fall outside the known vocab are skipped
+    (mirrors ``_advancement``'s unknown-variant tolerance) so a future Foundry bump
+    never crashes canonical regen.
+    """
+    raw = system.get("uses")
+    if not isinstance(raw, dict):
+        return None
+    max_expr = str(raw.get("max") or "")
+    recovery: list[RecoveryRule] = []
+    for entry in raw.get("recovery") or []:
+        if not isinstance(entry, dict):
+            continue
+        period = str(entry.get("period") or "")
+        rtype = str(entry.get("type") or "")
+        if period not in _RECOVERY_PERIOD_VALUES or rtype not in _RECOVERY_TYPE_VALUES:
+            continue
+        recovery.append(
+            RecoveryRule(
+                period=period,  # type: ignore[arg-type]
+                type=rtype,  # type: ignore[arg-type]
+                formula=str(entry.get("formula") or ""),
+            )
+        )
+    if not max_expr and not recovery:
+        return None
+    spent_raw = raw.get("spent")
+    try:
+        spent = int(spent_raw) if spent_raw is not None else 0
+    except (TypeError, ValueError):
+        spent = 0
+    return FeatureUses(max=max_expr, spent=max(0, spent), recovery=recovery)
+
+
+_ITEM_RECOVERY_PERIODS = {"sr", "lr", "day", "dawn", "dusk"}
+
+
+def _item_uses(system: dict[str, Any]) -> ItemUses | None:
+    """Foundry ``system.uses`` on an equipment doc → typed charge pool.
+
+    Mirrors ``_feature_uses`` but accepts the item-corpus recovery periods
+    (dawn/dusk dominate) and carries Foundry's consumable ``autoDestroy``.
+    """
+    raw = system.get("uses")
+    if not isinstance(raw, dict):
+        return None
+    max_expr = str(raw.get("max") or "")
+    recovery: list[RecoveryRule] = []
+    for entry in raw.get("recovery") or []:
+        if not isinstance(entry, dict):
+            continue
+        period = str(entry.get("period") or "")
+        rtype = str(entry.get("type") or "")
+        if period not in _ITEM_RECOVERY_PERIODS or rtype not in _RECOVERY_TYPE_VALUES:
+            continue
+        recovery.append(
+            RecoveryRule(
+                period=period,  # type: ignore[arg-type]
+                type=rtype,  # type: ignore[arg-type]
+                formula=str(entry.get("formula") or ""),
+            )
+        )
+    if not max_expr and not recovery:
+        return None
+    spent_raw = raw.get("spent")
+    try:
+        spent = int(spent_raw) if spent_raw is not None else 0
+    except (TypeError, ValueError):
+        spent = 0
+    return ItemUses(
+        max=max_expr,
+        spent=max(0, spent),
+        auto_destroy=bool(raw.get("autoDestroy", False)),
+        recovery=recovery,
+    )
+
+
+def _spell_foundry_uuid(yaml_path: Path, doc: dict[str, Any]) -> str:
+    """Compose the full compendium uuid for a spell doc.
+
+    Pack name comes from the path component after ``_source`` (matching
+    ``build_feature_index``); the fixture corpus lacks that ancestry, so we
+    fall back to ``spells24`` -- the only spell pack in the pinned Foundry
+    snapshot.
+    """
+    doc_id = str(doc.get("_id") or "")
+    if not doc_id:
+        return ""
+    parts = yaml_path.resolve().parts
+    pack = "spells24"
+    if "_source" in parts:
+        pack = parts[parts.index("_source") + 1]
+    return f"Compendium.dnd5e.{pack}.Item.{doc_id}"
+
+
+# --- Species / Class derived fields from advancement ---
+
+
+def _species_languages(advancement: list[AdvancementEntry]) -> list[str]:
+    """Read languages from ``Trait`` advancement entries. Foundry encodes them
+    as grants like ``languages:standard:common`` / ``languages:exotic:draconic``.
+    The third segment is the SRD language slug."""
+    out: list[str] = []
+    seen: set[str] = set()
+    for entry in advancement:
+        if entry.type is not AdvancementType.TRAIT:
+            continue
+        grants = entry.configuration.get("grants") or []
+        if not isinstance(grants, list):
+            continue
+        for g in grants:
+            parts = str(g).split(":")
+            if len(parts) >= 3 and parts[0] == "languages":
+                lang = parts[2]
+                if lang not in seen:
+                    out.append(lang)
+                    seen.add(lang)
+    return out
+
+
+def _species_trait_grants(advancement: list[AdvancementEntry]) -> list[str]:
+    """Collect Trait-advancement configuration.grants (dr/di/dv/ci/etc.), source order, deduped.
+    Skips choice-based traits (grants empty) — those are char-creation selection state."""
+    grants: list[str] = []
+    seen: set[str] = set()
+    for entry in advancement:
+        if entry.type is not AdvancementType.TRAIT:
+            continue
+        for g in entry.configuration.get("grants") or []:
+            s = str(g)
+            if s not in seen:
+                seen.add(s)
+                grants.append(s)
+    return grants
+
+
+def _class_saving_throws(
+    advancement: list[AdvancementEntry],
+) -> frozenset[Literal["str", "dex", "con", "int", "wis", "cha"]]:
+    """Read saving-throw proficiencies from ``Trait`` advancement entries
+    with ``classRestriction == "primary"``. Foundry uses that flag to mark
+    the foundational class proficiency grants (every SRD class has exactly
+    two); later class-feature grants like Rogue's Slippery Mind (level-15
+    wis save) carry no restriction and are intentionally excluded."""
+    out: set[str] = set()
+    for entry in advancement:
+        if entry.type is not AdvancementType.TRAIT:
+            continue
+        if entry.class_restriction != "primary":
+            continue
+        grants = entry.configuration.get("grants") or []
+        if not isinstance(grants, list):
+            continue
+        for g in grants:
+            parts = str(g).split(":")
+            if (
+                len(parts) == 2
+                and parts[0] == "saves"
+                and parts[1] in {"str", "dex", "con", "int", "wis", "cha"}
+            ):
+                out.add(parts[1])
+    return frozenset(out)  # type: ignore[arg-type]
+
+
+def _class_subclass_identifiers(advancement: list[AdvancementEntry]) -> list[str]:
+    """Extract subclass identifiers from ``Subclass``-type advancement entries.
+    Foundry encodes them via ``configuration.identifier`` (preferred) or via
+    nested ``configuration.items[].uuid`` references."""
+    out: list[str] = []
+    seen: set[str] = set()
+    for entry in advancement:
+        if entry.type is not AdvancementType.SUBCLASS:
+            continue
+        identifier = entry.configuration.get("identifier")
+        if identifier and str(identifier) not in seen:
+            out.append(str(identifier))
+            seen.add(str(identifier))
+            continue
+        items = entry.configuration.get("items") or []
+        if not isinstance(items, list):
+            continue
+        for item in items:
+            if not isinstance(item, dict):
+                continue
+            uuid = item.get("uuid")
+            if uuid and str(uuid) not in seen:
+                out.append(str(uuid))
+                seen.add(str(uuid))
+    return out
+
+
+# --- Species ---
+
+
+_FOUNDRY_SIZE_TO_CANONICAL = {
+    "tiny": CreatureSize.TINY,
+    "sm": CreatureSize.SMALL,
+    "small": CreatureSize.SMALL,
+    "med": CreatureSize.MEDIUM,
+    "medium": CreatureSize.MEDIUM,
+    "lg": CreatureSize.LARGE,
+    "large": CreatureSize.LARGE,
+    "huge": CreatureSize.HUGE,
+    "grg": CreatureSize.GARGANTUAN,
+    "gargantuan": CreatureSize.GARGANTUAN,
+}
+
+
+def _species_size(advancement: list[AdvancementEntry]) -> CreatureSize:
+    """Pull species size from the first ``Size`` advancement entry's
+    ``configuration.sizes``. Foundry species consistently ship at least one Size
+    entry; if missing (non-SRD content), default to MEDIUM.
+
+    A species may offer a player choice of sizes (e.g. 2024 Human ships
+    ``['sm', 'med']`` — Small or Medium, chosen at creation). When the choice
+    includes Medium, prefer Medium: it is the standard playable default and
+    matches the 5e-bits oracle. Single-size species resolve to their only size.
+    """
+    for entry in advancement:
+        if entry.type is not AdvancementType.SIZE:
+            continue
+        sizes = entry.configuration.get("sizes")
+        if not (isinstance(sizes, list) and sizes):
+            continue
+        mapped_sizes = [
+            mapped
+            for raw in sizes
+            if (mapped := _FOUNDRY_SIZE_TO_CANONICAL.get(str(raw).lower())) is not None
+        ]
+        if not mapped_sizes:
+            continue
+        if CreatureSize.MEDIUM in mapped_sizes:
+            return CreatureSize.MEDIUM
+        return mapped_sizes[0]
+    return CreatureSize.MEDIUM
+
+
+def _species_creature_type(system: dict[str, Any]) -> CreatureTypeRef:
+    type_doc = system.get("type") or {}
+    raw_value = str(type_doc.get("value") or "humanoid").lower()
+    try:
+        kind = CreatureKind(raw_value)
+    except ValueError:
+        kind = CreatureKind.HUMANOID
+    return CreatureTypeRef(
+        value=kind,
+        subtype=str(type_doc.get("subtype") or ""),
+        custom=str(type_doc.get("custom") or ""),
+    )
+
+
+def _movement(system: dict[str, Any]) -> Movement:
+    m = system.get("movement") or {}
+    return Movement(
+        walk=m.get("walk") or None,
+        fly=m.get("fly") or None,
+        swim=m.get("swim") or None,
+        burrow=m.get("burrow") or None,
+        climb=m.get("climb") or None,
+        hover=bool(m.get("hover") or False),
+    )
+
+
+def _species_senses(system: dict[str, Any]) -> Senses:
+    s = system.get("senses") or {}
+    return Senses(
+        darkvision=_sense_value(s.get("darkvision")),
+        blindsight=_sense_value(s.get("blindsight")),
+        tremorsense=_sense_value(s.get("tremorsense")),
+        truesight=_sense_value(s.get("truesight")),
+        passive_perception=None,  # Species don't ship a passive perception value.
+    )
+
+
+def translate_species_yaml(
+    yaml_path: Path,
+    *,
+    ingest_date: date,
+    ingest_version: str,
+) -> Species:
+    doc = _load_yaml(yaml_path)
+    system = doc.get("system") or {}
+    advancement = _advancement(system)
+    return Species(
+        slug=_slug(doc, yaml_path),
+        name=_name(doc),
+        description=_description(doc),
+        creature_type=_species_creature_type(system),
+        size=_species_size(advancement),
+        movement=_movement(system),
+        senses=_species_senses(system),
+        languages=_species_languages(advancement),
+        trait_grants=_species_trait_grants(advancement),
+        advancement=advancement,
+        provenance=_provenance(yaml_path, ingest_date, ingest_version),
+        review=ReviewState(),
+    )
+
+
+# --- Class / Subclass ---
+
+
+_HIT_DIE_MAP = {
+    "d6": HitDie.D6,
+    "d8": HitDie.D8,
+    "d10": HitDie.D10,
+    "d12": HitDie.D12,
+}
+
+
+def _hit_die(system: dict[str, Any]) -> HitDie:
+    # 2024 packs (classes24/) store the hit die at ``system.hd.denomination``;
+    # the legacy 2014 packs used the flat ``system.hitDice``. Prefer the 2024
+    # shape, then fall back so both editions resolve correctly.
+    hd = system.get("hd") or {}
+    raw = str(hd.get("denomination") or system.get("hitDice") or "d8").lower()
+    return _HIT_DIE_MAP.get(raw, HitDie.D8)
+
+
+def _primary_ability(system: dict[str, Any]) -> PrimaryAbility:
+    doc = system.get("primaryAbility") or {}
+    raw_value = doc.get("value") or []
+    abilities: set[str] = set()
+    if isinstance(raw_value, list):
+        for ab in raw_value:
+            s = str(ab).lower()
+            if s in {"str", "dex", "con", "int", "wis", "cha"}:
+                abilities.add(s)
+    return PrimaryAbility(
+        value=frozenset(abilities),  # type: ignore[arg-type]
+        all=bool(doc.get("all") or False),
+    )
+
+
+def _spellcasting(system: dict[str, Any]) -> Spellcasting:
+    doc = system.get("spellcasting") or {}
+    ability_raw = str(doc.get("ability") or "").lower()
+    ability: str = ability_raw if ability_raw in {"str", "dex", "con", "int", "wis", "cha"} else ""
+    progression_raw = str(doc.get("progression") or "none").lower()
+    try:
+        progression = SpellcastingProgression(progression_raw)
+    except ValueError:
+        progression = SpellcastingProgression.NONE
+    return Spellcasting(
+        ability=ability,  # type: ignore[arg-type]
+        progression=progression,
+    )
+
+
+def translate_class_yaml(
+    yaml_path: Path,
+    *,
+    ingest_date: date,
+    ingest_version: str,
+) -> Class:
+    doc = _load_yaml(yaml_path)
+    system = doc.get("system") or {}
+    advancement = _advancement(system)
+    return Class(
+        slug=_slug(doc, yaml_path),
+        name=_name(doc),
+        description=_description(doc),
+        identifier=str(system.get("identifier") or ""),
+        hit_die=_hit_die(system),
+        primary_ability=_primary_ability(system),
+        spellcasting=_spellcasting(system),
+        wealth=str(system.get("wealth") or ""),
+        saving_throws=_class_saving_throws(advancement),
+        subclass_identifiers=_class_subclass_identifiers(advancement),
+        advancement=advancement,
+        provenance=_provenance(yaml_path, ingest_date, ingest_version),
+        review=ReviewState(),
+    )
+
+
+def translate_subclass_yaml(
+    yaml_path: Path,
+    *,
+    ingest_date: date,
+    ingest_version: str,
+) -> Subclass:
+    doc = _load_yaml(yaml_path)
+    system = doc.get("system") or {}
+    return Subclass(
+        slug=_slug(doc, yaml_path),
+        name=_name(doc),
+        description=_description(doc),
+        identifier=str(system.get("identifier") or ""),
+        class_identifier=str(system.get("classIdentifier") or ""),
+        spellcasting=_spellcasting(system),
+        advancement=_advancement(system),
+        provenance=_provenance(yaml_path, ingest_date, ingest_version),
+        review=ReviewState(),
+    )
+
+
+# --- Background ---
+
+
+_ALL_ABILITIES: tuple[str, ...] = ("str", "dex", "con", "int", "wis", "cha")
+
+
+def _background_ability_options(advancement: list[AdvancementEntry]) -> BackgroundAbilityChoice:
+    """Build the +2/+1 choice from the ``AbilityScoreImprovement`` advancement.
+
+    Foundry stores the three abilities the background does NOT improve in
+    ``configuration.locked``; the eligible (improvable) abilities are the
+    complement. ``cap``/``points`` come straight from the configuration
+    (2/3 across the 2024 SRD backgrounds)."""
+    for entry in advancement:
+        if entry.type is not AdvancementType.ABILITY_SCORE_IMPROVEMENT:
+            continue
+        cfg = entry.configuration
+        locked_raw = cfg.get("locked") or []
+        locked = {str(a).lower() for a in locked_raw if isinstance(locked_raw, list)}
+        options = frozenset(a for a in _ALL_ABILITIES if a not in locked)
+        cap_raw = cfg.get("cap")
+        points_raw = cfg.get("points")
+        return BackgroundAbilityChoice(
+            options=options,  # type: ignore[arg-type]
+            cap=int(cap_raw) if cap_raw is not None else 2,
+            points=int(points_raw) if points_raw is not None else 3,
+        )
+    # No ASI advancement (non-SRD content) → all six eligible, SRD defaults.
+    return BackgroundAbilityChoice(options=frozenset(_ALL_ABILITIES))  # type: ignore[arg-type]
+
+
+def _trait_grant_strings(entry: AdvancementEntry) -> list[str]:
+    grants = entry.configuration.get("grants") or []
+    return [str(g) for g in grants] if isinstance(grants, list) else []
+
+
+def _trait_choice_pool_strings(entry: AdvancementEntry) -> list[str]:
+    """Flatten a ``Trait`` advancement's ``configuration.choices[].pool`` into
+    the grant-string vocabulary (``tool:game:*``, ``languages:standard:*`` …)."""
+    out: list[str] = []
+    choices = entry.configuration.get("choices") or []
+    if not isinstance(choices, list):
+        return out
+    for choice in choices:
+        if not isinstance(choice, dict):
+            continue
+        pool = choice.get("pool") or []
+        if isinstance(pool, list):
+            out.extend(str(p) for p in pool)
+    return out
+
+
+def _background_proficiencies(advancement: list[AdvancementEntry]) -> tuple[list[str], list[str]]:
+    """Split the proficiency ``Trait`` advancement's grants (and tool/skill
+    choice pools) into ``(skill_short_codes, tool_keys)``, preserving source
+    order. The proficiency Trait is identified by carrying ``skills:`` or
+    ``tool:`` grants/choices; the separate language Trait (``languages:`` only)
+    is ignored here. Order within a single grant list is byte-stable from
+    Foundry; we de-dup while preserving first-seen order."""
+    skills: list[str] = []
+    tools: list[str] = []
+    skills_seen: set[str] = set()
+    tools_seen: set[str] = set()
+    for entry in advancement:
+        if entry.type is not AdvancementType.TRAIT:
+            continue
+        strings = _trait_grant_strings(entry) + _trait_choice_pool_strings(entry)
+        if not any(s.startswith(("skills:", "tool:")) for s in strings):
+            continue
+        for s in strings:
+            if s.startswith("skills:"):
+                code = s.removeprefix("skills:")
+                if code and code not in skills_seen:
+                    skills.append(code)
+                    skills_seen.add(code)
+            elif s.startswith("tool:"):
+                code = s.removeprefix("tool:")
+                if code and code not in tools_seen:
+                    tools.append(code)
+                    tools_seen.add(code)
+    return skills, tools
+
+
+def _background_languages(advancement: list[AdvancementEntry]) -> list[str]:
+    """Granted language slugs from the language ``Trait`` advancement's
+    ``languages:<group>:<slug>`` grants. Only fixed grants — the free choice
+    pool (``languages:standard:*``) is a player decision, not a grant."""
+    out: list[str] = []
+    seen: set[str] = set()
+    for entry in advancement:
+        if entry.type is not AdvancementType.TRAIT:
+            continue
+        for g in _trait_grant_strings(entry):
+            parts = g.split(":")
+            if len(parts) >= 3 and parts[0] == "languages":
+                lang = parts[2]
+                if lang and lang not in seen:
+                    out.append(lang)
+                    seen.add(lang)
+    return out
+
+
+def _granted_feat_slug(uuid: str, packs_root: Path) -> str:
+    """The canonical slug of the SRD feat a ``Compendium.dnd5e.<pack>.Item.<id>``
+    UUID names, through that pack's index; ``ValueError`` if it names none."""
+    parts = uuid.split(".")
+    pack = parts[2] if len(parts) == 5 else ""
+    ref = _cached_pack_index(packs_root, pack).get(uuid) if pack in _INDEX_PACK_REF_TYPE else None
+    if ref is None or ref.ref_type != "feat":
+        raise ValueError(f"background feat {uuid!r} names no SRD feat")
+    return ref.slug
+
+
+def _packs_root(yaml_path: Path) -> Path:
+    """The ``packs/_source`` directory a pack document sits under."""
+    parts = yaml_path.resolve().parts
+    if "_source" not in parts:
+        raise ValueError(f"{yaml_path} is not under a packs/_source tree")
+    return Path(*parts[: parts.index("_source") + 1])
+
+
+def _background_starting_feat_slug(advancement: list[AdvancementEntry], yaml_path: Path) -> str:
+    """The canonical slug of the Origin feat the "Background Feat" ItemGrant grants.
+
+    The feat ItemGrant is identified by title; its
+    ``configuration.items[0].uuid`` is a Foundry compendium ref like
+    ``Compendium.dnd5e.feats24.Item.phbftMagicInitia``, resolved through that
+    pack's index to the feat's canonical slug (``magic-initiate``). The packs
+    root is resolved here, lazily, only once a grant is actually found, so a
+    background with no "Background Feat" ItemGrant never needs one."""
+    for entry in advancement:
+        if entry.type is not AdvancementType.ITEM_GRANT:
+            continue
+        if entry.title.strip().lower() != "background feat":
+            continue
+        items = entry.configuration.get("items") or []
+        if not isinstance(items, list):
+            continue
+        for item in items:
+            if not isinstance(item, dict):
+                continue
+            uuid = item.get("uuid")
+            if uuid:
+                return _granted_feat_slug(str(uuid), _packs_root(yaml_path))
+    return ""
+
+
+def translate_background_yaml(
+    yaml_path: Path,
+    *,
+    ingest_date: date,
+    ingest_version: str,
+) -> Background:
+    doc = _load_yaml(yaml_path)
+    system = doc.get("system") or {}
+    advancement = _advancement(system)
+    skills, tools = _background_proficiencies(advancement)
+    starting_equipment_raw = system.get("startingEquipment") or []
+    starting_equipment = (
+        [e for e in starting_equipment_raw if isinstance(e, dict)]
+        if isinstance(starting_equipment_raw, list)
+        else []
+    )
+    return Background(
+        slug=_slug(doc, yaml_path),
+        name=_name(doc),
+        description=_description(doc),
+        ability_options=_background_ability_options(advancement),
+        skill_proficiencies=skills,
+        tool_proficiencies=tools,
+        languages=_background_languages(advancement),
+        starting_feat_slug=_background_starting_feat_slug(advancement, yaml_path),
+        starting_equipment=starting_equipment,
+        wealth=str(system.get("wealth") or ""),
+        provenance=_provenance(yaml_path, ingest_date, ingest_version),
+        review=ReviewState(),
+    )
+
+
+# --- Feat ---
+
+
+_FEAT_SUBTYPE_TO_CATEGORY = {
+    "origin": FeatCategory.ORIGIN,
+    "general": FeatCategory.GENERAL,
+    "fightingStyle": FeatCategory.FIGHTING_STYLE,
+    "epicBoon": FeatCategory.EPIC_BOON,
+}
+
+
+def _feat_category(system: dict[str, Any]) -> FeatCategory:
+    """Map Foundry ``system.type.subtype`` onto a ``FeatCategory``.
+
+    The 2024 ``ability-score-improvement`` feat ships with an EMPTY ``subtype``
+    (and empty ``type.value``) in the Foundry pack, while the 5e-bits SRD
+    classifies it as a general feat — so an empty subtype falls back to
+    ``GENERAL`` rather than failing translation."""
+    subtype = str((system.get("type") or {}).get("subtype") or "")
+    if not subtype:
+        return FeatCategory.GENERAL
+    return _FEAT_SUBTYPE_TO_CATEGORY[subtype]
+
+
+def _feat_prerequisites(system: dict[str, Any]) -> list[FeatPrerequisite]:
+    """Collapse Foundry's ``system.prerequisites`` block plus the free-text
+    ``system.requirements`` into a single ``FeatPrerequisite``. Returns an
+    empty list when the feat has no level gate, no prerequisite features, and no
+    requirement prose."""
+    prereq = system.get("prerequisites") or {}
+    level = prereq.get("level")
+    feats = [str(i) for i in (prereq.get("items") or [])]
+    requirement = str(system.get("requirements") or "")
+    if level is None and not feats and not requirement:
+        return []
+    return [
+        FeatPrerequisite(
+            level=int(level) if level is not None else None,
+            feats=feats,
+            requirement=requirement,
+        )
+    ]
+
+
+def translate_feat_yaml(
+    yaml_path: Path,
+    *,
+    ingest_date: date,
+    ingest_version: str,
+) -> Feat:
+    doc = _load_yaml(yaml_path)
+    system = doc.get("system") or {}
+    return Feat(
+        slug=_slug(doc, yaml_path),
+        name=_name(doc),
+        description=_description(doc),
+        category=_feat_category(system),
+        prerequisites=_feat_prerequisites(system),
+        repeatable=bool((system.get("prerequisites") or {}).get("repeatable")),
+        activities=_translate_activities(system),
+        provenance=_provenance(yaml_path, ingest_date, ingest_version),
+        review=ReviewState(),
+    )
+
+
+def _feature_type_and_source(yaml_path: Path) -> tuple[str, str]:
+    parts = yaml_path.parts
+    if "subclass-features" in parts:
+        return "subclass_feature", parts[parts.index("subclass-features") + 1]
+    if "traits" in parts:  # origins24/species/traits/<species>/...
+        return "species_trait", parts[parts.index("traits") + 1]
+    if "classes24" in parts:  # any class-feature dir: class-features/,
+        return "class_feature", parts[
+            parts.index("classes24") + 1
+        ]  # metamagic-options/, eldritch-invocation-options/, ...
+    raise ValueError(f"cannot classify feature doc path: {yaml_path}")
+
+
+def translate_feature_yaml(
+    yaml_path: Path,
+    *,
+    ingest_date: date,
+    ingest_version: str,
+) -> Feature:
+    doc = _load_yaml(yaml_path)
+    system = doc.get("system") or {}
+    feature_type, source_slug = _feature_type_and_source(yaml_path)
+    return Feature(
+        slug=_feature_slug(doc, yaml_path),
+        name=_name(doc),
+        description=_description(doc),
+        feature_type=feature_type,
+        foundry_id=str(doc.get("_id") or ""),
+        source_slug=source_slug,
+        activities=_translate_activities(system),
+        passive_effects=_passive_effects(doc),
+        advancement=_advancement(system),
+        uses=_feature_uses(system),
+        provenance=_provenance(yaml_path, ingest_date, ingest_version),
+        review=ReviewState(),
+    )
+
+
+T = TypeVar("T", bound=BaseModel)
+
+
+def write_canonical_with_overrides[T: BaseModel](entity: T, canonical_dir: Path) -> None:
+    """Write canonical JSON, preserving reviewer overrides from any existing file.
+
+    If a file already exists with ``review.known_divergence != null``, the
+    existing entry's field values WIN over the freshly-translated entity.
+    Provenance + ingest fields always update to the fresh translator output.
+    """
+    target = canonical_dir / f"{entity.slug}.json"  # type: ignore[attr-defined]
+    # frozenset-typed fields define their own deterministic serializers
+    # (see schema field_serializer hooks) so model_dump is byte-stable.
+    fresh_dict = entity.model_dump(mode="json")
+
+    if target.is_file():
+        existing = json.loads(target.read_text(encoding="utf-8"))
+        if existing.get("review", {}).get("known_divergence") is not None:
+            # Reviewer-controlled fields stay; refresh only provenance.
+            existing["provenance"] = fresh_dict["provenance"]
+            target.write_text(json.dumps(existing, indent=2, sort_keys=True), encoding="utf-8")
+            return
+
+    target.write_text(json.dumps(fresh_dict, indent=2, sort_keys=True), encoding="utf-8")

@@ -1,0 +1,7327 @@
+{
+ "meta": {
+  "commit": "d389e6c0",
+  "frames": 16,
+  "base": "http://127.0.0.1:51345",
+  "data_dir": "/home/hermes/projects/SoloRealmsAI-Nat20/runtime/n07-audit",
+  "tag": "critic-n2"
+ },
+ "frames": [
+  {
+   "probe": {
+    "viewportH": 812,
+    "description": {
+     "rect": {
+      "x": 0,
+      "y": 0,
+      "w": 0,
+      "h": 0,
+      "bottom": 0,
+      "right": 0,
+      "inView": false
+     },
+     "lines": -0.8
+    },
+    "prepare": {
+     "text": "Подготовить приключение",
+     "disabled": false,
+     "rect": {
+      "x": 0,
+      "y": 0,
+      "w": 0,
+      "h": 0,
+      "bottom": 0,
+      "right": 0,
+      "inView": false
+     }
+    },
+    "drop": {
+     "x": 0,
+     "y": 0,
+     "w": 0,
+     "h": 0,
+     "bottom": 0,
+     "right": 0,
+     "inView": false
+    },
+    "abilities": {
+     "count": 6,
+     "columns": 1,
+     "lastBottom": 0,
+     "allInside": true,
+     "cells": [
+      {
+       "text": "16Сила",
+       "x": 0,
+       "y": 0,
+       "w": 0,
+       "h": 0,
+       "bottom": 0,
+       "right": 0,
+       "inView": false
+      },
+      {
+       "text": "14Ловкость",
+       "x": 0,
+       "y": 0,
+       "w": 0,
+       "h": 0,
+       "bottom": 0,
+       "right": 0,
+       "inView": false
+      },
+      {
+       "text": "14Телосложение",
+       "x": 0,
+       "y": 0,
+       "w": 0,
+       "h": 0,
+       "bottom": 0,
+       "right": 0,
+       "inView": false
+      },
+      {
+       "text": "10Интеллект",
+       "x": 0,
+       "y": 0,
+       "w": 0,
+       "h": 0,
+       "bottom": 0,
+       "right": 0,
+       "inView": false
+      },
+      {
+       "text": "12Мудрость",
+       "x": 0,
+       "y": 0,
+       "w": 0,
+       "h": 0,
+       "bottom": 0,
+       "right": 0,
+       "inView": false
+      },
+      {
+       "text": "8Харизма",
+       "x": 0,
+       "y": 0,
+       "w": 0,
+       "h": 0,
+       "bottom": 0,
+       "right": 0,
+       "inView": false
+      }
+     ]
+    },
+    "navLabels": [
+     {
+      "text": "Навыки",
+      "lines": 1,
+      "broken": [],
+      "textWidth": 329,
+      "textScroll": 329,
+      "singleWidth": 64,
+      "fontSize": "16px",
+      "fontFamily": "\"Segoe UI\"",
+      "letterSpacing": "normal",
+      "x": -366.8,
+      "y": 249,
+      "w": 351,
+      "h": 44,
+      "bottom": 293,
+      "right": -15.8,
+      "inView": false
+     },
+     {
+      "text": "Инвентарь",
+      "lines": 1,
+      "broken": [],
+      "textWidth": 329,
+      "textScroll": 329,
+      "singleWidth": 89,
+      "fontSize": "16px",
+      "fontFamily": "\"Segoe UI\"",
+      "letterSpacing": "normal",
+      "x": -366.8,
+      "y": 299,
+      "w": 351,
+      "h": 44,
+      "bottom": 343,
+      "right": -15.8,
+      "inView": false
+     },
+     {
+      "text": "Карта мира",
+      "lines": 1,
+      "broken": [],
+      "textWidth": 329,
+      "textScroll": 329,
+      "singleWidth": 97,
+      "fontSize": "16px",
+      "fontFamily": "\"Segoe UI\"",
+      "letterSpacing": "normal",
+      "x": -366.8,
+      "y": 349,
+      "w": 351,
+      "h": 44,
+      "bottom": 393,
+      "right": -15.8,
+      "inView": false
+     },
+     {
+      "text": "Блокнот",
+      "lines": 1,
+      "broken": [],
+      "textWidth": 329,
+      "textScroll": 329,
+      "singleWidth": 70,
+      "fontSize": "16px",
+      "fontFamily": "\"Segoe UI\"",
+      "letterSpacing": "normal",
+      "x": -366.8,
+      "y": 399,
+      "w": 351,
+      "h": 44,
+      "bottom": 443,
+      "right": -15.8,
+      "inView": false
+     },
+     {
+      "text": "Раздатки и карты",
+      "lines": 1,
+      "broken": [],
+      "textWidth": 329,
+      "textScroll": 329,
+      "singleWidth": 151,
+      "fontSize": "16px",
+      "fontFamily": "\"Segoe UI\"",
+      "letterSpacing": "normal",
+      "x": -366.8,
+      "y": 449,
+      "w": 351,
+      "h": 44,
+      "bottom": 493,
+      "right": -15.8,
+      "inView": false
+     },
+     {
+      "text": "Сохранения",
+      "lines": 1,
+      "broken": [],
+      "textWidth": 329,
+      "textScroll": 329,
+      "singleWidth": 100,
+      "fontSize": "16px",
+      "fontFamily": "\"Segoe UI\"",
+      "letterSpacing": "normal",
+      "x": -366.8,
+      "y": 499,
+      "w": 351,
+      "h": 44,
+      "bottom": 543,
+      "right": -15.8,
+      "inView": false
+     },
+     {
+      "text": "Выход из игры",
+      "lines": 1,
+      "broken": [],
+      "textWidth": 329,
+      "textScroll": 329,
+      "singleWidth": 124,
+      "fontSize": "16px",
+      "fontFamily": "\"Segoe UI\"",
+      "letterSpacing": "normal",
+      "x": -366.8,
+      "y": 548,
+      "w": 351,
+      "h": 44,
+      "bottom": 592,
+      "right": -15.8,
+      "inView": false
+     }
+    ],
+    "navWrapped": 0,
+    "navBroken": 0,
+    "headerVitals": {
+     "text": "12/12 хиты 18 защита",
+     "rect": {
+      "x": 222.5,
+      "y": 6.5,
+      "w": 80.5,
+      "h": 42,
+      "bottom": 48.5,
+      "right": 303,
+      "inView": true
+     }
+    },
+    "drawerTabs": {
+     "tab": "campaign",
+     "tabs": [
+      {
+       "text": "Кампания",
+       "selected": true
+      },
+      {
+       "text": "Приложение",
+       "selected": false
+      }
+     ],
+     "visible": 2,
+     "rows": 7,
+     "perBlock": [
+      {
+       "title": "Кампания",
+       "rows": 6
+      },
+      {
+       "title": "Приложение",
+       "rows": 0
+      }
+     ],
+     "overflow": 0,
+     "children": [
+      {
+       "cls": "nav-head",
+       "y": 162,
+       "h": 44,
+       "bottom": 206
+      },
+      {
+       "cls": "nav-block",
+       "y": 212,
+       "h": 334,
+       "bottom": 546
+      },
+      {
+       "cls": "nav",
+       "y": 548,
+       "h": 44,
+       "bottom": 592
+      }
+     ]
+    },
+    "home": {
+     "sections": 0,
+     "lists": 0,
+     "stories": 0,
+     "continueBlocks": 0,
+     "allStories": 0,
+     "kickers": []
+    },
+    "journal": {
+     "width": 0,
+     "contentRight": 0,
+     "rightGap": 375,
+     "emptyRightPct": 100,
+     "sections": 0,
+     "emptySections": 0,
+     "knownVisible": false,
+     "eventsVisible": false,
+     "facts": 0,
+     "eventRows": 0,
+     "textareas": 0,
+     "saveButtons": 0,
+     "reloadButtons": 0,
+     "empty": true
+    },
+    "heroPanel": {
+     "hpNodes": 0,
+     "hpText": false,
+     "hpWords": 0,
+     "documentHp": 0,
+     "text": "Ваш геройМиронВторое дыхание · потрачено: 0Опыт: 0Кости хитов: 1Состояния: нетЛист героя"
+    },
+    "words": {
+     "hit": true,
+     "ac": true,
+     "computer": false,
+     "neuralApi": false,
+     "costsApi": false,
+     "performance": false
+    }
+   },
+   "viewport": {
+    "w": 375,
+    "h": 812,
+    "dpr": 1
+   },
+   "scrollWidth": 375,
+   "scrollHeight": 812,
+   "overflowX": 0,
+   "activeView": "play",
+   "campaignOpen": true,
+   "kbOpen": false,
+   "textElements": 11,
+   "fontMin": 14,
+   "smallText": [],
+   "tinyText": [
+    {
+     "sel": "body.effects.tabletop > main > header > div.m-title:nth-of-type(1) > span.m-sub:nth-of-type(2)",
+     "px": 14,
+     "text": "Дозор на тракте"
+    },
+    {
+     "sel": "main > header > div.vitals:nth-of-type(3) > span:nth-of-type(1) > span.vitals__label",
+     "px": 14,
+     "text": "хиты"
+    },
+    {
+     "sel": "main > header > div.vitals:nth-of-type(3) > span:nth-of-type(3) > span.vitals__label",
+     "px": 14,
+     "text": "защита"
+    },
+    {
+     "sel": "div.workspace-layout > div.literary-column > div.story-card > div.dice-row:nth-of-type(4) > span.dice-row__note",
+     "px": 14,
+     "text": "сохранено"
+    }
+   ],
+   "fontDistinct": 3,
+   "fontSizes": {
+    "14": 4,
+    "16": 5,
+    "17": 2
+   },
+   "tapCount": 4,
+   "tapsBad": [],
+   "tapsBadCount": 0,
+   "contrastBad": [],
+   "contrastBadCount": 0,
+   "contrastMin": null,
+   "contrastChecked": 11,
+   "placeholderChecked": 1,
+   "borderBad": [
+    {
+     "sel": "form#action-form",
+     "frameFor": "textarea#player-input",
+     "label": "Ваша реплика",
+     "side": "top",
+     "w": 1,
+     "what": "рамка",
+     "ratio": 1.75,
+     "fg": "rgb(74,62,48)",
+     "bg": "rgb(20,17,13)",
+     "kind": "граница"
+    }
+   ],
+   "borderBadCount": 1,
+   "borderMin": 1.75,
+   "borderChecked": 2,
+   "controlChecked": 2,
+   "cellChecked": 0,
+   "contrastSkipped": [
+    {
+     "sel": "button#mobile-burger",
+     "kind": "граница",
+     "reason": "видимой-границы-нет"
+    },
+    {
+     "sel": "button#sheet-toggle",
+     "kind": "граница",
+     "reason": "видимой-границы-нет"
+    }
+   ],
+   "contrastSkippedCount": 2,
+   "interactiveVisible": 4,
+   "clipped": [],
+   "clippedCount": 0,
+   "colorsOutsideCount": 0,
+   "colorsOutside": [],
+   "drawer": null,
+   "chatBlocks": [
+    {
+     "tag": "message master",
+     "h": 202,
+     "text": "МАСТЕР\nУ сторожевого поста гоблин перекрыл тропу. Осмотрите "
+    }
+   ],
+   "state": "game",
+   "theme": "dark",
+   "width": 375,
+   "height": 812,
+   "file": "critic-n2-game-dark-375.png",
+   "jsErrors": []
+  },
+  {
+   "probe": {
+    "viewportH": 812,
+    "description": {
+     "rect": {
+      "x": 0,
+      "y": 0,
+      "w": 0,
+      "h": 0,
+      "bottom": 0,
+      "right": 0,
+      "inView": false
+     },
+     "lines": -0.8
+    },
+    "prepare": {
+     "text": "Подготовить приключение",
+     "disabled": false,
+     "rect": {
+      "x": 0,
+      "y": 0,
+      "w": 0,
+      "h": 0,
+      "bottom": 0,
+      "right": 0,
+      "inView": false
+     }
+    },
+    "drop": {
+     "x": 0,
+     "y": 0,
+     "w": 0,
+     "h": 0,
+     "bottom": 0,
+     "right": 0,
+     "inView": false
+    },
+    "abilities": {
+     "count": 6,
+     "columns": 1,
+     "lastBottom": 0,
+     "allInside": true,
+     "cells": [
+      {
+       "text": "16Сила",
+       "x": 0,
+       "y": 0,
+       "w": 0,
+       "h": 0,
+       "bottom": 0,
+       "right": 0,
+       "inView": false
+      },
+      {
+       "text": "14Ловкость",
+       "x": 0,
+       "y": 0,
+       "w": 0,
+       "h": 0,
+       "bottom": 0,
+       "right": 0,
+       "inView": false
+      },
+      {
+       "text": "14Телосложение",
+       "x": 0,
+       "y": 0,
+       "w": 0,
+       "h": 0,
+       "bottom": 0,
+       "right": 0,
+       "inView": false
+      },
+      {
+       "text": "10Интеллект",
+       "x": 0,
+       "y": 0,
+       "w": 0,
+       "h": 0,
+       "bottom": 0,
+       "right": 0,
+       "inView": false
+      },
+      {
+       "text": "12Мудрость",
+       "x": 0,
+       "y": 0,
+       "w": 0,
+       "h": 0,
+       "bottom": 0,
+       "right": 0,
+       "inView": false
+      },
+      {
+       "text": "8Харизма",
+       "x": 0,
+       "y": 0,
+       "w": 0,
+       "h": 0,
+       "bottom": 0,
+       "right": 0,
+       "inView": false
+      }
+     ]
+    },
+    "navLabels": [
+     {
+      "text": "Навыки",
+      "lines": 1,
+      "broken": [],
+      "textWidth": 329,
+      "textScroll": 329,
+      "singleWidth": 64,
+      "fontSize": "16px",
+      "fontFamily": "\"Segoe UI\"",
+      "letterSpacing": "normal",
+      "x": -366.8,
+      "y": 249,
+      "w": 351,
+      "h": 44,
+      "bottom": 293,
+      "right": -15.8,
+      "inView": false
+     },
+     {
+      "text": "Инвентарь",
+      "lines": 1,
+      "broken": [],
+      "textWidth": 329,
+      "textScroll": 329,
+      "singleWidth": 89,
+      "fontSize": "16px",
+      "fontFamily": "\"Segoe UI\"",
+      "letterSpacing": "normal",
+      "x": -366.8,
+      "y": 299,
+      "w": 351,
+      "h": 44,
+      "bottom": 343,
+      "right": -15.8,
+      "inView": false
+     },
+     {
+      "text": "Карта мира",
+      "lines": 1,
+      "broken": [],
+      "textWidth": 329,
+      "textScroll": 329,
+      "singleWidth": 97,
+      "fontSize": "16px",
+      "fontFamily": "\"Segoe UI\"",
+      "letterSpacing": "normal",
+      "x": -366.8,
+      "y": 349,
+      "w": 351,
+      "h": 44,
+      "bottom": 393,
+      "right": -15.8,
+      "inView": false
+     },
+     {
+      "text": "Блокнот",
+      "lines": 1,
+      "broken": [],
+      "textWidth": 329,
+      "textScroll": 329,
+      "singleWidth": 70,
+      "fontSize": "16px",
+      "fontFamily": "\"Segoe UI\"",
+      "letterSpacing": "normal",
+      "x": -366.8,
+      "y": 399,
+      "w": 351,
+      "h": 44,
+      "bottom": 443,
+      "right": -15.8,
+      "inView": false
+     },
+     {
+      "text": "Раздатки и карты",
+      "lines": 1,
+      "broken": [],
+      "textWidth": 329,
+      "textScroll": 329,
+      "singleWidth": 151,
+      "fontSize": "16px",
+      "fontFamily": "\"Segoe UI\"",
+      "letterSpacing": "normal",
+      "x": -366.8,
+      "y": 449,
+      "w": 351,
+      "h": 44,
+      "bottom": 493,
+      "right": -15.8,
+      "inView": false
+     },
+     {
+      "text": "Сохранения",
+      "lines": 1,
+      "broken": [],
+      "textWidth": 329,
+      "textScroll": 329,
+      "singleWidth": 100,
+      "fontSize": "16px",
+      "fontFamily": "\"Segoe UI\"",
+      "letterSpacing": "normal",
+      "x": -366.8,
+      "y": 499,
+      "w": 351,
+      "h": 44,
+      "bottom": 543,
+      "right": -15.8,
+      "inView": false
+     },
+     {
+      "text": "Выход из игры",
+      "lines": 1,
+      "broken": [],
+      "textWidth": 329,
+      "textScroll": 329,
+      "singleWidth": 124,
+      "fontSize": "16px",
+      "fontFamily": "\"Segoe UI\"",
+      "letterSpacing": "normal",
+      "x": -366.8,
+      "y": 548,
+      "w": 351,
+      "h": 44,
+      "bottom": 592,
+      "right": -15.8,
+      "inView": false
+     }
+    ],
+    "navWrapped": 0,
+    "navBroken": 0,
+    "headerVitals": {
+     "text": "12/12 хиты·18 защита",
+     "rect": {
+      "x": 0,
+      "y": 0,
+      "w": 0,
+      "h": 0,
+      "bottom": 0,
+      "right": 0,
+      "inView": false
+     }
+    },
+    "drawerTabs": {
+     "tab": "campaign",
+     "tabs": [
+      {
+       "text": "Кампания",
+       "selected": true
+      },
+      {
+       "text": "Приложение",
+       "selected": false
+      }
+     ],
+     "visible": 2,
+     "rows": 7,
+     "perBlock": [
+      {
+       "title": "Кампания",
+       "rows": 6
+      },
+      {
+       "title": "Приложение",
+       "rows": 0
+      }
+     ],
+     "overflow": 0,
+     "children": [
+      {
+       "cls": "nav-head",
+       "y": 162,
+       "h": 44,
+       "bottom": 206
+      },
+      {
+       "cls": "nav-block",
+       "y": 212,
+       "h": 334,
+       "bottom": 546
+      },
+      {
+       "cls": "nav",
+       "y": 548,
+       "h": 44,
+       "bottom": 592
+      }
+     ]
+    },
+    "home": {
+     "sections": 1,
+     "lists": 0,
+     "stories": 0,
+     "continueBlocks": 1,
+     "allStories": 1,
+     "kickers": [
+      "Продолжить"
+     ]
+    },
+    "journal": {
+     "width": 0,
+     "contentRight": 0,
+     "rightGap": 375,
+     "emptyRightPct": 100,
+     "sections": 0,
+     "emptySections": 0,
+     "knownVisible": false,
+     "eventsVisible": false,
+     "facts": 0,
+     "eventRows": 0,
+     "textareas": 0,
+     "saveButtons": 0,
+     "reloadButtons": 0,
+     "empty": true
+    },
+    "heroPanel": {
+     "hpNodes": 0,
+     "hpText": false,
+     "hpWords": 0,
+     "documentHp": 0,
+     "text": "Ваш геройМиронВторое дыхание · потрачено: 0Опыт: 0Кости хитов: 1Состояния: нетЛист героя"
+    },
+    "words": {
+     "hit": false,
+     "ac": false,
+     "computer": false,
+     "neuralApi": false,
+     "costsApi": false,
+     "performance": false
+    }
+   },
+   "viewport": {
+    "w": 375,
+    "h": 812,
+    "dpr": 1
+   },
+   "scrollWidth": 375,
+   "scrollHeight": 812,
+   "overflowX": 0,
+   "activeView": "welcome",
+   "campaignOpen": true,
+   "kbOpen": false,
+   "textElements": 12,
+   "fontMin": 14,
+   "smallText": [],
+   "tinyText": [
+    {
+     "sel": "section#welcome > div.start__main:nth-of-type(1) > div.start__copy:nth-of-type(1) > p.eyebrow:nth-of-type(1)",
+     "px": 14,
+     "text": "одиночное приключение"
+    },
+    {
+     "sel": "section#welcome > div.start__feed:nth-of-type(2) > div.start__stories > p.start__stories-kicker",
+     "px": 14,
+     "text": "Продолжить"
+    },
+    {
+     "sel": "div.start__feed:nth-of-type(2) > div.start__stories > button.start__continue:nth-of-type(1) > span.start__continue-meta:nth-of-type(2) > span.story-where:nth-of-type(1)",
+     "px": 14,
+     "text": "Мирон, 1-й уровень · Дозор на тр"
+    },
+    {
+     "sel": "div.start__feed:nth-of-type(2) > div.start__stories > button.start__continue:nth-of-type(1) > span.start__continue-meta:nth-of-type(2) > span.story-when:nth-of-type(2)",
+     "px": 14,
+     "text": "сегодня, 22:09"
+    },
+    {
+     "sel": "section#welcome > div.start__foot:nth-of-type(3) > p.start__local",
+     "px": 14,
+     "text": "Сохранения и книги остаются на э"
+    }
+   ],
+   "fontDistinct": 3,
+   "fontSizes": {
+    "14": 5,
+    "16": 6,
+    "30": 1
+   },
+   "tapCount": 5,
+   "tapsBad": [],
+   "tapsBadCount": 0,
+   "contrastBad": [],
+   "contrastBadCount": 0,
+   "contrastMin": null,
+   "contrastChecked": 12,
+   "placeholderChecked": 0,
+   "borderBad": [
+    {
+     "sel": "section#welcome > div.start__feed:nth-of-type(2) > div.start__stories",
+     "frameFor": "section#welcome > div.start__feed:nth-of-type(2) > div.start__stories > button.start__continue:nth-of-type(1)",
+     "label": "BUTTON",
+     "side": "top",
+     "w": 1,
+     "what": "рамка",
+     "ratio": 1.35,
+     "fg": "rgb(51,43,34)",
+     "bg": "rgb(20,17,13)",
+     "kind": "граница"
+    },
+    {
+     "sel": "section#welcome > div.start__main:nth-of-type(1) > div.start__copy:nth-of-type(1) > div.start__actions > button.start__btn.start__btn--ghost:nth-of-type(2)",
+     "label": "Загрузить книгу",
+     "side": "top",
+     "w": 1,
+     "what": "рамка",
+     "ratio": 1.81,
+     "fg": "rgb(74,62,48)",
+     "bg": "rgb(20,17,13)",
+     "kind": "граница"
+    }
+   ],
+   "borderBadCount": 2,
+   "borderMin": 1.35,
+   "borderChecked": 4,
+   "controlChecked": 4,
+   "cellChecked": 0,
+   "contrastSkipped": [
+    {
+     "sel": "button#mobile-burger",
+     "kind": "граница",
+     "reason": "видимой-границы-нет"
+    }
+   ],
+   "contrastSkippedCount": 1,
+   "interactiveVisible": 5,
+   "clipped": [],
+   "clippedCount": 0,
+   "colorsOutsideCount": 0,
+   "colorsOutside": [],
+   "drawer": null,
+   "state": "home",
+   "theme": "dark",
+   "width": 375,
+   "height": 812,
+   "file": "critic-n2-home-dark-375.png",
+   "jsErrors": []
+  },
+  {
+   "probe": {
+    "viewportH": 812,
+    "description": {
+     "rect": {
+      "x": 0,
+      "y": 0,
+      "w": 0,
+      "h": 0,
+      "bottom": 0,
+      "right": 0,
+      "inView": false
+     },
+     "lines": -0.8
+    },
+    "prepare": {
+     "text": "Подготовить приключение",
+     "disabled": false,
+     "rect": {
+      "x": 0,
+      "y": 0,
+      "w": 0,
+      "h": 0,
+      "bottom": 0,
+      "right": 0,
+      "inView": false
+     }
+    },
+    "drop": {
+     "x": 0,
+     "y": 0,
+     "w": 0,
+     "h": 0,
+     "bottom": 0,
+     "right": 0,
+     "inView": false
+    },
+    "abilities": {
+     "count": 6,
+     "columns": 1,
+     "lastBottom": 0,
+     "allInside": true,
+     "cells": [
+      {
+       "text": "16Сила",
+       "x": 0,
+       "y": 0,
+       "w": 0,
+       "h": 0,
+       "bottom": 0,
+       "right": 0,
+       "inView": false
+      },
+      {
+       "text": "14Ловкость",
+       "x": 0,
+       "y": 0,
+       "w": 0,
+       "h": 0,
+       "bottom": 0,
+       "right": 0,
+       "inView": false
+      },
+      {
+       "text": "14Телосложение",
+       "x": 0,
+       "y": 0,
+       "w": 0,
+       "h": 0,
+       "bottom": 0,
+       "right": 0,
+       "inView": false
+      },
+      {
+       "text": "10Интеллект",
+       "x": 0,
+       "y": 0,
+       "w": 0,
+       "h": 0,
+       "bottom": 0,
+       "right": 0,
+       "inView": false
+      },
+      {
+       "text": "12Мудрость",
+       "x": 0,
+       "y": 0,
+       "w": 0,
+       "h": 0,
+       "bottom": 0,
+       "right": 0,
+       "inView": false
+      },
+      {
+       "text": "8Харизма",
+       "x": 0,
+       "y": 0,
+       "w": 0,
+       "h": 0,
+       "bottom": 0,
+       "right": 0,
+       "inView": false
+      }
+     ]
+    },
+    "navLabels": [
+     {
+      "text": "Навыки",
+      "lines": 1,
+      "broken": [],
+      "textWidth": 329,
+      "textScroll": 329,
+      "singleWidth": 64,
+      "fontSize": "16px",
+      "fontFamily": "\"Segoe UI\"",
+      "letterSpacing": "normal",
+      "x": 12,
+      "y": 249,
+      "w": 351,
+      "h": 44,
+      "bottom": 293,
+      "right": 363,
+      "inView": true
+     },
+     {
+      "text": "Инвентарь",
+      "lines": 1,
+      "broken": [],
+      "textWidth": 329,
+      "textScroll": 329,
+      "singleWidth": 89,
+      "fontSize": "16px",
+      "fontFamily": "\"Segoe UI\"",
+      "letterSpacing": "normal",
+      "x": 12,
+      "y": 299,
+      "w": 351,
+      "h": 44,
+      "bottom": 343,
+      "right": 363,
+      "inView": true
+     },
+     {
+      "text": "Карта мира",
+      "lines": 1,
+      "broken": [],
+      "textWidth": 329,
+      "textScroll": 329,
+      "singleWidth": 97,
+      "fontSize": "16px",
+      "fontFamily": "\"Segoe UI\"",
+      "letterSpacing": "normal",
+      "x": 12,
+      "y": 349,
+      "w": 351,
+      "h": 44,
+      "bottom": 393,
+      "right": 363,
+      "inView": true
+     },
+     {
+      "text": "Блокнот",
+      "lines": 1,
+      "broken": [],
+      "textWidth": 329,
+      "textScroll": 329,
+      "singleWidth": 70,
+      "fontSize": "16px",
+      "fontFamily": "\"Segoe UI\"",
+      "letterSpacing": "normal",
+      "x": 12,
+      "y": 399,
+      "w": 351,
+      "h": 44,
+      "bottom": 443,
+      "right": 363,
+      "inView": true
+     },
+     {
+      "text": "Раздатки и карты",
+      "lines": 1,
+      "broken": [],
+      "textWidth": 329,
+      "textScroll": 329,
+      "singleWidth": 151,
+      "fontSize": "16px",
+      "fontFamily": "\"Segoe UI\"",
+      "letterSpacing": "normal",
+      "x": 12,
+      "y": 449,
+      "w": 351,
+      "h": 44,
+      "bottom": 493,
+      "right": 363,
+      "inView": true
+     },
+     {
+      "text": "Сохранения",
+      "lines": 1,
+      "broken": [],
+      "textWidth": 329,
+      "textScroll": 329,
+      "singleWidth": 100,
+      "fontSize": "16px",
+      "fontFamily": "\"Segoe UI\"",
+      "letterSpacing": "normal",
+      "x": 12,
+      "y": 499,
+      "w": 351,
+      "h": 44,
+      "bottom": 543,
+      "right": 363,
+      "inView": true
+     },
+     {
+      "text": "Выход из игры",
+      "lines": 1,
+      "broken": [],
+      "textWidth": 329,
+      "textScroll": 329,
+      "singleWidth": 124,
+      "fontSize": "16px",
+      "fontFamily": "\"Segoe UI\"",
+      "letterSpacing": "normal",
+      "x": 12,
+      "y": 548,
+      "w": 351,
+      "h": 44,
+      "bottom": 592,
+      "right": 363,
+      "inView": true
+     }
+    ],
+    "navWrapped": 0,
+    "navBroken": 0,
+    "headerVitals": {
+     "text": "12/12 хиты·18 защита",
+     "rect": {
+      "x": 0,
+      "y": 0,
+      "w": 0,
+      "h": 0,
+      "bottom": 0,
+      "right": 0,
+      "inView": false
+     }
+    },
+    "drawerTabs": {
+     "tab": "campaign",
+     "tabs": [
+      {
+       "text": "Кампания",
+       "selected": true
+      },
+      {
+       "text": "Приложение",
+       "selected": false
+      }
+     ],
+     "visible": 2,
+     "rows": 7,
+     "perBlock": [
+      {
+       "title": "Кампания",
+       "rows": 6
+      },
+      {
+       "title": "Приложение",
+       "rows": 0
+      }
+     ],
+     "overflow": 0,
+     "children": [
+      {
+       "cls": "nav-head",
+       "y": 162,
+       "h": 44,
+       "bottom": 206
+      },
+      {
+       "cls": "nav-block",
+       "y": 212,
+       "h": 334,
+       "bottom": 546
+      },
+      {
+       "cls": "nav",
+       "y": 548,
+       "h": 44,
+       "bottom": 592
+      }
+     ]
+    },
+    "home": {
+     "sections": 1,
+     "lists": 0,
+     "stories": 0,
+     "continueBlocks": 1,
+     "allStories": 1,
+     "kickers": [
+      "Продолжить"
+     ]
+    },
+    "journal": {
+     "width": 0,
+     "contentRight": 0,
+     "rightGap": 375,
+     "emptyRightPct": 100,
+     "sections": 0,
+     "emptySections": 0,
+     "knownVisible": false,
+     "eventsVisible": false,
+     "facts": 0,
+     "eventRows": 0,
+     "textareas": 0,
+     "saveButtons": 0,
+     "reloadButtons": 0,
+     "empty": true
+    },
+    "heroPanel": {
+     "hpNodes": 0,
+     "hpText": false,
+     "hpWords": 0,
+     "documentHp": 0,
+     "text": "Ваш геройМиронВторое дыхание · потрачено: 0Опыт: 0Кости хитов: 1Состояния: нетЛист героя"
+    },
+    "words": {
+     "hit": false,
+     "ac": false,
+     "computer": false,
+     "neuralApi": false,
+     "costsApi": false,
+     "performance": false
+    }
+   },
+   "viewport": {
+    "w": 375,
+    "h": 812,
+    "dpr": 1
+   },
+   "scrollWidth": 375,
+   "scrollHeight": 812,
+   "overflowX": 0,
+   "activeView": "welcome",
+   "campaignOpen": true,
+   "kbOpen": false,
+   "textElements": 28,
+   "fontMin": 14,
+   "smallText": [],
+   "tinyText": [
+    {
+     "sel": "section#welcome > div.start__main:nth-of-type(1) > div.start__copy:nth-of-type(1) > p.eyebrow:nth-of-type(1)",
+     "px": 14,
+     "text": "одиночное приключение"
+    },
+    {
+     "sel": "section#welcome > div.start__feed:nth-of-type(2) > div.start__stories > p.start__stories-kicker",
+     "px": 14,
+     "text": "Продолжить"
+    },
+    {
+     "sel": "div.start__feed:nth-of-type(2) > div.start__stories > button.start__continue:nth-of-type(1) > span.start__continue-meta:nth-of-type(2) > span.story-where:nth-of-type(1)",
+     "px": 14,
+     "text": "Мирон, 1-й уровень · Дозор на тр"
+    },
+    {
+     "sel": "div.start__feed:nth-of-type(2) > div.start__stories > button.start__continue:nth-of-type(1) > span.start__continue-meta:nth-of-type(2) > span.story-when:nth-of-type(2)",
+     "px": 14,
+     "text": "сегодня, 22:09"
+    },
+    {
+     "sel": "section#welcome > div.start__foot:nth-of-type(3) > p.start__local",
+     "px": 14,
+     "text": "Сохранения и книги остаются на э"
+    }
+   ],
+   "fontDistinct": 4,
+   "fontSizes": {
+    "14": 5,
+    "16": 21,
+    "19": 1,
+    "30": 1
+   },
+   "tapCount": 20,
+   "tapsBad": [],
+   "tapsBadCount": 0,
+   "contrastBad": [],
+   "contrastBadCount": 0,
+   "contrastMin": null,
+   "contrastChecked": 28,
+   "placeholderChecked": 0,
+   "borderBad": [
+    {
+     "sel": "div#nav-tabs > button.nav-tab:nth-of-type(2)",
+     "label": "Приложение",
+     "side": "top",
+     "w": 1,
+     "what": "рамка",
+     "ratio": 1.31,
+     "fg": "rgb(51,43,34)",
+     "bg": "rgb(20,17,13)",
+     "kind": "граница"
+    },
+    {
+     "sel": "div#nav-head > button.nav-close",
+     "label": "Закрыть меню",
+     "side": "top",
+     "w": 1,
+     "what": "рамка",
+     "ratio": 1.31,
+     "fg": "rgb(51,43,34)",
+     "bg": "rgb(20,17,13)",
+     "kind": "граница"
+    },
+    {
+     "sel": "div#nav-drawer > button.nav.nav-exit",
+     "label": "BUTTON",
+     "side": "top",
+     "w": 1,
+     "what": "рамка",
+     "ratio": 1.35,
+     "fg": "rgb(51,43,34)",
+     "bg": "rgb(20,17,13)",
+     "kind": "граница"
+    },
+    {
+     "sel": "section#welcome > div.start__feed:nth-of-type(2) > div.start__stories",
+     "frameFor": "section#welcome > div.start__feed:nth-of-type(2) > div.start__stories > button.start__continue:nth-of-type(1)",
+     "label": "BUTTON",
+     "side": "top",
+     "w": 1,
+     "what": "рамка",
+     "ratio": 1.35,
+     "fg": "rgb(51,43,34)",
+     "bg": "rgb(20,17,13)",
+     "kind": "граница"
+    },
+    {
+     "sel": "section#welcome > div.start__main:nth-of-type(1) > div.start__copy:nth-of-type(1) > div.start__actions > button.start__btn.start__btn--ghost:nth-of-type(2)",
+     "label": "Загрузить книгу",
+     "side": "top",
+     "w": 1,
+     "what": "рамка",
+     "ratio": 1.81,
+     "fg": "rgb(74,62,48)",
+     "bg": "rgb(20,17,13)",
+     "kind": "граница"
+    }
+   ],
+   "borderBadCount": 5,
+   "borderMin": 1.31,
+   "borderChecked": 8,
+   "controlChecked": 8,
+   "cellChecked": 0,
+   "contrastSkipped": [
+    {
+     "sel": "html > body.effects.campaign-open > aside.sidebar > a.brand",
+     "kind": "граница",
+     "reason": "видимой-границы-нет"
+    },
+    {
+     "sel": "body.effects.campaign-open > aside.sidebar > nav > div.nav-bar:nth-of-type(1) > button.nav:nth-of-type(1)",
+     "kind": "граница",
+     "reason": "видимой-границы-нет"
+    },
+    {
+     "sel": "body.effects.campaign-open > aside.sidebar > nav > div.nav-bar:nth-of-type(1) > button.nav:nth-of-type(2)",
+     "kind": "граница",
+     "reason": "видимой-границы-нет"
+    },
+    {
+     "sel": "body.effects.campaign-open > aside.sidebar > nav > div.nav-bar:nth-of-type(1) > button.nav:nth-of-type(3)",
+     "kind": "граница",
+     "reason": "видимой-границы-нет"
+    },
+    {
+     "sel": "body.effects.campaign-open > aside.sidebar > nav > div.nav-bar:nth-of-type(1) > button.nav:nth-of-type(4)",
+     "kind": "граница",
+     "reason": "видимой-границы-нет"
+    },
+    {
+     "sel": "div#nav-drawer > div.nav-block.nav-block--campaign:nth-of-type(2) > button.nav:nth-of-type(1)",
+     "kind": "граница",
+     "reason": "видимой-границы-нет"
+    },
+    {
+     "sel": "div#nav-drawer > div.nav-block.nav-block--campaign:nth-of-type(2) > button.nav:nth-of-type(2)",
+     "kind": "граница",
+     "reason": "видимой-границы-нет"
+    },
+    {
+     "sel": "div#nav-drawer > div.nav-block.nav-block--campaign:nth-of-type(2) > button.nav:nth-of-type(3)",
+     "kind": "граница",
+     "reason": "видимой-границы-нет"
+    },
+    {
+     "sel": "div#nav-drawer > div.nav-block.nav-block--campaign:nth-of-type(2) > button.nav:nth-of-type(4)",
+     "kind": "граница",
+     "reason": "видимой-границы-нет"
+    },
+    {
+     "sel": "div#nav-drawer > div.nav-block.nav-block--campaign:nth-of-type(2) > button.nav:nth-of-type(5)",
+     "kind": "граница",
+     "reason": "видимой-границы-нет"
+    },
+    {
+     "sel": "div#nav-drawer > div.nav-block.nav-block--campaign:nth-of-type(2) > button.nav:nth-of-type(6)",
+     "kind": "граница",
+     "reason": "видимой-границы-нет"
+    },
+    {
+     "sel": "button#mobile-burger",
+     "kind": "граница",
+     "reason": "видимой-границы-нет"
+    }
+   ],
+   "contrastSkippedCount": 12,
+   "interactiveVisible": 20,
+   "clipped": [],
+   "clippedCount": 0,
+   "colorsOutsideCount": 0,
+   "colorsOutside": [],
+   "drawer": {
+    "h": 433,
+    "top": 162,
+    "rows": 7,
+    "blocks": [
+     "Кампания"
+    ],
+    "scrollTop": 0,
+    "scroll": 0,
+    "content": 433
+   },
+   "state": "menu",
+   "theme": "dark",
+   "width": 375,
+   "height": 812,
+   "debug": {
+    "bodyClass": "effects campaign-open tabletop mobile-menu-open",
+    "burger": true,
+    "aside": {
+     "x": 0,
+     "y": 0,
+     "w": 375,
+     "h": 812
+    },
+    "drawer": {
+     "x": 12,
+     "y": 162,
+     "w": 351,
+     "h": 433
+    }
+   },
+   "file": "critic-n2-menu-dark-375.png",
+   "jsErrors": []
+  },
+  {
+   "probe": {
+    "viewportH": 812,
+    "description": {
+     "rect": {
+      "x": 0,
+      "y": 0,
+      "w": 0,
+      "h": 0,
+      "bottom": 0,
+      "right": 0,
+      "inView": false
+     },
+     "lines": -0.8
+    },
+    "prepare": {
+     "text": "Подготовить приключение",
+     "disabled": false,
+     "rect": {
+      "x": 0,
+      "y": 0,
+      "w": 0,
+      "h": 0,
+      "bottom": 0,
+      "right": 0,
+      "inView": false
+     }
+    },
+    "drop": {
+     "x": 0,
+     "y": 0,
+     "w": 0,
+     "h": 0,
+     "bottom": 0,
+     "right": 0,
+     "inView": false
+    },
+    "abilities": {
+     "count": 6,
+     "columns": 2,
+     "lastBottom": 604.2,
+     "allInside": true,
+     "cells": [
+      {
+       "text": "16 Сила",
+       "x": 16,
+       "y": 283.2,
+       "w": 165.5,
+       "h": 99,
+       "bottom": 382.2,
+       "right": 181.5,
+       "inView": true
+      },
+      {
+       "text": "14 Ловкость",
+       "x": 193.5,
+       "y": 283.2,
+       "w": 165.5,
+       "h": 99,
+       "bottom": 382.2,
+       "right": 359,
+       "inView": true
+      },
+      {
+       "text": "14 Телосложение",
+       "x": 16,
+       "y": 394.2,
+       "w": 165.5,
+       "h": 99,
+       "bottom": 493.2,
+       "right": 181.5,
+       "inView": true
+      },
+      {
+       "text": "10 Интеллект",
+       "x": 193.5,
+       "y": 394.2,
+       "w": 165.5,
+       "h": 99,
+       "bottom": 493.2,
+       "right": 359,
+       "inView": true
+      },
+      {
+       "text": "12 Мудрость",
+       "x": 16,
+       "y": 505.2,
+       "w": 165.5,
+       "h": 99,
+       "bottom": 604.2,
+       "right": 181.5,
+       "inView": true
+      },
+      {
+       "text": "8 Харизма",
+       "x": 193.5,
+       "y": 505.2,
+       "w": 165.5,
+       "h": 99,
+       "bottom": 604.2,
+       "right": 359,
+       "inView": true
+      }
+     ]
+    },
+    "navLabels": [
+     {
+      "text": "Навыки",
+      "lines": 1,
+      "broken": [],
+      "textWidth": 329,
+      "textScroll": 329,
+      "singleWidth": 64,
+      "fontSize": "16px",
+      "fontFamily": "\"Segoe UI\"",
+      "letterSpacing": "normal",
+      "x": -366.8,
+      "y": 249,
+      "w": 351,
+      "h": 44,
+      "bottom": 293,
+      "right": -15.8,
+      "inView": false
+     },
+     {
+      "text": "Инвентарь",
+      "lines": 1,
+      "broken": [],
+      "textWidth": 329,
+      "textScroll": 329,
+      "singleWidth": 89,
+      "fontSize": "16px",
+      "fontFamily": "\"Segoe UI\"",
+      "letterSpacing": "normal",
+      "x": -366.8,
+      "y": 299,
+      "w": 351,
+      "h": 44,
+      "bottom": 343,
+      "right": -15.8,
+      "inView": false
+     },
+     {
+      "text": "Карта мира",
+      "lines": 1,
+      "broken": [],
+      "textWidth": 329,
+      "textScroll": 329,
+      "singleWidth": 97,
+      "fontSize": "16px",
+      "fontFamily": "\"Segoe UI\"",
+      "letterSpacing": "normal",
+      "x": -366.8,
+      "y": 349,
+      "w": 351,
+      "h": 44,
+      "bottom": 393,
+      "right": -15.8,
+      "inView": false
+     },
+     {
+      "text": "Блокнот",
+      "lines": 1,
+      "broken": [],
+      "textWidth": 329,
+      "textScroll": 329,
+      "singleWidth": 70,
+      "fontSize": "16px",
+      "fontFamily": "\"Segoe UI\"",
+      "letterSpacing": "normal",
+      "x": -366.8,
+      "y": 399,
+      "w": 351,
+      "h": 44,
+      "bottom": 443,
+      "right": -15.8,
+      "inView": false
+     },
+     {
+      "text": "Раздатки и карты",
+      "lines": 1,
+      "broken": [],
+      "textWidth": 329,
+      "textScroll": 329,
+      "singleWidth": 151,
+      "fontSize": "16px",
+      "fontFamily": "\"Segoe UI\"",
+      "letterSpacing": "normal",
+      "x": -366.8,
+      "y": 449,
+      "w": 351,
+      "h": 44,
+      "bottom": 493,
+      "right": -15.8,
+      "inView": false
+     },
+     {
+      "text": "Сохранения",
+      "lines": 1,
+      "broken": [],
+      "textWidth": 329,
+      "textScroll": 329,
+      "singleWidth": 100,
+      "fontSize": "16px",
+      "fontFamily": "\"Segoe UI\"",
+      "letterSpacing": "normal",
+      "x": -366.8,
+      "y": 499,
+      "w": 351,
+      "h": 44,
+      "bottom": 543,
+      "right": -15.8,
+      "inView": false
+     },
+     {
+      "text": "Выход из игры",
+      "lines": 1,
+      "broken": [],
+      "textWidth": 329,
+      "textScroll": 329,
+      "singleWidth": 124,
+      "fontSize": "16px",
+      "fontFamily": "\"Segoe UI\"",
+      "letterSpacing": "normal",
+      "x": -366.8,
+      "y": 548,
+      "w": 351,
+      "h": 44,
+      "bottom": 592,
+      "right": -15.8,
+      "inView": false
+     }
+    ],
+    "navWrapped": 0,
+    "navBroken": 0,
+    "headerVitals": {
+     "text": "12/12 хиты·18 защита",
+     "rect": {
+      "x": 0,
+      "y": 0,
+      "w": 0,
+      "h": 0,
+      "bottom": 0,
+      "right": 0,
+      "inView": false
+     }
+    },
+    "drawerTabs": {
+     "tab": "campaign",
+     "tabs": [
+      {
+       "text": "Кампания",
+       "selected": true
+      },
+      {
+       "text": "Приложение",
+       "selected": false
+      }
+     ],
+     "visible": 2,
+     "rows": 7,
+     "perBlock": [
+      {
+       "title": "Кампания",
+       "rows": 6
+      },
+      {
+       "title": "Приложение",
+       "rows": 0
+      }
+     ],
+     "overflow": 0,
+     "children": [
+      {
+       "cls": "nav-head",
+       "y": 162,
+       "h": 44,
+       "bottom": 206
+      },
+      {
+       "cls": "nav-block",
+       "y": 212,
+       "h": 334,
+       "bottom": 546
+      },
+      {
+       "cls": "nav",
+       "y": 548,
+       "h": 44,
+       "bottom": 592
+      }
+     ]
+    },
+    "home": {
+     "sections": 0,
+     "lists": 0,
+     "stories": 0,
+     "continueBlocks": 0,
+     "allStories": 0,
+     "kickers": []
+    },
+    "journal": {
+     "width": 0,
+     "contentRight": 0,
+     "rightGap": 375,
+     "emptyRightPct": 100,
+     "sections": 0,
+     "emptySections": 0,
+     "knownVisible": false,
+     "eventsVisible": false,
+     "facts": 0,
+     "eventRows": 0,
+     "textareas": 0,
+     "saveButtons": 0,
+     "reloadButtons": 0,
+     "empty": true
+    },
+    "heroPanel": {
+     "hpNodes": 0,
+     "hpText": false,
+     "hpWords": 0,
+     "documentHp": 0,
+     "text": "Ваш геройМиронВторое дыхание · потрачено: 0Опыт: 0Кости хитов: 1Состояния: нетЛист героя"
+    },
+    "words": {
+     "hit": true,
+     "ac": true,
+     "computer": false,
+     "neuralApi": false,
+     "costsApi": false,
+     "performance": false
+    }
+   },
+   "viewport": {
+    "w": 375,
+    "h": 812,
+    "dpr": 1
+   },
+   "scrollWidth": 375,
+   "scrollHeight": 812,
+   "overflowX": 0,
+   "activeView": "character",
+   "campaignOpen": true,
+   "kbOpen": false,
+   "textElements": 27,
+   "fontMin": 14,
+   "smallText": [],
+   "tinyText": [
+    {
+     "sel": "div#character-content > div.sheet-vitals:nth-of-type(1) > div.sheet-vitals__cell:nth-of-type(1) > small",
+     "px": 14,
+     "text": "Хиты"
+    },
+    {
+     "sel": "div#character-content > div.sheet-vitals:nth-of-type(1) > div.sheet-vitals__cell:nth-of-type(2) > small",
+     "px": 14,
+     "text": "Защита"
+    },
+    {
+     "sel": "div#character-content > div.sheet-vitals:nth-of-type(1) > div.sheet-vitals__cell:nth-of-type(3) > small",
+     "px": 14,
+     "text": "Инициатива"
+    },
+    {
+     "sel": "div#character-content > div.sheet-vitals:nth-of-type(1) > div.sheet-vitals__cell:nth-of-type(4) > small",
+     "px": 14,
+     "text": "Скорость"
+    },
+    {
+     "sel": "div#character-content > div.scores-grid:nth-of-type(2) > div.metric:nth-of-type(1) > small",
+     "px": 14,
+     "text": "Сила"
+    },
+    {
+     "sel": "div#character-content > div.scores-grid:nth-of-type(2) > div.metric:nth-of-type(2) > small",
+     "px": 14,
+     "text": "Ловкость"
+    },
+    {
+     "sel": "div#character-content > div.scores-grid:nth-of-type(2) > div.metric:nth-of-type(3) > small",
+     "px": 14,
+     "text": "Телосложение"
+    },
+    {
+     "sel": "div#character-content > div.scores-grid:nth-of-type(2) > div.metric:nth-of-type(4) > small",
+     "px": 14,
+     "text": "Интеллект"
+    },
+    {
+     "sel": "div#character-content > div.scores-grid:nth-of-type(2) > div.metric:nth-of-type(5) > small",
+     "px": 14,
+     "text": "Мудрость"
+    },
+    {
+     "sel": "div#character-content > div.scores-grid:nth-of-type(2) > div.metric:nth-of-type(6) > small",
+     "px": 14,
+     "text": "Харизма"
+    }
+   ],
+   "fontDistinct": 4,
+   "fontSizes": {
+    "14": 10,
+    "16": 5,
+    "17": 1,
+    "22": 11
+   },
+   "tapCount": 2,
+   "tapsBad": [],
+   "tapsBadCount": 0,
+   "contrastBad": [],
+   "contrastBadCount": 0,
+   "contrastMin": null,
+   "contrastChecked": 27,
+   "placeholderChecked": 0,
+   "borderBad": [
+    {
+     "sel": "html > body.effects.tabletop > main > header > button.themetoggle:nth-of-type(2)",
+     "label": "Светлая тема",
+     "side": "top",
+     "w": 1,
+     "what": "рамка",
+     "ratio": 1.35,
+     "fg": "rgb(51,43,34)",
+     "bg": "rgb(20,17,13)",
+     "kind": "граница"
+    },
+    {
+     "sel": "div#character-content > div.sheet-vitals:nth-of-type(1) > div.sheet-vitals__cell:nth-of-type(2)",
+     "label": "DIV",
+     "side": "left",
+     "w": 1,
+     "what": "рамка",
+     "ratio": 1.35,
+     "fg": "rgb(51,43,34)",
+     "bg": "rgb(16,18,16)",
+     "kind": "ячейка"
+    },
+    {
+     "sel": "div#character-content > div.sheet-vitals:nth-of-type(1) > div.sheet-vitals__cell:nth-of-type(3)",
+     "label": "DIV",
+     "side": "top",
+     "w": 1,
+     "what": "рамка",
+     "ratio": 1.35,
+     "fg": "rgb(51,43,34)",
+     "bg": "rgb(16,18,16)",
+     "kind": "ячейка"
+    },
+    {
+     "sel": "div#character-content > div.sheet-vitals:nth-of-type(1) > div.sheet-vitals__cell:nth-of-type(4)",
+     "label": "DIV",
+     "side": "top",
+     "w": 1,
+     "what": "рамка",
+     "ratio": 1.35,
+     "fg": "rgb(51,43,34)",
+     "bg": "rgb(16,18,16)",
+     "kind": "ячейка"
+    },
+    {
+     "sel": "div#character-content > div.sheet-vitals:nth-of-type(1)",
+     "frameFor": "div#character-content > div.sheet-vitals:nth-of-type(1) > div.sheet-vitals__cell:nth-of-type(1)",
+     "label": "DIV",
+     "side": "top",
+     "w": 1,
+     "what": "рамка",
+     "ratio": 1.81,
+     "fg": "rgb(74,62,48)",
+     "bg": "rgb(16,18,16)",
+     "kind": "ячейка"
+    }
+   ],
+   "borderBadCount": 5,
+   "borderMin": 1.35,
+   "borderChecked": 5,
+   "controlChecked": 1,
+   "cellChecked": 4,
+   "contrastSkipped": [
+    {
+     "sel": "button#mobile-burger",
+     "kind": "граница",
+     "reason": "видимой-границы-нет"
+    }
+   ],
+   "contrastSkippedCount": 1,
+   "interactiveVisible": 2,
+   "clipped": [],
+   "clippedCount": 0,
+   "colorsOutsideCount": 0,
+   "colorsOutside": [],
+   "drawer": null,
+   "state": "hero",
+   "theme": "dark",
+   "width": 375,
+   "height": 812,
+   "file": "critic-n2-hero-dark-375.png",
+   "jsErrors": []
+  },
+  {
+   "probe": {
+    "viewportH": 812,
+    "description": {
+     "rect": {
+      "x": 0,
+      "y": 0,
+      "w": 0,
+      "h": 0,
+      "bottom": 0,
+      "right": 0,
+      "inView": false
+     },
+     "lines": -0.8
+    },
+    "prepare": {
+     "text": "Подготовить приключение",
+     "disabled": false,
+     "rect": {
+      "x": 0,
+      "y": 0,
+      "w": 0,
+      "h": 0,
+      "bottom": 0,
+      "right": 0,
+      "inView": false
+     }
+    },
+    "drop": {
+     "x": 0,
+     "y": 0,
+     "w": 0,
+     "h": 0,
+     "bottom": 0,
+     "right": 0,
+     "inView": false
+    },
+    "abilities": {
+     "count": 6,
+     "columns": 1,
+     "lastBottom": 0,
+     "allInside": true,
+     "cells": [
+      {
+       "text": "16Сила",
+       "x": 0,
+       "y": 0,
+       "w": 0,
+       "h": 0,
+       "bottom": 0,
+       "right": 0,
+       "inView": false
+      },
+      {
+       "text": "14Ловкость",
+       "x": 0,
+       "y": 0,
+       "w": 0,
+       "h": 0,
+       "bottom": 0,
+       "right": 0,
+       "inView": false
+      },
+      {
+       "text": "14Телосложение",
+       "x": 0,
+       "y": 0,
+       "w": 0,
+       "h": 0,
+       "bottom": 0,
+       "right": 0,
+       "inView": false
+      },
+      {
+       "text": "10Интеллект",
+       "x": 0,
+       "y": 0,
+       "w": 0,
+       "h": 0,
+       "bottom": 0,
+       "right": 0,
+       "inView": false
+      },
+      {
+       "text": "12Мудрость",
+       "x": 0,
+       "y": 0,
+       "w": 0,
+       "h": 0,
+       "bottom": 0,
+       "right": 0,
+       "inView": false
+      },
+      {
+       "text": "8Харизма",
+       "x": 0,
+       "y": 0,
+       "w": 0,
+       "h": 0,
+       "bottom": 0,
+       "right": 0,
+       "inView": false
+      }
+     ]
+    },
+    "navLabels": [
+     {
+      "text": "Навыки",
+      "lines": 1,
+      "broken": [],
+      "textWidth": 329,
+      "textScroll": 329,
+      "singleWidth": 64,
+      "fontSize": "16px",
+      "fontFamily": "\"Segoe UI\"",
+      "letterSpacing": "normal",
+      "x": -366.8,
+      "y": 249,
+      "w": 351,
+      "h": 44,
+      "bottom": 293,
+      "right": -15.8,
+      "inView": false
+     },
+     {
+      "text": "Инвентарь",
+      "lines": 1,
+      "broken": [],
+      "textWidth": 329,
+      "textScroll": 329,
+      "singleWidth": 89,
+      "fontSize": "16px",
+      "fontFamily": "\"Segoe UI\"",
+      "letterSpacing": "normal",
+      "x": -366.8,
+      "y": 299,
+      "w": 351,
+      "h": 44,
+      "bottom": 343,
+      "right": -15.8,
+      "inView": false
+     },
+     {
+      "text": "Карта мира",
+      "lines": 1,
+      "broken": [],
+      "textWidth": 329,
+      "textScroll": 329,
+      "singleWidth": 97,
+      "fontSize": "16px",
+      "fontFamily": "\"Segoe UI\"",
+      "letterSpacing": "normal",
+      "x": -366.8,
+      "y": 349,
+      "w": 351,
+      "h": 44,
+      "bottom": 393,
+      "right": -15.8,
+      "inView": false
+     },
+     {
+      "text": "Блокнот",
+      "lines": 1,
+      "broken": [],
+      "textWidth": 329,
+      "textScroll": 329,
+      "singleWidth": 70,
+      "fontSize": "16px",
+      "fontFamily": "\"Segoe UI\"",
+      "letterSpacing": "normal",
+      "x": -366.8,
+      "y": 399,
+      "w": 351,
+      "h": 44,
+      "bottom": 443,
+      "right": -15.8,
+      "inView": false
+     },
+     {
+      "text": "Раздатки и карты",
+      "lines": 1,
+      "broken": [],
+      "textWidth": 329,
+      "textScroll": 329,
+      "singleWidth": 151,
+      "fontSize": "16px",
+      "fontFamily": "\"Segoe UI\"",
+      "letterSpacing": "normal",
+      "x": -366.8,
+      "y": 449,
+      "w": 351,
+      "h": 44,
+      "bottom": 493,
+      "right": -15.8,
+      "inView": false
+     },
+     {
+      "text": "Сохранения",
+      "lines": 1,
+      "broken": [],
+      "textWidth": 329,
+      "textScroll": 329,
+      "singleWidth": 100,
+      "fontSize": "16px",
+      "fontFamily": "\"Segoe UI\"",
+      "letterSpacing": "normal",
+      "x": -366.8,
+      "y": 499,
+      "w": 351,
+      "h": 44,
+      "bottom": 543,
+      "right": -15.8,
+      "inView": false
+     },
+     {
+      "text": "Выход из игры",
+      "lines": 1,
+      "broken": [],
+      "textWidth": 329,
+      "textScroll": 329,
+      "singleWidth": 124,
+      "fontSize": "16px",
+      "fontFamily": "\"Segoe UI\"",
+      "letterSpacing": "normal",
+      "x": -366.8,
+      "y": 548,
+      "w": 351,
+      "h": 44,
+      "bottom": 592,
+      "right": -15.8,
+      "inView": false
+     }
+    ],
+    "navWrapped": 0,
+    "navBroken": 0,
+    "headerVitals": {
+     "text": "12/12 хиты 18 защита",
+     "rect": {
+      "x": 222.5,
+      "y": 6.5,
+      "w": 80.5,
+      "h": 42,
+      "bottom": 48.5,
+      "right": 303,
+      "inView": true
+     }
+    },
+    "drawerTabs": {
+     "tab": "campaign",
+     "tabs": [
+      {
+       "text": "Кампания",
+       "selected": true
+      },
+      {
+       "text": "Приложение",
+       "selected": false
+      }
+     ],
+     "visible": 2,
+     "rows": 7,
+     "perBlock": [
+      {
+       "title": "Кампания",
+       "rows": 6
+      },
+      {
+       "title": "Приложение",
+       "rows": 0
+      }
+     ],
+     "overflow": 0,
+     "children": [
+      {
+       "cls": "nav-head",
+       "y": 162,
+       "h": 44,
+       "bottom": 206
+      },
+      {
+       "cls": "nav-block",
+       "y": 212,
+       "h": 334,
+       "bottom": 546
+      },
+      {
+       "cls": "nav",
+       "y": 548,
+       "h": 44,
+       "bottom": 592
+      }
+     ]
+    },
+    "home": {
+     "sections": 0,
+     "lists": 0,
+     "stories": 0,
+     "continueBlocks": 0,
+     "allStories": 0,
+     "kickers": []
+    },
+    "journal": {
+     "width": 0,
+     "contentRight": 0,
+     "rightGap": 375,
+     "emptyRightPct": 100,
+     "sections": 0,
+     "emptySections": 0,
+     "knownVisible": false,
+     "eventsVisible": false,
+     "facts": 0,
+     "eventRows": 0,
+     "textareas": 0,
+     "saveButtons": 0,
+     "reloadButtons": 0,
+     "empty": true
+    },
+    "heroPanel": {
+     "hpNodes": 0,
+     "hpText": false,
+     "hpWords": 0,
+     "documentHp": 0,
+     "text": "Ваш геройМиронВторое дыхание · потрачено: 0Опыт: 0Кости хитов: 1Состояния: нетЛист героя"
+    },
+    "words": {
+     "hit": true,
+     "ac": true,
+     "computer": false,
+     "neuralApi": false,
+     "costsApi": false,
+     "performance": false
+    }
+   },
+   "viewport": {
+    "w": 375,
+    "h": 812,
+    "dpr": 1
+   },
+   "scrollWidth": 375,
+   "scrollHeight": 812,
+   "overflowX": 0,
+   "activeView": "play",
+   "campaignOpen": true,
+   "kbOpen": false,
+   "textElements": 11,
+   "fontMin": 14,
+   "smallText": [],
+   "tinyText": [
+    {
+     "sel": "body.effects.campaign-open > main > header > div.m-title:nth-of-type(1) > span.m-sub:nth-of-type(2)",
+     "px": 14,
+     "text": "Дозор на тракте"
+    },
+    {
+     "sel": "main > header > div.vitals:nth-of-type(3) > span:nth-of-type(1) > span.vitals__label",
+     "px": 14,
+     "text": "хиты"
+    },
+    {
+     "sel": "main > header > div.vitals:nth-of-type(3) > span:nth-of-type(3) > span.vitals__label",
+     "px": 14,
+     "text": "защита"
+    },
+    {
+     "sel": "div.workspace-layout > div.literary-column > div.story-card > div.dice-row:nth-of-type(4) > span.dice-row__note",
+     "px": 14,
+     "text": "сохранено"
+    }
+   ],
+   "fontDistinct": 3,
+   "fontSizes": {
+    "14": 4,
+    "16": 5,
+    "17": 2
+   },
+   "tapCount": 4,
+   "tapsBad": [],
+   "tapsBadCount": 0,
+   "contrastBad": [],
+   "contrastBadCount": 0,
+   "contrastMin": null,
+   "contrastChecked": 11,
+   "placeholderChecked": 1,
+   "borderBad": [
+    {
+     "sel": "form#action-form",
+     "frameFor": "textarea#player-input",
+     "label": "Ваша реплика",
+     "side": "top",
+     "w": 1,
+     "what": "рамка",
+     "ratio": 2.09,
+     "fg": "rgb(180,159,125)",
+     "bg": "rgb(243,236,224)",
+     "kind": "граница"
+    }
+   ],
+   "borderBadCount": 1,
+   "borderMin": 2.09,
+   "borderChecked": 2,
+   "controlChecked": 2,
+   "cellChecked": 0,
+   "contrastSkipped": [
+    {
+     "sel": "button#mobile-burger",
+     "kind": "граница",
+     "reason": "видимой-границы-нет"
+    },
+    {
+     "sel": "button#sheet-toggle",
+     "kind": "граница",
+     "reason": "видимой-границы-нет"
+    }
+   ],
+   "contrastSkippedCount": 2,
+   "interactiveVisible": 4,
+   "clipped": [],
+   "clippedCount": 0,
+   "colorsOutsideCount": 0,
+   "colorsOutside": [],
+   "drawer": null,
+   "chatBlocks": [
+    {
+     "tag": "message master",
+     "h": 202,
+     "text": "МАСТЕР\nУ сторожевого поста гоблин перекрыл тропу. Осмотрите "
+    }
+   ],
+   "state": "game",
+   "theme": "light",
+   "width": 375,
+   "height": 812,
+   "file": "critic-n2-game-light-375.png",
+   "jsErrors": []
+  },
+  {
+   "probe": {
+    "viewportH": 812,
+    "description": {
+     "rect": {
+      "x": 0,
+      "y": 0,
+      "w": 0,
+      "h": 0,
+      "bottom": 0,
+      "right": 0,
+      "inView": false
+     },
+     "lines": -0.8
+    },
+    "prepare": {
+     "text": "Подготовить приключение",
+     "disabled": false,
+     "rect": {
+      "x": 0,
+      "y": 0,
+      "w": 0,
+      "h": 0,
+      "bottom": 0,
+      "right": 0,
+      "inView": false
+     }
+    },
+    "drop": {
+     "x": 0,
+     "y": 0,
+     "w": 0,
+     "h": 0,
+     "bottom": 0,
+     "right": 0,
+     "inView": false
+    },
+    "abilities": {
+     "count": 6,
+     "columns": 1,
+     "lastBottom": 0,
+     "allInside": true,
+     "cells": [
+      {
+       "text": "16Сила",
+       "x": 0,
+       "y": 0,
+       "w": 0,
+       "h": 0,
+       "bottom": 0,
+       "right": 0,
+       "inView": false
+      },
+      {
+       "text": "14Ловкость",
+       "x": 0,
+       "y": 0,
+       "w": 0,
+       "h": 0,
+       "bottom": 0,
+       "right": 0,
+       "inView": false
+      },
+      {
+       "text": "14Телосложение",
+       "x": 0,
+       "y": 0,
+       "w": 0,
+       "h": 0,
+       "bottom": 0,
+       "right": 0,
+       "inView": false
+      },
+      {
+       "text": "10Интеллект",
+       "x": 0,
+       "y": 0,
+       "w": 0,
+       "h": 0,
+       "bottom": 0,
+       "right": 0,
+       "inView": false
+      },
+      {
+       "text": "12Мудрость",
+       "x": 0,
+       "y": 0,
+       "w": 0,
+       "h": 0,
+       "bottom": 0,
+       "right": 0,
+       "inView": false
+      },
+      {
+       "text": "8Харизма",
+       "x": 0,
+       "y": 0,
+       "w": 0,
+       "h": 0,
+       "bottom": 0,
+       "right": 0,
+       "inView": false
+      }
+     ]
+    },
+    "navLabels": [
+     {
+      "text": "Навыки",
+      "lines": 1,
+      "broken": [],
+      "textWidth": 329,
+      "textScroll": 329,
+      "singleWidth": 64,
+      "fontSize": "16px",
+      "fontFamily": "\"Segoe UI\"",
+      "letterSpacing": "normal",
+      "x": -366.8,
+      "y": 249,
+      "w": 351,
+      "h": 44,
+      "bottom": 293,
+      "right": -15.8,
+      "inView": false
+     },
+     {
+      "text": "Инвентарь",
+      "lines": 1,
+      "broken": [],
+      "textWidth": 329,
+      "textScroll": 329,
+      "singleWidth": 89,
+      "fontSize": "16px",
+      "fontFamily": "\"Segoe UI\"",
+      "letterSpacing": "normal",
+      "x": -366.8,
+      "y": 299,
+      "w": 351,
+      "h": 44,
+      "bottom": 343,
+      "right": -15.8,
+      "inView": false
+     },
+     {
+      "text": "Карта мира",
+      "lines": 1,
+      "broken": [],
+      "textWidth": 329,
+      "textScroll": 329,
+      "singleWidth": 97,
+      "fontSize": "16px",
+      "fontFamily": "\"Segoe UI\"",
+      "letterSpacing": "normal",
+      "x": -366.8,
+      "y": 349,
+      "w": 351,
+      "h": 44,
+      "bottom": 393,
+      "right": -15.8,
+      "inView": false
+     },
+     {
+      "text": "Блокнот",
+      "lines": 1,
+      "broken": [],
+      "textWidth": 329,
+      "textScroll": 329,
+      "singleWidth": 70,
+      "fontSize": "16px",
+      "fontFamily": "\"Segoe UI\"",
+      "letterSpacing": "normal",
+      "x": -366.8,
+      "y": 399,
+      "w": 351,
+      "h": 44,
+      "bottom": 443,
+      "right": -15.8,
+      "inView": false
+     },
+     {
+      "text": "Раздатки и карты",
+      "lines": 1,
+      "broken": [],
+      "textWidth": 329,
+      "textScroll": 329,
+      "singleWidth": 151,
+      "fontSize": "16px",
+      "fontFamily": "\"Segoe UI\"",
+      "letterSpacing": "normal",
+      "x": -366.8,
+      "y": 449,
+      "w": 351,
+      "h": 44,
+      "bottom": 493,
+      "right": -15.8,
+      "inView": false
+     },
+     {
+      "text": "Сохранения",
+      "lines": 1,
+      "broken": [],
+      "textWidth": 329,
+      "textScroll": 329,
+      "singleWidth": 100,
+      "fontSize": "16px",
+      "fontFamily": "\"Segoe UI\"",
+      "letterSpacing": "normal",
+      "x": -366.8,
+      "y": 499,
+      "w": 351,
+      "h": 44,
+      "bottom": 543,
+      "right": -15.8,
+      "inView": false
+     },
+     {
+      "text": "Выход из игры",
+      "lines": 1,
+      "broken": [],
+      "textWidth": 329,
+      "textScroll": 329,
+      "singleWidth": 124,
+      "fontSize": "16px",
+      "fontFamily": "\"Segoe UI\"",
+      "letterSpacing": "normal",
+      "x": -366.8,
+      "y": 548,
+      "w": 351,
+      "h": 44,
+      "bottom": 592,
+      "right": -15.8,
+      "inView": false
+     }
+    ],
+    "navWrapped": 0,
+    "navBroken": 0,
+    "headerVitals": {
+     "text": "12/12 хиты·18 защита",
+     "rect": {
+      "x": 0,
+      "y": 0,
+      "w": 0,
+      "h": 0,
+      "bottom": 0,
+      "right": 0,
+      "inView": false
+     }
+    },
+    "drawerTabs": {
+     "tab": "campaign",
+     "tabs": [
+      {
+       "text": "Кампания",
+       "selected": true
+      },
+      {
+       "text": "Приложение",
+       "selected": false
+      }
+     ],
+     "visible": 2,
+     "rows": 7,
+     "perBlock": [
+      {
+       "title": "Кампания",
+       "rows": 6
+      },
+      {
+       "title": "Приложение",
+       "rows": 0
+      }
+     ],
+     "overflow": 0,
+     "children": [
+      {
+       "cls": "nav-head",
+       "y": 162,
+       "h": 44,
+       "bottom": 206
+      },
+      {
+       "cls": "nav-block",
+       "y": 212,
+       "h": 334,
+       "bottom": 546
+      },
+      {
+       "cls": "nav",
+       "y": 548,
+       "h": 44,
+       "bottom": 592
+      }
+     ]
+    },
+    "home": {
+     "sections": 1,
+     "lists": 0,
+     "stories": 0,
+     "continueBlocks": 1,
+     "allStories": 1,
+     "kickers": [
+      "Продолжить"
+     ]
+    },
+    "journal": {
+     "width": 0,
+     "contentRight": 0,
+     "rightGap": 375,
+     "emptyRightPct": 100,
+     "sections": 0,
+     "emptySections": 0,
+     "knownVisible": false,
+     "eventsVisible": false,
+     "facts": 0,
+     "eventRows": 0,
+     "textareas": 0,
+     "saveButtons": 0,
+     "reloadButtons": 0,
+     "empty": true
+    },
+    "heroPanel": {
+     "hpNodes": 0,
+     "hpText": false,
+     "hpWords": 0,
+     "documentHp": 0,
+     "text": "Ваш геройМиронВторое дыхание · потрачено: 0Опыт: 0Кости хитов: 1Состояния: нетЛист героя"
+    },
+    "words": {
+     "hit": false,
+     "ac": false,
+     "computer": false,
+     "neuralApi": false,
+     "costsApi": false,
+     "performance": false
+    }
+   },
+   "viewport": {
+    "w": 375,
+    "h": 812,
+    "dpr": 1
+   },
+   "scrollWidth": 375,
+   "scrollHeight": 812,
+   "overflowX": 0,
+   "activeView": "welcome",
+   "campaignOpen": true,
+   "kbOpen": false,
+   "textElements": 12,
+   "fontMin": 14,
+   "smallText": [],
+   "tinyText": [
+    {
+     "sel": "section#welcome > div.start__main:nth-of-type(1) > div.start__copy:nth-of-type(1) > p.eyebrow:nth-of-type(1)",
+     "px": 14,
+     "text": "одиночное приключение"
+    },
+    {
+     "sel": "section#welcome > div.start__feed:nth-of-type(2) > div.start__stories > p.start__stories-kicker",
+     "px": 14,
+     "text": "Продолжить"
+    },
+    {
+     "sel": "div.start__feed:nth-of-type(2) > div.start__stories > button.start__continue:nth-of-type(1) > span.start__continue-meta:nth-of-type(2) > span.story-where:nth-of-type(1)",
+     "px": 14,
+     "text": "Мирон, 1-й уровень · Дозор на тр"
+    },
+    {
+     "sel": "div.start__feed:nth-of-type(2) > div.start__stories > button.start__continue:nth-of-type(1) > span.start__continue-meta:nth-of-type(2) > span.story-when:nth-of-type(2)",
+     "px": 14,
+     "text": "сегодня, 22:09"
+    },
+    {
+     "sel": "section#welcome > div.start__foot:nth-of-type(3) > p.start__local",
+     "px": 14,
+     "text": "Сохранения и книги остаются на э"
+    }
+   ],
+   "fontDistinct": 3,
+   "fontSizes": {
+    "14": 5,
+    "16": 6,
+    "30": 1
+   },
+   "tapCount": 5,
+   "tapsBad": [],
+   "tapsBadCount": 0,
+   "contrastBad": [],
+   "contrastBadCount": 0,
+   "contrastMin": null,
+   "contrastChecked": 12,
+   "placeholderChecked": 0,
+   "borderBad": [
+    {
+     "sel": "section#welcome > div.start__feed:nth-of-type(2) > div.start__stories",
+     "frameFor": "section#welcome > div.start__feed:nth-of-type(2) > div.start__stories > button.start__continue:nth-of-type(1)",
+     "label": "BUTTON",
+     "side": "top",
+     "w": 1,
+     "what": "рамка",
+     "ratio": 1.36,
+     "fg": "rgb(217,203,175)",
+     "bg": "rgb(243,236,224)",
+     "kind": "граница"
+    },
+    {
+     "sel": "section#welcome > div.start__main:nth-of-type(1) > div.start__copy:nth-of-type(1) > div.start__actions > button.start__btn.start__btn--ghost:nth-of-type(2)",
+     "label": "Загрузить книгу",
+     "side": "top",
+     "w": 1,
+     "what": "рамка",
+     "ratio": 2.18,
+     "fg": "rgb(180,159,125)",
+     "bg": "rgb(243,236,224)",
+     "kind": "граница"
+    }
+   ],
+   "borderBadCount": 2,
+   "borderMin": 1.36,
+   "borderChecked": 4,
+   "controlChecked": 4,
+   "cellChecked": 0,
+   "contrastSkipped": [
+    {
+     "sel": "button#mobile-burger",
+     "kind": "граница",
+     "reason": "видимой-границы-нет"
+    }
+   ],
+   "contrastSkippedCount": 1,
+   "interactiveVisible": 5,
+   "clipped": [],
+   "clippedCount": 0,
+   "colorsOutsideCount": 0,
+   "colorsOutside": [],
+   "drawer": null,
+   "state": "home",
+   "theme": "light",
+   "width": 375,
+   "height": 812,
+   "file": "critic-n2-home-light-375.png",
+   "jsErrors": []
+  },
+  {
+   "probe": {
+    "viewportH": 812,
+    "description": {
+     "rect": {
+      "x": 0,
+      "y": 0,
+      "w": 0,
+      "h": 0,
+      "bottom": 0,
+      "right": 0,
+      "inView": false
+     },
+     "lines": -0.8
+    },
+    "prepare": {
+     "text": "Подготовить приключение",
+     "disabled": false,
+     "rect": {
+      "x": 0,
+      "y": 0,
+      "w": 0,
+      "h": 0,
+      "bottom": 0,
+      "right": 0,
+      "inView": false
+     }
+    },
+    "drop": {
+     "x": 0,
+     "y": 0,
+     "w": 0,
+     "h": 0,
+     "bottom": 0,
+     "right": 0,
+     "inView": false
+    },
+    "abilities": {
+     "count": 6,
+     "columns": 1,
+     "lastBottom": 0,
+     "allInside": true,
+     "cells": [
+      {
+       "text": "16Сила",
+       "x": 0,
+       "y": 0,
+       "w": 0,
+       "h": 0,
+       "bottom": 0,
+       "right": 0,
+       "inView": false
+      },
+      {
+       "text": "14Ловкость",
+       "x": 0,
+       "y": 0,
+       "w": 0,
+       "h": 0,
+       "bottom": 0,
+       "right": 0,
+       "inView": false
+      },
+      {
+       "text": "14Телосложение",
+       "x": 0,
+       "y": 0,
+       "w": 0,
+       "h": 0,
+       "bottom": 0,
+       "right": 0,
+       "inView": false
+      },
+      {
+       "text": "10Интеллект",
+       "x": 0,
+       "y": 0,
+       "w": 0,
+       "h": 0,
+       "bottom": 0,
+       "right": 0,
+       "inView": false
+      },
+      {
+       "text": "12Мудрость",
+       "x": 0,
+       "y": 0,
+       "w": 0,
+       "h": 0,
+       "bottom": 0,
+       "right": 0,
+       "inView": false
+      },
+      {
+       "text": "8Харизма",
+       "x": 0,
+       "y": 0,
+       "w": 0,
+       "h": 0,
+       "bottom": 0,
+       "right": 0,
+       "inView": false
+      }
+     ]
+    },
+    "navLabels": [
+     {
+      "text": "Навыки",
+      "lines": 1,
+      "broken": [],
+      "textWidth": 329,
+      "textScroll": 329,
+      "singleWidth": 64,
+      "fontSize": "16px",
+      "fontFamily": "\"Segoe UI\"",
+      "letterSpacing": "normal",
+      "x": 12,
+      "y": 249,
+      "w": 351,
+      "h": 44,
+      "bottom": 293,
+      "right": 363,
+      "inView": true
+     },
+     {
+      "text": "Инвентарь",
+      "lines": 1,
+      "broken": [],
+      "textWidth": 329,
+      "textScroll": 329,
+      "singleWidth": 89,
+      "fontSize": "16px",
+      "fontFamily": "\"Segoe UI\"",
+      "letterSpacing": "normal",
+      "x": 12,
+      "y": 299,
+      "w": 351,
+      "h": 44,
+      "bottom": 343,
+      "right": 363,
+      "inView": true
+     },
+     {
+      "text": "Карта мира",
+      "lines": 1,
+      "broken": [],
+      "textWidth": 329,
+      "textScroll": 329,
+      "singleWidth": 97,
+      "fontSize": "16px",
+      "fontFamily": "\"Segoe UI\"",
+      "letterSpacing": "normal",
+      "x": 12,
+      "y": 349,
+      "w": 351,
+      "h": 44,
+      "bottom": 393,
+      "right": 363,
+      "inView": true
+     },
+     {
+      "text": "Блокнот",
+      "lines": 1,
+      "broken": [],
+      "textWidth": 329,
+      "textScroll": 329,
+      "singleWidth": 70,
+      "fontSize": "16px",
+      "fontFamily": "\"Segoe UI\"",
+      "letterSpacing": "normal",
+      "x": 12,
+      "y": 399,
+      "w": 351,
+      "h": 44,
+      "bottom": 443,
+      "right": 363,
+      "inView": true
+     },
+     {
+      "text": "Раздатки и карты",
+      "lines": 1,
+      "broken": [],
+      "textWidth": 329,
+      "textScroll": 329,
+      "singleWidth": 151,
+      "fontSize": "16px",
+      "fontFamily": "\"Segoe UI\"",
+      "letterSpacing": "normal",
+      "x": 12,
+      "y": 449,
+      "w": 351,
+      "h": 44,
+      "bottom": 493,
+      "right": 363,
+      "inView": true
+     },
+     {
+      "text": "Сохранения",
+      "lines": 1,
+      "broken": [],
+      "textWidth": 329,
+      "textScroll": 329,
+      "singleWidth": 100,
+      "fontSize": "16px",
+      "fontFamily": "\"Segoe UI\"",
+      "letterSpacing": "normal",
+      "x": 12,
+      "y": 499,
+      "w": 351,
+      "h": 44,
+      "bottom": 543,
+      "right": 363,
+      "inView": true
+     },
+     {
+      "text": "Выход из игры",
+      "lines": 1,
+      "broken": [],
+      "textWidth": 329,
+      "textScroll": 329,
+      "singleWidth": 124,
+      "fontSize": "16px",
+      "fontFamily": "\"Segoe UI\"",
+      "letterSpacing": "normal",
+      "x": 12,
+      "y": 548,
+      "w": 351,
+      "h": 44,
+      "bottom": 592,
+      "right": 363,
+      "inView": true
+     }
+    ],
+    "navWrapped": 0,
+    "navBroken": 0,
+    "headerVitals": {
+     "text": "12/12 хиты·18 защита",
+     "rect": {
+      "x": 0,
+      "y": 0,
+      "w": 0,
+      "h": 0,
+      "bottom": 0,
+      "right": 0,
+      "inView": false
+     }
+    },
+    "drawerTabs": {
+     "tab": "campaign",
+     "tabs": [
+      {
+       "text": "Кампания",
+       "selected": true
+      },
+      {
+       "text": "Приложение",
+       "selected": false
+      }
+     ],
+     "visible": 2,
+     "rows": 7,
+     "perBlock": [
+      {
+       "title": "Кампания",
+       "rows": 6
+      },
+      {
+       "title": "Приложение",
+       "rows": 0
+      }
+     ],
+     "overflow": 0,
+     "children": [
+      {
+       "cls": "nav-head",
+       "y": 162,
+       "h": 44,
+       "bottom": 206
+      },
+      {
+       "cls": "nav-block",
+       "y": 212,
+       "h": 334,
+       "bottom": 546
+      },
+      {
+       "cls": "nav",
+       "y": 548,
+       "h": 44,
+       "bottom": 592
+      }
+     ]
+    },
+    "home": {
+     "sections": 1,
+     "lists": 0,
+     "stories": 0,
+     "continueBlocks": 1,
+     "allStories": 1,
+     "kickers": [
+      "Продолжить"
+     ]
+    },
+    "journal": {
+     "width": 0,
+     "contentRight": 0,
+     "rightGap": 375,
+     "emptyRightPct": 100,
+     "sections": 0,
+     "emptySections": 0,
+     "knownVisible": false,
+     "eventsVisible": false,
+     "facts": 0,
+     "eventRows": 0,
+     "textareas": 0,
+     "saveButtons": 0,
+     "reloadButtons": 0,
+     "empty": true
+    },
+    "heroPanel": {
+     "hpNodes": 0,
+     "hpText": false,
+     "hpWords": 0,
+     "documentHp": 0,
+     "text": "Ваш геройМиронВторое дыхание · потрачено: 0Опыт: 0Кости хитов: 1Состояния: нетЛист героя"
+    },
+    "words": {
+     "hit": false,
+     "ac": false,
+     "computer": false,
+     "neuralApi": false,
+     "costsApi": false,
+     "performance": false
+    }
+   },
+   "viewport": {
+    "w": 375,
+    "h": 812,
+    "dpr": 1
+   },
+   "scrollWidth": 375,
+   "scrollHeight": 812,
+   "overflowX": 0,
+   "activeView": "welcome",
+   "campaignOpen": true,
+   "kbOpen": false,
+   "textElements": 28,
+   "fontMin": 14,
+   "smallText": [],
+   "tinyText": [
+    {
+     "sel": "section#welcome > div.start__main:nth-of-type(1) > div.start__copy:nth-of-type(1) > p.eyebrow:nth-of-type(1)",
+     "px": 14,
+     "text": "одиночное приключение"
+    },
+    {
+     "sel": "section#welcome > div.start__feed:nth-of-type(2) > div.start__stories > p.start__stories-kicker",
+     "px": 14,
+     "text": "Продолжить"
+    },
+    {
+     "sel": "div.start__feed:nth-of-type(2) > div.start__stories > button.start__continue:nth-of-type(1) > span.start__continue-meta:nth-of-type(2) > span.story-where:nth-of-type(1)",
+     "px": 14,
+     "text": "Мирон, 1-й уровень · Дозор на тр"
+    },
+    {
+     "sel": "div.start__feed:nth-of-type(2) > div.start__stories > button.start__continue:nth-of-type(1) > span.start__continue-meta:nth-of-type(2) > span.story-when:nth-of-type(2)",
+     "px": 14,
+     "text": "сегодня, 22:09"
+    },
+    {
+     "sel": "section#welcome > div.start__foot:nth-of-type(3) > p.start__local",
+     "px": 14,
+     "text": "Сохранения и книги остаются на э"
+    }
+   ],
+   "fontDistinct": 4,
+   "fontSizes": {
+    "14": 5,
+    "16": 21,
+    "19": 1,
+    "30": 1
+   },
+   "tapCount": 20,
+   "tapsBad": [],
+   "tapsBadCount": 0,
+   "contrastBad": [],
+   "contrastBadCount": 0,
+   "contrastMin": null,
+   "contrastChecked": 28,
+   "placeholderChecked": 0,
+   "borderBad": [
+    {
+     "sel": "div#nav-tabs > button.nav-tab:nth-of-type(2)",
+     "label": "Приложение",
+     "side": "top",
+     "w": 1,
+     "what": "рамка",
+     "ratio": 1.3,
+     "fg": "rgb(217,203,175)",
+     "bg": "rgb(243,236,224)",
+     "kind": "граница"
+    },
+    {
+     "sel": "div#nav-head > button.nav-close",
+     "label": "Закрыть меню",
+     "side": "top",
+     "w": 1,
+     "what": "рамка",
+     "ratio": 1.3,
+     "fg": "rgb(217,203,175)",
+     "bg": "rgb(243,236,224)",
+     "kind": "граница"
+    },
+    {
+     "sel": "div#nav-drawer > button.nav.nav-exit",
+     "label": "BUTTON",
+     "side": "top",
+     "w": 1,
+     "what": "рамка",
+     "ratio": 1.36,
+     "fg": "rgb(217,203,175)",
+     "bg": "rgb(243,236,224)",
+     "kind": "граница"
+    },
+    {
+     "sel": "section#welcome > div.start__feed:nth-of-type(2) > div.start__stories",
+     "frameFor": "section#welcome > div.start__feed:nth-of-type(2) > div.start__stories > button.start__continue:nth-of-type(1)",
+     "label": "BUTTON",
+     "side": "top",
+     "w": 1,
+     "what": "рамка",
+     "ratio": 1.36,
+     "fg": "rgb(217,203,175)",
+     "bg": "rgb(243,236,224)",
+     "kind": "граница"
+    },
+    {
+     "sel": "section#welcome > div.start__main:nth-of-type(1) > div.start__copy:nth-of-type(1) > div.start__actions > button.start__btn.start__btn--ghost:nth-of-type(2)",
+     "label": "Загрузить книгу",
+     "side": "top",
+     "w": 1,
+     "what": "рамка",
+     "ratio": 2.18,
+     "fg": "rgb(180,159,125)",
+     "bg": "rgb(243,236,224)",
+     "kind": "граница"
+    }
+   ],
+   "borderBadCount": 5,
+   "borderMin": 1.3,
+   "borderChecked": 8,
+   "controlChecked": 8,
+   "cellChecked": 0,
+   "contrastSkipped": [
+    {
+     "sel": "html > body.effects.campaign-open > aside.sidebar > a.brand",
+     "kind": "граница",
+     "reason": "видимой-границы-нет"
+    },
+    {
+     "sel": "body.effects.campaign-open > aside.sidebar > nav > div.nav-bar:nth-of-type(1) > button.nav:nth-of-type(1)",
+     "kind": "граница",
+     "reason": "видимой-границы-нет"
+    },
+    {
+     "sel": "body.effects.campaign-open > aside.sidebar > nav > div.nav-bar:nth-of-type(1) > button.nav:nth-of-type(2)",
+     "kind": "граница",
+     "reason": "видимой-границы-нет"
+    },
+    {
+     "sel": "body.effects.campaign-open > aside.sidebar > nav > div.nav-bar:nth-of-type(1) > button.nav:nth-of-type(3)",
+     "kind": "граница",
+     "reason": "видимой-границы-нет"
+    },
+    {
+     "sel": "body.effects.campaign-open > aside.sidebar > nav > div.nav-bar:nth-of-type(1) > button.nav:nth-of-type(4)",
+     "kind": "граница",
+     "reason": "видимой-границы-нет"
+    },
+    {
+     "sel": "div#nav-drawer > div.nav-block.nav-block--campaign:nth-of-type(2) > button.nav:nth-of-type(1)",
+     "kind": "граница",
+     "reason": "видимой-границы-нет"
+    },
+    {
+     "sel": "div#nav-drawer > div.nav-block.nav-block--campaign:nth-of-type(2) > button.nav:nth-of-type(2)",
+     "kind": "граница",
+     "reason": "видимой-границы-нет"
+    },
+    {
+     "sel": "div#nav-drawer > div.nav-block.nav-block--campaign:nth-of-type(2) > button.nav:nth-of-type(3)",
+     "kind": "граница",
+     "reason": "видимой-границы-нет"
+    },
+    {
+     "sel": "div#nav-drawer > div.nav-block.nav-block--campaign:nth-of-type(2) > button.nav:nth-of-type(4)",
+     "kind": "граница",
+     "reason": "видимой-границы-нет"
+    },
+    {
+     "sel": "div#nav-drawer > div.nav-block.nav-block--campaign:nth-of-type(2) > button.nav:nth-of-type(5)",
+     "kind": "граница",
+     "reason": "видимой-границы-нет"
+    },
+    {
+     "sel": "div#nav-drawer > div.nav-block.nav-block--campaign:nth-of-type(2) > button.nav:nth-of-type(6)",
+     "kind": "граница",
+     "reason": "видимой-границы-нет"
+    },
+    {
+     "sel": "button#mobile-burger",
+     "kind": "граница",
+     "reason": "видимой-границы-нет"
+    }
+   ],
+   "contrastSkippedCount": 12,
+   "interactiveVisible": 20,
+   "clipped": [],
+   "clippedCount": 0,
+   "colorsOutsideCount": 0,
+   "colorsOutside": [],
+   "drawer": {
+    "h": 433,
+    "top": 162,
+    "rows": 7,
+    "blocks": [
+     "Кампания"
+    ],
+    "scrollTop": 0,
+    "scroll": 0,
+    "content": 433
+   },
+   "state": "menu",
+   "theme": "light",
+   "width": 375,
+   "height": 812,
+   "debug": {
+    "bodyClass": "effects campaign-open tabletop mobile-menu-open",
+    "burger": true,
+    "aside": {
+     "x": 0,
+     "y": 0,
+     "w": 375,
+     "h": 812
+    },
+    "drawer": {
+     "x": 12,
+     "y": 162,
+     "w": 351,
+     "h": 433
+    }
+   },
+   "file": "critic-n2-menu-light-375.png",
+   "jsErrors": []
+  },
+  {
+   "probe": {
+    "viewportH": 812,
+    "description": {
+     "rect": {
+      "x": 0,
+      "y": 0,
+      "w": 0,
+      "h": 0,
+      "bottom": 0,
+      "right": 0,
+      "inView": false
+     },
+     "lines": -0.8
+    },
+    "prepare": {
+     "text": "Подготовить приключение",
+     "disabled": false,
+     "rect": {
+      "x": 0,
+      "y": 0,
+      "w": 0,
+      "h": 0,
+      "bottom": 0,
+      "right": 0,
+      "inView": false
+     }
+    },
+    "drop": {
+     "x": 0,
+     "y": 0,
+     "w": 0,
+     "h": 0,
+     "bottom": 0,
+     "right": 0,
+     "inView": false
+    },
+    "abilities": {
+     "count": 6,
+     "columns": 2,
+     "lastBottom": 604.2,
+     "allInside": true,
+     "cells": [
+      {
+       "text": "16 Сила",
+       "x": 16,
+       "y": 283.2,
+       "w": 165.5,
+       "h": 99,
+       "bottom": 382.2,
+       "right": 181.5,
+       "inView": true
+      },
+      {
+       "text": "14 Ловкость",
+       "x": 193.5,
+       "y": 283.2,
+       "w": 165.5,
+       "h": 99,
+       "bottom": 382.2,
+       "right": 359,
+       "inView": true
+      },
+      {
+       "text": "14 Телосложение",
+       "x": 16,
+       "y": 394.2,
+       "w": 165.5,
+       "h": 99,
+       "bottom": 493.2,
+       "right": 181.5,
+       "inView": true
+      },
+      {
+       "text": "10 Интеллект",
+       "x": 193.5,
+       "y": 394.2,
+       "w": 165.5,
+       "h": 99,
+       "bottom": 493.2,
+       "right": 359,
+       "inView": true
+      },
+      {
+       "text": "12 Мудрость",
+       "x": 16,
+       "y": 505.2,
+       "w": 165.5,
+       "h": 99,
+       "bottom": 604.2,
+       "right": 181.5,
+       "inView": true
+      },
+      {
+       "text": "8 Харизма",
+       "x": 193.5,
+       "y": 505.2,
+       "w": 165.5,
+       "h": 99,
+       "bottom": 604.2,
+       "right": 359,
+       "inView": true
+      }
+     ]
+    },
+    "navLabels": [
+     {
+      "text": "Навыки",
+      "lines": 1,
+      "broken": [],
+      "textWidth": 329,
+      "textScroll": 329,
+      "singleWidth": 64,
+      "fontSize": "16px",
+      "fontFamily": "\"Segoe UI\"",
+      "letterSpacing": "normal",
+      "x": -366.8,
+      "y": 249,
+      "w": 351,
+      "h": 44,
+      "bottom": 293,
+      "right": -15.8,
+      "inView": false
+     },
+     {
+      "text": "Инвентарь",
+      "lines": 1,
+      "broken": [],
+      "textWidth": 329,
+      "textScroll": 329,
+      "singleWidth": 89,
+      "fontSize": "16px",
+      "fontFamily": "\"Segoe UI\"",
+      "letterSpacing": "normal",
+      "x": -366.8,
+      "y": 299,
+      "w": 351,
+      "h": 44,
+      "bottom": 343,
+      "right": -15.8,
+      "inView": false
+     },
+     {
+      "text": "Карта мира",
+      "lines": 1,
+      "broken": [],
+      "textWidth": 329,
+      "textScroll": 329,
+      "singleWidth": 97,
+      "fontSize": "16px",
+      "fontFamily": "\"Segoe UI\"",
+      "letterSpacing": "normal",
+      "x": -366.8,
+      "y": 349,
+      "w": 351,
+      "h": 44,
+      "bottom": 393,
+      "right": -15.8,
+      "inView": false
+     },
+     {
+      "text": "Блокнот",
+      "lines": 1,
+      "broken": [],
+      "textWidth": 329,
+      "textScroll": 329,
+      "singleWidth": 70,
+      "fontSize": "16px",
+      "fontFamily": "\"Segoe UI\"",
+      "letterSpacing": "normal",
+      "x": -366.8,
+      "y": 399,
+      "w": 351,
+      "h": 44,
+      "bottom": 443,
+      "right": -15.8,
+      "inView": false
+     },
+     {
+      "text": "Раздатки и карты",
+      "lines": 1,
+      "broken": [],
+      "textWidth": 329,
+      "textScroll": 329,
+      "singleWidth": 151,
+      "fontSize": "16px",
+      "fontFamily": "\"Segoe UI\"",
+      "letterSpacing": "normal",
+      "x": -366.8,
+      "y": 449,
+      "w": 351,
+      "h": 44,
+      "bottom": 493,
+      "right": -15.8,
+      "inView": false
+     },
+     {
+      "text": "Сохранения",
+      "lines": 1,
+      "broken": [],
+      "textWidth": 329,
+      "textScroll": 329,
+      "singleWidth": 100,
+      "fontSize": "16px",
+      "fontFamily": "\"Segoe UI\"",
+      "letterSpacing": "normal",
+      "x": -366.8,
+      "y": 499,
+      "w": 351,
+      "h": 44,
+      "bottom": 543,
+      "right": -15.8,
+      "inView": false
+     },
+     {
+      "text": "Выход из игры",
+      "lines": 1,
+      "broken": [],
+      "textWidth": 329,
+      "textScroll": 329,
+      "singleWidth": 124,
+      "fontSize": "16px",
+      "fontFamily": "\"Segoe UI\"",
+      "letterSpacing": "normal",
+      "x": -366.8,
+      "y": 548,
+      "w": 351,
+      "h": 44,
+      "bottom": 592,
+      "right": -15.8,
+      "inView": false
+     }
+    ],
+    "navWrapped": 0,
+    "navBroken": 0,
+    "headerVitals": {
+     "text": "12/12 хиты·18 защита",
+     "rect": {
+      "x": 0,
+      "y": 0,
+      "w": 0,
+      "h": 0,
+      "bottom": 0,
+      "right": 0,
+      "inView": false
+     }
+    },
+    "drawerTabs": {
+     "tab": "campaign",
+     "tabs": [
+      {
+       "text": "Кампания",
+       "selected": true
+      },
+      {
+       "text": "Приложение",
+       "selected": false
+      }
+     ],
+     "visible": 2,
+     "rows": 7,
+     "perBlock": [
+      {
+       "title": "Кампания",
+       "rows": 6
+      },
+      {
+       "title": "Приложение",
+       "rows": 0
+      }
+     ],
+     "overflow": 0,
+     "children": [
+      {
+       "cls": "nav-head",
+       "y": 162,
+       "h": 44,
+       "bottom": 206
+      },
+      {
+       "cls": "nav-block",
+       "y": 212,
+       "h": 334,
+       "bottom": 546
+      },
+      {
+       "cls": "nav",
+       "y": 548,
+       "h": 44,
+       "bottom": 592
+      }
+     ]
+    },
+    "home": {
+     "sections": 0,
+     "lists": 0,
+     "stories": 0,
+     "continueBlocks": 0,
+     "allStories": 0,
+     "kickers": []
+    },
+    "journal": {
+     "width": 0,
+     "contentRight": 0,
+     "rightGap": 375,
+     "emptyRightPct": 100,
+     "sections": 0,
+     "emptySections": 0,
+     "knownVisible": false,
+     "eventsVisible": false,
+     "facts": 0,
+     "eventRows": 0,
+     "textareas": 0,
+     "saveButtons": 0,
+     "reloadButtons": 0,
+     "empty": true
+    },
+    "heroPanel": {
+     "hpNodes": 0,
+     "hpText": false,
+     "hpWords": 0,
+     "documentHp": 0,
+     "text": "Ваш геройМиронВторое дыхание · потрачено: 0Опыт: 0Кости хитов: 1Состояния: нетЛист героя"
+    },
+    "words": {
+     "hit": true,
+     "ac": true,
+     "computer": false,
+     "neuralApi": false,
+     "costsApi": false,
+     "performance": false
+    }
+   },
+   "viewport": {
+    "w": 375,
+    "h": 812,
+    "dpr": 1
+   },
+   "scrollWidth": 375,
+   "scrollHeight": 812,
+   "overflowX": 0,
+   "activeView": "character",
+   "campaignOpen": true,
+   "kbOpen": false,
+   "textElements": 27,
+   "fontMin": 14,
+   "smallText": [],
+   "tinyText": [
+    {
+     "sel": "div#character-content > div.sheet-vitals:nth-of-type(1) > div.sheet-vitals__cell:nth-of-type(1) > small",
+     "px": 14,
+     "text": "Хиты"
+    },
+    {
+     "sel": "div#character-content > div.sheet-vitals:nth-of-type(1) > div.sheet-vitals__cell:nth-of-type(2) > small",
+     "px": 14,
+     "text": "Защита"
+    },
+    {
+     "sel": "div#character-content > div.sheet-vitals:nth-of-type(1) > div.sheet-vitals__cell:nth-of-type(3) > small",
+     "px": 14,
+     "text": "Инициатива"
+    },
+    {
+     "sel": "div#character-content > div.sheet-vitals:nth-of-type(1) > div.sheet-vitals__cell:nth-of-type(4) > small",
+     "px": 14,
+     "text": "Скорость"
+    },
+    {
+     "sel": "div#character-content > div.scores-grid:nth-of-type(2) > div.metric:nth-of-type(1) > small",
+     "px": 14,
+     "text": "Сила"
+    },
+    {
+     "sel": "div#character-content > div.scores-grid:nth-of-type(2) > div.metric:nth-of-type(2) > small",
+     "px": 14,
+     "text": "Ловкость"
+    },
+    {
+     "sel": "div#character-content > div.scores-grid:nth-of-type(2) > div.metric:nth-of-type(3) > small",
+     "px": 14,
+     "text": "Телосложение"
+    },
+    {
+     "sel": "div#character-content > div.scores-grid:nth-of-type(2) > div.metric:nth-of-type(4) > small",
+     "px": 14,
+     "text": "Интеллект"
+    },
+    {
+     "sel": "div#character-content > div.scores-grid:nth-of-type(2) > div.metric:nth-of-type(5) > small",
+     "px": 14,
+     "text": "Мудрость"
+    },
+    {
+     "sel": "div#character-content > div.scores-grid:nth-of-type(2) > div.metric:nth-of-type(6) > small",
+     "px": 14,
+     "text": "Харизма"
+    }
+   ],
+   "fontDistinct": 4,
+   "fontSizes": {
+    "14": 10,
+    "16": 5,
+    "17": 1,
+    "22": 11
+   },
+   "tapCount": 2,
+   "tapsBad": [],
+   "tapsBadCount": 0,
+   "contrastBad": [],
+   "contrastBadCount": 0,
+   "contrastMin": null,
+   "contrastChecked": 27,
+   "placeholderChecked": 0,
+   "borderBad": [
+    {
+     "sel": "html > body.effects.tabletop > main > header > button.themetoggle:nth-of-type(2)",
+     "label": "Тёмная тема",
+     "side": "top",
+     "w": 1,
+     "what": "рамка",
+     "ratio": 1.36,
+     "fg": "rgb(217,203,175)",
+     "bg": "rgb(243,236,224)",
+     "kind": "граница"
+    },
+    {
+     "sel": "div#character-content > div.sheet-vitals:nth-of-type(1) > div.sheet-vitals__cell:nth-of-type(2)",
+     "label": "DIV",
+     "side": "left",
+     "w": 1,
+     "what": "рамка",
+     "ratio": 1.36,
+     "fg": "rgb(217,203,175)",
+     "bg": "rgb(243,236,224)",
+     "kind": "ячейка"
+    },
+    {
+     "sel": "div#character-content > div.sheet-vitals:nth-of-type(1) > div.sheet-vitals__cell:nth-of-type(3)",
+     "label": "DIV",
+     "side": "top",
+     "w": 1,
+     "what": "рамка",
+     "ratio": 1.36,
+     "fg": "rgb(217,203,175)",
+     "bg": "rgb(243,236,224)",
+     "kind": "ячейка"
+    },
+    {
+     "sel": "div#character-content > div.sheet-vitals:nth-of-type(1) > div.sheet-vitals__cell:nth-of-type(4)",
+     "label": "DIV",
+     "side": "top",
+     "w": 1,
+     "what": "рамка",
+     "ratio": 1.36,
+     "fg": "rgb(217,203,175)",
+     "bg": "rgb(243,236,224)",
+     "kind": "ячейка"
+    },
+    {
+     "sel": "div#character-content > div.sheet-vitals:nth-of-type(1)",
+     "frameFor": "div#character-content > div.sheet-vitals:nth-of-type(1) > div.sheet-vitals__cell:nth-of-type(1)",
+     "label": "DIV",
+     "side": "top",
+     "w": 1,
+     "what": "рамка",
+     "ratio": 2.18,
+     "fg": "rgb(180,159,125)",
+     "bg": "rgb(243,236,224)",
+     "kind": "ячейка"
+    }
+   ],
+   "borderBadCount": 5,
+   "borderMin": 1.36,
+   "borderChecked": 5,
+   "controlChecked": 1,
+   "cellChecked": 4,
+   "contrastSkipped": [
+    {
+     "sel": "button#mobile-burger",
+     "kind": "граница",
+     "reason": "видимой-границы-нет"
+    }
+   ],
+   "contrastSkippedCount": 1,
+   "interactiveVisible": 2,
+   "clipped": [],
+   "clippedCount": 0,
+   "colorsOutsideCount": 0,
+   "colorsOutside": [],
+   "drawer": null,
+   "state": "hero",
+   "theme": "light",
+   "width": 375,
+   "height": 812,
+   "file": "critic-n2-hero-light-375.png",
+   "jsErrors": []
+  },
+  {
+   "probe": {
+    "viewportH": 900,
+    "description": {
+     "rect": {
+      "x": 0,
+      "y": 0,
+      "w": 0,
+      "h": 0,
+      "bottom": 0,
+      "right": 0,
+      "inView": false
+     },
+     "lines": -1
+    },
+    "prepare": {
+     "text": "Подготовить приключение",
+     "disabled": false,
+     "rect": {
+      "x": 0,
+      "y": 0,
+      "w": 0,
+      "h": 0,
+      "bottom": 0,
+      "right": 0,
+      "inView": false
+     }
+    },
+    "drop": {
+     "x": 0,
+     "y": 0,
+     "w": 0,
+     "h": 0,
+     "bottom": 0,
+     "right": 0,
+     "inView": false
+    },
+    "abilities": {
+     "count": 6,
+     "columns": 1,
+     "lastBottom": 0,
+     "allInside": true,
+     "cells": [
+      {
+       "text": "16Сила",
+       "x": 0,
+       "y": 0,
+       "w": 0,
+       "h": 0,
+       "bottom": 0,
+       "right": 0,
+       "inView": false
+      },
+      {
+       "text": "14Ловкость",
+       "x": 0,
+       "y": 0,
+       "w": 0,
+       "h": 0,
+       "bottom": 0,
+       "right": 0,
+       "inView": false
+      },
+      {
+       "text": "14Телосложение",
+       "x": 0,
+       "y": 0,
+       "w": 0,
+       "h": 0,
+       "bottom": 0,
+       "right": 0,
+       "inView": false
+      },
+      {
+       "text": "10Интеллект",
+       "x": 0,
+       "y": 0,
+       "w": 0,
+       "h": 0,
+       "bottom": 0,
+       "right": 0,
+       "inView": false
+      },
+      {
+       "text": "12Мудрость",
+       "x": 0,
+       "y": 0,
+       "w": 0,
+       "h": 0,
+       "bottom": 0,
+       "right": 0,
+       "inView": false
+      },
+      {
+       "text": "8Харизма",
+       "x": 0,
+       "y": 0,
+       "w": 0,
+       "h": 0,
+       "bottom": 0,
+       "right": 0,
+       "inView": false
+      }
+     ]
+    },
+    "navLabels": [],
+    "navWrapped": 0,
+    "navBroken": 0,
+    "headerVitals": {
+     "text": "12/12 хиты · 18 защита",
+     "rect": {
+      "x": 1185.4,
+      "y": 71.5,
+      "w": 190.6,
+      "h": 24,
+      "bottom": 95.5,
+      "right": 1376,
+      "inView": true
+     }
+    },
+    "drawerTabs": {
+     "tab": "campaign",
+     "tabs": [
+      {
+       "text": "Кампания",
+       "selected": true
+      },
+      {
+       "text": "Приложение",
+       "selected": false
+      }
+     ],
+     "visible": 0,
+     "rows": 0,
+     "perBlock": [
+      {
+       "title": "Кампания",
+       "rows": 0
+      },
+      {
+       "title": "Приложение",
+       "rows": 0
+      }
+     ],
+     "overflow": 0,
+     "children": []
+    },
+    "home": {
+     "sections": 0,
+     "lists": 0,
+     "stories": 0,
+     "continueBlocks": 0,
+     "allStories": 0,
+     "kickers": []
+    },
+    "journal": {
+     "width": 0,
+     "contentRight": 0,
+     "rightGap": 1440,
+     "emptyRightPct": 100,
+     "sections": 0,
+     "emptySections": 0,
+     "knownVisible": false,
+     "eventsVisible": false,
+     "facts": 0,
+     "eventRows": 0,
+     "textareas": 0,
+     "saveButtons": 0,
+     "reloadButtons": 0,
+     "empty": true
+    },
+    "heroPanel": {
+     "hpNodes": 0,
+     "hpText": false,
+     "hpWords": 0,
+     "documentHp": 0,
+     "text": "ВАШ ГЕРОЙ Мирон Второе дыхание · потрачено: 0 Опыт: 0 Кости хитов: 1 Состояния: нет Лист героя"
+    },
+    "words": {
+     "hit": true,
+     "ac": true,
+     "computer": false,
+     "neuralApi": false,
+     "costsApi": false,
+     "performance": false
+    }
+   },
+   "viewport": {
+    "w": 1440,
+    "h": 900,
+    "dpr": 1
+   },
+   "scrollWidth": 1440,
+   "scrollHeight": 900,
+   "overflowX": 0,
+   "activeView": "play",
+   "campaignOpen": true,
+   "kbOpen": false,
+   "textElements": 23,
+   "fontMin": 14,
+   "smallText": [],
+   "tinyText": [
+    {
+     "sel": "html > body.effects.tabletop > aside.sidebar > a.brand > span:nth-of-type(2)",
+     "px": 14,
+     "text": "SOLO REALMS"
+    },
+    {
+     "sel": "button#nav-more",
+     "px": 14,
+     "text": "Ещё"
+    },
+    {
+     "sel": "div#chat > article.message.master > div.speaker:nth-of-type(1)",
+     "px": 14,
+     "text": "МАСТЕР"
+    },
+    {
+     "sel": "form#action-form > div.composer-footer:nth-of-type(2) > span",
+     "px": 14,
+     "text": "Enter — отправить · Shift + Ente"
+    },
+    {
+     "sel": "div.workspace-layout > div.literary-column > div.story-card > div.dice-row:nth-of-type(4) > span.dice-row__note",
+     "px": 14,
+     "text": "сохранено"
+    },
+    {
+     "sel": "details#scene-hero > summary",
+     "px": 14,
+     "text": "Ваш герой"
+    },
+    {
+     "sel": "details#scene-hero > div.disclosure-body > p.hint:nth-of-type(1)",
+     "px": 14,
+     "text": "Второе дыхание · потрачено: 0"
+    },
+    {
+     "sel": "details#scene-hero > div.disclosure-body > p.hint:nth-of-type(2)",
+     "px": 14,
+     "text": "Опыт: 0"
+    },
+    {
+     "sel": "details#scene-hero > div.disclosure-body > p.hint:nth-of-type(3)",
+     "px": 14,
+     "text": "Кости хитов: 1"
+    },
+    {
+     "sel": "details#scene-hero > div.disclosure-body > p.hint:nth-of-type(4)",
+     "px": 14,
+     "text": "Состояния: нет"
+    },
+    {
+     "sel": "details#scene-hero > div.disclosure-body > button.quiet.sheet-link",
+     "px": 14,
+     "text": "Лист героя"
+    }
+   ],
+   "fontDistinct": 4,
+   "fontSizes": {
+    "14": 11,
+    "16": 10,
+    "22": 1,
+    "30": 1
+   },
+   "tapCount": 11,
+   "tapsBad": [],
+   "tapsBadCount": 0,
+   "contrastBad": [],
+   "contrastBadCount": 0,
+   "contrastMin": null,
+   "contrastChecked": 23,
+   "placeholderChecked": 1,
+   "borderBad": [
+    {
+     "sel": "html > body.effects.tabletop > main > header > button.themetoggle:nth-of-type(1)",
+     "label": "Светлая тема",
+     "side": "top",
+     "w": 1,
+     "what": "рамка",
+     "ratio": 1.35,
+     "fg": "rgb(51,43,34)",
+     "bg": "rgb(20,17,13)",
+     "kind": "граница"
+    },
+    {
+     "sel": "details#scene-hero > div.disclosure-body > button.quiet.sheet-link",
+     "label": "Лист героя",
+     "side": "top",
+     "w": 1,
+     "what": "рамка",
+     "ratio": 1.36,
+     "fg": "rgb(58,49,40)",
+     "bg": "rgb(30,26,20)",
+     "kind": "граница"
+    },
+    {
+     "sel": "body.effects.tabletop > aside.sidebar > nav > div.nav-bar:nth-of-type(1) > button.nav.active:nth-of-type(1)",
+     "label": "BUTTON",
+     "side": "top",
+     "w": 1,
+     "what": "рамка",
+     "ratio": 1.6,
+     "fg": "rgb(74,62,48)",
+     "bg": "rgb(16,18,16)",
+     "kind": "граница"
+    },
+    {
+     "sel": "form#action-form",
+     "frameFor": "textarea#player-input",
+     "label": "Ваша реплика",
+     "side": "top",
+     "w": 1,
+     "what": "рамка",
+     "ratio": 1.75,
+     "fg": "rgb(74,62,48)",
+     "bg": "rgb(20,17,13)",
+     "kind": "граница"
+    }
+   ],
+   "borderBadCount": 4,
+   "borderMin": 1.35,
+   "borderChecked": 5,
+   "controlChecked": 5,
+   "cellChecked": 0,
+   "contrastSkipped": [
+    {
+     "sel": "html > body.effects.tabletop > aside.sidebar > a.brand",
+     "kind": "граница",
+     "reason": "видимой-границы-нет"
+    },
+    {
+     "sel": "body.effects.tabletop > aside.sidebar > nav > div.nav-bar:nth-of-type(1) > button.nav:nth-of-type(2)",
+     "kind": "граница",
+     "reason": "видимой-границы-нет"
+    },
+    {
+     "sel": "body.effects.tabletop > aside.sidebar > nav > div.nav-bar:nth-of-type(1) > button.nav:nth-of-type(3)",
+     "kind": "граница",
+     "reason": "видимой-границы-нет"
+    },
+    {
+     "sel": "body.effects.tabletop > aside.sidebar > nav > div.nav-bar:nth-of-type(1) > button.nav:nth-of-type(4)",
+     "kind": "граница",
+     "reason": "видимой-границы-нет"
+    },
+    {
+     "sel": "button#nav-more",
+     "kind": "граница",
+     "reason": "видимой-границы-нет"
+    },
+    {
+     "sel": "details#scene-hero > summary",
+     "kind": "граница",
+     "reason": "видимой-границы-нет"
+    }
+   ],
+   "contrastSkippedCount": 6,
+   "interactiveVisible": 11,
+   "clipped": [],
+   "clippedCount": 0,
+   "colorsOutsideCount": 0,
+   "colorsOutside": [],
+   "drawer": null,
+   "chatBlocks": [
+    {
+     "tag": "message master",
+     "h": 173,
+     "text": "МАСТЕР\nУ сторожевого поста гоблин перекрыл тропу. Осмотрите "
+    }
+   ],
+   "state": "game",
+   "theme": "dark",
+   "width": 1440,
+   "height": 900,
+   "file": "critic-n2-game-dark-1440.png",
+   "jsErrors": []
+  },
+  {
+   "probe": {
+    "viewportH": 900,
+    "description": {
+     "rect": {
+      "x": 0,
+      "y": 0,
+      "w": 0,
+      "h": 0,
+      "bottom": 0,
+      "right": 0,
+      "inView": false
+     },
+     "lines": -1
+    },
+    "prepare": {
+     "text": "Подготовить приключение",
+     "disabled": false,
+     "rect": {
+      "x": 0,
+      "y": 0,
+      "w": 0,
+      "h": 0,
+      "bottom": 0,
+      "right": 0,
+      "inView": false
+     }
+    },
+    "drop": {
+     "x": 0,
+     "y": 0,
+     "w": 0,
+     "h": 0,
+     "bottom": 0,
+     "right": 0,
+     "inView": false
+    },
+    "abilities": {
+     "count": 6,
+     "columns": 1,
+     "lastBottom": 0,
+     "allInside": true,
+     "cells": [
+      {
+       "text": "16Сила",
+       "x": 0,
+       "y": 0,
+       "w": 0,
+       "h": 0,
+       "bottom": 0,
+       "right": 0,
+       "inView": false
+      },
+      {
+       "text": "14Ловкость",
+       "x": 0,
+       "y": 0,
+       "w": 0,
+       "h": 0,
+       "bottom": 0,
+       "right": 0,
+       "inView": false
+      },
+      {
+       "text": "14Телосложение",
+       "x": 0,
+       "y": 0,
+       "w": 0,
+       "h": 0,
+       "bottom": 0,
+       "right": 0,
+       "inView": false
+      },
+      {
+       "text": "10Интеллект",
+       "x": 0,
+       "y": 0,
+       "w": 0,
+       "h": 0,
+       "bottom": 0,
+       "right": 0,
+       "inView": false
+      },
+      {
+       "text": "12Мудрость",
+       "x": 0,
+       "y": 0,
+       "w": 0,
+       "h": 0,
+       "bottom": 0,
+       "right": 0,
+       "inView": false
+      },
+      {
+       "text": "8Харизма",
+       "x": 0,
+       "y": 0,
+       "w": 0,
+       "h": 0,
+       "bottom": 0,
+       "right": 0,
+       "inView": false
+      }
+     ]
+    },
+    "navLabels": [],
+    "navWrapped": 0,
+    "navBroken": 0,
+    "headerVitals": {
+     "text": "12/12 хиты·18 защита",
+     "rect": {
+      "x": 0,
+      "y": 0,
+      "w": 0,
+      "h": 0,
+      "bottom": 0,
+      "right": 0,
+      "inView": false
+     }
+    },
+    "drawerTabs": {
+     "tab": "campaign",
+     "tabs": [
+      {
+       "text": "Кампания",
+       "selected": true
+      },
+      {
+       "text": "Приложение",
+       "selected": false
+      }
+     ],
+     "visible": 0,
+     "rows": 0,
+     "perBlock": [
+      {
+       "title": "Кампания",
+       "rows": 0
+      },
+      {
+       "title": "Приложение",
+       "rows": 0
+      }
+     ],
+     "overflow": 0,
+     "children": []
+    },
+    "home": {
+     "sections": 1,
+     "lists": 0,
+     "stories": 0,
+     "continueBlocks": 1,
+     "allStories": 1,
+     "kickers": [
+      "Продолжить"
+     ]
+    },
+    "journal": {
+     "width": 0,
+     "contentRight": 0,
+     "rightGap": 1440,
+     "emptyRightPct": 100,
+     "sections": 0,
+     "emptySections": 0,
+     "knownVisible": false,
+     "eventsVisible": false,
+     "facts": 0,
+     "eventRows": 0,
+     "textareas": 0,
+     "saveButtons": 0,
+     "reloadButtons": 0,
+     "empty": true
+    },
+    "heroPanel": {
+     "hpNodes": 0,
+     "hpText": false,
+     "hpWords": 0,
+     "documentHp": 0,
+     "text": "Ваш геройМиронВторое дыхание · потрачено: 0Опыт: 0Кости хитов: 1Состояния: нетЛист героя"
+    },
+    "words": {
+     "hit": false,
+     "ac": false,
+     "computer": true,
+     "neuralApi": false,
+     "costsApi": false,
+     "performance": false
+    }
+   },
+   "viewport": {
+    "w": 1440,
+    "h": 900,
+    "dpr": 1
+   },
+   "scrollWidth": 1440,
+   "scrollHeight": 900,
+   "overflowX": 0,
+   "activeView": "welcome",
+   "campaignOpen": true,
+   "kbOpen": false,
+   "textElements": 17,
+   "fontMin": 14,
+   "smallText": [],
+   "tinyText": [
+    {
+     "sel": "html > body.effects.tabletop > aside.sidebar > a.brand > span:nth-of-type(2)",
+     "px": 14,
+     "text": "SOLO REALMS"
+    },
+    {
+     "sel": "button#nav-more",
+     "px": 14,
+     "text": "Ещё"
+    },
+    {
+     "sel": "section#welcome > div.start__main:nth-of-type(1) > div.start__copy:nth-of-type(1) > p.eyebrow:nth-of-type(1)",
+     "px": 14,
+     "text": "одиночное приключение"
+    },
+    {
+     "sel": "section#welcome > div.start__feed:nth-of-type(2) > div.start__stories > p.start__stories-kicker",
+     "px": 14,
+     "text": "Продолжить"
+    },
+    {
+     "sel": "div.start__feed:nth-of-type(2) > div.start__stories > button.start__continue:nth-of-type(1) > span.start__continue-meta:nth-of-type(2) > span.story-where:nth-of-type(1)",
+     "px": 14,
+     "text": "Мирон, 1-й уровень · Дозор на тр"
+    },
+    {
+     "sel": "div.start__feed:nth-of-type(2) > div.start__stories > button.start__continue:nth-of-type(1) > span.start__continue-meta:nth-of-type(2) > span.story-when:nth-of-type(2)",
+     "px": 14,
+     "text": "сегодня, 22:09"
+    },
+    {
+     "sel": "section#welcome > div.start__foot:nth-of-type(3) > p.start__local",
+     "px": 14,
+     "text": "Сохранения и книги остаются на э"
+    }
+   ],
+   "fontDistinct": 3,
+   "fontSizes": {
+    "14": 7,
+    "16": 9,
+    "30": 1
+   },
+   "tapCount": 10,
+   "tapsBad": [
+    {
+     "sel": "section#welcome > div.start__feed:nth-of-type(2) > div.start__stories > button.start__continue:nth-of-type(1)",
+     "label": "BUTTON",
+     "w": 352,
+     "h": 41.2
+    }
+   ],
+   "tapsBadCount": 1,
+   "contrastBad": [],
+   "contrastBadCount": 0,
+   "contrastMin": null,
+   "contrastChecked": 17,
+   "placeholderChecked": 0,
+   "borderBad": [
+    {
+     "sel": "section#welcome > div.start__feed:nth-of-type(2) > div.start__stories",
+     "frameFor": "section#welcome > div.start__feed:nth-of-type(2) > div.start__stories > button.start__all:nth-of-type(2)",
+     "label": "Все истории",
+     "side": "top",
+     "w": 1,
+     "what": "рамка",
+     "ratio": 1.35,
+     "fg": "rgb(51,43,34)",
+     "bg": "rgb(20,17,13)",
+     "kind": "граница"
+    },
+    {
+     "sel": "section#welcome > div.start__main:nth-of-type(1) > div.start__copy:nth-of-type(1) > div.start__actions > button.start__btn.start__btn--ghost:nth-of-type(2)",
+     "label": "Загрузить книгу",
+     "side": "top",
+     "w": 1,
+     "what": "рамка",
+     "ratio": 1.81,
+     "fg": "rgb(74,62,48)",
+     "bg": "rgb(20,17,13)",
+     "kind": "граница"
+    }
+   ],
+   "borderBadCount": 2,
+   "borderMin": 1.35,
+   "borderChecked": 3,
+   "controlChecked": 3,
+   "cellChecked": 0,
+   "contrastSkipped": [
+    {
+     "sel": "html > body.effects.tabletop > aside.sidebar > a.brand",
+     "kind": "граница",
+     "reason": "видимой-границы-нет"
+    },
+    {
+     "sel": "body.effects.tabletop > aside.sidebar > nav > div.nav-bar:nth-of-type(1) > button.nav:nth-of-type(1)",
+     "kind": "граница",
+     "reason": "видимой-границы-нет"
+    },
+    {
+     "sel": "body.effects.tabletop > aside.sidebar > nav > div.nav-bar:nth-of-type(1) > button.nav:nth-of-type(2)",
+     "kind": "граница",
+     "reason": "видимой-границы-нет"
+    },
+    {
+     "sel": "body.effects.tabletop > aside.sidebar > nav > div.nav-bar:nth-of-type(1) > button.nav:nth-of-type(3)",
+     "kind": "граница",
+     "reason": "видимой-границы-нет"
+    },
+    {
+     "sel": "body.effects.tabletop > aside.sidebar > nav > div.nav-bar:nth-of-type(1) > button.nav:nth-of-type(4)",
+     "kind": "граница",
+     "reason": "видимой-границы-нет"
+    },
+    {
+     "sel": "button#nav-more",
+     "kind": "граница",
+     "reason": "видимой-границы-нет"
+    },
+    {
+     "sel": "section#welcome > div.start__feed:nth-of-type(2) > div.start__stories > button.start__continue:nth-of-type(1)",
+     "kind": "граница",
+     "reason": "видимой-границы-нет"
+    }
+   ],
+   "contrastSkippedCount": 7,
+   "interactiveVisible": 10,
+   "clipped": [],
+   "clippedCount": 0,
+   "colorsOutsideCount": 0,
+   "colorsOutside": [],
+   "drawer": null,
+   "state": "home",
+   "theme": "dark",
+   "width": 1440,
+   "height": 900,
+   "file": "critic-n2-home-dark-1440.png",
+   "jsErrors": []
+  },
+  {
+   "probe": {
+    "viewportH": 900,
+    "description": {
+     "rect": {
+      "x": 0,
+      "y": 0,
+      "w": 0,
+      "h": 0,
+      "bottom": 0,
+      "right": 0,
+      "inView": false
+     },
+     "lines": -1
+    },
+    "prepare": {
+     "text": "Подготовить приключение",
+     "disabled": false,
+     "rect": {
+      "x": 0,
+      "y": 0,
+      "w": 0,
+      "h": 0,
+      "bottom": 0,
+      "right": 0,
+      "inView": false
+     }
+    },
+    "drop": {
+     "x": 0,
+     "y": 0,
+     "w": 0,
+     "h": 0,
+     "bottom": 0,
+     "right": 0,
+     "inView": false
+    },
+    "abilities": {
+     "count": 6,
+     "columns": 1,
+     "lastBottom": 0,
+     "allInside": true,
+     "cells": [
+      {
+       "text": "16Сила",
+       "x": 0,
+       "y": 0,
+       "w": 0,
+       "h": 0,
+       "bottom": 0,
+       "right": 0,
+       "inView": false
+      },
+      {
+       "text": "14Ловкость",
+       "x": 0,
+       "y": 0,
+       "w": 0,
+       "h": 0,
+       "bottom": 0,
+       "right": 0,
+       "inView": false
+      },
+      {
+       "text": "14Телосложение",
+       "x": 0,
+       "y": 0,
+       "w": 0,
+       "h": 0,
+       "bottom": 0,
+       "right": 0,
+       "inView": false
+      },
+      {
+       "text": "10Интеллект",
+       "x": 0,
+       "y": 0,
+       "w": 0,
+       "h": 0,
+       "bottom": 0,
+       "right": 0,
+       "inView": false
+      },
+      {
+       "text": "12Мудрость",
+       "x": 0,
+       "y": 0,
+       "w": 0,
+       "h": 0,
+       "bottom": 0,
+       "right": 0,
+       "inView": false
+      },
+      {
+       "text": "8Харизма",
+       "x": 0,
+       "y": 0,
+       "w": 0,
+       "h": 0,
+       "bottom": 0,
+       "right": 0,
+       "inView": false
+      }
+     ]
+    },
+    "navLabels": [
+     {
+      "text": "Навыки",
+      "lines": 1,
+      "broken": [],
+      "textWidth": 261,
+      "textScroll": 261,
+      "singleWidth": 64,
+      "fontSize": "16px",
+      "fontFamily": "\"Segoe UI\"",
+      "letterSpacing": "normal",
+      "x": 16,
+      "y": 122,
+      "w": 287,
+      "h": 44,
+      "bottom": 166,
+      "right": 303,
+      "inView": true
+     },
+     {
+      "text": "Инвентарь",
+      "lines": 1,
+      "broken": [],
+      "textWidth": 261,
+      "textScroll": 261,
+      "singleWidth": 89,
+      "fontSize": "16px",
+      "fontFamily": "\"Segoe UI\"",
+      "letterSpacing": "normal",
+      "x": 16,
+      "y": 168,
+      "w": 287,
+      "h": 44,
+      "bottom": 212,
+      "right": 303,
+      "inView": true
+     },
+     {
+      "text": "Карта мира",
+      "lines": 1,
+      "broken": [],
+      "textWidth": 261,
+      "textScroll": 261,
+      "singleWidth": 97,
+      "fontSize": "16px",
+      "fontFamily": "\"Segoe UI\"",
+      "letterSpacing": "normal",
+      "x": 16,
+      "y": 214,
+      "w": 287,
+      "h": 44,
+      "bottom": 258,
+      "right": 303,
+      "inView": true
+     },
+     {
+      "text": "Блокнот",
+      "lines": 1,
+      "broken": [],
+      "textWidth": 261,
+      "textScroll": 261,
+      "singleWidth": 70,
+      "fontSize": "16px",
+      "fontFamily": "\"Segoe UI\"",
+      "letterSpacing": "normal",
+      "x": 16,
+      "y": 260,
+      "w": 287,
+      "h": 44,
+      "bottom": 304,
+      "right": 303,
+      "inView": true
+     },
+     {
+      "text": "Раздатки и карты",
+      "lines": 1,
+      "broken": [],
+      "textWidth": 261,
+      "textScroll": 261,
+      "singleWidth": 151,
+      "fontSize": "16px",
+      "fontFamily": "\"Segoe UI\"",
+      "letterSpacing": "normal",
+      "x": 16,
+      "y": 306,
+      "w": 287,
+      "h": 44,
+      "bottom": 350,
+      "right": 303,
+      "inView": true
+     },
+     {
+      "text": "Сохранения",
+      "lines": 1,
+      "broken": [],
+      "textWidth": 261,
+      "textScroll": 261,
+      "singleWidth": 100,
+      "fontSize": "16px",
+      "fontFamily": "\"Segoe UI\"",
+      "letterSpacing": "normal",
+      "x": 16,
+      "y": 352,
+      "w": 287,
+      "h": 44,
+      "bottom": 396,
+      "right": 303,
+      "inView": true
+     },
+     {
+      "text": "Выход из игры",
+      "lines": 1,
+      "broken": [],
+      "textWidth": 261,
+      "textScroll": 261,
+      "singleWidth": 124,
+      "fontSize": "16px",
+      "fontFamily": "\"Segoe UI\"",
+      "letterSpacing": "normal",
+      "x": 16,
+      "y": 398,
+      "w": 287,
+      "h": 44,
+      "bottom": 442,
+      "right": 303,
+      "inView": true
+     }
+    ],
+    "navWrapped": 0,
+    "navBroken": 0,
+    "headerVitals": {
+     "text": "12/12 хиты·18 защита",
+     "rect": {
+      "x": 0,
+      "y": 0,
+      "w": 0,
+      "h": 0,
+      "bottom": 0,
+      "right": 0,
+      "inView": false
+     }
+    },
+    "drawerTabs": {
+     "tab": "campaign",
+     "tabs": [
+      {
+       "text": "Кампания",
+       "selected": true
+      },
+      {
+       "text": "Приложение",
+       "selected": false
+      }
+     ],
+     "visible": 2,
+     "rows": 7,
+     "perBlock": [
+      {
+       "title": "Кампания",
+       "rows": 6
+      },
+      {
+       "title": "Приложение",
+       "rows": 0
+      }
+     ],
+     "overflow": 0,
+     "children": [
+      {
+       "cls": "nav-head",
+       "y": 72,
+       "h": 40,
+       "bottom": 112
+      },
+      {
+       "cls": "nav-block",
+       "y": 122,
+       "h": 274,
+       "bottom": 396
+      },
+      {
+       "cls": "nav",
+       "y": 398,
+       "h": 44,
+       "bottom": 442
+      }
+     ]
+    },
+    "home": {
+     "sections": 1,
+     "lists": 0,
+     "stories": 0,
+     "continueBlocks": 1,
+     "allStories": 1,
+     "kickers": [
+      "Продолжить"
+     ]
+    },
+    "journal": {
+     "width": 0,
+     "contentRight": 0,
+     "rightGap": 1440,
+     "emptyRightPct": 100,
+     "sections": 0,
+     "emptySections": 0,
+     "knownVisible": false,
+     "eventsVisible": false,
+     "facts": 0,
+     "eventRows": 0,
+     "textareas": 0,
+     "saveButtons": 0,
+     "reloadButtons": 0,
+     "empty": true
+    },
+    "heroPanel": {
+     "hpNodes": 0,
+     "hpText": false,
+     "hpWords": 0,
+     "documentHp": 0,
+     "text": "Ваш геройМиронВторое дыхание · потрачено: 0Опыт: 0Кости хитов: 1Состояния: нетЛист героя"
+    },
+    "words": {
+     "hit": false,
+     "ac": false,
+     "computer": true,
+     "neuralApi": false,
+     "costsApi": false,
+     "performance": false
+    }
+   },
+   "viewport": {
+    "w": 1440,
+    "h": 900,
+    "dpr": 1
+   },
+   "scrollWidth": 1440,
+   "scrollHeight": 900,
+   "overflowX": 0,
+   "activeView": "welcome",
+   "campaignOpen": true,
+   "kbOpen": false,
+   "textElements": 26,
+   "fontMin": 14,
+   "smallText": [],
+   "tinyText": [
+    {
+     "sel": "html > body.effects.tabletop > aside.sidebar.show-more > a.brand > span:nth-of-type(2)",
+     "px": 14,
+     "text": "SOLO REALMS"
+    },
+    {
+     "sel": "button#nav-more",
+     "px": 14,
+     "text": "Ещё"
+    },
+    {
+     "sel": "section#welcome > div.start__main:nth-of-type(1) > div.start__copy:nth-of-type(1) > p.eyebrow:nth-of-type(1)",
+     "px": 14,
+     "text": "одиночное приключение"
+    },
+    {
+     "sel": "section#welcome > div.start__feed:nth-of-type(2) > div.start__stories > p.start__stories-kicker",
+     "px": 14,
+     "text": "Продолжить"
+    },
+    {
+     "sel": "div.start__feed:nth-of-type(2) > div.start__stories > button.start__continue:nth-of-type(1) > span.start__continue-meta:nth-of-type(2) > span.story-where:nth-of-type(1)",
+     "px": 14,
+     "text": "Мирон, 1-й уровень · Дозор на тр"
+    },
+    {
+     "sel": "div.start__feed:nth-of-type(2) > div.start__stories > button.start__continue:nth-of-type(1) > span.start__continue-meta:nth-of-type(2) > span.story-when:nth-of-type(2)",
+     "px": 14,
+     "text": "сегодня, 22:09"
+    },
+    {
+     "sel": "section#welcome > div.start__foot:nth-of-type(3) > p.start__local",
+     "px": 14,
+     "text": "Сохранения и книги остаются на э"
+    }
+   ],
+   "fontDistinct": 3,
+   "fontSizes": {
+    "14": 7,
+    "16": 18,
+    "30": 1
+   },
+   "tapCount": 19,
+   "tapsBad": [
+    {
+     "sel": "div#nav-tabs > button.nav-tab:nth-of-type(1)",
+     "label": "Кампания",
+     "w": 141.5,
+     "h": 40
+    },
+    {
+     "sel": "div#nav-tabs > button.nav-tab:nth-of-type(2)",
+     "label": "Приложение",
+     "w": 141.5,
+     "h": 40
+    },
+    {
+     "sel": "section#welcome > div.start__feed:nth-of-type(2) > div.start__stories > button.start__continue:nth-of-type(1)",
+     "label": "BUTTON",
+     "w": 352,
+     "h": 41.2
+    }
+   ],
+   "tapsBadCount": 3,
+   "contrastBad": [],
+   "contrastBadCount": 0,
+   "contrastMin": null,
+   "contrastChecked": 26,
+   "placeholderChecked": 0,
+   "borderBad": [
+    {
+     "sel": "div#nav-tabs > button.nav-tab:nth-of-type(2)",
+     "label": "Приложение",
+     "side": "top",
+     "w": 1,
+     "what": "рамка",
+     "ratio": 1.31,
+     "fg": "rgb(51,43,34)",
+     "bg": "rgb(16,18,16)",
+     "kind": "граница"
+    },
+    {
+     "sel": "div#nav-drawer > button.nav.nav-exit",
+     "label": "BUTTON",
+     "side": "top",
+     "w": 1,
+     "what": "рамка",
+     "ratio": 1.35,
+     "fg": "rgb(51,43,34)",
+     "bg": "rgb(16,18,16)",
+     "kind": "граница"
+    },
+    {
+     "sel": "section#welcome > div.start__feed:nth-of-type(2) > div.start__stories",
+     "frameFor": "section#welcome > div.start__feed:nth-of-type(2) > div.start__stories > button.start__all:nth-of-type(2)",
+     "label": "Все истории",
+     "side": "top",
+     "w": 1,
+     "what": "рамка",
+     "ratio": 1.35,
+     "fg": "rgb(51,43,34)",
+     "bg": "rgb(20,17,13)",
+     "kind": "граница"
+    },
+    {
+     "sel": "section#welcome > div.start__main:nth-of-type(1) > div.start__copy:nth-of-type(1) > div.start__actions > button.start__btn.start__btn--ghost:nth-of-type(2)",
+     "label": "Загрузить книгу",
+     "side": "top",
+     "w": 1,
+     "what": "рамка",
+     "ratio": 1.81,
+     "fg": "rgb(74,62,48)",
+     "bg": "rgb(20,17,13)",
+     "kind": "граница"
+    }
+   ],
+   "borderBadCount": 4,
+   "borderMin": 1.31,
+   "borderChecked": 6,
+   "controlChecked": 6,
+   "cellChecked": 0,
+   "contrastSkipped": [
+    {
+     "sel": "html > body.effects.tabletop > aside.sidebar.show-more > a.brand",
+     "kind": "граница",
+     "reason": "видимой-границы-нет"
+    },
+    {
+     "sel": "body.effects.tabletop > aside.sidebar.show-more > nav > div.nav-bar:nth-of-type(1) > button.nav:nth-of-type(1)",
+     "kind": "граница",
+     "reason": "видимой-границы-нет"
+    },
+    {
+     "sel": "body.effects.tabletop > aside.sidebar.show-more > nav > div.nav-bar:nth-of-type(1) > button.nav:nth-of-type(2)",
+     "kind": "граница",
+     "reason": "видимой-границы-нет"
+    },
+    {
+     "sel": "body.effects.tabletop > aside.sidebar.show-more > nav > div.nav-bar:nth-of-type(1) > button.nav:nth-of-type(3)",
+     "kind": "граница",
+     "reason": "видимой-границы-нет"
+    },
+    {
+     "sel": "body.effects.tabletop > aside.sidebar.show-more > nav > div.nav-bar:nth-of-type(1) > button.nav:nth-of-type(4)",
+     "kind": "граница",
+     "reason": "видимой-границы-нет"
+    },
+    {
+     "sel": "button#nav-more",
+     "kind": "граница",
+     "reason": "видимой-границы-нет"
+    },
+    {
+     "sel": "div#nav-drawer > div.nav-block.nav-block--campaign:nth-of-type(2) > button.nav:nth-of-type(1)",
+     "kind": "граница",
+     "reason": "видимой-границы-нет"
+    },
+    {
+     "sel": "div#nav-drawer > div.nav-block.nav-block--campaign:nth-of-type(2) > button.nav:nth-of-type(2)",
+     "kind": "граница",
+     "reason": "видимой-границы-нет"
+    },
+    {
+     "sel": "div#nav-drawer > div.nav-block.nav-block--campaign:nth-of-type(2) > button.nav:nth-of-type(3)",
+     "kind": "граница",
+     "reason": "видимой-границы-нет"
+    },
+    {
+     "sel": "div#nav-drawer > div.nav-block.nav-block--campaign:nth-of-type(2) > button.nav:nth-of-type(4)",
+     "kind": "граница",
+     "reason": "видимой-границы-нет"
+    },
+    {
+     "sel": "div#nav-drawer > div.nav-block.nav-block--campaign:nth-of-type(2) > button.nav:nth-of-type(5)",
+     "kind": "граница",
+     "reason": "видимой-границы-нет"
+    },
+    {
+     "sel": "div#nav-drawer > div.nav-block.nav-block--campaign:nth-of-type(2) > button.nav:nth-of-type(6)",
+     "kind": "граница",
+     "reason": "видимой-границы-нет"
+    },
+    {
+     "sel": "section#welcome > div.start__feed:nth-of-type(2) > div.start__stories > button.start__continue:nth-of-type(1)",
+     "kind": "граница",
+     "reason": "видимой-границы-нет"
+    }
+   ],
+   "contrastSkippedCount": 13,
+   "interactiveVisible": 19,
+   "clipped": [],
+   "clippedCount": 0,
+   "colorsOutsideCount": 0,
+   "colorsOutside": [],
+   "drawer": {
+    "h": 410,
+    "top": 56,
+    "rows": 7,
+    "blocks": [
+     "Кампания"
+    ],
+    "scrollTop": 0,
+    "scroll": 0,
+    "content": 410
+   },
+   "state": "menu",
+   "theme": "dark",
+   "width": 1440,
+   "height": 900,
+   "debug": {
+    "bodyClass": "effects tabletop campaign-open nat20-game",
+    "burger": false,
+    "aside": {
+     "x": 0,
+     "y": 0,
+     "w": 1440,
+     "h": 56
+    },
+    "drawer": {
+     "x": 0,
+     "y": 56,
+     "w": 320,
+     "h": 410
+    }
+   },
+   "file": "critic-n2-menu-dark-1440.png",
+   "jsErrors": []
+  },
+  {
+   "probe": {
+    "viewportH": 900,
+    "description": {
+     "rect": {
+      "x": 0,
+      "y": 0,
+      "w": 0,
+      "h": 0,
+      "bottom": 0,
+      "right": 0,
+      "inView": false
+     },
+     "lines": -1
+    },
+    "prepare": {
+     "text": "Подготовить приключение",
+     "disabled": false,
+     "rect": {
+      "x": 0,
+      "y": 0,
+      "w": 0,
+      "h": 0,
+      "bottom": 0,
+      "right": 0,
+      "inView": false
+     }
+    },
+    "drop": {
+     "x": 0,
+     "y": 0,
+     "w": 0,
+     "h": 0,
+     "bottom": 0,
+     "right": 0,
+     "inView": false
+    },
+    "abilities": {
+     "count": 6,
+     "columns": 2,
+     "lastBottom": 694.3,
+     "allInside": true,
+     "cells": [
+      {
+       "text": "16 Сила",
+       "x": 32,
+       "y": 365.3,
+       "w": 492,
+       "h": 99,
+       "bottom": 464.3,
+       "right": 524,
+       "inView": true
+      },
+      {
+       "text": "14 Ловкость",
+       "x": 540,
+       "y": 365.3,
+       "w": 492,
+       "h": 99,
+       "bottom": 464.3,
+       "right": 1032,
+       "inView": true
+      },
+      {
+       "text": "14 Телосложение",
+       "x": 32,
+       "y": 480.3,
+       "w": 492,
+       "h": 99,
+       "bottom": 579.3,
+       "right": 524,
+       "inView": true
+      },
+      {
+       "text": "10 Интеллект",
+       "x": 540,
+       "y": 480.3,
+       "w": 492,
+       "h": 99,
+       "bottom": 579.3,
+       "right": 1032,
+       "inView": true
+      },
+      {
+       "text": "12 Мудрость",
+       "x": 32,
+       "y": 595.3,
+       "w": 492,
+       "h": 99,
+       "bottom": 694.3,
+       "right": 524,
+       "inView": true
+      },
+      {
+       "text": "8 Харизма",
+       "x": 540,
+       "y": 595.3,
+       "w": 492,
+       "h": 99,
+       "bottom": 694.3,
+       "right": 1032,
+       "inView": true
+      }
+     ]
+    },
+    "navLabels": [],
+    "navWrapped": 0,
+    "navBroken": 0,
+    "headerVitals": {
+     "text": "12/12 хиты·18 защита",
+     "rect": {
+      "x": 0,
+      "y": 0,
+      "w": 0,
+      "h": 0,
+      "bottom": 0,
+      "right": 0,
+      "inView": false
+     }
+    },
+    "drawerTabs": {
+     "tab": "campaign",
+     "tabs": [
+      {
+       "text": "Кампания",
+       "selected": true
+      },
+      {
+       "text": "Приложение",
+       "selected": false
+      }
+     ],
+     "visible": 0,
+     "rows": 0,
+     "perBlock": [
+      {
+       "title": "Кампания",
+       "rows": 0
+      },
+      {
+       "title": "Приложение",
+       "rows": 0
+      }
+     ],
+     "overflow": 0,
+     "children": []
+    },
+    "home": {
+     "sections": 0,
+     "lists": 0,
+     "stories": 0,
+     "continueBlocks": 0,
+     "allStories": 0,
+     "kickers": []
+    },
+    "journal": {
+     "width": 0,
+     "contentRight": 0,
+     "rightGap": 1440,
+     "emptyRightPct": 100,
+     "sections": 0,
+     "emptySections": 0,
+     "knownVisible": false,
+     "eventsVisible": false,
+     "facts": 0,
+     "eventRows": 0,
+     "textareas": 0,
+     "saveButtons": 0,
+     "reloadButtons": 0,
+     "empty": true
+    },
+    "heroPanel": {
+     "hpNodes": 0,
+     "hpText": false,
+     "hpWords": 0,
+     "documentHp": 0,
+     "text": "Ваш геройМиронВторое дыхание · потрачено: 0Опыт: 0Кости хитов: 1Состояния: нетЛист героя"
+    },
+    "words": {
+     "hit": true,
+     "ac": true,
+     "computer": false,
+     "neuralApi": false,
+     "costsApi": false,
+     "performance": false
+    }
+   },
+   "viewport": {
+    "w": 1440,
+    "h": 900,
+    "dpr": 1
+   },
+   "scrollWidth": 1440,
+   "scrollHeight": 1336,
+   "overflowX": 0,
+   "activeView": "character",
+   "campaignOpen": true,
+   "kbOpen": false,
+   "textElements": 37,
+   "fontMin": 14,
+   "smallText": [],
+   "tinyText": [
+    {
+     "sel": "html > body.effects.tabletop > aside.sidebar > a.brand > span:nth-of-type(2)",
+     "px": 14,
+     "text": "SOLO REALMS"
+    },
+    {
+     "sel": "button#nav-more",
+     "px": 14,
+     "text": "Ещё"
+    },
+    {
+     "sel": "html > body.effects.tabletop > main > header > div.breadcrumb:nth-of-type(1)",
+     "px": 14,
+     "text": "ОДИНОЧНОЕ ПРИКЛЮЧЕНИЕ"
+    },
+    {
+     "sel": "body.effects.tabletop > main > header > div.breadcrumb:nth-of-type(1) > span:nth-of-type(1)",
+     "px": 14,
+     "text": "/"
+    },
+    {
+     "sel": "span#campaign-label",
+     "px": 14,
+     "text": "Тайна трёх сосен"
+    },
+    {
+     "sel": "span#model-status",
+     "px": 14,
+     "text": "Подключите облачного Мастера"
+    },
+    {
+     "sel": "div#character-content > p.hero-meta:nth-of-type(1)",
+     "px": 14,
+     "text": "Человек · Воин · 1-й уровень"
+    },
+    {
+     "sel": "div#character-content > div.sheet-vitals:nth-of-type(1) > div.sheet-vitals__cell:nth-of-type(1) > small",
+     "px": 14,
+     "text": "Хиты"
+    },
+    {
+     "sel": "div#character-content > div.sheet-vitals:nth-of-type(1) > div.sheet-vitals__cell:nth-of-type(2) > small",
+     "px": 14,
+     "text": "Защита"
+    },
+    {
+     "sel": "div#character-content > div.sheet-vitals:nth-of-type(1) > div.sheet-vitals__cell:nth-of-type(3) > small",
+     "px": 14,
+     "text": "Инициатива"
+    },
+    {
+     "sel": "div#character-content > div.sheet-vitals:nth-of-type(1) > div.sheet-vitals__cell:nth-of-type(4) > small",
+     "px": 14,
+     "text": "Скорость"
+    },
+    {
+     "sel": "div#character-content > div.scores-grid:nth-of-type(2) > div.metric:nth-of-type(1) > small",
+     "px": 14,
+     "text": "Сила"
+    },
+    {
+     "sel": "div#character-content > div.scores-grid:nth-of-type(2) > div.metric:nth-of-type(2) > small",
+     "px": 14,
+     "text": "Ловкость"
+    },
+    {
+     "sel": "div#character-content > div.scores-grid:nth-of-type(2) > div.metric:nth-of-type(3) > small",
+     "px": 14,
+     "text": "Телосложение"
+    },
+    {
+     "sel": "div#character-content > div.scores-grid:nth-of-type(2) > div.metric:nth-of-type(4) > small",
+     "px": 14,
+     "text": "Интеллект"
+    },
+    {
+     "sel": "div#character-content > div.scores-grid:nth-of-type(2) > div.metric:nth-of-type(5) > small",
+     "px": 14,
+     "text": "Мудрость"
+    },
+    {
+     "sel": "div#character-content > div.scores-grid:nth-of-type(2) > div.metric:nth-of-type(6) > small",
+     "px": 14,
+     "text": "Харизма"
+    },
+    {
+     "sel": "div#character-content > p.hint:nth-of-type(5)",
+     "px": 14,
+     "text": "Подтверждённые ресурсы и действи"
+    }
+   ],
+   "fontDistinct": 4,
+   "fontSizes": {
+    "14": 18,
+    "16": 8,
+    "22": 10,
+    "30": 1
+   },
+   "tapCount": 7,
+   "tapsBad": [
+    {
+     "sel": "html > body.effects.tabletop > main > header > button.themetoggle:nth-of-type(1)",
+     "label": "Светлая тема",
+     "w": 34,
+     "h": 34
+    }
+   ],
+   "tapsBadCount": 1,
+   "contrastBad": [],
+   "contrastBadCount": 0,
+   "contrastMin": null,
+   "contrastChecked": 37,
+   "placeholderChecked": 0,
+   "borderBad": [
+    {
+     "sel": "html > body.effects.tabletop > main > header > button.themetoggle:nth-of-type(1)",
+     "label": "Светлая тема",
+     "side": "top",
+     "w": 1,
+     "what": "рамка",
+     "ratio": 1.35,
+     "fg": "rgb(51,43,34)",
+     "bg": "rgb(16,18,16)",
+     "kind": "граница"
+    },
+    {
+     "sel": "div#character-content > div.sheet-vitals:nth-of-type(1) > div.sheet-vitals__cell:nth-of-type(2)",
+     "label": "DIV",
+     "side": "left",
+     "w": 1,
+     "what": "рамка",
+     "ratio": 1.35,
+     "fg": "rgb(51,43,34)",
+     "bg": "rgb(16,18,16)",
+     "kind": "ячейка"
+    },
+    {
+     "sel": "div#character-content > div.sheet-vitals:nth-of-type(1) > div.sheet-vitals__cell:nth-of-type(3)",
+     "label": "DIV",
+     "side": "top",
+     "w": 1,
+     "what": "рамка",
+     "ratio": 1.35,
+     "fg": "rgb(51,43,34)",
+     "bg": "rgb(16,18,16)",
+     "kind": "ячейка"
+    },
+    {
+     "sel": "div#character-content > div.sheet-vitals:nth-of-type(1) > div.sheet-vitals__cell:nth-of-type(4)",
+     "label": "DIV",
+     "side": "top",
+     "w": 1,
+     "what": "рамка",
+     "ratio": 1.35,
+     "fg": "rgb(51,43,34)",
+     "bg": "rgb(16,18,16)",
+     "kind": "ячейка"
+    },
+    {
+     "sel": "body.effects.tabletop > aside.sidebar > nav > div.nav-bar:nth-of-type(1) > button.nav.active:nth-of-type(3)",
+     "label": "BUTTON",
+     "side": "top",
+     "w": 1,
+     "what": "рамка",
+     "ratio": 1.6,
+     "fg": "rgb(74,62,48)",
+     "bg": "rgb(16,18,16)",
+     "kind": "граница"
+    },
+    {
+     "sel": "div#character-content > div.sheet-vitals:nth-of-type(1)",
+     "frameFor": "div#character-content > div.sheet-vitals:nth-of-type(1) > div.sheet-vitals__cell:nth-of-type(1)",
+     "label": "DIV",
+     "side": "top",
+     "w": 1,
+     "what": "рамка",
+     "ratio": 1.81,
+     "fg": "rgb(74,62,48)",
+     "bg": "rgb(16,18,16)",
+     "kind": "ячейка"
+    }
+   ],
+   "borderBadCount": 6,
+   "borderMin": 1.35,
+   "borderChecked": 6,
+   "controlChecked": 2,
+   "cellChecked": 4,
+   "contrastSkipped": [
+    {
+     "sel": "html > body.effects.tabletop > aside.sidebar > a.brand",
+     "kind": "граница",
+     "reason": "видимой-границы-нет"
+    },
+    {
+     "sel": "body.effects.tabletop > aside.sidebar > nav > div.nav-bar:nth-of-type(1) > button.nav:nth-of-type(1)",
+     "kind": "граница",
+     "reason": "видимой-границы-нет"
+    },
+    {
+     "sel": "body.effects.tabletop > aside.sidebar > nav > div.nav-bar:nth-of-type(1) > button.nav:nth-of-type(2)",
+     "kind": "граница",
+     "reason": "видимой-границы-нет"
+    },
+    {
+     "sel": "body.effects.tabletop > aside.sidebar > nav > div.nav-bar:nth-of-type(1) > button.nav:nth-of-type(4)",
+     "kind": "граница",
+     "reason": "видимой-границы-нет"
+    },
+    {
+     "sel": "button#nav-more",
+     "kind": "граница",
+     "reason": "видимой-границы-нет"
+    }
+   ],
+   "contrastSkippedCount": 5,
+   "interactiveVisible": 7,
+   "clipped": [],
+   "clippedCount": 0,
+   "colorsOutsideCount": 0,
+   "colorsOutside": [],
+   "drawer": null,
+   "state": "hero",
+   "theme": "dark",
+   "width": 1440,
+   "height": 900,
+   "file": "critic-n2-hero-dark-1440.png",
+   "jsErrors": []
+  },
+  {
+   "probe": {
+    "viewportH": 900,
+    "description": {
+     "rect": {
+      "x": 0,
+      "y": 0,
+      "w": 0,
+      "h": 0,
+      "bottom": 0,
+      "right": 0,
+      "inView": false
+     },
+     "lines": -1
+    },
+    "prepare": {
+     "text": "Подготовить приключение",
+     "disabled": false,
+     "rect": {
+      "x": 0,
+      "y": 0,
+      "w": 0,
+      "h": 0,
+      "bottom": 0,
+      "right": 0,
+      "inView": false
+     }
+    },
+    "drop": {
+     "x": 0,
+     "y": 0,
+     "w": 0,
+     "h": 0,
+     "bottom": 0,
+     "right": 0,
+     "inView": false
+    },
+    "abilities": {
+     "count": 6,
+     "columns": 1,
+     "lastBottom": 0,
+     "allInside": true,
+     "cells": [
+      {
+       "text": "16Сила",
+       "x": 0,
+       "y": 0,
+       "w": 0,
+       "h": 0,
+       "bottom": 0,
+       "right": 0,
+       "inView": false
+      },
+      {
+       "text": "14Ловкость",
+       "x": 0,
+       "y": 0,
+       "w": 0,
+       "h": 0,
+       "bottom": 0,
+       "right": 0,
+       "inView": false
+      },
+      {
+       "text": "14Телосложение",
+       "x": 0,
+       "y": 0,
+       "w": 0,
+       "h": 0,
+       "bottom": 0,
+       "right": 0,
+       "inView": false
+      },
+      {
+       "text": "10Интеллект",
+       "x": 0,
+       "y": 0,
+       "w": 0,
+       "h": 0,
+       "bottom": 0,
+       "right": 0,
+       "inView": false
+      },
+      {
+       "text": "12Мудрость",
+       "x": 0,
+       "y": 0,
+       "w": 0,
+       "h": 0,
+       "bottom": 0,
+       "right": 0,
+       "inView": false
+      },
+      {
+       "text": "8Харизма",
+       "x": 0,
+       "y": 0,
+       "w": 0,
+       "h": 0,
+       "bottom": 0,
+       "right": 0,
+       "inView": false
+      }
+     ]
+    },
+    "navLabels": [],
+    "navWrapped": 0,
+    "navBroken": 0,
+    "headerVitals": {
+     "text": "12/12 хиты · 18 защита",
+     "rect": {
+      "x": 1185.4,
+      "y": 71.5,
+      "w": 190.6,
+      "h": 24,
+      "bottom": 95.5,
+      "right": 1376,
+      "inView": true
+     }
+    },
+    "drawerTabs": {
+     "tab": "campaign",
+     "tabs": [
+      {
+       "text": "Кампания",
+       "selected": true
+      },
+      {
+       "text": "Приложение",
+       "selected": false
+      }
+     ],
+     "visible": 0,
+     "rows": 0,
+     "perBlock": [
+      {
+       "title": "Кампания",
+       "rows": 0
+      },
+      {
+       "title": "Приложение",
+       "rows": 0
+      }
+     ],
+     "overflow": 0,
+     "children": []
+    },
+    "home": {
+     "sections": 0,
+     "lists": 0,
+     "stories": 0,
+     "continueBlocks": 0,
+     "allStories": 0,
+     "kickers": []
+    },
+    "journal": {
+     "width": 0,
+     "contentRight": 0,
+     "rightGap": 1440,
+     "emptyRightPct": 100,
+     "sections": 0,
+     "emptySections": 0,
+     "knownVisible": false,
+     "eventsVisible": false,
+     "facts": 0,
+     "eventRows": 0,
+     "textareas": 0,
+     "saveButtons": 0,
+     "reloadButtons": 0,
+     "empty": true
+    },
+    "heroPanel": {
+     "hpNodes": 0,
+     "hpText": false,
+     "hpWords": 0,
+     "documentHp": 0,
+     "text": "ВАШ ГЕРОЙ Мирон Второе дыхание · потрачено: 0 Опыт: 0 Кости хитов: 1 Состояния: нет Лист героя"
+    },
+    "words": {
+     "hit": true,
+     "ac": true,
+     "computer": false,
+     "neuralApi": false,
+     "costsApi": false,
+     "performance": false
+    }
+   },
+   "viewport": {
+    "w": 1440,
+    "h": 900,
+    "dpr": 1
+   },
+   "scrollWidth": 1440,
+   "scrollHeight": 900,
+   "overflowX": 0,
+   "activeView": "play",
+   "campaignOpen": true,
+   "kbOpen": false,
+   "textElements": 23,
+   "fontMin": 14,
+   "smallText": [],
+   "tinyText": [
+    {
+     "sel": "html > body.effects.tabletop > aside.sidebar > a.brand > span:nth-of-type(2)",
+     "px": 14,
+     "text": "SOLO REALMS"
+    },
+    {
+     "sel": "button#nav-more",
+     "px": 14,
+     "text": "Ещё"
+    },
+    {
+     "sel": "div#chat > article.message.master > div.speaker:nth-of-type(1)",
+     "px": 14,
+     "text": "МАСТЕР"
+    },
+    {
+     "sel": "form#action-form > div.composer-footer:nth-of-type(2) > span",
+     "px": 14,
+     "text": "Enter — отправить · Shift + Ente"
+    },
+    {
+     "sel": "div.workspace-layout > div.literary-column > div.story-card > div.dice-row:nth-of-type(4) > span.dice-row__note",
+     "px": 14,
+     "text": "сохранено"
+    },
+    {
+     "sel": "details#scene-hero > summary",
+     "px": 14,
+     "text": "Ваш герой"
+    },
+    {
+     "sel": "details#scene-hero > div.disclosure-body > p.hint:nth-of-type(1)",
+     "px": 14,
+     "text": "Второе дыхание · потрачено: 0"
+    },
+    {
+     "sel": "details#scene-hero > div.disclosure-body > p.hint:nth-of-type(2)",
+     "px": 14,
+     "text": "Опыт: 0"
+    },
+    {
+     "sel": "details#scene-hero > div.disclosure-body > p.hint:nth-of-type(3)",
+     "px": 14,
+     "text": "Кости хитов: 1"
+    },
+    {
+     "sel": "details#scene-hero > div.disclosure-body > p.hint:nth-of-type(4)",
+     "px": 14,
+     "text": "Состояния: нет"
+    },
+    {
+     "sel": "details#scene-hero > div.disclosure-body > button.quiet.sheet-link",
+     "px": 14,
+     "text": "Лист героя"
+    }
+   ],
+   "fontDistinct": 4,
+   "fontSizes": {
+    "14": 11,
+    "16": 10,
+    "22": 1,
+    "30": 1
+   },
+   "tapCount": 11,
+   "tapsBad": [],
+   "tapsBadCount": 0,
+   "contrastBad": [],
+   "contrastBadCount": 0,
+   "contrastMin": null,
+   "contrastChecked": 23,
+   "placeholderChecked": 1,
+   "borderBad": [
+    {
+     "sel": "html > body.effects.tabletop > main > header > button.themetoggle:nth-of-type(1)",
+     "label": "Тёмная тема",
+     "side": "top",
+     "w": 1,
+     "what": "рамка",
+     "ratio": 1.36,
+     "fg": "rgb(217,203,175)",
+     "bg": "rgb(243,236,224)",
+     "kind": "граница"
+    },
+    {
+     "sel": "details#scene-hero > div.disclosure-body > button.quiet.sheet-link",
+     "label": "Лист героя",
+     "side": "top",
+     "w": 1,
+     "what": "рамка",
+     "ratio": 1.47,
+     "fg": "rgb(220,203,169)",
+     "bg": "rgb(251,245,232)",
+     "kind": "граница"
+    },
+    {
+     "sel": "body.effects.tabletop > aside.sidebar > nav > div.nav-bar:nth-of-type(1) > button.nav.active:nth-of-type(1)",
+     "label": "BUTTON",
+     "side": "top",
+     "w": 1,
+     "what": "рамка",
+     "ratio": 1.95,
+     "fg": "rgb(180,159,125)",
+     "bg": "rgb(243,236,224)",
+     "kind": "граница"
+    },
+    {
+     "sel": "form#action-form",
+     "frameFor": "textarea#player-input",
+     "label": "Ваша реплика",
+     "side": "top",
+     "w": 1,
+     "what": "рамка",
+     "ratio": 2.09,
+     "fg": "rgb(180,159,125)",
+     "bg": "rgb(243,236,224)",
+     "kind": "граница"
+    }
+   ],
+   "borderBadCount": 4,
+   "borderMin": 1.36,
+   "borderChecked": 5,
+   "controlChecked": 5,
+   "cellChecked": 0,
+   "contrastSkipped": [
+    {
+     "sel": "html > body.effects.tabletop > aside.sidebar > a.brand",
+     "kind": "граница",
+     "reason": "видимой-границы-нет"
+    },
+    {
+     "sel": "body.effects.tabletop > aside.sidebar > nav > div.nav-bar:nth-of-type(1) > button.nav:nth-of-type(2)",
+     "kind": "граница",
+     "reason": "видимой-границы-нет"
+    },
+    {
+     "sel": "body.effects.tabletop > aside.sidebar > nav > div.nav-bar:nth-of-type(1) > button.nav:nth-of-type(3)",
+     "kind": "граница",
+     "reason": "видимой-границы-нет"
+    },
+    {
+     "sel": "body.effects.tabletop > aside.sidebar > nav > div.nav-bar:nth-of-type(1) > button.nav:nth-of-type(4)",
+     "kind": "граница",
+     "reason": "видимой-границы-нет"
+    },
+    {
+     "sel": "button#nav-more",
+     "kind": "граница",
+     "reason": "видимой-границы-нет"
+    },
+    {
+     "sel": "details#scene-hero > summary",
+     "kind": "граница",
+     "reason": "видимой-границы-нет"
+    }
+   ],
+   "contrastSkippedCount": 6,
+   "interactiveVisible": 11,
+   "clipped": [],
+   "clippedCount": 0,
+   "colorsOutsideCount": 0,
+   "colorsOutside": [],
+   "drawer": null,
+   "chatBlocks": [
+    {
+     "tag": "message master",
+     "h": 173,
+     "text": "МАСТЕР\nУ сторожевого поста гоблин перекрыл тропу. Осмотрите "
+    }
+   ],
+   "state": "game",
+   "theme": "light",
+   "width": 1440,
+   "height": 900,
+   "file": "critic-n2-game-light-1440.png",
+   "jsErrors": []
+  },
+  {
+   "probe": {
+    "viewportH": 900,
+    "description": {
+     "rect": {
+      "x": 0,
+      "y": 0,
+      "w": 0,
+      "h": 0,
+      "bottom": 0,
+      "right": 0,
+      "inView": false
+     },
+     "lines": -1
+    },
+    "prepare": {
+     "text": "Подготовить приключение",
+     "disabled": false,
+     "rect": {
+      "x": 0,
+      "y": 0,
+      "w": 0,
+      "h": 0,
+      "bottom": 0,
+      "right": 0,
+      "inView": false
+     }
+    },
+    "drop": {
+     "x": 0,
+     "y": 0,
+     "w": 0,
+     "h": 0,
+     "bottom": 0,
+     "right": 0,
+     "inView": false
+    },
+    "abilities": {
+     "count": 6,
+     "columns": 1,
+     "lastBottom": 0,
+     "allInside": true,
+     "cells": [
+      {
+       "text": "16Сила",
+       "x": 0,
+       "y": 0,
+       "w": 0,
+       "h": 0,
+       "bottom": 0,
+       "right": 0,
+       "inView": false
+      },
+      {
+       "text": "14Ловкость",
+       "x": 0,
+       "y": 0,
+       "w": 0,
+       "h": 0,
+       "bottom": 0,
+       "right": 0,
+       "inView": false
+      },
+      {
+       "text": "14Телосложение",
+       "x": 0,
+       "y": 0,
+       "w": 0,
+       "h": 0,
+       "bottom": 0,
+       "right": 0,
+       "inView": false
+      },
+      {
+       "text": "10Интеллект",
+       "x": 0,
+       "y": 0,
+       "w": 0,
+       "h": 0,
+       "bottom": 0,
+       "right": 0,
+       "inView": false
+      },
+      {
+       "text": "12Мудрость",
+       "x": 0,
+       "y": 0,
+       "w": 0,
+       "h": 0,
+       "bottom": 0,
+       "right": 0,
+       "inView": false
+      },
+      {
+       "text": "8Харизма",
+       "x": 0,
+       "y": 0,
+       "w": 0,
+       "h": 0,
+       "bottom": 0,
+       "right": 0,
+       "inView": false
+      }
+     ]
+    },
+    "navLabels": [],
+    "navWrapped": 0,
+    "navBroken": 0,
+    "headerVitals": {
+     "text": "12/12 хиты·18 защита",
+     "rect": {
+      "x": 0,
+      "y": 0,
+      "w": 0,
+      "h": 0,
+      "bottom": 0,
+      "right": 0,
+      "inView": false
+     }
+    },
+    "drawerTabs": {
+     "tab": "campaign",
+     "tabs": [
+      {
+       "text": "Кампания",
+       "selected": true
+      },
+      {
+       "text": "Приложение",
+       "selected": false
+      }
+     ],
+     "visible": 0,
+     "rows": 0,
+     "perBlock": [
+      {
+       "title": "Кампания",
+       "rows": 0
+      },
+      {
+       "title": "Приложение",
+       "rows": 0
+      }
+     ],
+     "overflow": 0,
+     "children": []
+    },
+    "home": {
+     "sections": 1,
+     "lists": 0,
+     "stories": 0,
+     "continueBlocks": 1,
+     "allStories": 1,
+     "kickers": [
+      "Продолжить"
+     ]
+    },
+    "journal": {
+     "width": 0,
+     "contentRight": 0,
+     "rightGap": 1440,
+     "emptyRightPct": 100,
+     "sections": 0,
+     "emptySections": 0,
+     "knownVisible": false,
+     "eventsVisible": false,
+     "facts": 0,
+     "eventRows": 0,
+     "textareas": 0,
+     "saveButtons": 0,
+     "reloadButtons": 0,
+     "empty": true
+    },
+    "heroPanel": {
+     "hpNodes": 0,
+     "hpText": false,
+     "hpWords": 0,
+     "documentHp": 0,
+     "text": "Ваш геройМиронВторое дыхание · потрачено: 0Опыт: 0Кости хитов: 1Состояния: нетЛист героя"
+    },
+    "words": {
+     "hit": false,
+     "ac": false,
+     "computer": true,
+     "neuralApi": false,
+     "costsApi": false,
+     "performance": false
+    }
+   },
+   "viewport": {
+    "w": 1440,
+    "h": 900,
+    "dpr": 1
+   },
+   "scrollWidth": 1440,
+   "scrollHeight": 900,
+   "overflowX": 0,
+   "activeView": "welcome",
+   "campaignOpen": true,
+   "kbOpen": false,
+   "textElements": 17,
+   "fontMin": 14,
+   "smallText": [],
+   "tinyText": [
+    {
+     "sel": "html > body.effects.campaign-open > aside.sidebar > a.brand > span:nth-of-type(2)",
+     "px": 14,
+     "text": "SOLO REALMS"
+    },
+    {
+     "sel": "button#nav-more",
+     "px": 14,
+     "text": "Ещё"
+    },
+    {
+     "sel": "section#welcome > div.start__main:nth-of-type(1) > div.start__copy:nth-of-type(1) > p.eyebrow:nth-of-type(1)",
+     "px": 14,
+     "text": "одиночное приключение"
+    },
+    {
+     "sel": "section#welcome > div.start__feed:nth-of-type(2) > div.start__stories > p.start__stories-kicker",
+     "px": 14,
+     "text": "Продолжить"
+    },
+    {
+     "sel": "div.start__feed:nth-of-type(2) > div.start__stories > button.start__continue:nth-of-type(1) > span.start__continue-meta:nth-of-type(2) > span.story-where:nth-of-type(1)",
+     "px": 14,
+     "text": "Мирон, 1-й уровень · Дозор на тр"
+    },
+    {
+     "sel": "div.start__feed:nth-of-type(2) > div.start__stories > button.start__continue:nth-of-type(1) > span.start__continue-meta:nth-of-type(2) > span.story-when:nth-of-type(2)",
+     "px": 14,
+     "text": "сегодня, 22:09"
+    },
+    {
+     "sel": "section#welcome > div.start__foot:nth-of-type(3) > p.start__local",
+     "px": 14,
+     "text": "Сохранения и книги остаются на э"
+    }
+   ],
+   "fontDistinct": 3,
+   "fontSizes": {
+    "14": 7,
+    "16": 9,
+    "30": 1
+   },
+   "tapCount": 10,
+   "tapsBad": [
+    {
+     "sel": "section#welcome > div.start__feed:nth-of-type(2) > div.start__stories > button.start__continue:nth-of-type(1)",
+     "label": "BUTTON",
+     "w": 352,
+     "h": 41.2
+    }
+   ],
+   "tapsBadCount": 1,
+   "contrastBad": [],
+   "contrastBadCount": 0,
+   "contrastMin": null,
+   "contrastChecked": 17,
+   "placeholderChecked": 0,
+   "borderBad": [
+    {
+     "sel": "section#welcome > div.start__feed:nth-of-type(2) > div.start__stories",
+     "frameFor": "section#welcome > div.start__feed:nth-of-type(2) > div.start__stories > button.start__all:nth-of-type(2)",
+     "label": "Все истории",
+     "side": "top",
+     "w": 1,
+     "what": "рамка",
+     "ratio": 1.36,
+     "fg": "rgb(217,203,175)",
+     "bg": "rgb(243,236,224)",
+     "kind": "граница"
+    },
+    {
+     "sel": "section#welcome > div.start__main:nth-of-type(1) > div.start__copy:nth-of-type(1) > div.start__actions > button.start__btn.start__btn--ghost:nth-of-type(2)",
+     "label": "Загрузить книгу",
+     "side": "top",
+     "w": 1,
+     "what": "рамка",
+     "ratio": 2.18,
+     "fg": "rgb(180,159,125)",
+     "bg": "rgb(243,236,224)",
+     "kind": "граница"
+    }
+   ],
+   "borderBadCount": 2,
+   "borderMin": 1.36,
+   "borderChecked": 3,
+   "controlChecked": 3,
+   "cellChecked": 0,
+   "contrastSkipped": [
+    {
+     "sel": "html > body.effects.campaign-open > aside.sidebar > a.brand",
+     "kind": "граница",
+     "reason": "видимой-границы-нет"
+    },
+    {
+     "sel": "body.effects.campaign-open > aside.sidebar > nav > div.nav-bar:nth-of-type(1) > button.nav:nth-of-type(1)",
+     "kind": "граница",
+     "reason": "видимой-границы-нет"
+    },
+    {
+     "sel": "body.effects.campaign-open > aside.sidebar > nav > div.nav-bar:nth-of-type(1) > button.nav:nth-of-type(2)",
+     "kind": "граница",
+     "reason": "видимой-границы-нет"
+    },
+    {
+     "sel": "body.effects.campaign-open > aside.sidebar > nav > div.nav-bar:nth-of-type(1) > button.nav:nth-of-type(3)",
+     "kind": "граница",
+     "reason": "видимой-границы-нет"
+    },
+    {
+     "sel": "body.effects.campaign-open > aside.sidebar > nav > div.nav-bar:nth-of-type(1) > button.nav:nth-of-type(4)",
+     "kind": "граница",
+     "reason": "видимой-границы-нет"
+    },
+    {
+     "sel": "button#nav-more",
+     "kind": "граница",
+     "reason": "видимой-границы-нет"
+    },
+    {
+     "sel": "section#welcome > div.start__feed:nth-of-type(2) > div.start__stories > button.start__continue:nth-of-type(1)",
+     "kind": "граница",
+     "reason": "видимой-границы-нет"
+    }
+   ],
+   "contrastSkippedCount": 7,
+   "interactiveVisible": 10,
+   "clipped": [],
+   "clippedCount": 0,
+   "colorsOutsideCount": 0,
+   "colorsOutside": [],
+   "drawer": null,
+   "state": "home",
+   "theme": "light",
+   "width": 1440,
+   "height": 900,
+   "file": "critic-n2-home-light-1440.png",
+   "jsErrors": []
+  },
+  {
+   "probe": {
+    "viewportH": 900,
+    "description": {
+     "rect": {
+      "x": 0,
+      "y": 0,
+      "w": 0,
+      "h": 0,
+      "bottom": 0,
+      "right": 0,
+      "inView": false
+     },
+     "lines": -1
+    },
+    "prepare": {
+     "text": "Подготовить приключение",
+     "disabled": false,
+     "rect": {
+      "x": 0,
+      "y": 0,
+      "w": 0,
+      "h": 0,
+      "bottom": 0,
+      "right": 0,
+      "inView": false
+     }
+    },
+    "drop": {
+     "x": 0,
+     "y": 0,
+     "w": 0,
+     "h": 0,
+     "bottom": 0,
+     "right": 0,
+     "inView": false
+    },
+    "abilities": {
+     "count": 6,
+     "columns": 1,
+     "lastBottom": 0,
+     "allInside": true,
+     "cells": [
+      {
+       "text": "16Сила",
+       "x": 0,
+       "y": 0,
+       "w": 0,
+       "h": 0,
+       "bottom": 0,
+       "right": 0,
+       "inView": false
+      },
+      {
+       "text": "14Ловкость",
+       "x": 0,
+       "y": 0,
+       "w": 0,
+       "h": 0,
+       "bottom": 0,
+       "right": 0,
+       "inView": false
+      },
+      {
+       "text": "14Телосложение",
+       "x": 0,
+       "y": 0,
+       "w": 0,
+       "h": 0,
+       "bottom": 0,
+       "right": 0,
+       "inView": false
+      },
+      {
+       "text": "10Интеллект",
+       "x": 0,
+       "y": 0,
+       "w": 0,
+       "h": 0,
+       "bottom": 0,
+       "right": 0,
+       "inView": false
+      },
+      {
+       "text": "12Мудрость",
+       "x": 0,
+       "y": 0,
+       "w": 0,
+       "h": 0,
+       "bottom": 0,
+       "right": 0,
+       "inView": false
+      },
+      {
+       "text": "8Харизма",
+       "x": 0,
+       "y": 0,
+       "w": 0,
+       "h": 0,
+       "bottom": 0,
+       "right": 0,
+       "inView": false
+      }
+     ]
+    },
+    "navLabels": [
+     {
+      "text": "Навыки",
+      "lines": 1,
+      "broken": [],
+      "textWidth": 261,
+      "textScroll": 261,
+      "singleWidth": 64,
+      "fontSize": "16px",
+      "fontFamily": "\"Segoe UI\"",
+      "letterSpacing": "normal",
+      "x": 16,
+      "y": 122,
+      "w": 287,
+      "h": 44,
+      "bottom": 166,
+      "right": 303,
+      "inView": true
+     },
+     {
+      "text": "Инвентарь",
+      "lines": 1,
+      "broken": [],
+      "textWidth": 261,
+      "textScroll": 261,
+      "singleWidth": 89,
+      "fontSize": "16px",
+      "fontFamily": "\"Segoe UI\"",
+      "letterSpacing": "normal",
+      "x": 16,
+      "y": 168,
+      "w": 287,
+      "h": 44,
+      "bottom": 212,
+      "right": 303,
+      "inView": true
+     },
+     {
+      "text": "Карта мира",
+      "lines": 1,
+      "broken": [],
+      "textWidth": 261,
+      "textScroll": 261,
+      "singleWidth": 97,
+      "fontSize": "16px",
+      "fontFamily": "\"Segoe UI\"",
+      "letterSpacing": "normal",
+      "x": 16,
+      "y": 214,
+      "w": 287,
+      "h": 44,
+      "bottom": 258,
+      "right": 303,
+      "inView": true
+     },
+     {
+      "text": "Блокнот",
+      "lines": 1,
+      "broken": [],
+      "textWidth": 261,
+      "textScroll": 261,
+      "singleWidth": 70,
+      "fontSize": "16px",
+      "fontFamily": "\"Segoe UI\"",
+      "letterSpacing": "normal",
+      "x": 16,
+      "y": 260,
+      "w": 287,
+      "h": 44,
+      "bottom": 304,
+      "right": 303,
+      "inView": true
+     },
+     {
+      "text": "Раздатки и карты",
+      "lines": 1,
+      "broken": [],
+      "textWidth": 261,
+      "textScroll": 261,
+      "singleWidth": 151,
+      "fontSize": "16px",
+      "fontFamily": "\"Segoe UI\"",
+      "letterSpacing": "normal",
+      "x": 16,
+      "y": 306,
+      "w": 287,
+      "h": 44,
+      "bottom": 350,
+      "right": 303,
+      "inView": true
+     },
+     {
+      "text": "Сохранения",
+      "lines": 1,
+      "broken": [],
+      "textWidth": 261,
+      "textScroll": 261,
+      "singleWidth": 100,
+      "fontSize": "16px",
+      "fontFamily": "\"Segoe UI\"",
+      "letterSpacing": "normal",
+      "x": 16,
+      "y": 352,
+      "w": 287,
+      "h": 44,
+      "bottom": 396,
+      "right": 303,
+      "inView": true
+     },
+     {
+      "text": "Выход из игры",
+      "lines": 1,
+      "broken": [],
+      "textWidth": 261,
+      "textScroll": 261,
+      "singleWidth": 124,
+      "fontSize": "16px",
+      "fontFamily": "\"Segoe UI\"",
+      "letterSpacing": "normal",
+      "x": 16,
+      "y": 398,
+      "w": 287,
+      "h": 44,
+      "bottom": 442,
+      "right": 303,
+      "inView": true
+     }
+    ],
+    "navWrapped": 0,
+    "navBroken": 0,
+    "headerVitals": {
+     "text": "12/12 хиты·18 защита",
+     "rect": {
+      "x": 0,
+      "y": 0,
+      "w": 0,
+      "h": 0,
+      "bottom": 0,
+      "right": 0,
+      "inView": false
+     }
+    },
+    "drawerTabs": {
+     "tab": "campaign",
+     "tabs": [
+      {
+       "text": "Кампания",
+       "selected": true
+      },
+      {
+       "text": "Приложение",
+       "selected": false
+      }
+     ],
+     "visible": 2,
+     "rows": 7,
+     "perBlock": [
+      {
+       "title": "Кампания",
+       "rows": 6
+      },
+      {
+       "title": "Приложение",
+       "rows": 0
+      }
+     ],
+     "overflow": 0,
+     "children": [
+      {
+       "cls": "nav-head",
+       "y": 72,
+       "h": 40,
+       "bottom": 112
+      },
+      {
+       "cls": "nav-block",
+       "y": 122,
+       "h": 274,
+       "bottom": 396
+      },
+      {
+       "cls": "nav",
+       "y": 398,
+       "h": 44,
+       "bottom": 442
+      }
+     ]
+    },
+    "home": {
+     "sections": 1,
+     "lists": 0,
+     "stories": 0,
+     "continueBlocks": 1,
+     "allStories": 1,
+     "kickers": [
+      "Продолжить"
+     ]
+    },
+    "journal": {
+     "width": 0,
+     "contentRight": 0,
+     "rightGap": 1440,
+     "emptyRightPct": 100,
+     "sections": 0,
+     "emptySections": 0,
+     "knownVisible": false,
+     "eventsVisible": false,
+     "facts": 0,
+     "eventRows": 0,
+     "textareas": 0,
+     "saveButtons": 0,
+     "reloadButtons": 0,
+     "empty": true
+    },
+    "heroPanel": {
+     "hpNodes": 0,
+     "hpText": false,
+     "hpWords": 0,
+     "documentHp": 0,
+     "text": "Ваш геройМиронВторое дыхание · потрачено: 0Опыт: 0Кости хитов: 1Состояния: нетЛист героя"
+    },
+    "words": {
+     "hit": false,
+     "ac": false,
+     "computer": true,
+     "neuralApi": false,
+     "costsApi": false,
+     "performance": false
+    }
+   },
+   "viewport": {
+    "w": 1440,
+    "h": 900,
+    "dpr": 1
+   },
+   "scrollWidth": 1440,
+   "scrollHeight": 900,
+   "overflowX": 0,
+   "activeView": "welcome",
+   "campaignOpen": true,
+   "kbOpen": false,
+   "textElements": 26,
+   "fontMin": 14,
+   "smallText": [],
+   "tinyText": [
+    {
+     "sel": "html > body.effects.tabletop > aside.sidebar.show-more > a.brand > span:nth-of-type(2)",
+     "px": 14,
+     "text": "SOLO REALMS"
+    },
+    {
+     "sel": "button#nav-more",
+     "px": 14,
+     "text": "Ещё"
+    },
+    {
+     "sel": "section#welcome > div.start__main:nth-of-type(1) > div.start__copy:nth-of-type(1) > p.eyebrow:nth-of-type(1)",
+     "px": 14,
+     "text": "одиночное приключение"
+    },
+    {
+     "sel": "section#welcome > div.start__feed:nth-of-type(2) > div.start__stories > p.start__stories-kicker",
+     "px": 14,
+     "text": "Продолжить"
+    },
+    {
+     "sel": "div.start__feed:nth-of-type(2) > div.start__stories > button.start__continue:nth-of-type(1) > span.start__continue-meta:nth-of-type(2) > span.story-where:nth-of-type(1)",
+     "px": 14,
+     "text": "Мирон, 1-й уровень · Дозор на тр"
+    },
+    {
+     "sel": "div.start__feed:nth-of-type(2) > div.start__stories > button.start__continue:nth-of-type(1) > span.start__continue-meta:nth-of-type(2) > span.story-when:nth-of-type(2)",
+     "px": 14,
+     "text": "сегодня, 22:09"
+    },
+    {
+     "sel": "section#welcome > div.start__foot:nth-of-type(3) > p.start__local",
+     "px": 14,
+     "text": "Сохранения и книги остаются на э"
+    }
+   ],
+   "fontDistinct": 3,
+   "fontSizes": {
+    "14": 7,
+    "16": 18,
+    "30": 1
+   },
+   "tapCount": 19,
+   "tapsBad": [
+    {
+     "sel": "div#nav-tabs > button.nav-tab:nth-of-type(1)",
+     "label": "Кампания",
+     "w": 141.5,
+     "h": 40
+    },
+    {
+     "sel": "div#nav-tabs > button.nav-tab:nth-of-type(2)",
+     "label": "Приложение",
+     "w": 141.5,
+     "h": 40
+    },
+    {
+     "sel": "section#welcome > div.start__feed:nth-of-type(2) > div.start__stories > button.start__continue:nth-of-type(1)",
+     "label": "BUTTON",
+     "w": 352,
+     "h": 41.2
+    }
+   ],
+   "tapsBadCount": 3,
+   "contrastBad": [],
+   "contrastBadCount": 0,
+   "contrastMin": null,
+   "contrastChecked": 26,
+   "placeholderChecked": 0,
+   "borderBad": [
+    {
+     "sel": "div#nav-tabs > button.nav-tab:nth-of-type(2)",
+     "label": "Приложение",
+     "side": "top",
+     "w": 1,
+     "what": "рамка",
+     "ratio": 1.3,
+     "fg": "rgb(217,203,175)",
+     "bg": "rgb(243,236,224)",
+     "kind": "граница"
+    },
+    {
+     "sel": "div#nav-drawer > button.nav.nav-exit",
+     "label": "BUTTON",
+     "side": "top",
+     "w": 1,
+     "what": "рамка",
+     "ratio": 1.36,
+     "fg": "rgb(217,203,175)",
+     "bg": "rgb(243,236,224)",
+     "kind": "граница"
+    },
+    {
+     "sel": "section#welcome > div.start__feed:nth-of-type(2) > div.start__stories",
+     "frameFor": "section#welcome > div.start__feed:nth-of-type(2) > div.start__stories > button.start__all:nth-of-type(2)",
+     "label": "Все истории",
+     "side": "top",
+     "w": 1,
+     "what": "рамка",
+     "ratio": 1.36,
+     "fg": "rgb(217,203,175)",
+     "bg": "rgb(243,236,224)",
+     "kind": "граница"
+    },
+    {
+     "sel": "section#welcome > div.start__main:nth-of-type(1) > div.start__copy:nth-of-type(1) > div.start__actions > button.start__btn.start__btn--ghost:nth-of-type(2)",
+     "label": "Загрузить книгу",
+     "side": "top",
+     "w": 1,
+     "what": "рамка",
+     "ratio": 2.18,
+     "fg": "rgb(180,159,125)",
+     "bg": "rgb(243,236,224)",
+     "kind": "граница"
+    }
+   ],
+   "borderBadCount": 4,
+   "borderMin": 1.3,
+   "borderChecked": 6,
+   "controlChecked": 6,
+   "cellChecked": 0,
+   "contrastSkipped": [
+    {
+     "sel": "html > body.effects.tabletop > aside.sidebar.show-more > a.brand",
+     "kind": "граница",
+     "reason": "видимой-границы-нет"
+    },
+    {
+     "sel": "body.effects.tabletop > aside.sidebar.show-more > nav > div.nav-bar:nth-of-type(1) > button.nav:nth-of-type(1)",
+     "kind": "граница",
+     "reason": "видимой-границы-нет"
+    },
+    {
+     "sel": "body.effects.tabletop > aside.sidebar.show-more > nav > div.nav-bar:nth-of-type(1) > button.nav:nth-of-type(2)",
+     "kind": "граница",
+     "reason": "видимой-границы-нет"
+    },
+    {
+     "sel": "body.effects.tabletop > aside.sidebar.show-more > nav > div.nav-bar:nth-of-type(1) > button.nav:nth-of-type(3)",
+     "kind": "граница",
+     "reason": "видимой-границы-нет"
+    },
+    {
+     "sel": "body.effects.tabletop > aside.sidebar.show-more > nav > div.nav-bar:nth-of-type(1) > button.nav:nth-of-type(4)",
+     "kind": "граница",
+     "reason": "видимой-границы-нет"
+    },
+    {
+     "sel": "button#nav-more",
+     "kind": "граница",
+     "reason": "видимой-границы-нет"
+    },
+    {
+     "sel": "div#nav-drawer > div.nav-block.nav-block--campaign:nth-of-type(2) > button.nav:nth-of-type(1)",
+     "kind": "граница",
+     "reason": "видимой-границы-нет"
+    },
+    {
+     "sel": "div#nav-drawer > div.nav-block.nav-block--campaign:nth-of-type(2) > button.nav:nth-of-type(2)",
+     "kind": "граница",
+     "reason": "видимой-границы-нет"
+    },
+    {
+     "sel": "div#nav-drawer > div.nav-block.nav-block--campaign:nth-of-type(2) > button.nav:nth-of-type(3)",
+     "kind": "граница",
+     "reason": "видимой-границы-нет"
+    },
+    {
+     "sel": "div#nav-drawer > div.nav-block.nav-block--campaign:nth-of-type(2) > button.nav:nth-of-type(4)",
+     "kind": "граница",
+     "reason": "видимой-границы-нет"
+    },
+    {
+     "sel": "div#nav-drawer > div.nav-block.nav-block--campaign:nth-of-type(2) > button.nav:nth-of-type(5)",
+     "kind": "граница",
+     "reason": "видимой-границы-нет"
+    },
+    {
+     "sel": "div#nav-drawer > div.nav-block.nav-block--campaign:nth-of-type(2) > button.nav:nth-of-type(6)",
+     "kind": "граница",
+     "reason": "видимой-границы-нет"
+    },
+    {
+     "sel": "section#welcome > div.start__feed:nth-of-type(2) > div.start__stories > button.start__continue:nth-of-type(1)",
+     "kind": "граница",
+     "reason": "видимой-границы-нет"
+    }
+   ],
+   "contrastSkippedCount": 13,
+   "interactiveVisible": 19,
+   "clipped": [],
+   "clippedCount": 0,
+   "colorsOutsideCount": 0,
+   "colorsOutside": [],
+   "drawer": {
+    "h": 410,
+    "top": 56,
+    "rows": 7,
+    "blocks": [
+     "Кампания"
+    ],
+    "scrollTop": 0,
+    "scroll": 0,
+    "content": 410
+   },
+   "state": "menu",
+   "theme": "light",
+   "width": 1440,
+   "height": 900,
+   "debug": {
+    "bodyClass": "effects tabletop campaign-open nat20-game",
+    "burger": false,
+    "aside": {
+     "x": 0,
+     "y": 0,
+     "w": 1440,
+     "h": 56
+    },
+    "drawer": {
+     "x": 0,
+     "y": 56,
+     "w": 320,
+     "h": 410
+    }
+   },
+   "file": "critic-n2-menu-light-1440.png",
+   "jsErrors": []
+  },
+  {
+   "probe": {
+    "viewportH": 900,
+    "description": {
+     "rect": {
+      "x": 0,
+      "y": 0,
+      "w": 0,
+      "h": 0,
+      "bottom": 0,
+      "right": 0,
+      "inView": false
+     },
+     "lines": -1
+    },
+    "prepare": {
+     "text": "Подготовить приключение",
+     "disabled": false,
+     "rect": {
+      "x": 0,
+      "y": 0,
+      "w": 0,
+      "h": 0,
+      "bottom": 0,
+      "right": 0,
+      "inView": false
+     }
+    },
+    "drop": {
+     "x": 0,
+     "y": 0,
+     "w": 0,
+     "h": 0,
+     "bottom": 0,
+     "right": 0,
+     "inView": false
+    },
+    "abilities": {
+     "count": 6,
+     "columns": 2,
+     "lastBottom": 694.3,
+     "allInside": true,
+     "cells": [
+      {
+       "text": "16 Сила",
+       "x": 32,
+       "y": 365.3,
+       "w": 492,
+       "h": 99,
+       "bottom": 464.3,
+       "right": 524,
+       "inView": true
+      },
+      {
+       "text": "14 Ловкость",
+       "x": 540,
+       "y": 365.3,
+       "w": 492,
+       "h": 99,
+       "bottom": 464.3,
+       "right": 1032,
+       "inView": true
+      },
+      {
+       "text": "14 Телосложение",
+       "x": 32,
+       "y": 480.3,
+       "w": 492,
+       "h": 99,
+       "bottom": 579.3,
+       "right": 524,
+       "inView": true
+      },
+      {
+       "text": "10 Интеллект",
+       "x": 540,
+       "y": 480.3,
+       "w": 492,
+       "h": 99,
+       "bottom": 579.3,
+       "right": 1032,
+       "inView": true
+      },
+      {
+       "text": "12 Мудрость",
+       "x": 32,
+       "y": 595.3,
+       "w": 492,
+       "h": 99,
+       "bottom": 694.3,
+       "right": 524,
+       "inView": true
+      },
+      {
+       "text": "8 Харизма",
+       "x": 540,
+       "y": 595.3,
+       "w": 492,
+       "h": 99,
+       "bottom": 694.3,
+       "right": 1032,
+       "inView": true
+      }
+     ]
+    },
+    "navLabels": [],
+    "navWrapped": 0,
+    "navBroken": 0,
+    "headerVitals": {
+     "text": "12/12 хиты·18 защита",
+     "rect": {
+      "x": 0,
+      "y": 0,
+      "w": 0,
+      "h": 0,
+      "bottom": 0,
+      "right": 0,
+      "inView": false
+     }
+    },
+    "drawerTabs": {
+     "tab": "campaign",
+     "tabs": [
+      {
+       "text": "Кампания",
+       "selected": true
+      },
+      {
+       "text": "Приложение",
+       "selected": false
+      }
+     ],
+     "visible": 0,
+     "rows": 0,
+     "perBlock": [
+      {
+       "title": "Кампания",
+       "rows": 0
+      },
+      {
+       "title": "Приложение",
+       "rows": 0
+      }
+     ],
+     "overflow": 0,
+     "children": []
+    },
+    "home": {
+     "sections": 0,
+     "lists": 0,
+     "stories": 0,
+     "continueBlocks": 0,
+     "allStories": 0,
+     "kickers": []
+    },
+    "journal": {
+     "width": 0,
+     "contentRight": 0,
+     "rightGap": 1440,
+     "emptyRightPct": 100,
+     "sections": 0,
+     "emptySections": 0,
+     "knownVisible": false,
+     "eventsVisible": false,
+     "facts": 0,
+     "eventRows": 0,
+     "textareas": 0,
+     "saveButtons": 0,
+     "reloadButtons": 0,
+     "empty": true
+    },
+    "heroPanel": {
+     "hpNodes": 0,
+     "hpText": false,
+     "hpWords": 0,
+     "documentHp": 0,
+     "text": "Ваш геройМиронВторое дыхание · потрачено: 0Опыт: 0Кости хитов: 1Состояния: нетЛист героя"
+    },
+    "words": {
+     "hit": true,
+     "ac": true,
+     "computer": false,
+     "neuralApi": false,
+     "costsApi": false,
+     "performance": false
+    }
+   },
+   "viewport": {
+    "w": 1440,
+    "h": 900,
+    "dpr": 1
+   },
+   "scrollWidth": 1440,
+   "scrollHeight": 1299,
+   "overflowX": 0,
+   "activeView": "character",
+   "campaignOpen": true,
+   "kbOpen": false,
+   "textElements": 37,
+   "fontMin": 14,
+   "smallText": [],
+   "tinyText": [
+    {
+     "sel": "html > body.effects.tabletop > aside.sidebar > a.brand > span:nth-of-type(2)",
+     "px": 14,
+     "text": "SOLO REALMS"
+    },
+    {
+     "sel": "button#nav-more",
+     "px": 14,
+     "text": "Ещё"
+    },
+    {
+     "sel": "html > body.effects.tabletop > main > header > div.breadcrumb:nth-of-type(1)",
+     "px": 14,
+     "text": "ОДИНОЧНОЕ ПРИКЛЮЧЕНИЕ"
+    },
+    {
+     "sel": "body.effects.tabletop > main > header > div.breadcrumb:nth-of-type(1) > span:nth-of-type(1)",
+     "px": 14,
+     "text": "/"
+    },
+    {
+     "sel": "span#campaign-label",
+     "px": 14,
+     "text": "Тайна трёх сосен"
+    },
+    {
+     "sel": "span#model-status",
+     "px": 14,
+     "text": "Подключите облачного Мастера"
+    },
+    {
+     "sel": "div#character-content > p.hero-meta:nth-of-type(1)",
+     "px": 14,
+     "text": "Человек · Воин · 1-й уровень"
+    },
+    {
+     "sel": "div#character-content > div.sheet-vitals:nth-of-type(1) > div.sheet-vitals__cell:nth-of-type(1) > small",
+     "px": 14,
+     "text": "Хиты"
+    },
+    {
+     "sel": "div#character-content > div.sheet-vitals:nth-of-type(1) > div.sheet-vitals__cell:nth-of-type(2) > small",
+     "px": 14,
+     "text": "Защита"
+    },
+    {
+     "sel": "div#character-content > div.sheet-vitals:nth-of-type(1) > div.sheet-vitals__cell:nth-of-type(3) > small",
+     "px": 14,
+     "text": "Инициатива"
+    },
+    {
+     "sel": "div#character-content > div.sheet-vitals:nth-of-type(1) > div.sheet-vitals__cell:nth-of-type(4) > small",
+     "px": 14,
+     "text": "Скорость"
+    },
+    {
+     "sel": "div#character-content > div.scores-grid:nth-of-type(2) > div.metric:nth-of-type(1) > small",
+     "px": 14,
+     "text": "Сила"
+    },
+    {
+     "sel": "div#character-content > div.scores-grid:nth-of-type(2) > div.metric:nth-of-type(2) > small",
+     "px": 14,
+     "text": "Ловкость"
+    },
+    {
+     "sel": "div#character-content > div.scores-grid:nth-of-type(2) > div.metric:nth-of-type(3) > small",
+     "px": 14,
+     "text": "Телосложение"
+    },
+    {
+     "sel": "div#character-content > div.scores-grid:nth-of-type(2) > div.metric:nth-of-type(4) > small",
+     "px": 14,
+     "text": "Интеллект"
+    },
+    {
+     "sel": "div#character-content > div.scores-grid:nth-of-type(2) > div.metric:nth-of-type(5) > small",
+     "px": 14,
+     "text": "Мудрость"
+    },
+    {
+     "sel": "div#character-content > div.scores-grid:nth-of-type(2) > div.metric:nth-of-type(6) > small",
+     "px": 14,
+     "text": "Харизма"
+    },
+    {
+     "sel": "div#character-content > p.hint:nth-of-type(5)",
+     "px": 14,
+     "text": "Подтверждённые ресурсы и действи"
+    }
+   ],
+   "fontDistinct": 4,
+   "fontSizes": {
+    "14": 18,
+    "16": 8,
+    "22": 10,
+    "30": 1
+   },
+   "tapCount": 7,
+   "tapsBad": [
+    {
+     "sel": "html > body.effects.tabletop > main > header > button.themetoggle:nth-of-type(1)",
+     "label": "Тёмная тема",
+     "w": 34,
+     "h": 34
+    }
+   ],
+   "tapsBadCount": 1,
+   "contrastBad": [],
+   "contrastBadCount": 0,
+   "contrastMin": null,
+   "contrastChecked": 37,
+   "placeholderChecked": 0,
+   "borderBad": [
+    {
+     "sel": "html > body.effects.tabletop > main > header > button.themetoggle:nth-of-type(1)",
+     "label": "Тёмная тема",
+     "side": "top",
+     "w": 1,
+     "what": "рамка",
+     "ratio": 1.36,
+     "fg": "rgb(217,203,175)",
+     "bg": "rgb(243,236,224)",
+     "kind": "граница"
+    },
+    {
+     "sel": "div#character-content > div.sheet-vitals:nth-of-type(1) > div.sheet-vitals__cell:nth-of-type(2)",
+     "label": "DIV",
+     "side": "left",
+     "w": 1,
+     "what": "рамка",
+     "ratio": 1.36,
+     "fg": "rgb(217,203,175)",
+     "bg": "rgb(243,236,224)",
+     "kind": "ячейка"
+    },
+    {
+     "sel": "div#character-content > div.sheet-vitals:nth-of-type(1) > div.sheet-vitals__cell:nth-of-type(3)",
+     "label": "DIV",
+     "side": "top",
+     "w": 1,
+     "what": "рамка",
+     "ratio": 1.36,
+     "fg": "rgb(217,203,175)",
+     "bg": "rgb(243,236,224)",
+     "kind": "ячейка"
+    },
+    {
+     "sel": "div#character-content > div.sheet-vitals:nth-of-type(1) > div.sheet-vitals__cell:nth-of-type(4)",
+     "label": "DIV",
+     "side": "top",
+     "w": 1,
+     "what": "рамка",
+     "ratio": 1.36,
+     "fg": "rgb(217,203,175)",
+     "bg": "rgb(243,236,224)",
+     "kind": "ячейка"
+    },
+    {
+     "sel": "body.effects.tabletop > aside.sidebar > nav > div.nav-bar:nth-of-type(1) > button.nav.active:nth-of-type(3)",
+     "label": "BUTTON",
+     "side": "top",
+     "w": 1,
+     "what": "рамка",
+     "ratio": 1.95,
+     "fg": "rgb(180,159,125)",
+     "bg": "rgb(243,236,224)",
+     "kind": "граница"
+    },
+    {
+     "sel": "div#character-content > div.sheet-vitals:nth-of-type(1)",
+     "frameFor": "div#character-content > div.sheet-vitals:nth-of-type(1) > div.sheet-vitals__cell:nth-of-type(1)",
+     "label": "DIV",
+     "side": "top",
+     "w": 1,
+     "what": "рамка",
+     "ratio": 2.18,
+     "fg": "rgb(180,159,125)",
+     "bg": "rgb(243,236,224)",
+     "kind": "ячейка"
+    }
+   ],
+   "borderBadCount": 6,
+   "borderMin": 1.36,
+   "borderChecked": 6,
+   "controlChecked": 2,
+   "cellChecked": 4,
+   "contrastSkipped": [
+    {
+     "sel": "html > body.effects.tabletop > aside.sidebar > a.brand",
+     "kind": "граница",
+     "reason": "видимой-границы-нет"
+    },
+    {
+     "sel": "body.effects.tabletop > aside.sidebar > nav > div.nav-bar:nth-of-type(1) > button.nav:nth-of-type(1)",
+     "kind": "граница",
+     "reason": "видимой-границы-нет"
+    },
+    {
+     "sel": "body.effects.tabletop > aside.sidebar > nav > div.nav-bar:nth-of-type(1) > button.nav:nth-of-type(2)",
+     "kind": "граница",
+     "reason": "видимой-границы-нет"
+    },
+    {
+     "sel": "body.effects.tabletop > aside.sidebar > nav > div.nav-bar:nth-of-type(1) > button.nav:nth-of-type(4)",
+     "kind": "граница",
+     "reason": "видимой-границы-нет"
+    },
+    {
+     "sel": "button#nav-more",
+     "kind": "граница",
+     "reason": "видимой-границы-нет"
+    }
+   ],
+   "contrastSkippedCount": 5,
+   "interactiveVisible": 7,
+   "clipped": [],
+   "clippedCount": 0,
+   "colorsOutsideCount": 0,
+   "colorsOutside": [],
+   "drawer": null,
+   "state": "hero",
+   "theme": "light",
+   "width": 1440,
+   "height": 900,
+   "file": "critic-n2-hero-light-1440.png",
+   "jsErrors": []
+  }
+ ]
+}

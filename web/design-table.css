@@ -1,0 +1,318 @@
+/* r222 — первый экран и бой на карте в языке «Стол и лист».
+   Источник — макеты design/screens/01-start.{html,css} и 04-combat.{html,css}.
+   Токены приходят из design-tokens.css на `#welcome` и `#play`.
+   Правила стиля те же, что у r220/r221: ноль градиентов, теней, полупрозрачных
+   подложек и переходов; радиус ≤ 2 px; границы — волосяная линия 1 px и отступ.
+   Картинок-заглушек нет: роза ветров на входе — SVG, поле боя — сетка из данных. */
+
+/* ── Первый экран ───────────────────────────────────────────────────────────
+   `#welcome` — раздел SPA, поэтому он живёт внутри main рядом с сайдбаром:
+   это навигация приложения, а не часть макета. Макет задаёт стол, набор
+   текста и две кнопки — их и повторяем. */
+
+#welcome{
+  background:var(--ink-900);color:var(--text);
+  font-family:var(--font-book);
+  padding:clamp(20px,3.4vh,40px) clamp(18px,4vw,64px) clamp(16px,3vh,32px);
+  min-height:calc(100dvh - 64px);
+}
+#welcome.active{display:flex;flex-direction:column;justify-content:space-between;gap:clamp(20px,4vh,40px)}
+/* Шапка приложения (крошки, «Тестовые данные», кнопка «Лист») принадлежит
+   игровому экрану: на входе её нет — у макета свой верх. */
+body:has(#welcome.active)>main>header{display:none}
+/* На столе сверху sticky-полоса 56 px (chrome.css). 100dvh считал её
+   лишними 56 px и добавлял странице прокрутку. Подвал приложения на первом
+   экране не нужен: это техническая строка, а не часть макета. */
+body:has(#welcome.active) #welcome{min-height:calc(100dvh - 56px)}
+body:has(#welcome.active)>main>footer{display:none}
+#welcome .start__main{
+  display:grid;grid-template-columns:minmax(0,1fr) minmax(0,min(34vw,360px));
+  align-items:center;gap:clamp(24px,4vw,56px);
+  max-width:960px;margin:0 auto;width:100%;
+}
+#welcome .start__copy{min-width:0;max-width:50ch}
+#welcome .eyebrow{
+  margin:0;font-family:var(--font-ui);font-size:14px;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--text-3);
+}
+/* n04: три кегля на весь экран — 34 (заголовок), 16 (подзаголовок и названия
+   историй), 14 (подписи). Больше нет. */
+#welcome .start__title{
+  margin:14px 0 0;font-family:var(--font-book);font-weight:400;
+  font-size:clamp(26px,3vw,30px);line-height:1.08;letter-spacing:-.004em;
+  color:var(--text);
+}
+#welcome .start__lead{
+  margin:18px 0 0;max-width:34ch;font-family:var(--font-book);font-style:italic;
+  font-size:16px;line-height:1.55;color:var(--text-2);
+}
+#welcome .start__actions{display:flex;flex-wrap:wrap;align-items:center;gap:10px 12px;margin-top:clamp(20px,3vh,30px)}
+#welcome .start__btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:8px;
+  min-height:46px;padding:0 20px;border-radius:var(--radius);
+  font-family:var(--font-ui);font-size:16px;font-weight:700;letter-spacing:.01em;
+  border:1px solid transparent;cursor:pointer;
+}
+/* n08: заливка основной кнопки — --candle-fill. Тёмная тема: #D8A05C, светлая:
+   #B0722A с чернилами #191207 — 4.67:1 (порог 4.5). Прежний --candle в светлой
+   теме (#8A5714) давал 3.05:1 на том же тексте — замер критика №6. */
+#welcome .start__btn--primary{background:var(--candle-fill);border-color:var(--candle-fill);color:var(--candle-ink)}
+#welcome .start__btn--primary:hover{background:var(--candle-hi);border-color:var(--candle-hi)}
+#welcome .start__btn--ghost{background:none;border-color:var(--line-strong);color:var(--text)}
+#welcome .start__btn--ghost:hover{border-color:var(--candle-deep);color:var(--candle-hi)}
+#welcome .start__btn .solo-icon{width:16px;height:16px;opacity:.8}
+
+/* «Продолжить»: одна строка с названием и датой, без карточки-плитки. */
+#welcome .start__feed{width:100%;max-width:960px;margin:0 auto;min-width:0}
+/* minmax(0,1fr): колонка не растягивается под max-content строки с датой,
+   иначе мета вылезала за кнопку на 28 px. */
+#welcome .start__continue{
+  display:grid;grid-template-columns:minmax(0,1fr);gap:3px;width:100%;max-width:44ch;margin-top:clamp(14px,2.4vh,22px);
+  padding:12px 0 0;border:0;border-top:1px solid var(--line);border-radius:0;
+  background:none;color:var(--text);text-align:left;cursor:pointer;
+}
+#welcome .start__continue:hover .start__continue-title{color:var(--candle-hi)}
+#welcome .start__continue-kicker{
+  font-family:var(--font-ui);font-size:14px;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--text-3);
+}
+#welcome .start__continue-title{
+  font-family:var(--font-book);font-size:16px;line-height:1.25;color:var(--text);
+}
+/* Место остановки сжимается, дата — нет: строка остаётся одной. */
+#welcome .start__continue-meta,
+#welcome .story-meta{
+  display:flex;min-width:0;gap:10px;align-items:baseline;justify-content:space-between;
+  font-family:var(--font-ui);font-size:14px;line-height:1.3;color:var(--text-3);
+}
+/* n08: место остановки переносится, а не режется многоточием: замер показал
+   20 обрезанных строк на 1440 (`scrollWidth > clientWidth`). Мета больше не
+   повторяет название истории (web/obsidian.js), поэтому строк обычно одна. */
+#welcome .story-where{min-width:0;overflow:visible;text-overflow:clip;white-space:normal;overflow-wrap:anywhere}
+#welcome .story-when{flex:none;white-space:nowrap}
+
+/* n04: прошлые истории — строки в один столбец на телефоне и сеткой не больше
+   трёх в ряд на столе. Дата и место остановки — одной строкой 14 px. */
+#welcome .start__stories{width:100%;margin-top:clamp(14px,2.4vh,20px);border-top:1px solid var(--line)}
+#welcome .start__stories-kicker{
+  margin:12px 0 0;font-family:var(--font-ui);font-size:14px;
+  letter-spacing:.14em;text-transform:uppercase;color:var(--text-3);
+}
+/* Два ряда — шесть историй в кадре; остальные прокручиваются внутри списка,
+   иначе первый экран растёт вместе с архивом. */
+#welcome .start__list{
+  display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0 24px;
+  /* n08: мета переносится (многоточие давало 20 обрезанных строк), поэтому
+     строка стала выше на одну строку текста — высота списка держит те же два
+     ряда и шесть историй в кадре. */
+  max-height:172px;overflow-y:auto;overscroll-behavior:contain;
+}
+/* n16: на главной осталась одна карточка истории, список пуст — display:grid
+   перебивал [hidden], и пустая сетка всё равно занимала место в разметке. */
+#welcome .start__list[hidden]{display:none}
+#welcome .story{
+  display:flex;flex-direction:column;gap:2px;width:100%;min-height:64px;padding:8px 0;
+  border:0;border-bottom:1px solid var(--line);border-radius:0;background:none;
+  color:var(--text);text-align:left;cursor:pointer;
+}
+#welcome .story:hover .story-title{color:var(--candle-hi)}
+#welcome .story-title{font-family:var(--font-book);font-size:16px;line-height:1.25}
+
+/* n14: одна секция «Продолжить» (замечание №9 критика). Кнопка последней
+   истории стоит внутри секции: своя верхняя линия и отступ подписи у неё
+   больше не нужны — секция уже дала и линию, и подпись. */
+#welcome .start__stories .start__continue{margin-top:10px;padding-top:0;border-top:0}
+/* Строка «Все истории» — конец той же секции: та же ширина, та же линия,
+   тот же кегль 16, что у названий историй. */
+#welcome .start__all{
+  display:flex;align-items:center;width:100%;min-height:44px;margin:0;padding:8px 0;
+  border:0;border-radius:0;background:none;color:var(--text-2);
+  font-family:var(--font-ui);font-size:16px;text-align:left;cursor:pointer;
+}
+#welcome .start__all:hover{color:var(--candle-hi)}
+
+#welcome .start__empty{
+  margin:clamp(18px,3vh,26px) 0 0;padding-top:12px;max-width:34ch;
+  border-top:1px solid var(--line);font-family:var(--font-book);
+  font-size:16px;line-height:1.55;color:var(--text-2);
+}
+
+#welcome .start__art{display:grid;place-items:center;min-width:0}
+#welcome .start__art svg{
+  width:min(100%,420px);height:auto;color:var(--candle);
+  opacity:.5;
+}
+
+#welcome .start__foot{
+  display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;
+  gap:8px 20px;max-width:960px;margin:0 auto;width:100%;
+  padding-top:12px;border-top:1px solid var(--line);
+  font-family:var(--font-ui);font-size:14px;color:var(--text-3);
+}
+#welcome .start__local{display:inline-flex;align-items:center;gap:8px;margin:0}
+#welcome .start__local .solo-icon{width:14px;height:14px;opacity:.7}
+
+@media(max-width:900px){
+  #welcome{min-height:calc(100dvh - 52px);padding:22px 18px 18px}
+  #welcome .start__main{grid-template-columns:minmax(0,1fr);gap:18px}
+  #welcome .start__art{display:none}
+  #welcome .start__copy{max-width:none}
+  #welcome .start__title{font-size:30px}
+  #welcome .start__lead{font-size:16px}
+  #welcome .start__btn{min-height:48px}
+  #welcome .start__list{grid-template-columns:minmax(0,1fr);gap:0}
+  #welcome .start__foot{flex-direction:column;align-items:flex-start;gap:6px}
+}
+
+/* ── Бой: поле боя рядом с лентой ───────────────────────────────────────────
+   Правило владельца: в игре — лента и поле ввода, карта отдельным экраном.
+   Поэтому карта существует только пока бой активен (`#play.in-battle`):
+   вне боя её нет в DOM, и режим «только чат» её не получает вовсе —
+   разметку строит game-screen.js, а он в чат-оболочку не попадает. */
+
+.board{
+  display:flex;flex-direction:column;min-width:0;min-height:0;
+  background:var(--ink-850);border-left:1px solid var(--line);
+  font-family:var(--font-ui);color:var(--text);overflow:hidden;
+}
+.board[hidden]{display:none}
+.board__head{padding:14px 14px 12px;border-bottom:1px solid var(--line)}
+.board__eyebrow{
+  margin:0;font-size:10px;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--text-3);
+}
+.board__title{
+  margin:6px 0 0;font-family:var(--font-book);font-size:22px;font-weight:400;
+  line-height:1.15;color:var(--text);
+}
+.board__meta{
+  display:block;margin-top:6px;font-size:11px;line-height:1.45;color:var(--text-3);
+  font-variant-numeric:tabular-nums;
+}
+
+/* Очередь ходов: номер, имя, хиты. Активный ход помечен свечой и полосой. */
+.board__turns{
+  display:grid;gap:0;margin:0;padding:0;list-style:none;
+  border-bottom:1px solid var(--line);
+  max-height:30%;overflow-y:auto;scrollbar-width:thin;
+}
+.board__turn{
+  display:grid;grid-template-columns:18px minmax(0,1fr) auto;align-items:baseline;
+  gap:8px;padding:7px 14px;font-size:12.5px;line-height:1.35;color:var(--text-2);
+  border-bottom:1px solid var(--ink-800);
+}
+.board__turn:last-child{border-bottom:0}
+.board__turn-n{color:var(--text-3);font-variant-numeric:tabular-nums}
+.board__turn-name{min-width:0;overflow-wrap:anywhere;color:var(--text)}
+.board__turn-hp{font-variant-numeric:tabular-nums;color:var(--text-2);white-space:nowrap}
+.board__turn-hp.is-hurt{color:var(--ember)}
+.board__turn-cond{
+  grid-column:2 / -1;font-size:11px;line-height:1.3;color:var(--candle-deep);
+}
+.board__turn.is-active{background:var(--ink-800);box-shadow:inset 2px 0 0 var(--candle)}
+.board__turn.is-active .board__turn-n{color:var(--candle)}
+
+/* Сетка: клетки одинаковые, заливка только у препятствий и укрытий. */
+.board__map{
+  padding:12px 14px 0;min-height:0;overflow:auto;
+  scrollbar-width:thin;scrollbar-color:var(--ink-600) transparent;
+}
+.board__grid{
+  display:grid;gap:1px;width:100%;margin:0 auto;
+  background:var(--line);border:1px solid var(--line);
+  --cols:1;
+  /* Клетка тянется по ширине плашки, но не мельче 28 px: на 375 это 44 px
+     при 7 столбцах. Карта шире 11 столбцов прокручивается внутри плашки —
+     страница вбок не едет никогда. */
+  grid-template-columns:repeat(var(--cols),minmax(28px,1fr));
+}
+.board__cell{
+  position:relative;aspect-ratio:1;min-width:28px;
+  background:var(--ink-800);
+}
+.board__cell--wall{background:var(--ink-600)}
+.board__cell--cover{background:var(--ink-750)}
+.board__cell--cover::after{
+  content:"";position:absolute;inset:6px;border:1px solid var(--line-strong);
+  border-radius:1px;
+}
+.board__cell--move{box-shadow:inset 0 0 0 1px var(--candle-deep)}
+.board__cell--unseen{background:var(--ink-900)}
+.board__cell--unseen::before{
+  content:"?";position:absolute;inset:0;display:grid;place-items:center;
+  font-size:11px;color:var(--text-3);
+}
+.board__cell[role="button"]{cursor:pointer}
+.board__cell[role="button"]:hover{background:var(--ink-700)}
+.board__token{
+  position:absolute;inset:18%;display:grid;place-items:center;border-radius:50%;
+  font-family:var(--font-ui);font-size:12px;font-weight:700;line-height:1;
+  border:1px solid transparent;
+}
+.board__token--hero{background:var(--candle);color:var(--candle-ink);border-color:var(--candle-hi)}
+.board__token--foe{background:var(--ember);color:var(--out-miss-ink);border-color:var(--ember)}
+.board__token--ally{background:var(--moss);color:var(--out-hit-ink);border-color:var(--moss)}
+.board__token--dead{opacity:.55}
+
+.board__legend{
+  display:flex;flex-wrap:wrap;gap:4px 14px;margin:10px 0 0;padding:0 14px;
+  list-style:none;font-size:11px;color:var(--text-3);
+}
+.board__legend li{display:inline-flex;align-items:center;gap:6px}
+.board__legend i{display:inline-block;width:9px;height:9px;border-radius:50%}
+.board__legend i.is-hero{background:var(--candle)}
+.board__legend i.is-foe{background:var(--ember)}
+.board__legend i.is-ally{background:var(--moss)}
+.board__legend i.is-cover{background:var(--ink-750);border:1px solid var(--line-strong);border-radius:1px}
+.board__legend i.is-move{border:1px solid var(--candle-deep);border-radius:1px}
+
+.board__note{
+  margin:auto 0 0;padding:12px 14px 14px;font-size:11.5px;line-height:1.5;
+  color:var(--text-3);
+}
+.board__empty{
+  margin:12px 14px 0;padding:14px;border:1px dashed var(--line);
+  border-radius:0;font-size:12px;line-height:1.5;color:var(--text-3);
+}
+.board__empty p{margin:0}
+.board__empty p+p{margin-top:6px}
+
+/* Раскладка: карта — вторая колонка рядом с лентой; лист на время боя уходит
+   за кнопку «Лист» (иначе три колонки не помещаются на 1440). */
+#play.in-battle .workspace-layout{grid-template-columns:minmax(0,1fr) clamp(300px,26vw,360px)}
+#play.in-battle .workspace-layout>.scene-rail{display:none!important}
+#play.in-battle .literary-column{min-width:0}
+
+@media(min-width:1280px){
+  body.tabletop #play.unified-game.in-battle .workspace-layout{
+    display:grid;grid-template-columns:minmax(0,1fr) 344px;height:100%;
+  }
+  body.tabletop #play.unified-game.in-battle .workspace-layout>.scene-rail{display:none!important}
+}
+
+@media(max-width:900px){
+  /* Телефон: карта сверху, лента под ней, страница листается вниз. Вбок она
+     не едет: сетка тянется по ширине, клетка не мельче 28 px. Высоту #play
+     здесь приходится снимать — иначе фиксированная высота игрового экрана
+     сжимает плашку поля до 12 px и сетка в неё не влезает. */
+  body.tabletop #play.unified-game.in-battle{height:auto!important;min-height:0!important}
+  #play.in-battle{overflow:visible}
+  #play.in-battle .workspace-layout{grid-template-columns:minmax(0,1fr);height:auto;min-height:0}
+  #play.in-battle .board{order:-1;flex:0 0 auto;border-left:0;border-bottom:1px solid var(--line)}
+  #play.in-battle .board__turns{max-height:none;overflow:visible}
+  #play.in-battle .board__map{overflow:visible}
+  #play.in-battle .board__title{font-size:20px}
+  #play.in-battle .board__legend{padding-bottom:2px}
+  #play.in-battle .board__note{display:none}
+}
+
+/* ── Блокнот при нуле записей ────────────────────────────────────────────────
+   n14 (замечание №10 критика): на 1440 поле 800 px оставляло 44 % ширины
+   справа пустым, потому что рядом стояли две пустые секции («Известные
+   сведения», «События приключения»). Пустые секции больше не рисуются
+   (web/tabletop.js, web/chronicle.js), и единственное поле получает ширину
+   стола. Класс journal-empty ставит tabletop.js: «Запись 0», ни одного
+   факта и ни одного события. */
+@media (min-width: 1000px) {
+  .view#journal.journal-empty { max-width: 1120px; }
+}

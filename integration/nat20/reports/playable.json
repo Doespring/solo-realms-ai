@@ -1,0 +1,78 @@
+{
+  "schema_version": "playable-acceptance-v1",
+  "checked_on": "2026-10-18",
+  "unique_tests": 71,
+  "passed": 71,
+  "failed": 0,
+  "reports": [
+    "playable-regression.xml",
+    "playable-acceptance.xml",
+    "playable-guards.xml"
+  ],
+  "definitions": [
+    "fighter-road-2024-v1",
+    "fighter-standard-array-2024-v1"
+  ],
+  "runtime": "Nat20 0.7.0 pinned e187c813bb4e43c4e4e62942ecd83831f1cdbcaa",
+  "executable_actions": [
+    "check",
+    "start_combat",
+    "move",
+    "attack",
+    "use_feature:second-wind",
+    "end_turn",
+    "end_combat",
+    "short_rest",
+    "long_rest"
+  ],
+  "indexed_documents": 2460,
+  "indexed_packs": 9,
+  "manifest_only_and_indexed_packs": 40,
+  "end_to_end": "standard-array fighter HP12 AC18 -> mock HTTP check -> combat -> save/new Python process/replay -> victory -> native XP50 receipt -> short/long rest -> new Python process/check",
+  "integrity": [
+    "state/event/memory atomic rollback",
+    "reward idempotence and no encounter farming",
+    "checkpoint withdraws reward and memory",
+    "strict command fields, pinned data/edition, pending activation gate",
+    "legacy native replay and ordinary Solo regression; legacy HTTP mechanics blocked for native campaigns"
+  ],
+  "paid_api_calls": 0,
+  "exe_builds": 0,
+  "user_campaigns_used": false,
+  "ui_cloud_pdf_modified_by_this_task": false,
+  "notes": [
+    "Starlette/httpx and lark deprecation warnings only",
+    "XP50 and check DCs are authored scenario data, not imported CR/XP rules",
+    "No complete PHB/DMG/MM implementation is claimed"
+  ],
+  "production_gate_without_solo_test": "passed: registered standard-array creation, native check and restore in disposable database",
+  "removed_owned_temporary_directories": [
+    ".test-tmp-playable-probe",
+    ".test-tmp-playable-regression",
+    ".test-tmp-playable-acceptance",
+    ".test-tmp-playable-verified",
+    ".test-tmp-playable-guards",
+    ".test-tmp-playable-production"
+  ],
+  "temporary_cleanup_complete": true,
+  "verified_file_sha256": {
+    "docs/PLAYABLE_RULES_SCOPE.md": "f051b0425ee2d6f09d4287b17699e5749313e5aae8e041026049ac75dfcf6743",
+    "integration/nat20/playable/campaign.schema.json": "1f78fa8bf32a637af85adeebfea89f1935d366feff7ad67553215fda4fa2d8f1",
+    "integration/nat20/playable/capabilities.json": "552de3439ae0571cc3a46e883fc7d15caed05a5b17257f07322c1ad8203962e9",
+    "integration/nat20/playable/fighter-road-2024-v1.json": "d251098de6d2bacd5523c9806722010cacdafe10f9fa9dd210e42d1ffa8668cf",
+    "integration/nat20/playable/fighter-standard-array-2024-v1.json": "485b0374241639f351f2e99b196affd2f29dc2d2a1f16409498ac8cea2abc3a2",
+    "integration/nat20/playable/registry.json": "8ca300f867e452c2b030535a3c97daaaa91410932c9716c0170fad2475bce08e",
+    "integration/nat20/playable/search-catalog.json": "8b1425e38ef2e290604201c4c4aa569b0667f20e49746ba987718941f98d8d47",
+    "solo/command_engine.py": "4b605dbf1df8ae4a66e251aeeefd87c94be3ecabef0dc0f50fed4cf7592139b1",
+    "solo/engine_memory_contracts.py": "d064fe017285331cc2ec2074d91dd6ee6645c410bbe689d5866dcd88b2211fd0",
+    "solo/game_commands.py": "f24b15ad899087154c6f12bcb55c9d281a147b514a3d42b446c080bf9b7b8be7",
+    "solo/nat20_api.py": "e1323859e27408b08db4c5c097a16749d4a38d1bbc55b69c7bef1e482907de61",
+    "solo/nat20_campaign.py": "d422e63563ce1f98adc7013146ccb661db1a4c17dab48b348834c9c2cf3d127e",
+    "solo/nat20_contracts.py": "c240194dfa279bd42ecf18c9056984ac67ca049b5edf58b8460143b34438db7e",
+    "solo/nat20_worker.py": "190dbf258347f648daa5139655b09272cd03a7530336285a18455a6bada022c5",
+    "solo/playable_ui.py": "0af75fdf3ebf3a86a72892281816925b6455eba7f003bcd17115f3c7d6fcaefa",
+    "tests/test_command_cycle.py": "3be144b02525003056897241d632a5bb0dc167c2261b7f7fce3ecedacd553251",
+    "tests/test_nat20_playable_rules.py": "799392b3bac62b6b8dd9c8dbf0b518e3192519c586f686c6fc4dca0aa39bf412",
+    "tools/index_nat20_catalog.py": "bb49377d6307c34dfa0e0d5fca3c4dddfdde5cf1d64a06d60aa796c73e58ad2d"
+  }
+}

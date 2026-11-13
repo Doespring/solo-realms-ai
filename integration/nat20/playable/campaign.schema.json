@@ -1,0 +1,705 @@
+{
+  "$defs": {
+    "AbilityScores": {
+      "additionalProperties": false,
+      "properties": {
+        "charisma": {
+          "default": 10,
+          "title": "Charisma",
+          "type": "integer"
+        },
+        "constitution": {
+          "default": 10,
+          "title": "Constitution",
+          "type": "integer"
+        },
+        "dexterity": {
+          "default": 10,
+          "title": "Dexterity",
+          "type": "integer"
+        },
+        "intelligence": {
+          "default": 10,
+          "title": "Intelligence",
+          "type": "integer"
+        },
+        "strength": {
+          "default": 10,
+          "title": "Strength",
+          "type": "integer"
+        },
+        "wisdom": {
+          "default": 10,
+          "title": "Wisdom",
+          "type": "integer"
+        }
+      },
+      "title": "AbilityScores",
+      "type": "object"
+    },
+    "BlessSpellcasting": {
+      "additionalProperties": false,
+      "properties": {
+        "content_release": {
+          "const": "bless-self-2024-v1",
+          "title": "Content Release",
+          "type": "string"
+        },
+        "environment": {
+          "const": "open_bright_no_silence",
+          "title": "Environment",
+          "type": "string"
+        },
+        "hands": {
+          "const": "mace_one_hand_symbol_other_hand",
+          "title": "Hands",
+          "type": "string"
+        },
+        "holy_symbol": {
+          "const": "amulet",
+          "title": "Holy Symbol",
+          "type": "string"
+        },
+        "prepared": {
+          "items": {
+            "const": "bless",
+            "type": "string"
+          },
+          "maxItems": 1,
+          "minItems": 1,
+          "title": "Prepared",
+          "type": "array"
+        }
+      },
+      "required": [
+        "content_release",
+        "prepared",
+        "holy_symbol",
+        "hands",
+        "environment"
+      ],
+      "title": "BlessSpellcasting",
+      "type": "object"
+    },
+    "CampaignSource": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "maxLength": 100,
+          "minLength": 1,
+          "title": "Id",
+          "type": "string"
+        },
+        "kind": {
+          "default": "authored_scenario",
+          "enum": [
+            "authored_scenario",
+            "native_derived"
+          ],
+          "title": "Kind",
+          "type": "string"
+        },
+        "note": {
+          "maxLength": 800,
+          "minLength": 1,
+          "title": "Note",
+          "type": "string"
+        },
+        "version": {
+          "maxLength": 40,
+          "minLength": 1,
+          "title": "Version",
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "version",
+        "note"
+      ],
+      "title": "CampaignSource",
+      "type": "object"
+    },
+    "CharacterBuildSpec": {
+      "additionalProperties": false,
+      "description": "The typed input that resolves into a complete PC.\n\n``classes`` is the multiclass carrier — a ``{class_slug: level}``\nmap. ``class_slug`` (= the FIRST key, the primary class) and ``level`` (= the SUM\nof class levels) are kept as single-class aliases and always populated, so\nexisting single-class callers (``CharacterBuildSpec(class_slug=..., level=...)``)\nkeep working exactly as before.\n\nCaveat: ``model_copy(update=...)`` bypasses the ``mode=\"before\"``\nvalidator below (Pydantic does not re-run before-validators on\n``model_copy``), so a ``model_copy`` that changes only ``level`` or only\n``classes`` can desync the two fields. Construct a fresh\n``CharacterBuildSpec(...)`` instead of ``model_copy`` when changing\neither field.\n\nC19 derivation inputs — see ``derive_sheet``.",
+      "properties": {
+        "species_slug": {
+          "title": "Species Slug",
+          "type": "string"
+        },
+        "rules_edition": {
+          "default": "5.2",
+          "title": "Rules Edition",
+          "type": "string"
+        },
+        "class_slug": {
+          "default": "",
+          "title": "Class Slug",
+          "type": "string"
+        },
+        "classes": {
+          "additionalProperties": {
+            "type": "integer"
+          },
+          "title": "Classes",
+          "type": "object"
+        },
+        "starting_class": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Starting Class"
+        },
+        "subclass_slug": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Subclass Slug"
+        },
+        "level": {
+          "default": 1,
+          "maximum": 20,
+          "minimum": 1,
+          "title": "Level",
+          "type": "integer"
+        },
+        "ability_scores": {
+          "$ref": "#/$defs/AbilityScores"
+        },
+        "equipment": {
+          "default": [],
+          "items": {
+            "type": "string"
+          },
+          "title": "Equipment",
+          "type": "array"
+        },
+        "selected_choices": {
+          "default": [],
+          "items": {
+            "type": "string"
+          },
+          "title": "Selected Choices",
+          "type": "array"
+        },
+        "require_complete_choices": {
+          "default": false,
+          "title": "Require Complete Choices",
+          "type": "boolean"
+        },
+        "background_slug": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Background Slug"
+        },
+        "hp_mode": {
+          "default": "fixed",
+          "enum": [
+            "fixed",
+            "rolled"
+          ],
+          "title": "Hp Mode",
+          "type": "string"
+        },
+        "hp_rolls": {
+          "additionalProperties": {
+            "items": {
+              "type": "integer"
+            },
+            "type": "array"
+          },
+          "title": "Hp Rolls",
+          "type": "object"
+        },
+        "ac_calc_mode": {
+          "anyOf": [
+            {
+              "enum": [
+                "default",
+                "mage_armor",
+                "unarmored_barbarian",
+                "unarmored_monk",
+                "unarmored_bard",
+                "custom"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Ac Calc Mode"
+        },
+        "attuned_items": {
+          "default": [],
+          "items": {
+            "type": "string"
+          },
+          "title": "Attuned Items",
+          "type": "array"
+        },
+        "item_variants": {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "title": "Item Variants",
+          "type": "object"
+        },
+        "ability_score_method": {
+          "anyOf": [
+            {
+              "enum": [
+                "standard_array",
+                "point_buy"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Ability Score Method"
+        }
+      },
+      "required": [
+        "species_slug"
+      ],
+      "title": "CharacterBuildSpec",
+      "type": "object"
+    },
+    "EncounterActor": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "pattern": "^[a-z][a-z0-9-]{0,59}$",
+          "title": "Id",
+          "type": "string"
+        },
+        "monster": {
+          "const": "goblin-warrior",
+          "title": "Monster",
+          "type": "string"
+        },
+        "position": {
+          "$ref": "#/$defs/GridPosition"
+        },
+        "xp_value": {
+          "maximum": 1000,
+          "minimum": 0,
+          "title": "Xp Value",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "id",
+        "monster",
+        "position",
+        "xp_value"
+      ],
+      "title": "EncounterActor",
+      "type": "object"
+    },
+    "GridPosition": {
+      "additionalProperties": false,
+      "properties": {
+        "x": {
+          "maximum": 79,
+          "minimum": 0,
+          "title": "X",
+          "type": "integer"
+        },
+        "y": {
+          "maximum": 79,
+          "minimum": 0,
+          "title": "Y",
+          "type": "integer"
+        },
+        "z": {
+          "maximum": 20,
+          "minimum": -6,
+          "title": "Z",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "x",
+        "y",
+        "z"
+      ],
+      "title": "GridPosition",
+      "type": "object"
+    },
+    "GridScene": {
+      "additionalProperties": false,
+      "description": "Wire-level shape for a 2-D grid battlefield.\n\nThe grid backend resolves combat over Chebyshev (8-direction, one cell =\n``cell_size_ft``) distance. Combatant positions reuse the existing\n``zone_id`` string on the party/encounter specs, encoded as ``\"col,row\"``\n(see ``dnd5e_engine.spatial.cell_id``). ``blocked_cells`` are impassable\nsquares (movement may not enter them). ``wall_segments`` block line of\nsight (SRD 5.2 §Areas of Effect); ``cover_cells`` grant half / three-\nquarters / total cover (SRD 5.2 §Cover); ``difficult_terrain_cells``\ndouble the movement cost of entering them (SRD 5.2 §Difficult Terrain).\nSee ``docs/dev/spatial-geometry.md`` for the full geometry design note.",
+      "properties": {
+        "blocked_cells": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Blocked Cells",
+          "type": "array"
+        },
+        "cell_size_ft": {
+          "default": 5,
+          "minimum": 1,
+          "title": "Cell Size Ft",
+          "type": "integer"
+        },
+        "cover_cells": {
+          "additionalProperties": {
+            "enum": [
+              "half",
+              "three_quarters",
+              "total"
+            ],
+            "type": "string"
+          },
+          "title": "Cover Cells",
+          "type": "object"
+        },
+        "default_lighting": {
+          "default": "bright",
+          "enum": [
+            "bright",
+            "dim",
+            "dark"
+          ],
+          "title": "Default Lighting",
+          "type": "string"
+        },
+        "difficult_terrain_cells": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Difficult Terrain Cells",
+          "type": "array"
+        },
+        "difficult_terrain_kinds": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          },
+          "title": "Difficult Terrain Kinds"
+        },
+        "height": {
+          "minimum": 1,
+          "title": "Height",
+          "type": "integer"
+        },
+        "lighting": {
+          "additionalProperties": {
+            "enum": [
+              "bright",
+              "dim",
+              "dark"
+            ],
+            "type": "string"
+          },
+          "title": "Lighting",
+          "type": "object"
+        },
+        "obscurement_cells": {
+          "additionalProperties": {
+            "enum": [
+              "light",
+              "heavy"
+            ],
+            "type": "string"
+          },
+          "title": "Obscurement Cells",
+          "type": "object"
+        },
+        "sunlight": {
+          "default": false,
+          "title": "Sunlight",
+          "type": "boolean"
+        },
+        "wall_segments": {
+          "items": {
+            "$ref": "#/$defs/WallSegment"
+          },
+          "title": "Wall Segments",
+          "type": "array"
+        },
+        "width": {
+          "minimum": 1,
+          "title": "Width",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "width",
+        "height"
+      ],
+      "title": "GridScene",
+      "type": "object"
+    },
+    "Reward": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "pattern": "^[a-z][a-z0-9-]{0,79}$",
+          "title": "Id",
+          "type": "string"
+        },
+        "kind": {
+          "const": "native_encounter_xp",
+          "title": "Kind",
+          "type": "string"
+        },
+        "source": {
+          "$ref": "#/$defs/CampaignSource"
+        }
+      },
+      "required": [
+        "id",
+        "kind",
+        "source"
+      ],
+      "title": "Reward",
+      "type": "object"
+    },
+    "SceneCheck": {
+      "additionalProperties": false,
+      "properties": {
+        "ability": {
+          "anyOf": [
+            {
+              "enum": [
+                "str",
+                "dex",
+                "con",
+                "int",
+                "wis",
+                "cha"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Ability"
+        },
+        "dc": {
+          "maximum": 30,
+          "minimum": 1,
+          "title": "Dc",
+          "type": "integer"
+        },
+        "kind": {
+          "enum": [
+            "skill",
+            "ability"
+          ],
+          "title": "Kind",
+          "type": "string"
+        },
+        "skill": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Skill"
+        },
+        "source": {
+          "$ref": "#/$defs/CampaignSource"
+        }
+      },
+      "required": [
+        "kind",
+        "skill",
+        "ability",
+        "dc",
+        "source"
+      ],
+      "title": "SceneCheck",
+      "type": "object"
+    },
+    "SceneEncounter": {
+      "additionalProperties": false,
+      "properties": {
+        "actors": {
+          "items": {
+            "$ref": "#/$defs/EncounterActor"
+          },
+          "maxItems": 1,
+          "minItems": 1,
+          "title": "Actors",
+          "type": "array"
+        },
+        "grid": {
+          "$ref": "#/$defs/GridScene"
+        },
+        "hero_position": {
+          "$ref": "#/$defs/GridPosition"
+        },
+        "reward": {
+          "$ref": "#/$defs/Reward"
+        }
+      },
+      "required": [
+        "grid",
+        "hero_position",
+        "actors",
+        "reward"
+      ],
+      "title": "SceneEncounter",
+      "type": "object"
+    },
+    "WallSegment": {
+      "additionalProperties": false,
+      "description": "One wall edge, grid-CORNER endpoints (mirrors Foundry's ``Wall.c``\nfour-coordinate convention).\n\nCoordinates are grid-corner units, not cell-center units: a wall running\nalong the boundary between column 2 and column 3 (spanning the full grid\nheight) is ``WallSegment(x1=2, y1=0, x2=2, y2=<height>)``, not\n``x1=2.5``. ``GridTopology.has_line_of_sight`` tests the straight segment\nbetween two cells' CENTER points (``col+0.5, row+0.5``) against every\nwall segment for a proper intersection — see\n``docs/dev/spatial-geometry.md``.",
+      "properties": {
+        "x1": {
+          "title": "X1",
+          "type": "number"
+        },
+        "x2": {
+          "title": "X2",
+          "type": "number"
+        },
+        "y1": {
+          "title": "Y1",
+          "type": "number"
+        },
+        "y2": {
+          "title": "Y2",
+          "type": "number"
+        }
+      },
+      "required": [
+        "x1",
+        "y1",
+        "x2",
+        "y2"
+      ],
+      "title": "WallSegment",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "attack_weapon": {
+      "enum": [
+        "longsword",
+        "mace"
+      ],
+      "title": "Attack Weapon",
+      "type": "string"
+    },
+    "build": {
+      "$ref": "#/$defs/CharacterBuildSpec"
+    },
+    "checks": {
+      "additionalProperties": {
+        "$ref": "#/$defs/SceneCheck"
+      },
+      "maxProperties": 12,
+      "minProperties": 1,
+      "title": "Checks",
+      "type": "object"
+    },
+    "description": {
+      "maxLength": 1500,
+      "minLength": 1,
+      "title": "Description",
+      "type": "string"
+    },
+    "encounters": {
+      "additionalProperties": {
+        "$ref": "#/$defs/SceneEncounter"
+      },
+      "maxProperties": 2,
+      "minProperties": 1,
+      "title": "Encounters",
+      "type": "object"
+    },
+    "features": {
+      "items": {
+        "const": "second-wind",
+        "type": "string"
+      },
+      "maxItems": 1,
+      "title": "Features",
+      "type": "array"
+    },
+    "id": {
+      "pattern": "^[a-z][a-z0-9-]{0,79}$",
+      "title": "Id",
+      "type": "string"
+    },
+    "rules_version": {
+      "const": "dnd2024",
+      "default": "dnd2024",
+      "title": "Rules Version",
+      "type": "string"
+    },
+    "schema_version": {
+      "const": "nat20-campaign-v1",
+      "default": "nat20-campaign-v1",
+      "title": "Schema Version",
+      "type": "string"
+    },
+    "source": {
+      "$ref": "#/$defs/CampaignSource"
+    },
+    "spellcasting": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/BlessSpellcasting"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null
+    },
+    "title": {
+      "maxLength": 120,
+      "minLength": 1,
+      "title": "Title",
+      "type": "string"
+    }
+  },
+  "required": [
+    "id",
+    "title",
+    "description",
+    "source",
+    "build",
+    "attack_weapon",
+    "features",
+    "checks",
+    "encounters"
+  ],
+  "title": "CampaignDefinition",
+  "type": "object"
+}

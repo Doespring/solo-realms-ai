@@ -1,0 +1,10 @@
+# Provenance hashes refer to exact downloaded bytes, including line endings.
+visual_catalog/source/** -text
+web/visual/** -text
+
+# Nat20 manifests verify exact source bytes; Git must preserve them.
+vendor/nat20/** -text
+# The campaign registry hashes the release JSON byte for byte, and
+# core.autocrlf=input would hand the runtime a CRLF copy whose sha256 no
+# longer matches. Keep these files exactly as committed.
+integration/nat20/** -text

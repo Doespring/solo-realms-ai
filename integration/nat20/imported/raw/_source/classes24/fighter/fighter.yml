@@ -1,0 +1,961 @@
+{
+  "_id": "phbftrFighter000",
+  "_stats": {
+    "coreVersion": "13.348",
+    "createdTime": 1735866361253,
+    "duplicateSource": null,
+    "exportSource": null,
+    "lastModifiedBy": "dnd5ebuilder0000",
+    "modifiedTime": 1758045140128,
+    "systemId": "dnd5e",
+    "systemVersion": "5.2.0"
+  },
+  "effects": [],
+  "flags": {},
+  "folder": "FCphxnvdYmavFNkr",
+  "img": "systems/dnd5e/icons/classes/fighter.webp",
+  "name": "Fighter",
+  "ownership": {
+    "default": 0
+  },
+  "sort": 0,
+  "system": {
+    "advancement": [
+      {
+        "_id": "zvm19nuuM9qRHGrR",
+        "configuration": {},
+        "type": "HitPoints",
+        "value": {}
+      },
+      {
+        "_id": "15eBHWfn4f7qB8mA",
+        "configuration": {
+          "items": [
+            {
+              "optional": false,
+              "uuid": "Compendium.dnd5e.classes24.Item.phbftrFightingSt"
+            },
+            {
+              "optional": false,
+              "uuid": "Compendium.dnd5e.classes24.Item.phbftrSecondWind"
+            },
+            {
+              "optional": false,
+              "uuid": "Compendium.dnd5e.classes24.Item.phbftrWeaponMast"
+            }
+          ],
+          "optional": false,
+          "spell": null
+        },
+        "level": 1,
+        "title": "Class Features",
+        "type": "ItemGrant",
+        "value": {}
+      },
+      {
+        "_id": "T2FovyKDjcIGMPCW",
+        "configuration": {
+          "items": [
+            {
+              "optional": false,
+              "uuid": "Compendium.dnd5e.classes24.Item.phbftrActionSurg"
+            },
+            {
+              "optional": false,
+              "uuid": "Compendium.dnd5e.classes24.Item.phbftrTacticalMi"
+            }
+          ],
+          "optional": false,
+          "spell": null
+        },
+        "level": 2,
+        "title": "Class Features",
+        "type": "ItemGrant",
+        "value": {}
+      },
+      {
+        "_id": "9UkcNtQ0HwJhmwKQ",
+        "configuration": {
+          "items": [
+            {
+              "optional": false,
+              "uuid": "Compendium.dnd5e.classes24.Item.phbftrExtraAttac"
+            },
+            {
+              "optional": false,
+              "uuid": "Compendium.dnd5e.classes24.Item.phbftrTacticalSh"
+            }
+          ],
+          "optional": false,
+          "spell": null
+        },
+        "level": 5,
+        "title": "Class Features",
+        "type": "ItemGrant",
+        "value": {}
+      },
+      {
+        "_id": "wKoM6KOIKl1HWVpR",
+        "configuration": {
+          "items": [
+            {
+              "optional": false,
+              "uuid": "Compendium.dnd5e.classes24.Item.phbftrIndomitabl"
+            },
+            {
+              "optional": false,
+              "uuid": "Compendium.dnd5e.classes24.Item.phbftrTacticalMa"
+            }
+          ],
+          "optional": false,
+          "spell": null
+        },
+        "level": 9,
+        "title": "Class Features",
+        "type": "ItemGrant",
+        "value": {}
+      },
+      {
+        "_id": "gxbvTuKFKDsuzCmp",
+        "configuration": {
+          "items": [
+            {
+              "optional": false,
+              "uuid": "Compendium.dnd5e.classes24.Item.phbftrTwoExtraAt"
+            }
+          ],
+          "optional": false,
+          "spell": null
+        },
+        "level": 11,
+        "title": "Class Features",
+        "type": "ItemGrant",
+        "value": {}
+      },
+      {
+        "_id": "pUT3XfEF6U1xeY18",
+        "configuration": {
+          "items": [
+            {
+              "optional": false,
+              "uuid": "Compendium.dnd5e.classes24.Item.phbftrStudiedAtt"
+            }
+          ],
+          "optional": false,
+          "spell": null
+        },
+        "level": 13,
+        "title": "Class Features",
+        "type": "ItemGrant",
+        "value": {}
+      },
+      {
+        "_id": "knLMZh9N1O50qEcV",
+        "configuration": {
+          "items": [
+            {
+              "optional": false,
+              "uuid": "Compendium.dnd5e.classes24.Item.phbftrThreeExtra"
+            }
+          ],
+          "optional": false,
+          "spell": null
+        },
+        "level": 20,
+        "title": "Class Features",
+        "type": "ItemGrant",
+        "value": {}
+      },
+      {
+        "_id": "bwCLOdauuzoHofil",
+        "configuration": {
+          "cap": 2,
+          "fixed": {
+            "cha": 0,
+            "con": 0,
+            "dex": 0,
+            "int": 0,
+            "str": 0,
+            "wis": 0
+          },
+          "locked": [],
+          "points": 2,
+          "recommendation": null
+        },
+        "level": 4,
+        "title": "",
+        "type": "AbilityScoreImprovement",
+        "value": {}
+      },
+      {
+        "_id": "mRSh9oUVjLU33e7p",
+        "configuration": {
+          "cap": 2,
+          "fixed": {
+            "cha": 0,
+            "con": 0,
+            "dex": 0,
+            "int": 0,
+            "str": 0,
+            "wis": 0
+          },
+          "locked": [],
+          "points": 2,
+          "recommendation": null
+        },
+        "level": 8,
+        "title": "",
+        "type": "AbilityScoreImprovement",
+        "value": {}
+      },
+      {
+        "_id": "mhZh3LfLMa15tXee",
+        "configuration": {
+          "cap": 2,
+          "fixed": {
+            "cha": 0,
+            "con": 0,
+            "dex": 0,
+            "int": 0,
+            "str": 0,
+            "wis": 0
+          },
+          "locked": [],
+          "points": 2,
+          "recommendation": null
+        },
+        "level": 12,
+        "title": "",
+        "type": "AbilityScoreImprovement",
+        "value": {}
+      },
+      {
+        "_id": "FOf5CkGnSs0OlppY",
+        "configuration": {
+          "cap": 2,
+          "fixed": {
+            "cha": 0,
+            "con": 0,
+            "dex": 0,
+            "int": 0,
+            "str": 0,
+            "wis": 0
+          },
+          "locked": [],
+          "points": 2,
+          "recommendation": null
+        },
+        "level": 16,
+        "title": "",
+        "type": "AbilityScoreImprovement",
+        "value": {}
+      },
+      {
+        "_id": "54UFgRZAnd1Qo9dp",
+        "configuration": {
+          "cap": 2,
+          "fixed": {
+            "cha": 0,
+            "con": 0,
+            "dex": 0,
+            "int": 0,
+            "str": 0,
+            "wis": 0
+          },
+          "locked": [],
+          "points": 2,
+          "recommendation": null
+        },
+        "level": 6,
+        "title": "",
+        "type": "AbilityScoreImprovement",
+        "value": {}
+      },
+      {
+        "_id": "a70EF7pL9l3Y48QL",
+        "configuration": {
+          "cap": 2,
+          "fixed": {
+            "cha": 0,
+            "con": 0,
+            "dex": 0,
+            "int": 0,
+            "str": 0,
+            "wis": 0
+          },
+          "locked": [],
+          "points": 2,
+          "recommendation": null
+        },
+        "level": 14,
+        "title": "",
+        "type": "AbilityScoreImprovement",
+        "value": {}
+      },
+      {
+        "_id": "x1gr4ONIHZo6bjX8",
+        "configuration": {
+          "distance": {
+            "units": ""
+          },
+          "identifier": "",
+          "scale": {
+            "17": {
+              "value": 2
+            },
+            "2": {
+              "value": 1
+            }
+          },
+          "type": "number"
+        },
+        "hint": "",
+        "title": "Action Surge",
+        "type": "ScaleValue",
+        "value": {}
+      },
+      {
+        "_id": "iJ9JidHgTldknGgK",
+        "configuration": {
+          "distance": {
+            "units": ""
+          },
+          "identifier": "",
+          "scale": {
+            "13": {
+              "value": 2
+            },
+            "17": {
+              "value": 3
+            },
+            "9": {
+              "value": 1
+            }
+          },
+          "type": "number"
+        },
+        "hint": "",
+        "title": "Indomitable",
+        "type": "ScaleValue",
+        "value": {}
+      },
+      {
+        "_id": "yEH3vVRip4nzxnN9",
+        "configuration": {
+          "distance": {
+            "units": ""
+          },
+          "identifier": "",
+          "scale": {
+            "1": {
+              "value": 2
+            },
+            "10": {
+              "value": 4
+            },
+            "4": {
+              "value": 3
+            }
+          },
+          "type": "number"
+        },
+        "hint": "",
+        "title": "Second Wind",
+        "type": "ScaleValue",
+        "value": {}
+      },
+      {
+        "_id": "mpkUwD60nPpNaKsg",
+        "configuration": {},
+        "hint": "",
+        "level": 3,
+        "title": "",
+        "type": "Subclass",
+        "value": {
+          "document": null,
+          "uuid": null
+        }
+      },
+      {
+        "_id": "B05A1ijLPQMNlb3m",
+        "classRestriction": "primary",
+        "configuration": {
+          "allowReplacements": false,
+          "choices": [],
+          "grants": [
+            "saves:str",
+            "saves:con"
+          ],
+          "mode": "default"
+        },
+        "hint": "",
+        "level": 1,
+        "title": "Saving Throw Proficiencies",
+        "type": "Trait",
+        "value": {
+          "chosen": []
+        }
+      },
+      {
+        "_id": "UaSYMl2io5kbXNOY",
+        "classRestriction": "primary",
+        "configuration": {
+          "allowReplacements": false,
+          "choices": [
+            {
+              "count": 2,
+              "pool": [
+                "skills:acr",
+                "skills:ani",
+                "skills:ath",
+                "skills:his",
+                "skills:ins",
+                "skills:itm",
+                "skills:prc",
+                "skills:per",
+                "skills:sur"
+              ]
+            }
+          ],
+          "grants": [],
+          "mode": "default"
+        },
+        "hint": "",
+        "level": 1,
+        "title": "Skill Proficiencies",
+        "type": "Trait",
+        "value": {
+          "chosen": []
+        }
+      },
+      {
+        "_id": "TsqDRDOepHDmgYjZ",
+        "classRestriction": "primary",
+        "configuration": {
+          "allowReplacements": false,
+          "choices": [],
+          "grants": [
+            "weapon:sim",
+            "weapon:mar"
+          ],
+          "mode": "default"
+        },
+        "hint": "",
+        "level": 1,
+        "title": "Weapon Proficiencies",
+        "type": "Trait",
+        "value": {
+          "chosen": []
+        }
+      },
+      {
+        "_id": "XNba1RiASLSxoS8e",
+        "classRestriction": "primary",
+        "configuration": {
+          "allowReplacements": false,
+          "choices": [],
+          "grants": [
+            "armor:lgt",
+            "armor:med",
+            "armor:hvy",
+            "armor:shl"
+          ],
+          "mode": "default"
+        },
+        "hint": "",
+        "level": 1,
+        "title": "Armor Training",
+        "type": "Trait",
+        "value": {
+          "chosen": []
+        }
+      },
+      {
+        "_id": "fK62ORkG9cOsa3XL",
+        "classRestriction": "secondary",
+        "configuration": {
+          "allowReplacements": false,
+          "choices": [],
+          "grants": [
+            "weapon:mar"
+          ],
+          "mode": "default"
+        },
+        "hint": "",
+        "level": 1,
+        "title": "Weapon Proficiencies",
+        "type": "Trait",
+        "value": {
+          "chosen": []
+        }
+      },
+      {
+        "_id": "Nl6NkDxsiWjv7MfC",
+        "classRestriction": "secondary",
+        "configuration": {
+          "allowReplacements": false,
+          "choices": [],
+          "grants": [
+            "armor:lgt",
+            "armor:med",
+            "armor:shl"
+          ],
+          "mode": "default"
+        },
+        "hint": "",
+        "level": 1,
+        "title": "Armor Training",
+        "type": "Trait",
+        "value": {
+          "chosen": []
+        }
+      },
+      {
+        "_id": "mJnrjhWpEz2lMDq4",
+        "configuration": {
+          "allowReplacements": false,
+          "choices": [
+            {
+              "count": 3,
+              "pool": [
+                "weapon:sim:*",
+                "weapon:mar:*"
+              ]
+            }
+          ],
+          "grants": [],
+          "mode": "mastery"
+        },
+        "hint": "",
+        "level": 1,
+        "title": "Weapon Mastery",
+        "type": "Trait",
+        "value": {
+          "chosen": []
+        }
+      },
+      {
+        "_id": "EmTANp6x6GfXFTmU",
+        "configuration": {
+          "allowDrops": true,
+          "choices": {
+            "1": {
+              "count": 1,
+              "replacement": true
+            },
+            "10": {
+              "count": null,
+              "replacement": true
+            },
+            "11": {
+              "count": null,
+              "replacement": true
+            },
+            "12": {
+              "count": null,
+              "replacement": true
+            },
+            "13": {
+              "count": null,
+              "replacement": true
+            },
+            "14": {
+              "count": null,
+              "replacement": true
+            },
+            "15": {
+              "count": null,
+              "replacement": true
+            },
+            "16": {
+              "count": null,
+              "replacement": true
+            },
+            "17": {
+              "count": null,
+              "replacement": true
+            },
+            "18": {
+              "count": null,
+              "replacement": true
+            },
+            "19": {
+              "count": null,
+              "replacement": true
+            },
+            "2": {
+              "count": null,
+              "replacement": true
+            },
+            "20": {
+              "count": null,
+              "replacement": true
+            },
+            "3": {
+              "count": null,
+              "replacement": true
+            },
+            "4": {
+              "count": null,
+              "replacement": true
+            },
+            "5": {
+              "count": null,
+              "replacement": true
+            },
+            "6": {
+              "count": null,
+              "replacement": true
+            },
+            "7": {
+              "count": null,
+              "replacement": true
+            },
+            "8": {
+              "count": null,
+              "replacement": true
+            },
+            "9": {
+              "count": null,
+              "replacement": true
+            }
+          },
+          "pool": [
+            {
+              "uuid": "Compendium.dnd5e.feats24.Item.phbfstArchery000"
+            },
+            {
+              "uuid": "Compendium.dnd5e.feats24.Item.phbfstDefense000"
+            },
+            {
+              "uuid": "Compendium.dnd5e.feats24.Item.phbfstGreatWeapo"
+            },
+            {
+              "uuid": "Compendium.dnd5e.feats24.Item.phbfstTwoWeaponF"
+            }
+          ],
+          "restriction": {
+            "list": [],
+            "subtype": "fightingStyle",
+            "type": "feat"
+          },
+          "spell": null,
+          "type": "feat"
+        },
+        "hint": "",
+        "title": "Fighting Style",
+        "type": "ItemChoice",
+        "value": {
+          "added": {},
+          "replaced": {}
+        }
+      },
+      {
+        "_id": "n08OgNequzQOoUMV",
+        "configuration": {
+          "distance": {
+            "units": ""
+          },
+          "identifier": "mastery",
+          "scale": {
+            "1": {
+              "value": 3
+            },
+            "10": {
+              "value": 5
+            },
+            "16": {
+              "value": 6
+            },
+            "4": {
+              "value": 4
+            }
+          },
+          "type": "number"
+        },
+        "hint": "",
+        "title": "Weapon Masteries Known",
+        "type": "ScaleValue",
+        "value": {}
+      },
+      {
+        "_id": "oQeuiFaWAVOPtJPt",
+        "configuration": {
+          "allowReplacements": false,
+          "choices": [
+            {
+              "count": 1,
+              "pool": [
+                "weapon:sim:*",
+                "weapon:mar:*"
+              ]
+            }
+          ],
+          "grants": [],
+          "mode": "mastery"
+        },
+        "hint": "",
+        "level": 4,
+        "title": "Weapon Mastery",
+        "type": "Trait",
+        "value": {
+          "chosen": []
+        }
+      },
+      {
+        "_id": "4QKhDAuuM8x78quv",
+        "configuration": {
+          "allowReplacements": false,
+          "choices": [
+            {
+              "count": 1,
+              "pool": [
+                "weapon:sim:*",
+                "weapon:mar:*"
+              ]
+            }
+          ],
+          "grants": [],
+          "mode": "mastery"
+        },
+        "hint": "",
+        "level": 10,
+        "title": "Weapon Mastery",
+        "type": "Trait",
+        "value": {
+          "chosen": []
+        }
+      },
+      {
+        "_id": "YSAbsXV9zn9eX9p7",
+        "configuration": {
+          "allowReplacements": false,
+          "choices": [
+            {
+              "count": 1,
+              "pool": [
+                "weapon:sim:*",
+                "weapon:mar:*"
+              ]
+            }
+          ],
+          "grants": [],
+          "mode": "mastery"
+        },
+        "hint": "",
+        "level": 16,
+        "title": "Weapon Mastery",
+        "type": "Trait",
+        "value": {
+          "chosen": []
+        }
+      },
+      {
+        "_id": "gf1iwlMYsK0HHV0X",
+        "configuration": {
+          "cap": 2,
+          "fixed": {
+            "cha": 0,
+            "con": 0,
+            "dex": 0,
+            "int": 0,
+            "str": 0,
+            "wis": 0
+          },
+          "locked": [],
+          "max": null,
+          "points": 2,
+          "recommendation": "Compendium.dnd5e.feats24.Item.phbBoonofCombatP"
+        },
+        "hint": "",
+        "level": 19,
+        "title": "",
+        "type": "AbilityScoreImprovement",
+        "value": {}
+      }
+    ],
+    "description": {
+      "chat": "",
+      "value": "<h3>Core Fighter Traits</h3><table class=\"core-class-traits\"><tbody><tr><th scope=\"row\"><p><strong>Primary Ability</strong></p></th><td><p>Strength or Dexterity</p></td></tr><tr><th scope=\"row\"><p><strong>Hit Point Die</strong></p></th><td><p>D10 per Fighter level</p></td></tr><tr><th scope=\"row\"><p><strong>Saving Throw Proficiencies</strong></p></th><td><p>Strength and Constitution</p></td></tr><tr><th scope=\"row\"><p><strong>Skill Proficiencies</strong></p></th><td><p><em>Choose 2:</em> Acrobatics, Animal Handling, Athletics, History, Insight, Intimidation, Persuasion, Perception, or Survival</p></td></tr><tr><th scope=\"row\"><p><strong>Weapon Proficiencies</strong></p></th><td><p>Simple and Martial weapons</p></td></tr><tr><th scope=\"row\"><p><strong>Armor Training</strong></p></th><td><p>Light, Medium, and Heavy armor and Shields</p></td></tr><tr><th scope=\"row\"><p><strong>Starting Equipment</strong></p></th><td><p><em>Choose A, B, or C:</em> (A) @UUID[Compendium.dnd5e.equipment24.Item.phbarmChainMail0]{Chain Mail}, @UUID[Compendium.dnd5e.equipment24.Item.phbwepGreatsword]{Greatsword}, @UUID[Compendium.dnd5e.equipment24.Item.phbwepFlail00000]{Flail}, 8 @UUID[Compendium.dnd5e.equipment24.Item.phbwepJavelin000]{Javelins}, @UUID[Compendium.dnd5e.equipment24.Item.phbagDungeoneers]{Dungeoneer's Pack}, and [[/award 4GP]]; (B) @UUID[Compendium.dnd5e.equipment24.Item.phbarmStuddedLea]{Studded Leather Armor}, @UUID[Compendium.dnd5e.equipment24.Item.phbwepScimitar00]{Scimitar}, @UUID[Compendium.dnd5e.equipment24.Item.phbwepShortsword]{Short­sword}, @UUID[Compendium.dnd5e.equipment24.Item.phbwepLongbow000]{Longbow}, 20 @UUID[Compendium.dnd5e.equipment24.Item.phbamoArrows0000]{Arrows}, @UUID[Compendium.dnd5e.equipment24.Item.phbagQuiver00000]{Quiver}, @UUID[Compendium.dnd5e.equipment24.Item.phbagDungeoneers]{Dungeoneer's Pack}, and [[/award 11GP]]; or (C) [[/award 155GP]]</p></td></tr></tbody></table><p>@Embed[Compendium.dnd5e.content24.JournalEntry.phbAppendixClass.JournalEntryPage.phbftrFighter000 inline classes=\"free-rules-embed\"]</p><h2>Becoming a Fighter …</h2><h3>As a Level 1 Character</h3><ul><li>Gain all the traits in the Core Fighter Traits table.</li><li>Gain the Fighter's level 1 features, which are listed in the Fighter Features table.</li></ul><h3>As a Multiclass Character</h3><ul><li>Gain the following traits from the Core Fighter Traits table: Hit Point Die, proficiency with Martial weapons, and training with Light and Medium armor and Shields.</li><li>Gain the Fighter's level 1 features, which are listed in the Fighter Features table.</li></ul>"
+    },
+    "hd": {
+      "additional": "",
+      "denomination": "d10",
+      "spent": 0
+    },
+    "identifier": "fighter",
+    "levels": 1,
+    "primaryAbility": {
+      "all": false,
+      "value": [
+        "str",
+        "dex"
+      ]
+    },
+    "source": {
+      "book": "",
+      "custom": "",
+      "license": "CC-BY-4.0",
+      "revision": 1,
+      "rules": "2024"
+    },
+    "spellcasting": {
+      "ability": "",
+      "preparation": {
+        "formula": ""
+      },
+      "progression": "none"
+    },
+    "startingEquipment": [
+      {
+        "_id": "bT680hdYfCJkbk1M",
+        "group": "",
+        "requiresProficiency": false,
+        "sort": 100000,
+        "type": "OR"
+      },
+      {
+        "_id": "NgcVsnjvVJsL3xLw",
+        "group": "bT680hdYfCJkbk1M",
+        "requiresProficiency": false,
+        "sort": 200000,
+        "type": "AND"
+      },
+      {
+        "_id": "2AgjcVGUTGP1cqCS",
+        "count": null,
+        "group": "NgcVsnjvVJsL3xLw",
+        "key": "Compendium.dnd5e.equipment24.Item.phbarmChainMail0",
+        "requiresProficiency": false,
+        "sort": 400000,
+        "type": "linked"
+      },
+      {
+        "_id": "B4b5Em0xc9EDUtan",
+        "count": null,
+        "group": "NgcVsnjvVJsL3xLw",
+        "key": "Compendium.dnd5e.equipment24.Item.phbwepGreatsword",
+        "requiresProficiency": false,
+        "sort": 500000,
+        "type": "linked"
+      },
+      {
+        "_id": "eMuasr6qhYhh0zsn",
+        "count": null,
+        "group": "NgcVsnjvVJsL3xLw",
+        "key": "Compendium.dnd5e.equipment24.Item.phbwepFlail00000",
+        "requiresProficiency": false,
+        "sort": 600000,
+        "type": "linked"
+      },
+      {
+        "_id": "iLcbTWDnJuSDtfC1",
+        "count": 8,
+        "group": "NgcVsnjvVJsL3xLw",
+        "key": "Compendium.dnd5e.equipment24.Item.phbwepJavelin000",
+        "requiresProficiency": false,
+        "sort": 700000,
+        "type": "linked"
+      },
+      {
+        "_id": "HXnWybFbmiQJ7jxw",
+        "count": null,
+        "group": "NgcVsnjvVJsL3xLw",
+        "key": "Compendium.dnd5e.equipment24.Item.phbagDungeoneers",
+        "requiresProficiency": false,
+        "sort": 800000,
+        "type": "linked"
+      },
+      {
+        "_id": "a1YXCzXv1aGDIw86",
+        "count": 4,
+        "group": "NgcVsnjvVJsL3xLw",
+        "key": "gp",
+        "requiresProficiency": false,
+        "sort": 1600000,
+        "type": "currency"
+      },
+      {
+        "_id": "mXHlWriN3u7VGUmQ",
+        "group": "bT680hdYfCJkbk1M",
+        "requiresProficiency": false,
+        "sort": 300000,
+        "type": "AND"
+      },
+      {
+        "_id": "07VK1qiy28AWgHWE",
+        "count": null,
+        "group": "mXHlWriN3u7VGUmQ",
+        "key": "Compendium.dnd5e.equipment24.Item.phbarmStuddedLea",
+        "requiresProficiency": false,
+        "sort": 900000,
+        "type": "linked"
+      },
+      {
+        "_id": "q8p43JwNYPAJFk0v",
+        "count": null,
+        "group": "mXHlWriN3u7VGUmQ",
+        "key": "Compendium.dnd5e.equipment24.Item.phbwepScimitar00",
+        "requiresProficiency": false,
+        "sort": 1000000,
+        "type": "linked"
+      },
+      {
+        "_id": "Z0BQ8xiUO9TdCpeY",
+        "count": null,
+        "group": "mXHlWriN3u7VGUmQ",
+        "key": "Compendium.dnd5e.equipment24.Item.phbwepShortsword",
+        "requiresProficiency": false,
+        "sort": 1100000,
+        "type": "linked"
+      },
+      {
+        "_id": "7UT2I5hEuyETwaw8",
+        "count": null,
+        "group": "mXHlWriN3u7VGUmQ",
+        "key": "Compendium.dnd5e.equipment24.Item.phbwepLongbow000",
+        "requiresProficiency": false,
+        "sort": 1200000,
+        "type": "linked"
+      },
+      {
+        "_id": "RAZO2ywuqreGQheI",
+        "count": 20,
+        "group": "mXHlWriN3u7VGUmQ",
+        "key": "Compendium.dnd5e.equipment24.Item.phbamoArrows0000",
+        "requiresProficiency": false,
+        "sort": 1300000,
+        "type": "linked"
+      },
+      {
+        "_id": "jzEWEiEKl0djfd2u",
+        "count": null,
+        "group": "mXHlWriN3u7VGUmQ",
+        "key": "Compendium.dnd5e.equipment24.Item.phbagQuiver00000",
+        "requiresProficiency": false,
+        "sort": 1400000,
+        "type": "linked"
+      },
+      {
+        "_id": "gf3zQAZHgglaMuN1",
+        "count": null,
+        "group": "mXHlWriN3u7VGUmQ",
+        "key": "Compendium.dnd5e.equipment24.Item.phbagDungeoneers",
+        "requiresProficiency": false,
+        "sort": 1500000,
+        "type": "linked"
+      },
+      {
+        "_id": "N6FXv4CBSpxAodCH",
+        "count": 11,
+        "group": "mXHlWriN3u7VGUmQ",
+        "key": "gp",
+        "requiresProficiency": false,
+        "sort": 1700000,
+        "type": "currency"
+      }
+    ],
+    "wealth": "155"
+  },
+  "type": "class"
+}

@@ -1,0 +1,51 @@
+{
+  "real_api": true,
+  "real_nat20": true,
+  "response_fixtures": false,
+  "real_provider_calls": 0,
+  "checks": [
+    "Real 0HP end_turn advances Native death saves; service save/restore returns exact resource state and keeps offered end_turn",
+    "Native dead state displays explicitly and backend-offered end_combat closes defeat without XP (host verified)",
+    "Real selected spell status prevents unsupported submit, no slot/action/version change; Magic Missile stays selectable, Bless/Hide guards retained"
+  ],
+  "unsupported_spell": "alarm",
+  "posts": [
+    {
+      "request_id": "0db47887-d9e3-443f-ad6a-d05f8c996468",
+      "expected_version": 3,
+      "action": {
+        "kind": "end_turn"
+      }
+    },
+    {
+      "request_id": "ec7a162b-a279-4101-a4e1-786ef052674a",
+      "expected_version": 5,
+      "action": {
+        "kind": "end_turn"
+      }
+    },
+    {
+      "request_id": "8c8d4709-250a-40aa-8332-596869af1dd4",
+      "expected_version": 6,
+      "action": {
+        "kind": "end_turn"
+      }
+    },
+    {
+      "request_id": "5e514eb1-dc82-459a-be9e-e942f3e3d685",
+      "expected_version": 7,
+      "action": {
+        "kind": "end_turn"
+      }
+    },
+    {
+      "request_id": "6df36774-2962-4bc8-b072-add99e54e218",
+      "expected_version": 8,
+      "action": {
+        "kind": "end_combat"
+      }
+    }
+  ],
+  "page_errors": [],
+  "verified_no_xp_or_spell_mutation": true
+}

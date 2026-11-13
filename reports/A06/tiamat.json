@@ -1,0 +1,82 @@
+{
+ "book": "The Rise of Tiamat RUS.pdf",
+ "bundle": "d39b0a1b-f5c9-4149-8694-5f094f89c48b",
+ "document": "9808ab99ccea1717597f19abba228c806260792f38ab7d68c3545d7e01810270",
+ "job_message": "Извлечено страниц: 99, знаков: 494964. Модулей: 9. Игровые инструкции по-прежнему требуют проверки.",
+ "seconds": 12.2,
+ "modules": 11,
+ "kinds": {
+  "adventure": 9,
+  "appendix": 2
+ },
+ "modules_titles": [
+  "Эпизод 1: Совет Глубоководья",
+  "Эпизод 2: Море движущегося льда",
+  "Эпизод 3: Варрам Белый",
+  "Эпизод 4: Неронвейн",
+  "Эпизод 5: Культ наносит ответный удар",
+  "Эпизод 6: Воспряньте, металлические драконы",
+  "Эпизод 7: Башня Ксонтала",
+  "Эпизод 8: Миссия в Тэй",
+  "Эпизод 9: Возвращение Тиамат",
+  "Приложение А: Монстры",
+  "Приложение В: Магические предметы"
+ ],
+ "appendices": [
+  {
+   "id": "auto-9808ab99-apx-01",
+   "title": "Приложение А: Монстры",
+   "reference": "monsters",
+   "startable": false,
+   "entries": 11,
+   "locations": 0
+  },
+  {
+   "id": "auto-9808ab99-apx-02",
+   "title": "Приложение В: Магические предметы",
+   "reference": "items",
+   "startable": false,
+   "entries": 3,
+   "locations": 0
+  }
+ ],
+ "appendices_with_start": 0,
+ "reference_entries": 14,
+ "entry_scene": {
+  "found": true,
+  "module": "auto-9808ab99-01",
+  "title": "Эпизод 1: Совет Глубоководья",
+  "entry": {
+   "name": "Совет Глубоководья",
+   "title": "Эпизод 1: Совет Глубоководья",
+   "place": "Башня Ксонтала",
+   "page": 19,
+   "quote": "Эпизод 1: Совет Глубоководья",
+   "document": "9808ab99ccea1717597f19abba228c806260792f38ab7d68c3545d7e01810270",
+   "binding": "title",
+   "confidence": "printed",
+   "place_confidence": "check",
+   "note": ""
+  },
+  "matches_title": true,
+  "first_place": "Башня Ксонтала"
+ },
+ "provenance": {
+  "total": 103,
+  "with_page": 103,
+  "missing_page": 0,
+  "quote_not_on_page": 0,
+  "share": 1.0,
+  "examples": []
+ },
+ "correction": {
+  "module": "auto-9808ab99-01",
+  "name": "Башня Ксонтала",
+  "page": 23,
+  "stayed_out_of_places": true,
+  "moved_to_reference": true,
+  "entity_type": "monster",
+  "edited": true,
+  "edits": 1
+ }
+}

@@ -1,0 +1,2007 @@
+{
+ "meta": {
+  "commit": "4c9b6667",
+  "frames": 5,
+  "base": "http://127.0.0.1:59201",
+  "data_dir": "/home/hermes/projects/SoloRealmsAI-Nat20/runtime/n13-audit",
+  "tag": "n13-it1"
+ },
+ "frames": [
+  {
+   "probe": {
+    "viewportH": 812,
+    "description": {
+     "rect": {
+      "x": 16,
+      "y": 164.4,
+      "w": 343,
+      "h": 173,
+      "bottom": 337.4,
+      "right": 359,
+      "inView": true
+     },
+     "lines": 6
+    },
+    "prepare": {
+     "text": "Подготовить приключение",
+     "disabled": true,
+     "rect": {
+      "x": 0,
+      "y": 0,
+      "w": 0,
+      "h": 0,
+      "bottom": 0,
+      "right": 0,
+      "inView": false
+     }
+    },
+    "drop": {
+     "x": 16,
+     "y": 504.5,
+     "w": 343,
+     "h": 204.8,
+     "bottom": 709.3,
+     "right": 359,
+     "inView": true
+    },
+    "abilities": {
+     "count": 6,
+     "columns": 1,
+     "lastBottom": 0,
+     "allInside": true,
+     "cells": [
+      {
+       "text": "16Сила",
+       "x": 0,
+       "y": 0,
+       "w": 0,
+       "h": 0,
+       "bottom": 0,
+       "right": 0,
+       "inView": false
+      },
+      {
+       "text": "14Ловкость",
+       "x": 0,
+       "y": 0,
+       "w": 0,
+       "h": 0,
+       "bottom": 0,
+       "right": 0,
+       "inView": false
+      },
+      {
+       "text": "14Телосложение",
+       "x": 0,
+       "y": 0,
+       "w": 0,
+       "h": 0,
+       "bottom": 0,
+       "right": 0,
+       "inView": false
+      },
+      {
+       "text": "10Интеллект",
+       "x": 0,
+       "y": 0,
+       "w": 0,
+       "h": 0,
+       "bottom": 0,
+       "right": 0,
+       "inView": false
+      },
+      {
+       "text": "12Мудрость",
+       "x": 0,
+       "y": 0,
+       "w": 0,
+       "h": 0,
+       "bottom": 0,
+       "right": 0,
+       "inView": false
+      },
+      {
+       "text": "8Харизма",
+       "x": 0,
+       "y": 0,
+       "w": 0,
+       "h": 0,
+       "bottom": 0,
+       "right": 0,
+       "inView": false
+      }
+     ]
+    },
+    "navLabels": [
+     {
+      "text": "Закрыть",
+      "lines": 1,
+      "broken": [],
+      "x": -366.8,
+      "y": 165,
+      "w": 351,
+      "h": 44,
+      "bottom": 209,
+      "right": -15.8,
+      "inView": false
+     },
+     {
+      "text": "Навыки",
+      "lines": 1,
+      "broken": [],
+      "x": -366.8,
+      "y": 249,
+      "w": 175.5,
+      "h": 44,
+      "bottom": 293,
+      "right": -191.3,
+      "inView": false
+     },
+     {
+      "text": "Инвентарь",
+      "lines": 1,
+      "broken": [],
+      "x": -191.3,
+      "y": 249,
+      "w": 175.5,
+      "h": 44,
+      "bottom": 293,
+      "right": -15.8,
+      "inView": false
+     },
+     {
+      "text": "Карта мира",
+      "lines": 1,
+      "broken": [],
+      "x": -366.8,
+      "y": 299,
+      "w": 175.5,
+      "h": 44,
+      "bottom": 343,
+      "right": -191.3,
+      "inView": false
+     },
+     {
+      "text": "Блокнот",
+      "lines": 1,
+      "broken": [],
+      "x": -191.3,
+      "y": 299,
+      "w": 175.5,
+      "h": 44,
+      "bottom": 343,
+      "right": -15.8,
+      "inView": false
+     },
+     {
+      "text": "Раздатки и карты",
+      "lines": 1,
+      "broken": [],
+      "x": -366.8,
+      "y": 349,
+      "w": 175.5,
+      "h": 44,
+      "bottom": 393,
+      "right": -191.3,
+      "inView": false
+     },
+     {
+      "text": "Сохранения",
+      "lines": 1,
+      "broken": [],
+      "x": -191.3,
+      "y": 349,
+      "w": 175.5,
+      "h": 44,
+      "bottom": 393,
+      "right": -15.8,
+      "inView": false
+     },
+     {
+      "text": "Настройки",
+      "lines": 1,
+      "broken": [],
+      "x": -366.8,
+      "y": 433,
+      "w": 175.5,
+      "h": 44,
+      "bottom": 477,
+      "right": -191.3,
+      "inView": false
+     },
+     {
+      "text": "Подключение Мастера",
+      "lines": 2,
+      "broken": [],
+      "x": -191.3,
+      "y": 433,
+      "w": 175.5,
+      "h": 44,
+      "bottom": 477,
+      "right": -15.8,
+      "inView": false
+     },
+     {
+      "text": "Расходы",
+      "lines": 1,
+      "broken": [],
+      "x": -366.8,
+      "y": 483,
+      "w": 175.5,
+      "h": 44,
+      "bottom": 527,
+      "right": -191.3,
+      "inView": false
+     },
+     {
+      "text": "Скорость",
+      "lines": 1,
+      "broken": [],
+      "x": -191.3,
+      "y": 483,
+      "w": 175.5,
+      "h": 44,
+      "bottom": 527,
+      "right": -15.8,
+      "inView": false
+     },
+     {
+      "text": "О проекте",
+      "lines": 1,
+      "broken": [],
+      "x": -366.8,
+      "y": 533,
+      "w": 175.5,
+      "h": 44,
+      "bottom": 577,
+      "right": -191.3,
+      "inView": false
+     },
+     {
+      "text": "Мои миры",
+      "lines": 1,
+      "broken": [],
+      "x": -191.3,
+      "y": 533,
+      "w": 175.5,
+      "h": 44,
+      "bottom": 577,
+      "right": -15.8,
+      "inView": false
+     },
+     {
+      "text": "Правила",
+      "lines": 1,
+      "broken": [],
+      "x": -366.8,
+      "y": 583,
+      "w": 175.5,
+      "h": 44,
+      "bottom": 627,
+      "right": -191.3,
+      "inView": false
+     },
+     {
+      "text": "Книги",
+      "lines": 1,
+      "broken": [],
+      "x": -191.3,
+      "y": 583,
+      "w": 175.5,
+      "h": 44,
+      "bottom": 627,
+      "right": -15.8,
+      "inView": false
+     },
+     {
+      "text": "Профили Мастера",
+      "lines": 1,
+      "broken": [],
+      "x": -366.8,
+      "y": 633,
+      "w": 175.5,
+      "h": 44,
+      "bottom": 677,
+      "right": -191.3,
+      "inView": false
+     },
+     {
+      "text": "Оформление: тёмное",
+      "lines": 1,
+      "broken": [],
+      "x": -366.8,
+      "y": 683,
+      "w": 351,
+      "h": 44,
+      "bottom": 727,
+      "right": -15.8,
+      "inView": false
+     },
+     {
+      "text": "Выход из игры",
+      "lines": 1,
+      "broken": [],
+      "x": -366.8,
+      "y": 732,
+      "w": 351,
+      "h": 44,
+      "bottom": 776,
+      "right": -15.8,
+      "inView": false
+     }
+    ],
+    "navWrapped": 1,
+    "navBroken": 0,
+    "headerVitals": {
+     "text": "12/12 хиты·18 защита",
+     "rect": {
+      "x": 0,
+      "y": 0,
+      "w": 0,
+      "h": 0,
+      "bottom": 0,
+      "right": 0,
+      "inView": false
+     }
+    },
+    "words": {
+     "hit": false,
+     "ac": false,
+     "computer": false,
+     "neuralApi": false,
+     "costsApi": false,
+     "performance": false
+    }
+   },
+   "viewport": {
+    "w": 375,
+    "h": 812,
+    "dpr": 1
+   },
+   "scrollWidth": 375,
+   "scrollHeight": 812,
+   "overflowX": 0,
+   "activeView": "creation",
+   "campaignOpen": true,
+   "kbOpen": false,
+   "textElements": 10,
+   "fontMin": 16,
+   "smallText": [],
+   "fontDistinct": 3,
+   "fontSizes": {
+    "16": 8,
+    "22": 1,
+    "30": 1
+   },
+   "tapCount": 7,
+   "tapsBad": [],
+   "tapsBadCount": 0,
+   "contrastBad": [],
+   "contrastBadCount": 0,
+   "contrastMin": null,
+   "interactiveVisible": 7,
+   "clipped": [],
+   "clippedCount": 0,
+   "colorsOutsideCount": 0,
+   "colorsOutside": [],
+   "drawer": null,
+   "state": "new",
+   "theme": "dark",
+   "width": 375,
+   "height": 812,
+   "file": "n13-it1-new-dark-375.png",
+   "jsErrors": []
+  },
+  {
+   "probe": {
+    "viewportH": 812,
+    "description": {
+     "rect": {
+      "x": 0,
+      "y": 0,
+      "w": 0,
+      "h": 0,
+      "bottom": 0,
+      "right": 0,
+      "inView": false
+     },
+     "lines": -0.8
+    },
+    "prepare": {
+     "text": "Подготовить приключение",
+     "disabled": false,
+     "rect": {
+      "x": 0,
+      "y": 0,
+      "w": 0,
+      "h": 0,
+      "bottom": 0,
+      "right": 0,
+      "inView": false
+     }
+    },
+    "drop": {
+     "x": 0,
+     "y": 0,
+     "w": 0,
+     "h": 0,
+     "bottom": 0,
+     "right": 0,
+     "inView": false
+    },
+    "abilities": {
+     "count": 6,
+     "columns": 2,
+     "lastBottom": 604.2,
+     "allInside": true,
+     "cells": [
+      {
+       "text": "16 Сила",
+       "x": 16,
+       "y": 283.2,
+       "w": 165.5,
+       "h": 99,
+       "bottom": 382.2,
+       "right": 181.5,
+       "inView": true
+      },
+      {
+       "text": "14 Ловкость",
+       "x": 193.5,
+       "y": 283.2,
+       "w": 165.5,
+       "h": 99,
+       "bottom": 382.2,
+       "right": 359,
+       "inView": true
+      },
+      {
+       "text": "14 Телосложение",
+       "x": 16,
+       "y": 394.2,
+       "w": 165.5,
+       "h": 99,
+       "bottom": 493.2,
+       "right": 181.5,
+       "inView": true
+      },
+      {
+       "text": "10 Интеллект",
+       "x": 193.5,
+       "y": 394.2,
+       "w": 165.5,
+       "h": 99,
+       "bottom": 493.2,
+       "right": 359,
+       "inView": true
+      },
+      {
+       "text": "12 Мудрость",
+       "x": 16,
+       "y": 505.2,
+       "w": 165.5,
+       "h": 99,
+       "bottom": 604.2,
+       "right": 181.5,
+       "inView": true
+      },
+      {
+       "text": "8 Харизма",
+       "x": 193.5,
+       "y": 505.2,
+       "w": 165.5,
+       "h": 99,
+       "bottom": 604.2,
+       "right": 359,
+       "inView": true
+      }
+     ]
+    },
+    "navLabels": [
+     {
+      "text": "Закрыть",
+      "lines": 1,
+      "broken": [],
+      "x": -366.8,
+      "y": 165,
+      "w": 351,
+      "h": 44,
+      "bottom": 209,
+      "right": -15.8,
+      "inView": false
+     },
+     {
+      "text": "Навыки",
+      "lines": 1,
+      "broken": [],
+      "x": -366.8,
+      "y": 249,
+      "w": 175.5,
+      "h": 44,
+      "bottom": 293,
+      "right": -191.3,
+      "inView": false
+     },
+     {
+      "text": "Инвентарь",
+      "lines": 1,
+      "broken": [],
+      "x": -191.3,
+      "y": 249,
+      "w": 175.5,
+      "h": 44,
+      "bottom": 293,
+      "right": -15.8,
+      "inView": false
+     },
+     {
+      "text": "Карта мира",
+      "lines": 1,
+      "broken": [],
+      "x": -366.8,
+      "y": 299,
+      "w": 175.5,
+      "h": 44,
+      "bottom": 343,
+      "right": -191.3,
+      "inView": false
+     },
+     {
+      "text": "Блокнот",
+      "lines": 1,
+      "broken": [],
+      "x": -191.3,
+      "y": 299,
+      "w": 175.5,
+      "h": 44,
+      "bottom": 343,
+      "right": -15.8,
+      "inView": false
+     },
+     {
+      "text": "Раздатки и карты",
+      "lines": 1,
+      "broken": [],
+      "x": -366.8,
+      "y": 349,
+      "w": 175.5,
+      "h": 44,
+      "bottom": 393,
+      "right": -191.3,
+      "inView": false
+     },
+     {
+      "text": "Сохранения",
+      "lines": 1,
+      "broken": [],
+      "x": -191.3,
+      "y": 349,
+      "w": 175.5,
+      "h": 44,
+      "bottom": 393,
+      "right": -15.8,
+      "inView": false
+     },
+     {
+      "text": "Настройки",
+      "lines": 1,
+      "broken": [],
+      "x": -366.8,
+      "y": 433,
+      "w": 175.5,
+      "h": 44,
+      "bottom": 477,
+      "right": -191.3,
+      "inView": false
+     },
+     {
+      "text": "Подключение Мастера",
+      "lines": 2,
+      "broken": [],
+      "x": -191.3,
+      "y": 433,
+      "w": 175.5,
+      "h": 44,
+      "bottom": 477,
+      "right": -15.8,
+      "inView": false
+     },
+     {
+      "text": "Расходы",
+      "lines": 1,
+      "broken": [],
+      "x": -366.8,
+      "y": 483,
+      "w": 175.5,
+      "h": 44,
+      "bottom": 527,
+      "right": -191.3,
+      "inView": false
+     },
+     {
+      "text": "Скорость",
+      "lines": 1,
+      "broken": [],
+      "x": -191.3,
+      "y": 483,
+      "w": 175.5,
+      "h": 44,
+      "bottom": 527,
+      "right": -15.8,
+      "inView": false
+     },
+     {
+      "text": "О проекте",
+      "lines": 1,
+      "broken": [],
+      "x": -366.8,
+      "y": 533,
+      "w": 175.5,
+      "h": 44,
+      "bottom": 577,
+      "right": -191.3,
+      "inView": false
+     },
+     {
+      "text": "Мои миры",
+      "lines": 1,
+      "broken": [],
+      "x": -191.3,
+      "y": 533,
+      "w": 175.5,
+      "h": 44,
+      "bottom": 577,
+      "right": -15.8,
+      "inView": false
+     },
+     {
+      "text": "Правила",
+      "lines": 1,
+      "broken": [],
+      "x": -366.8,
+      "y": 583,
+      "w": 175.5,
+      "h": 44,
+      "bottom": 627,
+      "right": -191.3,
+      "inView": false
+     },
+     {
+      "text": "Книги",
+      "lines": 1,
+      "broken": [],
+      "x": -191.3,
+      "y": 583,
+      "w": 175.5,
+      "h": 44,
+      "bottom": 627,
+      "right": -15.8,
+      "inView": false
+     },
+     {
+      "text": "Профили Мастера",
+      "lines": 1,
+      "broken": [],
+      "x": -366.8,
+      "y": 633,
+      "w": 175.5,
+      "h": 44,
+      "bottom": 677,
+      "right": -191.3,
+      "inView": false
+     },
+     {
+      "text": "Оформление: тёмное",
+      "lines": 1,
+      "broken": [],
+      "x": -366.8,
+      "y": 683,
+      "w": 351,
+      "h": 44,
+      "bottom": 727,
+      "right": -15.8,
+      "inView": false
+     },
+     {
+      "text": "Выход из игры",
+      "lines": 1,
+      "broken": [],
+      "x": -366.8,
+      "y": 732,
+      "w": 351,
+      "h": 44,
+      "bottom": 776,
+      "right": -15.8,
+      "inView": false
+     }
+    ],
+    "navWrapped": 1,
+    "navBroken": 0,
+    "headerVitals": {
+     "text": "12/12 хиты·18 защита",
+     "rect": {
+      "x": 0,
+      "y": 0,
+      "w": 0,
+      "h": 0,
+      "bottom": 0,
+      "right": 0,
+      "inView": false
+     }
+    },
+    "words": {
+     "hit": true,
+     "ac": true,
+     "computer": false,
+     "neuralApi": false,
+     "costsApi": false,
+     "performance": false
+    }
+   },
+   "viewport": {
+    "w": 375,
+    "h": 812,
+    "dpr": 1
+   },
+   "scrollWidth": 375,
+   "scrollHeight": 812,
+   "overflowX": 0,
+   "activeView": "character",
+   "campaignOpen": true,
+   "kbOpen": false,
+   "textElements": 27,
+   "fontMin": 14,
+   "smallText": [],
+   "fontDistinct": 3,
+   "fontSizes": {
+    "14": 11,
+    "16": 5,
+    "22": 11
+   },
+   "tapCount": 2,
+   "tapsBad": [],
+   "tapsBadCount": 0,
+   "contrastBad": [],
+   "contrastBadCount": 0,
+   "contrastMin": null,
+   "interactiveVisible": 2,
+   "clipped": [],
+   "clippedCount": 0,
+   "colorsOutsideCount": 0,
+   "colorsOutside": [],
+   "drawer": null,
+   "state": "hero",
+   "theme": "dark",
+   "width": 375,
+   "height": 812,
+   "file": "n13-it1-hero-dark-375.png",
+   "jsErrors": []
+  },
+  {
+   "probe": {
+    "viewportH": 812,
+    "description": {
+     "rect": {
+      "x": 0,
+      "y": 0,
+      "w": 0,
+      "h": 0,
+      "bottom": 0,
+      "right": 0,
+      "inView": false
+     },
+     "lines": -0.8
+    },
+    "prepare": {
+     "text": "Подготовить приключение",
+     "disabled": false,
+     "rect": {
+      "x": 0,
+      "y": 0,
+      "w": 0,
+      "h": 0,
+      "bottom": 0,
+      "right": 0,
+      "inView": false
+     }
+    },
+    "drop": {
+     "x": 0,
+     "y": 0,
+     "w": 0,
+     "h": 0,
+     "bottom": 0,
+     "right": 0,
+     "inView": false
+    },
+    "abilities": {
+     "count": 6,
+     "columns": 1,
+     "lastBottom": 0,
+     "allInside": true,
+     "cells": [
+      {
+       "text": "16Сила",
+       "x": 0,
+       "y": 0,
+       "w": 0,
+       "h": 0,
+       "bottom": 0,
+       "right": 0,
+       "inView": false
+      },
+      {
+       "text": "14Ловкость",
+       "x": 0,
+       "y": 0,
+       "w": 0,
+       "h": 0,
+       "bottom": 0,
+       "right": 0,
+       "inView": false
+      },
+      {
+       "text": "14Телосложение",
+       "x": 0,
+       "y": 0,
+       "w": 0,
+       "h": 0,
+       "bottom": 0,
+       "right": 0,
+       "inView": false
+      },
+      {
+       "text": "10Интеллект",
+       "x": 0,
+       "y": 0,
+       "w": 0,
+       "h": 0,
+       "bottom": 0,
+       "right": 0,
+       "inView": false
+      },
+      {
+       "text": "12Мудрость",
+       "x": 0,
+       "y": 0,
+       "w": 0,
+       "h": 0,
+       "bottom": 0,
+       "right": 0,
+       "inView": false
+      },
+      {
+       "text": "8Харизма",
+       "x": 0,
+       "y": 0,
+       "w": 0,
+       "h": 0,
+       "bottom": 0,
+       "right": 0,
+       "inView": false
+      }
+     ]
+    },
+    "navLabels": [
+     {
+      "text": "Закрыть",
+      "lines": 1,
+      "broken": [],
+      "x": -366.8,
+      "y": 165,
+      "w": 351,
+      "h": 44,
+      "bottom": 209,
+      "right": -15.8,
+      "inView": false
+     },
+     {
+      "text": "Навыки",
+      "lines": 1,
+      "broken": [],
+      "x": -366.8,
+      "y": 249,
+      "w": 175.5,
+      "h": 44,
+      "bottom": 293,
+      "right": -191.3,
+      "inView": false
+     },
+     {
+      "text": "Инвентарь",
+      "lines": 1,
+      "broken": [],
+      "x": -191.3,
+      "y": 249,
+      "w": 175.5,
+      "h": 44,
+      "bottom": 293,
+      "right": -15.8,
+      "inView": false
+     },
+     {
+      "text": "Карта мира",
+      "lines": 1,
+      "broken": [],
+      "x": -366.8,
+      "y": 299,
+      "w": 175.5,
+      "h": 44,
+      "bottom": 343,
+      "right": -191.3,
+      "inView": false
+     },
+     {
+      "text": "Блокнот",
+      "lines": 1,
+      "broken": [],
+      "x": -191.3,
+      "y": 299,
+      "w": 175.5,
+      "h": 44,
+      "bottom": 343,
+      "right": -15.8,
+      "inView": false
+     },
+     {
+      "text": "Раздатки и карты",
+      "lines": 1,
+      "broken": [],
+      "x": -366.8,
+      "y": 349,
+      "w": 175.5,
+      "h": 44,
+      "bottom": 393,
+      "right": -191.3,
+      "inView": false
+     },
+     {
+      "text": "Сохранения",
+      "lines": 1,
+      "broken": [],
+      "x": -191.3,
+      "y": 349,
+      "w": 175.5,
+      "h": 44,
+      "bottom": 393,
+      "right": -15.8,
+      "inView": false
+     },
+     {
+      "text": "Настройки",
+      "lines": 1,
+      "broken": [],
+      "x": -366.8,
+      "y": 433,
+      "w": 175.5,
+      "h": 44,
+      "bottom": 477,
+      "right": -191.3,
+      "inView": false
+     },
+     {
+      "text": "Подключение Мастера",
+      "lines": 2,
+      "broken": [],
+      "x": -191.3,
+      "y": 433,
+      "w": 175.5,
+      "h": 44,
+      "bottom": 477,
+      "right": -15.8,
+      "inView": false
+     },
+     {
+      "text": "Расходы",
+      "lines": 1,
+      "broken": [],
+      "x": -366.8,
+      "y": 483,
+      "w": 175.5,
+      "h": 44,
+      "bottom": 527,
+      "right": -191.3,
+      "inView": false
+     },
+     {
+      "text": "Скорость",
+      "lines": 1,
+      "broken": [],
+      "x": -191.3,
+      "y": 483,
+      "w": 175.5,
+      "h": 44,
+      "bottom": 527,
+      "right": -15.8,
+      "inView": false
+     },
+     {
+      "text": "О проекте",
+      "lines": 1,
+      "broken": [],
+      "x": -366.8,
+      "y": 533,
+      "w": 175.5,
+      "h": 44,
+      "bottom": 577,
+      "right": -191.3,
+      "inView": false
+     },
+     {
+      "text": "Мои миры",
+      "lines": 1,
+      "broken": [],
+      "x": -191.3,
+      "y": 533,
+      "w": 175.5,
+      "h": 44,
+      "bottom": 577,
+      "right": -15.8,
+      "inView": false
+     },
+     {
+      "text": "Правила",
+      "lines": 1,
+      "broken": [],
+      "x": -366.8,
+      "y": 583,
+      "w": 175.5,
+      "h": 44,
+      "bottom": 627,
+      "right": -191.3,
+      "inView": false
+     },
+     {
+      "text": "Книги",
+      "lines": 1,
+      "broken": [],
+      "x": -191.3,
+      "y": 583,
+      "w": 175.5,
+      "h": 44,
+      "bottom": 627,
+      "right": -15.8,
+      "inView": false
+     },
+     {
+      "text": "Профили Мастера",
+      "lines": 1,
+      "broken": [],
+      "x": -366.8,
+      "y": 633,
+      "w": 175.5,
+      "h": 44,
+      "bottom": 677,
+      "right": -191.3,
+      "inView": false
+     },
+     {
+      "text": "Оформление: тёмное",
+      "lines": 1,
+      "broken": [],
+      "x": -366.8,
+      "y": 683,
+      "w": 351,
+      "h": 44,
+      "bottom": 727,
+      "right": -15.8,
+      "inView": false
+     },
+     {
+      "text": "Выход из игры",
+      "lines": 1,
+      "broken": [],
+      "x": -366.8,
+      "y": 732,
+      "w": 351,
+      "h": 44,
+      "bottom": 776,
+      "right": -15.8,
+      "inView": false
+     }
+    ],
+    "navWrapped": 1,
+    "navBroken": 0,
+    "headerVitals": {
+     "text": "12/12 хиты · 18 защита",
+     "rect": {
+      "x": 129.4,
+      "y": 15.5,
+      "w": 173.6,
+      "h": 24,
+      "bottom": 39.5,
+      "right": 303,
+      "inView": true
+     }
+    },
+    "words": {
+     "hit": true,
+     "ac": true,
+     "computer": false,
+     "neuralApi": false,
+     "costsApi": false,
+     "performance": false
+    }
+   },
+   "viewport": {
+    "w": 375,
+    "h": 812,
+    "dpr": 1
+   },
+   "scrollWidth": 375,
+   "scrollHeight": 812,
+   "overflowX": 0,
+   "activeView": "play",
+   "campaignOpen": true,
+   "kbOpen": false,
+   "textElements": 12,
+   "fontMin": 14,
+   "smallText": [],
+   "fontDistinct": 3,
+   "fontSizes": {
+    "14": 4,
+    "16": 7,
+    "17": 1
+   },
+   "tapCount": 5,
+   "tapsBad": [],
+   "tapsBadCount": 0,
+   "contrastBad": [],
+   "contrastBadCount": 0,
+   "contrastMin": null,
+   "interactiveVisible": 5,
+   "clipped": [
+    {
+     "sel": "html > body.effects.tabletop > main > header > div.m-title:nth-of-type(1)",
+     "sw": 107,
+     "cw": 49,
+     "overflow": "hidden",
+     "text": "Тайна трёх сосен"
+    }
+   ],
+   "clippedCount": 1,
+   "colorsOutsideCount": 0,
+   "colorsOutside": [],
+   "drawer": null,
+   "chatBlocks": [
+    {
+     "tag": "message master",
+     "h": 202,
+     "text": "МАСТЕР\nУ сторожевого поста гоблин перекрыл тропу. Осмотрите "
+    }
+   ],
+   "state": "game",
+   "theme": "dark",
+   "width": 375,
+   "height": 812,
+   "file": "n13-it1-game-dark-375.png",
+   "jsErrors": []
+  },
+  {
+   "probe": {
+    "viewportH": 812,
+    "description": {
+     "rect": {
+      "x": 0,
+      "y": 0,
+      "w": 0,
+      "h": 0,
+      "bottom": 0,
+      "right": 0,
+      "inView": false
+     },
+     "lines": -0.8
+    },
+    "prepare": {
+     "text": "Подготовить приключение",
+     "disabled": false,
+     "rect": {
+      "x": 0,
+      "y": 0,
+      "w": 0,
+      "h": 0,
+      "bottom": 0,
+      "right": 0,
+      "inView": false
+     }
+    },
+    "drop": {
+     "x": 0,
+     "y": 0,
+     "w": 0,
+     "h": 0,
+     "bottom": 0,
+     "right": 0,
+     "inView": false
+    },
+    "abilities": {
+     "count": 6,
+     "columns": 1,
+     "lastBottom": 0,
+     "allInside": true,
+     "cells": [
+      {
+       "text": "16Сила",
+       "x": 0,
+       "y": 0,
+       "w": 0,
+       "h": 0,
+       "bottom": 0,
+       "right": 0,
+       "inView": false
+      },
+      {
+       "text": "14Ловкость",
+       "x": 0,
+       "y": 0,
+       "w": 0,
+       "h": 0,
+       "bottom": 0,
+       "right": 0,
+       "inView": false
+      },
+      {
+       "text": "14Телосложение",
+       "x": 0,
+       "y": 0,
+       "w": 0,
+       "h": 0,
+       "bottom": 0,
+       "right": 0,
+       "inView": false
+      },
+      {
+       "text": "10Интеллект",
+       "x": 0,
+       "y": 0,
+       "w": 0,
+       "h": 0,
+       "bottom": 0,
+       "right": 0,
+       "inView": false
+      },
+      {
+       "text": "12Мудрость",
+       "x": 0,
+       "y": 0,
+       "w": 0,
+       "h": 0,
+       "bottom": 0,
+       "right": 0,
+       "inView": false
+      },
+      {
+       "text": "8Харизма",
+       "x": 0,
+       "y": 0,
+       "w": 0,
+       "h": 0,
+       "bottom": 0,
+       "right": 0,
+       "inView": false
+      }
+     ]
+    },
+    "navLabels": [
+     {
+      "text": "Закрыть",
+      "lines": 1,
+      "broken": [],
+      "x": 12,
+      "y": 165,
+      "w": 351,
+      "h": 44,
+      "bottom": 209,
+      "right": 363,
+      "inView": true
+     },
+     {
+      "text": "Навыки",
+      "lines": 1,
+      "broken": [],
+      "x": 12,
+      "y": 249,
+      "w": 175.5,
+      "h": 44,
+      "bottom": 293,
+      "right": 187.5,
+      "inView": true
+     },
+     {
+      "text": "Инвентарь",
+      "lines": 1,
+      "broken": [],
+      "x": 187.5,
+      "y": 249,
+      "w": 175.5,
+      "h": 44,
+      "bottom": 293,
+      "right": 363,
+      "inView": true
+     },
+     {
+      "text": "Карта мира",
+      "lines": 1,
+      "broken": [],
+      "x": 12,
+      "y": 299,
+      "w": 175.5,
+      "h": 44,
+      "bottom": 343,
+      "right": 187.5,
+      "inView": true
+     },
+     {
+      "text": "Блокнот",
+      "lines": 1,
+      "broken": [],
+      "x": 187.5,
+      "y": 299,
+      "w": 175.5,
+      "h": 44,
+      "bottom": 343,
+      "right": 363,
+      "inView": true
+     },
+     {
+      "text": "Раздатки и карты",
+      "lines": 1,
+      "broken": [],
+      "x": 12,
+      "y": 349,
+      "w": 175.5,
+      "h": 44,
+      "bottom": 393,
+      "right": 187.5,
+      "inView": true
+     },
+     {
+      "text": "Сохранения",
+      "lines": 1,
+      "broken": [],
+      "x": 187.5,
+      "y": 349,
+      "w": 175.5,
+      "h": 44,
+      "bottom": 393,
+      "right": 363,
+      "inView": true
+     },
+     {
+      "text": "Настройки",
+      "lines": 1,
+      "broken": [],
+      "x": 12,
+      "y": 433,
+      "w": 175.5,
+      "h": 44,
+      "bottom": 477,
+      "right": 187.5,
+      "inView": true
+     },
+     {
+      "text": "Подключение Мастера",
+      "lines": 2,
+      "broken": [],
+      "x": 187.5,
+      "y": 433,
+      "w": 175.5,
+      "h": 44,
+      "bottom": 477,
+      "right": 363,
+      "inView": true
+     },
+     {
+      "text": "Расходы",
+      "lines": 1,
+      "broken": [],
+      "x": 12,
+      "y": 483,
+      "w": 175.5,
+      "h": 44,
+      "bottom": 527,
+      "right": 187.5,
+      "inView": true
+     },
+     {
+      "text": "Скорость",
+      "lines": 1,
+      "broken": [],
+      "x": 187.5,
+      "y": 483,
+      "w": 175.5,
+      "h": 44,
+      "bottom": 527,
+      "right": 363,
+      "inView": true
+     },
+     {
+      "text": "О проекте",
+      "lines": 1,
+      "broken": [],
+      "x": 12,
+      "y": 533,
+      "w": 175.5,
+      "h": 44,
+      "bottom": 577,
+      "right": 187.5,
+      "inView": true
+     },
+     {
+      "text": "Мои миры",
+      "lines": 1,
+      "broken": [],
+      "x": 187.5,
+      "y": 533,
+      "w": 175.5,
+      "h": 44,
+      "bottom": 577,
+      "right": 363,
+      "inView": true
+     },
+     {
+      "text": "Правила",
+      "lines": 1,
+      "broken": [],
+      "x": 12,
+      "y": 583,
+      "w": 175.5,
+      "h": 44,
+      "bottom": 627,
+      "right": 187.5,
+      "inView": true
+     },
+     {
+      "text": "Книги",
+      "lines": 1,
+      "broken": [],
+      "x": 187.5,
+      "y": 583,
+      "w": 175.5,
+      "h": 44,
+      "bottom": 627,
+      "right": 363,
+      "inView": true
+     },
+     {
+      "text": "Профили Мастера",
+      "lines": 1,
+      "broken": [],
+      "x": 12,
+      "y": 633,
+      "w": 175.5,
+      "h": 44,
+      "bottom": 677,
+      "right": 187.5,
+      "inView": true
+     },
+     {
+      "text": "Оформление: тёмное",
+      "lines": 1,
+      "broken": [],
+      "x": 12,
+      "y": 683,
+      "w": 351,
+      "h": 44,
+      "bottom": 727,
+      "right": 363,
+      "inView": true
+     },
+     {
+      "text": "Выход из игры",
+      "lines": 1,
+      "broken": [],
+      "x": 12,
+      "y": 732,
+      "w": 351,
+      "h": 44,
+      "bottom": 776,
+      "right": 363,
+      "inView": true
+     }
+    ],
+    "navWrapped": 1,
+    "navBroken": 0,
+    "headerVitals": {
+     "text": "12/12 хиты",
+     "rect": {
+      "x": 0,
+      "y": 0,
+      "w": 0,
+      "h": 0,
+      "bottom": 0,
+      "right": 0,
+      "inView": false
+     }
+    },
+    "words": {
+     "hit": false,
+     "ac": false,
+     "computer": false,
+     "neuralApi": false,
+     "costsApi": false,
+     "performance": false
+    }
+   },
+   "viewport": {
+    "w": 375,
+    "h": 812,
+    "dpr": 1
+   },
+   "scrollWidth": 375,
+   "scrollHeight": 812,
+   "overflowX": 0,
+   "activeView": "welcome",
+   "campaignOpen": true,
+   "kbOpen": false,
+   "textElements": 49,
+   "fontMin": 14,
+   "smallText": [],
+   "fontDistinct": 4,
+   "fontSizes": {
+    "14": 15,
+    "16": 32,
+    "19": 1,
+    "30": 1
+   },
+   "tapCount": 31,
+   "tapsBad": [],
+   "tapsBadCount": 0,
+   "contrastBad": [],
+   "contrastBadCount": 0,
+   "contrastMin": null,
+   "interactiveVisible": 31,
+   "clipped": [],
+   "clippedCount": 0,
+   "colorsOutsideCount": 0,
+   "colorsOutside": [],
+   "drawer": {
+    "h": 617,
+    "top": 162,
+    "rows": 18,
+    "blocks": [
+     "Кампания",
+     "Приложение"
+    ],
+    "scrollTop": 0,
+    "scroll": 0,
+    "content": 617
+   },
+   "state": "menu",
+   "theme": "dark",
+   "width": 375,
+   "height": 812,
+   "debug": {
+    "bodyClass": "effects tabletop campaign-open nat20-game mobile-menu-open",
+    "burger": true,
+    "aside": {
+     "x": 0,
+     "y": 0,
+     "w": 375,
+     "h": 812
+    },
+    "drawer": {
+     "x": 12,
+     "y": 162,
+     "w": 351,
+     "h": 617
+    }
+   },
+   "file": "n13-it1-menu-dark-375.png",
+   "jsErrors": []
+  },
+  {
+   "probe": {
+    "viewportH": 812,
+    "description": {
+     "rect": {
+      "x": 0,
+      "y": 0,
+      "w": 0,
+      "h": 0,
+      "bottom": 0,
+      "right": 0,
+      "inView": false
+     },
+     "lines": -0.8
+    },
+    "prepare": {
+     "text": "Подготовить приключение",
+     "disabled": false,
+     "rect": {
+      "x": 0,
+      "y": 0,
+      "w": 0,
+      "h": 0,
+      "bottom": 0,
+      "right": 0,
+      "inView": false
+     }
+    },
+    "drop": {
+     "x": 0,
+     "y": 0,
+     "w": 0,
+     "h": 0,
+     "bottom": 0,
+     "right": 0,
+     "inView": false
+    },
+    "abilities": {
+     "count": 6,
+     "columns": 1,
+     "lastBottom": 0,
+     "allInside": true,
+     "cells": [
+      {
+       "text": "16Сила",
+       "x": 0,
+       "y": 0,
+       "w": 0,
+       "h": 0,
+       "bottom": 0,
+       "right": 0,
+       "inView": false
+      },
+      {
+       "text": "14Ловкость",
+       "x": 0,
+       "y": 0,
+       "w": 0,
+       "h": 0,
+       "bottom": 0,
+       "right": 0,
+       "inView": false
+      },
+      {
+       "text": "14Телосложение",
+       "x": 0,
+       "y": 0,
+       "w": 0,
+       "h": 0,
+       "bottom": 0,
+       "right": 0,
+       "inView": false
+      },
+      {
+       "text": "10Интеллект",
+       "x": 0,
+       "y": 0,
+       "w": 0,
+       "h": 0,
+       "bottom": 0,
+       "right": 0,
+       "inView": false
+      },
+      {
+       "text": "12Мудрость",
+       "x": 0,
+       "y": 0,
+       "w": 0,
+       "h": 0,
+       "bottom": 0,
+       "right": 0,
+       "inView": false
+      },
+      {
+       "text": "8Харизма",
+       "x": 0,
+       "y": 0,
+       "w": 0,
+       "h": 0,
+       "bottom": 0,
+       "right": 0,
+       "inView": false
+      }
+     ]
+    },
+    "navLabels": [
+     {
+      "text": "Закрыть",
+      "lines": 1,
+      "broken": [],
+      "x": 12,
+      "y": 165,
+      "w": 351,
+      "h": 44,
+      "bottom": 209,
+      "right": 363,
+      "inView": true
+     },
+     {
+      "text": "Навыки",
+      "lines": 1,
+      "broken": [],
+      "x": 12,
+      "y": 249,
+      "w": 175.5,
+      "h": 44,
+      "bottom": 293,
+      "right": 187.5,
+      "inView": true
+     },
+     {
+      "text": "Инвентарь",
+      "lines": 1,
+      "broken": [],
+      "x": 187.5,
+      "y": 249,
+      "w": 175.5,
+      "h": 44,
+      "bottom": 293,
+      "right": 363,
+      "inView": true
+     },
+     {
+      "text": "Карта мира",
+      "lines": 1,
+      "broken": [],
+      "x": 12,
+      "y": 299,
+      "w": 175.5,
+      "h": 44,
+      "bottom": 343,
+      "right": 187.5,
+      "inView": true
+     },
+     {
+      "text": "Блокнот",
+      "lines": 1,
+      "broken": [],
+      "x": 187.5,
+      "y": 299,
+      "w": 175.5,
+      "h": 44,
+      "bottom": 343,
+      "right": 363,
+      "inView": true
+     },
+     {
+      "text": "Раздатки и карты",
+      "lines": 1,
+      "broken": [],
+      "x": 12,
+      "y": 349,
+      "w": 175.5,
+      "h": 44,
+      "bottom": 393,
+      "right": 187.5,
+      "inView": true
+     },
+     {
+      "text": "Сохранения",
+      "lines": 1,
+      "broken": [],
+      "x": 187.5,
+      "y": 349,
+      "w": 175.5,
+      "h": 44,
+      "bottom": 393,
+      "right": 363,
+      "inView": true
+     },
+     {
+      "text": "Настройки",
+      "lines": 1,
+      "broken": [],
+      "x": 12,
+      "y": 433,
+      "w": 175.5,
+      "h": 44,
+      "bottom": 477,
+      "right": 187.5,
+      "inView": true
+     },
+     {
+      "text": "Подключение Мастера",
+      "lines": 2,
+      "broken": [],
+      "x": 187.5,
+      "y": 433,
+      "w": 175.5,
+      "h": 44,
+      "bottom": 477,
+      "right": 363,
+      "inView": true
+     },
+     {
+      "text": "Расходы",
+      "lines": 1,
+      "broken": [],
+      "x": 12,
+      "y": 483,
+      "w": 175.5,
+      "h": 44,
+      "bottom": 527,
+      "right": 187.5,
+      "inView": true
+     },
+     {
+      "text": "Скорость",
+      "lines": 1,
+      "broken": [],
+      "x": 187.5,
+      "y": 483,
+      "w": 175.5,
+      "h": 44,
+      "bottom": 527,
+      "right": 363,
+      "inView": true
+     },
+     {
+      "text": "О проекте",
+      "lines": 1,
+      "broken": [],
+      "x": 12,
+      "y": 533,
+      "w": 175.5,
+      "h": 44,
+      "bottom": 577,
+      "right": 187.5,
+      "inView": true
+     },
+     {
+      "text": "Мои миры",
+      "lines": 1,
+      "broken": [],
+      "x": 187.5,
+      "y": 533,
+      "w": 175.5,
+      "h": 44,
+      "bottom": 577,
+      "right": 363,
+      "inView": true
+     },
+     {
+      "text": "Правила",
+      "lines": 1,
+      "broken": [],
+      "x": 12,
+      "y": 583,
+      "w": 175.5,
+      "h": 44,
+      "bottom": 627,
+      "right": 187.5,
+      "inView": true
+     },
+     {
+      "text": "Книги",
+      "lines": 1,
+      "broken": [],
+      "x": 187.5,
+      "y": 583,
+      "w": 175.5,
+      "h": 44,
+      "bottom": 627,
+      "right": 363,
+      "inView": true
+     },
+     {
+      "text": "Профили Мастера",
+      "lines": 1,
+      "broken": [],
+      "x": 12,
+      "y": 633,
+      "w": 175.5,
+      "h": 44,
+      "bottom": 677,
+      "right": 187.5,
+      "inView": true
+     },
+     {
+      "text": "Оформление: тёмное",
+      "lines": 1,
+      "broken": [],
+      "x": 12,
+      "y": 683,
+      "w": 351,
+      "h": 44,
+      "bottom": 727,
+      "right": 363,
+      "inView": true
+     },
+     {
+      "text": "Выход из игры",
+      "lines": 1,
+      "broken": [],
+      "x": 12,
+      "y": 732,
+      "w": 351,
+      "h": 44,
+      "bottom": 776,
+      "right": 363,
+      "inView": true
+     }
+    ],
+    "navWrapped": 1,
+    "navBroken": 0,
+    "headerVitals": {
+     "text": "12/12 хиты",
+     "rect": {
+      "x": 0,
+      "y": 0,
+      "w": 0,
+      "h": 0,
+      "bottom": 0,
+      "right": 0,
+      "inView": false
+     }
+    },
+    "words": {
+     "hit": false,
+     "ac": false,
+     "computer": false,
+     "neuralApi": false,
+     "costsApi": false,
+     "performance": false
+    }
+   },
+   "viewport": {
+    "w": 375,
+    "h": 812,
+    "dpr": 1
+   },
+   "scrollWidth": 375,
+   "scrollHeight": 812,
+   "overflowX": 0,
+   "activeView": "welcome",
+   "campaignOpen": true,
+   "kbOpen": false,
+   "textElements": 49,
+   "fontMin": 14,
+   "smallText": [],
+   "fontDistinct": 4,
+   "fontSizes": {
+    "14": 15,
+    "16": 32,
+    "19": 1,
+    "30": 1
+   },
+   "tapCount": 31,
+   "tapsBad": [],
+   "tapsBadCount": 0,
+   "contrastBad": [],
+   "contrastBadCount": 0,
+   "contrastMin": null,
+   "interactiveVisible": 31,
+   "clipped": [],
+   "clippedCount": 0,
+   "colorsOutsideCount": 0,
+   "colorsOutside": [],
+   "drawer": {
+    "h": 617,
+    "top": 162,
+    "rows": 18,
+    "blocks": [
+     "Кампания",
+     "Приложение"
+    ],
+    "scrollTop": 0,
+    "scroll": 0,
+    "content": 617
+   },
+   "state": "menu-app",
+   "theme": "dark",
+   "width": 375,
+   "height": 812,
+   "debug": {
+    "bodyClass": "effects tabletop mobile-menu-open campaign-open nat20-game",
+    "burger": true,
+    "aside": {
+     "x": 0,
+     "y": 0,
+     "w": 375,
+     "h": 812
+    },
+    "drawer": {
+     "x": 12,
+     "y": 162,
+     "w": 351,
+     "h": 617
+    }
+   },
+   "file": "n13-it1-menu-app-dark-375.png",
+   "jsErrors": []
+  }
+ ]
+}

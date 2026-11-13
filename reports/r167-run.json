@@ -1,0 +1,161 @@
+{
+ "base": "http://127.0.0.1:19318",
+ "database": "/home/hermes/projects/SoloRealmsAI-Nat20/runtime/r167-live/solo.sqlite3",
+ "started": "2026-11-02T04:45:04Z",
+ "health": {
+  "product": "Solo Realms AI",
+  "llm": {
+   "result": "MockLLM (тест)",
+   "mock": true
+  },
+  "version": "2.2.0-prototype.5",
+  "offline": true,
+  "cloud_only": false,
+  "experimental": true,
+  "build": "6478848b822d",
+  "commit": "4a2a123",
+  "readiness": {
+   "status": "configured"
+  },
+  "risk_limitation": "Риск фиксируется перед началом столкновения. Без заранее объявленного серьёзного риска необратимая смерть останавливается; механический результат сохраняется. Поздняя отметка не действует задним числом."
+ },
+ "import": {
+  "bundle": "706c5e4c-7048-458f-aa1b-aff9c6f25be2",
+  "document": "444bcd2fb12c429360fe43c1af8ba380484e44aef42463cccd71000da1bc91fa",
+  "pages": null,
+  "status": "complete"
+ },
+ "offered": [
+  {
+   "kind": "check",
+   "check_id": "athletics"
+  },
+  {
+   "kind": "check",
+   "check_id": "perception"
+  },
+  {
+   "kind": "check",
+   "check_id": "strength"
+  },
+  {
+   "kind": "scene_action",
+   "action_id": "influence",
+   "skill": "persuasion"
+  },
+  {
+   "kind": "scene_action",
+   "action_id": "influence",
+   "skill": "deception"
+  },
+  {
+   "kind": "scene_action",
+   "action_id": "influence",
+   "skill": "intimidation"
+  },
+  {
+   "kind": "scene_action",
+   "action_id": "search",
+   "skill": "perception"
+  },
+  {
+   "kind": "scene_action",
+   "action_id": "search",
+   "skill": "investigation"
+  },
+  {
+   "kind": "start_combat",
+   "encounter_id": "basic"
+  },
+  {
+   "kind": "short_rest",
+   "hit_dice": 0
+  },
+  {
+   "kind": "short_rest",
+   "hit_dice": 1
+  },
+  {
+   "kind": "long_rest",
+   "food_water": true
+  }
+ ],
+ "campaign": "960f3ea2-9a57-4f17-a38c-169bcbdbb047",
+ "rule": {
+  "id": "purse-xp",
+  "amount": 50,
+  "page": 1,
+  "reason": "Награда напечатана в книге r167"
+ },
+ "played": "check",
+ "before": {
+  "version": 1,
+  "experience": 0,
+  "receipts": [],
+  "build_level": 1,
+  "hero_level": 1,
+  "hero_experience": 0,
+  "adventure_rewards": {},
+  "deferred": [
+   "reward"
+  ]
+ },
+ "after": {
+  "version": 2,
+  "experience": 50,
+  "receipts": [
+   {
+    "id": "printed:r167-opening:purse-xp",
+    "experience": 50,
+    "kind": "printed",
+    "page": 1,
+    "encounter_id": "",
+    "outcome_sha256": "d0319908290323ff4621ddd14e677d9b5591e9cfc248a8ebfc483e2423ba70c5"
+   }
+  ],
+  "build_level": 1,
+  "hero_level": 1,
+  "hero_experience": 50,
+  "adventure_rewards": {
+   "purse-xp": {
+    "status": "applied",
+    "experience": 50,
+    "page": 1,
+    "basis": "per_character"
+   }
+  },
+  "deferred": []
+ },
+ "repeated": {
+  "version": 3,
+  "experience": 50,
+  "receipts": [
+   {
+    "id": "printed:r167-opening:purse-xp",
+    "experience": 50,
+    "kind": "printed",
+    "page": 1,
+    "encounter_id": "",
+    "outcome_sha256": "d0319908290323ff4621ddd14e677d9b5591e9cfc248a8ebfc483e2423ba70c5"
+   }
+  ],
+  "build_level": 1,
+  "hero_level": 1,
+  "hero_experience": 50,
+  "adventure_rewards": {
+   "purse-xp": {
+    "status": "applied",
+    "experience": 50,
+    "page": 1,
+    "basis": "per_character"
+   }
+  },
+  "deferred": []
+ },
+ "player_text": [
+  "Награда начислена: 50 опыта (стр. 1)",
+  "Опыт Nat20: 50 (+50, стр. 1)"
+ ],
+ "first_status": "resolved",
+ "second_status": "resolved"
+}

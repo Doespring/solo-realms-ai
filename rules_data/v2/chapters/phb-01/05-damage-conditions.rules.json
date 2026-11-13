@@ -1,0 +1,1634 @@
+{
+  "schema_version": "2.1.0",
+  "rules": [
+    {
+      "id": "phb2024.phb01.hit_points",
+      "rules_family": "dnd2024",
+      "name": "Хиты, границы и отсутствие штрафа до нуля",
+      "kind": "procedure",
+      "classification": {
+        "mode": "deterministic",
+        "semantic_required": false,
+        "formal_required": true,
+        "reason": "Formal consequence of explicit inputs; source-specific exceptions remain separate dependencies."
+      },
+      "conditions": [],
+      "triggers": [
+        "hit_points.requested"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "procedure_id": "hit_points"
+          }
+        }
+      ],
+      "semantic_questions": [],
+      "facts": {
+        "minimum": 0,
+        "maximum": "max_hp",
+        "hp_loss_impairs_only_at": 0
+      },
+      "constraints": [
+        "Existing registered combat state; death consequences are separate."
+      ],
+      "exceptions": [],
+      "duration": "source_dependent",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "kind": "phb",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 28,
+        "printed_page": "27",
+        "section": "Урон и лечение / Хиты"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "existing_engine_subset",
+      "auto_activate": false,
+      "dependencies": [
+        "combat.weapon_attack"
+      ],
+      "behavior_tests": [
+        "phb01.hit_points"
+      ],
+      "readiness": {
+        "status": "engine_subset_verified",
+        "handler": "CombatEngine.damage",
+        "scope": "Existing registered combat state; death consequences are separate.",
+        "blockers": []
+      },
+      "revision": 1
+    },
+    {
+      "id": "phb2024.phb01.bloodied",
+      "rules_family": "dnd2024",
+      "name": "Окровавленность при половине Хитов",
+      "kind": "procedure",
+      "classification": {
+        "mode": "deterministic",
+        "semantic_required": false,
+        "formal_required": true,
+        "reason": "Formal consequence of explicit inputs; source-specific exceptions remain separate dependencies."
+      },
+      "conditions": [],
+      "triggers": [
+        "bloodied.requested"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "procedure_id": "bloodied"
+          }
+        }
+      ],
+      "semantic_questions": [],
+      "facts": {
+        "condition": "current_hp_times_two_lte_max_hp",
+        "standalone_effect": "none"
+      },
+      "constraints": [],
+      "exceptions": [],
+      "duration": "source_dependent",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "kind": "phb",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 28,
+        "printed_page": "27",
+        "section": "Хиты / Окровавленный"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "existing_engine_subset",
+      "auto_activate": false,
+      "dependencies": [
+        "effect.bloodied"
+      ],
+      "behavior_tests": [
+        "phb01.bloodied"
+      ],
+      "readiness": {
+        "status": "engine_subset_verified",
+        "handler": "CombatEngine.damage",
+        "scope": "Флаг Окровавленный считается в записи урона и виден на экране боя; правило не даёт ему эффектов, и движок их не выдумывает.",
+        "blockers": []
+      },
+      "revision": 1
+    },
+    {
+      "id": "phb2024.phb01.damage_roll",
+      "rules_family": "dnd2024",
+      "name": "Бросок урона, модификатор и минимум 0",
+      "kind": "procedure",
+      "classification": {
+        "mode": "deterministic",
+        "semantic_required": false,
+        "formal_required": true,
+        "reason": "Formal consequence of explicit inputs; source-specific exceptions remain separate dependencies."
+      },
+      "conditions": [],
+      "triggers": [
+        "damage.before_apply"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "procedure_id": "damage_roll"
+          }
+        }
+      ],
+      "semantic_questions": [],
+      "facts": {
+        "minimum": 0,
+        "weapon_ability": "same_as_attack",
+        "fixed_damage": "no_ability_modifier_unless_specified",
+        "spell_damage": "spell_definition"
+      },
+      "constraints": [
+        "Registered rolled weapon damage only; fixed-damage exceptions not fully represented."
+      ],
+      "exceptions": [],
+      "duration": "source_dependent",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "kind": "phb",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 28,
+        "printed_page": "27",
+        "section": "Броски урона"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "existing_engine_subset",
+      "auto_activate": false,
+      "dependencies": [
+        "combat.weapon_attack"
+      ],
+      "behavior_tests": [
+        "phb01.damage_roll"
+      ],
+      "readiness": {
+        "status": "engine_subset_verified",
+        "handler": "CombatEngine.attack",
+        "scope": "Registered rolled weapon damage only; fixed-damage exceptions not fully represented.",
+        "blockers": []
+      },
+      "revision": 1
+    },
+    {
+      "id": "phb2024.phb01.critical_damage",
+      "rules_family": "dnd2024",
+      "name": "Критическое попадание удваивает кости",
+      "kind": "procedure",
+      "classification": {
+        "mode": "deterministic",
+        "semantic_required": false,
+        "formal_required": true,
+        "reason": "Formal consequence of explicit inputs; source-specific exceptions remain separate dependencies."
+      },
+      "conditions": [],
+      "triggers": [
+        "damage.before_apply"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "procedure_id": "critical_damage"
+          }
+        }
+      ],
+      "semantic_questions": [],
+      "facts": {
+        "dice_multiplier": 2,
+        "flat_modifier_multiplier": 1,
+        "includes": "all_attack_damage_dice_including_sneak_attack"
+      },
+      "constraints": [
+        "Registered weapon dice only; class/spell extra dice need separately registered effects."
+      ],
+      "exceptions": [],
+      "duration": "source_dependent",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "kind": "phb",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 28,
+        "printed_page": "27",
+        "section": "Критические попадания (продолжение на стр.28)"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "existing_engine_subset",
+      "auto_activate": false,
+      "dependencies": [
+        "combat.weapon_attack"
+      ],
+      "behavior_tests": [
+        "phb01.critical_damage"
+      ],
+      "readiness": {
+        "status": "engine_subset_verified",
+        "handler": "CombatEngine.attack",
+        "scope": "Registered weapon dice only; class/spell extra dice need separately registered effects.",
+        "blockers": []
+      },
+      "revision": 1
+    },
+    {
+      "id": "phb2024.phb01.shared_damage_roll",
+      "rules_family": "dnd2024",
+      "name": "Один бросок урона одновременным целям",
+      "kind": "procedure",
+      "classification": {
+        "mode": "deterministic",
+        "semantic_required": false,
+        "formal_required": true,
+        "reason": "Formal consequence of explicit inputs; source-specific exceptions remain separate dependencies."
+      },
+      "conditions": [],
+      "triggers": [
+        "shared_damage_roll.requested"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "procedure_id": "shared_damage_roll"
+          }
+        }
+      ],
+      "semantic_questions": [],
+      "facts": {
+        "minimum_targets": 2,
+        "simultaneous_saves": true,
+        "damage_rolls": 1
+      },
+      "constraints": [],
+      "exceptions": [],
+      "duration": "source_dependent",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "kind": "phb",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 29,
+        "printed_page": "28",
+        "section": "Спасброски и урон / Урон по нескольким целям"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "not_implemented",
+      "auto_activate": false,
+      "dependencies": [
+        "effect.multi_target_damage"
+      ],
+      "behavior_tests": [
+        "phb01.shared_damage_roll"
+      ],
+      "readiness": {
+        "status": "blocked",
+        "handler": null,
+        "scope": "Один бросок урона одновременным целям",
+        "blockers": [
+          "No trusted multi-target effect executor; do not independently roll per target."
+        ]
+      },
+      "revision": 1
+    },
+    {
+      "id": "phb2024.phb01.half_damage",
+      "rules_family": "dnd2024",
+      "name": "Половина урона при успешном спасброске",
+      "kind": "procedure",
+      "classification": {
+        "mode": "deterministic",
+        "semantic_required": false,
+        "formal_required": true,
+        "reason": "Formal consequence of explicit inputs; source-specific exceptions remain separate dependencies."
+      },
+      "conditions": [],
+      "triggers": [
+        "half_damage.requested"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "procedure_id": "half_damage"
+          }
+        }
+      ],
+      "semantic_questions": [],
+      "facts": {
+        "numerator": 1,
+        "denominator": 2,
+        "rounding": "floor",
+        "requires": "effect_explicitly_says_half_on_success"
+      },
+      "constraints": [
+        "Pure arithmetic only; originating effect decides whether half damage applies."
+      ],
+      "exceptions": [],
+      "duration": "source_dependent",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "kind": "phb",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 29,
+        "printed_page": "28",
+        "section": "Половина урона"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "kernel_verified",
+      "auto_activate": false,
+      "dependencies": [],
+      "behavior_tests": [
+        "phb01.half_damage"
+      ],
+      "readiness": {
+        "status": "kernel_verified",
+        "handler": "math.scale_integer",
+        "scope": "Pure arithmetic only; originating effect decides whether half damage applies.",
+        "blockers": []
+      },
+      "revision": 1
+    },
+    {
+      "id": "phb2024.phb01.damage_types",
+      "rules_family": "dnd2024",
+      "name": "Тип урона без самостоятельного эффекта",
+      "kind": "procedure",
+      "classification": {
+        "mode": "deterministic",
+        "semantic_required": false,
+        "formal_required": true,
+        "reason": "Formal consequence of explicit inputs; source-specific exceptions remain separate dependencies."
+      },
+      "conditions": [],
+      "triggers": [
+        "damage_types.requested"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "procedure_id": "damage_types"
+          }
+        }
+      ],
+      "semantic_questions": [],
+      "facts": {
+        "standalone_rules": false,
+        "interactions": [
+          "resistance",
+          "vulnerability",
+          "immunity"
+        ],
+        "definitions_in": "glossary"
+      },
+      "constraints": [
+        "Only registered DamageType literals; chapter overview does not independently define all types."
+      ],
+      "exceptions": [],
+      "duration": "source_dependent",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "kind": "phb",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 29,
+        "printed_page": "28",
+        "section": "Типы урона"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "existing_engine_subset",
+      "auto_activate": false,
+      "dependencies": [
+        "combat.weapon_attack"
+      ],
+      "behavior_tests": [
+        "phb01.damage_types"
+      ],
+      "readiness": {
+        "status": "engine_subset_verified",
+        "handler": "CombatEngine.damage",
+        "scope": "Only registered DamageType literals; chapter overview does not independently define all types.",
+        "blockers": []
+      },
+      "revision": 1
+    },
+    {
+      "id": "phb2024.phb01.damage_traits",
+      "rules_family": "dnd2024",
+      "name": "Сопротивление, Уязвимость и порядок",
+      "kind": "procedure",
+      "classification": {
+        "mode": "deterministic",
+        "semantic_required": false,
+        "formal_required": true,
+        "reason": "Formal consequence of explicit inputs; source-specific exceptions remain separate dependencies."
+      },
+      "conditions": [],
+      "triggers": [
+        "damage.before_apply"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "procedure_id": "damage_traits"
+          }
+        }
+      ],
+      "semantic_questions": [],
+      "facts": {
+        "resistance_divisor": 2,
+        "rounding": "floor",
+        "vulnerability_multiplier": 2,
+        "stacks": false,
+        "order": [
+          "other_adjustments",
+          "resistance",
+          "vulnerability"
+        ],
+        "example_raw": 28,
+        "example_reduction": 5,
+        "example_result": 22
+      },
+      "constraints": [
+        "Existing amount input is already adjusted; type-specific resistance/vulnerability branch only."
+      ],
+      "exceptions": [],
+      "duration": "source_dependent",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "kind": "phb",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 29,
+        "printed_page": "28",
+        "section": "Сопротивление и Уязвимость / Нет суммирования / Порядок применения"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "existing_engine_subset",
+      "auto_activate": false,
+      "dependencies": [
+        "combat.weapon_attack"
+      ],
+      "behavior_tests": [
+        "phb01.damage_traits"
+      ],
+      "readiness": {
+        "status": "engine_subset_verified",
+        "handler": "CombatEngine.damage",
+        "scope": "Existing amount input is already adjusted; type-specific resistance/vulnerability branch only.",
+        "blockers": []
+      },
+      "revision": 1
+    },
+    {
+      "id": "phb2024.phb01.immunity",
+      "rules_family": "dnd2024",
+      "name": "Иммунитет к типу урона или состоянию",
+      "kind": "procedure",
+      "classification": {
+        "mode": "deterministic",
+        "semantic_required": false,
+        "formal_required": true,
+        "reason": "Formal consequence of explicit inputs; source-specific exceptions remain separate dependencies."
+      },
+      "conditions": [],
+      "triggers": [
+        "damage.before_apply"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "procedure_id": "immunity"
+          }
+        }
+      ],
+      "semantic_questions": [],
+      "facts": {
+        "damage_immunity": "zero_damage",
+        "condition_immunity": "unaffected"
+      },
+      "constraints": [
+        "Damage immunity verified; generic condition immunity requires originating effect/condition resolver."
+      ],
+      "exceptions": [],
+      "duration": "source_dependent",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "kind": "phb",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 29,
+        "printed_page": "28",
+        "section": "Иммунитет"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "existing_engine_subset",
+      "auto_activate": false,
+      "dependencies": [
+        "combat.weapon_attack"
+      ],
+      "behavior_tests": [
+        "phb01.immunity"
+      ],
+      "readiness": {
+        "status": "engine_subset_verified",
+        "handler": "CombatEngine.damage",
+        "scope": "Damage immunity verified; generic condition immunity requires originating effect/condition resolver.",
+        "blockers": []
+      },
+      "revision": 1
+    },
+    {
+      "id": "phb2024.phb01.healing",
+      "rules_family": "dnd2024",
+      "name": "Лечение ограничено максимумом Хитов",
+      "kind": "procedure",
+      "classification": {
+        "mode": "deterministic",
+        "semantic_required": false,
+        "formal_required": true,
+        "reason": "Formal consequence of explicit inputs; source-specific exceptions remain separate dependencies."
+      },
+      "conditions": [],
+      "triggers": [
+        "healing.requested"
+      ],
+      "formal_operations": [
+        {
+          "op": "resource_change",
+          "inputs": [],
+          "constants": {
+            "procedure_id": "healing"
+          }
+        }
+      ],
+      "semantic_questions": [],
+      "facts": {
+        "maximum": "max_hp",
+        "excess": "discard",
+        "example_current": 14,
+        "example_max": 20,
+        "example_heal": 8,
+        "example_after": 20
+      },
+      "constraints": [
+        "Numeric healing only; dead/condition/effect applicability requires separate validated transition."
+      ],
+      "exceptions": [],
+      "duration": "source_dependent",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "kind": "phb",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 29,
+        "printed_page": "28",
+        "section": "Лечение"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "kernel_verified",
+      "auto_activate": false,
+      "dependencies": [],
+      "behavior_tests": [
+        "phb01.healing"
+      ],
+      "readiness": {
+        "status": "kernel_verified",
+        "handler": "math.resource_change",
+        "scope": "Numeric healing only; dead/condition/effect applicability requires separate validated transition.",
+        "blockers": []
+      },
+      "revision": 1
+    },
+    {
+      "id": "phb2024.phb01.zero_hp",
+      "rules_family": "dnd2024",
+      "name": "Нулевые Хиты: смерть или бессознательность",
+      "kind": "procedure",
+      "classification": {
+        "mode": "deterministic",
+        "semantic_required": false,
+        "formal_required": true,
+        "reason": "Formal consequence of explicit inputs; source-specific exceptions remain separate dependencies."
+      },
+      "conditions": [],
+      "triggers": [
+        "zero_hp.requested"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "procedure_id": "zero_hp"
+          }
+        }
+      ],
+      "semantic_questions": [],
+      "facts": {
+        "outcomes": [
+          "instant_death",
+          "unconscious_until_any_hp_restored"
+        ],
+        "nonfatal_zero_hp": "death_saves"
+      },
+      "constraints": [
+        "Existing hero lethal-risk confirmation remains separate from mechanical outcome."
+      ],
+      "exceptions": [],
+      "duration": "source_dependent",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "kind": "phb",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 29,
+        "printed_page": "28",
+        "section": "Опускание Хитов до 0 / Потеря сознания"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "existing_engine_subset",
+      "auto_activate": false,
+      "dependencies": [
+        "phb2024.phb01.instant_death",
+        "glossary.unconscious"
+      ],
+      "behavior_tests": [
+        "phb01.zero_hp"
+      ],
+      "readiness": {
+        "status": "engine_subset_verified",
+        "handler": "CombatEngine.damage",
+        "scope": "Existing hero lethal-risk confirmation remains separate from mechanical outcome.",
+        "blockers": []
+      },
+      "revision": 1
+    },
+    {
+      "id": "phb2024.phb01.instant_death",
+      "rules_family": "dnd2024",
+      "name": "Мгновенная смерть: чудовище, максимум 0, массивный урон",
+      "kind": "procedure",
+      "classification": {
+        "mode": "hybrid",
+        "semantic_required": true,
+        "formal_required": true,
+        "reason": "Narrative choice is proposed by GM; formal consequences require trusted Engine validation."
+      },
+      "conditions": [],
+      "triggers": [
+        "instant_death.requested"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "procedure_id": "instant_death"
+          }
+        }
+      ],
+      "semantic_questions": [
+        "Мгновенная смерть: чудовище, максимум 0, массивный урон — какие факты и решения подтверждены Мастером?"
+      ],
+      "facts": {
+        "monster_at_zero": "dies",
+        "gm_may_allow_monster_pc_rules": true,
+        "zero_max_hp": "dies",
+        "massive_damage": "remaining_damage_gte_max_hp",
+        "example_max_hp": 12,
+        "example_current_hp": 6,
+        "example_damage": 18
+      },
+      "constraints": [],
+      "exceptions": [],
+      "duration": "source_dependent",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "kind": "phb",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 29,
+        "printed_page": "28",
+        "section": "Мгновенная смерть"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "existing_engine_subset",
+      "auto_activate": false,
+      "dependencies": [
+        "combat.weapon_attack"
+      ],
+      "behavior_tests": [
+        "phb01.instant_death"
+      ],
+      "readiness": {
+        "status": "blocked",
+        "handler": "CombatEngine.damage",
+        "scope": "Мгновенная смерть: чудовище, максимум 0, массивный урон",
+        "blockers": [
+          "Existing Hero requires max_hp >=1 and non-hero death policy is broader than monster-only; only massive-damage branch checked."
+        ]
+      },
+      "revision": 1
+    },
+    {
+      "id": "phb2024.phb01.character_death",
+      "rules_family": "dnd2024",
+      "name": "После смерти персонажа",
+      "kind": "guidance",
+      "classification": {
+        "mode": "adjudicated",
+        "semantic_required": true,
+        "formal_required": false,
+        "reason": "Narrative choice is proposed by GM; formal consequences require trusted Engine validation."
+      },
+      "conditions": [],
+      "triggers": [
+        "character_death.requested"
+      ],
+      "formal_operations": [],
+      "semantic_questions": [
+        "После смерти персонажа — какие факты и решения подтверждены Мастером?"
+      ],
+      "facts": {
+        "options": [
+          "registered_revival_magic",
+          "discuss_new_character"
+        ],
+        "definitions_in": "glossary"
+      },
+      "constraints": [],
+      "exceptions": [],
+      "duration": "source_dependent",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "kind": "phb",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 29,
+        "printed_page": "28",
+        "section": "Гибель персонажа"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "not_implemented",
+      "auto_activate": false,
+      "dependencies": [
+        "catalog.revival_spells",
+        "glossary.dead"
+      ],
+      "behavior_tests": [
+        "phb01.character_death"
+      ],
+      "readiness": {
+        "status": "adjudication_required",
+        "handler": null,
+        "scope": "После смерти персонажа",
+        "blockers": []
+      },
+      "revision": 1
+    },
+    {
+      "id": "phb2024.phb01.death_saves",
+      "rules_family": "dnd2024",
+      "name": "Спасброски от смерти",
+      "kind": "procedure",
+      "classification": {
+        "mode": "deterministic",
+        "semantic_required": false,
+        "formal_required": true,
+        "reason": "Formal consequence of explicit inputs; source-specific exceptions remain separate dependencies."
+      },
+      "conditions": [
+        {
+          "fact": "actor.hp",
+          "operator": "eq",
+          "value": 0
+        }
+      ],
+      "triggers": [
+        "turn.start"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "procedure_id": "death_saves"
+          }
+        }
+      ],
+      "semantic_questions": [],
+      "facts": {
+        "trigger": "start_turn_at_zero_hp",
+        "ability_modifier": false,
+        "success_threshold": 10,
+        "successes_to_stabilize": 3,
+        "failures_to_die": 3,
+        "consecutive_required": false,
+        "natural_1_failures": 2,
+        "natural_20_hp": 1,
+        "reset_on": [
+          "any_hp_restored",
+          "stabilized"
+        ]
+      },
+      "constraints": [
+        "Existing engine exhaustion may modify saves; full effects require source-specific tests."
+      ],
+      "exceptions": [],
+      "duration": "source_dependent",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "kind": "phb",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 30,
+        "printed_page": "29",
+        "section": "Спасброски от смерти / Три успеха/провала / При результате «1» или «20»"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "existing_engine_subset",
+      "auto_activate": false,
+      "dependencies": [
+        "combat.turn",
+        "glossary.unconscious"
+      ],
+      "behavior_tests": [
+        "phb01.death_saves"
+      ],
+      "readiness": {
+        "status": "engine_subset_verified",
+        "handler": "CombatEngine.death_save",
+        "scope": "Existing engine exhaustion may modify saves; full effects require source-specific tests.",
+        "blockers": []
+      },
+      "revision": 1
+    },
+    {
+      "id": "phb2024.phb01.damage_at_zero",
+      "rules_family": "dnd2024",
+      "name": "Урон при нулевых Хитах",
+      "kind": "procedure",
+      "classification": {
+        "mode": "deterministic",
+        "semantic_required": false,
+        "formal_required": true,
+        "reason": "Formal consequence of explicit inputs; source-specific exceptions remain separate dependencies."
+      },
+      "conditions": [],
+      "triggers": [
+        "damage.before_apply"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "procedure_id": "damage_at_zero"
+          }
+        }
+      ],
+      "semantic_questions": [],
+      "facts": {
+        "normal_failures": 1,
+        "critical_failures": 2,
+        "death_if": "damage_gte_max_hp"
+      },
+      "constraints": [],
+      "exceptions": [],
+      "duration": "source_dependent",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "kind": "phb",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 30,
+        "printed_page": "29",
+        "section": "Урон при 0 Хитов"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "existing_engine_subset",
+      "auto_activate": false,
+      "dependencies": [
+        "combat.weapon_attack",
+        "phb2024.phb01.death_saves"
+      ],
+      "behavior_tests": [
+        "phb01.damage_at_zero"
+      ],
+      "readiness": {
+        "status": "engine_subset_verified",
+        "handler": "CombatEngine.damage",
+        "scope": "Урон при нулевых Хитах",
+        "blockers": []
+      },
+      "revision": 1
+    },
+    {
+      "id": "phb2024.phb01.stabilization",
+      "rules_family": "dnd2024",
+      "name": "Стабилизация, потеря стабильности и 1к4 часов",
+      "kind": "procedure",
+      "classification": {
+        "mode": "deterministic",
+        "semantic_required": false,
+        "formal_required": true,
+        "reason": "Formal consequence of explicit inputs; source-specific exceptions remain separate dependencies."
+      },
+      "conditions": [],
+      "triggers": [
+        "stabilization.requested"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "procedure_id": "stabilization"
+          }
+        }
+      ],
+      "semantic_questions": [],
+      "facts": {
+        "action": "help",
+        "ability": "wisdom",
+        "skill": "medicine",
+        "dc": 10,
+        "stable": "no_death_saves_still_unconscious",
+        "damage": "ends_stability",
+        "without_healing_hours_die": 4,
+        "regained_hp": 1
+      },
+      "constraints": [],
+      "exceptions": [],
+      "duration": "source_dependent",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "kind": "phb",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 30,
+        "printed_page": "29",
+        "section": "Стабилизация персонажа"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "existing_engine_subset",
+      "auto_activate": false,
+      "dependencies": [
+        "glossary.help",
+        "phb2024.phb01.skill_check"
+      ],
+      "behavior_tests": [
+        "phb01.stabilization"
+      ],
+      "readiness": {
+        "status": "engine_subset_verified",
+        "handler": "CombatEngine.stabilize",
+        "scope": "Действие Помощь и Мудрость (Медицина) Сл 10: успех снимает Спасброски от смерти, Бессознательность остаётся; урон возвращает к спасброскам; без лечения 1 Хит через 1к4 часов.",
+        "blockers": []
+      },
+      "revision": 1
+    },
+    {
+      "id": "phb2024.phb01.temp_hp_absorption",
+      "rules_family": "dnd2024",
+      "name": "Временные хиты поглощают урон первыми",
+      "kind": "procedure",
+      "classification": {
+        "mode": "deterministic",
+        "semantic_required": false,
+        "formal_required": true,
+        "reason": "Formal consequence of explicit inputs; source-specific exceptions remain separate dependencies."
+      },
+      "conditions": [],
+      "triggers": [
+        "damage.before_apply"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "procedure_id": "temp_hp_absorption"
+          }
+        }
+      ],
+      "semantic_questions": [],
+      "facts": {
+        "order": [
+          "temporary_hp",
+          "hit_points"
+        ],
+        "example_temp": 5,
+        "example_damage": 7,
+        "example_hp_loss": 2
+      },
+      "constraints": [],
+      "exceptions": [],
+      "duration": "source_dependent",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "kind": "phb",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 30,
+        "printed_page": "29",
+        "section": "Временные хиты тратятся первыми"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "existing_engine_subset",
+      "auto_activate": false,
+      "dependencies": [
+        "combat.weapon_attack"
+      ],
+      "behavior_tests": [
+        "phb01.temp_hp_absorption"
+      ],
+      "readiness": {
+        "status": "engine_subset_verified",
+        "handler": "CombatEngine.damage",
+        "scope": "Временные хиты поглощают урон первыми",
+        "blockers": []
+      },
+      "revision": 1
+    },
+    {
+      "id": "phb2024.phb01.temp_hp_duration",
+      "rules_family": "dnd2024",
+      "name": "Временные хиты до исчерпания или Долгого отдыха",
+      "kind": "procedure",
+      "classification": {
+        "mode": "deterministic",
+        "semantic_required": false,
+        "formal_required": true,
+        "reason": "Formal consequence of explicit inputs; source-specific exceptions remain separate dependencies."
+      },
+      "conditions": [],
+      "triggers": [
+        "temp_hp_duration.requested"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "procedure_id": "temp_hp_duration"
+          }
+        }
+      ],
+      "semantic_questions": [],
+      "facts": {
+        "ends": [
+          "depleted",
+          "finish_long_rest"
+        ]
+      },
+      "constraints": [],
+      "exceptions": [],
+      "duration": "source_dependent",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "kind": "phb",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 30,
+        "printed_page": "29",
+        "section": "Временные хиты / Длительность"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "existing_engine_subset",
+      "auto_activate": false,
+      "dependencies": [
+        "rest.recovery"
+      ],
+      "behavior_tests": [
+        "phb01.temp_hp_duration"
+      ],
+      "readiness": {
+        "status": "engine_subset_verified",
+        "handler": "CombatEngine.grant_temp_hp",
+        "scope": "Временные хиты хранятся на листе героя между боями, расходуются первыми и снимаются Долгим отдыхом.",
+        "blockers": []
+      },
+      "revision": 1
+    },
+    {
+      "id": "phb2024.phb01.temp_hp_choice",
+      "rules_family": "dnd2024",
+      "name": "Выбор старых или новых Временных хитов",
+      "kind": "procedure",
+      "classification": {
+        "mode": "hybrid",
+        "semantic_required": true,
+        "formal_required": true,
+        "reason": "Narrative choice is proposed by GM; formal consequences require trusted Engine validation."
+      },
+      "conditions": [],
+      "triggers": [
+        "temp_hp_choice.requested"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "procedure_id": "temp_hp_choice"
+          }
+        }
+      ],
+      "semantic_questions": [
+        "Выбор старых или новых Временных хитов — какие факты и решения подтверждены Мастером?"
+      ],
+      "facts": {
+        "stack": false,
+        "choice": [
+          "existing",
+          "new"
+        ],
+        "example_existing": 10,
+        "example_new": 12,
+        "forbidden_total": 22
+      },
+      "constraints": [],
+      "exceptions": [],
+      "duration": "source_dependent",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "kind": "phb",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 30,
+        "printed_page": "29",
+        "section": "Временные хиты не складываются"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "existing_engine_subset",
+      "auto_activate": false,
+      "dependencies": [
+        "resource.temporary_hp_choice"
+      ],
+      "behavior_tests": [
+        "phb01.temp_hp_choice"
+      ],
+      "readiness": {
+        "status": "engine_subset_verified",
+        "handler": "CombatEngine.grant_temp_hp",
+        "scope": "Выбор старых или новых приходит командой игрока; без выбора остаются старые; 10 и 12 никогда не дают 22.",
+        "blockers": []
+      },
+      "revision": 1
+    },
+    {
+      "id": "phb2024.phb01.temp_hp_not_healing",
+      "rules_family": "dnd2024",
+      "name": "Временные хиты отдельно от лечения",
+      "kind": "procedure",
+      "classification": {
+        "mode": "deterministic",
+        "semantic_required": false,
+        "formal_required": true,
+        "reason": "Formal consequence of explicit inputs; source-specific exceptions remain separate dependencies."
+      },
+      "conditions": [],
+      "triggers": [
+        "temp_hp_not_healing.requested"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "procedure_id": "temp_hp_not_healing"
+          }
+        }
+      ],
+      "semantic_questions": [],
+      "facts": {
+        "part_of_hit_points": false,
+        "healing_restores": false,
+        "at_zero_hp": "does_not_restore_consciousness",
+        "allowed_at_full_hp": true
+      },
+      "constraints": [
+        "Absorption branch only; no generic temp HP grant/heal resolver."
+      ],
+      "exceptions": [],
+      "duration": "source_dependent",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "kind": "phb",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 30,
+        "printed_page": "29",
+        "section": "Не Хиты и не лечение"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "existing_engine_subset",
+      "auto_activate": false,
+      "dependencies": [
+        "combat.weapon_attack"
+      ],
+      "behavior_tests": [
+        "phb01.temp_hp_not_healing"
+      ],
+      "readiness": {
+        "status": "engine_subset_verified",
+        "handler": "CombatEngine.damage",
+        "scope": "Absorption branch only; no generic temp HP grant/heal resolver.",
+        "blockers": []
+      },
+      "revision": 1
+    },
+    {
+      "id": "phb2024.phb01.conditions",
+      "rules_family": "dnd2024",
+      "name": "Состояния и определения в глоссарии",
+      "kind": "procedure",
+      "classification": {
+        "mode": "hybrid",
+        "semantic_required": true,
+        "formal_required": true,
+        "reason": "Narrative choice is proposed by GM; formal consequences require trusted Engine validation."
+      },
+      "conditions": [],
+      "triggers": [
+        "conditions.requested"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "procedure_id": "conditions"
+          }
+        }
+      ],
+      "semantic_questions": [
+        "Состояния и определения в глоссарии — какие факты и решения подтверждены Мастером?"
+      ],
+      "facts": {
+        "conditions": [
+          "unconscious",
+          "deafened",
+          "charmed",
+          "frightened",
+          "petrified",
+          "stunned",
+          "exhaustion",
+          "restrained",
+          "paralyzed",
+          "invisible",
+          "blinded",
+          "prone",
+          "incapacitated",
+          "poisoned",
+          "grappled"
+        ],
+        "definitions_in": "glossary",
+        "can_imply_other_conditions": true
+      },
+      "constraints": [],
+      "exceptions": [],
+      "duration": "source_dependent",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "kind": "phb",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 30,
+        "printed_page": "29",
+        "section": "Состояния"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "existing_engine_subset",
+      "auto_activate": false,
+      "dependencies": [
+        "conditions.execution",
+        "glossary.conditions"
+      ],
+      "behavior_tests": [
+        "phb01.conditions"
+      ],
+      "readiness": {
+        "status": "engine_subset_verified",
+        "handler": "damage_conditions.attack_adjustments",
+        "scope": "14 состояний с числами: преимущество и помеха атакам, автопровал спасбросков Силы и Ловкости, скорость 0, запрет действий, автокрит в упор. Не считаются проверки «требующие зрения/слуха» и независимые длительности одного состояния (см. condition_duration).",
+        "blockers": []
+      },
+      "revision": 1
+    },
+    {
+      "id": "phb2024.phb01.condition_duration",
+      "rules_family": "dnd2024",
+      "name": "Отдельные длительности одного состояния",
+      "kind": "procedure",
+      "classification": {
+        "mode": "deterministic",
+        "semantic_required": false,
+        "formal_required": true,
+        "reason": "Formal consequence of explicit inputs; source-specific exceptions remain separate dependencies."
+      },
+      "conditions": [],
+      "triggers": [
+        "condition_duration.requested"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "procedure_id": "condition_duration"
+          }
+        }
+      ],
+      "semantic_questions": [],
+      "facts": {
+        "duration": "originating_effect_or_ending_condition",
+        "same_condition_strength_stacks": false,
+        "same_condition_durations": "independent",
+        "stacking_exception": "exhaustion"
+      },
+      "constraints": [],
+      "exceptions": [],
+      "duration": "source_dependent",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "kind": "phb",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 30,
+        "printed_page": "29",
+        "section": "Состояния / Длительность / Нет суммирования"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "not_implemented",
+      "auto_activate": false,
+      "dependencies": [
+        "effect.condition_instances"
+      ],
+      "behavior_tests": [
+        "phb01.condition_duration"
+      ],
+      "readiness": {
+        "status": "blocked",
+        "handler": null,
+        "scope": "Отдельные длительности одного состояния",
+        "blockers": [
+          "Движок хранит одну длительность на состояние и снимает его в конце хода носителя; независимые экземпляры одного состояния и исключение Истощения требуют модели экземпляров в Hero.conditions."
+        ]
+      },
+      "revision": 1
+    },
+    {
+      "id": "phb2024.phb01.knockout",
+      "rules_family": "dnd2024",
+      "name": "Нокаут: 1 Хит и бессознательность",
+      "kind": "procedure",
+      "classification": {
+        "mode": "hybrid",
+        "semantic_required": true,
+        "formal_required": true,
+        "reason": "Narrative choice is proposed by GM; formal consequences require trusted Engine validation."
+      },
+      "conditions": [],
+      "triggers": [
+        "knockout.requested"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "procedure_id": "knockout"
+          }
+        }
+      ],
+      "semantic_questions": [
+        "Нокаут: 1 Хит и бессознательность — какие факты и решения подтверждены Мастером?"
+      ],
+      "facts": {
+        "requires": "melee_attack_would_reduce_to_zero",
+        "choice": "attacker",
+        "hp_after": 1,
+        "condition": "unconscious",
+        "begins": "short_rest",
+        "condition_ends": [
+          "finish_short_rest",
+          "any_hp_restored",
+          "medicine_dc10_first_aid"
+        ],
+        "medicine_dc": 10
+      },
+      "constraints": [],
+      "exceptions": [],
+      "duration": "source_dependent",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "kind": "phb",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 30,
+        "printed_page": "29",
+        "section": "Нокаутирование существа"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "existing_engine_subset",
+      "auto_activate": false,
+      "dependencies": [
+        "combat.weapon_attack",
+        "glossary.unconscious",
+        "rest.recovery"
+      ],
+      "behavior_tests": [
+        "phb01.knockout"
+      ],
+      "readiness": {
+        "status": "engine_subset_verified",
+        "handler": "CombatEngine.damage",
+        "scope": "Рукопашная атака оставляет 1 Хит и Бессознательность; первая помощь (Медицина Сл 10) снимает состояние досрочно; завершение Короткого отдыха в бою не моделируется.",
+        "blockers": []
+      },
+      "revision": 1
+    },
+    {
+      "id": "phb2024.phb01.rest_overview",
+      "rules_family": "dnd2024",
+      "name": "Ссылки на Короткий и Долгий отдых",
+      "kind": "procedure",
+      "classification": {
+        "mode": "deterministic",
+        "semantic_required": false,
+        "formal_required": true,
+        "reason": "Formal consequence of explicit inputs; source-specific exceptions remain separate dependencies."
+      },
+      "conditions": [],
+      "triggers": [
+        "rest_overview.requested"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "procedure_id": "rest_overview"
+          }
+        }
+      ],
+      "semantic_questions": [],
+      "facts": {
+        "short_minutes": 60,
+        "long_minutes": 480,
+        "benefit": "hp_recovery",
+        "definitions_in": "glossary"
+      },
+      "constraints": [
+        "Durations and existing subset verified; interruptions/eligibility require full glossary."
+      ],
+      "exceptions": [],
+      "duration": "source_dependent",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "kind": "phb",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 28,
+        "printed_page": "27",
+        "section": "Отдых"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "existing_engine_subset",
+      "auto_activate": false,
+      "dependencies": [
+        "rest.recovery"
+      ],
+      "behavior_tests": [
+        "phb01.rest_overview"
+      ],
+      "readiness": {
+        "status": "engine_subset_verified",
+        "handler": "RulesetEngine.rest",
+        "scope": "Durations and existing subset verified; interruptions/eligibility require full glossary.",
+        "blockers": []
+      },
+      "revision": 1
+    },
+    {
+      "id": "phb2024.phb01.combat_example",
+      "rules_family": "dnd2024",
+      "name": "Пример боя: инициатива, урон и исключения",
+      "kind": "guidance",
+      "classification": {
+        "mode": "adjudicated",
+        "semantic_required": true,
+        "formal_required": false,
+        "reason": "Narrative choice is proposed by GM; formal consequences require trusted Engine validation."
+      },
+      "conditions": [],
+      "triggers": [
+        "combat_example.requested"
+      ],
+      "formal_operations": [],
+      "semantic_questions": [
+        "Пример боя: инициатива, урон и исключения — какие факты и решения подтверждены Мастером?"
+      ],
+      "facts": {
+        "initiative_values": [
+          20,
+          19,
+          16,
+          8,
+          2
+        ],
+        "skeleton_example_hp": 13,
+        "bludgeoning_example_before": 7,
+        "bludgeoning_example_after": 14,
+        "specific_effects_not_definitions": [
+          "shield",
+          "sneak_attack",
+          "cunning_action",
+          "thunderwave",
+          "sear_undead"
+        ],
+        "area_example": "15ft_cube",
+        "example_only": true
+      },
+      "constraints": [],
+      "exceptions": [],
+      "duration": "source_dependent",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "kind": "phb",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 31,
+        "printed_page": "30",
+        "section": "Пример боя и урона (стр.30–31)"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "not_implemented",
+      "auto_activate": false,
+      "dependencies": [
+        "catalog.spells",
+        "catalog.class_features",
+        "glossary.areas"
+      ],
+      "behavior_tests": [
+        "phb01.combat_example"
+      ],
+      "readiness": {
+        "status": "adjudication_required",
+        "handler": null,
+        "scope": "Пример боя: инициатива, урон и исключения",
+        "blockers": []
+      },
+      "revision": 1
+    }
+  ]
+}

@@ -1,0 +1,190 @@
+{
+  "schema_version": "playable-capabilities-v1",
+  "rules_version": "dnd2024",
+  "runtime": "Nat20 0.7.0",
+  "catalogue_is_not_execution_permission": true,
+  "actions": [
+    "check",
+    "start_combat",
+    "move",
+    "dash",
+    "attack",
+    "use_feature:second-wind",
+    "end_turn",
+    "end_combat",
+    "short_rest",
+    "long_rest"
+  ],
+  "character": {
+    "species": [
+      "human"
+    ],
+    "classes": {
+      "fighter": [
+        1
+      ]
+    },
+    "weapons": [
+      "longsword"
+    ],
+    "armor": [
+      "chain-mail",
+      "shield"
+    ],
+    "active_features": [
+      "second-wind"
+    ]
+  },
+  "reward": {
+    "kind": "native_encounter_xp",
+    "source": "registered authored encounter xp_value -> Nat20 CombatOutcome.xp_awarded -> durable experience resource",
+    "repeatable": false
+  },
+  "sources": [
+    {
+      "category": "classes",
+      "slug": "fighter",
+      "foundry_pack": "classes24",
+      "foundry_id": "phbftrFighter000",
+      "rules_version": "dnd2024",
+      "license": "CC-BY-4.0",
+      "sha256": "4c38ea4963e30fe9bd8c6e010203e7051da4cf04c4e136f0a1cc299ae088e387",
+      "raw_sha256": "11564e58269b3c18a283ba797d81196b8612e030182b76b5c3f1531e2b112d1b"
+    },
+    {
+      "category": "features",
+      "slug": "fighting-style",
+      "foundry_pack": "classes24",
+      "foundry_id": "phbftrFightingSt",
+      "rules_version": "dnd2024",
+      "license": "CC-BY-4.0",
+      "sha256": "3ee61065a19f63cbf8fa649925684a579073b00112ebdb84d1db3d158e6f5156",
+      "raw_sha256": "b19f83b7c28e4bdbef1be7ca3ab2426153913e9c58f7157191d1103b08d578a6"
+    },
+    {
+      "category": "features",
+      "slug": "second-wind",
+      "foundry_pack": "classes24",
+      "foundry_id": "phbftrSecondWind",
+      "rules_version": "dnd2024",
+      "license": "CC-BY-4.0",
+      "sha256": "d42c0e3ad67dfa1e9dcea2700449c19de9a17241c409c8d9d1c6b9eacf479749",
+      "raw_sha256": "c0e8b50853d780c635f58348ce75eb6d6ed11930fe29ae2c5fce7f0e83d6eef8"
+    },
+    {
+      "category": "features",
+      "slug": "weapon-mastery",
+      "foundry_pack": "classes24",
+      "foundry_id": "phbftrWeaponMast",
+      "rules_version": "dnd2024",
+      "license": "CC-BY-4.0",
+      "sha256": "4fee83f4e830650092991e070d4d5a4c0edab2d30882648a4e5196d1f6a3eda9",
+      "raw_sha256": "39c178831f69ecbbf1c055bd2f3e76c023b183025a5a50da30ff2914fb1f1959"
+    },
+    {
+      "category": "species",
+      "slug": "human",
+      "foundry_pack": "origins24",
+      "foundry_id": "phbspHuman000000",
+      "rules_version": "dnd2024",
+      "license": "CC-BY-4.0",
+      "sha256": "bf483d36b87af1ae7d18663a6937d87a1ff565925049175840c714cb3ebc2046",
+      "raw_sha256": "5a9891ead35d050117eab4ed619b7108d54d68c48054c43491263613a155ec44"
+    },
+    {
+      "category": "features",
+      "slug": "resourceful",
+      "foundry_pack": "origins24",
+      "foundry_id": "phbsptResourcefu",
+      "rules_version": "dnd2024",
+      "license": "CC-BY-4.0",
+      "sha256": "26ad8615abdb1ff2d64ead86ad43c8c25484bb09ca19dc136ee32f0cac93b43b",
+      "raw_sha256": "4f8d8dd668960954905f5ea35c9fe876a28b067bcdf9338d4422b3cd3c62efd4"
+    },
+    {
+      "category": "features",
+      "slug": "skillful",
+      "foundry_pack": "origins24",
+      "foundry_id": "phbsptSkillful00",
+      "rules_version": "dnd2024",
+      "license": "CC-BY-4.0",
+      "sha256": "e29a31db60b75d58c8d13549a5d483e0714f2c2e2be1a5934b0818795efbf722",
+      "raw_sha256": "005a0e1aeeedf49ff56a60e8da8079a65175079fbda88e63a1a352b1cc2ba3c4"
+    },
+    {
+      "category": "features",
+      "slug": "versatile",
+      "foundry_pack": "origins24",
+      "foundry_id": "phbsptVersatile0",
+      "rules_version": "dnd2024",
+      "license": "CC-BY-4.0",
+      "sha256": "40b11941c0552bff803404238898922e3d21e17fe95da5d362462fd03d7578e7",
+      "raw_sha256": "ba8ecc789f0477a55433cfda1009afd69ea93c12e16e5e663ed7292a8249dbd3"
+    },
+    {
+      "category": "items",
+      "slug": "longsword",
+      "foundry_pack": "equipment24",
+      "foundry_id": "phbwepLongsword0",
+      "rules_version": "dnd2024",
+      "license": "CC-BY-4.0",
+      "sha256": "979f311419465596799ed4210ca9cad6d075ed470740384a46e6400915c6c591",
+      "raw_sha256": "a383a183caf4253e03f66c22e4d287637084083d196f344cfdcc75c85aa322c7"
+    },
+    {
+      "category": "items",
+      "slug": "chain-mail",
+      "foundry_pack": "equipment24",
+      "foundry_id": "phbarmChainMail0",
+      "rules_version": "dnd2024",
+      "license": "CC-BY-4.0",
+      "sha256": "3d62efcb6dd7aa0137d7b99e755e99f115d3898350dd395cfd7493e092316ee0",
+      "raw_sha256": "c6580705ff6d5d0462558a3cf12441310140b21c9b4e1503222932b155744758"
+    },
+    {
+      "category": "items",
+      "slug": "shield",
+      "foundry_pack": "equipment24",
+      "foundry_id": "phbarmShield0000",
+      "rules_version": "dnd2024",
+      "license": "CC-BY-4.0",
+      "sha256": "2e810d810de9fc714241692d405987ca6ad5f4ca5a7ef99817096cc24a8d445c",
+      "raw_sha256": "57ce1732584ec3d4b9cf5e0b6bacba5742a91f5bf91a314a2edf72eee6c34ec3"
+    },
+    {
+      "category": "monsters",
+      "slug": "goblin-warrior",
+      "foundry_pack": "actors24",
+      "foundry_id": "mmGoblinWarrior0",
+      "rules_version": "dnd2024",
+      "license": "CC-BY-4.0",
+      "sha256": "508e27ec6dc727e6e04384751c4728abf8f4268f2e24e437efef6a7c1c6161ab",
+      "raw_sha256": "8d3dbbba959f16b3453ae5605456096c7a6ae4429f04720e46ec3a184e1ede45"
+    }
+  ],
+  "indexed_only": "search-catalog.json; metadata never enables an action or a fallback content loader",
+  "imported_but_not_enabled": [
+    "weapon-mastery",
+    "fighting-style choices",
+    "human Resourceful/Skillful/Versatile active choices",
+    "goblin Nimble Escape/Shortbow/conditional advantage rider"
+  ],
+  "verification": {
+    "status": "reports_archived_not_reproducible",
+    "status_note": "Downgraded 2026-10-24 (DELIVERY 14.199/14.202): the XML reports below exist as archived artifacts dated 2026-10-18, but no generator exists in this tree and tests/test_nat20_playable_rules.py cannot execute here. The evidence is historical, not reproducible from this delivery; do not treat it as behavioural proof.",
+    "unique_targeted_tests": 71,
+    "unique_targeted_tests_note": "carried over from the archived reports; not re-run in this workspace",
+    "reports": [
+      "playable-regression.xml",
+      "playable-acceptance.xml",
+      "playable-guards.xml"
+    ],
+    "reports_note": "archived copies under integration/nat20/reports/; regeneration is not possible from this tree"
+  },
+  "limits": [
+    "one level-one fighter; fixed reviewed builds and equipment",
+    "one registered encounter, one non-repeatable native XP reward",
+    "native automatic turn advancement; no action-timing override",
+    "no 0-HP rescue/death, spells, level-up, weapon mastery or unbound monster riders"
+  ]
+}

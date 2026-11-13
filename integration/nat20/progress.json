@@ -1,0 +1,17 @@
+{
+  "phase": "limited_native_backend_acceptance_passed",
+  "passed": 7,
+  "failed": [],
+  "inventory": "pack-inventory.json",
+  "import_manifest": "imported/manifest.json",
+  "report": "reports/summary.json",
+  "contract_schemas": "schemas/",
+  "existing_campaigns_migrated": false,
+  "catalogue_complete": false,
+  "source_of_mechanics": "unmodified pinned Nat20; narrow source-derived encounter projection only",
+  "next": [
+    "Review Foundry/Nat20 action timing and full monster activity branches before broader use.",
+    "Import and verify full origin/class/feat choices, unsupported spell/activity handlers independently.",
+    "Keep Laaru 2014/HB out of executable dnd2024 records."
+  ]
+}

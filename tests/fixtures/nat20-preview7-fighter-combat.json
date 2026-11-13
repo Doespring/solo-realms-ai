@@ -1,0 +1,1143 @@
+{
+ "campaign": {
+  "created": 1793344897.0087464,
+  "id": "dc8686a8-07d6-4c3c-bdcf-524d011566bc",
+  "master": {
+   "boundaries": "",
+   "character_prompt": "Значимые NPC имеют мотивы и помнят подтверждённые встречи. Отношения развиваются через события; романтическая атмосфера взрослых персонажей естественна. Никогда не отвечай и не решай за героя.",
+   "confirmation": "complex",
+   "declared_lethal_risk": false,
+   "hide_mechanics": true,
+   "instructions": "Свобода игрока; баланс исследования, диалогов и опасности. Частые вопросы при подготовке, во время игры только по существу. Сюжетные повороты должны иметь причины и проходить утверждение новых значимых фактов. В сценах допустимы уместная жестокость и настраиваемая романтическая подробность. Мотивы NPC и развитие мира связывай с подтверждёнными событиями приключения.",
+   "literary": {
+    "consequences": "нейтральная подача",
+    "detail": "средне",
+    "dialogue": "по сцене",
+    "emotion": "выразительная",
+    "focus": "баланс",
+    "freedom": "смешанный",
+    "imagery": "умеренная",
+    "initiative": "сбалансированная",
+    "npc_autonomy": "средняя",
+    "pace": "средний",
+    "rhythm": "сбалансированный",
+    "surprises": "по причинам",
+    "tension": "приключенческая",
+    "theme": "классическое фэнтези"
+   },
+   "max_tokens": 400,
+   "mode": "Balanced",
+   "narrative_prompt": "Тёмное и классическое героическое фэнтези. Меняй атмосферу и длину по сцене. Конкретные детали, естественные эмоциональные диалоги, инициативные NPC. Импровизируй причинно, сохраняя канон приключения. Последствия честные, без искусственного подыгрывания.",
+   "narrator_format": "plain",
+   "profile_name": "Живой мир, скрытая механика",
+   "romance_detail": "подробно",
+   "style": "Героическое фэнтези с тёмными краями, живыми деталями и надеждой",
+   "system_prompt": "Ты живой инициативный Мастер одиночной RPG на русском языке. Герой полностью принадлежит игроку.",
+   "temperature": 0.65
+  },
+  "name": "Preview7 compatibility fighter",
+  "state": {
+   "deferred": [],
+   "engine_snapshot": {
+    "actors": [
+     {
+      "conditions": [],
+      "hp": {
+       "current": 12,
+       "known_by": [
+        "hero"
+       ],
+       "maximum": 12,
+       "scope": "public"
+      },
+      "id": "hero",
+      "kind": "hero",
+      "known_by": [
+       "hero"
+      ],
+      "name": "Preview7 compatibility fighter",
+      "position": {
+       "coordinates": [
+        3,
+        1,
+        0
+       ],
+       "known_by": [
+        "hero"
+       ],
+       "scope": "public"
+      },
+      "resources": {
+       "action_available": {
+        "current": 0,
+        "known_by": [
+         "hero"
+        ],
+        "scope": "private"
+       },
+       "attacks_remaining": {
+        "current": 0,
+        "known_by": [
+         "hero"
+        ],
+        "scope": "private"
+       },
+       "bonus_action_available": {
+        "current": 1,
+        "known_by": [
+         "hero"
+        ],
+        "scope": "private"
+       },
+       "experience": {
+        "current": 0,
+        "known_by": [
+         "hero"
+        ],
+        "scope": "private"
+       },
+       "feature_use:second-wind": {
+        "current": 0,
+        "known_by": [
+         "hero"
+        ],
+        "scope": "private"
+       },
+       "hit_dice": {
+        "current": 1,
+        "known_by": [
+         "hero"
+        ],
+        "scope": "private"
+       },
+       "movement_remaining": {
+        "current": 20,
+        "known_by": [
+         "hero"
+        ],
+        "scope": "private"
+       },
+       "reaction_available": {
+        "current": 1,
+        "known_by": [
+         "hero"
+        ],
+        "scope": "private"
+       }
+      },
+      "scope": "public"
+     },
+     {
+      "conditions": [],
+      "hp": {
+       "current": 6,
+       "known_by": [
+        "hero",
+        "goblin"
+       ],
+       "maximum": 10,
+       "scope": "public"
+      },
+      "id": "goblin",
+      "kind": "npc",
+      "known_by": [
+       "hero",
+       "goblin"
+      ],
+      "name": "Goblin Warrior",
+      "position": {
+       "coordinates": [
+        4,
+        1,
+        0
+       ],
+       "known_by": [
+        "hero",
+        "goblin"
+       ],
+       "scope": "public"
+      },
+      "resources": {
+       "action_available": {
+        "current": 1,
+        "known_by": [
+         "goblin"
+        ],
+        "scope": "private"
+       },
+       "attacks_remaining": {
+        "current": 1,
+        "known_by": [
+         "goblin"
+        ],
+        "scope": "private"
+       },
+       "bonus_action_available": {
+        "current": 1,
+        "known_by": [
+         "goblin"
+        ],
+        "scope": "private"
+       },
+       "movement_remaining": {
+        "current": 30,
+        "known_by": [
+         "goblin"
+        ],
+        "scope": "private"
+       },
+       "reaction_available": {
+        "current": 1,
+        "known_by": [
+         "goblin"
+        ],
+        "scope": "private"
+       }
+      },
+      "scope": "public"
+     }
+    ],
+    "available_checks": [],
+    "available_encounters": [
+     "basic"
+    ],
+    "available_weapons": [
+     "battleaxe",
+     "berserker-axe",
+     "blowgun",
+     "clawed-gauntlet",
+     "club",
+     "dagger",
+     "dagger-of-venom",
+     "dancing-sword",
+     "dart",
+     "defender",
+     "dragon-slayer",
+     "dwarven-thrower",
+     "energy-bow",
+     "flail",
+     "flame-tongue",
+     "frost-brand",
+     "giant-slayer",
+     "glaive",
+     "greataxe",
+     "greatclub",
+     "greatsword",
+     "halberd",
+     "hammer-of-thunderbolts",
+     "hand-crossbow",
+     "handaxe",
+     "heavy-crossbow",
+     "holy-avenger",
+     "javelin",
+     "javelin-of-lightning",
+     "lance",
+     "light-crossbow",
+     "light-hammer",
+     "longbow",
+     "longsword",
+     "luck-blade",
+     "mace",
+     "mace-of-disruption",
+     "mace-of-smiting",
+     "mace-of-terror",
+     "maul",
+     "morningstar",
+     "musket",
+     "nine-lives-stealer",
+     "oathbow",
+     "pike",
+     "pistol",
+     "quarterstaff",
+     "quarterstaff-of-the-acrobat",
+     "rapier",
+     "rod-of-lordly-might",
+     "scimitar",
+     "scimitar-of-speed",
+     "shortbow",
+     "shortsword",
+     "sickle",
+     "sling",
+     "spear",
+     "staff",
+     "staff-of-charming",
+     "staff-of-fire",
+     "staff-of-frost",
+     "staff-of-healing",
+     "staff-of-power",
+     "staff-of-striking",
+     "staff-of-swarming-insects",
+     "staff-of-the-magi",
+     "staff-of-the-python",
+     "staff-of-the-woodlands",
+     "staff-of-thunder-and-lightning",
+     "staff-of-withering",
+     "sun-blade",
+     "sword-of-life-stealing",
+     "sword-of-sharpness",
+     "sword-of-wounding",
+     "thunderous-greatclub",
+     "trident",
+     "trident-of-fish-command",
+     "unarmed-strike",
+     "vicious-weapon",
+     "vorpal-sword",
+     "war-pick",
+     "warhammer",
+     "weapon-1-2-or-3",
+     "weapon-of-warning",
+     "whip",
+     "wooden-staff"
+    ],
+    "branch_id": "main",
+    "campaign_id": "dc8686a8-07d6-4c3c-bdcf-524d011566bc",
+    "combat": {
+     "active": true,
+     "id": "dc8686a8-07d6-4c3c-bdcf-524d011566bc:pre-bless-0",
+     "known_by": [
+      "hero"
+     ],
+     "round": 1,
+     "scope": "private",
+     "turn": "hero"
+    },
+    "contract_version": "memory-v1",
+    "event_id": "nat20:pre-bless-2",
+    "location": "Дозор на тракте",
+    "sequence": 3
+   },
+   "facts": [],
+   "hero": {
+    "abilities": {
+     "charisma": 8,
+     "constitution": 14,
+     "dexterity": 14,
+     "intelligence": 10,
+     "strength": 16,
+     "wisdom": 12
+    },
+    "ac": 18,
+    "alignment": "",
+    "appearance": "",
+    "armor_proficiencies": [],
+    "background": "",
+    "bonds": "",
+    "class_name": "fighter",
+    "conditions": [],
+    "exhaustion": 0,
+    "experience": 0,
+    "expertise": [],
+    "features": [
+     "fighting-style",
+     "second-wind",
+     "weapon-mastery",
+     "resourceful",
+     "skillful",
+     "versatile"
+    ],
+    "flaws": "",
+    "goals": [],
+    "hit_dice_available": 1,
+    "hit_die": 10,
+    "hp": 12,
+    "ideals": "",
+    "languages": [],
+    "level": 1,
+    "max_hp": 12,
+    "name": "Preview7 compatibility fighter",
+    "origin": "",
+    "personality": "",
+    "resources": {},
+    "saving_throw_proficiencies": [
+     "constitution",
+     "strength"
+    ],
+    "size": "Medium",
+    "skill_proficiencies": [
+     "athletics",
+     "perception"
+    ],
+    "species": "human",
+    "specific_weapon_proficiencies": [],
+    "speed_ft": 30,
+    "spells": [],
+    "subclass": "",
+    "tool_expertise": [],
+    "tool_proficiencies": [],
+    "weapon_proficiencies": []
+   },
+   "location": "Дозор на тракте",
+   "locations": [
+    {
+     "description": "У сторожевого поста гоблин перекрыл тропу. Осмотрите следы или приготовьтесь к столкновению. За победу дозор получает зарегистрированный опыт; после боя доступен спокойный отдых.",
+     "facts": [],
+     "name": "Дозор на тракте",
+     "npc": [],
+     "objects": []
+    }
+   ],
+   "nat20": {
+    "active_effects": [],
+    "combat": {
+     "active_effects": [],
+     "commands": [
+      {
+       "action": {
+        "kind": "move",
+        "position": {
+         "x": 3,
+         "y": 1,
+         "z": 0
+        }
+       },
+       "result_digest": "37168b5d54c9ae52a425121f5b841589901da9ae0406f617459cb22e4e4dd454"
+      },
+      {
+       "action": {
+        "kind": "attack",
+        "target": "goblin"
+       },
+       "result_digest": "3be7fa0cb464885a002e6ccdfd3a07becea0bbacab0eba8bacf62820c2c965fe"
+      }
+     ],
+     "initial": {
+      "active_effects": [],
+      "allowed_features": [
+       "second-wind"
+      ],
+      "attack_weapon": "longsword",
+      "definition_id": "fighter-road-2024-v1",
+      "encounter": [
+       {
+        "ac": 15,
+        "attack_bonus": 4,
+        "base_speed": 30,
+        "behavior_profile": "AGGRESSIVE",
+        "condition_immunities": [],
+        "creature_type": null,
+        "damage_dice": "1d4",
+        "damage_immunities": [],
+        "damage_resistances": [],
+        "damage_type": "bludgeoning",
+        "damage_vulnerabilities": [],
+        "dexterity": 15,
+        "entity_id": "goblin",
+        "entity_type": "Monster",
+        "hp_current": 10,
+        "hp_max": 10,
+        "initiative": null,
+        "is_surprised": false,
+        "monster_template_slug": "goblin-warrior",
+        "name": "Goblin Warrior",
+        "physical_resistances_nonmagical_only": true,
+        "senses": null,
+        "xp_value": 50,
+        "zone_id": "4,1"
+       }
+      ],
+      "encounter_id": "basic",
+      "grid": {
+       "blocked_cells": [],
+       "cell_size_ft": 5,
+       "cover_cells": {},
+       "default_lighting": "bright",
+       "difficult_terrain_cells": [],
+       "difficult_terrain_kinds": {},
+       "height": 5,
+       "lighting": {},
+       "obscurement_cells": {},
+       "sunlight": false,
+       "wall_segments": [],
+       "width": 7
+      },
+      "party": [
+       {
+        "ac": 18,
+        "attuned_items": [],
+        "base_speed": 30,
+        "character_level": 1,
+        "charisma": 8,
+        "chosen_features": [],
+        "class_slug": "fighter",
+        "classes": {
+         "fighter": 1
+        },
+        "concentration_effect_id": null,
+        "condition_immunities": [],
+        "constitution": 14,
+        "custom_counters": {
+         "feature_use:second-wind": {
+          "spent": 0
+         }
+        },
+        "damage_immunities": [],
+        "damage_resistances": [],
+        "dexterity": 14,
+        "entity_id": "hero",
+        "equipment": [
+         "longsword",
+         "chain-mail",
+         "shield"
+        ],
+        "feats": [],
+        "hp_current": 12,
+        "hp_max": 12,
+        "ignored_difficult_terrain": [],
+        "initiative": null,
+        "initiative_advantage": 0,
+        "intelligence": 10,
+        "languages": [],
+        "movement_modes": {},
+        "name": "Preview7 compatibility fighter",
+        "pact_slots": {},
+        "save_proficiencies": [
+         "con",
+         "str"
+        ],
+        "senses": {},
+        "skill_expertise": [],
+        "skill_proficiencies": [
+         "athletics",
+         "perception"
+        ],
+        "slotless_casts": [],
+        "species_slug": "human",
+        "spell_abilities": {},
+        "spell_slots": {},
+        "spells_known": [],
+        "strength": 16,
+        "subclass_slug": null,
+        "weapon_masteries": [],
+        "weapon_proficiencies": [
+         "martial_melee",
+         "martial_ranged",
+         "simple_melee",
+         "simple_ranged"
+        ],
+        "wisdom": 12,
+        "zone_id": "1,1"
+       }
+      ],
+      "seed": 5,
+      "session_id": "9002e3b1-0a35-49b7-a1bd-2fa5c0e6f4f4:pre-bless-0"
+     },
+     "initial_digest": "6d2d7872ea732a6bd1c0e5014f3710112075983d614ed8853c3d78180e65b1f3",
+     "view": {
+      "active_conditions": {},
+      "actor_zone": {
+       "goblin": "4,1",
+       "hero": "3,1"
+      },
+      "concentration_chain": {},
+      "constructs": {},
+      "current_turn_index": 0,
+      "custom_counters_by_entity": {
+       "hero": {
+        "feature_use:second-wind": {
+         "spent": 0
+        }
+       }
+      },
+      "dead_ids": [],
+      "encounter_ids": [
+       "goblin"
+      ],
+      "ended": false,
+      "final_outcome": null,
+      "initiative": [
+       {
+        "ac": 18,
+        "action_available": false,
+        "action_surge_used_this_turn": false,
+        "attack_action_engaged": true,
+        "attack_bonus": null,
+        "attacks_remaining": 0,
+        "attuned_items": [],
+        "base_speed": 30,
+        "behavior_profile": "AGGRESSIVE",
+        "bonus_action_available": true,
+        "character_level": 1,
+        "charisma": 8,
+        "chosen_features": [],
+        "class_slug": "fighter",
+        "classes": {
+         "fighter": 1
+        },
+        "cleave_spent_this_turn": false,
+        "concentration_effect_id": null,
+        "condition_immunities": [],
+        "conditions": [],
+        "constitution": 14,
+        "creature_type": null,
+        "damage_dice": "1d4",
+        "damage_immunities": [],
+        "damage_resistances": [],
+        "damage_type": "bludgeoning",
+        "damage_vulnerabilities": [],
+        "death_saves": {},
+        "dexterity": 14,
+        "disengaging_this_turn": false,
+        "dodging": false,
+        "entity_id": "hero",
+        "entity_type": "Character",
+        "extra_actions_remaining": 0,
+        "feats": [],
+        "fighting_styles": [],
+        "flurry_strikes_remaining": 0,
+        "has_fled": false,
+        "hide_attempted_this_turn": false,
+        "hit_dice_remaining": {
+         "10": 1
+        },
+        "hit_dice_total": {
+         "10": 1
+        },
+        "hp_current": 12,
+        "hp_max": 12,
+        "ignored_difficult_terrain": [],
+        "initiative": 22,
+        "intelligence": 10,
+        "is_alive": true,
+        "languages": [],
+        "last_damaged_by": null,
+        "legendary_actions_max": 0,
+        "legendary_actions_remaining": 0,
+        "legendary_resistances_max": 0,
+        "legendary_resistances_remaining": 0,
+        "light_weapon_swing_slug": null,
+        "loading_weapon_fired_this_turn": false,
+        "melee_reach_ft": 5,
+        "movement_modes": {
+         "burrow": null,
+         "climb": null,
+         "fly": null,
+         "swim": null
+        },
+        "movement_remaining": 20,
+        "name": "Preview7 compatibility fighter",
+        "offhand_attack_spent": false,
+        "physical_resistances_nonmagical_only": true,
+        "proficiency_bonus_override": null,
+        "reaction_available": true,
+        "savage_attacker_spent_this_turn": false,
+        "save_proficiencies": [
+         "con",
+         "str"
+        ],
+        "senses": {
+         "blindsight": null,
+         "darkvision": null,
+         "tremorsense": null,
+         "truesight": null
+        },
+        "shield_equipped": true,
+        "skill_expertise": [],
+        "skill_proficiencies": [
+         "athletics",
+         "perception"
+        ],
+        "slotless_casts": [],
+        "sneak_attack_spent_this_turn": false,
+        "species_slug": "human",
+        "spell_abilities": {},
+        "spellcasting_ability": null,
+        "strength": 16,
+        "subclass_slug": null,
+        "temp_hp": 0,
+        "trait_mechanics": [],
+        "weapon_masteries": [],
+        "weapon_proficiencies": [
+         "martial_melee",
+         "martial_ranged",
+         "simple_melee",
+         "simple_ranged"
+        ],
+        "wisdom": 12,
+        "worn_armor": "heavy"
+       },
+       {
+        "ac": 15,
+        "action_available": true,
+        "action_surge_used_this_turn": false,
+        "attack_action_engaged": false,
+        "attack_bonus": 4,
+        "attacks_remaining": 1,
+        "attuned_items": [],
+        "base_speed": 30,
+        "behavior_profile": "AGGRESSIVE",
+        "bonus_action_available": true,
+        "character_level": 1,
+        "charisma": 8,
+        "chosen_features": [],
+        "class_slug": null,
+        "classes": {},
+        "cleave_spent_this_turn": false,
+        "concentration_effect_id": null,
+        "condition_immunities": [],
+        "conditions": [],
+        "constitution": 10,
+        "creature_type": null,
+        "damage_dice": "1d4",
+        "damage_immunities": [],
+        "damage_resistances": [],
+        "damage_type": "bludgeoning",
+        "damage_vulnerabilities": [],
+        "death_saves": {},
+        "dexterity": 15,
+        "disengaging_this_turn": false,
+        "dodging": false,
+        "entity_id": "goblin",
+        "entity_type": "Monster",
+        "extra_actions_remaining": 0,
+        "feats": [],
+        "fighting_styles": [],
+        "flurry_strikes_remaining": 0,
+        "has_fled": false,
+        "hide_attempted_this_turn": false,
+        "hit_dice_remaining": {},
+        "hit_dice_total": {},
+        "hp_current": 6,
+        "hp_max": 10,
+        "ignored_difficult_terrain": [],
+        "initiative": 11,
+        "intelligence": 10,
+        "is_alive": true,
+        "languages": [],
+        "last_damaged_by": "hero",
+        "legendary_actions_max": 0,
+        "legendary_actions_remaining": 0,
+        "legendary_resistances_max": 0,
+        "legendary_resistances_remaining": 0,
+        "light_weapon_swing_slug": null,
+        "loading_weapon_fired_this_turn": false,
+        "melee_reach_ft": 5,
+        "movement_modes": {
+         "burrow": null,
+         "climb": null,
+         "fly": null,
+         "swim": null
+        },
+        "movement_remaining": 30,
+        "name": "Goblin Warrior",
+        "offhand_attack_spent": false,
+        "physical_resistances_nonmagical_only": false,
+        "proficiency_bonus_override": 2,
+        "reaction_available": true,
+        "savage_attacker_spent_this_turn": false,
+        "save_proficiencies": [],
+        "senses": {
+         "blindsight": null,
+         "darkvision": 60,
+         "tremorsense": null,
+         "truesight": null
+        },
+        "shield_equipped": false,
+        "skill_expertise": [],
+        "skill_proficiencies": [
+         "stealth"
+        ],
+        "slotless_casts": [],
+        "sneak_attack_spent_this_turn": false,
+        "species_slug": null,
+        "spell_abilities": {},
+        "spellcasting_ability": null,
+        "strength": 8,
+        "subclass_slug": null,
+        "temp_hp": 0,
+        "trait_mechanics": [],
+        "weapon_masteries": null,
+        "weapon_proficiencies": null,
+        "wisdom": 8,
+        "worn_armor": null
+       }
+      ],
+      "legendary_actions_by_entity": {},
+      "legendary_resistances_by_entity": {},
+      "monster_action_uses_by_entity": {
+       "goblin": {}
+      },
+      "pact_slots_by_entity": {},
+      "party_ids": [
+       "hero"
+      ],
+      "round_number": 1,
+      "spell_slots_by_entity": {},
+      "spells_known_by_entity": {},
+      "summons": {},
+      "tracked_hp": {
+       "goblin": 6,
+       "hero": 12
+      },
+      "tracked_temp_hp": {},
+      "transformations": {},
+      "turn": {
+       "attacks_remaining": 0,
+       "extra_actions_remaining": 0
+      }
+     }
+    },
+    "contract_version": "nat20-state-v1",
+    "definition": {
+     "attack_weapon": "longsword",
+     "build": {
+      "ability_score_method": null,
+      "ability_scores": {
+       "charisma": 8,
+       "constitution": 14,
+       "dexterity": 14,
+       "intelligence": 10,
+       "strength": 16,
+       "wisdom": 12
+      },
+      "ac_calc_mode": null,
+      "attuned_items": [],
+      "background_slug": null,
+      "class_slug": "fighter",
+      "classes": {
+       "fighter": 1
+      },
+      "equipment": [
+       "longsword",
+       "chain-mail",
+       "shield"
+      ],
+      "hp_mode": "fixed",
+      "hp_rolls": {},
+      "item_variants": {},
+      "level": 1,
+      "require_complete_choices": false,
+      "rules_edition": "5.2",
+      "selected_choices": [
+       "skill:athletics",
+       "skill:perception"
+      ],
+      "species_slug": "human",
+      "starting_class": null,
+      "subclass_slug": null
+     },
+     "checks": {
+      "athletics": {
+       "ability": null,
+       "dc": 15,
+       "kind": "skill",
+       "skill": "athletics",
+       "source": {
+        "id": "solo-road-watch",
+        "kind": "authored_scenario",
+        "note": "Author-reviewed scenario inputs, not a quotation or automatic PHB rule. DCs and encounter XP budgets are fixed here, never supplied by the Interpreter.",
+        "version": "1.0.0"
+       }
+      },
+      "perception": {
+       "ability": null,
+       "dc": 12,
+       "kind": "skill",
+       "skill": "perception",
+       "source": {
+        "id": "solo-road-watch",
+        "kind": "authored_scenario",
+        "note": "Author-reviewed scenario inputs, not a quotation or automatic PHB rule. DCs and encounter XP budgets are fixed here, never supplied by the Interpreter.",
+        "version": "1.0.0"
+       }
+      },
+      "strength": {
+       "ability": "str",
+       "dc": 15,
+       "kind": "ability",
+       "skill": null,
+       "source": {
+        "id": "solo-road-watch",
+        "kind": "authored_scenario",
+        "note": "Author-reviewed scenario inputs, not a quotation or automatic PHB rule. DCs and encounter XP budgets are fixed here, never supplied by the Interpreter.",
+        "version": "1.0.0"
+       }
+      }
+     },
+     "description": "У сторожевого поста гоблин перекрыл тропу. Осмотрите следы или приготовьтесь к столкновению. За победу дозор получает зарегистрированный опыт; после боя доступен спокойный отдых.",
+     "encounters": {
+      "basic": {
+       "actors": [
+        {
+         "id": "goblin",
+         "monster": "goblin-warrior",
+         "position": {
+          "x": 4,
+          "y": 1,
+          "z": 0
+         },
+         "xp_value": 50
+        }
+       ],
+       "grid": {
+        "blocked_cells": [],
+        "cell_size_ft": 5,
+        "cover_cells": {},
+        "default_lighting": "bright",
+        "difficult_terrain_cells": [],
+        "difficult_terrain_kinds": {},
+        "height": 5,
+        "lighting": {},
+        "obscurement_cells": {},
+        "sunlight": false,
+        "wall_segments": [],
+        "width": 7
+       },
+       "hero_position": {
+        "x": 1,
+        "y": 1,
+        "z": 0
+       },
+       "reward": {
+        "id": "road-watch-victory",
+        "kind": "native_encounter_xp",
+        "source": {
+         "id": "solo-road-watch",
+         "kind": "authored_scenario",
+         "note": "Author-reviewed scenario inputs, not a quotation or automatic PHB rule. DCs and encounter XP budgets are fixed here, never supplied by the Interpreter.",
+         "version": "1.0.0"
+        }
+       }
+      }
+     },
+     "features": [
+      "second-wind"
+     ],
+     "id": "fighter-road-2024-v1",
+     "rules_version": "dnd2024",
+     "schema_version": "nat20-campaign-v1",
+     "source": {
+      "id": "solo-road-watch",
+      "kind": "authored_scenario",
+      "note": "Author-reviewed scenario inputs, not a quotation or automatic PHB rule. DCs and encounter XP budgets are fixed here, never supplied by the Interpreter.",
+      "version": "1.0.0"
+     },
+     "title": "Дозор на тракте"
+    },
+    "engine_version": "0.7.0",
+    "exhaustion": 0,
+    "experience": 0,
+    "hero": {
+     "ac": 18,
+     "attuned_items": [],
+     "base_speed": 30,
+     "character_level": 1,
+     "charisma": 8,
+     "chosen_features": [],
+     "class_slug": "fighter",
+     "classes": {
+      "fighter": 1
+     },
+     "concentration_effect_id": null,
+     "condition_immunities": [],
+     "constitution": 14,
+     "custom_counters": {
+      "feature_use:second-wind": {
+       "spent": 0
+      }
+     },
+     "damage_immunities": [],
+     "damage_resistances": [],
+     "dexterity": 14,
+     "entity_id": "hero",
+     "equipment": [
+      "longsword",
+      "chain-mail",
+      "shield"
+     ],
+     "feats": [],
+     "hp_current": 12,
+     "hp_max": 12,
+     "ignored_difficult_terrain": [],
+     "initiative": null,
+     "initiative_advantage": 0,
+     "intelligence": 10,
+     "languages": [],
+     "movement_modes": {},
+     "name": "Preview7 compatibility fighter",
+     "pact_slots": {},
+     "save_proficiencies": [
+      "con",
+      "str"
+     ],
+     "senses": {},
+     "skill_expertise": [],
+     "skill_proficiencies": [
+      "athletics",
+      "perception"
+     ],
+     "slotless_casts": [],
+     "species_slug": "human",
+     "spell_abilities": {},
+     "spell_slots": {},
+     "spells_known": [],
+     "strength": 16,
+     "subclass_slug": null,
+     "weapon_masteries": [],
+     "weapon_proficiencies": [
+      "martial_melee",
+      "martial_ranged",
+      "simple_melee",
+      "simple_ranged"
+     ],
+     "wisdom": 12,
+     "zone_id": "3,1"
+    },
+    "hit_dice": {
+     "dice_remaining": 1,
+     "dice_total": 1,
+     "hit_die_size": 10
+    },
+    "release_digest": "374afd1a3898e089e023130cc342a0f3c6fe88a75bf4f8ee7e3bf865852abf75",
+    "rewards": [],
+    "rules_version": "dnd2024",
+    "seed": 5,
+    "sheet": {
+     "ability_modifiers": {
+      "charisma": -1,
+      "constitution": 2,
+      "dexterity": 2,
+      "intelligence": 0,
+      "strength": 3,
+      "wisdom": 1
+     },
+     "ability_scores": {
+      "charisma": 8,
+      "constitution": 14,
+      "dexterity": 14,
+      "intelligence": 10,
+      "strength": 16,
+      "wisdom": 12
+     },
+     "ac": 18,
+     "ac_calc_mode": "default",
+     "armor_training": [
+      "heavy",
+      "light",
+      "medium",
+      "shield"
+     ],
+     "base_speed": 30,
+     "cantrips": [],
+     "chosen_features": [],
+     "condition_immunities": [],
+     "damage_immunities": [],
+     "damage_resistances": [],
+     "extra_attack_count": 0,
+     "feats": [],
+     "features": [
+      "fighting-style",
+      "second-wind",
+      "weapon-mastery",
+      "resourceful",
+      "skillful",
+      "versatile"
+     ],
+     "hit_dice": {
+      "10": 1
+     },
+     "hp_max": 12,
+     "ignored_difficult_terrain": [],
+     "initiative_advantage": 0,
+     "jack_of_all_trades": false,
+     "languages": [],
+     "movement_modes": {
+      "burrow": null,
+      "climb": null,
+      "fly": null,
+      "swim": null
+     },
+     "pact_slots": {},
+     "passive_perception": 13,
+     "prepared_spells": [],
+     "proficiency_bonus": 2,
+     "reliable_talent": false,
+     "rules_edition": "5.2",
+     "save_proficiencies": [
+      "con",
+      "str"
+     ],
+     "senses": {
+      "blindsight": null,
+      "darkvision": null,
+      "tremorsense": null,
+      "truesight": null
+     },
+     "skill_expertise": [],
+     "skill_proficiencies": [
+      "athletics",
+      "perception"
+     ],
+     "slotless_casts": [],
+     "spell_abilities": {},
+     "spell_slots": {},
+     "starting_equipment": [],
+     "stealth_disadvantage": true,
+     "tool_proficiencies": [],
+     "wealth_gp": 0,
+     "weapon_masteries": [],
+     "weapon_proficiencies": [
+      "martial_melee",
+      "martial_ranged",
+      "simple_melee",
+      "simple_ranged"
+     ]
+    }
+   },
+   "ruleset": {
+    "carry_multiplier": 15,
+    "cell_feet": 5,
+    "crit_threshold": 20,
+    "diagonal": "five_feet",
+    "edition": "2024",
+    "exhaustion": "2024",
+    "fall_die_feet": 10,
+    "fall_max_dice": 20,
+    "id": "dnd2024",
+    "long_rest_hit_dice": "all",
+    "name": "D&D 2024 · часть SRD 5.2.1",
+    "notes": "",
+    "potion_action": "bonus",
+    "proficiency_by_level": [
+     2,
+     2,
+     2,
+     2,
+     3,
+     3,
+     3,
+     3,
+     4,
+     4,
+     4,
+     4,
+     5,
+     5,
+     5,
+     5,
+     6,
+     6,
+     6,
+     6
+    ],
+    "requires_implementation": [],
+    "surprise": "initiative_disadvantage",
+    "travel_pace_ft": {
+     "fast": 400,
+     "normal": 300,
+     "slow": 200
+    },
+    "version": 1
+   },
+   "turn": 3
+  },
+  "version": 3
+ },
+ "captured_with_engine": {
+  "engine_version": "0.7.0",
+  "initial_digest": "6d2d7872ea732a6bd1c0e5014f3710112075983d614ed8853c3d78180e65b1f3",
+  "recapture": "r125: route campaign create -> start_combat(basic) -> move(3,1) -> attack(goblin) on the current pin",
+  "release_digest": "374afd1a3898e089e023130cc342a0f3c6fe88a75bf4f8ee7e3bf865852abf75"
+ },
+ "preview7_source_sha256": "93df0971cadf7dce5da80d19ca25af422f6575e11c8eb2af33bc6962748cf01e",
+ "release_digest": "374afd1a3898e089e023130cc342a0f3c6fe88a75bf4f8ee7e3bf865852abf75"
+}

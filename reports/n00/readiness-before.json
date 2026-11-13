@@ -1,0 +1,746 @@
+{
+  "draft": "85f962a6-ed81-4f3a-be01-e22226c7e8b1",
+  "run": "2e18c595-58bd-4b68-9bb0-a45a821b7bfb",
+  "states": [
+    {
+      "state": "как лежит в профиле",
+      "status": "ready",
+      "playable": 1,
+      "http": 200,
+      "body": {
+        "scope": "world",
+        "ready": false,
+        "world_ready": true,
+        "run_id": "2e18c595-58bd-4b68-9bb0-a45a821b7bfb",
+        "revision": 5,
+        "minimum_level": null,
+        "maximum_level": null,
+        "recommended_party": null,
+        "hero_level": null,
+        "source_ruleset": "dnd2014",
+        "mechanics_ruleset": "dnd2024",
+        "reasons": [
+          "Подтвердите проверенный мир отдельно."
+        ],
+        "blocked_operations": [
+          {
+            "key": "Oril",
+            "kind": "npc",
+            "reason": "Непроверенное утверждение снято с элемента: description"
+          },
+          {
+            "key": "OrilFrostGoddess",
+            "kind": "npc",
+            "reason": "Противоречивые версии одного элемента"
+          },
+          {
+            "key": "ZardorokSunDestroyer",
+            "kind": "npc",
+            "reason": "Непроверенное утверждение снято с элемента: name"
+          },
+          {
+            "key": "ten-towns",
+            "kind": "location",
+            "reason": "Непроверенное утверждение снято с элемента: description, name"
+          },
+          {
+            "key": "reghed-glacier",
+            "kind": "location",
+            "reason": "Непроверенное утверждение снято с элемента: name"
+          },
+          {
+            "key": "Itryn",
+            "kind": "location",
+            "reason": "Непроверенное утверждение снято с элемента: description"
+          },
+          {
+            "key": "Chardalyn",
+            "kind": "object",
+            "reason": "Непроверенное утверждение снято с элемента: description"
+          },
+          {
+            "key": "MagicalBrotherhood",
+            "kind": "npc",
+            "reason": "Непроверенное утверждение снято с элемента: description, name"
+          },
+          {
+            "key": "NeterylRuins",
+            "kind": "location",
+            "reason": "Непроверенное утверждение снято с элемента: name"
+          },
+          {
+            "key": "WhiteCovenant",
+            "kind": "object",
+            "reason": "Текстовое сведение не подтверждено цитатой (поле name)"
+          },
+          {
+            "key": "WorldOfForgottenKingdom",
+            "kind": "location",
+            "reason": "Текстовое сведение не подтверждено цитатой (поле name)"
+          },
+          {
+            "key": "Chvinga",
+            "kind": "npc",
+            "reason": "description: Extra inputs are not permitted"
+          },
+          {
+            "key": "KoboldOfColdWind",
+            "kind": "npc",
+            "reason": "description: Extra inputs are not permitted"
+          },
+          {
+            "key": "VerbigMarauder",
+            "kind": "npc",
+            "reason": "description: Extra inputs are not permitted"
+          },
+          {
+            "key": "VerbigSpeedster",
+            "kind": "npc",
+            "reason": "description: Extra inputs are not permitted"
+          },
+          {
+            "key": "ZardrokSunDestroyer",
+            "kind": "npc",
+            "reason": "description: Extra inputs are not permitted"
+          },
+          {
+            "key": "AisarKronenstrom",
+            "kind": "npc",
+            "reason": "description: Extra inputs are not permitted"
+          },
+          {
+            "key": "YarundElkhardt",
+            "kind": "npc",
+            "reason": "description: Extra inputs are not permitted"
+          },
+          {
+            "key": "GunwaldHalragon",
+            "kind": "npc",
+            "reason": "description: Extra inputs are not permitted"
+          },
+          {
+            "key": "ByrnildSolvigsdotir",
+            "kind": "npc",
+            "reason": "description: Extra inputs are not permitted"
+          },
+          {
+            "key": "IceGiantSkeleton",
+            "kind": "npc",
+            "reason": "description: Extra inputs are not permitted"
+          },
+          {
+            "key": "SnowGolem",
+            "kind": "npc",
+            "reason": "description: Extra inputs are not permitted"
+          },
+          {
+            "key": "DullFannel",
+            "kind": "npc",
+            "reason": "description: Extra inputs are not permitted"
+          },
+          {
+            "key": "WalkerOfColdLight",
+            "kind": "npc",
+            "reason": "description: Extra inputs are not permitted"
+          },
+          {
+            "key": "ZardorokSunDestroyer",
+            "kind": "npc",
+            "reason": "name: Field required; description: Extra inputs are not permitted"
+          },
+          {
+            "key": "ten-towns",
+            "kind": "location",
+            "reason": "known: Extra inputs are not permitted"
+          },
+          {
+            "key": "ReghedNomadCamp",
+            "kind": "location",
+            "reason": "known: Extra inputs are not permitted"
+          },
+          {
+            "key": "reghed-glacier",
+            "kind": "location",
+            "reason": "known: Extra inputs are not permitted"
+          },
+          {
+            "key": "Itryn",
+            "kind": "location",
+            "reason": "known: Extra inputs are not permitted"
+          },
+          {
+            "key": "MagicalBrotherhood",
+            "kind": "npc",
+            "reason": "name: Field required; facts: Extra inputs are not permitted"
+          },
+          {
+            "key": "NeterylRuins",
+            "kind": "location",
+            "reason": "known: Extra inputs are not permitted"
+          },
+          {
+            "key": "DolinaLedyanogoVetra",
+            "kind": "location",
+            "reason": "known: Extra inputs are not permitted"
+          },
+          {
+            "key": "Oril",
+            "kind": "npc",
+            "reason": "Местонахождение NPC не подтверждено источником"
+          },
+          {
+            "key": "Chardalyn",
+            "kind": "object",
+            "reason": "Неизвестная локация объекта"
+          },
+          {
+            "key": null,
+            "kind": "ruleset",
+            "reason": "Редакция исходного текста: dnd2014; механика игры: dnd2024. Текст сохраняется как есть, механика считается по dnd2024."
+          },
+          {
+            "key": null,
+            "kind": "start",
+            "reason": "Место начала не названо материалом; Мастер уточнит его в диалоге"
+          },
+          {
+            "key": null,
+            "kind": "coverage",
+            "reason": "Анализатор отметил то, чего книга не печатает; сведение показано как адаптация"
+          },
+          {
+            "key": "printed-3416d71e828c24f0",
+            "kind": "opponent",
+            "reason": "Противнику не назначено подтверждённое место"
+          },
+          {
+            "key": "printed-assassin",
+            "kind": "opponent",
+            "reason": "Противнику не назначено подтверждённое место"
+          },
+          {
+            "key": "printed-3535ca350659d602",
+            "kind": "opponent",
+            "reason": "Противнику не назначено подтверждённое место"
+          },
+          {
+            "key": "printed-priest",
+            "kind": "opponent",
+            "reason": "Противнику не назначено подтверждённое место"
+          },
+          {
+            "key": "printed-veteran",
+            "kind": "opponent",
+            "reason": "Противнику не назначено подтверждённое место"
+          },
+          {
+            "key": "printed-bandit",
+            "kind": "opponent",
+            "reason": "Противнику не назначено подтверждённое место"
+          },
+          {
+            "key": "printed-acolyte",
+            "kind": "opponent",
+            "reason": "Противнику не назначено подтверждённое место"
+          },
+          {
+            "key": "printed-commoner",
+            "kind": "opponent",
+            "reason": "Противнику не назначено подтверждённое место"
+          },
+          {
+            "key": "printed-a55ef3b3ea2382ba",
+            "kind": "opponent",
+            "reason": "Противнику не назначено подтверждённое место"
+          },
+          {
+            "key": "printed-cc32083fe81cde32",
+            "kind": "opponent",
+            "reason": "Противнику не назначено подтверждённое место"
+          },
+          {
+            "key": "printed-e82e89fc34d71c1c",
+            "kind": "opponent",
+            "reason": "Противнику не назначено подтверждённое место"
+          },
+          {
+            "key": "printed-cultist",
+            "kind": "opponent",
+            "reason": "Противнику не назначено подтверждённое место"
+          },
+          {
+            "key": "printed-ffa09687e56ec33d",
+            "kind": "opponent",
+            "reason": "Противнику не назначено подтверждённое место"
+          },
+          {
+            "key": "printed-bd33ee22ffeb7032",
+            "kind": "opponent",
+            "reason": "Противнику не назначено подтверждённое место"
+          },
+          {
+            "key": "printed-scout",
+            "kind": "opponent",
+            "reason": "Противнику не назначено подтверждённое место"
+          },
+          {
+            "key": "printed-e1fc6af23d2e3455",
+            "kind": "opponent",
+            "reason": "Противнику не назначено подтверждённое место"
+          },
+          {
+            "key": "printed-5749e118e77fd64b",
+            "kind": "opponent",
+            "reason": "Противнику не назначено подтверждённое место"
+          },
+          {
+            "key": "printed-8655d71d2e972e98",
+            "kind": "opponent",
+            "reason": "Противнику не назначено подтверждённое место"
+          }
+        ],
+        "blocked_groups": {
+          "total": 55,
+          "groups": 20,
+          "shown": [
+            {
+              "kind": "opponent",
+              "label": "противников",
+              "reason": "Противнику не назначено подтверждённое место",
+              "count": 18,
+              "detail": ""
+            },
+            {
+              "kind": "npc",
+              "label": "персонажей",
+              "reason": "description: Extra inputs are not permitted",
+              "count": 13,
+              "detail": ""
+            },
+            {
+              "kind": "location",
+              "label": "мест",
+              "reason": "known: Extra inputs are not permitted",
+              "count": 6,
+              "detail": ""
+            },
+            {
+              "kind": "location",
+              "label": "мест",
+              "reason": "Непроверенное утверждение снято с элемента: name",
+              "count": 2,
+              "detail": ""
+            },
+            {
+              "kind": "coverage",
+              "label": "пометок анализатора",
+              "reason": "Анализатор отметил то, чего книга не печатает; сведение показано как адаптация",
+              "count": 1,
+              "detail": ""
+            },
+            {
+              "kind": "location",
+              "label": "мест",
+              "reason": "Непроверенное утверждение снято с элемента: description",
+              "count": 1,
+              "detail": ""
+            },
+            {
+              "kind": "location",
+              "label": "мест",
+              "reason": "Непроверенное утверждение снято с элемента: description, name",
+              "count": 1,
+              "detail": ""
+            },
+            {
+              "kind": "location",
+              "label": "мест",
+              "reason": "Текстовое сведение не подтверждено цитатой (поле name)",
+              "count": 1,
+              "detail": ""
+            }
+          ],
+          "hidden": 12
+        }
+      }
+    },
+    {
+      "state": "r239: partial, глава собрана",
+      "status": "partial",
+      "playable": 1,
+      "http": 200,
+      "body": {
+        "scope": "world",
+        "ready": false,
+        "world_ready": true,
+        "run_id": "2e18c595-58bd-4b68-9bb0-a45a821b7bfb",
+        "revision": 5,
+        "minimum_level": null,
+        "maximum_level": null,
+        "recommended_party": null,
+        "hero_level": null,
+        "source_ruleset": "dnd2014",
+        "mechanics_ruleset": "dnd2024",
+        "reasons": [
+          "Подтвердите проверенный мир отдельно."
+        ],
+        "blocked_operations": [
+          {
+            "key": "Oril",
+            "kind": "npc",
+            "reason": "Непроверенное утверждение снято с элемента: description"
+          },
+          {
+            "key": "OrilFrostGoddess",
+            "kind": "npc",
+            "reason": "Противоречивые версии одного элемента"
+          },
+          {
+            "key": "ZardorokSunDestroyer",
+            "kind": "npc",
+            "reason": "Непроверенное утверждение снято с элемента: name"
+          },
+          {
+            "key": "ten-towns",
+            "kind": "location",
+            "reason": "Непроверенное утверждение снято с элемента: description, name"
+          },
+          {
+            "key": "reghed-glacier",
+            "kind": "location",
+            "reason": "Непроверенное утверждение снято с элемента: name"
+          },
+          {
+            "key": "Itryn",
+            "kind": "location",
+            "reason": "Непроверенное утверждение снято с элемента: description"
+          },
+          {
+            "key": "Chardalyn",
+            "kind": "object",
+            "reason": "Непроверенное утверждение снято с элемента: description"
+          },
+          {
+            "key": "MagicalBrotherhood",
+            "kind": "npc",
+            "reason": "Непроверенное утверждение снято с элемента: description, name"
+          },
+          {
+            "key": "NeterylRuins",
+            "kind": "location",
+            "reason": "Непроверенное утверждение снято с элемента: name"
+          },
+          {
+            "key": "WhiteCovenant",
+            "kind": "object",
+            "reason": "Текстовое сведение не подтверждено цитатой (поле name)"
+          },
+          {
+            "key": "WorldOfForgottenKingdom",
+            "kind": "location",
+            "reason": "Текстовое сведение не подтверждено цитатой (поле name)"
+          },
+          {
+            "key": "Chvinga",
+            "kind": "npc",
+            "reason": "description: Extra inputs are not permitted"
+          },
+          {
+            "key": "KoboldOfColdWind",
+            "kind": "npc",
+            "reason": "description: Extra inputs are not permitted"
+          },
+          {
+            "key": "VerbigMarauder",
+            "kind": "npc",
+            "reason": "description: Extra inputs are not permitted"
+          },
+          {
+            "key": "VerbigSpeedster",
+            "kind": "npc",
+            "reason": "description: Extra inputs are not permitted"
+          },
+          {
+            "key": "ZardrokSunDestroyer",
+            "kind": "npc",
+            "reason": "description: Extra inputs are not permitted"
+          },
+          {
+            "key": "AisarKronenstrom",
+            "kind": "npc",
+            "reason": "description: Extra inputs are not permitted"
+          },
+          {
+            "key": "YarundElkhardt",
+            "kind": "npc",
+            "reason": "description: Extra inputs are not permitted"
+          },
+          {
+            "key": "GunwaldHalragon",
+            "kind": "npc",
+            "reason": "description: Extra inputs are not permitted"
+          },
+          {
+            "key": "ByrnildSolvigsdotir",
+            "kind": "npc",
+            "reason": "description: Extra inputs are not permitted"
+          },
+          {
+            "key": "IceGiantSkeleton",
+            "kind": "npc",
+            "reason": "description: Extra inputs are not permitted"
+          },
+          {
+            "key": "SnowGolem",
+            "kind": "npc",
+            "reason": "description: Extra inputs are not permitted"
+          },
+          {
+            "key": "DullFannel",
+            "kind": "npc",
+            "reason": "description: Extra inputs are not permitted"
+          },
+          {
+            "key": "WalkerOfColdLight",
+            "kind": "npc",
+            "reason": "description: Extra inputs are not permitted"
+          },
+          {
+            "key": "ZardorokSunDestroyer",
+            "kind": "npc",
+            "reason": "name: Field required; description: Extra inputs are not permitted"
+          },
+          {
+            "key": "ten-towns",
+            "kind": "location",
+            "reason": "known: Extra inputs are not permitted"
+          },
+          {
+            "key": "ReghedNomadCamp",
+            "kind": "location",
+            "reason": "known: Extra inputs are not permitted"
+          },
+          {
+            "key": "reghed-glacier",
+            "kind": "location",
+            "reason": "known: Extra inputs are not permitted"
+          },
+          {
+            "key": "Itryn",
+            "kind": "location",
+            "reason": "known: Extra inputs are not permitted"
+          },
+          {
+            "key": "MagicalBrotherhood",
+            "kind": "npc",
+            "reason": "name: Field required; facts: Extra inputs are not permitted"
+          },
+          {
+            "key": "NeterylRuins",
+            "kind": "location",
+            "reason": "known: Extra inputs are not permitted"
+          },
+          {
+            "key": "DolinaLedyanogoVetra",
+            "kind": "location",
+            "reason": "known: Extra inputs are not permitted"
+          },
+          {
+            "key": "Oril",
+            "kind": "npc",
+            "reason": "Местонахождение NPC не подтверждено источником"
+          },
+          {
+            "key": "Chardalyn",
+            "kind": "object",
+            "reason": "Неизвестная локация объекта"
+          },
+          {
+            "key": null,
+            "kind": "ruleset",
+            "reason": "Редакция исходного текста: dnd2014; механика игры: dnd2024. Текст сохраняется как есть, механика считается по dnd2024."
+          },
+          {
+            "key": null,
+            "kind": "start",
+            "reason": "Место начала не названо материалом; Мастер уточнит его в диалоге"
+          },
+          {
+            "key": null,
+            "kind": "coverage",
+            "reason": "Анализатор отметил то, чего книга не печатает; сведение показано как адаптация"
+          },
+          {
+            "key": "printed-3416d71e828c24f0",
+            "kind": "opponent",
+            "reason": "Противнику не назначено подтверждённое место"
+          },
+          {
+            "key": "printed-assassin",
+            "kind": "opponent",
+            "reason": "Противнику не назначено подтверждённое место"
+          },
+          {
+            "key": "printed-3535ca350659d602",
+            "kind": "opponent",
+            "reason": "Противнику не назначено подтверждённое место"
+          },
+          {
+            "key": "printed-priest",
+            "kind": "opponent",
+            "reason": "Противнику не назначено подтверждённое место"
+          },
+          {
+            "key": "printed-veteran",
+            "kind": "opponent",
+            "reason": "Противнику не назначено подтверждённое место"
+          },
+          {
+            "key": "printed-bandit",
+            "kind": "opponent",
+            "reason": "Противнику не назначено подтверждённое место"
+          },
+          {
+            "key": "printed-acolyte",
+            "kind": "opponent",
+            "reason": "Противнику не назначено подтверждённое место"
+          },
+          {
+            "key": "printed-commoner",
+            "kind": "opponent",
+            "reason": "Противнику не назначено подтверждённое место"
+          },
+          {
+            "key": "printed-a55ef3b3ea2382ba",
+            "kind": "opponent",
+            "reason": "Противнику не назначено подтверждённое место"
+          },
+          {
+            "key": "printed-cc32083fe81cde32",
+            "kind": "opponent",
+            "reason": "Противнику не назначено подтверждённое место"
+          },
+          {
+            "key": "printed-e82e89fc34d71c1c",
+            "kind": "opponent",
+            "reason": "Противнику не назначено подтверждённое место"
+          },
+          {
+            "key": "printed-cultist",
+            "kind": "opponent",
+            "reason": "Противнику не назначено подтверждённое место"
+          },
+          {
+            "key": "printed-ffa09687e56ec33d",
+            "kind": "opponent",
+            "reason": "Противнику не назначено подтверждённое место"
+          },
+          {
+            "key": "printed-bd33ee22ffeb7032",
+            "kind": "opponent",
+            "reason": "Противнику не назначено подтверждённое место"
+          },
+          {
+            "key": "printed-scout",
+            "kind": "opponent",
+            "reason": "Противнику не назначено подтверждённое место"
+          },
+          {
+            "key": "printed-e1fc6af23d2e3455",
+            "kind": "opponent",
+            "reason": "Противнику не назначено подтверждённое место"
+          },
+          {
+            "key": "printed-5749e118e77fd64b",
+            "kind": "opponent",
+            "reason": "Противнику не назначено подтверждённое место"
+          },
+          {
+            "key": "printed-8655d71d2e972e98",
+            "kind": "opponent",
+            "reason": "Противнику не назначено подтверждённое место"
+          }
+        ],
+        "blocked_groups": {
+          "total": 55,
+          "groups": 20,
+          "shown": [
+            {
+              "kind": "opponent",
+              "label": "противников",
+              "reason": "Противнику не назначено подтверждённое место",
+              "count": 18,
+              "detail": ""
+            },
+            {
+              "kind": "npc",
+              "label": "персонажей",
+              "reason": "description: Extra inputs are not permitted",
+              "count": 13,
+              "detail": ""
+            },
+            {
+              "kind": "location",
+              "label": "мест",
+              "reason": "known: Extra inputs are not permitted",
+              "count": 6,
+              "detail": ""
+            },
+            {
+              "kind": "location",
+              "label": "мест",
+              "reason": "Непроверенное утверждение снято с элемента: name",
+              "count": 2,
+              "detail": ""
+            },
+            {
+              "kind": "coverage",
+              "label": "пометок анализатора",
+              "reason": "Анализатор отметил то, чего книга не печатает; сведение показано как адаптация",
+              "count": 1,
+              "detail": ""
+            },
+            {
+              "kind": "location",
+              "label": "мест",
+              "reason": "Непроверенное утверждение снято с элемента: description",
+              "count": 1,
+              "detail": ""
+            },
+            {
+              "kind": "location",
+              "label": "мест",
+              "reason": "Непроверенное утверждение снято с элемента: description, name",
+              "count": 1,
+              "detail": ""
+            },
+            {
+              "kind": "location",
+              "label": "мест",
+              "reason": "Текстовое сведение не подтверждено цитатой (поле name)",
+              "count": 1,
+              "detail": ""
+            }
+          ],
+          "hidden": 12
+        }
+      }
+    },
+    {
+      "state": "partial без отметки «можно играть»",
+      "status": "partial",
+      "playable": 0,
+      "http": 200,
+      "body": {
+        "scope": "world",
+        "ready": false,
+        "world_ready": false,
+        "revision": 5,
+        "reasons": [
+          "Подготовка не завершена: 96 / 96. Продолжите сохранённые блоки."
+        ],
+        "blocked_operations": []
+      }
+    }
+  ]
+}

@@ -1,0 +1,296 @@
+/* r234 — полоса подготовки книги в языке «Стол и лист».
+   Это НЕ код приложения. Файл существует, чтобы кодер увидел те же числа, что
+   записаны в SPEC.md, и перенёс блок «ПАНЕЛЬ» в web/prepare-progress.css
+   один к одному. Ниже блока «ОБЗОРНЫЙ ЛИСТ» — только витрина макета.
+
+   Правила языка (те же, что у принятых r224/r231):
+   • ноль градиентов, теней, размытий и полупрозрачных подложек;
+   • один радиус 2 px, кромка — волосяная линия 1 px;
+   • шкала отступов 4 px; 2 и 6 px — только внутри пары (оптическая связка);
+   • цвета — из web/design-tokens.css. Копия нужных токенов лежит ниже, чтобы
+     макет открывался с диска без сервера; в приложении берётся готовый файл. */
+
+/* ── Шрифты приложения (web/visual/fonts, SIL OFL) ──────────────────────── */
+@font-face{
+  font-family:"Book";src:url("../../web/visual/fonts/book-regular.ttf") format("truetype");
+  font-weight:300 800;font-style:normal;font-display:swap;
+}
+@font-face{
+  font-family:"Book";src:url("../../web/visual/fonts/book-italic.ttf") format("truetype");
+  font-weight:300 800;font-style:italic;font-display:swap;
+}
+@font-face{
+  font-family:"UI";src:url("../../web/visual/fonts/ui-regular.ttf") format("truetype");
+  font-weight:400;font-style:normal;font-display:swap;
+}
+@font-face{
+  font-family:"UI";src:url("../../web/visual/fonts/ui-bold.ttf") format("truetype");
+  font-weight:700;font-style:normal;font-display:swap;
+}
+
+/* ── Токены: значения web/design-tokens.css, без новых цветов ─────────────
+   Имена — из нового языка (--candle, --moss, --text-3, --sheet-*), а не из
+   старого словаря оболочки (--muted, --accent, --gold): в design-tokens.css
+   они помечены как «словарь оболочки до r223», их значения холоднее стола и
+   выдают панель за чужую деталь. --gold/--accent/--muted в новой панели не
+   используются — см. SPEC.md, §2. ─────────────────────────────────────────── */
+:root{
+  color-scheme:dark;
+  --bg:#101210;
+  --sheet-bg:#1E1A14;
+  --sheet-bg-2:#221D16;
+  --sheet-line:#3A3128;
+  --sheet-line-soft:#2E2720;
+  --line:#332B22;
+  --line-strong:#4A3E30;
+  --text:#EDE3CE;
+  --text-2:#BEB097;
+  --text-3:#A2957B;
+  --candle:#D8A05C;         /* медный акцент: заливка, корешок, «сейчас» */
+  --moss:#8FA97A;           /* успех: можно играть, готово */
+  --ember:#D9704F;          /* сбой: засечка и плашка */
+  --out-miss:#D9704F;       /* плашка сбоя = вердикт промаха */
+  --out-miss-ink:#170C07;   /* 5.84:1 на меди — пара из брифа */
+
+  --s1:4px;--s2:8px;--s3:12px;--s4:16px;--s5:24px;--s6:32px;
+  --radius:2px;
+  --measure:660px;
+  --font-ui:"UI","PT Sans",-apple-system,"Segoe UI",Roboto,sans-serif;
+  --font-book:"Book","EB Garamond",Georgia,"Times New Roman",serif;
+}
+[data-theme="light"]{
+  color-scheme:light;
+  --bg:#F3ECE0;
+  --sheet-bg:#FBF5E8;
+  --sheet-bg-2:#F6EEDF;
+  --sheet-line:#DCCBA9;
+  --sheet-line-soft:#E9DDC6;
+  --line:#D9CBAF;
+  --line-strong:#B49F7D;
+  --text:#2A231A;
+  --text-2:#57483A;
+  --text-3:#6A5740;
+  --candle:#8A5714;         /* 5.18:1 — годится и в текст, и в линию */
+  --moss:#476127;
+  --ember:#A33C22;
+  --out-miss:#C86A4C;       /* светлая плашка сбоя — как вердикт промаха */
+  --out-miss-ink:#1A0C06;   /* 5.11:1 */
+}
+
+*,*::before,*::after{box-sizing:border-box}
+
+/* ══ ПАНЕЛЬ ═══════════════════════════════════════════════════════════════ */
+/* Лист на столе: кромка 1 px, слева корешок 3 px. Корешок — единственный
+   цветовой сигнал состояния: свеча (идёт), зелень (можно играть/готово),
+   медь (сбой), линия (остановлено). Больше ни один элемент панели не
+   перекрашивается целиком. */
+.prep-panel{
+  display:grid;grid-template-columns:minmax(0,1fr);
+  gap:0;
+  width:100%;max-width:var(--measure);
+  margin:0;padding:var(--s4) var(--s4) var(--s4) calc(var(--s4) - 2px);
+  background:var(--sheet-bg);
+  border:1px solid var(--sheet-line);
+  border-left:3px solid var(--candle);
+  border-radius:var(--radius);
+  color:var(--text);
+  font-family:var(--font-ui);
+}
+
+/* ── Шапка: надзаголовок панели и часы, под ними — что делаю сейчас ────── */
+.prep-head{
+  display:grid;grid-template-columns:minmax(0,1fr) auto;
+  align-items:baseline;column-gap:var(--s3);
+}
+.prep-eyebrow{
+  margin:0;
+  font:500 14px/1.3 var(--font-ui);
+  letter-spacing:.12em;text-transform:uppercase;
+  color:var(--text-3);
+}
+.prep-clock{
+  margin:0;justify-self:end;
+  font:500 14px/1.2 var(--font-ui);
+  color:var(--text-3);font-variant-numeric:tabular-nums;
+  white-space:nowrap;
+}
+.prep-title{
+  grid-column:1 / -1;margin:6px 0 0;
+  font:400 20px/1.2 var(--font-book);
+  color:var(--text);
+  letter-spacing:.002em;
+  overflow-wrap:anywhere;
+}
+
+/* ── Путь: чтение → разбор → сборка. Пройденное — чернилами, текущий шаг —
+   свечой с подчёркиванием, впереди — служебным цветом. ─────────────────── */
+.prep-steps{
+  display:flex;align-items:baseline;flex-wrap:wrap;
+  gap:var(--s1) var(--s2);
+  margin:var(--s2) 0 0;padding:0;
+  font:500 14px/1.35 var(--font-ui);
+  color:var(--text-3);
+}
+.prep-step{padding-bottom:2px;border-bottom:1px solid transparent}
+.prep-step.is-done{color:var(--text-2)}
+.prep-step.is-current{color:var(--candle);border-bottom-color:var(--candle)}
+.prep-arrow{
+  color:var(--line-strong);
+  font:400 14px/1 var(--font-ui);
+  transform:translateY(-1px);
+}
+
+/* ── Линейка: полоса 10 px между двумя волосяными линиями. Пустая часть —
+   это лист, а не серая колодка: заливка только там, где прочитано. На
+   переднем крае — закладка 2×16 px, единственное, что движется помимо
+   самой заливки. ──────────────────────────────────────────────────────── */
+.prep-bar{
+  position:relative;height:12px;margin:var(--s3) 0 0;
+  border-top:1px solid var(--line-strong);
+  border-bottom:1px solid var(--line-strong);
+  overflow:visible;
+}
+.prep-fill{
+  position:absolute;left:0;top:0;bottom:0;width:0;
+  background:var(--candle);
+  border-radius:0;
+  transition:width .4s ease-out;
+}
+.prep-fill::after{               /* закладка на переднем крае */
+  content:"";position:absolute;right:-1px;top:-3px;
+  width:2px;height:16px;background:var(--candle);
+}
+.prep-panel[data-empty] .prep-fill::after{content:none}
+
+/* ── Засечки блоков: стежки 4 px по нижнему краю листа. Готово — свеча,
+   сейчас — контур свечой, который дышит, сбой — медь, впереди — кромка
+   листа. ──────────────────────────────────────────────────────────────── */
+.prep-ticks{display:flex;gap:2px;margin:var(--s2) 0 0;height:4px}
+.prep-tick{
+  flex:1 1 0;min-width:2px;height:4px;box-sizing:border-box;
+  background:var(--line-strong);
+  border-radius:0;
+  transition:background-color .3s ease;
+}
+.prep-tick.is-done{background:var(--candle)}
+/* «Сейчас» — не залитый стежок, а намеченный: контур 1 px. Так готовое и
+   текущее различаются в статике и при reduced-motion, а не только дыханием. */
+.prep-tick.is-active{background:transparent;border:1px solid var(--candle);animation:prep-flame 2.4s ease-in-out infinite}
+.prep-tick.is-failed{background:var(--ember)}
+@keyframes prep-flame{50%{opacity:.45}}
+
+/* ── Фраза: заметка на полях — курсив книги, не интерфейс. Поле на две
+   строки зарезервировано заранее: смена фразы не двигает панель. ──────── */
+.prep-caption{
+  margin:var(--s4) 0 0;padding:0;
+  min-height:calc(2 * 1.45em);
+  font:italic 400 16px/1.45 var(--font-book);
+  color:var(--text-2);
+  overflow-wrap:anywhere;
+  opacity:0;transform:translateY(2px);
+  transition:opacity .35s ease,transform .35s ease;
+}
+.prep-caption.is-in{opacity:1;transform:none}
+
+/* ── Числа: часть, остаток. Служебная строка, но не мельче 14 px. Каждый
+   кусок не рвётся внутри себя — перенос только между кусками. ──────────── */
+.prep-meta{
+  display:flex;flex-wrap:wrap;gap:2px var(--s2);
+  margin:6px 0 0;padding:0;
+  font:400 14px/1.45 var(--font-ui);
+  color:var(--text-3);font-variant-numeric:tabular-nums;
+}
+.prep-meta span{white-space:nowrap}
+.prep-meta .sep{color:var(--line-strong)}
+
+/* ── Сбой: медная плашка с тёмными чернилами — та же модель, что у вердикта
+   броска (design-table.css, .board__token--foe). Появляется один раз и
+   остаётся до конца подготовки; отдельного «красного текста» нет. ─────── */
+.prep-alert{
+  justify-self:start;max-width:100%;
+  margin:var(--s3) 0 0;padding:var(--s1) var(--s2);
+  background:var(--out-miss);color:var(--out-miss-ink);
+  border-radius:var(--radius);
+  font:700 14px/1.35 var(--font-ui);
+  text-wrap:balance;   /* на 375 две строки делятся пополам, а не «…идут / дальше.» */
+}
+.prep-alert[hidden]{display:none}
+
+/* ── Состояния ─────────────────────────────────────────────────────────── */
+.prep-panel.is-stopped{border-left-color:var(--line-strong)}
+.prep-panel.is-stopped .prep-tick.is-active{animation:none;opacity:1}
+
+/* Глава 1 собрана — играть можно, книга ещё читается. */
+.prep-panel.is-playable{border-left-color:var(--moss)}
+.prep-panel.is-playable .prep-meta{color:var(--text-2)}
+
+/* Готово: панель один раз меняет высоту — убирает строку фразы. */
+.prep-panel.is-finished{border-left-color:var(--moss)}
+.prep-panel.is-finished .prep-title{color:var(--moss)}
+.prep-panel.is-finished .prep-caption{display:none}
+.prep-panel.is-finished .prep-meta{color:var(--text-2)}
+/* Сбой во время работы: корешок остаётся свечным, сигналят только засечки и
+   плашка. Медь в корешке, надзаголовке и заголовке — вердикт КОНЦА, поэтому
+   правило требует обоих классов: is-finished.is-failed. */
+.prep-panel.is-finished.is-failed{border-left-color:var(--ember)}
+.prep-panel.is-finished.is-failed .prep-title{color:var(--ember)}
+.prep-panel.is-finished.is-failed .prep-eyebrow{color:var(--ember)}
+
+/* ── Стол шире: тот же лист, крупнее кегли, воздух 24 ──────────────────── */
+@media (min-width:720px){
+  .prep-panel{padding:var(--s5) var(--s5) var(--s5) calc(var(--s5) - 2px)}
+  .prep-title{font-size:22px}
+  .prep-caption{font-size:17px;min-height:1.45em}
+}
+
+/* ── Сдержанное движение: анимируются только заливка, засечки и приход
+   фразы. При reduce всё стоит. ─────────────────────────────────────────── */
+@media (prefers-reduced-motion:reduce){
+  .prep-fill{transition:none}
+  .prep-tick{transition:none}
+  .prep-tick.is-active{animation:none;opacity:1}
+  .prep-caption{transition:none;opacity:1;transform:none}
+}
+
+/* ══ ОБЗОРНЫЙ ЛИСТ (к приложению не относится) ════════════════════════════ */
+html{background:var(--bg);color-scheme:dark light}
+body{
+  margin:0;background:var(--bg);color:var(--text);
+  font:400 14px/1.5 var(--font-ui);
+  -webkit-font-smoothing:antialiased;
+}
+
+.view__head{
+  display:flex;flex-wrap:wrap;align-items:baseline;gap:var(--s2) var(--s4);
+  padding:var(--s4) var(--s4) var(--s3);
+  border-bottom:1px solid var(--line);
+}
+.view__head b{font:700 15px/1.3 var(--font-ui)}
+.view__head span{color:var(--text-2)}
+.view__head a{color:var(--candle);text-decoration:none;border-bottom:1px solid var(--line-strong);padding-bottom:1px}
+.view__head a:hover{border-bottom-color:var(--candle)}
+
+.stage{padding:var(--s5) var(--s4) var(--s6)}
+.scenes{display:grid;gap:var(--s5);margin:0 auto;max-width:var(--measure)}
+.scene{margin:0}
+.scene__label{
+  margin:0 0 var(--s2);
+  font:400 14px/1.4 var(--font-ui);color:var(--text-3);
+}
+.scene__label b{color:var(--text-2);font-weight:700}
+@media (min-width:720px){
+  .stage{padding:var(--s5) var(--s6) var(--s6)}
+  .scenes{gap:var(--s6)}
+}
+
+/* витрина: четыре живых кадра */
+.wall{padding:var(--s5);display:grid;gap:var(--s6)}
+.wall__head{max-width:1100px}
+.wall__head h1{margin:0 0 var(--s2);font:400 30px/1.15 var(--font-book);color:var(--text)}
+.wall__head p{margin:0 0 var(--s2);font:400 14px/1.55 var(--font-ui);color:var(--text-2);max-width:76ch}
+.wall__head p b{color:var(--text)}
+.wall__row{display:flex;flex-wrap:wrap;gap:var(--s5);align-items:flex-start}
+.frame{margin:0}
+.frame figcaption{margin:0 0 var(--s2);font:500 14px/1.4 var(--font-ui);color:var(--text-3)}
+.frame figcaption a{color:var(--candle);text-decoration:none;border-bottom:1px solid var(--line-strong)}
+.frame iframe{display:block;border:1px solid var(--line-strong);background:var(--bg)}

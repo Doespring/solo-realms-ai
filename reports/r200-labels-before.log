@@ -1,0 +1,31 @@
+FF                                                                       [100%]
+=================================== FAILURES ===================================
+E   AssertionError: failure codes shown to the player in English: ['heavy_armor', 'raging']
+    assert ['heavy_armor', 'raging'] == []
+      
+      Left contains 2 more items, first extra item: 'heavy_armor'
+      Use -v to get more diff
+/home/hermes/projects/SoloRealmsAI-Nat20/tests/test_nat20_item_movement_and_initiative.py:1876: AssertionError: failure codes shown to the player in English: ['heavy_armor', 'raging']
+E   AssertionError: slugs shown to player in English: ['drop_prone', 'heavy_armor', 'raging']
+    assert {'drop_prone'...or', 'raging'} == set()
+      
+      Extra items in the left set:
+      'drop_prone'
+      'heavy_armor'
+      'raging'
+      Use -v to get more diff
+/home/hermes/projects/SoloRealmsAI-Nat20/tests/test_nat20_item_movement_and_initiative.py:1895: AssertionError: slugs shown to player in English: ['drop_prone', 'heavy_armor', 'raging']
+=============================== warnings summary ===============================
+.venv/lib/python3.14/site-packages/lark/utils.py:176
+  /home/hermes/projects/SoloRealmsAI-Nat20/.venv/lib/python3.14/site-packages/lark/utils.py:176: DeprecationWarning: module 'sre_parse' is deprecated
+    import sre_parse
+
+.venv/lib/python3.14/site-packages/lark/utils.py:177
+  /home/hermes/projects/SoloRealmsAI-Nat20/.venv/lib/python3.14/site-packages/lark/utils.py:177: DeprecationWarning: module 'sre_constants' is deprecated
+    import sre_constants
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/test_nat20_item_movement_and_initiative.py::test_every_cast_failure_reason_has_russian_text
+FAILED tests/test_nat20_item_movement_and_initiative.py::test_no_slug_in_event_fields_reaches_the_player_in_english
+2 failed, 57 deselected, 2 warnings in 1.11s

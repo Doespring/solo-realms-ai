@@ -1,0 +1,201 @@
+{
+  "status": "blocked",
+  "ready": false,
+  "done": 7,
+  "total": 7,
+  "message": "Открытая стартовая сцена и её обязательные зависимости ещё не подтверждены. Продолжить можно после проверки конкретной сцены; исходники и блоки сохранены.",
+  "structure": {
+    "calls": 7,
+    "modes": {
+      "json_object": 7
+    },
+    "dropped_keys": 4,
+    "repairs": 0,
+    "duration_ms": 33091.38,
+    "sections": 7,
+    "answered_sections": 7,
+    "response_bytes": 131946,
+    "max_response_bytes": 30189,
+    "min_headroom": 0.6929,
+    "limit_hits": 0,
+    "split_sections": 0,
+    "output_limit_tokens": 2048,
+    "byte_limit": 98304,
+    "responses": [
+      {
+        "section": 1,
+        "status": "validated",
+        "bytes": 20310,
+        "calls": 1,
+        "tokens": 581,
+        "input_tokens": 6949,
+        "max_tokens": 2048,
+        "duration_ms": 5675.83,
+        "split_depth": 0,
+        "limit_code": null,
+        "byte_limit": 98304,
+        "headroom": 0.7934
+      },
+      {
+        "section": 2,
+        "status": "validated",
+        "bytes": 29788,
+        "calls": 1,
+        "tokens": 882,
+        "input_tokens": 6220,
+        "max_tokens": 2048,
+        "duration_ms": 6791.01,
+        "split_depth": 0,
+        "limit_code": null,
+        "byte_limit": 98304,
+        "headroom": 0.697
+      },
+      {
+        "section": 3,
+        "status": "validated",
+        "bytes": 28867,
+        "calls": 1,
+        "tokens": 849,
+        "input_tokens": 6565,
+        "max_tokens": 2048,
+        "duration_ms": 6799.65,
+        "split_depth": 0,
+        "limit_code": null,
+        "byte_limit": 98304,
+        "headroom": 0.7063
+      },
+      {
+        "section": 4,
+        "status": "validated",
+        "bytes": 30189,
+        "calls": 1,
+        "tokens": 880,
+        "input_tokens": 6883,
+        "max_tokens": 2048,
+        "duration_ms": 6696.4,
+        "split_depth": 0,
+        "limit_code": null,
+        "byte_limit": 98304,
+        "headroom": 0.6929
+      },
+      {
+        "section": 5,
+        "status": "validated",
+        "bytes": 5235,
+        "calls": 1,
+        "tokens": 115,
+        "input_tokens": 7013,
+        "max_tokens": 2048,
+        "duration_ms": 1895.08,
+        "split_depth": 0,
+        "limit_code": null,
+        "byte_limit": 98304,
+        "headroom": 0.9467
+      },
+      {
+        "section": 6,
+        "status": "validated",
+        "bytes": 5213,
+        "calls": 1,
+        "tokens": 122,
+        "input_tokens": 6628,
+        "max_tokens": 2048,
+        "duration_ms": 1679.59,
+        "split_depth": 0,
+        "limit_code": null,
+        "byte_limit": 98304,
+        "headroom": 0.947
+      },
+      {
+        "section": 7,
+        "status": "validated",
+        "bytes": 12344,
+        "calls": 1,
+        "tokens": 323,
+        "input_tokens": 7322,
+        "max_tokens": 2048,
+        "duration_ms": 3553.82,
+        "split_depth": 0,
+        "limit_code": null,
+        "byte_limit": 98304,
+        "headroom": 0.8744
+      }
+    ],
+    "responses_total": 7
+  },
+  "errors": [],
+  "cost": {
+    "spent": [
+      [
+        "RUB",
+        0.4136
+      ]
+    ],
+    "calls": 7
+  },
+  "sections": [
+    {
+      "section": 1,
+      "bytes": 20310,
+      "limit": 98304,
+      "headroom": 0.7934,
+      "calls": 1,
+      "depth": 0,
+      "limit_code": null
+    },
+    {
+      "section": 2,
+      "bytes": 29788,
+      "limit": 98304,
+      "headroom": 0.697,
+      "calls": 1,
+      "depth": 0,
+      "limit_code": null
+    },
+    {
+      "section": 3,
+      "bytes": 28867,
+      "limit": 98304,
+      "headroom": 0.7063,
+      "calls": 1,
+      "depth": 0,
+      "limit_code": null
+    },
+    {
+      "section": 4,
+      "bytes": 30189,
+      "limit": 98304,
+      "headroom": 0.6929,
+      "calls": 1,
+      "depth": 0,
+      "limit_code": null
+    },
+    {
+      "section": 5,
+      "bytes": 5235,
+      "limit": 98304,
+      "headroom": 0.9467,
+      "calls": 1,
+      "depth": 0,
+      "limit_code": null
+    },
+    {
+      "section": 6,
+      "bytes": 5213,
+      "limit": 98304,
+      "headroom": 0.947,
+      "calls": 1,
+      "depth": 0,
+      "limit_code": null
+    },
+    {
+      "section": 7,
+      "bytes": 12344,
+      "limit": 98304,
+      "headroom": 0.8744,
+      "calls": 1,
+      "depth": 0,
+      "limit_code": null
+    }
+  ]
+}

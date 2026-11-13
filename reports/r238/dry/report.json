@@ -1,0 +1,65 @@
+{
+  "document": "fed0a540d18504088dfa17217e3f92ebebdab342f6f1de526bd8ddd8ec4202c3",
+  "name": "Out of the Abyss RUS.pdf",
+  "pages": 12,
+  "characters": 48763,
+  "run": "09c53311-ee62-433e-b1e6-27b8d4d4fe59",
+  "status": "failed",
+  "done": 14,
+  "total": 14,
+  "message": "Подготовка не завершена. Исходники сохранены; проверьте подключение, лимит расходов или повторите попытку.",
+  "before": {
+    "state": {
+      "status": "running",
+      "done": 2,
+      "total": 10,
+      "worker": "2397864-894459fa",
+      "heartbeat": 1793877995.4253325,
+      "message": "Обработаны блоки: 2 / 10. Результаты сохранены.",
+      "validated": 2
+    },
+    "calls": {
+      "total": 3,
+      "ok": 2,
+      "invalid": 0,
+      "limit": 0,
+      "spent": 0.0545
+    }
+  },
+  "after": {
+    "state": {
+      "status": "failed",
+      "done": 14,
+      "total": 14,
+      "worker": "",
+      "heartbeat": 1793878288.8792322,
+      "message": "Подготовка не завершена. Исходники сохранены; проверьте подключение, лимит расходов или повторите попытку.",
+      "validated": 18
+    },
+    "calls": {
+      "total": 27,
+      "ok": 23,
+      "invalid": 0,
+      "limit": 3,
+      "spent": 2.1298
+    }
+  },
+  "calls_after_restart": 24,
+  "blocks_remaining_at_restart": 8,
+  "raised": [
+    "r238: поднял после перезапуска 1 прогон(ов) подготовки: 09c53311-ee62-433e-b1e6-27b8d4d4fe59"
+  ],
+  "retry": {
+    "done": 18,
+    "total": 18,
+    "pending": 0,
+    "failed": 0,
+    "exhausted": 0,
+    "can_retry": false,
+    "blocks": []
+  },
+  "refuse_share": 0.0,
+  "limit_share": 0.111,
+  "calls_per_block": 1.93,
+  "watchdog_log": []
+}

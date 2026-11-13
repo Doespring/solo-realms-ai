@@ -1,0 +1,36 @@
+{
+ "port": 55535,
+ "quiet_ms": [
+  12.861041992437094,
+  13.6501369997859,
+  15.73956897482276,
+  22.215445002075285,
+  33.410912030376494
+ ],
+ "rows": [
+  {
+   "turn_status": 200,
+   "turn_seconds": 2.442529777996242,
+   "scene_status": 200,
+   "scene_seconds": 0.08212791802361608,
+   "scene_bytes": 15,
+   "scene_version": 1
+  },
+  {
+   "turn_status": 200,
+   "turn_seconds": 2.219742588000372,
+   "scene_status": 200,
+   "scene_seconds": 0.04482100403402001,
+   "scene_bytes": 15,
+   "scene_version": 2
+  },
+  {
+   "turn_status": 200,
+   "turn_seconds": 2.352684646961279,
+   "scene_status": 200,
+   "scene_seconds": 0.05416745296679437,
+   "scene_bytes": 15,
+   "scene_version": 3
+  }
+ ]
+}

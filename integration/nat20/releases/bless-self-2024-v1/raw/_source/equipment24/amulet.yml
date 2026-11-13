@@ -1,0 +1,91 @@
+{
+  "_id": "phbhsyAmuletworn",
+  "_stats": {
+    "coreVersion": "13.344",
+    "createdTime": 1724425915122,
+    "duplicateSource": null,
+    "exportSource": null,
+    "lastModifiedBy": "dnd5ebuilder0000",
+    "modifiedTime": 1745256813803,
+    "systemId": "dnd5e",
+    "systemVersion": "4.4.0"
+  },
+  "effects": [],
+  "flags": {
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    }
+  },
+  "folder": "z3BNNUO43nbnbTy7",
+  "img": "icons/equipment/neck/pendant-bronze-gem-blue.webp",
+  "name": "Amulet",
+  "ownership": {
+    "default": 0
+  },
+  "sort": 0,
+  "system": {
+    "activities": {},
+    "armor": {
+      "dex": null,
+      "magicalBonus": null,
+      "value": null
+    },
+    "attuned": false,
+    "attunement": "",
+    "container": null,
+    "cover": null,
+    "crewed": false,
+    "description": {
+      "chat": "",
+      "value": "<p><em><strong>Usage Requirement: </strong>Worn or held</em></p><p>A @UUID[Compendium.dnd5e.equipment24.Item.phbagHolySymbolV]{Holy Symbol} takes one of the forms in the Holy Symbol table and is bejeweled or painted to channel divine magic. A Cleric or Paladin can use a Holy Symbol as a Spellcasting Focus.</p>"
+    },
+    "equipped": false,
+    "hp": {
+      "conditions": "",
+      "dt": null,
+      "max": null,
+      "value": null
+    },
+    "identified": true,
+    "identifier": "amulet",
+    "price": {
+      "denomination": "gp",
+      "value": 5
+    },
+    "proficient": null,
+    "properties": [],
+    "quantity": 1,
+    "rarity": "",
+    "source": {
+      "book": "",
+      "custom": "",
+      "license": "CC-BY-4.0",
+      "rules": "2024"
+    },
+    "speed": {
+      "conditions": "",
+      "value": null
+    },
+    "strength": null,
+    "type": {
+      "baseItem": "",
+      "value": "trinket"
+    },
+    "unidentified": {
+      "description": ""
+    },
+    "uses": {
+      "max": "",
+      "recovery": [],
+      "spent": 0
+    },
+    "weight": {
+      "units": "lb",
+      "value": 1
+    }
+  },
+  "type": "equipment"
+}

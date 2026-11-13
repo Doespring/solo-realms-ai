@@ -1,0 +1,1770 @@
+{
+  "_id": "mmGoblinWarrior0",
+  "_stats": {
+    "compendiumSource": null,
+    "coreVersion": "14.366",
+    "createdTime": 1771452705301,
+    "duplicateSource": null,
+    "exportSource": null,
+    "lastModifiedBy": "dnd5ebuilder0000",
+    "modifiedTime": 1771452705301,
+    "systemId": "dnd5e",
+    "systemVersion": "5.3.0"
+  },
+  "effects": [],
+  "flags": {},
+  "folder": "EypLbRzz5Hphlv5M",
+  "img": null,
+  "items": [
+    {
+      "_id": "9RULzqhnPi3lqw1u",
+      "_stats": {
+        "compendiumSource": "Compendium.dnd5e.equipment24.phbwepScimitar00",
+        "coreVersion": "14.366",
+        "createdTime": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "lastModifiedBy": null,
+        "modifiedTime": null,
+        "systemId": "dnd5e",
+        "systemVersion": "5.3.0"
+      },
+      "effects": [],
+      "flags": {
+        "dnd5e": {
+          "riders": {
+            "activity": [],
+            "effect": []
+          }
+        }
+      },
+      "folder": "fd3qxAXCv2FhExPp",
+      "img": "icons/weapons/swords/scimitar-worn-blue.webp",
+      "name": "Scimitar",
+      "ownership": {
+        "default": 0
+      },
+      "sort": 0,
+      "system": {
+        "activities": {
+          "U2GucmlwJ3rhKAz6": {
+            "_id": "U2GucmlwJ3rhKAz6",
+            "activation": {
+              "condition": "",
+              "override": false,
+              "type": "action",
+              "value": 1
+            },
+            "attack": {
+              "ability": "",
+              "bonus": "",
+              "critical": {
+                "threshold": null
+              },
+              "flat": false,
+              "type": {
+                "classification": "weapon",
+                "value": "melee"
+              }
+            },
+            "consumption": {
+              "scaling": {
+                "allowed": false,
+                "max": ""
+              },
+              "spellSlot": true,
+              "targets": []
+            },
+            "damage": {
+              "critical": {
+                "bonus": ""
+              },
+              "includeBase": true,
+              "parts": [
+                {
+                  "bonus": "",
+                  "custom": {
+                    "enabled": false,
+                    "formula": ""
+                  },
+                  "denomination": 4,
+                  "number": 1,
+                  "scaling": {
+                    "number": 1
+                  },
+                  "types": [
+                    "slashing"
+                  ]
+                }
+              ]
+            },
+            "description": {
+              "chatFlavor": ""
+            },
+            "duration": {
+              "concentration": false,
+              "override": false,
+              "special": "",
+              "units": "inst",
+              "value": ""
+            },
+            "effects": [],
+            "flags": {},
+            "img": null,
+            "name": "Attack with Advantage",
+            "range": {
+              "override": false,
+              "special": "",
+              "units": "ft",
+              "value": "5"
+            },
+            "sort": 0,
+            "target": {
+              "affects": {
+                "choice": false,
+                "count": "",
+                "special": "",
+                "type": ""
+              },
+              "override": false,
+              "prompt": false,
+              "template": {
+                "contiguous": false,
+                "count": "",
+                "height": "",
+                "size": "",
+                "type": "",
+                "units": "ft",
+                "width": ""
+              }
+            },
+            "type": "attack",
+            "uses": {
+              "max": "",
+              "recovery": [],
+              "spent": 0
+            },
+            "visibility": {
+              "level": {},
+              "requireAttunement": false,
+              "requireIdentification": false,
+              "requireMagic": false
+            }
+          },
+          "YOx3cikY6oPu6Ojh": {
+            "_id": "YOx3cikY6oPu6Ojh",
+            "activation": {
+              "condition": "",
+              "override": false,
+              "type": "action",
+              "value": 1
+            },
+            "attack": {
+              "ability": "",
+              "bonus": "",
+              "critical": {
+                "threshold": null
+              },
+              "flat": false,
+              "type": {
+                "classification": "weapon",
+                "value": "melee"
+              }
+            },
+            "consumption": {
+              "scaling": {
+                "allowed": false,
+                "max": ""
+              },
+              "spellSlot": true,
+              "targets": []
+            },
+            "damage": {
+              "critical": {
+                "bonus": ""
+              },
+              "includeBase": true,
+              "parts": []
+            },
+            "description": {
+              "chatFlavor": ""
+            },
+            "duration": {
+              "concentration": false,
+              "override": false,
+              "special": "",
+              "units": "inst",
+              "value": ""
+            },
+            "effects": [],
+            "flags": {},
+            "img": null,
+            "name": "",
+            "range": {
+              "override": false,
+              "special": "",
+              "units": "ft",
+              "value": "5"
+            },
+            "sort": 0,
+            "target": {
+              "affects": {
+                "choice": false,
+                "count": "",
+                "special": "",
+                "type": ""
+              },
+              "override": false,
+              "prompt": false,
+              "template": {
+                "contiguous": false,
+                "count": "",
+                "height": "",
+                "size": "",
+                "type": "",
+                "units": "ft",
+                "width": ""
+              }
+            },
+            "type": "attack",
+            "uses": {
+              "max": "",
+              "recovery": [],
+              "spent": 0
+            },
+            "visibility": {
+              "level": {},
+              "requireAttunement": false,
+              "requireIdentification": false,
+              "requireMagic": false
+            }
+          }
+        },
+        "ammunition": {},
+        "armor": {
+          "value": null
+        },
+        "attuned": false,
+        "attunement": "",
+        "container": null,
+        "cover": null,
+        "crew": {
+          "value": []
+        },
+        "damage": {
+          "base": {
+            "bonus": "",
+            "custom": {
+              "enabled": false
+            },
+            "denomination": 6,
+            "number": 1,
+            "scaling": {
+              "number": 1
+            },
+            "types": [
+              "slashing"
+            ]
+          },
+          "versatile": {
+            "bonus": "",
+            "custom": {
+              "enabled": true,
+              "formula": ""
+            },
+            "denomination": null,
+            "number": null,
+            "scaling": {
+              "formula": "",
+              "mode": "",
+              "number": null
+            },
+            "types": []
+          }
+        },
+        "description": {
+          "chat": "",
+          "value": "<p>[[/attack extended]]. [[/damage average extended]], plus [[/damage 1d4 slashing average]] damage if the attack roll had Advantage.</p>"
+        },
+        "equipped": true,
+        "hp": {
+          "conditions": "",
+          "dt": null,
+          "max": null,
+          "value": null
+        },
+        "identified": true,
+        "identifier": "scimitar",
+        "mastery": "nick",
+        "price": {
+          "denomination": "gp",
+          "value": 25
+        },
+        "proficient": null,
+        "properties": [
+          "fin",
+          "lgt",
+          "gear"
+        ],
+        "quantity": 1,
+        "range": {
+          "long": null,
+          "reach": null,
+          "units": "ft",
+          "value": null
+        },
+        "rarity": "",
+        "source": {
+          "book": "",
+          "custom": "",
+          "license": "CC-BY-4.0",
+          "revision": 1,
+          "rules": "2024"
+        },
+        "type": {
+          "baseItem": "scimitar",
+          "value": "martialM"
+        },
+        "unidentified": {
+          "description": ""
+        },
+        "uses": {
+          "max": "",
+          "recovery": [],
+          "spent": 0
+        },
+        "weight": {
+          "units": "lb",
+          "value": 3
+        }
+      },
+      "type": "weapon"
+    },
+    {
+      "_id": "wKUi0YkXW5KapyxP",
+      "_stats": {
+        "compendiumSource": "Compendium.dnd5e.equipment24.phbwepShortbow00",
+        "coreVersion": "14.366",
+        "createdTime": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "lastModifiedBy": null,
+        "modifiedTime": null,
+        "systemId": "dnd5e",
+        "systemVersion": "5.3.0"
+      },
+      "effects": [],
+      "flags": {
+        "dnd5e": {
+          "riders": {
+            "activity": [],
+            "effect": []
+          }
+        }
+      },
+      "folder": "atG8UGtcNyNweUOt",
+      "img": "icons/weapons/bows/shortbow-leather.webp",
+      "name": "Shortbow",
+      "ownership": {
+        "default": 0
+      },
+      "sort": 0,
+      "system": {
+        "activities": {
+          "XTpNEcni4iwfmaeA": {
+            "_id": "XTpNEcni4iwfmaeA",
+            "activation": {
+              "condition": "",
+              "override": false,
+              "type": "action",
+              "value": 1
+            },
+            "attack": {
+              "ability": "",
+              "bonus": "",
+              "critical": {
+                "threshold": null
+              },
+              "flat": false,
+              "type": {
+                "classification": "weapon",
+                "value": "ranged"
+              }
+            },
+            "consumption": {
+              "scaling": {
+                "allowed": false,
+                "max": ""
+              },
+              "spellSlot": true,
+              "targets": []
+            },
+            "damage": {
+              "critical": {
+                "bonus": ""
+              },
+              "includeBase": true,
+              "parts": []
+            },
+            "description": {
+              "chatFlavor": ""
+            },
+            "duration": {
+              "concentration": false,
+              "override": false,
+              "special": "",
+              "units": "inst",
+              "value": ""
+            },
+            "effects": [],
+            "flags": {},
+            "img": null,
+            "name": "",
+            "range": {
+              "override": false,
+              "special": "",
+              "units": "ft",
+              "value": "80"
+            },
+            "sort": 0,
+            "target": {
+              "affects": {
+                "choice": false,
+                "count": "",
+                "special": "",
+                "type": ""
+              },
+              "override": false,
+              "prompt": false,
+              "template": {
+                "contiguous": false,
+                "count": "",
+                "height": "",
+                "size": "",
+                "type": "",
+                "units": "ft",
+                "width": ""
+              }
+            },
+            "type": "attack",
+            "uses": {
+              "max": "",
+              "recovery": [],
+              "spent": 0
+            },
+            "visibility": {
+              "level": {},
+              "requireAttunement": false,
+              "requireIdentification": false,
+              "requireMagic": false
+            }
+          },
+          "emYvANeuJFZF7Zh7": {
+            "_id": "emYvANeuJFZF7Zh7",
+            "activation": {
+              "condition": "",
+              "override": false,
+              "type": "action",
+              "value": 1
+            },
+            "attack": {
+              "ability": "",
+              "bonus": "",
+              "critical": {
+                "threshold": null
+              },
+              "flat": false,
+              "type": {
+                "classification": "weapon",
+                "value": "ranged"
+              }
+            },
+            "consumption": {
+              "scaling": {
+                "allowed": false,
+                "max": ""
+              },
+              "spellSlot": true,
+              "targets": []
+            },
+            "damage": {
+              "critical": {
+                "bonus": ""
+              },
+              "includeBase": true,
+              "parts": [
+                {
+                  "bonus": "",
+                  "custom": {
+                    "enabled": false,
+                    "formula": ""
+                  },
+                  "denomination": 4,
+                  "number": 1,
+                  "scaling": {
+                    "number": 1
+                  },
+                  "types": [
+                    "piercing"
+                  ]
+                }
+              ]
+            },
+            "description": {
+              "chatFlavor": ""
+            },
+            "duration": {
+              "concentration": false,
+              "override": false,
+              "special": "",
+              "units": "inst",
+              "value": ""
+            },
+            "effects": [],
+            "flags": {},
+            "img": null,
+            "name": "Attack with Advantage",
+            "range": {
+              "override": false,
+              "special": "",
+              "units": "ft",
+              "value": "80"
+            },
+            "sort": 0,
+            "target": {
+              "affects": {
+                "choice": false,
+                "count": "",
+                "special": "",
+                "type": ""
+              },
+              "override": false,
+              "prompt": false,
+              "template": {
+                "contiguous": false,
+                "count": "",
+                "height": "",
+                "size": "",
+                "type": "",
+                "units": "ft",
+                "width": ""
+              }
+            },
+            "type": "attack",
+            "uses": {
+              "max": "",
+              "recovery": [],
+              "spent": 0
+            },
+            "visibility": {
+              "level": {},
+              "requireAttunement": false,
+              "requireIdentification": false,
+              "requireMagic": false
+            }
+          }
+        },
+        "ammunition": {
+          "type": "arrow"
+        },
+        "armor": {
+          "value": null
+        },
+        "attuned": false,
+        "attunement": "",
+        "container": null,
+        "cover": null,
+        "crew": {
+          "value": []
+        },
+        "damage": {
+          "base": {
+            "bonus": "",
+            "custom": {
+              "enabled": false
+            },
+            "denomination": 6,
+            "number": 1,
+            "scaling": {
+              "number": 1
+            },
+            "types": [
+              "piercing"
+            ]
+          },
+          "versatile": {
+            "bonus": "",
+            "custom": {
+              "enabled": true,
+              "formula": ""
+            },
+            "denomination": null,
+            "number": null,
+            "scaling": {
+              "formula": "",
+              "mode": "",
+              "number": null
+            },
+            "types": []
+          }
+        },
+        "description": {
+          "chat": "",
+          "value": "<p>[[/attack extended]]. [[/damage average extended]], plus [[/damage 1d4 piercing average]] damage if the attack roll had Advantage.</p>"
+        },
+        "equipped": true,
+        "hp": {
+          "conditions": "",
+          "dt": null,
+          "max": null,
+          "value": null
+        },
+        "identified": true,
+        "identifier": "shortbow",
+        "mastery": "vex",
+        "price": {
+          "denomination": "gp",
+          "value": 25
+        },
+        "proficient": null,
+        "properties": [
+          "amm",
+          "two",
+          "gear"
+        ],
+        "quantity": 1,
+        "range": {
+          "long": 320,
+          "reach": null,
+          "units": "ft",
+          "value": 80
+        },
+        "rarity": "",
+        "source": {
+          "book": "",
+          "custom": "",
+          "license": "CC-BY-4.0",
+          "revision": 1,
+          "rules": "2024"
+        },
+        "type": {
+          "baseItem": "shortbow",
+          "value": "simpleR"
+        },
+        "unidentified": {
+          "description": ""
+        },
+        "uses": {
+          "max": "",
+          "recovery": [],
+          "spent": 0
+        },
+        "weight": {
+          "units": "lb",
+          "value": 2
+        }
+      },
+      "type": "weapon"
+    },
+    {
+      "_id": "mW9S8ntOw3ORgPwd",
+      "_stats": {
+        "compendiumSource": "Compendium.dnd5e.equipment24.Item.phbarmLeatherArm",
+        "coreVersion": "14.366",
+        "createdTime": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "lastModifiedBy": null,
+        "modifiedTime": null,
+        "systemId": "dnd5e",
+        "systemVersion": "5.3.0"
+      },
+      "effects": [],
+      "flags": {},
+      "folder": "G3X11BbtmEqLmEnK",
+      "img": "icons/equipment/chest/breastplate-scale-leather.webp",
+      "name": "Leather Armor",
+      "ownership": {
+        "default": 0
+      },
+      "sort": 0,
+      "system": {
+        "activities": {},
+        "armor": {
+          "dex": null,
+          "value": 11
+        },
+        "attuned": false,
+        "attunement": "",
+        "container": null,
+        "cover": null,
+        "crew": {
+          "value": []
+        },
+        "description": {
+          "chat": "",
+          "value": ""
+        },
+        "equipped": true,
+        "hp": {
+          "conditions": "",
+          "dt": null,
+          "max": null,
+          "value": null
+        },
+        "identified": true,
+        "identifier": "leather-armor",
+        "price": {
+          "denomination": "gp",
+          "value": 10
+        },
+        "proficient": null,
+        "properties": [
+          "gear"
+        ],
+        "quantity": 1,
+        "rarity": "",
+        "source": {
+          "book": "",
+          "custom": "",
+          "license": "CC-BY-4.0",
+          "revision": 1,
+          "rules": "2024"
+        },
+        "speed": {
+          "conditions": "",
+          "units": "ft",
+          "value": null
+        },
+        "strength": null,
+        "type": {
+          "baseItem": "leather",
+          "value": "light"
+        },
+        "unidentified": {
+          "description": ""
+        },
+        "uses": {
+          "max": "",
+          "recovery": [],
+          "spent": 0
+        },
+        "weight": {
+          "units": "lb",
+          "value": 10
+        }
+      },
+      "type": "equipment"
+    },
+    {
+      "_id": "4VduzMc1QjJxGesu",
+      "_stats": {
+        "compendiumSource": "Compendium.dnd5e.equipment24.Item.phbarmShield0000",
+        "coreVersion": "14.366",
+        "createdTime": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "lastModifiedBy": null,
+        "modifiedTime": null,
+        "systemId": "dnd5e",
+        "systemVersion": "5.3.0"
+      },
+      "effects": [],
+      "flags": {},
+      "folder": "Iyyec8ij0PAfdLBd",
+      "img": "icons/equipment/shield/round-wooden-boss-steel-brown.webp",
+      "name": "Shield",
+      "ownership": {
+        "default": 0
+      },
+      "sort": 0,
+      "system": {
+        "activities": {},
+        "armor": {
+          "dex": null,
+          "value": 2
+        },
+        "attuned": false,
+        "attunement": "",
+        "container": null,
+        "cover": null,
+        "crew": {
+          "value": []
+        },
+        "description": {
+          "chat": "",
+          "value": "<p>You gain the Armor Class benefit of a Shield only if you have training with it.</p>"
+        },
+        "equipped": true,
+        "hp": {
+          "conditions": "",
+          "dt": null,
+          "max": null,
+          "value": null
+        },
+        "identified": true,
+        "identifier": "shield",
+        "price": {
+          "denomination": "gp",
+          "value": 10
+        },
+        "proficient": null,
+        "properties": [
+          "gear"
+        ],
+        "quantity": 1,
+        "rarity": "",
+        "source": {
+          "book": "",
+          "custom": "",
+          "license": "CC-BY-4.0",
+          "revision": 1,
+          "rules": "2024"
+        },
+        "speed": {
+          "conditions": "",
+          "units": "ft",
+          "value": null
+        },
+        "strength": null,
+        "type": {
+          "baseItem": "shield",
+          "value": "shield"
+        },
+        "unidentified": {
+          "description": ""
+        },
+        "uses": {
+          "max": "",
+          "recovery": [],
+          "spent": 0
+        },
+        "weight": {
+          "units": "lb",
+          "value": 6
+        }
+      },
+      "type": "equipment"
+    },
+    {
+      "_id": "mmNimbleEscape00",
+      "_stats": {
+        "compendiumSource": "Compendium.dnd-monster-manual.features.Item.mmNimbleEscape00",
+        "coreVersion": "14.366",
+        "createdTime": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "lastModifiedBy": null,
+        "modifiedTime": null,
+        "systemId": "dnd5e",
+        "systemVersion": "5.3.0"
+      },
+      "effects": [
+        {
+          "_id": "7U7Pe61lsMZgN7qh",
+          "_stats": {
+            "compendiumSource": null,
+            "coreVersion": "14.366",
+            "createdTime": null,
+            "duplicateSource": null,
+            "exportSource": null,
+            "lastModifiedBy": null,
+            "modifiedTime": null,
+            "systemId": "dnd5e",
+            "systemVersion": "5.3.0"
+          },
+          "description": "",
+          "disabled": false,
+          "duration": {
+            "expired": false,
+            "expiry": null,
+            "units": "seconds",
+            "value": null
+          },
+          "flags": {
+            "core": {
+              "overlay": false
+            }
+          },
+          "folder": null,
+          "img": "systems/dnd5e/icons/svg/statuses/hiding.svg",
+          "name": "Apply Hide Action to Target",
+          "origin": "Item.mmNimbleEscape00",
+          "showIcon": 2,
+          "sort": 0,
+          "start": {
+            "combat": null,
+            "combatant": null,
+            "initiative": null,
+            "round": null,
+            "time": 0,
+            "turn": null
+          },
+          "statuses": [
+            "hiding"
+          ],
+          "system": {
+            "changes": []
+          },
+          "tint": "#ffffff",
+          "transfer": false,
+          "type": "base"
+        }
+      ],
+      "flags": {
+        "dnd5e": {
+          "riders": {
+            "activity": [],
+            "effect": []
+          }
+        }
+      },
+      "folder": "4T18pEvubPMQLzvD",
+      "img": "icons/skills/movement/ball-spinning-blue.webp",
+      "name": "Nimble Escape",
+      "ownership": {
+        "default": 0
+      },
+      "sort": 0,
+      "system": {
+        "activities": {
+          "CcMi6Alf0pup7o81": {
+            "_id": "CcMi6Alf0pup7o81",
+            "activation": {
+              "condition": "",
+              "override": false,
+              "type": "bonus",
+              "value": null
+            },
+            "consumption": {
+              "scaling": {
+                "allowed": false
+              },
+              "spellSlot": true,
+              "targets": []
+            },
+            "description": {
+              "chatFlavor": ""
+            },
+            "duration": {
+              "concentration": false,
+              "override": false,
+              "units": "inst"
+            },
+            "effects": [
+              {
+                "_id": "7U7Pe61lsMZgN7qh",
+                "level": {}
+              }
+            ],
+            "flags": {},
+            "img": "systems/dnd5e/icons/svg/monster.svg",
+            "name": "Expend Use",
+            "range": {
+              "override": false,
+              "special": "",
+              "units": "self"
+            },
+            "roll": {
+              "formula": "",
+              "name": "",
+              "prompt": false,
+              "visible": false
+            },
+            "sort": 0,
+            "target": {
+              "affects": {
+                "choice": false,
+                "type": ""
+              },
+              "override": false,
+              "prompt": true,
+              "template": {
+                "contiguous": false,
+                "type": "",
+                "units": "ft"
+              }
+            },
+            "type": "utility",
+            "uses": {
+              "max": "",
+              "recovery": [],
+              "spent": 0
+            },
+            "visibility": {
+              "level": {},
+              "requireAttunement": false,
+              "requireIdentification": false,
+              "requireMagic": false
+            }
+          }
+        },
+        "advancement": {},
+        "cover": null,
+        "crewed": false,
+        "description": {
+          "chat": "",
+          "value": "<p class=\"feature\">The [[lookup @name lowercase]]{monster} takes the &amp;Reference[Disengage] or &amp;Reference[Hide] action.</p>"
+        },
+        "enchant": {},
+        "identifier": "nimble-escape",
+        "prerequisites": {
+          "items": [],
+          "level": null,
+          "repeatable": false
+        },
+        "properties": [],
+        "requirements": "",
+        "source": {
+          "book": "",
+          "license": "CC-BY-4.0",
+          "revision": 1,
+          "rules": "2024"
+        },
+        "type": {
+          "subtype": "",
+          "value": "monster"
+        },
+        "uses": {
+          "max": "",
+          "recovery": [],
+          "spent": 0
+        }
+      },
+      "type": "feat"
+    }
+  ],
+  "name": "Goblin Warrior",
+  "ownership": {
+    "default": 0
+  },
+  "prototypeToken": {
+    "actorLink": false,
+    "alpha": 1,
+    "appendNumber": false,
+    "bar1": {
+      "attribute": "attributes.hp"
+    },
+    "bar2": {
+      "attribute": null
+    },
+    "depth": 1,
+    "detectionModes": {},
+    "displayBars": 20,
+    "displayName": 20,
+    "disposition": -1,
+    "flags": {},
+    "height": 1,
+    "light": {
+      "alpha": 0.5,
+      "angle": 360,
+      "animation": {
+        "intensity": 5,
+        "reverse": false,
+        "speed": 5,
+        "type": null
+      },
+      "attenuation": 0.5,
+      "bright": 0,
+      "color": null,
+      "coloration": 1,
+      "contrast": 0,
+      "darkness": {
+        "max": 1,
+        "min": 0
+      },
+      "dim": 0,
+      "luminosity": 0.5,
+      "negative": false,
+      "priority": 0,
+      "saturation": 0,
+      "shadows": 0
+    },
+    "lockRotation": false,
+    "movementAction": null,
+    "name": "Goblin Warrior",
+    "occludable": {
+      "radius": 0
+    },
+    "prependAdjective": false,
+    "randomImg": false,
+    "ring": {
+      "colors": {
+        "background": null,
+        "ring": null
+      },
+      "effects": 1,
+      "enabled": false,
+      "subject": {
+        "scale": 1,
+        "texture": null
+      }
+    },
+    "rotation": 0,
+    "sight": {
+      "angle": 360,
+      "attenuation": 0.1,
+      "brightness": 0,
+      "color": null,
+      "contrast": 0,
+      "enabled": false,
+      "range": 0,
+      "saturation": 0,
+      "visionMode": "basic"
+    },
+    "texture": {
+      "alphaThreshold": 0.75,
+      "anchorX": 0.5,
+      "anchorY": 0.5,
+      "fit": "contain",
+      "scaleX": 1,
+      "scaleY": 1,
+      "src": null,
+      "tint": "#ffffff"
+    },
+    "turnMarker": {
+      "animation": null,
+      "disposition": false,
+      "mode": 1,
+      "src": null
+    },
+    "width": 1
+  },
+  "sort": 0,
+  "system": {
+    "abilities": {
+      "cha": {
+        "bonuses": {
+          "check": "",
+          "save": ""
+        },
+        "check": {
+          "roll": {
+            "max": null,
+            "min": null,
+            "mode": 0
+          }
+        },
+        "max": null,
+        "proficient": 0,
+        "save": {
+          "roll": {
+            "max": null,
+            "min": null,
+            "mode": 0
+          }
+        },
+        "value": 8
+      },
+      "con": {
+        "bonuses": {
+          "check": "",
+          "save": ""
+        },
+        "check": {
+          "roll": {
+            "max": null,
+            "min": null,
+            "mode": 0
+          }
+        },
+        "max": null,
+        "proficient": 0,
+        "save": {
+          "roll": {
+            "max": null,
+            "min": null,
+            "mode": 0
+          }
+        },
+        "value": 10
+      },
+      "dex": {
+        "bonuses": {
+          "check": "",
+          "save": ""
+        },
+        "check": {
+          "roll": {
+            "max": null,
+            "min": null,
+            "mode": 0
+          }
+        },
+        "max": null,
+        "proficient": 0,
+        "save": {
+          "roll": {
+            "max": null,
+            "min": null,
+            "mode": 0
+          }
+        },
+        "value": 15
+      },
+      "int": {
+        "bonuses": {
+          "check": "",
+          "save": ""
+        },
+        "check": {
+          "roll": {
+            "max": null,
+            "min": null,
+            "mode": 0
+          }
+        },
+        "max": null,
+        "proficient": 0,
+        "save": {
+          "roll": {
+            "max": null,
+            "min": null,
+            "mode": 0
+          }
+        },
+        "value": 10
+      },
+      "str": {
+        "bonuses": {
+          "check": "",
+          "save": ""
+        },
+        "check": {
+          "roll": {
+            "max": null,
+            "min": null,
+            "mode": 0
+          }
+        },
+        "max": null,
+        "proficient": 0,
+        "save": {
+          "roll": {
+            "max": null,
+            "min": null,
+            "mode": 0
+          }
+        },
+        "value": 8
+      },
+      "wis": {
+        "bonuses": {
+          "check": "",
+          "save": ""
+        },
+        "check": {
+          "roll": {
+            "max": null,
+            "min": null,
+            "mode": 0
+          }
+        },
+        "max": null,
+        "proficient": 0,
+        "save": {
+          "roll": {
+            "max": null,
+            "min": null,
+            "mode": 0
+          }
+        },
+        "value": 8
+      }
+    },
+    "attributes": {
+      "ac": {
+        "calc": "default",
+        "flat": 15
+      },
+      "attunement": {
+        "max": 3
+      },
+      "concentration": {
+        "ability": "",
+        "bonuses": {
+          "save": ""
+        },
+        "limit": 1,
+        "roll": {
+          "max": null,
+          "min": null,
+          "mode": 0
+        }
+      },
+      "death": {
+        "bonuses": {
+          "save": ""
+        },
+        "failure": 0,
+        "roll": {
+          "max": null,
+          "min": null,
+          "mode": 0
+        },
+        "success": 0
+      },
+      "exhaustion": 0,
+      "hd": {
+        "spent": 0
+      },
+      "hp": {
+        "formula": "3d6",
+        "max": 10,
+        "temp": null,
+        "tempmax": null,
+        "value": 10
+      },
+      "init": {
+        "ability": "",
+        "bonus": "",
+        "roll": {
+          "max": null,
+          "min": null,
+          "mode": 0
+        }
+      },
+      "loyalty": {
+        "value": null
+      },
+      "movement": {
+        "hover": false,
+        "ignoredDifficultTerrain": [],
+        "units": null,
+        "walk": "30"
+      },
+      "price": {
+        "denomination": "gp",
+        "value": null
+      },
+      "senses": {
+        "ranges": {
+          "blindsight": null,
+          "darkvision": 60,
+          "tremorsense": null,
+          "truesight": null
+        },
+        "special": "",
+        "units": null
+      },
+      "spell": {
+        "level": 0
+      },
+      "spellcasting": "str"
+    },
+    "bonuses": {
+      "abilities": {
+        "check": "",
+        "save": "",
+        "skill": ""
+      },
+      "msak": {
+        "attack": "",
+        "damage": ""
+      },
+      "mwak": {
+        "attack": "",
+        "damage": ""
+      },
+      "rsak": {
+        "attack": "",
+        "damage": ""
+      },
+      "rwak": {
+        "attack": "",
+        "damage": ""
+      },
+      "spell": {
+        "dc": ""
+      }
+    },
+    "currency": {
+      "cp": 0,
+      "ep": 0,
+      "gp": 0,
+      "pp": 0,
+      "sp": 0
+    },
+    "details": {
+      "alignment": "Chaotic Neutral",
+      "biography": {
+        "public": "",
+        "value": "<h1>Goblins</h1><p>@Embed[Compendium.dnd5e.content24.JournalEntry.mmAppendixMonste.JournalEntryPage.TwMrfWrYo0ZAnWB3 caption=false cite=false classes=\"no-embed mm free-rules-embed\"]</p><h2>Goblin Warrior</h2><p>@Embed[Compendium.dnd5e.content24.JournalEntry.mmAppendixMonste.JournalEntryPage.ktLVwvt2KkJVB9eS caption=false cite=false classes=\"no-embed mm free-rules-embed\"]</p>"
+      },
+      "bond": "",
+      "cr": 0.25,
+      "flaw": "",
+      "habitat": {
+        "custom": "",
+        "value": [
+          {
+            "type": "forest"
+          },
+          {
+            "type": "grassland"
+          },
+          {
+            "type": "hill"
+          },
+          {
+            "subtype": "acheron",
+            "type": "planar"
+          },
+          {
+            "type": "underdark"
+          }
+        ]
+      },
+      "ideal": "",
+      "race": null,
+      "treasure": {
+        "value": [
+          "implements",
+          "individual"
+        ]
+      },
+      "type": {
+        "custom": "",
+        "subtype": "Goblinoid",
+        "swarm": "",
+        "value": "fey"
+      }
+    },
+    "resources": {
+      "lair": {
+        "initiative": null,
+        "inside": false,
+        "value": false
+      },
+      "legact": {
+        "max": 0,
+        "spent": 0
+      },
+      "legres": {
+        "max": 0,
+        "spent": 0
+      }
+    },
+    "skills": {
+      "acr": {
+        "ability": "dex",
+        "bonuses": {
+          "check": "",
+          "passive": ""
+        },
+        "roll": {
+          "max": null,
+          "min": null,
+          "mode": 0
+        },
+        "value": 0
+      },
+      "ani": {
+        "ability": "wis",
+        "bonuses": {
+          "check": "",
+          "passive": ""
+        },
+        "roll": {
+          "max": null,
+          "min": null,
+          "mode": 0
+        },
+        "value": 0
+      },
+      "arc": {
+        "ability": "int",
+        "bonuses": {
+          "check": "",
+          "passive": ""
+        },
+        "roll": {
+          "max": null,
+          "min": null,
+          "mode": 0
+        },
+        "value": 0
+      },
+      "ath": {
+        "ability": "str",
+        "bonuses": {
+          "check": "",
+          "passive": ""
+        },
+        "roll": {
+          "max": null,
+          "min": null,
+          "mode": 0
+        },
+        "value": 0
+      },
+      "dec": {
+        "ability": "cha",
+        "bonuses": {
+          "check": "",
+          "passive": ""
+        },
+        "roll": {
+          "max": null,
+          "min": null,
+          "mode": 0
+        },
+        "value": 0
+      },
+      "his": {
+        "ability": "int",
+        "bonuses": {
+          "check": "",
+          "passive": ""
+        },
+        "roll": {
+          "max": null,
+          "min": null,
+          "mode": 0
+        },
+        "value": 0
+      },
+      "ins": {
+        "ability": "wis",
+        "bonuses": {
+          "check": "",
+          "passive": ""
+        },
+        "roll": {
+          "max": null,
+          "min": null,
+          "mode": 0
+        },
+        "value": 0
+      },
+      "inv": {
+        "ability": "int",
+        "bonuses": {
+          "check": "",
+          "passive": ""
+        },
+        "roll": {
+          "max": null,
+          "min": null,
+          "mode": 0
+        },
+        "value": 0
+      },
+      "itm": {
+        "ability": "cha",
+        "bonuses": {
+          "check": "",
+          "passive": ""
+        },
+        "roll": {
+          "max": null,
+          "min": null,
+          "mode": 0
+        },
+        "value": 0
+      },
+      "med": {
+        "ability": "wis",
+        "bonuses": {
+          "check": "",
+          "passive": ""
+        },
+        "roll": {
+          "max": null,
+          "min": null,
+          "mode": 0
+        },
+        "value": 0
+      },
+      "nat": {
+        "ability": "int",
+        "bonuses": {
+          "check": "",
+          "passive": ""
+        },
+        "roll": {
+          "max": null,
+          "min": null,
+          "mode": 0
+        },
+        "value": 0
+      },
+      "per": {
+        "ability": "cha",
+        "bonuses": {
+          "check": "",
+          "passive": ""
+        },
+        "roll": {
+          "max": null,
+          "min": null,
+          "mode": 0
+        },
+        "value": 0
+      },
+      "prc": {
+        "ability": "wis",
+        "bonuses": {
+          "check": "",
+          "passive": ""
+        },
+        "roll": {
+          "max": null,
+          "min": null,
+          "mode": 0
+        },
+        "value": 0
+      },
+      "prf": {
+        "ability": "cha",
+        "bonuses": {
+          "check": "",
+          "passive": ""
+        },
+        "roll": {
+          "max": null,
+          "min": null,
+          "mode": 0
+        },
+        "value": 0
+      },
+      "rel": {
+        "ability": "int",
+        "bonuses": {
+          "check": "",
+          "passive": ""
+        },
+        "roll": {
+          "max": null,
+          "min": null,
+          "mode": 0
+        },
+        "value": 0
+      },
+      "slt": {
+        "ability": "dex",
+        "bonuses": {
+          "check": "",
+          "passive": ""
+        },
+        "roll": {
+          "max": null,
+          "min": null,
+          "mode": 0
+        },
+        "value": 0
+      },
+      "ste": {
+        "ability": "dex",
+        "bonuses": {
+          "check": "",
+          "passive": ""
+        },
+        "roll": {
+          "max": null,
+          "min": null,
+          "mode": 0
+        },
+        "value": 2
+      },
+      "sur": {
+        "ability": "wis",
+        "bonuses": {
+          "check": "",
+          "passive": ""
+        },
+        "roll": {
+          "max": null,
+          "min": null,
+          "mode": 0
+        },
+        "value": 0
+      }
+    },
+    "source": {
+      "book": "",
+      "license": "CC-BY-4.0",
+      "revision": 2,
+      "rules": "2024"
+    },
+    "spells": {
+      "pact": {
+        "override": null,
+        "value": 0
+      },
+      "spell1": {
+        "override": null,
+        "value": 0
+      },
+      "spell2": {
+        "override": null,
+        "value": 0
+      },
+      "spell3": {
+        "override": null,
+        "value": 0
+      },
+      "spell4": {
+        "override": null,
+        "value": 0
+      },
+      "spell5": {
+        "override": null,
+        "value": 0
+      },
+      "spell6": {
+        "override": null,
+        "value": 0
+      },
+      "spell7": {
+        "override": null,
+        "value": 0
+      },
+      "spell8": {
+        "override": null,
+        "value": 0
+      },
+      "spell9": {
+        "override": null,
+        "value": 0
+      }
+    },
+    "tools": {},
+    "traits": {
+      "ci": {
+        "custom": "",
+        "value": []
+      },
+      "di": {
+        "bypasses": [],
+        "custom": "",
+        "value": []
+      },
+      "dm": {
+        "amount": {},
+        "bypasses": []
+      },
+      "dr": {
+        "bypasses": [],
+        "custom": "",
+        "value": []
+      },
+      "dv": {
+        "bypasses": [],
+        "custom": "",
+        "value": []
+      },
+      "important": false,
+      "languages": {
+        "communication": {},
+        "custom": "",
+        "value": [
+          "common",
+          "goblin"
+        ]
+      },
+      "size": "sm"
+    }
+  },
+  "type": "npc"
+}

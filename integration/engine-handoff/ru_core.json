@@ -1,0 +1,1851 @@
+{
+ "_meta": {
+  "source": "dnd5e-srd-data canonical",
+  "corpus_version": "0.7.0"
+ },
+ "spell:acid-arrow": {
+  "category": "spells",
+  "name": "Acid Arrow",
+  "name_ru": "Кислотная стрела"
+ },
+ "spell:acid-splash": {
+  "category": "spells",
+  "name": "Acid Splash",
+  "name_ru": "Всплеск кислоты"
+ },
+ "spell:aid": {
+  "category": "spells",
+  "name": "Aid",
+  "name_ru": "Помощь"
+ },
+ "spell:alarm": {
+  "category": "spells",
+  "name": "Alarm",
+  "name_ru": "Сигнализация"
+ },
+ "spell:alter-self": {
+  "category": "spells",
+  "name": "Alter Self",
+  "name_ru": "Изменение себя"
+ },
+ "spell:animal-friendship": {
+  "category": "spells",
+  "name": "Animal Friendship",
+  "name_ru": "Дружба с животными"
+ },
+ "spell:animal-messenger": {
+  "category": "spells",
+  "name": "Animal Messenger",
+  "name_ru": "Животное-посланник"
+ },
+ "spell:animal-shapes": {
+  "category": "spells",
+  "name": "Animal Shapes",
+  "name_ru": "Звериный облик"
+ },
+ "spell:animate-dead": {
+  "category": "spells",
+  "name": "Animate Dead",
+  "name_ru": "Оживление мертвецов"
+ },
+ "spell:animate-objects": {
+  "category": "spells",
+  "name": "Animate Objects",
+  "name_ru": "Оживление предметов"
+ },
+ "spell:antilife-shell": {
+  "category": "spells",
+  "name": "Antilife Shell",
+  "name_ru": "Оболочка защиты от жизни"
+ },
+ "spell:antimagic-field": {
+  "category": "spells",
+  "name": "Antimagic Field",
+  "name_ru": "Поле антимагии"
+ },
+ "spell:antipathy-sympathy": {
+  "category": "spells",
+  "name": "Antipathy/Sympathy",
+  "name_ru": "Антипатия/симпатия"
+ },
+ "spell:arcane-eye": {
+  "category": "spells",
+  "name": "Arcane Eye",
+  "name_ru": "Магический глаз"
+ },
+ "spell:arcane-hand": {
+  "category": "spells",
+  "name": "Arcane Hand",
+  "name_ru": "Магическая рука"
+ },
+ "spell:arcane-lock": {
+  "category": "spells",
+  "name": "Arcane Lock",
+  "name_ru": "Магический замок"
+ },
+ "spell:arcane-sword": {
+  "category": "spells",
+  "name": "Arcane Sword",
+  "name_ru": "Магический меч"
+ },
+ "spell:arcane-vigor": {
+  "category": "spells",
+  "name": "Arcane Vigor",
+  "name_ru": "Магическая сила"
+ },
+ "spell:arcanists-magic-aura": {
+  "category": "spells",
+  "name": "Arcanist's Magic Aura",
+  "name_ru": "Магическая аура волшебника"
+ },
+ "spell:astral-projection": {
+  "category": "spells",
+  "name": "Astral Projection",
+  "name_ru": "Астральная проекция"
+ },
+ "spell:augury": {
+  "category": "spells",
+  "name": "Augury",
+  "name_ru": "Предзнаменование"
+ },
+ "spell:aura-of-life": {
+  "category": "spells",
+  "name": "Aura of Life",
+  "name_ru": "Аура жизни"
+ },
+ "spell:awaken": {
+  "category": "spells",
+  "name": "Awaken",
+  "name_ru": "Пробуждение"
+ },
+ "spell:bane": {
+  "category": "spells",
+  "name": "Bane",
+  "name_ru": "Порча"
+ },
+ "spell:banishment": {
+  "category": "spells",
+  "name": "Banishment",
+  "name_ru": "Изгнание"
+ },
+ "spell:barkskin": {
+  "category": "spells",
+  "name": "Barkskin",
+  "name_ru": "Дубовая кожа"
+ },
+ "spell:beacon-of-hope": {
+  "category": "spells",
+  "name": "Beacon of Hope",
+  "name_ru": "Маяк надежды"
+ },
+ "spell:befuddlement": {
+  "category": "spells",
+  "name": "Befuddlement",
+  "name_ru": "Помрачение"
+ },
+ "spell:bestow-curse": {
+  "category": "spells",
+  "name": "Bestow Curse",
+  "name_ru": "Наложение проклятия"
+ },
+ "spell:black-tentacles": {
+  "category": "spells",
+  "name": "Black Tentacles",
+  "name_ru": "Чёрные щупальца"
+ },
+ "spell:blade-barrier": {
+  "category": "spells",
+  "name": "Blade Barrier",
+  "name_ru": "Стена клинков"
+ },
+ "spell:bless": {
+  "category": "spells",
+  "name": "Bless",
+  "name_ru": "Благословение"
+ },
+ "spell:blight": {
+  "category": "spells",
+  "name": "Blight",
+  "name_ru": "Увядание"
+ },
+ "spell:blindness-deafness": {
+  "category": "spells",
+  "name": "Blindness/Deafness",
+  "name_ru": "Слепота/глухота"
+ },
+ "spell:blink": {
+  "category": "spells",
+  "name": "Blink",
+  "name_ru": "Мерцание"
+ },
+ "spell:blur": {
+  "category": "spells",
+  "name": "Blur",
+  "name_ru": "Размытие"
+ },
+ "spell:burning-hands": {
+  "category": "spells",
+  "name": "Burning Hands",
+  "name_ru": "Горящие руки"
+ },
+ "spell:call-lightning": {
+  "category": "spells",
+  "name": "Call Lightning",
+  "name_ru": "Власть над молнией"
+ },
+ "spell:calm-emotions": {
+  "category": "spells",
+  "name": "Calm Emotions",
+  "name_ru": "Успокоение эмоций"
+ },
+ "spell:chain-lightning": {
+  "category": "spells",
+  "name": "Chain Lightning",
+  "name_ru": "Цепная молния"
+ },
+ "spell:charm-monster": {
+  "category": "spells",
+  "name": "Charm Monster",
+  "name_ru": "Очарование монстра"
+ },
+ "spell:charm-person": {
+  "category": "spells",
+  "name": "Charm Person",
+  "name_ru": "Очарование личности"
+ },
+ "spell:chill-touch": {
+  "category": "spells",
+  "name": "Chill Touch",
+  "name_ru": "Ледяное прикосновение"
+ },
+ "spell:chromatic-orb": {
+  "category": "spells",
+  "name": "Chromatic Orb",
+  "name_ru": "Хроматический шар"
+ },
+ "spell:circle-of-death": {
+  "category": "spells",
+  "name": "Circle of Death",
+  "name_ru": "Круг смерти"
+ },
+ "spell:clairvoyance": {
+  "category": "spells",
+  "name": "Clairvoyance",
+  "name_ru": "Ясновидение"
+ },
+ "spell:clone": {
+  "category": "spells",
+  "name": "Clone",
+  "name_ru": "Клон"
+ },
+ "spell:cloudkill": {
+  "category": "spells",
+  "name": "Cloudkill",
+  "name_ru": "Смертельное облако"
+ },
+ "spell:color-spray": {
+  "category": "spells",
+  "name": "Color Spray",
+  "name_ru": "Цветной веер"
+ },
+ "spell:command": {
+  "category": "spells",
+  "name": "Command",
+  "name_ru": "Команда"
+ },
+ "spell:commune-with-nature": {
+  "category": "spells",
+  "name": "Commune with Nature",
+  "name_ru": "Общение с природой"
+ },
+ "spell:commune": {
+  "category": "spells",
+  "name": "Commune",
+  "name_ru": "Общение"
+ },
+ "spell:comprehend-languages": {
+  "category": "spells",
+  "name": "Comprehend Languages",
+  "name_ru": "Понимание языков"
+ },
+ "spell:compulsion": {
+  "category": "spells",
+  "name": "Compulsion",
+  "name_ru": "Принуждение"
+ },
+ "spell:cone-of-cold": {
+  "category": "spells",
+  "name": "Cone of Cold",
+  "name_ru": "Конус холода"
+ },
+ "spell:confusion": {
+  "category": "spells",
+  "name": "Confusion",
+  "name_ru": "Смущение"
+ },
+ "spell:conjure-animals": {
+  "category": "spells",
+  "name": "Conjure Animals",
+  "name_ru": "Вызов животных"
+ },
+ "spell:conjure-celestial": {
+  "category": "spells",
+  "name": "Conjure Celestial",
+  "name_ru": "Вызов небожителя"
+ },
+ "spell:conjure-elemental": {
+  "category": "spells",
+  "name": "Conjure Elemental",
+  "name_ru": "Вызов элементаля"
+ },
+ "spell:conjure-fey": {
+  "category": "spells",
+  "name": "Conjure Fey",
+  "name_ru": "Вызов фейри"
+ },
+ "spell:conjure-minor-elementals": {
+  "category": "spells",
+  "name": "Conjure Minor Elementals",
+  "name_ru": "Вызов малых элементалей"
+ },
+ "spell:conjure-woodland-beings": {
+  "category": "spells",
+  "name": "Conjure Woodland Beings",
+  "name_ru": "Вызов лесных существ"
+ },
+ "spell:contact-other-plane": {
+  "category": "spells",
+  "name": "Contact Other Plane",
+  "name_ru": "Связь с иным планом"
+ },
+ "spell:contagion": {
+  "category": "spells",
+  "name": "Contagion",
+  "name_ru": "Заражение"
+ },
+ "spell:contingency": {
+  "category": "spells",
+  "name": "Contingency",
+  "name_ru": "Отложенное заклинание"
+ },
+ "spell:continual-flame": {
+  "category": "spells",
+  "name": "Continual Flame",
+  "name_ru": "Вечное пламя"
+ },
+ "spell:control-water": {
+  "category": "spells",
+  "name": "Control Water",
+  "name_ru": "Управление водой"
+ },
+ "spell:control-weather": {
+  "category": "spells",
+  "name": "Control Weather",
+  "name_ru": "Управление погодой"
+ },
+ "spell:counterspell": {
+  "category": "spells",
+  "name": "Counterspell",
+  "name_ru": "Контрзаклинание"
+ },
+ "spell:create-food-and-water": {
+  "category": "spells",
+  "name": "Create Food and Water",
+  "name_ru": "Создание еды и воды"
+ },
+ "spell:create-or-destroy-water": {
+  "category": "spells",
+  "name": "Create or Destroy Water",
+  "name_ru": "Создание или уничтожение воды"
+ },
+ "spell:create-undead": {
+  "category": "spells",
+  "name": "Create Undead",
+  "name_ru": "Создание нежити"
+ },
+ "spell:creation": {
+  "category": "spells",
+  "name": "Creation",
+  "name_ru": "Сотворение"
+ },
+ "spell:cure-wounds": {
+  "category": "spells",
+  "name": "Cure Wounds",
+  "name_ru": "Лечение ран"
+ },
+ "spell:dancing-lights": {
+  "category": "spells",
+  "name": "Dancing Lights",
+  "name_ru": "Пляшущие огоньки"
+ },
+ "spell:darkness": {
+  "category": "spells",
+  "name": "Darkness",
+  "name_ru": "Тьма"
+ },
+ "spell:darkvision": {
+  "category": "spells",
+  "name": "Darkvision",
+  "name_ru": "Тёмное зрение"
+ },
+ "spell:daylight": {
+  "category": "spells",
+  "name": "Daylight",
+  "name_ru": "Дневной свет"
+ },
+ "spell:death-ward": {
+  "category": "spells",
+  "name": "Death Ward",
+  "name_ru": "Защита от смерти"
+ },
+ "spell:delayed-blast-fireball": {
+  "category": "spells",
+  "name": "Delayed Blast Fireball",
+  "name_ru": "Запоздалый огненный шар"
+ },
+ "spell:demiplane": {
+  "category": "spells",
+  "name": "Demiplane",
+  "name_ru": "Полуплоскость"
+ },
+ "spell:detect-evil-and-good": {
+  "category": "spells",
+  "name": "Detect Evil and Good",
+  "name_ru": "Обнаружение зла и добра"
+ },
+ "spell:detect-magic": {
+  "category": "spells",
+  "name": "Detect Magic",
+  "name_ru": "Обнаружение магии"
+ },
+ "spell:detect-poison-and-disease": {
+  "category": "spells",
+  "name": "Detect Poison and Disease",
+  "name_ru": "Обнаружение яда и болезней"
+ },
+ "spell:detect-thoughts": {
+  "category": "spells",
+  "name": "Detect Thoughts",
+  "name_ru": "Обнаружение мыслей"
+ },
+ "spell:dimension-door": {
+  "category": "spells",
+  "name": "Dimension Door",
+  "name_ru": "Дверь между измерениями"
+ },
+ "spell:disguise-self": {
+  "category": "spells",
+  "name": "Disguise Self",
+  "name_ru": "Маскировка"
+ },
+ "spell:disintegrate": {
+  "category": "spells",
+  "name": "Disintegrate",
+  "name_ru": "Дезинтеграция"
+ },
+ "spell:dispel-evil-and-good": {
+  "category": "spells",
+  "name": "Dispel Evil and Good",
+  "name_ru": "Изгнание зла и добра"
+ },
+ "spell:dispel-magic": {
+  "category": "spells",
+  "name": "Dispel Magic",
+  "name_ru": "Развеивание магии"
+ },
+ "spell:dissonant-whispers": {
+  "category": "spells",
+  "name": "Dissonant Whispers",
+  "name_ru": "Диссонирующий шёпот"
+ },
+ "spell:divination": {
+  "category": "spells",
+  "name": "Divination",
+  "name_ru": "Гадание"
+ },
+ "spell:divine-favor": {
+  "category": "spells",
+  "name": "Divine Favor",
+  "name_ru": "Божественное благоволение"
+ },
+ "spell:divine-smite": {
+  "category": "spells",
+  "name": "Divine Smite",
+  "name_ru": "Божественная кара"
+ },
+ "spell:divine-word": {
+  "category": "spells",
+  "name": "Divine Word",
+  "name_ru": "Слово божественной силы"
+ },
+ "spell:dominate-beast": {
+  "category": "spells",
+  "name": "Dominate Beast",
+  "name_ru": "Подчинение зверя"
+ },
+ "spell:dominate-monster": {
+  "category": "spells",
+  "name": "Dominate Monster",
+  "name_ru": "Подчинение монстра"
+ },
+ "spell:dominate-person": {
+  "category": "spells",
+  "name": "Dominate Person",
+  "name_ru": "Подчинение личности"
+ },
+ "spell:dragons-breath": {
+  "category": "spells",
+  "name": "Dragon's Breath",
+  "name_ru": "Дыхание дракона"
+ },
+ "spell:dream": {
+  "category": "spells",
+  "name": "Dream",
+  "name_ru": "Сон"
+ },
+ "spell:druidcraft": {
+  "category": "spells",
+  "name": "Druidcraft",
+  "name_ru": "Друидское ремесло"
+ },
+ "spell:earthquake": {
+  "category": "spells",
+  "name": "Earthquake",
+  "name_ru": "Землетрясение"
+ },
+ "spell:eldritch-blast": {
+  "category": "spells",
+  "name": "Eldritch Blast",
+  "name_ru": "Мистический заряд"
+ },
+ "spell:elementalism": {
+  "category": "spells",
+  "name": "Elementalism",
+  "name_ru": "Элементализм"
+ },
+ "spell:enhance-ability": {
+  "category": "spells",
+  "name": "Enhance Ability",
+  "name_ru": "Усиление характеристики"
+ },
+ "spell:enlarge-reduce": {
+  "category": "spells",
+  "name": "Enlarge/Reduce",
+  "name_ru": "Увеличение/уменьшение"
+ },
+ "spell:ensnaring-strike": {
+  "category": "spells",
+  "name": "Ensnaring Strike",
+  "name_ru": "Опутывающий удар"
+ },
+ "spell:entangle": {
+  "category": "spells",
+  "name": "Entangle",
+  "name_ru": "Опутывание"
+ },
+ "spell:enthrall": {
+  "category": "spells",
+  "name": "Enthrall",
+  "name_ru": "Пленение разума"
+ },
+ "spell:etherealness": {
+  "category": "spells",
+  "name": "Etherealness",
+  "name_ru": "Эфирность"
+ },
+ "spell:expeditious-retreat": {
+  "category": "spells",
+  "name": "Expeditious Retreat",
+  "name_ru": "Ускоренное отступление"
+ },
+ "spell:eyebite": {
+  "category": "spells",
+  "name": "Eyebite",
+  "name_ru": "Взгляд"
+ },
+ "spell:fabricate": {
+  "category": "spells",
+  "name": "Fabricate",
+  "name_ru": "Изготовление"
+ },
+ "spell:faerie-fire": {
+  "category": "spells",
+  "name": "Faerie Fire",
+  "name_ru": "Огонь фейри"
+ },
+ "spell:faithful-hound": {
+  "category": "spells",
+  "name": "Faithful Hound",
+  "name_ru": "Верный пёс"
+ },
+ "spell:false-life": {
+  "category": "spells",
+  "name": "False Life",
+  "name_ru": "Ложная жизнь"
+ },
+ "spell:fear": {
+  "category": "spells",
+  "name": "Fear",
+  "name_ru": "Страх"
+ },
+ "spell:feather-fall": {
+  "category": "spells",
+  "name": "Feather Fall",
+  "name_ru": "Падение пёрышком"
+ },
+ "spell:find-familiar": {
+  "category": "spells",
+  "name": "Find Familiar",
+  "name_ru": "Поиск фамильяра"
+ },
+ "spell:find-steed": {
+  "category": "spells",
+  "name": "Find Steed",
+  "name_ru": "Поиск скакуна"
+ },
+ "spell:find-the-path": {
+  "category": "spells",
+  "name": "Find the Path",
+  "name_ru": "Поиск пути"
+ },
+ "spell:find-traps": {
+  "category": "spells",
+  "name": "Find Traps",
+  "name_ru": "Поиск ловушек"
+ },
+ "spell:finger-of-death": {
+  "category": "spells",
+  "name": "Finger of Death",
+  "name_ru": "Перст смерти"
+ },
+ "spell:fire-bolt": {
+  "category": "spells",
+  "name": "Fire Bolt",
+  "name_ru": "Огненная стрела"
+ },
+ "spell:fire-shield": {
+  "category": "spells",
+  "name": "Fire Shield",
+  "name_ru": "Огненный щит"
+ },
+ "spell:fire-storm": {
+  "category": "spells",
+  "name": "Fire Storm",
+  "name_ru": "Огненная буря"
+ },
+ "spell:fireball": {
+  "category": "spells",
+  "name": "Fireball",
+  "name_ru": "Огненный шар"
+ },
+ "spell:flame-blade": {
+  "category": "spells",
+  "name": "Flame Blade",
+  "name_ru": "Пламенный клинок"
+ },
+ "spell:flame-strike": {
+  "category": "spells",
+  "name": "Flame Strike",
+  "name_ru": "Огненный удар"
+ },
+ "spell:flaming-sphere": {
+  "category": "spells",
+  "name": "Flaming Sphere",
+  "name_ru": "Пылающая сфера"
+ },
+ "spell:flesh-to-stone": {
+  "category": "spells",
+  "name": "Flesh to Stone",
+  "name_ru": "Плоть в камень"
+ },
+ "spell:fly": {
+  "category": "spells",
+  "name": "Fly",
+  "name_ru": "Полёт"
+ },
+ "spell:fog-cloud": {
+  "category": "spells",
+  "name": "Fog Cloud",
+  "name_ru": "Облако тумана"
+ },
+ "spell:forbiddance": {
+  "category": "spells",
+  "name": "Forbiddance",
+  "name_ru": "Запрет"
+ },
+ "spell:forcecage": {
+  "category": "spells",
+  "name": "Forcecage",
+  "name_ru": "Силовая клетка"
+ },
+ "spell:foresight": {
+  "category": "spells",
+  "name": "Foresight",
+  "name_ru": "Предвидение"
+ },
+ "spell:freedom-of-movement": {
+  "category": "spells",
+  "name": "Freedom of Movement",
+  "name_ru": "Свобода передвижения"
+ },
+ "spell:freezing-sphere": {
+  "category": "spells",
+  "name": "Freezing Sphere",
+  "name_ru": "Ледяная сфера"
+ },
+ "spell:gaseous-form": {
+  "category": "spells",
+  "name": "Gaseous Form",
+  "name_ru": "Газообразная форма"
+ },
+ "spell:gate": {
+  "category": "spells",
+  "name": "Gate",
+  "name_ru": "Врата"
+ },
+ "spell:geas": {
+  "category": "spells",
+  "name": "Geas",
+  "name_ru": "Гейс"
+ },
+ "spell:gentle-repose": {
+  "category": "spells",
+  "name": "Gentle Repose",
+  "name_ru": "Упокоение"
+ },
+ "spell:giant-insect": {
+  "category": "spells",
+  "name": "Giant Insect",
+  "name_ru": "Гигантское насекомое"
+ },
+ "spell:glibness": {
+  "category": "spells",
+  "name": "Glibness",
+  "name_ru": "Красноречие"
+ },
+ "spell:globe-of-invulnerability": {
+  "category": "spells",
+  "name": "Globe of Invulnerability",
+  "name_ru": "Сфера неуязвимости"
+ },
+ "spell:glyph-of-warding": {
+  "category": "spells",
+  "name": "Glyph of Warding",
+  "name_ru": "Знак охраны"
+ },
+ "spell:goodberry": {
+  "category": "spells",
+  "name": "Goodberry",
+  "name_ru": "Чудо-ягода"
+ },
+ "spell:grease": {
+  "category": "spells",
+  "name": "Grease",
+  "name_ru": "Скольжение"
+ },
+ "spell:greater-invisibility": {
+  "category": "spells",
+  "name": "Greater Invisibility",
+  "name_ru": "Высшая невидимость"
+ },
+ "spell:greater-restoration": {
+  "category": "spells",
+  "name": "Greater Restoration",
+  "name_ru": "Высшее восстановление"
+ },
+ "spell:guardian-of-faith": {
+  "category": "spells",
+  "name": "Guardian of Faith",
+  "name_ru": "Страж веры"
+ },
+ "spell:guards-and-wards": {
+  "category": "spells",
+  "name": "Guards and Wards",
+  "name_ru": "Стражи и обереги"
+ },
+ "spell:guidance": {
+  "category": "spells",
+  "name": "Guidance",
+  "name_ru": "Наставление"
+ },
+ "spell:guiding-bolt": {
+  "category": "spells",
+  "name": "Guiding Bolt",
+  "name_ru": "Направляющий снаряд"
+ },
+ "spell:gust-of-wind": {
+  "category": "spells",
+  "name": "Gust of Wind",
+  "name_ru": "Порыв ветра"
+ },
+ "spell:hallow": {
+  "category": "spells",
+  "name": "Hallow",
+  "name_ru": "Освящение"
+ },
+ "spell:hallucinatory-terrain": {
+  "category": "spells",
+  "name": "Hallucinatory Terrain",
+  "name_ru": "Иллюзорная местность"
+ },
+ "spell:harm": {
+  "category": "spells",
+  "name": "Harm",
+  "name_ru": "Порча здоровья"
+ },
+ "spell:haste": {
+  "category": "spells",
+  "name": "Haste",
+  "name_ru": "Ускорение"
+ },
+ "spell:heal": {
+  "category": "spells",
+  "name": "Heal",
+  "name_ru": "Исцеление"
+ },
+ "spell:healing-word": {
+  "category": "spells",
+  "name": "Healing Word",
+  "name_ru": "Целебное слово"
+ },
+ "spell:heat-metal": {
+  "category": "spells",
+  "name": "Heat Metal",
+  "name_ru": "Нагревание металла"
+ },
+ "spell:hellish-rebuke": {
+  "category": "spells",
+  "name": "Hellish Rebuke",
+  "name_ru": "Адская кара"
+ },
+ "spell:heroes-feast": {
+  "category": "spells",
+  "name": "Heroes' Feast",
+  "name_ru": "Пир героев"
+ },
+ "spell:heroism": {
+  "category": "spells",
+  "name": "Heroism",
+  "name_ru": "Героизм"
+ },
+ "spell:hex": {
+  "category": "spells",
+  "name": "Hex",
+  "name_ru": "Сглаз"
+ },
+ "spell:hideous-laughter": {
+  "category": "spells",
+  "name": "Hideous Laughter",
+  "name_ru": "Жуткий смех"
+ },
+ "spell:hold-monster": {
+  "category": "spells",
+  "name": "Hold Monster",
+  "name_ru": "Одержимость монстра"
+ },
+ "spell:hold-person": {
+  "category": "spells",
+  "name": "Hold Person",
+  "name_ru": "Одержимость личности"
+ },
+ "spell:holy-aura": {
+  "category": "spells",
+  "name": "Holy Aura",
+  "name_ru": "Святая аура"
+ },
+ "spell:hunters-mark": {
+  "category": "spells",
+  "name": "Hunter's Mark",
+  "name_ru": "Метка охотника"
+ },
+ "spell:hypnotic-pattern": {
+  "category": "spells",
+  "name": "Hypnotic Pattern",
+  "name_ru": "Гипнотический узор"
+ },
+ "spell:ice-storm": {
+  "category": "spells",
+  "name": "Ice Storm",
+  "name_ru": "Ледяная буря"
+ },
+ "spell:identify": {
+  "category": "spells",
+  "name": "Identify",
+  "name_ru": "Опознание"
+ },
+ "spell:illusory-script": {
+  "category": "spells",
+  "name": "Illusory Script",
+  "name_ru": "Иллюзорный текст"
+ },
+ "spell:imprisonment": {
+  "category": "spells",
+  "name": "Imprisonment",
+  "name_ru": "Заточение"
+ },
+ "spell:incendiary-cloud": {
+  "category": "spells",
+  "name": "Incendiary Cloud",
+  "name_ru": "Зажигательное облако"
+ },
+ "spell:inflict-wounds": {
+  "category": "spells",
+  "name": "Inflict Wounds",
+  "name_ru": "Нанесение ран"
+ },
+ "spell:insect-plague": {
+  "category": "spells",
+  "name": "Insect Plague",
+  "name_ru": "Нашествие насекомых"
+ },
+ "spell:instant-summons": {
+  "category": "spells",
+  "name": "Instant Summons",
+  "name_ru": "Мгновенный вызов"
+ },
+ "spell:invisibility": {
+  "category": "spells",
+  "name": "Invisibility",
+  "name_ru": "Невидимость"
+ },
+ "spell:irresistible-dance": {
+  "category": "spells",
+  "name": "Irresistible Dance",
+  "name_ru": "Неотразимый танец"
+ },
+ "spell:jump": {
+  "category": "spells",
+  "name": "Jump",
+  "name_ru": "Прыжок"
+ },
+ "spell:knock": {
+  "category": "spells",
+  "name": "Knock",
+  "name_ru": "Открывание"
+ },
+ "spell:legend-lore": {
+  "category": "spells",
+  "name": "Legend Lore",
+  "name_ru": "Знание легенд"
+ },
+ "spell:lesser-restoration": {
+  "category": "spells",
+  "name": "Lesser Restoration",
+  "name_ru": "Малое восстановление"
+ },
+ "spell:levitate": {
+  "category": "spells",
+  "name": "Levitate",
+  "name_ru": "Левитация"
+ },
+ "spell:light": {
+  "category": "spells",
+  "name": "Light",
+  "name_ru": "Свет"
+ },
+ "spell:lightning-bolt": {
+  "category": "spells",
+  "name": "Lightning Bolt",
+  "name_ru": "Молния"
+ },
+ "spell:locate-animals-or-plants": {
+  "category": "spells",
+  "name": "Locate Animals or Plants",
+  "name_ru": "Поиск животных или растений"
+ },
+ "spell:locate-creature": {
+  "category": "spells",
+  "name": "Locate Creature",
+  "name_ru": "Поиск существа"
+ },
+ "spell:locate-object": {
+  "category": "spells",
+  "name": "Locate Object",
+  "name_ru": "Поиск предмета"
+ },
+ "spell:longstrider": {
+  "category": "spells",
+  "name": "Longstrider",
+  "name_ru": "Быстроход"
+ },
+ "spell:mage-armor": {
+  "category": "spells",
+  "name": "Mage Armor",
+  "name_ru": "Доспех мага"
+ },
+ "spell:mage-hand": {
+  "category": "spells",
+  "name": "Mage Hand",
+  "name_ru": "Волшебная рука"
+ },
+ "spell:magic-circle": {
+  "category": "spells",
+  "name": "Magic Circle",
+  "name_ru": "Магический круг"
+ },
+ "spell:magic-jar": {
+  "category": "spells",
+  "name": "Magic Jar",
+  "name_ru": "Магический сосуд"
+ },
+ "spell:magic-missile": {
+  "category": "spells",
+  "name": "Magic Missile",
+  "name_ru": "Волшебные снаряды"
+ },
+ "spell:magic-mouth": {
+  "category": "spells",
+  "name": "Magic Mouth",
+  "name_ru": "Волшебные уста"
+ },
+ "spell:magic-weapon": {
+  "category": "spells",
+  "name": "Magic Weapon",
+  "name_ru": "Волшебное оружие"
+ },
+ "spell:magnificent-mansion": {
+  "category": "spells",
+  "name": "Magnificent Mansion",
+  "name_ru": "Великолепный особняк"
+ },
+ "spell:major-image": {
+  "category": "spells",
+  "name": "Major Image",
+  "name_ru": "Большой образ"
+ },
+ "spell:mass-cure-wounds": {
+  "category": "spells",
+  "name": "Mass Cure Wounds",
+  "name_ru": "Массовое лечение ран"
+ },
+ "spell:mass-heal": {
+  "category": "spells",
+  "name": "Mass Heal",
+  "name_ru": "Массовое исцеление"
+ },
+ "spell:mass-healing-word": {
+  "category": "spells",
+  "name": "Mass Healing Word",
+  "name_ru": "Массовое целебное слово"
+ },
+ "spell:mass-suggestion": {
+  "category": "spells",
+  "name": "Mass Suggestion",
+  "name_ru": "Массовое внушение"
+ },
+ "spell:maze": {
+  "category": "spells",
+  "name": "Maze",
+  "name_ru": "Лабиринт"
+ },
+ "spell:meld-into-stone": {
+  "category": "spells",
+  "name": "Meld into Stone",
+  "name_ru": "Сродство с камнем"
+ },
+ "spell:mending": {
+  "category": "spells",
+  "name": "Mending",
+  "name_ru": "Починка"
+ },
+ "spell:message": {
+  "category": "spells",
+  "name": "Message",
+  "name_ru": "Сообщение"
+ },
+ "spell:meteor-swarm": {
+  "category": "spells",
+  "name": "Meteor Swarm",
+  "name_ru": "Метеоритный дождь"
+ },
+ "spell:mind-blank": {
+  "category": "spells",
+  "name": "Mind Blank",
+  "name_ru": "Пустота разума"
+ },
+ "spell:mind-spike": {
+  "category": "spells",
+  "name": "Mind Spike",
+  "name_ru": "Шип разума"
+ },
+ "spell:minor-illusion": {
+  "category": "spells",
+  "name": "Minor Illusion",
+  "name_ru": "Малая иллюзия"
+ },
+ "spell:mirage-arcane": {
+  "category": "spells",
+  "name": "Mirage Arcane",
+  "name_ru": "Магический мираж"
+ },
+ "spell:mirror-image": {
+  "category": "spells",
+  "name": "Mirror Image",
+  "name_ru": "Зеркальные двойники"
+ },
+ "spell:mislead": {
+  "category": "spells",
+  "name": "Mislead",
+  "name_ru": "Ввести в заблуждение"
+ },
+ "spell:misty-step": {
+  "category": "spells",
+  "name": "Misty Step",
+  "name_ru": "Туманный шаг"
+ },
+ "spell:modify-memory": {
+  "category": "spells",
+  "name": "Modify Memory",
+  "name_ru": "Изменение памяти"
+ },
+ "spell:moonbeam": {
+  "category": "spells",
+  "name": "Moonbeam",
+  "name_ru": "Лунный луч"
+ },
+ "spell:move-earth": {
+  "category": "spells",
+  "name": "Move Earth",
+  "name_ru": "Движение земли"
+ },
+ "spell:nondetection": {
+  "category": "spells",
+  "name": "Nondetection",
+  "name_ru": "Сокрытие от обнаружения"
+ },
+ "spell:pass-without-trace": {
+  "category": "spells",
+  "name": "Pass without Trace",
+  "name_ru": "Без следа"
+ },
+ "spell:passwall": {
+  "category": "spells",
+  "name": "Passwall",
+  "name_ru": "Проход в стене"
+ },
+ "spell:phantasmal-force": {
+  "category": "spells",
+  "name": "Phantasmal Force",
+  "name_ru": "Призрачная сила"
+ },
+ "spell:phantasmal-killer": {
+  "category": "spells",
+  "name": "Phantasmal Killer",
+  "name_ru": "Призрачный убийца"
+ },
+ "spell:phantom-steed": {
+  "category": "spells",
+  "name": "Phantom Steed",
+  "name_ru": "Фантомный скакун"
+ },
+ "spell:planar-ally": {
+  "category": "spells",
+  "name": "Planar Ally",
+  "name_ru": "Планарный союзник"
+ },
+ "spell:planar-binding": {
+  "category": "spells",
+  "name": "Planar Binding",
+  "name_ru": "Планарные узы"
+ },
+ "spell:plane-shift": {
+  "category": "spells",
+  "name": "Plane Shift",
+  "name_ru": "Смена плана"
+ },
+ "spell:plant-growth": {
+  "category": "spells",
+  "name": "Plant Growth",
+  "name_ru": "Рост растений"
+ },
+ "spell:poison-spray": {
+  "category": "spells",
+  "name": "Poison Spray",
+  "name_ru": "Брызги яда"
+ },
+ "spell:polymorph": {
+  "category": "spells",
+  "name": "Polymorph",
+  "name_ru": "Превращение"
+ },
+ "spell:power-word-heal": {
+  "category": "spells",
+  "name": "Power Word Heal",
+  "name_ru": "Слово силы: исцеление"
+ },
+ "spell:power-word-kill": {
+  "category": "spells",
+  "name": "Power Word Kill",
+  "name_ru": "Слово силы: смерть"
+ },
+ "spell:power-word-stun": {
+  "category": "spells",
+  "name": "Power Word Stun",
+  "name_ru": "Слово силы: оглушение"
+ },
+ "spell:prayer-of-healing": {
+  "category": "spells",
+  "name": "Prayer of Healing",
+  "name_ru": "Молитва исцеления"
+ },
+ "spell:prestidigitation": {
+  "category": "spells",
+  "name": "Prestidigitation",
+  "name_ru": "Малая магия"
+ },
+ "spell:prismatic-spray": {
+  "category": "spells",
+  "name": "Prismatic Spray",
+  "name_ru": "Радужный веер"
+ },
+ "spell:prismatic-wall": {
+  "category": "spells",
+  "name": "Prismatic Wall",
+  "name_ru": "Радужная стена"
+ },
+ "spell:private-sanctum": {
+  "category": "spells",
+  "name": "Private Sanctum",
+  "name_ru": "Личное святилище"
+ },
+ "spell:produce-flame": {
+  "category": "spells",
+  "name": "Produce Flame",
+  "name_ru": "Сотворение пламени"
+ },
+ "spell:programmed-illusion": {
+  "category": "spells",
+  "name": "Programmed Illusion",
+  "name_ru": "Запрограммированная иллюзия"
+ },
+ "spell:project-image": {
+  "category": "spells",
+  "name": "Project Image",
+  "name_ru": "Проекция образа"
+ },
+ "spell:protection-from-energy": {
+  "category": "spells",
+  "name": "Protection from Energy",
+  "name_ru": "Защита от энергии"
+ },
+ "spell:protection-from-evil-and-good": {
+  "category": "spells",
+  "name": "Protection from Evil and Good",
+  "name_ru": "Защита от зла и добра"
+ },
+ "spell:protection-from-poison": {
+  "category": "spells",
+  "name": "Protection from Poison",
+  "name_ru": "Защита от яда"
+ },
+ "spell:purify-food-and-drink": {
+  "category": "spells",
+  "name": "Purify Food and Drink",
+  "name_ru": "Очищение еды и питья"
+ },
+ "spell:raise-dead": {
+  "category": "spells",
+  "name": "Raise Dead",
+  "name_ru": "Воскрешение мёртвых"
+ },
+ "spell:ray-of-enfeeblement": {
+  "category": "spells",
+  "name": "Ray of Enfeeblement",
+  "name_ru": "Луч слабости"
+ },
+ "spell:ray-of-frost": {
+  "category": "spells",
+  "name": "Ray of Frost",
+  "name_ru": "Луч холода"
+ },
+ "spell:ray-of-sickness": {
+  "category": "spells",
+  "name": "Ray of Sickness",
+  "name_ru": "Луч болезни"
+ },
+ "spell:regenerate": {
+  "category": "spells",
+  "name": "Regenerate",
+  "name_ru": "Регенерация"
+ },
+ "spell:reincarnate": {
+  "category": "spells",
+  "name": "Reincarnate",
+  "name_ru": "Перевоплощение"
+ },
+ "spell:remove-curse": {
+  "category": "spells",
+  "name": "Remove Curse",
+  "name_ru": "Снятие проклятия"
+ },
+ "spell:resilient-sphere": {
+  "category": "spells",
+  "name": "Resilient Sphere",
+  "name_ru": "Упругий шар"
+ },
+ "spell:resistance": {
+  "category": "spells",
+  "name": "Resistance",
+  "name_ru": "Сопротивление"
+ },
+ "spell:resurrection": {
+  "category": "spells",
+  "name": "Resurrection",
+  "name_ru": "Воскрешение"
+ },
+ "spell:reverse-gravity": {
+  "category": "spells",
+  "name": "Reverse Gravity",
+  "name_ru": "Обратная гравитация"
+ },
+ "spell:revivify": {
+  "category": "spells",
+  "name": "Revivify",
+  "name_ru": "Оживление"
+ },
+ "spell:rope-trick": {
+  "category": "spells",
+  "name": "Rope Trick",
+  "name_ru": "Верёвочная уловка"
+ },
+ "spell:sacred-flame": {
+  "category": "spells",
+  "name": "Sacred Flame",
+  "name_ru": "Священное пламя"
+ },
+ "spell:sanctuary": {
+  "category": "spells",
+  "name": "Sanctuary",
+  "name_ru": "Святилище"
+ },
+ "spell:scorching-ray": {
+  "category": "spells",
+  "name": "Scorching Ray",
+  "name_ru": "Палящий луч"
+ },
+ "spell:scrying": {
+  "category": "spells",
+  "name": "Scrying",
+  "name_ru": "Наблюдение"
+ },
+ "spell:searing-smite": {
+  "category": "spells",
+  "name": "Searing Smite",
+  "name_ru": "Обжигающая кара"
+ },
+ "spell:secret-chest": {
+  "category": "spells",
+  "name": "Secret Chest",
+  "name_ru": "Тайный сундук"
+ },
+ "spell:see-invisibility": {
+  "category": "spells",
+  "name": "See Invisibility",
+  "name_ru": "Видение невидимого"
+ },
+ "spell:seeming": {
+  "category": "spells",
+  "name": "Seeming",
+  "name_ru": "Личина"
+ },
+ "spell:sending": {
+  "category": "spells",
+  "name": "Sending",
+  "name_ru": "Послание"
+ },
+ "spell:sequester": {
+  "category": "spells",
+  "name": "Sequester",
+  "name_ru": "Изоляция"
+ },
+ "spell:shapechange": {
+  "category": "spells",
+  "name": "Shapechange",
+  "name_ru": "Изменение облика"
+ },
+ "spell:shatter": {
+  "category": "spells",
+  "name": "Shatter",
+  "name_ru": "Дребезги"
+ },
+ "spell:shield-of-faith": {
+  "category": "spells",
+  "name": "Shield of Faith",
+  "name_ru": "Щит веры"
+ },
+ "spell:shield": {
+  "category": "spells",
+  "name": "Shield",
+  "name_ru": "Щит"
+ },
+ "spell:shillelagh": {
+  "category": "spells",
+  "name": "Shillelagh",
+  "name_ru": "Дубина"
+ },
+ "spell:shining-smite": {
+  "category": "spells",
+  "name": "Shining Smite",
+  "name_ru": "Сияющая кара"
+ },
+ "spell:shocking-grasp": {
+  "category": "spells",
+  "name": "Shocking Grasp",
+  "name_ru": "Разряд"
+ },
+ "spell:silence": {
+  "category": "spells",
+  "name": "Silence",
+  "name_ru": "Тишина"
+ },
+ "spell:silent-image": {
+  "category": "spells",
+  "name": "Silent Image",
+  "name_ru": "Беззвучный образ"
+ },
+ "spell:simulacrum": {
+  "category": "spells",
+  "name": "Simulacrum",
+  "name_ru": "Симулякр"
+ },
+ "spell:sleep": {
+  "category": "spells",
+  "name": "Sleep",
+  "name_ru": "Сон-колыбельная"
+ },
+ "spell:sleet-storm": {
+  "category": "spells",
+  "name": "Sleet Storm",
+  "name_ru": "Мокрый снег"
+ },
+ "spell:slow": {
+  "category": "spells",
+  "name": "Slow",
+  "name_ru": "Замедление"
+ },
+ "spell:sorcerous-burst": {
+  "category": "spells",
+  "name": "Sorcerous Burst",
+  "name_ru": "Чародейский взрыв"
+ },
+ "spell:spare-the-dying": {
+  "category": "spells",
+  "name": "Spare the Dying",
+  "name_ru": "Пощада умирающему"
+ },
+ "spell:speak-with-animals": {
+  "category": "spells",
+  "name": "Speak with Animals",
+  "name_ru": "Разговор с животными"
+ },
+ "spell:speak-with-dead": {
+  "category": "spells",
+  "name": "Speak with Dead",
+  "name_ru": "Разговор с мёртвыми"
+ },
+ "spell:speak-with-plants": {
+  "category": "spells",
+  "name": "Speak with Plants",
+  "name_ru": "Разговор с растениями"
+ },
+ "spell:spider-climb": {
+  "category": "spells",
+  "name": "Spider Climb",
+  "name_ru": "Паучье лазание"
+ },
+ "spell:spike-growth": {
+  "category": "spells",
+  "name": "Spike Growth",
+  "name_ru": "Шипы"
+ },
+ "spell:spirit-guardians": {
+  "category": "spells",
+  "name": "Spirit Guardians",
+  "name_ru": "Духи-хранители"
+ },
+ "spell:spiritual-weapon": {
+  "category": "spells",
+  "name": "Spiritual Weapon",
+  "name_ru": "Духовное оружие"
+ },
+ "spell:starry-wisp": {
+  "category": "spells",
+  "name": "Starry Wisp",
+  "name_ru": "Звёздный огонёк"
+ },
+ "spell:stinking-cloud": {
+  "category": "spells",
+  "name": "Stinking Cloud",
+  "name_ru": "Зловонное облако"
+ },
+ "spell:stone-shape": {
+  "category": "spells",
+  "name": "Stone Shape",
+  "name_ru": "Формование камня"
+ },
+ "spell:stoneskin": {
+  "category": "spells",
+  "name": "Stoneskin",
+  "name_ru": "Каменная кожа"
+ },
+ "spell:storm-of-vengeance": {
+  "category": "spells",
+  "name": "Storm of Vengeance",
+  "name_ru": "Шторм возмездия"
+ },
+ "spell:suggestion": {
+  "category": "spells",
+  "name": "Suggestion",
+  "name_ru": "Внушение"
+ },
+ "spell:summon-dragon": {
+  "category": "spells",
+  "name": "Summon Dragon",
+  "name_ru": "Вызов дракона"
+ },
+ "spell:sunbeam": {
+  "category": "spells",
+  "name": "Sunbeam",
+  "name_ru": "Солнечный луч"
+ },
+ "spell:sunburst": {
+  "category": "spells",
+  "name": "Sunburst",
+  "name_ru": "Солнечная вспышка"
+ },
+ "spell:symbol": {
+  "category": "spells",
+  "name": "Symbol",
+  "name_ru": "Символ"
+ },
+ "spell:telekinesis": {
+  "category": "spells",
+  "name": "Telekinesis",
+  "name_ru": "Телекинез"
+ },
+ "spell:telepathic-bond": {
+  "category": "spells",
+  "name": "Telepathic Bond",
+  "name_ru": "Телепатическая связь"
+ },
+ "spell:teleport": {
+  "category": "spells",
+  "name": "Teleport",
+  "name_ru": "Телепортация"
+ },
+ "spell:teleportation-circle": {
+  "category": "spells",
+  "name": "Teleportation Circle",
+  "name_ru": "Телепортационный круг"
+ },
+ "spell:tensers-floating-disk": {
+  "category": "spells",
+  "name": "Floating Disk",
+  "name_ru": "Парящий диск Тензера"
+ },
+ "spell:thaumaturgy": {
+  "category": "spells",
+  "name": "Thaumaturgy",
+  "name_ru": "Тауматургия"
+ },
+ "spell:thunderwave": {
+  "category": "spells",
+  "name": "Thunderwave",
+  "name_ru": "Волна грома"
+ },
+ "spell:time-stop": {
+  "category": "spells",
+  "name": "Time Stop",
+  "name_ru": "Остановка времени"
+ },
+ "spell:tiny-hut": {
+  "category": "spells",
+  "name": "Tiny Hut",
+  "name_ru": "Крошечная хижина"
+ },
+ "spell:tongues": {
+  "category": "spells",
+  "name": "Tongues",
+  "name_ru": "Языки"
+ },
+ "spell:transport-via-plants": {
+  "category": "spells",
+  "name": "Transport via Plants",
+  "name_ru": "Путешествие через растения"
+ },
+ "spell:tree-stride": {
+  "category": "spells",
+  "name": "Tree Stride",
+  "name_ru": "Древесный шаг"
+ },
+ "spell:true-polymorph": {
+  "category": "spells",
+  "name": "True Polymorph",
+  "name_ru": "Истинное превращение"
+ },
+ "spell:true-resurrection": {
+  "category": "spells",
+  "name": "True Resurrection",
+  "name_ru": "Истинное воскрешение"
+ },
+ "spell:true-seeing": {
+  "category": "spells",
+  "name": "True Seeing",
+  "name_ru": "Истинное зрение"
+ },
+ "spell:true-strike": {
+  "category": "spells",
+  "name": "True Strike",
+  "name_ru": "Истинный удар"
+ },
+ "spell:tsunami": {
+  "category": "spells",
+  "name": "Tsunami",
+  "name_ru": "Цунами"
+ },
+ "spell:unseen-servant": {
+  "category": "spells",
+  "name": "Unseen Servant",
+  "name_ru": "Невидимый слуга"
+ },
+ "spell:vampiric-touch": {
+  "category": "spells",
+  "name": "Vampiric Touch",
+  "name_ru": "Вампирское прикосновение"
+ },
+ "spell:vicious-mockery": {
+  "category": "spells",
+  "name": "Vicious Mockery",
+  "name_ru": "Едкая насмешка"
+ },
+ "spell:vitriolic-sphere": {
+  "category": "spells",
+  "name": "Vitriolic Sphere",
+  "name_ru": "Едкая сфера"
+ },
+ "spell:wall-of-fire": {
+  "category": "spells",
+  "name": "Wall of Fire",
+  "name_ru": "Стена огня"
+ },
+ "spell:wall-of-force": {
+  "category": "spells",
+  "name": "Wall of Force",
+  "name_ru": "Силовая стена"
+ },
+ "spell:wall-of-ice": {
+  "category": "spells",
+  "name": "Wall of Ice",
+  "name_ru": "Ледяная стена"
+ },
+ "spell:wall-of-stone": {
+  "category": "spells",
+  "name": "Wall of Stone",
+  "name_ru": "Каменная стена"
+ },
+ "spell:wall-of-thorns": {
+  "category": "spells",
+  "name": "Wall of Thorns",
+  "name_ru": "Стена шипов"
+ },
+ "spell:warding-bond": {
+  "category": "spells",
+  "name": "Warding Bond",
+  "name_ru": "Защитная связь"
+ },
+ "spell:water-breathing": {
+  "category": "spells",
+  "name": "Water Breathing",
+  "name_ru": "Дыхание под водой"
+ },
+ "spell:water-walk": {
+  "category": "spells",
+  "name": "Water Walk",
+  "name_ru": "Хождение по воде"
+ },
+ "spell:web": {
+  "category": "spells",
+  "name": "Web",
+  "name_ru": "Паутина"
+ },
+ "spell:weird": {
+  "category": "spells",
+  "name": "Weird",
+  "name_ru": "Жуткое видение"
+ },
+ "spell:wind-walk": {
+  "category": "spells",
+  "name": "Wind Walk",
+  "name_ru": "Хождение по ветру"
+ },
+ "spell:wind-wall": {
+  "category": "spells",
+  "name": "Wind Wall",
+  "name_ru": "Стена ветра"
+ },
+ "spell:wish": {
+  "category": "spells",
+  "name": "Wish",
+  "name_ru": "Желание"
+ },
+ "spell:word-of-recall": {
+  "category": "spells",
+  "name": "Word of Recall",
+  "name_ru": "Слово возвращения"
+ },
+ "spell:zone-of-truth": {
+  "category": "spells",
+  "name": "Zone of Truth",
+  "name_ru": "Зона правды"
+ },
+ "classes:barbarian": {
+  "category": "classes",
+  "name": "Barbarian",
+  "name_ru": "Варвар"
+ },
+ "classes:bard": {
+  "category": "classes",
+  "name": "Bard",
+  "name_ru": "Бард"
+ },
+ "classes:cleric": {
+  "category": "classes",
+  "name": "Cleric",
+  "name_ru": "Жрец"
+ },
+ "classes:druid": {
+  "category": "classes",
+  "name": "Druid",
+  "name_ru": "Друид"
+ },
+ "classes:fighter": {
+  "category": "classes",
+  "name": "Fighter",
+  "name_ru": "Воин"
+ },
+ "classes:monk": {
+  "category": "classes",
+  "name": "Monk",
+  "name_ru": "Монах"
+ },
+ "classes:paladin": {
+  "category": "classes",
+  "name": "Paladin",
+  "name_ru": "Паладин"
+ },
+ "classes:ranger": {
+  "category": "classes",
+  "name": "Ranger",
+  "name_ru": "Следопыт"
+ },
+ "classes:rogue": {
+  "category": "classes",
+  "name": "Rogue",
+  "name_ru": "Плут"
+ },
+ "classes:sorcerer": {
+  "category": "classes",
+  "name": "Sorcerer",
+  "name_ru": "Чародей"
+ },
+ "classes:warlock": {
+  "category": "classes",
+  "name": "Warlock",
+  "name_ru": "Колдун"
+ },
+ "classes:wizard": {
+  "category": "classes",
+  "name": "Wizard",
+  "name_ru": "Волшебник"
+ },
+ "species:dragonborn": {
+  "category": "species",
+  "name": "Dragonborn",
+  "name_ru": "Дракорождённый"
+ },
+ "species:dwarf": {
+  "category": "species",
+  "name": "Dwarf",
+  "name_ru": "Дварф"
+ },
+ "species:elf-drow": {
+  "category": "species",
+  "name": "Elf, Drow",
+  "name_ru": "Эльф (дроу)"
+ },
+ "species:elf-high": {
+  "category": "species",
+  "name": "Elf, High",
+  "name_ru": "Эльф (высший)"
+ },
+ "species:elf-wood": {
+  "category": "species",
+  "name": "Elf, Wood",
+  "name_ru": "Эльф (лесной)"
+ },
+ "species:gnome-forest": {
+  "category": "species",
+  "name": "Gnome, Forest",
+  "name_ru": "Гном (лесной)"
+ },
+ "species:gnome-rock": {
+  "category": "species",
+  "name": "Gnome, Rock",
+  "name_ru": "Гном (скальный)"
+ },
+ "species:goliath": {
+  "category": "species",
+  "name": "Goliath",
+  "name_ru": "Голиаф"
+ },
+ "species:halfling": {
+  "category": "species",
+  "name": "Halfling",
+  "name_ru": "Полуросток"
+ },
+ "species:human": {
+  "category": "species",
+  "name": "Human",
+  "name_ru": "Человек"
+ },
+ "species:orc": {
+  "category": "species",
+  "name": "Orc",
+  "name_ru": "Орк"
+ },
+ "species:tiefling-abyssal": {
+  "category": "species",
+  "name": "Tiefling, Abyssal",
+  "name_ru": "Тифлинг (бездны)"
+ },
+ "species:tiefling-chthonic": {
+  "category": "species",
+  "name": "Tiefling, Chthonic",
+  "name_ru": "Тифлинг (хтонии)"
+ },
+ "species:tiefling-infernal": {
+  "category": "species",
+  "name": "Tiefling, Infernal",
+  "name_ru": "Тифлинг (преисподней)"
+ },
+ "backgrounds:acolyte": {
+  "category": "backgrounds",
+  "name": "Acolyte",
+  "name_ru": "Послушник"
+ },
+ "backgrounds:criminal": {
+  "category": "backgrounds",
+  "name": "Criminal",
+  "name_ru": "Преступник"
+ },
+ "backgrounds:sage": {
+  "category": "backgrounds",
+  "name": "Sage",
+  "name_ru": "Мудрец"
+ },
+ "backgrounds:soldier": {
+  "category": "backgrounds",
+  "name": "Soldier",
+  "name_ru": "Солдат"
+ }
+}

@@ -1,0 +1,45 @@
+Спасброски захвата (save-активности в действиях с захватом): 24
+
+существо                 действие               тип  движок книга ok
+behir                    Constrict              str      18    18 ok
+behir                    Swallow                dex      18     - ?
+behir                    Swallow                con      14     - ?
+bugbear-stalker          Quick Grapple          dex      13    13 ok
+chuul                    Paralyzing Tentacles   con      13    13 ok
+constrictor-snake        Constrict              str      12     - ?
+couatl                   Constrict              str      15    15 ok
+giant-constrictor-snake  Constrict              str      14    14 ok
+glabrezu                 Pummel                 dex      17     - ?
+invisible-stalker        Vortex                 con      14    14 ok
+kraken                   Fling                  dex      25    25 ok
+kraken                   Swallow                dex      25     - ?
+kraken                   Swallow                con      25     - ?
+marilith                 Constrict              str      17    17 ok
+purple-worm              Swallow                str      19     - ?
+purple-worm              Swallow                con      22     - ?
+remorhaz                 Swallow                str      19     - ?
+remorhaz                 Swallow                con      15     - ?
+salamander               Constrict              str      15    15 ok
+shambling-mound          Engulf                 str      15    15 ok
+tarrasque                Swallow                str      27     - ?
+tarrasque                Swallow                con      20     - ?
+vampire-spawn            Bite                   con      14     - ?
+water-elemental          Whelm                  str      15    15 ok
+
+Ссылок на эффект без определения: 11 | из них объяснены adjudication: 11 | типизируются книгой: 0
+  adjudication behir                  Swallow              VOHv1LyO3hHolZXo — первый спасбросок Swallow: по книге провал сразу проглатывает цель, и Grappled тут же снимается — состояния на цель не остаётся, а механики проглатывания в движке нет
+  adjudication behir                  Swallow              aS5FyMP72vn3OKf1 — второй (Constitution) спасбросок Swallow бросает САМО существо, когда получает урон изнутри, — это не эффект на цель
+  adjudication chuul                  Paralyzing Tentacles 5ReKSrBu11ume7GP — Paralyzing Tentacles: Poisoned+Paralyzed с повтором спасброска в конце каждого хода цели; повторный спасбросок из данных не выводится типизированной активностью, поэтому без новой механики запись осталась бы включённой навсегда
+  adjudication kraken                 Swallow              VOHv1LyO3hHolZXo — первый спасбросок Swallow: по книге провал сразу проглатывает цель, и Grappled тут же снимается — состояния на цель не остаётся, а механики проглатывания в движке нет
+  adjudication kraken                 Swallow              aS5FyMP72vn3OKf1 — второй (Constitution) спасбросок Swallow бросает САМО существо, когда получает урон изнутри, — это не эффект на цель
+  adjudication purple-worm            Swallow              VOHv1LyO3hHolZXo — первый спасбросок Swallow: по книге провал сразу проглатывает цель, и Grappled тут же снимается — состояния на цель не остаётся, а механики проглатывания в движке нет
+  adjudication purple-worm            Swallow              aS5FyMP72vn3OKf1 — второй (Constitution) спасбросок Swallow бросает САМО существо, когда получает урон изнутри, — это не эффект на цель
+  adjudication remorhaz               Swallow              VOHv1LyO3hHolZXo — первый спасбросок Swallow: по книге провал сразу проглатывает цель, и Grappled тут же снимается — состояния на цель не остаётся, а механики проглатывания в движке нет
+  adjudication remorhaz               Swallow              aS5FyMP72vn3OKf1 — второй (Constitution) спасбросок Swallow бросает САМО существо, когда получает урон изнутри, — это не эффект на цель
+  adjudication tarrasque              Swallow              VOHv1LyO3hHolZXo — первый спасбросок Swallow: по книге провал сразу проглатывает цель, и Grappled тут же снимается — состояния на цель не остаётся, а механики проглатывания в движке нет
+  adjudication tarrasque              Swallow              aS5FyMP72vn3OKf1 — второй (Constitution) спасбросок Swallow бросает САМО существо, когда получает урон изнутри, — это не эффект на цель
+
+Сейв-активности без ссылки на эффект (по книге состояния нет):
+  glabrezu               Pummel               — Pummel: провал — 15 (3d6+5) дробящего, успех — половина; состояния по книге нет, ссылки на эффект в данных тоже нет
+  vampire-spawn          Bite                 — Bite: провал — урон некротикой и уменьшение максимума хитов; состояния по книге нет, ссылки на эффект в данных тоже нет
+

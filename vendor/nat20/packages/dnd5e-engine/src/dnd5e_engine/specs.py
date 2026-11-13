@@ -1,0 +1,431 @@
+"""Combat boundary spec types.
+
+Value-typed payloads the host adapter passes into start_combat. Owned
+by the library so a standalone consumer can construct combat-ready
+inputs without depending on the host-specific session/world types.
+"""
+
+from __future__ import annotations
+
+from typing import Literal
+
+from pydantic import BaseModel, ConfigDict, Field, model_validator
+
+from dnd5e_engine.activities.passive_stats import CombatantMovementModes, CombatantSenses
+from dnd5e_engine.types.combat import FightingStyle, SpellcastingAbility
+
+
+class PartyMemberSpec(BaseModel):
+    """One PC entering combat.
+
+    The seam takes the projected wire-level shape; building a real
+    ``Combatant`` from this happens in ``start_combat``. Combat stats
+    (hp_max, ac, attack_bonus, …) are the host's to look up — the seam
+    keeps them on this spec so the engine runs standalone.
+    """
+
+    model_config = ConfigDict(extra="forbid")
+
+    entity_id: str
+    name: str
+    # SRD 5.2 Initiative — "every participant rolls Initiative; they make a
+    # Dexterity check". A fixed int seats the combatant directly (legacy /
+    # host-supplied path, zero RNG draws). ``None`` opts into an
+    # engine-rolled ``d20 + DEX modifier`` in ``start_combat`` instead, plus
+    # the Proficiency Bonus for a character with Alert.
+    initiative: int | None
+    # SRD 5.2 Surprise — "that creature is surprised, which causes it to
+    # have Disadvantage on its Initiative roll." Only consulted when
+    # ``initiative`` is ``None`` (an explicit fixed initiative always wins).
+    is_surprised: bool = False
+    hp_current: int
+    hp_max: int
+    ac: int = 10
+    # A fixed weapon-attack to-hit bonus, honored verbatim (bypasses the
+    # engine's governing-ability-mod + proficiency-bonus computation) —
+    # for a host that precomputes its own totals. Leaving this unset (the
+    # default) is NOT the same as ``0``: an unset field lets the engine
+    # compute the real ability-mod + proficiency-bonus total instead
+    # (C15, SRD 5.2 §Weapon Proficiency); an explicit ``0`` is honored as a
+    # genuine zero override.
+    attack_bonus: int = 0
+    strength: int = 10
+    dexterity: int = 10
+    constitution: int = 10
+    intelligence: int = 10
+    wisdom: int = 10
+    charisma: int = 10
+    zone_id: str
+    # SRD §Spellcasting — caster spell-slot pool, ``{slot_level: count_remaining}``.
+    # Tracked on ``_LiveCombat.spell_slots_by_entity[caster_id]``; the
+    # orchestrator's slot gate decrements it and emits ``CastFailed`` when no
+    # slot remains rather than resolving the spell. Empty dict for non-casters.
+    spell_slots: dict[int, int] = Field(default_factory=dict)
+    # SRD Pact Magic — the Warlock's separately-recovering slot pool
+    # ``{slot_level: count_remaining}``, spent by the orchestrator.
+    pact_slots: dict[int, int] = Field(default_factory=dict)
+    # SRD §Spells Known — list of spell slugs the caster has prepared/known.
+    # The orchestrator resolves each slug to a typed ``Spell`` via
+    # ``get_lib_loader().get_spell`` and routes its activities through the typed
+    # resolver. Unknown slugs are skipped (with no warning — the caster simply
+    # cannot cast that spell at runtime).
+    spells_known: list[str] = Field(default_factory=list)
+    # SRD 5.2 Magic Initiate: "Intelligence, Wisdom, or Charisma is your
+    # spellcasting ability for this feat's spells". A spell slug → the ability
+    # (``"wis"``) that casts it, in place of the class's. ``build_party_member``
+    # fills it from the build's ``magic-initiate:`` tokens; empty by default.
+    spell_abilities: dict[str, SpellcastingAbility] = Field(default_factory=dict)
+    # SRD 5.2 Magic Initiate: "You can cast it once without a spell slot, and you
+    # regain the ability to cast it in that way when you finish a Long Rest."
+    # The spells this character can cast at their own level once without a
+    # slot; each use is tallied in ``custom_counters`` under
+    # ``slotless_cast:<spell>``. Empty by default.
+    slotless_casts: tuple[str, ...] = ()
+    # Custom limited-use counters, carried onto live combat state for the
+    # caster. Namespaced key conventions (see dnd5e_engine.rest):
+    # ``feature_use:<slug>`` / ``item_use:<slug>`` / ``slotless_cast:<spell>``
+    # → ``{"spent": n}``.
+    custom_counters: dict[str, dict[str, int]] = Field(default_factory=dict)
+    # SRD §Concentration — ``effect_id`` the caster is currently concentrating
+    # on, or ``None``. Carried across to the live ``Combatant`` so the
+    # single-concentration rule sees it on the first turn after combat opens.
+    concentration_effect_id: str | None = None
+    # SRD §Creatures — creature_type. PCs default to ``None`` until a host
+    # projects it from the species. The condition-predicate evaluator reads this
+    # via ``target.creature_type`` / ``caster.creature_type``.
+    creature_type: str | None = None
+    # SRD §Damage Resistance / §Damage Immunity — per-PC type lists. Empty by
+    # default; populated from the character sheet projection when wired.
+    damage_resistances: list[str] = Field(default_factory=list)
+    damage_immunities: list[str] = Field(default_factory=list)
+    # SRD §Damage Vulnerability — per-PC type list ("applying twice the normal
+    # damage"). Empty by default; threaded onto ``Combatant.damage_vulnerabilities``
+    # → the damage sidecar. Symmetric with the monster path.
+    damage_vulnerabilities: list[str] = Field(default_factory=list)
+    # SRD §Condition Immunity — condition slugs the PC can't suffer (Nature's
+    # Ward → ``"poisoned"``). Populated by ``build_party_member`` from always-on
+    # granted-feature ``system.traits.ci.value`` changes; copied onto the live
+    # ``Combatant`` at start_combat, where the condition-application path
+    # (``activities/effects.py``) suppresses a matching ``ConditionApplied``.
+    condition_immunities: list[str] = Field(default_factory=list)
+    # SRD §Senses — special senses in feet. Populated by ``build_party_member``
+    # from the PC's species senses + always-on feature passive_effects, and
+    # copied onto the live ``Combatant`` at start_combat. Empty (all ``None``)
+    # by default.
+    senses: CombatantSenses = Field(default_factory=CombatantSenses)
+    # SRD §Cantrips / §Character Advancement — character level (1..20).
+    # Drives cantrip scaling tiers (1/5/11/17) for dice-count cantrips
+    # (Sacred Flame, Fire Bolt → 1d8/2d8/3d8/4d8) and beam-count cantrips
+    # (Eldritch Blast → 1/2/3/4 beams). Carried onto the live ``Combatant`` and
+    # surfaced as ``ActivityResolutionContext.caster_level`` for the typed
+    # resolver's dice-scaling. (Multi-instance beam/dart count is a recorded
+    # data-layer follow-up.)
+    character_level: int = Field(ge=1, le=20, default=1)
+    # SRD §Movement — walking speed in feet. Defaults to 30 (the SRD
+    # baseline for medium humanoids). Projected onto ``Combatant.base_speed``
+    # at start_combat; resets ``movement_remaining`` on each of the actor's
+    # turns. Character race / monster speed projection threads through here.
+    base_speed: int = 30
+    # SRD §Movement — a creature's non-walk movement modes (climb/swim/fly/
+    # burrow speeds in feet; ``None`` = mode unavailable). Populated by
+    # ``build_party_member`` from always-on granted-feature
+    # ``system.attributes.movement.*`` changes (Roving → climb/swim = walk
+    # speed) and copied onto the live ``Combatant`` at start_combat. Kept
+    # multi-mode (collapsing to a single scalar is lossy). Empty by default.
+    movement_modes: CombatantMovementModes = Field(default_factory=CombatantMovementModes)
+
+    # SRD §Classes — character class slug (e.g. ``"rogue"``, ``"barbarian"``).
+    # Class-feature grants — Cunning Action's Bonus-Action Dash and Disengage
+    # among them — are read from the granted features at each class's own
+    # level (``classes``), never by comparing this slug: a multiclass build's
+    # Rogue levels grant Cunning Action whatever its primary ``class_slug``.
+    # ``None`` for non-classed entities and fixtures that don't project class
+    # info.
+    class_slug: str | None = None
+    # SRD 5.2 Multiclassing — ``{class_slug: level}`` in the order the classes
+    # were taken ("When you gain a new level in a class, you get its features for
+    # that level"): combat reads each class's features, ``@scale`` values and
+    # ``@classes.<slug>.levels`` at that class's own level. ``class_slug`` names
+    # one of them and ``character_level`` is their sum. Empty (the default) is a
+    # single class: ``class_slug`` at ``character_level``.
+    classes: dict[str, int] = Field(default_factory=dict)
+    # SRD §Subclasses — subclass slug (e.g. ``"berserker"``). Carried across to
+    # the live ``Combatant`` so subclass-feature activities can gate
+    # on it. ``None`` for non-classed entities, fixtures, and PCs a host
+    # records without a subclass.
+    subclass_slug: str | None = None
+    # SRD §Species — species slug (e.g. ``"orc"``, ``"dragonborn"``). Carried
+    # across to the live ``Combatant`` so species-feature activities resolve
+    # through the USE_FEATURE repertoire gate and species @scale tables resolve.
+    # ``None`` for non-species entities, fixtures, and PCs a host records
+    # without a species.
+    species_slug: str | None = None
+    # Build-seam equipment carrier — a reference-slug list of item slugs the PC
+    # carries. The build-spec owns equipment selection;
+    # ``build_party_member`` threads it through here so a built PC's equipment
+    # reaches the spec. Empty for a PC a host builds itself (its equipment's
+    # mechanics can reach the engine as enchantment effects instead).
+    equipment: tuple[str, ...] = ()
+    # SRD 5.2 feats the PC has (``DerivedSheet.feats``; ``build_party_member``
+    # fills it). In combat the engine applies Alert (an engine-rolled
+    # Initiative), Savage Attacker, Grappler's Advantage and the Fighting Style
+    # feats (Archery, Great Weapon Fighting, Two-Weapon Fighting); Defense is
+    # already in ``ac`` when ``derive_sheet`` computed it, and Magic Initiate
+    # reaches combat through ``spell_abilities`` and ``slotless_casts``. Other
+    # feats are recorded, not applied.
+    feats: tuple[str, ...] = ()
+    # SRD 5.2 feature-CHOICE picks (``DerivedSheet.features`` ∩ the pools a
+    # class/subclass/species offers) — Sorcerer Metamagic (Careful Spell,
+    # Quickened Spell, ...), Barbarian's Giant Ancestry, Rogue Expertise. These
+    # are GRANTED features the corpus keeps out of ``granted_features`` because
+    # the player picks them, so the repertoire gate cannot find them by walking
+    # owner docs. Without this carrier an obligatory Metamagic pick silently
+    # vanished: the sheet validated, and the ability the player chose was not in
+    # the repertoire at all (§5). ``build_party_member`` fills it from
+    # ``DerivedSheet.features`` minus the statically granted ones.
+    chosen_features: tuple[str, ...] = ()
+
+    # One Fighting Style feat for a hand-built spec; merged with any in ``feats``.
+    fighting_style: FightingStyle | None = None
+    # The reach this PC's opportunity attack threatens when it makes an Unarmed
+    # Strike, or the legacy swing (``_synthesize_attack_from_legacy_fields``); an
+    # opportunity attack with a weapon uses the weapon's own reach (10 ft with the
+    # Reach property), and an on-turn Unarmed Strike reaches 5 ft whatever this
+    # says. Defaults to 5 (mirrors ``Combatant.melee_reach_ft``'s own default — the
+    # SRD baseline). Projected onto ``Combatant.melee_reach_ft`` at start_combat by
+    # ``_build_pc_combatants``.
+    reach_ft: int = 5
+    # SRD 5.2 Opportunity Attacks: "take a Reaction to make one melee attack
+    # with a weapon or an Unarmed Strike". The weapon slug this PC makes its
+    # opportunity attacks with. ``None`` (the default) picks the first melee
+    # weapon in ``equipment``, else an Unarmed Strike; ``start_combat`` raises
+    # ``ValueError`` for a slug that names no melee weapon.
+    opportunity_attack_weapon_id: str | None = None
+    # SRD §Proficiency Bonus / §Saving Throws / §Skills — the PC's proficient
+    # save abilities, proficient skills, skills with expertise (double
+    # proficiency), and proficient weapon categories/slugs. Threaded onto the
+    # live ``Combatant`` at start_combat by ``_build_pc_combatants`` and read by
+    # ``activities/actor_stats.save_modifier`` / ``check_modifier`` (F1c/F1d).
+    # For ``save_proficiencies`` / ``skill_proficiencies`` / ``skill_expertise``,
+    # an empty tuple reproduces pre-F1 behaviour exactly: ability modifier
+    # only, no proficiency bonus. ``weapon_proficiencies`` is the ONE
+    # exception (the unset sentinel): ``Combatant.weapon_proficiencies`` is
+    # ``list[str] | None``, keyed off ``model_fields_set`` rather than off
+    # emptiness — an UNSET field on this spec (the field never assigned)
+    # projects to ``None`` and assumes proficient with every weapon (the
+    # legacy behaviour); an explicitly-set field, even an empty tuple/list,
+    # projects to a real list and every attack is enforced against it by
+    # category or slug. See ``orchestrator.py::_is_proficient_with_weapon``.
+    save_proficiencies: tuple[str, ...] = ()
+    skill_proficiencies: tuple[str, ...] = ()
+    skill_expertise: tuple[str, ...] = ()
+    weapon_proficiencies: tuple[str, ...] = ()
+    # Weapon kinds whose mastery the member actually chose. Empty means the
+    # member earns no mastery, so a weapon's printed mastery never fires for
+    # somebody who did not pick it.
+    weapon_masteries: tuple[str, ...] = ()
+    # SRD 5.2 Boots of the Winterlands, \"Winter Strider\": \"You ignore Difficult
+    # Terrain created by ice or snow.\" The terrain kinds this member's own
+    # difficult-terrain exemption covers; empty for everyone else.
+    ignored_difficult_terrain: tuple[str, ...] = ()
+    # SRD 5.2 Ioun Stone of Awareness: "Advantage on Initiative rolls."
+    # Positive = advantage, negative = disadvantage, 0 = neither.
+    initiative_advantage: int = 0
+    # Languages an item teaches (SRD 5.2 Demon Armor -> abyssal).
+    languages: tuple[str, ...] = ()
+    # SRD 5.2 §Attunement: an item that requires attunement gives its benefits
+    # only while attuned. Activations are gated on this tuple the same way the
+    # sheet's own item projection is -- without it a pair of Boots of Speed
+    # could be clicked by a character who never attuned to them.
+    attuned_items: tuple[str, ...] = ()
+
+
+    @model_validator(mode="after")
+    def _check_classes(self) -> PartyMemberSpec:
+        if not self.classes:
+            return self
+        if any(level < 1 for level in self.classes.values()):
+            raise ValueError(f"class levels must be positive: {self.classes}")
+        total = sum(self.classes.values())
+        if total != self.character_level:
+            raise ValueError(
+                f"character_level {self.character_level} does not equal "
+                f"the sum of classes ({total})"
+            )
+        if self.class_slug not in self.classes:
+            raise ValueError(
+                f"class_slug {self.class_slug!r} is not one of classes {sorted(self.classes)}"
+            )
+        return self
+
+
+class EncounterMemberSpec(BaseModel):
+    """One hostile (monster or NPC) entering combat."""
+
+    model_config = ConfigDict(extra="forbid")
+
+    entity_id: str
+    entity_type: Literal["Monster", "NPC"]
+    name: str
+    # SRD 5.2 Initiative — "every participant rolls Initiative; they make a
+    # Dexterity check". A fixed int seats the combatant directly (legacy /
+    # host-supplied path, zero RNG draws). ``None`` opts into an
+    # engine-rolled ``d20 + DEX modifier`` in ``start_combat`` instead.
+    initiative: int | None
+    # SRD 5.2 Surprise — "that creature is surprised, which causes it to
+    # have Disadvantage on its Initiative roll." Only consulted when
+    # ``initiative`` is ``None`` (an explicit fixed initiative always wins).
+    is_surprised: bool = False
+    hp_current: int
+    hp_max: int
+    ac: int = 10
+    attack_bonus: int = 0
+    damage_dice: str = "1d4"
+    damage_type: str = "bludgeoning"
+    behavior_profile: str = "AGGRESSIVE"
+    dexterity: int = 10
+    zone_id: str
+    # SRD monster template slug — the orchestrator's monster-turn resolver uses
+    # this to look up the monster's typed action repertoire via
+    # ``get_lib_loader().get_monster(slug)``. ``None`` (for NPCs without a
+    # template, or test fixtures) falls back to the legacy damage_dice /
+    # damage_type single-attack heuristic (one synthesized ``AttackActivity`` per turn;
+    # an unparseable ``damage_dice`` still records a no-op turn).
+    monster_template_slug: str | None = None
+    # SRD §Encounter XP value awarded when this monster dies. The orchestrator's
+    # outcome projection sums xp_value across dead encounter members and divides
+    # equally among surviving PCs (a solo PC takes the full total).
+    xp_value: int = 0
+    # SRD §Creatures — creature_type ("humanoid", "undead", "fey", ...).
+    # Populated from the monster's stat block; ``None`` for
+    # NPCs without a template. Drives type-gated spell semantics (Hold
+    # Person targets humanoids; Sleep autopasses undead/elves; etc.).
+    creature_type: str | None = None
+    # SRD §Damage Resistance / §Damage Immunity — per-monster type lists,
+    # populated from the host's monster template record. Empty
+    # by default for fixtures that don't specify.
+    damage_resistances: list[str] = Field(default_factory=list)
+    damage_immunities: list[str] = Field(default_factory=list)
+    # SRD §Damage Vulnerability — per-monster type list ("applying twice the
+    # normal damage"). Empty by default; when a ``monster_template_slug`` is set
+    # and this list is empty, ``_build_foe_combatants`` hydrates it from
+    # ``Monster.damage_vulnerabilities`` (the Skeleton's ``["bludgeoning"]``).
+    # Threaded onto ``Combatant.damage_vulnerabilities`` → the damage sidecar.
+    damage_vulnerabilities: list[str] = Field(default_factory=list)
+    # SRD §Condition Immunity — condition slugs this creature can't suffer.
+    # Empty by default; when a ``monster_template_slug`` is set and this list is
+    # empty, ``_build_foe_combatants`` hydrates it from
+    # ``Monster.condition_immunities`` (the Skeleton's ``["exhaustion",
+    # "poisoned"]``). Copied onto the live ``Combatant`` at start_combat.
+    condition_immunities: list[str] = Field(default_factory=list)
+    # SRD §Senses — special senses in feet. ``None`` (the default) takes them
+    # from the ``monster_template_slug`` stat block (the Goblin Warrior's
+    # Darkvision 60 ft.), or no special sense without one; an explicit value,
+    # ``CombatantSenses()`` included, wins over the template.
+    senses: CombatantSenses | None = None
+    # C22 — see ``Combatant.physical_resistances_nonmagical_only``. Leave True
+    # for the common "resistant to nonmagical B/P/S" profile; set False for
+    # a creature whose B/P/S resistance also applies to magical damage.
+    physical_resistances_nonmagical_only: bool = True
+    # SRD §Movement — walking speed in feet. See PartyMemberSpec.base_speed.
+    # Defaults to 30; a host threads the stat block's walking speed in
+    # here.
+    base_speed: int = 30
+
+
+class WallSegment(BaseModel):
+    """One wall edge, grid-CORNER endpoints (mirrors Foundry's ``Wall.c``
+    four-coordinate convention).
+
+    Coordinates are grid-corner units, not cell-center units: a wall running
+    along the boundary between column 2 and column 3 (spanning the full grid
+    height) is ``WallSegment(x1=2, y1=0, x2=2, y2=<height>)``, not
+    ``x1=2.5``. ``GridTopology.has_line_of_sight`` tests the straight segment
+    between two cells' CENTER points (``col+0.5, row+0.5``) against every
+    wall segment for a proper intersection — see
+    ``docs/dev/spatial-geometry.md``.
+    """
+
+    model_config = ConfigDict(extra="forbid")
+
+    x1: float
+    y1: float
+    x2: float
+    y2: float
+
+
+# SRD 5.2 §Vision and Light — the three light levels and the two obscurement
+# grades. Dim Light is a Lightly Obscured area (Perception disadvantage only);
+# Darkness is Heavily Obscured ("opaque ... you have the Blinded condition when
+# trying to see something there").
+LightLevel = Literal["bright", "dim", "dark"]
+Obscurement = Literal["light", "heavy"]
+
+
+class GridScene(BaseModel):
+    """Wire-level shape for a 2-D grid battlefield.
+
+    The grid backend resolves combat over Chebyshev (8-direction, one cell =
+    ``cell_size_ft``) distance. Combatant positions reuse the existing
+    ``zone_id`` string on the party/encounter specs, encoded as ``"col,row"``
+    (see ``dnd5e_engine.spatial.cell_id``). ``blocked_cells`` are impassable
+    squares (movement may not enter them). ``wall_segments`` block line of
+    sight (SRD 5.2 §Areas of Effect); ``cover_cells`` grant half / three-
+    quarters / total cover (SRD 5.2 §Cover); ``difficult_terrain_cells``
+    double the movement cost of entering them (SRD 5.2 §Difficult Terrain).
+    See ``docs/dev/spatial-geometry.md`` for the full geometry design note.
+    """
+
+    model_config = ConfigDict(extra="forbid")
+
+    width: int = Field(ge=1)
+    height: int = Field(ge=1)
+    cell_size_ft: int = Field(default=5, ge=1)
+    blocked_cells: list[str] = Field(default_factory=list)
+    # SRD 5.2 §Areas of Effect — wall geometry blocking line of sight.
+    # Additive; empty preserves ``has_line_of_sight``'s prior always-True
+    # behavior byte-for-byte.
+    wall_segments: list[WallSegment] = Field(default_factory=list)
+    # SRD 5.2 §Cover — obstruction cells tagged with the cover degree they
+    # grant a creature standing behind them, keyed by cell id (``"col,row"``).
+    # Distinct from ``blocked_cells`` (blocks movement) and ``wall_segments``
+    # (blocks LoS outright). Additive; empty preserves today's no-cover
+    # behavior.
+    cover_cells: dict[str, Literal["half", "three_quarters", "total"]] = Field(default_factory=dict)
+    # SRD 5.2 §Difficult Terrain — floor cells that cost double to enter.
+    # Additive; empty preserves ``edge_distance``'s prior flat-cost behavior.
+    difficult_terrain_cells: list[str] = Field(default_factory=list)
+    # SRD 5.2 Boots of the Winterlands, "Winter Strider": "You ignore
+    # Difficult Terrain created by ice or snow." The exemption is per TERRAIN
+    # KIND, so a scene says WHAT a difficult cell is made of here, keyed by
+    # cell id -- cell ids themselves stay "col,row" (``parse_cell`` parses
+    # them). A cell absent from this map is difficult ground of unknown kind
+    # and nothing ignores it. Additive; empty preserves prior behaviour.
+    difficult_terrain_kinds: dict[str, str] = Field(default_factory=dict)
+    # C16b — SRD 5.2 §Vision and Light. ``lighting`` tags cells whose light
+    # level differs from ``default_lighting``; an empty map + the "bright"
+    # default reproduces pre-0.6 behaviour (everything visible).
+    lighting: dict[str, LightLevel] = Field(default_factory=dict)
+    default_lighting: LightLevel = "bright"
+    # Non-light obscurement (fog, foliage): "light" has no combat effect,
+    # "heavy" hides whatever stands in the cell from every sense but
+    # blindsight/truesight. Consumed by ``GridTopology.can_see``.
+    obscurement_cells: dict[str, Obscurement] = Field(default_factory=dict)
+    # C18 §Monster action economy — SRD 5.2 stat-block trait "Sunlight
+    # Sensitivity" (bundled ``canonical/traits/sunlight-sensitivity.json``):
+    # "While in sunlight, the monster has Disadvantage on ability checks and
+    # attack rolls." Only the attack-roll half is consumed (ability checks
+    # are a BACKLOG residual). Whole-SCENE flag for now — every cell shares
+    # one sunlight state; a per-cell field is a later additive extension.
+    # ``False`` default reproduces pre-C18 behavior (no scene is ever sunlit).
+    sunlight: bool = False
+
+
+__all__ = [
+    "EncounterMemberSpec",
+    "GridScene",
+    "LightLevel",
+    "Obscurement",
+    "PartyMemberSpec",
+    "WallSegment",
+]

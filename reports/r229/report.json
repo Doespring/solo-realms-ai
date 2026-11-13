@@ -1,0 +1,178 @@
+[
+  {
+    "file": "text-layer.pdf",
+    "upload_status": 200,
+    "job": {
+      "id": "6ee4f5ff-4cfb-428a-8c8a-f7988f70e107",
+      "status": "complete",
+      "message": "Извлечено страниц: 3, знаков: 730. Модулей: 1. Границы глав не найдены: один модуль на весь документ. Игровые инструкции по-прежнему требуют проверки."
+    },
+    "library": {
+      "document": "fbefab7d3ce5",
+      "document_status": "extracted",
+      "format": ".pdf",
+      "pages": 3,
+      "extracted_characters": 730,
+      "materials": 3,
+      "quality": {
+        "text_characters": 730,
+        "text_encoding": null,
+        "blank_pages": 0,
+        "partial_pages": [],
+        "mechanics": "requires_review",
+        "media_scope": "gm",
+        "ocr": false,
+        "blank_pages_list": []
+      }
+    },
+    "step": "prepare",
+    "run": {
+      "id": "b08510d8-7b21-46ed-82fb-149285a77f9c",
+      "status": "ready",
+      "ready": true,
+      "done": 1,
+      "total": 1,
+      "message": "Приключение подготовлено. Создайте героя.",
+      "errors": [],
+      "summary": {
+        "locations": 1,
+        "npc": 0,
+        "quarantined": 0
+      }
+    },
+    "model": {
+      "calls": 1,
+      "largest_block": 751,
+      "blocks_sent": [
+        751
+      ],
+      "block_detail": [
+        {
+          "task": "campaign-prepare-v1",
+          "pages": 3,
+          "characters": 751,
+          "numbers": [
+            1,
+            2,
+            3
+          ],
+          "documents": [
+            "fbefab7d3ce5db219de69c1ad9829ccf5248986ae22515ba217c8c24e4a0df08"
+          ]
+        }
+      ],
+      "characters_in_model": 751
+    },
+    "parts": [
+      {
+        "ordinal": 0,
+        "status": "validated",
+        "characters": 1199
+      }
+    ]
+  },
+  {
+    "file": "scan-only.pdf",
+    "upload_status": 200,
+    "job": {
+      "id": "6dcd2834-a3f4-4d52-a440-16262b55de1e",
+      "status": "failed",
+      "message": "Извлечение не завершено: В этом PDF нет текстового слоя: распознавание (OCR) не поддерживается. Нужен PDF с текстом или TXT. Оригинал сохранён; непроверенные материалы не готовы к игре."
+    },
+    "library": {
+      "document": "d4fcc5312149",
+      "document_status": "failed",
+      "format": ".pdf",
+      "pages": 0,
+      "extracted_characters": 0,
+      "materials": 0,
+      "quality": {
+        "text_characters": 0,
+        "blank_pages": 3,
+        "blank_pages_list": [
+          1,
+          2,
+          3
+        ],
+        "pictured_pages": [],
+        "ocr": false,
+        "text_encoding": null,
+        "reason": "В этом PDF нет текстового слоя: распознавание (OCR) не поддерживается. Нужен PDF с текстом или TXT.",
+        "mechanics": "requires_review"
+      }
+    },
+    "step": "extract",
+    "refused": true
+  },
+  {
+    "file": "cp1251.txt",
+    "upload_status": 200,
+    "job": {
+      "id": "cdd471b8-0f75-4e87-badc-95f53dcbeadd",
+      "status": "complete",
+      "message": "Извлечено страниц: 1, знаков: 455. Модулей: 1. Границы глав не найдены: один модуль на весь документ. Игровые инструкции по-прежнему требуют проверки."
+    },
+    "library": {
+      "document": "6592767c4ea0",
+      "document_status": "extracted",
+      "format": ".txt",
+      "pages": 1,
+      "extracted_characters": 455,
+      "materials": 0,
+      "quality": {
+        "text_characters": 455,
+        "text_encoding": "cp1251",
+        "blank_pages": 0,
+        "partial_pages": [],
+        "mechanics": "requires_review",
+        "media_scope": "gm",
+        "ocr": false,
+        "blank_pages_list": []
+      }
+    },
+    "step": "prepare",
+    "run": {
+      "id": "63d78d70-ec05-4362-be9d-c1bb2424075a",
+      "status": "ready",
+      "ready": true,
+      "done": 1,
+      "total": 1,
+      "message": "Приключение подготовлено. Создайте героя.",
+      "errors": [],
+      "summary": {
+        "locations": 1,
+        "npc": 0,
+        "quarantined": 0
+      }
+    },
+    "model": {
+      "calls": 1,
+      "largest_block": 469,
+      "blocks_sent": [
+        469
+      ],
+      "block_detail": [
+        {
+          "task": "campaign-prepare-v1",
+          "pages": 2,
+          "characters": 469,
+          "numbers": [
+            1,
+            1
+          ],
+          "documents": [
+            "6592767c4ea0cf7b79fa84ceff8ef2627b2a2df84c6727039f20989efd1512fd"
+          ]
+        }
+      ],
+      "characters_in_model": 469
+    },
+    "parts": [
+      {
+        "ordinal": 0,
+        "status": "validated",
+        "characters": 786
+      }
+    ]
+  }
+]

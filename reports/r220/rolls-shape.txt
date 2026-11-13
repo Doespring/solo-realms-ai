@@ -1,0 +1,14 @@
+кампания 200
+--- eb261802-242b-4c6b-8fac-b543cfe22657 lantern-install
+    results: [{"type": "scripted", "kind": "scene_install", "text": "У старого фонаря стоит домик. Смотрительница Лада просит проверить следы у калитки. После устранения опасности она передаст герою благодарственное письмо."}]
+    narrative_data: {}
+--- 628a9027-51a5-460b-9a1d-49d19d4a8e5d r220-001
+    results: [{"type": "scripted", "kind": "nat20_command", "text": "Восприятие: 23 против Сл 12 — успех (натуральная 20)", "game_command": {"request_id": "r220-001", "expected_version": 1, "action": {"kind": "check", "check_id": "perception"}}, "ai_proposal_applied": false}]
+    narrative_data: {"description": "Восприятие: 23 против Сл 12 — успех (натуральная 20)", "dialogue": [], "proposals": [], "presentation_only": true}
+--- 7b34928f-4b2a-48be-81f2-709036329829 social-dd6ddd77ff1cbe8ef722422277be81a0
+    results: [{"type": "scripted", "kind": "conversation", "text": "У старого фонаря стоит домик. Смотрительница Лада просит проверить следы у калитки. Лада: «Лада видела следы у калитки.»"}]
+    narrative_data: {"description": "У старого фонаря стоит домик. Смотрительница Лада просит проверить следы у калитки.", "dialogue": [{"speaker": "Лада", "text": "Лада видела следы у калитки."}], "proposals": [], "presentation_only": true}
+screen 200 keys ['commands', 'contract_version', 'events', 'feedback', 'snapshot']
+snapshot keys ['backend', 'campaign_id', 'combat', 'command_turn', 'hero', 'last_roll', 'scene', 'terminal', 'version']
+last_roll {"label": "Проверка", "dice": [20], "total": 23, "success": true, "formula": ""}
+hero null

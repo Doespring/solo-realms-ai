@@ -1,0 +1,39 @@
+{
+  "document": "ffdf632462bfe2666132456f6a81f312475950b2501a28e8362c0fff7e2581d7",
+  "name": "Icewind Dale - Rime of the Frostmaiden RUS.pdf",
+  "pages": 109,
+  "characters": 428404,
+  "run": "fde291af-d702-48fc-bb1b-b9196230bc36",
+  "plan_blocks": 0,
+  "status": "blocked",
+  "done": 21,
+  "total": 21,
+  "message": "Открытая стартовая сцена и её обязательные зависимости ещё не подтверждены. Продолжить можно после проверки конкретной сцены; исходники и блоки сохранены.",
+  "playable_at_s": null,
+  "playable_done": null,
+  "playable_total": null,
+  "playable_blocks": null,
+  "full_at_s": 285.3,
+  "calls": {
+    "total": 25,
+    "ok": 25,
+    "invalid": 0,
+    "limit": 0,
+    "spent": 1.9864
+  },
+  "calls_per_block": 1.19,
+  "split_sections": 4,
+  "limit_hits": 4,
+  "refused_share": 0.0,
+  "world_readiness": {
+    "status": 200,
+    "ready": false,
+    "world_ready": false,
+    "reasons": [
+      "Старт мира заблокирован: Текстовое сведение не подтверждено цитатой (поле name); Число не подтверждено цитатой; Противоречивые версии одного элемента; id: Field required; category: Field required; name: Extra inputs are not permitted; description: Extra inputs are not permitted; id: Field required; npc: Field required; name: Extra inputs are not permitted; name: Field required; id: Field required"
+    ]
+  },
+  "confirmed_during_run": null,
+  "draft_prepared": false,
+  "errors": []
+}

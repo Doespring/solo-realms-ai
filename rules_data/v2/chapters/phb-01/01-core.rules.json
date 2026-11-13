@@ -1,0 +1,1956 @@
+{
+  "schema_version": "2.1.0",
+  "rules": [
+    {
+      "id": "phb2024.phb01.rounding",
+      "rules_family": "dnd2024",
+      "name": "Округление произведений и частных",
+      "kind": "procedure",
+      "classification": {
+        "mode": "deterministic",
+        "semantic_required": false,
+        "formal_required": true,
+        "reason": "Formal branch after trusted input confirmation."
+      },
+      "conditions": [],
+      "triggers": [
+        "rounding.requested"
+      ],
+      "formal_operations": [
+        {
+          "op": "scale_integer",
+          "inputs": [],
+          "constants": {
+            "procedure_id": "rounding"
+          }
+        }
+      ],
+      "semantic_questions": [],
+      "facts": {
+        "rounding": "floor"
+      },
+      "constraints": [],
+      "exceptions": [
+        {
+          "when": "A specific rule requires rounding up",
+          "consequence": "Use ceil for that operation only"
+        }
+      ],
+      "duration": "per_test",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "kind": "phb",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 9,
+        "printed_page": "8",
+        "section": "Округление в меньшую сторону"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "kernel_verified",
+      "auto_activate": false,
+      "dependencies": [],
+      "behavior_tests": [
+        "phb01.rounding"
+      ],
+      "readiness": {
+        "status": "kernel_verified",
+        "handler": "math.scale_integer",
+        "scope": "Округление произведений и частных",
+        "blockers": []
+      },
+      "revision": 1
+    },
+    {
+      "id": "phb2024.phb01.specific_over_general",
+      "rules_family": "dnd2024",
+      "name": "Приоритет явно указанного исключения",
+      "kind": "guidance",
+      "classification": {
+        "mode": "adjudicated",
+        "semantic_required": true,
+        "formal_required": false,
+        "reason": "Narrative judgement has no invented numerical outcome."
+      },
+      "conditions": [],
+      "triggers": [
+        "specific_over_general.requested"
+      ],
+      "formal_operations": [],
+      "semantic_questions": [
+        "Какое явное исключение применимо? Не сочинять исключения."
+      ],
+      "facts": {
+        "priority": "specific_over_general"
+      },
+      "constraints": [],
+      "exceptions": [],
+      "duration": "per_test",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "kind": "phb",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 9,
+        "printed_page": "8",
+        "section": "Исключения заменяют общие правила"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "not_implemented",
+      "auto_activate": false,
+      "dependencies": [],
+      "behavior_tests": [
+        "phb01.specific_over_general"
+      ],
+      "readiness": {
+        "status": "adjudication_required",
+        "handler": null,
+        "scope": "Приоритет явно указанного исключения",
+        "blockers": []
+      },
+      "revision": 1
+    },
+    {
+      "id": "phb2024.phb01.dice_sum",
+      "rules_family": "dnd2024",
+      "name": "Сумма костей и модификатор",
+      "kind": "procedure",
+      "classification": {
+        "mode": "deterministic",
+        "semantic_required": false,
+        "formal_required": true,
+        "reason": "Formal branch after trusted input confirmation."
+      },
+      "conditions": [],
+      "triggers": [
+        "dice_sum.requested"
+      ],
+      "formal_operations": [
+        {
+          "op": "sum_dice",
+          "inputs": [],
+          "constants": {
+            "procedure_id": "dice_sum"
+          }
+        }
+      ],
+      "semantic_questions": [],
+      "facts": {
+        "sides": [
+          4,
+          6,
+          8,
+          10,
+          12,
+          20
+        ],
+        "example_draw_count": 3,
+        "example_sides": 8,
+        "example_modifier": 5
+      },
+      "constraints": [],
+      "exceptions": [],
+      "duration": "per_test",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "kind": "phb",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 10,
+        "printed_page": "9",
+        "section": "Обозначение костей"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "kernel_verified",
+      "auto_activate": false,
+      "dependencies": [],
+      "behavior_tests": [
+        "phb01.dice_sum"
+      ],
+      "readiness": {
+        "status": "kernel_verified",
+        "handler": "math.sum_dice",
+        "scope": "Сумма костей и модификатор",
+        "blockers": []
+      },
+      "revision": 1
+    },
+    {
+      "id": "phb2024.phb01.percentile",
+      "rules_family": "dnd2024",
+      "name": "Десятки и единицы к100",
+      "kind": "procedure",
+      "classification": {
+        "mode": "deterministic",
+        "semantic_required": false,
+        "formal_required": true,
+        "reason": "Formal branch after trusted input confirmation."
+      },
+      "conditions": [],
+      "triggers": [
+        "percentile.requested"
+      ],
+      "formal_operations": [
+        {
+          "op": "percentile",
+          "inputs": [],
+          "constants": {
+            "procedure_id": "percentile"
+          }
+        }
+      ],
+      "semantic_questions": [],
+      "facts": {
+        "digit_min": 0,
+        "digit_max": 9,
+        "double_zero": 100
+      },
+      "constraints": [],
+      "exceptions": [],
+      "duration": "per_test",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "kind": "phb",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 10,
+        "printed_page": "9",
+        "section": "Процентная кость"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "kernel_verified",
+      "auto_activate": false,
+      "dependencies": [],
+      "behavior_tests": [
+        "phb01.percentile"
+      ],
+      "readiness": {
+        "status": "kernel_verified",
+        "handler": "math.percentile",
+        "scope": "Десятки и единицы к100",
+        "blockers": []
+      },
+      "revision": 1
+    },
+    {
+      "id": "phb2024.phb01.d3",
+      "rules_family": "dnd2024",
+      "name": "Имитация к3 посредством к6",
+      "kind": "procedure",
+      "classification": {
+        "mode": "deterministic",
+        "semantic_required": false,
+        "formal_required": true,
+        "reason": "Formal branch after trusted input confirmation."
+      },
+      "conditions": [],
+      "triggers": [
+        "d3.requested"
+      ],
+      "formal_operations": [
+        {
+          "op": "scale_integer",
+          "inputs": [],
+          "constants": {
+            "procedure_id": "d3"
+          }
+        }
+      ],
+      "semantic_questions": [],
+      "facts": {
+        "die": 6,
+        "numerator": 1,
+        "denominator": 2,
+        "rounding": "ceil"
+      },
+      "constraints": [],
+      "exceptions": [],
+      "duration": "per_test",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "kind": "phb",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 10,
+        "printed_page": "9",
+        "section": "к3"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "kernel_verified",
+      "auto_activate": false,
+      "dependencies": [],
+      "behavior_tests": [
+        "phb01.d3"
+      ],
+      "readiness": {
+        "status": "kernel_verified",
+        "handler": "math.scale_integer",
+        "scope": "Имитация к3 посредством к6",
+        "blockers": []
+      },
+      "revision": 1
+    },
+    {
+      "id": "phb2024.phb01.percentage_chance",
+      "rules_family": "dnd2024",
+      "name": "Процентная вероятность",
+      "kind": "procedure",
+      "classification": {
+        "mode": "deterministic",
+        "semantic_required": false,
+        "formal_required": true,
+        "reason": "Formal branch after trusted input confirmation."
+      },
+      "conditions": [],
+      "triggers": [
+        "percentage_chance.requested"
+      ],
+      "formal_operations": [
+        {
+          "op": "percentage_event",
+          "inputs": [],
+          "constants": {
+            "procedure_id": "percentage_chance"
+          }
+        }
+      ],
+      "semantic_questions": [],
+      "facts": {
+        "die": 100,
+        "comparison": "draw_lte_chance"
+      },
+      "constraints": [],
+      "exceptions": [],
+      "duration": "per_test",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "kind": "phb",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 10,
+        "printed_page": "9",
+        "section": "Вероятность в процентах"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "kernel_verified",
+      "auto_activate": false,
+      "dependencies": [],
+      "behavior_tests": [
+        "phb01.percentage_chance"
+      ],
+      "readiness": {
+        "status": "kernel_verified",
+        "handler": "math.percentage_event",
+        "scope": "Процентная вероятность",
+        "blockers": []
+      },
+      "revision": 1
+    },
+    {
+      "id": "phb2024.phb01.random_tables",
+      "rules_family": "dnd2024",
+      "name": "Выбор строки случайной таблицы",
+      "kind": "procedure",
+      "classification": {
+        "mode": "hybrid",
+        "semantic_required": true,
+        "formal_required": true,
+        "reason": "Meaning and applicability require a GM proposal; formal effects remain in Engine."
+      },
+      "conditions": [],
+      "triggers": [
+        "random_tables.requested"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "procedure_id": "random_tables"
+          }
+        }
+      ],
+      "semantic_questions": [
+        "Выбор строки случайной таблицы — какие обстоятельства и решение подтверждены Мастером?"
+      ],
+      "facts": {
+        "selection": "inclusive_interval_contains_draw"
+      },
+      "constraints": [],
+      "exceptions": [],
+      "duration": "per_test",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "kind": "phb",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 10,
+        "printed_page": "9",
+        "section": "Случайные таблицы"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "not_implemented",
+      "auto_activate": false,
+      "dependencies": [
+        "catalog.table_ranges"
+      ],
+      "behavior_tests": [
+        "phb01.random_tables"
+      ],
+      "readiness": {
+        "status": "blocked",
+        "handler": null,
+        "scope": "Выбор строки случайной таблицы",
+        "blockers": [
+          "Each table and its non-overlapping intervals must be extracted separately."
+        ]
+      },
+      "revision": 1
+    },
+    {
+      "id": "phb2024.phb01.roll_narration",
+      "rules_family": "dnd2024",
+      "name": "Повествовательная трактовка броска",
+      "kind": "guidance",
+      "classification": {
+        "mode": "adjudicated",
+        "semantic_required": true,
+        "formal_required": false,
+        "reason": "Narrative judgement has no invented numerical outcome."
+      },
+      "conditions": [],
+      "triggers": [
+        "roll_narration.requested"
+      ],
+      "formal_operations": [],
+      "semantic_questions": [
+        "Повествовательная трактовка броска — какие обстоятельства и решение подтверждены Мастером?"
+      ],
+      "facts": {
+        "input": "committed_roll_result",
+        "state_write": false
+      },
+      "constraints": [],
+      "exceptions": [],
+      "duration": "per_test",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "kind": "phb",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 10,
+        "printed_page": "9",
+        "section": "Толкование результатов в рамках сюжета"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "not_implemented",
+      "auto_activate": false,
+      "dependencies": [],
+      "behavior_tests": [
+        "phb01.roll_narration"
+      ],
+      "readiness": {
+        "status": "adjudication_required",
+        "handler": null,
+        "scope": "Повествовательная трактовка броска",
+        "blockers": []
+      },
+      "revision": 1
+    },
+    {
+      "id": "phb2024.phb01.abilities",
+      "rules_family": "dnd2024",
+      "name": "Шесть характеристик",
+      "kind": "procedure",
+      "classification": {
+        "mode": "deterministic",
+        "semantic_required": false,
+        "formal_required": true,
+        "reason": "Formal branch after trusted input confirmation."
+      },
+      "conditions": [],
+      "triggers": [
+        "abilities.requested"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "procedure_id": "abilities"
+          }
+        }
+      ],
+      "semantic_questions": [],
+      "facts": {
+        "abilities": [
+          "strength",
+          "dexterity",
+          "constitution",
+          "intelligence",
+          "wisdom",
+          "charisma"
+        ]
+      },
+      "constraints": [],
+      "exceptions": [],
+      "duration": "per_test",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "kind": "phb",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 11,
+        "printed_page": "10",
+        "section": "Шесть характеристик"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "existing_engine_subset",
+      "auto_activate": false,
+      "dependencies": [],
+      "behavior_tests": [
+        "phb01.abilities"
+      ],
+      "readiness": {
+        "status": "engine_subset_verified",
+        "handler": "Hero.scores",
+        "scope": "Шесть характеристик",
+        "blockers": []
+      },
+      "revision": 1
+    },
+    {
+      "id": "phb2024.phb01.ability_scores",
+      "rules_family": "dnd2024",
+      "name": "Значения характеристик и исключения",
+      "kind": "procedure",
+      "classification": {
+        "mode": "hybrid",
+        "semantic_required": true,
+        "formal_required": true,
+        "reason": "Meaning and applicability require a GM proposal; formal effects remain in Engine."
+      },
+      "conditions": [],
+      "triggers": [
+        "ability_scores.requested"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "procedure_id": "ability_scores"
+          }
+        }
+      ],
+      "semantic_questions": [
+        "Значения характеристик и исключения — какие обстоятельства и решение подтверждены Мастером?"
+      ],
+      "facts": {
+        "ordinary_min": 1,
+        "ordinary_adventurer_max": 20,
+        "absolute_max": 30,
+        "zero_effect": "defined_by_reducing_effect"
+      },
+      "constraints": [],
+      "exceptions": [],
+      "duration": "per_test",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "kind": "phb",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 11,
+        "printed_page": "10",
+        "section": "Характеристики"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "existing_engine_subset",
+      "auto_activate": false,
+      "dependencies": [],
+      "behavior_tests": [
+        "phb01.ability_scores"
+      ],
+      "readiness": {
+        "status": "blocked",
+        "handler": "Hero.scores",
+        "scope": "Значения характеристик и исключения",
+        "blockers": [
+          "Zero and effect-specific upper-bound exceptions require the originating effect."
+        ]
+      },
+      "revision": 1
+    },
+    {
+      "id": "phb2024.phb01.ability_modifier",
+      "rules_family": "dnd2024",
+      "name": "Модификатор характеристики",
+      "kind": "procedure",
+      "classification": {
+        "mode": "deterministic",
+        "semantic_required": false,
+        "formal_required": true,
+        "reason": "Formal branch after trusted input confirmation."
+      },
+      "conditions": [],
+      "triggers": [
+        "ability_modifier.requested"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "procedure_id": "ability_modifier"
+          }
+        }
+      ],
+      "semantic_questions": [],
+      "facts": {
+        "min_score": 1,
+        "max_score": 30,
+        "offset": 10,
+        "divisor": 2,
+        "rounding": "floor"
+      },
+      "constraints": [],
+      "exceptions": [],
+      "duration": "per_test",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "kind": "phb",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 11,
+        "printed_page": "10",
+        "section": "Модификаторы характеристик"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "existing_engine_subset",
+      "auto_activate": false,
+      "dependencies": [
+        "checks.ability"
+      ],
+      "behavior_tests": [
+        "phb01.ability_modifier"
+      ],
+      "readiness": {
+        "status": "adapter_verified",
+        "handler": "RulesetEngine.d20",
+        "scope": "Модификатор характеристики",
+        "blockers": []
+      },
+      "revision": 1
+    },
+    {
+      "id": "phb2024.phb01.ability_check",
+      "rules_family": "dnd2024",
+      "name": "Проверка характеристики против Сл",
+      "kind": "procedure",
+      "classification": {
+        "mode": "deterministic",
+        "semantic_required": false,
+        "formal_required": true,
+        "reason": "Formal branch after trusted input confirmation."
+      },
+      "conditions": [],
+      "triggers": [
+        "d20.before_roll"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "procedure_id": "ability_check"
+          }
+        }
+      ],
+      "semantic_questions": [],
+      "facts": {
+        "die": 20,
+        "comparison": "total_gte_dc",
+        "natural_1_20": "no_automatic_result"
+      },
+      "constraints": [
+        "Trusted confirmed ability/DC/proficiency only; arbitrary situational modifiers and unregistered effects are refused."
+      ],
+      "exceptions": [],
+      "duration": "per_test",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "kind": "phb",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 11,
+        "printed_page": "10",
+        "section": "Тесты к20 / Проверки характеристики"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "existing_engine_subset",
+      "auto_activate": false,
+      "dependencies": [
+        "checks.ability",
+        "phb2024.phb01.ability_modifier"
+      ],
+      "behavior_tests": [
+        "phb01.ability_check"
+      ],
+      "readiness": {
+        "status": "adapter_verified",
+        "handler": "RulesetEngine.check",
+        "scope": "Проверка характеристики против Сл",
+        "blockers": []
+      },
+      "revision": 1
+    },
+    {
+      "id": "phb2024.phb01.choose_check",
+      "rules_family": "dnd2024",
+      "name": "Необходимость проверки и выбор характеристики",
+      "kind": "guidance",
+      "classification": {
+        "mode": "adjudicated",
+        "semantic_required": true,
+        "formal_required": false,
+        "reason": "Narrative judgement has no invented numerical outcome."
+      },
+      "conditions": [],
+      "triggers": [
+        "choose_check.requested"
+      ],
+      "formal_operations": [],
+      "semantic_questions": [
+        "Необходимость проверки и выбор характеристики — какие обстоятельства и решение подтверждены Мастером?"
+      ],
+      "facts": {
+        "roll_when": "uncertain_and_interesting",
+        "dc_authority": "gm_or_explicit_rule"
+      },
+      "constraints": [],
+      "exceptions": [],
+      "duration": "per_test",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "kind": "phb",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 11,
+        "printed_page": "10",
+        "section": "Проверки характеристики"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "not_implemented",
+      "auto_activate": false,
+      "dependencies": [],
+      "behavior_tests": [
+        "phb01.choose_check"
+      ],
+      "readiness": {
+        "status": "adjudication_required",
+        "handler": null,
+        "scope": "Необходимость проверки и выбор характеристики",
+        "blockers": []
+      },
+      "revision": 1
+    },
+    {
+      "id": "phb2024.phb01.difficulty",
+      "rules_family": "dnd2024",
+      "name": "Типичные классы сложности",
+      "kind": "procedure",
+      "classification": {
+        "mode": "hybrid",
+        "semantic_required": true,
+        "formal_required": true,
+        "reason": "Meaning and applicability require a GM proposal; formal effects remain in Engine."
+      },
+      "conditions": [],
+      "triggers": [
+        "difficulty.requested"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "procedure_id": "difficulty"
+          }
+        }
+      ],
+      "semantic_questions": [
+        "Типичные классы сложности — какие обстоятельства и решение подтверждены Мастером?"
+      ],
+      "facts": {
+        "difficulties": [
+          "very_easy",
+          "easy",
+          "moderate",
+          "hard",
+          "very_hard",
+          "nearly_impossible"
+        ],
+        "dc": [
+          5,
+          10,
+          15,
+          20,
+          25,
+          30
+        ]
+      },
+      "constraints": [],
+      "exceptions": [],
+      "duration": "per_test",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "kind": "phb",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 12,
+        "printed_page": "11",
+        "section": "Типичные Классы сложности"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "not_implemented",
+      "auto_activate": false,
+      "dependencies": [
+        "phb2024.phb01.choose_check"
+      ],
+      "behavior_tests": [
+        "phb01.difficulty"
+      ],
+      "readiness": {
+        "status": "blocked",
+        "handler": null,
+        "scope": "Типичные классы сложности",
+        "blockers": [
+          "AI proposes task difficulty; confirmed DC is a trusted command input, not automatically assigned from text."
+        ]
+      },
+      "revision": 1
+    },
+    {
+      "id": "phb2024.phb01.saving_throw",
+      "rules_family": "dnd2024",
+      "name": "Спасбросок против Сл",
+      "kind": "procedure",
+      "classification": {
+        "mode": "deterministic",
+        "semantic_required": false,
+        "formal_required": true,
+        "reason": "Formal branch after trusted input confirmation."
+      },
+      "conditions": [],
+      "triggers": [
+        "d20.before_roll"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "procedure_id": "saving_throw"
+          }
+        }
+      ],
+      "semantic_questions": [],
+      "facts": {
+        "die": 20,
+        "comparison": "total_gte_dc",
+        "consequence": "originating_effect_only",
+        "proficiency": "confirmed_character_sheet"
+      },
+      "constraints": [
+        "Consequences of the originating effect are not inferred or applied by this check-only command."
+      ],
+      "exceptions": [],
+      "duration": "per_test",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "kind": "phb",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 12,
+        "printed_page": "11",
+        "section": "Спасброски; Модификатор характеристик; Бонус владения (стр. 12)"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "existing_engine_subset",
+      "auto_activate": false,
+      "dependencies": [
+        "checks.ability",
+        "phb2024.phb01.ability_modifier"
+      ],
+      "behavior_tests": [
+        "phb01.saving_throw"
+      ],
+      "readiness": {
+        "status": "adapter_verified",
+        "handler": "RulesetEngine.saving_throw",
+        "scope": "Спасбросок против Сл",
+        "blockers": []
+      },
+      "revision": 1
+    },
+    {
+      "id": "phb2024.phb01.voluntary_save_failure",
+      "rules_family": "dnd2024",
+      "name": "Добровольный провал спасброска без броска",
+      "kind": "procedure",
+      "classification": {
+        "mode": "deterministic",
+        "semantic_required": false,
+        "formal_required": true,
+        "reason": "Formal branch after trusted input confirmation."
+      },
+      "conditions": [],
+      "triggers": [
+        "voluntary_save_failure.requested"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "procedure_id": "voluntary_save_failure"
+          }
+        }
+      ],
+      "semantic_questions": [],
+      "facts": {
+        "draws": 0,
+        "success": false,
+        "choice": "unwilling_to_resist"
+      },
+      "constraints": [],
+      "exceptions": [],
+      "duration": "per_test",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "kind": "phb",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 12,
+        "printed_page": "11",
+        "section": "Спасброски"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "existing_engine_subset",
+      "auto_activate": false,
+      "dependencies": [
+        "effect.save"
+      ],
+      "behavior_tests": [
+        "phb01.voluntary_save_failure"
+      ],
+      "readiness": {
+        "status": "engine_subset_verified",
+        "handler": "RulesetEngine.saving_throw",
+        "scope": "Добровольный провал спасброска без броска",
+        "blockers": [
+          "Добровольный провал — параметр voluntary: кость не бросается (draws=0), ресурсы не тратятся, обычный спасбросок этот путь не подменяет. Отдельной кнопки «провалить» на экране и операции в vendor/nat20 нет — вызов идёт от доверенного решения игрока."
+        ]
+      },
+      "revision": 2
+    },
+    {
+      "id": "phb2024.phb01.attack_roll",
+      "rules_family": "dnd2024",
+      "name": "Бросок атаки и натуральные 1/20",
+      "kind": "procedure",
+      "classification": {
+        "mode": "deterministic",
+        "semantic_required": false,
+        "formal_required": true,
+        "reason": "Formal branch after trusted input confirmation."
+      },
+      "conditions": [],
+      "triggers": [
+        "d20.before_roll"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "procedure_id": "attack_roll"
+          }
+        }
+      ],
+      "semantic_questions": [],
+      "facts": {
+        "die": 20,
+        "hit": "total_gte_ac",
+        "natural_1": "miss",
+        "natural_20": "critical_hit"
+      },
+      "constraints": [
+        "Only registered visible combat targets and weapon profiles."
+      ],
+      "exceptions": [],
+      "duration": "per_test",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "kind": "phb",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 13,
+        "printed_page": "12",
+        "section": "Броски атаки; Выбрасывание «20» или «1»"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "existing_engine_subset",
+      "auto_activate": false,
+      "dependencies": [
+        "combat.weapon_attack"
+      ],
+      "behavior_tests": [
+        "phb01.attack_roll"
+      ],
+      "readiness": {
+        "status": "engine_subset_verified",
+        "handler": "CombatEngine.attack",
+        "scope": "Only registered visible combat targets and weapon profiles.",
+        "blockers": []
+      },
+      "revision": 1
+    },
+    {
+      "id": "phb2024.phb01.attack_ability",
+      "rules_family": "dnd2024",
+      "name": "Выбор характеристики атаки",
+      "kind": "procedure",
+      "classification": {
+        "mode": "hybrid",
+        "semantic_required": true,
+        "formal_required": true,
+        "reason": "Meaning and applicability require a GM proposal; formal effects remain in Engine."
+      },
+      "conditions": [],
+      "triggers": [
+        "attack_ability.requested"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "procedure_id": "attack_ability"
+          }
+        }
+      ],
+      "semantic_questions": [
+        "Выбор характеристики атаки — какие обстоятельства и решение подтверждены Мастером?"
+      ],
+      "facts": {
+        "melee_weapon": "strength",
+        "unarmed": "strength",
+        "ranged_weapon": "dexterity",
+        "spell": "spellcasting_feature",
+        "finesse": [
+          "strength",
+          "dexterity"
+        ]
+      },
+      "constraints": [],
+      "exceptions": [],
+      "duration": "per_test",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "kind": "phb",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 13,
+        "printed_page": "12",
+        "section": "Характеристики бросков атаки"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "existing_engine_subset",
+      "auto_activate": false,
+      "dependencies": [
+        "catalog.weapon",
+        "catalog.spellcasting"
+      ],
+      "behavior_tests": [
+        "phb01.attack_ability"
+      ],
+      "readiness": {
+        "status": "engine_subset_verified",
+        "handler": "CombatEngine.attack",
+        "scope": "Выбор характеристики атаки",
+        "blockers": [
+          "Характеристика берётся из правила (solo/combat.attack_ability): рукопашное — Сила, дальнобойное — Ловкость, фехтовальное — Сила или Ловкость по выбору игрока, чужой выбор отвергается. Заклинательные атаки (характеристика заклинателя) в хостовом бою не зарегистрированы — это остаток правила."
+        ]
+      },
+      "revision": 2
+    },
+    {
+      "id": "phb2024.phb01.base_ac",
+      "rules_family": "dnd2024",
+      "name": "Базовый КЗ и единственный расчёт",
+      "kind": "procedure",
+      "classification": {
+        "mode": "hybrid",
+        "semantic_required": true,
+        "formal_required": true,
+        "reason": "Meaning and applicability require a GM proposal; formal effects remain in Engine."
+      },
+      "conditions": [],
+      "triggers": [
+        "base_ac.requested"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "procedure_id": "base_ac"
+          }
+        }
+      ],
+      "semantic_questions": [
+        "Базовый КЗ и единственный расчёт — какие обстоятельства и решение подтверждены Мастером?"
+      ],
+      "facts": {
+        "base": 10,
+        "ability": "dexterity",
+        "base_calculations_used": 1
+      },
+      "constraints": [],
+      "exceptions": [],
+      "duration": "per_test",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "kind": "phb",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 13,
+        "printed_page": "12",
+        "section": "Класс Защиты"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "existing_engine_subset",
+      "auto_activate": false,
+      "dependencies": [
+        "catalog.ac_formulas"
+      ],
+      "behavior_tests": [
+        "phb01.base_ac"
+      ],
+      "readiness": {
+        "status": "engine_subset_verified",
+        "handler": "armor_class.armor_class",
+        "scope": "Базовый КЗ и единственный расчёт",
+        "blockers": [
+          "Единственный расчёт — solo/armor_class.py: лист, экран и бой читают одно число, второй базовый расчёт (Unarmored Defense рядом с бронёй) не складывается и назван в ignored. Магические предметы с бонусом к КЗ и заклинания вроде Mage Armor в каталоге снаряжения не зарегистрированы, поэтому их бонус в расчёт пока не входит."
+        ]
+      },
+      "revision": 2
+    },
+    {
+      "id": "phb2024.phb01.advantage",
+      "rules_family": "dnd2024",
+      "name": "Преимущество и помеха",
+      "kind": "procedure",
+      "classification": {
+        "mode": "deterministic",
+        "semantic_required": false,
+        "formal_required": true,
+        "reason": "Formal branch after trusted input confirmation."
+      },
+      "conditions": [],
+      "triggers": [
+        "d20.before_roll"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "procedure_id": "advantage"
+          }
+        }
+      ],
+      "semantic_questions": [],
+      "facts": {
+        "dice_count": 2,
+        "advantage": "max",
+        "disadvantage": "min"
+      },
+      "constraints": [],
+      "exceptions": [],
+      "duration": "per_test",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "kind": "phb",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 13,
+        "printed_page": "12",
+        "section": "Преимущество/Помеха / Бросок двух к20"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "existing_engine_subset",
+      "auto_activate": false,
+      "dependencies": [
+        "dnd2024.d20.advantage",
+        "dnd2024.d20.disadvantage"
+      ],
+      "behavior_tests": [
+        "phb01.advantage"
+      ],
+      "readiness": {
+        "status": "engine_subset_verified",
+        "handler": "RulesetEngine.d20",
+        "scope": "Преимущество и помеха",
+        "blockers": []
+      },
+      "revision": 1
+    },
+    {
+      "id": "phb2024.phb01.cancellation",
+      "rules_family": "dnd2024",
+      "name": "Несложение и взаимная отмена причин",
+      "kind": "procedure",
+      "classification": {
+        "mode": "deterministic",
+        "semantic_required": false,
+        "formal_required": true,
+        "reason": "Formal branch after trusted input confirmation."
+      },
+      "conditions": [],
+      "triggers": [
+        "d20.before_roll"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "procedure_id": "cancellation"
+          }
+        }
+      ],
+      "semantic_questions": [],
+      "facts": {
+        "both_present_draws": 1,
+        "one_kind_present_draws": 2,
+        "causes_do_not_stack": true
+      },
+      "constraints": [],
+      "exceptions": [],
+      "duration": "per_test",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "kind": "phb",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 13,
+        "printed_page": "12",
+        "section": "Преимущества и помехи не складываются (продолжение на стр.13)"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "existing_engine_subset",
+      "auto_activate": false,
+      "dependencies": [
+        "dnd2024.d20.cancellation"
+      ],
+      "behavior_tests": [
+        "phb01.cancellation"
+      ],
+      "readiness": {
+        "status": "engine_subset_verified",
+        "handler": "RulesetEngine.d20",
+        "scope": "Несложение и взаимная отмена причин",
+        "blockers": []
+      },
+      "revision": 1
+    },
+    {
+      "id": "phb2024.phb01.single_die_replacement",
+      "rules_family": "dnd2024",
+      "name": "Замена или переброс одной выбранной к20",
+      "kind": "procedure",
+      "classification": {
+        "mode": "deterministic",
+        "semantic_required": false,
+        "formal_required": true,
+        "reason": "Formal branch after trusted input confirmation."
+      },
+      "conditions": [],
+      "triggers": [
+        "single_die_replacement.requested"
+      ],
+      "formal_operations": [
+        {
+          "op": "replace_draw",
+          "inputs": [],
+          "constants": {
+            "procedure_id": "single_die_replacement"
+          }
+        }
+      ],
+      "semantic_questions": [],
+      "facts": {
+        "replacement_count": 1,
+        "choice": "actor_selects_index"
+      },
+      "constraints": [],
+      "exceptions": [],
+      "duration": "per_test",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "kind": "phb",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 14,
+        "printed_page": "13",
+        "section": "Перебрасывание костей"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "existing_engine_subset",
+      "auto_activate": false,
+      "dependencies": [
+        "effect.reroll_authorization"
+      ],
+      "behavior_tests": [
+        "phb01.single_die_replacement"
+      ],
+      "readiness": {
+        "status": "engine_subset_verified",
+        "handler": "rulesets.replace_die",
+        "scope": "Замена или переброс одной выбранной к20",
+        "blockers": [
+          "Замена меняет ровно одну кость записанного броска (остальные остаются теми же, генератор не вызывается) — solo/rulesets.replace_die. Отдельной команды «заменить кость после броска» на экране боя нет: операцию зовёт переброс вдохновением."
+        ]
+      },
+      "revision": 2
+    },
+    {
+      "id": "phb2024.phb01.heroic_inspiration",
+      "rules_family": "dnd2024",
+      "name": "Вдохновение: ресурс, переброс, передача",
+      "kind": "procedure",
+      "classification": {
+        "mode": "hybrid",
+        "semantic_required": true,
+        "formal_required": true,
+        "reason": "Meaning and applicability require a GM proposal; formal effects remain in Engine."
+      },
+      "conditions": [],
+      "triggers": [
+        "heroic_inspiration.requested"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "procedure_id": "heroic_inspiration"
+          }
+        }
+      ],
+      "semantic_questions": [
+        "Вдохновение: ресурс, переброс, передача — какие обстоятельства и решение подтверждены Мастером?"
+      ],
+      "facts": {
+        "maximum": 1,
+        "reroll": "any_die_immediately_after_roll",
+        "must_use_new": true,
+        "overflow": "may_gift_to_party_pc_without_inspiration",
+        "human_gain": "start_of_day"
+      },
+      "constraints": [],
+      "exceptions": [],
+      "duration": "per_test",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "kind": "phb",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 14,
+        "printed_page": "13",
+        "section": "Героическое вдохновение"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "existing_engine_subset",
+      "auto_activate": false,
+      "dependencies": [
+        "phb2024.phb01.single_die_replacement",
+        "catalog.species.human",
+        "resource.heroic_inspiration"
+      ],
+      "behavior_tests": [
+        "phb01.heroic_inspiration"
+      ],
+      "readiness": {
+        "status": "engine_subset_verified",
+        "handler": "RulesetEngine.d20",
+        "scope": "Вдохновение: ресурс, переброс, передача",
+        "blockers": [
+          "Ресурс живёт в Hero.resources[\"heroic_inspiration\"]; трата перебрасывает одну к20 и обязана использовать новую кость, излишек передаётся другому герою группы и не копится (solo/rulesets.py, CombatEngine.gain_inspiration/give_inspiration). На нативном пути (nat20_worker, vendor/nat20) Героического вдохновения нет вовсе — там нужна правка вендора: ресурс, операция переброса с обязательным новым результатом и передача."
+        ]
+      },
+      "revision": 2
+    },
+    {
+      "id": "phb2024.phb01.proficiency",
+      "rules_family": "dnd2024",
+      "name": "Бонус владения по уровню или ПО",
+      "kind": "procedure",
+      "classification": {
+        "mode": "deterministic",
+        "semantic_required": false,
+        "formal_required": true,
+        "reason": "Formal branch after trusted input confirmation."
+      },
+      "conditions": [],
+      "triggers": [
+        "proficiency.requested"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "procedure_id": "proficiency"
+          }
+        }
+      ],
+      "semantic_questions": [],
+      "facts": {
+        "upper_bounds": [
+          4,
+          8,
+          12,
+          16,
+          20,
+          24,
+          28,
+          30
+        ],
+        "bonuses": [
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "production_scope": "character_levels_1_20"
+      },
+      "constraints": [
+        "Engine supports character levels 1–20; monster CR lookup remains data-only."
+      ],
+      "exceptions": [],
+      "duration": "per_test",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "kind": "phb",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 14,
+        "printed_page": "13",
+        "section": "Бонус владения"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "existing_engine_subset",
+      "auto_activate": false,
+      "dependencies": [
+        "checks.ability"
+      ],
+      "behavior_tests": [
+        "phb01.proficiency"
+      ],
+      "readiness": {
+        "status": "adapter_verified",
+        "handler": "RulesetEngine.proficiency",
+        "scope": "Engine supports character levels 1–20; monster CR lookup remains data-only.",
+        "blockers": []
+      },
+      "revision": 1
+    },
+    {
+      "id": "phb2024.phb01.proficiency_once",
+      "rules_family": "dnd2024",
+      "name": "Бонус владения применяется один раз",
+      "kind": "procedure",
+      "classification": {
+        "mode": "deterministic",
+        "semantic_required": false,
+        "formal_required": true,
+        "reason": "Formal branch after trusted input confirmation."
+      },
+      "conditions": [],
+      "triggers": [
+        "proficiency_once.requested"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "procedure_id": "proficiency_once"
+          }
+        }
+      ],
+      "semantic_questions": [],
+      "facts": {
+        "applications": 1,
+        "multiply_at_most": 1,
+        "divide_at_most": 1,
+        "expertise_multiplier": 2
+      },
+      "constraints": [
+        "Registered skill expertise only; arbitrary proficiency multipliers not accepted by command."
+      ],
+      "exceptions": [],
+      "duration": "per_test",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "kind": "phb",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 14,
+        "printed_page": "13",
+        "section": "Бонусы не складываются"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "existing_engine_subset",
+      "auto_activate": false,
+      "dependencies": [
+        "checks.ability"
+      ],
+      "behavior_tests": [
+        "phb01.proficiency_once"
+      ],
+      "readiness": {
+        "status": "engine_subset_verified",
+        "handler": "RulesetEngine.d20",
+        "scope": "Registered skill expertise only; arbitrary proficiency multipliers not accepted by command.",
+        "blockers": []
+      },
+      "revision": 1
+    },
+    {
+      "id": "phb2024.phb01.skill_check",
+      "rules_family": "dnd2024",
+      "name": "Проверка навыка из подтверждённого листа",
+      "kind": "procedure",
+      "classification": {
+        "mode": "deterministic",
+        "semantic_required": false,
+        "formal_required": true,
+        "reason": "Formal branch after trusted input confirmation."
+      },
+      "conditions": [],
+      "triggers": [
+        "d20.before_roll"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "procedure_id": "skill_check"
+          }
+        }
+      ],
+      "semantic_questions": [],
+      "facts": {
+        "proficiency_source": "hero.skill_proficiencies",
+        "expertise_source": "hero.expertise",
+        "untrained_allowed": true,
+        "initial_skills_source": [
+          "character_creation",
+          "monster_stat_block"
+        ]
+      },
+      "constraints": [
+        "This branch consumes the confirmed sheet; it does not grant initial class/background proficiencies."
+      ],
+      "exceptions": [],
+      "duration": "per_test",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "kind": "phb",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 14,
+        "printed_page": "13",
+        "section": "Владение навыками / Список навыков / Определение навыков"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "existing_engine_subset",
+      "auto_activate": false,
+      "dependencies": [
+        "checks.ability",
+        "phb2024.phb01.proficiency"
+      ],
+      "behavior_tests": [
+        "phb01.skill_check"
+      ],
+      "readiness": {
+        "status": "adapter_verified",
+        "handler": "RulesetEngine.skill",
+        "scope": "Проверка навыка из подтверждённого листа",
+        "blockers": []
+      },
+      "revision": 1
+    },
+    {
+      "id": "phb2024.phb01.skill_alternate_ability",
+      "rules_family": "dnd2024",
+      "name": "Навык с иной характеристикой по решению Мастера",
+      "kind": "procedure",
+      "classification": {
+        "mode": "hybrid",
+        "semantic_required": true,
+        "formal_required": true,
+        "reason": "Meaning and applicability require a GM proposal; formal effects remain in Engine."
+      },
+      "conditions": [],
+      "triggers": [
+        "skill_alternate_ability.requested"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "procedure_id": "skill_alternate_ability"
+          }
+        }
+      ],
+      "semantic_questions": [
+        "Навык с иной характеристикой по решению Мастера — какие обстоятельства и решение подтверждены Мастером?"
+      ],
+      "facts": {
+        "requires": "gm_specific_ability_skill_pair"
+      },
+      "constraints": [],
+      "exceptions": [],
+      "duration": "per_test",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "kind": "phb",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 15,
+        "printed_page": "14",
+        "section": "Навыки с различными характеристиками"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "not_implemented",
+      "auto_activate": false,
+      "dependencies": [
+        "phb2024.phb01.skill_check"
+      ],
+      "behavior_tests": [
+        "phb01.skill_alternate_ability"
+      ],
+      "readiness": {
+        "status": "blocked",
+        "handler": null,
+        "scope": "Навык с иной характеристикой по решению Мастера",
+        "blockers": [
+          "Existing skill handler fixes its ability; alternate pairs are not silently normalized."
+        ]
+      },
+      "revision": 1
+    },
+    {
+      "id": "phb2024.phb01.save_proficiency",
+      "rules_family": "dnd2024",
+      "name": "Владение спасброском",
+      "kind": "procedure",
+      "classification": {
+        "mode": "deterministic",
+        "semantic_required": false,
+        "formal_required": true,
+        "reason": "Formal branch after trusted input confirmation."
+      },
+      "conditions": [],
+      "triggers": [
+        "save_proficiency.requested"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "procedure_id": "save_proficiency"
+          }
+        }
+      ],
+      "semantic_questions": [],
+      "facts": {
+        "source": "hero.saving_throw_proficiencies",
+        "bonus_applications": 1,
+        "class_initial_proficiencies_minimum": 2
+      },
+      "constraints": [
+        "Initial class and monster proficiencies require their own definitions; this branch reads the confirmed sheet."
+      ],
+      "exceptions": [],
+      "duration": "per_test",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "kind": "phb",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 15,
+        "printed_page": "14",
+        "section": "Владение спасбросками"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "existing_engine_subset",
+      "auto_activate": false,
+      "dependencies": [
+        "phb2024.phb01.saving_throw",
+        "phb2024.phb01.proficiency"
+      ],
+      "behavior_tests": [
+        "phb01.save_proficiency"
+      ],
+      "readiness": {
+        "status": "adapter_verified",
+        "handler": "RulesetEngine.saving_throw",
+        "scope": "Владение спасброском",
+        "blockers": []
+      },
+      "revision": 1
+    },
+    {
+      "id": "phb2024.phb01.weapon_proficiency",
+      "rules_family": "dnd2024",
+      "name": "Владение оружием",
+      "kind": "procedure",
+      "classification": {
+        "mode": "deterministic",
+        "semantic_required": false,
+        "formal_required": true,
+        "reason": "Formal branch after trusted input confirmation."
+      },
+      "conditions": [],
+      "triggers": [
+        "weapon_proficiency.requested"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "procedure_id": "weapon_proficiency"
+          }
+        }
+      ],
+      "semantic_questions": [],
+      "facts": {
+        "bonus_target": "weapon_attack_roll",
+        "bonus_applications": 1
+      },
+      "constraints": [
+        "Only registered weapon profiles."
+      ],
+      "exceptions": [],
+      "duration": "per_test",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "kind": "phb",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 15,
+        "printed_page": "14",
+        "section": "Владение экипировкой / Оружие"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "existing_engine_subset",
+      "auto_activate": false,
+      "dependencies": [
+        "combat.weapon_attack"
+      ],
+      "behavior_tests": [
+        "phb01.weapon_proficiency"
+      ],
+      "readiness": {
+        "status": "engine_subset_verified",
+        "handler": "CombatEngine.attack",
+        "scope": "Only registered weapon profiles.",
+        "blockers": []
+      },
+      "revision": 1
+    },
+    {
+      "id": "phb2024.phb01.tool_proficiency",
+      "rules_family": "dnd2024",
+      "name": "Инструмент и навык вместе",
+      "kind": "procedure",
+      "classification": {
+        "mode": "hybrid",
+        "semantic_required": true,
+        "formal_required": true,
+        "reason": "Meaning and applicability require a GM proposal; formal effects remain in Engine."
+      },
+      "conditions": [],
+      "triggers": [
+        "tool_proficiency.requested"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "procedure_id": "tool_proficiency"
+          }
+        }
+      ],
+      "semantic_questions": [
+        "Инструмент и навык вместе — какие обстоятельства и решение подтверждены Мастером?"
+      ],
+      "facts": {
+        "tool_proficient": "add_proficiency_once",
+        "tool_and_skill_proficient": "advantage"
+      },
+      "constraints": [],
+      "exceptions": [],
+      "duration": "per_test",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "kind": "phb",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 15,
+        "printed_page": "14",
+        "section": "Владение экипировкой / Инструменты"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "not_implemented",
+      "auto_activate": false,
+      "dependencies": [
+        "catalog.tools",
+        "phb2024.phb01.skill_check"
+      ],
+      "behavior_tests": [
+        "phb01.tool_proficiency"
+      ],
+      "readiness": {
+        "status": "blocked",
+        "handler": null,
+        "scope": "Инструмент и навык вместе",
+        "blockers": [
+          "Applicability, inventory tool and skill must be validated; bridge has no tool command."
+        ]
+      },
+      "revision": 1
+    },
+    {
+      "id": "phb2024.phb01.skills_table",
+      "rules_family": "dnd2024",
+      "name": "Таблица восемнадцати навыков",
+      "kind": "procedure",
+      "classification": {
+        "mode": "deterministic",
+        "semantic_required": false,
+        "formal_required": true,
+        "reason": "Formal branch after trusted input confirmation."
+      },
+      "conditions": [],
+      "triggers": [
+        "skills_table.requested"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "procedure_id": "skills_table"
+          }
+        }
+      ],
+      "semantic_questions": [],
+      "facts": {
+        "acrobatics": "dexterity",
+        "animal_handling": "wisdom",
+        "arcana": "intelligence",
+        "athletics": "strength",
+        "deception": "charisma",
+        "history": "intelligence",
+        "insight": "wisdom",
+        "intimidation": "charisma",
+        "investigation": "intelligence",
+        "medicine": "wisdom",
+        "nature": "intelligence",
+        "perception": "wisdom",
+        "performance": "charisma",
+        "persuasion": "charisma",
+        "religion": "intelligence",
+        "sleight_of_hand": "dexterity",
+        "stealth": "dexterity",
+        "survival": "wisdom"
+      },
+      "constraints": [],
+      "exceptions": [],
+      "duration": "per_test",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "kind": "phb",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 15,
+        "printed_page": "14",
+        "section": "Навыки"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "existing_engine_subset",
+      "auto_activate": false,
+      "dependencies": [
+        "checks.ability"
+      ],
+      "behavior_tests": [
+        "phb01.skills_table"
+      ],
+      "readiness": {
+        "status": "engine_subset_verified",
+        "handler": "RulesetEngine.skill",
+        "scope": "Таблица восемнадцати навыков",
+        "blockers": []
+      },
+      "revision": 1
+    }
+  ]
+}

@@ -1,0 +1,93 @@
+{
+  "_id": "phbarmChainMail0",
+  "_stats": {
+    "coreVersion": "13.344",
+    "createdTime": 1724425913489,
+    "duplicateSource": null,
+    "exportSource": null,
+    "lastModifiedBy": "dnd5ebuilder0000",
+    "modifiedTime": 1745431704598,
+    "systemId": "dnd5e",
+    "systemVersion": "4.4.0"
+  },
+  "effects": [],
+  "flags": {
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    }
+  },
+  "folder": "zqXSu2wOJljt7AsS",
+  "img": "icons/equipment/chest/breastplate-metal-scaled-grey.webp",
+  "name": "Chain Mail",
+  "ownership": {
+    "default": 0
+  },
+  "sort": 0,
+  "system": {
+    "activities": {},
+    "armor": {
+      "dex": 0,
+      "magicalBonus": null,
+      "value": 16
+    },
+    "attuned": false,
+    "attunement": "",
+    "container": null,
+    "cover": null,
+    "crewed": false,
+    "description": {
+      "chat": "",
+      "value": ""
+    },
+    "equipped": false,
+    "hp": {
+      "conditions": "",
+      "dt": null,
+      "max": null,
+      "value": null
+    },
+    "identified": true,
+    "identifier": "chain-mail",
+    "price": {
+      "denomination": "gp",
+      "value": 75
+    },
+    "proficient": null,
+    "properties": [
+      "stealthDisadvantage"
+    ],
+    "quantity": 1,
+    "rarity": "",
+    "source": {
+      "book": "",
+      "custom": "",
+      "license": "CC-BY-4.0",
+      "rules": "2024"
+    },
+    "speed": {
+      "conditions": "",
+      "value": null
+    },
+    "strength": 13,
+    "type": {
+      "baseItem": "chainmail",
+      "value": "heavy"
+    },
+    "unidentified": {
+      "description": ""
+    },
+    "uses": {
+      "max": "",
+      "recovery": [],
+      "spent": 0
+    },
+    "weight": {
+      "units": "lb",
+      "value": 55
+    }
+  },
+  "type": "equipment"
+}

@@ -1,0 +1,16 @@
+файл сводки: reports/TEST-RUN-r139.jsonl
+пакетов в файле: 103
+файлов тестов затронуто: 309
+ИТОГО: 2602 passed, 3 failed, 0 errors, 38 skipped, 0 xfailed, 0 xpassed
+имён в FAILED/ERROR: 3
+
+ПАДЕНИЯ ПО ФАЙЛАМ:
+
+tests/test_nat20_dash.py — 1
+  - tests/test_nat20_dash.py::test_closed_contract_old_fixture_and_legacy_boundary
+
+tests/test_playable_ai_readiness.py — 1
+  - tests/test_playable_ai_readiness.py::test_real_packets_roles_schemas_context_and_estimates
+
+tests/test_preview9_clarification.py — 1
+  - tests/test_preview9_clarification.py::test_cloud_mock_transport_preserves_joined_context_and_contract

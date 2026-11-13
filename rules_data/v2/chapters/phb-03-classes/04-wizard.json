@@ -1,0 +1,816 @@
+{
+  "schema_version": "2.1.0",
+  "rules": [
+    {
+      "id": "phb2024.phb03.wizard.class_attributes",
+      "rules_family": "dnd2024",
+      "name": "Волшебник: Ключевые атрибуты",
+      "kind": "procedure",
+      "classification": {
+        "mode": "deterministic",
+        "semantic_required": false,
+        "formal_required": true,
+        "reason": "Таблица «Ключевые атрибуты» задаёт точные значения (Кость хитов, спасброски, владения) без выбора Мастера"
+      },
+      "conditions": [],
+      "triggers": [
+        "wizard.class_attributes"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "procedure_id": "wizard_class_attributes"
+          }
+        }
+      ],
+      "semantic_questions": [],
+      "facts": {
+        "hit_die": "к6",
+        "primary": "Интеллект",
+        "saves": [
+          "Интеллект",
+          "Мудрость"
+        ],
+        "weapons": "Простое оружие",
+        "armor": "Отсутствует",
+        "subclass_level": 3,
+        "subclasses": [
+          "Воплотитель",
+          "Иллюзионист",
+          "Оградитель",
+          "Прорицатель"
+        ],
+        "pdf_span": [
+          79,
+          90
+        ]
+      },
+      "rule_parameters": {
+        "class_resources": {
+          "1": "ячейки заклинаний",
+          "2": "книга заклинаний",
+          "3": "Магическое восстановление"
+        }
+      },
+      "constraints": [],
+      "exceptions": [],
+      "duration": "not_applicable",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "kind": "phb",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 80,
+        "printed_page": "79",
+        "section": "Волшебник, глава 3 «Классы персонажей»: Выбор Волшебника..."
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "existing_engine_subset",
+      "auto_activate": false,
+      "dependencies": [],
+      "behavior_tests": [
+        "phb03.wizard.class_attributes"
+      ],
+      "readiness": {
+        "status": "engine_subset_verified",
+        "handler": null,
+        "scope": "Проецирование классовых атрибутов на лист персонажа",
+        "blockers": []
+      },
+      "revision": 1
+    },
+    {
+      "id": "phb2024.phb03.wizard.sotvorenie_zaklinanii",
+      "rules_family": "dnd2024",
+      "name": "Волшебник: Сотворение заклинаний (Волшебник)",
+      "kind": "procedure",
+      "classification": {
+        "mode": "deterministic",
+        "semantic_required": false,
+        "formal_required": true,
+        "reason": "Числа и порядок шагов заданы текстом PHB 2024 (см. facts)"
+      },
+      "conditions": [],
+      "triggers": [
+        "wizard.sotvorenie_zaklinanii"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "cantrips_start": 3,
+            "spellbook_spells_start": 6,
+            "spellbook_add_per_level": 2,
+            "prepared_level_1": 4,
+            "spellcasting_ability": "Интеллект",
+            "book_weight_lb": 3,
+            "book_pages": 100,
+            "procedure_id": "wizard_sotvorenie_zaklinanii"
+          }
+        }
+      ],
+      "semantic_questions": [],
+      "facts": {
+        "cantrips_start": 3,
+        "cantrip_levels": [
+          "4",
+          "10"
+        ],
+        "spellbook_spells_start": 6,
+        "spellbook_add_per_level": 2,
+        "prepared_level_1": 4,
+        "spellcasting_ability": "Интеллект",
+        "book_weight_lb": 3,
+        "book_pages": 100
+      },
+      "rule_parameters": {},
+      "constraints": [],
+      "exceptions": [],
+      "duration": "per_action",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "kind": "phb",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 80,
+        "printed_page": "79",
+        "section": "Волшебник, глава 3 «Классы персонажей»: Сотворение заклинаний (Волшебник)"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "existing_engine_subset",
+      "auto_activate": false,
+      "dependencies": [
+        "phb2024.phb07.spellbook"
+      ],
+      "behavior_tests": [
+        "phb03.wizard.sotvorenie_zaklinanii"
+      ],
+      "readiness": {
+        "status": "engine_subset_verified",
+        "handler": null,
+        "scope": "Волшебник: Сотворение заклинаний (Волшебник)",
+        "blockers": []
+      },
+      "revision": 1
+    },
+    {
+      "id": "phb2024.phb03.wizard.znatok_ritualov",
+      "rules_family": "dnd2024",
+      "name": "Волшебник: Знаток ритуалов",
+      "kind": "procedure",
+      "classification": {
+        "mode": "deterministic",
+        "semantic_required": false,
+        "formal_required": true,
+        "reason": "Числа и порядок шагов заданы текстом PHB 2024 (см. facts)"
+      },
+      "conditions": [],
+      "triggers": [
+        "wizard.znatok_ritualov"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "ritual_only_from_book": true,
+            "no_preparation_needed": true,
+            "procedure_id": "wizard_znatok_ritualov"
+          }
+        }
+      ],
+      "semantic_questions": [],
+      "facts": {
+        "ritual_only_from_book": true,
+        "no_preparation_needed": true
+      },
+      "rule_parameters": {},
+      "constraints": [],
+      "exceptions": [],
+      "duration": "per_action",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "kind": "phb",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 81,
+        "printed_page": "80",
+        "section": "Волшебник, глава 3 «Классы персонажей»: Знаток ритуалов"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "existing_engine_subset",
+      "auto_activate": false,
+      "dependencies": [],
+      "behavior_tests": [
+        "phb03.wizard.znatok_ritualov"
+      ],
+      "readiness": {
+        "status": "adjudication_required",
+        "handler": null,
+        "scope": "Волшебник: Знаток ритуалов",
+        "blockers": [
+          "ритуал в бою отвергается движком (`ritual_in_combat`), а внебоевой путь `resolve_ritual_cast` прогоном не подтверждён"
+        ]
+      },
+      "revision": 1
+    },
+    {
+      "id": "phb2024.phb03.wizard.magicheskoe_vosstanovlenie",
+      "rules_family": "dnd2024",
+      "name": "Волшебник: Магическое восстановление",
+      "kind": "procedure",
+      "classification": {
+        "mode": "deterministic",
+        "semantic_required": false,
+        "formal_required": true,
+        "reason": "Числа и порядок шагов заданы текстом PHB 2024 (см. facts)"
+      },
+      "conditions": [],
+      "triggers": [
+        "wizard.magicheskoe_vosstanovlenie"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "recharge": "Короткий отдых",
+            "max_slot_level_total": "половина уровня (в большую сторону)",
+            "forbidden_slot_level": 6,
+            "max_levels": "floor(уровень/2)",
+            "example_level_4_levels": 2,
+            "once_per_long_rest": true,
+            "procedure_id": "wizard_magicheskoe_vosstanovlenie"
+          }
+        }
+      ],
+      "semantic_questions": [],
+      "facts": {
+        "recharge": "Короткий отдых",
+        "max_slot_level_total": "половина уровня (в большую сторону)",
+        "forbidden_slot_level": 6,
+        "max_levels": "floor(уровень/2)",
+        "example_level_4_levels": 2,
+        "once_per_long_rest": true
+      },
+      "rule_parameters": {},
+      "constraints": [],
+      "exceptions": [],
+      "duration": "per_action",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "kind": "phb",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 81,
+        "printed_page": "80",
+        "section": "Волшебник, глава 3 «Классы персонажей»: Магическое восстановление"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "existing_engine_subset",
+      "auto_activate": false,
+      "dependencies": [
+        "phb2024.phb01.rounding"
+      ],
+      "behavior_tests": [
+        "phb03.wizard.magicheskoe_vosstanovlenie"
+      ],
+      "readiness": {
+        "status": "adjudication_required",
+        "handler": null,
+        "scope": "Волшебник: Магическое восстановление",
+        "blockers": [
+          "движок принимает умение и тратит использование, но восстановление ячеек на коротком отдыхе прогоном не наблюдается"
+        ]
+      },
+      "revision": 1
+    },
+    {
+      "id": "phb2024.phb03.wizard.akademicheskie_znaniya",
+      "rules_family": "dnd2024",
+      "name": "Волшебник: Академические знания",
+      "kind": "procedure",
+      "classification": {
+        "mode": "deterministic",
+        "semantic_required": false,
+        "formal_required": true,
+        "reason": "Числа и порядок шагов заданы текстом PHB 2024 (см. facts)"
+      },
+      "conditions": [],
+      "triggers": [
+        "wizard.akademicheskie_znaniya"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "expertise": true,
+            "procedure_id": "wizard_akademicheskie_znaniya"
+          }
+        }
+      ],
+      "semantic_questions": [],
+      "facts": {
+        "skill_choices": [
+          "История",
+          "Медицина",
+          "Природа",
+          "Расследование",
+          "Религия",
+          "Тайная магия"
+        ],
+        "expertise": true
+      },
+      "rule_parameters": {},
+      "constraints": [],
+      "exceptions": [],
+      "duration": "per_action",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "kind": "phb",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 81,
+        "printed_page": "80",
+        "section": "Волшебник, глава 3 «Классы персонажей»: Академические знания"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "not_implemented",
+      "auto_activate": false,
+      "dependencies": [],
+      "behavior_tests": [
+        "phb03.wizard.akademicheskie_znaniya"
+      ],
+      "readiness": {
+        "status": "blocked",
+        "handler": null,
+        "scope": "Волшебник: Академические знания",
+        "blockers": [
+          "у умения нет ни активности, ни поля листа: выбор навыка по Академическим знаниям не исполняется"
+        ]
+      },
+      "revision": 1
+    },
+    {
+      "id": "phb2024.phb03.wizard.podklass_volshebnika",
+      "rules_family": "dnd2024",
+      "name": "Волшебник: Подкласс Волшебника",
+      "kind": "procedure",
+      "classification": {
+        "mode": "deterministic",
+        "semantic_required": false,
+        "formal_required": true,
+        "reason": "Числа и порядок шагов заданы текстом PHB 2024 (см. facts)"
+      },
+      "conditions": [],
+      "triggers": [
+        "wizard.podklass_volshebnika"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "subclass_level": 3,
+            "procedure_id": "wizard_podklass_volshebnika"
+          }
+        }
+      ],
+      "semantic_questions": [],
+      "facts": {
+        "subclass_level": 3,
+        "subclasses": [
+          "Воплотитель",
+          "Иллюзионист",
+          "Оградитель",
+          "Прорицатель"
+        ]
+      },
+      "rule_parameters": {},
+      "constraints": [],
+      "exceptions": [],
+      "duration": "per_action",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "kind": "phb",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 82,
+        "printed_page": "81",
+        "section": "Волшебник, глава 3 «Классы персонажей»: Подкласс Волшебника"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "existing_engine_subset",
+      "auto_activate": false,
+      "dependencies": [],
+      "behavior_tests": [
+        "phb03.wizard.podklass_volshebnika"
+      ],
+      "readiness": {
+        "status": "engine_subset_verified",
+        "handler": null,
+        "scope": "Волшебник: Подкласс Волшебника",
+        "blockers": []
+      },
+      "revision": 1
+    },
+    {
+      "id": "phb2024.phb03.wizard.uvelichenie_harakteristik",
+      "rules_family": "dnd2024",
+      "name": "Волшебник: Увеличение характеристик",
+      "kind": "procedure",
+      "classification": {
+        "mode": "deterministic",
+        "semantic_required": false,
+        "formal_required": true,
+        "reason": "Числа и порядок шагов заданы текстом PHB 2024 (см. facts)"
+      },
+      "conditions": [],
+      "triggers": [
+        "wizard.uvelichenie_harakteristik"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "procedure_id": "wizard_uvelichenie_harakteristik"
+          }
+        }
+      ],
+      "semantic_questions": [],
+      "facts": {
+        "levels": [
+          "4",
+          "8",
+          "12",
+          "16"
+        ]
+      },
+      "rule_parameters": {},
+      "constraints": [],
+      "exceptions": [],
+      "duration": "per_action",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "kind": "phb",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 82,
+        "printed_page": "81",
+        "section": "Волшебник, глава 3 «Классы персонажей»: Увеличение характеристик"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "existing_engine_subset",
+      "auto_activate": false,
+      "dependencies": [
+        "phb2024.phb05.ability_score_improvement"
+      ],
+      "behavior_tests": [
+        "phb03.wizard.uvelichenie_harakteristik"
+      ],
+      "readiness": {
+        "status": "engine_subset_verified",
+        "handler": null,
+        "scope": "Волшебник: Увеличение характеристик",
+        "blockers": []
+      },
+      "revision": 1
+    },
+    {
+      "id": "phb2024.phb03.wizard.zapominanie_zaklinaniya",
+      "rules_family": "dnd2024",
+      "name": "Волшебник: Запоминание заклинания",
+      "kind": "procedure",
+      "classification": {
+        "mode": "deterministic",
+        "semantic_required": false,
+        "formal_required": true,
+        "reason": "Числа и порядок шагов заданы текстом PHB 2024 (см. facts)"
+      },
+      "conditions": [],
+      "triggers": [
+        "wizard.zapominanie_zaklinaniya"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "recharge": "Короткий отдых",
+            "replacements": 1,
+            "procedure_id": "wizard_zapominanie_zaklinaniya"
+          }
+        }
+      ],
+      "semantic_questions": [],
+      "facts": {
+        "recharge": "Короткий отдых",
+        "replacements": 1
+      },
+      "rule_parameters": {},
+      "constraints": [],
+      "exceptions": [],
+      "duration": "per_action",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "kind": "phb",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 82,
+        "printed_page": "81",
+        "section": "Волшебник, глава 3 «Классы персонажей»: Запоминание заклинания"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "not_implemented",
+      "auto_activate": false,
+      "dependencies": [],
+      "behavior_tests": [
+        "phb03.wizard.zapominanie_zaklinaniya"
+      ],
+      "readiness": {
+        "status": "blocked",
+        "handler": null,
+        "scope": "Волшебник: Запоминание заклинания",
+        "blockers": [
+          "у умения нет типизированной активности: замена подготовленного заклинания не исполняется"
+        ]
+      },
+      "revision": 1
+    },
+    {
+      "id": "phb2024.phb03.wizard.masterstvo_zaklinatelya",
+      "rules_family": "dnd2024",
+      "name": "Волшебник: Мастерство заклинателя",
+      "kind": "procedure",
+      "classification": {
+        "mode": "deterministic",
+        "semantic_required": false,
+        "formal_required": true,
+        "reason": "Числа и порядок шагов заданы текстом PHB 2024 (см. facts)"
+      },
+      "conditions": [],
+      "triggers": [
+        "wizard.masterstvo_zaklinatelya"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "cast_time": "1 действие",
+            "free_at_lowest_level": true,
+            "replace_on": "Долгий отдых",
+            "procedure_id": "wizard_masterstvo_zaklinatelya"
+          }
+        }
+      ],
+      "semantic_questions": [],
+      "facts": {
+        "free_spells": [
+          "1",
+          "2"
+        ],
+        "cast_time": "1 действие",
+        "free_at_lowest_level": true,
+        "replace_on": "Долгий отдых"
+      },
+      "rule_parameters": {},
+      "constraints": [],
+      "exceptions": [],
+      "duration": "per_action",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "kind": "phb",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 82,
+        "printed_page": "81",
+        "section": "Волшебник, глава 3 «Классы персонажей»: Мастерство заклинателя"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "existing_engine_subset",
+      "auto_activate": false,
+      "dependencies": [],
+      "behavior_tests": [
+        "phb03.wizard.masterstvo_zaklinatelya"
+      ],
+      "readiness": {
+        "status": "adjudication_required",
+        "handler": null,
+        "scope": "Волшебник: Мастерство заклинателя",
+        "blockers": [
+          "движок принимает умение и тратит использование, но выбранное заклинание 1 и 2 уровня без ячейки не кастуется"
+        ]
+      },
+      "revision": 1
+    },
+    {
+      "id": "phb2024.phb03.wizard.epicheskii_dar",
+      "rules_family": "dnd2024",
+      "name": "Волшебник: Эпический дар",
+      "kind": "procedure",
+      "classification": {
+        "mode": "deterministic",
+        "semantic_required": false,
+        "formal_required": true,
+        "reason": "Числа и порядок шагов заданы текстом PHB 2024 (см. facts)"
+      },
+      "conditions": [],
+      "triggers": [
+        "wizard.epicheskii_dar"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "procedure_id": "wizard_epicheskii_dar"
+          }
+        }
+      ],
+      "semantic_questions": [],
+      "facts": {},
+      "rule_parameters": {},
+      "constraints": [],
+      "exceptions": [],
+      "duration": "per_action",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "kind": "phb",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 82,
+        "printed_page": "81",
+        "section": "Волшебник, глава 3 «Классы персонажей»: Эпический дар"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "existing_engine_subset",
+      "auto_activate": false,
+      "dependencies": [
+        "phb2024.phb05.epic_boon"
+      ],
+      "behavior_tests": [
+        "phb03.wizard.epicheskii_dar"
+      ],
+      "readiness": {
+        "status": "adjudication_required",
+        "handler": null,
+        "scope": "Волшебник: Эпический дар",
+        "blockers": [
+          "дар не входит в репертуар ни одного класса: use_feature даёт CastFailed(not_in_repertoire)",
+          "выгод дара нет: activities и passive_effects пусты в данных, слово epic в ядре встречается только в labels.py"
+        ]
+      },
+      "revision": 1
+    },
+    {
+      "id": "phb2024.phb03.wizard.firmennye_zaklinaniya",
+      "rules_family": "dnd2024",
+      "name": "Волшебник: Фирменные заклинания",
+      "kind": "procedure",
+      "classification": {
+        "mode": "deterministic",
+        "semantic_required": false,
+        "formal_required": true,
+        "reason": "Числа и порядок шагов заданы текстом PHB 2024 (см. facts)"
+      },
+      "conditions": [],
+      "triggers": [
+        "wizard.firmennye_zaklinaniya"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "spells": 2,
+            "spell_level": 3,
+            "free_casts": 1,
+            "recharge": "Короткий или Долгий отдых",
+            "procedure_id": "wizard_firmennye_zaklinaniya"
+          }
+        }
+      ],
+      "semantic_questions": [],
+      "facts": {
+        "spells": 2,
+        "spell_level": 3,
+        "free_casts": 1,
+        "recharge": "Короткий или Долгий отдых"
+      },
+      "rule_parameters": {},
+      "constraints": [],
+      "exceptions": [],
+      "duration": "per_action",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "kind": "phb",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 82,
+        "printed_page": "81",
+        "section": "Волшебник, глава 3 «Классы персонажей»: Фирменные заклинания"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "existing_engine_subset",
+      "auto_activate": false,
+      "dependencies": [],
+      "behavior_tests": [
+        "phb03.wizard.firmennye_zaklinaniya"
+      ],
+      "readiness": {
+        "status": "adjudication_required",
+        "handler": null,
+        "scope": "Волшебник: Фирменные заклинания",
+        "blockers": [
+          "движок принимает умение и тратит использование, но бесплатное применение фирменных заклинаний не наблюдается"
+        ]
+      },
+      "revision": 1
+    },
+    {
+      "id": "phb2024.phb03.wizard.kopirovanie_zaklinanii",
+      "rules_family": "dnd2024",
+      "name": "Волшебник: Копирование заклинания в книгу",
+      "kind": "procedure",
+      "classification": {
+        "mode": "deterministic",
+        "semantic_required": false,
+        "formal_required": true,
+        "reason": "Числа и порядок шагов заданы текстом PHB 2024 (см. facts)"
+      },
+      "conditions": [],
+      "triggers": [
+        "wizard.kopirovanie_zaklinanii"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "hours_per_level_new": 2,
+            "gold_per_level_new": 50,
+            "hours_per_level_copy": 1,
+            "gold_per_level_copy": 10,
+            "procedure_id": "wizard_kopirovanie_zaklinanii"
+          }
+        }
+      ],
+      "semantic_questions": [],
+      "facts": {
+        "hours_per_level_new": 2,
+        "gold_per_level_new": 50,
+        "hours_per_level_copy": 1,
+        "gold_per_level_copy": 10
+      },
+      "rule_parameters": {},
+      "constraints": [],
+      "exceptions": [],
+      "duration": "per_action",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "kind": "phb",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 82,
+        "printed_page": "81",
+        "section": "Волшебник, глава 3 «Классы персонажей»: Копирование заклинания в книгу"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "not_implemented",
+      "auto_activate": false,
+      "dependencies": [
+        "phb2024.phb07.spellbook"
+      ],
+      "behavior_tests": [
+        "phb03.wizard.kopirovanie_zaklinanii"
+      ],
+      "readiness": {
+        "status": "blocked",
+        "handler": null,
+        "scope": "Волшебник: Копирование заклинания в книгу",
+        "blockers": [
+          "копирование в книгу — внебоевое действие без активности и без пути в движке"
+        ]
+      },
+      "revision": 1
+    }
+  ]
+}

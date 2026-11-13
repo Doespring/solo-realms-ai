@@ -1,0 +1,28 @@
+
+== bugbear-stalker (сид 1): существо против героя
+start_combat → 200 Бой начат.
+на герое после хода существа (снимок экрана): ["grappled"]
+на герое после хода существа (состояние кампании: условие + КС): [{"condition": "grappled", "save_dc": 13, "source_effect_id": "effect:grappled"}]
+экран: кнопки: ["Уклонение", "Отход", "Лечь", "Захватить: Bugbear Stalker", "Сбить с ног: Bugbear Stalker", "Оттолкнуть: Bugbear Stalker", "Вырваться из захвата: Bugbear Stalker", "Второе дыхание"]
+экран: кнопка освобождения: {"label": "Вырваться из захвата: Bugbear Stalker", "kind": "engine", "parameters": {"kind": "native_action", "operation": "escape_grapple", "target_id": "foe"}, "expected_version": 2, "id": "engine:9"}
+escape-0: нажатие → 200: "Освобождение: захват снят (проверка 13 против КС 13)."
+escape-0: состояние героя: []
+escape-1: нажатие → 200: "Освобождение: захват снят (проверка 20 против КС 13)."
+escape-1: состояние героя: []
+escape-5: нажатие → 200: "Освобождение не удалось (проверка 8 против КС 13)."
+escape-5: состояние героя: ["grappled"]
+исходы броска: {"true": 2, "false": 1}
+
+== constrictor-snake (сид 1): существо против героя
+start_combat → 200 Бой начат.
+на герое после хода существа (снимок экрана): ["grappled"]
+на герое после хода существа (состояние кампании: условие + КС): [{"condition": "grappled", "save_dc": 12, "source_effect_id": "effect:grappled"}]
+экран: кнопки: ["Уклонение", "Отход", "Лечь", "Захватить: Constrictor Snake", "Сбить с ног: Constrictor Snake", "Оттолкнуть: Constrictor Snake", "Вырваться из захвата: Constrictor Snake", "Второе дыхание"]
+экран: кнопка освобождения: {"label": "Вырваться из захвата: Constrictor Snake", "kind": "engine", "parameters": {"kind": "native_action", "operation": "escape_grapple", "target_id": "foe"}, "expected_version": 3, "id": "engine:9"}
+escape-0: нажатие → 200: "Освобождение не удалось (проверка 8 против КС 12)."
+escape-0: состояние героя: ["grappled"]
+escape-1: нажатие → 200: "Освобождение: захват снят (проверка 17 против КС 12)."
+escape-1: состояние героя: []
+исходы броска: {"false": 1, "true": 1}
+
+ИТОГ: [{"monster": "bugbear-stalker", "landed": true, "dc": 13, "button": true, "label": "Вырваться из захвата: Bugbear Stalker", "outcomes": {"success": 2, "failure": 1}, "attempts": [{"roll": 13, "dc": 13, "succeeded": true, "text": "Освобождение: захват снят (проверка 13 против КС 13).", "conditions": []}, {"roll": 20, "dc": 13, "succeeded": true, "text": "Освобождение: захват снят (проверка 20 против КС 13).", "conditions": []}, {"roll": 8, "dc": 13, "succeeded": false, "text": "Освобождение не удалось (проверка 8 против КС 13).", "conditions": ["grappled"]}]}, {"monster": "constrictor-snake", "landed": true, "dc": 12, "button": true, "label": "Вырваться из захвата: Constrictor Snake", "outcomes": {"failure": 1, "success": 1}, "attempts": [{"roll": 8, "dc": 12, "succeeded": false, "text": "Освобождение не удалось (проверка 8 против КС 12).", "conditions": ["grappled"]}, {"roll": 17, "dc": 12, "succeeded": true, "text": "Освобождение: захват снят (проверка 17 против КС 12).", "conditions": []}]}]

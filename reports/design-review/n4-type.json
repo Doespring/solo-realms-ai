@@ -1,0 +1,189 @@
+{
+ "port": 33761,
+ "frames": {
+  "hero-light-375": {
+   "name": {
+    "sel": "#character #character-content > h2",
+    "text": "Мирон",
+    "fs": "26px",
+    "fw": "600",
+    "lh": "29.9px",
+    "color": "rgb(42, 35, 26)"
+   },
+   "vital": {
+    "sel": "#character .sheet-vitals__cell strong",
+    "text": "12 / 12",
+    "fs": "20px",
+    "fw": "400",
+    "lh": "22px",
+    "color": "rgb(42, 35, 26)"
+   },
+   "metric": {
+    "sel": "#character .metric strong",
+    "text": "16",
+    "fs": "22px",
+    "fw": "400",
+    "lh": "33px",
+    "color": "rgb(138, 87, 20)"
+   },
+   "metricLabel": {
+    "sel": "#character .metric small",
+    "text": "Сила",
+    "fs": "14px",
+    "fw": "400",
+    "lh": "21px",
+    "color": "rgb(106, 87, 64)"
+   },
+   "vitalLabel": {
+    "sel": "#character .sheet-vitals__cell small",
+    "text": "Хиты",
+    "fs": "14px",
+    "fw": "400",
+    "lh": "21px",
+    "color": "rgb(106, 87, 64)"
+   },
+   "counts": {
+    "vitals": 4,
+    "metrics": 6
+   }
+  },
+  "hero-light-1440": {
+   "name": {
+    "sel": "#character #character-content > h2",
+    "text": "Мирон",
+    "fs": "28px",
+    "fw": "600",
+    "lh": "30.8px",
+    "color": "rgb(42, 35, 26)"
+   },
+   "vital": {
+    "sel": "#character .sheet-vitals__cell strong",
+    "text": "12 / 12",
+    "fs": "20px",
+    "fw": "400",
+    "lh": "22px",
+    "color": "rgb(42, 35, 26)"
+   },
+   "metric": {
+    "sel": "#character .metric strong",
+    "text": "16",
+    "fs": "22px",
+    "fw": "400",
+    "lh": "33px",
+    "color": "rgb(138, 87, 20)"
+   },
+   "metricLabel": {
+    "sel": "#character .metric small",
+    "text": "Сила",
+    "fs": "14px",
+    "fw": "400",
+    "lh": "21px",
+    "color": "rgb(106, 87, 64)"
+   },
+   "vitalLabel": {
+    "sel": "#character .sheet-vitals__cell small",
+    "text": "Хиты",
+    "fs": "14px",
+    "fw": "400",
+    "lh": "21px",
+    "color": "rgb(106, 87, 64)"
+   },
+   "counts": {
+    "vitals": 4,
+    "metrics": 6
+   }
+  },
+  "hero-dark-375": {
+   "name": {
+    "sel": "#character #character-content > h2",
+    "text": "Мирон",
+    "fs": "26px",
+    "fw": "600",
+    "lh": "29.9px",
+    "color": "rgb(237, 227, 206)"
+   },
+   "vital": {
+    "sel": "#character .sheet-vitals__cell strong",
+    "text": "12 / 12",
+    "fs": "20px",
+    "fw": "400",
+    "lh": "22px",
+    "color": "rgb(237, 227, 206)"
+   },
+   "metric": {
+    "sel": "#character .metric strong",
+    "text": "16",
+    "fs": "22px",
+    "fw": "400",
+    "lh": "33px",
+    "color": "rgb(209, 186, 130)"
+   },
+   "metricLabel": {
+    "sel": "#character .metric small",
+    "text": "Сила",
+    "fs": "14px",
+    "fw": "400",
+    "lh": "21px",
+    "color": "rgb(163, 176, 166)"
+   },
+   "vitalLabel": {
+    "sel": "#character .sheet-vitals__cell small",
+    "text": "Хиты",
+    "fs": "14px",
+    "fw": "400",
+    "lh": "21px",
+    "color": "rgb(163, 176, 166)"
+   },
+   "counts": {
+    "vitals": 4,
+    "metrics": 6
+   }
+  },
+  "hero-dark-1440": {
+   "name": {
+    "sel": "#character #character-content > h2",
+    "text": "Мирон",
+    "fs": "28px",
+    "fw": "600",
+    "lh": "30.8px",
+    "color": "rgb(237, 227, 206)"
+   },
+   "vital": {
+    "sel": "#character .sheet-vitals__cell strong",
+    "text": "12 / 12",
+    "fs": "20px",
+    "fw": "400",
+    "lh": "22px",
+    "color": "rgb(237, 227, 206)"
+   },
+   "metric": {
+    "sel": "#character .metric strong",
+    "text": "16",
+    "fs": "22px",
+    "fw": "400",
+    "lh": "33px",
+    "color": "rgb(209, 186, 130)"
+   },
+   "metricLabel": {
+    "sel": "#character .metric small",
+    "text": "Сила",
+    "fs": "14px",
+    "fw": "400",
+    "lh": "21px",
+    "color": "rgb(163, 176, 166)"
+   },
+   "vitalLabel": {
+    "sel": "#character .sheet-vitals__cell small",
+    "text": "Хиты",
+    "fs": "14px",
+    "fw": "400",
+    "lh": "21px",
+    "color": "rgb(163, 176, 166)"
+   },
+   "counts": {
+    "vitals": 4,
+    "metrics": 6
+   }
+  }
+ }
+}

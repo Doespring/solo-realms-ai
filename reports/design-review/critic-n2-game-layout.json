@@ -1,0 +1,1267 @@
+{
+ "base": "http://127.0.0.1:60621",
+ "frames": [
+  {
+   "frame": "game-375",
+   "measured": {
+    "viewport": {
+     "w": 375,
+     "h": 812
+    },
+    "play": {
+     "x": 0,
+     "y": 56,
+     "w": 375,
+     "h": 756,
+     "bottom": 812,
+     "right": 375
+    },
+    "chat": {
+     "x": 0,
+     "y": 56,
+     "w": 375,
+     "h": 634,
+     "bottom": 690,
+     "right": 375
+    },
+    "lastMessage": {
+     "x": 16,
+     "y": 439.8,
+     "w": 343,
+     "h": 202.3,
+     "bottom": 642,
+     "right": 359
+    },
+    "composer": {
+     "x": 16,
+     "y": 690,
+     "w": 343,
+     "h": 72,
+     "bottom": 762,
+     "right": 359
+    },
+    "form": {
+     "x": 16,
+     "y": 690,
+     "w": 343,
+     "h": 72,
+     "bottom": 762,
+     "right": 359
+    },
+    "input": {
+     "x": 31,
+     "y": 697,
+     "w": 231.8,
+     "h": 58,
+     "bottom": 755,
+     "right": 262.8
+    },
+    "send": {
+     "x": 270.8,
+     "y": 711,
+     "w": 79.3,
+     "h": 44,
+     "bottom": 755,
+     "right": 350
+    },
+    "card": {
+     "x": 16,
+     "y": 490.3,
+     "w": 343,
+     "h": 137.7,
+     "bottom": 628,
+     "right": 359
+    },
+    "formPadding": [
+     "6px",
+     "8px",
+     "6px",
+     "14px"
+    ],
+    "composerPadding": [
+     "6px",
+     "8px",
+     "6px",
+     "14px"
+    ],
+    "textToInput": 48,
+    "chatToForm": 0,
+    "bottomGap": 50,
+    "header": {
+     "x": 0,
+     "y": 0,
+     "w": 375,
+     "h": 56,
+     "bottom": 56,
+     "right": 375
+    },
+    "title": {
+     "text": "Тайна трёх сосенДозор на тракте",
+     "w": 142.5,
+     "client": 142,
+     "scroll": 142,
+     "font": "17px"
+    },
+    "sub": {
+     "text": "Дозор на тракте",
+     "w": 142.5,
+     "client": 142,
+     "scroll": 142,
+     "font": "14px"
+    },
+    "vitals": {
+     "x": 222.5,
+     "y": 6.5,
+     "w": 80.5,
+     "h": 42,
+     "bottom": 48.5,
+     "right": 303
+    },
+    "navDebug": {
+     "found": true,
+     "cls": "nav active",
+     "w": 175.5,
+     "h": 44,
+     "minH": "44px",
+     "height": "44px",
+     "pad": "0px 10px",
+     "inAside": true,
+     "parent": "nav-bar",
+     "mq900": false,
+     "mq701": true
+    },
+    "vitalsDebug": {
+     "display": "grid",
+     "font": "16px",
+     "gap": "1px",
+     "flex": "0 0 auto",
+     "html": "<div class=\"vitals\" aria-label=\"хиты 12/12, защита 18\"><span><b>12/12</b><span class=\"vitals__label\"> хиты</span></span><span class=\"vitals__sep\">·</span><span><b>18</b><span class=\"vitals__label\"> защита</span></span></div>",
+     "kids": [
+      {
+       "cls": "",
+       "disp": "flex",
+       "w": 80.5,
+       "h": 20.5
+      },
+      {
+       "cls": "vitals__sep",
+       "disp": "none",
+       "w": 0,
+       "h": 0
+      },
+      {
+       "cls": "",
+       "disp": "flex",
+       "w": 70.3,
+       "h": 20.5
+      }
+     ]
+    },
+    "taps": [
+     {
+      "id": "mobile-burger",
+      "w": 44,
+      "h": 44
+     },
+     {
+      "id": "sheet-toggle",
+      "w": 52,
+      "h": 44
+     }
+    ],
+    "boxes": {
+     "chatRect": {
+      "#chat": {
+       "padding": "12px 16px 48px",
+       "display": "flex",
+       "justify": "normal",
+       "direction": "column"
+      }
+     },
+     "body > main": {
+      "x": 0,
+      "y": 0,
+      "w": 375,
+      "h": 812,
+      "bottom": 812,
+      "right": 375
+     },
+     "body > aside.sidebar": {
+      "x": -378.7,
+      "y": 0,
+      "w": 375,
+      "h": 812,
+      "bottom": 812,
+      "right": -3.7
+     },
+     ".workspace-layout": {
+      "x": 0,
+      "y": 56,
+      "w": 375,
+      "h": 756,
+      "bottom": 812,
+      "right": 375
+     },
+     ".story-card": {
+      "x": 0,
+      "y": 56,
+      "w": 375,
+      "h": 756,
+      "bottom": 812,
+      "right": 375
+     },
+     ".literary-column": {
+      "x": 0,
+      "y": 56,
+      "w": 375,
+      "h": 756,
+      "bottom": 812,
+      "right": 375
+     },
+     "#chat": {
+      "x": 0,
+      "y": 56,
+      "w": 375,
+      "h": 634,
+      "bottom": 690,
+      "right": 375
+     },
+     "chat > .message": {
+      "x": 16,
+      "y": 439.8,
+      "w": 343,
+      "h": 202.3,
+      "bottom": 642,
+      "right": 359
+     },
+     ".scene-rail": {
+      "x": 0,
+      "y": 0,
+      "w": 0,
+      "h": 0,
+      "bottom": 0,
+      "right": 0
+     },
+     "#scene-hero": {
+      "x": 0,
+      "y": 0,
+      "w": 0,
+      "h": 0,
+      "bottom": 0,
+      "right": 0
+     }
+    },
+    "headerKids": [
+     {
+      "cls": "m-burger",
+      "x": 12,
+      "w": 44,
+      "h": 44,
+      "order": "1",
+      "text": ""
+     },
+     {
+      "cls": "m-title",
+      "x": 68,
+      "w": 142.5,
+      "h": 37.9,
+      "order": "2",
+      "text": "Тайна трёх сосен\nДозор на тр"
+     },
+     {
+      "cls": "vitals",
+      "x": 222.5,
+      "w": 80.5,
+      "h": 42,
+      "order": "3",
+      "text": "12/12\nхиты\n18\nзащита"
+     },
+     {
+      "cls": "iconbtn sheet-toggle",
+      "x": 311,
+      "w": 52,
+      "h": 44,
+      "order": "4",
+      "text": "Лист"
+     }
+    ],
+    "interactive": [
+     {
+      "cls": "brand",
+      "id": "",
+      "w": 351,
+      "h": 44,
+      "text": "SOLO REALMS"
+     },
+     {
+      "cls": "nav active",
+      "id": "",
+      "w": 175.5,
+      "h": 44,
+      "text": "Игра"
+     },
+     {
+      "cls": "nav",
+      "id": "",
+      "w": 175.5,
+      "h": 44,
+      "text": "Кампании"
+     },
+     {
+      "cls": "nav",
+      "id": "",
+      "w": 175.5,
+      "h": 44,
+      "text": "Персонаж"
+     },
+     {
+      "cls": "nav",
+      "id": "",
+      "w": 175.5,
+      "h": 44,
+      "text": "Мастер"
+     },
+     {
+      "cls": "nav-tab",
+      "id": "",
+      "w": 147.5,
+      "h": 44,
+      "text": "Кампания"
+     },
+     {
+      "cls": "nav-tab",
+      "id": "",
+      "w": 147.5,
+      "h": 44,
+      "text": "Приложение"
+     },
+     {
+      "cls": "nav-close",
+      "id": "",
+      "w": 44,
+      "h": 44,
+      "text": "×"
+     },
+     {
+      "cls": "nav",
+      "id": "",
+      "w": 351,
+      "h": 44,
+      "text": "Навыки"
+     },
+     {
+      "cls": "nav",
+      "id": "",
+      "w": 351,
+      "h": 44,
+      "text": "Инвентарь"
+     },
+     {
+      "cls": "nav",
+      "id": "",
+      "w": 351,
+      "h": 44,
+      "text": "Карта мира"
+     },
+     {
+      "cls": "nav",
+      "id": "",
+      "w": 351,
+      "h": 44,
+      "text": "Блокнот"
+     },
+     {
+      "cls": "nav",
+      "id": "",
+      "w": 351,
+      "h": 44,
+      "text": "Раздатки и карты"
+     },
+     {
+      "cls": "nav",
+      "id": "",
+      "w": 351,
+      "h": 44,
+      "text": "Сохранения"
+     },
+     {
+      "cls": "nav nav-exit",
+      "id": "",
+      "w": 351,
+      "h": 44,
+      "text": "Выход из игры"
+     },
+     {
+      "cls": "m-burger",
+      "id": "mobile-burger",
+      "w": 44,
+      "h": 44,
+      "text": "Меню"
+     },
+     {
+      "cls": "iconbtn sheet-toggle",
+      "id": "sheet-toggle",
+      "w": 52,
+      "h": 44,
+      "text": "Лист"
+     },
+     {
+      "cls": "TEXTAREA",
+      "id": "player-input",
+      "w": 231.8,
+      "h": 58,
+      "text": "Ваша реплика"
+     },
+     {
+      "cls": "primary",
+      "id": "send",
+      "w": 79.3,
+      "h": 44,
+      "text": "Сказать"
+     }
+    ],
+    "sheet": {
+     "minHeight": "44px",
+     "height": "auto",
+     "display": "inline-block",
+     "parent": "disclosure-body",
+     "inHero": true,
+     "inPlay": true
+    }
+   },
+   "file": "reports/design-review/probe_n2_layout-game-375.png",
+   "titles": [
+    {
+     "name": "Тайна трёх сосен",
+     "title": "Тайна трёх сосен",
+     "client": 142,
+     "scroll": 142,
+     "sub": "Дозор на тракте",
+     "subScroll": 142,
+     "subClient": 142
+    },
+    {
+     "name": "Соляной тракт",
+     "title": "Соляной тракт",
+     "client": 142,
+     "scroll": 142,
+     "sub": "Дозор на тракте",
+     "subScroll": 142,
+     "subClient": 142
+    },
+    {
+     "name": "Дом у маяка",
+     "title": "Дом у маяка",
+     "client": 142,
+     "scroll": 142,
+     "sub": "Дозор на тракте",
+     "subScroll": 142,
+     "subClient": 142
+    }
+   ],
+   "jsErrors": []
+  },
+  {
+   "frame": "game-kb-375",
+   "measured": {
+    "viewport": {
+     "w": 375,
+     "h": 476
+    },
+    "play": {
+     "x": 0,
+     "y": 44,
+     "w": 375,
+     "h": 432,
+     "bottom": 476,
+     "right": 375
+    },
+    "chat": {
+     "x": 0,
+     "y": 44,
+     "w": 375,
+     "h": 352,
+     "bottom": 396,
+     "right": 375
+    },
+    "lastMessage": {
+     "x": 16,
+     "y": 145.8,
+     "w": 343,
+     "h": 202.3,
+     "bottom": 348,
+     "right": 359
+    },
+    "composer": {
+     "x": 16,
+     "y": 396,
+     "w": 343,
+     "h": 72,
+     "bottom": 468,
+     "right": 359
+    },
+    "form": {
+     "x": 16,
+     "y": 396,
+     "w": 343,
+     "h": 72,
+     "bottom": 468,
+     "right": 359
+    },
+    "input": {
+     "x": 31,
+     "y": 403,
+     "w": 231.8,
+     "h": 58,
+     "bottom": 461,
+     "right": 262.8
+    },
+    "send": {
+     "x": 270.8,
+     "y": 417,
+     "w": 79.3,
+     "h": 44,
+     "bottom": 461,
+     "right": 350
+    },
+    "card": {
+     "x": 16,
+     "y": 196.3,
+     "w": 343,
+     "h": 137.7,
+     "bottom": 334,
+     "right": 359
+    },
+    "formPadding": [
+     "6px",
+     "8px",
+     "6px",
+     "14px"
+    ],
+    "composerPadding": [
+     "6px",
+     "8px",
+     "6px",
+     "14px"
+    ],
+    "textToInput": 48,
+    "chatToForm": 0,
+    "bottomGap": 8,
+    "header": {
+     "x": 0,
+     "y": 0,
+     "w": 375,
+     "h": 44,
+     "bottom": 44,
+     "right": 375
+    },
+    "title": {
+     "text": "Тайна трёх сосенДозор на тракте",
+     "w": 142.5,
+     "client": 142,
+     "scroll": 142,
+     "font": "17px"
+    },
+    "sub": {
+     "text": "Дозор на тракте",
+     "w": 142.5,
+     "client": 142,
+     "scroll": 142,
+     "font": "14px"
+    },
+    "vitals": {
+     "x": 222.5,
+     "y": 0.5,
+     "w": 80.5,
+     "h": 42,
+     "bottom": 42.5,
+     "right": 303
+    },
+    "navDebug": {
+     "found": true,
+     "cls": "nav active",
+     "w": 175.5,
+     "h": 44,
+     "minH": "44px",
+     "height": "44px",
+     "pad": "0px 10px",
+     "inAside": true,
+     "parent": "nav-bar",
+     "mq900": false,
+     "mq701": false
+    },
+    "vitalsDebug": {
+     "display": "grid",
+     "font": "16px",
+     "gap": "1px",
+     "flex": "0 0 auto",
+     "html": "<div class=\"vitals\" aria-label=\"хиты 12/12, защита 18\"><span><b>12/12</b><span class=\"vitals__label\"> хиты</span></span><span class=\"vitals__sep\">·</span><span><b>18</b><span class=\"vitals__label\"> защита</span></span></div>",
+     "kids": [
+      {
+       "cls": "",
+       "disp": "flex",
+       "w": 80.5,
+       "h": 20.5
+      },
+      {
+       "cls": "vitals__sep",
+       "disp": "none",
+       "w": 0,
+       "h": 0
+      },
+      {
+       "cls": "",
+       "disp": "flex",
+       "w": 70.3,
+       "h": 20.5
+      }
+     ]
+    },
+    "taps": [
+     {
+      "id": "mobile-burger",
+      "w": 44,
+      "h": 44
+     },
+     {
+      "id": "sheet-toggle",
+      "w": 52,
+      "h": 44
+     }
+    ],
+    "boxes": {
+     "chatRect": {
+      "#chat": {
+       "padding": "12px 16px 48px",
+       "display": "flex",
+       "justify": "normal",
+       "direction": "column"
+      }
+     },
+     "body > main": {
+      "x": 0,
+      "y": 0,
+      "w": 375,
+      "h": 476,
+      "bottom": 476,
+      "right": 375
+     },
+     "body > aside.sidebar": {
+      "x": -378.7,
+      "y": 0,
+      "w": 375,
+      "h": 476,
+      "bottom": 476,
+      "right": -3.7
+     },
+     ".workspace-layout": {
+      "x": 0,
+      "y": 44,
+      "w": 375,
+      "h": 432,
+      "bottom": 476,
+      "right": 375
+     },
+     ".story-card": {
+      "x": 0,
+      "y": 44,
+      "w": 375,
+      "h": 432,
+      "bottom": 476,
+      "right": 375
+     },
+     ".literary-column": {
+      "x": 0,
+      "y": 44,
+      "w": 375,
+      "h": 432,
+      "bottom": 476,
+      "right": 375
+     },
+     "#chat": {
+      "x": 0,
+      "y": 44,
+      "w": 375,
+      "h": 352,
+      "bottom": 396,
+      "right": 375
+     },
+     "chat > .message": {
+      "x": 16,
+      "y": 145.8,
+      "w": 343,
+      "h": 202.3,
+      "bottom": 348,
+      "right": 359
+     },
+     ".scene-rail": {
+      "x": 0,
+      "y": 0,
+      "w": 0,
+      "h": 0,
+      "bottom": 0,
+      "right": 0
+     },
+     "#scene-hero": {
+      "x": 0,
+      "y": 0,
+      "w": 0,
+      "h": 0,
+      "bottom": 0,
+      "right": 0
+     }
+    },
+    "headerKids": [
+     {
+      "cls": "m-burger",
+      "x": 12,
+      "w": 44,
+      "h": 44,
+      "order": "1",
+      "text": ""
+     },
+     {
+      "cls": "m-title",
+      "x": 68,
+      "w": 142.5,
+      "h": 37.9,
+      "order": "2",
+      "text": "Тайна трёх сосен\nДозор на тр"
+     },
+     {
+      "cls": "vitals",
+      "x": 222.5,
+      "w": 80.5,
+      "h": 42,
+      "order": "3",
+      "text": "12/12\nхиты\n18\nзащита"
+     },
+     {
+      "cls": "iconbtn sheet-toggle",
+      "x": 311,
+      "w": 52,
+      "h": 44,
+      "order": "4",
+      "text": "Лист"
+     }
+    ],
+    "interactive": [
+     {
+      "cls": "brand",
+      "id": "",
+      "w": 351,
+      "h": 44,
+      "text": "SOLO REALMS"
+     },
+     {
+      "cls": "nav active",
+      "id": "",
+      "w": 175.5,
+      "h": 44,
+      "text": "Игра"
+     },
+     {
+      "cls": "nav",
+      "id": "",
+      "w": 175.5,
+      "h": 44,
+      "text": "Кампании"
+     },
+     {
+      "cls": "nav",
+      "id": "",
+      "w": 175.5,
+      "h": 44,
+      "text": "Персонаж"
+     },
+     {
+      "cls": "nav",
+      "id": "",
+      "w": 175.5,
+      "h": 44,
+      "text": "Мастер"
+     },
+     {
+      "cls": "nav-tab",
+      "id": "",
+      "w": 147.5,
+      "h": 44,
+      "text": "Кампания"
+     },
+     {
+      "cls": "nav-tab",
+      "id": "",
+      "w": 147.5,
+      "h": 44,
+      "text": "Приложение"
+     },
+     {
+      "cls": "nav-close",
+      "id": "",
+      "w": 44,
+      "h": 44,
+      "text": "×"
+     },
+     {
+      "cls": "nav",
+      "id": "",
+      "w": 351,
+      "h": 44,
+      "text": "Навыки"
+     },
+     {
+      "cls": "nav",
+      "id": "",
+      "w": 351,
+      "h": 44,
+      "text": "Инвентарь"
+     },
+     {
+      "cls": "nav",
+      "id": "",
+      "w": 351,
+      "h": 44,
+      "text": "Карта мира"
+     },
+     {
+      "cls": "nav",
+      "id": "",
+      "w": 351,
+      "h": 44,
+      "text": "Блокнот"
+     },
+     {
+      "cls": "nav",
+      "id": "",
+      "w": 351,
+      "h": 44,
+      "text": "Раздатки и карты"
+     },
+     {
+      "cls": "nav",
+      "id": "",
+      "w": 351,
+      "h": 44,
+      "text": "Сохранения"
+     },
+     {
+      "cls": "nav nav-exit",
+      "id": "",
+      "w": 351,
+      "h": 44,
+      "text": "Выход из игры"
+     },
+     {
+      "cls": "m-burger",
+      "id": "mobile-burger",
+      "w": 44,
+      "h": 44,
+      "text": "Меню"
+     },
+     {
+      "cls": "iconbtn sheet-toggle",
+      "id": "sheet-toggle",
+      "w": 52,
+      "h": 44,
+      "text": "Лист"
+     },
+     {
+      "cls": "TEXTAREA",
+      "id": "player-input",
+      "w": 231.8,
+      "h": 58,
+      "text": "Ваша реплика"
+     },
+     {
+      "cls": "primary",
+      "id": "send",
+      "w": 79.3,
+      "h": 44,
+      "text": "Сказать"
+     }
+    ],
+    "sheet": {
+     "minHeight": "44px",
+     "height": "auto",
+     "display": "inline-block",
+     "parent": "disclosure-body",
+     "inHero": true,
+     "inPlay": true
+    }
+   },
+   "file": "reports/design-review/probe_n2_layout-game-kb-375.png",
+   "titles": [
+    {
+     "name": "Тайна трёх сосен",
+     "title": "Тайна трёх сосен",
+     "client": 142,
+     "scroll": 142,
+     "sub": "Дозор на тракте",
+     "subScroll": 142,
+     "subClient": 142
+    },
+    {
+     "name": "Соляной тракт",
+     "title": "Соляной тракт",
+     "client": 142,
+     "scroll": 142,
+     "sub": "Дозор на тракте",
+     "subScroll": 142,
+     "subClient": 142
+    },
+    {
+     "name": "Дом у маяка",
+     "title": "Дом у маяка",
+     "client": 142,
+     "scroll": 142,
+     "sub": "Дозор на тракте",
+     "subScroll": 142,
+     "subClient": 142
+    }
+   ],
+   "jsErrors": []
+  },
+  {
+   "frame": "game-1440",
+   "measured": {
+    "viewport": {
+     "w": 1440,
+     "h": 900
+    },
+    "play": {
+     "x": 32,
+     "y": 112,
+     "w": 1376,
+     "h": 788,
+     "bottom": 900,
+     "right": 1408
+    },
+    "chat": {
+     "x": 230,
+     "y": 112,
+     "w": 692,
+     "h": 577.6,
+     "bottom": 689.6,
+     "right": 922
+    },
+    "lastMessage": {
+     "x": 246,
+     "y": 484.7,
+     "w": 660,
+     "h": 173,
+     "bottom": 657.6,
+     "right": 906
+    },
+    "composer": {
+     "x": 246,
+     "y": 689.6,
+     "w": 660,
+     "h": 160.4,
+     "bottom": 850,
+     "right": 906
+    },
+    "form": {
+     "x": 246,
+     "y": 689.6,
+     "w": 660,
+     "h": 160.4,
+     "bottom": 850,
+     "right": 906
+    },
+    "input": {
+     "x": 263,
+     "y": 700.6,
+     "w": 632,
+     "h": 52,
+     "bottom": 752.6,
+     "right": 895
+    },
+    "send": {
+     "x": 529.4,
+     "y": 795,
+     "w": 99.3,
+     "h": 44,
+     "bottom": 839,
+     "right": 628.6
+    },
+    "card": {
+     "x": 246,
+     "y": 538,
+     "w": 660,
+     "h": 105.6,
+     "bottom": 643.6,
+     "right": 906
+    },
+    "formPadding": [
+     "10px",
+     "10px",
+     "10px",
+     "16px"
+    ],
+    "composerPadding": [
+     "10px",
+     "10px",
+     "10px",
+     "16px"
+    ],
+    "textToInput": 32,
+    "chatToForm": 0,
+    "bottomGap": 50,
+    "header": {
+     "x": 32,
+     "y": 56,
+     "w": 1376,
+     "h": 56,
+     "bottom": 112,
+     "right": 1408
+    },
+    "title": null,
+    "sub": null,
+    "vitals": {
+     "x": 1185.4,
+     "y": 71.5,
+     "w": 190.6,
+     "h": 24,
+     "bottom": 95.5,
+     "right": 1376
+    },
+    "navDebug": {
+     "found": true,
+     "cls": "nav active",
+     "w": 68,
+     "h": 44,
+     "minH": "44px",
+     "height": "44px",
+     "pad": "8px 13px",
+     "inAside": true,
+     "parent": "nav-bar",
+     "mq900": true,
+     "mq701": true
+    },
+    "vitalsDebug": {
+     "display": "flex",
+     "font": "16px",
+     "gap": "14px",
+     "flex": "0 0 auto",
+     "html": "<div class=\"vitals\" aria-label=\"хиты 12/12, защита 18\"><span><b>12/12</b><span class=\"vitals__label\"> хиты</span></span><span class=\"vitals__sep\">·</span><span><b>18</b><span class=\"vitals__label\"> защита</span></span></div>",
+     "kids": [
+      {
+       "cls": "",
+       "disp": "block",
+       "w": 83.8,
+       "h": 24
+      },
+      {
+       "cls": "vitals__sep",
+       "disp": "block",
+       "w": 4.3,
+       "h": 24
+      },
+      {
+       "cls": "",
+       "disp": "block",
+       "w": 74.5,
+       "h": 24
+      }
+     ]
+    },
+    "taps": [
+     {
+      "id": "themetoggle",
+      "w": 44,
+      "h": 44
+     }
+    ],
+    "boxes": {
+     "chatRect": {
+      "#chat": {
+       "padding": "36px 16px 32px",
+       "display": "flex",
+       "justify": "normal",
+       "direction": "column"
+      }
+     },
+     "body > main": {
+      "x": 0,
+      "y": 56,
+      "w": 1440,
+      "h": 844,
+      "bottom": 900,
+      "right": 1440
+     },
+     "body > aside.sidebar": {
+      "x": 0,
+      "y": 0,
+      "w": 1440,
+      "h": 56,
+      "bottom": 56,
+      "right": 1440
+     },
+     ".workspace-layout": {
+      "x": 32,
+      "y": 112,
+      "w": 1376,
+      "h": 788,
+      "bottom": 900,
+      "right": 1408
+     },
+     ".story-card": {
+      "x": 230,
+      "y": 112,
+      "w": 692,
+      "h": 788,
+      "bottom": 900,
+      "right": 922
+     },
+     ".literary-column": {
+      "x": 32,
+      "y": 112,
+      "w": 1088,
+      "h": 788,
+      "bottom": 900,
+      "right": 1120
+     },
+     "#chat": {
+      "x": 230,
+      "y": 112,
+      "w": 692,
+      "h": 577.6,
+      "bottom": 689.6,
+      "right": 922
+     },
+     "chat > .message": {
+      "x": 246,
+      "y": 484.7,
+      "w": 660,
+      "h": 173,
+      "bottom": 657.6,
+      "right": 906
+     },
+     ".scene-rail": {
+      "x": 1120,
+      "y": 128,
+      "w": 288,
+      "h": 772,
+      "bottom": 900,
+      "right": 1408
+     },
+     "#scene-hero": {
+      "x": 1135,
+      "y": 142,
+      "w": 259,
+      "h": 330.8,
+      "bottom": 472.8,
+      "right": 1394
+     }
+    },
+    "headerKids": [
+     {
+      "cls": "themetoggle",
+      "x": 64,
+      "w": 44,
+      "h": 44,
+      "order": "0",
+      "text": ""
+     },
+     {
+      "cls": "vitals",
+      "x": 1185.4,
+      "w": 190.6,
+      "h": 24,
+      "order": "0",
+      "text": "12/12 хиты\n·\n18 защита"
+     }
+    ],
+    "interactive": [
+     {
+      "cls": "brand",
+      "id": "",
+      "w": 115.6,
+      "h": 44,
+      "text": "SOLO REALMS"
+     },
+     {
+      "cls": "nav active",
+      "id": "",
+      "w": 68,
+      "h": 44,
+      "text": "Игра"
+     },
+     {
+      "cls": "nav",
+      "id": "",
+      "w": 111,
+      "h": 44,
+      "text": "Кампании"
+     },
+     {
+      "cls": "nav",
+      "id": "",
+      "w": 113,
+      "h": 44,
+      "text": "Персонаж"
+     },
+     {
+      "cls": "nav",
+      "id": "",
+      "w": 90,
+      "h": 44,
+      "text": "Мастер"
+     },
+     {
+      "cls": "nav more-toggle",
+      "id": "nav-more",
+      "w": 59,
+      "h": 44,
+      "text": "Ещё"
+     },
+     {
+      "cls": "themetoggle",
+      "id": "",
+      "w": 44,
+      "h": 44,
+      "text": "Светлая тема"
+     },
+     {
+      "cls": "TEXTAREA",
+      "id": "player-input",
+      "w": 632,
+      "h": 52,
+      "text": "Ваша реплика"
+     },
+     {
+      "cls": "primary",
+      "id": "send",
+      "w": 99.3,
+      "h": 44,
+      "text": "Сказать"
+     },
+     {
+      "cls": "SUMMARY",
+      "id": "",
+      "w": 225,
+      "h": 44,
+      "text": "ВАШ ГЕРОЙ"
+     },
+     {
+      "cls": "quiet sheet-link",
+      "id": "",
+      "w": 94,
+      "h": 44,
+      "text": "Лист героя"
+     }
+    ],
+    "sheet": {
+     "minHeight": "44px",
+     "height": "44px",
+     "display": "inline-block",
+     "parent": "disclosure-body",
+     "inHero": true,
+     "inPlay": true
+    }
+   },
+   "file": "reports/design-review/probe_n2_layout-game-1440.png",
+   "jsErrors": []
+  }
+ ]
+}

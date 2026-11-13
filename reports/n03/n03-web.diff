@@ -1,0 +1,467 @@
+commit db73c9288dbe0c1c391d8ad246500670706d6c30
+Author: Иван Орловский <doespring@users.noreply.github.com>
+Date:   Sat Nov 7 03:01:11 2026 +0000
+
+    n03: экран игры — лента и одно поле ввода, служебное в шторку
+    
+    Первый план игрового экрана: лента истории и одно поле «Что вы делаете?».
+    Убрано с экрана: переключатель темы из шапки телефона (переехал строкой
+    «Оформление» в шторку), вторая строка дока с кнопкой во всю ширину,
+    подсказка Ctrl+Enter, крошки и статус модели в шапке стола, подвал под
+    игрой, строка «Действие подтверждено.» после каждой реплики.
+    
+    Enter отправляет (Shift+Enter — перенос); док на телефоне 72 px вместо
+    130 и учитывает env(safe-area-inset-bottom); пока мастер отвечает,
+    «Сказать» уступает место «Остановить ответ» (SPEC §7). Лента: 375×684 на
+    телефоне, блок 692 / контент 660 на 1440, рассказ 17/20 px, прокрутка к
+    последнему сообщению. Один настоящий ход: command-turn 200, ответ мастера
+    в ленте, 4xx/5xx нет.
+    
+    Движок, solo/ и design/ не тронуты. Тесты Enter обновлены под новую
+    семантику (test_small_window_ui.cjs, test_preview7_ui_followup.cjs).
+
+diff --git a/scripts/n03_accept_server.py b/scripts/n03_accept_server.py
+new file mode 100644
+index 00000000..1ae70519
+--- /dev/null
++++ b/scripts/n03_accept_server.py
+@@ -0,0 +1,46 @@
++"""n03: свой инстанс приложения для приёмки экрана игры (лента + одно поле ввода).
++
++Живой профиль и порт 19215 не трогаются: своя база в runtime/n03, свободный порт,
++mock-модель без сети и без платных вызовов, свой журнал действий.
++
++Печатает JSON с портом и id кампании, затем работает до остановки процесса.
++
++    .venv/bin/python scripts/n03_accept_server.py runtime/n03
++"""
++import json
++import os
++import socket
++import sys
++from pathlib import Path
++
++import uvicorn
++
++ROOT = Path(__file__).resolve().parents[1]
++sys.path.insert(0, str(ROOT))
++work = Path(sys.argv[1] if len(sys.argv) > 1 else ROOT / 'runtime' / 'n03')
++work.mkdir(parents=True, exist_ok=True)
++log = work / 'actions.jsonl'
++log.write_text('', encoding='utf-8')
++os.environ['SOLO_ACTIONS_LOG'] = str(log)
++os.environ['SOLO_TEST'] = '1'
++
++from solo.app import create_app          # noqa: E402 — путь журнала читается при сборке app
++from solo.llm import CommandMockLLM      # noqa: E402
++from solo.nat20_api import Nat20GameEngine  # noqa: E402
++
++llm = CommandMockLLM({'Осматриваю зал и стойку': dict(status='command',
++                                                      action=dict(kind='check', check_id='perception'),
++                                                      message='')})
++sock = socket.socket()
++sock.bind(('127.0.0.1', 0))
++port = sock.getsockname()[1]
++# Как Web.cmd: experimental=True. Иначе маршрут /api/campaigns/<id>/prototype
++# не зарегистрирован, и браузер рисует 404, которого в живом приложении нет.
++app = create_app(work / 'n03.sqlite3', llm, local_port=port, experimental=True)
++store = app.state.store
++campaign = Nat20GameEngine(store).create_campaign('n03 · экран игры: лента и поле', seed=7)
++
++(work / 'server.json').write_text(json.dumps(dict(port=port, campaign=campaign['id'], log=str(log)),
++                                             ensure_ascii=False), encoding='utf-8')
++print(json.dumps(dict(port=port, campaign=campaign['id'], log=str(log)), ensure_ascii=False), flush=True)
++uvicorn.Server(uvicorn.Config(app, log_level='error', access_log=False)).run(sockets=[sock])
+diff --git a/tests/test_preview7_ui_followup.cjs b/tests/test_preview7_ui_followup.cjs
+index c060933e..eaf18700 100644
+--- a/tests/test_preview7_ui_followup.cjs
++++ b/tests/test_preview7_ui_followup.cjs
+@@ -59,9 +59,11 @@ fs.mkdirSync(out,{recursive:true});
+   await page.waitForFunction(()=>window.SoloGameScreen&&document.querySelector('.game-hp')?.textContent==='HP 0 / 12');
+   await page.evaluate(()=>view('play'));
+   const input=page.locator('#player-input');
++  // n03: Enter теперь отправляет, но терминальный сценарий держит отправку
++  // (play.js: actionBlocked/terminal): реплика остаётся в поле, запрос не уходит.
+   await input.fill('Отдыхаю');await input.press('Enter');
+-  assert.equal(await input.inputValue(),'Отдыхаю\n');
+-  await input.press('Control+Enter');
++  assert.equal(await input.inputValue(),'Отдыхаю');
++  await input.press('Shift+Enter');
+   await page.locator('#action-form').evaluate(form=>form.requestSubmit());
+   await settle();
+   assert.equal(turns.length,0);assert.equal(legacy.length,0);
+diff --git a/tests/test_small_window_ui.cjs b/tests/test_small_window_ui.cjs
+index 80497eb5..5947f8c8 100644
+--- a/tests/test_small_window_ui.cjs
++++ b/tests/test_small_window_ui.cjs
+@@ -108,9 +108,10 @@ fs.mkdirSync(out,{recursive:true});
+    await page.getByRole('button',{name:'Выполнить проверку',exact:true}).first().click();}
+   await page.waitForFunction(()=>!document.getElementById('send').disabled);assert.equal(buttonCount,1);
+   assert.equal(posts.filter(p=>p.width===width&&p.path==='commands')[0].body.expected_version,packet.snapshot.version);
+-  // Normal Enter edits the draft; explicit keyboard/button submission still works.
+-  await input.fill('Осматриваюсь');await input.press('Enter');assert.equal(await input.inputValue(),'Осматриваюсь\n');
+-  await input.press('Control+Enter');await page.waitForFunction(()=>document.getElementById('player-input').value===''&&!document.getElementById('send').disabled);assert.equal(turnCount,1);
++  // n03: Enter отправляет реплику, Shift+Enter оставляет перенос строки.
++  // Было наоборот (Enter — перенос, Ctrl+Enter — отправка), и на телефоне Enter не работал.
++  await input.fill('Осматриваюсь');await input.press('Enter');await page.waitForFunction(()=>document.getElementById('player-input').value===''&&!document.getElementById('send').disabled);assert.equal(turnCount,1);
++  await input.fill('Осматриваюсь');await input.press('Shift+Enter');assert.equal(await input.inputValue(),'Осматриваюсь\n');await input.fill('');
+   await input.fill('Проверяю силу');await page.locator('#send').click();await page.waitForFunction(()=>document.getElementById('player-input').value===''&&!document.getElementById('send').disabled);assert.equal(turnCount,2);
+   campaign.backend=real.backend;packet.snapshot.backend=screen.snapshot.backend;packet.snapshot.command_turn=false;packet.snapshot.scene=null;await page.evaluate(async()=>{await refresh();await SoloGameScreen.reload();});
+   await input.fill('Обычная Solo');await page.locator('#send').click();await page.waitForFunction(()=>!document.getElementById('send').disabled);assert.equal(legacyCount,1);
+diff --git a/web/chronicle.js b/web/chronicle.js
+index 27f4f0b9..b4ccd545 100644
+--- a/web/chronicle.js
++++ b/web/chronicle.js
+@@ -23,5 +23,7 @@
+   const place=c.state.locations.find(p=>p.name===c.state.location),here=$('scene-presence').lastElementChild;here.replaceChildren();for(const n of place?.npc||[]){if(n.present===false)continue;const b=el('button',n.name,'context-person');b.onclick=()=>window.soloInspect({title:n.name,icon:'person',text:n.description||n.public_description||'',rows:[['Присутствие','В текущей сцене']],selection:{kind:'npc',id:n.id||n.name}});here.append(b);}if(!here.childElementCount)here.append(el('p','Вы здесь одни.','hint'));
+   const box=context.lastElementChild;box.replaceChildren();for(const item of (c.state.economy?.items||[]).slice(0,5)){const b=el('button',undefined,'context-item');b.append(window.soloIcon(item.catalog==='leather'?'leather_armor':['longsword','shield','rope','healing_potion','rations'].includes(item.catalog)?item.catalog:'inventory'),el('span',item.name+' × '+item.quantity));b.onclick=()=>window.soloInspect({title:item.name,icon:'inventory',text:item.description,rows:[['Состояние',item.condition],['Источник',item.source]],selection:{kind:'item',id:item.id}});box.append(b);}if(!box.childElementCount)box.append(el('p','Снаряжение пока не записано.','hint'));
+  });
+- $('action-form').querySelector('.composer-footer>span').textContent='Ctrl + Enter · действия — вашей репликой';$('player-input').placeholder='Мастер, я осматриваю дверь… Или: Ирина, что произошло в башне?';
++ // n03: подпись поля и подсказка в доке живут в разметке (web/index.html), а не
++ // здесь: этот файл перекрывал их после загрузки, и в доке снова появлялось
++ // «Ctrl + Enter» с длинным плейсхолдером, хотя отправляет Enter.
+ })();
+diff --git a/web/game-screen.css b/web/game-screen.css
+index 35e835f3..a549992c 100644
+--- a/web/game-screen.css
++++ b/web/game-screen.css
+@@ -330,6 +330,23 @@ html[data-ui="chat"] #play{height:100dvh}
+ #play #action-form #stop{background:none;border-color:var(--line-strong);color:var(--text);font-weight:400}
+ #play #action-form #stop:hover{background:var(--ink-750);border-color:var(--line-strong)}
+ #play #action-form button:disabled{opacity:.38;cursor:not-allowed}
++/* Спрайт силуэтов кубика (DICE_SYMBOLS) вставляется в конец body. Пустой
++   инлайновый svg даёт строку 21 px и лишнюю прокрутку страницы — на 1440
++   появлялся второй скролл: колесо двигало страницу, а не ленту. Разметку
++   спрайта не трогаем: тест test_dice_sign сверяет её с файлом дизайнера,
++   поэтому это единственный svg верхнего уровня с focusable="false". */
++body > svg[focusable="false"]{position:absolute;width:0;height:0;overflow:hidden}
++
++/* ── n03: шапка игрового экрана — одно действие и статы ────────────────────
++   Крошки «ОДИНОЧНОЕ ПРИКЛЮЧЕНИЕ / …» дублируют название кампании, которое уже
++   стоит в полосе меню, а «Тестовые данные · mock» — статус модели: его место в
++   «Расходах API» (design/mobile/SPEC.md §10). Оба — служебные строки над
++   лентой, поэтому на игровом экране их нет. Правила висят на `:has(#play.active)`:
++   остальные экраны сохраняют свою шапку. */
++body.tabletop:has(#play.active)>main>header .runtime{display:none}
++/* Подвал «SOLO REALMS AI · сборка …» под игрой даёт 69 px и вторую прокрутку
++   страницы: колесо двигает всё, а не ленту. По макету `game` подвала нет. */
++body.tabletop:has(#play.active)>main>footer{display:none}
+ 
+ /* ── Шапка со статами (только полный интерфейс: в режиме чата её нет) ────── */
+ body.tabletop:has(#play.active)>main>header{
+@@ -364,6 +381,20 @@ body.tabletop:has(#play.active)>main>header .iconbtn{
+   background:none;color:var(--text-2);font-family:var(--font-ui);font-size:13px;
+ }
+ body.tabletop:has(#play.active)>main>header .iconbtn:hover{background:var(--ink-800);color:var(--text)}
++/* n03: 56, а не 64 — как шапка макета `game`. Ставится после основного блока
++   намеренно: тот же селектор, побеждает порядок. */
++body.tabletop:has(#play.active)>main>header{height:56px;min-height:56px}
++/* Крошки прячутся здесь, а не в блоке выше: в блоке ниже (основной вид шапки)
++   тот же селектор задаёт им display:flex, и при равной специфичности побеждает
++   порядок. */
++body.tabletop:has(#play.active)>main>header .breadcrumb{display:none}
++/* Шапка стала 56, поэтому экран игры занимает остаток: полоса меню 56 +
++   шапка 56. Иначе #play сохранял прежние 100dvh-64 и страница прокручивалась
++   второй раз — колесом двигалось всё, а не лента. Только стол: на телефоне
++   высоту считает mobile.css по visualViewport. */
++@media(min-width:901px){
++  body.tabletop:has(#play.active) #play{height:calc(100dvh - 112px)}
++}
+ 
+ /* ── Лист героя: колонка справа от 1280 px, по кнопке — уже ──────────────── */
+ #play #scene-hero{
+diff --git a/web/game-screen.js b/web/game-screen.js
+index 9df85780..e0abb83a 100644
+--- a/web/game-screen.js
++++ b/web/game-screen.js
+@@ -5,7 +5,10 @@
+  const hero=$('scene-hero');if(hero){hero.open=true;rail.prepend(hero);}
+  const log=el('details',undefined,'disclosure game-log');log.open=true;
+  const rows=el('div');log.append(el('summary','Броски и события'),rows);rail.append(log);
+- const lastRoll=el('p','Бросков пока нет.','game-last-roll');lastRoll.id='game-last-roll';
++ // Строка последнего броска остаётся в DOM ради проверки восстановления
++ // (tests/test_small_window_ui.cjs читает её), но на экране её нет с r220:
++ // game-screen.css прячет .game-last-roll, а бросок уже показан плашкой в ленте.
++ const lastRoll=el('p','Бросков пока нет.','game-last-roll');lastRoll.id='game-last-roll';lastRoll.hidden=true;
+  const feedback=el('div',undefined,'game-feedback'),feedbackText=el('span'),recover=el('button','Обновить сцену');
+  feedback.id='game-feedback';feedback.setAttribute('role','status');feedback.hidden=true;recover.type='button';recover.hidden=true;feedback.append(feedbackText,recover);$('action-form').before(lastRoll,feedback);
+  // The main screen is a conversation: the player types intent and the Master answers. The mechanics stay available to the dialogue but are not offered as a palette of buttons.
+@@ -283,7 +286,7 @@
+    // Отказ по версии приходит и телом 200 (status='state_version_error'): сцена уже
+    // перезапрошена, поэтому игроку — та же одна фраза, а не «Не удалось обработать».
+    if(value.status==='state_version_error')return status('ready',SCENE_UPDATED);
+-   status(({ai_error:'error',rejected:'unsupported'})[value.status]||value.status,value.status==='resolved'?'Действие подтверждено.':value.narrative);
++   status(({ai_error:'error',rejected:'unsupported'})[value.status]||value.status,value.status==='resolved'?'':value.narrative);
+   }catch(error){
+    if(cid===campaignId){
+     if(error.code==='version_conflict'){const fresh=await rejoinScene();status('conflict',fresh?SCENE_UPDATED:SCENE_STALE);}
+diff --git a/web/index.html b/web/index.html
+index f9342b5b..4fe18f5c 100644
+--- a/web/index.html
++++ b/web/index.html
+@@ -1,5 +1,5 @@
+ ﻿<!doctype html>
+-<html lang="ru" data-theme="dark"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Solo Realms AI</title><link rel="stylesheet" href="/static/style.css?v=r223"><link rel="stylesheet" href="/static/workspace.css?v=r223"><link rel="stylesheet" href="/static/combat.css?v=2.1.4-preview.6"><link rel="stylesheet" href="/static/inventory.css?v=2.1.4-preview.6"><script src="/static/play.js?v=n02" defer></script><script src="/static/campaign-settings.js?v=r217" defer></script><script src="/static/cloud.js?v=cost-1" defer></script><script src="/static/workspace.js?v=n02" defer></script><script src="/static/rulesets.js?v=nat20-screen-2" defer></script><script src="/static/combat.js?v=2.1.4-preview.6" defer></script><script src="/static/inventory.js?v=2.1.4-preview.6" defer></script><link rel="stylesheet" href="/static/world.css?v=2.1.4-preview.6"><script src="/static/world.js?v=2.1.4-preview.6" defer></script><script src="/static/desktop.js?v=2.1.4-preview.6" defer></script><script src="/static/obsidian.js?v=r223" defer></script><link rel="icon" type="image/svg+xml" href="/static/visual/icons/compass.svg"><link rel="stylesheet" href="/static/mobile.css?v=r230-5"><script src="/static/mobile.js?v=r230-5" defer></script></head>
++<html lang="ru" data-theme="dark"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Solo Realms AI</title><link rel="stylesheet" href="/static/style.css?v=r223"><link rel="stylesheet" href="/static/workspace.css?v=r223"><link rel="stylesheet" href="/static/combat.css?v=2.1.4-preview.6"><link rel="stylesheet" href="/static/inventory.css?v=2.1.4-preview.6"><script src="/static/play.js?v=n03" defer></script><script src="/static/campaign-settings.js?v=r217" defer></script><script src="/static/cloud.js?v=cost-1" defer></script><script src="/static/workspace.js?v=n02" defer></script><script src="/static/rulesets.js?v=nat20-screen-2" defer></script><script src="/static/combat.js?v=2.1.4-preview.6" defer></script><script src="/static/inventory.js?v=2.1.4-preview.6" defer></script><link rel="stylesheet" href="/static/world.css?v=2.1.4-preview.6"><script src="/static/world.js?v=2.1.4-preview.6" defer></script><script src="/static/desktop.js?v=2.1.4-preview.6" defer></script><script src="/static/obsidian.js?v=n03" defer></script><link rel="icon" type="image/svg+xml" href="/static/visual/icons/compass.svg"><link rel="stylesheet" href="/static/mobile.css?v=n03"><script src="/static/mobile.js?v=n03" defer></script></head>
+ <body>
+ <!-- chat-only:cut --><aside class="sidebar"><a class="brand" href="/" aria-label="Solo Realms AI"><span class="sigil">✧</span><span>SOLO REALMS<small>ОБЛАЧНЫЙ МАСТЕР · ВАШ МИР</small></span></a>
+ <p class="nav-label">ВАШЕ ПРИКЛЮЧЕНИЕ</p><nav>
+@@ -19,7 +19,7 @@
+ <div class="story-card"><div class="panel-heading"><span>ИСТОРИЯ</span><span id="story-status" role="status">Мастер ждёт вашей реплики</span></div>
+ <div id="chat" class="chat" aria-live="polite"><div class="welcome"><div class="compass">✧</div><h2>Ваша история, ваш выбор</h2><p>Говорите с персонажами, исследуйте мир и отправляйтесь в путь. Просто напишите, что вы хотите сделать.</p><button id="begin" class="primary">Начать приключение</button></div></div>
+ <p id="scene-risk" class="hint" hidden>Серьёзный смертельный риск объявлен заранее. Предупреждение фиксируется перед началом боя.</p>
+-<form id="action-form" class="composer"><textarea id="player-input" aria-label="Ваша реплика" placeholder="Ирина, расскажи о брате… Или: я покидаю таверну и иду к старой башне." rows="3" maxlength="4000"></textarea><div class="composer-footer"><span>Ctrl + Enter · «Мастер, …» — вопрос вне роли</span><div><button id="stop" type="button" hidden>Остановить ответ</button><button id="send" class="primary" type="submit">Сказать</button></div></div></form></div>
++<form id="action-form" class="composer"><textarea id="player-input" aria-label="Ваша реплика" placeholder="Что вы делаете?" enterkeyhint="send" autocapitalize="sentences" rows="3" maxlength="4000"></textarea><div class="composer-footer"><span>Enter — отправить · Shift + Enter — новая строка</span><div><button id="stop" type="button" hidden>Остановить ответ</button><button id="send" class="primary" type="submit">Сказать</button></div></div></form></div>
+ </section>
+ <!-- chat-only:cut --><section id="journal" class="view"><p class="eyebrow">ПАМЯТЬ ГЕРОЯ</p><h1>Журнал</h1><p id="hero-details" class="subtext"></p><div id="abilities" class="abilities"></div><div id="rolls"></div></section>
+ <section id="campaigns" class="view"><p class="eyebrow">ВАШИ МИРЫ</p><h1>Мои приключения</h1><p class="subtext">Один главный герой в каждой истории. Продолжите сохранённое приключение.</p><button id="new-campaign" class="primary">+ Новая кампания</button><div id="campaign-list" class="cards-list"></div></section>
+@@ -100,24 +100,24 @@
+ <div class="button-row"><button class="primary">Сохранить подключение</button><button id="api-probe" type="button">Короткий тест генерации — по тарифу API</button></div><p id="api-feedback" role="status" class="hint"></p></form></section>
+ <section id="costs" class="view"><p class="eyebrow">КОНТРОЛЬ РАСХОДОВ</p><h1>Расходы Мастера</h1><button id="cost-refresh">Обновить</button><div id="cost-summary" class="metrics-grid"></div><p class="hint">«Сообщено провайдером» означает значение usage. Расчёт по токенам и резерв при отсутствии usage показываются отдельно. Отмена хода не отменяет уже оплаченный запрос.</p><div id="cost-approvals"></div><div class="table-scroll"><table><thead><tr><th>Модель / задача</th><th>Токены вход / выход</th><th>Стоимость</th><th>Источник</th><th>Статус</th></tr></thead><tbody id="cost-calls"></tbody></table></div></section>
+ </template><!-- /chat-only:cut -->
+-<script src="/static/chronicle.js?v=2.1.4-preview.6" defer></script>
++<script src="/static/chronicle.js?v=n03" defer></script>
+ <script src="/static/preparation.js?v=2.1.4-preview.6" defer></script>
+ <script src="/static/adventure.js?v=lib-2" defer></script>
+ <script src="/static/adventure-geometry.js?v=adventure-1" defer></script>
+-<link rel="stylesheet" href="/static/tabletop.css?v=r223"><script src="/static/tabletop.js?v=tabletop-B" defer></script>
++<link rel="stylesheet" href="/static/tabletop.css?v=r223"><script src="/static/tabletop.js?v=n03" defer></script>
+ <script src="/static/navigation.js?v=critical-1" defer></script>
+ <link rel="stylesheet" href="/static/creation.css?v=r223"><link rel="stylesheet" href="/static/prepare-progress.css?v=r241"><script src="/static/prepare-progress.js?v=r246" defer></script><script src="/static/creation.js?v=n00-2" defer></script>
+ <!-- Второй редактор отключён (единый путь: мастер Nat20). Строка сохранена закомментированной, чтобы отключение было обратимым. -->
+ <!-- <link rel="stylesheet" href="/static/character-creation.css?v=critical-5"><script src="/static/character-creation.js?v=critical-5" defer></script> -->
+ <link rel="stylesheet" href="/static/chronicles.css?v=r223"><script src="/static/chronicles.js?v=list-2" defer></script>
+-<script src="/static/game-screen.js?v=n01" defer></script>
++<script src="/static/game-screen.js?v=n03" defer></script>
+ <link rel="stylesheet" href="/static/prototype.css?v=r223"><script src="/static/prototype.js?v=prototype-3" defer></script>
+ <script src="/static/prototype-actions.js?v=prototype-2" defer></script>
+ <link rel="stylesheet" href="/static/wizard.css?v=r223"><link rel="stylesheet" href="/static/themes.css?v=r223"><script src="/static/telemetry.js?v=trace-1" defer></script><script src="/static/wizard.js?v=wizard-7" defer></script>
+ <!-- r220: токены «Стол и лист» и игровой экран подключаются последними: их
+      правила должны идти после themes.css, иначе !important-правила телефона
+      выигрывают каскад и лента остаётся 40dvh вместо экрана. -->
+-<link rel="stylesheet" href="/static/design-tokens.css?v=r223"><link rel="stylesheet" href="/static/game-screen.css?v=r223">
++<link rel="stylesheet" href="/static/design-tokens.css?v=r223"><link rel="stylesheet" href="/static/game-screen.css?v=n03">
+ <!-- r221: разбор книги и колофон «О проекте» — тот же язык «Стол и лист». -->
+ <link rel="stylesheet" href="/static/design-screens.css?v=screens-1"><link rel="stylesheet" href="/static/design-table.css?v=r223"><script src="/static/board.js?v=board-1" defer></script>
+ <!-- r242: «Мои миры» — библиотека готовых миров. Стили и скрипт идут последними,
+diff --git a/web/mobile.css b/web/mobile.css
+index 3ab2d45d..9f8525bc 100644
+--- a/web/mobile.css
++++ b/web/mobile.css
+@@ -44,6 +44,10 @@
+   body > main > header .breadcrumb,
+   body > main > header .runtime,
+   body > main > header .vitals { display: none !important; }
++  /* n03: на игровом экране в шапке остаются два действия — меню и «Лист».
++     Переключатель темы — служебный: он есть в шторке («Оформление»), а над
++     лентой занимал 44 px рядом с пальцем. */
++  body:has(#play.active) > main > header > .themetoggle { display: none !important; }
+ 
+   /* Заголовок шапки — имя открытого экрана, одна строка с многоточием. */
+   .m-title {
+@@ -52,6 +56,10 @@
+     line-height: 1.2; color: var(--text);
+     white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+   }
++  /* n03: на игровом экране подпись нужна — по макету `game` это название
++     истории, единственная строка, по которой видно, где вы. Остальные экраны
++     r251 оставил без дублирующего заголовка, и здесь он не появляется. */
++  body:has(#play.active) > main > header > .m-title { display: block !important; }
+   .m-burger {
+     order: 1; flex: none; width: var(--mtap); height: var(--mtap); min-height: var(--mtap);
+     padding: 0; display: inline-flex; flex-direction: column; align-items: center;
+@@ -234,6 +242,10 @@
+        на телефоне экран занимает остаток, иначе лента получает 235 px из 812. */
+     height: auto !important; min-height: 0 !important;
+     padding: 0 !important;
++    /* min-width:0 — иначе широкий ребёнок (две кнопки в доке) растягивает
++       #play до 421 px, и правый край уезжает за экран: overflow-x у body это
++       только прячет. */
++    min-width: 0;
+   }
+   body > main > .view#play .story-card {
+     flex: 1 1 auto; min-height: 0; display: flex; flex-direction: column;
+@@ -256,17 +268,37 @@
+     flex: none; position: static; padding: 8px 16px calc(8px + env(safe-area-inset-bottom));
+     background: var(--ink-900); border-top: 1px solid var(--line);
+   }
++  /* n03: одно поле и одна кнопка в одной строке. Было две строки: поле 58 и
++     кнопка 48 во всю ширину — док 130 px, ленте оставалось 580. Теперь док
++     72 px: кнопка стоит справа в рамке поля, как в макете `game`.
++     Нижний отступ — calc(... + env(safe-area-inset-bottom)): это единственное
++     правило, которое осталось от .composer, и без env поле с кнопкой уезжали
++     под home-индикатор iPhone. */
++  body > main > .view#play #action-form {
++    display: flex; align-items: flex-end; gap: 8px;
++    padding: 6px 6px calc(6px + env(safe-area-inset-bottom)) 14px;
++  }
++  body > main > .view#play #action-form textarea { flex: 1 1 auto; min-width: 0; width: auto; }
++  body > main > .view#play .composer-footer > div { width: auto; flex: 0 0 auto; gap: 8px; }
+   body > main > .view#play .composer textarea {
+     height: 58px !important; min-height: 58px !important; max-height: 104px;
+     padding: 8px 12px; line-height: 1.34 !important;
+   }
+-  body > main > .view#play .composer-footer { margin-top: 6px; display: flex; align-items: center; gap: 8px; }
++  body > main > .view#play .composer-footer {
++    display: flex; align-items: center; gap: 8px; margin: 0; width: auto; flex: none;
++  }
+   /* Подсказка «Ctrl + Enter» на телефоне бессмысленна, а вместе с переносом
+      растягивала док до 118 px — из-за неё при открытой клавиатуре ленте
+-     оставалось 28 px. Одна кнопка на всю ширину, 48 px. */
++     оставалось 28 px. Отправляет Enter, кнопка «Сказать» — 44×44 в рамке поля. */
+   body > main > .view#play .composer-footer > span { display: none !important; }
+-  body > main > .view#play .composer-footer > div { flex: 1 1 auto; width: 100%; display: flex; gap: 8px; }
+-  body > main > .view#play .composer-footer button { min-height: 48px; min-width: var(--mtap); flex: 1 1 auto; }
++  body > main > .view#play .composer-footer button {
++    min-height: 44px !important; min-width: var(--mtap); flex: 0 1 auto; padding: 0 10px !important;
++    white-space: nowrap;
++  }
++  /* Пока мастер отвечает, «Сказать» уступает место «Остановить ответ»
++     (design/mobile/SPEC.md §7). Иначе в доке две кнопки, они выталкивают
++     #play за 375 px, и правый край дока обрезается. */
++  body > main > .view#play #action-form:has(#stop:not([hidden])) #send { display: none !important; }
+   /* Рейки механики на телефоне не нужны: они отнимают у ленты треть экрана. */
+   body > main > .view#play .scene-rail,
+   body > main > .view#play .sheet-rail,
+diff --git a/web/mobile.js b/web/mobile.js
+index 994f7d01..bb73442b 100644
+--- a/web/mobile.js
++++ b/web/mobile.js
+@@ -49,11 +49,12 @@
+   const header = document.querySelector('main > header');
+   let burger = null;
+   let scrim = null;
++  let paintTheme = null;
+ 
+   function setMenu(open) {
+     body.classList.toggle('mobile-menu-open', open);
+     if (burger) burger.setAttribute('aria-expanded', String(open));
+-    if (open && aside) aside.scrollTop = 0;
++    if (open && aside) { aside.scrollTop = 0; if (paintTheme) paintTheme(); }
+     else if (burger) burger.focus({ preventScroll: true });
+   }
+ 
+@@ -79,10 +80,42 @@
+       aside.addEventListener('click', event => {
+         if (event.target.closest('button[data-view], a[href]')) setMenu(false);
+       });
++      themeRow();
+     }
+     syncTitle();
+   }
+ 
++  /* Тема. На столе её переключатель стоит в шапке, на телефоне в шапке ему
++     места нет: над лентой остаются только меню и «Лист». Строка в шторке
++     зовёт ту же applyTheme из play.js — своего состояния темы здесь нет,
++     иначе выбор разошёлся бы с тем, что видят остальные экраны. */
++  function themeRow() {
++    if (!aside) return;
++    const old = aside.querySelector('#mobile-theme');
++    // Ушли на стол (или окно расширили) — строке темы в полосе меню не место:
++    // там переключатель стоит в шапке, а этот занимал бы всю строку.
++    if (!phone.matches) { if (old) old.remove(); return; }
++    if (old) return;
++    const row = document.createElement('button');
++    row.type = 'button';
++    row.id = 'mobile-theme';
++    row.className = 'nav';
++    const paint = () => {
++      const light = root.dataset.theme === 'light' || window.soloTheme === 'light';
++      row.textContent = light ? 'Оформление: светлое' : 'Оформление: тёмное';
++      row.setAttribute('aria-pressed', String(light));
++    };
++    row.addEventListener('click', () => {
++      const next = (root.dataset.theme === 'light') ? 'dark' : 'light';
++      if (typeof window.applyTheme === 'function') window.applyTheme(next);
++      else { root.dataset.theme = next; try { localStorage.setItem('solo-theme', next); } catch (e) {} }
++      paint();
++    });
++    aside.append(row);
++    paintTheme = paint;
++    paint();
++  }
++
+   /* Заголовок шапки = имя открытого экрана. Крошки на телефоне не читаются:
+      в шапке одна строка. Имя берём у того же пункта меню, что и шторка. */
+   function syncTitle() {
+@@ -98,7 +131,10 @@
+     const buttons = [...document.querySelectorAll(`[data-view="${name}"]`)];
+     const named = buttons.find(b => (b.innerText || '').trim());
+     const heading = view ? view.querySelector('h1, h2') : null;
+-    title.textContent = (named ? named.innerText : heading ? heading.innerText : name).trim();
++    // n03: на игровом экране подпись — название истории, а не слово «Игра»:
++    // по макету `game` шапка называет приключение, в котором вы находитесь.
++    const story = name === 'play' ? (document.querySelector('#campaign-label')?.textContent || '') : '';
++    title.textContent = (story || (named ? named.innerText : heading ? heading.innerText : name)).trim();
+   }
+ 
+   /* ---------- 3. Лента игры: к последнему сообщению ---------- */
+@@ -150,10 +186,17 @@
+       setTimeout(() => { syncTitle(); syncHeight(); }, 300);
+     }
+   });
++  // Название истории приходит позже шапки: play.js пишет его в #campaign-label
++  // после ответа /campaigns/<id>. Без этой подписки на холодной перезагрузке в
++  // шапке стояло «Новая история» из разметки до первого клика.
++  document.addEventListener('solo:render', () => { syncTitle(); });
+ 
+   phone.addEventListener('change', () => {
+     setMenu(false);
+     if (phone.matches) build();
++    // Ушли на стол — строку темы из шторки убираем: в горизонтальной полосе
++    // меню она растянулась бы во всю ширину. Вернулись — build() создаст снова.
++    themeRow();
+     syncHeight();
+   });
+ 
+diff --git a/web/obsidian.js b/web/obsidian.js
+index d75e3c47..99d4ed84 100644
+--- a/web/obsidian.js
++++ b/web/obsidian.js
+@@ -64,7 +64,7 @@
+  preference(general,'При запуске','solo-start-page','select',[['campaign','Последняя кампания'],['campaigns','Мои приключения'],['welcome','Стартовая страница']],'campaign');preference(general,'Запоминать последнюю кампанию','solo-remember-campaign','checkbox',[],true);general.append(el('p','Язык — русский. Подтверждённые действия сохраняются сразу. Закрытие окна останавливает незавершённое описание и сохраняет механический результат.','hint'));
+  const themeNode=$('theme'),themeLabel=el('label','Тема интерфейса');themeLabel.append(themeNode);appearance.append(themeLabel,field('Мягкие переходы',$('effects')));preference(appearance,'Компактные панели','solo-compact','checkbox',[],false);preference(appearance,'Карточки предметов','solo-card-size','select',[['normal','Обычные'],['large','Крупные']],'normal');
+  const look=document.querySelector('.shell-preferences');if(look)appearance.append(look);const moved=new WeakSet();function relocate(){for(const item of document.querySelectorAll('.shell-preferences'))if(!moved.has(item)){moved.add(item);if(item!==look)windowPane.append(item);}}
+- relocate();new MutationObserver(relocate).observe(main,{childList:true,subtree:true});windowPane.append(el('p','Размер и полноэкранный режим доступны в Windows-приложении. Настройки сохраняются в пользовательском профиле.','hint'));controls.append(el('p','Ctrl + Enter — отправить реплику. F11 — полноэкранный режим Windows. Tab / Shift + Tab — переход между элементами. Escape закрывает открытый диалог.'));
++ relocate();new MutationObserver(relocate).observe(main,{childList:true,subtree:true});windowPane.append(el('p','Размер и полноэкранный режим доступны в Windows-приложении. Настройки сохраняются в пользовательском профиле.','hint'));controls.append(el('p','Enter — отправить реплику, Shift + Enter — новая строка. F11 — полноэкранный режим Windows. Tab / Shift + Tab — переход между элементами. Escape закрывает открытый диалог.'));
+  const dataInfo=el('p',undefined,'hint'),backupList=el('div'),backupButton=el('button','Создать резервную копию'),refreshBackups=el('button','Обновить список копий'),exportButton=el('button','Экспорт данных');data.append(dataInfo,backupButton,refreshBackups,exportButton,backupList);
+  async function loadBackups(){const result=await api('/data/backups');dataInfo.textContent='Профиль: '+result.profile+' · схема '+result.schema;backupList.replaceChildren();for(const b of result.backups){const card=el('div',undefined,'list-card'),preview=el('button','Проверить копию');card.append(el('span',b.name+' · '+b.created),preview);preview.onclick=protect(async()=>{const details=await api('/data/backups/'+encodeURIComponent(b.id)+'/preview');toast('Копия проверена: '+details.campaigns+' кампаний, схема '+details.schema+'.');if(window.soloDesktop){const restore=el('button','Восстановить при следующем запуске');restore.onclick=protect(async()=>{if(!confirm('Перед восстановлением будет создана новая копия текущего профиля. Приложение закроется; выбранные данные применятся при следующем запуске.'))return;await api('/desktop/restore',{backup:b.id,confirm:true});});card.append(restore);}});backupList.append(card);}if(!result.backups.length)backupList.append(el('p','Копий пока нет.','hint'));}
+  backupButton.onclick=protect(async()=>{if(busy)throw new Error('Остановите ответ перед резервным копированием.');await api('/data/backup',{});await loadBackups();});refreshBackups.onclick=protect(loadBackups);exportButton.onclick=()=>{const a=el('a');a.href='/api/data/export';a.download='SoloRealmsAI-data.zip';a.click();};
+diff --git a/web/play.js b/web/play.js
+index 5402cc7d..314f7aeb 100644
+--- a/web/play.js
++++ b/web/play.js
+@@ -171,7 +171,16 @@ if(!Number.isInteger(current.version))throw new Error('Состояние кам
+  pendingSend=null;localStorage.removeItem('solo-pending-send');$('player-input').value='';await refresh();}finally{markBusy(false);// A failing final render must not swallow the refusal either, and the focus
+ // belongs to the composer in both cases.
+ try{await refresh();}finally{if(answered&&!recordedInFeed(sentId))echoTurn(text,answered.narrative||null);$('player-input').focus();}}}
+-$('action-form').onsubmit=protect(async e=>{e.preventDefault();await sendAction();});$('player-input').addEventListener('keydown',e=>{if(e.ctrlKey&&e.key==='Enter'){e.preventDefault();protect(sendAction)();}});
++$('action-form').onsubmit=protect(async e=>{e.preventDefault();await sendAction();});
++// n03: одно поле и один способ отправки. Enter отправляет (на телефоне это
++// клавиша «Ввод» на клавиатуре — enterkeyhint="send"), Shift+Enter — перенос
++// строки, Ctrl+Enter остался для привычки со стола.
++$('player-input').addEventListener('keydown',e=>{
++  if(e.key!=='Enter'||e.isComposing)return;
++  if(e.shiftKey||e.altKey)return;
++  e.preventDefault();
++  protect(sendAction)();
++});
+ async function narrate(event,regenerate=false){if(busy)return;markBusy(true);try{await streamAnswer('/events/'+event+'/narrate',{regenerate},event);}finally{markBusy(false);await refresh();}}
+ async function narrateGM(id){if(busy)return;markBusy(true);try{await streamAnswer('/gm/'+id+'/stream',undefined);}finally{markBusy(false);await refresh();}}
+ async function streamAnswer(path,body,event){
+diff --git a/web/tabletop.js b/web/tabletop.js
+index 6e8d9311..d89b5ff1 100644
+--- a/web/tabletop.js
++++ b/web/tabletop.js
+@@ -88,7 +88,10 @@ function syncCampaignNav(){const open=Boolean(current);for(const b of document.q
+ document.addEventListener('solo:render',syncCampaignNav);syncCampaignNav();
+ document.addEventListener('solo:render',()=>{renderEvents();activateNotes();if($('journal').classList.contains('active'))protect(()=>loadNotes())();});if(current)renderEvents();
+  window.addEventListener('beforeunload',e=>{if(noteDirty){e.preventDefault();e.returnValue='';}});
+- $('player-input').placeholder='Что делает или говорит ваш герой?';
++ // n03: подпись одна и та же в разметке и здесь — «Что вы делаете?»:
++ // прежняя длинная подсказка («Что делает или говорит ваш герой?») не
++ // помещалась в поле 58 px и читалась как второй абзац.
++ $('player-input').placeholder='Что вы делаете?';
+  $('hero-details').hidden=true;$('abilities').hidden=true;
+  const rolls=el('details',undefined,'disclosure');rolls.append(el('summary','Проверки и путь'),$('rolls'));$('journal').append(rolls);
+ })();

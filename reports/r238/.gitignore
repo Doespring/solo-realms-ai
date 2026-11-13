@@ -1,0 +1,7 @@
+# Живой прогон: личные ключи, расходы и копии книг в git не идут.
+# Остаются только числа и логи: report.json, app-*.log, preparation-watchdog.log.
+*.sqlite3
+cloud-profiles.json
+cloud-secrets/
+adventure-files/
+.solo-prototype.json

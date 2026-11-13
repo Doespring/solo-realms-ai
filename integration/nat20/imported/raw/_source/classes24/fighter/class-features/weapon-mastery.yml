@@ -1,0 +1,61 @@
+{
+  "_id": "phbftrWeaponMast",
+  "_stats": {
+    "coreVersion": "13.344",
+    "createdTime": 1735866361253,
+    "duplicateSource": null,
+    "exportSource": null,
+    "lastModifiedBy": "dnd5ebuilder0000",
+    "modifiedTime": 1745256761920,
+    "systemId": "dnd5e",
+    "systemVersion": "4.4.0"
+  },
+  "effects": [],
+  "flags": {
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    }
+  },
+  "folder": "xggTDaiQq26ZrVzJ",
+  "img": "icons/skills/ranged/arrow-flying-spiral-blue.webp",
+  "name": "Weapon Mastery",
+  "ownership": {
+    "default": 0
+  },
+  "sort": 0,
+  "system": {
+    "activities": {},
+    "description": {
+      "chat": "",
+      "value": "<p>Your training with weapons allows you to use the mastery properties of three kinds of Simple or Martial weapons of your choice. Whenever you finish a Long Rest, you can practice weapon drills and change one of those weapon choices.</p><p>When you reach certain Fighter levels, you gain the ability to use the mastery properties of more kinds of weapons, as shown in the Weapon Mastery column of the @UUID[Compendium.dnd5e.content24.JournalEntry.phbFighter000000.JournalEntryPage.wDELe3k25FQvYdrq#class-features]{Fighter Features} table.</p><section class=\"secret\" id=\"secret-Qfoze6XoZUYIlAnw\"><p><strong>Foundry Note</strong></p><p>To change your masteries toggle on the \"Edit\" mode of your sheet. On the \"Details\" tab click on the cog icon next to \"Weapons\" in the bottom right. You can place a check in the mastery column of your chosen weapons.</p></section>"
+    },
+    "enchant": {},
+    "identifier": "weapon-mastery",
+    "prerequisites": {
+      "level": null,
+      "repeatable": false
+    },
+    "properties": [],
+    "requirements": "",
+    "source": {
+      "book": "",
+      "custom": "",
+      "license": "CC-BY-4.0",
+      "revision": 1,
+      "rules": "2024"
+    },
+    "type": {
+      "subtype": "",
+      "value": "class"
+    },
+    "uses": {
+      "max": "",
+      "recovery": [],
+      "spent": 0
+    }
+  },
+  "type": "feat"
+}

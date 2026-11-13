@@ -1,0 +1,391 @@
+{
+  "server": "local-uvicorn",
+  "model": "CommandMockLLM",
+  "provider_calls": 0,
+  "real_nat20": true,
+  "plain": "785ee764-da29-4720-afab-44055087258d",
+  "experimental": "f1eb1944-f139-45d2-9cd1-c9f35d5f0f15",
+  "checks": [
+    "tab-20-inside-dialog",
+    "underline-inert",
+    "escape-returns-to-initiator",
+    "keyboard-only-path",
+    "action-select-keeps-focus",
+    "focus-ring-2px",
+    "repeat-showmodal-keeps-initiator",
+    "removed-dialog-restores-background",
+    "escape-honours-cancel"
+  ],
+  "inert": [
+    {
+      "node": "DIV",
+      "inert": true,
+      "isDialog": false
+    },
+    {
+      "node": "ASIDE",
+      "inert": true,
+      "isDialog": false
+    },
+    {
+      "node": "MAIN",
+      "inert": true,
+      "isDialog": false
+    },
+    {
+      "node": "DIV#toast",
+      "inert": true,
+      "isDialog": false
+    },
+    {
+      "node": "DIALOG#narrative-edit-dialog",
+      "inert": true,
+      "isDialog": false
+    },
+    {
+      "node": "DIALOG#create-dialog",
+      "inert": true,
+      "isDialog": false
+    },
+    {
+      "node": "DIALOG#api-enable-confirm",
+      "inert": true,
+      "isDialog": false
+    },
+    {
+      "node": "DIALOG#exit-confirm",
+      "inert": true,
+      "isDialog": false
+    },
+    {
+      "node": "DIALOG",
+      "inert": false,
+      "isDialog": true
+    },
+    {
+      "node": "DIALOG#document-viewer",
+      "inert": true,
+      "isDialog": false
+    },
+    {
+      "node": "DIALOG#external-link-dialog",
+      "inert": true,
+      "isDialog": false
+    },
+    {
+      "node": "DIALOG#world-confirm",
+      "inert": true,
+      "isDialog": false
+    },
+    {
+      "node": "DIALOG#preparation-confirm",
+      "inert": true,
+      "isDialog": false
+    },
+    {
+      "node": "svg",
+      "inert": true,
+      "isDialog": false
+    },
+    {
+      "node": "DIALOG",
+      "inert": true,
+      "isDialog": false
+    },
+    {
+      "node": "DIALOG#nat20-create-dialog",
+      "inert": true,
+      "isDialog": false
+    }
+  ],
+  "tabs": [
+    {
+      "name": "BUTTON",
+      "label": "Закрыть",
+      "body": false,
+      "inDialog": true
+    },
+    {
+      "name": "BUTTON.primary",
+      "label": "Выбрать для реплики",
+      "body": false,
+      "inDialog": true
+    },
+    {
+      "name": "BUTTON",
+      "label": "Закрыть",
+      "body": false,
+      "inDialog": true
+    },
+    {
+      "name": "BUTTON.primary",
+      "label": "Выбрать для реплики",
+      "body": false,
+      "inDialog": true
+    },
+    {
+      "name": "BUTTON",
+      "label": "Закрыть",
+      "body": false,
+      "inDialog": true
+    },
+    {
+      "name": "BUTTON.primary",
+      "label": "Выбрать для реплики",
+      "body": false,
+      "inDialog": true
+    },
+    {
+      "name": "BUTTON",
+      "label": "Закрыть",
+      "body": false,
+      "inDialog": true
+    },
+    {
+      "name": "BUTTON.primary",
+      "label": "Выбрать для реплики",
+      "body": false,
+      "inDialog": true
+    },
+    {
+      "name": "BUTTON",
+      "label": "Закрыть",
+      "body": false,
+      "inDialog": true
+    },
+    {
+      "name": "BUTTON.primary",
+      "label": "Выбрать для реплики",
+      "body": false,
+      "inDialog": true
+    },
+    {
+      "name": "BUTTON",
+      "label": "Закрыть",
+      "body": false,
+      "inDialog": true
+    },
+    {
+      "name": "BUTTON.primary",
+      "label": "Выбрать для реплики",
+      "body": false,
+      "inDialog": true
+    },
+    {
+      "name": "BUTTON",
+      "label": "Закрыть",
+      "body": false,
+      "inDialog": true
+    },
+    {
+      "name": "BUTTON.primary",
+      "label": "Выбрать для реплики",
+      "body": false,
+      "inDialog": true
+    },
+    {
+      "name": "BUTTON",
+      "label": "Закрыть",
+      "body": false,
+      "inDialog": true
+    },
+    {
+      "name": "BUTTON.primary",
+      "label": "Выбрать для реплики",
+      "body": false,
+      "inDialog": true
+    },
+    {
+      "name": "BUTTON",
+      "label": "Закрыть",
+      "body": false,
+      "inDialog": true
+    },
+    {
+      "name": "BUTTON.primary",
+      "label": "Выбрать для реплики",
+      "body": false,
+      "inDialog": true
+    },
+    {
+      "name": "BUTTON",
+      "label": "Закрыть",
+      "body": false,
+      "inDialog": true
+    },
+    {
+      "name": "BUTTON.primary",
+      "label": "Выбрать для реплики",
+      "body": false,
+      "inDialog": true
+    }
+  ],
+  "escape": {
+    "open": false,
+    "isItemCard": true,
+    "inInventory": true,
+    "label": "Longsword",
+    "backgroundInert": false
+  },
+  "keyboard": {
+    "toMore": 6,
+    "toNav": 4,
+    "toCard": 5,
+    "toSelect": 0,
+    "ring": {
+      "node": "BUTTON",
+      "body": false,
+      "own": "2px solid rgb(155, 170, 136)",
+      "host": null
+    },
+    "after": {
+      "dialogOpen": false,
+      "chipHidden": false,
+      "chipText": "Контекст: Longsword",
+      "view": "play",
+      "focusComposer": true
+    }
+  },
+  "actions": {
+    "before": {
+      "value": "attack",
+      "ring": "2px"
+    },
+    "after": {
+      "sameNode": true,
+      "body": false,
+      "value": "cast_spell",
+      "fields": 8
+    },
+    "again": {
+      "body": false,
+      "sameNode": true,
+      "value": "use_item",
+      "fields": 4
+    },
+    "inner": {
+      "label": "Предмет",
+      "value": "longsword",
+      "focused": true
+    },
+    "innerAfter": {
+      "found": true,
+      "focused": true,
+      "value": "longsword",
+      "body": false
+    }
+  },
+  "rings": [
+    {
+      "step": 0,
+      "node": "A[Solo Realms AI]",
+      "body": false,
+      "own": "2px solid rgb(216, 160, 92)",
+      "host": null
+    },
+    {
+      "step": 1,
+      "node": "BUTTON",
+      "body": false,
+      "own": "2px solid rgb(216, 160, 92)",
+      "host": null
+    },
+    {
+      "step": 2,
+      "node": "BUTTON",
+      "body": false,
+      "own": "2px solid rgb(216, 160, 92)",
+      "host": null
+    },
+    {
+      "step": 3,
+      "node": "BUTTON",
+      "body": false,
+      "own": "2px solid rgb(216, 160, 92)",
+      "host": null
+    },
+    {
+      "step": 4,
+      "node": "BUTTON",
+      "body": false,
+      "own": "2px solid rgb(216, 160, 92)",
+      "host": null
+    },
+    {
+      "step": 5,
+      "node": "BUTTON#nav-more",
+      "body": false,
+      "own": "2px solid rgb(216, 160, 92)",
+      "host": null
+    },
+    {
+      "step": 6,
+      "node": "BUTTON[Светлая тема]",
+      "body": false,
+      "own": "2px solid rgb(155, 170, 136)",
+      "host": null
+    },
+    {
+      "step": 7,
+      "node": "TEXTAREA#player-input[Ваша реплика]",
+      "body": false,
+      "own": "0px none rgb(237, 227, 206)",
+      "host": "2px solid rgb(155, 170, 136)"
+    },
+    {
+      "step": 8,
+      "node": "BUTTON#send",
+      "body": false,
+      "own": "2px solid rgb(155, 170, 136)",
+      "host": "2px solid rgb(155, 170, 136)"
+    },
+    {
+      "step": 9,
+      "node": "SUMMARY",
+      "body": false,
+      "own": "2px solid rgb(155, 170, 136)",
+      "host": null
+    },
+    {
+      "step": 10,
+      "node": "BUTTON",
+      "body": false,
+      "own": "2px solid rgb(216, 160, 92)",
+      "host": null
+    },
+    {
+      "step": 11,
+      "node": "BODY",
+      "body": true,
+      "own": "",
+      "host": null
+    },
+    {
+      "step": 12,
+      "node": "A[Solo Realms AI]",
+      "body": false,
+      "own": "2px solid rgb(216, 160, 92)",
+      "host": null
+    },
+    {
+      "step": 13,
+      "node": "BUTTON",
+      "body": false,
+      "own": "2px solid rgb(216, 160, 92)",
+      "host": null
+    }
+  ],
+  "ringBodies": 1,
+  "guards": {
+    "repeat": {
+      "focusInside": true,
+      "backToInitiator": true
+    },
+    "removed": {
+      "inert": [],
+      "focused": true
+    },
+    "cancelRefused": true
+  },
+  "focusAfterCancel": "BODY"
+}

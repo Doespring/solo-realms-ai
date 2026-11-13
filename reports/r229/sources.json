@@ -1,0 +1,77 @@
+[
+ {
+  "file": "text-layer.pdf",
+  "bytes": 2218,
+  "document_status": "extracted",
+  "document_pages": 3,
+  "page_characters": 730,
+  "quality": {
+   "text_characters": 730,
+   "text_encoding": null,
+   "blank_pages": 0,
+   "pictured_pages": null,
+   "ocr": false,
+   "reason": null
+  },
+  "candidates": 3,
+  "materials": 3,
+  "sections": {
+   "batches": 1,
+   "characters": 730,
+   "readable": true
+  },
+  "refused": null,
+  "job_message": null,
+  "bundle_status": "documents_imported"
+ },
+ {
+  "file": "scan-only.pdf",
+  "bytes": 48474,
+  "document_status": "failed",
+  "document_pages": 0,
+  "page_characters": 0,
+  "quality": {
+   "text_characters": 0,
+   "text_encoding": null,
+   "blank_pages": 3,
+   "pictured_pages": [],
+   "ocr": false,
+   "reason": "В этом PDF нет текстового слоя: распознавание (OCR) не поддерживается. Нужен PDF с текстом или TXT."
+  },
+  "candidates": 0,
+  "materials": 0,
+  "sections": {
+   "batches": 0,
+   "characters": 0,
+   "readable": null
+  },
+  "refused": "ValueError: В этом PDF нет текстового слоя: распознавание (OCR) не поддерживается. Нужен PDF с текстом или TXT.",
+  "job_message": "",
+  "bundle_status": "import_incomplete"
+ },
+ {
+  "file": "cp1251.txt",
+  "bytes": 455,
+  "document_status": "extracted",
+  "document_pages": 1,
+  "page_characters": 455,
+  "quality": {
+   "text_characters": 455,
+   "text_encoding": "cp1251",
+   "blank_pages": 0,
+   "pictured_pages": null,
+   "ocr": false,
+   "reason": null
+  },
+  "candidates": 0,
+  "materials": 0,
+  "sections": {
+   "batches": 1,
+   "characters": 455,
+   "readable": true
+  },
+  "refused": null,
+  "job_message": null,
+  "bundle_status": "documents_imported"
+ }
+]

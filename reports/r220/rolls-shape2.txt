@@ -1,0 +1,50 @@
+история 200 записей 3
+--- ключи события: ['created', 'error', 'id', 'metrics', 'narrative', 'narrative_data', 'narrative_status', 'original', 'request_id', 'results', 'seq', 'undone']
+--- ключи события: ['created', 'error', 'id', 'metrics', 'narrative', 'narrative_data', 'narrative_status', 'original', 'request_id', 'results', 'seq', 'undone']
+--- ключи события: ['created', 'error', 'id', 'metrics', 'narrative', 'narrative_data', 'narrative_status', 'original', 'request_id', 'results', 'seq', 'undone']
+последнее событие целиком:
+{
+ "id": "7b34928f-4b2a-48be-81f2-709036329829",
+ "seq": 3,
+ "results": [
+  {
+   "type": "scripted",
+   "kind": "conversation",
+   "text": "У старого фонаря стоит домик. Смотрительница Лада просит проверить следы у калитки. Лада: «Лада видела следы у калитки.»"
+  }
+ ],
+ "narrative": "У старого фонаря стоит домик. Смотрительница Лада просит проверить следы у калитки. Лада: «Лада видела следы у калитки.»",
+ "narrative_status": "complete",
+ "error": "",
+ "undone": 0,
+ "created": 1793725412.9381146,
+ "narrative_data": {
+  "description": "У старого фонаря стоит домик. Смотрительница Лада просит проверить следы у калитки.",
+  "dialogue": [
+   {
+    "speaker": "Лада",
+    "text": "Лада видела следы у калитки."
+   }
+  ],
+  "proposals": [],
+  "presentation_only": true
+ },
+ "original": "говорю с Лада",
+ "metrics": {
+  "route": "scenario",
+  "llm": [],
+  "engine_signature": null,
+  "ruleset": {
+   "id": "dnd2024",
+   "version": 1
+  }
+ },
+ "request_id": "social-dd6ddd77ff1cbe8ef722422277be81a0"
+}
+экран 200
+--- screen event: {"id": "eb261802-242b-4c6b-8fac-b543cfe22657", "sequence": 1, "text": "У старого фонаря стоит домик. Смотрительница Лада просит проверить следы у калитки. После устранения опасности она передаст герою благодарственное письмо.", "roll": null, "display_key": "", "display_text": "У старого фонаря стоит домик. Смотрительница Лада просит проверить следы у калитки. После устранения опасности она передаст герою благодарственное письмо."}
+--- screen event: {"id": "628a9027-51a5-460b-9a1d-49d19d4a8e5d", "sequence": 2, "text": "Восприятие: 23 против Сл 12 — успех (натуральная 20)", "roll": {"label": "Проверка", "dice": [20], "total": 23, "success": true, "formula": ""}, "display_key": "check", "display_text": "Восприятие: 23 против Сл 12 — успех (натуральная 20)"}
+--- screen event: {"id": "7b34928f-4b2a-48be-81f2-709036329829", "sequence": 3, "text": "У старого фонаря стоит домик. Смотрительница Лада просит проверить следы у калитки. Лада: «Лада видела следы у калитки.»", "roll": null, "display_key": "", "display_text": "У старого фонаря стоит домик. Смотрительница Лада просит проверить следы у калитки. Лада: «Лада видела следы у калитки.»"}
+command_turn: true
+commands: [{"label": "Проверить: athletics", "kind": "engine", "parameters": {"kind": "check", "check_id": "athletics"}, "expected_version": 3, "id": "engine:0"}, {"label": "Проверить: perception", "kind": "engine", "parameters": {"kind": "check", "check_id": "perception"}, "expected_version": 3, "id": "engine:1"}, {"label": "Проверить: strength", "kind": "engine", "parameters": {"kind": "check", "check_id": "strength"}, "expected_version": 3, "id": "engine:2"}, {"label": "Влиять: Убеждение", "kind": "engine", "parameters": {"kind": "scene_action", "action_id": "influence", "skill": "persuasion"}, "expe
+hero из состояния кампании: {"name": "Тайна трёх сосен", "background": "", "level": 1, "hp": 12, "max_hp": 12, "temp_hp": 0, "ac": 18, "species": "human", "class_name": "fighter", "origin": "", "subclass": "", "languages": [], "personality": "", "appearance": "", "alignment": "", "goals": [], "bonds": "", "ideals": "", "flaws": "", "skill_proficiencies": ["athletics", "perception"], "expertise": [], "saving_throw_proficiencies": ["constitution", "strength"], "weapon_proficiencies": [], "specific_weapon_proficiencies": [], "tool_proficiencies": [], "tool_expertise": [], "armor_proficiencies": [], "speed_ft": 30, "size": "Medium", "exhaustion": 0, "hit_die": 10, "hit_dice_available": 1, "resources": {}, "features": ["fighting-style", "second-wind", "weapon-mastery", "resourceful", "skillful", "versatile"], "spells": [], "experience": 0, "conditions": [], "abilities": {"strength": 15, "dexterity": 13, "constitution": 

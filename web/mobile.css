@@ -1,0 +1,506 @@
+/* r230 — телефонный слой «Стола и листа».
+
+   Подключается последним и живёт только на узком экране (≤ 760 px). На столе
+   (r224) не меняется ни один пиксель: все правила внутри @media.
+
+   Числа — из `design/mobile/SPEC.md` (r231), не «на глаз»:
+     шапка 56, боковой отступ 16, зона нажатия 44, главная кнопка 52;
+     основной текст 16, служебный 14 (меньше нельзя), рассказ 17, поле 17;
+     ни одного position:fixed внутри экрана — док и поле флекс-дети;
+     одна палитра обеих тем (design-tokens.css), новых цветов нет.
+
+   Замеры до/после — `reports/r230/REPORT.md`. */
+
+@media (max-width: 760px) {
+
+  /* ── 1. Каркас: один экран, один скролл ─────────────────────────────────── */
+  html { -webkit-text-size-adjust: 100%; }
+  html, body { max-width: 100%; overflow-x: hidden; }
+  body {
+    --mbar: 56px; --mtap: 44px; --mpad: 16px;
+    height: var(--vvh, 100dvh); min-height: 0; overflow: hidden;
+    display: flex; flex-direction: column;
+  }
+  /* Полоса прототипа — одна строка 14 px, не 44 на три строки. */
+  body > .notice {
+    flex: none; font-size: 14px !important; line-height: 1.3;
+    padding: 4px 12px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+  }
+  body > main {
+    flex: 1 1 auto; min-height: 0; width: 100%;
+    margin: 0 !important; padding: 0 !important; max-width: none !important;
+    display: flex; flex-direction: column;
+  }
+  body > main > header {
+    /* `design-table.css` прячет шапку на главной (`body:has(#welcome.active)>main>header`):
+       на телефоне шапка — единственный вход в меню, поэтому она есть всегда. */
+    display: flex !important;
+    flex: none; height: var(--mbar) !important; min-height: var(--mbar) !important;
+    padding: 0 8px; margin: 0; gap: 8px;
+    display: flex; align-items: center; justify-content: flex-start;
+    position: sticky; top: 0; z-index: 15;
+    border-bottom: 1px solid var(--line); background: var(--ink-900);
+  }
+  body > main > header .breadcrumb,
+  body > main > header .runtime { display: none !important; }
+  /* n08: на игровом экране статы стоят в шапке числами (макет `game`, §7);
+     на остальных экранах строке «Хиты / 12» места нет. */
+  body:not(:has(#play.active)) > main > header .vitals { display: none !important; }
+  /* n03: на игровом экране в шапке остаются два действия — меню и «Лист».
+     Переключатель темы — служебный: он есть в шторке («Оформление»), а над
+     лентой занимал 44 px рядом с пальцем. */
+  body:has(#play.active) > main > header > .themetoggle { display: none !important; }
+  /* n04: на главной в шапке только меню и имя приложения. «Лист» принадлежит
+     игровому экрану, тема живёт в шторке — на первом экране им места нет. */
+  body:has(#welcome.active) > main > header > .themetoggle,
+  body:not(:has(#play.active)) > main > header > #sheet-toggle { display: none !important; }
+
+  /* Заголовок шапки — две строки: имя кампании и «глава · место».
+     Многоточие — у каждой строки своё, иначе длинное название съедало бы
+     подзаголовок целиком. */
+  .m-title {
+    order: 2; flex: 1 1 auto; min-width: 0; margin: 0 4px;
+    display: flex; flex-direction: column; justify-content: center; gap: 1px;
+    font-family: "Book", Georgia, serif; font-size: 17px; font-weight: 700;
+    line-height: 1.2; color: var(--text);
+  }
+  .m-title__name, .m-sub {
+    display: block; min-width: 0;
+    white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+  }
+  /* n17: подзаголовок «глава II · трактир» — служебная строка 14, как в
+     макете `game`. Сидит под названием, а не рядом с виталами. */
+  .m-sub {
+    font-family: inherit; font-size: 14px; font-weight: 400;
+    line-height: 1.25; color: var(--text-3);
+  }
+  /* n03: на игровом экране подпись нужна — по макету `game` это название
+     истории, единственная строка, по которой видно, где вы. Остальные экраны
+     r251 оставил без дублирующего заголовка, и здесь он не появляется. */
+  body:has(#play.active) > main > header > .m-title { display: block !important; }
+  /* n04: на главной подпись — имя приложения, кегль 16 (тот же, что у текста
+     экрана), иначе на первом экране появлялся четвёртый размер шрифта. */
+  body:has(#welcome.active) > main > header > .m-title { display: block !important; font-size: 16px; }
+  /* n08: лист героя назван в шапке один раз — «Лист героя» (§9.1). */
+  body:has(#character.active) > main > header > .m-title { display: block !important; }
+  .m-burger {
+    order: 1; flex: none; width: var(--mtap); height: var(--mtap); min-height: var(--mtap);
+    padding: 0; display: inline-flex; flex-direction: column; align-items: center;
+    justify-content: center; gap: 4px; background: none; border: 1px solid transparent;
+    border-radius: 2px; color: var(--text);
+  }
+  .m-burger span { display: block; width: 18px; height: 2px; background: currentColor; border-radius: 1px; }
+  /* Слева — меню и имя экрана, справа — служебные кнопки: зазор между любыми
+     соседями шапки 8 px (карточка r230), иначе палец попадает в чужую кнопку. */
+  body > main > header > .themetoggle,
+  body > main > header > #sheet-toggle { order: 3; flex: none; }
+
+  /* Один экран за раз: неактивный view не занимает места и не ловит клики. */
+  body > main > .view { display: none; }
+  body > main > .view.active {
+    display: block; flex: 1 1 auto; min-height: 0;
+    overflow-y: auto; overscroll-behavior: contain;
+    padding: 0 var(--mpad) calc(24px + env(safe-area-inset-bottom)) !important;
+  }
+
+  /* ── 2. Меню: лист снизу, бургер открывает шторку ───────────────────────── */
+  /* n18: шторка — ЛИСТ, прижатый к нижнему краю экрана (SPEC §1, эталон
+     `design/mobile/shots/menu-dark-375.png`). Сверху остаётся затемнённая
+     страница: по SPEC §1 это 124–154 px (замер n18 на обеих вкладках — 146),
+     по ней палец и закрывает шторку. Прежде панель стояла от нуля и занимала
+     все 375×812 непрозрачным фоном — затемнение `.m-scrim` лежало под ней и
+     было недостижимо, тап выше шторки уходил в живые кнопки полосы, а список
+     обрывался на 592 из 812 (220 px пустого фона). Высота — по содержимому в
+     границах 146…124 сверху: обе вкладки дают лист 666 px (658/688 в SPEC §1). */
+  body > aside.sidebar {
+    position: fixed; inset: auto 0 0 0; z-index: 95;
+    width: 100%; height: auto !important;
+    /* `!important` — `themes.css` (`@media(max-width:850px)`) держит
+       `aside.sidebar{max-height:190px!important}` от прежнего меню-полосы:
+       без важности лист не мог вырасти выше 190 px и упирался в min-height. */
+    min-height: calc(100% - 146px) !important;
+    max-height: calc(100% - 124px) !important;
+    display: flex; flex-direction: column; gap: 4px;
+    padding: 0 12px 0;
+    overflow: hidden;
+    /* Поверхность листа — `--sheet-bg`, а не поверхность стола: разница
+       1.09:1 и граница 1px `--line-strong` дают видимый край, которого не
+       было (перепад 1.04:1 не читался). */
+    background: var(--sheet-bg); border: 0;
+    border-top: 1px solid var(--line-strong);
+    border-radius: 12px 12px 0 0;
+    transform: translateX(-101%); transition: transform .2s ease;
+  }
+  /* Грабер: тот же, что в эталоне, — лист видно за что взяться. */
+  body > aside.sidebar::before {
+    content: ''; flex: none; width: 40px; height: 4px; margin: 0 auto 4px;
+    border-radius: 2px; background: var(--line-strong);
+  }
+  body.mobile-menu-open > aside.sidebar { transform: none; box-shadow: 0 -18px 44px #0009; }
+  body.mobile-menu-open { overflow: hidden; }
+  body > aside.sidebar .brand { min-height: var(--mtap); padding: 0 4px; display: flex; align-items: center; gap: 8px; font-size: 19px; }
+  body > aside.sidebar .brand small { display: none; }
+  body > aside.sidebar .nav-label { font-size: 14px; margin: 8px 4px 0; }
+  /* Прежние листы раскладывают меню в строку и жмут строки до 28 px
+     (`themes.css: aside.sidebar button{min-height:28px!important}`).
+     На телефоне меню — столбец строк 44: поэтому `!important` и `flex: none`. */
+  body > aside.sidebar nav,
+  body > aside.sidebar :is(.tabletop-primary, .tabletop-utilities, .tabletop-secondary, .nav-submenu) {
+    display: flex !important; flex-direction: column !important; flex-wrap: nowrap !important;
+    width: 100% !important; min-width: 0; gap: 8px; padding-left: 0;
+  }
+  body > aside.sidebar :is(button.nav, .nav, details > summary) {
+    min-height: var(--mtap) !important; height: auto !important; flex: 0 0 auto !important;
+    width: 100% !important; max-width: none;
+    padding: 10px 12px !important;
+    display: flex; align-items: center; gap: 8px;
+    font-size: 16px !important; line-height: 1.3; text-align: left;
+    white-space: normal !important; border-radius: 2px;
+  }
+  body > aside.sidebar details > summary { list-style: none; }
+  body > aside.sidebar details[open] > summary { background: var(--ink-850); }
+  body > aside.sidebar .side-bottom { font-size: 14px; gap: 8px; }
+  body > aside.sidebar .side-bottom :is(label, small, span) { font-size: 14px !important; }
+
+  /* Затемнение под шторкой: один узел, создаёт mobile.js. */
+  .m-scrim {
+    position: fixed; inset: 0; z-index: 94; background: #0009;
+    opacity: 0; pointer-events: none; transition: opacity .2s ease;
+  }
+  body.mobile-menu-open .m-scrim { opacity: 1; pointer-events: auto; }
+
+  /* ── 3. Шкала кеглей: основной 16, служебный 14, ниже нельзя ────────────── */
+  body { font-size: 16px; }
+  /* Основной текст и всё, что нажимают. `!important` — потому что прежние
+     листы задают 9–13 px десятками конкретных селекторов; правило живёт
+     только внутри этого @media и снимает весь класс разом. */
+  body :is(p, li, dt, dd, td, label, blockquote, figcaption, legend, address,
+           button, input, select, textarea, option, summary, output, time,
+           .speaker, .message .body, .message .prose, .prose, .hint, .subtext,
+           .eyebrow, .nav, .nav *, .start__lead, .start__continue-kicker,
+           .start__continue-meta, .composer-footer span, #game-feedback *,
+           .settings-card label, .settings-card p, .field, .field *) {
+    font-size: 16px !important;
+  }
+  /* Служебный: подписи, мета, надзаголовки, подвал. Идёт после правила выше —
+     порядок и решает. */
+  body :is(small, .hint, .subtext, .eyebrow, .speaker, .start__continue-kicker,
+           .start__continue-meta, .composer-footer span, footer, footer *,
+           .nav-label, th, caption, .meta, .meta *,
+           .roll__tag, .roll__verdict, .roll__nums, .chip, .badge,
+           .chronicle-status, .chronicle-status *, .about__foot, .about__foot *,
+           .start__foot, .start__foot * ) {
+    font-size: 14px !important;
+  }
+  body h1 { font-size: 30px !important; line-height: 1.08; }
+  body h2 { font-size: 22px !important; line-height: 1.2; }
+  /* n4: имя героя — главное на листе. Общее правило `body h2` держит 22 px
+     и перебивало `#character #character-content>h2` из workspace.css;
+     здесь 26/600, чтобы имя звучало выше значений характеристик (22/400). */
+  body #character #character-content>h2 { font-size: 26px !important; font-weight: 600; line-height: 1.15; }
+  body h3 { font-size: 17px !important; line-height: 1.3; }
+  /* Служебное, но моноширинное и «техническое»: было 12 px в `style.css`
+     (`pre{font:12px/1.7 ...}`), на телефоне — 14. */
+  body :is(pre, code, kbd, samp, tt, output, .mono) { font-size: 14px !important; }
+  /* Рассказ и поле ввода — 17: при 16 и ниже Safari на iOS зумит на фокусе. */
+  body #chat .message .prose,
+  body #chat .message .body,
+  body .prose { font-size: 17px !important; line-height: 1.62; }
+  body :is(input#player-input, textarea, #note-input, .note-input) { font-size: 17px !important; }
+
+  /* ── 4. Зоны нажатия 44×44, зазор между соседними 8 ─────────────────────── */
+  body :is(button, summary, select, [role=button], input:not([type=hidden]),
+           label.file-button, .nav, .chip) { min-height: var(--mtap) !important; }
+  /* Кнопка-иконка: и высота, и ширина 44. */
+  body :is(main > header button, .iconbtn, button.themetoggle, .drawer-close) {
+    min-width: var(--mtap) !important; min-height: var(--mtap) !important;
+  }
+  body :is(input[type=text], input[type=search], input[type=url], input[type=number],
+           input[type=password], input[type=email], input[type=tel], select, textarea) {
+    min-height: var(--mtap); height: auto;
+  }
+  /* Чекбокс: квадрат 22 px рисуем сами, а сам input — прозрачный, но во всю
+     строку 44 px. Иначе зона нажатия 13×22, а строка вокруг 44 обманывает замер:
+     палец попадает только в квадратик. */
+  body label.checkline,
+  body label:has(input[type=checkbox]),
+  body label:has(input[type=radio]) {
+    display: flex; align-items: center; gap: 8px;
+    min-height: var(--mtap); padding-left: 34px; position: relative;
+  }
+  body label.checkline > input,
+  body label:has(input[type=checkbox]) input[type=checkbox],
+  body label:has(input[type=radio]) input[type=radio] {
+    position: absolute; left: 0; top: 50%; transform: translateY(-50%);
+    width: 44px !important; height: 44px !important; min-height: 0 !important; margin: 0 !important;
+    appearance: none; -webkit-appearance: none; opacity: .01 !important;
+    cursor: pointer; z-index: 1;
+  }
+  body label.checkline::before,
+  body label:has(input[type=checkbox])::before {
+    content: ''; position: absolute; left: 9px; top: 50%; transform: translateY(-50%);
+    width: 22px; height: 22px; border: 2px solid var(--line, #5a5245);
+    border-radius: 3px; background: var(--surface, transparent); box-sizing: border-box;
+  }
+  body label.checkline:has(input:checked)::before,
+  body label:has(input[type=checkbox]:checked)::before {
+    background: var(--gold, #c9a227); border-color: var(--gold, #c9a227);
+  }
+  body label.checkline:has(input:checked)::after,
+  body label:has(input[type=checkbox]:checked)::after {
+    content: '✓'; position: absolute; left: 9px; top: 50%; transform: translateY(-50%);
+    width: 22px; height: 22px; line-height: 22px; text-align: center;
+    font-size: 14px; font-weight: 700; color: var(--ink-on-gold, #14130f);
+    pointer-events: none;
+  }
+  body a[role=button], body a.nav, body a.start__btn { display: inline-flex; align-items: center; min-height: var(--mtap); }
+  body summary { display: flex; align-items: center; gap: 8px; }
+  /* Кнопка в шторке — любые 44 px, не только `.nav`: в раскрытых группах
+     живут обычные кнопки (кубик, «Незавершённые приключения», каталог) и они
+     были 32 px — палец промахивался. */
+  body > aside.sidebar button { min-height: var(--mtap) !important; height: auto !important; }
+  /* Раскрытая группа: `gap` на `details` не работает — его содержимое лежит в
+     собственной обёртке (::details-content), и у флекс-контейнера она одна.
+     Поэтому зазор делаем полями детей: 4 + 4 = 8 px между соседями. */
+  body details > *:not(summary) { margin-block: 4px; }
+  /* Соседние кнопки в раскрытой группе: ровно 8 px, а не «4+4 как получится». */
+  body details > *:not(summary) + *:not(summary) { margin-top: 8px; }
+  body > aside.sidebar details > summary { margin: 0; }
+  body :is(.world-place, .library-grid) { display: flex; flex-direction: column; gap: 8px; }
+  /* Вкладки настроек — строка с переносом: `gap` на блочном контейнере не работает. */
+  body :is(.settings-tabs, .tabletop-tabs) { display: flex; flex-wrap: wrap; gap: 8px; }
+  /* Кнопки формы ключей стоят в строку без зазора (inline-block). */
+  body #cloud form > button { margin: 4px; }
+  body :is(.button-row, .inline-form, .form-grid,
+           .start__actions, .row-actions, .card-actions, .toolbar, .tabs,
+           .settings-tabs, .tabletop-tabs) { gap: 8px; flex-wrap: wrap; }
+
+  /* ── 5. Никакой горизонтальной прокрутки ───────────────────────────────── */
+  body img, body svg, body canvas, body video { max-width: 100%; }
+  body :is(pre, code) { white-space: pre-wrap; overflow-wrap: anywhere; word-break: break-word; }
+  body :is(p, li, dd, td, .prose, .message .prose, .start__lead, .hint) { overflow-wrap: anywhere; }
+  body .table-scroll { overflow-x: auto !important; -webkit-overflow-scrolling: touch; max-width: 100%; }
+  body table { max-width: 100%; }
+  body :is(.metrics-grid, .form-grid, .scores-grid, .stats-grid) { grid-template-columns: minmax(0, 1fr) !important; }
+  /* n13: характеристики героя — сетка 2 колонки, как витальные ячейки выше
+     («макет hero-375: шесть в сетке»). Общее правило схлопывало их в один
+     столбец с шагом 115 px, и шестая (Харизма) начиналась на y≈889 при окне
+     812 — игрок видел 5 из 6 (замечание №4 критика). */
+  body #character .scores-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 12px; margin-bottom: 20px;
+  }
+  body :is(input, select, textarea, button) { max-width: 100%; }
+  body [style*="width"] { max-width: 100%; }
+
+  /* ── 6. Игра: лента тянется, поле ввода — док внизу ─────────────────────── */
+  body > main > .view#play.active {
+    display: flex; flex-direction: column; overflow: hidden;
+    /* `themes.css` держит `#play.unified-game{height:calc(100dvh - 140px)!important}`:
+       на телефоне экран занимает остаток, иначе лента получает 235 px из 812. */
+    height: auto !important; min-height: 0 !important;
+    padding: 0 !important;
+    /* min-width:0 — иначе широкий ребёнок (две кнопки в доке) растягивает
+       #play до 421 px, и правый край уезжает за экран: overflow-x у body это
+       только прячет. */
+    min-width: 0;
+  }
+  body > main > .view#play .story-card {
+    flex: 1 1 auto; min-height: 0; display: flex; flex-direction: column;
+    border: 0; border-radius: 0; background: transparent; margin: 0; padding: 0;
+  }
+  body > main > .view#play .panel-heading { display: none !important; }
+  body > main > .view#play .workspace-layout {
+    flex: 1 1 auto; min-height: 0; display: flex !important; flex-direction: column;
+    gap: 0 !important; grid-template-columns: none !important;
+  }
+  body > main > .view#play .literary-column {
+    flex: 1 1 auto; min-height: 0; display: flex; flex-direction: column;
+  }
+  body > main > .view#play #chat {
+    flex: 1 1 auto; min-height: 0; max-height: none !important; overflow-y: auto;
+    overscroll-behavior: contain; scroll-behavior: smooth;
+    /* n17: 48 px внизу — тот же воздух, что в макете `game` (там 67 до рамки
+       вместе с отбивкой сообщения). При 16 px последняя строка упиралась в
+       рамку ввода. */
+    padding: 12px 16px 48px; scroll-padding-bottom: 48px;
+  }
+  body > main > .view#play .composer {
+    flex: none; position: static; padding: 8px 16px calc(8px + env(safe-area-inset-bottom));
+    background: var(--ink-900); border-top: 1px solid var(--line);
+  }
+  /* n03: одно поле и одна кнопка в одной строке. Было две строки: поле 58 и
+     кнопка 48 во всю ширину — док 130 px, ленте оставалось 580. Теперь док
+     72 px: кнопка стоит справа в рамке поля, как в макете `game`.
+     Нижний отступ — calc(... + env(safe-area-inset-bottom)): это единственное
+     правило, которое осталось от .composer, и без env поле с кнопкой уезжали
+     под home-индикатор iPhone. */
+  body > main > .view#play #action-form {
+    display: flex; align-items: flex-end; gap: 8px;
+    /* n17: рамка стоит по тем же 16 px, что и текст ленты (макет `game`:
+       16 от края экрана, «Сказать» — 24 до края). Раньше форма шла во всю
+       ширину 0…375 и упиралась в края, поля были 0. */
+    width: auto; margin: 0 16px;
+    padding: 6px 8px calc(6px + env(safe-area-inset-bottom)) 14px;
+  }
+  body > main > .view#play #action-form textarea { flex: 1 1 auto; min-width: 0; width: auto; }
+  body > main > .view#play .composer-footer > div { width: auto; flex: 0 0 auto; gap: 8px; }
+  body > main > .view#play .composer textarea {
+    height: 58px !important; min-height: 58px !important; max-height: 104px;
+    padding: 8px 12px; line-height: 1.34 !important;
+  }
+  body > main > .view#play .composer-footer {
+    display: flex; align-items: center; gap: 8px; margin: 0; width: auto; flex: none;
+  }
+  /* Подсказка «Ctrl + Enter» на телефоне бессмысленна, а вместе с переносом
+     растягивала док до 118 px — из-за неё при открытой клавиатуре ленте
+     оставалось 28 px. Отправляет Enter, кнопка «Сказать» — 44×44 в рамке поля. */
+  body > main > .view#play .composer-footer > span { display: none !important; }
+  body > main > .view#play .composer-footer button {
+    min-height: 44px !important; min-width: var(--mtap); flex: 0 1 auto; padding: 0 10px !important;
+    white-space: nowrap;
+  }
+  /* Пока мастер отвечает, «Сказать» уступает место «Остановить ответ»
+     (design/mobile/SPEC.md §7). Иначе в доке две кнопки, они выталкивают
+     #play за 375 px, и правый край дока обрезается. */
+  body > main > .view#play #action-form:has(#stop:not([hidden])) #send { display: none !important; }
+  /* Рейки механики на телефоне не нужны: они отнимают у ленты треть экрана. */
+  body > main > .view#play .scene-rail,
+  body > main > .view#play .sheet-rail,
+  body > main > .view#play .game-log { display: none !important; }
+  /* Шапка при клавиатуре сжимается до 44, второстепенные плашки уходят:
+     при открытой клавиатуре экран — это лента и поле ввода. */
+  body.kb-open > main > header { height: 44px !important; min-height: 44px !important; }
+  body.kb-open #game-feedback,
+  body.kb-open .prototype-action-panel { display: none !important; }
+  body.kb-open > main > .view#play .composer { padding-bottom: 8px; }
+  /* n17: между рамкой поля и клавиатурой — 8 px, как в кадре `game-kb`.
+     Без этого поле упиралось в клавиатуру вплотную (0 px), и палец бил по
+     нижней границе рамки вместо строки ввода. */
+  body.kb-open > main > .view#play #action-form { margin-bottom: 8px; }
+
+  /* n18 (добавка оценщика к n16): подпись «ход N · сохранено» стоит ПОД доком
+     (ряд `.dice-row` идёт после формы), и у неё не было env(safe-area-inset-bottom)
+     — на iPhone текст лежал в 1 px от системной полосы. Нижний отступ ряда и
+     есть место под home-индикатор, поэтому у дока нижний отступ снят. */
+  body > main > .view#play .dice-row {
+    flex: none; margin: 0 16px !important; min-height: 32px;
+    padding: 4px 0 calc(10px + env(safe-area-inset-bottom));
+    align-items: flex-start;
+  }
+  body > main > .view#play .composer,
+  body > main > .view#play #action-form { padding-bottom: 6px; }
+
+  /* ── 7. Главная: один призыв, одна строка состояния, список историй ──────── */
+  /* min-height:100dvh с шапкой 56 даёт 868 px и уводит подвал за кадр:
+     у главной высота — остаток под шапкой, а не весь экран. */
+  body > main > .view#welcome.active { display: flex; flex-direction: column; justify-content: flex-start; gap: 0; overflow-y: auto; min-height: 0 !important; }
+  body #welcome .start__main {
+    flex: none; min-height: 0; display: flex; flex-direction: column;
+    grid-template-columns: minmax(0, 1fr) !important; gap: 0;
+    padding: 0 0 calc(16px + env(safe-area-inset-bottom));
+  }
+  body #welcome .start__copy { display: flex; flex-direction: column; flex: none; min-height: 0; padding: 24px 0 0; max-width: none; }
+  body #welcome .start__feed { flex: none; }
+  body #welcome .eyebrow { font-size: 14px !important; }
+  body #welcome .start__title { font-size: 30px !important; margin: 8px 0 12px; }
+  body #welcome .start__lead { margin: 0 0 16px; font-size: 16px !important; }
+  /* На телефоне текст занимает всю ширину экрана: 34ch оставляли справа
+     пустую полосу, а вводная шла в три строки вместо двух. */
+  body #welcome :is(.start__lead, .start__continue, .start__empty) { max-width: none; }
+  body #welcome .start__actions {
+    display: flex; flex-direction: column; align-items: stretch; gap: 8px;
+    margin-top: 8px;
+  }
+  body #welcome .start__btn { min-height: 52px !important; width: 100%; justify-content: center; font-size: 16px !important; }
+  body #welcome .start__continue { width: 100%; min-height: 44px; text-align: left; margin-top: 20px; }
+  body #welcome .start__continue-title { font-size: 16px !important; }
+  /* Подписи — один кегль на весь экран, 14: кикеры, мета, подвал. */
+  body #welcome :is(.start__continue-kicker, .start__continue-meta, .start__stories-kicker,
+                    .story-meta, .start__foot, .start__foot *) { font-size: 14px !important; }
+  body #welcome .story-title { font-size: 16px !important; }
+  body #welcome .story { width: 100%; min-height: 64px !important; text-align: left; }
+  /* Прошлые истории прокручиваются внутри себя: первый экран не растёт вместе
+     с числом кампаний и не уводит главную кнопку за кадр. */
+  body #welcome .start__stories { margin-top: 20px; }
+  body #welcome .start__list {
+    grid-template-columns: minmax(0, 1fr) !important; gap: 0;
+    max-height: 64px; overflow-y: auto;
+  }
+  body #welcome .start__empty { font-size: 16px !important; }
+  body #welcome .start__art { display: none; }
+  /* Строка состояния прижата к низу экрана, но остаётся в кадре. */
+  body #welcome .start__foot { margin: auto 0 0; padding-top: 12px; }
+
+  /* ── 8. Кубик: число читается с вытянутой руки ──────────────────────────── */
+  /* Форма кубика в прежнем листе — сетка 1fr 1fr: на 375 поле и кнопка по 115 px. */
+  body #tabletop-dice form { display: flex !important; flex-direction: column; gap: 8px; }
+  body #tabletop-dice :is(input, select) { width: 100% !important; }
+  body #tabletop-dice .dice-entry { font-size: 16px !important; }
+  body .roll__value, body .roll__total, body #tabletop-dice .dice-total {
+    font-size: 36px !important; line-height: 1.05; font-weight: 700; font-variant-numeric: tabular-nums;
+  }
+  body :is(.roll__tag, .roll__verdict, .roll__nums, #tabletop-dice .hint) { font-size: 14px !important; }
+  body .roll { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; min-height: var(--mtap); }
+  body #tabletop-dice :is(input, select, button, summary) { min-height: var(--mtap); }
+
+  /* ── 9. Диалоги и широкие страницы ──────────────────────────────────────── */
+  body dialog {
+    width: calc(100vw - 32px) !important; max-width: calc(100vw - 32px);
+    max-height: calc(100dvh - 64px); overflow-y: auto; margin: auto; padding: 16px;
+  }
+  /* Подвал на телефоне — 67 px подписи «прототип 2.2.0»; место ленты дороже. */
+  body > main > footer { display: none !important; }
+  body > main > footer {
+    flex: none; font-size: 14px !important; padding: 12px 16px;
+    border-top: 1px solid var(--line);
+  }
+
+  /* ── 10. Светлая тема: контраст главной кнопки ───────────────────────────
+     n08: прежняя заплатка красила текст кнопки в светлый --on-gold под тёмную
+     медь --candle (#8A5714) — 5.74:1. С r-замера заливка берёт --candle-fill
+     (#B0722A), и светлый текст на ней давал 3.66:1. Теперь чернила кнопки —
+     --candle-ink (#191207): 4.67:1 на --candle-fill. Отдельного правила для
+     телефона не нужно, цвет один на обе ширины. */
+
+  /* ── 11. Новое приключение (#creation): призыв в доке над сгибом ───────────
+     n16: экран рендерился десктопным потоком — главная кнопка вставала на
+     y=965 при кадре 812 (блокер №1), а над полем висели три служебные кнопки.
+     По SPEC §5: «Назад» уходит в шапку, «Мои приключения» — в шторку,
+     сохранение идёт само; drag&drop на телефоне не нужен. */
+  body > main > .view#creation.active {
+    display: flex; flex-direction: column;
+    padding: 0 var(--mpad) !important;
+  }
+  body #creation .creation-controls { display: none !important; }
+  body #creation .creation-drop {
+    border: 0; padding: 0; margin: 12px 0; background: none;
+  }
+  body #creation .creation-drop > :is(h2, p) { display: none; }
+  body #creation .creation-drop > button {
+    width: 100%; min-height: 52px !important; justify-content: center;
+  }
+  body #creation textarea#creation-description { min-height: 120px; height: 154px; }
+  /* Призыв приклеен к низу как док: 102 px по SPEC §5, кнопка 52 px. */
+  body #creation .creation-dock {
+    order: 99; position: sticky; bottom: 0; z-index: 10; flex: none;
+    margin: 0 calc(-1 * var(--mpad));
+    padding: 8px var(--mpad) calc(8px + env(safe-area-inset-bottom));
+    background: var(--ink-900); border-top: 1px solid var(--line);
+  }
+  body #creation .creation-dock > button:not([hidden]) {
+    width: 100%; min-height: 52px !important; justify-content: center;
+  }
+}
+
+/* n13: одно слово в статичной разметке — «на этом телефоне» на телефоне и
+   «на этом компьютере» на столе. Классы живут ВНЕ @media: мобильный слой
+   прячет .only-desktop, широкий экран — .only-phone. В скриптах то же слово
+   выбирает `hereWord()` (web/play.js), потому что там текст собирается из
+   строк. */
+.only-phone { display: none; }
+
+@media (max-width: 760px) {
+  .only-phone { display: inline; }
+  .only-desktop { display: none; }
+}

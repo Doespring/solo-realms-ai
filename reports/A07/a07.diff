@@ -1,0 +1,319 @@
+diff --git a/web/game-screen.css b/web/game-screen.css
+index 5c9dcd13..0c7bf9cd 100644
+--- a/web/game-screen.css
++++ b/web/game-screen.css
+@@ -363,7 +363,7 @@ html[data-ui="chat"] #play{height:100dvh}
+   border:1px solid var(--line-strong);border-radius:var(--radius);
+   transition:border-color .16s;
+ }
+-#play #action-form:focus-within{border-color:var(--line-strong)}
++#play #action-form:focus-within{border-color:var(--line-strong);outline:2px solid var(--accent);outline-offset:2px}
+ #play #action-form textarea{
+   display:block;width:100%;height:52px;min-height:52px;max-height:170px;
+   margin:0;padding:2px 0;border:0;border-radius:0;background:none;box-shadow:none;
+diff --git a/web/index.html b/web/index.html
+index fd42e470..bd8a6288 100644
+--- a/web/index.html
++++ b/web/index.html
+@@ -1,5 +1,5 @@
+ ﻿<!doctype html>
+-<html lang="ru" data-theme="dark"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Solo Realms AI</title><link rel="stylesheet" href="/static/style.css?v=r223"><link rel="stylesheet" href="/static/workspace.css?v=r223"><link rel="stylesheet" href="/static/combat.css?v=2.1.4-preview.6"><link rel="stylesheet" href="/static/inventory.css?v=2.1.4-preview.6"><script src="/static/play.js?v=n17" defer></script><script src="/static/campaign-settings.js?v=r217" defer></script><script src="/static/cloud.js?v=cost-1" defer></script><script src="/static/workspace.js?v=n02" defer></script><script src="/static/rulesets.js?v=nat20-screen-2" defer></script><script src="/static/combat.js?v=2.1.4-preview.6" defer></script><script src="/static/inventory.js?v=2.1.4-preview.6" defer></script><link rel="stylesheet" href="/static/world.css?v=2.1.4-preview.6"><script src="/static/world.js?v=2.1.4-preview.6" defer></script><script src="/static/desktop.js?v=2.1.4-preview.6" defer></script><script src="/static/obsidian.js?v=n18" defer></script><link rel="icon" type="image/svg+xml" href="/static/visual/icons/compass.svg"><link rel="stylesheet" href="/static/mobile.css?v=n18"><script src="/static/mobile.js?v=n17" defer></script></head>
++<html lang="ru" data-theme="dark"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Solo Realms AI</title><link rel="stylesheet" href="/static/style.css?v=r223"><link rel="stylesheet" href="/static/workspace.css?v=r223"><link rel="stylesheet" href="/static/combat.css?v=2.1.4-preview.6"><link rel="stylesheet" href="/static/inventory.css?v=2.1.4-preview.6"><script src="/static/play.js?v=n17" defer></script><script src="/static/focus.js?v=a07" defer></script><script src="/static/campaign-settings.js?v=r217" defer></script><script src="/static/cloud.js?v=cost-1" defer></script><script src="/static/workspace.js?v=n02" defer></script><script src="/static/rulesets.js?v=nat20-screen-2" defer></script><script src="/static/combat.js?v=2.1.4-preview.6" defer></script><script src="/static/inventory.js?v=2.1.4-preview.6" defer></script><link rel="stylesheet" href="/static/world.css?v=2.1.4-preview.6"><script src="/static/world.js?v=2.1.4-preview.6" defer></script><script src="/static/desktop.js?v=2.1.4-preview.6" defer></script><script src="/static/obsidian.js?v=n18" defer></script><link rel="icon" type="image/svg+xml" href="/static/visual/icons/compass.svg"><link rel="stylesheet" href="/static/mobile.css?v=n18"><script src="/static/mobile.js?v=n17" defer></script></head>
+ <body>
+ <!-- chat-only:cut --><aside class="sidebar"><a class="brand" href="/" aria-label="Solo Realms AI"><span class="sigil">✧</span><span>SOLO REALMS<small>ОБЛАЧНЫЙ МАСТЕР · ВАШ МИР</small></span></a>
+ <p class="nav-label">ВАШЕ ПРИКЛЮЧЕНИЕ</p><nav>
+diff --git a/web/prototype-actions.js b/web/prototype-actions.js
+index 72092e4f..9e257c7c 100644
+--- a/web/prototype-actions.js
++++ b/web/prototype-actions.js
+@@ -2,24 +2,39 @@
+ (()=>{
+  'use strict';const panel=el('details',undefined,'disclosure prototype-action-panel'),body=el('div'),note=el('p','','hint');
+  panel.hidden=true;panel.append(el('summary','Оружие, магия, предметы и цели'),note,body);$('action-form').parentElement.append(panel);
+- let data=null,stamp=0,selectedOperation='attack';
++ // A07/F12: список действия — постоянный узел. Раньше каждый `change` звал
++ // draw(), тот делал body.replaceChildren() и вместе со старым списком
++ // выбрасывал сам сфокусированный select: после ArrowDown фокус уходил в BODY.
++ // Теперь перерисовываются только поля параметров (fields), а список действия
++ // остаётся тем же элементом; поле внутри fields возвращается после перерисовки.
++ let data=null,stamp=0,selectedOperation='attack',values=null,selectedSpell=null,version=0,lastOperation='',pendingFocus='';
++ const form=el('form',undefined,'prototype-action-form'),operation=el('select'),fields=el('div',undefined,'prototype-action-fields'),submit=el('button','Выполнить выбранное действие','primary');
++ operation.setAttribute('aria-label','Действие героя');submit.type='submit';form.append(field('Действие героя',operation),fields,submit);
+  const labels={attack:'Атаковать',cast_spell:'Произнести заклинание',use_item:'Использовать предмет',use_feature:'Использовать способность',move:'Переместиться',dash:'Рывок',dodge:'Уклонение',disengage:'Отход',hide:'Спрятаться',help:'Помочь',ready:'Подготовить действие',reaction:'Реакция',move_mark:'Переместить метку',pass:'Пропустить',drop_concentration:'Прекратить концентрацию',grapple:'Захватить',shove:'Толкнуть',stand_up:'Встать',escape_grapple:'Вырваться'};
+- function draw(){if(!data)return;body.replaceChildren();const form=el('form',undefined,'prototype-action-form'),operation=el('select');operation.setAttribute('aria-label','Действие героя');for(const row of data.actions){const option=el('option',labels[row.slug]||row.name);option.value=row.slug;operation.append(option);}if([...operation.options].some(o=>o.value===selectedOperation))operation.value=selectedOperation;else selectedOperation=operation.value;operation.onchange=()=>{selectedOperation=operation.value;draw();};form.append(field('Действие героя',operation));body.append(form);
+-  const values={kind:'native_action',operation:operation.value},version=data.version;let selectedSpell=null;const unsupportedSpell=row=>row?.status==='narrative_or_unsupported_in_combat';const issue=data.actions.find(a=>a.slug===operation.value)?.known_issue;note.textContent=issue?'Известное ограничение: '+issue:'Параметры и доступность проверит Nat20. Отказ одного действия не закрывает остальные.';
++ const unsupportedSpell=row=>row?.status==='narrative_or_unsupported_in_combat';
++ function syncOperations(){const rows=data.actions||[],options=rows.map(row=>{const option=el('option',labels[row.slug]||row.name);option.value=row.slug;return option;});if(!options.some(option=>option.value===selectedOperation))selectedOperation=options.length?options[0].value:'';operation.replaceChildren(...options);operation.value=selectedOperation;}
++ operation.onchange=()=>{selectedOperation=operation.value;draw();};
++ function draw(){if(!data)return;if(form.parentElement!==body)body.replaceChildren(form);
++  syncOperations();
++  const active=document.activeElement,key=pendingFocus||(active&&fields.contains(active)?active.getAttribute('aria-label'):'');pendingFocus='';
++  fields.replaceChildren();
++  const keep=lastOperation===operation.value&&values;lastOperation=operation.value;
++  values=keep?values:{kind:'native_action',operation:operation.value};version=data.version;selectedSpell=null;
++  const issue=data.actions.find(a=>a.slug===operation.value)?.known_issue;note.textContent=issue?'Известное ограничение: '+issue:'Параметры и доступность проверит Nat20. Отказ одного действия не закрывает остальные.';
+   const property=key=>data.action_schema?.properties?.[key];
+   function typed(key,type){const schema=property(key);return schema&&(schema.anyOf||[schema]).find(part=>part.type===type);}
+-  function pick(label,key,rows,{multiple=false,container=form}={}){const select=el('select');select.multiple=multiple;select.setAttribute('aria-label',label);if(!multiple){select.append(el('option','Автоматический выбор'));select.firstChild.value='';}for(const row of rows||[]){const option=el('option',row.name||row.id);option.value=row.id;select.append(option);}select.onchange=()=>{if(multiple)values[key]=[...select.selectedOptions].map(o=>o.value);else if(select.value)values[key]=select.value;else delete values[key];};container.append(field(label,select));return select;}
+-  function number(label,key,container){const bounds=typed(key,'integer');if(!bounds)return;const input=el('input');input.type='number';input.step='1';input.placeholder='По умолчанию';if(bounds.minimum!=null)input.min=bounds.minimum;if(bounds.maximum!=null)input.max=bounds.maximum;input.oninput=()=>{if(input.value==='')delete values[key];else values[key]=Number(input.value);};container.append(field(label,input));}
+-  function choice(label,key,rows,container){if(!property(key))return;const select=el('select');select.setAttribute('aria-label',label);select.append(el('option','По умолчанию'));select.firstChild.value='';for(const [value,title]of rows){const option=el('option',title);option.value=String(value);select.append(option);}select.onchange=()=>{if(select.value==='')delete values[key];else values[key]=typed(key,'boolean')?select.value==='true':select.value;};container.append(field(label,select));}
+-  function pair(label,key,container,position=false){if(!property(key))return;const inputs=[];for(const axis of ['X','Y']){const input=el('input');input.type='number';input.step='1';input.placeholder='Не задано';const bounds=position?data.action_schema.$defs?.GridPosition?.properties?.[axis.toLowerCase()]:typed(key,'array')?.items;if(bounds?.minimum!=null)input.min=bounds.minimum;if(bounds?.maximum!=null)input.max=bounds.maximum;inputs.push(input);container.append(field(label+' '+axis,input));}const update=()=>{const partial=inputs.some(n=>n.value!=='')&&inputs.some(n=>n.value==='');for(const input of inputs)input.setCustomValidity(partial?'Укажите обе координаты или оставьте обе пустыми.':'');if(inputs.every(n=>n.value!==''))values[key]=position?{x:Number(inputs[0].value),y:Number(inputs[1].value)}:inputs.map(n=>Number(n.value));else delete values[key];};for(const input of inputs)input.oninput=update;}
++  function pick(label,key,rows,{multiple=false,container=fields}={}){const select=el('select');select.multiple=multiple;select.setAttribute('aria-label',label);if(!multiple){select.append(el('option','Автоматический выбор'));select.firstChild.value='';}for(const row of rows||[]){const option=el('option',row.name||row.id);option.value=row.id;select.append(option);}if(multiple){if(Array.isArray(values[key]))for(const option of select.options)option.selected=values[key].includes(option.value);}else if(values[key])select.value=values[key];select.onchange=()=>{if(multiple)values[key]=[...select.selectedOptions].map(o=>o.value);else if(select.value)values[key]=select.value;else delete values[key];};container.append(field(label,select));return select;}
++  function number(label,key,container){const bounds=typed(key,'integer');if(!bounds)return;const input=el('input');input.type='number';input.step='1';input.placeholder='По умолчанию';if(bounds.minimum!=null)input.min=bounds.minimum;if(bounds.maximum!=null)input.max=bounds.maximum;if(values[key]!=null)input.value=values[key];input.oninput=()=>{if(input.value==='')delete values[key];else values[key]=Number(input.value);};container.append(field(label,input));}
++  function choice(label,key,rows,container){if(!property(key))return;const select=el('select');select.setAttribute('aria-label',label);select.append(el('option','По умолчанию'));select.firstChild.value='';for(const [value,title]of rows){const option=el('option',title);option.value=String(value);select.append(option);}if(values[key]!=null)select.value=String(values[key]);select.onchange=()=>{if(select.value==='')delete values[key];else values[key]=typed(key,'boolean')?select.value==='true':select.value;};container.append(field(label,select));}
++  function pair(label,key,container,position=false){if(!property(key))return;const inputs=[];for(const axis of ['X','Y']){const input=el('input');input.type='number';input.step='1';input.placeholder='Не задано';const bounds=position?data.action_schema.$defs?.GridPosition?.properties?.[axis.toLowerCase()]:typed(key,'array')?.items;if(bounds?.minimum!=null)input.min=bounds.minimum;if(bounds?.maximum!=null)input.max=bounds.maximum;inputs.push(input);container.append(field(label+' '+axis,input));}const update=()=>{const partial=inputs.some(n=>n.value!=='')&&inputs.some(n=>n.value==='');for(const input of inputs)input.setCustomValidity(partial?'Укажите обе координаты или оставьте обе пустыми.':'');if(inputs.every(n=>n.value!==''))values[key]=position?{x:Number(inputs[0].value),y:Number(inputs[1].value)}:inputs.map(n=>Number(n.value));else delete values[key];};if(values[key]){const saved=position?[values[key].x,values[key].y]:values[key];saved.forEach((value,index)=>{if(value!=null)inputs[index].value=value;});}for(const input of inputs)input.oninput=update;}
+   if(operation.value==='attack')pick('Оружие','weapon_id',data.weapons);
+   const sources={cast_spell:['Заклинание','spell_id',data.spells],use_item:['Предмет','item_id',data.items],use_feature:['Способность','feature_id',data.features]};
+   if(sources[operation.value]){const [label,key,rows]=sources[operation.value],source=pick(label,key,rows),activity=pick('Вариант применения','activity_id',[]),update=source.onchange;source.onchange=()=>{update();const selected=rows.find(r=>r.id===source.value);if(key==='spell_id')selectedSpell=selected;note.textContent=[unsupportedSpell(selected)?'Это заклинание предназначено для повествования либо пока не поддержано в бою. Боевое применение не отправляется; другие заклинания доступны.':issue?'Ограничение: '+issue:'Доступность проверит Nat20.',selected?.issue,selected?.description].filter(Boolean).join('\n');submit.disabled=unsupportedSpell(selectedSpell);activity.replaceChildren(el('option','Автоматический выбор'));activity.firstChild.value='';delete values.activity_id;for(const row of selected?.activities||[]){const option=el('option',row.name||row.id);option.value=row.id;activity.append(option);}};}
+-  if(operation.value==='cast_spell'){const target=pick('Цели заклинания','target_id',data.targets),add=el('button','Добавить цель'),list=el('div',undefined,'button-row');add.type='button';target.onchange=()=>{};add.onclick=()=>{if(!target.value)return;(values.target_ids??=[]).push(target.value);const chip=el('button',data.targets.find(t=>t.id===target.value)?.name||target.value);chip.type='button';const index=values.target_ids.length-1;chip.onclick=()=>{values.target_ids[index]=null;chip.remove();};list.append(chip);};form.append(add,list,el('p','Одну цель можно добавить несколько раз для распределения отдельных эффектов. Количество и допустимость проверит движок.','hint'));}
++  if(operation.value==='cast_spell'){const target=pick('Цели заклинания','target_id',data.targets),add=el('button','Добавить цель'),list=el('div',undefined,'button-row');add.type='button';target.onchange=()=>{};add.onclick=()=>{if(!target.value)return;(values.target_ids??=[]).push(target.value);const chip=el('button',data.targets.find(t=>t.id===target.value)?.name||target.value);chip.type='button';const index=values.target_ids.length-1;chip.onclick=()=>{values.target_ids[index]=null;chip.remove();};list.append(chip);};fields.append(add,list,el('p','Одну цель можно добавить несколько раз для распределения отдельных эффектов. Количество и допустимость проверит движок.','hint'));}
+   else if(['attack','use_item','use_feature','help','ready','reaction','grapple','shove','escape_grapple'].includes(operation.value))pick('Цель','target_id',data.targets);
+   if(['ready','reaction'].includes(operation.value)){const spell=pick('Заклинание реакции','spell_id',data.spells),update=spell.onchange;spell.onchange=()=>{update();selectedSpell=data.spells.find(row=>row.id===spell.value);submit.disabled=unsupportedSpell(selectedSpell);note.textContent=unsupportedSpell(selectedSpell)?'Это заклинание не поддержано для боевого применения. Выберите другое заклинание.':'Параметры и доступность проверит Nat20.';};}
+-  if(['cast_spell','ready','reaction'].includes(operation.value))number('Круг ячейки','slot_level',form);
+-  if(['move','move_mark'].includes(operation.value)){pair('Клетка','position',form,true);form.append(el('p','Текущие позиции: '+data.targets.map(t=>t.name+' '+(t.position||[]).join(', ')).join(' · '),'hint'));}
++  if(['cast_spell','ready','reaction'].includes(operation.value))number('Круг ячейки','slot_level',fields);
++  if(['move','move_mark'].includes(operation.value)){pair('Клетка','position',fields,true);fields.append(el('p','Текущие позиции: '+data.targets.map(t=>t.name+' '+(t.position||[]).join(', ')).join(' · '),'hint'));}
+   const extra=el('details',undefined,'disclosure'),extraBody=el('div',undefined,'prototype-action-form');extra.style.gridColumn='1 / -1';extra.append(el('summary','Дополнительные параметры действия'),extraBody);
+   if(operation.value==='use_item')number('Потратить зарядов','charges_to_spend',extraBody);
+   if(operation.value==='use_feature')number('Потратить очков способности','pool_points',extraBody);
+@@ -29,9 +44,12 @@
+   if(['ready','reaction'].includes(operation.value)){const names={cast_spell:'При произнесении заклинания',hit_by_attack:'При попадании атакой',targeted_by_magic_missile:'Когда цель — под «Волшебной стрелой»'};choice('Условие реакции','reaction_trigger',(typed('reaction_trigger','string')?.enum||[]).map(id=>[id,names[id]||id]),extraBody);}
+   if(['cast_spell','use_item','use_feature'].includes(operation.value)){pair('Направление','direction',extraBody);if(property('excluded_target_ids'))pick('Исключить цели из области','excluded_target_ids',data.targets,{multiple:true,container:extraBody});}
+   if(operation.value==='cast_spell')choice('Ритуальное применение','as_ritual',[[false,'Обычное заклинание'],[true,'Как ритуал — проверит Native']],extraBody);
+-  if(extraBody.childElementCount){extraBody.append(el('p','Пустое поле использует выбор Native. Указанные значения и расход ресурсов проверит сервер.','hint'));form.append(extra);}
+-  const submit=el('button','Выполнить выбранное действие','primary');submit.type='submit';form.append(submit);form.onsubmit=protect(async event=>{event.preventDefault();if(submit.disabled||unsupportedSpell(selectedSpell))return;submit.disabled=true;const parameters={...values};if(parameters.target_ids){parameters.target_ids=parameters.target_ids.filter(Boolean);if(!parameters.target_ids.length)delete parameters.target_ids;}try{await window.SoloGameScreen.execute({kind:'engine',parameters,expected_version:version});}finally{submit.disabled=unsupportedSpell(selectedSpell);}});
++  if(extraBody.childElementCount){extraBody.append(el('p','Пустое поле использует выбор Native. Указанные значения и расход ресурсов проверит сервер.','hint'));fields.append(extra);}
++  submit.disabled=unsupportedSpell(selectedSpell);
++  const again=key&&key!=='__operation__'?Array.from(fields.querySelectorAll('[aria-label]')).find(node=>node.getAttribute('aria-label')===key):null;
++  if(again)again.focus();else if(key==='__operation__'&&!panel.hidden)operation.focus();
+  }
+- async function load(){const seq=++stamp,cid=campaignId;panel.hidden=true;if(current?.backend!=='nat20')return;try{const value=await api('/campaigns/'+cid+'/prototype');if(seq!==stamp||cid!==campaignId)return;data=value;panel.hidden=!value.experimental;if(value.experimental)draw();}catch(error){if(seq===stamp&&cid===campaignId){panel.hidden=error.status===404;note.textContent='Возможности героя пока недоступны: '+error.message;body.replaceChildren();}}}
++ form.onsubmit=protect(async event=>{event.preventDefault();if(submit.disabled||unsupportedSpell(selectedSpell))return;submit.disabled=true;const parameters={...(values||{})};if(parameters.target_ids){parameters.target_ids=parameters.target_ids.filter(Boolean);if(!parameters.target_ids.length)delete parameters.target_ids;}try{await window.SoloGameScreen.execute({kind:'engine',parameters,expected_version:version});}finally{submit.disabled=unsupportedSpell(selectedSpell);}});
++ async function load(){const seq=++stamp,cid=campaignId,active=document.activeElement;pendingFocus=active===operation?'__operation__':(active&&fields.contains(active)?active.getAttribute('aria-label'):'');panel.hidden=true;if(current?.backend!=='nat20')return;try{const value=await api('/campaigns/'+cid+'/prototype');if(seq!==stamp||cid!==campaignId)return;data=value;panel.hidden=!value.experimental;if(value.experimental)draw();}catch(error){if(seq===stamp&&cid===campaignId){data=null;panel.hidden=true;note.textContent='Возможности героя пока недоступны: '+error.message;body.replaceChildren();}}}
+  document.addEventListener('solo:render',load);if(current)load();
+ })();
+diff --git a/web/prototype.css b/web/prototype.css
+index b2bb1f91..28f1a626 100644
+--- a/web/prototype.css
++++ b/web/prototype.css
+@@ -1,5 +1,5 @@
+ #prototype-creation .prototype-form{max-width:100%;margin:16px 0;padding:20px}#prototype-creation .prototype-fields{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}#prototype-creation .prototype-fields>h2,#prototype-creation .prototype-fields>.disclosure,#prototype-creation .prototype-fields>p{grid-column:1/-1}#prototype-creation .prototype-fields input,#prototype-creation .prototype-fields select,#prototype-creation textarea{width:100%}.prototype-options{max-height:240px;overflow:auto;padding:8px}.prototype-options .checkline input{width:auto!important}.prototype-preview{padding:18px;border:1px solid var(--line);overflow-wrap:anywhere}.prototype-preview fieldset{margin:12px 0}.prototype-preview .checkline input{width:auto}@media(max-width:1000px){#prototype-creation .prototype-fields{grid-template-columns:1fr}#prototype-creation .prototype-form{padding:12px}}
+-#play .prototype-action-panel{margin:10px;padding:12px}.prototype-action-form{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px}.prototype-action-form select,.prototype-action-form input{width:100%}.prototype-action-form>button,.prototype-action-form>p{grid-column:1/-1}.prototype-action-form select[multiple]{min-height:80px}
++#play .prototype-action-panel{margin:10px;padding:12px}.prototype-action-form{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px}.prototype-action-form select,.prototype-action-form input{width:100%}.prototype-action-form>button,.prototype-action-form>p{grid-column:1/-1}.prototype-action-form select[multiple]{min-height:80px}.prototype-action-form .prototype-action-fields{display:grid;grid-column:1/-1;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px}
+ .prototype-action-panel>p{max-height:180px;overflow:auto;white-space:pre-wrap}
+ .field-error{display:block;color:var(--sheet-bad);white-space:normal;font-weight:600}.field-error[hidden]{display:none}#prototype-creation [aria-invalid="true"]{outline:2px solid var(--sheet-bad);outline-offset:1px}
+ #prototype-creation .prototype-field{display:flex;flex-direction:column;gap:4px;min-width:0}#prototype-creation .prototype-field>label{display:flex;flex-direction:column;gap:4px}
+diff --git a/web/wizard.css b/web/wizard.css
+index f4f36d5b..4e053960 100644
+--- a/web/wizard.css
++++ b/web/wizard.css
+@@ -165,7 +165,7 @@
+   color:var(--text);font-family:var(--font-ui);font-size:13px;padding:8px 10px;
+ }
+ #wizard input:focus-visible,#wizard textarea:focus-visible,#wizard select:focus-visible,#wizard button:focus-visible{
+-  outline:1px solid var(--candle);outline-offset:1px;
++  outline:2px solid var(--candle);outline-offset:2px;
+ }
+ #wizard .wizard-sheet-toggle{display:none}
+ #wizard .wizard-import textarea{width:100%;min-height:180px;line-height:1.5;resize:vertical}
+diff --git a/web/focus.js b/web/focus.js
+new file mode 100644
+index 00000000..049b2046
+--- /dev/null
++++ b/web/focus.js
+@@ -0,0 +1,195 @@
++'use strict';
++/* A07/F12 — фокус в модальных окнах.
++
++   Аудит 08.11 (снимки S74–S75): Tab за последним элементом <dialog> уходил
++   из окна, и `document.activeElement` становился BODY. Родное `showModal()`
++   блокирует мышь и клики, но кольцо фокуса в этом браузере не замыкает.
++   Здесь три вещи сразу для каждого окна:
++
++   1) Tab/Shift+Tab ходят по кругу внутри верхнего окна;
++   2) всё, что под окном, получает `inert` — ни мышью, ни Tab туда не попасть;
++   3) закрытие возвращает фокус кнопке-инициатору.
++
++   Модуль не знает про экраны: он надевает поведение на
++   HTMLDialogElement.showModal/close, поэтому работает и для окон, которые
++   создаются в рантайме (карточка предмета, просмотр броска, материал). */
++(() => {
++ const FOCUSABLE = 'a[href],button:not([disabled]),input:not([disabled]):not([type="hidden"]),select:not([disabled]),textarea:not([disabled]),summary,[tabindex]:not([tabindex="-1"]),[contenteditable="true"]';
++ const SKIP = new Set(['SCRIPT','STYLE','LINK','TEMPLATE','NOSCRIPT','META','TITLE']);
++ const stack = [];
++ const original = new Map();
++
++ const seen = node => !!node && !node.disabled && node.getClientRects().length > 0
++   && node.getAttribute('aria-hidden') !== 'true'
++   && getComputedStyle(node).visibility !== 'hidden';
++ function focusables(root){ return Array.from(root.querySelectorAll(FOCUSABLE)).filter(seen); }
++ /* Порядок обхода как у браузера: сначала положительный tabindex, затем
++    остальные в порядке разметки. */
++ function order(nodes){
++   const positive = nodes.filter(node => node.tabIndex > 0).sort((a, b) => a.tabIndex - b.tabIndex);
++   const rest = nodes.filter(node => node.tabIndex <= 0);
++   return positive.concat(rest);
++ }
++ function top(){ return stack.length ? stack[stack.length - 1] : null; }
++
++ /* Окно, которое убрали из документа без close(), иначе осталось бы в стеке:
++    подложка навсегда осталась бы inert. Наблюдатель живёт только пока открыто
++    хотя бы одно окно. */
++ let observer = null;
++ function watch(){
++   if (observer || !stack.length || typeof MutationObserver !== 'function') return;
++   observer = new MutationObserver(() => prune());
++   observer.observe(document.body, { childList: true, subtree: true });
++ }
++ function unwatch(){
++   if (observer && !stack.length) { observer.disconnect(); observer = null; }
++ }
++ function prune(){
++   let changed = false, topmost = null;
++   for (let index = stack.length - 1; index >= 0; index -= 1) {
++     const record = stack[index];
++     if (record.dialog.isConnected) continue;
++     if (index === stack.length - 1) topmost = record;
++     stack.splice(index, 1);
++     record.dialog.removeEventListener('close', record.onClose);
++     restoreTabindex(record);
++     changed = true;
++   }
++   if (!changed) return;
++   // Сначала вернуть подложку, потом фокус: иначе инициатор ещё inert и focus()
++   // молча не сработает.
++   inertBackground();
++   unwatch();
++   if (topmost) returnFocus(topmost);
++ }
++ function restoreTabindex(record){
++   if (record.tabindex === null) return;
++   if (record.tabindex === undefined) record.dialog.removeAttribute('tabindex');
++   else record.dialog.setAttribute('tabindex', record.tabindex);
++   record.tabindex = null;
++ }
++
++ /* Подложка: всё, кроме верхнего окна, помечается inert. Прежнее значение
++    запоминается, чтобы не снять чужой inert (панели ставят его сами). */
++ function inertBackground(){
++   const current = top();
++   if (!current) {
++     // Окон больше нет: возвращаем подложке ровно то, что было до первого окна.
++     for (const [node, inert] of original) node.inert = inert;
++     original.clear();
++     return;
++   }
++   for (const node of document.body.children) {
++     if (SKIP.has(node.tagName)) continue;
++     if (!original.has(node)) original.set(node, node.inert === true);
++     // Контейнер, внутри которого лежит окно, гасить нельзя: тогда окно тоже
++     // станет inert и перестанет принимать фокус.
++     const holds = node === current.dialog || node.contains(current.dialog);
++     node.inert = !holds;
++   }
++   for (const node of original.keys()) if (!node.isConnected) original.delete(node);
++ }
++
++ function returnFocus(record){
++   const target = record.initiator;
++   const real = target && target !== document.body && target !== document.documentElement;
++   if (real && target.isConnected && typeof target.focus === 'function' && !target.closest('[inert]')) {
++     target.focus();
++     if (document.activeElement === target) return;
++   }
++   // Инициатора перерисовали, пока окно было открыто: фокус — в первый
++   // достижимый элемент активного экрана, иначе игрок остался бы с BODY.
++   const view = document.querySelector('.view.active') || document.body;
++   const candidate = view.querySelector('#player-input') || focusables(view)[0];
++   if (candidate && seen(candidate)) candidate.focus();
++ }
++
++ function detach(record){
++   const index = stack.indexOf(record);
++   if (index < 0) return false;
++   stack.splice(index, 1);
++   record.dialog.removeEventListener('close', record.onClose);
++   restoreTabindex(record);
++   inertBackground();
++   unwatch();
++   return true;
++ }
++
++ function onKeydown(event){
++   const current = top();
++   if (!current) return;
++   const dialog = current.dialog;
++   if (event.key === 'Escape') {
++     // Когда фокус внутри окна, закрытие (и событие cancel) делает сам браузер:
++     // так диалог может отказаться закрываться через preventDefault. Вмешиваемся
++     // только если фокус уехал из окна — тогда Escape до него не дойдёт.
++     if (event.isComposing || event.defaultPrevented) return;
++     if (dialog.contains(document.activeElement)) return;
++     event.preventDefault();
++     dialog.close();
++     return;
++   }
++   if (event.key !== 'Tab') return;
++   const nodes = order(focusables(dialog));
++   if (!nodes.length) {
++     event.preventDefault();
++     if (current.tabindex === null) current.tabindex = dialog.getAttribute('tabindex');
++     dialog.setAttribute('tabindex', '-1');
++     dialog.focus();
++     return;
++   }
++   const active = document.activeElement;
++   if (!dialog.contains(active)) {
++     event.preventDefault();
++     (event.shiftKey ? nodes[nodes.length - 1] : nodes[0]).focus();
++     return;
++   }
++   const first = nodes[0], last = nodes[nodes.length - 1];
++   if (event.shiftKey && active === first) { event.preventDefault(); last.focus(); }
++   else if (!event.shiftKey && active === last) { event.preventDefault(); first.focus(); }
++ }
++ document.addEventListener('keydown', onKeydown, true);
++
++ const proto = window.HTMLDialogElement && window.HTMLDialogElement.prototype;
++ if (!proto) return;
++ const openModal = proto.showModal;
++ const closeModal = proto.close;
++
++ proto.showModal = function showModal(){
++ // Инициатора запоминаем ДО открытия: showModal переносит фокус внутрь окна,
++ // и после вызова activeElement уже не тот, кто окно вызвал. Повторный вызов
++ // на уже открытом окне не должен затирать прежнего инициатора элементом
++ // из самого окна.
++ const previous = stack.find(record => record.dialog === this);
++ const initiator = previous ? previous.initiator : document.activeElement;
++ const result = openModal.apply(this, arguments);
++ if (previous) detach(previous);
++ const record = { dialog: this, initiator, onClose: null, tabindex: null };
++ record.onClose = () => { if (detach(record)) returnFocus(record); };
++ stack.push(record);
++ this.addEventListener('close', record.onClose);
++ inertBackground();
++ watch();
++ const target = this.querySelector('[autofocus]') || focusables(this)[0];
++ if (target) target.focus();
++ else {
++   if (record.tabindex === null) record.tabindex = this.getAttribute('tabindex');
++   this.setAttribute('tabindex', '-1');
++   this.focus();
++ }
++ return result;
++ };
++
++ proto.close = function close(){
++   const record = stack.find(row => row.dialog === this);
++   if (!record) return closeModal.apply(this, arguments);
++   // Сначала снимаем inert и только потом закрываем: иначе родной возврат
++   // фокуса и следующий за close() focus() из обработчика кнопки попадут
++   // в inert-подложку и молча не сработают.
++   const wasTop = top() === record;
++   detach(record);
++   const result = closeModal.apply(this, arguments);
++   if (wasTop) returnFocus(record);
++   return result;
++ };
++})();

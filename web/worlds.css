@@ -1,0 +1,26 @@
+/* r242 — «Мои миры»: библиотека готовых миров и мира открытой кампании.
+   Только раскладка: цвета, кегли и кнопки берутся из общих переменных темы,
+   поэтому экран живёт в тёмной и светлой теме и на 375, и на 1440. */
+.worlds-block{margin:0 0 22px;padding:20px;border:1px solid var(--line);border-radius:9px;background:var(--surface);max-width:1100px}
+.worlds-block h2{margin:0 0 6px;font-size:20px}
+.worlds-block>p.hint{margin:0 0 4px}
+.worlds-block .button-row{margin-top:14px}
+.worlds-status{margin:12px 0 0;color:var(--muted);font-size:12px;line-height:1.6}
+.worlds-status.is-bad{color:var(--sheet-bad,#ff8f7a)}
+.worlds-list{display:grid;gap:12px;margin-top:16px}
+.world-row{display:grid;grid-template-columns:minmax(0,1fr) auto auto;gap:14px;align-items:center;padding:14px 16px;border:1px solid var(--line);border-radius:8px;background:var(--surface2)}
+.world-row__main{min-width:0}
+.world-row__main strong{display:block;font-size:16px;font-weight:400;margin-bottom:4px;overflow-wrap:anywhere}
+.world-row__main small,.world-row__meta small{letter-spacing:.3px;color:var(--muted);font-size:11px;line-height:1.5}
+.world-row__meta{text-align:right;white-space:nowrap}
+.world-row__meta small{display:block}
+.world-row.is-broken{border-color:var(--sheet-bad,#ff8f7a)}
+.world-row.is-broken .world-row__main small{color:var(--sheet-bad,#ff8f7a)}
+.worlds-upload{display:inline-flex}
+@media (max-width:600px){
+ .world-row{grid-template-columns:minmax(0,1fr);gap:10px}
+ .world-row__meta{text-align:left;white-space:normal}
+ .worlds-block{padding:14px}
+ .worlds-block .button-row{flex-direction:column;align-items:stretch}
+ .worlds-block .button-row>*{width:100%;text-align:center}
+}

@@ -1,0 +1,6 @@
+FAIL page.waitForSelector: Timeout 40000ms exceeded.
+Call log:
+  - waiting for locator('.game-actions:not([hidden]) button') to be visible
+
+    at openGame (/home/hermes/projects/SoloRealmsAI-Nat20/scripts/probe_n01_live.cjs:53:14)
+    at async /home/hermes/projects/SoloRealmsAI-Nat20/scripts/probe_n01_live.cjs:83:18

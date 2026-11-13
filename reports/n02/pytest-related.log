@@ -1,0 +1,296 @@
+...................FF.................s........................          [100%]
+=================================== FAILURES ===================================
+_______ test_a_reviewed_book_attaches_and_continues_on_a_nat20_campaign ________
+
+native = (<fastapi.applications.FastAPI object at 0x7251aed57a10>, '58187bed-78ed-40d2-bc48-80a6211641ca')
+tmp_path = PosixPath('/home/hermes/.hermes/profiles/coder/cache/scratch/pytest-of-hermes/pytest-1460/test_a_reviewed_book_attaches_0')
+
+    def test_a_reviewed_book_attaches_and_continues_on_a_nat20_campaign(native, tmp_path):
+        app, cid = native
+        store = app.state.store
+>       bundle, following = modules(app.state.adventures, tmp_path)
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_attach_on_nat20_campaign.py:55: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_attach_on_nat20_campaign.py:45: in modules
+    bundle, document = book(library, tmp_path, 'Prepared one')
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests/test_adventure_continuity.py:15: in book
+    bundle=library.create(title,{'edition':'2024'});job=library.enqueue(bundle['id'],path,path.name,'book');run(tmp_path,job['id']);return bundle,job['document']
+                                                                                                            ^^^^^^^^^^^^^^^^^^^^^^^
+solo/adventure_worker.py:345: in run
+    else:extract_document(library,record['document'],format,record['purpose'],job)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+library = <solo.adventure_library.AdventureLibrary object at 0x7251ae62f150>
+sha = '7ebb29467c3d956e7debdc5740c5ef52e4172b8da9bc178c8c8985a9f9448777'
+format = '.pdf', purpose = 'book', job = '33559a54-b6dc-46a1-b4bc-9a4fb28355d1'
+
+    def extract_document(library,sha,format,purpose,job):
+        with library.db() as db:
+            previous=db.execute('SELECT status FROM documents WHERE id=?',(sha,)).fetchone()
+            if previous and previous[0]=='extracted':return
+            db.execute('UPDATE documents SET status="extracting" WHERE id=?',(sha,))
+        path=library.blob(sha);total_text=0;total_letters=0;blank=0;partial=[];blank_pages=[];text_encoding=None
+        if format=='.pdf':
+            import pypdfium2 as pdfium
+            with pdfium.PdfDocument(path) as pdf:
+                count=len(pdf)
+                if not 1<=count<=2000:raise ValueError('В PDF '+str(count)+' страниц, а предел — 2000. '
+                    'Разделите книгу на части; оригинал сохранён без изменений.')
+                if job:library.progress(job,total=count)
+                section=None
+                # Lines the book prints on more than one page are its running heads,
+                # not the names of the pictures beside them. They are counted before
+                # the pages are laid out, because a head printed on page 8 can only be
+                # recognised as repeated by the pages that follow it.
+                repeated=set()
+                if purpose=='book':
+                    from .module_media import repeated_lines
+                    from .pdf_pipeline import MAX_PAGE_CHARS
+                    total=[0]
+                    def printed_pages():
+                        for number in range(count):
+                            block=pdf[number]
+                            try:
+                                textpage=block.get_textpage()
+                                try:value=textpage.get_text_range() or ''
+                                finally:textpage.close()
+                            finally:block.close()
+                            if len(value)>MAX_PAGE_CHARS:raise ValueError('Текст страницы превышает безопасный лимит; исходный PDF сохранён')
+                            total[0]+=len(value)
+                            if total[0]>12000000:raise ValueError('Из PDF извлекается больше 12 млн знаков: это больше, '
+                                'чем держит один импорт. Разделите книгу на части; оригинал сохранён.')
+                            yield value
+                    repeated=repeated_lines(printed_pages())
+                for index in range(count):
+                    page=pdf[index]
+                    try:
+                        textpage=page.get_textpage()
+                        try:
+                            text=textpage.get_text_range() or ''
+                            from .pdf_pipeline import layout_page,MAX_PAGE_CHARS
+                            if len(text)>MAX_PAGE_CHARS:raise ValueError('Текст страницы превышает безопасный лимит; исходный PDF сохранён')
+                            layout=layout_page(page,textpage,text,index+1)
+                        finally:textpage.close()
+                        total_text+=len(text);letters=len(re.sub(r'\W','',text));total_letters+=letters
+                        if total_text>12000000:raise ValueError('Из PDF извлекается больше 12 млн знаков: это больше, '
+                            'чем держит один импорт. Разделите книгу на части; оригинал сохранён.')
+                        if letters<30:blank+=1;blank_pages.append(index+1)
+                        images=[image['bounds'] for image in layout['images']]
+                        w,h=page.get_size()
+                        label=pdf.get_page_label(index) or ''
+                    finally:page.close()
+                    kind='map' if purpose=='maps' else 'handout' if purpose=='handouts' else 'page'
+                    with library.db() as db:
+                        old=db.execute('SELECT id FROM pages WHERE document=? AND number=?',(sha,index+1)).fetchone()
+                        if old:db.execute('DELETE FROM pages_fts WHERE rowid=?',(old[0],))
+                        db.execute('INSERT INTO pages(document,number,label,content,objects) VALUES(?,?,?,?,?) ON CONFLICT(document,number) DO UPDATE SET label=excluded.label,content=excluded.content,objects=excluded.objects',(sha,index+1,label,text,json.dumps(dict(images=images,bounds=[0,0,w,h]))))
+                        pid=db.execute('SELECT id FROM pages WHERE document=? AND number=?',(sha,index+1)).fetchone()[0]
+                        db.execute('INSERT INTO pages_fts(rowid,content) VALUES(?,?)',(pid,text))
+                        from .pdf_pipeline import save_layout
+                        save_layout(db,sha,index+1,text,layout)
+                        mid=stable(sha,index+1)
+                        db.execute('INSERT OR IGNORE INTO materials(id,document,page,kind) VALUES(?,?,?,?)',(mid,sha,index+1,kind))
+                        # A bought module prints its maps and handouts inside the page, so
+                        # every picture the layout found becomes its own material: named
+                        # by its printed region and box, offered as a candidate, and
+                        # playable only after a person confirms it in the review screen.
+                        # Its file is cut out of the page on first request, not here: a
+                        # book can hold hundreds of pictures and the import must stay
+                        # inside its time and memory budget.
+                        if purpose=='book':
+                            from .module_media import candidates as page_media,section_kind
+                            announced=section_kind(text)
+                            if announced is not None:section=announced
+                            for item in page_media(layout,text,section,repeated,page=index+1):
+                                rid=stable(sha,index+1,item['region'])
+                                # The review screen shows the caption; a picture the page did
+                                # not name carries its kind and page (r161), and a clean form of
+                                # that name is kept as the public name, so confirming a candidate
+                                # does not start from an empty field.
+                                db.execute('INSERT OR IGNORE INTO materials(id,document,page,kind,scope,public_name,region,bounds,caption,status) VALUES(?,?,?,?,?,?,?,?,?,?)',(rid,sha,index+1,item['kind'],'gm',item.get('public_name') or item['caption'],item['region'],json.dumps(item['bounds']),item['caption'],'candidate'))
+                        for line in text.splitlines():
+                            line=line.strip()[:180];kind_hint=candidate_kind(line)
+                            if kind_hint:
+                                cid=stable(sha,index+1,kind_hint,line)
+                                db.execute('INSERT OR IGNORE INTO candidates(id,document,page,kind,title,body) VALUES(?,?,?,?,?,?)',(cid,sha,index+1,kind_hint,line,json.dumps({'scope':'gm','confidence':'candidate','printed_page':label})))
+                    # Render all standalone map/handout PDF pages, rather than counting filenames.
+                    if purpose in ('maps','handouts') or index==0:render_material(library,mid,480)
+                    if job:library.progress(job,done=index+1)
+            # Во всём PDF не нашлось букв: это скан. Распознавания (OCR) у нас нет, и
+            # источник, который доходит до модели нулём знаков, хуже честного отказа:
+            # подготовка падала бы позже и выглядела бы как поломка модели. Строки
+            # убираем, чтобы в библиотеке не осталось непрочитываемых страниц. Карты и
+            # раздатки (purpose != 'book') — наоборот, часто чистые картинки, их не трогаем.
+            if purpose=='book' and total_letters<30:
+                reason=('В этом PDF нет текстового слоя: распознавание (OCR) не поддерживается. '
+                        'Нужен PDF с текстом или TXT.')
+                discard_document(library,sha,reason,dict(text_characters=total_text,blank_pages=blank,
+                    blank_pages_list=blank_pages,pictured_pages=[],ocr=False,text_encoding=None))
+>               raise ValueError(reason)
+E               ValueError: В этом PDF нет текстового слоя: распознавание (OCR) не поддерживается. Нужен PDF с текстом или TXT.
+
+solo/adventure_worker.py:258: ValueError
+______ test_a_scenario_that_opens_with_a_roll_waits_for_the_nat20_screen _______
+
+native = (<fastapi.applications.FastAPI object at 0x7251adb742f0>, '2b45f51f-370a-4e8c-b045-736a700e86df')
+tmp_path = PosixPath('/home/hermes/.hermes/profiles/coder/cache/scratch/pytest-of-hermes/pytest-1460/test_a_scenario_that_opens_wit0')
+
+    def test_a_scenario_that_opens_with_a_roll_waits_for_the_nat20_screen(native, tmp_path):
+        """The preparation layer must not roll the legacy dice for a Nat20 campaign.
+    
+        The reviewed definition starts with a printed check that is due immediately.
+        On a campaign started on the Nat20 screen the effect is recorded as pending
+        (no dice, no flag, nothing spent); on a legacy campaign the same definition
+        still resolves it, so the guard narrowed nothing for the older path.
+        """
+        from solo.contracts import Hero
+        from solo.rulesets import BUILTINS
+        from test_adventure_continuity import book, definition
+    
+        app, cid = native
+        store = app.state.store
+>       bundle, document = book(app.state.adventures, tmp_path, 'Opening roll')
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_attach_on_nat20_campaign.py:106: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_adventure_continuity.py:15: in book
+    bundle=library.create(title,{'edition':'2024'});job=library.enqueue(bundle['id'],path,path.name,'book');run(tmp_path,job['id']);return bundle,job['document']
+                                                                                                            ^^^^^^^^^^^^^^^^^^^^^^^
+solo/adventure_worker.py:345: in run
+    else:extract_document(library,record['document'],format,record['purpose'],job)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+library = <solo.adventure_library.AdventureLibrary object at 0x7251adb69040>
+sha = 'b55646ef022c9b4618c49aa74fbafab24bc705aab3e7262c1d2eabb50fbf302d'
+format = '.pdf', purpose = 'book', job = '62bb97ab-455f-4562-9464-70847a7fbeed'
+
+    def extract_document(library,sha,format,purpose,job):
+        with library.db() as db:
+            previous=db.execute('SELECT status FROM documents WHERE id=?',(sha,)).fetchone()
+            if previous and previous[0]=='extracted':return
+            db.execute('UPDATE documents SET status="extracting" WHERE id=?',(sha,))
+        path=library.blob(sha);total_text=0;total_letters=0;blank=0;partial=[];blank_pages=[];text_encoding=None
+        if format=='.pdf':
+            import pypdfium2 as pdfium
+            with pdfium.PdfDocument(path) as pdf:
+                count=len(pdf)
+                if not 1<=count<=2000:raise ValueError('В PDF '+str(count)+' страниц, а предел — 2000. '
+                    'Разделите книгу на части; оригинал сохранён без изменений.')
+                if job:library.progress(job,total=count)
+                section=None
+                # Lines the book prints on more than one page are its running heads,
+                # not the names of the pictures beside them. They are counted before
+                # the pages are laid out, because a head printed on page 8 can only be
+                # recognised as repeated by the pages that follow it.
+                repeated=set()
+                if purpose=='book':
+                    from .module_media import repeated_lines
+                    from .pdf_pipeline import MAX_PAGE_CHARS
+                    total=[0]
+                    def printed_pages():
+                        for number in range(count):
+                            block=pdf[number]
+                            try:
+                                textpage=block.get_textpage()
+                                try:value=textpage.get_text_range() or ''
+                                finally:textpage.close()
+                            finally:block.close()
+                            if len(value)>MAX_PAGE_CHARS:raise ValueError('Текст страницы превышает безопасный лимит; исходный PDF сохранён')
+                            total[0]+=len(value)
+                            if total[0]>12000000:raise ValueError('Из PDF извлекается больше 12 млн знаков: это больше, '
+                                'чем держит один импорт. Разделите книгу на части; оригинал сохранён.')
+                            yield value
+                    repeated=repeated_lines(printed_pages())
+                for index in range(count):
+                    page=pdf[index]
+                    try:
+                        textpage=page.get_textpage()
+                        try:
+                            text=textpage.get_text_range() or ''
+                            from .pdf_pipeline import layout_page,MAX_PAGE_CHARS
+                            if len(text)>MAX_PAGE_CHARS:raise ValueError('Текст страницы превышает безопасный лимит; исходный PDF сохранён')
+                            layout=layout_page(page,textpage,text,index+1)
+                        finally:textpage.close()
+                        total_text+=len(text);letters=len(re.sub(r'\W','',text));total_letters+=letters
+                        if total_text>12000000:raise ValueError('Из PDF извлекается больше 12 млн знаков: это больше, '
+                            'чем держит один импорт. Разделите книгу на части; оригинал сохранён.')
+                        if letters<30:blank+=1;blank_pages.append(index+1)
+                        images=[image['bounds'] for image in layout['images']]
+                        w,h=page.get_size()
+                        label=pdf.get_page_label(index) or ''
+                    finally:page.close()
+                    kind='map' if purpose=='maps' else 'handout' if purpose=='handouts' else 'page'
+                    with library.db() as db:
+                        old=db.execute('SELECT id FROM pages WHERE document=? AND number=?',(sha,index+1)).fetchone()
+                        if old:db.execute('DELETE FROM pages_fts WHERE rowid=?',(old[0],))
+                        db.execute('INSERT INTO pages(document,number,label,content,objects) VALUES(?,?,?,?,?) ON CONFLICT(document,number) DO UPDATE SET label=excluded.label,content=excluded.content,objects=excluded.objects',(sha,index+1,label,text,json.dumps(dict(images=images,bounds=[0,0,w,h]))))
+                        pid=db.execute('SELECT id FROM pages WHERE document=? AND number=?',(sha,index+1)).fetchone()[0]
+                        db.execute('INSERT INTO pages_fts(rowid,content) VALUES(?,?)',(pid,text))
+                        from .pdf_pipeline import save_layout
+                        save_layout(db,sha,index+1,text,layout)
+                        mid=stable(sha,index+1)
+                        db.execute('INSERT OR IGNORE INTO materials(id,document,page,kind) VALUES(?,?,?,?)',(mid,sha,index+1,kind))
+                        # A bought module prints its maps and handouts inside the page, so
+                        # every picture the layout found becomes its own material: named
+                        # by its printed region and box, offered as a candidate, and
+                        # playable only after a person confirms it in the review screen.
+                        # Its file is cut out of the page on first request, not here: a
+                        # book can hold hundreds of pictures and the import must stay
+                        # inside its time and memory budget.
+                        if purpose=='book':
+                            from .module_media import candidates as page_media,section_kind
+                            announced=section_kind(text)
+                            if announced is not None:section=announced
+                            for item in page_media(layout,text,section,repeated,page=index+1):
+                                rid=stable(sha,index+1,item['region'])
+                                # The review screen shows the caption; a picture the page did
+                                # not name carries its kind and page (r161), and a clean form of
+                                # that name is kept as the public name, so confirming a candidate
+                                # does not start from an empty field.
+                                db.execute('INSERT OR IGNORE INTO materials(id,document,page,kind,scope,public_name,region,bounds,caption,status) VALUES(?,?,?,?,?,?,?,?,?,?)',(rid,sha,index+1,item['kind'],'gm',item.get('public_name') or item['caption'],item['region'],json.dumps(item['bounds']),item['caption'],'candidate'))
+                        for line in text.splitlines():
+                            line=line.strip()[:180];kind_hint=candidate_kind(line)
+                            if kind_hint:
+                                cid=stable(sha,index+1,kind_hint,line)
+                                db.execute('INSERT OR IGNORE INTO candidates(id,document,page,kind,title,body) VALUES(?,?,?,?,?,?)',(cid,sha,index+1,kind_hint,line,json.dumps({'scope':'gm','confidence':'candidate','printed_page':label})))
+                    # Render all standalone map/handout PDF pages, rather than counting filenames.
+                    if purpose in ('maps','handouts') or index==0:render_material(library,mid,480)
+                    if job:library.progress(job,done=index+1)
+            # Во всём PDF не нашлось букв: это скан. Распознавания (OCR) у нас нет, и
+            # источник, который доходит до модели нулём знаков, хуже честного отказа:
+            # подготовка падала бы позже и выглядела бы как поломка модели. Строки
+            # убираем, чтобы в библиотеке не осталось непрочитываемых страниц. Карты и
+            # раздатки (purpose != 'book') — наоборот, часто чистые картинки, их не трогаем.
+            if purpose=='book' and total_letters<30:
+                reason=('В этом PDF нет текстового слоя: распознавание (OCR) не поддерживается. '
+                        'Нужен PDF с текстом или TXT.')
+                discard_document(library,sha,reason,dict(text_characters=total_text,blank_pages=blank,
+                    blank_pages_list=blank_pages,pictured_pages=[],ocr=False,text_encoding=None))
+>               raise ValueError(reason)
+E               ValueError: В этом PDF нет текстового слоя: распознавание (OCR) не поддерживается. Нужен PDF с текстом или TXT.
+
+solo/adventure_worker.py:258: ValueError
+=============================== warnings summary ===============================
+.venv/lib/python3.14/site-packages/fastapi/testclient.py:1
+  /home/hermes/projects/SoloRealmsAI-Nat20/.venv/lib/python3.14/site-packages/fastapi/testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+    from starlette.testclient import TestClient as TestClient  # noqa
+
+.venv/lib/python3.14/site-packages/lark/utils.py:176
+  /home/hermes/projects/SoloRealmsAI-Nat20/.venv/lib/python3.14/site-packages/lark/utils.py:176: DeprecationWarning: module 'sre_parse' is deprecated
+    import sre_parse
+
+.venv/lib/python3.14/site-packages/lark/utils.py:177
+  /home/hermes/projects/SoloRealmsAI-Nat20/.venv/lib/python3.14/site-packages/lark/utils.py:177: DeprecationWarning: module 'sre_constants' is deprecated
+    import sre_constants
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/test_attach_on_nat20_campaign.py::test_a_reviewed_book_attaches_and_continues_on_a_nat20_campaign
+FAILED tests/test_attach_on_nat20_campaign.py::test_a_scenario_that_opens_with_a_roll_waits_for_the_nat20_screen
+2 failed, 60 passed, 1 skipped, 3 warnings in 552.07s (0:09:12)

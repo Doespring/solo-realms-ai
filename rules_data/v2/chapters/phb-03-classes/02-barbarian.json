@@ -1,0 +1,1396 @@
+{
+  "schema_version": "2.1.0",
+  "rules": [
+    {
+      "id": "phb2024.phb03.barbarian.class_attributes",
+      "rules_family": "dnd2024",
+      "name": "Варвар: Ключевые атрибуты",
+      "kind": "procedure",
+      "classification": {
+        "mode": "deterministic",
+        "semantic_required": false,
+        "formal_required": true,
+        "reason": "Таблица «Ключевые атрибуты» задаёт точные значения (Кость хитов, спасброски, владения) без выбора Мастера"
+      },
+      "conditions": [],
+      "triggers": [
+        "barbarian.class_attributes"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "procedure_id": "barbarian_class_attributes"
+          }
+        }
+      ],
+      "semantic_questions": [],
+      "facts": {
+        "hit_die": "к12",
+        "primary": "Сила",
+        "saves": [
+          "Сила",
+          "Телосложение"
+        ],
+        "weapons": "Простое и Воинское оружие",
+        "armor": "Лёгкие и Средние доспехи и Щиты",
+        "subclass_level": 3,
+        "subclasses": [
+          "Путь берсерка",
+          "Путь дикого сердца",
+          "Путь Мирового Древа",
+          "Путь фанатика"
+        ],
+        "pdf_span": [
+          61,
+          68
+        ]
+      },
+      "rule_parameters": {
+        "class_resources": {
+          "1": "использования Ярости",
+          "2": "Урон от Ярости"
+        }
+      },
+      "constraints": [],
+      "exceptions": [],
+      "duration": "not_applicable",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "kind": "phb",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 62,
+        "printed_page": "61",
+        "section": "Варвар, глава 3 «Классы персонажей»: Выбор Варвара..."
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "existing_engine_subset",
+      "auto_activate": false,
+      "dependencies": [],
+      "behavior_tests": [
+        "phb03.barbarian.class_attributes"
+      ],
+      "readiness": {
+        "status": "engine_subset_verified",
+        "handler": null,
+        "scope": "Проецирование классовых атрибутов на лист персонажа",
+        "blockers": []
+      },
+      "revision": 1
+    },
+    {
+      "id": "phb2024.phb03.barbarian.yarost",
+      "rules_family": "dnd2024",
+      "name": "Варвар: Ярость",
+      "kind": "procedure",
+      "classification": {
+        "mode": "hybrid",
+        "semantic_required": true,
+        "formal_required": true,
+        "reason": "Числа берутся из текста PHB 2024 (см. facts); применение к существу и выбранные варианты требуют решения Мастера"
+      },
+      "conditions": [],
+      "triggers": [
+        "barbarian.yarost"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "bonus_action": true,
+            "no_heavy_armor": true,
+            "recharge": "одно использование за Короткий отдых, все за Долгий",
+            "strength_advantage": true,
+            "no_concentration": true,
+            "no_spells": true,
+            "max_duration_minutes": 10,
+            "procedure_id": "barbarian_yarost"
+          }
+        }
+      ],
+      "semantic_questions": [
+        "Что подтверждает, что Варвар впал в Ярость и она ещё действует на этом ходу?"
+      ],
+      "facts": {
+        "bonus_action": true,
+        "no_heavy_armor": true,
+        "recharge": "одно использование за Короткий отдых, все за Долгий",
+        "resistance": [
+          "Дробящий",
+          "Колющий",
+          "Рубящий"
+        ],
+        "strength_advantage": true,
+        "no_concentration": true,
+        "no_spells": true,
+        "max_duration_minutes": 10,
+        "ends_when": [
+          "надет Тяжёлый доспех",
+          "Недееспособность"
+        ]
+      },
+      "rule_parameters": {
+        "uses_by_level": {
+          "1": "2",
+          "3": "3",
+          "6": "4",
+          "12": "5",
+          "17": "6"
+        },
+        "damage_bonus_by_level": {
+          "1": "2",
+          "9": "3",
+          "16": "4"
+        }
+      },
+      "constraints": [],
+      "exceptions": [],
+      "duration": "per_action",
+      "resources": [
+        {
+          "id": "rage_uses",
+          "handling": "dependency_not_extracted"
+        }
+      ],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "kind": "phb",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 62,
+        "printed_page": "61",
+        "section": "Варвар, глава 3 «Классы персонажей»: Ярость"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "existing_engine_subset",
+      "auto_activate": false,
+      "dependencies": [],
+      "behavior_tests": [
+        "phb03.barbarian.yarost",
+        "nat20.class_features_reach_game.yarost"
+      ],
+      "readiness": {
+        "status": "engine_subset_verified",
+        "handler": "nat20_content.feature_gate",
+        "scope": "Хост: Фильтр «кому включать» и набор врагов. Движок: эффект с прибавкой к урону оружия и сопротивление Дробящему, Колющим и Рубящему, трата применения. r177: Ярость ОТКЛОНЯЕТСЯ в тяжёлом доспехе (`cast_failed/heavy_armor`), каст заклинания под Яростью отклоняется (`cast_failed/raging`), вход в Ярость снимает концентрацию. Вендорный остаток: надетый доспех не прерывает уже идущую Ярость (события «надеть доспех» в бою нет), преимущество на проверки и спасброски Силы корпус объявляет, но движок эти ключи не читает",
+        "blockers": []
+      },
+      "revision": 2
+    },
+    {
+      "id": "phb2024.phb03.barbarian.zashita_bez_dospehov",
+      "rules_family": "dnd2024",
+      "name": "Варвар: Защита без доспехов (Варвар)",
+      "kind": "procedure",
+      "classification": {
+        "mode": "deterministic",
+        "semantic_required": false,
+        "formal_required": true,
+        "reason": "Числа и порядок шагов заданы текстом PHB 2024 (см. facts)"
+      },
+      "conditions": [],
+      "triggers": [
+        "barbarian.zashita_bez_dospehov"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "ac_base": 10,
+            "add_dex": true,
+            "add_con": true,
+            "shield_allowed": true,
+            "procedure_id": "barbarian_zashita_bez_dospehov"
+          }
+        }
+      ],
+      "semantic_questions": [],
+      "facts": {
+        "ac_base": 10,
+        "add_dex": true,
+        "add_con": true,
+        "shield_allowed": true
+      },
+      "rule_parameters": {},
+      "constraints": [],
+      "exceptions": [],
+      "duration": "per_action",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "kind": "phb",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 62,
+        "printed_page": "61",
+        "section": "Варвар, глава 3 «Классы персонажей»: Защита без доспехов (Варвар)"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "existing_engine_subset",
+      "auto_activate": false,
+      "dependencies": [
+        "phb2024.phb01.ability_modifier"
+      ],
+      "behavior_tests": [
+        "phb03.barbarian.zashita_bez_dospehov"
+      ],
+      "readiness": {
+        "status": "engine_subset_verified",
+        "handler": null,
+        "scope": "Варвар: Защита без доспехов (Варвар)",
+        "blockers": []
+      },
+      "revision": 1
+    },
+    {
+      "id": "phb2024.phb03.barbarian.iskusnoe_vladenie_oruzhiem",
+      "rules_family": "dnd2024",
+      "name": "Варвар: Искусное владение оружием (Варвар)",
+      "kind": "procedure",
+      "classification": {
+        "mode": "deterministic",
+        "semantic_required": false,
+        "formal_required": true,
+        "reason": "Числа и порядок шагов заданы текстом PHB 2024 (см. facts)"
+      },
+      "conditions": [],
+      "triggers": [
+        "barbarian.iskusnoe_vladenie_oruzhiem"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "types_at_level_1": 2,
+            "change_on": "Долгий отдых",
+            "procedure_id": "barbarian_iskusnoe_vladenie_oruzhiem"
+          }
+        }
+      ],
+      "semantic_questions": [],
+      "facts": {
+        "types_at_level_1": 2,
+        "change_on": "Долгий отдых"
+      },
+      "rule_parameters": {
+        "types_by_level": {
+          "1": "2",
+          "4": "3",
+          "10": "4",
+          "16": "5"
+        }
+      },
+      "constraints": [],
+      "exceptions": [],
+      "duration": "per_action",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "kind": "phb",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 63,
+        "printed_page": "62",
+        "section": "Варвар, глава 3 «Классы персонажей»: Искусное владение оружием (Варвар)"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "existing_engine_subset",
+      "auto_activate": false,
+      "dependencies": [
+        "phb2024.phb05.weapon_mastery"
+      ],
+      "behavior_tests": [
+        "phb03.barbarian.iskusnoe_vladenie_oruzhiem"
+      ],
+      "readiness": {
+        "status": "engine_subset_verified",
+        "handler": null,
+        "scope": "Варвар: Искусное владение оружием (Варвар)",
+        "blockers": []
+      },
+      "revision": 1
+    },
+    {
+      "id": "phb2024.phb03.barbarian.chuvstvo_opasnosti",
+      "rules_family": "dnd2024",
+      "name": "Варвар: Чувство опасности",
+      "kind": "procedure",
+      "classification": {
+        "mode": "deterministic",
+        "semantic_required": false,
+        "formal_required": true,
+        "reason": "Числа и порядок шагов заданы текстом PHB 2024 (см. facts)"
+      },
+      "conditions": [],
+      "triggers": [
+        "barbarian.chuvstvo_opasnosti"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "dex_saves_advantage": true,
+            "procedure_id": "barbarian_chuvstvo_opasnosti"
+          }
+        }
+      ],
+      "semantic_questions": [],
+      "facts": {
+        "dex_saves_advantage": true
+      },
+      "rule_parameters": {},
+      "constraints": [],
+      "exceptions": [],
+      "duration": "per_action",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "kind": "phb",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 63,
+        "printed_page": "62",
+        "section": "Варвар, глава 3 «Классы персонажей»: Чувство опасности"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "not_implemented",
+      "auto_activate": false,
+      "dependencies": [
+        "phb2024.phb01.advantage"
+      ],
+      "behavior_tests": [
+        "phb03.barbarian.chuvstvo_opasnosti"
+      ],
+      "readiness": {
+        "status": "blocked",
+        "handler": null,
+        "scope": "Варвар: Чувство опасности",
+        "blockers": [
+          "у умения нет активности, а его пассивный эффект не привязан ни к одному исполняемому пути — преимущество на спасброски Ловкости не выдаётся"
+        ]
+      },
+      "revision": 1
+    },
+    {
+      "id": "phb2024.phb03.barbarian.bezrassudnaya_ataka",
+      "rules_family": "dnd2024",
+      "name": "Варвар: Безрассудная атака",
+      "kind": "procedure",
+      "classification": {
+        "mode": "deterministic",
+        "semantic_required": false,
+        "formal_required": true,
+        "reason": "Числа и порядок шагов заданы текстом PHB 2024 (см. facts)"
+      },
+      "conditions": [],
+      "triggers": [
+        "barbarian.bezrassudnaya_ataka"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "trigger": "первый бросок атаки в свой ход",
+            "advantage_on_strength_attacks": true,
+            "attacks_against_advantage": true,
+            "until": "начало следующего хода",
+            "procedure_id": "barbarian_bezrassudnaya_ataka"
+          }
+        }
+      ],
+      "semantic_questions": [],
+      "facts": {
+        "trigger": "первый бросок атаки в свой ход",
+        "advantage_on_strength_attacks": true,
+        "attacks_against_advantage": true,
+        "until": "начало следующего хода"
+      },
+      "rule_parameters": {},
+      "constraints": [],
+      "exceptions": [],
+      "duration": "per_action",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "kind": "phb",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 63,
+        "printed_page": "62",
+        "section": "Варвар, глава 3 «Классы персонажей»: Безрассудная атака"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "not_implemented",
+      "auto_activate": false,
+      "dependencies": [],
+      "behavior_tests": [
+        "phb03.barbarian.bezrassudnaya_ataka"
+      ],
+      "readiness": {
+        "status": "blocked",
+        "handler": null,
+        "scope": "Варвар: Безрассудная атака",
+        "blockers": [
+          "умение не исполняется: движок отвечает `CastFailed` с причиной `class_feature_no_typed_activities`"
+        ]
+      },
+      "revision": 1
+    },
+    {
+      "id": "phb2024.phb03.barbarian.podklass_varvara",
+      "rules_family": "dnd2024",
+      "name": "Варвар: Подкласс Варвара",
+      "kind": "procedure",
+      "classification": {
+        "mode": "deterministic",
+        "semantic_required": false,
+        "formal_required": true,
+        "reason": "Числа и порядок шагов заданы текстом PHB 2024 (см. facts)"
+      },
+      "conditions": [],
+      "triggers": [
+        "barbarian.podklass_varvara"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "subclass_level": 3,
+            "procedure_id": "barbarian_podklass_varvara"
+          }
+        }
+      ],
+      "semantic_questions": [],
+      "facts": {
+        "subclass_level": 3,
+        "subclasses": [
+          "Путь берсерка",
+          "Путь дикого сердца",
+          "Путь Мирового Древа",
+          "Путь фанатика"
+        ]
+      },
+      "rule_parameters": {},
+      "constraints": [],
+      "exceptions": [],
+      "duration": "per_action",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "kind": "phb",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 63,
+        "printed_page": "62",
+        "section": "Варвар, глава 3 «Классы персонажей»: Подкласс Варвара"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "existing_engine_subset",
+      "auto_activate": false,
+      "dependencies": [],
+      "behavior_tests": [
+        "phb03.barbarian.podklass_varvara"
+      ],
+      "readiness": {
+        "status": "engine_subset_verified",
+        "handler": null,
+        "scope": "Варвар: Подкласс Варвара",
+        "blockers": []
+      },
+      "revision": 1
+    },
+    {
+      "id": "phb2024.phb03.barbarian.pervobytnoe_znanie",
+      "rules_family": "dnd2024",
+      "name": "Варвар: Первобытное знание",
+      "kind": "procedure",
+      "classification": {
+        "mode": "hybrid",
+        "semantic_required": true,
+        "formal_required": true,
+        "reason": "Числа берутся из текста PHB 2024 (см. facts); применение к существу и выбранные варианты требуют решения Мастера"
+      },
+      "conditions": [],
+      "triggers": [
+        "barbarian.pervobytnoe_znanie"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "extra_skill": 1,
+            "requires_rage": true,
+            "procedure_id": "barbarian_pervobytnoe_znanie"
+          }
+        }
+      ],
+      "semantic_questions": [
+        "Какой навык Варвар проверяет Силой под Яростью?"
+      ],
+      "facts": {
+        "extra_skill": 1,
+        "strength_checks": [
+          "Акробатика",
+          "Восприятие",
+          "Выживание",
+          "Запугивание",
+          "Скрытность"
+        ],
+        "requires_rage": true
+      },
+      "rule_parameters": {},
+      "constraints": [],
+      "exceptions": [],
+      "duration": "per_action",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "kind": "phb",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 63,
+        "printed_page": "62",
+        "section": "Варвар, глава 3 «Классы персонажей»: Первобытное знание"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "not_implemented",
+      "auto_activate": false,
+      "dependencies": [],
+      "behavior_tests": [
+        "phb03.barbarian.pervobytnoe_znanie"
+      ],
+      "readiness": {
+        "status": "blocked",
+        "handler": null,
+        "scope": "Варвар: Первобытное знание",
+        "blockers": [
+          "выбор навыка по Первобытному знанию не доходит до листа: у умения нет ни активности, ни поля"
+        ]
+      },
+      "revision": 1
+    },
+    {
+      "id": "phb2024.phb03.barbarian.uvelichenie_harakteristik",
+      "rules_family": "dnd2024",
+      "name": "Варвар: Увеличение характеристик",
+      "kind": "procedure",
+      "classification": {
+        "mode": "deterministic",
+        "semantic_required": false,
+        "formal_required": true,
+        "reason": "Числа и порядок шагов заданы текстом PHB 2024 (см. facts)"
+      },
+      "conditions": [],
+      "triggers": [
+        "barbarian.uvelichenie_harakteristik"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "procedure_id": "barbarian_uvelichenie_harakteristik"
+          }
+        }
+      ],
+      "semantic_questions": [],
+      "facts": {
+        "levels": [
+          "4",
+          "8",
+          "12",
+          "16"
+        ]
+      },
+      "rule_parameters": {},
+      "constraints": [],
+      "exceptions": [],
+      "duration": "per_action",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "kind": "phb",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 63,
+        "printed_page": "62",
+        "section": "Варвар, глава 3 «Классы персонажей»: Увеличение характеристик"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "existing_engine_subset",
+      "auto_activate": false,
+      "dependencies": [
+        "phb2024.phb05.ability_score_improvement"
+      ],
+      "behavior_tests": [
+        "phb03.barbarian.uvelichenie_harakteristik"
+      ],
+      "readiness": {
+        "status": "engine_subset_verified",
+        "handler": null,
+        "scope": "Варвар: Увеличение характеристик",
+        "blockers": []
+      },
+      "revision": 1
+    },
+    {
+      "id": "phb2024.phb03.barbarian.dopolnitelnaya_ataka",
+      "rules_family": "dnd2024",
+      "name": "Варвар: Дополнительная атака",
+      "kind": "procedure",
+      "classification": {
+        "mode": "deterministic",
+        "semantic_required": false,
+        "formal_required": true,
+        "reason": "Числа и порядок шагов заданы текстом PHB 2024 (см. facts)"
+      },
+      "conditions": [],
+      "triggers": [
+        "barbarian.dopolnitelnaya_ataka"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "attacks_per_attack_action": 2,
+            "unlock_level": 5,
+            "procedure_id": "barbarian_dopolnitelnaya_ataka"
+          }
+        }
+      ],
+      "semantic_questions": [],
+      "facts": {
+        "attacks_per_attack_action": 2,
+        "unlock_level": 5
+      },
+      "rule_parameters": {},
+      "constraints": [],
+      "exceptions": [],
+      "duration": "per_action",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "kind": "phb",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 63,
+        "printed_page": "62",
+        "section": "Варвар, глава 3 «Классы персонажей»: Дополнительная атака"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "existing_engine_subset",
+      "auto_activate": false,
+      "dependencies": [
+        "phb2024.phb02.attack_action"
+      ],
+      "behavior_tests": [
+        "phb03.barbarian.dopolnitelnaya_ataka"
+      ],
+      "readiness": {
+        "status": "engine_subset_verified",
+        "handler": null,
+        "scope": "Варвар: Дополнительная атака",
+        "blockers": []
+      },
+      "revision": 1
+    },
+    {
+      "id": "phb2024.phb03.barbarian.bystroe_peredvizhenie",
+      "rules_family": "dnd2024",
+      "name": "Варвар: Быстрое передвижение",
+      "kind": "procedure",
+      "classification": {
+        "mode": "deterministic",
+        "semantic_required": false,
+        "formal_required": true,
+        "reason": "Числа и порядок шагов заданы текстом PHB 2024 (см. facts)"
+      },
+      "conditions": [],
+      "triggers": [
+        "barbarian.bystroe_peredvizhenie"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "speed_bonus_feet": 10,
+            "unless_heavy_armor": true,
+            "procedure_id": "barbarian_bystroe_peredvizhenie"
+          }
+        }
+      ],
+      "semantic_questions": [],
+      "facts": {
+        "speed_bonus_feet": 10,
+        "unless_heavy_armor": true
+      },
+      "rule_parameters": {},
+      "constraints": [],
+      "exceptions": [],
+      "duration": "per_action",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "kind": "phb",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 63,
+        "printed_page": "62",
+        "section": "Варвар, глава 3 «Классы персонажей»: Быстрое передвижение"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "existing_engine_subset",
+      "auto_activate": false,
+      "dependencies": [],
+      "behavior_tests": [
+        "phb03.barbarian.bystroe_peredvizhenie"
+      ],
+      "readiness": {
+        "status": "engine_subset_verified",
+        "handler": null,
+        "scope": "Варвар: Быстрое передвижение",
+        "blockers": []
+      },
+      "revision": 1
+    },
+    {
+      "id": "phb2024.phb03.barbarian.dikii_instinkt",
+      "rules_family": "dnd2024",
+      "name": "Варвар: Дикий инстинкт",
+      "kind": "procedure",
+      "classification": {
+        "mode": "deterministic",
+        "semantic_required": false,
+        "formal_required": true,
+        "reason": "Числа и порядок шагов заданы текстом PHB 2024 (см. facts)"
+      },
+      "conditions": [],
+      "triggers": [
+        "barbarian.dikii_instinkt"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "initiative_advantage": true,
+            "procedure_id": "barbarian_dikii_instinkt"
+          }
+        }
+      ],
+      "semantic_questions": [],
+      "facts": {
+        "initiative_advantage": true
+      },
+      "rule_parameters": {},
+      "constraints": [],
+      "exceptions": [],
+      "duration": "per_action",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "kind": "phb",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 64,
+        "printed_page": "63",
+        "section": "Варвар, глава 3 «Классы персонажей»: Дикий инстинкт"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "existing_engine_subset",
+      "auto_activate": false,
+      "dependencies": [],
+      "behavior_tests": [
+        "phb03.barbarian.dikii_instinkt"
+      ],
+      "readiness": {
+        "status": "engine_subset_verified",
+        "handler": null,
+        "scope": "Варвар: Дикий инстинкт",
+        "blockers": []
+      },
+      "revision": 1
+    },
+    {
+      "id": "phb2024.phb03.barbarian.instinktivnyi_brosok",
+      "rules_family": "dnd2024",
+      "name": "Варвар: Инстинктивный бросок",
+      "kind": "procedure",
+      "classification": {
+        "mode": "deterministic",
+        "semantic_required": false,
+        "formal_required": true,
+        "reason": "Числа и порядок шагов заданы текстом PHB 2024 (см. facts)"
+      },
+      "conditions": [],
+      "triggers": [
+        "barbarian.instinktivnyi_brosok"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "move": "половина Скорости",
+            "part_of": "Бонусное действие Ярости",
+            "procedure_id": "barbarian_instinktivnyi_brosok"
+          }
+        }
+      ],
+      "semantic_questions": [],
+      "facts": {
+        "move": "половина Скорости",
+        "part_of": "Бонусное действие Ярости"
+      },
+      "rule_parameters": {},
+      "constraints": [],
+      "exceptions": [],
+      "duration": "per_action",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "kind": "phb",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 64,
+        "printed_page": "63",
+        "section": "Варвар, глава 3 «Классы персонажей»: Инстинктивный бросок"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "not_implemented",
+      "auto_activate": false,
+      "dependencies": [],
+      "behavior_tests": [
+        "phb03.barbarian.instinktivnyi_brosok"
+      ],
+      "readiness": {
+        "status": "blocked",
+        "handler": null,
+        "scope": "Варвар: Инстинктивный бросок",
+        "blockers": [
+          "у умения нет типизированной активности: рывок при броске инициативы не исполняется"
+        ]
+      },
+      "revision": 1
+    },
+    {
+      "id": "phb2024.phb03.barbarian.zhestokii_udar",
+      "rules_family": "dnd2024",
+      "name": "Варвар: Жестокий удар",
+      "kind": "procedure",
+      "classification": {
+        "mode": "hybrid",
+        "semantic_required": true,
+        "formal_required": true,
+        "reason": "Числа берутся из текста PHB 2024 (см. facts); применение к существу и выбранные варианты требуют решения Мастера"
+      },
+      "conditions": [],
+      "triggers": [
+        "barbarian.zhestokii_udar"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "extra_damage": "1к10",
+            "push_feet": 15,
+            "slow_feet": 15,
+            "requires": "Безрассудная атака",
+            "procedure_id": "barbarian_zhestokii_udar"
+          }
+        }
+      ],
+      "semantic_questions": [
+        "Какой бросок атаки Варвар лишает Преимущества ради Жестокого удара?"
+      ],
+      "facts": {
+        "extra_damage": "1к10",
+        "push_feet": 15,
+        "slow_feet": 15,
+        "requires": "Безрассудная атака"
+      },
+      "rule_parameters": {},
+      "constraints": [],
+      "exceptions": [],
+      "duration": "per_action",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "kind": "phb",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 64,
+        "printed_page": "63",
+        "section": "Варвар, глава 3 «Классы персонажей»: Жестокий удар"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "existing_engine_subset",
+      "auto_activate": false,
+      "dependencies": [],
+      "behavior_tests": [
+        "phb03.barbarian.zhestokii_udar"
+      ],
+      "readiness": {
+        "status": "engine_subset_verified",
+        "handler": null,
+        "scope": "Варвар: Жестокий удар",
+        "blockers": []
+      },
+      "revision": 1
+    },
+    {
+      "id": "phb2024.phb03.barbarian.nepreklonnaya_yarost",
+      "rules_family": "dnd2024",
+      "name": "Варвар: Непреклонная ярость",
+      "kind": "procedure",
+      "classification": {
+        "mode": "hybrid",
+        "semantic_required": true,
+        "formal_required": true,
+        "reason": "Числа берутся из текста PHB 2024 (см. facts); применение к существу и выбранные варианты требуют решения Мастера"
+      },
+      "conditions": [],
+      "triggers": [
+        "barbarian.nepreklonnaya_yarost"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "dc": 10,
+            "dc_step": 5,
+            "dc_reset": "Короткий или Долгий отдых",
+            "hp_on_success": "удвоенный уровень Варвара",
+            "procedure_id": "barbarian_nepreklonnaya_yarost"
+          }
+        }
+      ],
+      "semantic_questions": [
+        "Какой спасбросок Телосложения Сл 10 совершается при падении до 0 Хитов?"
+      ],
+      "facts": {
+        "dc": 10,
+        "dc_step": 5,
+        "dc_reset": "Короткий или Долгий отдых",
+        "hp_on_success": "удвоенный уровень Варвара"
+      },
+      "rule_parameters": {},
+      "constraints": [],
+      "exceptions": [],
+      "duration": "per_action",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "kind": "phb",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 64,
+        "printed_page": "63",
+        "section": "Варвар, глава 3 «Классы персонажей»: Непреклонная ярость"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "existing_engine_subset",
+      "auto_activate": false,
+      "dependencies": [],
+      "behavior_tests": [
+        "phb03.barbarian.nepreklonnaya_yarost"
+      ],
+      "readiness": {
+        "status": "engine_subset_verified",
+        "handler": null,
+        "scope": "Движок: падение до 0 под активной Яростью даёт спасбросок Тел. Сл 10 (+5 за каждое прошлое применение, сброс на отдыхе); успех меняет хиты на удвоенный уровень Варвара, попытка тратит применение. Прогон r177: хиты 0 → 22 у варвара 11 уровня, спасбросок Сл 10, без события смерти",
+        "blockers": []
+      },
+      "revision": 1
+    },
+    {
+      "id": "phb2024.phb03.barbarian.uluchshennyi_zhestokii_udar_13",
+      "rules_family": "dnd2024",
+      "name": "Варвар: Улучшенный Жестокий удар (13-й уровень)",
+      "kind": "procedure",
+      "classification": {
+        "mode": "hybrid",
+        "semantic_required": true,
+        "formal_required": true,
+        "reason": "Числа берутся из текста PHB 2024 (см. facts); применение к существу и выбранные варианты требуют решения Мастера"
+      },
+      "conditions": [],
+      "triggers": [
+        "barbarian.uluchshennyi_zhestokii_udar_13"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "dc_penalty_effect": true,
+            "split_bonus": 5,
+            "procedure_id": "barbarian_uluchshennyi_zhestokii_udar_13"
+          }
+        }
+      ],
+      "semantic_questions": [
+        "Какой эффект Жестокого удара применён и к кому?"
+      ],
+      "facts": {
+        "dc_penalty_effect": true,
+        "split_bonus": 5
+      },
+      "rule_parameters": {},
+      "constraints": [],
+      "exceptions": [],
+      "duration": "per_action",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "kind": "phb",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 64,
+        "printed_page": "63",
+        "section": "Варвар, глава 3 «Классы персонажей»: Улучшенный Жестокий удар (13-й уровень)"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "existing_engine_subset",
+      "auto_activate": false,
+      "dependencies": [],
+      "behavior_tests": [
+        "phb03.barbarian.uluchshennyi_zhestokii_udar_13"
+      ],
+      "readiness": {
+        "status": "engine_subset_verified",
+        "handler": null,
+        "scope": "Варвар: Улучшенный Жестокий удар (13-й уровень)",
+        "blockers": []
+      },
+      "revision": 1
+    },
+    {
+      "id": "phb2024.phb03.barbarian.nepreryvnaya_yarost",
+      "rules_family": "dnd2024",
+      "name": "Варвар: Непрерывная ярость",
+      "kind": "procedure",
+      "classification": {
+        "mode": "deterministic",
+        "semantic_required": false,
+        "formal_required": true,
+        "reason": "Числа и порядок шагов заданы текстом PHB 2024 (см. facts)"
+      },
+      "conditions": [],
+      "triggers": [
+        "barbarian.nepreryvnaya_yarost"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "restore_on_initiative": true,
+            "max_duration_minutes": 10,
+            "procedure_id": "barbarian_nepreryvnaya_yarost"
+          }
+        }
+      ],
+      "semantic_questions": [],
+      "facts": {
+        "restore_on_initiative": true,
+        "max_duration_minutes": 10
+      },
+      "rule_parameters": {},
+      "constraints": [],
+      "exceptions": [],
+      "duration": "per_action",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "kind": "phb",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 64,
+        "printed_page": "63",
+        "section": "Варвар, глава 3 «Классы персонажей»: Непрерывная ярость"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "existing_engine_subset",
+      "auto_activate": false,
+      "dependencies": [],
+      "behavior_tests": [
+        "phb03.barbarian.nepreryvnaya_yarost",
+        "nat20.class_features_reach_game.nepreryvnaya_yarost"
+      ],
+      "readiness": {
+        "status": "engine_subset_verified",
+        "handler": null,
+        "scope": "Движок: на старте боя гасит потраченные применения Ярости и ставит разовый маркер восстановления — раз на Долгий отдых. Прогон двух боёв подряд: счётчик Ярости 1 → 0 на втором, повтор в тот же день ничего не меняет",
+        "blockers": []
+      },
+      "revision": 2
+    },
+    {
+      "id": "phb2024.phb03.barbarian.uluchshennyi_zhestokii_udar_17",
+      "rules_family": "dnd2024",
+      "name": "Варвар: Улучшенный Жестокий удар (17-й уровень)",
+      "kind": "procedure",
+      "classification": {
+        "mode": "hybrid",
+        "semantic_required": true,
+        "formal_required": true,
+        "reason": "Числа берутся из текста PHB 2024 (см. facts); применение к существу и выбранные варианты требуют решения Мастера"
+      },
+      "conditions": [],
+      "triggers": [
+        "barbarian.uluchshennyi_zhestokii_udar_17"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "extra_damage": "2к10",
+            "effects": 2,
+            "procedure_id": "barbarian_uluchshennyi_zhestokii_udar_17"
+          }
+        }
+      ],
+      "semantic_questions": [
+        "Какие два эффекта Жестокого удара выбраны?"
+      ],
+      "facts": {
+        "extra_damage": "2к10",
+        "effects": 2
+      },
+      "rule_parameters": {},
+      "constraints": [],
+      "exceptions": [],
+      "duration": "per_action",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "kind": "phb",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 64,
+        "printed_page": "63",
+        "section": "Варвар, глава 3 «Классы персонажей»: Улучшенный Жестокий удар (17-й уровень)"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "not_implemented",
+      "auto_activate": false,
+      "dependencies": [],
+      "behavior_tests": [
+        "phb03.barbarian.uluchshennyi_zhestokii_udar_17"
+      ],
+      "readiness": {
+        "status": "blocked",
+        "handler": null,
+        "scope": "Варвар: Улучшенный Жестокий удар (17-й уровень)",
+        "blockers": [
+          "у умения 17 уровня нет типизированной активности в корпусе: усиление Жестокого удара не исполняется"
+        ]
+      },
+      "revision": 1
+    },
+    {
+      "id": "phb2024.phb03.barbarian.neukrotimaya_mosh",
+      "rules_family": "dnd2024",
+      "name": "Варвар: Неукротимая мощь",
+      "kind": "procedure",
+      "classification": {
+        "mode": "deterministic",
+        "semantic_required": false,
+        "formal_required": true,
+        "reason": "Числа и порядок шагов заданы текстом PHB 2024 (см. facts)"
+      },
+      "conditions": [],
+      "triggers": [
+        "barbarian.neukrotimaya_mosh"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "min_result_equals": "значение Силы",
+            "procedure_id": "barbarian_neukrotimaya_mosh"
+          }
+        }
+      ],
+      "semantic_questions": [],
+      "facts": {
+        "min_result_equals": "значение Силы",
+        "applies_to": [
+          "проверка",
+          "спасбросок"
+        ]
+      },
+      "rule_parameters": {},
+      "constraints": [],
+      "exceptions": [],
+      "duration": "per_action",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "kind": "phb",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 64,
+        "printed_page": "63",
+        "section": "Варвар, глава 3 «Классы персонажей»: Неукротимая мощь"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "not_implemented",
+      "auto_activate": false,
+      "dependencies": [],
+      "behavior_tests": [
+        "phb03.barbarian.neukrotimaya_mosh"
+      ],
+      "readiness": {
+        "status": "blocked",
+        "handler": null,
+        "scope": "Варвар: Неукротимая мощь",
+        "blockers": [
+          "у умения нет ни активности, ни поля листа: замена броска Силы на 20 не исполняется"
+        ]
+      },
+      "revision": 1
+    },
+    {
+      "id": "phb2024.phb03.barbarian.epicheskii_dar",
+      "rules_family": "dnd2024",
+      "name": "Варвар: Эпический дар",
+      "kind": "procedure",
+      "classification": {
+        "mode": "deterministic",
+        "semantic_required": false,
+        "formal_required": true,
+        "reason": "Числа и порядок шагов заданы текстом PHB 2024 (см. facts)"
+      },
+      "conditions": [],
+      "triggers": [
+        "barbarian.epicheskii_dar"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "procedure_id": "barbarian_epicheskii_dar"
+          }
+        }
+      ],
+      "semantic_questions": [],
+      "facts": {},
+      "rule_parameters": {},
+      "constraints": [],
+      "exceptions": [],
+      "duration": "per_action",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "kind": "phb",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 64,
+        "printed_page": "63",
+        "section": "Варвар, глава 3 «Классы персонажей»: Эпический дар"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "existing_engine_subset",
+      "auto_activate": false,
+      "dependencies": [
+        "phb2024.phb05.epic_boon"
+      ],
+      "behavior_tests": [
+        "phb03.barbarian.epicheskii_dar"
+      ],
+      "readiness": {
+        "status": "adjudication_required",
+        "handler": null,
+        "scope": "Варвар: Эпический дар",
+        "blockers": [
+          "дар не входит в репертуар ни одного класса: use_feature даёт CastFailed(not_in_repertoire)",
+          "выгод дара нет: activities и passive_effects пусты в данных, слово epic в ядре встречается только в labels.py"
+        ]
+      },
+      "revision": 1
+    },
+    {
+      "id": "phb2024.phb03.barbarian.dikii_chempion",
+      "rules_family": "dnd2024",
+      "name": "Варвар: Дикий чемпион",
+      "kind": "procedure",
+      "classification": {
+        "mode": "deterministic",
+        "semantic_required": false,
+        "formal_required": true,
+        "reason": "Числа и порядок шагов заданы текстом PHB 2024 (см. facts)"
+      },
+      "conditions": [],
+      "triggers": [
+        "barbarian.dikii_chempion"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "strength_bonus": 4,
+            "constitution_bonus": 4,
+            "cap": 25,
+            "procedure_id": "barbarian_dikii_chempion"
+          }
+        }
+      ],
+      "semantic_questions": [],
+      "facts": {
+        "strength_bonus": 4,
+        "constitution_bonus": 4,
+        "cap": 25
+      },
+      "rule_parameters": {},
+      "constraints": [],
+      "exceptions": [],
+      "duration": "per_action",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "kind": "phb",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 64,
+        "printed_page": "63",
+        "section": "Варвар, глава 3 «Классы персонажей»: Дикий чемпион"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "existing_engine_subset",
+      "auto_activate": false,
+      "dependencies": [],
+      "behavior_tests": [
+        "phb03.barbarian.dikii_chempion"
+      ],
+      "readiness": {
+        "status": "adjudication_required",
+        "handler": null,
+        "scope": "Варвар: Дикий чемпион",
+        "blockers": [
+          "увеличение характеристик на 20 уровне до 25 движком не применяется: растут только ASI-черты с пределом 20"
+        ]
+      },
+      "revision": 1
+    }
+  ]
+}

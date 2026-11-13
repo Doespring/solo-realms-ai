@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="ru" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<title>r234 — сверка: код панели против макета</title>
+<link rel="stylesheet" href="../mock.css">
+<style>
+  /* Кадр сверки не показывается человеку: нужен только для замеров.
+     Контейнер тот же, что у макета (.stage > .scenes), поэтому ширина
+     листа совпадает с макетной без подгонок. */
+  .parity-note{margin:0;padding:8px 16px;font:400 13px/1.4 var(--font-ui);color:var(--text-3)}
+</style>
+</head>
+<body>
+<p class="parity-note">Служебный кадр: здесь крутится код из HANDOFF (tools/app-panel.js) на данных тех же сцен. Человеку открывать не нужно — см. tools/parity.py.</p>
+<div id="root"></div>
+
+<script src="app-panel.js"></script>
+<script>
+'use strict';
+const Q = new URLSearchParams(location.search);
+const THEME = Q.get('theme') === 'light' ? 'light' : 'dark';
+document.documentElement.setAttribute('data-theme', THEME);
+
+/* Сцены повторяют mock.html один в один: те же phase/done/total/failed/eta/elapsed.
+   finish — второй вызов с завершённым прогоном (так панель узнаёт о конце). */
+const FIX = [
+  {id:'start', run:{status:'running', progress:{phase:'reading', done:0, total:12, failed:0, elapsed_s:3, eta_s:null}}},
+  {id:'middle', run:{status:'running', progress:{phase:'extracting', done:7, total:12, failed:0, elapsed_s:107, eta_s:130}}},
+  {id:'failure', run:{status:'running', progress:{phase:'extracting', done:7, total:12, failed:2, elapsed_s:178, eta_s:95}}},
+  {id:'failure-one', run:{status:'running', progress:{phase:'extracting', done:8, total:12, failed:1, elapsed_s:132, eta_s:140}}},
+  {id:'many', run:{status:'running', progress:{phase:'extracting', done:79, total:120, failed:0, elapsed_s:512, eta_s:360}}},
+  {id:'assembling', run:{status:'running', progress:{phase:'assembling', done:12, total:12, failed:0, elapsed_s:154, eta_s:null}}},
+  {id:'playable', run:{status:'running', playable:true, progress:{phase:'extracting', done:8, total:12, failed:0, elapsed_s:192, eta_s:200}}},
+  {id:'done', run:{status:'running', progress:{phase:'assembling', done:12, total:12, failed:0, elapsed_s:154, eta_s:null}},
+   finish:{status:'completed', progress:{phase:'assembling', done:12, total:12, failed:0, elapsed_s:154, eta_s:null}}},
+  {id:'done-failed', run:{status:'running', progress:{phase:'assembling', done:11, total:12, failed:1, elapsed_s:201, eta_s:null}},
+   finish:{status:'completed', progress:{phase:'assembling', done:11, total:12, failed:1, elapsed_s:201, eta_s:null}}}
+];
+
+/* Статика: «дыхание» текущей засечки и переход заливки на снимке не нужны. */
+const freeze = document.createElement('style');
+freeze.textContent = '.prep-tick.is-active{animation:none!important;opacity:1!important}.prep-fill{transition:none!important}';
+document.head.append(freeze);
+/* Панель в конце уходит через 6 с — в кадре сверки она должна остаться. */
+const realTimeout = window.setTimeout;
+window.setTimeout = (fn, ms) => ms >= 6000 ? 0 : realTimeout(fn, ms);
+/* Часы и ротатор фраз идут по интервалам: в сверке они должны стоять, иначе
+   часы успеют уйти на секунду вперёд макета. */
+window.setInterval = () => 0;
+
+const stage = document.createElement('div'); stage.className = 'stage';
+const scenes = document.createElement('div'); scenes.className = 'scenes';
+stage.append(scenes); document.getElementById('root').append(stage);
+
+for (const f of FIX) {
+  const section = document.createElement('section');
+  section.className = 'scene'; section.dataset.scene = f.id;
+  const host = document.createElement('div');
+  section.append(host); scenes.append(section);
+  window.soloPrepPanel(host, f.run);
+  if (f.finish) window.soloPrepPanel(host, f.finish);
+}
+</script>
+</body>
+</html>

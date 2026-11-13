@@ -1,0 +1,383 @@
+{
+  "book": "/home/hermes/projects/SoloRealmsAI-Nat20/runtime/books/The Rise of Tiamat RUS.pdf",
+  "bundle": "39bab727-d990-445f-a353-82c4dc42142f",
+  "job": {
+    "id": "e9e46da8-42e8-40d1-8b9e-e24657800f35",
+    "status": "complete",
+    "done": 99,
+    "total": 99,
+    "message": "Извлечено страниц: 99, знаков: 494964. Модулей: 9. Игровые инструкции по-прежнему требуют проверки."
+  },
+  "card": {
+    "revision": 1,
+    "modules": 11,
+    "documents": 1,
+    "pages": 99,
+    "status": "requires_review",
+    "jobs": [
+      "Извлечено страниц: 99, знаков: 494964. Модулей: 9. Игровые инструкции по-прежнему требуют проверки."
+    ],
+    "headline": "Можно играть и готова вся книга: эпизодов 9.",
+    "counts": {
+      "documents": 1,
+      "extracted": 1,
+      "pages": 99,
+      "modules": 11,
+      "episodes": 9,
+      "appendices": 2,
+      "indexed": 11,
+      "boundaries": 11,
+      "blank_pages": 0,
+      "locations": 14,
+      "npcs": 11,
+      "checks": 66
+    },
+    "start_ready": true,
+    "book_ready": true,
+    "instructions_checked": false,
+    "stage": "playable",
+    "steps": [
+      [
+        "upload",
+        "done",
+        "Источников: 1"
+      ],
+      [
+        "extract",
+        "done",
+        "Извлечено 1 из 1, страниц 99"
+      ],
+      [
+        "index",
+        "done",
+        "Модулей 11: эпизодов 9, приложений 2; размечено 11"
+      ],
+      [
+        "prepare",
+        "done",
+        "Стр. 1: мест 1, людей 2, проверок 0"
+      ],
+      [
+        "validate",
+        "done",
+        "Стартовая сцена сверена со страницей 1"
+      ],
+      [
+        "playable",
+        "done",
+        "Готов старт"
+      ]
+    ],
+    "warnings": [
+      [
+        "appendix",
+        "details",
+        "Приложение книги «Приложение А: Монстры» — справочные страницы; старт отсюда не начинается, но места в нём есть."
+      ],
+      [
+        "appendix",
+        "details",
+        "Приложение книги «Приложение В: Магические предметы» — справочные страницы; старт отсюда не начинается, но места в нём есть."
+      ],
+      [
+        "level_requirement",
+        "details",
+        "Книга рассчитана на 8-й уровень и группа из 4 (стр. 6). Это условие книги, а не требование движка."
+      ],
+      [
+        "instructions_missing",
+        "fix",
+        "Строгие инструкции книги (события и таблицы) не проверены: старт откроет первую страницу эпизода, а не сценарий событий."
+      ]
+    ]
+  },
+  "review": {
+    "revision": 1,
+    "counts": {
+      "documents": 1,
+      "extracted": 1,
+      "pages": 99,
+      "modules": 11,
+      "episodes": 9,
+      "appendices": 2,
+      "indexed": 11,
+      "boundaries": 11,
+      "blank_pages": 0,
+      "locations": 14,
+      "npcs": 11,
+      "checks": 66
+    },
+    "headline": "Можно играть и готова вся книга: эпизодов 9.",
+    "modules": 11
+  },
+  "modules": [
+    {
+      "id": "auto-9808ab99-01",
+      "title": "Эпизод 1: Совет Глубоководья",
+      "kind": "adventure",
+      "ready": true,
+      "pages": [
+        [
+          19,
+          23
+        ],
+        [
+          1,
+          18
+        ]
+      ],
+      "requirements": [
+        {
+          "kind": "minimum_level",
+          "value": 8,
+          "page": 6,
+          "quote": "Тирания драконов\r\nТирания драконов: Пробуждение Тиамат – это сце￾нарий для ДнД продолжение 1 тома Клад Королевы \r\nДраконов для персонажей, начиная с 8 уровня.",
+          "document": "9808ab99ccea1717597f19abba228c806260792f38ab7d68c3545d7e01810270",
+          "module": "auto-9808ab99-01"
+        },
+        {
+          "kind": "maximum_level",
+          "value": 15,
+          "page": 6,
+          "quote": "К \r\nконцу сценария персонажи должны достигнуть 15 уров￾ня (или быть близки к нему).",
+          "document": "9808ab99ccea1717597f19abba228c806260792f38ab7d68c3545d7e01810270",
+          "module": "auto-9808ab99-01"
+        },
+        {
+          "kind": "recommended_party",
+          "value": 4,
+          "maximum": 4,
+          "page": 6,
+          "quote": "Идеальный размер группы – 4 персонажа.",
+          "document": "9808ab99ccea1717597f19abba228c806260792f38ab7d68c3545d7e01810270",
+          "module": "auto-9808ab99-01"
+        },
+        {
+          "kind": "continuation",
+          "text": "Если вы играли в Клад Драконьей Королевы, то персонажи могут добраться до Сияющего Города [City of Splendors] после того, как Поднебесный Замок [Skyreach Castle] разбился в конце того приключения.",
+          "page": 19,
+          "quote": "Если \r\nвы играли в Клад Драконьей Королевы, то персонажи \r\nмогут добраться до Сияющего Города [City of Splendors] \r\nпосле того, как Поднебесный Замок [Skyreach Castle] \r\nразбился в конце того приключения.",
+          "document": "9808ab99ccea1717597f19abba228c806260792f38ab7d68c3545d7e01810270",
+          "module": "auto-9808ab99-01"
+        }
+      ],
+      "locations": 1
+    },
+    {
+      "id": "auto-9808ab99-02",
+      "title": "Эпизод 2: Море движущегося льда",
+      "kind": "adventure",
+      "ready": true,
+      "pages": [
+        [
+          24,
+          38
+        ]
+      ],
+      "requirements": [],
+      "locations": 2
+    },
+    {
+      "id": "auto-9808ab99-03",
+      "title": "Эпизод 3: Варрам Белый",
+      "kind": "adventure",
+      "ready": true,
+      "pages": [
+        [
+          39,
+          47
+        ]
+      ],
+      "requirements": [
+        {
+          "kind": "continuation",
+          "text": "Если герои прошли мимо области 17 не проверяя эту дверь, 3 ящеролюда и 1 чистокровный юань-ти [yuan-ti pureblood] выскочившие из этой области атаку ют сзади.",
+          "page": 47,
+          "quote": "Если герои прошли мимо области 17 не проверяя \r\nэту дверь, 3 ящеролюда и 1 чистокровный юань-ти\r\n[yuan-ti pureblood] выскочившие из этой области атаку￾ют сзади.",
+          "document": "9808ab99ccea1717597f19abba228c806260792f38ab7d68c3545d7e01810270",
+          "module": "auto-9808ab99-03"
+        }
+      ],
+      "locations": 1
+    },
+    {
+      "id": "auto-9808ab99-04",
+      "title": "Эпизод 4: Неронвейн",
+      "kind": "adventure",
+      "ready": true,
+      "pages": [
+        [
+          48,
+          54
+        ]
+      ],
+      "requirements": [
+        {
+          "kind": "continuation",
+          "text": "Если герои прошли в эту область незамеченными, все эльфы, которые не находятся на страже (смотри область 2) находятся здесь.",
+          "page": 53,
+          "quote": "Если герои прошли в эту область незамеченными, все \r\nэльфы, которые не находятся на страже (смотри область \r\n2) находятся здесь.",
+          "document": "9808ab99ccea1717597f19abba228c806260792f38ab7d68c3545d7e01810270",
+          "module": "auto-9808ab99-04"
+        }
+      ],
+      "locations": 2
+    },
+    {
+      "id": "auto-9808ab99-05",
+      "title": "Эпизод 5: Культ наносит ответный удар",
+      "kind": "adventure",
+      "ready": true,
+      "pages": [
+        [
+          55,
+          58
+        ]
+      ],
+      "requirements": [],
+      "locations": 1
+    },
+    {
+      "id": "auto-9808ab99-06",
+      "title": "Эпизод 6: Воспряньте, металлические драконы",
+      "kind": "adventure",
+      "ready": true,
+      "pages": [
+        [
+          59,
+          62
+        ]
+      ],
+      "requirements": [],
+      "locations": 1
+    },
+    {
+      "id": "auto-9808ab99-07",
+      "title": "Эпизод 7: Башня Ксонтала",
+      "kind": "adventure",
+      "ready": true,
+      "pages": [
+        [
+          63,
+          75
+        ]
+      ],
+      "requirements": [],
+      "locations": 1
+    },
+    {
+      "id": "auto-9808ab99-08",
+      "title": "Эпизод 8: Миссия в Тэй",
+      "kind": "adventure",
+      "ready": true,
+      "pages": [
+        [
+          76,
+          79
+        ]
+      ],
+      "requirements": [],
+      "locations": 1
+    },
+    {
+      "id": "auto-9808ab99-09",
+      "title": "Эпизод 9: Возвращение Тиамат",
+      "kind": "adventure",
+      "ready": true,
+      "pages": [
+        [
+          80,
+          90
+        ]
+      ],
+      "requirements": [],
+      "locations": 2
+    },
+    {
+      "id": "auto-9808ab99-apx-01",
+      "title": "Приложение А: Монстры",
+      "kind": "appendix",
+      "ready": false,
+      "pages": [
+        [
+          91,
+          95
+        ]
+      ],
+      "requirements": [],
+      "locations": 1
+    },
+    {
+      "id": "auto-9808ab99-apx-02",
+      "title": "Приложение В: Магические предметы",
+      "kind": "appendix",
+      "ready": false,
+      "pages": [
+        [
+          96,
+          99
+        ]
+      ],
+      "requirements": [
+        {
+          "kind": "minimum_level",
+          "value": 8,
+          "page": 99,
+          "quote": "Приключение для персонажей 8-15 \r\nуровня, следующее за событиями Клада \r\nКоролевы Драконов.",
+          "document": "9808ab99ccea1717597f19abba228c806260792f38ab7d68c3545d7e01810270",
+          "module": "auto-9808ab99-apx-02"
+        },
+        {
+          "kind": "maximum_level",
+          "value": 15,
+          "page": 99,
+          "quote": "Приключение для персонажей 8-15 \r\nуровня, следующее за событиями Клада \r\nКоролевы Драконов.",
+          "document": "9808ab99ccea1717597f19abba228c806260792f38ab7d68c3545d7e01810270",
+          "module": "auto-9808ab99-apx-02"
+        }
+      ],
+      "locations": 1
+    }
+  ],
+  "checks": {
+    "one_module_number": true,
+    "one_revision": true,
+    "history_not_status": true,
+    "every_warning_has_action": true,
+    "appendix_never_start": true,
+    "start_is_first_episode": true,
+    "level_requirement_with_page": [
+      {
+        "value": 8,
+        "page": 6,
+        "quote": "Тирания драконов\r\nТирания драконов: Пробуждение Тиамат – это сце￾нарий для ДнД продолжение 1 тома Клад Королевы \r\nДраконов для персонажей, начиная с 8 уровня."
+      },
+      {
+        "value": 8,
+        "page": 99,
+        "quote": "Приключение для персонажей 8-15 \r\nуровня, следующее за событиями Клада \r\nКоролевы Драконов."
+      }
+    ],
+    "party_requirement_with_page": [
+      {
+        "value": 4,
+        "page": 6,
+        "quote": "Идеальный размер группы – 4 персонажа."
+      }
+    ],
+    "playable_only_with_valid_start": true,
+    "book_level_gate": {
+      "book_level": 8,
+      "page": 6,
+      "hero_level": 1,
+      "gap": "lower",
+      "combat_blocked": true,
+      "options": [
+        "rebuild",
+        "accept"
+      ]
+    },
+    "level_1_hero_blocked_or_adapted": true
+  },
+  "seconds": 15.4
+}

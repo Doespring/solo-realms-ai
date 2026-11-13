@@ -1,0 +1,53 @@
+{
+  "_id": "phbsptVersatile0",
+  "_stats": {
+    "coreVersion": "13.344",
+    "createdTime": 1735866697989,
+    "duplicateSource": null,
+    "exportSource": null,
+    "lastModifiedBy": "dnd5ebuilder0000",
+    "modifiedTime": 1740680089966,
+    "systemId": "dnd5e",
+    "systemVersion": "4.4.0"
+  },
+  "effects": [],
+  "flags": {},
+  "folder": "uCr9wkkriM8r4C9R",
+  "img": "icons/skills/trades/academics-investigation-puzzles.webp",
+  "name": "Versatile",
+  "ownership": {
+    "default": 0
+  },
+  "sort": 150000,
+  "system": {
+    "activities": {},
+    "description": {
+      "chat": "",
+      "value": "<p>You gain an @UUID[Compendium.dnd5e.content24.JournalEntry.phbFeats00000000.JournalEntryPage.otAeQs0TLHYIBNuj]{Origin feat} of your choice. @UUID[Compendium.dnd5e.feats24.Item.phbftSkilled0000]{Skilled} is recommended.</p><section id=\"secret-9E1yve6WHohyBage\" class=\"secret\"><p><strong>Foundry Note</strong></p><p>You will be prompted for your choice when you select this Species.</p></section>"
+    },
+    "enchant": {},
+    "identifier": "versatile",
+    "prerequisites": {
+      "level": null,
+      "repeatable": false
+    },
+    "properties": [],
+    "requirements": "Human",
+    "source": {
+      "book": "",
+      "license": "CC-BY-4.0",
+      "revision": 1,
+      "rules": "2024"
+    },
+    "type": {
+      "subtype": "",
+      "value": "race"
+    },
+    "uses": {
+      "max": "",
+      "recovery": [],
+      "spent": 0
+    }
+  },
+  "type": "feat"
+}

@@ -1,0 +1,1239 @@
+{
+  "schema_version": "2.1.0",
+  "rules": [
+    {
+      "id": "phb2024.phb03.rogue.class_attributes",
+      "rules_family": "dnd2024",
+      "name": "Плут: Ключевые атрибуты",
+      "kind": "procedure",
+      "classification": {
+        "mode": "deterministic",
+        "semantic_required": false,
+        "formal_required": true,
+        "reason": "Таблица «Ключевые атрибуты» задаёт точные значения (Кость хитов, спасброски, владения) без выбора Мастера"
+      },
+      "conditions": [],
+      "triggers": [
+        "rogue.class_attributes"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "procedure_id": "rogue_class_attributes"
+          }
+        }
+      ],
+      "semantic_questions": [],
+      "facts": {
+        "hit_die": "к8",
+        "primary": "Ловкость",
+        "saves": [
+          "Ловкость",
+          "Интеллект"
+        ],
+        "weapons": "Простое оружие и Воинское оружие со свойством Фехтовальное или Лёгкое",
+        "tools": "Воровские инструменты",
+        "armor": "Лёгкие доспехи",
+        "subclass_level": 3,
+        "subclasses": [
+          "Вор",
+          "Клинок душ",
+          "Мистический ловкач",
+          "Убийца"
+        ],
+        "pdf_span": [
+          143,
+          152
+        ]
+      },
+      "rule_parameters": {
+        "class_resources": {
+          "1": "Коварная атака",
+          "2": "Хитрый удар"
+        }
+      },
+      "constraints": [],
+      "exceptions": [],
+      "duration": "not_applicable",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "kind": "phb",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 144,
+        "printed_page": "143",
+        "section": "Плут, глава 3 «Классы персонажей»: Выбор Плута..."
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "existing_engine_subset",
+      "auto_activate": false,
+      "dependencies": [],
+      "behavior_tests": [
+        "phb03.rogue.class_attributes"
+      ],
+      "readiness": {
+        "status": "engine_subset_verified",
+        "handler": null,
+        "scope": "Проецирование классовых атрибутов на лист персонажа",
+        "blockers": []
+      },
+      "revision": 1
+    },
+    {
+      "id": "phb2024.phb03.rogue.ekspertnost",
+      "rules_family": "dnd2024",
+      "name": "Плут: Экспертность (Плут)",
+      "kind": "procedure",
+      "classification": {
+        "mode": "deterministic",
+        "semantic_required": false,
+        "formal_required": true,
+        "reason": "Числа и порядок шагов заданы текстом PHB 2024 (см. facts)"
+      },
+      "conditions": [],
+      "triggers": [
+        "rogue.ekspertnost"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "skills": 2,
+            "extra_at_level": 6,
+            "procedure_id": "rogue_ekspertnost"
+          }
+        }
+      ],
+      "semantic_questions": [],
+      "facts": {
+        "skills": 2,
+        "extra_at_level": 6
+      },
+      "rule_parameters": {},
+      "constraints": [],
+      "exceptions": [],
+      "duration": "per_action",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "kind": "phb",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 144,
+        "printed_page": "143",
+        "section": "Плут, глава 3 «Классы персонажей»: Экспертность (Плут)"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "existing_engine_subset",
+      "auto_activate": false,
+      "dependencies": [
+        "phb2024.phb01.expertise"
+      ],
+      "behavior_tests": [
+        "phb03.rogue.ekspertnost"
+      ],
+      "readiness": {
+        "status": "engine_subset_verified",
+        "handler": null,
+        "scope": "Плут: Экспертность (Плут)",
+        "blockers": []
+      },
+      "revision": 1
+    },
+    {
+      "id": "phb2024.phb03.rogue.kovarnaya_ataka",
+      "rules_family": "dnd2024",
+      "name": "Плут: Коварная атака",
+      "kind": "procedure",
+      "classification": {
+        "mode": "hybrid",
+        "semantic_required": true,
+        "formal_required": true,
+        "reason": "Числа берутся из текста PHB 2024 (см. facts); применение к существу и выбранные варианты требуют решения Мастера"
+      },
+      "conditions": [],
+      "triggers": [
+        "rogue.kovarnaya_ataka"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "once_per_turn": true,
+            "ally_range_feet": 5,
+            "procedure_id": "rogue_kovarnaya_ataka"
+          }
+        }
+      ],
+      "semantic_questions": [
+        "Выполнено ли условие Коварной атаки — Преимущество или союзник в 5 футах без Помехи?"
+      ],
+      "facts": {
+        "once_per_turn": true,
+        "ally_range_feet": 5,
+        "weapons": [
+          "Дальнобойное",
+          "Фехтовальное"
+        ]
+      },
+      "rule_parameters": {
+        "dice_by_level": {
+          "1": "1к6",
+          "3": "2к6",
+          "5": "3к6",
+          "7": "4к6",
+          "9": "5к6",
+          "11": "6к6",
+          "13": "7к6",
+          "15": "8к6",
+          "17": "9к6",
+          "19": "10к6"
+        }
+      },
+      "constraints": [],
+      "exceptions": [],
+      "duration": "per_action",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "kind": "phb",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 144,
+        "printed_page": "143",
+        "section": "Плут, глава 3 «Классы персонажей»: Коварная атака"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "existing_engine_subset",
+      "auto_activate": false,
+      "dependencies": [
+        "phb2024.phb02.unarmed_strike"
+      ],
+      "behavior_tests": [
+        "phb03.rogue.kovarnaya_ataka"
+      ],
+      "readiness": {
+        "status": "engine_subset_verified",
+        "handler": "CombatEngine.damage",
+        "scope": "Плут: Коварная атака",
+        "blockers": []
+      },
+      "revision": 1
+    },
+    {
+      "id": "phb2024.phb03.rogue.vorovskoi_zhargon",
+      "rules_family": "dnd2024",
+      "name": "Плут: Воровской жаргон",
+      "kind": "procedure",
+      "classification": {
+        "mode": "deterministic",
+        "semantic_required": false,
+        "formal_required": true,
+        "reason": "Числа и порядок шагов заданы текстом PHB 2024 (см. facts)"
+      },
+      "conditions": [],
+      "triggers": [
+        "rogue.vorovskoi_zhargon"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "extra_languages": 1,
+            "procedure_id": "rogue_vorovskoi_zhargon"
+          }
+        }
+      ],
+      "semantic_questions": [],
+      "facts": {
+        "extra_languages": 1
+      },
+      "rule_parameters": {},
+      "constraints": [],
+      "exceptions": [],
+      "duration": "per_action",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "kind": "phb",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 144,
+        "printed_page": "143",
+        "section": "Плут, глава 3 «Классы персонажей»: Воровской жаргон"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "not_implemented",
+      "auto_activate": false,
+      "dependencies": [],
+      "behavior_tests": [
+        "phb03.rogue.vorovskoi_zhargon"
+      ],
+      "readiness": {
+        "status": "blocked",
+        "handler": null,
+        "scope": "Плут: Воровской жаргон",
+        "blockers": [
+          "у умения нет ни активности, ни поля листа: жаргон не исполняется"
+        ]
+      },
+      "revision": 1
+    },
+    {
+      "id": "phb2024.phb03.rogue.iskusnoe_vladenie_oruzhiem",
+      "rules_family": "dnd2024",
+      "name": "Плут: Искусное владение оружием (Плут)",
+      "kind": "procedure",
+      "classification": {
+        "mode": "deterministic",
+        "semantic_required": false,
+        "formal_required": true,
+        "reason": "Числа и порядок шагов заданы текстом PHB 2024 (см. facts)"
+      },
+      "conditions": [],
+      "triggers": [
+        "rogue.iskusnoe_vladenie_oruzhiem"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "types": 2,
+            "change_on": "Долгий отдых",
+            "procedure_id": "rogue_iskusnoe_vladenie_oruzhiem"
+          }
+        }
+      ],
+      "semantic_questions": [],
+      "facts": {
+        "types": 2,
+        "change_on": "Долгий отдых"
+      },
+      "rule_parameters": {},
+      "constraints": [],
+      "exceptions": [],
+      "duration": "per_action",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "kind": "phb",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 144,
+        "printed_page": "143",
+        "section": "Плут, глава 3 «Классы персонажей»: Искусное владение оружием (Плут)"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "existing_engine_subset",
+      "auto_activate": false,
+      "dependencies": [
+        "phb2024.phb05.weapon_mastery"
+      ],
+      "behavior_tests": [
+        "phb03.rogue.iskusnoe_vladenie_oruzhiem"
+      ],
+      "readiness": {
+        "status": "engine_subset_verified",
+        "handler": null,
+        "scope": "Плут: Искусное владение оружием (Плут)",
+        "blockers": []
+      },
+      "revision": 1
+    },
+    {
+      "id": "phb2024.phb03.rogue.hitroe_deistvie",
+      "rules_family": "dnd2024",
+      "name": "Плут: Хитрое действие",
+      "kind": "procedure",
+      "classification": {
+        "mode": "deterministic",
+        "semantic_required": false,
+        "formal_required": true,
+        "reason": "Числа и порядок шагов заданы текстом PHB 2024 (см. facts)"
+      },
+      "conditions": [],
+      "triggers": [
+        "rogue.hitroe_deistvie"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "bonus_action": true,
+            "procedure_id": "rogue_hitroe_deistvie"
+          }
+        }
+      ],
+      "semantic_questions": [],
+      "facts": {
+        "bonus_action": true,
+        "actions": [
+          "Засада",
+          "Отход",
+          "Рывок"
+        ]
+      },
+      "rule_parameters": {},
+      "constraints": [],
+      "exceptions": [],
+      "duration": "per_action",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "kind": "phb",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 145,
+        "printed_page": "144",
+        "section": "Плут, глава 3 «Классы персонажей»: Хитрое действие"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "existing_engine_subset",
+      "auto_activate": false,
+      "dependencies": [],
+      "behavior_tests": [
+        "phb03.rogue.hitroe_deistvie"
+      ],
+      "readiness": {
+        "status": "engine_subset_verified",
+        "handler": null,
+        "scope": "Плут: Хитрое действие",
+        "blockers": []
+      },
+      "revision": 1
+    },
+    {
+      "id": "phb2024.phb03.rogue.podklass_pluta",
+      "rules_family": "dnd2024",
+      "name": "Плут: Подкласс Плута",
+      "kind": "procedure",
+      "classification": {
+        "mode": "deterministic",
+        "semantic_required": false,
+        "formal_required": true,
+        "reason": "Числа и порядок шагов заданы текстом PHB 2024 (см. facts)"
+      },
+      "conditions": [],
+      "triggers": [
+        "rogue.podklass_pluta"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "subclass_level": 3,
+            "procedure_id": "rogue_podklass_pluta"
+          }
+        }
+      ],
+      "semantic_questions": [],
+      "facts": {
+        "subclass_level": 3,
+        "subclasses": [
+          "Вор",
+          "Клинок душ",
+          "Мистический ловкач",
+          "Убийца"
+        ]
+      },
+      "rule_parameters": {},
+      "constraints": [],
+      "exceptions": [],
+      "duration": "per_action",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "kind": "phb",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 145,
+        "printed_page": "144",
+        "section": "Плут, глава 3 «Классы персонажей»: Подкласс Плута"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "existing_engine_subset",
+      "auto_activate": false,
+      "dependencies": [],
+      "behavior_tests": [
+        "phb03.rogue.podklass_pluta"
+      ],
+      "readiness": {
+        "status": "engine_subset_verified",
+        "handler": null,
+        "scope": "Плут: Подкласс Плута",
+        "blockers": []
+      },
+      "revision": 1
+    },
+    {
+      "id": "phb2024.phb03.rogue.tochnoe_pritselivanie",
+      "rules_family": "dnd2024",
+      "name": "Плут: Точное прицеливание",
+      "kind": "procedure",
+      "classification": {
+        "mode": "deterministic",
+        "semantic_required": false,
+        "formal_required": true,
+        "reason": "Числа и порядок шагов заданы текстом PHB 2024 (см. facts)"
+      },
+      "conditions": [],
+      "triggers": [
+        "rogue.tochnoe_pritselivanie"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "bonus_action": true,
+            "advantage_next_attack": true,
+            "requires_no_move": true,
+            "speed_zero_after": true,
+            "procedure_id": "rogue_tochnoe_pritselivanie"
+          }
+        }
+      ],
+      "semantic_questions": [],
+      "facts": {
+        "bonus_action": true,
+        "advantage_next_attack": true,
+        "requires_no_move": true,
+        "speed_zero_after": true
+      },
+      "rule_parameters": {},
+      "constraints": [],
+      "exceptions": [],
+      "duration": "per_action",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "kind": "phb",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 145,
+        "printed_page": "144",
+        "section": "Плут, глава 3 «Классы персонажей»: Точное прицеливание"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "not_implemented",
+      "auto_activate": false,
+      "dependencies": [],
+      "behavior_tests": [
+        "phb03.rogue.tochnoe_pritselivanie"
+      ],
+      "readiness": {
+        "status": "blocked",
+        "handler": null,
+        "scope": "Плут: Точное прицеливание",
+        "blockers": [
+          "преимущество не выдаётся: следующая атака после Точного прицеливания шла с обычным броском"
+        ]
+      },
+      "revision": 1
+    },
+    {
+      "id": "phb2024.phb03.rogue.uvelichenie_harakteristik",
+      "rules_family": "dnd2024",
+      "name": "Плут: Увеличение характеристик",
+      "kind": "procedure",
+      "classification": {
+        "mode": "deterministic",
+        "semantic_required": false,
+        "formal_required": true,
+        "reason": "Числа и порядок шагов заданы текстом PHB 2024 (см. facts)"
+      },
+      "conditions": [],
+      "triggers": [
+        "rogue.uvelichenie_harakteristik"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "procedure_id": "rogue_uvelichenie_harakteristik"
+          }
+        }
+      ],
+      "semantic_questions": [],
+      "facts": {
+        "levels": [
+          "4",
+          "8",
+          "10",
+          "12",
+          "16"
+        ]
+      },
+      "rule_parameters": {},
+      "constraints": [],
+      "exceptions": [],
+      "duration": "per_action",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "kind": "phb",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 145,
+        "printed_page": "144",
+        "section": "Плут, глава 3 «Классы персонажей»: Увеличение характеристик"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "existing_engine_subset",
+      "auto_activate": false,
+      "dependencies": [
+        "phb2024.phb05.ability_score_improvement"
+      ],
+      "behavior_tests": [
+        "phb03.rogue.uvelichenie_harakteristik"
+      ],
+      "readiness": {
+        "status": "engine_subset_verified",
+        "handler": null,
+        "scope": "Плут: Увеличение характеристик",
+        "blockers": []
+      },
+      "revision": 1
+    },
+    {
+      "id": "phb2024.phb03.rogue.hitryi_udar",
+      "rules_family": "dnd2024",
+      "name": "Плут: Хитрый удар",
+      "kind": "procedure",
+      "classification": {
+        "mode": "hybrid",
+        "semantic_required": true,
+        "formal_required": true,
+        "reason": "Числа берутся из текста PHB 2024 (см. facts); применение к существу и выбранные варианты требуют решения Мастера"
+      },
+      "conditions": [],
+      "triggers": [
+        "rogue.hitryi_udar"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "dc": "8 + модификатор Ловкости + Бонус владения",
+            "procedure_id": "rogue_hitryi_udar"
+          }
+        }
+      ],
+      "semantic_questions": [
+        "Какой эффект Хитрого удара применён и какие кости за него убраны?"
+      ],
+      "facts": {
+        "dc": "8 + модификатор Ловкости + Бонус владения",
+        "poison_tools_required": [
+          "Отравление"
+        ],
+        "target_size_max": [
+          "Подсечка",
+          "Большой"
+        ]
+      },
+      "rule_parameters": {
+        "effects": {
+          "Отравление": "1к6",
+          "Подсечка": "1к6",
+          "Отступление": "1к6"
+        }
+      },
+      "constraints": [],
+      "exceptions": [],
+      "duration": "per_action",
+      "resources": [
+        {
+          "id": "sneak_attack_dice",
+          "handling": "dependency_not_extracted"
+        }
+      ],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "kind": "phb",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 145,
+        "printed_page": "144",
+        "section": "Плут, глава 3 «Классы персонажей»: Хитрый удар"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "existing_engine_subset",
+      "auto_activate": false,
+      "dependencies": [],
+      "behavior_tests": [
+        "phb03.rogue.hitryi_udar"
+      ],
+      "readiness": {
+        "status": "engine_subset_verified",
+        "handler": null,
+        "scope": "Плут: Хитрый удар",
+        "blockers": []
+      },
+      "revision": 1
+    },
+    {
+      "id": "phb2024.phb03.rogue.neveroyatnoe_uklonenie",
+      "rules_family": "dnd2024",
+      "name": "Плут: Невероятное уклонение",
+      "kind": "procedure",
+      "classification": {
+        "mode": "deterministic",
+        "semantic_required": false,
+        "formal_required": true,
+        "reason": "Числа и порядок шагов заданы текстом PHB 2024 (см. facts)"
+      },
+      "conditions": [],
+      "triggers": [
+        "rogue.neveroyatnoe_uklonenie"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "reaction": true,
+            "damage_halved": true,
+            "rounding": "floor",
+            "procedure_id": "rogue_neveroyatnoe_uklonenie"
+          }
+        }
+      ],
+      "semantic_questions": [],
+      "facts": {
+        "reaction": true,
+        "damage_halved": true,
+        "rounding": "floor"
+      },
+      "rule_parameters": {},
+      "constraints": [],
+      "exceptions": [],
+      "duration": "per_action",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "kind": "phb",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 146,
+        "printed_page": "145",
+        "section": "Плут, глава 3 «Классы персонажей»: Невероятное уклонение"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "existing_engine_subset",
+      "auto_activate": false,
+      "dependencies": [
+        "phb2024.phb01.half_damage"
+      ],
+      "behavior_tests": [
+        "phb03.rogue.neveroyatnoe_uklonenie"
+      ],
+      "readiness": {
+        "status": "adjudication_required",
+        "handler": null,
+        "scope": "Плут: Невероятное уклонение",
+        "blockers": [
+          "движок принимает умение, но уменьшение урона вдвое прогоном не наблюдается"
+        ]
+      },
+      "revision": 1
+    },
+    {
+      "id": "phb2024.phb03.rogue.uvertlivost",
+      "rules_family": "dnd2024",
+      "name": "Плут: Увёртливость (Плут)",
+      "kind": "procedure",
+      "classification": {
+        "mode": "deterministic",
+        "semantic_required": false,
+        "formal_required": true,
+        "reason": "Числа и порядок шагов заданы текстом PHB 2024 (см. facts)"
+      },
+      "conditions": [],
+      "triggers": [
+        "rogue.uvertlivost"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "procedure_id": "rogue_uvertlivost"
+          }
+        }
+      ],
+      "semantic_questions": [],
+      "facts": {},
+      "rule_parameters": {},
+      "constraints": [],
+      "exceptions": [],
+      "duration": "per_action",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "kind": "phb",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 146,
+        "printed_page": "145",
+        "section": "Плут, глава 3 «Классы персонажей»: Увёртливость (Плут)"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "not_implemented",
+      "auto_activate": false,
+      "dependencies": [
+        "phb2024.phb02.dexterity_save_half_damage"
+      ],
+      "behavior_tests": [
+        "phb03.rogue.uvertlivost"
+      ],
+      "readiness": {
+        "status": "blocked",
+        "handler": null,
+        "scope": "Плут: Увёртливость (Плут)",
+        "blockers": [
+          "у умения нет ни активности, ни поля листа: уклонение от урона области не исполняется"
+        ]
+      },
+      "revision": 1
+    },
+    {
+      "id": "phb2024.phb03.rogue.nadezhnyi_talant",
+      "rules_family": "dnd2024",
+      "name": "Плут: Надёжный талант",
+      "kind": "procedure",
+      "classification": {
+        "mode": "deterministic",
+        "semantic_required": false,
+        "formal_required": true,
+        "reason": "Числа и порядок шагов заданы текстом PHB 2024 (см. facts)"
+      },
+      "conditions": [],
+      "triggers": [
+        "rogue.nadezhnyi_talant"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "threshold": 9,
+            "replaced_by": 10,
+            "procedure_id": "rogue_nadezhnyi_talant"
+          }
+        }
+      ],
+      "semantic_questions": [],
+      "facts": {
+        "threshold": 9,
+        "replaced_by": 10
+      },
+      "rule_parameters": {},
+      "constraints": [],
+      "exceptions": [],
+      "duration": "per_action",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "kind": "phb",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 146,
+        "printed_page": "145",
+        "section": "Плут, глава 3 «Классы персонажей»: Надёжный талант"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "existing_engine_subset",
+      "auto_activate": false,
+      "dependencies": [],
+      "behavior_tests": [
+        "phb03.rogue.nadezhnyi_talant"
+      ],
+      "readiness": {
+        "status": "adjudication_required",
+        "handler": null,
+        "scope": "Плут: Надёжный талант",
+        "blockers": [
+          "лист выставляет признак надёжного таланта, но боевой путь проверок его не берёт"
+        ]
+      },
+      "revision": 1
+    },
+    {
+      "id": "phb2024.phb03.rogue.uluchshennyi_hitryi_udar",
+      "rules_family": "dnd2024",
+      "name": "Плут: Улучшенный Хитрый удар",
+      "kind": "procedure",
+      "classification": {
+        "mode": "deterministic",
+        "semantic_required": false,
+        "formal_required": true,
+        "reason": "Числа и порядок шагов заданы текстом PHB 2024 (см. facts)"
+      },
+      "conditions": [],
+      "triggers": [
+        "rogue.uluchshennyi_hitryi_udar"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "effects_max": 2,
+            "procedure_id": "rogue_uluchshennyi_hitryi_udar"
+          }
+        }
+      ],
+      "semantic_questions": [],
+      "facts": {
+        "effects_max": 2
+      },
+      "rule_parameters": {},
+      "constraints": [],
+      "exceptions": [],
+      "duration": "per_action",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "kind": "phb",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 146,
+        "printed_page": "145",
+        "section": "Плут, глава 3 «Классы персонажей»: Улучшенный Хитрый удар"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "not_implemented",
+      "auto_activate": false,
+      "dependencies": [],
+      "behavior_tests": [
+        "phb03.rogue.uluchshennyi_hitryi_udar"
+      ],
+      "readiness": {
+        "status": "blocked",
+        "handler": null,
+        "scope": "Плут: Улучшенный Хитрый удар",
+        "blockers": [
+          "у умения нет активности: новые варианты Хитрого удара не исполняются"
+        ]
+      },
+      "revision": 1
+    },
+    {
+      "id": "phb2024.phb03.rogue.beschestnye_udary",
+      "rules_family": "dnd2024",
+      "name": "Плут: Бесчестные удары",
+      "kind": "procedure",
+      "classification": {
+        "mode": "hybrid",
+        "semantic_required": true,
+        "formal_required": true,
+        "reason": "Числа берутся из текста PHB 2024 (см. facts); применение к существу и выбранные варианты требуют решения Мастера"
+      },
+      "conditions": [],
+      "triggers": [
+        "rogue.beschestnye_udary"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "procedure_id": "rogue_beschestnye_udary"
+          }
+        }
+      ],
+      "semantic_questions": [
+        "Какой из новых эффектов Хитрого удара применён?"
+      ],
+      "facts": {},
+      "rule_parameters": {
+        "effects": {
+          "Шок": "2к6",
+          "Нокаут": "6к6",
+          "Ослепление": "3к6"
+        }
+      },
+      "constraints": [],
+      "exceptions": [],
+      "duration": "per_action",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "kind": "phb",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 146,
+        "printed_page": "145",
+        "section": "Плут, глава 3 «Классы персонажей»: Бесчестные удары"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "existing_engine_subset",
+      "auto_activate": false,
+      "dependencies": [],
+      "behavior_tests": [
+        "phb03.rogue.beschestnye_udary"
+      ],
+      "readiness": {
+        "status": "engine_subset_verified",
+        "handler": null,
+        "scope": "Плут: Бесчестные удары",
+        "blockers": []
+      },
+      "revision": 1
+    },
+    {
+      "id": "phb2024.phb03.rogue.skolzskii_um",
+      "rules_family": "dnd2024",
+      "name": "Плут: Скользкий ум",
+      "kind": "procedure",
+      "classification": {
+        "mode": "deterministic",
+        "semantic_required": false,
+        "formal_required": true,
+        "reason": "Числа и порядок шагов заданы текстом PHB 2024 (см. facts)"
+      },
+      "conditions": [],
+      "triggers": [
+        "rogue.skolzskii_um"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "procedure_id": "rogue_skolzskii_um"
+          }
+        }
+      ],
+      "semantic_questions": [],
+      "facts": {
+        "save_proficiencies": [
+          "Мудрость",
+          "Харизма"
+        ]
+      },
+      "rule_parameters": {},
+      "constraints": [],
+      "exceptions": [],
+      "duration": "per_action",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "kind": "phb",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 146,
+        "printed_page": "145",
+        "section": "Плут, глава 3 «Классы персонажей»: Скользкий ум"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "existing_engine_subset",
+      "auto_activate": false,
+      "dependencies": [],
+      "behavior_tests": [
+        "phb03.rogue.skolzskii_um"
+      ],
+      "readiness": {
+        "status": "engine_subset_verified",
+        "handler": null,
+        "scope": "Плут: Скользкий ум",
+        "blockers": []
+      },
+      "revision": 1
+    },
+    {
+      "id": "phb2024.phb03.rogue.neulovimost",
+      "rules_family": "dnd2024",
+      "name": "Плут: Неуловимость",
+      "kind": "procedure",
+      "classification": {
+        "mode": "deterministic",
+        "semantic_required": false,
+        "formal_required": true,
+        "reason": "Числа и порядок шагов заданы текстом PHB 2024 (см. facts)"
+      },
+      "conditions": [],
+      "triggers": [
+        "rogue.neulovimost"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "no_advantage_against": true,
+            "procedure_id": "rogue_neulovimost"
+          }
+        }
+      ],
+      "semantic_questions": [],
+      "facts": {
+        "no_advantage_against": true
+      },
+      "rule_parameters": {},
+      "constraints": [],
+      "exceptions": [],
+      "duration": "per_action",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "kind": "phb",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 146,
+        "printed_page": "145",
+        "section": "Плут, глава 3 «Классы персонажей»: Неуловимость"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "not_implemented",
+      "auto_activate": false,
+      "dependencies": [],
+      "behavior_tests": [
+        "phb03.rogue.neulovimost"
+      ],
+      "readiness": {
+        "status": "blocked",
+        "handler": null,
+        "scope": "Плут: Неуловимость",
+        "blockers": [
+          "у умения нет активности: запрет преимущества против плута не исполняется"
+        ]
+      },
+      "revision": 1
+    },
+    {
+      "id": "phb2024.phb03.rogue.epicheskii_dar",
+      "rules_family": "dnd2024",
+      "name": "Плут: Эпический дар",
+      "kind": "procedure",
+      "classification": {
+        "mode": "deterministic",
+        "semantic_required": false,
+        "formal_required": true,
+        "reason": "Числа и порядок шагов заданы текстом PHB 2024 (см. facts)"
+      },
+      "conditions": [],
+      "triggers": [
+        "rogue.epicheskii_dar"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "procedure_id": "rogue_epicheskii_dar"
+          }
+        }
+      ],
+      "semantic_questions": [],
+      "facts": {},
+      "rule_parameters": {},
+      "constraints": [],
+      "exceptions": [],
+      "duration": "per_action",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "kind": "phb",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 146,
+        "printed_page": "145",
+        "section": "Плут, глава 3 «Классы персонажей»: Эпический дар"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "existing_engine_subset",
+      "auto_activate": false,
+      "dependencies": [
+        "phb2024.phb05.epic_boon"
+      ],
+      "behavior_tests": [
+        "phb03.rogue.epicheskii_dar"
+      ],
+      "readiness": {
+        "status": "adjudication_required",
+        "handler": null,
+        "scope": "Плут: Эпический дар",
+        "blockers": [
+          "дар не входит в репертуар ни одного класса: use_feature даёт CastFailed(not_in_repertoire)",
+          "выгод дара нет: activities и passive_effects пусты в данных, слово epic в ядре встречается только в labels.py"
+        ]
+      },
+      "revision": 1
+    },
+    {
+      "id": "phb2024.phb03.rogue.ulybka_fortuny",
+      "rules_family": "dnd2024",
+      "name": "Плут: Улыбка фортуны",
+      "kind": "procedure",
+      "classification": {
+        "mode": "deterministic",
+        "semantic_required": false,
+        "formal_required": true,
+        "reason": "Числа и порядок шагов заданы текстом PHB 2024 (см. facts)"
+      },
+      "conditions": [],
+      "triggers": [
+        "rogue.ulybka_fortuny"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "replace_result_with": 20,
+            "recharge": "Короткий или Долгий отдых",
+            "procedure_id": "rogue_ulybka_fortuny"
+          }
+        }
+      ],
+      "semantic_questions": [],
+      "facts": {
+        "replace_result_with": 20,
+        "recharge": "Короткий или Долгий отдых"
+      },
+      "rule_parameters": {},
+      "constraints": [],
+      "exceptions": [],
+      "duration": "per_action",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "kind": "phb",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 146,
+        "printed_page": "145",
+        "section": "Плут, глава 3 «Классы персонажей»: Улыбка фортуны"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "existing_engine_subset",
+      "auto_activate": false,
+      "dependencies": [],
+      "behavior_tests": [
+        "phb03.rogue.ulybka_fortuny"
+      ],
+      "readiness": {
+        "status": "adjudication_required",
+        "handler": null,
+        "scope": "Плут: Улыбка фортуны",
+        "blockers": [
+          "движок принимает умение и тратит использование, но замена броска на 20 не наблюдается"
+        ]
+      },
+      "revision": 1
+    }
+  ]
+}

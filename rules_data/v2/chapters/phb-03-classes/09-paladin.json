@@ -1,0 +1,1300 @@
+{
+  "schema_version": "2.1.0",
+  "rules": [
+    {
+      "id": "phb2024.phb03.paladin.class_attributes",
+      "rules_family": "dnd2024",
+      "name": "Паладин: Ключевые атрибуты",
+      "kind": "procedure",
+      "classification": {
+        "mode": "deterministic",
+        "semantic_required": false,
+        "formal_required": true,
+        "reason": "Таблица «Ключевые атрибуты» задаёт точные значения (Кость хитов, спасброски, владения) без выбора Мастера"
+      },
+      "conditions": [],
+      "triggers": [
+        "paladin.class_attributes"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "procedure_id": "paladin_class_attributes"
+          }
+        }
+      ],
+      "semantic_questions": [],
+      "facts": {
+        "hit_die": "к10",
+        "primary": "Сила и Харизма",
+        "saves": [
+          "Мудрость",
+          "Харизма"
+        ],
+        "weapons": "Простое и Воинское оружие",
+        "armor": "Лёгкие, Средние и Тяжёлые доспехи и Щиты",
+        "subclass_level": 3,
+        "subclasses": [
+          "Клятва возмездия",
+          "Клятва древних",
+          "Клятва преданности",
+          "Клятва славы"
+        ],
+        "pdf_span": [
+          133,
+          142
+        ]
+      },
+      "rule_parameters": {
+        "class_resources": {
+          "1": "запас Возложения рук",
+          "2": "ячейки заклинаний",
+          "3": "Проведение божественности"
+        }
+      },
+      "constraints": [],
+      "exceptions": [],
+      "duration": "not_applicable",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "kind": "phb",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 134,
+        "printed_page": "133",
+        "section": "Паладин, глава 3 «Классы персонажей»: Выбор Паладина..."
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "existing_engine_subset",
+      "auto_activate": false,
+      "dependencies": [],
+      "behavior_tests": [
+        "phb03.paladin.class_attributes"
+      ],
+      "readiness": {
+        "status": "engine_subset_verified",
+        "handler": null,
+        "scope": "Проецирование классовых атрибутов на лист персонажа",
+        "blockers": []
+      },
+      "revision": 1
+    },
+    {
+      "id": "phb2024.phb03.paladin.vozlozhenie_ruk",
+      "rules_family": "dnd2024",
+      "name": "Паладин: Возложение рук",
+      "kind": "procedure",
+      "classification": {
+        "mode": "deterministic",
+        "semantic_required": false,
+        "formal_required": true,
+        "reason": "Числа и порядок шагов заданы текстом PHB 2024 (см. facts)"
+      },
+      "conditions": [],
+      "triggers": [
+        "paladin.vozlozhenie_ruk"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "pool": "пятикратный уровень Паладина",
+            "bonus_action": true,
+            "recharge": "Долгий отдых",
+            "poison_cure_cost": 5,
+            "procedure_id": "paladin_vozlozhenie_ruk"
+          }
+        }
+      ],
+      "semantic_questions": [],
+      "facts": {
+        "pool": "пятикратный уровень Паладина",
+        "bonus_action": true,
+        "recharge": "Долгий отдых",
+        "poison_cure_cost": 5
+      },
+      "rule_parameters": {},
+      "constraints": [],
+      "exceptions": [],
+      "duration": "per_action",
+      "resources": [
+        {
+          "id": "lay_on_hands_pool",
+          "handling": "dependency_not_extracted"
+        }
+      ],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "kind": "phb",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 134,
+        "printed_page": "133",
+        "section": "Паладин, глава 3 «Классы персонажей»: Возложение рук"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "existing_engine_subset",
+      "auto_activate": false,
+      "dependencies": [],
+      "behavior_tests": [
+        "phb03.paladin.vozlozhenie_ruk"
+      ],
+      "readiness": {
+        "status": "engine_subset_verified",
+        "handler": null,
+        "scope": "Паладин: Возложение рук",
+        "blockers": []
+      },
+      "revision": 1
+    },
+    {
+      "id": "phb2024.phb03.paladin.sotvorenie_zaklinanii",
+      "rules_family": "dnd2024",
+      "name": "Паладин: Сотворение заклинаний (Паладин)",
+      "kind": "procedure",
+      "classification": {
+        "mode": "deterministic",
+        "semantic_required": false,
+        "formal_required": true,
+        "reason": "Числа и порядок шагов заданы текстом PHB 2024 (см. facts)"
+      },
+      "conditions": [],
+      "triggers": [
+        "paladin.sotvorenie_zaklinanii"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "prepared_level_1": 2,
+            "spellcasting_ability": "Харизма",
+            "replace_prepared": 1,
+            "recharge": "Долгий отдых",
+            "procedure_id": "paladin_sotvorenie_zaklinanii"
+          }
+        }
+      ],
+      "semantic_questions": [],
+      "facts": {
+        "prepared_level_1": 2,
+        "spellcasting_ability": "Харизма",
+        "replace_prepared": 1,
+        "recharge": "Долгий отдых"
+      },
+      "rule_parameters": {
+        "prepared_by_level": {
+          "1": "2",
+          "2": "3",
+          "3": "4",
+          "4": "5",
+          "5": "6",
+          "6": "6",
+          "7": "7",
+          "8": "7",
+          "9": "9",
+          "10": "9",
+          "11": "10",
+          "12": "10",
+          "13": "11",
+          "14": "11",
+          "15": "12",
+          "16": "12",
+          "17": "14",
+          "18": "14",
+          "19": "15",
+          "20": "15"
+        }
+      },
+      "constraints": [],
+      "exceptions": [],
+      "duration": "per_action",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "kind": "phb",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 134,
+        "printed_page": "133",
+        "section": "Паладин, глава 3 «Классы персонажей»: Сотворение заклинаний (Паладин)"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "existing_engine_subset",
+      "auto_activate": false,
+      "dependencies": [
+        "phb2024.phb01.spell_slots"
+      ],
+      "behavior_tests": [
+        "phb03.paladin.sotvorenie_zaklinanii"
+      ],
+      "readiness": {
+        "status": "engine_subset_verified",
+        "handler": null,
+        "scope": "Паладин: Сотворение заклинаний (Паладин)",
+        "blockers": []
+      },
+      "revision": 1
+    },
+    {
+      "id": "phb2024.phb03.paladin.iskusnoe_vladenie_oruzhiem",
+      "rules_family": "dnd2024",
+      "name": "Паладин: Искусное владение оружием (Паладин)",
+      "kind": "procedure",
+      "classification": {
+        "mode": "deterministic",
+        "semantic_required": false,
+        "formal_required": true,
+        "reason": "Числа и порядок шагов заданы текстом PHB 2024 (см. facts)"
+      },
+      "conditions": [],
+      "triggers": [
+        "paladin.iskusnoe_vladenie_oruzhiem"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "types": 2,
+            "change_on": "Долгий отдых",
+            "procedure_id": "paladin_iskusnoe_vladenie_oruzhiem"
+          }
+        }
+      ],
+      "semantic_questions": [],
+      "facts": {
+        "types": 2,
+        "change_on": "Долгий отдых"
+      },
+      "rule_parameters": {},
+      "constraints": [],
+      "exceptions": [],
+      "duration": "per_action",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "kind": "phb",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 135,
+        "printed_page": "134",
+        "section": "Паладин, глава 3 «Классы персонажей»: Искусное владение оружием (Паладин)"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "existing_engine_subset",
+      "auto_activate": false,
+      "dependencies": [
+        "phb2024.phb05.weapon_mastery"
+      ],
+      "behavior_tests": [
+        "phb03.paladin.iskusnoe_vladenie_oruzhiem"
+      ],
+      "readiness": {
+        "status": "engine_subset_verified",
+        "handler": null,
+        "scope": "Паладин: Искусное владение оружием (Паладин)",
+        "blockers": []
+      },
+      "revision": 1
+    },
+    {
+      "id": "phb2024.phb03.paladin.boevoi_stil",
+      "rules_family": "dnd2024",
+      "name": "Паладин: Боевой стиль (Паладин)",
+      "kind": "procedure",
+      "classification": {
+        "mode": "deterministic",
+        "semantic_required": false,
+        "formal_required": true,
+        "reason": "Числа и порядок шагов заданы текстом PHB 2024 (см. facts)"
+      },
+      "conditions": [],
+      "triggers": [
+        "paladin.boevoi_stil"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "feats": 1,
+            "blessed_warrior_cantrips": 2,
+            "blessed_warrior_list": "Жрец",
+            "ability": "Харизма",
+            "procedure_id": "paladin_boevoi_stil"
+          }
+        }
+      ],
+      "semantic_questions": [],
+      "facts": {
+        "feats": 1,
+        "blessed_warrior_cantrips": 2,
+        "blessed_warrior_list": "Жрец",
+        "ability": "Харизма"
+      },
+      "rule_parameters": {},
+      "constraints": [],
+      "exceptions": [],
+      "duration": "per_action",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "kind": "phb",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 135,
+        "printed_page": "134",
+        "section": "Паладин, глава 3 «Классы персонажей»: Боевой стиль (Паладин)"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "existing_engine_subset",
+      "auto_activate": false,
+      "dependencies": [
+        "phb2024.phb05.fighting_style"
+      ],
+      "behavior_tests": [
+        "phb03.paladin.boevoi_stil"
+      ],
+      "readiness": {
+        "status": "engine_subset_verified",
+        "handler": "CombatEngine.attack",
+        "scope": "Паладин: Боевой стиль (Паладин)",
+        "blockers": []
+      },
+      "revision": 1
+    },
+    {
+      "id": "phb2024.phb03.paladin.kara_paladina",
+      "rules_family": "dnd2024",
+      "name": "Паладин: Кара Паладина",
+      "kind": "procedure",
+      "classification": {
+        "mode": "deterministic",
+        "semantic_required": false,
+        "formal_required": true,
+        "reason": "Числа и порядок шагов заданы текстом PHB 2024 (см. facts)"
+      },
+      "conditions": [],
+      "triggers": [
+        "paladin.kara_paladina"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "free_cast": 1,
+            "recharge": "Долгий отдых",
+            "procedure_id": "paladin_kara_paladina"
+          }
+        }
+      ],
+      "semantic_questions": [],
+      "facts": {
+        "always_prepared": [
+          "Божественная кара"
+        ],
+        "free_cast": 1,
+        "recharge": "Долгий отдых"
+      },
+      "rule_parameters": {},
+      "constraints": [],
+      "exceptions": [],
+      "duration": "per_action",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "kind": "phb",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 135,
+        "printed_page": "134",
+        "section": "Паладин, глава 3 «Классы персонажей»: Кара Паладина"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "not_implemented",
+      "auto_activate": false,
+      "dependencies": [],
+      "behavior_tests": [
+        "phb03.paladin.kara_paladina"
+      ],
+      "readiness": {
+        "status": "blocked",
+        "handler": null,
+        "scope": "Паладин: Кара Паладина",
+        "blockers": [
+          "Кара паладина остаётся прозой: у умения нет типизированной активности (матрица апстрима: Divine Smite inert)"
+        ]
+      },
+      "revision": 1
+    },
+    {
+      "id": "phb2024.phb03.paladin.provedenie_bozhestvennosti",
+      "rules_family": "dnd2024",
+      "name": "Паладин: Проведение божественности (Паладин)",
+      "kind": "procedure",
+      "classification": {
+        "mode": "hybrid",
+        "semantic_required": true,
+        "formal_required": true,
+        "reason": "Числа берутся из текста PHB 2024 (см. facts); применение к существу и выбранные варианты требуют решения Мастера"
+      },
+      "conditions": [],
+      "triggers": [
+        "paladin.provedenie_bozhestvennosti"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "recharge": "одно за Короткий отдых, все за Долгий",
+            "dc": "Сл спасброска заклинаний Паладина",
+            "procedure_id": "paladin_provedenie_bozhestvennosti"
+          }
+        }
+      ],
+      "semantic_questions": [
+        "Какой эффект Проведения божественности создаётся Паладином?"
+      ],
+      "facts": {
+        "effects_start": [
+          "Божественное чувство"
+        ],
+        "recharge": "одно за Короткий отдых, все за Долгий",
+        "dc": "Сл спасброска заклинаний Паладина"
+      },
+      "rule_parameters": {
+        "uses_by_level": {
+          "3": "2",
+          "11": "3"
+        }
+      },
+      "constraints": [],
+      "exceptions": [],
+      "duration": "per_action",
+      "resources": [
+        {
+          "id": "channel_divinity_uses",
+          "handling": "dependency_not_extracted"
+        }
+      ],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "kind": "phb",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 135,
+        "printed_page": "134",
+        "section": "Паладин, глава 3 «Классы персонажей»: Проведение божественности (Паладин)"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "existing_engine_subset",
+      "auto_activate": false,
+      "dependencies": [],
+      "behavior_tests": [
+        "phb03.paladin.provedenie_bozhestvennosti"
+      ],
+      "readiness": {
+        "status": "adjudication_required",
+        "handler": null,
+        "scope": "Паладин: Проведение божественности (Паладин)",
+        "blockers": [
+          "единственная активность Канала — «Божественное чувство» с пустым эффектом (changes=[], statuses=[])",
+          "восстановление одного применения на коротком отдыхе не проверено"
+        ]
+      },
+      "revision": 1
+    },
+    {
+      "id": "phb2024.phb03.paladin.bozhestvennoe_chuvstvo",
+      "rules_family": "dnd2024",
+      "name": "Паладин: Божественное чувство",
+      "kind": "procedure",
+      "classification": {
+        "mode": "hybrid",
+        "semantic_required": true,
+        "formal_required": true,
+        "reason": "Числа берутся из текста PHB 2024 (см. facts); применение к существу и выбранные варианты требуют решения Мастера"
+      },
+      "conditions": [],
+      "triggers": [
+        "paladin.bozhestvennoe_chuvstvo"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "bonus_action": true,
+            "range_feet": 60,
+            "duration_minutes": 10,
+            "detects_holy_unholy": true,
+            "procedure_id": "paladin_bozhestvennoe_chuvstvo"
+          }
+        }
+      ],
+      "semantic_questions": [
+        "Какие именно Исчадия, Небожители и Нежить обнаружены?"
+      ],
+      "facts": {
+        "bonus_action": true,
+        "range_feet": 60,
+        "duration_minutes": 10,
+        "creature_types": [
+          "Исчадие",
+          "Небожитель",
+          "Нежить"
+        ],
+        "detects_holy_unholy": true
+      },
+      "rule_parameters": {},
+      "constraints": [],
+      "exceptions": [],
+      "duration": "per_action",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "kind": "phb",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 135,
+        "printed_page": "134",
+        "section": "Паладин, глава 3 «Классы персонажей»: Божественное чувство"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "not_implemented",
+      "auto_activate": false,
+      "dependencies": [],
+      "behavior_tests": [
+        "phb03.paladin.bozhestvennoe_chuvstvo"
+      ],
+      "readiness": {
+        "status": "blocked",
+        "handler": null,
+        "scope": "Паладин: Божественное чувство",
+        "blockers": [
+          "у умения нет ни активности, ни поля листа: Божественное чувство не исполняется"
+        ]
+      },
+      "revision": 1
+    },
+    {
+      "id": "phb2024.phb03.paladin.podklass_paladina",
+      "rules_family": "dnd2024",
+      "name": "Паладин: Подкласс Паладина",
+      "kind": "procedure",
+      "classification": {
+        "mode": "deterministic",
+        "semantic_required": false,
+        "formal_required": true,
+        "reason": "Числа и порядок шагов заданы текстом PHB 2024 (см. facts)"
+      },
+      "conditions": [],
+      "triggers": [
+        "paladin.podklass_paladina"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "subclass_level": 3,
+            "procedure_id": "paladin_podklass_paladina"
+          }
+        }
+      ],
+      "semantic_questions": [],
+      "facts": {
+        "subclass_level": 3,
+        "subclasses": [
+          "Клятва возмездия",
+          "Клятва древних",
+          "Клятва преданности",
+          "Клятва славы"
+        ]
+      },
+      "rule_parameters": {},
+      "constraints": [],
+      "exceptions": [],
+      "duration": "per_action",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "kind": "phb",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 136,
+        "printed_page": "135",
+        "section": "Паладин, глава 3 «Классы персонажей»: Подкласс Паладина"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "existing_engine_subset",
+      "auto_activate": false,
+      "dependencies": [],
+      "behavior_tests": [
+        "phb03.paladin.podklass_paladina"
+      ],
+      "readiness": {
+        "status": "engine_subset_verified",
+        "handler": null,
+        "scope": "Паладин: Подкласс Паладина",
+        "blockers": []
+      },
+      "revision": 1
+    },
+    {
+      "id": "phb2024.phb03.paladin.uvelichenie_harakteristik",
+      "rules_family": "dnd2024",
+      "name": "Паладин: Увеличение характеристик",
+      "kind": "procedure",
+      "classification": {
+        "mode": "deterministic",
+        "semantic_required": false,
+        "formal_required": true,
+        "reason": "Числа и порядок шагов заданы текстом PHB 2024 (см. facts)"
+      },
+      "conditions": [],
+      "triggers": [
+        "paladin.uvelichenie_harakteristik"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "procedure_id": "paladin_uvelichenie_harakteristik"
+          }
+        }
+      ],
+      "semantic_questions": [],
+      "facts": {
+        "levels": [
+          "4",
+          "8",
+          "12",
+          "16"
+        ]
+      },
+      "rule_parameters": {},
+      "constraints": [],
+      "exceptions": [],
+      "duration": "per_action",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "kind": "phb",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 136,
+        "printed_page": "135",
+        "section": "Паладин, глава 3 «Классы персонажей»: Увеличение характеристик"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "existing_engine_subset",
+      "auto_activate": false,
+      "dependencies": [
+        "phb2024.phb05.ability_score_improvement"
+      ],
+      "behavior_tests": [
+        "phb03.paladin.uvelichenie_harakteristik"
+      ],
+      "readiness": {
+        "status": "engine_subset_verified",
+        "handler": null,
+        "scope": "Паладин: Увеличение характеристик",
+        "blockers": []
+      },
+      "revision": 1
+    },
+    {
+      "id": "phb2024.phb03.paladin.dopolnitelnaya_ataka",
+      "rules_family": "dnd2024",
+      "name": "Паладин: Дополнительная атака",
+      "kind": "procedure",
+      "classification": {
+        "mode": "deterministic",
+        "semantic_required": false,
+        "formal_required": true,
+        "reason": "Числа и порядок шагов заданы текстом PHB 2024 (см. facts)"
+      },
+      "conditions": [],
+      "triggers": [
+        "paladin.dopolnitelnaya_ataka"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "attacks_per_attack_action": 2,
+            "unlock_level": 5,
+            "procedure_id": "paladin_dopolnitelnaya_ataka"
+          }
+        }
+      ],
+      "semantic_questions": [],
+      "facts": {
+        "attacks_per_attack_action": 2,
+        "unlock_level": 5
+      },
+      "rule_parameters": {},
+      "constraints": [],
+      "exceptions": [],
+      "duration": "per_action",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "kind": "phb",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 136,
+        "printed_page": "135",
+        "section": "Паладин, глава 3 «Классы персонажей»: Дополнительная атака"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "existing_engine_subset",
+      "auto_activate": false,
+      "dependencies": [
+        "phb2024.phb02.attack_action"
+      ],
+      "behavior_tests": [
+        "phb03.paladin.dopolnitelnaya_ataka"
+      ],
+      "readiness": {
+        "status": "engine_subset_verified",
+        "handler": null,
+        "scope": "Паладин: Дополнительная атака",
+        "blockers": []
+      },
+      "revision": 1
+    },
+    {
+      "id": "phb2024.phb03.paladin.vernyi_skakun",
+      "rules_family": "dnd2024",
+      "name": "Паладин: Верный скакун",
+      "kind": "procedure",
+      "classification": {
+        "mode": "deterministic",
+        "semantic_required": false,
+        "formal_required": true,
+        "reason": "Числа и порядок шагов заданы текстом PHB 2024 (см. facts)"
+      },
+      "conditions": [],
+      "triggers": [
+        "paladin.vernyi_skakun"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "free_cast": 1,
+            "recharge": "Долгий отдых",
+            "procedure_id": "paladin_vernyi_skakun"
+          }
+        }
+      ],
+      "semantic_questions": [],
+      "facts": {
+        "always_prepared": [
+          "Обретение скакуна"
+        ],
+        "free_cast": 1,
+        "recharge": "Долгий отдых"
+      },
+      "rule_parameters": {},
+      "constraints": [],
+      "exceptions": [],
+      "duration": "per_action",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "kind": "phb",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 136,
+        "printed_page": "135",
+        "section": "Паладин, глава 3 «Классы персонажей»: Верный скакун"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "not_implemented",
+      "auto_activate": false,
+      "dependencies": [],
+      "behavior_tests": [
+        "phb03.paladin.vernyi_skakun"
+      ],
+      "readiness": {
+        "status": "blocked",
+        "handler": null,
+        "scope": "Паладин: Верный скакун",
+        "blockers": [
+          "у умения нет типизированной активности: призыв скакуна не исполняется"
+        ]
+      },
+      "revision": 1
+    },
+    {
+      "id": "phb2024.phb03.paladin.aura_zashity",
+      "rules_family": "dnd2024",
+      "name": "Паладин: Аура защиты",
+      "kind": "procedure",
+      "classification": {
+        "mode": "deterministic",
+        "semantic_required": false,
+        "formal_required": true,
+        "reason": "Числа и порядок шагов заданы текстом PHB 2024 (см. facts)"
+      },
+      "conditions": [],
+      "triggers": [
+        "paladin.aura_zashity"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "radius_feet": 10,
+            "save_bonus": "модификатор Харизмы, минимум +1",
+            "single_aura_only": true,
+            "procedure_id": "paladin_aura_zashity"
+          }
+        }
+      ],
+      "semantic_questions": [],
+      "facts": {
+        "radius_feet": 10,
+        "save_bonus": "модификатор Харизмы, минимум +1",
+        "single_aura_only": true
+      },
+      "rule_parameters": {},
+      "constraints": [],
+      "exceptions": [],
+      "duration": "per_action",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "kind": "phb",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 136,
+        "printed_page": "135",
+        "section": "Паладин, глава 3 «Классы персонажей»: Аура защиты"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "existing_engine_subset",
+      "auto_activate": false,
+      "dependencies": [],
+      "behavior_tests": [
+        "phb03.paladin.aura_zashity"
+      ],
+      "readiness": {
+        "status": "adjudication_required",
+        "handler": null,
+        "scope": "Паладин: Аура защиты",
+        "blockers": [
+          "движок принимает умение, но добавка Харизмы к спасброскам союзников прогоном не наблюдается"
+        ]
+      },
+      "revision": 1
+    },
+    {
+      "id": "phb2024.phb03.paladin.poritsanie_vragov",
+      "rules_family": "dnd2024",
+      "name": "Паладин: Порицание врагов",
+      "kind": "procedure",
+      "classification": {
+        "mode": "hybrid",
+        "semantic_required": true,
+        "formal_required": true,
+        "reason": "Числа берутся из текста PHB 2024 (см. facts); применение к существу и выбранные варианты требуют решения Мастера"
+      },
+      "conditions": [],
+      "triggers": [
+        "paladin.poritsanie_vragov"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "range_feet": 60,
+            "action": "Магия",
+            "targets": "модификатор Харизмы, минимум 1",
+            "save": "Мудрость",
+            "condition": "Испуганный",
+            "duration_minutes": 1,
+            "ends_on_damage": true,
+            "uses_conduct_cost": 1,
+            "procedure_id": "paladin_poritsanie_vragov"
+          }
+        }
+      ],
+      "semantic_questions": [
+        "Какие видимые существа в пределах 60 футов выбраны целью Порицания?"
+      ],
+      "facts": {
+        "range_feet": 60,
+        "action": "Магия",
+        "targets": "модификатор Харизмы, минимум 1",
+        "save": "Мудрость",
+        "condition": "Испуганный",
+        "duration_minutes": 1,
+        "ends_on_damage": true,
+        "uses_conduct_cost": 1
+      },
+      "rule_parameters": {},
+      "constraints": [],
+      "exceptions": [],
+      "duration": "per_action",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "kind": "phb",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 136,
+        "printed_page": "135",
+        "section": "Паладин, глава 3 «Классы персонажей»: Порицание врагов"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "existing_engine_subset",
+      "auto_activate": false,
+      "dependencies": [],
+      "behavior_tests": [
+        "phb03.paladin.poritsanie_vragov"
+      ],
+      "readiness": {
+        "status": "adjudication_required",
+        "handler": null,
+        "scope": "Паладин: Порицание врагов",
+        "blockers": [
+          "применение не списывает Канал божественности: счётчик feature_use:channel-divinity-paladin не появляется",
+          "Сл по Харизме, дистанция 60 футов и число целей (мод. Харизмы) прогоном не сверяются"
+        ]
+      },
+      "revision": 1
+    },
+    {
+      "id": "phb2024.phb03.paladin.aura_otvagi",
+      "rules_family": "dnd2024",
+      "name": "Паладин: Аура отваги",
+      "kind": "procedure",
+      "classification": {
+        "mode": "deterministic",
+        "semantic_required": false,
+        "formal_required": true,
+        "reason": "Числа и порядок шагов заданы текстом PHB 2024 (см. facts)"
+      },
+      "conditions": [],
+      "triggers": [
+        "paladin.aura_otvagi"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "immunity": "Испуганный",
+            "within_aura_of_protection": true,
+            "procedure_id": "paladin_aura_otvagi"
+          }
+        }
+      ],
+      "semantic_questions": [],
+      "facts": {
+        "immunity": "Испуганный",
+        "within_aura_of_protection": true
+      },
+      "rule_parameters": {},
+      "constraints": [],
+      "exceptions": [],
+      "duration": "per_action",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "kind": "phb",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 136,
+        "printed_page": "135",
+        "section": "Паладин, глава 3 «Классы персонажей»: Аура отваги"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "not_implemented",
+      "auto_activate": false,
+      "dependencies": [],
+      "behavior_tests": [
+        "phb03.paladin.aura_otvagi"
+      ],
+      "readiness": {
+        "status": "blocked",
+        "handler": null,
+        "scope": "Паладин: Аура отваги",
+        "blockers": [
+          "аура не выдаёт ни эффекта, ни иммунитета: лист 10 уровня без immunities, use_feature — только IntentSubmitted"
+        ]
+      },
+      "revision": 1
+    },
+    {
+      "id": "phb2024.phb03.paladin.siyayushie_udary",
+      "rules_family": "dnd2024",
+      "name": "Паладин: Сияющие удары",
+      "kind": "procedure",
+      "classification": {
+        "mode": "deterministic",
+        "semantic_required": false,
+        "formal_required": true,
+        "reason": "Числа и порядок шагов заданы текстом PHB 2024 (см. facts)"
+      },
+      "conditions": [],
+      "triggers": [
+        "paladin.siyayushie_udary"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "extra_damage": "1к8",
+            "damage_type": "Излучение",
+            "procedure_id": "paladin_siyayushie_udary"
+          }
+        }
+      ],
+      "semantic_questions": [],
+      "facts": {
+        "extra_damage": "1к8",
+        "damage_type": "Излучение",
+        "applies_to": [
+          "Рукопашное оружие",
+          "Безоружный удар"
+        ]
+      },
+      "rule_parameters": {},
+      "constraints": [],
+      "exceptions": [],
+      "duration": "per_action",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "kind": "phb",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 136,
+        "printed_page": "135",
+        "section": "Паладин, глава 3 «Классы персонажей»: Сияющие удары"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "not_implemented",
+      "auto_activate": false,
+      "dependencies": [],
+      "behavior_tests": [
+        "phb03.paladin.siyayushie_udary"
+      ],
+      "readiness": {
+        "status": "blocked",
+        "handler": null,
+        "scope": "Паладин: Сияющие удары",
+        "blockers": [
+          "у умения нет типизированной активности: прибавка урона Светом не исполняется"
+        ]
+      },
+      "revision": 1
+    },
+    {
+      "id": "phb2024.phb03.paladin.vosstanavlivayushee_prikosnovenie",
+      "rules_family": "dnd2024",
+      "name": "Паладин: Восстанавливающее прикосновение",
+      "kind": "procedure",
+      "classification": {
+        "mode": "deterministic",
+        "semantic_required": false,
+        "formal_required": true,
+        "reason": "Числа и порядок шагов заданы текстом PHB 2024 (см. facts)"
+      },
+      "conditions": [],
+      "triggers": [
+        "paladin.vosstanavlivayushee_prikosnovenie"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "cost_per_condition": 5,
+            "procedure_id": "paladin_vosstanavlivayushee_prikosnovenie"
+          }
+        }
+      ],
+      "semantic_questions": [],
+      "facts": {
+        "cost_per_condition": 5,
+        "conditions": [
+          "Испуганный",
+          "Оглохший",
+          "Ослеплённый",
+          "Очарованный",
+          "Ошеломлённый",
+          "Парализованный"
+        ]
+      },
+      "rule_parameters": {},
+      "constraints": [],
+      "exceptions": [],
+      "duration": "per_action",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "kind": "phb",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 136,
+        "printed_page": "135",
+        "section": "Паладин, глава 3 «Классы персонажей»: Восстанавливающее прикосновение"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "existing_engine_subset",
+      "auto_activate": false,
+      "dependencies": [],
+      "behavior_tests": [
+        "phb03.paladin.vosstanavlivayushee_prikosnovenie"
+      ],
+      "readiness": {
+        "status": "adjudication_required",
+        "handler": null,
+        "scope": "Паладин: Восстанавливающее прикосновение",
+        "blockers": [
+          "движок принимает умение, но снятие состояния прикосновением не наблюдается"
+        ]
+      },
+      "revision": 1
+    },
+    {
+      "id": "phb2024.phb03.paladin.rasshirenie_aury",
+      "rules_family": "dnd2024",
+      "name": "Паладин: Расширение ауры",
+      "kind": "procedure",
+      "classification": {
+        "mode": "deterministic",
+        "semantic_required": false,
+        "formal_required": true,
+        "reason": "Числа и порядок шагов заданы текстом PHB 2024 (см. facts)"
+      },
+      "conditions": [],
+      "triggers": [
+        "paladin.rasshirenie_aury"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "radius_feet": 30,
+            "procedure_id": "paladin_rasshirenie_aury"
+          }
+        }
+      ],
+      "semantic_questions": [],
+      "facts": {
+        "radius_feet": 30
+      },
+      "rule_parameters": {},
+      "constraints": [],
+      "exceptions": [],
+      "duration": "per_action",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "kind": "phb",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 136,
+        "printed_page": "135",
+        "section": "Паладин, глава 3 «Классы персонажей»: Расширение ауры"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "not_implemented",
+      "auto_activate": false,
+      "dependencies": [],
+      "behavior_tests": [
+        "phb03.paladin.rasshirenie_aury"
+      ],
+      "readiness": {
+        "status": "blocked",
+        "handler": null,
+        "scope": "Паладин: Расширение ауры",
+        "blockers": [
+          "у умения нет активности: расширение аур до 30 футов не исполняется"
+        ]
+      },
+      "revision": 1
+    },
+    {
+      "id": "phb2024.phb03.paladin.epicheskii_dar",
+      "rules_family": "dnd2024",
+      "name": "Паладин: Эпический дар",
+      "kind": "procedure",
+      "classification": {
+        "mode": "deterministic",
+        "semantic_required": false,
+        "formal_required": true,
+        "reason": "Числа и порядок шагов заданы текстом PHB 2024 (см. facts)"
+      },
+      "conditions": [],
+      "triggers": [
+        "paladin.epicheskii_dar"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "procedure_id": "paladin_epicheskii_dar"
+          }
+        }
+      ],
+      "semantic_questions": [],
+      "facts": {},
+      "rule_parameters": {},
+      "constraints": [],
+      "exceptions": [],
+      "duration": "per_action",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "kind": "phb",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 136,
+        "printed_page": "135",
+        "section": "Паладин, глава 3 «Классы персонажей»: Эпический дар"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "existing_engine_subset",
+      "auto_activate": false,
+      "dependencies": [
+        "phb2024.phb05.epic_boon"
+      ],
+      "behavior_tests": [
+        "phb03.paladin.epicheskii_dar"
+      ],
+      "readiness": {
+        "status": "adjudication_required",
+        "handler": null,
+        "scope": "Паладин: Эпический дар",
+        "blockers": [
+          "дар не входит в репертуар ни одного класса: use_feature даёт CastFailed(not_in_repertoire)",
+          "выгод дара нет: activities и passive_effects пусты в данных, слово epic в ядре встречается только в labels.py"
+        ]
+      },
+      "revision": 1
+    }
+  ]
+}

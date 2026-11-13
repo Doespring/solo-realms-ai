@@ -1,0 +1,1114 @@
+{
+  "schema_version": "2.1.0",
+  "rules": [
+    {
+      "id": "phb2024.phb03.bard.class_attributes",
+      "rules_family": "dnd2024",
+      "name": "Бард: Ключевые атрибуты",
+      "kind": "procedure",
+      "classification": {
+        "mode": "deterministic",
+        "semantic_required": false,
+        "formal_required": true,
+        "reason": "Таблица «Ключевые атрибуты» задаёт точные значения (Кость хитов, спасброски, владения) без выбора Мастера"
+      },
+      "conditions": [],
+      "triggers": [
+        "bard.class_attributes"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "procedure_id": "bard_class_attributes"
+          }
+        }
+      ],
+      "semantic_questions": [],
+      "facts": {
+        "hit_die": "к6",
+        "primary": "Харизма",
+        "saves": [
+          "Ловкость",
+          "Харизма"
+        ],
+        "skills": "любые три навыка",
+        "weapons": "Простое оружие",
+        "tools": "три Музыкальных инструмента",
+        "armor": "Лёгкие доспехи",
+        "subclass_level": 3,
+        "subclasses": [
+          "Коллегия доблести",
+          "Коллегия знаний",
+          "Коллегия очарования",
+          "Коллегия танца"
+        ],
+        "pdf_span": [
+          51,
+          60
+        ]
+      },
+      "rule_parameters": {
+        "class_resources": {
+          "1": "Кость бардовского вдохновения: к6, к8 на 5-м, к10 на 10-м, к12 на 15-м уровне",
+          "2": "ячейки заклинаний",
+          "3": "подготовленные заклинания 1-го уровня и выше"
+        }
+      },
+      "constraints": [],
+      "exceptions": [],
+      "duration": "not_applicable",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "kind": "phb",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 52,
+        "printed_page": "51",
+        "section": "Бард, глава 3 «Классы персонажей»: Выбор Барда..."
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "existing_engine_subset",
+      "auto_activate": false,
+      "dependencies": [],
+      "behavior_tests": [
+        "phb03.bard.class_attributes"
+      ],
+      "readiness": {
+        "status": "engine_subset_verified",
+        "handler": null,
+        "scope": "Проецирование классовых атрибутов на лист персонажа",
+        "blockers": []
+      },
+      "revision": 1
+    },
+    {
+      "id": "phb2024.phb03.bard.vardo_vdohnovenie",
+      "rules_family": "dnd2024",
+      "name": "Бард: Бардовское вдохновение",
+      "kind": "procedure",
+      "classification": {
+        "mode": "hybrid",
+        "semantic_required": true,
+        "formal_required": true,
+        "reason": "Числа берутся из текста PHB 2024 (см. facts); применение к существу и выбранные варианты требуют решения Мастера"
+      },
+      "conditions": [],
+      "triggers": [
+        "bard.vardo_vdohnovenie"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "range_feet": 60,
+            "max_dice_per_creature": 1,
+            "bonus_action": true,
+            "duration": "1 час",
+            "uses": "модификатор Харизмы, минимум 1",
+            "recharge": "Долгий отдых",
+            "procedure_id": "bard_vardo_vdohnovenie"
+          }
+        }
+      ],
+      "semantic_questions": [
+        "Какому существу в пределах 60 футов, которое видит или слышит Барда, Мастер подтверждает Кость бардовского вдохновения?"
+      ],
+      "facts": {
+        "range_feet": 60,
+        "max_dice_per_creature": 1,
+        "bonus_action": true,
+        "duration": "1 час",
+        "uses": "модификатор Харизмы, минимум 1",
+        "recharge": "Долгий отдых"
+      },
+      "rule_parameters": {
+        "die_by_level": {
+          "1": "к6",
+          "5": "к8",
+          "10": "к10",
+          "15": "к12"
+        }
+      },
+      "constraints": [],
+      "exceptions": [],
+      "duration": "per_action",
+      "resources": [
+        {
+          "id": "bardic_inspiration_die",
+          "handling": "dependency_not_extracted"
+        }
+      ],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "kind": "phb",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 52,
+        "printed_page": "51",
+        "section": "Бард, глава 3 «Классы персонажей»: Бардовское вдохновение"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "existing_engine_subset",
+      "auto_activate": false,
+      "dependencies": [
+        "phb2024.phb01.ability_modifier"
+      ],
+      "behavior_tests": [
+        "phb03.bard.vardo_vdohnovenie",
+        "nat20.class_features_reach_game.vardo_vdohnovenie"
+      ],
+      "readiness": {
+        "status": "adjudication_required",
+        "handler": "nat20_content.feature_gate",
+        "scope": "Хост: вне боя кость не выдаётся, а в бою — союзнику в 60 футах и не в полном укрытии, кому выбирает игрок. Движок: эффект «Вдохновлён» на получателе, счётчик применений, кость берётся ЛЮБЫМ D20-тестом — атакой оружием, заклинательной атакой (по флагу интента) и спасброском (r177). Не закрыто: в кампании хоста в бою один герой, поэтому получателя кости нет и путь проверен на проекции двух героев; кость барда, вышедшего из боя, бросить нельзя",
+        "blockers": [
+          "в бою кампании хоста один герой — получателя кости нет; путь хоста готов и проверен на проекции двух героев"
+        ]
+      },
+      "revision": 2
+    },
+    {
+      "id": "phb2024.phb03.bard.sotvorenie_zaklinanii",
+      "rules_family": "dnd2024",
+      "name": "Бард: Сотворение заклинаний (Бард)",
+      "kind": "procedure",
+      "classification": {
+        "mode": "deterministic",
+        "semantic_required": false,
+        "formal_required": true,
+        "reason": "Числа и порядок шагов заданы текстом PHB 2024 (см. facts)"
+      },
+      "conditions": [],
+      "triggers": [
+        "bard.sotvorenie_zaklinanii"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "cantrips_start": 2,
+            "spells_start": 2,
+            "prepared_level_1": 4,
+            "spellcasting_ability": "Харизма",
+            "spellbook": false,
+            "procedure_id": "bard_sotvorenie_zaklinanii"
+          }
+        }
+      ],
+      "semantic_questions": [],
+      "facts": {
+        "cantrips_start": 2,
+        "cantrip_levels": [
+          "4",
+          "10"
+        ],
+        "spells_start": 2,
+        "prepared_level_1": 4,
+        "spellcasting_ability": "Харизма",
+        "spellbook": false
+      },
+      "rule_parameters": {},
+      "constraints": [],
+      "exceptions": [],
+      "duration": "per_action",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "kind": "phb",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 52,
+        "printed_page": "51",
+        "section": "Бард, глава 3 «Классы персонажей»: Сотворение заклинаний (Бард)"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "existing_engine_subset",
+      "auto_activate": false,
+      "dependencies": [
+        "phb2024.phb01.spell_slots"
+      ],
+      "behavior_tests": [
+        "phb03.bard.sotvorenie_zaklinanii"
+      ],
+      "readiness": {
+        "status": "engine_subset_verified",
+        "handler": null,
+        "scope": "Бард: Сотворение заклинаний (Бард)",
+        "blockers": []
+      },
+      "revision": 1
+    },
+    {
+      "id": "phb2024.phb03.bard.ekspertnost",
+      "rules_family": "dnd2024",
+      "name": "Бард: Экспертность (Бард)",
+      "kind": "procedure",
+      "classification": {
+        "mode": "deterministic",
+        "semantic_required": false,
+        "formal_required": true,
+        "reason": "Числа и порядок шагов заданы текстом PHB 2024 (см. facts)"
+      },
+      "conditions": [],
+      "triggers": [
+        "bard.ekspertnost"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "skills": 2,
+            "extra_at_level": 9,
+            "procedure_id": "bard_ekspertnost"
+          }
+        }
+      ],
+      "semantic_questions": [],
+      "facts": {
+        "skills": 2,
+        "extra_at_level": 9
+      },
+      "rule_parameters": {},
+      "constraints": [],
+      "exceptions": [],
+      "duration": "per_action",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "kind": "phb",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 53,
+        "printed_page": "52",
+        "section": "Бард, глава 3 «Классы персонажей»: Экспертность (Бард)"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "existing_engine_subset",
+      "auto_activate": false,
+      "dependencies": [
+        "phb2024.phb01.expertise"
+      ],
+      "behavior_tests": [
+        "phb03.bard.ekspertnost"
+      ],
+      "readiness": {
+        "status": "engine_subset_verified",
+        "handler": null,
+        "scope": "Бард: Экспертность (Бард)",
+        "blockers": []
+      },
+      "revision": 1
+    },
+    {
+      "id": "phb2024.phb03.bard.master_na_vse_ruki",
+      "rules_family": "dnd2024",
+      "name": "Бард: Мастер на все руки",
+      "kind": "procedure",
+      "classification": {
+        "mode": "deterministic",
+        "semantic_required": false,
+        "formal_required": true,
+        "reason": "Числа и порядок шагов заданы текстом PHB 2024 (см. facts)"
+      },
+      "conditions": [],
+      "triggers": [
+        "bard.master_na_vse_ruki"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "bonus": "половина Бонуса владения",
+            "rounding": "floor",
+            "procedure_id": "bard_master_na_vse_ruki"
+          }
+        }
+      ],
+      "semantic_questions": [],
+      "facts": {
+        "bonus": "половина Бонуса владения",
+        "rounding": "floor"
+      },
+      "rule_parameters": {},
+      "constraints": [],
+      "exceptions": [],
+      "duration": "per_action",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "kind": "phb",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 53,
+        "printed_page": "52",
+        "section": "Бард, глава 3 «Классы персонажей»: Мастер на все руки"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "existing_engine_subset",
+      "auto_activate": false,
+      "dependencies": [
+        "phb2024.phb01.rounding"
+      ],
+      "behavior_tests": [
+        "phb03.bard.master_na_vse_ruki"
+      ],
+      "readiness": {
+        "status": "engine_subset_verified",
+        "handler": null,
+        "scope": "Движок: половина Бонуса владения (с округлением вниз) добавляется к проверке характеристики, которая ещё не включает Бонус владения, — общий разрешатель проверок и боевой путь (проверки Атлетики в захвате, Скрытности, проекция модификаторов). Прогон r177: `check_modifier` на навыке без владения даёт половину владения",
+        "blockers": []
+      },
+      "revision": 1
+    },
+    {
+      "id": "phb2024.phb03.bard.podklass_barda",
+      "rules_family": "dnd2024",
+      "name": "Бард: Подкласс Барда",
+      "kind": "procedure",
+      "classification": {
+        "mode": "deterministic",
+        "semantic_required": false,
+        "formal_required": true,
+        "reason": "Числа и порядок шагов заданы текстом PHB 2024 (см. facts)"
+      },
+      "conditions": [],
+      "triggers": [
+        "bard.podklass_barda"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "subclass_level": 3,
+            "procedure_id": "bard_podklass_barda"
+          }
+        }
+      ],
+      "semantic_questions": [],
+      "facts": {
+        "subclass_level": 3,
+        "subclasses": [
+          "Коллегия доблести",
+          "Коллегия знаний",
+          "Коллегия очарования",
+          "Коллегия танца"
+        ]
+      },
+      "rule_parameters": {},
+      "constraints": [],
+      "exceptions": [],
+      "duration": "per_action",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "kind": "phb",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 53,
+        "printed_page": "52",
+        "section": "Бард, глава 3 «Классы персонажей»: Подкласс Барда"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "existing_engine_subset",
+      "auto_activate": false,
+      "dependencies": [],
+      "behavior_tests": [
+        "phb03.bard.podklass_barda"
+      ],
+      "readiness": {
+        "status": "engine_subset_verified",
+        "handler": null,
+        "scope": "Бард: Подкласс Барда",
+        "blockers": []
+      },
+      "revision": 1
+    },
+    {
+      "id": "phb2024.phb03.bard.uvelichenie_harakteristik",
+      "rules_family": "dnd2024",
+      "name": "Бард: Увеличение характеристик",
+      "kind": "procedure",
+      "classification": {
+        "mode": "deterministic",
+        "semantic_required": false,
+        "formal_required": true,
+        "reason": "Числа и порядок шагов заданы текстом PHB 2024 (см. facts)"
+      },
+      "conditions": [],
+      "triggers": [
+        "bard.uvelichenie_harakteristik"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "procedure_id": "bard_uvelichenie_harakteristik"
+          }
+        }
+      ],
+      "semantic_questions": [],
+      "facts": {},
+      "rule_parameters": {},
+      "constraints": [],
+      "exceptions": [],
+      "duration": "per_action",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "kind": "phb",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 54,
+        "printed_page": "53",
+        "section": "Бард, глава 3 «Классы персонажей»: Увеличение характеристик"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "existing_engine_subset",
+      "auto_activate": false,
+      "dependencies": [
+        "phb2024.phb05.ability_score_improvement"
+      ],
+      "behavior_tests": [
+        "phb03.bard.uvelichenie_harakteristik"
+      ],
+      "readiness": {
+        "status": "engine_subset_verified",
+        "handler": null,
+        "scope": "Бард: Увеличение характеристик",
+        "blockers": []
+      },
+      "revision": 1
+    },
+    {
+      "id": "phb2024.phb03.bard.istochnik_vdohnoveniya",
+      "rules_family": "dnd2024",
+      "name": "Бард: Источник вдохновения",
+      "kind": "procedure",
+      "classification": {
+        "mode": "deterministic",
+        "semantic_required": false,
+        "formal_required": true,
+        "reason": "Числа и порядок шагов заданы текстом PHB 2024 (см. facts)"
+      },
+      "conditions": [],
+      "triggers": [
+        "bard.istochnik_vdohnoveniya"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "spell_slot_for_use": true,
+            "procedure_id": "bard_istochnik_vdohnoveniya"
+          }
+        }
+      ],
+      "semantic_questions": [],
+      "facts": {
+        "recharge": [
+          "Короткий отдых",
+          "Долгий отдых"
+        ],
+        "spell_slot_for_use": true
+      },
+      "rule_parameters": {},
+      "constraints": [],
+      "exceptions": [],
+      "duration": "per_action",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "kind": "phb",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 54,
+        "printed_page": "53",
+        "section": "Бард, глава 3 «Классы персонажей»: Источник вдохновения"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "existing_engine_subset",
+      "auto_activate": false,
+      "dependencies": [],
+      "behavior_tests": [
+        "phb03.bard.istochnik_vdohnoveniya"
+      ],
+      "readiness": {
+        "status": "adjudication_required",
+        "handler": null,
+        "scope": "Бард: Источник вдохновения",
+        "blockers": [
+          "движок принимает умение и тратит использование, но восстановление костей вдохновения прогоном не наблюдается"
+        ]
+      },
+      "revision": 1
+    },
+    {
+      "id": "phb2024.phb03.bard.kontrocharovanie",
+      "rules_family": "dnd2024",
+      "name": "Бард: Контрочарование",
+      "kind": "procedure",
+      "classification": {
+        "mode": "hybrid",
+        "semantic_required": true,
+        "formal_required": true,
+        "reason": "Числа берутся из текста PHB 2024 (см. facts); применение к существу и выбранные варианты требуют решения Мастера"
+      },
+      "conditions": [],
+      "triggers": [
+        "bard.kontrocharovanie"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "range_feet": 30,
+            "reaction": true,
+            "new_roll_advantage": true,
+            "procedure_id": "bard_kontrocharovanie"
+          }
+        }
+      ],
+      "semantic_questions": [
+        "Проваленный спасбросок против Очарованного или Испуганного — что именно резолвится перебросом?"
+      ],
+      "facts": {
+        "range_feet": 30,
+        "reaction": true,
+        "new_roll_advantage": true
+      },
+      "rule_parameters": {},
+      "constraints": [],
+      "exceptions": [],
+      "duration": "per_action",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "kind": "phb",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 54,
+        "printed_page": "53",
+        "section": "Бард, глава 3 «Классы персонажей»: Контрочарование"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "existing_engine_subset",
+      "auto_activate": false,
+      "dependencies": [],
+      "behavior_tests": [
+        "phb03.bard.kontrocharovanie"
+      ],
+      "readiness": {
+        "status": "adjudication_required",
+        "handler": null,
+        "scope": "Бард: Контрочарование",
+        "blockers": [
+          "активность реакции принимается, но преимущество на спасбросок от очарования и испуга прогоном не подтверждено"
+        ]
+      },
+      "revision": 1
+    },
+    {
+      "id": "phb2024.phb03.bard.tainy_magii",
+      "rules_family": "dnd2024",
+      "name": "Бард: Тайны магии",
+      "kind": "procedure",
+      "classification": {
+        "mode": "deterministic",
+        "semantic_required": false,
+        "formal_required": true,
+        "reason": "Числа и порядок шагов заданы текстом PHB 2024 (см. facts)"
+      },
+      "conditions": [],
+      "triggers": [
+        "bard.tainy_magii"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "procedure_id": "bard_tainy_magii"
+          }
+        }
+      ],
+      "semantic_questions": [],
+      "facts": {
+        "from_lists": [
+          "Бард",
+          "Волшебник",
+          "Друид",
+          "Жрец"
+        ]
+      },
+      "rule_parameters": {},
+      "constraints": [],
+      "exceptions": [],
+      "duration": "per_action",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "kind": "phb",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 54,
+        "printed_page": "53",
+        "section": "Бард, глава 3 «Классы персонажей»: Тайны магии"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "not_implemented",
+      "auto_activate": false,
+      "dependencies": [],
+      "behavior_tests": [
+        "phb03.bard.tainy_magii"
+      ],
+      "readiness": {
+        "status": "blocked",
+        "handler": null,
+        "scope": "Бард: Тайны магии",
+        "blockers": [
+          "выбранные через Тайны магии заклинания не доходят до живого гейта умений — движок выдаёт имя умения, а выбор не исполняется"
+        ]
+      },
+      "revision": 1
+    },
+    {
+      "id": "phb2024.phb03.bard.prevoshodnoe_vdohnovenie",
+      "rules_family": "dnd2024",
+      "name": "Бард: Превосходное вдохновение",
+      "kind": "procedure",
+      "classification": {
+        "mode": "deterministic",
+        "semantic_required": false,
+        "formal_required": true,
+        "reason": "Числа и порядок шагов заданы текстом PHB 2024 (см. facts)"
+      },
+      "conditions": [],
+      "triggers": [
+        "bard.prevoshodnoe_vdohnovenie"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "on_initiative_restore_to": 2,
+            "procedure_id": "bard_prevoshodnoe_vdohnovenie"
+          }
+        }
+      ],
+      "semantic_questions": [],
+      "facts": {
+        "on_initiative_restore_to": 2
+      },
+      "rule_parameters": {},
+      "constraints": [],
+      "exceptions": [],
+      "duration": "per_action",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "kind": "phb",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 54,
+        "printed_page": "53",
+        "section": "Бард, глава 3 «Классы персонажей»: Превосходное вдохновение"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "not_implemented",
+      "auto_activate": false,
+      "dependencies": [],
+      "behavior_tests": [
+        "phb03.bard.prevoshodnoe_vdohnovenie"
+      ],
+      "readiness": {
+        "status": "blocked",
+        "handler": null,
+        "scope": "Бард: Превосходное вдохновение",
+        "blockers": [
+          "у умения нет ни типизированной активности, ни поля листа: восстановление костей на броске инициативы исполнять нечем"
+        ]
+      },
+      "revision": 1
+    },
+    {
+      "id": "phb2024.phb03.bard.epicheskii_dar",
+      "rules_family": "dnd2024",
+      "name": "Бард: Эпический дар",
+      "kind": "procedure",
+      "classification": {
+        "mode": "deterministic",
+        "semantic_required": false,
+        "formal_required": true,
+        "reason": "Числа и порядок шагов заданы текстом PHB 2024 (см. facts)"
+      },
+      "conditions": [],
+      "triggers": [
+        "bard.epicheskii_dar"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "procedure_id": "bard_epicheskii_dar"
+          }
+        }
+      ],
+      "semantic_questions": [],
+      "facts": {},
+      "rule_parameters": {},
+      "constraints": [],
+      "exceptions": [],
+      "duration": "per_action",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "kind": "phb",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 54,
+        "printed_page": "53",
+        "section": "Бард, глава 3 «Классы персонажей»: Эпический дар"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "existing_engine_subset",
+      "auto_activate": false,
+      "dependencies": [
+        "phb2024.phb05.epic_boon"
+      ],
+      "behavior_tests": [
+        "phb03.bard.epicheskii_dar"
+      ],
+      "readiness": {
+        "status": "adjudication_required",
+        "handler": null,
+        "scope": "Бард: Эпический дар",
+        "blockers": [
+          "дар не входит в репертуар ни одного класса: use_feature даёт CastFailed(not_in_repertoire)",
+          "выгод дара нет: activities и passive_effects пусты в данных, слово epic в ядре встречается только в labels.py"
+        ]
+      },
+      "revision": 1
+    },
+    {
+      "id": "phb2024.phb03.bard.slova_tvoreniya",
+      "rules_family": "dnd2024",
+      "name": "Бард: Слова Творения",
+      "kind": "procedure",
+      "classification": {
+        "mode": "deterministic",
+        "semantic_required": false,
+        "formal_required": true,
+        "reason": "Числа и порядок шагов заданы текстом PHB 2024 (см. facts)"
+      },
+      "conditions": [],
+      "triggers": [
+        "bard.slova_tvoreniya"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "second_target_range_feet": 10,
+            "procedure_id": "bard_slova_tvoreniya"
+          }
+        }
+      ],
+      "semantic_questions": [],
+      "facts": {
+        "second_target_range_feet": 10,
+        "spells": [
+          "Слово силы: исцеление",
+          "Слово силы: смерть"
+        ]
+      },
+      "rule_parameters": {},
+      "constraints": [],
+      "exceptions": [],
+      "duration": "per_action",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "kind": "phb",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 54,
+        "printed_page": "53",
+        "section": "Бард, глава 3 «Классы персонажей»: Слова Творения"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "not_implemented",
+      "auto_activate": false,
+      "dependencies": [],
+      "behavior_tests": [
+        "phb03.bard.slova_tvoreniya"
+      ],
+      "readiness": {
+        "status": "blocked",
+        "handler": null,
+        "scope": "Бард: Слова Творения",
+        "blockers": [
+          "у умения нет типизированной активности: усиление слов силы движком не исполняется"
+        ]
+      },
+      "revision": 1
+    },
+    {
+      "id": "phb2024.phb03.bard.kolegiya_dobletsi_boevoe_vdohnovenie",
+      "rules_family": "dnd2024",
+      "name": "Бард: Подкласс «Коллегия доблести»: Боевое вдохновение",
+      "kind": "procedure",
+      "classification": {
+        "mode": "deterministic",
+        "semantic_required": false,
+        "formal_required": true,
+        "reason": "Числа и порядок шагов заданы текстом PHB 2024 (см. facts)"
+      },
+      "conditions": [],
+      "triggers": [
+        "bard.kolegiya_dobletsi_boevoe_vdohnovenie"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "unlock_level": 3,
+            "effect": "Кость вдохновения к КЗ (Реакцией) или к урону атаки",
+            "procedure_id": "bard_kolegiya_dobletsi_boevoe_vdohnovenie"
+          }
+        }
+      ],
+      "semantic_questions": [],
+      "facts": {
+        "unlock_level": 3,
+        "effect": "Кость вдохновения к КЗ (Реакцией) или к урону атаки"
+      },
+      "rule_parameters": {},
+      "constraints": [],
+      "exceptions": [],
+      "duration": "per_action",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "kind": "phb",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 57,
+        "printed_page": "56",
+        "section": "Бард, глава 3 «Классы персонажей»: Подкласс «Коллегия доблести»: Боевое вдохновение"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "existing_engine_subset",
+      "auto_activate": false,
+      "dependencies": [],
+      "behavior_tests": [
+        "phb03.bard.kolegiya_dobletsi_boevoe_vdohnovenie"
+      ],
+      "readiness": {
+        "status": "adjudication_required",
+        "handler": null,
+        "scope": "Бард: Подкласс «Коллегия доблести»: Боевое вдохновение",
+        "blockers": [
+          "умение «Боевое вдохновение» перенесено дословно (PHB 2024, стр. 56), но типизированной активности в движке нет: трату Кости вдохновения и добавку к КЗ или урону исполняет Мастер; в библиотеке пина записи умения нет — use_feature отвечает CastFailed(not_in_repertoire), и это видно в прогоне r170"
+        ]
+      },
+      "revision": 2
+    },
+    {
+      "id": "phb2024.phb03.bard.kolegiya_znanii_ostroe_slovtso",
+      "rules_family": "dnd2024",
+      "name": "Бард: Подкласс «Коллегия знаний»: Острое словцо",
+      "kind": "procedure",
+      "classification": {
+        "mode": "hybrid",
+        "semantic_required": true,
+        "formal_required": true,
+        "reason": "Числа берутся из текста PHB 2024 (см. facts); применение к существу и выбранные варианты требуют решения Мастера"
+      },
+      "conditions": [],
+      "triggers": [
+        "bard.kolegiya_znanii_ostroe_slovtso"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "unlock_level": 3,
+            "procedure_id": "bard_kolegiya_znanii_ostroe_slovtso"
+          }
+        }
+      ],
+      "semantic_questions": [
+        "Какое существо и какой бросок затронуты реакцией Острого словца?"
+      ],
+      "facts": {
+        "unlock_level": 3
+      },
+      "rule_parameters": {},
+      "constraints": [],
+      "exceptions": [],
+      "duration": "per_action",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "kind": "phb",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 58,
+        "printed_page": "57",
+        "section": "Бард, глава 3 «Классы персонажей»: Подкласс «Коллегия знаний»: Острое словцо"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "not_implemented",
+      "auto_activate": false,
+      "dependencies": [],
+      "behavior_tests": [
+        "phb03.bard.kolegiya_znanii_ostroe_slovtso"
+      ],
+      "readiness": {
+        "status": "blocked",
+        "handler": null,
+        "scope": "Бард: Подкласс «Коллегия знаний»: Острое словцо",
+        "blockers": [
+          "активность «Острого словца» принимается, но ни эффекта, ни траты ресурса не даёт"
+        ]
+      },
+      "revision": 1
+    },
+    {
+      "id": "phb2024.phb03.bard.kolegiya_ocharovaniya_maniya_vdohnoveniya",
+      "rules_family": "dnd2024",
+      "name": "Бард: Подкласс «Коллегия очарования»: Мантия вдохновения",
+      "kind": "procedure",
+      "classification": {
+        "mode": "deterministic",
+        "semantic_required": false,
+        "formal_required": true,
+        "reason": "Числа и порядок шагов заданы текстом PHB 2024 (см. facts)"
+      },
+      "conditions": [],
+      "triggers": [
+        "bard.kolegiya_ocharovaniya_maniya_vdohnoveniya"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "unlock_level": 3,
+            "procedure_id": "bard_kolegiya_ocharovaniya_maniya_vdohnoveniya"
+          }
+        }
+      ],
+      "semantic_questions": [],
+      "facts": {
+        "unlock_level": 3
+      },
+      "rule_parameters": {},
+      "constraints": [],
+      "exceptions": [],
+      "duration": "per_action",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "kind": "phb",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 59,
+        "printed_page": "58",
+        "section": "Бард, глава 3 «Классы персонажей»: Подкласс «Коллегия очарования»: Мантия вдохновения"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "existing_engine_subset",
+      "auto_activate": false,
+      "dependencies": [],
+      "behavior_tests": [
+        "phb03.bard.kolegiya_ocharovaniya_maniya_vdohnoveniya"
+      ],
+      "readiness": {
+        "status": "adjudication_required",
+        "handler": null,
+        "scope": "Бард: Подкласс «Коллегия очарования»: Мантия вдохновения",
+        "blockers": [
+          "умение «Мантия вдохновения» перенесено дословно (PHB 2024, стр. 58), но типизированной активности в движке нет: временные хиты и Реакцию-перемещение исполняет Мастер; в библиотеке пина записи умения нет — use_feature отвечает CastFailed(not_in_repertoire), и это видно в прогоне r170"
+        ]
+      },
+      "revision": 2
+    },
+    {
+      "id": "phb2024.phb03.bard.kolegiya_tantsa_oslepitelnye_fuete",
+      "rules_family": "dnd2024",
+      "name": "Бард: Подкласс «Коллегия танца»: Ослепительные фуэте",
+      "kind": "procedure",
+      "classification": {
+        "mode": "deterministic",
+        "semantic_required": false,
+        "formal_required": true,
+        "reason": "Числа и порядок шагов заданы текстом PHB 2024 (см. facts)"
+      },
+      "conditions": [],
+      "triggers": [
+        "bard.kolegiya_tantsa_oslepitelnye_fuete"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "unlock_level": 3,
+            "procedure_id": "bard_kolegiya_tantsa_oslepitelnye_fuete"
+          }
+        }
+      ],
+      "semantic_questions": [],
+      "facts": {
+        "unlock_level": 3
+      },
+      "rule_parameters": {},
+      "constraints": [],
+      "exceptions": [],
+      "duration": "per_action",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "kind": "phb",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 60,
+        "printed_page": "59",
+        "section": "Бард, глава 3 «Классы персонажей»: Подкласс «Коллегия танца»: Ослепительные фуэте"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "existing_engine_subset",
+      "auto_activate": false,
+      "dependencies": [],
+      "behavior_tests": [
+        "phb03.bard.kolegiya_tantsa_oslepitelnye_fuete"
+      ],
+      "readiness": {
+        "status": "adjudication_required",
+        "handler": null,
+        "scope": "Бард: Подкласс «Коллегия танца»: Ослепительные фуэте",
+        "blockers": [
+          "умение «Ослепительные фуэте» перенесено дословно (PHB 2024, стр. 59), но типизированной активности в движке нет: КЗ без доспехов, Безоружный удар и Бардовский урон исполняет Мастер; в библиотеке пина записи умения нет — use_feature отвечает CastFailed(not_in_repertoire), и это видно в прогоне r170"
+        ]
+      },
+      "revision": 2
+    }
+  ]
+}

@@ -1,0 +1,2705 @@
+{
+ "port": 47381,
+ "frames": {
+  "game-light-375": {
+   "form#action-form": {
+    "inside": "rgb(239,231,217)",
+    "outside": "rgb(243,236,224)",
+    "fill": 1.05,
+    "worst": {
+     "side": "top",
+     "w": 1,
+     "color": "rgb(110,91,66)",
+     "ratioIn": 5.28,
+     "ratioOut": 5.52,
+     "ratio": 5.28
+    },
+    "edges": [
+     {
+      "side": "top",
+      "w": 1,
+      "color": "rgb(110,91,66)",
+      "ratioIn": 5.28,
+      "ratioOut": 5.52,
+      "ratio": 5.28
+     },
+     {
+      "side": "right",
+      "w": 1,
+      "color": "rgb(110,91,66)",
+      "ratioIn": 5.28,
+      "ratioOut": 5.52,
+      "ratio": 5.28
+     },
+     {
+      "side": "bottom",
+      "w": 1,
+      "color": "rgb(110,91,66)",
+      "ratioIn": 5.28,
+      "ratioOut": 5.52,
+      "ratio": 5.28
+     },
+     {
+      "side": "left",
+      "w": 1,
+      "color": "rgb(110,91,66)",
+      "ratioIn": 5.28,
+      "ratioOut": 5.52,
+      "ratio": 5.28
+     }
+    ],
+    "placeholder": null,
+    "text": "Сказать"
+   },
+   "#play #scene-hero .sheet-link": {
+    "inside": "rgb(251,245,232)",
+    "outside": "rgb(251,245,232)",
+    "fill": 1,
+    "worst": {
+     "side": "top",
+     "w": 1,
+     "color": "rgb(143,119,82)",
+     "ratioIn": 3.92,
+     "ratioOut": 3.92,
+     "ratio": 3.92
+    },
+    "edges": [
+     {
+      "side": "top",
+      "w": 1,
+      "color": "rgb(143,119,82)",
+      "ratioIn": 3.92,
+      "ratioOut": 3.92,
+      "ratio": 3.92
+     },
+     {
+      "side": "right",
+      "w": 1,
+      "color": "rgb(143,119,82)",
+      "ratioIn": 3.92,
+      "ratioOut": 3.92,
+      "ratio": 3.92
+     },
+     {
+      "side": "bottom",
+      "w": 1,
+      "color": "rgb(143,119,82)",
+      "ratioIn": 3.92,
+      "ratioOut": 3.92,
+      "ratio": 3.92
+     },
+     {
+      "side": "left",
+      "w": 1,
+      "color": "rgb(143,119,82)",
+      "ratioIn": 3.92,
+      "ratioOut": 3.92,
+      "ratio": 3.92
+     }
+    ],
+    "placeholder": null,
+    "text": "Лист героя"
+   },
+   "button.themetoggle": {
+    "inside": "rgb(243,236,224)",
+    "outside": "rgb(243,236,224)",
+    "fill": 1,
+    "worst": {
+     "side": "top",
+     "w": 1,
+     "color": "rgb(143,119,82)",
+     "ratioIn": 3.63,
+     "ratioOut": 3.63,
+     "ratio": 3.63
+    },
+    "edges": [
+     {
+      "side": "top",
+      "w": 1,
+      "color": "rgb(143,119,82)",
+      "ratioIn": 3.63,
+      "ratioOut": 3.63,
+      "ratio": 3.63
+     },
+     {
+      "side": "right",
+      "w": 1,
+      "color": "rgb(143,119,82)",
+      "ratioIn": 3.63,
+      "ratioOut": 3.63,
+      "ratio": 3.63
+     },
+     {
+      "side": "bottom",
+      "w": 1,
+      "color": "rgb(143,119,82)",
+      "ratioIn": 3.63,
+      "ratioOut": 3.63,
+      "ratio": 3.63
+     },
+     {
+      "side": "left",
+      "w": 1,
+      "color": "rgb(143,119,82)",
+      "ratioIn": 3.63,
+      "ratioOut": 3.63,
+      "ratio": 3.63
+     }
+    ],
+    "placeholder": null,
+    "text": "Тёмная тема"
+   }
+  },
+  "hero-light-375": {
+   "#character .sheet-vitals": {
+    "inside": "rgb(243,236,224)",
+    "outside": "rgb(243,236,224)",
+    "fill": 1,
+    "worst": {
+     "side": "top",
+     "w": 1,
+     "color": "rgb(110,91,66)",
+     "ratioIn": 5.52,
+     "ratioOut": 5.52,
+     "ratio": 5.52
+    },
+    "edges": [
+     {
+      "side": "top",
+      "w": 1,
+      "color": "rgb(110,91,66)",
+      "ratioIn": 5.52,
+      "ratioOut": 5.52,
+      "ratio": 5.52
+     },
+     {
+      "side": "bottom",
+      "w": 1,
+      "color": "rgb(110,91,66)",
+      "ratioIn": 5.52,
+      "ratioOut": 5.52,
+      "ratio": 5.52
+     }
+    ],
+    "placeholder": null,
+    "text": "12 / 12\nХиты\n18\nЗащита\n+2\nИнициатива\n30 "
+   },
+   "#character .sheet-vitals__cell:nth-child(2)": {
+    "inside": "rgb(243,236,224)",
+    "outside": "rgb(243,236,224)",
+    "fill": 1,
+    "worst": {
+     "side": "left",
+     "w": 1,
+     "color": "rgb(143,119,82)",
+     "ratioIn": 3.63,
+     "ratioOut": 3.63,
+     "ratio": 3.63
+    },
+    "edges": [
+     {
+      "side": "left",
+      "w": 1,
+      "color": "rgb(143,119,82)",
+      "ratioIn": 3.63,
+      "ratioOut": 3.63,
+      "ratio": 3.63
+     }
+    ],
+    "placeholder": null,
+    "text": "18\nЗащита"
+   },
+   "#character .sheet-vitals__cell:nth-child(3)": {
+    "inside": "rgb(243,236,224)",
+    "outside": "rgb(243,236,224)",
+    "fill": 1,
+    "worst": {
+     "side": "top",
+     "w": 1,
+     "color": "rgb(143,119,82)",
+     "ratioIn": 3.63,
+     "ratioOut": 3.63,
+     "ratio": 3.63
+    },
+    "edges": [
+     {
+      "side": "top",
+      "w": 1,
+      "color": "rgb(143,119,82)",
+      "ratioIn": 3.63,
+      "ratioOut": 3.63,
+      "ratio": 3.63
+     }
+    ],
+    "placeholder": null,
+    "text": "+2\nИнициатива"
+   },
+   "#character .metric": {
+    "inside": "rgb(251,245,232)",
+    "outside": "rgb(243,236,224)",
+    "fill": 1.08,
+    "worst": {
+     "side": "top",
+     "w": 1,
+     "color": "rgb(143,119,82)",
+     "ratioIn": 3.92,
+     "ratioOut": 3.63,
+     "ratio": 3.63
+    },
+    "edges": [
+     {
+      "side": "top",
+      "w": 1,
+      "color": "rgb(143,119,82)",
+      "ratioIn": 3.92,
+      "ratioOut": 3.63,
+      "ratio": 3.63
+     },
+     {
+      "side": "right",
+      "w": 1,
+      "color": "rgb(143,119,82)",
+      "ratioIn": 3.92,
+      "ratioOut": 3.63,
+      "ratio": 3.63
+     },
+     {
+      "side": "bottom",
+      "w": 1,
+      "color": "rgb(143,119,82)",
+      "ratioIn": 3.92,
+      "ratioOut": 3.63,
+      "ratio": 3.63
+     },
+     {
+      "side": "left",
+      "w": 1,
+      "color": "rgb(143,119,82)",
+      "ratioIn": 3.92,
+      "ratioOut": 3.63,
+      "ratio": 3.63
+     }
+    ],
+    "placeholder": null,
+    "text": "16\nСила"
+   }
+  },
+  "notes-light-375": {
+   "textarea#player-notes": {
+    "inside": "rgb(246,238,223)",
+    "outside": "rgb(251,245,232)",
+    "fill": 1.06,
+    "worst": {
+     "side": "top",
+     "w": 1,
+     "color": "rgb(143,119,82)",
+     "ratioIn": 3.7,
+     "ratioOut": 3.92,
+     "ratio": 3.7
+    },
+    "edges": [
+     {
+      "side": "top",
+      "w": 1,
+      "color": "rgb(143,119,82)",
+      "ratioIn": 3.7,
+      "ratioOut": 3.92,
+      "ratio": 3.7
+     },
+     {
+      "side": "right",
+      "w": 1,
+      "color": "rgb(143,119,82)",
+      "ratioIn": 3.7,
+      "ratioOut": 3.92,
+      "ratio": 3.7
+     },
+     {
+      "side": "bottom",
+      "w": 1,
+      "color": "rgb(143,119,82)",
+      "ratioIn": 3.7,
+      "ratioOut": 3.92,
+      "ratio": 3.7
+     },
+     {
+      "side": "left",
+      "w": 1,
+      "color": "rgb(143,119,82)",
+      "ratioIn": 3.7,
+      "ratioOut": 3.92,
+      "ratio": 3.7
+     }
+    ],
+    "placeholder": "rgb(42, 35, 26)",
+    "text": "Личные записи"
+   },
+   "section#journal .tabletop-tabs button": {
+    "inside": "rgb(246,238,223)",
+    "outside": "rgb(243,236,224)",
+    "fill": 1.02,
+    "worst": {
+     "side": "top",
+     "w": 1,
+     "color": "rgb(143,119,82)",
+     "ratioIn": 3.7,
+     "ratioOut": 3.63,
+     "ratio": 3.63
+    },
+    "edges": [
+     {
+      "side": "top",
+      "w": 1,
+      "color": "rgb(143,119,82)",
+      "ratioIn": 3.7,
+      "ratioOut": 3.63,
+      "ratio": 3.63
+     },
+     {
+      "side": "right",
+      "w": 1,
+      "color": "rgb(143,119,82)",
+      "ratioIn": 3.7,
+      "ratioOut": 3.63,
+      "ratio": 3.63
+     },
+     {
+      "side": "bottom",
+      "w": 1,
+      "color": "rgb(143,119,82)",
+      "ratioIn": 3.7,
+      "ratioOut": 3.63,
+      "ratio": 3.63
+     },
+     {
+      "side": "left",
+      "w": 1,
+      "color": "rgb(143,119,82)",
+      "ratioIn": 3.7,
+      "ratioOut": 3.63,
+      "ratio": 3.63
+     }
+    ],
+    "placeholder": null,
+    "text": "События и записи"
+   },
+   ".player-notes": {
+    "inside": "rgb(251,245,232)",
+    "outside": "rgb(243,236,224)",
+    "fill": 1.08,
+    "worst": {
+     "side": "top",
+     "w": 1,
+     "color": "rgb(143,119,82)",
+     "ratioIn": 3.92,
+     "ratioOut": 3.63,
+     "ratio": 3.63
+    },
+    "edges": [
+     {
+      "side": "top",
+      "w": 1,
+      "color": "rgb(143,119,82)",
+      "ratioIn": 3.92,
+      "ratioOut": 3.63,
+      "ratio": 3.63
+     },
+     {
+      "side": "right",
+      "w": 1,
+      "color": "rgb(143,119,82)",
+      "ratioIn": 3.92,
+      "ratioOut": 3.63,
+      "ratio": 3.63
+     },
+     {
+      "side": "bottom",
+      "w": 1,
+      "color": "rgb(143,119,82)",
+      "ratioIn": 3.92,
+      "ratioOut": 3.63,
+      "ratio": 3.63
+     },
+     {
+      "side": "left",
+      "w": 1,
+      "color": "rgb(143,119,82)",
+      "ratioIn": 3.92,
+      "ratioOut": 3.63,
+      "ratio": 3.63
+     }
+    ],
+    "placeholder": null,
+    "text": "Мои записи\n\nВаши догадки и планы. Записи"
+   }
+  },
+  "new-light-375": {
+   "textarea#creation-description": {
+    "inside": "rgb(246,238,223)",
+    "outside": "rgb(243,236,224)",
+    "fill": 1.02,
+    "worst": {
+     "side": "top",
+     "w": 1,
+     "color": "rgb(143,119,82)",
+     "ratioIn": 3.7,
+     "ratioOut": 3.63,
+     "ratio": 3.63
+    },
+    "edges": [
+     {
+      "side": "top",
+      "w": 1,
+      "color": "rgb(143,119,82)",
+      "ratioIn": 3.7,
+      "ratioOut": 3.63,
+      "ratio": 3.63
+     },
+     {
+      "side": "right",
+      "w": 1,
+      "color": "rgb(143,119,82)",
+      "ratioIn": 3.7,
+      "ratioOut": 3.63,
+      "ratio": 3.63
+     },
+     {
+      "side": "bottom",
+      "w": 1,
+      "color": "rgb(143,119,82)",
+      "ratioIn": 3.7,
+      "ratioOut": 3.63,
+      "ratio": 3.63
+     },
+     {
+      "side": "left",
+      "w": 1,
+      "color": "rgb(143,119,82)",
+      "ratioIn": 3.7,
+      "ratioOut": 3.63,
+      "ratio": 3.63
+     }
+    ],
+    "placeholder": "rgb(106, 87, 64)",
+    "text": ""
+   },
+   "#creation .creation-controls button": {
+    "inside": "rgb(246,238,223)",
+    "outside": "rgb(243,236,224)",
+    "fill": 1.02,
+    "worst": {
+     "side": "top",
+     "w": 1,
+     "color": "rgb(143,119,82)",
+     "ratioIn": 3.7,
+     "ratioOut": 3.63,
+     "ratio": 3.63
+    },
+    "edges": [
+     {
+      "side": "top",
+      "w": 1,
+      "color": "rgb(143,119,82)",
+      "ratioIn": 3.7,
+      "ratioOut": 3.63,
+      "ratio": 3.63
+     },
+     {
+      "side": "right",
+      "w": 1,
+      "color": "rgb(143,119,82)",
+      "ratioIn": 3.7,
+      "ratioOut": 3.63,
+      "ratio": 3.63
+     },
+     {
+      "side": "bottom",
+      "w": 1,
+      "color": "rgb(143,119,82)",
+      "ratioIn": 3.7,
+      "ratioOut": 3.63,
+      "ratio": 3.63
+     },
+     {
+      "side": "left",
+      "w": 1,
+      "color": "rgb(143,119,82)",
+      "ratioIn": 3.7,
+      "ratioOut": 3.63,
+      "ratio": 3.63
+     }
+    ],
+    "placeholder": null,
+    "text": "Назад"
+   },
+   "#creation .creation-drop button": {
+    "inside": "rgb(246,238,223)",
+    "outside": "rgb(240,229,211)",
+    "fill": 1.08,
+    "worst": {
+     "side": "top",
+     "w": 1,
+     "color": "rgb(143,119,82)",
+     "ratioIn": 3.7,
+     "ratioOut": 3.42,
+     "ratio": 3.42
+    },
+    "edges": [
+     {
+      "side": "top",
+      "w": 1,
+      "color": "rgb(143,119,82)",
+      "ratioIn": 3.7,
+      "ratioOut": 3.42,
+      "ratio": 3.42
+     },
+     {
+      "side": "right",
+      "w": 1,
+      "color": "rgb(143,119,82)",
+      "ratioIn": 3.7,
+      "ratioOut": 3.42,
+      "ratio": 3.42
+     },
+     {
+      "side": "bottom",
+      "w": 1,
+      "color": "rgb(143,119,82)",
+      "ratioIn": 3.7,
+      "ratioOut": 3.42,
+      "ratio": 3.42
+     },
+     {
+      "side": "left",
+      "w": 1,
+      "color": "rgb(143,119,82)",
+      "ratioIn": 3.7,
+      "ratioOut": 3.42,
+      "ratio": 3.42
+     }
+    ],
+    "placeholder": null,
+    "text": "Выбрать файлы"
+   }
+  },
+  "menu-light-375": {
+   "#nav-tabs .nav-tab": {
+    "inside": "rgb(251,245,232)",
+    "outside": "rgb(251,245,232)",
+    "fill": 1,
+    "worst": {
+     "side": "bottom",
+     "w": 2,
+     "color": "rgb(138,87,20)",
+     "ratioIn": 5.6,
+     "ratioOut": 5.6,
+     "ratio": 5.6
+    },
+    "edges": [
+     {
+      "side": "bottom",
+      "w": 2,
+      "color": "rgb(138,87,20)",
+      "ratioIn": 5.6,
+      "ratioOut": 5.6,
+      "ratio": 5.6
+     }
+    ],
+    "placeholder": null,
+    "text": "Кампания"
+   },
+   "#nav-head .nav-close": {
+    "inside": "rgb(251,245,232)",
+    "outside": "rgb(251,245,232)",
+    "fill": 1,
+    "worst": null,
+    "edges": [],
+    "placeholder": null,
+    "text": "×"
+   },
+   "aside.sidebar .nav.active": {
+    "missing": true
+   }
+  },
+  "prep-light-375": {
+   ".prep-bar": {
+    "inside": "rgb(218,204,178)",
+    "outside": "rgb(251,245,232)",
+    "fill": 1.46,
+    "worst": null,
+    "edges": [],
+    "placeholder": null,
+    "text": ""
+   },
+   ".prep-fill": {
+    "inside": "rgb(71,97,39)",
+    "outside": "rgb(218,204,178)",
+    "fill": 4.41,
+    "worst": null,
+    "edges": [],
+    "placeholder": null,
+    "text": ""
+   },
+   ".prep-tick:not(.is-done):not(.is-active):not(.is-failed)": {
+    "missing": true
+   }
+  },
+  "game-light-1440": {
+   "form#action-form": {
+    "inside": "rgb(239,231,217)",
+    "outside": "rgb(243,236,224)",
+    "fill": 1.05,
+    "worst": {
+     "side": "top",
+     "w": 1,
+     "color": "rgb(110,91,66)",
+     "ratioIn": 5.28,
+     "ratioOut": 5.52,
+     "ratio": 5.28
+    },
+    "edges": [
+     {
+      "side": "top",
+      "w": 1,
+      "color": "rgb(110,91,66)",
+      "ratioIn": 5.28,
+      "ratioOut": 5.52,
+      "ratio": 5.28
+     },
+     {
+      "side": "right",
+      "w": 1,
+      "color": "rgb(110,91,66)",
+      "ratioIn": 5.28,
+      "ratioOut": 5.52,
+      "ratio": 5.28
+     },
+     {
+      "side": "bottom",
+      "w": 1,
+      "color": "rgb(110,91,66)",
+      "ratioIn": 5.28,
+      "ratioOut": 5.52,
+      "ratio": 5.28
+     },
+     {
+      "side": "left",
+      "w": 1,
+      "color": "rgb(110,91,66)",
+      "ratioIn": 5.28,
+      "ratioOut": 5.52,
+      "ratio": 5.28
+     }
+    ],
+    "placeholder": null,
+    "text": "Enter — отправить · Shift + Enter — нова"
+   },
+   "#play #scene-hero .sheet-link": {
+    "inside": "rgb(251,245,232)",
+    "outside": "rgb(251,245,232)",
+    "fill": 1,
+    "worst": {
+     "side": "top",
+     "w": 1,
+     "color": "rgb(143,119,82)",
+     "ratioIn": 3.92,
+     "ratioOut": 3.92,
+     "ratio": 3.92
+    },
+    "edges": [
+     {
+      "side": "top",
+      "w": 1,
+      "color": "rgb(143,119,82)",
+      "ratioIn": 3.92,
+      "ratioOut": 3.92,
+      "ratio": 3.92
+     },
+     {
+      "side": "right",
+      "w": 1,
+      "color": "rgb(143,119,82)",
+      "ratioIn": 3.92,
+      "ratioOut": 3.92,
+      "ratio": 3.92
+     },
+     {
+      "side": "bottom",
+      "w": 1,
+      "color": "rgb(143,119,82)",
+      "ratioIn": 3.92,
+      "ratioOut": 3.92,
+      "ratio": 3.92
+     },
+     {
+      "side": "left",
+      "w": 1,
+      "color": "rgb(143,119,82)",
+      "ratioIn": 3.92,
+      "ratioOut": 3.92,
+      "ratio": 3.92
+     }
+    ],
+    "placeholder": null,
+    "text": "Лист героя"
+   },
+   "button.themetoggle": {
+    "inside": "rgb(243,236,224)",
+    "outside": "rgb(243,236,224)",
+    "fill": 1,
+    "worst": {
+     "side": "top",
+     "w": 1,
+     "color": "rgb(143,119,82)",
+     "ratioIn": 3.63,
+     "ratioOut": 3.63,
+     "ratio": 3.63
+    },
+    "edges": [
+     {
+      "side": "top",
+      "w": 1,
+      "color": "rgb(143,119,82)",
+      "ratioIn": 3.63,
+      "ratioOut": 3.63,
+      "ratio": 3.63
+     },
+     {
+      "side": "right",
+      "w": 1,
+      "color": "rgb(143,119,82)",
+      "ratioIn": 3.63,
+      "ratioOut": 3.63,
+      "ratio": 3.63
+     },
+     {
+      "side": "bottom",
+      "w": 1,
+      "color": "rgb(143,119,82)",
+      "ratioIn": 3.63,
+      "ratioOut": 3.63,
+      "ratio": 3.63
+     },
+     {
+      "side": "left",
+      "w": 1,
+      "color": "rgb(143,119,82)",
+      "ratioIn": 3.63,
+      "ratioOut": 3.63,
+      "ratio": 3.63
+     }
+    ],
+    "placeholder": null,
+    "text": "Тёмная тема"
+   }
+  },
+  "hero-light-1440": {
+   "#character .sheet-vitals": {
+    "inside": "rgb(243,236,224)",
+    "outside": "rgb(243,236,224)",
+    "fill": 1,
+    "worst": {
+     "side": "top",
+     "w": 1,
+     "color": "rgb(110,91,66)",
+     "ratioIn": 5.52,
+     "ratioOut": 5.52,
+     "ratio": 5.52
+    },
+    "edges": [
+     {
+      "side": "top",
+      "w": 1,
+      "color": "rgb(110,91,66)",
+      "ratioIn": 5.52,
+      "ratioOut": 5.52,
+      "ratio": 5.52
+     },
+     {
+      "side": "bottom",
+      "w": 1,
+      "color": "rgb(110,91,66)",
+      "ratioIn": 5.52,
+      "ratioOut": 5.52,
+      "ratio": 5.52
+     }
+    ],
+    "placeholder": null,
+    "text": "12 / 12\nХиты\n18\nЗащита\n+2\nИнициатива\n30 "
+   },
+   "#character .sheet-vitals__cell:nth-child(2)": {
+    "inside": "rgb(243,236,224)",
+    "outside": "rgb(243,236,224)",
+    "fill": 1,
+    "worst": {
+     "side": "left",
+     "w": 1,
+     "color": "rgb(143,119,82)",
+     "ratioIn": 3.63,
+     "ratioOut": 3.63,
+     "ratio": 3.63
+    },
+    "edges": [
+     {
+      "side": "left",
+      "w": 1,
+      "color": "rgb(143,119,82)",
+      "ratioIn": 3.63,
+      "ratioOut": 3.63,
+      "ratio": 3.63
+     }
+    ],
+    "placeholder": null,
+    "text": "18\nЗащита"
+   },
+   "#character .sheet-vitals__cell:nth-child(3)": {
+    "inside": "rgb(243,236,224)",
+    "outside": "rgb(243,236,224)",
+    "fill": 1,
+    "worst": {
+     "side": "top",
+     "w": 1,
+     "color": "rgb(143,119,82)",
+     "ratioIn": 3.63,
+     "ratioOut": 3.63,
+     "ratio": 3.63
+    },
+    "edges": [
+     {
+      "side": "top",
+      "w": 1,
+      "color": "rgb(143,119,82)",
+      "ratioIn": 3.63,
+      "ratioOut": 3.63,
+      "ratio": 3.63
+     }
+    ],
+    "placeholder": null,
+    "text": "+2\nИнициатива"
+   },
+   "#character .metric": {
+    "inside": "rgb(251,245,232)",
+    "outside": "rgb(243,236,224)",
+    "fill": 1.08,
+    "worst": {
+     "side": "top",
+     "w": 1,
+     "color": "rgb(143,119,82)",
+     "ratioIn": 3.92,
+     "ratioOut": 3.63,
+     "ratio": 3.63
+    },
+    "edges": [
+     {
+      "side": "top",
+      "w": 1,
+      "color": "rgb(143,119,82)",
+      "ratioIn": 3.92,
+      "ratioOut": 3.63,
+      "ratio": 3.63
+     },
+     {
+      "side": "right",
+      "w": 1,
+      "color": "rgb(143,119,82)",
+      "ratioIn": 3.92,
+      "ratioOut": 3.63,
+      "ratio": 3.63
+     },
+     {
+      "side": "bottom",
+      "w": 1,
+      "color": "rgb(143,119,82)",
+      "ratioIn": 3.92,
+      "ratioOut": 3.63,
+      "ratio": 3.63
+     },
+     {
+      "side": "left",
+      "w": 1,
+      "color": "rgb(143,119,82)",
+      "ratioIn": 3.92,
+      "ratioOut": 3.63,
+      "ratio": 3.63
+     }
+    ],
+    "placeholder": null,
+    "text": "16\nСила"
+   }
+  },
+  "notes-light-1440": {
+   "textarea#player-notes": {
+    "inside": "rgb(246,238,223)",
+    "outside": "rgb(251,245,232)",
+    "fill": 1.06,
+    "worst": {
+     "side": "top",
+     "w": 1,
+     "color": "rgb(143,119,82)",
+     "ratioIn": 3.7,
+     "ratioOut": 3.92,
+     "ratio": 3.7
+    },
+    "edges": [
+     {
+      "side": "top",
+      "w": 1,
+      "color": "rgb(143,119,82)",
+      "ratioIn": 3.7,
+      "ratioOut": 3.92,
+      "ratio": 3.7
+     },
+     {
+      "side": "right",
+      "w": 1,
+      "color": "rgb(143,119,82)",
+      "ratioIn": 3.7,
+      "ratioOut": 3.92,
+      "ratio": 3.7
+     },
+     {
+      "side": "bottom",
+      "w": 1,
+      "color": "rgb(143,119,82)",
+      "ratioIn": 3.7,
+      "ratioOut": 3.92,
+      "ratio": 3.7
+     },
+     {
+      "side": "left",
+      "w": 1,
+      "color": "rgb(143,119,82)",
+      "ratioIn": 3.7,
+      "ratioOut": 3.92,
+      "ratio": 3.7
+     }
+    ],
+    "placeholder": "rgb(42, 35, 26)",
+    "text": "Личные записи"
+   },
+   "section#journal .tabletop-tabs button": {
+    "inside": "rgb(246,238,223)",
+    "outside": "rgb(243,236,224)",
+    "fill": 1.02,
+    "worst": {
+     "side": "top",
+     "w": 1,
+     "color": "rgb(143,119,82)",
+     "ratioIn": 3.7,
+     "ratioOut": 3.63,
+     "ratio": 3.63
+    },
+    "edges": [
+     {
+      "side": "top",
+      "w": 1,
+      "color": "rgb(143,119,82)",
+      "ratioIn": 3.7,
+      "ratioOut": 3.63,
+      "ratio": 3.63
+     },
+     {
+      "side": "right",
+      "w": 1,
+      "color": "rgb(143,119,82)",
+      "ratioIn": 3.7,
+      "ratioOut": 3.63,
+      "ratio": 3.63
+     },
+     {
+      "side": "bottom",
+      "w": 1,
+      "color": "rgb(143,119,82)",
+      "ratioIn": 3.7,
+      "ratioOut": 3.63,
+      "ratio": 3.63
+     },
+     {
+      "side": "left",
+      "w": 1,
+      "color": "rgb(143,119,82)",
+      "ratioIn": 3.7,
+      "ratioOut": 3.63,
+      "ratio": 3.63
+     }
+    ],
+    "placeholder": null,
+    "text": "События и записи"
+   },
+   ".player-notes": {
+    "inside": "rgb(251,245,232)",
+    "outside": "rgb(243,236,224)",
+    "fill": 1.08,
+    "worst": {
+     "side": "top",
+     "w": 1,
+     "color": "rgb(143,119,82)",
+     "ratioIn": 3.92,
+     "ratioOut": 3.63,
+     "ratio": 3.63
+    },
+    "edges": [
+     {
+      "side": "top",
+      "w": 1,
+      "color": "rgb(143,119,82)",
+      "ratioIn": 3.92,
+      "ratioOut": 3.63,
+      "ratio": 3.63
+     },
+     {
+      "side": "right",
+      "w": 1,
+      "color": "rgb(143,119,82)",
+      "ratioIn": 3.92,
+      "ratioOut": 3.63,
+      "ratio": 3.63
+     },
+     {
+      "side": "bottom",
+      "w": 1,
+      "color": "rgb(143,119,82)",
+      "ratioIn": 3.92,
+      "ratioOut": 3.63,
+      "ratio": 3.63
+     },
+     {
+      "side": "left",
+      "w": 1,
+      "color": "rgb(143,119,82)",
+      "ratioIn": 3.92,
+      "ratioOut": 3.63,
+      "ratio": 3.63
+     }
+    ],
+    "placeholder": null,
+    "text": "Мои записи\n\nВаши догадки и планы. Записи"
+   }
+  },
+  "new-light-1440": {
+   "textarea#creation-description": {
+    "inside": "rgb(246,238,223)",
+    "outside": "rgb(243,236,224)",
+    "fill": 1.02,
+    "worst": {
+     "side": "top",
+     "w": 1,
+     "color": "rgb(143,119,82)",
+     "ratioIn": 3.7,
+     "ratioOut": 3.63,
+     "ratio": 3.63
+    },
+    "edges": [
+     {
+      "side": "top",
+      "w": 1,
+      "color": "rgb(143,119,82)",
+      "ratioIn": 3.7,
+      "ratioOut": 3.63,
+      "ratio": 3.63
+     },
+     {
+      "side": "right",
+      "w": 1,
+      "color": "rgb(143,119,82)",
+      "ratioIn": 3.7,
+      "ratioOut": 3.63,
+      "ratio": 3.63
+     },
+     {
+      "side": "bottom",
+      "w": 1,
+      "color": "rgb(143,119,82)",
+      "ratioIn": 3.7,
+      "ratioOut": 3.63,
+      "ratio": 3.63
+     },
+     {
+      "side": "left",
+      "w": 1,
+      "color": "rgb(143,119,82)",
+      "ratioIn": 3.7,
+      "ratioOut": 3.63,
+      "ratio": 3.63
+     }
+    ],
+    "placeholder": "rgb(106, 87, 64)",
+    "text": ""
+   },
+   "#creation .creation-controls button": {
+    "inside": "rgb(246,238,223)",
+    "outside": "rgb(243,236,224)",
+    "fill": 1.02,
+    "worst": {
+     "side": "top",
+     "w": 1,
+     "color": "rgb(143,119,82)",
+     "ratioIn": 3.7,
+     "ratioOut": 3.63,
+     "ratio": 3.63
+    },
+    "edges": [
+     {
+      "side": "top",
+      "w": 1,
+      "color": "rgb(143,119,82)",
+      "ratioIn": 3.7,
+      "ratioOut": 3.63,
+      "ratio": 3.63
+     },
+     {
+      "side": "right",
+      "w": 1,
+      "color": "rgb(143,119,82)",
+      "ratioIn": 3.7,
+      "ratioOut": 3.63,
+      "ratio": 3.63
+     },
+     {
+      "side": "bottom",
+      "w": 1,
+      "color": "rgb(143,119,82)",
+      "ratioIn": 3.7,
+      "ratioOut": 3.63,
+      "ratio": 3.63
+     },
+     {
+      "side": "left",
+      "w": 1,
+      "color": "rgb(143,119,82)",
+      "ratioIn": 3.7,
+      "ratioOut": 3.63,
+      "ratio": 3.63
+     }
+    ],
+    "placeholder": null,
+    "text": "Назад"
+   },
+   "#creation .creation-drop button": {
+    "inside": "rgb(246,238,223)",
+    "outside": "rgb(240,229,211)",
+    "fill": 1.08,
+    "worst": {
+     "side": "top",
+     "w": 1,
+     "color": "rgb(143,119,82)",
+     "ratioIn": 3.7,
+     "ratioOut": 3.42,
+     "ratio": 3.42
+    },
+    "edges": [
+     {
+      "side": "top",
+      "w": 1,
+      "color": "rgb(143,119,82)",
+      "ratioIn": 3.7,
+      "ratioOut": 3.42,
+      "ratio": 3.42
+     },
+     {
+      "side": "right",
+      "w": 1,
+      "color": "rgb(143,119,82)",
+      "ratioIn": 3.7,
+      "ratioOut": 3.42,
+      "ratio": 3.42
+     },
+     {
+      "side": "bottom",
+      "w": 1,
+      "color": "rgb(143,119,82)",
+      "ratioIn": 3.7,
+      "ratioOut": 3.42,
+      "ratio": 3.42
+     },
+     {
+      "side": "left",
+      "w": 1,
+      "color": "rgb(143,119,82)",
+      "ratioIn": 3.7,
+      "ratioOut": 3.42,
+      "ratio": 3.42
+     }
+    ],
+    "placeholder": null,
+    "text": "Выбрать файлы"
+   }
+  },
+  "menu-light-1440": {
+   "#nav-tabs .nav-tab": {
+    "inside": "rgb(227,214,191)",
+    "outside": "rgb(243,236,224)",
+    "fill": 1.22,
+    "worst": {
+     "side": "top",
+     "w": 1,
+     "color": "rgb(138,87,20)",
+     "ratioIn": 4.24,
+     "ratioOut": 5.18,
+     "ratio": 4.24
+    },
+    "edges": [
+     {
+      "side": "top",
+      "w": 1,
+      "color": "rgb(138,87,20)",
+      "ratioIn": 4.24,
+      "ratioOut": 5.18,
+      "ratio": 4.24
+     },
+     {
+      "side": "right",
+      "w": 1,
+      "color": "rgb(138,87,20)",
+      "ratioIn": 4.24,
+      "ratioOut": 5.18,
+      "ratio": 4.24
+     },
+     {
+      "side": "bottom",
+      "w": 1,
+      "color": "rgb(138,87,20)",
+      "ratioIn": 4.24,
+      "ratioOut": 5.18,
+      "ratio": 4.24
+     },
+     {
+      "side": "left",
+      "w": 1,
+      "color": "rgb(138,87,20)",
+      "ratioIn": 4.24,
+      "ratioOut": 5.18,
+      "ratio": 4.24
+     }
+    ],
+    "placeholder": null,
+    "text": "Кампания"
+   },
+   "#nav-head .nav-close": {
+    "inside": "rgb(239,231,217)",
+    "outside": "rgb(243,236,224)",
+    "fill": 1.05,
+    "worst": {
+     "side": "top",
+     "w": 1,
+     "color": "rgb(143,119,82)",
+     "ratioIn": 3.47,
+     "ratioOut": 3.63,
+     "ratio": 3.47
+    },
+    "edges": [
+     {
+      "side": "top",
+      "w": 1,
+      "color": "rgb(143,119,82)",
+      "ratioIn": 3.47,
+      "ratioOut": 3.63,
+      "ratio": 3.47
+     },
+     {
+      "side": "right",
+      "w": 1,
+      "color": "rgb(143,119,82)",
+      "ratioIn": 3.47,
+      "ratioOut": 3.63,
+      "ratio": 3.47
+     },
+     {
+      "side": "bottom",
+      "w": 1,
+      "color": "rgb(143,119,82)",
+      "ratioIn": 3.47,
+      "ratioOut": 3.63,
+      "ratio": 3.47
+     },
+     {
+      "side": "left",
+      "w": 1,
+      "color": "rgb(143,119,82)",
+      "ratioIn": 3.47,
+      "ratioOut": 3.63,
+      "ratio": 3.47
+     }
+    ],
+    "placeholder": null,
+    "text": "×"
+   },
+   "aside.sidebar .nav.active": {
+    "missing": true
+   }
+  },
+  "prep-light-1440": {
+   ".prep-bar": {
+    "inside": "rgb(218,204,178)",
+    "outside": "rgb(251,245,232)",
+    "fill": 1.46,
+    "worst": null,
+    "edges": [],
+    "placeholder": null,
+    "text": ""
+   },
+   ".prep-fill": {
+    "inside": "rgb(71,97,39)",
+    "outside": "rgb(218,204,178)",
+    "fill": 4.41,
+    "worst": null,
+    "edges": [],
+    "placeholder": null,
+    "text": ""
+   },
+   ".prep-tick:not(.is-done):not(.is-active):not(.is-failed)": {
+    "missing": true
+   }
+  },
+  "game-dark-375": {
+   "form#action-form": {
+    "inside": "rgb(25,21,16)",
+    "outside": "rgb(20,17,13)",
+    "fill": 1.04,
+    "worst": {
+     "side": "top",
+     "w": 1,
+     "color": "rgb(74,62,48)",
+     "ratioIn": 1.75,
+     "ratioOut": 1.81,
+     "ratio": 1.75
+    },
+    "edges": [
+     {
+      "side": "top",
+      "w": 1,
+      "color": "rgb(74,62,48)",
+      "ratioIn": 1.75,
+      "ratioOut": 1.81,
+      "ratio": 1.75
+     },
+     {
+      "side": "right",
+      "w": 1,
+      "color": "rgb(74,62,48)",
+      "ratioIn": 1.75,
+      "ratioOut": 1.81,
+      "ratio": 1.75
+     },
+     {
+      "side": "bottom",
+      "w": 1,
+      "color": "rgb(74,62,48)",
+      "ratioIn": 1.75,
+      "ratioOut": 1.81,
+      "ratio": 1.75
+     },
+     {
+      "side": "left",
+      "w": 1,
+      "color": "rgb(74,62,48)",
+      "ratioIn": 1.75,
+      "ratioOut": 1.81,
+      "ratio": 1.75
+     }
+    ],
+    "placeholder": null,
+    "text": "Сказать"
+   },
+   "#play #scene-hero .sheet-link": {
+    "inside": "rgb(30,26,20)",
+    "outside": "rgb(30,26,20)",
+    "fill": 1,
+    "worst": {
+     "side": "top",
+     "w": 1,
+     "color": "rgb(58,49,40)",
+     "ratioIn": 1.36,
+     "ratioOut": 1.36,
+     "ratio": 1.36
+    },
+    "edges": [
+     {
+      "side": "top",
+      "w": 1,
+      "color": "rgb(58,49,40)",
+      "ratioIn": 1.36,
+      "ratioOut": 1.36,
+      "ratio": 1.36
+     },
+     {
+      "side": "right",
+      "w": 1,
+      "color": "rgb(58,49,40)",
+      "ratioIn": 1.36,
+      "ratioOut": 1.36,
+      "ratio": 1.36
+     },
+     {
+      "side": "bottom",
+      "w": 1,
+      "color": "rgb(58,49,40)",
+      "ratioIn": 1.36,
+      "ratioOut": 1.36,
+      "ratio": 1.36
+     },
+     {
+      "side": "left",
+      "w": 1,
+      "color": "rgb(58,49,40)",
+      "ratioIn": 1.36,
+      "ratioOut": 1.36,
+      "ratio": 1.36
+     }
+    ],
+    "placeholder": null,
+    "text": "Лист героя"
+   },
+   "button.themetoggle": {
+    "inside": "rgb(20,17,13)",
+    "outside": "rgb(20,17,13)",
+    "fill": 1,
+    "worst": {
+     "side": "top",
+     "w": 1,
+     "color": "rgb(51,43,34)",
+     "ratioIn": 1.35,
+     "ratioOut": 1.35,
+     "ratio": 1.35
+    },
+    "edges": [
+     {
+      "side": "top",
+      "w": 1,
+      "color": "rgb(51,43,34)",
+      "ratioIn": 1.35,
+      "ratioOut": 1.35,
+      "ratio": 1.35
+     },
+     {
+      "side": "right",
+      "w": 1,
+      "color": "rgb(51,43,34)",
+      "ratioIn": 1.35,
+      "ratioOut": 1.35,
+      "ratio": 1.35
+     },
+     {
+      "side": "bottom",
+      "w": 1,
+      "color": "rgb(51,43,34)",
+      "ratioIn": 1.35,
+      "ratioOut": 1.35,
+      "ratio": 1.35
+     },
+     {
+      "side": "left",
+      "w": 1,
+      "color": "rgb(51,43,34)",
+      "ratioIn": 1.35,
+      "ratioOut": 1.35,
+      "ratio": 1.35
+     }
+    ],
+    "placeholder": null,
+    "text": "Светлая тема"
+   }
+  },
+  "hero-dark-375": {
+   "#character .sheet-vitals": {
+    "inside": "rgb(16,18,16)",
+    "outside": "rgb(16,18,16)",
+    "fill": 1,
+    "worst": {
+     "side": "top",
+     "w": 1,
+     "color": "rgb(74,62,48)",
+     "ratioIn": 1.81,
+     "ratioOut": 1.81,
+     "ratio": 1.81
+    },
+    "edges": [
+     {
+      "side": "top",
+      "w": 1,
+      "color": "rgb(74,62,48)",
+      "ratioIn": 1.81,
+      "ratioOut": 1.81,
+      "ratio": 1.81
+     },
+     {
+      "side": "bottom",
+      "w": 1,
+      "color": "rgb(74,62,48)",
+      "ratioIn": 1.81,
+      "ratioOut": 1.81,
+      "ratio": 1.81
+     }
+    ],
+    "placeholder": null,
+    "text": "12 / 12\nХиты\n18\nЗащита\n+2\nИнициатива\n30 "
+   },
+   "#character .sheet-vitals__cell:nth-child(2)": {
+    "inside": "rgb(16,18,16)",
+    "outside": "rgb(16,18,16)",
+    "fill": 1,
+    "worst": {
+     "side": "left",
+     "w": 1,
+     "color": "rgb(51,43,34)",
+     "ratioIn": 1.35,
+     "ratioOut": 1.35,
+     "ratio": 1.35
+    },
+    "edges": [
+     {
+      "side": "left",
+      "w": 1,
+      "color": "rgb(51,43,34)",
+      "ratioIn": 1.35,
+      "ratioOut": 1.35,
+      "ratio": 1.35
+     }
+    ],
+    "placeholder": null,
+    "text": "18\nЗащита"
+   },
+   "#character .sheet-vitals__cell:nth-child(3)": {
+    "inside": "rgb(16,18,16)",
+    "outside": "rgb(16,18,16)",
+    "fill": 1,
+    "worst": {
+     "side": "top",
+     "w": 1,
+     "color": "rgb(51,43,34)",
+     "ratioIn": 1.35,
+     "ratioOut": 1.35,
+     "ratio": 1.35
+    },
+    "edges": [
+     {
+      "side": "top",
+      "w": 1,
+      "color": "rgb(51,43,34)",
+      "ratioIn": 1.35,
+      "ratioOut": 1.35,
+      "ratio": 1.35
+     }
+    ],
+    "placeholder": null,
+    "text": "+2\nИнициатива"
+   },
+   "#character .metric": {
+    "inside": "rgb(24,28,25)",
+    "outside": "rgb(16,18,16)",
+    "fill": 1.09,
+    "worst": {
+     "side": "top",
+     "w": 1,
+     "color": "rgb(51,43,34)",
+     "ratioIn": 1.24,
+     "ratioOut": 1.35,
+     "ratio": 1.24
+    },
+    "edges": [
+     {
+      "side": "top",
+      "w": 1,
+      "color": "rgb(51,43,34)",
+      "ratioIn": 1.24,
+      "ratioOut": 1.35,
+      "ratio": 1.24
+     },
+     {
+      "side": "right",
+      "w": 1,
+      "color": "rgb(51,43,34)",
+      "ratioIn": 1.24,
+      "ratioOut": 1.35,
+      "ratio": 1.24
+     },
+     {
+      "side": "bottom",
+      "w": 1,
+      "color": "rgb(51,43,34)",
+      "ratioIn": 1.24,
+      "ratioOut": 1.35,
+      "ratio": 1.24
+     },
+     {
+      "side": "left",
+      "w": 1,
+      "color": "rgb(51,43,34)",
+      "ratioIn": 1.24,
+      "ratioOut": 1.35,
+      "ratio": 1.24
+     }
+    ],
+    "placeholder": null,
+    "text": "16\nСила"
+   }
+  },
+  "notes-dark-375": {
+   "textarea#player-notes": {
+    "inside": "rgb(18,22,19)",
+    "outside": "rgb(24,28,25)",
+    "fill": 1.06,
+    "worst": {
+     "side": "top",
+     "w": 1,
+     "color": "rgb(51,43,34)",
+     "ratioIn": 1.31,
+     "ratioOut": 1.24,
+     "ratio": 1.24
+    },
+    "edges": [
+     {
+      "side": "top",
+      "w": 1,
+      "color": "rgb(51,43,34)",
+      "ratioIn": 1.31,
+      "ratioOut": 1.24,
+      "ratio": 1.24
+     },
+     {
+      "side": "right",
+      "w": 1,
+      "color": "rgb(51,43,34)",
+      "ratioIn": 1.31,
+      "ratioOut": 1.24,
+      "ratio": 1.24
+     },
+     {
+      "side": "bottom",
+      "w": 1,
+      "color": "rgb(51,43,34)",
+      "ratioIn": 1.31,
+      "ratioOut": 1.24,
+      "ratio": 1.24
+     },
+     {
+      "side": "left",
+      "w": 1,
+      "color": "rgb(51,43,34)",
+      "ratioIn": 1.31,
+      "ratioOut": 1.24,
+      "ratio": 1.24
+     }
+    ],
+    "placeholder": "rgb(237, 227, 206)",
+    "text": "Личные записи"
+   },
+   "section#journal .tabletop-tabs button": {
+    "inside": "rgb(30,36,32)",
+    "outside": "rgb(16,18,16)",
+    "fill": 1.19,
+    "worst": {
+     "side": "top",
+     "w": 1,
+     "color": "rgb(51,43,34)",
+     "ratioIn": 1.14,
+     "ratioOut": 1.35,
+     "ratio": 1.14
+    },
+    "edges": [
+     {
+      "side": "top",
+      "w": 1,
+      "color": "rgb(51,43,34)",
+      "ratioIn": 1.14,
+      "ratioOut": 1.35,
+      "ratio": 1.14
+     },
+     {
+      "side": "right",
+      "w": 1,
+      "color": "rgb(51,43,34)",
+      "ratioIn": 1.14,
+      "ratioOut": 1.35,
+      "ratio": 1.14
+     },
+     {
+      "side": "bottom",
+      "w": 1,
+      "color": "rgb(51,43,34)",
+      "ratioIn": 1.14,
+      "ratioOut": 1.35,
+      "ratio": 1.14
+     },
+     {
+      "side": "left",
+      "w": 1,
+      "color": "rgb(51,43,34)",
+      "ratioIn": 1.14,
+      "ratioOut": 1.35,
+      "ratio": 1.14
+     }
+    ],
+    "placeholder": null,
+    "text": "События и записи"
+   },
+   ".player-notes": {
+    "inside": "rgb(24,28,25)",
+    "outside": "rgb(16,18,16)",
+    "fill": 1.09,
+    "worst": {
+     "side": "top",
+     "w": 1,
+     "color": "rgb(51,43,34)",
+     "ratioIn": 1.24,
+     "ratioOut": 1.35,
+     "ratio": 1.24
+    },
+    "edges": [
+     {
+      "side": "top",
+      "w": 1,
+      "color": "rgb(51,43,34)",
+      "ratioIn": 1.24,
+      "ratioOut": 1.35,
+      "ratio": 1.24
+     },
+     {
+      "side": "right",
+      "w": 1,
+      "color": "rgb(51,43,34)",
+      "ratioIn": 1.24,
+      "ratioOut": 1.35,
+      "ratio": 1.24
+     },
+     {
+      "side": "bottom",
+      "w": 1,
+      "color": "rgb(51,43,34)",
+      "ratioIn": 1.24,
+      "ratioOut": 1.35,
+      "ratio": 1.24
+     },
+     {
+      "side": "left",
+      "w": 1,
+      "color": "rgb(51,43,34)",
+      "ratioIn": 1.24,
+      "ratioOut": 1.35,
+      "ratio": 1.24
+     }
+    ],
+    "placeholder": null,
+    "text": "Мои записи\n\nВаши догадки и планы. Записи"
+   }
+  },
+  "new-dark-375": {
+   "textarea#creation-description": {
+    "inside": "rgb(18,22,19)",
+    "outside": "rgb(16,18,16)",
+    "fill": 1.03,
+    "worst": {
+     "side": "top",
+     "w": 1,
+     "color": "rgb(51,43,34)",
+     "ratioIn": 1.31,
+     "ratioOut": 1.35,
+     "ratio": 1.31
+    },
+    "edges": [
+     {
+      "side": "top",
+      "w": 1,
+      "color": "rgb(51,43,34)",
+      "ratioIn": 1.31,
+      "ratioOut": 1.35,
+      "ratio": 1.31
+     },
+     {
+      "side": "right",
+      "w": 1,
+      "color": "rgb(51,43,34)",
+      "ratioIn": 1.31,
+      "ratioOut": 1.35,
+      "ratio": 1.31
+     },
+     {
+      "side": "bottom",
+      "w": 1,
+      "color": "rgb(51,43,34)",
+      "ratioIn": 1.31,
+      "ratioOut": 1.35,
+      "ratio": 1.31
+     },
+     {
+      "side": "left",
+      "w": 1,
+      "color": "rgb(51,43,34)",
+      "ratioIn": 1.31,
+      "ratioOut": 1.35,
+      "ratio": 1.31
+     }
+    ],
+    "placeholder": "rgb(162, 149, 123)",
+    "text": ""
+   },
+   "#creation .creation-controls button": {
+    "inside": "rgb(30,36,32)",
+    "outside": "rgb(16,18,16)",
+    "fill": 1.19,
+    "worst": {
+     "side": "top",
+     "w": 1,
+     "color": "rgb(51,43,34)",
+     "ratioIn": 1.14,
+     "ratioOut": 1.35,
+     "ratio": 1.14
+    },
+    "edges": [
+     {
+      "side": "top",
+      "w": 1,
+      "color": "rgb(51,43,34)",
+      "ratioIn": 1.14,
+      "ratioOut": 1.35,
+      "ratio": 1.14
+     },
+     {
+      "side": "right",
+      "w": 1,
+      "color": "rgb(51,43,34)",
+      "ratioIn": 1.14,
+      "ratioOut": 1.35,
+      "ratio": 1.14
+     },
+     {
+      "side": "bottom",
+      "w": 1,
+      "color": "rgb(51,43,34)",
+      "ratioIn": 1.14,
+      "ratioOut": 1.35,
+      "ratio": 1.14
+     },
+     {
+      "side": "left",
+      "w": 1,
+      "color": "rgb(51,43,34)",
+      "ratioIn": 1.14,
+      "ratioOut": 1.35,
+      "ratio": 1.14
+     }
+    ],
+    "placeholder": null,
+    "text": "Назад"
+   },
+   "#creation .creation-drop button": {
+    "inside": "rgb(30,36,32)",
+    "outside": "rgb(43,44,36)",
+    "fill": 1.12,
+    "worst": {
+     "side": "top",
+     "w": 1,
+     "color": "rgb(51,43,34)",
+     "ratioIn": 1.14,
+     "ratioOut": 1.01,
+     "ratio": 1.01
+    },
+    "edges": [
+     {
+      "side": "top",
+      "w": 1,
+      "color": "rgb(51,43,34)",
+      "ratioIn": 1.14,
+      "ratioOut": 1.01,
+      "ratio": 1.01
+     },
+     {
+      "side": "right",
+      "w": 1,
+      "color": "rgb(51,43,34)",
+      "ratioIn": 1.14,
+      "ratioOut": 1.01,
+      "ratio": 1.01
+     },
+     {
+      "side": "bottom",
+      "w": 1,
+      "color": "rgb(51,43,34)",
+      "ratioIn": 1.14,
+      "ratioOut": 1.01,
+      "ratio": 1.01
+     },
+     {
+      "side": "left",
+      "w": 1,
+      "color": "rgb(51,43,34)",
+      "ratioIn": 1.14,
+      "ratioOut": 1.01,
+      "ratio": 1.01
+     }
+    ],
+    "placeholder": null,
+    "text": "Выбрать файлы"
+   }
+  },
+  "menu-dark-375": {
+   "#nav-tabs .nav-tab": {
+    "inside": "rgb(30,26,20)",
+    "outside": "rgb(30,26,20)",
+    "fill": 1,
+    "worst": {
+     "side": "bottom",
+     "w": 2,
+     "color": "rgb(216,160,92)",
+     "ratioIn": 7.5,
+     "ratioOut": 7.5,
+     "ratio": 7.5
+    },
+    "edges": [
+     {
+      "side": "bottom",
+      "w": 2,
+      "color": "rgb(216,160,92)",
+      "ratioIn": 7.5,
+      "ratioOut": 7.5,
+      "ratio": 7.5
+     }
+    ],
+    "placeholder": null,
+    "text": "Кампания"
+   },
+   "#nav-head .nav-close": {
+    "inside": "rgb(30,26,20)",
+    "outside": "rgb(30,26,20)",
+    "fill": 1,
+    "worst": null,
+    "edges": [],
+    "placeholder": null,
+    "text": "×"
+   },
+   "aside.sidebar .nav.active": {
+    "missing": true
+   }
+  },
+  "prep-dark-375": {
+   ".prep-bar": {
+    "inside": "rgb(46,39,32)",
+    "outside": "rgb(30,26,20)",
+    "fill": 1.18,
+    "worst": null,
+    "edges": [],
+    "placeholder": null,
+    "text": ""
+   },
+   ".prep-fill": {
+    "inside": "rgb(155,170,136)",
+    "outside": "rgb(46,39,32)",
+    "fill": 5.95,
+    "worst": null,
+    "edges": [],
+    "placeholder": null,
+    "text": ""
+   },
+   ".prep-tick:not(.is-done):not(.is-active):not(.is-failed)": {
+    "missing": true
+   }
+  },
+  "game-dark-1440": {
+   "form#action-form": {
+    "inside": "rgb(25,21,16)",
+    "outside": "rgb(20,17,13)",
+    "fill": 1.04,
+    "worst": {
+     "side": "top",
+     "w": 1,
+     "color": "rgb(74,62,48)",
+     "ratioIn": 1.75,
+     "ratioOut": 1.81,
+     "ratio": 1.75
+    },
+    "edges": [
+     {
+      "side": "top",
+      "w": 1,
+      "color": "rgb(74,62,48)",
+      "ratioIn": 1.75,
+      "ratioOut": 1.81,
+      "ratio": 1.75
+     },
+     {
+      "side": "right",
+      "w": 1,
+      "color": "rgb(74,62,48)",
+      "ratioIn": 1.75,
+      "ratioOut": 1.81,
+      "ratio": 1.75
+     },
+     {
+      "side": "bottom",
+      "w": 1,
+      "color": "rgb(74,62,48)",
+      "ratioIn": 1.75,
+      "ratioOut": 1.81,
+      "ratio": 1.75
+     },
+     {
+      "side": "left",
+      "w": 1,
+      "color": "rgb(74,62,48)",
+      "ratioIn": 1.75,
+      "ratioOut": 1.81,
+      "ratio": 1.75
+     }
+    ],
+    "placeholder": null,
+    "text": "Enter — отправить · Shift + Enter — нова"
+   },
+   "#play #scene-hero .sheet-link": {
+    "inside": "rgb(30,26,20)",
+    "outside": "rgb(30,26,20)",
+    "fill": 1,
+    "worst": {
+     "side": "top",
+     "w": 1,
+     "color": "rgb(58,49,40)",
+     "ratioIn": 1.36,
+     "ratioOut": 1.36,
+     "ratio": 1.36
+    },
+    "edges": [
+     {
+      "side": "top",
+      "w": 1,
+      "color": "rgb(58,49,40)",
+      "ratioIn": 1.36,
+      "ratioOut": 1.36,
+      "ratio": 1.36
+     },
+     {
+      "side": "right",
+      "w": 1,
+      "color": "rgb(58,49,40)",
+      "ratioIn": 1.36,
+      "ratioOut": 1.36,
+      "ratio": 1.36
+     },
+     {
+      "side": "bottom",
+      "w": 1,
+      "color": "rgb(58,49,40)",
+      "ratioIn": 1.36,
+      "ratioOut": 1.36,
+      "ratio": 1.36
+     },
+     {
+      "side": "left",
+      "w": 1,
+      "color": "rgb(58,49,40)",
+      "ratioIn": 1.36,
+      "ratioOut": 1.36,
+      "ratio": 1.36
+     }
+    ],
+    "placeholder": null,
+    "text": "Лист героя"
+   },
+   "button.themetoggle": {
+    "inside": "rgb(20,17,13)",
+    "outside": "rgb(20,17,13)",
+    "fill": 1,
+    "worst": {
+     "side": "top",
+     "w": 1,
+     "color": "rgb(51,43,34)",
+     "ratioIn": 1.35,
+     "ratioOut": 1.35,
+     "ratio": 1.35
+    },
+    "edges": [
+     {
+      "side": "top",
+      "w": 1,
+      "color": "rgb(51,43,34)",
+      "ratioIn": 1.35,
+      "ratioOut": 1.35,
+      "ratio": 1.35
+     },
+     {
+      "side": "right",
+      "w": 1,
+      "color": "rgb(51,43,34)",
+      "ratioIn": 1.35,
+      "ratioOut": 1.35,
+      "ratio": 1.35
+     },
+     {
+      "side": "bottom",
+      "w": 1,
+      "color": "rgb(51,43,34)",
+      "ratioIn": 1.35,
+      "ratioOut": 1.35,
+      "ratio": 1.35
+     },
+     {
+      "side": "left",
+      "w": 1,
+      "color": "rgb(51,43,34)",
+      "ratioIn": 1.35,
+      "ratioOut": 1.35,
+      "ratio": 1.35
+     }
+    ],
+    "placeholder": null,
+    "text": "Светлая тема"
+   }
+  },
+  "hero-dark-1440": {
+   "#character .sheet-vitals": {
+    "inside": "rgb(16,18,16)",
+    "outside": "rgb(16,18,16)",
+    "fill": 1,
+    "worst": {
+     "side": "top",
+     "w": 1,
+     "color": "rgb(74,62,48)",
+     "ratioIn": 1.81,
+     "ratioOut": 1.81,
+     "ratio": 1.81
+    },
+    "edges": [
+     {
+      "side": "top",
+      "w": 1,
+      "color": "rgb(74,62,48)",
+      "ratioIn": 1.81,
+      "ratioOut": 1.81,
+      "ratio": 1.81
+     },
+     {
+      "side": "bottom",
+      "w": 1,
+      "color": "rgb(74,62,48)",
+      "ratioIn": 1.81,
+      "ratioOut": 1.81,
+      "ratio": 1.81
+     }
+    ],
+    "placeholder": null,
+    "text": "12 / 12\nХиты\n18\nЗащита\n+2\nИнициатива\n30 "
+   },
+   "#character .sheet-vitals__cell:nth-child(2)": {
+    "inside": "rgb(16,18,16)",
+    "outside": "rgb(16,18,16)",
+    "fill": 1,
+    "worst": {
+     "side": "left",
+     "w": 1,
+     "color": "rgb(51,43,34)",
+     "ratioIn": 1.35,
+     "ratioOut": 1.35,
+     "ratio": 1.35
+    },
+    "edges": [
+     {
+      "side": "left",
+      "w": 1,
+      "color": "rgb(51,43,34)",
+      "ratioIn": 1.35,
+      "ratioOut": 1.35,
+      "ratio": 1.35
+     }
+    ],
+    "placeholder": null,
+    "text": "18\nЗащита"
+   },
+   "#character .sheet-vitals__cell:nth-child(3)": {
+    "inside": "rgb(16,18,16)",
+    "outside": "rgb(16,18,16)",
+    "fill": 1,
+    "worst": {
+     "side": "top",
+     "w": 1,
+     "color": "rgb(51,43,34)",
+     "ratioIn": 1.35,
+     "ratioOut": 1.35,
+     "ratio": 1.35
+    },
+    "edges": [
+     {
+      "side": "top",
+      "w": 1,
+      "color": "rgb(51,43,34)",
+      "ratioIn": 1.35,
+      "ratioOut": 1.35,
+      "ratio": 1.35
+     }
+    ],
+    "placeholder": null,
+    "text": "+2\nИнициатива"
+   },
+   "#character .metric": {
+    "inside": "rgb(24,28,25)",
+    "outside": "rgb(16,18,16)",
+    "fill": 1.09,
+    "worst": {
+     "side": "top",
+     "w": 1,
+     "color": "rgb(51,43,34)",
+     "ratioIn": 1.24,
+     "ratioOut": 1.35,
+     "ratio": 1.24
+    },
+    "edges": [
+     {
+      "side": "top",
+      "w": 1,
+      "color": "rgb(51,43,34)",
+      "ratioIn": 1.24,
+      "ratioOut": 1.35,
+      "ratio": 1.24
+     },
+     {
+      "side": "right",
+      "w": 1,
+      "color": "rgb(51,43,34)",
+      "ratioIn": 1.24,
+      "ratioOut": 1.35,
+      "ratio": 1.24
+     },
+     {
+      "side": "bottom",
+      "w": 1,
+      "color": "rgb(51,43,34)",
+      "ratioIn": 1.24,
+      "ratioOut": 1.35,
+      "ratio": 1.24
+     },
+     {
+      "side": "left",
+      "w": 1,
+      "color": "rgb(51,43,34)",
+      "ratioIn": 1.24,
+      "ratioOut": 1.35,
+      "ratio": 1.24
+     }
+    ],
+    "placeholder": null,
+    "text": "16\nСила"
+   }
+  },
+  "notes-dark-1440": {
+   "textarea#player-notes": {
+    "inside": "rgb(18,22,19)",
+    "outside": "rgb(24,28,25)",
+    "fill": 1.06,
+    "worst": {
+     "side": "top",
+     "w": 1,
+     "color": "rgb(51,43,34)",
+     "ratioIn": 1.31,
+     "ratioOut": 1.24,
+     "ratio": 1.24
+    },
+    "edges": [
+     {
+      "side": "top",
+      "w": 1,
+      "color": "rgb(51,43,34)",
+      "ratioIn": 1.31,
+      "ratioOut": 1.24,
+      "ratio": 1.24
+     },
+     {
+      "side": "right",
+      "w": 1,
+      "color": "rgb(51,43,34)",
+      "ratioIn": 1.31,
+      "ratioOut": 1.24,
+      "ratio": 1.24
+     },
+     {
+      "side": "bottom",
+      "w": 1,
+      "color": "rgb(51,43,34)",
+      "ratioIn": 1.31,
+      "ratioOut": 1.24,
+      "ratio": 1.24
+     },
+     {
+      "side": "left",
+      "w": 1,
+      "color": "rgb(51,43,34)",
+      "ratioIn": 1.31,
+      "ratioOut": 1.24,
+      "ratio": 1.24
+     }
+    ],
+    "placeholder": "rgb(237, 227, 206)",
+    "text": "Личные записи"
+   },
+   "section#journal .tabletop-tabs button": {
+    "inside": "rgb(30,36,32)",
+    "outside": "rgb(16,18,16)",
+    "fill": 1.19,
+    "worst": {
+     "side": "top",
+     "w": 1,
+     "color": "rgb(51,43,34)",
+     "ratioIn": 1.14,
+     "ratioOut": 1.35,
+     "ratio": 1.14
+    },
+    "edges": [
+     {
+      "side": "top",
+      "w": 1,
+      "color": "rgb(51,43,34)",
+      "ratioIn": 1.14,
+      "ratioOut": 1.35,
+      "ratio": 1.14
+     },
+     {
+      "side": "right",
+      "w": 1,
+      "color": "rgb(51,43,34)",
+      "ratioIn": 1.14,
+      "ratioOut": 1.35,
+      "ratio": 1.14
+     },
+     {
+      "side": "bottom",
+      "w": 1,
+      "color": "rgb(51,43,34)",
+      "ratioIn": 1.14,
+      "ratioOut": 1.35,
+      "ratio": 1.14
+     },
+     {
+      "side": "left",
+      "w": 1,
+      "color": "rgb(51,43,34)",
+      "ratioIn": 1.14,
+      "ratioOut": 1.35,
+      "ratio": 1.14
+     }
+    ],
+    "placeholder": null,
+    "text": "События и записи"
+   },
+   ".player-notes": {
+    "inside": "rgb(24,28,25)",
+    "outside": "rgb(16,18,16)",
+    "fill": 1.09,
+    "worst": {
+     "side": "top",
+     "w": 1,
+     "color": "rgb(51,43,34)",
+     "ratioIn": 1.24,
+     "ratioOut": 1.35,
+     "ratio": 1.24
+    },
+    "edges": [
+     {
+      "side": "top",
+      "w": 1,
+      "color": "rgb(51,43,34)",
+      "ratioIn": 1.24,
+      "ratioOut": 1.35,
+      "ratio": 1.24
+     },
+     {
+      "side": "right",
+      "w": 1,
+      "color": "rgb(51,43,34)",
+      "ratioIn": 1.24,
+      "ratioOut": 1.35,
+      "ratio": 1.24
+     },
+     {
+      "side": "bottom",
+      "w": 1,
+      "color": "rgb(51,43,34)",
+      "ratioIn": 1.24,
+      "ratioOut": 1.35,
+      "ratio": 1.24
+     },
+     {
+      "side": "left",
+      "w": 1,
+      "color": "rgb(51,43,34)",
+      "ratioIn": 1.24,
+      "ratioOut": 1.35,
+      "ratio": 1.24
+     }
+    ],
+    "placeholder": null,
+    "text": "Мои записи\n\nВаши догадки и планы. Записи"
+   }
+  },
+  "new-dark-1440": {
+   "textarea#creation-description": {
+    "inside": "rgb(18,22,19)",
+    "outside": "rgb(16,18,16)",
+    "fill": 1.03,
+    "worst": {
+     "side": "top",
+     "w": 1,
+     "color": "rgb(51,43,34)",
+     "ratioIn": 1.31,
+     "ratioOut": 1.35,
+     "ratio": 1.31
+    },
+    "edges": [
+     {
+      "side": "top",
+      "w": 1,
+      "color": "rgb(51,43,34)",
+      "ratioIn": 1.31,
+      "ratioOut": 1.35,
+      "ratio": 1.31
+     },
+     {
+      "side": "right",
+      "w": 1,
+      "color": "rgb(51,43,34)",
+      "ratioIn": 1.31,
+      "ratioOut": 1.35,
+      "ratio": 1.31
+     },
+     {
+      "side": "bottom",
+      "w": 1,
+      "color": "rgb(51,43,34)",
+      "ratioIn": 1.31,
+      "ratioOut": 1.35,
+      "ratio": 1.31
+     },
+     {
+      "side": "left",
+      "w": 1,
+      "color": "rgb(51,43,34)",
+      "ratioIn": 1.31,
+      "ratioOut": 1.35,
+      "ratio": 1.31
+     }
+    ],
+    "placeholder": "rgb(162, 149, 123)",
+    "text": ""
+   },
+   "#creation .creation-controls button": {
+    "inside": "rgb(30,36,32)",
+    "outside": "rgb(16,18,16)",
+    "fill": 1.19,
+    "worst": {
+     "side": "top",
+     "w": 1,
+     "color": "rgb(51,43,34)",
+     "ratioIn": 1.14,
+     "ratioOut": 1.35,
+     "ratio": 1.14
+    },
+    "edges": [
+     {
+      "side": "top",
+      "w": 1,
+      "color": "rgb(51,43,34)",
+      "ratioIn": 1.14,
+      "ratioOut": 1.35,
+      "ratio": 1.14
+     },
+     {
+      "side": "right",
+      "w": 1,
+      "color": "rgb(51,43,34)",
+      "ratioIn": 1.14,
+      "ratioOut": 1.35,
+      "ratio": 1.14
+     },
+     {
+      "side": "bottom",
+      "w": 1,
+      "color": "rgb(51,43,34)",
+      "ratioIn": 1.14,
+      "ratioOut": 1.35,
+      "ratio": 1.14
+     },
+     {
+      "side": "left",
+      "w": 1,
+      "color": "rgb(51,43,34)",
+      "ratioIn": 1.14,
+      "ratioOut": 1.35,
+      "ratio": 1.14
+     }
+    ],
+    "placeholder": null,
+    "text": "Назад"
+   },
+   "#creation .creation-drop button": {
+    "inside": "rgb(30,36,32)",
+    "outside": "rgb(43,44,36)",
+    "fill": 1.12,
+    "worst": {
+     "side": "top",
+     "w": 1,
+     "color": "rgb(51,43,34)",
+     "ratioIn": 1.14,
+     "ratioOut": 1.01,
+     "ratio": 1.01
+    },
+    "edges": [
+     {
+      "side": "top",
+      "w": 1,
+      "color": "rgb(51,43,34)",
+      "ratioIn": 1.14,
+      "ratioOut": 1.01,
+      "ratio": 1.01
+     },
+     {
+      "side": "right",
+      "w": 1,
+      "color": "rgb(51,43,34)",
+      "ratioIn": 1.14,
+      "ratioOut": 1.01,
+      "ratio": 1.01
+     },
+     {
+      "side": "bottom",
+      "w": 1,
+      "color": "rgb(51,43,34)",
+      "ratioIn": 1.14,
+      "ratioOut": 1.01,
+      "ratio": 1.01
+     },
+     {
+      "side": "left",
+      "w": 1,
+      "color": "rgb(51,43,34)",
+      "ratioIn": 1.14,
+      "ratioOut": 1.01,
+      "ratio": 1.01
+     }
+    ],
+    "placeholder": null,
+    "text": "Выбрать файлы"
+   }
+  },
+  "menu-dark-1440": {
+   "#nav-tabs .nav-tab": {
+    "inside": "rgb(46,48,36)",
+    "outside": "rgb(16,18,16)",
+    "fill": 1.4,
+    "worst": {
+     "side": "top",
+     "w": 1,
+     "color": "rgb(209,186,130)",
+     "ratioIn": 7.07,
+     "ratioOut": 9.91,
+     "ratio": 7.07
+    },
+    "edges": [
+     {
+      "side": "top",
+      "w": 1,
+      "color": "rgb(209,186,130)",
+      "ratioIn": 7.07,
+      "ratioOut": 9.91,
+      "ratio": 7.07
+     },
+     {
+      "side": "right",
+      "w": 1,
+      "color": "rgb(209,186,130)",
+      "ratioIn": 7.07,
+      "ratioOut": 9.91,
+      "ratio": 7.07
+     },
+     {
+      "side": "bottom",
+      "w": 1,
+      "color": "rgb(209,186,130)",
+      "ratioIn": 7.07,
+      "ratioOut": 9.91,
+      "ratio": 7.07
+     },
+     {
+      "side": "left",
+      "w": 1,
+      "color": "rgb(209,186,130)",
+      "ratioIn": 7.07,
+      "ratioOut": 9.91,
+      "ratio": 7.07
+     }
+    ],
+    "placeholder": null,
+    "text": "Кампания"
+   },
+   "#nav-head .nav-close": {
+    "inside": "rgb(25,21,16)",
+    "outside": "rgb(16,18,16)",
+    "fill": 1.04,
+    "worst": {
+     "side": "top",
+     "w": 1,
+     "color": "rgb(51,43,34)",
+     "ratioIn": 1.31,
+     "ratioOut": 1.35,
+     "ratio": 1.31
+    },
+    "edges": [
+     {
+      "side": "top",
+      "w": 1,
+      "color": "rgb(51,43,34)",
+      "ratioIn": 1.31,
+      "ratioOut": 1.35,
+      "ratio": 1.31
+     },
+     {
+      "side": "right",
+      "w": 1,
+      "color": "rgb(51,43,34)",
+      "ratioIn": 1.31,
+      "ratioOut": 1.35,
+      "ratio": 1.31
+     },
+     {
+      "side": "bottom",
+      "w": 1,
+      "color": "rgb(51,43,34)",
+      "ratioIn": 1.31,
+      "ratioOut": 1.35,
+      "ratio": 1.31
+     },
+     {
+      "side": "left",
+      "w": 1,
+      "color": "rgb(51,43,34)",
+      "ratioIn": 1.31,
+      "ratioOut": 1.35,
+      "ratio": 1.31
+     }
+    ],
+    "placeholder": null,
+    "text": "×"
+   },
+   "aside.sidebar .nav.active": {
+    "missing": true
+   }
+  },
+  "prep-dark-1440": {
+   ".prep-bar": {
+    "inside": "rgb(46,39,32)",
+    "outside": "rgb(30,26,20)",
+    "fill": 1.18,
+    "worst": null,
+    "edges": [],
+    "placeholder": null,
+    "text": ""
+   },
+   ".prep-fill": {
+    "inside": "rgb(155,170,136)",
+    "outside": "rgb(46,39,32)",
+    "fill": 5.95,
+    "worst": null,
+    "edges": [],
+    "placeholder": null,
+    "text": ""
+   },
+   ".prep-tick:not(.is-done):not(.is-active):not(.is-failed)": {
+    "missing": true
+   }
+  }
+ }
+}

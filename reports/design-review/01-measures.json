@@ -1,0 +1,4731 @@
+{
+ "meta": {
+  "commit": "5b394e5b",
+  "frames": 40,
+  "base": "http://127.0.0.1:59931",
+  "data_dir": "/home/hermes/projects/SoloRealmsAI-Nat20/runtime/n07-audit"
+ },
+ "frames": [
+  {
+   "viewport": {
+    "w": 375,
+    "h": 812,
+    "dpr": 1
+   },
+   "scrollWidth": 375,
+   "scrollHeight": 812,
+   "overflowX": 0,
+   "activeView": "welcome",
+   "campaignOpen": true,
+   "kbOpen": false,
+   "textElements": 25,
+   "fontMin": 14,
+   "smallText": [],
+   "fontDistinct": 3,
+   "fontSizes": {
+    "14": 15,
+    "16": 9,
+    "30": 1
+   },
+   "tapCount": 9,
+   "tapsBad": [],
+   "tapsBadCount": 0,
+   "contrastBad": [],
+   "contrastBadCount": 0,
+   "contrastMin": null,
+   "interactiveVisible": 9,
+   "clipped": [],
+   "clippedCount": 0,
+   "colorsOutsideCount": 0,
+   "colorsOutside": [],
+   "drawer": null,
+   "state": "home",
+   "theme": "dark",
+   "width": 375,
+   "height": 812,
+   "file": "home-dark-375.png",
+   "jsErrors": []
+  },
+  {
+   "viewport": {
+    "w": 375,
+    "h": 812,
+    "dpr": 1
+   },
+   "scrollWidth": 375,
+   "scrollHeight": 812,
+   "overflowX": 0,
+   "activeView": "creation",
+   "campaignOpen": true,
+   "kbOpen": false,
+   "textElements": 11,
+   "fontMin": 16,
+   "smallText": [],
+   "fontDistinct": 3,
+   "fontSizes": {
+    "16": 9,
+    "22": 1,
+    "30": 1
+   },
+   "tapCount": 8,
+   "tapsBad": [],
+   "tapsBadCount": 0,
+   "contrastBad": [],
+   "contrastBadCount": 0,
+   "contrastMin": null,
+   "interactiveVisible": 8,
+   "clipped": [],
+   "clippedCount": 0,
+   "colorsOutsideCount": 0,
+   "colorsOutside": [],
+   "drawer": null,
+   "state": "new",
+   "theme": "dark",
+   "width": 375,
+   "height": 812,
+   "file": "new-dark-375.png",
+   "jsErrors": []
+  },
+  {
+   "viewport": {
+    "w": 375,
+    "h": 812,
+    "dpr": 1
+   },
+   "scrollWidth": 375,
+   "scrollHeight": 812,
+   "overflowX": 0,
+   "activeView": "character",
+   "campaignOpen": true,
+   "kbOpen": false,
+   "textElements": 16,
+   "fontMin": 14,
+   "smallText": [],
+   "fontDistinct": 5,
+   "fontSizes": {
+    "14": 4,
+    "16": 6,
+    "22": 1,
+    "24": 4,
+    "30": 1
+   },
+   "tapCount": 5,
+   "tapsBad": [],
+   "tapsBadCount": 0,
+   "contrastBad": [],
+   "contrastBadCount": 0,
+   "contrastMin": null,
+   "interactiveVisible": 5,
+   "clipped": [],
+   "clippedCount": 0,
+   "colorsOutsideCount": 0,
+   "colorsOutside": [],
+   "drawer": null,
+   "state": "hero",
+   "theme": "dark",
+   "width": 375,
+   "height": 812,
+   "file": "hero-dark-375.png",
+   "jsErrors": []
+  },
+  {
+   "viewport": {
+    "w": 375,
+    "h": 812,
+    "dpr": 1
+   },
+   "scrollWidth": 375,
+   "scrollHeight": 812,
+   "overflowX": 0,
+   "activeView": "creation",
+   "campaignOpen": true,
+   "kbOpen": false,
+   "textElements": 11,
+   "fontMin": 16,
+   "smallText": [],
+   "fontDistinct": 3,
+   "fontSizes": {
+    "16": 9,
+    "22": 1,
+    "30": 1
+   },
+   "tapCount": 8,
+   "tapsBad": [],
+   "tapsBadCount": 0,
+   "contrastBad": [],
+   "contrastBadCount": 0,
+   "contrastMin": null,
+   "interactiveVisible": 8,
+   "clipped": [],
+   "clippedCount": 0,
+   "colorsOutsideCount": 0,
+   "colorsOutside": [],
+   "drawer": null,
+   "state": "prep",
+   "theme": "dark",
+   "width": 375,
+   "height": 812,
+   "prep": {
+    "prepare": true,
+    "disabled": true,
+    "dialog": false,
+    "panel": false
+   },
+   "prep_panel": null,
+   "reached": false,
+   "file": "prep-dark-375.png",
+   "jsErrors": []
+  },
+  {
+   "viewport": {
+    "w": 375,
+    "h": 812,
+    "dpr": 1
+   },
+   "scrollWidth": 375,
+   "scrollHeight": 812,
+   "overflowX": 0,
+   "activeView": "creation",
+   "campaignOpen": true,
+   "kbOpen": false,
+   "textElements": 11,
+   "fontMin": 16,
+   "smallText": [],
+   "fontDistinct": 3,
+   "fontSizes": {
+    "16": 9,
+    "22": 1,
+    "30": 1
+   },
+   "tapCount": 8,
+   "tapsBad": [],
+   "tapsBadCount": 0,
+   "contrastBad": [],
+   "contrastBadCount": 0,
+   "contrastMin": null,
+   "interactiveVisible": 8,
+   "clipped": [],
+   "clippedCount": 0,
+   "colorsOutsideCount": 0,
+   "colorsOutside": [],
+   "drawer": null,
+   "state": "prep-log",
+   "theme": "dark",
+   "width": 375,
+   "height": 812,
+   "prep": {
+    "prepare": true,
+    "disabled": true,
+    "dialog": false,
+    "panel": false
+   },
+   "prep_panel": null,
+   "reached": false,
+   "file": "prep-log-dark-375.png",
+   "jsErrors": []
+  },
+  {
+   "viewport": {
+    "w": 375,
+    "h": 812,
+    "dpr": 1
+   },
+   "scrollWidth": 375,
+   "scrollHeight": 812,
+   "overflowX": 0,
+   "activeView": "play",
+   "campaignOpen": true,
+   "kbOpen": false,
+   "textElements": 5,
+   "fontMin": 14,
+   "smallText": [],
+   "fontDistinct": 3,
+   "fontSizes": {
+    "14": 1,
+    "16": 3,
+    "17": 1
+   },
+   "tapCount": 4,
+   "tapsBad": [],
+   "tapsBadCount": 0,
+   "contrastBad": [],
+   "contrastBadCount": 0,
+   "contrastMin": null,
+   "interactiveVisible": 4,
+   "clipped": [],
+   "clippedCount": 0,
+   "colorsOutsideCount": 0,
+   "colorsOutside": [],
+   "drawer": null,
+   "chatBlocks": [
+    {
+     "tag": "message master",
+     "h": 202,
+     "text": "МАСТЕР\nУ сторожевого поста гоблин перекрыл тропу. Осмотрите "
+    }
+   ],
+   "state": "game",
+   "theme": "dark",
+   "width": 375,
+   "height": 812,
+   "file": "game-dark-375.png",
+   "jsErrors": []
+  },
+  {
+   "viewport": {
+    "w": 375,
+    "h": 476,
+    "dpr": 1
+   },
+   "scrollWidth": 375,
+   "scrollHeight": 476,
+   "overflowX": 0,
+   "activeView": "play",
+   "campaignOpen": true,
+   "kbOpen": true,
+   "textElements": 5,
+   "fontMin": 14,
+   "smallText": [],
+   "fontDistinct": 3,
+   "fontSizes": {
+    "14": 1,
+    "16": 3,
+    "17": 1
+   },
+   "tapCount": 4,
+   "tapsBad": [],
+   "tapsBadCount": 0,
+   "contrastBad": [],
+   "contrastBadCount": 0,
+   "contrastMin": null,
+   "interactiveVisible": 4,
+   "clipped": [],
+   "clippedCount": 0,
+   "colorsOutsideCount": 0,
+   "colorsOutside": [],
+   "drawer": null,
+   "chatBlocks": [
+    {
+     "tag": "message master",
+     "h": 202,
+     "text": "МАСТЕР\nУ сторожевого поста гоблин перекрыл тропу. Осмотрите "
+    }
+   ],
+   "state": "game-kb",
+   "theme": "dark",
+   "width": 375,
+   "height": 476,
+   "file": "game-kb-dark-375.png",
+   "jsErrors": []
+  },
+  {
+   "viewport": {
+    "w": 375,
+    "h": 812,
+    "dpr": 1
+   },
+   "scrollWidth": 375,
+   "scrollHeight": 812,
+   "overflowX": 0,
+   "activeView": "welcome",
+   "campaignOpen": true,
+   "kbOpen": false,
+   "textElements": 41,
+   "fontMin": 14,
+   "smallText": [],
+   "fontDistinct": 4,
+   "fontSizes": {
+    "14": 15,
+    "16": 24,
+    "19": 1,
+    "30": 1
+   },
+   "tapCount": 23,
+   "tapsBad": [],
+   "tapsBadCount": 0,
+   "contrastBad": [],
+   "contrastBadCount": 0,
+   "contrastMin": null,
+   "interactiveVisible": 23,
+   "clipped": [],
+   "clippedCount": 0,
+   "colorsOutsideCount": 0,
+   "colorsOutside": [],
+   "drawer": {
+    "h": 1013,
+    "top": 297,
+    "rows": 18,
+    "blocks": [
+     "Кампания",
+     "Приложение"
+    ],
+    "scrollTop": 0,
+    "scroll": 514,
+    "content": 1013
+   },
+   "state": "menu",
+   "theme": "dark",
+   "width": 375,
+   "height": 812,
+   "debug": {
+    "bodyClass": "effects tabletop campaign-open nat20-game mobile-menu-open",
+    "burger": true,
+    "aside": {
+     "x": 0,
+     "y": 0,
+     "w": 375,
+     "h": 812
+    },
+    "drawer": {
+     "x": 12,
+     "y": 297,
+     "w": 351,
+     "h": 1013
+    }
+   },
+   "file": "menu-dark-375.png",
+   "jsErrors": []
+  },
+  {
+   "viewport": {
+    "w": 375,
+    "h": 812,
+    "dpr": 1
+   },
+   "scrollWidth": 375,
+   "scrollHeight": 812,
+   "overflowX": 0,
+   "activeView": "welcome",
+   "campaignOpen": true,
+   "kbOpen": false,
+   "textElements": 42,
+   "fontMin": 14,
+   "smallText": [],
+   "fontDistinct": 3,
+   "fontSizes": {
+    "14": 15,
+    "16": 26,
+    "30": 1
+   },
+   "tapCount": 25,
+   "tapsBad": [],
+   "tapsBadCount": 0,
+   "contrastBad": [],
+   "contrastBadCount": 0,
+   "contrastMin": null,
+   "interactiveVisible": 25,
+   "clipped": [],
+   "clippedCount": 0,
+   "colorsOutsideCount": 0,
+   "colorsOutside": [],
+   "drawer": {
+    "h": 1013,
+    "top": -217,
+    "rows": 18,
+    "blocks": [
+     "Кампания",
+     "Приложение"
+    ],
+    "scrollTop": 514,
+    "scroll": 514,
+    "content": 1013
+   },
+   "state": "menu-app",
+   "theme": "dark",
+   "width": 375,
+   "height": 812,
+   "debug": {
+    "bodyClass": "effects tabletop campaign-open nat20-game mobile-menu-open",
+    "burger": true,
+    "aside": {
+     "x": 0,
+     "y": 0,
+     "w": 375,
+     "h": 812
+    },
+    "drawer": {
+     "x": 12,
+     "y": -217,
+     "w": 351,
+     "h": 1013
+    }
+   },
+   "file": "menu-app-dark-375.png",
+   "jsErrors": []
+  },
+  {
+   "viewport": {
+    "w": 375,
+    "h": 812,
+    "dpr": 1
+   },
+   "scrollWidth": 375,
+   "scrollHeight": 812,
+   "overflowX": 0,
+   "activeView": "journal",
+   "campaignOpen": true,
+   "kbOpen": false,
+   "textElements": 9,
+   "fontMin": 16,
+   "smallText": [],
+   "fontDistinct": 3,
+   "fontSizes": {
+    "16": 7,
+    "22": 1,
+    "30": 1
+   },
+   "tapCount": 7,
+   "tapsBad": [],
+   "tapsBadCount": 0,
+   "contrastBad": [],
+   "contrastBadCount": 0,
+   "contrastMin": null,
+   "interactiveVisible": 7,
+   "clipped": [],
+   "clippedCount": 0,
+   "colorsOutsideCount": 0,
+   "colorsOutside": [],
+   "drawer": null,
+   "state": "notes",
+   "theme": "dark",
+   "width": 375,
+   "height": 812,
+   "file": "notes-dark-375.png",
+   "jsErrors": []
+  },
+  {
+   "viewport": {
+    "w": 375,
+    "h": 812,
+    "dpr": 1
+   },
+   "scrollWidth": 375,
+   "scrollHeight": 812,
+   "overflowX": 0,
+   "activeView": "welcome",
+   "campaignOpen": true,
+   "kbOpen": false,
+   "textElements": 25,
+   "fontMin": 14,
+   "smallText": [],
+   "fontDistinct": 3,
+   "fontSizes": {
+    "14": 15,
+    "16": 9,
+    "30": 1
+   },
+   "tapCount": 9,
+   "tapsBad": [],
+   "tapsBadCount": 0,
+   "contrastBad": [],
+   "contrastBadCount": 0,
+   "contrastMin": null,
+   "interactiveVisible": 9,
+   "clipped": [],
+   "clippedCount": 0,
+   "colorsOutsideCount": 0,
+   "colorsOutside": [],
+   "drawer": null,
+   "state": "home",
+   "theme": "light",
+   "width": 375,
+   "height": 812,
+   "file": "home-light-375.png",
+   "jsErrors": []
+  },
+  {
+   "viewport": {
+    "w": 375,
+    "h": 812,
+    "dpr": 1
+   },
+   "scrollWidth": 375,
+   "scrollHeight": 812,
+   "overflowX": 0,
+   "activeView": "creation",
+   "campaignOpen": true,
+   "kbOpen": false,
+   "textElements": 11,
+   "fontMin": 16,
+   "smallText": [],
+   "fontDistinct": 3,
+   "fontSizes": {
+    "16": 9,
+    "22": 1,
+    "30": 1
+   },
+   "tapCount": 8,
+   "tapsBad": [],
+   "tapsBadCount": 0,
+   "contrastBad": [],
+   "contrastBadCount": 0,
+   "contrastMin": null,
+   "interactiveVisible": 8,
+   "clipped": [],
+   "clippedCount": 0,
+   "colorsOutsideCount": 0,
+   "colorsOutside": [],
+   "drawer": null,
+   "state": "new",
+   "theme": "light",
+   "width": 375,
+   "height": 812,
+   "file": "new-light-375.png",
+   "jsErrors": []
+  },
+  {
+   "viewport": {
+    "w": 375,
+    "h": 812,
+    "dpr": 1
+   },
+   "scrollWidth": 375,
+   "scrollHeight": 812,
+   "overflowX": 0,
+   "activeView": "character",
+   "campaignOpen": true,
+   "kbOpen": false,
+   "textElements": 16,
+   "fontMin": 14,
+   "smallText": [],
+   "fontDistinct": 5,
+   "fontSizes": {
+    "14": 4,
+    "16": 6,
+    "22": 1,
+    "24": 4,
+    "30": 1
+   },
+   "tapCount": 5,
+   "tapsBad": [],
+   "tapsBadCount": 0,
+   "contrastBad": [],
+   "contrastBadCount": 0,
+   "contrastMin": null,
+   "interactiveVisible": 5,
+   "clipped": [],
+   "clippedCount": 0,
+   "colorsOutsideCount": 0,
+   "colorsOutside": [],
+   "drawer": null,
+   "state": "hero",
+   "theme": "light",
+   "width": 375,
+   "height": 812,
+   "file": "hero-light-375.png",
+   "jsErrors": []
+  },
+  {
+   "viewport": {
+    "w": 375,
+    "h": 812,
+    "dpr": 1
+   },
+   "scrollWidth": 375,
+   "scrollHeight": 812,
+   "overflowX": 0,
+   "activeView": "creation",
+   "campaignOpen": true,
+   "kbOpen": false,
+   "textElements": 11,
+   "fontMin": 16,
+   "smallText": [],
+   "fontDistinct": 3,
+   "fontSizes": {
+    "16": 9,
+    "22": 1,
+    "30": 1
+   },
+   "tapCount": 8,
+   "tapsBad": [],
+   "tapsBadCount": 0,
+   "contrastBad": [],
+   "contrastBadCount": 0,
+   "contrastMin": null,
+   "interactiveVisible": 8,
+   "clipped": [],
+   "clippedCount": 0,
+   "colorsOutsideCount": 0,
+   "colorsOutside": [],
+   "drawer": null,
+   "state": "prep",
+   "theme": "light",
+   "width": 375,
+   "height": 812,
+   "prep": {
+    "prepare": true,
+    "disabled": true,
+    "dialog": false,
+    "panel": false
+   },
+   "prep_panel": null,
+   "reached": false,
+   "file": "prep-light-375.png",
+   "jsErrors": []
+  },
+  {
+   "viewport": {
+    "w": 375,
+    "h": 812,
+    "dpr": 1
+   },
+   "scrollWidth": 375,
+   "scrollHeight": 812,
+   "overflowX": 0,
+   "activeView": "creation",
+   "campaignOpen": true,
+   "kbOpen": false,
+   "textElements": 11,
+   "fontMin": 16,
+   "smallText": [],
+   "fontDistinct": 3,
+   "fontSizes": {
+    "16": 9,
+    "22": 1,
+    "30": 1
+   },
+   "tapCount": 8,
+   "tapsBad": [],
+   "tapsBadCount": 0,
+   "contrastBad": [],
+   "contrastBadCount": 0,
+   "contrastMin": null,
+   "interactiveVisible": 8,
+   "clipped": [],
+   "clippedCount": 0,
+   "colorsOutsideCount": 0,
+   "colorsOutside": [],
+   "drawer": null,
+   "state": "prep-log",
+   "theme": "light",
+   "width": 375,
+   "height": 812,
+   "prep": {
+    "prepare": true,
+    "disabled": true,
+    "dialog": false,
+    "panel": false
+   },
+   "prep_panel": null,
+   "reached": false,
+   "file": "prep-log-light-375.png",
+   "jsErrors": []
+  },
+  {
+   "viewport": {
+    "w": 375,
+    "h": 812,
+    "dpr": 1
+   },
+   "scrollWidth": 375,
+   "scrollHeight": 812,
+   "overflowX": 0,
+   "activeView": "play",
+   "campaignOpen": true,
+   "kbOpen": false,
+   "textElements": 5,
+   "fontMin": 14,
+   "smallText": [],
+   "fontDistinct": 3,
+   "fontSizes": {
+    "14": 1,
+    "16": 3,
+    "17": 1
+   },
+   "tapCount": 4,
+   "tapsBad": [],
+   "tapsBadCount": 0,
+   "contrastBad": [],
+   "contrastBadCount": 0,
+   "contrastMin": null,
+   "interactiveVisible": 4,
+   "clipped": [],
+   "clippedCount": 0,
+   "colorsOutsideCount": 0,
+   "colorsOutside": [],
+   "drawer": null,
+   "chatBlocks": [
+    {
+     "tag": "message master",
+     "h": 202,
+     "text": "МАСТЕР\nУ сторожевого поста гоблин перекрыл тропу. Осмотрите "
+    }
+   ],
+   "state": "game",
+   "theme": "light",
+   "width": 375,
+   "height": 812,
+   "file": "game-light-375.png",
+   "jsErrors": []
+  },
+  {
+   "viewport": {
+    "w": 375,
+    "h": 476,
+    "dpr": 1
+   },
+   "scrollWidth": 375,
+   "scrollHeight": 476,
+   "overflowX": 0,
+   "activeView": "play",
+   "campaignOpen": true,
+   "kbOpen": true,
+   "textElements": 5,
+   "fontMin": 14,
+   "smallText": [],
+   "fontDistinct": 3,
+   "fontSizes": {
+    "14": 1,
+    "16": 3,
+    "17": 1
+   },
+   "tapCount": 4,
+   "tapsBad": [],
+   "tapsBadCount": 0,
+   "contrastBad": [],
+   "contrastBadCount": 0,
+   "contrastMin": null,
+   "interactiveVisible": 4,
+   "clipped": [],
+   "clippedCount": 0,
+   "colorsOutsideCount": 0,
+   "colorsOutside": [],
+   "drawer": null,
+   "chatBlocks": [
+    {
+     "tag": "message master",
+     "h": 202,
+     "text": "МАСТЕР\nУ сторожевого поста гоблин перекрыл тропу. Осмотрите "
+    }
+   ],
+   "state": "game-kb",
+   "theme": "light",
+   "width": 375,
+   "height": 476,
+   "file": "game-kb-light-375.png",
+   "jsErrors": []
+  },
+  {
+   "viewport": {
+    "w": 375,
+    "h": 812,
+    "dpr": 1
+   },
+   "scrollWidth": 375,
+   "scrollHeight": 812,
+   "overflowX": 0,
+   "activeView": "welcome",
+   "campaignOpen": true,
+   "kbOpen": false,
+   "textElements": 41,
+   "fontMin": 14,
+   "smallText": [],
+   "fontDistinct": 4,
+   "fontSizes": {
+    "14": 15,
+    "16": 24,
+    "19": 1,
+    "30": 1
+   },
+   "tapCount": 23,
+   "tapsBad": [],
+   "tapsBadCount": 0,
+   "contrastBad": [],
+   "contrastBadCount": 0,
+   "contrastMin": null,
+   "interactiveVisible": 23,
+   "clipped": [],
+   "clippedCount": 0,
+   "colorsOutsideCount": 0,
+   "colorsOutside": [],
+   "drawer": {
+    "h": 1013,
+    "top": 297,
+    "rows": 18,
+    "blocks": [
+     "Кампания",
+     "Приложение"
+    ],
+    "scrollTop": 0,
+    "scroll": 514,
+    "content": 1013
+   },
+   "state": "menu",
+   "theme": "light",
+   "width": 375,
+   "height": 812,
+   "debug": {
+    "bodyClass": "effects tabletop campaign-open nat20-game mobile-menu-open",
+    "burger": true,
+    "aside": {
+     "x": 0,
+     "y": 0,
+     "w": 375,
+     "h": 812
+    },
+    "drawer": {
+     "x": 12,
+     "y": 297,
+     "w": 351,
+     "h": 1013
+    }
+   },
+   "file": "menu-light-375.png",
+   "jsErrors": []
+  },
+  {
+   "viewport": {
+    "w": 375,
+    "h": 812,
+    "dpr": 1
+   },
+   "scrollWidth": 375,
+   "scrollHeight": 812,
+   "overflowX": 0,
+   "activeView": "welcome",
+   "campaignOpen": true,
+   "kbOpen": false,
+   "textElements": 42,
+   "fontMin": 14,
+   "smallText": [],
+   "fontDistinct": 3,
+   "fontSizes": {
+    "14": 15,
+    "16": 26,
+    "30": 1
+   },
+   "tapCount": 25,
+   "tapsBad": [],
+   "tapsBadCount": 0,
+   "contrastBad": [],
+   "contrastBadCount": 0,
+   "contrastMin": null,
+   "interactiveVisible": 25,
+   "clipped": [],
+   "clippedCount": 0,
+   "colorsOutsideCount": 0,
+   "colorsOutside": [],
+   "drawer": {
+    "h": 1013,
+    "top": -217,
+    "rows": 18,
+    "blocks": [
+     "Кампания",
+     "Приложение"
+    ],
+    "scrollTop": 514,
+    "scroll": 514,
+    "content": 1013
+   },
+   "state": "menu-app",
+   "theme": "light",
+   "width": 375,
+   "height": 812,
+   "debug": {
+    "bodyClass": "effects tabletop campaign-open nat20-game mobile-menu-open",
+    "burger": true,
+    "aside": {
+     "x": 0,
+     "y": 0,
+     "w": 375,
+     "h": 812
+    },
+    "drawer": {
+     "x": 12,
+     "y": -217,
+     "w": 351,
+     "h": 1013
+    }
+   },
+   "file": "menu-app-light-375.png",
+   "jsErrors": []
+  },
+  {
+   "viewport": {
+    "w": 375,
+    "h": 812,
+    "dpr": 1
+   },
+   "scrollWidth": 375,
+   "scrollHeight": 812,
+   "overflowX": 0,
+   "activeView": "journal",
+   "campaignOpen": true,
+   "kbOpen": false,
+   "textElements": 9,
+   "fontMin": 16,
+   "smallText": [],
+   "fontDistinct": 3,
+   "fontSizes": {
+    "16": 7,
+    "22": 1,
+    "30": 1
+   },
+   "tapCount": 7,
+   "tapsBad": [],
+   "tapsBadCount": 0,
+   "contrastBad": [],
+   "contrastBadCount": 0,
+   "contrastMin": null,
+   "interactiveVisible": 7,
+   "clipped": [],
+   "clippedCount": 0,
+   "colorsOutsideCount": 0,
+   "colorsOutside": [],
+   "drawer": null,
+   "state": "notes",
+   "theme": "light",
+   "width": 375,
+   "height": 812,
+   "file": "notes-light-375.png",
+   "jsErrors": []
+  },
+  {
+   "viewport": {
+    "w": 1440,
+    "h": 900,
+    "dpr": 1
+   },
+   "scrollWidth": 1440,
+   "scrollHeight": 900,
+   "overflowX": 0,
+   "activeView": "welcome",
+   "campaignOpen": true,
+   "kbOpen": false,
+   "textElements": 53,
+   "fontMin": 13,
+   "smallText": [],
+   "fontDistinct": 4,
+   "fontSizes": {
+    "13": 1,
+    "14": 31,
+    "16": 20,
+    "34": 1
+   },
+   "tapCount": 21,
+   "tapsBad": [
+    {
+     "sel": "html > body.effects.tabletop > aside.sidebar > a.brand",
+     "label": "Solo Realms AI",
+     "w": 115.6,
+     "h": 21
+    },
+    {
+     "sel": "body.effects.tabletop > aside.sidebar > nav > div.nav-bar:nth-of-type(1) > button.nav:nth-of-type(1)",
+     "label": "BUTTON",
+     "w": 68,
+     "h": 38
+    },
+    {
+     "sel": "body.effects.tabletop > aside.sidebar > nav > div.nav-bar:nth-of-type(1) > button.nav:nth-of-type(2)",
+     "label": "BUTTON",
+     "w": 111,
+     "h": 38
+    },
+    {
+     "sel": "body.effects.tabletop > aside.sidebar > nav > div.nav-bar:nth-of-type(1) > button.nav:nth-of-type(3)",
+     "label": "BUTTON",
+     "w": 113,
+     "h": 38
+    },
+    {
+     "sel": "body.effects.tabletop > aside.sidebar > nav > div.nav-bar:nth-of-type(1) > button.nav:nth-of-type(4)",
+     "label": "BUTTON",
+     "w": 90,
+     "h": 38
+    },
+    {
+     "sel": "button#nav-more",
+     "label": "Ещё",
+     "w": 56,
+     "h": 36
+    }
+   ],
+   "tapsBadCount": 6,
+   "contrastBad": [],
+   "contrastBadCount": 0,
+   "contrastMin": null,
+   "interactiveVisible": 21,
+   "clipped": [
+    {
+     "sel": "section#welcome > div.start__feed:nth-of-type(2) > button.start__continue > span.start__continue-meta:nth-of-type(3) > span.story-where:nth-of-type(1)",
+     "sw": 222,
+     "cw": 208,
+     "overflow": "hidden",
+     "text": "Дозор на тракте · Тайна трёх сос"
+    },
+    {
+     "sel": "div.start__stories > div.start__list > button.story:nth-of-type(2) > span.story-meta:nth-of-type(2) > span.story-where:nth-of-type(1)",
+     "sw": 207,
+     "cw": 204,
+     "overflow": "hidden",
+     "text": "Дозор на тракте · Соляной тракт"
+    },
+    {
+     "sel": "div.start__stories > div.start__list > button.story:nth-of-type(4) > span.story-meta:nth-of-type(2) > span.story-where:nth-of-type(1)",
+     "sw": 207,
+     "cw": 204,
+     "overflow": "hidden",
+     "text": "Дозор на тракте · Соляной тракт"
+    },
+    {
+     "sel": "div.start__stories > div.start__list > button.story:nth-of-type(5) > span.story-meta:nth-of-type(2) > span.story-where:nth-of-type(1)",
+     "sw": 222,
+     "cw": 204,
+     "overflow": "hidden",
+     "text": "Дозор на тракте · Тайна трёх сос"
+    },
+    {
+     "sel": "div.start__stories > div.start__list > button.story:nth-of-type(7) > span.story-meta:nth-of-type(2) > span.story-where:nth-of-type(1)",
+     "sw": 207,
+     "cw": 204,
+     "overflow": "hidden",
+     "text": "Дозор на тракте · Соляной тракт"
+    },
+    {
+     "sel": "div.start__stories > div.start__list > button.story:nth-of-type(8) > span.story-meta:nth-of-type(2) > span.story-where:nth-of-type(1)",
+     "sw": 222,
+     "cw": 204,
+     "overflow": "hidden",
+     "text": "Дозор на тракте · Тайна трёх сос"
+    },
+    {
+     "sel": "div.start__stories > div.start__list > button.story:nth-of-type(10) > span.story-meta:nth-of-type(2) > span.story-where:nth-of-type(1)",
+     "sw": 207,
+     "cw": 204,
+     "overflow": "hidden",
+     "text": "Дозор на тракте · Соляной тракт"
+    },
+    {
+     "sel": "div.start__stories > div.start__list > button.story:nth-of-type(11) > span.story-meta:nth-of-type(2) > span.story-where:nth-of-type(1)",
+     "sw": 222,
+     "cw": 204,
+     "overflow": "hidden",
+     "text": "Дозор на тракте · Тайна трёх сос"
+    },
+    {
+     "sel": "div.start__stories > div.start__list > button.story:nth-of-type(13) > span.story-meta:nth-of-type(2) > span.story-where:nth-of-type(1)",
+     "sw": 207,
+     "cw": 204,
+     "overflow": "hidden",
+     "text": "Дозор на тракте · Соляной тракт"
+    },
+    {
+     "sel": "div.start__stories > div.start__list > button.story:nth-of-type(14) > span.story-meta:nth-of-type(2) > span.story-where:nth-of-type(1)",
+     "sw": 222,
+     "cw": 204,
+     "overflow": "hidden",
+     "text": "Дозор на тракте · Тайна трёх сос"
+    },
+    {
+     "sel": "div.start__stories > div.start__list > button.story:nth-of-type(16) > span.story-meta:nth-of-type(2) > span.story-where:nth-of-type(1)",
+     "sw": 207,
+     "cw": 204,
+     "overflow": "hidden",
+     "text": "Дозор на тракте · Соляной тракт"
+    },
+    {
+     "sel": "div.start__stories > div.start__list > button.story:nth-of-type(17) > span.story-meta:nth-of-type(2) > span.story-where:nth-of-type(1)",
+     "sw": 222,
+     "cw": 204,
+     "overflow": "hidden",
+     "text": "Дозор на тракте · Тайна трёх сос"
+    },
+    {
+     "sel": "div.start__stories > div.start__list > button.story:nth-of-type(19) > span.story-meta:nth-of-type(2) > span.story-where:nth-of-type(1)",
+     "sw": 207,
+     "cw": 204,
+     "overflow": "hidden",
+     "text": "Дозор на тракте · Соляной тракт"
+    },
+    {
+     "sel": "div.start__stories > div.start__list > button.story:nth-of-type(20) > span.story-meta:nth-of-type(2) > span.story-where:nth-of-type(1)",
+     "sw": 222,
+     "cw": 204,
+     "overflow": "hidden",
+     "text": "Дозор на тракте · Тайна трёх сос"
+    },
+    {
+     "sel": "div.start__stories > div.start__list > button.story:nth-of-type(22) > span.story-meta:nth-of-type(2) > span.story-where:nth-of-type(1)",
+     "sw": 207,
+     "cw": 204,
+     "overflow": "hidden",
+     "text": "Дозор на тракте · Соляной тракт"
+    }
+   ],
+   "clippedCount": 20,
+   "colorsOutsideCount": 0,
+   "colorsOutside": [],
+   "drawer": null,
+   "state": "home",
+   "theme": "dark",
+   "width": 1440,
+   "height": 900,
+   "file": "home-dark-1440.png",
+   "jsErrors": []
+  },
+  {
+   "viewport": {
+    "w": 1440,
+    "h": 900,
+    "dpr": 1
+   },
+   "scrollWidth": 1440,
+   "scrollHeight": 1033,
+   "overflowX": 0,
+   "activeView": "creation",
+   "campaignOpen": true,
+   "kbOpen": false,
+   "textElements": 28,
+   "fontMin": 10,
+   "smallText": [
+    {
+     "sel": "html > body.effects.tabletop > main > header > div.breadcrumb:nth-of-type(1)",
+     "px": 10,
+     "text": "ОДИНОЧНОЕ ПРИКЛЮЧЕНИЕ"
+    },
+    {
+     "sel": "body.effects.tabletop > main > header > div.breadcrumb:nth-of-type(1) > span:nth-of-type(1)",
+     "px": 10,
+     "text": "/"
+    },
+    {
+     "sel": "span#campaign-label",
+     "px": 10,
+     "text": "Тайна трёх сосен"
+    },
+    {
+     "sel": "body.effects.tabletop > main > header > div.vitals:nth-of-type(2) > span",
+     "px": 10,
+     "text": "Хиты / 12"
+    },
+    {
+     "sel": "main > header > div.vitals:nth-of-type(2) > span > b",
+     "px": 10,
+     "text": "12"
+    },
+    {
+     "sel": "button#sheet-toggle",
+     "px": 10,
+     "text": "Лист"
+    },
+    {
+     "sel": "section#creation > p.eyebrow:nth-of-type(1)",
+     "px": 10,
+     "text": "ВАША НОВАЯ ИСТОРИЯ"
+    },
+    {
+     "sel": "span#model-status",
+     "px": 11,
+     "text": "Тестовые данные · mock"
+    }
+   ],
+   "fontDistinct": 8,
+   "fontSizes": {
+    "10": 7,
+    "11": 1,
+    "12": 6,
+    "13": 1,
+    "14": 6,
+    "16": 4,
+    "25": 2,
+    "36": 1
+   },
+   "tapCount": 14,
+   "tapsBad": [
+    {
+     "sel": "html > body.effects.tabletop > aside.sidebar > a.brand",
+     "label": "Solo Realms AI",
+     "w": 115.6,
+     "h": 21
+    },
+    {
+     "sel": "body.effects.tabletop > aside.sidebar > nav > div.nav-bar:nth-of-type(1) > button.nav:nth-of-type(1)",
+     "label": "BUTTON",
+     "w": 68,
+     "h": 38
+    },
+    {
+     "sel": "body.effects.tabletop > aside.sidebar > nav > div.nav-bar:nth-of-type(1) > button.nav:nth-of-type(2)",
+     "label": "BUTTON",
+     "w": 111,
+     "h": 38
+    },
+    {
+     "sel": "body.effects.tabletop > aside.sidebar > nav > div.nav-bar:nth-of-type(1) > button.nav:nth-of-type(3)",
+     "label": "BUTTON",
+     "w": 113,
+     "h": 38
+    },
+    {
+     "sel": "body.effects.tabletop > aside.sidebar > nav > div.nav-bar:nth-of-type(1) > button.nav:nth-of-type(4)",
+     "label": "BUTTON",
+     "w": 90,
+     "h": 38
+    },
+    {
+     "sel": "button#nav-more",
+     "label": "Ещё",
+     "w": 56,
+     "h": 36
+    },
+    {
+     "sel": "html > body.effects.tabletop > main > header > button.themetoggle:nth-of-type(1)",
+     "label": "Светлая тема",
+     "w": 34,
+     "h": 34
+    },
+    {
+     "sel": "button#sheet-toggle",
+     "label": "Лист",
+     "w": 59,
+     "h": 37
+    },
+    {
+     "sel": "section#creation > div.creation-controls:nth-of-type(1) > button:nth-of-type(1)",
+     "label": "Назад",
+     "w": 78,
+     "h": 43
+    },
+    {
+     "sel": "section#creation > div.creation-controls:nth-of-type(1) > button:nth-of-type(2)",
+     "label": "Сохранить и выйти",
+     "w": 173,
+     "h": 43
+    },
+    {
+     "sel": "section#creation > div.creation-controls:nth-of-type(1) > button:nth-of-type(3)",
+     "label": "Мои приключения",
+     "w": 165,
+     "h": 43
+    },
+    {
+     "sel": "section#creation-mock-notice > div.button-row > button",
+     "label": "Открыть готовое испытание",
+     "w": 211,
+     "h": 40
+    },
+    {
+     "sel": "section#creation > div.creation-drop:nth-of-type(3) > button",
+     "label": "Выбрать файлы",
+     "w": 150,
+     "h": 43
+    }
+   ],
+   "tapsBadCount": 13,
+   "contrastBad": [],
+   "contrastBadCount": 0,
+   "contrastMin": null,
+   "interactiveVisible": 14,
+   "clipped": [],
+   "clippedCount": 0,
+   "colorsOutsideCount": 0,
+   "colorsOutside": [],
+   "drawer": null,
+   "state": "new",
+   "theme": "dark",
+   "width": 1440,
+   "height": 900,
+   "file": "new-dark-1440.png",
+   "jsErrors": []
+  },
+  {
+   "viewport": {
+    "w": 1440,
+    "h": 900,
+    "dpr": 1
+   },
+   "scrollWidth": 1440,
+   "scrollHeight": 1324,
+   "overflowX": 0,
+   "activeView": "character",
+   "campaignOpen": true,
+   "kbOpen": false,
+   "textElements": 38,
+   "fontMin": 10,
+   "smallText": [
+    {
+     "sel": "html > body.effects.tabletop > main > header > div.breadcrumb:nth-of-type(1)",
+     "px": 10,
+     "text": "ОДИНОЧНОЕ ПРИКЛЮЧЕНИЕ"
+    },
+    {
+     "sel": "body.effects.tabletop > main > header > div.breadcrumb:nth-of-type(1) > span:nth-of-type(1)",
+     "px": 10,
+     "text": "/"
+    },
+    {
+     "sel": "span#campaign-label",
+     "px": 10,
+     "text": "Тайна трёх сосен"
+    },
+    {
+     "sel": "body.effects.tabletop > main > header > div.vitals:nth-of-type(2) > span",
+     "px": 10,
+     "text": "Хиты / 12"
+    },
+    {
+     "sel": "main > header > div.vitals:nth-of-type(2) > span > b",
+     "px": 10,
+     "text": "12"
+    },
+    {
+     "sel": "button#sheet-toggle",
+     "px": 10,
+     "text": "Лист"
+    },
+    {
+     "sel": "section#character > p.eyebrow:nth-of-type(1)",
+     "px": 10,
+     "text": "ЛИСТ ГЕРОЯ"
+    },
+    {
+     "sel": "div#character-content > div.scores-grid > div.metric:nth-of-type(1) > small",
+     "px": 10,
+     "text": "Сила"
+    }
+   ],
+   "fontDistinct": 10,
+   "fontSizes": {
+    "10": 13,
+    "11": 1,
+    "12": 2,
+    "13": 4,
+    "14": 5,
+    "16": 4,
+    "21": 1,
+    "24": 6,
+    "25": 1,
+    "36": 1
+   },
+   "tapCount": 11,
+   "tapsBad": [
+    {
+     "sel": "html > body.effects.tabletop > aside.sidebar > a.brand",
+     "label": "Solo Realms AI",
+     "w": 115.6,
+     "h": 21
+    },
+    {
+     "sel": "body.effects.tabletop > aside.sidebar > nav > div.nav-bar:nth-of-type(1) > button.nav:nth-of-type(1)",
+     "label": "BUTTON",
+     "w": 68,
+     "h": 38
+    },
+    {
+     "sel": "body.effects.tabletop > aside.sidebar > nav > div.nav-bar:nth-of-type(1) > button.nav:nth-of-type(2)",
+     "label": "BUTTON",
+     "w": 111,
+     "h": 38
+    },
+    {
+     "sel": "body.effects.tabletop > aside.sidebar > nav > div.nav-bar:nth-of-type(1) > button.nav.active:nth-of-type(3)",
+     "label": "BUTTON",
+     "w": 113,
+     "h": 38
+    },
+    {
+     "sel": "body.effects.tabletop > aside.sidebar > nav > div.nav-bar:nth-of-type(1) > button.nav:nth-of-type(4)",
+     "label": "BUTTON",
+     "w": 90,
+     "h": 38
+    },
+    {
+     "sel": "button#nav-more",
+     "label": "Ещё",
+     "w": 56,
+     "h": 36
+    },
+    {
+     "sel": "html > body.effects.tabletop > main > header > button.themetoggle:nth-of-type(1)",
+     "label": "Светлая тема",
+     "w": 34,
+     "h": 34
+    },
+    {
+     "sel": "button#sheet-toggle",
+     "label": "Лист",
+     "w": 59,
+     "h": 37
+    },
+    {
+     "sel": "section#character > div.tabletop-tabs:nth-of-type(1) > button:nth-of-type(1)",
+     "label": "Лист героя",
+     "w": 102,
+     "h": 37.5
+    },
+    {
+     "sel": "section#character > div.tabletop-tabs:nth-of-type(1) > button:nth-of-type(2)",
+     "label": "Инвентарь и торговля",
+     "w": 181,
+     "h": 37.5
+    },
+    {
+     "sel": "section#character > div.tabletop-tabs:nth-of-type(1) > button:nth-of-type(3)",
+     "label": "Навыки и магия",
+     "w": 135,
+     "h": 37.5
+    }
+   ],
+   "tapsBadCount": 11,
+   "contrastBad": [],
+   "contrastBadCount": 0,
+   "contrastMin": null,
+   "interactiveVisible": 11,
+   "clipped": [],
+   "clippedCount": 0,
+   "colorsOutsideCount": 0,
+   "colorsOutside": [],
+   "drawer": null,
+   "state": "hero",
+   "theme": "dark",
+   "width": 1440,
+   "height": 900,
+   "file": "hero-dark-1440.png",
+   "jsErrors": []
+  },
+  {
+   "viewport": {
+    "w": 1440,
+    "h": 900,
+    "dpr": 1
+   },
+   "scrollWidth": 1440,
+   "scrollHeight": 1033,
+   "overflowX": 0,
+   "activeView": "creation",
+   "campaignOpen": true,
+   "kbOpen": false,
+   "textElements": 28,
+   "fontMin": 10,
+   "smallText": [
+    {
+     "sel": "html > body.effects.tabletop > main > header > div.breadcrumb:nth-of-type(1)",
+     "px": 10,
+     "text": "ОДИНОЧНОЕ ПРИКЛЮЧЕНИЕ"
+    },
+    {
+     "sel": "body.effects.tabletop > main > header > div.breadcrumb:nth-of-type(1) > span:nth-of-type(1)",
+     "px": 10,
+     "text": "/"
+    },
+    {
+     "sel": "span#campaign-label",
+     "px": 10,
+     "text": "Тайна трёх сосен"
+    },
+    {
+     "sel": "body.effects.tabletop > main > header > div.vitals:nth-of-type(2) > span",
+     "px": 10,
+     "text": "Хиты / 12"
+    },
+    {
+     "sel": "main > header > div.vitals:nth-of-type(2) > span > b",
+     "px": 10,
+     "text": "12"
+    },
+    {
+     "sel": "button#sheet-toggle",
+     "px": 10,
+     "text": "Лист"
+    },
+    {
+     "sel": "section#creation > p.eyebrow:nth-of-type(1)",
+     "px": 10,
+     "text": "ВАША НОВАЯ ИСТОРИЯ"
+    },
+    {
+     "sel": "span#model-status",
+     "px": 11,
+     "text": "Тестовые данные · mock"
+    }
+   ],
+   "fontDistinct": 8,
+   "fontSizes": {
+    "10": 7,
+    "11": 1,
+    "12": 6,
+    "13": 1,
+    "14": 6,
+    "16": 4,
+    "25": 2,
+    "36": 1
+   },
+   "tapCount": 14,
+   "tapsBad": [
+    {
+     "sel": "html > body.effects.tabletop > aside.sidebar > a.brand",
+     "label": "Solo Realms AI",
+     "w": 115.6,
+     "h": 21
+    },
+    {
+     "sel": "body.effects.tabletop > aside.sidebar > nav > div.nav-bar:nth-of-type(1) > button.nav:nth-of-type(1)",
+     "label": "BUTTON",
+     "w": 68,
+     "h": 38
+    },
+    {
+     "sel": "body.effects.tabletop > aside.sidebar > nav > div.nav-bar:nth-of-type(1) > button.nav:nth-of-type(2)",
+     "label": "BUTTON",
+     "w": 111,
+     "h": 38
+    },
+    {
+     "sel": "body.effects.tabletop > aside.sidebar > nav > div.nav-bar:nth-of-type(1) > button.nav:nth-of-type(3)",
+     "label": "BUTTON",
+     "w": 113,
+     "h": 38
+    },
+    {
+     "sel": "body.effects.tabletop > aside.sidebar > nav > div.nav-bar:nth-of-type(1) > button.nav:nth-of-type(4)",
+     "label": "BUTTON",
+     "w": 90,
+     "h": 38
+    },
+    {
+     "sel": "button#nav-more",
+     "label": "Ещё",
+     "w": 56,
+     "h": 36
+    },
+    {
+     "sel": "html > body.effects.tabletop > main > header > button.themetoggle:nth-of-type(1)",
+     "label": "Светлая тема",
+     "w": 34,
+     "h": 34
+    },
+    {
+     "sel": "button#sheet-toggle",
+     "label": "Лист",
+     "w": 59,
+     "h": 37
+    },
+    {
+     "sel": "section#creation > div.creation-controls:nth-of-type(1) > button:nth-of-type(1)",
+     "label": "Назад",
+     "w": 78,
+     "h": 43
+    },
+    {
+     "sel": "section#creation > div.creation-controls:nth-of-type(1) > button:nth-of-type(2)",
+     "label": "Сохранить и выйти",
+     "w": 173,
+     "h": 43
+    },
+    {
+     "sel": "section#creation > div.creation-controls:nth-of-type(1) > button:nth-of-type(3)",
+     "label": "Мои приключения",
+     "w": 165,
+     "h": 43
+    },
+    {
+     "sel": "section#creation-mock-notice > div.button-row > button",
+     "label": "Открыть готовое испытание",
+     "w": 211,
+     "h": 40
+    },
+    {
+     "sel": "section#creation > div.creation-drop:nth-of-type(3) > button",
+     "label": "Выбрать файлы",
+     "w": 150,
+     "h": 43
+    }
+   ],
+   "tapsBadCount": 13,
+   "contrastBad": [],
+   "contrastBadCount": 0,
+   "contrastMin": null,
+   "interactiveVisible": 14,
+   "clipped": [],
+   "clippedCount": 0,
+   "colorsOutsideCount": 0,
+   "colorsOutside": [],
+   "drawer": null,
+   "state": "prep",
+   "theme": "dark",
+   "width": 1440,
+   "height": 900,
+   "prep": {
+    "prepare": true,
+    "disabled": true,
+    "dialog": false,
+    "panel": false
+   },
+   "prep_panel": null,
+   "reached": false,
+   "file": "prep-dark-1440.png",
+   "jsErrors": []
+  },
+  {
+   "viewport": {
+    "w": 1440,
+    "h": 900,
+    "dpr": 1
+   },
+   "scrollWidth": 1440,
+   "scrollHeight": 1033,
+   "overflowX": 0,
+   "activeView": "creation",
+   "campaignOpen": true,
+   "kbOpen": false,
+   "textElements": 28,
+   "fontMin": 10,
+   "smallText": [
+    {
+     "sel": "html > body.effects.tabletop > main > header > div.breadcrumb:nth-of-type(1)",
+     "px": 10,
+     "text": "ОДИНОЧНОЕ ПРИКЛЮЧЕНИЕ"
+    },
+    {
+     "sel": "body.effects.tabletop > main > header > div.breadcrumb:nth-of-type(1) > span:nth-of-type(1)",
+     "px": 10,
+     "text": "/"
+    },
+    {
+     "sel": "span#campaign-label",
+     "px": 10,
+     "text": "Тайна трёх сосен"
+    },
+    {
+     "sel": "body.effects.tabletop > main > header > div.vitals:nth-of-type(2) > span",
+     "px": 10,
+     "text": "Хиты / 12"
+    },
+    {
+     "sel": "main > header > div.vitals:nth-of-type(2) > span > b",
+     "px": 10,
+     "text": "12"
+    },
+    {
+     "sel": "button#sheet-toggle",
+     "px": 10,
+     "text": "Лист"
+    },
+    {
+     "sel": "section#creation > p.eyebrow:nth-of-type(1)",
+     "px": 10,
+     "text": "ВАША НОВАЯ ИСТОРИЯ"
+    },
+    {
+     "sel": "span#model-status",
+     "px": 11,
+     "text": "Тестовые данные · mock"
+    }
+   ],
+   "fontDistinct": 8,
+   "fontSizes": {
+    "10": 7,
+    "11": 1,
+    "12": 6,
+    "13": 1,
+    "14": 6,
+    "16": 4,
+    "25": 2,
+    "36": 1
+   },
+   "tapCount": 14,
+   "tapsBad": [
+    {
+     "sel": "html > body.effects.tabletop > aside.sidebar > a.brand",
+     "label": "Solo Realms AI",
+     "w": 115.6,
+     "h": 21
+    },
+    {
+     "sel": "body.effects.tabletop > aside.sidebar > nav > div.nav-bar:nth-of-type(1) > button.nav:nth-of-type(1)",
+     "label": "BUTTON",
+     "w": 68,
+     "h": 38
+    },
+    {
+     "sel": "body.effects.tabletop > aside.sidebar > nav > div.nav-bar:nth-of-type(1) > button.nav:nth-of-type(2)",
+     "label": "BUTTON",
+     "w": 111,
+     "h": 38
+    },
+    {
+     "sel": "body.effects.tabletop > aside.sidebar > nav > div.nav-bar:nth-of-type(1) > button.nav:nth-of-type(3)",
+     "label": "BUTTON",
+     "w": 113,
+     "h": 38
+    },
+    {
+     "sel": "body.effects.tabletop > aside.sidebar > nav > div.nav-bar:nth-of-type(1) > button.nav:nth-of-type(4)",
+     "label": "BUTTON",
+     "w": 90,
+     "h": 38
+    },
+    {
+     "sel": "button#nav-more",
+     "label": "Ещё",
+     "w": 56,
+     "h": 36
+    },
+    {
+     "sel": "html > body.effects.tabletop > main > header > button.themetoggle:nth-of-type(1)",
+     "label": "Светлая тема",
+     "w": 34,
+     "h": 34
+    },
+    {
+     "sel": "button#sheet-toggle",
+     "label": "Лист",
+     "w": 59,
+     "h": 37
+    },
+    {
+     "sel": "section#creation > div.creation-controls:nth-of-type(1) > button:nth-of-type(1)",
+     "label": "Назад",
+     "w": 78,
+     "h": 43
+    },
+    {
+     "sel": "section#creation > div.creation-controls:nth-of-type(1) > button:nth-of-type(2)",
+     "label": "Сохранить и выйти",
+     "w": 173,
+     "h": 43
+    },
+    {
+     "sel": "section#creation > div.creation-controls:nth-of-type(1) > button:nth-of-type(3)",
+     "label": "Мои приключения",
+     "w": 165,
+     "h": 43
+    },
+    {
+     "sel": "section#creation-mock-notice > div.button-row > button",
+     "label": "Открыть готовое испытание",
+     "w": 211,
+     "h": 40
+    },
+    {
+     "sel": "section#creation > div.creation-drop:nth-of-type(3) > button",
+     "label": "Выбрать файлы",
+     "w": 150,
+     "h": 43
+    }
+   ],
+   "tapsBadCount": 13,
+   "contrastBad": [],
+   "contrastBadCount": 0,
+   "contrastMin": null,
+   "interactiveVisible": 14,
+   "clipped": [],
+   "clippedCount": 0,
+   "colorsOutsideCount": 0,
+   "colorsOutside": [],
+   "drawer": null,
+   "state": "prep-log",
+   "theme": "dark",
+   "width": 1440,
+   "height": 900,
+   "prep": {
+    "prepare": true,
+    "disabled": true,
+    "dialog": false,
+    "panel": false
+   },
+   "prep_panel": null,
+   "reached": false,
+   "file": "prep-log-dark-1440.png",
+   "jsErrors": []
+  },
+  {
+   "viewport": {
+    "w": 1440,
+    "h": 900,
+    "dpr": 1
+   },
+   "scrollWidth": 1440,
+   "scrollHeight": 900,
+   "overflowX": 0,
+   "activeView": "play",
+   "campaignOpen": true,
+   "kbOpen": false,
+   "textElements": 20,
+   "fontMin": 10,
+   "smallText": [
+    {
+     "sel": "details#scene-hero > summary",
+     "px": 10,
+     "text": "Ваш герой"
+    },
+    {
+     "sel": "div#chat > article.message.master > div.speaker:nth-of-type(1)",
+     "px": 10.5,
+     "text": "МАСТЕР"
+    },
+    {
+     "sel": "form#action-form > div.composer-footer:nth-of-type(2) > span",
+     "px": 12,
+     "text": "Enter — отправить · Shift + Ente"
+    },
+    {
+     "sel": "details#scene-hero > div.disclosure-body > p.hint:nth-of-type(2)",
+     "px": 12,
+     "text": "Второе дыхание · потрачено: 0"
+    },
+    {
+     "sel": "details#scene-hero > div.disclosure-body > p.hint:nth-of-type(3)",
+     "px": 12,
+     "text": "Опыт: 0"
+    },
+    {
+     "sel": "details#scene-hero > div.disclosure-body > p.hint:nth-of-type(4)",
+     "px": 12,
+     "text": "Кости хитов: 1"
+    },
+    {
+     "sel": "details#scene-hero > div.disclosure-body > p.hint:nth-of-type(5)",
+     "px": 12,
+     "text": "Состояния: нет"
+    }
+   ],
+   "fontDistinct": 9,
+   "fontSizes": {
+    "10": 1,
+    "12": 5,
+    "13": 4,
+    "14": 2,
+    "16": 4,
+    "18": 1,
+    "20": 1,
+    "30": 1,
+    "10.5": 1
+   },
+   "tapCount": 11,
+   "tapsBad": [
+    {
+     "sel": "html > body.effects.tabletop > aside.sidebar > a.brand",
+     "label": "Solo Realms AI",
+     "w": 115.6,
+     "h": 21
+    },
+    {
+     "sel": "body.effects.tabletop > aside.sidebar > nav > div.nav-bar:nth-of-type(1) > button.nav.active:nth-of-type(1)",
+     "label": "BUTTON",
+     "w": 68,
+     "h": 38
+    },
+    {
+     "sel": "body.effects.tabletop > aside.sidebar > nav > div.nav-bar:nth-of-type(1) > button.nav:nth-of-type(2)",
+     "label": "BUTTON",
+     "w": 111,
+     "h": 38
+    },
+    {
+     "sel": "body.effects.tabletop > aside.sidebar > nav > div.nav-bar:nth-of-type(1) > button.nav:nth-of-type(3)",
+     "label": "BUTTON",
+     "w": 113,
+     "h": 38
+    },
+    {
+     "sel": "body.effects.tabletop > aside.sidebar > nav > div.nav-bar:nth-of-type(1) > button.nav:nth-of-type(4)",
+     "label": "BUTTON",
+     "w": 90,
+     "h": 38
+    },
+    {
+     "sel": "button#nav-more",
+     "label": "Ещё",
+     "w": 56,
+     "h": 36
+    },
+    {
+     "sel": "html > body.effects.tabletop > main > header > button.themetoggle:nth-of-type(1)",
+     "label": "Светлая тема",
+     "w": 34,
+     "h": 34
+    },
+    {
+     "sel": "details#scene-hero > summary",
+     "label": "Ваш герой",
+     "w": 225,
+     "h": 13.5
+    },
+    {
+     "sel": "details#scene-hero > div.disclosure-body > button.quiet.sheet-link",
+     "label": "Лист героя",
+     "w": 75,
+     "h": 28.8
+    }
+   ],
+   "tapsBadCount": 9,
+   "contrastBad": [],
+   "contrastBadCount": 0,
+   "contrastMin": null,
+   "interactiveVisible": 11,
+   "clipped": [],
+   "clippedCount": 0,
+   "colorsOutsideCount": 0,
+   "colorsOutside": [],
+   "drawer": null,
+   "chatBlocks": [
+    {
+     "tag": "message master",
+     "h": 158,
+     "text": "МАСТЕР\nУ сторожевого поста гоблин перекрыл тропу. Осмотрите "
+    }
+   ],
+   "state": "game",
+   "theme": "dark",
+   "width": 1440,
+   "height": 900,
+   "file": "game-dark-1440.png",
+   "jsErrors": []
+  },
+  {
+   "viewport": {
+    "w": 1440,
+    "h": 564,
+    "dpr": 1
+   },
+   "scrollWidth": 1440,
+   "scrollHeight": 564,
+   "overflowX": 0,
+   "activeView": "play",
+   "campaignOpen": true,
+   "kbOpen": true,
+   "textElements": 20,
+   "fontMin": 10,
+   "smallText": [
+    {
+     "sel": "details#scene-hero > summary",
+     "px": 10,
+     "text": "Ваш герой"
+    },
+    {
+     "sel": "div#chat > article.message.master > div.speaker:nth-of-type(1)",
+     "px": 10.5,
+     "text": "МАСТЕР"
+    },
+    {
+     "sel": "form#action-form > div.composer-footer:nth-of-type(2) > span",
+     "px": 12,
+     "text": "Enter — отправить · Shift + Ente"
+    },
+    {
+     "sel": "details#scene-hero > div.disclosure-body > p.hint:nth-of-type(2)",
+     "px": 12,
+     "text": "Второе дыхание · потрачено: 0"
+    },
+    {
+     "sel": "details#scene-hero > div.disclosure-body > p.hint:nth-of-type(3)",
+     "px": 12,
+     "text": "Опыт: 0"
+    },
+    {
+     "sel": "details#scene-hero > div.disclosure-body > p.hint:nth-of-type(4)",
+     "px": 12,
+     "text": "Кости хитов: 1"
+    },
+    {
+     "sel": "details#scene-hero > div.disclosure-body > p.hint:nth-of-type(5)",
+     "px": 12,
+     "text": "Состояния: нет"
+    }
+   ],
+   "fontDistinct": 9,
+   "fontSizes": {
+    "10": 1,
+    "12": 5,
+    "13": 4,
+    "14": 2,
+    "16": 4,
+    "18": 1,
+    "20": 1,
+    "30": 1,
+    "10.5": 1
+   },
+   "tapCount": 11,
+   "tapsBad": [
+    {
+     "sel": "html > body.effects.tabletop > aside.sidebar > a.brand",
+     "label": "Solo Realms AI",
+     "w": 115.6,
+     "h": 21
+    },
+    {
+     "sel": "body.effects.tabletop > aside.sidebar > nav > div.nav-bar:nth-of-type(1) > button.nav.active:nth-of-type(1)",
+     "label": "BUTTON",
+     "w": 68,
+     "h": 38
+    },
+    {
+     "sel": "body.effects.tabletop > aside.sidebar > nav > div.nav-bar:nth-of-type(1) > button.nav:nth-of-type(2)",
+     "label": "BUTTON",
+     "w": 111,
+     "h": 38
+    },
+    {
+     "sel": "body.effects.tabletop > aside.sidebar > nav > div.nav-bar:nth-of-type(1) > button.nav:nth-of-type(3)",
+     "label": "BUTTON",
+     "w": 113,
+     "h": 38
+    },
+    {
+     "sel": "body.effects.tabletop > aside.sidebar > nav > div.nav-bar:nth-of-type(1) > button.nav:nth-of-type(4)",
+     "label": "BUTTON",
+     "w": 90,
+     "h": 38
+    },
+    {
+     "sel": "button#nav-more",
+     "label": "Ещё",
+     "w": 56,
+     "h": 36
+    },
+    {
+     "sel": "html > body.effects.tabletop > main > header > button.themetoggle:nth-of-type(1)",
+     "label": "Светлая тема",
+     "w": 34,
+     "h": 34
+    },
+    {
+     "sel": "details#scene-hero > summary",
+     "label": "Ваш герой",
+     "w": 1313,
+     "h": 13.5
+    },
+    {
+     "sel": "details#scene-hero > div.disclosure-body > button.quiet.sheet-link",
+     "label": "Лист героя",
+     "w": 75,
+     "h": 28.8
+    }
+   ],
+   "tapsBadCount": 9,
+   "contrastBad": [],
+   "contrastBadCount": 0,
+   "contrastMin": null,
+   "interactiveVisible": 11,
+   "clipped": [],
+   "clippedCount": 0,
+   "colorsOutsideCount": 0,
+   "colorsOutside": [],
+   "drawer": null,
+   "chatBlocks": [
+    {
+     "tag": "message master",
+     "h": 158,
+     "text": "МАСТЕР\nУ сторожевого поста гоблин перекрыл тропу. Осмотрите "
+    }
+   ],
+   "state": "game-kb",
+   "theme": "dark",
+   "width": 1440,
+   "height": 564,
+   "file": "game-kb-dark-1440.png",
+   "jsErrors": []
+  },
+  {
+   "viewport": {
+    "w": 1440,
+    "h": 900,
+    "dpr": 1
+   },
+   "scrollWidth": 1440,
+   "scrollHeight": 900,
+   "overflowX": 0,
+   "activeView": "welcome",
+   "campaignOpen": true,
+   "kbOpen": false,
+   "textElements": 71,
+   "fontMin": 11,
+   "smallText": [
+    {
+     "sel": "div#nav-drawer > div.nav-block:nth-of-type(1) > p.nav-group-label",
+     "px": 11,
+     "text": "Кампания"
+    },
+    {
+     "sel": "div#nav-drawer > div.nav-block:nth-of-type(2) > p.nav-group-label",
+     "px": 11,
+     "text": "Приложение"
+    }
+   ],
+   "fontDistinct": 5,
+   "fontSizes": {
+    "11": 2,
+    "13": 1,
+    "14": 31,
+    "16": 36,
+    "34": 1
+   },
+   "tapCount": 37,
+   "tapsBad": [
+    {
+     "sel": "html > body.effects.tabletop > aside.sidebar.show-more > a.brand",
+     "label": "Solo Realms AI",
+     "w": 115.6,
+     "h": 21
+    },
+    {
+     "sel": "body.effects.tabletop > aside.sidebar.show-more > nav > div.nav-bar:nth-of-type(1) > button.nav:nth-of-type(1)",
+     "label": "BUTTON",
+     "w": 68,
+     "h": 38
+    },
+    {
+     "sel": "body.effects.tabletop > aside.sidebar.show-more > nav > div.nav-bar:nth-of-type(1) > button.nav:nth-of-type(2)",
+     "label": "BUTTON",
+     "w": 111,
+     "h": 38
+    },
+    {
+     "sel": "body.effects.tabletop > aside.sidebar.show-more > nav > div.nav-bar:nth-of-type(1) > button.nav:nth-of-type(3)",
+     "label": "BUTTON",
+     "w": 113,
+     "h": 38
+    },
+    {
+     "sel": "body.effects.tabletop > aside.sidebar.show-more > nav > div.nav-bar:nth-of-type(1) > button.nav:nth-of-type(4)",
+     "label": "BUTTON",
+     "w": 90,
+     "h": 38
+    },
+    {
+     "sel": "button#nav-more",
+     "label": "Ещё",
+     "w": 56,
+     "h": 36
+    },
+    {
+     "sel": "div#nav-drawer > div.nav-block:nth-of-type(1) > button.nav:nth-of-type(1)",
+     "label": "BUTTON",
+     "w": 287,
+     "h": 38
+    },
+    {
+     "sel": "div#nav-drawer > div.nav-block:nth-of-type(1) > button.nav:nth-of-type(2)",
+     "label": "BUTTON",
+     "w": 287,
+     "h": 38
+    },
+    {
+     "sel": "div#nav-drawer > div.nav-block:nth-of-type(1) > button.nav:nth-of-type(3)",
+     "label": "BUTTON",
+     "w": 287,
+     "h": 38
+    },
+    {
+     "sel": "div#nav-drawer > div.nav-block:nth-of-type(1) > button.nav:nth-of-type(4)",
+     "label": "BUTTON",
+     "w": 287,
+     "h": 38
+    },
+    {
+     "sel": "div#nav-drawer > div.nav-block:nth-of-type(1) > button.nav:nth-of-type(5)",
+     "label": "BUTTON",
+     "w": 287,
+     "h": 38
+    },
+    {
+     "sel": "div#nav-drawer > div.nav-block:nth-of-type(1) > button.nav:nth-of-type(6)",
+     "label": "BUTTON",
+     "w": 287,
+     "h": 38
+    },
+    {
+     "sel": "div#nav-drawer > div.nav-block:nth-of-type(2) > button.nav:nth-of-type(1)",
+     "label": "BUTTON",
+     "w": 287,
+     "h": 38
+    },
+    {
+     "sel": "div#nav-drawer > div.nav-block:nth-of-type(2) > button.nav:nth-of-type(2)",
+     "label": "BUTTON",
+     "w": 287,
+     "h": 38
+    },
+    {
+     "sel": "div#nav-drawer > div.nav-block:nth-of-type(2) > button.nav:nth-of-type(3)",
+     "label": "BUTTON",
+     "w": 287,
+     "h": 38
+    }
+   ],
+   "tapsBadCount": 22,
+   "contrastBad": [],
+   "contrastBadCount": 0,
+   "contrastMin": null,
+   "interactiveVisible": 37,
+   "clipped": [
+    {
+     "sel": "section#welcome > div.start__feed:nth-of-type(2) > button.start__continue > span.start__continue-meta:nth-of-type(3) > span.story-where:nth-of-type(1)",
+     "sw": 222,
+     "cw": 208,
+     "overflow": "hidden",
+     "text": "Дозор на тракте · Тайна трёх сос"
+    },
+    {
+     "sel": "div.start__stories > div.start__list > button.story:nth-of-type(2) > span.story-meta:nth-of-type(2) > span.story-where:nth-of-type(1)",
+     "sw": 207,
+     "cw": 204,
+     "overflow": "hidden",
+     "text": "Дозор на тракте · Соляной тракт"
+    },
+    {
+     "sel": "div.start__stories > div.start__list > button.story:nth-of-type(4) > span.story-meta:nth-of-type(2) > span.story-where:nth-of-type(1)",
+     "sw": 207,
+     "cw": 204,
+     "overflow": "hidden",
+     "text": "Дозор на тракте · Соляной тракт"
+    },
+    {
+     "sel": "div.start__stories > div.start__list > button.story:nth-of-type(5) > span.story-meta:nth-of-type(2) > span.story-where:nth-of-type(1)",
+     "sw": 222,
+     "cw": 204,
+     "overflow": "hidden",
+     "text": "Дозор на тракте · Тайна трёх сос"
+    },
+    {
+     "sel": "div.start__stories > div.start__list > button.story:nth-of-type(7) > span.story-meta:nth-of-type(2) > span.story-where:nth-of-type(1)",
+     "sw": 207,
+     "cw": 204,
+     "overflow": "hidden",
+     "text": "Дозор на тракте · Соляной тракт"
+    },
+    {
+     "sel": "div.start__stories > div.start__list > button.story:nth-of-type(8) > span.story-meta:nth-of-type(2) > span.story-where:nth-of-type(1)",
+     "sw": 222,
+     "cw": 204,
+     "overflow": "hidden",
+     "text": "Дозор на тракте · Тайна трёх сос"
+    },
+    {
+     "sel": "div.start__stories > div.start__list > button.story:nth-of-type(10) > span.story-meta:nth-of-type(2) > span.story-where:nth-of-type(1)",
+     "sw": 207,
+     "cw": 204,
+     "overflow": "hidden",
+     "text": "Дозор на тракте · Соляной тракт"
+    },
+    {
+     "sel": "div.start__stories > div.start__list > button.story:nth-of-type(11) > span.story-meta:nth-of-type(2) > span.story-where:nth-of-type(1)",
+     "sw": 222,
+     "cw": 204,
+     "overflow": "hidden",
+     "text": "Дозор на тракте · Тайна трёх сос"
+    },
+    {
+     "sel": "div.start__stories > div.start__list > button.story:nth-of-type(13) > span.story-meta:nth-of-type(2) > span.story-where:nth-of-type(1)",
+     "sw": 207,
+     "cw": 204,
+     "overflow": "hidden",
+     "text": "Дозор на тракте · Соляной тракт"
+    },
+    {
+     "sel": "div.start__stories > div.start__list > button.story:nth-of-type(14) > span.story-meta:nth-of-type(2) > span.story-where:nth-of-type(1)",
+     "sw": 222,
+     "cw": 204,
+     "overflow": "hidden",
+     "text": "Дозор на тракте · Тайна трёх сос"
+    },
+    {
+     "sel": "div.start__stories > div.start__list > button.story:nth-of-type(16) > span.story-meta:nth-of-type(2) > span.story-where:nth-of-type(1)",
+     "sw": 207,
+     "cw": 204,
+     "overflow": "hidden",
+     "text": "Дозор на тракте · Соляной тракт"
+    },
+    {
+     "sel": "div.start__stories > div.start__list > button.story:nth-of-type(17) > span.story-meta:nth-of-type(2) > span.story-where:nth-of-type(1)",
+     "sw": 222,
+     "cw": 204,
+     "overflow": "hidden",
+     "text": "Дозор на тракте · Тайна трёх сос"
+    },
+    {
+     "sel": "div.start__stories > div.start__list > button.story:nth-of-type(19) > span.story-meta:nth-of-type(2) > span.story-where:nth-of-type(1)",
+     "sw": 207,
+     "cw": 204,
+     "overflow": "hidden",
+     "text": "Дозор на тракте · Соляной тракт"
+    },
+    {
+     "sel": "div.start__stories > div.start__list > button.story:nth-of-type(20) > span.story-meta:nth-of-type(2) > span.story-where:nth-of-type(1)",
+     "sw": 222,
+     "cw": 204,
+     "overflow": "hidden",
+     "text": "Дозор на тракте · Тайна трёх сос"
+    },
+    {
+     "sel": "div.start__stories > div.start__list > button.story:nth-of-type(22) > span.story-meta:nth-of-type(2) > span.story-where:nth-of-type(1)",
+     "sw": 207,
+     "cw": 204,
+     "overflow": "hidden",
+     "text": "Дозор на тракте · Соляной тракт"
+    }
+   ],
+   "clippedCount": 20,
+   "colorsOutsideCount": 0,
+   "colorsOutside": [],
+   "drawer": {
+    "h": 741,
+    "top": 56,
+    "rows": 17,
+    "blocks": [
+     "Кампания",
+     "Приложение"
+    ],
+    "scrollTop": 0,
+    "scroll": 0,
+    "content": 741
+   },
+   "state": "menu",
+   "theme": "dark",
+   "width": 1440,
+   "height": 900,
+   "debug": {
+    "bodyClass": "effects tabletop campaign-open nat20-game",
+    "burger": false,
+    "aside": {
+     "x": 0,
+     "y": 0,
+     "w": 1440,
+     "h": 56
+    },
+    "drawer": {
+     "x": 0,
+     "y": 56,
+     "w": 320,
+     "h": 741
+    }
+   },
+   "file": "menu-dark-1440.png",
+   "jsErrors": []
+  },
+  {
+   "viewport": {
+    "w": 1440,
+    "h": 900,
+    "dpr": 1
+   },
+   "scrollWidth": 1440,
+   "scrollHeight": 900,
+   "overflowX": 0,
+   "activeView": "welcome",
+   "campaignOpen": true,
+   "kbOpen": false,
+   "textElements": 71,
+   "fontMin": 11,
+   "smallText": [
+    {
+     "sel": "div#nav-drawer > div.nav-block:nth-of-type(1) > p.nav-group-label",
+     "px": 11,
+     "text": "Кампания"
+    },
+    {
+     "sel": "div#nav-drawer > div.nav-block:nth-of-type(2) > p.nav-group-label",
+     "px": 11,
+     "text": "Приложение"
+    }
+   ],
+   "fontDistinct": 5,
+   "fontSizes": {
+    "11": 2,
+    "13": 1,
+    "14": 31,
+    "16": 36,
+    "34": 1
+   },
+   "tapCount": 37,
+   "tapsBad": [
+    {
+     "sel": "html > body.effects.tabletop > aside.sidebar.show-more > a.brand",
+     "label": "Solo Realms AI",
+     "w": 115.6,
+     "h": 21
+    },
+    {
+     "sel": "body.effects.tabletop > aside.sidebar.show-more > nav > div.nav-bar:nth-of-type(1) > button.nav:nth-of-type(1)",
+     "label": "BUTTON",
+     "w": 68,
+     "h": 38
+    },
+    {
+     "sel": "body.effects.tabletop > aside.sidebar.show-more > nav > div.nav-bar:nth-of-type(1) > button.nav:nth-of-type(2)",
+     "label": "BUTTON",
+     "w": 111,
+     "h": 38
+    },
+    {
+     "sel": "body.effects.tabletop > aside.sidebar.show-more > nav > div.nav-bar:nth-of-type(1) > button.nav:nth-of-type(3)",
+     "label": "BUTTON",
+     "w": 113,
+     "h": 38
+    },
+    {
+     "sel": "body.effects.tabletop > aside.sidebar.show-more > nav > div.nav-bar:nth-of-type(1) > button.nav:nth-of-type(4)",
+     "label": "BUTTON",
+     "w": 90,
+     "h": 38
+    },
+    {
+     "sel": "button#nav-more",
+     "label": "Ещё",
+     "w": 56,
+     "h": 36
+    },
+    {
+     "sel": "div#nav-drawer > div.nav-block:nth-of-type(1) > button.nav:nth-of-type(1)",
+     "label": "BUTTON",
+     "w": 287,
+     "h": 38
+    },
+    {
+     "sel": "div#nav-drawer > div.nav-block:nth-of-type(1) > button.nav:nth-of-type(2)",
+     "label": "BUTTON",
+     "w": 287,
+     "h": 38
+    },
+    {
+     "sel": "div#nav-drawer > div.nav-block:nth-of-type(1) > button.nav:nth-of-type(3)",
+     "label": "BUTTON",
+     "w": 287,
+     "h": 38
+    },
+    {
+     "sel": "div#nav-drawer > div.nav-block:nth-of-type(1) > button.nav:nth-of-type(4)",
+     "label": "BUTTON",
+     "w": 287,
+     "h": 38
+    },
+    {
+     "sel": "div#nav-drawer > div.nav-block:nth-of-type(1) > button.nav:nth-of-type(5)",
+     "label": "BUTTON",
+     "w": 287,
+     "h": 38
+    },
+    {
+     "sel": "div#nav-drawer > div.nav-block:nth-of-type(1) > button.nav:nth-of-type(6)",
+     "label": "BUTTON",
+     "w": 287,
+     "h": 38
+    },
+    {
+     "sel": "div#nav-drawer > div.nav-block:nth-of-type(2) > button.nav:nth-of-type(1)",
+     "label": "BUTTON",
+     "w": 287,
+     "h": 38
+    },
+    {
+     "sel": "div#nav-drawer > div.nav-block:nth-of-type(2) > button.nav:nth-of-type(2)",
+     "label": "BUTTON",
+     "w": 287,
+     "h": 38
+    },
+    {
+     "sel": "div#nav-drawer > div.nav-block:nth-of-type(2) > button.nav:nth-of-type(3)",
+     "label": "BUTTON",
+     "w": 287,
+     "h": 38
+    }
+   ],
+   "tapsBadCount": 22,
+   "contrastBad": [],
+   "contrastBadCount": 0,
+   "contrastMin": null,
+   "interactiveVisible": 37,
+   "clipped": [
+    {
+     "sel": "section#welcome > div.start__feed:nth-of-type(2) > button.start__continue > span.start__continue-meta:nth-of-type(3) > span.story-where:nth-of-type(1)",
+     "sw": 222,
+     "cw": 208,
+     "overflow": "hidden",
+     "text": "Дозор на тракте · Тайна трёх сос"
+    },
+    {
+     "sel": "div.start__stories > div.start__list > button.story:nth-of-type(2) > span.story-meta:nth-of-type(2) > span.story-where:nth-of-type(1)",
+     "sw": 207,
+     "cw": 204,
+     "overflow": "hidden",
+     "text": "Дозор на тракте · Соляной тракт"
+    },
+    {
+     "sel": "div.start__stories > div.start__list > button.story:nth-of-type(4) > span.story-meta:nth-of-type(2) > span.story-where:nth-of-type(1)",
+     "sw": 207,
+     "cw": 204,
+     "overflow": "hidden",
+     "text": "Дозор на тракте · Соляной тракт"
+    },
+    {
+     "sel": "div.start__stories > div.start__list > button.story:nth-of-type(5) > span.story-meta:nth-of-type(2) > span.story-where:nth-of-type(1)",
+     "sw": 222,
+     "cw": 204,
+     "overflow": "hidden",
+     "text": "Дозор на тракте · Тайна трёх сос"
+    },
+    {
+     "sel": "div.start__stories > div.start__list > button.story:nth-of-type(7) > span.story-meta:nth-of-type(2) > span.story-where:nth-of-type(1)",
+     "sw": 207,
+     "cw": 204,
+     "overflow": "hidden",
+     "text": "Дозор на тракте · Соляной тракт"
+    },
+    {
+     "sel": "div.start__stories > div.start__list > button.story:nth-of-type(8) > span.story-meta:nth-of-type(2) > span.story-where:nth-of-type(1)",
+     "sw": 222,
+     "cw": 204,
+     "overflow": "hidden",
+     "text": "Дозор на тракте · Тайна трёх сос"
+    },
+    {
+     "sel": "div.start__stories > div.start__list > button.story:nth-of-type(10) > span.story-meta:nth-of-type(2) > span.story-where:nth-of-type(1)",
+     "sw": 207,
+     "cw": 204,
+     "overflow": "hidden",
+     "text": "Дозор на тракте · Соляной тракт"
+    },
+    {
+     "sel": "div.start__stories > div.start__list > button.story:nth-of-type(11) > span.story-meta:nth-of-type(2) > span.story-where:nth-of-type(1)",
+     "sw": 222,
+     "cw": 204,
+     "overflow": "hidden",
+     "text": "Дозор на тракте · Тайна трёх сос"
+    },
+    {
+     "sel": "div.start__stories > div.start__list > button.story:nth-of-type(13) > span.story-meta:nth-of-type(2) > span.story-where:nth-of-type(1)",
+     "sw": 207,
+     "cw": 204,
+     "overflow": "hidden",
+     "text": "Дозор на тракте · Соляной тракт"
+    },
+    {
+     "sel": "div.start__stories > div.start__list > button.story:nth-of-type(14) > span.story-meta:nth-of-type(2) > span.story-where:nth-of-type(1)",
+     "sw": 222,
+     "cw": 204,
+     "overflow": "hidden",
+     "text": "Дозор на тракте · Тайна трёх сос"
+    },
+    {
+     "sel": "div.start__stories > div.start__list > button.story:nth-of-type(16) > span.story-meta:nth-of-type(2) > span.story-where:nth-of-type(1)",
+     "sw": 207,
+     "cw": 204,
+     "overflow": "hidden",
+     "text": "Дозор на тракте · Соляной тракт"
+    },
+    {
+     "sel": "div.start__stories > div.start__list > button.story:nth-of-type(17) > span.story-meta:nth-of-type(2) > span.story-where:nth-of-type(1)",
+     "sw": 222,
+     "cw": 204,
+     "overflow": "hidden",
+     "text": "Дозор на тракте · Тайна трёх сос"
+    },
+    {
+     "sel": "div.start__stories > div.start__list > button.story:nth-of-type(19) > span.story-meta:nth-of-type(2) > span.story-where:nth-of-type(1)",
+     "sw": 207,
+     "cw": 204,
+     "overflow": "hidden",
+     "text": "Дозор на тракте · Соляной тракт"
+    },
+    {
+     "sel": "div.start__stories > div.start__list > button.story:nth-of-type(20) > span.story-meta:nth-of-type(2) > span.story-where:nth-of-type(1)",
+     "sw": 222,
+     "cw": 204,
+     "overflow": "hidden",
+     "text": "Дозор на тракте · Тайна трёх сос"
+    },
+    {
+     "sel": "div.start__stories > div.start__list > button.story:nth-of-type(22) > span.story-meta:nth-of-type(2) > span.story-where:nth-of-type(1)",
+     "sw": 207,
+     "cw": 204,
+     "overflow": "hidden",
+     "text": "Дозор на тракте · Соляной тракт"
+    }
+   ],
+   "clippedCount": 20,
+   "colorsOutsideCount": 0,
+   "colorsOutside": [],
+   "drawer": {
+    "h": 741,
+    "top": 56,
+    "rows": 17,
+    "blocks": [
+     "Кампания",
+     "Приложение"
+    ],
+    "scrollTop": 0,
+    "scroll": 0,
+    "content": 741
+   },
+   "state": "menu-app",
+   "theme": "dark",
+   "width": 1440,
+   "height": 900,
+   "debug": {
+    "bodyClass": "effects tabletop campaign-open nat20-game",
+    "burger": false,
+    "aside": {
+     "x": 0,
+     "y": 0,
+     "w": 1440,
+     "h": 56
+    },
+    "drawer": {
+     "x": 0,
+     "y": 56,
+     "w": 320,
+     "h": 741
+    }
+   },
+   "file": "menu-app-dark-1440.png",
+   "jsErrors": []
+  },
+  {
+   "viewport": {
+    "w": 1440,
+    "h": 900,
+    "dpr": 1
+   },
+   "scrollWidth": 1440,
+   "scrollHeight": 1103,
+   "overflowX": 0,
+   "activeView": "journal",
+   "campaignOpen": true,
+   "kbOpen": false,
+   "textElements": 26,
+   "fontMin": 10,
+   "smallText": [
+    {
+     "sel": "html > body.effects.tabletop > main > header > div.breadcrumb:nth-of-type(1)",
+     "px": 10,
+     "text": "ОДИНОЧНОЕ ПРИКЛЮЧЕНИЕ"
+    },
+    {
+     "sel": "body.effects.tabletop > main > header > div.breadcrumb:nth-of-type(1) > span:nth-of-type(1)",
+     "px": 10,
+     "text": "/"
+    },
+    {
+     "sel": "span#campaign-label",
+     "px": 10,
+     "text": "Тайна трёх сосен"
+    },
+    {
+     "sel": "body.effects.tabletop > main > header > div.vitals:nth-of-type(2) > span",
+     "px": 10,
+     "text": "Хиты / 12"
+    },
+    {
+     "sel": "main > header > div.vitals:nth-of-type(2) > span > b",
+     "px": 10,
+     "text": "12"
+    },
+    {
+     "sel": "button#sheet-toggle",
+     "px": 10,
+     "text": "Лист"
+    },
+    {
+     "sel": "section#journal > p.eyebrow:nth-of-type(1)",
+     "px": 10,
+     "text": "ПАМЯТЬ ГЕРОЯ"
+    },
+    {
+     "sel": "span#model-status",
+     "px": 11,
+     "text": "Тестовые данные · mock"
+    }
+   ],
+   "fontDistinct": 8,
+   "fontSizes": {
+    "10": 7,
+    "11": 1,
+    "12": 4,
+    "13": 3,
+    "14": 3,
+    "16": 4,
+    "25": 3,
+    "36": 1
+   },
+   "tapCount": 13,
+   "tapsBad": [
+    {
+     "sel": "html > body.effects.tabletop > aside.sidebar > a.brand",
+     "label": "Solo Realms AI",
+     "w": 115.6,
+     "h": 21
+    },
+    {
+     "sel": "body.effects.tabletop > aside.sidebar > nav > div.nav-bar:nth-of-type(1) > button.nav:nth-of-type(1)",
+     "label": "BUTTON",
+     "w": 68,
+     "h": 38
+    },
+    {
+     "sel": "body.effects.tabletop > aside.sidebar > nav > div.nav-bar:nth-of-type(1) > button.nav:nth-of-type(2)",
+     "label": "BUTTON",
+     "w": 111,
+     "h": 38
+    },
+    {
+     "sel": "body.effects.tabletop > aside.sidebar > nav > div.nav-bar:nth-of-type(1) > button.nav:nth-of-type(3)",
+     "label": "BUTTON",
+     "w": 113,
+     "h": 38
+    },
+    {
+     "sel": "body.effects.tabletop > aside.sidebar > nav > div.nav-bar:nth-of-type(1) > button.nav:nth-of-type(4)",
+     "label": "BUTTON",
+     "w": 90,
+     "h": 38
+    },
+    {
+     "sel": "button#nav-more",
+     "label": "Ещё",
+     "w": 56,
+     "h": 36
+    },
+    {
+     "sel": "html > body.effects.tabletop > main > header > button.themetoggle:nth-of-type(1)",
+     "label": "Светлая тема",
+     "w": 34,
+     "h": 34
+    },
+    {
+     "sel": "button#sheet-toggle",
+     "label": "Лист",
+     "w": 59,
+     "h": 37
+    },
+    {
+     "sel": "section#journal > div.tabletop-tabs:nth-of-type(1) > button:nth-of-type(1)",
+     "label": "События и записи",
+     "w": 148,
+     "h": 37.5
+    },
+    {
+     "sel": "section#journal > div.tabletop-tabs:nth-of-type(1) > button:nth-of-type(2)",
+     "label": "Контрольные точки",
+     "w": 163,
+     "h": 37.5
+    },
+    {
+     "sel": "section#journal > section.player-notes:nth-of-type(1) > button.primary:nth-of-type(1)",
+     "label": "Сохранить запись",
+     "w": 176,
+     "h": 43
+    },
+    {
+     "sel": "section#journal > section.player-notes:nth-of-type(1) > button:nth-of-type(2)",
+     "label": "Обновить блокнот",
+     "w": 168,
+     "h": 43
+    }
+   ],
+   "tapsBadCount": 12,
+   "contrastBad": [],
+   "contrastBadCount": 0,
+   "contrastMin": null,
+   "interactiveVisible": 13,
+   "clipped": [],
+   "clippedCount": 0,
+   "colorsOutsideCount": 0,
+   "colorsOutside": [],
+   "drawer": null,
+   "state": "notes",
+   "theme": "dark",
+   "width": 1440,
+   "height": 900,
+   "file": "notes-dark-1440.png",
+   "jsErrors": []
+  },
+  {
+   "viewport": {
+    "w": 1440,
+    "h": 900,
+    "dpr": 1
+   },
+   "scrollWidth": 1440,
+   "scrollHeight": 900,
+   "overflowX": 0,
+   "activeView": "welcome",
+   "campaignOpen": true,
+   "kbOpen": false,
+   "textElements": 53,
+   "fontMin": 13,
+   "smallText": [],
+   "fontDistinct": 4,
+   "fontSizes": {
+    "13": 1,
+    "14": 31,
+    "16": 20,
+    "34": 1
+   },
+   "tapCount": 21,
+   "tapsBad": [
+    {
+     "sel": "html > body.effects.tabletop > aside.sidebar > a.brand",
+     "label": "Solo Realms AI",
+     "w": 115.6,
+     "h": 21
+    },
+    {
+     "sel": "body.effects.tabletop > aside.sidebar > nav > div.nav-bar:nth-of-type(1) > button.nav:nth-of-type(1)",
+     "label": "BUTTON",
+     "w": 68,
+     "h": 38
+    },
+    {
+     "sel": "body.effects.tabletop > aside.sidebar > nav > div.nav-bar:nth-of-type(1) > button.nav:nth-of-type(2)",
+     "label": "BUTTON",
+     "w": 111,
+     "h": 38
+    },
+    {
+     "sel": "body.effects.tabletop > aside.sidebar > nav > div.nav-bar:nth-of-type(1) > button.nav:nth-of-type(3)",
+     "label": "BUTTON",
+     "w": 113,
+     "h": 38
+    },
+    {
+     "sel": "body.effects.tabletop > aside.sidebar > nav > div.nav-bar:nth-of-type(1) > button.nav:nth-of-type(4)",
+     "label": "BUTTON",
+     "w": 90,
+     "h": 38
+    },
+    {
+     "sel": "button#nav-more",
+     "label": "Ещё",
+     "w": 56,
+     "h": 36
+    }
+   ],
+   "tapsBadCount": 6,
+   "contrastBad": [
+    {
+     "sel": "section#welcome > div.start__main:nth-of-type(1) > div.start__copy:nth-of-type(1) > div.start__actions > button.start__btn.start__btn--primary:nth-of-type(1)",
+     "text": "Начать историю",
+     "ratio": 3.05,
+     "fg": "rgb(25,18,7)",
+     "bg": "rgb(138,87,20)",
+     "px": 16
+    }
+   ],
+   "contrastBadCount": 1,
+   "contrastMin": 3.05,
+   "interactiveVisible": 21,
+   "clipped": [
+    {
+     "sel": "section#welcome > div.start__feed:nth-of-type(2) > button.start__continue > span.start__continue-meta:nth-of-type(3) > span.story-where:nth-of-type(1)",
+     "sw": 222,
+     "cw": 208,
+     "overflow": "hidden",
+     "text": "Дозор на тракте · Тайна трёх сос"
+    },
+    {
+     "sel": "div.start__stories > div.start__list > button.story:nth-of-type(2) > span.story-meta:nth-of-type(2) > span.story-where:nth-of-type(1)",
+     "sw": 207,
+     "cw": 204,
+     "overflow": "hidden",
+     "text": "Дозор на тракте · Соляной тракт"
+    },
+    {
+     "sel": "div.start__stories > div.start__list > button.story:nth-of-type(4) > span.story-meta:nth-of-type(2) > span.story-where:nth-of-type(1)",
+     "sw": 207,
+     "cw": 204,
+     "overflow": "hidden",
+     "text": "Дозор на тракте · Соляной тракт"
+    },
+    {
+     "sel": "div.start__stories > div.start__list > button.story:nth-of-type(5) > span.story-meta:nth-of-type(2) > span.story-where:nth-of-type(1)",
+     "sw": 222,
+     "cw": 204,
+     "overflow": "hidden",
+     "text": "Дозор на тракте · Тайна трёх сос"
+    },
+    {
+     "sel": "div.start__stories > div.start__list > button.story:nth-of-type(7) > span.story-meta:nth-of-type(2) > span.story-where:nth-of-type(1)",
+     "sw": 207,
+     "cw": 204,
+     "overflow": "hidden",
+     "text": "Дозор на тракте · Соляной тракт"
+    },
+    {
+     "sel": "div.start__stories > div.start__list > button.story:nth-of-type(8) > span.story-meta:nth-of-type(2) > span.story-where:nth-of-type(1)",
+     "sw": 222,
+     "cw": 204,
+     "overflow": "hidden",
+     "text": "Дозор на тракте · Тайна трёх сос"
+    },
+    {
+     "sel": "div.start__stories > div.start__list > button.story:nth-of-type(10) > span.story-meta:nth-of-type(2) > span.story-where:nth-of-type(1)",
+     "sw": 207,
+     "cw": 204,
+     "overflow": "hidden",
+     "text": "Дозор на тракте · Соляной тракт"
+    },
+    {
+     "sel": "div.start__stories > div.start__list > button.story:nth-of-type(11) > span.story-meta:nth-of-type(2) > span.story-where:nth-of-type(1)",
+     "sw": 222,
+     "cw": 204,
+     "overflow": "hidden",
+     "text": "Дозор на тракте · Тайна трёх сос"
+    },
+    {
+     "sel": "div.start__stories > div.start__list > button.story:nth-of-type(13) > span.story-meta:nth-of-type(2) > span.story-where:nth-of-type(1)",
+     "sw": 207,
+     "cw": 204,
+     "overflow": "hidden",
+     "text": "Дозор на тракте · Соляной тракт"
+    },
+    {
+     "sel": "div.start__stories > div.start__list > button.story:nth-of-type(14) > span.story-meta:nth-of-type(2) > span.story-where:nth-of-type(1)",
+     "sw": 222,
+     "cw": 204,
+     "overflow": "hidden",
+     "text": "Дозор на тракте · Тайна трёх сос"
+    },
+    {
+     "sel": "div.start__stories > div.start__list > button.story:nth-of-type(16) > span.story-meta:nth-of-type(2) > span.story-where:nth-of-type(1)",
+     "sw": 207,
+     "cw": 204,
+     "overflow": "hidden",
+     "text": "Дозор на тракте · Соляной тракт"
+    },
+    {
+     "sel": "div.start__stories > div.start__list > button.story:nth-of-type(17) > span.story-meta:nth-of-type(2) > span.story-where:nth-of-type(1)",
+     "sw": 222,
+     "cw": 204,
+     "overflow": "hidden",
+     "text": "Дозор на тракте · Тайна трёх сос"
+    },
+    {
+     "sel": "div.start__stories > div.start__list > button.story:nth-of-type(19) > span.story-meta:nth-of-type(2) > span.story-where:nth-of-type(1)",
+     "sw": 207,
+     "cw": 204,
+     "overflow": "hidden",
+     "text": "Дозор на тракте · Соляной тракт"
+    },
+    {
+     "sel": "div.start__stories > div.start__list > button.story:nth-of-type(20) > span.story-meta:nth-of-type(2) > span.story-where:nth-of-type(1)",
+     "sw": 222,
+     "cw": 204,
+     "overflow": "hidden",
+     "text": "Дозор на тракте · Тайна трёх сос"
+    },
+    {
+     "sel": "div.start__stories > div.start__list > button.story:nth-of-type(22) > span.story-meta:nth-of-type(2) > span.story-where:nth-of-type(1)",
+     "sw": 207,
+     "cw": 204,
+     "overflow": "hidden",
+     "text": "Дозор на тракте · Соляной тракт"
+    }
+   ],
+   "clippedCount": 20,
+   "colorsOutsideCount": 0,
+   "colorsOutside": [],
+   "drawer": null,
+   "state": "home",
+   "theme": "light",
+   "width": 1440,
+   "height": 900,
+   "file": "home-light-1440.png",
+   "jsErrors": []
+  },
+  {
+   "viewport": {
+    "w": 1440,
+    "h": 900,
+    "dpr": 1
+   },
+   "scrollWidth": 1440,
+   "scrollHeight": 1033,
+   "overflowX": 0,
+   "activeView": "creation",
+   "campaignOpen": true,
+   "kbOpen": false,
+   "textElements": 28,
+   "fontMin": 10,
+   "smallText": [
+    {
+     "sel": "html > body.effects.tabletop > main > header > div.breadcrumb:nth-of-type(1)",
+     "px": 10,
+     "text": "ОДИНОЧНОЕ ПРИКЛЮЧЕНИЕ"
+    },
+    {
+     "sel": "body.effects.tabletop > main > header > div.breadcrumb:nth-of-type(1) > span:nth-of-type(1)",
+     "px": 10,
+     "text": "/"
+    },
+    {
+     "sel": "span#campaign-label",
+     "px": 10,
+     "text": "Тайна трёх сосен"
+    },
+    {
+     "sel": "body.effects.tabletop > main > header > div.vitals:nth-of-type(2) > span",
+     "px": 10,
+     "text": "Хиты / 12"
+    },
+    {
+     "sel": "main > header > div.vitals:nth-of-type(2) > span > b",
+     "px": 10,
+     "text": "12"
+    },
+    {
+     "sel": "button#sheet-toggle",
+     "px": 10,
+     "text": "Лист"
+    },
+    {
+     "sel": "section#creation > p.eyebrow:nth-of-type(1)",
+     "px": 10,
+     "text": "ВАША НОВАЯ ИСТОРИЯ"
+    },
+    {
+     "sel": "span#model-status",
+     "px": 11,
+     "text": "Тестовые данные · mock"
+    }
+   ],
+   "fontDistinct": 8,
+   "fontSizes": {
+    "10": 7,
+    "11": 1,
+    "12": 6,
+    "13": 1,
+    "14": 6,
+    "16": 4,
+    "25": 2,
+    "36": 1
+   },
+   "tapCount": 14,
+   "tapsBad": [
+    {
+     "sel": "html > body.effects.tabletop > aside.sidebar > a.brand",
+     "label": "Solo Realms AI",
+     "w": 115.6,
+     "h": 21
+    },
+    {
+     "sel": "body.effects.tabletop > aside.sidebar > nav > div.nav-bar:nth-of-type(1) > button.nav:nth-of-type(1)",
+     "label": "BUTTON",
+     "w": 68,
+     "h": 38
+    },
+    {
+     "sel": "body.effects.tabletop > aside.sidebar > nav > div.nav-bar:nth-of-type(1) > button.nav:nth-of-type(2)",
+     "label": "BUTTON",
+     "w": 111,
+     "h": 38
+    },
+    {
+     "sel": "body.effects.tabletop > aside.sidebar > nav > div.nav-bar:nth-of-type(1) > button.nav:nth-of-type(3)",
+     "label": "BUTTON",
+     "w": 113,
+     "h": 38
+    },
+    {
+     "sel": "body.effects.tabletop > aside.sidebar > nav > div.nav-bar:nth-of-type(1) > button.nav:nth-of-type(4)",
+     "label": "BUTTON",
+     "w": 90,
+     "h": 38
+    },
+    {
+     "sel": "button#nav-more",
+     "label": "Ещё",
+     "w": 56,
+     "h": 36
+    },
+    {
+     "sel": "html > body.effects.tabletop > main > header > button.themetoggle:nth-of-type(1)",
+     "label": "Тёмная тема",
+     "w": 34,
+     "h": 34
+    },
+    {
+     "sel": "button#sheet-toggle",
+     "label": "Лист",
+     "w": 59,
+     "h": 37
+    },
+    {
+     "sel": "section#creation > div.creation-controls:nth-of-type(1) > button:nth-of-type(1)",
+     "label": "Назад",
+     "w": 78,
+     "h": 43
+    },
+    {
+     "sel": "section#creation > div.creation-controls:nth-of-type(1) > button:nth-of-type(2)",
+     "label": "Сохранить и выйти",
+     "w": 173,
+     "h": 43
+    },
+    {
+     "sel": "section#creation > div.creation-controls:nth-of-type(1) > button:nth-of-type(3)",
+     "label": "Мои приключения",
+     "w": 165,
+     "h": 43
+    },
+    {
+     "sel": "section#creation-mock-notice > div.button-row > button",
+     "label": "Открыть готовое испытание",
+     "w": 211,
+     "h": 40
+    },
+    {
+     "sel": "section#creation > div.creation-drop:nth-of-type(3) > button",
+     "label": "Выбрать файлы",
+     "w": 150,
+     "h": 43
+    }
+   ],
+   "tapsBadCount": 13,
+   "contrastBad": [],
+   "contrastBadCount": 0,
+   "contrastMin": null,
+   "interactiveVisible": 14,
+   "clipped": [],
+   "clippedCount": 0,
+   "colorsOutsideCount": 0,
+   "colorsOutside": [],
+   "drawer": null,
+   "state": "new",
+   "theme": "light",
+   "width": 1440,
+   "height": 900,
+   "file": "new-light-1440.png",
+   "jsErrors": []
+  },
+  {
+   "viewport": {
+    "w": 1440,
+    "h": 900,
+    "dpr": 1
+   },
+   "scrollWidth": 1440,
+   "scrollHeight": 1324,
+   "overflowX": 0,
+   "activeView": "character",
+   "campaignOpen": true,
+   "kbOpen": false,
+   "textElements": 38,
+   "fontMin": 10,
+   "smallText": [
+    {
+     "sel": "html > body.effects.tabletop > main > header > div.breadcrumb:nth-of-type(1)",
+     "px": 10,
+     "text": "ОДИНОЧНОЕ ПРИКЛЮЧЕНИЕ"
+    },
+    {
+     "sel": "body.effects.tabletop > main > header > div.breadcrumb:nth-of-type(1) > span:nth-of-type(1)",
+     "px": 10,
+     "text": "/"
+    },
+    {
+     "sel": "span#campaign-label",
+     "px": 10,
+     "text": "Тайна трёх сосен"
+    },
+    {
+     "sel": "body.effects.tabletop > main > header > div.vitals:nth-of-type(2) > span",
+     "px": 10,
+     "text": "Хиты / 12"
+    },
+    {
+     "sel": "main > header > div.vitals:nth-of-type(2) > span > b",
+     "px": 10,
+     "text": "12"
+    },
+    {
+     "sel": "button#sheet-toggle",
+     "px": 10,
+     "text": "Лист"
+    },
+    {
+     "sel": "section#character > p.eyebrow:nth-of-type(1)",
+     "px": 10,
+     "text": "ЛИСТ ГЕРОЯ"
+    },
+    {
+     "sel": "div#character-content > div.scores-grid > div.metric:nth-of-type(1) > small",
+     "px": 10,
+     "text": "Сила"
+    }
+   ],
+   "fontDistinct": 10,
+   "fontSizes": {
+    "10": 13,
+    "11": 1,
+    "12": 2,
+    "13": 4,
+    "14": 5,
+    "16": 4,
+    "21": 1,
+    "24": 6,
+    "25": 1,
+    "36": 1
+   },
+   "tapCount": 11,
+   "tapsBad": [
+    {
+     "sel": "html > body.effects.tabletop > aside.sidebar > a.brand",
+     "label": "Solo Realms AI",
+     "w": 115.6,
+     "h": 21
+    },
+    {
+     "sel": "body.effects.tabletop > aside.sidebar > nav > div.nav-bar:nth-of-type(1) > button.nav:nth-of-type(1)",
+     "label": "BUTTON",
+     "w": 68,
+     "h": 38
+    },
+    {
+     "sel": "body.effects.tabletop > aside.sidebar > nav > div.nav-bar:nth-of-type(1) > button.nav:nth-of-type(2)",
+     "label": "BUTTON",
+     "w": 111,
+     "h": 38
+    },
+    {
+     "sel": "body.effects.tabletop > aside.sidebar > nav > div.nav-bar:nth-of-type(1) > button.nav.active:nth-of-type(3)",
+     "label": "BUTTON",
+     "w": 113,
+     "h": 38
+    },
+    {
+     "sel": "body.effects.tabletop > aside.sidebar > nav > div.nav-bar:nth-of-type(1) > button.nav:nth-of-type(4)",
+     "label": "BUTTON",
+     "w": 90,
+     "h": 38
+    },
+    {
+     "sel": "button#nav-more",
+     "label": "Ещё",
+     "w": 56,
+     "h": 36
+    },
+    {
+     "sel": "html > body.effects.tabletop > main > header > button.themetoggle:nth-of-type(1)",
+     "label": "Тёмная тема",
+     "w": 34,
+     "h": 34
+    },
+    {
+     "sel": "button#sheet-toggle",
+     "label": "Лист",
+     "w": 59,
+     "h": 37
+    },
+    {
+     "sel": "section#character > div.tabletop-tabs:nth-of-type(1) > button:nth-of-type(1)",
+     "label": "Лист героя",
+     "w": 102,
+     "h": 37.5
+    },
+    {
+     "sel": "section#character > div.tabletop-tabs:nth-of-type(1) > button:nth-of-type(2)",
+     "label": "Инвентарь и торговля",
+     "w": 181,
+     "h": 37.5
+    },
+    {
+     "sel": "section#character > div.tabletop-tabs:nth-of-type(1) > button:nth-of-type(3)",
+     "label": "Навыки и магия",
+     "w": 135,
+     "h": 37.5
+    }
+   ],
+   "tapsBadCount": 11,
+   "contrastBad": [],
+   "contrastBadCount": 0,
+   "contrastMin": null,
+   "interactiveVisible": 11,
+   "clipped": [],
+   "clippedCount": 0,
+   "colorsOutsideCount": 0,
+   "colorsOutside": [],
+   "drawer": null,
+   "state": "hero",
+   "theme": "light",
+   "width": 1440,
+   "height": 900,
+   "file": "hero-light-1440.png",
+   "jsErrors": []
+  },
+  {
+   "viewport": {
+    "w": 1440,
+    "h": 900,
+    "dpr": 1
+   },
+   "scrollWidth": 1440,
+   "scrollHeight": 1033,
+   "overflowX": 0,
+   "activeView": "creation",
+   "campaignOpen": true,
+   "kbOpen": false,
+   "textElements": 28,
+   "fontMin": 10,
+   "smallText": [
+    {
+     "sel": "html > body.effects.tabletop > main > header > div.breadcrumb:nth-of-type(1)",
+     "px": 10,
+     "text": "ОДИНОЧНОЕ ПРИКЛЮЧЕНИЕ"
+    },
+    {
+     "sel": "body.effects.tabletop > main > header > div.breadcrumb:nth-of-type(1) > span:nth-of-type(1)",
+     "px": 10,
+     "text": "/"
+    },
+    {
+     "sel": "span#campaign-label",
+     "px": 10,
+     "text": "Тайна трёх сосен"
+    },
+    {
+     "sel": "body.effects.tabletop > main > header > div.vitals:nth-of-type(2) > span",
+     "px": 10,
+     "text": "Хиты / 12"
+    },
+    {
+     "sel": "main > header > div.vitals:nth-of-type(2) > span > b",
+     "px": 10,
+     "text": "12"
+    },
+    {
+     "sel": "button#sheet-toggle",
+     "px": 10,
+     "text": "Лист"
+    },
+    {
+     "sel": "section#creation > p.eyebrow:nth-of-type(1)",
+     "px": 10,
+     "text": "ВАША НОВАЯ ИСТОРИЯ"
+    },
+    {
+     "sel": "span#model-status",
+     "px": 11,
+     "text": "Тестовые данные · mock"
+    }
+   ],
+   "fontDistinct": 8,
+   "fontSizes": {
+    "10": 7,
+    "11": 1,
+    "12": 6,
+    "13": 1,
+    "14": 6,
+    "16": 4,
+    "25": 2,
+    "36": 1
+   },
+   "tapCount": 14,
+   "tapsBad": [
+    {
+     "sel": "html > body.effects.tabletop > aside.sidebar > a.brand",
+     "label": "Solo Realms AI",
+     "w": 115.6,
+     "h": 21
+    },
+    {
+     "sel": "body.effects.tabletop > aside.sidebar > nav > div.nav-bar:nth-of-type(1) > button.nav:nth-of-type(1)",
+     "label": "BUTTON",
+     "w": 68,
+     "h": 38
+    },
+    {
+     "sel": "body.effects.tabletop > aside.sidebar > nav > div.nav-bar:nth-of-type(1) > button.nav:nth-of-type(2)",
+     "label": "BUTTON",
+     "w": 111,
+     "h": 38
+    },
+    {
+     "sel": "body.effects.tabletop > aside.sidebar > nav > div.nav-bar:nth-of-type(1) > button.nav:nth-of-type(3)",
+     "label": "BUTTON",
+     "w": 113,
+     "h": 38
+    },
+    {
+     "sel": "body.effects.tabletop > aside.sidebar > nav > div.nav-bar:nth-of-type(1) > button.nav:nth-of-type(4)",
+     "label": "BUTTON",
+     "w": 90,
+     "h": 38
+    },
+    {
+     "sel": "button#nav-more",
+     "label": "Ещё",
+     "w": 56,
+     "h": 36
+    },
+    {
+     "sel": "html > body.effects.tabletop > main > header > button.themetoggle:nth-of-type(1)",
+     "label": "Тёмная тема",
+     "w": 34,
+     "h": 34
+    },
+    {
+     "sel": "button#sheet-toggle",
+     "label": "Лист",
+     "w": 59,
+     "h": 37
+    },
+    {
+     "sel": "section#creation > div.creation-controls:nth-of-type(1) > button:nth-of-type(1)",
+     "label": "Назад",
+     "w": 78,
+     "h": 43
+    },
+    {
+     "sel": "section#creation > div.creation-controls:nth-of-type(1) > button:nth-of-type(2)",
+     "label": "Сохранить и выйти",
+     "w": 173,
+     "h": 43
+    },
+    {
+     "sel": "section#creation > div.creation-controls:nth-of-type(1) > button:nth-of-type(3)",
+     "label": "Мои приключения",
+     "w": 165,
+     "h": 43
+    },
+    {
+     "sel": "section#creation-mock-notice > div.button-row > button",
+     "label": "Открыть готовое испытание",
+     "w": 211,
+     "h": 40
+    },
+    {
+     "sel": "section#creation > div.creation-drop:nth-of-type(3) > button",
+     "label": "Выбрать файлы",
+     "w": 150,
+     "h": 43
+    }
+   ],
+   "tapsBadCount": 13,
+   "contrastBad": [],
+   "contrastBadCount": 0,
+   "contrastMin": null,
+   "interactiveVisible": 14,
+   "clipped": [],
+   "clippedCount": 0,
+   "colorsOutsideCount": 0,
+   "colorsOutside": [],
+   "drawer": null,
+   "state": "prep",
+   "theme": "light",
+   "width": 1440,
+   "height": 900,
+   "prep": {
+    "prepare": true,
+    "disabled": true,
+    "dialog": false,
+    "panel": false
+   },
+   "prep_panel": null,
+   "reached": false,
+   "file": "prep-light-1440.png",
+   "jsErrors": []
+  },
+  {
+   "viewport": {
+    "w": 1440,
+    "h": 900,
+    "dpr": 1
+   },
+   "scrollWidth": 1440,
+   "scrollHeight": 1033,
+   "overflowX": 0,
+   "activeView": "creation",
+   "campaignOpen": true,
+   "kbOpen": false,
+   "textElements": 28,
+   "fontMin": 10,
+   "smallText": [
+    {
+     "sel": "html > body.effects.tabletop > main > header > div.breadcrumb:nth-of-type(1)",
+     "px": 10,
+     "text": "ОДИНОЧНОЕ ПРИКЛЮЧЕНИЕ"
+    },
+    {
+     "sel": "body.effects.tabletop > main > header > div.breadcrumb:nth-of-type(1) > span:nth-of-type(1)",
+     "px": 10,
+     "text": "/"
+    },
+    {
+     "sel": "span#campaign-label",
+     "px": 10,
+     "text": "Тайна трёх сосен"
+    },
+    {
+     "sel": "body.effects.tabletop > main > header > div.vitals:nth-of-type(2) > span",
+     "px": 10,
+     "text": "Хиты / 12"
+    },
+    {
+     "sel": "main > header > div.vitals:nth-of-type(2) > span > b",
+     "px": 10,
+     "text": "12"
+    },
+    {
+     "sel": "button#sheet-toggle",
+     "px": 10,
+     "text": "Лист"
+    },
+    {
+     "sel": "section#creation > p.eyebrow:nth-of-type(1)",
+     "px": 10,
+     "text": "ВАША НОВАЯ ИСТОРИЯ"
+    },
+    {
+     "sel": "span#model-status",
+     "px": 11,
+     "text": "Тестовые данные · mock"
+    }
+   ],
+   "fontDistinct": 8,
+   "fontSizes": {
+    "10": 7,
+    "11": 1,
+    "12": 6,
+    "13": 1,
+    "14": 6,
+    "16": 4,
+    "25": 2,
+    "36": 1
+   },
+   "tapCount": 14,
+   "tapsBad": [
+    {
+     "sel": "html > body.effects.tabletop > aside.sidebar > a.brand",
+     "label": "Solo Realms AI",
+     "w": 115.6,
+     "h": 21
+    },
+    {
+     "sel": "body.effects.tabletop > aside.sidebar > nav > div.nav-bar:nth-of-type(1) > button.nav:nth-of-type(1)",
+     "label": "BUTTON",
+     "w": 68,
+     "h": 38
+    },
+    {
+     "sel": "body.effects.tabletop > aside.sidebar > nav > div.nav-bar:nth-of-type(1) > button.nav:nth-of-type(2)",
+     "label": "BUTTON",
+     "w": 111,
+     "h": 38
+    },
+    {
+     "sel": "body.effects.tabletop > aside.sidebar > nav > div.nav-bar:nth-of-type(1) > button.nav:nth-of-type(3)",
+     "label": "BUTTON",
+     "w": 113,
+     "h": 38
+    },
+    {
+     "sel": "body.effects.tabletop > aside.sidebar > nav > div.nav-bar:nth-of-type(1) > button.nav:nth-of-type(4)",
+     "label": "BUTTON",
+     "w": 90,
+     "h": 38
+    },
+    {
+     "sel": "button#nav-more",
+     "label": "Ещё",
+     "w": 56,
+     "h": 36
+    },
+    {
+     "sel": "html > body.effects.tabletop > main > header > button.themetoggle:nth-of-type(1)",
+     "label": "Тёмная тема",
+     "w": 34,
+     "h": 34
+    },
+    {
+     "sel": "button#sheet-toggle",
+     "label": "Лист",
+     "w": 59,
+     "h": 37
+    },
+    {
+     "sel": "section#creation > div.creation-controls:nth-of-type(1) > button:nth-of-type(1)",
+     "label": "Назад",
+     "w": 78,
+     "h": 43
+    },
+    {
+     "sel": "section#creation > div.creation-controls:nth-of-type(1) > button:nth-of-type(2)",
+     "label": "Сохранить и выйти",
+     "w": 173,
+     "h": 43
+    },
+    {
+     "sel": "section#creation > div.creation-controls:nth-of-type(1) > button:nth-of-type(3)",
+     "label": "Мои приключения",
+     "w": 165,
+     "h": 43
+    },
+    {
+     "sel": "section#creation-mock-notice > div.button-row > button",
+     "label": "Открыть готовое испытание",
+     "w": 211,
+     "h": 40
+    },
+    {
+     "sel": "section#creation > div.creation-drop:nth-of-type(3) > button",
+     "label": "Выбрать файлы",
+     "w": 150,
+     "h": 43
+    }
+   ],
+   "tapsBadCount": 13,
+   "contrastBad": [],
+   "contrastBadCount": 0,
+   "contrastMin": null,
+   "interactiveVisible": 14,
+   "clipped": [],
+   "clippedCount": 0,
+   "colorsOutsideCount": 0,
+   "colorsOutside": [],
+   "drawer": null,
+   "state": "prep-log",
+   "theme": "light",
+   "width": 1440,
+   "height": 900,
+   "prep": {
+    "prepare": true,
+    "disabled": true,
+    "dialog": false,
+    "panel": false
+   },
+   "prep_panel": null,
+   "reached": false,
+   "file": "prep-log-light-1440.png",
+   "jsErrors": []
+  },
+  {
+   "viewport": {
+    "w": 1440,
+    "h": 900,
+    "dpr": 1
+   },
+   "scrollWidth": 1440,
+   "scrollHeight": 900,
+   "overflowX": 0,
+   "activeView": "play",
+   "campaignOpen": true,
+   "kbOpen": false,
+   "textElements": 20,
+   "fontMin": 10,
+   "smallText": [
+    {
+     "sel": "details#scene-hero > summary",
+     "px": 10,
+     "text": "Ваш герой"
+    },
+    {
+     "sel": "div#chat > article.message.master > div.speaker:nth-of-type(1)",
+     "px": 10.5,
+     "text": "МАСТЕР"
+    },
+    {
+     "sel": "form#action-form > div.composer-footer:nth-of-type(2) > span",
+     "px": 12,
+     "text": "Enter — отправить · Shift + Ente"
+    },
+    {
+     "sel": "details#scene-hero > div.disclosure-body > p.hint:nth-of-type(2)",
+     "px": 12,
+     "text": "Второе дыхание · потрачено: 0"
+    },
+    {
+     "sel": "details#scene-hero > div.disclosure-body > p.hint:nth-of-type(3)",
+     "px": 12,
+     "text": "Опыт: 0"
+    },
+    {
+     "sel": "details#scene-hero > div.disclosure-body > p.hint:nth-of-type(4)",
+     "px": 12,
+     "text": "Кости хитов: 1"
+    },
+    {
+     "sel": "details#scene-hero > div.disclosure-body > p.hint:nth-of-type(5)",
+     "px": 12,
+     "text": "Состояния: нет"
+    }
+   ],
+   "fontDistinct": 9,
+   "fontSizes": {
+    "10": 1,
+    "12": 5,
+    "13": 4,
+    "14": 2,
+    "16": 4,
+    "18": 1,
+    "20": 1,
+    "30": 1,
+    "10.5": 1
+   },
+   "tapCount": 11,
+   "tapsBad": [
+    {
+     "sel": "html > body.effects.tabletop > aside.sidebar > a.brand",
+     "label": "Solo Realms AI",
+     "w": 115.6,
+     "h": 21
+    },
+    {
+     "sel": "body.effects.tabletop > aside.sidebar > nav > div.nav-bar:nth-of-type(1) > button.nav.active:nth-of-type(1)",
+     "label": "BUTTON",
+     "w": 68,
+     "h": 38
+    },
+    {
+     "sel": "body.effects.tabletop > aside.sidebar > nav > div.nav-bar:nth-of-type(1) > button.nav:nth-of-type(2)",
+     "label": "BUTTON",
+     "w": 111,
+     "h": 38
+    },
+    {
+     "sel": "body.effects.tabletop > aside.sidebar > nav > div.nav-bar:nth-of-type(1) > button.nav:nth-of-type(3)",
+     "label": "BUTTON",
+     "w": 113,
+     "h": 38
+    },
+    {
+     "sel": "body.effects.tabletop > aside.sidebar > nav > div.nav-bar:nth-of-type(1) > button.nav:nth-of-type(4)",
+     "label": "BUTTON",
+     "w": 90,
+     "h": 38
+    },
+    {
+     "sel": "button#nav-more",
+     "label": "Ещё",
+     "w": 56,
+     "h": 36
+    },
+    {
+     "sel": "html > body.effects.tabletop > main > header > button.themetoggle:nth-of-type(1)",
+     "label": "Тёмная тема",
+     "w": 34,
+     "h": 34
+    },
+    {
+     "sel": "details#scene-hero > summary",
+     "label": "Ваш герой",
+     "w": 225,
+     "h": 13.5
+    },
+    {
+     "sel": "details#scene-hero > div.disclosure-body > button.quiet.sheet-link",
+     "label": "Лист героя",
+     "w": 75,
+     "h": 28.8
+    }
+   ],
+   "tapsBadCount": 9,
+   "contrastBad": [
+    {
+     "sel": "button#send",
+     "text": "Сказать",
+     "ratio": 3.05,
+     "fg": "rgb(25,18,7)",
+     "bg": "rgb(138,87,20)",
+     "px": 14
+    }
+   ],
+   "contrastBadCount": 1,
+   "contrastMin": 3.05,
+   "interactiveVisible": 11,
+   "clipped": [],
+   "clippedCount": 0,
+   "colorsOutsideCount": 0,
+   "colorsOutside": [],
+   "drawer": null,
+   "chatBlocks": [
+    {
+     "tag": "message master",
+     "h": 158,
+     "text": "МАСТЕР\nУ сторожевого поста гоблин перекрыл тропу. Осмотрите "
+    }
+   ],
+   "state": "game",
+   "theme": "light",
+   "width": 1440,
+   "height": 900,
+   "file": "game-light-1440.png",
+   "jsErrors": []
+  },
+  {
+   "viewport": {
+    "w": 1440,
+    "h": 564,
+    "dpr": 1
+   },
+   "scrollWidth": 1440,
+   "scrollHeight": 564,
+   "overflowX": 0,
+   "activeView": "play",
+   "campaignOpen": true,
+   "kbOpen": true,
+   "textElements": 20,
+   "fontMin": 10,
+   "smallText": [
+    {
+     "sel": "details#scene-hero > summary",
+     "px": 10,
+     "text": "Ваш герой"
+    },
+    {
+     "sel": "div#chat > article.message.master > div.speaker:nth-of-type(1)",
+     "px": 10.5,
+     "text": "МАСТЕР"
+    },
+    {
+     "sel": "form#action-form > div.composer-footer:nth-of-type(2) > span",
+     "px": 12,
+     "text": "Enter — отправить · Shift + Ente"
+    },
+    {
+     "sel": "details#scene-hero > div.disclosure-body > p.hint:nth-of-type(2)",
+     "px": 12,
+     "text": "Второе дыхание · потрачено: 0"
+    },
+    {
+     "sel": "details#scene-hero > div.disclosure-body > p.hint:nth-of-type(3)",
+     "px": 12,
+     "text": "Опыт: 0"
+    },
+    {
+     "sel": "details#scene-hero > div.disclosure-body > p.hint:nth-of-type(4)",
+     "px": 12,
+     "text": "Кости хитов: 1"
+    },
+    {
+     "sel": "details#scene-hero > div.disclosure-body > p.hint:nth-of-type(5)",
+     "px": 12,
+     "text": "Состояния: нет"
+    }
+   ],
+   "fontDistinct": 9,
+   "fontSizes": {
+    "10": 1,
+    "12": 5,
+    "13": 4,
+    "14": 2,
+    "16": 4,
+    "18": 1,
+    "20": 1,
+    "30": 1,
+    "10.5": 1
+   },
+   "tapCount": 11,
+   "tapsBad": [
+    {
+     "sel": "html > body.effects.tabletop > aside.sidebar > a.brand",
+     "label": "Solo Realms AI",
+     "w": 115.6,
+     "h": 21
+    },
+    {
+     "sel": "body.effects.tabletop > aside.sidebar > nav > div.nav-bar:nth-of-type(1) > button.nav.active:nth-of-type(1)",
+     "label": "BUTTON",
+     "w": 68,
+     "h": 38
+    },
+    {
+     "sel": "body.effects.tabletop > aside.sidebar > nav > div.nav-bar:nth-of-type(1) > button.nav:nth-of-type(2)",
+     "label": "BUTTON",
+     "w": 111,
+     "h": 38
+    },
+    {
+     "sel": "body.effects.tabletop > aside.sidebar > nav > div.nav-bar:nth-of-type(1) > button.nav:nth-of-type(3)",
+     "label": "BUTTON",
+     "w": 113,
+     "h": 38
+    },
+    {
+     "sel": "body.effects.tabletop > aside.sidebar > nav > div.nav-bar:nth-of-type(1) > button.nav:nth-of-type(4)",
+     "label": "BUTTON",
+     "w": 90,
+     "h": 38
+    },
+    {
+     "sel": "button#nav-more",
+     "label": "Ещё",
+     "w": 56,
+     "h": 36
+    },
+    {
+     "sel": "html > body.effects.tabletop > main > header > button.themetoggle:nth-of-type(1)",
+     "label": "Тёмная тема",
+     "w": 34,
+     "h": 34
+    },
+    {
+     "sel": "details#scene-hero > summary",
+     "label": "Ваш герой",
+     "w": 1313,
+     "h": 13.5
+    },
+    {
+     "sel": "details#scene-hero > div.disclosure-body > button.quiet.sheet-link",
+     "label": "Лист героя",
+     "w": 75,
+     "h": 28.8
+    }
+   ],
+   "tapsBadCount": 9,
+   "contrastBad": [
+    {
+     "sel": "button#send",
+     "text": "Сказать",
+     "ratio": 3.05,
+     "fg": "rgb(25,18,7)",
+     "bg": "rgb(138,87,20)",
+     "px": 14
+    }
+   ],
+   "contrastBadCount": 1,
+   "contrastMin": 3.05,
+   "interactiveVisible": 11,
+   "clipped": [],
+   "clippedCount": 0,
+   "colorsOutsideCount": 0,
+   "colorsOutside": [],
+   "drawer": null,
+   "chatBlocks": [
+    {
+     "tag": "message master",
+     "h": 158,
+     "text": "МАСТЕР\nУ сторожевого поста гоблин перекрыл тропу. Осмотрите "
+    }
+   ],
+   "state": "game-kb",
+   "theme": "light",
+   "width": 1440,
+   "height": 564,
+   "file": "game-kb-light-1440.png",
+   "jsErrors": []
+  },
+  {
+   "viewport": {
+    "w": 1440,
+    "h": 900,
+    "dpr": 1
+   },
+   "scrollWidth": 1440,
+   "scrollHeight": 900,
+   "overflowX": 0,
+   "activeView": "welcome",
+   "campaignOpen": true,
+   "kbOpen": false,
+   "textElements": 71,
+   "fontMin": 11,
+   "smallText": [
+    {
+     "sel": "div#nav-drawer > div.nav-block:nth-of-type(1) > p.nav-group-label",
+     "px": 11,
+     "text": "Кампания"
+    },
+    {
+     "sel": "div#nav-drawer > div.nav-block:nth-of-type(2) > p.nav-group-label",
+     "px": 11,
+     "text": "Приложение"
+    }
+   ],
+   "fontDistinct": 5,
+   "fontSizes": {
+    "11": 2,
+    "13": 1,
+    "14": 31,
+    "16": 36,
+    "34": 1
+   },
+   "tapCount": 37,
+   "tapsBad": [
+    {
+     "sel": "html > body.effects.tabletop > aside.sidebar.show-more > a.brand",
+     "label": "Solo Realms AI",
+     "w": 115.6,
+     "h": 21
+    },
+    {
+     "sel": "body.effects.tabletop > aside.sidebar.show-more > nav > div.nav-bar:nth-of-type(1) > button.nav:nth-of-type(1)",
+     "label": "BUTTON",
+     "w": 68,
+     "h": 38
+    },
+    {
+     "sel": "body.effects.tabletop > aside.sidebar.show-more > nav > div.nav-bar:nth-of-type(1) > button.nav:nth-of-type(2)",
+     "label": "BUTTON",
+     "w": 111,
+     "h": 38
+    },
+    {
+     "sel": "body.effects.tabletop > aside.sidebar.show-more > nav > div.nav-bar:nth-of-type(1) > button.nav:nth-of-type(3)",
+     "label": "BUTTON",
+     "w": 113,
+     "h": 38
+    },
+    {
+     "sel": "body.effects.tabletop > aside.sidebar.show-more > nav > div.nav-bar:nth-of-type(1) > button.nav:nth-of-type(4)",
+     "label": "BUTTON",
+     "w": 90,
+     "h": 38
+    },
+    {
+     "sel": "button#nav-more",
+     "label": "Ещё",
+     "w": 56,
+     "h": 36
+    },
+    {
+     "sel": "div#nav-drawer > div.nav-block:nth-of-type(1) > button.nav:nth-of-type(1)",
+     "label": "BUTTON",
+     "w": 287,
+     "h": 38
+    },
+    {
+     "sel": "div#nav-drawer > div.nav-block:nth-of-type(1) > button.nav:nth-of-type(2)",
+     "label": "BUTTON",
+     "w": 287,
+     "h": 38
+    },
+    {
+     "sel": "div#nav-drawer > div.nav-block:nth-of-type(1) > button.nav:nth-of-type(3)",
+     "label": "BUTTON",
+     "w": 287,
+     "h": 38
+    },
+    {
+     "sel": "div#nav-drawer > div.nav-block:nth-of-type(1) > button.nav:nth-of-type(4)",
+     "label": "BUTTON",
+     "w": 287,
+     "h": 38
+    },
+    {
+     "sel": "div#nav-drawer > div.nav-block:nth-of-type(1) > button.nav:nth-of-type(5)",
+     "label": "BUTTON",
+     "w": 287,
+     "h": 38
+    },
+    {
+     "sel": "div#nav-drawer > div.nav-block:nth-of-type(1) > button.nav:nth-of-type(6)",
+     "label": "BUTTON",
+     "w": 287,
+     "h": 38
+    },
+    {
+     "sel": "div#nav-drawer > div.nav-block:nth-of-type(2) > button.nav:nth-of-type(1)",
+     "label": "BUTTON",
+     "w": 287,
+     "h": 38
+    },
+    {
+     "sel": "div#nav-drawer > div.nav-block:nth-of-type(2) > button.nav:nth-of-type(2)",
+     "label": "BUTTON",
+     "w": 287,
+     "h": 38
+    },
+    {
+     "sel": "div#nav-drawer > div.nav-block:nth-of-type(2) > button.nav:nth-of-type(3)",
+     "label": "BUTTON",
+     "w": 287,
+     "h": 38
+    }
+   ],
+   "tapsBadCount": 22,
+   "contrastBad": [
+    {
+     "sel": "section#welcome > div.start__main:nth-of-type(1) > div.start__copy:nth-of-type(1) > div.start__actions > button.start__btn.start__btn--primary:nth-of-type(1)",
+     "text": "Начать историю",
+     "ratio": 3.05,
+     "fg": "rgb(25,18,7)",
+     "bg": "rgb(138,87,20)",
+     "px": 16
+    }
+   ],
+   "contrastBadCount": 1,
+   "contrastMin": 3.05,
+   "interactiveVisible": 37,
+   "clipped": [
+    {
+     "sel": "section#welcome > div.start__feed:nth-of-type(2) > button.start__continue > span.start__continue-meta:nth-of-type(3) > span.story-where:nth-of-type(1)",
+     "sw": 222,
+     "cw": 208,
+     "overflow": "hidden",
+     "text": "Дозор на тракте · Тайна трёх сос"
+    },
+    {
+     "sel": "div.start__stories > div.start__list > button.story:nth-of-type(2) > span.story-meta:nth-of-type(2) > span.story-where:nth-of-type(1)",
+     "sw": 207,
+     "cw": 204,
+     "overflow": "hidden",
+     "text": "Дозор на тракте · Соляной тракт"
+    },
+    {
+     "sel": "div.start__stories > div.start__list > button.story:nth-of-type(4) > span.story-meta:nth-of-type(2) > span.story-where:nth-of-type(1)",
+     "sw": 207,
+     "cw": 204,
+     "overflow": "hidden",
+     "text": "Дозор на тракте · Соляной тракт"
+    },
+    {
+     "sel": "div.start__stories > div.start__list > button.story:nth-of-type(5) > span.story-meta:nth-of-type(2) > span.story-where:nth-of-type(1)",
+     "sw": 222,
+     "cw": 204,
+     "overflow": "hidden",
+     "text": "Дозор на тракте · Тайна трёх сос"
+    },
+    {
+     "sel": "div.start__stories > div.start__list > button.story:nth-of-type(7) > span.story-meta:nth-of-type(2) > span.story-where:nth-of-type(1)",
+     "sw": 207,
+     "cw": 204,
+     "overflow": "hidden",
+     "text": "Дозор на тракте · Соляной тракт"
+    },
+    {
+     "sel": "div.start__stories > div.start__list > button.story:nth-of-type(8) > span.story-meta:nth-of-type(2) > span.story-where:nth-of-type(1)",
+     "sw": 222,
+     "cw": 204,
+     "overflow": "hidden",
+     "text": "Дозор на тракте · Тайна трёх сос"
+    },
+    {
+     "sel": "div.start__stories > div.start__list > button.story:nth-of-type(10) > span.story-meta:nth-of-type(2) > span.story-where:nth-of-type(1)",
+     "sw": 207,
+     "cw": 204,
+     "overflow": "hidden",
+     "text": "Дозор на тракте · Соляной тракт"
+    },
+    {
+     "sel": "div.start__stories > div.start__list > button.story:nth-of-type(11) > span.story-meta:nth-of-type(2) > span.story-where:nth-of-type(1)",
+     "sw": 222,
+     "cw": 204,
+     "overflow": "hidden",
+     "text": "Дозор на тракте · Тайна трёх сос"
+    },
+    {
+     "sel": "div.start__stories > div.start__list > button.story:nth-of-type(13) > span.story-meta:nth-of-type(2) > span.story-where:nth-of-type(1)",
+     "sw": 207,
+     "cw": 204,
+     "overflow": "hidden",
+     "text": "Дозор на тракте · Соляной тракт"
+    },
+    {
+     "sel": "div.start__stories > div.start__list > button.story:nth-of-type(14) > span.story-meta:nth-of-type(2) > span.story-where:nth-of-type(1)",
+     "sw": 222,
+     "cw": 204,
+     "overflow": "hidden",
+     "text": "Дозор на тракте · Тайна трёх сос"
+    },
+    {
+     "sel": "div.start__stories > div.start__list > button.story:nth-of-type(16) > span.story-meta:nth-of-type(2) > span.story-where:nth-of-type(1)",
+     "sw": 207,
+     "cw": 204,
+     "overflow": "hidden",
+     "text": "Дозор на тракте · Соляной тракт"
+    },
+    {
+     "sel": "div.start__stories > div.start__list > button.story:nth-of-type(17) > span.story-meta:nth-of-type(2) > span.story-where:nth-of-type(1)",
+     "sw": 222,
+     "cw": 204,
+     "overflow": "hidden",
+     "text": "Дозор на тракте · Тайна трёх сос"
+    },
+    {
+     "sel": "div.start__stories > div.start__list > button.story:nth-of-type(19) > span.story-meta:nth-of-type(2) > span.story-where:nth-of-type(1)",
+     "sw": 207,
+     "cw": 204,
+     "overflow": "hidden",
+     "text": "Дозор на тракте · Соляной тракт"
+    },
+    {
+     "sel": "div.start__stories > div.start__list > button.story:nth-of-type(20) > span.story-meta:nth-of-type(2) > span.story-where:nth-of-type(1)",
+     "sw": 222,
+     "cw": 204,
+     "overflow": "hidden",
+     "text": "Дозор на тракте · Тайна трёх сос"
+    },
+    {
+     "sel": "div.start__stories > div.start__list > button.story:nth-of-type(22) > span.story-meta:nth-of-type(2) > span.story-where:nth-of-type(1)",
+     "sw": 207,
+     "cw": 204,
+     "overflow": "hidden",
+     "text": "Дозор на тракте · Соляной тракт"
+    }
+   ],
+   "clippedCount": 20,
+   "colorsOutsideCount": 0,
+   "colorsOutside": [],
+   "drawer": {
+    "h": 741,
+    "top": 56,
+    "rows": 17,
+    "blocks": [
+     "Кампания",
+     "Приложение"
+    ],
+    "scrollTop": 0,
+    "scroll": 0,
+    "content": 741
+   },
+   "state": "menu",
+   "theme": "light",
+   "width": 1440,
+   "height": 900,
+   "debug": {
+    "bodyClass": "effects tabletop campaign-open nat20-game",
+    "burger": false,
+    "aside": {
+     "x": 0,
+     "y": 0,
+     "w": 1440,
+     "h": 56
+    },
+    "drawer": {
+     "x": 0,
+     "y": 56,
+     "w": 320,
+     "h": 741
+    }
+   },
+   "file": "menu-light-1440.png",
+   "jsErrors": []
+  },
+  {
+   "viewport": {
+    "w": 1440,
+    "h": 900,
+    "dpr": 1
+   },
+   "scrollWidth": 1440,
+   "scrollHeight": 900,
+   "overflowX": 0,
+   "activeView": "welcome",
+   "campaignOpen": true,
+   "kbOpen": false,
+   "textElements": 71,
+   "fontMin": 11,
+   "smallText": [
+    {
+     "sel": "div#nav-drawer > div.nav-block:nth-of-type(1) > p.nav-group-label",
+     "px": 11,
+     "text": "Кампания"
+    },
+    {
+     "sel": "div#nav-drawer > div.nav-block:nth-of-type(2) > p.nav-group-label",
+     "px": 11,
+     "text": "Приложение"
+    }
+   ],
+   "fontDistinct": 5,
+   "fontSizes": {
+    "11": 2,
+    "13": 1,
+    "14": 31,
+    "16": 36,
+    "34": 1
+   },
+   "tapCount": 37,
+   "tapsBad": [
+    {
+     "sel": "html > body.effects.tabletop > aside.sidebar.show-more > a.brand",
+     "label": "Solo Realms AI",
+     "w": 115.6,
+     "h": 21
+    },
+    {
+     "sel": "body.effects.tabletop > aside.sidebar.show-more > nav > div.nav-bar:nth-of-type(1) > button.nav:nth-of-type(1)",
+     "label": "BUTTON",
+     "w": 68,
+     "h": 38
+    },
+    {
+     "sel": "body.effects.tabletop > aside.sidebar.show-more > nav > div.nav-bar:nth-of-type(1) > button.nav:nth-of-type(2)",
+     "label": "BUTTON",
+     "w": 111,
+     "h": 38
+    },
+    {
+     "sel": "body.effects.tabletop > aside.sidebar.show-more > nav > div.nav-bar:nth-of-type(1) > button.nav:nth-of-type(3)",
+     "label": "BUTTON",
+     "w": 113,
+     "h": 38
+    },
+    {
+     "sel": "body.effects.tabletop > aside.sidebar.show-more > nav > div.nav-bar:nth-of-type(1) > button.nav:nth-of-type(4)",
+     "label": "BUTTON",
+     "w": 90,
+     "h": 38
+    },
+    {
+     "sel": "button#nav-more",
+     "label": "Ещё",
+     "w": 56,
+     "h": 36
+    },
+    {
+     "sel": "div#nav-drawer > div.nav-block:nth-of-type(1) > button.nav:nth-of-type(1)",
+     "label": "BUTTON",
+     "w": 287,
+     "h": 38
+    },
+    {
+     "sel": "div#nav-drawer > div.nav-block:nth-of-type(1) > button.nav:nth-of-type(2)",
+     "label": "BUTTON",
+     "w": 287,
+     "h": 38
+    },
+    {
+     "sel": "div#nav-drawer > div.nav-block:nth-of-type(1) > button.nav:nth-of-type(3)",
+     "label": "BUTTON",
+     "w": 287,
+     "h": 38
+    },
+    {
+     "sel": "div#nav-drawer > div.nav-block:nth-of-type(1) > button.nav:nth-of-type(4)",
+     "label": "BUTTON",
+     "w": 287,
+     "h": 38
+    },
+    {
+     "sel": "div#nav-drawer > div.nav-block:nth-of-type(1) > button.nav:nth-of-type(5)",
+     "label": "BUTTON",
+     "w": 287,
+     "h": 38
+    },
+    {
+     "sel": "div#nav-drawer > div.nav-block:nth-of-type(1) > button.nav:nth-of-type(6)",
+     "label": "BUTTON",
+     "w": 287,
+     "h": 38
+    },
+    {
+     "sel": "div#nav-drawer > div.nav-block:nth-of-type(2) > button.nav:nth-of-type(1)",
+     "label": "BUTTON",
+     "w": 287,
+     "h": 38
+    },
+    {
+     "sel": "div#nav-drawer > div.nav-block:nth-of-type(2) > button.nav:nth-of-type(2)",
+     "label": "BUTTON",
+     "w": 287,
+     "h": 38
+    },
+    {
+     "sel": "div#nav-drawer > div.nav-block:nth-of-type(2) > button.nav:nth-of-type(3)",
+     "label": "BUTTON",
+     "w": 287,
+     "h": 38
+    }
+   ],
+   "tapsBadCount": 22,
+   "contrastBad": [
+    {
+     "sel": "section#welcome > div.start__main:nth-of-type(1) > div.start__copy:nth-of-type(1) > div.start__actions > button.start__btn.start__btn--primary:nth-of-type(1)",
+     "text": "Начать историю",
+     "ratio": 3.05,
+     "fg": "rgb(25,18,7)",
+     "bg": "rgb(138,87,20)",
+     "px": 16
+    }
+   ],
+   "contrastBadCount": 1,
+   "contrastMin": 3.05,
+   "interactiveVisible": 37,
+   "clipped": [
+    {
+     "sel": "section#welcome > div.start__feed:nth-of-type(2) > button.start__continue > span.start__continue-meta:nth-of-type(3) > span.story-where:nth-of-type(1)",
+     "sw": 222,
+     "cw": 208,
+     "overflow": "hidden",
+     "text": "Дозор на тракте · Тайна трёх сос"
+    },
+    {
+     "sel": "div.start__stories > div.start__list > button.story:nth-of-type(2) > span.story-meta:nth-of-type(2) > span.story-where:nth-of-type(1)",
+     "sw": 207,
+     "cw": 204,
+     "overflow": "hidden",
+     "text": "Дозор на тракте · Соляной тракт"
+    },
+    {
+     "sel": "div.start__stories > div.start__list > button.story:nth-of-type(4) > span.story-meta:nth-of-type(2) > span.story-where:nth-of-type(1)",
+     "sw": 207,
+     "cw": 204,
+     "overflow": "hidden",
+     "text": "Дозор на тракте · Соляной тракт"
+    },
+    {
+     "sel": "div.start__stories > div.start__list > button.story:nth-of-type(5) > span.story-meta:nth-of-type(2) > span.story-where:nth-of-type(1)",
+     "sw": 222,
+     "cw": 204,
+     "overflow": "hidden",
+     "text": "Дозор на тракте · Тайна трёх сос"
+    },
+    {
+     "sel": "div.start__stories > div.start__list > button.story:nth-of-type(7) > span.story-meta:nth-of-type(2) > span.story-where:nth-of-type(1)",
+     "sw": 207,
+     "cw": 204,
+     "overflow": "hidden",
+     "text": "Дозор на тракте · Соляной тракт"
+    },
+    {
+     "sel": "div.start__stories > div.start__list > button.story:nth-of-type(8) > span.story-meta:nth-of-type(2) > span.story-where:nth-of-type(1)",
+     "sw": 222,
+     "cw": 204,
+     "overflow": "hidden",
+     "text": "Дозор на тракте · Тайна трёх сос"
+    },
+    {
+     "sel": "div.start__stories > div.start__list > button.story:nth-of-type(10) > span.story-meta:nth-of-type(2) > span.story-where:nth-of-type(1)",
+     "sw": 207,
+     "cw": 204,
+     "overflow": "hidden",
+     "text": "Дозор на тракте · Соляной тракт"
+    },
+    {
+     "sel": "div.start__stories > div.start__list > button.story:nth-of-type(11) > span.story-meta:nth-of-type(2) > span.story-where:nth-of-type(1)",
+     "sw": 222,
+     "cw": 204,
+     "overflow": "hidden",
+     "text": "Дозор на тракте · Тайна трёх сос"
+    },
+    {
+     "sel": "div.start__stories > div.start__list > button.story:nth-of-type(13) > span.story-meta:nth-of-type(2) > span.story-where:nth-of-type(1)",
+     "sw": 207,
+     "cw": 204,
+     "overflow": "hidden",
+     "text": "Дозор на тракте · Соляной тракт"
+    },
+    {
+     "sel": "div.start__stories > div.start__list > button.story:nth-of-type(14) > span.story-meta:nth-of-type(2) > span.story-where:nth-of-type(1)",
+     "sw": 222,
+     "cw": 204,
+     "overflow": "hidden",
+     "text": "Дозор на тракте · Тайна трёх сос"
+    },
+    {
+     "sel": "div.start__stories > div.start__list > button.story:nth-of-type(16) > span.story-meta:nth-of-type(2) > span.story-where:nth-of-type(1)",
+     "sw": 207,
+     "cw": 204,
+     "overflow": "hidden",
+     "text": "Дозор на тракте · Соляной тракт"
+    },
+    {
+     "sel": "div.start__stories > div.start__list > button.story:nth-of-type(17) > span.story-meta:nth-of-type(2) > span.story-where:nth-of-type(1)",
+     "sw": 222,
+     "cw": 204,
+     "overflow": "hidden",
+     "text": "Дозор на тракте · Тайна трёх сос"
+    },
+    {
+     "sel": "div.start__stories > div.start__list > button.story:nth-of-type(19) > span.story-meta:nth-of-type(2) > span.story-where:nth-of-type(1)",
+     "sw": 207,
+     "cw": 204,
+     "overflow": "hidden",
+     "text": "Дозор на тракте · Соляной тракт"
+    },
+    {
+     "sel": "div.start__stories > div.start__list > button.story:nth-of-type(20) > span.story-meta:nth-of-type(2) > span.story-where:nth-of-type(1)",
+     "sw": 222,
+     "cw": 204,
+     "overflow": "hidden",
+     "text": "Дозор на тракте · Тайна трёх сос"
+    },
+    {
+     "sel": "div.start__stories > div.start__list > button.story:nth-of-type(22) > span.story-meta:nth-of-type(2) > span.story-where:nth-of-type(1)",
+     "sw": 207,
+     "cw": 204,
+     "overflow": "hidden",
+     "text": "Дозор на тракте · Соляной тракт"
+    }
+   ],
+   "clippedCount": 20,
+   "colorsOutsideCount": 0,
+   "colorsOutside": [],
+   "drawer": {
+    "h": 741,
+    "top": 56,
+    "rows": 17,
+    "blocks": [
+     "Кампания",
+     "Приложение"
+    ],
+    "scrollTop": 0,
+    "scroll": 0,
+    "content": 741
+   },
+   "state": "menu-app",
+   "theme": "light",
+   "width": 1440,
+   "height": 900,
+   "debug": {
+    "bodyClass": "effects tabletop campaign-open nat20-game",
+    "burger": false,
+    "aside": {
+     "x": 0,
+     "y": 0,
+     "w": 1440,
+     "h": 56
+    },
+    "drawer": {
+     "x": 0,
+     "y": 56,
+     "w": 320,
+     "h": 741
+    }
+   },
+   "file": "menu-app-light-1440.png",
+   "jsErrors": []
+  },
+  {
+   "viewport": {
+    "w": 1440,
+    "h": 900,
+    "dpr": 1
+   },
+   "scrollWidth": 1440,
+   "scrollHeight": 1103,
+   "overflowX": 0,
+   "activeView": "journal",
+   "campaignOpen": true,
+   "kbOpen": false,
+   "textElements": 26,
+   "fontMin": 10,
+   "smallText": [
+    {
+     "sel": "html > body.effects.tabletop > main > header > div.breadcrumb:nth-of-type(1)",
+     "px": 10,
+     "text": "ОДИНОЧНОЕ ПРИКЛЮЧЕНИЕ"
+    },
+    {
+     "sel": "body.effects.tabletop > main > header > div.breadcrumb:nth-of-type(1) > span:nth-of-type(1)",
+     "px": 10,
+     "text": "/"
+    },
+    {
+     "sel": "span#campaign-label",
+     "px": 10,
+     "text": "Тайна трёх сосен"
+    },
+    {
+     "sel": "body.effects.tabletop > main > header > div.vitals:nth-of-type(2) > span",
+     "px": 10,
+     "text": "Хиты / 12"
+    },
+    {
+     "sel": "main > header > div.vitals:nth-of-type(2) > span > b",
+     "px": 10,
+     "text": "12"
+    },
+    {
+     "sel": "button#sheet-toggle",
+     "px": 10,
+     "text": "Лист"
+    },
+    {
+     "sel": "section#journal > p.eyebrow:nth-of-type(1)",
+     "px": 10,
+     "text": "ПАМЯТЬ ГЕРОЯ"
+    },
+    {
+     "sel": "span#model-status",
+     "px": 11,
+     "text": "Тестовые данные · mock"
+    }
+   ],
+   "fontDistinct": 8,
+   "fontSizes": {
+    "10": 7,
+    "11": 1,
+    "12": 4,
+    "13": 3,
+    "14": 3,
+    "16": 4,
+    "25": 3,
+    "36": 1
+   },
+   "tapCount": 13,
+   "tapsBad": [
+    {
+     "sel": "html > body.effects.tabletop > aside.sidebar > a.brand",
+     "label": "Solo Realms AI",
+     "w": 115.6,
+     "h": 21
+    },
+    {
+     "sel": "body.effects.tabletop > aside.sidebar > nav > div.nav-bar:nth-of-type(1) > button.nav:nth-of-type(1)",
+     "label": "BUTTON",
+     "w": 68,
+     "h": 38
+    },
+    {
+     "sel": "body.effects.tabletop > aside.sidebar > nav > div.nav-bar:nth-of-type(1) > button.nav:nth-of-type(2)",
+     "label": "BUTTON",
+     "w": 111,
+     "h": 38
+    },
+    {
+     "sel": "body.effects.tabletop > aside.sidebar > nav > div.nav-bar:nth-of-type(1) > button.nav:nth-of-type(3)",
+     "label": "BUTTON",
+     "w": 113,
+     "h": 38
+    },
+    {
+     "sel": "body.effects.tabletop > aside.sidebar > nav > div.nav-bar:nth-of-type(1) > button.nav:nth-of-type(4)",
+     "label": "BUTTON",
+     "w": 90,
+     "h": 38
+    },
+    {
+     "sel": "button#nav-more",
+     "label": "Ещё",
+     "w": 56,
+     "h": 36
+    },
+    {
+     "sel": "html > body.effects.tabletop > main > header > button.themetoggle:nth-of-type(1)",
+     "label": "Тёмная тема",
+     "w": 34,
+     "h": 34
+    },
+    {
+     "sel": "button#sheet-toggle",
+     "label": "Лист",
+     "w": 59,
+     "h": 37
+    },
+    {
+     "sel": "section#journal > div.tabletop-tabs:nth-of-type(1) > button:nth-of-type(1)",
+     "label": "События и записи",
+     "w": 148,
+     "h": 37.5
+    },
+    {
+     "sel": "section#journal > div.tabletop-tabs:nth-of-type(1) > button:nth-of-type(2)",
+     "label": "Контрольные точки",
+     "w": 163,
+     "h": 37.5
+    },
+    {
+     "sel": "section#journal > section.player-notes:nth-of-type(1) > button.primary:nth-of-type(1)",
+     "label": "Сохранить запись",
+     "w": 176,
+     "h": 43
+    },
+    {
+     "sel": "section#journal > section.player-notes:nth-of-type(1) > button:nth-of-type(2)",
+     "label": "Обновить блокнот",
+     "w": 168,
+     "h": 43
+    }
+   ],
+   "tapsBadCount": 12,
+   "contrastBad": [],
+   "contrastBadCount": 0,
+   "contrastMin": null,
+   "interactiveVisible": 13,
+   "clipped": [],
+   "clippedCount": 0,
+   "colorsOutsideCount": 0,
+   "colorsOutside": [],
+   "drawer": null,
+   "state": "notes",
+   "theme": "light",
+   "width": 1440,
+   "height": 900,
+   "file": "notes-light-1440.png",
+   "jsErrors": []
+  }
+ ]
+}

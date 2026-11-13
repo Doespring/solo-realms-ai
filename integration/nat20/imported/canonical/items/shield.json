@@ -1,0 +1,35 @@
+{
+  "activities": [],
+  "armor_category": "shield",
+  "attunement_constraint": null,
+  "base_ac": 2,
+  "cost_gp": 10.0,
+  "description": "You gain the Armor Class benefit of a Shield only if you have training with it.",
+  "dex_bonus_max": null,
+  "item_kind": "armor",
+  "magical": false,
+  "magical_bonus": 0,
+  "name": "Shield",
+  "passive_effects": [],
+  "provenance": {
+    "ingest_date": "2026-10-17",
+    "ingest_version": "solo-foundry533-nat20-070-v1",
+    "license_tag": "CC-BY-4.0",
+    "source": "foundry",
+    "source_url": "https://github.com/foundryvtt/dnd5e/releases/tag/release-5.3.3#Compendium.dnd5e.equipment24.phbarmShield0000",
+    "srd_version": [
+      "5.2"
+    ]
+  },
+  "rarity": "common",
+  "requires_attunement": false,
+  "review": {
+    "known_divergence": null,
+    "requires_user_decision": false
+  },
+  "slug": "shield",
+  "stealth_disadvantage": false,
+  "strength_min": null,
+  "uses": null,
+  "weight": 6.0
+}

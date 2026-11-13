@@ -1,0 +1,307 @@
+/* r221 — редактор героя в языке «Стол и лист» (макет design/screens/02-character).
+   Токены приходят из design-tokens.css на #wizard (`--sheet-*`, `--candle`,
+   `--ink-*`, шрифты Book/UI). Разметку строит wizard.js — здесь только
+   оформление: ноль градиентов, теней, размытий, полупрозрачных подложек и
+   переходов; радиус ≤ 2 px; разделители — волосяная линия 1 px и отступ.
+   Числа не считаются в браузере: их присылает Nat20, экран их показывает. */
+
+#wizard{position:fixed;inset:0;z-index:60;display:flex;align-items:stretch;justify-content:center;background:var(--ink-900)}
+#wizard[hidden]{display:none}
+#wizard .wizard-shell{
+  position:relative;display:flex;flex-direction:column;width:min(1440px,100%);
+  background:var(--ink-900);min-height:0;border-left:1px solid var(--line);border-right:1px solid var(--line);
+}
+
+/* ── Шапка: волосяная линия, без карточки и скруглений ───────────────────── */
+#wizard .wizard-head{display:flex;align-items:center;gap:var(--s4);min-height:56px;padding:10px clamp(14px,2vw,28px);border-bottom:1px solid var(--line)}
+#wizard .wizard-head .eyebrow{margin:0;font-family:var(--font-ui);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--text-3)}
+#wizard .wizard-head h1{margin:0;font-family:var(--font-book);font-size:21px;font-weight:400;line-height:1.15;color:var(--text)}
+#wizard .wizard-ready{margin:0;flex:1;text-align:right;font-family:var(--font-ui);font-size:12px;color:var(--text-3)}
+#wizard .wizard-paste{margin-left:auto;min-height:38px;padding:0 14px;border:1px solid var(--line);border-radius:var(--radius);background:var(--roll-bg);color:var(--text-2);font-family:var(--font-ui);font-size:13px;cursor:pointer}
+#wizard .wizard-paste:hover{background:var(--roll-bg);border-color:var(--line-strong);color:var(--text)}
+
+/* ── Основа и колонки ───────────────────────────────────────────────────── */
+#wizard .wizard-body{display:grid;grid-template-columns:224px minmax(0,1fr) 372px;flex:1;min-height:0}
+
+/* ── Шаги слева: строки с квадратной меткой, без «таблеток» ─────────────── */
+#wizard .wizard-steps{border-right:1px solid var(--line);padding:16px 12px;overflow:auto}
+#wizard .wizard-steps .eyebrow{margin:0 0 10px 2px;font-family:var(--font-ui);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--text-3)}
+#wizard .wizard-list{list-style:none;margin:0;padding:0;display:flex;flex-direction:column}
+#wizard .wizard-list li{min-width:0}
+#wizard .wizard-list button{
+  display:grid;grid-template-columns:16px minmax(0,1fr);gap:2px 10px;align-items:center;width:100%;
+  padding:8px 8px 8px 10px;background:none;border:0;border-left:2px solid transparent;
+  border-bottom:1px solid var(--sheet-bg-2);border-radius:0;color:var(--text-2);font:inherit;text-align:left;cursor:pointer;
+}
+#wizard .wizard-list button:hover{color:var(--text);background:var(--roll-bg)}
+#wizard .wizard-list li.is-current button{border-left-color:var(--candle);color:var(--text);background:none}
+#wizard .wizard-step-title{font-family:var(--font-ui);font-size:13px;letter-spacing:.02em;overflow-wrap:anywhere}
+#wizard .wizard-step-note{grid-column:2;font-family:var(--font-ui);font-size:11px;color:var(--text-3)}
+#wizard .wizard-list li.is-current .wizard-step-note{color:var(--text-2)}
+
+/* Метка шага — квадрат 16 px с линейчатой кромкой: штамп, не кружок */
+#wizard .wizard-chip{
+  display:inline-flex;align-items:center;justify-content:center;width:16px;height:16px;
+  border:1px solid var(--line-strong);border-radius:0;background:none;
+  font-family:var(--font-ui);font-size:10px;font-weight:700;color:var(--text-3);line-height:1;
+}
+#wizard .wizard-chip.is-complete{color:var(--moss);border-color:var(--moss)}
+#wizard .wizard-chip.is-invalid{color:var(--ember);border-color:var(--ember)}
+#wizard .wizard-chip.is-incomplete{color:var(--candle);border-color:var(--candle)}
+#wizard .wizard-chip.is-unavailable{color:var(--candle-deep);border-color:var(--candle-deep)}
+#wizard .wizard-chip.is-empty{color:var(--text-3)}
+#wizard .wizard-issues{margin-top:16px;border-top:1px solid var(--line);padding-top:10px}
+#wizard .wizard-issues .eyebrow{margin:0 0 6px;font-family:var(--font-ui);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--ember)}
+#wizard .wizard-issues p{margin:4px 0;font-family:var(--font-ui);font-size:11.5px;line-height:1.45;color:var(--text-3)}
+
+/* ── Сцена выбора ───────────────────────────────────────────────────────── */
+#wizard .wizard-stage{padding:clamp(16px,2.2vw,30px) clamp(16px,2.6vw,36px);overflow:auto;min-width:0}
+#wizard .wizard-stage:focus{outline:none}
+#wizard .wizard-stage-head{margin-bottom:14px}
+#wizard .wizard-stage-head h2{margin:0 0 6px;font-family:var(--font-book);font-size:26px;font-weight:400;line-height:1.18;color:var(--text)}
+#wizard .wizard-stage-head p{margin:4px 0;font-family:var(--font-ui);font-size:12px;line-height:1.5;color:var(--text-3);max-width:56ch}
+#wizard .wizard-reason{color:var(--ember)}
+#wizard .wizard-cards{min-width:0}
+
+/* Вариант — строка со штампом слева, линия снизу вместо рамки карточки */
+#wizard .wizard-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:24px;margin-top:6px}
+#wizard .wizard-card.wizard-option{
+  position:relative;display:grid;grid-template-columns:13px minmax(0,1fr);column-gap:12px;align-items:center;
+  width:100%;min-height:56px;padding:9px 12px 9px 2px;background:none;border:0;
+  border-bottom:1px solid var(--ink-750);border-radius:0;color:var(--text-2);font:inherit;text-align:left;cursor:pointer;
+}
+#wizard .wizard-option::before{
+  content:"";grid-column:1;grid-row:1 / span 3;align-self:center;justify-self:start;
+  width:9px;height:9px;border:1px solid var(--line-strong);background:none;
+}
+#wizard .wizard-option:hover:not(:disabled){color:var(--text);background:var(--roll-bg)}
+#wizard .wizard-option.is-chosen{color:var(--text);background:none}
+#wizard .wizard-option.is-chosen::before{background:var(--candle);border-color:var(--candle)}
+#wizard .wizard-option:disabled{opacity:.42;cursor:not-allowed}
+#wizard .wizard-option-name{grid-column:2;font-family:var(--font-book);font-size:19px;line-height:1.2;overflow-wrap:anywhere}
+#wizard .wizard-option-detail{grid-column:2;font-family:var(--font-ui);font-size:11.5px;line-height:1.45;color:var(--text-3)}
+#wizard .wizard-option.is-chosen .wizard-option-detail{color:var(--text-2)}
+#wizard .wizard-option-block{grid-column:2;font-family:var(--font-ui);font-size:11.5px;line-height:1.45;color:var(--ember)}
+
+/* Характеристики: строка на каждую, кнопки 36 px, число крупно */
+#wizard .wizard-scores{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:24px;margin-top:10px}
+#wizard .wizard-score{
+  display:grid;grid-template-columns:minmax(0,1fr) 40px auto auto;align-items:center;gap:6px;
+  padding:8px 0;border:0;border-bottom:1px solid var(--ink-750);border-radius:0;
+}
+#wizard .wizard-score>span{font-family:var(--font-ui);font-size:13px;letter-spacing:.04em;color:var(--text-2)}
+#wizard .wizard-score strong{font-family:var(--font-book);font-size:23px;font-weight:400;text-align:center;color:var(--text);font-variant-numeric:tabular-nums}
+#wizard .wizard-score input{width:64px}
+#wizard .wizard-step-button{width:36px;min-height:36px;padding:0;font-family:var(--font-ui);font-size:15px;line-height:1}
+#wizard .wizard-budget{margin:12px 0 0;font-family:var(--font-ui);font-size:12px;color:var(--text-2)}
+
+/* ── Полки и служебные блоки ────────────────────────────────────────────── */
+#wizard .wizard-block{margin-top:16px;border-top:1px solid var(--line);padding-top:14px}
+#wizard .wizard-block h3{margin:0 0 8px;font-family:var(--font-ui);font-size:10px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--text-3)}
+#wizard .wizard-block p{margin:4px 0;font-family:var(--font-ui);font-size:12.5px;line-height:1.5;color:var(--text-2)}
+#wizard .wizard-kits{border:0;border-top:1px solid var(--line);border-radius:0;margin:10px 0;padding:12px 0 0}
+#wizard .wizard-kits legend{padding:0 8px 0 0;font-family:var(--font-ui);font-size:11px;letter-spacing:.06em;color:var(--text-3)}
+#wizard .wizard-field{display:flex;flex-direction:column;gap:6px;margin:12px 0}
+#wizard .wizard-field label,#wizard .wizard-field>span{font-family:var(--font-ui);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--text-3)}
+#wizard .wizard-field input,#wizard .wizard-field textarea{width:100%}
+#wizard .wizard-gate{margin-top:16px;border-top:1px solid var(--line);padding-top:12px}
+#wizard .wizard-ok{margin:0 0 6px;font-family:var(--font-ui);font-size:12.5px;color:var(--moss)}
+#wizard .wizard-offer{border:1px solid var(--line-strong);border-radius:0;padding:16px 18px;background:none;margin-bottom:16px}
+#wizard .wizard-offer h2{margin:0 0 8px;font-family:var(--font-book);font-size:21px;font-weight:400;color:var(--text)}
+#wizard .wizard-offer-actions{display:flex;gap:10px;flex-wrap:wrap;margin:12px 0}
+#wizard .wizard-recommended{border-left:2px solid var(--candle);padding-left:10px;margin:0 0 14px;font-family:var(--font-ui);font-size:12.5px;color:var(--text-2)}
+#wizard .wizard-error{border:1px solid var(--ember);border-radius:0;padding:10px 12px;margin-top:14px;background:none;font-family:var(--font-ui);font-size:12.5px;color:var(--sheet-bad-ink)}
+#wizard .wizard-loading{opacity:.75;font-style:italic}
+#wizard .task-status.is-loading::before,#wizard .wizard-ready.is-loading::before{
+  content:'';display:inline-block;width:.7em;height:.7em;margin-right:.5em;
+  border:1px solid currentColor;border-right-color:transparent;animation:solo-wizard-wait .85s linear infinite;
+}
+@keyframes solo-wizard-wait{to{transform:rotate(360deg)}}
+
+/* ── Живой лист справа: тот же материал, что стол, кромка 1 px ──────────── */
+#wizard .wizard-sheet{
+  min-width:0;margin:16px 16px 16px 0;padding:20px 22px 22px;overflow:auto;
+  background:var(--sheet-bg);border:1px solid var(--sheet-line);border-radius:0;
+  color:var(--sheet-ink);font-size:14px;
+}
+#wizard .wizard-sheet-head{padding-bottom:12px;border-bottom:1px solid var(--sheet-line)}
+#wizard .wizard-sheet h2{margin:0;font-family:var(--font-book);font-size:27px;font-weight:400;line-height:1.1;color:var(--sheet-ink);overflow-wrap:anywhere}
+#wizard .wizard-sheet-head p{margin:4px 0 0;font-family:var(--font-ui);font-size:11px;letter-spacing:.04em;color:var(--sheet-ink-3)}
+#wizard .wizard-sheet p{margin:4px 0;font-family:var(--font-ui);font-size:12px;line-height:1.5;color:var(--sheet-ink-2)}
+#wizard .wizard-sheet .hint{color:var(--sheet-meta)}
+#wizard .wizard-vitals{
+  display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;margin:14px 0;
+  border-top:1px solid var(--sheet-line);border-bottom:1px solid var(--sheet-line);
+}
+#wizard .wizard-vital{display:flex;flex-direction:column;gap:3px;padding:10px 8px 10px 0;border-right:1px solid var(--sheet-line-soft)}
+#wizard .wizard-vital:last-child{border-right:0}
+#wizard .wizard-vital-label{font-family:var(--font-ui);font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--sheet-ink-3)}
+#wizard .wizard-vital strong{font-family:var(--font-book);font-size:22px;font-weight:400;line-height:1;color:var(--sheet-ink);font-variant-numeric:tabular-nums}
+#wizard .wizard-abilities{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:0;margin:0 0 4px}
+#wizard .wizard-abilities dt{margin:0;padding:7px 0;border-bottom:1px solid var(--sheet-line-soft);font-family:var(--font-ui);font-size:12px;letter-spacing:.04em;color:var(--sheet-ink-3)}
+#wizard .wizard-abilities dd{margin:0;padding:7px 0;border-bottom:1px solid var(--sheet-line-soft);text-align:right;font-family:var(--font-book);font-size:17px;color:var(--sheet-ink);font-variant-numeric:tabular-nums}
+#wizard .wizard-facts{display:grid;grid-template-columns:auto minmax(0,1fr);gap:0;margin:12px 0 0;font-size:12px}
+#wizard .wizard-facts dt{margin:0;padding:6px 0;border-bottom:1px solid var(--sheet-line-soft);font-family:var(--font-ui);font-size:11.5px;color:var(--sheet-ink-3)}
+#wizard .wizard-facts dd{margin:0;padding:6px 0;border-bottom:1px solid var(--sheet-line-soft);text-align:right;font-family:var(--font-ui);font-size:11.5px;color:var(--sheet-ink-2);overflow-wrap:anywhere}
+#wizard .wizard-sheet .wizard-block{border-top:1px solid var(--sheet-line);margin-top:14px;padding-top:12px}
+#wizard .wizard-sheet .wizard-block h3{font-family:var(--font-ui);font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--sheet-note)}
+#wizard .wizard-delta{border:1px solid var(--sheet-line);border-radius:0;padding:12px 14px;margin-bottom:14px;background:none}
+#wizard .wizard-delta h2{margin:0 0 6px;font-family:var(--font-book);font-size:19px;font-weight:400;color:var(--sheet-ink)}
+#wizard .wizard-delta-hp{margin:0 0 4px;font-family:var(--font-ui);font-size:12.5px;font-weight:700;color:var(--sheet-ok)}
+
+/* ── Подвал: кнопки с волосяной кромкой, отправка — свеча ───────────────── */
+#wizard .wizard-foot{display:flex;gap:10px;align-items:center;min-height:60px;padding:10px clamp(14px,2vw,28px);border-top:1px solid var(--line)}
+#wizard .wizard-spacer{flex:1}
+#wizard button{
+  min-height:38px;padding:0 14px;border:1px solid var(--line);border-radius:var(--radius);
+  background:var(--roll-bg);color:var(--text-2);font-family:var(--font-ui);font-size:13px;cursor:pointer;
+}
+#wizard button:hover:not(:disabled){border-color:var(--line-strong);color:var(--text)}
+#wizard button:disabled{opacity:.4;cursor:not-allowed}
+#wizard button.primary{background:var(--candle);border-color:var(--candle);color:var(--ink-950);font-weight:700}
+#wizard button.primary:hover:not(:disabled){background:var(--candle-hi);border-color:var(--candle-hi);color:var(--ink-950)}
+#wizard input,#wizard textarea,#wizard select{
+  background:var(--ink-900);border:1px solid var(--line);border-radius:var(--radius);
+  color:var(--text);font-family:var(--font-ui);font-size:13px;padding:8px 10px;
+}
+#wizard input:focus-visible,#wizard textarea:focus-visible,#wizard select:focus-visible,#wizard button:focus-visible{
+  outline:2px solid var(--candle);outline-offset:2px;
+}
+#wizard .wizard-sheet-toggle{display:none}
+#wizard .wizard-import textarea{width:100%;min-height:180px;line-height:1.5;resize:vertical}
+#wizard .wizard-import-actions{display:flex;gap:8px;margin:12px 0}
+
+/* ── Адаптив ────────────────────────────────────────────────────────────── */
+@media(max-width:1180px){
+  #wizard .wizard-body{grid-template-columns:200px minmax(0,1fr) 320px}
+  #wizard .wizard-sheet{margin:12px 12px 12px 0;padding:16px 16px 18px}
+}
+@media(max-width:940px){
+  #wizard .wizard-body{grid-template-columns:180px minmax(0,1fr)}
+  #wizard .wizard-sheet{display:none}
+  #wizard .wizard-sheet-toggle{display:inline-flex}
+  #wizard.is-sheet .wizard-sheet{
+    display:block;position:absolute;inset:56px 12px 68px;margin:0;
+    background:var(--sheet-bg);border:1px solid var(--sheet-line);z-index:2;
+  }
+}
+@media(max-width:760px){
+  #wizard .wizard-grid{grid-template-columns:minmax(0,1fr);column-gap:0}
+  #wizard .wizard-scores{grid-template-columns:minmax(0,1fr);column-gap:0}
+  #wizard .wizard-vitals{grid-template-columns:repeat(2,minmax(0,1fr))}
+  #wizard .wizard-vital:nth-child(2n){border-right:0}
+}
+@media(max-width:640px){
+  #wizard .wizard-shell{border:0}
+  #wizard .wizard-body{grid-template-columns:minmax(0,1fr)}
+  #wizard .wizard-steps{border-right:0;border-bottom:1px solid var(--line);max-height:32vh;padding:10px 10px 6px}
+  #wizard .wizard-stage{padding:14px 16px}
+  #wizard .wizard-stage-head h2{font-size:22px}
+  #wizard .wizard-foot{flex-wrap:wrap;gap:8px}
+  #wizard .wizard-foot button{flex:1 1 auto}
+  #wizard .wizard-paste{order:5;margin-left:0}
+  #wizard .wizard-head{gap:10px}
+  #wizard .wizard-ready{display:none}
+  #wizard.is-sheet .wizard-sheet{inset:52px 0 0;border:0}
+}
+@media(prefers-reduced-motion:reduce){
+  #wizard *{animation:none!important;transition:none!important}
+  #wizard .task-status.is-loading::before,#wizard .wizard-ready.is-loading::before{border-style:dotted}
+}
+/* ── n05: один шаг на экран, без простыней ──────────────────────────────── */
+/* Обводка выбранной карточки — акцент #8A5714 из design-tokens.css (светлая
+   «свеча»). Числом, а не токеном: в тёмной теме тот же токен светлее, а
+   требование называет именно этот цвет. Состояние видно и без цвета —
+   галочкой в углу карточки. */
+#wizard{--wizard-accent:#8A5714}
+#wizard .wizard-title-short{display:none}
+#wizard .wizard-sheet-open{display:none}
+#wizard .wizard-progress{margin:0 0 10px;padding:0;border:0;font-family:var(--font-ui);font-size:14px;line-height:1.3;color:var(--text-2)}
+#wizard .wizard-screen-head{margin:0 0 14px}
+#wizard .wizard-question{margin:0 0 4px;font-family:var(--font-book);font-size:24px;font-weight:400;line-height:1.15;color:var(--text);overflow-wrap:anywhere}
+#wizard .wizard-screen-head .hint{margin:2px 0 0;font-family:var(--font-ui);font-size:14px;line-height:1.35;color:var(--text-3)}
+#wizard .wizard-part{margin:0 0 16px}
+#wizard .wizard-level{margin:0 0 18px;padding:12px 14px;border:1px solid var(--line);border-radius:var(--radius);background:var(--roll-bg)}
+#wizard .wizard-level .wizard-field{flex-direction:row;align-items:center;gap:10px;margin:6px 0 0}
+#wizard .wizard-level select{min-height:44px;min-width:84px;padding:0 10px;border:1px solid var(--line);border-radius:var(--radius);background:transparent;color:var(--text);font-family:var(--font-ui);font-size:15px}
+#wizard .wizard-part-title{margin:14px 0 8px;font-family:var(--font-ui);font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--text-3)}
+#wizard .wizard-part>.wizard-part-title:first-child{margin-top:0}
+#wizard .wizard-part .hint{font-size:14px}
+
+/* Карточка варианта: одна строка названия, одна строка пояснения 14 px,
+   тап-таргет не меньше 44 px, выбранная — обводка акцентом, не заливка. */
+#wizard .wizard-card.wizard-option{
+  position:relative;display:grid;grid-template-columns:minmax(0,1fr);column-gap:0;align-items:start;
+  width:100%;min-height:44px;padding:10px 16px 10px 14px;margin:0 0 8px;
+  background:none;border:1px solid var(--line);border-radius:2px;color:var(--text-2);font:inherit;text-align:left;cursor:pointer;
+}
+#wizard .wizard-option::before{display:none}
+#wizard .wizard-option-name{grid-column:1;font-family:var(--font-book);font-size:17px;line-height:1.22;overflow-wrap:anywhere}
+#wizard .wizard-option-detail{grid-column:1;margin-top:2px;font-family:var(--font-ui);font-size:14px;line-height:1.32;color:var(--text-3)}
+#wizard .wizard-option.is-chosen{border-color:var(--wizard-accent);box-shadow:inset 0 0 0 1px var(--wizard-accent);color:var(--text);background:none}
+#wizard .wizard-option.is-chosen .wizard-option-detail{color:var(--text-2)}
+#wizard .wizard-option.is-chosen::after{content:"✓";position:absolute;top:6px;right:10px;font-family:var(--font-ui);font-size:14px;line-height:1;color:var(--wizard-accent)}
+#wizard .wizard-option:disabled{opacity:.42;cursor:not-allowed}
+
+/* Фраза «чего не хватает» рядом с неактивной кнопкой. */
+#wizard .wizard-need{flex:0 1 auto;margin:0;font-family:var(--font-ui);font-size:14px;line-height:1.3;color:var(--ember)}
+#wizard .wizard-need[hidden]{display:none}
+
+/* Характеристики: имя, ввод, итог и модификатор «на d20» одной строкой. */
+#wizard .wizard-score{grid-template-columns:minmax(0,1fr) 56px auto auto;column-gap:8px}
+#wizard .wizard-ability-name{font-family:var(--font-ui);font-size:14px;color:var(--text-2)}
+#wizard .wizard-mod{font-family:var(--font-ui);font-size:12px;line-height:1.2;color:var(--text-3);white-space:nowrap}
+#wizard button.wizard-option{min-height:44px}
+#wizard .wizard-step-button{min-height:44px;min-width:44px}
+
+/* Готово: чем герой получился, без таблиц и процентов. */
+#wizard .wizard-summary{margin:16px 0 0;border-top:1px solid var(--line);padding-top:12px}
+#wizard .wizard-summary h3{margin:0 0 6px;font-family:var(--font-ui);font-size:10px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--text-3)}
+#wizard .wizard-summary p{margin:3px 0;font-family:var(--font-ui);font-size:14px;line-height:1.4;color:var(--text-2)}
+#wizard .wizard-summary-who{color:var(--text)}
+#wizard .wizard-equipment{margin:0}
+#wizard .wizard-kits legend{font-family:var(--font-ui);font-size:11px;letter-spacing:.06em;color:var(--text-3)}
+
+@media(max-width:640px){
+  #wizard .wizard-title-long{display:none}
+  #wizard .wizard-title-short{display:inline}
+  /* Телефон: шапка и подвал стоят на месте, вопрос прокручивается один. */
+  #wizard .wizard-shell{border:0}
+  #wizard .wizard-head{min-height:52px;padding:6px 10px;gap:6px;flex-wrap:nowrap}
+  #wizard .wizard-head .eyebrow,#wizard .wizard-ready{display:none}
+  #wizard .wizard-head h1{font-size:17px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  #wizard .wizard-paste{min-height:44px;margin-left:auto;padding:0 8px;font-size:13px;flex:0 0 auto}
+  #wizard .wizard-close{min-height:44px;min-width:44px;padding:0 10px;margin-left:0;flex:0 0 auto}
+  /* Колонки нет: шаги — строка «Шаг 2 из 6 · Класс» и точки. */
+  #wizard .wizard-body{display:flex;flex-direction:column;flex:1;min-height:0;overflow:hidden}
+  #wizard .wizard-steps{border-right:0;border-bottom:1px solid var(--line);max-height:none;padding:8px 12px 6px;display:flex;flex-direction:column;gap:6px;overflow:visible}
+  #wizard .wizard-progress{margin:0;font-size:14px;color:var(--text-2)}
+  #wizard .wizard-list{flex-direction:row;gap:8px;align-items:center}
+  #wizard .wizard-list li{flex:0 0 auto}
+  #wizard .wizard-list button{display:flex;align-items:center;justify-content:center;width:auto;min-width:44px;min-height:44px;gap:0;padding:0;border:0;border-left:0}
+  #wizard .wizard-list li.is-current button{background:none;border-left:0;box-shadow:none}
+  #wizard .wizard-step-title,#wizard .wizard-step-note{display:none}
+  #wizard .wizard-list .wizard-chip{width:10px;height:10px;min-width:10px;font-size:0;line-height:0;border-radius:50%;border:1px solid var(--line-strong);background:none}
+  #wizard .wizard-list .wizard-chip.is-complete{border-color:var(--moss)}
+  #wizard .wizard-list li.is-current .wizard-chip{border-color:var(--wizard-accent);background:var(--wizard-accent)}
+  #wizard .wizard-stage{flex:1;min-height:0;overflow-y:auto;-webkit-overflow-scrolling:touch;padding:12px 14px 14px}
+  #wizard .wizard-question{font-size:21px}
+  #wizard .wizard-sheet{display:none}
+  #wizard .wizard-sheet-open{display:inline-flex;align-items:center;min-height:44px;margin-top:10px}
+  #wizard.is-sheet .wizard-sheet{display:block;position:absolute;inset:52px 0 0;margin:0;padding:16px;z-index:3;overflow:auto;background:var(--sheet-bg);border:0}
+  #wizard .wizard-sheet-toggle,#wizard .wizard-recommend,#wizard .wizard-spacer{display:none}
+  #wizard .wizard-foot{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:8px;min-height:0;padding:8px 12px calc(8px + env(safe-area-inset-bottom));border-top:1px solid var(--line)}
+  #wizard .wizard-foot .wizard-need{grid-column:1 / -1;font-size:14px}
+  #wizard .wizard-foot button{min-height:48px;font-size:15px;padding:0 10px}
+  #wizard .wizard-scores{grid-template-columns:minmax(0,1fr);column-gap:0}
+  #wizard .wizard-score{grid-template-columns:minmax(0,1fr) 52px auto;grid-template-areas:"name input total" "name mod mod";row-gap:2px}
+  #wizard .wizard-score .wizard-ability-name{grid-area:name}
+  #wizard .wizard-score input{grid-area:input}
+  #wizard .wizard-score .wizard-total{grid-area:total}
+  #wizard .wizard-score .wizard-mod{grid-area:mod;white-space:normal}
+  #wizard .wizard-score .hint{grid-column:1 / -1}
+  #wizard .wizard-grid{grid-template-columns:minmax(0,1fr);column-gap:0}
+}
+#wizard .wizard-return{margin:12px 0 0;border:1px solid var(--line-strong);border-radius:2px;padding:10px 12px}
+#wizard .wizard-return p{margin:0 0 8px;font-family:var(--font-ui);font-size:14px;line-height:1.35;color:var(--text-2)}
+#wizard .wizard-return button{min-height:44px}

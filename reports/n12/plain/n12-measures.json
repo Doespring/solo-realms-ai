@@ -1,0 +1,67 @@
+{
+ "base": "http://127.0.0.1:58511",
+ "healthLlm": null,
+ "healthLlmMock": false,
+ "commit": "4e495724",
+ "frames": {
+  "plain-home": {
+   "modelStatus": "Подключите облачного Мастера",
+   "modelStatusVisible": false,
+   "headerText": "ОДИНОЧНОЕ ПРИКЛЮЧЕНИЕ / Новая историяПодключите облачного МастераЛист",
+   "mockNoticeVisible": false,
+   "visibleMock": [],
+   "noticeMock": [],
+   "bodyHasMock": false,
+   "bodyHasTestData": false,
+   "url": "http://127.0.0.1:58511/?theme=dark",
+   "file": "/home/hermes/projects/SoloRealmsAI-Nat20/reports/n12/plain/n12-plain-home-1440.png",
+   "screen": "home"
+  },
+  "plain-new": {
+   "modelStatus": "Подключите облачного Мастера",
+   "modelStatusVisible": true,
+   "headerText": "ОДИНОЧНОЕ ПРИКЛЮЧЕНИЕ / Новая история Подключите облачного Мастера",
+   "mockNoticeVisible": false,
+   "visibleMock": [],
+   "noticeMock": [],
+   "bodyHasMock": false,
+   "bodyHasTestData": false,
+   "url": "http://127.0.0.1:58511/?theme=dark",
+   "file": "/home/hermes/projects/SoloRealmsAI-Nat20/reports/n12/plain/n12-plain-creation-1440.png",
+   "screen": "new"
+  },
+  "audit-frame": {
+   "modelStatus": "Подключите облачного Мастера",
+   "modelStatusVisible": true,
+   "headerText": "ОДИНОЧНОЕ ПРИКЛЮЧЕНИЕ / Новая история Подключите облачного Мастера",
+   "mockNoticeVisible": false,
+   "visibleMock": [],
+   "noticeMock": [],
+   "bodyHasMock": false,
+   "bodyHasTestData": false,
+   "url": "http://127.0.0.1:58511/?theme=dark&audit=game-1440",
+   "file": "/home/hermes/projects/SoloRealmsAI-Nat20/reports/n12/plain/n12-audit-frame-1440.png",
+   "screen": "new"
+  },
+  "flagged": {
+   "modelStatus": "Подключите облачного Мастера",
+   "modelStatusVisible": true,
+   "headerText": "ОДИНОЧНОЕ ПРИКЛЮЧЕНИЕ / Новая история Подключите облачного Мастера",
+   "mockNoticeVisible": false,
+   "visibleMock": [],
+   "noticeMock": [],
+   "bodyHasMock": false,
+   "bodyHasTestData": false,
+   "url": "http://127.0.0.1:58511/?theme=dark&audit=1",
+   "file": "/home/hermes/projects/SoloRealmsAI-Nat20/reports/n12/plain/n12-flagged-1440.png",
+   "screen": "new"
+  }
+ },
+ "checks": {
+  "plain_home_no_badge": true,
+  "plain_home_no_mock_word": true,
+  "plain_creation_no_badge": true,
+  "flagged_no_badge": true
+ },
+ "ok": true
+}

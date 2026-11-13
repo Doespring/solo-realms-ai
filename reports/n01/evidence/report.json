@@ -1,0 +1,315 @@
+{
+ "base": "http://127.0.0.1:44221",
+ "campaign": "bffe2f4e-2cb3-4788-9a22-c3581ecf3316",
+ "log": "runtime/n01-run8/actions.jsonl",
+ "scenario1": {
+  "clicks": 2,
+  "disabledAfter": true,
+  "requests": 1,
+  "statuses": [
+   200
+  ],
+  "router": [
+   "/api/campaigns/bffe2f4e-2cb3-4788-9a22-c3581ecf3316/command-turn"
+  ],
+  "answers": [
+   200
+  ],
+  "line": {
+   "hidden": false,
+   "state": "resolved",
+   "text": "Действие подтверждено.Обновить сцену"
+  },
+  "screen": {
+   "version": 1,
+   "commands": 9
+  }
+ },
+ "scenario2": {
+  "tabAOpen": true,
+  "staleVersion": 1,
+  "tabBVersion": 2,
+  "line": {
+   "hidden": false,
+   "state": "ready",
+   "text": "Сцена обновилась. Вот что можно сделатьОбновить сцену"
+  },
+  "posts": [
+   {
+    "url": "/api/campaigns/bffe2f4e-2cb3-4788-9a22-c3581ecf3316/command-turn",
+    "body": "{\"request_id\":\"5f79698f-4e3a-4d39-bcb4-d21562978a07\",\"expected_version\":1,\"text\":\"Осматриваю калитку\"}"
+   }
+  ],
+  "conflictRecords": [
+   {
+    "ts": "2026-11-07T02:16:06.887Z",
+    "src": "conflict",
+    "kind": "version_conflict",
+    "answer": "status_200",
+    "via": "browser",
+    "campaign_id": "bffe2f4e-2cb3-4788-9a22-c3581ecf3316",
+    "revision": 2,
+    "sid": "8b4p97fq",
+    "expected": 1,
+    "p": "command-turn"
+   }
+  ],
+  "screenAfter": {
+   "version": 2,
+   "commands": 9
+  }
+ },
+ "errors": [
+  {
+   "tab": "A",
+   "kind": "console",
+   "text": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+  },
+  {
+   "tab": "A",
+   "kind": "console",
+   "text": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+  },
+  {
+   "tab": "A",
+   "kind": "console",
+   "text": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+  },
+  {
+   "tab": "A",
+   "kind": "console",
+   "text": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+  },
+  {
+   "tab": "B",
+   "kind": "console",
+   "text": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+  },
+  {
+   "tab": "B",
+   "kind": "console",
+   "text": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+  },
+  {
+   "tab": "B",
+   "kind": "console",
+   "text": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+  },
+  {
+   "tab": "B",
+   "kind": "console",
+   "text": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+  },
+  {
+   "tab": "A",
+   "kind": "console",
+   "text": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+  },
+  {
+   "tab": "C",
+   "kind": "console",
+   "text": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+  },
+  {
+   "tab": "C",
+   "kind": "console",
+   "text": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+  },
+  {
+   "tab": "C",
+   "kind": "console",
+   "text": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+  },
+  {
+   "tab": "B",
+   "kind": "console",
+   "text": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+  },
+  {
+   "tab": "C",
+   "kind": "console",
+   "text": "Failed to load resource: the server responded with a status of 409 (Conflict)"
+  },
+  {
+   "tab": "C",
+   "kind": "console",
+   "text": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+  },
+  {
+   "tab": "B",
+   "kind": "console",
+   "text": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+  },
+  {
+   "tab": "B",
+   "kind": "console",
+   "text": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+  }
+ ],
+ "ok": true,
+ "steps": [
+  {
+   "name": "opened",
+   "version": {
+    "version": 0,
+    "commands": 9
+   },
+   "before": 0
+  },
+  {
+   "name": "double-click",
+   "clicks": 2,
+   "disabledAfter": true,
+   "requests": 1,
+   "statuses": [
+    200
+   ],
+   "router": [
+    "/api/campaigns/bffe2f4e-2cb3-4788-9a22-c3581ecf3316/command-turn"
+   ],
+   "answers": [
+    200
+   ],
+   "line": {
+    "hidden": false,
+    "state": "resolved",
+    "text": "Действие подтверждено.Обновить сцену"
+   },
+   "screen": {
+    "version": 1,
+    "commands": 9
+   }
+  },
+  {
+   "name": "tab-b-opened",
+   "version": 1,
+   "commands": 9
+  },
+  {
+   "name": "tab-b-acted",
+   "version": 2,
+   "commands": 9
+  },
+  {
+   "name": "conflict",
+   "tabAOpen": true,
+   "staleVersion": 1,
+   "tabBVersion": 2,
+   "line": {
+    "hidden": false,
+    "state": "ready",
+    "text": "Сцена обновилась. Вот что можно сделатьОбновить сцену"
+   },
+   "posts": [
+    {
+     "url": "/api/campaigns/bffe2f4e-2cb3-4788-9a22-c3581ecf3316/command-turn",
+     "body": "{\"request_id\":\"5f79698f-4e3a-4d39-bcb4-d21562978a07\",\"expected_version\":1,\"text\":\"Осматриваю калитку\"}"
+    }
+   ],
+   "conflictRecords": [
+    {
+     "ts": "2026-11-07T02:16:06.887Z",
+     "src": "conflict",
+     "kind": "version_conflict",
+     "answer": "status_200",
+     "via": "browser",
+     "campaign_id": "bffe2f4e-2cb3-4788-9a22-c3581ecf3316",
+     "revision": 2,
+     "sid": "8b4p97fq",
+     "expected": 1,
+     "p": "command-turn"
+    }
+   ],
+   "screenAfter": {
+    "version": 2,
+    "commands": 9
+   }
+  },
+  {
+   "name": "http-409",
+   "staleVersion": 2,
+   "freshVersion": 3,
+   "line": {
+    "hidden": false,
+    "state": "ready",
+    "text": "Сцена обновилась. Вот что можно сделатьОбновить сцену"
+   },
+   "posts": [
+    "/api/campaigns/bffe2f4e-2cb3-4788-9a22-c3581ecf3316/commands"
+   ],
+   "conflictRecords": [
+    {
+     "ts": "2026-11-07T02:16:27.084Z",
+     "src": "conflict",
+     "kind": "version_conflict",
+     "answer": "http_409",
+     "via": "browser",
+     "campaign_id": "bffe2f4e-2cb3-4788-9a22-c3581ecf3316",
+     "revision": 3,
+     "sid": "2162lh56",
+     "expected": 2,
+     "p": "commands"
+    }
+   ],
+   "screenAfter": {
+    "version": 3,
+    "commands": 9
+   }
+  },
+  {
+   "name": "window",
+   "answeredAt": 2835,
+   "disabledInWindow": true,
+   "disabledAfterWindow": false,
+   "requestsTotal": 2,
+   "requestsIncludingWindowClick": 2,
+   "line": {
+    "hidden": false,
+    "state": "resolved",
+    "text": "Действие подтверждено.Обновить сцену"
+   }
+  }
+ ],
+ "scenario3": {
+  "staleVersion": 2,
+  "freshVersion": 3,
+  "line": {
+   "hidden": false,
+   "state": "ready",
+   "text": "Сцена обновилась. Вот что можно сделатьОбновить сцену"
+  },
+  "posts": [
+   "/api/campaigns/bffe2f4e-2cb3-4788-9a22-c3581ecf3316/commands"
+  ],
+  "conflictRecords": [
+   {
+    "ts": "2026-11-07T02:16:27.084Z",
+    "src": "conflict",
+    "kind": "version_conflict",
+    "answer": "http_409",
+    "via": "browser",
+    "campaign_id": "bffe2f4e-2cb3-4788-9a22-c3581ecf3316",
+    "revision": 3,
+    "sid": "2162lh56",
+    "expected": 2,
+    "p": "commands"
+   }
+  ],
+  "screenAfter": {
+   "version": 3,
+   "commands": 9
+  }
+ },
+ "scenario4": {
+  "answeredAt": 2835,
+  "disabledInWindow": true,
+  "disabledAfterWindow": false,
+  "requestsTotal": 2,
+  "requestsIncludingWindowClick": 2,
+  "line": {
+   "hidden": false,
+   "state": "resolved",
+   "text": "Действие подтверждено.Обновить сцену"
+  }
+ }
+}

@@ -1,0 +1,110 @@
+{
+  "round": "r245",
+  "measured_at": "2026-11-06T13:28:44Z",
+  "build": {
+    "head": "feb91c1f",
+    "app_port_cold": 19217,
+    "app_port_warm": 19218
+  },
+  "books": {
+    "small": {
+      "book": "Путеводитель ПИПъЯПА по всем Девяти Преисподним.pdf",
+      "pages": 46,
+      "characters": 135247,
+      "bytes": 7084128,
+      "upload_s": 0.14,
+      "extract_s": 7.3,
+      "first_block_s": 45.71,
+      "playable_s": 45.71,
+      "first_block_detail": {
+        "done": 1,
+        "total": 4,
+        "status": "running"
+      },
+      "playable_detail": {
+        "done": 1,
+        "total": 4,
+        "status": "running",
+        "message": "Можно играть: готово 1 из 4, остальное готовится."
+      },
+      "full_parse_s": 412.5,
+      "blocks": "9/9",
+      "run_status": "ready",
+      "concurrency": 4,
+      "calls": {
+        "interpreter/ok": {
+          "n": 1,
+          "cost_rub": 0.07
+        },
+        "narrator/ok": {
+          "n": 1,
+          "cost_rub": 0.014
+        },
+        "preparation_world/ok": {
+          "n": 14,
+          "cost_rub": 2.288
+        }
+      },
+      "hero_options_s": 10.2,
+      "hero_preview_s": 0.96,
+      "campaign_s": 4.86,
+      "first_turn": {
+        "status": 200,
+        "seconds": 19.94,
+        "narrative": "Вы находитесь в месте «Дис» — Нового ничего не заметно.",
+        "policy": "engine_rejected",
+        "reason": "rejected_claim"
+      }
+    },
+    "big": {
+      "book": "Icewind Dale - Rime of the Frostmaiden RUS.pdf",
+      "pages": 323,
+      "characters": 1277375,
+      "bytes": 143581865,
+      "draft_from_library_s": 44.4,
+      "reuse_prepare_s": 69.89,
+      "reuse_calls": 0,
+      "reuse_cost_rub": 0.0,
+      "reuse_status": "ready",
+      "reuse_locations": 179,
+      "reuse_npc": 57,
+      "playable_s_measured": 296,
+      "playable_ready_at_recorded_s": 237,
+      "full_parse_recorded_s": 3275,
+      "full_parse_calls": 141,
+      "full_parse_cost_rub": 22.84,
+      "full_parse_blocks": "96/96",
+      "cancelled_run": {
+        "blocks": "8/57",
+        "calls": 17,
+        "cost_rub": 3.08,
+        "eta_min": 41
+      },
+      "hero_options_s": 11.96,
+      "hero_preview_s": 1.28,
+      "campaign_s": 5.28,
+      "first_turn": {
+        "status": 200,
+        "seconds": 15.81,
+        "narrative": "ДОЛИНА ЛЕДЯНОГО ВЕТРА — Нового ничего не заметно.",
+        "policy": "engine_rejected",
+        "reason": "rejected_claim"
+      },
+      "reuse_prepare_note": "POST /prepare отдаёт ответ через 69,89 с: сборка мира из 96 сохранённых секций идёт синхронно, вызовов модели 0"
+    }
+  },
+  "cost_rub_total": 5.622,
+  "sources": [
+    "числа перенесены из прогонов r245; сырые сводки (mark-лог малой книги, summary-part2 обоих книг, reuse-live.json) жили в runtime/r245-cold/probe-small и runtime/r245-warm/probe и удалены при уборке",
+    "записи прогонов живой базы: creation_runs 2e18c595 (полный разбор большой книги) и fccbe45a (отменённый на 8/57)",
+    "леджеры: runtime/web-local/cloud-usage.sqlite3 (общая история) и профильные копии прогонов r245"
+  ],
+  "probes": {
+    "files": [
+      "~/.hermes/cache/scratch/r245_probe.py",
+      "r245_continue.py",
+      "r245_warm.py"
+    ],
+    "note": "скрипты в scratch-каталоге кодера, не в дереве проекта: они разовые и содержат адреса портов обхода"
+  }
+}

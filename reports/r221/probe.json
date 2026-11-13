@@ -1,0 +1,264 @@
+{
+ "375": {
+  "viewport": {
+   "width": 375,
+   "height": 812
+  },
+  "errors": [
+   "Applying inline style violates the following Content Security Policy directive 'style-src 'self''. Either the 'unsafe-inline' keyword, a hash ('sha256-QtLc5uBVH",
+   "pageerror: ReferenceError: identity is not defined",
+   "pageerror: ReferenceError: identity is not defined"
+  ],
+  "aboutNav": true,
+  "about": {
+   "active": true,
+   "chars": 1444,
+   "hasSrd": true,
+   "hasIcons": true,
+   "legalOnOtherScreens": [],
+   "footerIsDiv": true,
+   "overflow": {
+    "scroll": 375,
+    "client": 375
+   }
+  },
+  "wizard": {
+   "before": {
+    "vitals": "",
+    "abilities": ""
+   },
+   "steps": [
+    "Вид",
+    "Класс",
+    "Предыстория",
+    "Характеристики",
+    "Итог и имя"
+   ],
+   "sheetVisible": false,
+   "toggleVisible": true,
+   "jumpedToSpecies": true,
+   "speciesPicked": "Dragonborn",
+   "afterSpecies": {
+    "vitals": "",
+    "abilities": ""
+   },
+   "jumpedToClass": true,
+   "classPicked": "Bard",
+   "after": {
+    "vitals": "ХП8 | КД10 | Скорость30 фт | БМ2",
+    "abilities": "10 (+0) 10 (+0) 10 (+0) 10 (+0) 10 (+0) 10 (+0)"
+   },
+   "classPickedSecond": "Barbarian",
+   "afterSecond": {
+    "vitals": "ХП12 | КД10 | Скорость30 фт | БМ2",
+    "abilities": "10 (+0) 10 (+0) 10 (+0) 10 (+0) 10 (+0) 10 (+0)"
+   },
+   "sheetOpenedByButton": true,
+   "overflow": {
+    "scroll": 375,
+    "client": 375
+   }
+  },
+  "book": {
+   "title": "Что мастер понял",
+   "sub": "«Материалы нового приключения» · 3 страницы · находок 6",
+   "sections": [
+    {
+     "title": "Места",
+     "count": "2",
+     "rows": [
+      {
+       "name": "Городок Гринест",
+       "note": "Глава 1: Городок Гринест",
+       "page": "стр. 2",
+       "conf": "ok"
+      },
+      {
+       "name": "Замок Неритар",
+       "note": "Замок Неритар заперт с началазимы, и ключ хранит мельничиха по имени Вельга, живущая у плотины на восточном берегу.",
+       "page": "стр. 3",
+       "conf": "ok"
+      }
+     ]
+    },
+    {
+     "title": "Люди",
+     "count": "2",
+     "rows": [
+      {
+       "name": "Гурт",
+       "note": "Здесь путников встречает трактирщик по имени Гурт, который держит постоялый двор у самого перекрёстка и знает всех, кто проезжал мимо за последнюю неделю.",
+       "page": "стр. 2",
+       "conf": "ok"
+      },
+      {
+       "name": "Вельга",
+       "note": "Замок Неритар заперт с началазимы, и ключ хранит мельничиха по имени Вельга, живущая у плотины на восточном берегу.",
+       "page": "стр. 3",
+       "conf": "ok"
+      }
+     ]
+    },
+    {
+     "title": "Проверки",
+     "count": "2",
+     "rows": [
+      {
+       "name": "Скрытность · нужно 13 на d20",
+       "note": "Чтобы пройти мимо спящего трактирщика, герои проходят проверку на Ловкость (Скрытность) Сл 13.",
+       "page": "стр. 2",
+       "conf": "ok"
+      },
+      {
+       "name": "Скрытность · нужно 15 на d20",
+       "note": "Чтобы открыть ворота без шума, герои проходят проверку на Ловкость (Скрытность) Сл 15.",
+       "page": "стр. 3",
+       "conf": "ok"
+      }
+     ]
+    },
+    {
+     "title": "Чего не хватило",
+     "count": "0",
+     "rows": []
+    }
+   ],
+   "overflow": {
+    "scroll": 375,
+    "client": 375
+   },
+   "scrollWidthPage": 375
+  }
+ },
+ "1440": {
+  "viewport": {
+   "width": 1440,
+   "height": 900
+  },
+  "errors": [
+   "Applying inline style violates the following Content Security Policy directive 'style-src 'self''. Either the 'unsafe-inline' keyword, a hash ('sha256-QtLc5uBVH",
+   "pageerror: ReferenceError: identity is not defined",
+   "pageerror: ReferenceError: identity is not defined",
+   "Failed to load resource: the server responded with a status of 404 (Not Found)"
+  ],
+  "aboutNav": true,
+  "about": {
+   "active": true,
+   "chars": 1444,
+   "hasSrd": true,
+   "hasIcons": true,
+   "legalOnOtherScreens": [],
+   "footerIsDiv": true,
+   "overflow": {
+    "scroll": 1440,
+    "client": 1440
+   }
+  },
+  "wizard": {
+   "before": {
+    "vitals": "",
+    "abilities": ""
+   },
+   "steps": [
+    "Вид",
+    "Класс",
+    "Предыстория",
+    "Характеристики",
+    "Итог и имя"
+   ],
+   "sheetVisible": true,
+   "toggleVisible": false,
+   "jumpedToSpecies": true,
+   "speciesPicked": "Dragonborn",
+   "afterSpecies": {
+    "vitals": "",
+    "abilities": ""
+   },
+   "jumpedToClass": true,
+   "classPicked": "Bard",
+   "after": {
+    "vitals": "ХП 8 | КД 10 | СКОРОСТЬ 30 фт | БМ 2",
+    "abilities": "10 (+0) 10 (+0) 10 (+0) 10 (+0) 10 (+0) 10 (+0)"
+   },
+   "classPickedSecond": "Barbarian",
+   "afterSecond": {
+    "vitals": "ХП 12 | КД 10 | СКОРОСТЬ 30 фт | БМ 2",
+    "abilities": "10 (+0) 10 (+0) 10 (+0) 10 (+0) 10 (+0) 10 (+0)"
+   },
+   "overflow": {
+    "scroll": 1440,
+    "client": 1440
+   }
+  },
+  "book": {
+   "title": "Что мастер понял",
+   "sub": "«Материалы нового приключения» · 3 страницы · находок 6",
+   "sections": [
+    {
+     "title": "Места",
+     "count": "2",
+     "rows": [
+      {
+       "name": "Городок Гринест",
+       "note": "Глава 1: Городок Гринест",
+       "page": "стр. 2",
+       "conf": "ok"
+      },
+      {
+       "name": "Замок Неритар",
+       "note": "Замок Неритар заперт с началазимы, и ключ хранит мельничиха по имени Вельга, живущая у плотины на восточном берегу.",
+       "page": "стр. 3",
+       "conf": "ok"
+      }
+     ]
+    },
+    {
+     "title": "Люди",
+     "count": "2",
+     "rows": [
+      {
+       "name": "Гурт",
+       "note": "Здесь путников встречает трактирщик по имени Гурт, который держит постоялый двор у самого перекрёстка и знает всех, кто проезжал мимо за последнюю неделю.",
+       "page": "стр. 2",
+       "conf": "ok"
+      },
+      {
+       "name": "Вельга",
+       "note": "Замок Неритар заперт с началазимы, и ключ хранит мельничиха по имени Вельга, живущая у плотины на восточном берегу.",
+       "page": "стр. 3",
+       "conf": "ok"
+      }
+     ]
+    },
+    {
+     "title": "Проверки",
+     "count": "2",
+     "rows": [
+      {
+       "name": "Скрытность · нужно 13 на d20",
+       "note": "Чтобы пройти мимо спящего трактирщика, герои проходят проверку на Ловкость (Скрытность) Сл 13.",
+       "page": "стр. 2",
+       "conf": "ok"
+      },
+      {
+       "name": "Скрытность · нужно 15 на d20",
+       "note": "Чтобы открыть ворота без шума, герои проходят проверку на Ловкость (Скрытность) Сл 15.",
+       "page": "стр. 3",
+       "conf": "ok"
+      }
+     ]
+    },
+    {
+     "title": "Чего не хватило",
+     "count": "0",
+     "rows": []
+    }
+   ],
+   "overflow": {
+    "scroll": 1440,
+    "client": 1440
+   },
+   "scrollWidthPage": 1440
+  }
+ }
+}

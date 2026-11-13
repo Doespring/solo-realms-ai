@@ -1,0 +1,1236 @@
+{
+ "meta": {
+  "commit": "74f2042c",
+  "frames": 2,
+  "base": "http://127.0.0.1:38917",
+  "data_dir": "/home/hermes/projects/SoloRealmsAI-Nat20/runtime/n07-audit",
+  "tag": "n18pc"
+ },
+ "frames": [
+  {
+   "probe": {
+    "viewportH": 900,
+    "description": {
+     "rect": {
+      "x": 0,
+      "y": 0,
+      "w": 0,
+      "h": 0,
+      "bottom": 0,
+      "right": 0,
+      "inView": false
+     },
+     "lines": -1
+    },
+    "prepare": {
+     "text": "Подготовить приключение",
+     "disabled": false,
+     "rect": {
+      "x": 0,
+      "y": 0,
+      "w": 0,
+      "h": 0,
+      "bottom": 0,
+      "right": 0,
+      "inView": false
+     }
+    },
+    "drop": {
+     "x": 0,
+     "y": 0,
+     "w": 0,
+     "h": 0,
+     "bottom": 0,
+     "right": 0,
+     "inView": false
+    },
+    "abilities": {
+     "count": 6,
+     "columns": 1,
+     "lastBottom": 0,
+     "allInside": true,
+     "cells": [
+      {
+       "text": "16 / +3Сила",
+       "x": 0,
+       "y": 0,
+       "w": 0,
+       "h": 0,
+       "bottom": 0,
+       "right": 0,
+       "inView": false
+      },
+      {
+       "text": "14 / +2Ловкость",
+       "x": 0,
+       "y": 0,
+       "w": 0,
+       "h": 0,
+       "bottom": 0,
+       "right": 0,
+       "inView": false
+      },
+      {
+       "text": "14 / +2Телосложение",
+       "x": 0,
+       "y": 0,
+       "w": 0,
+       "h": 0,
+       "bottom": 0,
+       "right": 0,
+       "inView": false
+      },
+      {
+       "text": "10 / +0Интеллект",
+       "x": 0,
+       "y": 0,
+       "w": 0,
+       "h": 0,
+       "bottom": 0,
+       "right": 0,
+       "inView": false
+      },
+      {
+       "text": "12 / +1Мудрость",
+       "x": 0,
+       "y": 0,
+       "w": 0,
+       "h": 0,
+       "bottom": 0,
+       "right": 0,
+       "inView": false
+      },
+      {
+       "text": "8 / -1Харизма",
+       "x": 0,
+       "y": 0,
+       "w": 0,
+       "h": 0,
+       "bottom": 0,
+       "right": 0,
+       "inView": false
+      }
+     ]
+    },
+    "navLabels": [
+     {
+      "text": "Навыки",
+      "lines": 1,
+      "broken": [],
+      "textWidth": 261,
+      "textScroll": 261,
+      "singleWidth": 64,
+      "fontSize": "16px",
+      "fontFamily": "\"Segoe UI\"",
+      "letterSpacing": "normal",
+      "x": 16,
+      "y": 122,
+      "w": 287,
+      "h": 44,
+      "bottom": 166,
+      "right": 303,
+      "inView": true
+     },
+     {
+      "text": "Инвентарь",
+      "lines": 1,
+      "broken": [],
+      "textWidth": 261,
+      "textScroll": 261,
+      "singleWidth": 89,
+      "fontSize": "16px",
+      "fontFamily": "\"Segoe UI\"",
+      "letterSpacing": "normal",
+      "x": 16,
+      "y": 168,
+      "w": 287,
+      "h": 44,
+      "bottom": 212,
+      "right": 303,
+      "inView": true
+     },
+     {
+      "text": "Карта мира",
+      "lines": 1,
+      "broken": [],
+      "textWidth": 261,
+      "textScroll": 261,
+      "singleWidth": 97,
+      "fontSize": "16px",
+      "fontFamily": "\"Segoe UI\"",
+      "letterSpacing": "normal",
+      "x": 16,
+      "y": 214,
+      "w": 287,
+      "h": 44,
+      "bottom": 258,
+      "right": 303,
+      "inView": true
+     },
+     {
+      "text": "Блокнот",
+      "lines": 1,
+      "broken": [],
+      "textWidth": 261,
+      "textScroll": 261,
+      "singleWidth": 70,
+      "fontSize": "16px",
+      "fontFamily": "\"Segoe UI\"",
+      "letterSpacing": "normal",
+      "x": 16,
+      "y": 260,
+      "w": 287,
+      "h": 44,
+      "bottom": 304,
+      "right": 303,
+      "inView": true
+     },
+     {
+      "text": "Раздатки и карты",
+      "lines": 1,
+      "broken": [],
+      "textWidth": 261,
+      "textScroll": 261,
+      "singleWidth": 151,
+      "fontSize": "16px",
+      "fontFamily": "\"Segoe UI\"",
+      "letterSpacing": "normal",
+      "x": 16,
+      "y": 306,
+      "w": 287,
+      "h": 44,
+      "bottom": 350,
+      "right": 303,
+      "inView": true
+     },
+     {
+      "text": "Сохранения",
+      "lines": 1,
+      "broken": [],
+      "textWidth": 261,
+      "textScroll": 261,
+      "singleWidth": 100,
+      "fontSize": "16px",
+      "fontFamily": "\"Segoe UI\"",
+      "letterSpacing": "normal",
+      "x": 16,
+      "y": 352,
+      "w": 287,
+      "h": 44,
+      "bottom": 396,
+      "right": 303,
+      "inView": true
+     },
+     {
+      "text": "Выход из игры",
+      "lines": 1,
+      "broken": [],
+      "textWidth": 261,
+      "textScroll": 261,
+      "singleWidth": 124,
+      "fontSize": "16px",
+      "fontFamily": "\"Segoe UI\"",
+      "letterSpacing": "normal",
+      "x": 16,
+      "y": 398,
+      "w": 287,
+      "h": 44,
+      "bottom": 442,
+      "right": 303,
+      "inView": true
+     }
+    ],
+    "navWrapped": 0,
+    "navBroken": 0,
+    "headerVitals": {
+     "text": "",
+     "rect": {
+      "x": 0,
+      "y": 0,
+      "w": 0,
+      "h": 0,
+      "bottom": 0,
+      "right": 0,
+      "inView": false
+     }
+    },
+    "drawerTabs": {
+     "tab": "campaign",
+     "tabs": [
+      {
+       "text": "Кампания",
+       "selected": true
+      },
+      {
+       "text": "Приложение",
+       "selected": false
+      }
+     ],
+     "visible": 2,
+     "rows": 7,
+     "perBlock": [
+      {
+       "title": "Кампания",
+       "rows": 6
+      },
+      {
+       "title": "Приложение",
+       "rows": 0
+      }
+     ],
+     "overflow": 0,
+     "children": [
+      {
+       "cls": "nav-head",
+       "y": 72,
+       "h": 40,
+       "bottom": 112
+      },
+      {
+       "cls": "nav-block",
+       "y": 122,
+       "h": 274,
+       "bottom": 396
+      },
+      {
+       "cls": "nav",
+       "y": 398,
+       "h": 44,
+       "bottom": 442
+      }
+     ]
+    },
+    "home": {
+     "sections": 1,
+     "lists": 0,
+     "stories": 0,
+     "continueBlocks": 1,
+     "allStories": 1,
+     "kickers": [
+      "Продолжить"
+     ]
+    },
+    "journal": {
+     "width": 0,
+     "contentRight": 0,
+     "rightGap": 1440,
+     "emptyRightPct": 100,
+     "sections": 0,
+     "emptySections": 0,
+     "knownVisible": false,
+     "eventsVisible": false,
+     "facts": 0,
+     "eventRows": 0,
+     "textareas": 0,
+     "saveButtons": 0,
+     "reloadButtons": 0,
+     "empty": true
+    },
+    "heroPanel": {
+     "hpNodes": 0,
+     "hpText": false,
+     "hpWords": 0,
+     "documentHp": 0,
+     "text": "Ваш геройМиронУровень 112 / 12 хитов · КБ 18Открыть листСнаряжениеНавыки и способностиКарта"
+    },
+    "words": {
+     "hit": false,
+     "ac": false,
+     "computer": true,
+     "neuralApi": false,
+     "costsApi": false,
+     "performance": false
+    }
+   },
+   "viewport": {
+    "w": 1440,
+    "h": 900,
+    "dpr": 1
+   },
+   "scrollWidth": 1440,
+   "scrollHeight": 900,
+   "overflowX": 0,
+   "activeView": "welcome",
+   "campaignOpen": true,
+   "kbOpen": false,
+   "textElements": 26,
+   "fontMin": 14,
+   "smallText": [],
+   "tinyText": [
+    {
+     "sel": "html > body.effects.tabletop > aside.sidebar.show-more > a.brand > span:nth-of-type(2)",
+     "px": 14,
+     "text": "SOLO REALMS"
+    },
+    {
+     "sel": "button#nav-more",
+     "px": 14,
+     "text": "Ещё"
+    },
+    {
+     "sel": "section#welcome > div.start__main:nth-of-type(1) > div.start__copy:nth-of-type(1) > p.eyebrow:nth-of-type(1)",
+     "px": 14,
+     "text": "одиночное приключение"
+    },
+    {
+     "sel": "section#welcome > div.start__feed:nth-of-type(2) > div.start__stories > p.start__stories-kicker",
+     "px": 14,
+     "text": "Продолжить"
+    },
+    {
+     "sel": "div.start__feed:nth-of-type(2) > div.start__stories > button.start__continue:nth-of-type(1) > span.start__continue-meta:nth-of-type(2) > span.story-where:nth-of-type(1)",
+     "px": 14,
+     "text": "Мирон, 1-й уровень · Дозор на тр"
+    },
+    {
+     "sel": "div.start__feed:nth-of-type(2) > div.start__stories > button.start__continue:nth-of-type(1) > span.start__continue-meta:nth-of-type(2) > span.story-when:nth-of-type(2)",
+     "px": 14,
+     "text": "сегодня, 22:45"
+    },
+    {
+     "sel": "section#welcome > div.start__foot:nth-of-type(3) > p.start__local",
+     "px": 14,
+     "text": "Сохранения и книги остаются на э"
+    }
+   ],
+   "fontDistinct": 3,
+   "fontSizes": {
+    "14": 7,
+    "16": 18,
+    "30": 1
+   },
+   "tapCount": 19,
+   "tapsBad": [
+    {
+     "sel": "div#nav-tabs > button.nav-tab:nth-of-type(1)",
+     "label": "Кампания",
+     "w": 141.5,
+     "h": 40
+    },
+    {
+     "sel": "div#nav-tabs > button.nav-tab:nth-of-type(2)",
+     "label": "Приложение",
+     "w": 141.5,
+     "h": 40
+    },
+    {
+     "sel": "section#welcome > div.start__feed:nth-of-type(2) > div.start__stories > button.start__continue:nth-of-type(1)",
+     "label": "BUTTON",
+     "w": 352,
+     "h": 41.2
+    }
+   ],
+   "tapsBadCount": 3,
+   "contrastBad": [],
+   "contrastBadCount": 0,
+   "contrastMin": null,
+   "contrastChecked": 26,
+   "placeholderChecked": 0,
+   "borderBad": [
+    {
+     "sel": "div#nav-tabs > button.nav-tab:nth-of-type(2)",
+     "label": "Приложение",
+     "side": "top",
+     "w": 1,
+     "what": "рамка",
+     "ratio": 1.31,
+     "fg": "rgb(51,43,34)",
+     "bg": "rgb(16,18,16)",
+     "kind": "граница"
+    },
+    {
+     "sel": "div#nav-drawer > button.nav.nav-exit",
+     "label": "BUTTON",
+     "side": "top",
+     "w": 1,
+     "what": "рамка",
+     "ratio": 1.35,
+     "fg": "rgb(51,43,34)",
+     "bg": "rgb(16,18,16)",
+     "kind": "граница"
+    },
+    {
+     "sel": "section#welcome > div.start__feed:nth-of-type(2) > div.start__stories",
+     "frameFor": "section#welcome > div.start__feed:nth-of-type(2) > div.start__stories > button.start__all:nth-of-type(2)",
+     "label": "Все истории",
+     "side": "top",
+     "w": 1,
+     "what": "рамка",
+     "ratio": 1.35,
+     "fg": "rgb(51,43,34)",
+     "bg": "rgb(20,17,13)",
+     "kind": "граница"
+    },
+    {
+     "sel": "section#welcome > div.start__main:nth-of-type(1) > div.start__copy:nth-of-type(1) > div.start__actions > button.start__btn.start__btn--ghost:nth-of-type(2)",
+     "label": "Загрузить книгу",
+     "side": "top",
+     "w": 1,
+     "what": "рамка",
+     "ratio": 1.81,
+     "fg": "rgb(74,62,48)",
+     "bg": "rgb(20,17,13)",
+     "kind": "граница"
+    }
+   ],
+   "borderBadCount": 4,
+   "borderMin": 1.31,
+   "borderChecked": 6,
+   "controlChecked": 6,
+   "cellChecked": 0,
+   "contrastSkipped": [
+    {
+     "sel": "html > body.effects.tabletop > aside.sidebar.show-more > a.brand",
+     "kind": "граница",
+     "reason": "видимой-границы-нет"
+    },
+    {
+     "sel": "body.effects.tabletop > aside.sidebar.show-more > nav > div.nav-bar:nth-of-type(1) > button.nav:nth-of-type(1)",
+     "kind": "граница",
+     "reason": "видимой-границы-нет"
+    },
+    {
+     "sel": "body.effects.tabletop > aside.sidebar.show-more > nav > div.nav-bar:nth-of-type(1) > button.nav:nth-of-type(2)",
+     "kind": "граница",
+     "reason": "видимой-границы-нет"
+    },
+    {
+     "sel": "body.effects.tabletop > aside.sidebar.show-more > nav > div.nav-bar:nth-of-type(1) > button.nav:nth-of-type(3)",
+     "kind": "граница",
+     "reason": "видимой-границы-нет"
+    },
+    {
+     "sel": "body.effects.tabletop > aside.sidebar.show-more > nav > div.nav-bar:nth-of-type(1) > button.nav:nth-of-type(4)",
+     "kind": "граница",
+     "reason": "видимой-границы-нет"
+    },
+    {
+     "sel": "button#nav-more",
+     "kind": "граница",
+     "reason": "видимой-границы-нет"
+    },
+    {
+     "sel": "div#nav-drawer > div.nav-block.nav-block--campaign:nth-of-type(2) > button.nav:nth-of-type(1)",
+     "kind": "граница",
+     "reason": "видимой-границы-нет"
+    },
+    {
+     "sel": "div#nav-drawer > div.nav-block.nav-block--campaign:nth-of-type(2) > button.nav:nth-of-type(2)",
+     "kind": "граница",
+     "reason": "видимой-границы-нет"
+    },
+    {
+     "sel": "div#nav-drawer > div.nav-block.nav-block--campaign:nth-of-type(2) > button.nav:nth-of-type(3)",
+     "kind": "граница",
+     "reason": "видимой-границы-нет"
+    },
+    {
+     "sel": "div#nav-drawer > div.nav-block.nav-block--campaign:nth-of-type(2) > button.nav:nth-of-type(4)",
+     "kind": "граница",
+     "reason": "видимой-границы-нет"
+    },
+    {
+     "sel": "div#nav-drawer > div.nav-block.nav-block--campaign:nth-of-type(2) > button.nav:nth-of-type(5)",
+     "kind": "граница",
+     "reason": "видимой-границы-нет"
+    },
+    {
+     "sel": "div#nav-drawer > div.nav-block.nav-block--campaign:nth-of-type(2) > button.nav:nth-of-type(6)",
+     "kind": "граница",
+     "reason": "видимой-границы-нет"
+    },
+    {
+     "sel": "section#welcome > div.start__feed:nth-of-type(2) > div.start__stories > button.start__continue:nth-of-type(1)",
+     "kind": "граница",
+     "reason": "видимой-границы-нет"
+    }
+   ],
+   "contrastSkippedCount": 13,
+   "interactiveVisible": 19,
+   "clipped": [],
+   "clippedCount": 0,
+   "colorsOutsideCount": 0,
+   "colorsOutside": [],
+   "drawer": {
+    "h": 410,
+    "top": 56,
+    "rows": 7,
+    "blocks": [
+     "Кампания"
+    ],
+    "scrollTop": 0,
+    "scroll": 0,
+    "content": 410
+   },
+   "state": "menu",
+   "theme": "dark",
+   "width": 1440,
+   "height": 900,
+   "debug": {
+    "bodyClass": "effects tabletop campaign-open nat20-game",
+    "burger": false,
+    "aside": {
+     "x": 0,
+     "y": 0,
+     "w": 1440,
+     "h": 56
+    },
+    "drawer": {
+     "x": 0,
+     "y": 56,
+     "w": 320,
+     "h": 410
+    }
+   },
+   "file": "n18pc-menu-dark-1440.png",
+   "jsErrors": []
+  },
+  {
+   "probe": {
+    "viewportH": 900,
+    "description": {
+     "rect": {
+      "x": 0,
+      "y": 0,
+      "w": 0,
+      "h": 0,
+      "bottom": 0,
+      "right": 0,
+      "inView": false
+     },
+     "lines": -1
+    },
+    "prepare": {
+     "text": "Подготовить приключение",
+     "disabled": false,
+     "rect": {
+      "x": 0,
+      "y": 0,
+      "w": 0,
+      "h": 0,
+      "bottom": 0,
+      "right": 0,
+      "inView": false
+     }
+    },
+    "drop": {
+     "x": 0,
+     "y": 0,
+     "w": 0,
+     "h": 0,
+     "bottom": 0,
+     "right": 0,
+     "inView": false
+    },
+    "abilities": {
+     "count": 6,
+     "columns": 1,
+     "lastBottom": 0,
+     "allInside": true,
+     "cells": [
+      {
+       "text": "16Сила",
+       "x": 0,
+       "y": 0,
+       "w": 0,
+       "h": 0,
+       "bottom": 0,
+       "right": 0,
+       "inView": false
+      },
+      {
+       "text": "14Ловкость",
+       "x": 0,
+       "y": 0,
+       "w": 0,
+       "h": 0,
+       "bottom": 0,
+       "right": 0,
+       "inView": false
+      },
+      {
+       "text": "14Телосложение",
+       "x": 0,
+       "y": 0,
+       "w": 0,
+       "h": 0,
+       "bottom": 0,
+       "right": 0,
+       "inView": false
+      },
+      {
+       "text": "10Интеллект",
+       "x": 0,
+       "y": 0,
+       "w": 0,
+       "h": 0,
+       "bottom": 0,
+       "right": 0,
+       "inView": false
+      },
+      {
+       "text": "12Мудрость",
+       "x": 0,
+       "y": 0,
+       "w": 0,
+       "h": 0,
+       "bottom": 0,
+       "right": 0,
+       "inView": false
+      },
+      {
+       "text": "8Харизма",
+       "x": 0,
+       "y": 0,
+       "w": 0,
+       "h": 0,
+       "bottom": 0,
+       "right": 0,
+       "inView": false
+      }
+     ]
+    },
+    "navLabels": [
+     {
+      "text": "Подключение Мастера",
+      "lines": 1,
+      "broken": [],
+      "textWidth": 261,
+      "textScroll": 261,
+      "singleWidth": 192,
+      "fontSize": "16px",
+      "fontFamily": "\"Segoe UI\"",
+      "letterSpacing": "normal",
+      "x": 16,
+      "y": 122,
+      "w": 287,
+      "h": 44,
+      "bottom": 166,
+      "right": 303,
+      "inView": true
+     },
+     {
+      "text": "Настройки",
+      "lines": 1,
+      "broken": [],
+      "textWidth": 261,
+      "textScroll": 261,
+      "singleWidth": 90,
+      "fontSize": "16px",
+      "fontFamily": "\"Segoe UI\"",
+      "letterSpacing": "normal",
+      "x": 16,
+      "y": 168,
+      "w": 287,
+      "h": 44,
+      "bottom": 212,
+      "right": 303,
+      "inView": true
+     },
+     {
+      "text": "Расходы на Мастера",
+      "lines": 1,
+      "broken": [],
+      "textWidth": 261,
+      "textScroll": 261,
+      "singleWidth": 174,
+      "fontSize": "16px",
+      "fontFamily": "\"Segoe UI\"",
+      "letterSpacing": "normal",
+      "x": 16,
+      "y": 214,
+      "w": 287,
+      "h": 44,
+      "bottom": 258,
+      "right": 303,
+      "inView": true
+     },
+     {
+      "text": "Скорость ответа",
+      "lines": 1,
+      "broken": [],
+      "textWidth": 261,
+      "textScroll": 261,
+      "singleWidth": 140,
+      "fontSize": "16px",
+      "fontFamily": "\"Segoe UI\"",
+      "letterSpacing": "normal",
+      "x": 16,
+      "y": 260,
+      "w": 287,
+      "h": 44,
+      "bottom": 304,
+      "right": 303,
+      "inView": true
+     },
+     {
+      "text": "О проекте",
+      "lines": 1,
+      "broken": [],
+      "textWidth": 261,
+      "textScroll": 261,
+      "singleWidth": 87,
+      "fontSize": "16px",
+      "fontFamily": "\"Segoe UI\"",
+      "letterSpacing": "normal",
+      "x": 16,
+      "y": 306,
+      "w": 287,
+      "h": 44,
+      "bottom": 350,
+      "right": 303,
+      "inView": true
+     },
+     {
+      "text": "Мои миры",
+      "lines": 1,
+      "broken": [],
+      "textWidth": 261,
+      "textScroll": 261,
+      "singleWidth": 84,
+      "fontSize": "16px",
+      "fontFamily": "\"Segoe UI\"",
+      "letterSpacing": "normal",
+      "x": 16,
+      "y": 352,
+      "w": 287,
+      "h": 44,
+      "bottom": 396,
+      "right": 303,
+      "inView": true
+     },
+     {
+      "text": "Правила",
+      "lines": 1,
+      "broken": [],
+      "textWidth": 261,
+      "textScroll": 261,
+      "singleWidth": 71,
+      "fontSize": "16px",
+      "fontFamily": "\"Segoe UI\"",
+      "letterSpacing": "normal",
+      "x": 16,
+      "y": 398,
+      "w": 287,
+      "h": 44,
+      "bottom": 442,
+      "right": 303,
+      "inView": true
+     },
+     {
+      "text": "Книги",
+      "lines": 1,
+      "broken": [],
+      "textWidth": 261,
+      "textScroll": 261,
+      "singleWidth": 49,
+      "fontSize": "16px",
+      "fontFamily": "\"Segoe UI\"",
+      "letterSpacing": "normal",
+      "x": 16,
+      "y": 444,
+      "w": 287,
+      "h": 44,
+      "bottom": 488,
+      "right": 303,
+      "inView": true
+     },
+     {
+      "text": "Профили Мастера",
+      "lines": 1,
+      "broken": [],
+      "textWidth": 261,
+      "textScroll": 261,
+      "singleWidth": 153,
+      "fontSize": "16px",
+      "fontFamily": "\"Segoe UI\"",
+      "letterSpacing": "normal",
+      "x": 16,
+      "y": 490,
+      "w": 287,
+      "h": 44,
+      "bottom": 534,
+      "right": 303,
+      "inView": true
+     },
+     {
+      "text": "Выход из игры",
+      "lines": 1,
+      "broken": [],
+      "textWidth": 261,
+      "textScroll": 261,
+      "singleWidth": 124,
+      "fontSize": "16px",
+      "fontFamily": "\"Segoe UI\"",
+      "letterSpacing": "normal",
+      "x": 16,
+      "y": 536,
+      "w": 287,
+      "h": 44,
+      "bottom": 580,
+      "right": 303,
+      "inView": true
+     }
+    ],
+    "navWrapped": 0,
+    "navBroken": 0,
+    "headerVitals": {
+     "text": "12/12 хиты·18 защита",
+     "rect": {
+      "x": 0,
+      "y": 0,
+      "w": 0,
+      "h": 0,
+      "bottom": 0,
+      "right": 0,
+      "inView": false
+     }
+    },
+    "drawerTabs": {
+     "tab": "app",
+     "tabs": [
+      {
+       "text": "Кампания",
+       "selected": false
+      },
+      {
+       "text": "Приложение",
+       "selected": true
+      }
+     ],
+     "visible": 2,
+     "rows": 10,
+     "perBlock": [
+      {
+       "title": "Кампания",
+       "rows": 0
+      },
+      {
+       "title": "Приложение",
+       "rows": 9
+      }
+     ],
+     "overflow": 0,
+     "children": [
+      {
+       "cls": "nav-head",
+       "y": 72,
+       "h": 40,
+       "bottom": 112
+      },
+      {
+       "cls": "nav-block",
+       "y": 122,
+       "h": 412,
+       "bottom": 534
+      },
+      {
+       "cls": "nav",
+       "y": 536,
+       "h": 44,
+       "bottom": 580
+      }
+     ]
+    },
+    "home": {
+     "sections": 1,
+     "lists": 0,
+     "stories": 0,
+     "continueBlocks": 1,
+     "allStories": 1,
+     "kickers": [
+      "Продолжить"
+     ]
+    },
+    "journal": {
+     "width": 0,
+     "contentRight": 0,
+     "rightGap": 1440,
+     "emptyRightPct": 100,
+     "sections": 0,
+     "emptySections": 0,
+     "knownVisible": false,
+     "eventsVisible": false,
+     "facts": 0,
+     "eventRows": 0,
+     "textareas": 0,
+     "saveButtons": 0,
+     "reloadButtons": 0,
+     "empty": true
+    },
+    "heroPanel": {
+     "hpNodes": 0,
+     "hpText": false,
+     "hpWords": 0,
+     "documentHp": 0,
+     "text": "Ваш геройМиронВторое дыхание · потрачено: 0Опыт: 0Кости хитов: 1Состояния: нетЛист героя"
+    },
+    "words": {
+     "hit": false,
+     "ac": false,
+     "computer": true,
+     "neuralApi": false,
+     "costsApi": false,
+     "performance": false
+    }
+   },
+   "viewport": {
+    "w": 1440,
+    "h": 900,
+    "dpr": 1
+   },
+   "scrollWidth": 1440,
+   "scrollHeight": 900,
+   "overflowX": 0,
+   "activeView": "welcome",
+   "campaignOpen": true,
+   "kbOpen": false,
+   "textElements": 29,
+   "fontMin": 14,
+   "smallText": [],
+   "tinyText": [
+    {
+     "sel": "html > body.effects.campaign-open > aside.sidebar.show-more > a.brand > span:nth-of-type(2)",
+     "px": 14,
+     "text": "SOLO REALMS"
+    },
+    {
+     "sel": "button#nav-more",
+     "px": 14,
+     "text": "Ещё"
+    },
+    {
+     "sel": "section#welcome > div.start__main:nth-of-type(1) > div.start__copy:nth-of-type(1) > p.eyebrow:nth-of-type(1)",
+     "px": 14,
+     "text": "одиночное приключение"
+    },
+    {
+     "sel": "section#welcome > div.start__feed:nth-of-type(2) > div.start__stories > p.start__stories-kicker",
+     "px": 14,
+     "text": "Продолжить"
+    },
+    {
+     "sel": "div.start__feed:nth-of-type(2) > div.start__stories > button.start__continue:nth-of-type(1) > span.start__continue-meta:nth-of-type(2) > span.story-where:nth-of-type(1)",
+     "px": 14,
+     "text": "Мирон, 1-й уровень · Дозор на тр"
+    },
+    {
+     "sel": "div.start__feed:nth-of-type(2) > div.start__stories > button.start__continue:nth-of-type(1) > span.start__continue-meta:nth-of-type(2) > span.story-when:nth-of-type(2)",
+     "px": 14,
+     "text": "сегодня, 22:45"
+    },
+    {
+     "sel": "section#welcome > div.start__foot:nth-of-type(3) > p.start__local",
+     "px": 14,
+     "text": "Сохранения и книги остаются на э"
+    }
+   ],
+   "fontDistinct": 3,
+   "fontSizes": {
+    "14": 7,
+    "16": 21,
+    "30": 1
+   },
+   "tapCount": 22,
+   "tapsBad": [
+    {
+     "sel": "div#nav-tabs > button.nav-tab:nth-of-type(1)",
+     "label": "Кампания",
+     "w": 141.5,
+     "h": 40
+    },
+    {
+     "sel": "div#nav-tabs > button.nav-tab:nth-of-type(2)",
+     "label": "Приложение",
+     "w": 141.5,
+     "h": 40
+    },
+    {
+     "sel": "section#welcome > div.start__feed:nth-of-type(2) > div.start__stories > button.start__continue:nth-of-type(1)",
+     "label": "BUTTON",
+     "w": 352,
+     "h": 41.2
+    }
+   ],
+   "tapsBadCount": 3,
+   "contrastBad": [],
+   "contrastBadCount": 0,
+   "contrastMin": null,
+   "contrastChecked": 29,
+   "placeholderChecked": 0,
+   "borderBad": [
+    {
+     "sel": "div#nav-tabs > button.nav-tab:nth-of-type(1)",
+     "label": "Кампания",
+     "side": "top",
+     "w": 1,
+     "what": "рамка",
+     "ratio": 1.31,
+     "fg": "rgb(51,43,34)",
+     "bg": "rgb(16,18,16)",
+     "kind": "граница"
+    },
+    {
+     "sel": "div#nav-drawer > button.nav.nav-exit",
+     "label": "BUTTON",
+     "side": "top",
+     "w": 1,
+     "what": "рамка",
+     "ratio": 1.35,
+     "fg": "rgb(51,43,34)",
+     "bg": "rgb(16,18,16)",
+     "kind": "граница"
+    },
+    {
+     "sel": "section#welcome > div.start__feed:nth-of-type(2) > div.start__stories",
+     "frameFor": "section#welcome > div.start__feed:nth-of-type(2) > div.start__stories > button.start__all:nth-of-type(2)",
+     "label": "Все истории",
+     "side": "top",
+     "w": 1,
+     "what": "рамка",
+     "ratio": 1.35,
+     "fg": "rgb(51,43,34)",
+     "bg": "rgb(20,17,13)",
+     "kind": "граница"
+    },
+    {
+     "sel": "section#welcome > div.start__main:nth-of-type(1) > div.start__copy:nth-of-type(1) > div.start__actions > button.start__btn.start__btn--ghost:nth-of-type(2)",
+     "label": "Загрузить книгу",
+     "side": "top",
+     "w": 1,
+     "what": "рамка",
+     "ratio": 1.81,
+     "fg": "rgb(74,62,48)",
+     "bg": "rgb(20,17,13)",
+     "kind": "граница"
+    }
+   ],
+   "borderBadCount": 4,
+   "borderMin": 1.31,
+   "borderChecked": 6,
+   "controlChecked": 6,
+   "cellChecked": 0,
+   "contrastSkipped": [
+    {
+     "sel": "html > body.effects.campaign-open > aside.sidebar.show-more > a.brand",
+     "kind": "граница",
+     "reason": "видимой-границы-нет"
+    },
+    {
+     "sel": "body.effects.campaign-open > aside.sidebar.show-more > nav > div.nav-bar:nth-of-type(1) > button.nav:nth-of-type(1)",
+     "kind": "граница",
+     "reason": "видимой-границы-нет"
+    },
+    {
+     "sel": "body.effects.campaign-open > aside.sidebar.show-more > nav > div.nav-bar:nth-of-type(1) > button.nav:nth-of-type(2)",
+     "kind": "граница",
+     "reason": "видимой-границы-нет"
+    },
+    {
+     "sel": "body.effects.campaign-open > aside.sidebar.show-more > nav > div.nav-bar:nth-of-type(1) > button.nav:nth-of-type(3)",
+     "kind": "граница",
+     "reason": "видимой-границы-нет"
+    },
+    {
+     "sel": "body.effects.campaign-open > aside.sidebar.show-more > nav > div.nav-bar:nth-of-type(1) > button.nav:nth-of-type(4)",
+     "kind": "граница",
+     "reason": "видимой-границы-нет"
+    },
+    {
+     "sel": "button#nav-more",
+     "kind": "граница",
+     "reason": "видимой-границы-нет"
+    },
+    {
+     "sel": "div#nav-drawer > div.nav-block.nav-block--app:nth-of-type(3) > button.nav:nth-of-type(1)",
+     "kind": "граница",
+     "reason": "видимой-границы-нет"
+    },
+    {
+     "sel": "div#nav-drawer > div.nav-block.nav-block--app:nth-of-type(3) > button.nav:nth-of-type(2)",
+     "kind": "граница",
+     "reason": "видимой-границы-нет"
+    },
+    {
+     "sel": "div#nav-drawer > div.nav-block.nav-block--app:nth-of-type(3) > button.nav:nth-of-type(3)",
+     "kind": "граница",
+     "reason": "видимой-границы-нет"
+    },
+    {
+     "sel": "div#nav-drawer > div.nav-block.nav-block--app:nth-of-type(3) > button.nav:nth-of-type(4)",
+     "kind": "граница",
+     "reason": "видимой-границы-нет"
+    },
+    {
+     "sel": "div#nav-drawer > div.nav-block.nav-block--app:nth-of-type(3) > button.nav:nth-of-type(5)",
+     "kind": "граница",
+     "reason": "видимой-границы-нет"
+    },
+    {
+     "sel": "button#worlds-nav",
+     "kind": "граница",
+     "reason": "видимой-границы-нет"
+    },
+    {
+     "sel": "div#nav-drawer > div.nav-block.nav-block--app:nth-of-type(3) > button.nav:nth-of-type(7)",
+     "kind": "граница",
+     "reason": "видимой-границы-нет"
+    },
+    {
+     "sel": "div#nav-drawer > div.nav-block.nav-block--app:nth-of-type(3) > button.nav:nth-of-type(8)",
+     "kind": "граница",
+     "reason": "видимой-границы-нет"
+    },
+    {
+     "sel": "div#nav-drawer > div.nav-block.nav-block--app:nth-of-type(3) > button.nav:nth-of-type(9)",
+     "kind": "граница",
+     "reason": "видимой-границы-нет"
+    },
+    {
+     "sel": "section#welcome > div.start__feed:nth-of-type(2) > div.start__stories > button.start__continue:nth-of-type(1)",
+     "kind": "граница",
+     "reason": "видимой-границы-нет"
+    }
+   ],
+   "contrastSkippedCount": 16,
+   "interactiveVisible": 22,
+   "clipped": [],
+   "clippedCount": 0,
+   "colorsOutsideCount": 0,
+   "colorsOutside": [],
+   "drawer": {
+    "h": 548,
+    "top": 56,
+    "rows": 10,
+    "blocks": [
+     "Приложение"
+    ],
+    "scrollTop": 0,
+    "scroll": 0,
+    "content": 548
+   },
+   "state": "menu-app",
+   "theme": "dark",
+   "width": 1440,
+   "height": 900,
+   "debug": {
+    "bodyClass": "effects campaign-open tabletop",
+    "burger": false,
+    "aside": {
+     "x": 0,
+     "y": 0,
+     "w": 1440,
+     "h": 56
+    },
+    "drawer": {
+     "x": 0,
+     "y": 56,
+     "w": 320,
+     "h": 548
+    }
+   },
+   "file": "n18pc-menu-app-dark-1440.png",
+   "jsErrors": []
+  }
+ ]
+}

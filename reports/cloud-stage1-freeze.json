@@ -1,0 +1,49 @@
+{
+  "status": "source-frozen",
+  "date": "2026-10-18",
+  "scope": "Stage 1 only",
+  "tests": "123 passed",
+  "live_paid_calls": 0,
+  "files": [
+    {
+      "path": "solo/cloud.py",
+      "sha256": "baddc77c6662261619e833d8991f4e9699cbfafc697a36ec6e59b979f117b35c",
+      "bytes": 24667
+    },
+    {
+      "path": "solo/cloud_cost.py",
+      "sha256": "591f95f3a449f6e69d865ede20f29122b7f63795d86f8418f526d4a1842fd664",
+      "bytes": 19852
+    },
+    {
+      "path": "solo/cloud_context.py",
+      "sha256": "525cd078dad5630794751ac0b10197133ce8a5e64aa17e63dc4ba0d4eeaf3a9d",
+      "bytes": 3991
+    },
+    {
+      "path": "solo/cloud_settings.py",
+      "sha256": "bfcf6626e67f4dfbee2ad193cab82f5697aab44d234411ffed9e06f4ea74e312",
+      "bytes": 9385
+    },
+    {
+      "path": "solo/cloud_setup.py",
+      "sha256": "62035cf7e87c043c57a946308615e295e3798699ce26df50f8d0ac97864d6643",
+      "bytes": 7755
+    },
+    {
+      "path": "tests/test_cloud_accounting.py",
+      "sha256": "e1df8c49b8d067a527c5687696e90f00655bfebc6aeb39116ef146ac44df5db3",
+      "bytes": 20330
+    },
+    {
+      "path": "tests/test_cloud_stage1.py",
+      "sha256": "498169ab3286e7b9de154055a500ab4cff0f172de25eacb6bd05009dd9374169",
+      "bytes": 9810
+    },
+    {
+      "path": "reports/CLOUD_STAGE1_2026-10-18.md",
+      "sha256": "a407ea965064b0731bc27f3f91123615c65c691a83d9b9f5b7663fa55e504b4d",
+      "bytes": 7503
+    }
+  ]
+}

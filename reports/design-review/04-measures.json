@@ -1,0 +1,923 @@
+{
+ "meta": {
+  "commit": "64a57ad0",
+  "frames": 12,
+  "base": "http://127.0.0.1:56173",
+  "data_dir": "/home/hermes/projects/SoloRealmsAI-Nat20/runtime/n11-audit9",
+  "tag": "04"
+ },
+ "frames": [
+  {
+   "viewport": {
+    "w": 375,
+    "h": 812,
+    "dpr": 1
+   },
+   "scrollWidth": 375,
+   "scrollHeight": 812,
+   "overflowX": 0,
+   "activeView": "creation",
+   "campaignOpen": true,
+   "kbOpen": false,
+   "textElements": 11,
+   "fontMin": 16,
+   "smallText": [],
+   "fontDistinct": 3,
+   "fontSizes": {
+    "16": 9,
+    "22": 1,
+    "30": 1
+   },
+   "tapCount": 8,
+   "tapsBad": [],
+   "tapsBadCount": 0,
+   "contrastBad": [],
+   "contrastBadCount": 0,
+   "contrastMin": null,
+   "interactiveVisible": 8,
+   "clipped": [],
+   "clippedCount": 0,
+   "colorsOutsideCount": 0,
+   "colorsOutside": [],
+   "drawer": null,
+   "state": "new",
+   "theme": "dark",
+   "width": 375,
+   "height": 812,
+   "file": "04-new-dark-375.png",
+   "jsErrors": []
+  },
+  {
+   "viewport": {
+    "w": 375,
+    "h": 812,
+    "dpr": 1
+   },
+   "scrollWidth": 375,
+   "scrollHeight": 812,
+   "overflowX": 0,
+   "activeView": "creation",
+   "campaignOpen": true,
+   "kbOpen": false,
+   "textElements": 23,
+   "fontMin": 16,
+   "smallText": [],
+   "fontDistinct": 2,
+   "fontSizes": {
+    "16": 22,
+    "22": 1
+   },
+   "tapCount": 7,
+   "tapsBad": [],
+   "tapsBadCount": 0,
+   "contrastBad": [],
+   "contrastBadCount": 0,
+   "contrastMin": null,
+   "interactiveVisible": 7,
+   "clipped": [],
+   "clippedCount": 0,
+   "colorsOutsideCount": 0,
+   "colorsOutside": [],
+   "drawer": null,
+   "state": "prep",
+   "theme": "dark",
+   "width": 375,
+   "height": 812,
+   "prep": {
+    "view": true
+   },
+   "reached": true,
+   "prep_panel": {
+    "text": "Разбираю книгу на части\n\n1:36\n\nЧтение\n→\nРазбор\n→\nСборка\n\nСейчас\n\nИщу локации на карте…\n\nЧасть 5 из 5 · осталось ≈3:00 · не вышло: 1\n\nОдин блок не разобрался — остальные части готовы\n\nБлок 4 (стр. 1): поле name пришло числом вместо строки",
+    "title": "Разбираю книгу на части",
+    "caption": "Ищу локации на карте…",
+    "now": "Сейчас",
+    "steps": "Чтение → Разбор → Сборка",
+    "barValue": "60",
+    "barText": "3 из 5 частей",
+    "fillWidth": "190.188px",
+    "failed": true,
+    "failedRows": 1,
+    "journalOpen": false
+   },
+   "file": "04-prep-dark-375.png",
+   "jsErrors": []
+  },
+  {
+   "viewport": {
+    "w": 375,
+    "h": 812,
+    "dpr": 1
+   },
+   "scrollWidth": 375,
+   "scrollHeight": 812,
+   "overflowX": 0,
+   "activeView": "creation",
+   "campaignOpen": true,
+   "kbOpen": false,
+   "textElements": 26,
+   "fontMin": 14,
+   "smallText": [],
+   "fontDistinct": 3,
+   "fontSizes": {
+    "14": 1,
+    "16": 24,
+    "22": 1
+   },
+   "tapCount": 8,
+   "tapsBad": [],
+   "tapsBadCount": 0,
+   "contrastBad": [],
+   "contrastBadCount": 0,
+   "contrastMin": null,
+   "interactiveVisible": 8,
+   "clipped": [],
+   "clippedCount": 0,
+   "colorsOutsideCount": 0,
+   "colorsOutside": [],
+   "drawer": null,
+   "state": "prep-log",
+   "theme": "dark",
+   "width": 375,
+   "height": 812,
+   "prep": {
+    "view": true
+   },
+   "reached": true,
+   "prep_log": {
+    "details": true,
+    "rows": 1
+   },
+   "prep_panel": {
+    "text": "Разбираю книгу на части\n\n1:37\n\nЧтение\n→\nРазбор\n→\nСборка\n\nСейчас\n\nИщу локации на карте…\n\nЧасть 5 из 5 · осталось ≈3:00 · не вышло: 1\n\nОдин блок не разобрался — остальные части готовы\n\nБлок 4 (стр. 1): поле name пришло числом вместо строки",
+    "title": "Разбираю книгу на части",
+    "caption": "Ищу локации на карте…",
+    "now": "Сейчас",
+    "steps": "Чтение → Разбор → Сборка",
+    "barValue": "60",
+    "barText": "3 из 5 частей",
+    "fillWidth": "190.188px",
+    "failed": true,
+    "failedRows": 1,
+    "journalOpen": true
+   },
+   "file": "04-prep-log-dark-375.png",
+   "jsErrors": []
+  },
+  {
+   "viewport": {
+    "w": 375,
+    "h": 812,
+    "dpr": 1
+   },
+   "scrollWidth": 375,
+   "scrollHeight": 812,
+   "overflowX": 0,
+   "activeView": "creation",
+   "campaignOpen": true,
+   "kbOpen": false,
+   "textElements": 11,
+   "fontMin": 16,
+   "smallText": [],
+   "fontDistinct": 3,
+   "fontSizes": {
+    "16": 9,
+    "22": 1,
+    "30": 1
+   },
+   "tapCount": 8,
+   "tapsBad": [],
+   "tapsBadCount": 0,
+   "contrastBad": [],
+   "contrastBadCount": 0,
+   "contrastMin": null,
+   "interactiveVisible": 8,
+   "clipped": [],
+   "clippedCount": 0,
+   "colorsOutsideCount": 0,
+   "colorsOutside": [],
+   "drawer": null,
+   "state": "new",
+   "theme": "light",
+   "width": 375,
+   "height": 812,
+   "file": "04-new-light-375.png",
+   "jsErrors": []
+  },
+  {
+   "viewport": {
+    "w": 375,
+    "h": 812,
+    "dpr": 1
+   },
+   "scrollWidth": 375,
+   "scrollHeight": 812,
+   "overflowX": 0,
+   "activeView": "creation",
+   "campaignOpen": true,
+   "kbOpen": false,
+   "textElements": 23,
+   "fontMin": 16,
+   "smallText": [],
+   "fontDistinct": 2,
+   "fontSizes": {
+    "16": 22,
+    "22": 1
+   },
+   "tapCount": 7,
+   "tapsBad": [],
+   "tapsBadCount": 0,
+   "contrastBad": [],
+   "contrastBadCount": 0,
+   "contrastMin": null,
+   "interactiveVisible": 7,
+   "clipped": [],
+   "clippedCount": 0,
+   "colorsOutsideCount": 0,
+   "colorsOutside": [],
+   "drawer": null,
+   "state": "prep",
+   "theme": "light",
+   "width": 375,
+   "height": 812,
+   "prep": {
+    "view": true
+   },
+   "reached": true,
+   "prep_panel": {
+    "text": "Разбираю книгу на части\n\n1:36\n\nЧтение\n→\nРазбор\n→\nСборка\n\nСейчас\n\nИщу локации на карте…\n\nЧасть 5 из 5 · осталось ≈3:00 · не вышло: 1\n\nОдин блок не разобрался — остальные части готовы\n\nБлок 4 (стр. 1): поле name пришло числом вместо строки",
+    "title": "Разбираю книгу на части",
+    "caption": "Ищу локации на карте…",
+    "now": "Сейчас",
+    "steps": "Чтение → Разбор → Сборка",
+    "barValue": "60",
+    "barText": "3 из 5 частей",
+    "fillWidth": "190.188px",
+    "failed": true,
+    "failedRows": 1,
+    "journalOpen": false
+   },
+   "file": "04-prep-light-375.png",
+   "jsErrors": []
+  },
+  {
+   "viewport": {
+    "w": 375,
+    "h": 812,
+    "dpr": 1
+   },
+   "scrollWidth": 375,
+   "scrollHeight": 812,
+   "overflowX": 0,
+   "activeView": "creation",
+   "campaignOpen": true,
+   "kbOpen": false,
+   "textElements": 26,
+   "fontMin": 14,
+   "smallText": [],
+   "fontDistinct": 3,
+   "fontSizes": {
+    "14": 1,
+    "16": 24,
+    "22": 1
+   },
+   "tapCount": 8,
+   "tapsBad": [],
+   "tapsBadCount": 0,
+   "contrastBad": [],
+   "contrastBadCount": 0,
+   "contrastMin": null,
+   "interactiveVisible": 8,
+   "clipped": [],
+   "clippedCount": 0,
+   "colorsOutsideCount": 0,
+   "colorsOutside": [],
+   "drawer": null,
+   "state": "prep-log",
+   "theme": "light",
+   "width": 375,
+   "height": 812,
+   "prep": {
+    "view": true
+   },
+   "reached": true,
+   "prep_log": {
+    "details": true,
+    "rows": 1
+   },
+   "prep_panel": {
+    "text": "Разбираю книгу на части\n\n1:37\n\nЧтение\n→\nРазбор\n→\nСборка\n\nСейчас\n\nИщу локации на карте…\n\nЧасть 5 из 5 · осталось ≈3:00 · не вышло: 1\n\nОдин блок не разобрался — остальные части готовы\n\nБлок 4 (стр. 1): поле name пришло числом вместо строки",
+    "title": "Разбираю книгу на части",
+    "caption": "Ищу локации на карте…",
+    "now": "Сейчас",
+    "steps": "Чтение → Разбор → Сборка",
+    "barValue": "60",
+    "barText": "3 из 5 частей",
+    "fillWidth": "190.188px",
+    "failed": true,
+    "failedRows": 1,
+    "journalOpen": true
+   },
+   "file": "04-prep-log-light-375.png",
+   "jsErrors": []
+  },
+  {
+   "viewport": {
+    "w": 1440,
+    "h": 900,
+    "dpr": 1
+   },
+   "scrollWidth": 1440,
+   "scrollHeight": 1102,
+   "overflowX": 0,
+   "activeView": "creation",
+   "campaignOpen": true,
+   "kbOpen": false,
+   "textElements": 24,
+   "fontMin": 14,
+   "smallText": [],
+   "fontDistinct": 4,
+   "fontSizes": {
+    "14": 12,
+    "16": 9,
+    "22": 2,
+    "30": 1
+   },
+   "tapCount": 13,
+   "tapsBad": [
+    {
+     "sel": "html > body.effects.campaign-open > aside.sidebar > a.brand",
+     "label": "Solo Realms AI",
+     "w": 115.6,
+     "h": 21
+    },
+    {
+     "sel": "body.effects.campaign-open > aside.sidebar > nav > div.nav-bar:nth-of-type(1) > button.nav:nth-of-type(1)",
+     "label": "BUTTON",
+     "w": 68,
+     "h": 38
+    },
+    {
+     "sel": "body.effects.campaign-open > aside.sidebar > nav > div.nav-bar:nth-of-type(1) > button.nav:nth-of-type(2)",
+     "label": "BUTTON",
+     "w": 111,
+     "h": 38
+    },
+    {
+     "sel": "body.effects.campaign-open > aside.sidebar > nav > div.nav-bar:nth-of-type(1) > button.nav:nth-of-type(3)",
+     "label": "BUTTON",
+     "w": 113,
+     "h": 38
+    },
+    {
+     "sel": "body.effects.campaign-open > aside.sidebar > nav > div.nav-bar:nth-of-type(1) > button.nav:nth-of-type(4)",
+     "label": "BUTTON",
+     "w": 90,
+     "h": 38
+    },
+    {
+     "sel": "button#nav-more",
+     "label": "Ещё",
+     "w": 59,
+     "h": 36
+    },
+    {
+     "sel": "html > body.effects.campaign-open > main > header > button.themetoggle:nth-of-type(1)",
+     "label": "Светлая тема",
+     "w": 34,
+     "h": 34
+    },
+    {
+     "sel": "section#creation-mock-notice > div.button-row > button",
+     "label": "Открыть готовое испытание",
+     "w": 243,
+     "h": 43
+    }
+   ],
+   "tapsBadCount": 8,
+   "contrastBad": [],
+   "contrastBadCount": 0,
+   "contrastMin": null,
+   "interactiveVisible": 13,
+   "clipped": [],
+   "clippedCount": 0,
+   "colorsOutsideCount": 0,
+   "colorsOutside": [],
+   "drawer": null,
+   "state": "new",
+   "theme": "dark",
+   "width": 1440,
+   "height": 900,
+   "file": "04-new-dark-1440.png",
+   "jsErrors": []
+  },
+  {
+   "viewport": {
+    "w": 1440,
+    "h": 900,
+    "dpr": 1
+   },
+   "scrollWidth": 1440,
+   "scrollHeight": 1628,
+   "overflowX": 0,
+   "activeView": "creation",
+   "campaignOpen": true,
+   "kbOpen": false,
+   "textElements": 35,
+   "fontMin": 14,
+   "smallText": [],
+   "fontDistinct": 6,
+   "fontSizes": {
+    "14": 9,
+    "15": 4,
+    "16": 13,
+    "22": 1,
+    "30": 1,
+    "15.2": 7
+   },
+   "tapCount": 12,
+   "tapsBad": [
+    {
+     "sel": "html > body.effects.campaign-open > aside.sidebar > a.brand",
+     "label": "Solo Realms AI",
+     "w": 115.6,
+     "h": 21
+    },
+    {
+     "sel": "body.effects.campaign-open > aside.sidebar > nav > div.nav-bar:nth-of-type(1) > button.nav:nth-of-type(1)",
+     "label": "BUTTON",
+     "w": 68,
+     "h": 38
+    },
+    {
+     "sel": "body.effects.campaign-open > aside.sidebar > nav > div.nav-bar:nth-of-type(1) > button.nav:nth-of-type(2)",
+     "label": "BUTTON",
+     "w": 111,
+     "h": 38
+    },
+    {
+     "sel": "body.effects.campaign-open > aside.sidebar > nav > div.nav-bar:nth-of-type(1) > button.nav:nth-of-type(3)",
+     "label": "BUTTON",
+     "w": 113,
+     "h": 38
+    },
+    {
+     "sel": "body.effects.campaign-open > aside.sidebar > nav > div.nav-bar:nth-of-type(1) > button.nav:nth-of-type(4)",
+     "label": "BUTTON",
+     "w": 90,
+     "h": 38
+    },
+    {
+     "sel": "button#nav-more",
+     "label": "Ещё",
+     "w": 59,
+     "h": 36
+    },
+    {
+     "sel": "section#creation-mock-notice > div.button-row > button",
+     "label": "Открыть готовое испытание",
+     "w": 243,
+     "h": 43
+    }
+   ],
+   "tapsBadCount": 7,
+   "contrastBad": [],
+   "contrastBadCount": 0,
+   "contrastMin": null,
+   "interactiveVisible": 12,
+   "clipped": [],
+   "clippedCount": 0,
+   "colorsOutsideCount": 0,
+   "colorsOutside": [],
+   "drawer": null,
+   "state": "prep",
+   "theme": "dark",
+   "width": 1440,
+   "height": 900,
+   "prep": {
+    "view": true
+   },
+   "reached": true,
+   "prep_panel": {
+    "text": "Разбираю книгу на части\n\n1:36\n\nЧтение\n→\nРазбор\n→\nСборка\n\nСейчас\n\nИщу локации на карте…\n\nЧасть 5 из 5 · осталось ≈3:00 · не вышло: 1\n\nОдин блок не разобрался — остальные части готовы\n\nБлок 4 (стр. 1): поле name пришло числом вместо строки",
+    "title": "Разбираю книгу на части",
+    "caption": "Ищу локации на карте…",
+    "now": "Сейчас",
+    "steps": "Чтение → Разбор → Сборка",
+    "barValue": "60",
+    "barText": "3 из 5 частей",
+    "fillWidth": "375.594px",
+    "failed": true,
+    "failedRows": 1,
+    "journalOpen": false
+   },
+   "file": "04-prep-dark-1440.png",
+   "jsErrors": []
+  },
+  {
+   "viewport": {
+    "w": 1440,
+    "h": 900,
+    "dpr": 1
+   },
+   "scrollWidth": 1440,
+   "scrollHeight": 1666,
+   "overflowX": 0,
+   "activeView": "creation",
+   "campaignOpen": true,
+   "kbOpen": false,
+   "textElements": 33,
+   "fontMin": 14,
+   "smallText": [],
+   "fontDistinct": 5,
+   "fontSizes": {
+    "14": 8,
+    "15": 4,
+    "16": 13,
+    "22": 1,
+    "15.2": 7
+   },
+   "tapCount": 13,
+   "tapsBad": [
+    {
+     "sel": "html > body.effects.campaign-open > aside.sidebar > a.brand",
+     "label": "Solo Realms AI",
+     "w": 115.6,
+     "h": 21
+    },
+    {
+     "sel": "body.effects.campaign-open > aside.sidebar > nav > div.nav-bar:nth-of-type(1) > button.nav:nth-of-type(1)",
+     "label": "BUTTON",
+     "w": 68,
+     "h": 38
+    },
+    {
+     "sel": "body.effects.campaign-open > aside.sidebar > nav > div.nav-bar:nth-of-type(1) > button.nav:nth-of-type(2)",
+     "label": "BUTTON",
+     "w": 111,
+     "h": 38
+    },
+    {
+     "sel": "body.effects.campaign-open > aside.sidebar > nav > div.nav-bar:nth-of-type(1) > button.nav:nth-of-type(3)",
+     "label": "BUTTON",
+     "w": 113,
+     "h": 38
+    },
+    {
+     "sel": "body.effects.campaign-open > aside.sidebar > nav > div.nav-bar:nth-of-type(1) > button.nav:nth-of-type(4)",
+     "label": "BUTTON",
+     "w": 90,
+     "h": 38
+    },
+    {
+     "sel": "button#nav-more",
+     "label": "Ещё",
+     "w": 59,
+     "h": 36
+    },
+    {
+     "sel": "section#creation-mock-notice > div.button-row > button",
+     "label": "Открыть готовое испытание",
+     "w": 243,
+     "h": 43
+    }
+   ],
+   "tapsBadCount": 7,
+   "contrastBad": [],
+   "contrastBadCount": 0,
+   "contrastMin": null,
+   "interactiveVisible": 13,
+   "clipped": [],
+   "clippedCount": 0,
+   "colorsOutsideCount": 0,
+   "colorsOutside": [],
+   "drawer": null,
+   "state": "prep-log",
+   "theme": "dark",
+   "width": 1440,
+   "height": 900,
+   "prep": {
+    "view": true
+   },
+   "reached": true,
+   "prep_log": {
+    "details": true,
+    "rows": 1
+   },
+   "prep_panel": {
+    "text": "Разбираю книгу на части\n\n1:37\n\nЧтение\n→\nРазбор\n→\nСборка\n\nСейчас\n\nИщу локации на карте…\n\nЧасть 5 из 5 · осталось ≈3:00 · не вышло: 1\n\nОдин блок не разобрался — остальные части готовы\n\nБлок 4 (стр. 1): поле name пришло числом вместо строки",
+    "title": "Разбираю книгу на части",
+    "caption": "Ищу локации на карте…",
+    "now": "Сейчас",
+    "steps": "Чтение → Разбор → Сборка",
+    "barValue": "60",
+    "barText": "3 из 5 частей",
+    "fillWidth": "375.594px",
+    "failed": true,
+    "failedRows": 1,
+    "journalOpen": true
+   },
+   "file": "04-prep-log-dark-1440.png",
+   "jsErrors": []
+  },
+  {
+   "viewport": {
+    "w": 1440,
+    "h": 900,
+    "dpr": 1
+   },
+   "scrollWidth": 1440,
+   "scrollHeight": 1102,
+   "overflowX": 0,
+   "activeView": "creation",
+   "campaignOpen": true,
+   "kbOpen": false,
+   "textElements": 24,
+   "fontMin": 14,
+   "smallText": [],
+   "fontDistinct": 4,
+   "fontSizes": {
+    "14": 12,
+    "16": 9,
+    "22": 2,
+    "30": 1
+   },
+   "tapCount": 13,
+   "tapsBad": [
+    {
+     "sel": "html > body.effects.campaign-open > aside.sidebar > a.brand",
+     "label": "Solo Realms AI",
+     "w": 115.6,
+     "h": 21
+    },
+    {
+     "sel": "body.effects.campaign-open > aside.sidebar > nav > div.nav-bar:nth-of-type(1) > button.nav:nth-of-type(1)",
+     "label": "BUTTON",
+     "w": 68,
+     "h": 38
+    },
+    {
+     "sel": "body.effects.campaign-open > aside.sidebar > nav > div.nav-bar:nth-of-type(1) > button.nav:nth-of-type(2)",
+     "label": "BUTTON",
+     "w": 111,
+     "h": 38
+    },
+    {
+     "sel": "body.effects.campaign-open > aside.sidebar > nav > div.nav-bar:nth-of-type(1) > button.nav:nth-of-type(3)",
+     "label": "BUTTON",
+     "w": 113,
+     "h": 38
+    },
+    {
+     "sel": "body.effects.campaign-open > aside.sidebar > nav > div.nav-bar:nth-of-type(1) > button.nav:nth-of-type(4)",
+     "label": "BUTTON",
+     "w": 90,
+     "h": 38
+    },
+    {
+     "sel": "button#nav-more",
+     "label": "Ещё",
+     "w": 59,
+     "h": 36
+    },
+    {
+     "sel": "html > body.effects.campaign-open > main > header > button.themetoggle:nth-of-type(1)",
+     "label": "Тёмная тема",
+     "w": 34,
+     "h": 34
+    },
+    {
+     "sel": "section#creation-mock-notice > div.button-row > button",
+     "label": "Открыть готовое испытание",
+     "w": 243,
+     "h": 43
+    }
+   ],
+   "tapsBadCount": 8,
+   "contrastBad": [],
+   "contrastBadCount": 0,
+   "contrastMin": null,
+   "interactiveVisible": 13,
+   "clipped": [],
+   "clippedCount": 0,
+   "colorsOutsideCount": 0,
+   "colorsOutside": [],
+   "drawer": null,
+   "state": "new",
+   "theme": "light",
+   "width": 1440,
+   "height": 900,
+   "file": "04-new-light-1440.png",
+   "jsErrors": []
+  },
+  {
+   "viewport": {
+    "w": 1440,
+    "h": 900,
+    "dpr": 1
+   },
+   "scrollWidth": 1440,
+   "scrollHeight": 1628,
+   "overflowX": 0,
+   "activeView": "creation",
+   "campaignOpen": true,
+   "kbOpen": false,
+   "textElements": 35,
+   "fontMin": 14,
+   "smallText": [],
+   "fontDistinct": 6,
+   "fontSizes": {
+    "14": 9,
+    "15": 4,
+    "16": 13,
+    "22": 1,
+    "30": 1,
+    "15.2": 7
+   },
+   "tapCount": 12,
+   "tapsBad": [
+    {
+     "sel": "html > body.effects.tabletop > aside.sidebar > a.brand",
+     "label": "Solo Realms AI",
+     "w": 115.6,
+     "h": 21
+    },
+    {
+     "sel": "body.effects.tabletop > aside.sidebar > nav > div.nav-bar:nth-of-type(1) > button.nav:nth-of-type(1)",
+     "label": "BUTTON",
+     "w": 68,
+     "h": 38
+    },
+    {
+     "sel": "body.effects.tabletop > aside.sidebar > nav > div.nav-bar:nth-of-type(1) > button.nav:nth-of-type(2)",
+     "label": "BUTTON",
+     "w": 111,
+     "h": 38
+    },
+    {
+     "sel": "body.effects.tabletop > aside.sidebar > nav > div.nav-bar:nth-of-type(1) > button.nav:nth-of-type(3)",
+     "label": "BUTTON",
+     "w": 113,
+     "h": 38
+    },
+    {
+     "sel": "body.effects.tabletop > aside.sidebar > nav > div.nav-bar:nth-of-type(1) > button.nav:nth-of-type(4)",
+     "label": "BUTTON",
+     "w": 90,
+     "h": 38
+    },
+    {
+     "sel": "button#nav-more",
+     "label": "Ещё",
+     "w": 59,
+     "h": 36
+    },
+    {
+     "sel": "section#creation-mock-notice > div.button-row > button",
+     "label": "Открыть готовое испытание",
+     "w": 243,
+     "h": 43
+    }
+   ],
+   "tapsBadCount": 7,
+   "contrastBad": [],
+   "contrastBadCount": 0,
+   "contrastMin": null,
+   "interactiveVisible": 12,
+   "clipped": [],
+   "clippedCount": 0,
+   "colorsOutsideCount": 0,
+   "colorsOutside": [],
+   "drawer": null,
+   "state": "prep",
+   "theme": "light",
+   "width": 1440,
+   "height": 900,
+   "prep": {
+    "view": true
+   },
+   "reached": true,
+   "prep_panel": {
+    "text": "Разбираю книгу на части\n\n1:36\n\nЧтение\n→\nРазбор\n→\nСборка\n\nСейчас\n\nИщу локации на карте…\n\nЧасть 5 из 5 · осталось ≈3:00 · не вышло: 1\n\nОдин блок не разобрался — остальные части готовы\n\nБлок 4 (стр. 1): поле name пришло числом вместо строки",
+    "title": "Разбираю книгу на части",
+    "caption": "Ищу локации на карте…",
+    "now": "Сейчас",
+    "steps": "Чтение → Разбор → Сборка",
+    "barValue": "60",
+    "barText": "3 из 5 частей",
+    "fillWidth": "375.594px",
+    "failed": true,
+    "failedRows": 1,
+    "journalOpen": false
+   },
+   "file": "04-prep-light-1440.png",
+   "jsErrors": []
+  },
+  {
+   "viewport": {
+    "w": 1440,
+    "h": 900,
+    "dpr": 1
+   },
+   "scrollWidth": 1440,
+   "scrollHeight": 1666,
+   "overflowX": 0,
+   "activeView": "creation",
+   "campaignOpen": true,
+   "kbOpen": false,
+   "textElements": 33,
+   "fontMin": 14,
+   "smallText": [],
+   "fontDistinct": 5,
+   "fontSizes": {
+    "14": 8,
+    "15": 4,
+    "16": 13,
+    "22": 1,
+    "15.2": 7
+   },
+   "tapCount": 13,
+   "tapsBad": [
+    {
+     "sel": "html > body.effects.campaign-open > aside.sidebar > a.brand",
+     "label": "Solo Realms AI",
+     "w": 115.6,
+     "h": 21
+    },
+    {
+     "sel": "body.effects.campaign-open > aside.sidebar > nav > div.nav-bar:nth-of-type(1) > button.nav:nth-of-type(1)",
+     "label": "BUTTON",
+     "w": 68,
+     "h": 38
+    },
+    {
+     "sel": "body.effects.campaign-open > aside.sidebar > nav > div.nav-bar:nth-of-type(1) > button.nav:nth-of-type(2)",
+     "label": "BUTTON",
+     "w": 111,
+     "h": 38
+    },
+    {
+     "sel": "body.effects.campaign-open > aside.sidebar > nav > div.nav-bar:nth-of-type(1) > button.nav:nth-of-type(3)",
+     "label": "BUTTON",
+     "w": 113,
+     "h": 38
+    },
+    {
+     "sel": "body.effects.campaign-open > aside.sidebar > nav > div.nav-bar:nth-of-type(1) > button.nav:nth-of-type(4)",
+     "label": "BUTTON",
+     "w": 90,
+     "h": 38
+    },
+    {
+     "sel": "button#nav-more",
+     "label": "Ещё",
+     "w": 59,
+     "h": 36
+    },
+    {
+     "sel": "section#creation-mock-notice > div.button-row > button",
+     "label": "Открыть готовое испытание",
+     "w": 243,
+     "h": 43
+    }
+   ],
+   "tapsBadCount": 7,
+   "contrastBad": [],
+   "contrastBadCount": 0,
+   "contrastMin": null,
+   "interactiveVisible": 13,
+   "clipped": [],
+   "clippedCount": 0,
+   "colorsOutsideCount": 0,
+   "colorsOutside": [],
+   "drawer": null,
+   "state": "prep-log",
+   "theme": "light",
+   "width": 1440,
+   "height": 900,
+   "prep": {
+    "view": true
+   },
+   "reached": true,
+   "prep_log": {
+    "details": true,
+    "rows": 1
+   },
+   "prep_panel": {
+    "text": "Разбираю книгу на части\n\n1:37\n\nЧтение\n→\nРазбор\n→\nСборка\n\nСейчас\n\nИщу локации на карте…\n\nЧасть 5 из 5 · осталось ≈3:00 · не вышло: 1\n\nОдин блок не разобрался — остальные части готовы\n\nБлок 4 (стр. 1): поле name пришло числом вместо строки",
+    "title": "Разбираю книгу на части",
+    "caption": "Ищу локации на карте…",
+    "now": "Сейчас",
+    "steps": "Чтение → Разбор → Сборка",
+    "barValue": "60",
+    "barText": "3 из 5 частей",
+    "fillWidth": "375.594px",
+    "failed": true,
+    "failedRows": 1,
+    "journalOpen": true
+   },
+   "file": "04-prep-log-light-1440.png",
+   "jsErrors": []
+  }
+ ]
+}

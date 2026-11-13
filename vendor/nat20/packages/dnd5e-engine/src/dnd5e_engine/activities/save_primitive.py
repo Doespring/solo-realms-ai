@@ -1,0 +1,376 @@
+"""The single saving-throw primitive shared by the ``save`` kind and weapon mastery.
+
+A saving throw is one concept: short-circuit to failure if the target auto-fails
+this ability (``ctx.passive_save_auto_fail`` — no d20 drawn), else roll a natural
+d20 (honoring the ``force_save_d20`` test seam for the first target only, plus
+target-side advantage/disadvantage from ``ctx.passive_save_adv`` /
+``passive_save_dis``), add the target's RESOLVED per-ability save modifier off
+``ctx.passive_save_modifiers`` and the rolled ``ctx.passive_save_bonus`` dice
+(Bless/Bane), and compare ``total >= dc``. Both ``activities/save.py`` (per-target
+loop) and ``activities/mastery.py`` (a single topple Con save) used to
+re-implement this independently; this module owns it once.
+
+The caller still constructs and emits ``SaveRolled`` because the two sites carry
+different surrounding context — ``save.py`` emits per target inside its loop with
+the activity's save ability, while ``mastery.py`` emits a single ``con`` save
+before applying ``prone``. The shared piece is the ROLL + MODIFIER + COMPARISON,
+not the event shape, so the primitive returns a ``SaveRoll`` envelope (total,
+success, kept natural, flat modifier, advantage sources) and the caller decides
+what event to emit.
+
+MIRRORS, does not import from, ``effects/save.py``:
+
+* the natural d20 honors ``ctx.variables["force_save_d20"]`` for the FIRST target
+  (``target_index == 0``) only — every other target rolls live off ``ctx.rng`` so
+  a forced value never silently reuses one kept d20 across a multi-target save.
+* the target modifier is the RESOLVED per-ability integer off the per-target
+  sidecar (``ctx.passive_save_modifiers[entity_id][ability]``), NOT rebuilt from
+  ability score + proficiency; an absent target / ability contributes +0.
+* auto-fail / advantage / disadvantage / save-bonus are sourced from the same
+  per-target sidecar shape the legacy evaluator path read off its effect store; empty
+  sidecars reproduce the prior single-d20 + per-ability-mod behavior exactly.
+"""
+
+from __future__ import annotations
+
+from dataclasses import dataclass
+from typing import TYPE_CHECKING, Final
+
+import d20
+from dnd5e_srd_data.schema.monster import MonsterTraitMechanic
+
+from dnd5e_engine.activities.d20 import AdvantageSources, D20Result, roll_d20_test
+from dnd5e_engine.activities.dice import roll_expr
+from dnd5e_engine.events import AdvantageMode, AdvantageSource
+from dnd5e_engine.spatial import cover_bonus
+
+if TYPE_CHECKING:
+    from dnd5e_engine.types.combat import Combatant
+
+    from .context import ActivityResolutionContext
+
+# Test-determinism seam for the natural save d20 (our own code; effects/save.py
+# has none and relies on a seeded ctx.rng). Scoped to the first target.
+FORCE_SAVE_D20: Final = "force_save_d20"
+
+
+@dataclass(frozen=True)
+class SaveRoll:
+    """The resolved outcome of one saving throw, with its D20 Test provenance.
+
+    A named envelope rather than a bare tuple, because the callers now
+    forward the roll breakdown onto ``SaveRolled``.
+
+    * ``natural`` is the KEPT die (post advantage/disadvantage), or ``None``
+      when the save auto-failed and no die was drawn.
+    * ``modifier`` is the FLAT, deterministic part of the total — the resolved
+      per-ability save modifier plus any Dexterity cover bonus. It EXCLUDES the
+      ``passive_save_bonus`` dice (SRD §Bless / §Bane), which must be rolled
+      AFTER the d20 to keep the seeded draw ORDER intact; mirrors the
+      ``AttackRolled.modifier`` convention. So ``total == natural + modifier``
+      holds only when no Bless/Bane-style sidecar is active on the target.
+    * ``mode`` is the resolved SRD 5.2 D20 Test mode (advantage and
+      disadvantage cancel to ``"normal"``); an auto-failed save reports
+      ``"normal"`` since no die was rolled.
+    * ``sources`` is the advantage/disadvantage provenance actually applied.
+    """
+
+    total: int
+    succeeded: bool
+    natural: int | None
+    modifier: int
+    mode: AdvantageMode
+    sources: tuple[AdvantageSource, ...]
+    # C18 §Monster action economy — SRD 5.2 Legendary Resistance. Set to the
+    # saving entity's REMAINING pool (post-decrement) iff this save FAILED but
+    # was converted to a success by a pre-armed Legendary Resistance use;
+    # ``None`` otherwise (not armed, or the save succeeded on its own — SRD:
+    # "If the monster fails a saving throw" only). The caller emits
+    # ``SaveRolled`` (already carrying the converted ``succeeded=True``) and
+    # THEN, when this is not ``None``, ``LegendaryResistanceUsed`` — so a host
+    # always sees the roll before the narration of the resistance spend.
+    legendary_resistance_remaining: int | None = None
+
+
+def roll_save(
+    ctx: ActivityResolutionContext,
+    target: Combatant,
+    ability: str,
+    dc: int,
+    *,
+    target_index: int = 0,
+    ignore_cover: bool = False,
+) -> SaveRoll:
+    """Roll ``target``'s ``ability`` save vs ``dc``; return the ``SaveRoll`` envelope.
+
+    Mirrors the full target-side save sidecar the OLD the legacy evaluator path
+    (``effects/save.py``) consumed:
+
+    * ``ctx.passive_save_auto_fail[id]`` — if ``ability`` (upper-case) is listed
+      (Paralyzed / Stunned / Petrified / Unconscious auto-fail STR + DEX), the
+      save short-circuits to a failed ``SaveRoll`` with NO d20 draw, so the
+      deterministic rng stream is not perturbed (matches ``conditions.py`` +
+      ``effects/save.py:_is_auto_fail``).
+    * ``ctx.passive_save_adv[id]`` / ``ctx.passive_save_dis[id]`` — advantage /
+      disadvantage on the d20, fed to the shared ``roll_d20_test`` primitive
+      (F2c); an ability present in both cancels to normal (SRD 5.2 §Advantage
+      and Disadvantage, the legacy evaluator ``reconcile_adv``).
+    * ``ctx.passive_save_modifiers[id][ability]`` — the resolved per-ability
+      integer modifier (absent → +0).
+    * ``ctx.d20_test_penalty[id]`` — SRD 5.2 Exhaustion's flat ``-2 x level``
+      on every D20 Test, folded into the modifier (absent → +0; a flat
+      modifier draws no dice, so an unexhausted stream is unmoved).
+    * ``ctx.passive_save_bonus[id]`` — a signed dice-expression string (Bless
+      ``"+1d4"`` / Bane ``"-1d4"``), rolled through ``ctx.rng`` (absent → +0).
+    * ``ctx.target_cover[id]`` — SRD 5.2 §Cover: half (+2) / three-quarters
+      (+5) cover adds directly to a **Dexterity** save's total (a bonus to
+      the covered creature's OWN roll, not a DC adjustment — "a bonus to AC
+      AND Dexterity saving throws"). Inert for any other ability.
+    * ``ignore_cover`` — SRD 5.2 Sacred Flame: the Half/Three-Quarters bonus is
+      skipped (data field ``SaveBlock.ignore_cover``, C22).
+
+    The natural d20 honors ``ctx.variables["force_save_d20"]`` for the first
+    target (``target_index == 0``) only. Success is ``total >= dc``, subject to
+    the C18 Legendary Resistance conversion below. The caller emits
+    ``SaveRolled`` (the event field set differs per call site). Empty
+    sidecars reproduce the prior single-d20 + per-ability-mod behavior exactly.
+    """
+    if _is_auto_fail(ctx, target, ability):
+        return _convert_if_legendary_resistance_armed(
+            ctx,
+            target,
+            SaveRoll(total=0, succeeded=False, natural=None, modifier=0, mode="normal", sources=()),
+        )
+    modifier = _target_save_modifier(ctx, target, ability)
+    # SRD 5.2 Exhaustion — flat ``-2 x level`` on every D20 Test.
+    modifier += ctx.d20_test_penalty.get(target.entity_id, 0)
+    if ability == "dex" and not ignore_cover:
+        modifier += cover_bonus(ctx.target_cover.get(target.entity_id, "none"))
+    # Draw ORDER matters for determinism: the d20 first, the Bless/Bane bonus
+    # dice after (folding those dice into the primitive's flat modifier would
+    # mean rolling them BEFORE the d20 and would shift the seeded stream).
+    roll = _roll_save_d20(ctx, target, ability, modifier, target_index=target_index)
+    total = roll.total + _passive_save_bonus(ctx, target)
+    total = _redeem_bardic_inspiration(ctx, target, total, dc, roll.kept)
+    return _convert_if_legendary_resistance_armed(
+        ctx,
+        target,
+        SaveRoll(
+            total=total,
+            succeeded=total >= dc,
+            natural=roll.kept,
+            modifier=roll.modifier,
+            mode=roll.mode,
+            sources=roll.sources,
+        ),
+    )
+
+
+def _redeem_bardic_inspiration(
+    ctx: ActivityResolutionContext,
+    target: Combatant,
+    total: int,
+    dc: int,
+    natural: int | None,
+) -> int:
+    """SRD 5.2 Bardic Inspiration: "when the creature fails a D20 Test, the
+    creature can roll the Bardic Inspiration die and add the number rolled to
+    the d20, potentially turning the failure into a success."
+
+    A saving throw forced by another creature's spell is a D20 Test the
+    target rolls, so the die belongs to the TARGET here, not to the caster —
+    ``ctx.granted_dices[target_id]``. Drawn only on a failure the die could
+    turn and only once. SRD 5.2 makes a natural 20/1 automatic only for an
+    ATTACK roll, never for a saving throw (this resolver's success is plain
+    ``total >= dc``), so a natural 1 keeps its die — refusing it there threw
+    away a die the player was entitled to. An auto-failed save
+    (``natural is None`` — Paralyzed/Stunned/Petrified/Unconscious) draws no
+    die, because it is not a roll at all. The
+    attempt is automatic — the intent that caused the save belongs to the
+    caster and carries no field for the target's spend, and a die the holder
+    keeps is worthless on a failure. The roll is recorded in
+    ``ctx.granted_dice_rolls`` so the orchestrator expires the die.
+    """
+    if natural is None or total >= dc:
+        return total
+    ability = ctx.granted_dices.get(target.entity_id)
+    if ability is None:
+        return total
+    draw = roll_expr(ability, ctx.rng)
+    ctx.granted_dice_rolls.setdefault(target.entity_id, []).append(draw)
+    return total + draw
+
+
+def _convert_if_legendary_resistance_armed(
+    ctx: ActivityResolutionContext, target: Combatant, roll: SaveRoll
+) -> SaveRoll:
+    """SRD 5.2 Legendary Resistance — "If the monster fails a saving throw,
+    it can choose to succeed instead."
+
+    A no-op unless ``roll.succeeded`` is ``False`` AND the target has an
+    armed use pending (``ctx.legendary_resistance_armed``) AND at least one
+    use remains (``ctx.legendary_resistances_remaining_by_entity``) — a
+    successful save never spends a use (the SRD sentence only triggers on a
+    FAILURE), and an armed-but-exhausted pool (a resolution that already
+    burned every remaining use earlier in the same hydration payload's
+    lifetime) converts nothing further. Both sidecar dicts are decremented in
+    lockstep here; the orchestrator reconciles the authoritative ``Combatant``
+    pool afterward via ``_sync_legendary_resistance`` (the "read the events"
+    pattern the reaction drains already use). Draws no dice.
+    """
+    if roll.succeeded:
+        return roll
+    entity_id = target.entity_id
+    armed = ctx.legendary_resistance_armed.get(entity_id, 0)
+    remaining = ctx.legendary_resistances_remaining_by_entity.get(entity_id, 0)
+    if armed <= 0 or remaining <= 0:
+        return roll
+    ctx.legendary_resistance_armed[entity_id] = armed - 1
+    new_remaining = remaining - 1
+    ctx.legendary_resistances_remaining_by_entity[entity_id] = new_remaining
+    return SaveRoll(
+        total=roll.total,
+        succeeded=True,
+        natural=roll.natural,
+        modifier=roll.modifier,
+        mode=roll.mode,
+        sources=roll.sources,
+        legendary_resistance_remaining=new_remaining,
+    )
+
+
+def _is_auto_fail(ctx: ActivityResolutionContext, target: Combatant, ability: str) -> bool:
+    """True when ``target`` auto-fails the ``ability`` save (no d20).
+
+    SRD §Conditions: Paralyzed / Stunned / Petrified / Unconscious creatures
+    auto-fail STR + DEX saves. The sidecar lists ability codes UPPER-case
+    (``conditions.py``); normalize the activity's lower-case ability to match.
+    """
+    auto_fail = ctx.passive_save_auto_fail.get(target.entity_id, [])
+    return ability.upper() in auto_fail
+
+
+def _roll_save_d20(
+    ctx: ActivityResolutionContext,
+    target: Combatant,
+    ability: str,
+    modifier: int,
+    *,
+    target_index: int,
+) -> D20Result:
+    """The save's D20 Test, honoring ``variables["force_save_d20"]`` + adv/dis.
+
+    Delegates to the shared ``activities/d20.py::roll_d20_test`` primitive (F2c)
+    so every d20 in the engine resolves advantage in ONE place. ``modifier`` is
+    the flat, deterministic part of the save total (see ``SaveRoll.modifier``).
+
+    Draw discipline is unchanged by the delegation: normal mode consumes exactly
+    one ``rng.randint(1, 20)``, advantage/disadvantage exactly two, a forced
+    value zero.
+
+    The forced value is a TEST seam scoped to the FIRST target only
+    (``target_index == 0``), mirroring ``activities/attack.py``'s ``force_d20``
+    discipline: every other target rolls live off ``ctx.rng`` so a forced value
+    never silently reuses one kept d20 across a multi-target save. A forced value
+    bypasses adv/dis (the test pins the kept natural directly).
+
+    Advantage / disadvantage are sourced from ``ctx.passive_save_adv`` /
+    ``ctx.passive_save_dis`` (UPPER-case ability codes); an ability present in
+    both cancels to normal (SRD 5.2 §Advantage and Disadvantage — the primitive
+    owns that reconciliation now). Both sidecars are typed as the
+    ``"condition:target"`` ``AdvantageSource``: their sole in-engine producer is
+    ``rules/conditions.py::project_passive_save_modifiers`` (SRD §Conditions —
+    Restrained ⇒ disadvantage on DEX saves, and so on), i.e. always a condition
+    on the SAVING creature. ``_fold_active_effect_changes`` never writes these
+    keys, so an ``"effect"`` tag would be wrong for every entry the engine
+    itself hydrates. A host hand-building the sidecar from a non-condition
+    source is the only way to make the tag inexact.
+    """
+    forced = ctx.variables.get(FORCE_SAVE_D20)
+    forced_natural = int(forced) if forced is not None and target_index == 0 else None
+
+    ability_upper = ability.upper()
+    has_adv = ability_upper in ctx.passive_save_adv.get(target.entity_id, [])
+    has_dis = ability_upper in ctx.passive_save_dis.get(target.entity_id, [])
+    # SRD 5.2 stat-block trait "Magic Resistance": "has Advantage on saving
+    # throws against spells and other magical effects". ``base_spell_level``
+    # is set by every spell-cast path (cantrips included, level 0) and is
+    # ``None`` for weapon attacks and features — the engine's "this save is
+    # spell-sourced" signal. Adds a draw ONLY when the trait is present.
+    advantage: tuple[AdvantageSource, ...] = ("condition:target",) if has_adv else ()
+    if (
+        ctx.base_spell_level is not None
+        and MonsterTraitMechanic.MAGIC_RESISTANCE in target.trait_mechanics
+    ):
+        advantage = (*advantage, "trait")
+    sources = AdvantageSources(
+        advantage=advantage,
+        disadvantage=("condition:target",) if has_dis else (),
+    )
+    return roll_d20_test(ctx.rng, modifier, sources, forced_natural=forced_natural)
+
+
+def _passive_save_bonus(ctx: ActivityResolutionContext, target: Combatant) -> int:
+    """Roll ``target``'s ``passive_save_bonus`` dice expression (Bless/Bane).
+
+    Mirrors ``effects/save.py:_roll_passive_save_bonus``: the sidecar carries a
+    signed dice-expression string (``"+1d4"`` Bless, ``"-1d4"`` Bane; stacked
+    sources pre-joined as ``"a + b"``). Evaluated through ``ctx.rng`` so the
+    bonus dice land in the same seed stream as the save d20. Absent / empty → +0.
+    """
+    expr = ctx.passive_save_bonus.get(target.entity_id)
+    if not expr:
+        return 0
+    try:
+        ast = d20.parse(expr)
+    except d20.RollError as exc:
+        raise ValueError(
+            f"Unparseable passive_save_bonus dice expression {expr!r}; the "
+            "orchestrator hydration must emit a d20-parseable signed expression "
+            "(e.g. '-1d4' for Bane, '+1d4' for Bless)."
+        ) from exc
+    return _eval_node(ast.roll, ctx)
+
+
+def _eval_node(node: d20.ast.Node, ctx: ActivityResolutionContext) -> int:
+    """Evaluate a parsed ``d20`` AST against ``ctx.rng`` (deterministic seed).
+
+    Mirrors ``effects/save.py:_eval_node`` — ``d20.roll`` uses the global RNG;
+    walking the AST and drawing each die face via ``ctx.rng`` keeps the bonus in
+    the seeded stream. Supports the literal / dice / unary / binary / parenthetical
+    node set the signed bonus expressions exercise.
+    """
+    if isinstance(node, d20.ast.Literal):
+        return int(node.value)
+    if isinstance(node, d20.ast.Dice):
+        return sum(ctx.rng.randint(1, int(node.size)) for _ in range(int(node.num)))
+    if isinstance(node, d20.ast.UnOp):
+        inner = _eval_node(node.value, ctx)
+        if node.op == "+":
+            return inner
+        if node.op == "-":
+            return -inner
+        raise ValueError(f"Unsupported unary op in passive_save_bonus: {node.op!r}")
+    if isinstance(node, d20.ast.BinOp):
+        left = _eval_node(node.left, ctx)
+        right = _eval_node(node.right, ctx)
+        if node.op == "+":
+            return left + right
+        if node.op == "-":
+            return left - right
+        raise ValueError(f"Unsupported binary op in passive_save_bonus: {node.op!r}")
+    if isinstance(node, d20.ast.Parenthetical):
+        return _eval_node(node.value, ctx)
+    raise ValueError(f"Unsupported node in passive_save_bonus: {type(node).__name__}")
+
+
+def _target_save_modifier(ctx: ActivityResolutionContext, target: Combatant, ability: str) -> int:
+    """The target's resolved save modifier for ``ability``.
+
+    Mirrors ``effects/save.py:_read_save_modifier`` — read the RESOLVED per-
+    ability integer off the per-target sidecar, never rebuilt from ability score
+    + proficiency. ``Combatant`` carries no per-ability save table, so the value
+    comes from ``ctx.passive_save_modifiers[entity_id][ability]``; an absent
+    target or ability contributes +0 (the same 0 fallback the effects path uses).
+    """
+    return ctx.passive_save_modifiers.get(target.entity_id, {}).get(ability, 0)

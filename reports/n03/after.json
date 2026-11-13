@@ -1,0 +1,44 @@
+{
+  "task": "n03 — экран игры",
+  "measured": "2026-11-07, Chromium (CDP), свой инстанс runtime/n03 (mock-модель, порт 42505, experimental=True как Web.cmd)",
+  "protocol": "goto ?accept=N, пауза 6–7 с, document.getAnimations().forEach(a=>a.finish()) — в headless анимация входа не тикает и держит кадр на translateY(4px)",
+  "375": {
+    "documentScrollWidth": 375,
+    "innerWidth": 375,
+    "элементов за правым краем": 0,
+    "visibleInteractive": 6,
+    "visibleBreakdown": "4 служебных (меню 44×44, «Лист» 52×44, поле 266×58, «Сказать» 79×44) + 2 знака броска в сообщениях (44×44, содержимое ленты)",
+    "header": 56,
+    "headerButtons": ["mobile-burger", "sheet-toggle"],
+    "chat": {"w": 375, "h": 684},
+    "dock": {"w": 375, "h": 72},
+    "textarea": {"w": 266, "h": 58, "font": "17px"},
+    "proseFont": "17px",
+    "placeholder": "Что вы делаете?",
+    "themeSwitch": "в шторке, строка «Оформление: тёмное/светлое» (#mobile-theme)",
+    "streaming": "пока мастер отвечает, «Сказать» скрыта, «Остановить ответ» 147×44, поле 198, #play 375, перелива нет"
+  },
+  "1440": {
+    "documentScrollHeight": 900,
+    "clientHeight": 900,
+    "documentScrollWidth": 1440,
+    "pageScroll": false,
+    "chatBlock": 692,
+    "chatContent": 660,
+    "dock": 660,
+    "textarea": 632,
+    "proseFont": "20px",
+    "header": 56,
+    "hidden": ["breadcrumb", "runtime (статус модели)", "footer (подвал)"],
+    "элементов за правым краем": 0
+  },
+  "turn": {
+    "ввод": "Осматриваю зал и стойку, Enter (без Ctrl)",
+    "ответы": "command-turn 200, campaign 200, character 200, prototype 200, screen 200 ×2, health 200, telemetry 200",
+    "4xx_5xx": 0,
+    "реплика в ленте": true,
+    "ответ мастера": "Восприятие: 14 против Сл 12 — успех + плашка броска",
+    "поле очистилось": true,
+    "лента на последнем сообщении": true
+  }
+}

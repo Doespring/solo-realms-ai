@@ -1,0 +1,247 @@
+{
+ "tag": "clean",
+ "moves": 0,
+ "screens": [
+  {
+   "at": "origin",
+   "counter": "Шаг 1 из 5 · Раса",
+   "question": "Кем вы родились?",
+   "docScrollWidth": 375,
+   "stageScrollWidth": 375,
+   "stageScrollHeight": 825,
+   "stageClientHeight": 517,
+   "footerBottom": 792,
+   "viewport": 812,
+   "nextLabel": "Дальше",
+   "nextInView": true,
+   "nextEnabled": false,
+   "need": "Выберите вид",
+   "options": 9,
+   "minOptionHeight": 63,
+   "dots": 5,
+   "chosenBorder": null,
+   "chosenBackground": null,
+   "detailFont": "14px"
+  },
+  {
+   "at": "class",
+   "counter": "Шаг 2 из 5 · Класс",
+   "question": "Чем вы занимаетесь?",
+   "docScrollWidth": 375,
+   "stageScrollWidth": 375,
+   "stageScrollHeight": 1075,
+   "stageClientHeight": 517,
+   "footerBottom": 792,
+   "viewport": 812,
+   "nextLabel": "Дальше",
+   "nextInView": true,
+   "nextEnabled": false,
+   "need": "Выберите класс",
+   "options": 12,
+   "minOptionHeight": 63,
+   "dots": 5,
+   "chosenBorder": null,
+   "chosenBackground": null,
+   "detailFont": "14px"
+  },
+  {
+   "at": "background",
+   "counter": "Шаг 3 из 6 · Прошлое",
+   "question": "Откуда вы пришли?",
+   "docScrollWidth": 375,
+   "stageScrollWidth": 375,
+   "stageScrollHeight": 536,
+   "stageClientHeight": 517,
+   "footerBottom": 792,
+   "viewport": 812,
+   "nextLabel": "Дальше",
+   "nextInView": true,
+   "nextEnabled": false,
+   "need": "Выберите прошлое",
+   "options": 4,
+   "minOptionHeight": 63,
+   "dots": 6,
+   "chosenBorder": null,
+   "chosenBackground": null,
+   "detailFont": "14px"
+  },
+  {
+   "at": "scores",
+   "counter": "Шаг 4 из 6 · Характеристики",
+   "question": "Насколько вы сильны и ловки?",
+   "docScrollWidth": 375,
+   "stageScrollWidth": 375,
+   "stageScrollHeight": 497,
+   "stageClientHeight": 497,
+   "footerBottom": 792,
+   "viewport": 812,
+   "nextLabel": "Дальше",
+   "nextInView": true,
+   "nextEnabled": false,
+   "need": "Выберите способ: готовый набор или покупка за очки",
+   "options": 2,
+   "minOptionHeight": 63,
+   "dots": 6,
+   "chosenBorder": null,
+   "chosenBackground": null,
+   "detailFont": "14px"
+  },
+  {
+   "at": "scores-filled",
+   "counter": "Шаг 4 из 6 · Характеристики",
+   "question": "Насколько вы сильны и ловки?",
+   "docScrollWidth": 375,
+   "stageScrollWidth": 375,
+   "stageScrollHeight": 1482,
+   "stageClientHeight": 546,
+   "footerBottom": 792,
+   "viewport": 812,
+   "nextLabel": "Дальше",
+   "nextInView": true,
+   "nextEnabled": true,
+   "need": "",
+   "options": 8,
+   "minOptionHeight": 44,
+   "dots": 6,
+   "chosenBorder": "rgb(138, 87, 20)",
+   "chosenBackground": "rgba(0, 0, 0, 0)",
+   "detailFont": "14px"
+  },
+  {
+   "at": "gear",
+   "counter": "Шаг 6 из 6 · Готово",
+   "question": "Имя и снаряжение",
+   "docScrollWidth": 375,
+   "stageScrollWidth": 375,
+   "stageScrollHeight": 1603,
+   "stageClientHeight": 497,
+   "footerBottom": 792,
+   "viewport": 812,
+   "nextLabel": "Создать героя",
+   "nextInView": true,
+   "nextEnabled": false,
+   "need": "Вернитесь на шаг «Раса» — навыки — отметьте ещё 1",
+   "options": 4,
+   "minOptionHeight": 63,
+   "dots": 6,
+   "chosenBorder": "rgb(138, 87, 20)",
+   "chosenBackground": "rgba(0, 0, 0, 0)",
+   "detailFont": "14px"
+  },
+  {
+   "at": "magic",
+   "counter": "Шаг 5 из 6 · Магия",
+   "question": "Что вы умеете колдовать?",
+   "docScrollWidth": 375,
+   "stageScrollWidth": 375,
+   "stageScrollHeight": 3563,
+   "stageClientHeight": 517,
+   "footerBottom": 792,
+   "viewport": 812,
+   "nextLabel": "Дальше",
+   "nextInView": true,
+   "nextEnabled": false,
+   "need": "Заговоров: выбрано 0 из 3",
+   "options": 44,
+   "minOptionHeight": 63,
+   "dots": 6,
+   "chosenBorder": null,
+   "chosenBackground": null,
+   "detailFont": "14px"
+  },
+  {
+   "at": "gear-final",
+   "counter": "Шаг 6 из 6 · Готово",
+   "question": "Имя и снаряжение",
+   "docScrollWidth": 375,
+   "stageScrollWidth": 375,
+   "stageScrollHeight": 1344,
+   "stageClientHeight": 517,
+   "footerBottom": 792,
+   "viewport": 812,
+   "nextLabel": "Создать героя",
+   "nextInView": true,
+   "nextEnabled": false,
+   "need": "Впишите имя героя",
+   "options": 4,
+   "minOptionHeight": 63,
+   "dots": 6,
+   "chosenBorder": "rgb(138, 87, 20)",
+   "chosenBackground": "rgba(0, 0, 0, 0)",
+   "detailFont": "14px"
+  }
+ ],
+ "plan": [
+  {
+   "id": "origin",
+   "title": "Раса",
+   "steps": [
+    "species"
+   ]
+  },
+  {
+   "id": "class",
+   "title": "Класс",
+   "steps": [
+    "class"
+   ]
+  },
+  {
+   "id": "background",
+   "title": "Прошлое",
+   "steps": [
+    "background"
+   ]
+  },
+  {
+   "id": "scores",
+   "title": "Характеристики",
+   "steps": [
+    "scores"
+   ]
+  },
+  {
+   "id": "gear",
+   "title": "Готово",
+   "steps": [
+    "equipment",
+    "final"
+   ]
+  }
+ ],
+ "readyNamed": {
+  "counter": "Шаг 6 из 6 · Готово",
+  "question": "Имя и снаряжение",
+  "docScrollWidth": 375,
+  "stageScrollWidth": 375,
+  "stageScrollHeight": 1344,
+  "stageClientHeight": 546,
+  "footerBottom": 792,
+  "viewport": 812,
+  "nextLabel": "Создать героя",
+  "nextInView": true,
+  "nextEnabled": true,
+  "need": "",
+  "options": 4,
+  "minOptionHeight": 63,
+  "dots": 6,
+  "chosenBorder": "rgb(138, 87, 20)",
+  "chosenBackground": "rgba(0, 0, 0, 0)",
+  "detailFont": "14px"
+ },
+ "elapsedSeconds": 28.8,
+ "play": {
+  "active": true,
+  "wizardHidden": true,
+  "textLength": 65,
+  "firstLines": [
+   "МАСТЕР",
+   "Открытая песочница.",
+   "Сказать",
+   "Оружие, магия, предметы и цели"
+  ],
+  "campaign": "9e33d7c2-0972-4233-b70b-dfaf4f6cc6a9",
+  "inputVisible": true
+ },
+ "errors": []
+}

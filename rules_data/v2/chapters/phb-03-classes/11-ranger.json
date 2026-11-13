@@ -1,0 +1,1184 @@
+{
+  "schema_version": "2.1.0",
+  "rules": [
+    {
+      "id": "phb2024.phb03.ranger.class_attributes",
+      "rules_family": "dnd2024",
+      "name": "Следопыт: Ключевые атрибуты",
+      "kind": "procedure",
+      "classification": {
+        "mode": "deterministic",
+        "semantic_required": false,
+        "formal_required": true,
+        "reason": "Таблица «Ключевые атрибуты» задаёт точные значения (Кость хитов, спасброски, владения) без выбора Мастера"
+      },
+      "conditions": [],
+      "triggers": [
+        "ranger.class_attributes"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "procedure_id": "ranger_class_attributes"
+          }
+        }
+      ],
+      "semantic_questions": [],
+      "facts": {
+        "hit_die": "к10",
+        "primary": "Ловкость и Мудрость",
+        "saves": [
+          "Сила",
+          "Ловкость"
+        ],
+        "weapons": "Простое и Воинское оружие",
+        "armor": "Лёгкие и Средние доспехи и Щиты",
+        "subclass_level": 3,
+        "subclasses": [
+          "Охотник",
+          "Повелитель зверей",
+          "Странник фей",
+          "Сумрачный охотник"
+        ],
+        "pdf_span": [
+          153,
+          162
+        ]
+      },
+      "rule_parameters": {
+        "class_resources": {
+          "1": "использования Избранного врага",
+          "2": "ячейки заклинаний"
+        }
+      },
+      "constraints": [],
+      "exceptions": [],
+      "duration": "not_applicable",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "kind": "phb",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 154,
+        "printed_page": "153",
+        "section": "Следопыт, глава 3 «Классы персонажей»: Выбор Следопыта..."
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "existing_engine_subset",
+      "auto_activate": false,
+      "dependencies": [],
+      "behavior_tests": [
+        "phb03.ranger.class_attributes"
+      ],
+      "readiness": {
+        "status": "engine_subset_verified",
+        "handler": null,
+        "scope": "Проецирование классовых атрибутов на лист персонажа",
+        "blockers": []
+      },
+      "revision": 1
+    },
+    {
+      "id": "phb2024.phb03.ranger.sotvorenie_zaklinanii",
+      "rules_family": "dnd2024",
+      "name": "Следопыт: Сотворение заклинаний (Следопыт)",
+      "kind": "procedure",
+      "classification": {
+        "mode": "deterministic",
+        "semantic_required": false,
+        "formal_required": true,
+        "reason": "Числа и порядок шагов заданы текстом PHB 2024 (см. facts)"
+      },
+      "conditions": [],
+      "triggers": [
+        "ranger.sotvorenie_zaklinanii"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "prepared_level_1": 2,
+            "spellcasting_ability": "Мудрость",
+            "replace_prepared": 1,
+            "focus": "Друидическая фокусировка",
+            "procedure_id": "ranger_sotvorenie_zaklinanii"
+          }
+        }
+      ],
+      "semantic_questions": [],
+      "facts": {
+        "prepared_level_1": 2,
+        "spellcasting_ability": "Мудрость",
+        "replace_prepared": 1,
+        "focus": "Друидическая фокусировка"
+      },
+      "rule_parameters": {
+        "prepared_by_level": {
+          "1": "2",
+          "2": "3",
+          "3": "4",
+          "4": "5",
+          "5": "6",
+          "6": "6",
+          "7": "7",
+          "8": "7",
+          "9": "9",
+          "10": "9",
+          "11": "10",
+          "12": "10",
+          "13": "11",
+          "14": "11",
+          "15": "12",
+          "16": "12",
+          "17": "14",
+          "18": "14",
+          "19": "15",
+          "20": "15"
+        }
+      },
+      "constraints": [],
+      "exceptions": [],
+      "duration": "per_action",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "kind": "phb",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 154,
+        "printed_page": "153",
+        "section": "Следопыт, глава 3 «Классы персонажей»: Сотворение заклинаний (Следопыт)"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "existing_engine_subset",
+      "auto_activate": false,
+      "dependencies": [
+        "phb2024.phb01.spell_slots"
+      ],
+      "behavior_tests": [
+        "phb03.ranger.sotvorenie_zaklinanii"
+      ],
+      "readiness": {
+        "status": "engine_subset_verified",
+        "handler": null,
+        "scope": "Следопыт: Сотворение заклинаний (Следопыт)",
+        "blockers": []
+      },
+      "revision": 1
+    },
+    {
+      "id": "phb2024.phb03.ranger.izbrannyi_vrag",
+      "rules_family": "dnd2024",
+      "name": "Следопыт: Избранный враг",
+      "kind": "procedure",
+      "classification": {
+        "mode": "deterministic",
+        "semantic_required": false,
+        "formal_required": true,
+        "reason": "Числа и порядок шагов заданы текстом PHB 2024 (см. facts)"
+      },
+      "conditions": [],
+      "triggers": [
+        "ranger.izbrannyi_vrag"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "free_casts_start": 2,
+            "recharge": "Долгий отдых",
+            "procedure_id": "ranger_izbrannyi_vrag"
+          }
+        }
+      ],
+      "semantic_questions": [],
+      "facts": {
+        "always_prepared": [
+          "Метка охотника"
+        ],
+        "free_casts_start": 2,
+        "recharge": "Долгий отдых"
+      },
+      "rule_parameters": {
+        "free_casts_by_level": {
+          "1": "2",
+          "5": "3",
+          "9": "4",
+          "13": "5",
+          "17": "6"
+        }
+      },
+      "constraints": [],
+      "exceptions": [],
+      "duration": "per_action",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "kind": "phb",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 155,
+        "printed_page": "154",
+        "section": "Следопыт, глава 3 «Классы персонажей»: Избранный враг"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "existing_engine_subset",
+      "auto_activate": false,
+      "dependencies": [],
+      "behavior_tests": [
+        "phb03.ranger.izbrannyi_vrag"
+      ],
+      "readiness": {
+        "status": "engine_subset_verified",
+        "handler": null,
+        "scope": "Следопыт: Избранный враг",
+        "blockers": []
+      },
+      "revision": 1
+    },
+    {
+      "id": "phb2024.phb03.ranger.iskusnoe_vladenie_oruzhiem",
+      "rules_family": "dnd2024",
+      "name": "Следопыт: Искусное владение оружием (Следопыт)",
+      "kind": "procedure",
+      "classification": {
+        "mode": "deterministic",
+        "semantic_required": false,
+        "formal_required": true,
+        "reason": "Числа и порядок шагов заданы текстом PHB 2024 (см. facts)"
+      },
+      "conditions": [],
+      "triggers": [
+        "ranger.iskusnoe_vladenie_oruzhiem"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "types": 2,
+            "change_on": "Долгий отдых",
+            "procedure_id": "ranger_iskusnoe_vladenie_oruzhiem"
+          }
+        }
+      ],
+      "semantic_questions": [],
+      "facts": {
+        "types": 2,
+        "change_on": "Долгий отдых"
+      },
+      "rule_parameters": {},
+      "constraints": [],
+      "exceptions": [],
+      "duration": "per_action",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "kind": "phb",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 155,
+        "printed_page": "154",
+        "section": "Следопыт, глава 3 «Классы персонажей»: Искусное владение оружием (Следопыт)"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "existing_engine_subset",
+      "auto_activate": false,
+      "dependencies": [
+        "phb2024.phb05.weapon_mastery"
+      ],
+      "behavior_tests": [
+        "phb03.ranger.iskusnoe_vladenie_oruzhiem"
+      ],
+      "readiness": {
+        "status": "engine_subset_verified",
+        "handler": null,
+        "scope": "Следопыт: Искусное владение оружием (Следопыт)",
+        "blockers": []
+      },
+      "revision": 1
+    },
+    {
+      "id": "phb2024.phb03.ranger.iskusnyi_issledovatel",
+      "rules_family": "dnd2024",
+      "name": "Следопыт: Искусный исследователь",
+      "kind": "procedure",
+      "classification": {
+        "mode": "deterministic",
+        "semantic_required": false,
+        "formal_required": true,
+        "reason": "Числа и порядок шагов заданы текстом PHB 2024 (см. facts)"
+      },
+      "conditions": [],
+      "triggers": [
+        "ranger.iskusnyi_issledovatel"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "expertise_skills": 1,
+            "languages": 2,
+            "procedure_id": "ranger_iskusnyi_issledovatel"
+          }
+        }
+      ],
+      "semantic_questions": [],
+      "facts": {
+        "expertise_skills": 1,
+        "languages": 2
+      },
+      "rule_parameters": {},
+      "constraints": [],
+      "exceptions": [],
+      "duration": "per_action",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "kind": "phb",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 155,
+        "printed_page": "154",
+        "section": "Следопыт, глава 3 «Классы персонажей»: Искусный исследователь"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "not_implemented",
+      "auto_activate": false,
+      "dependencies": [],
+      "behavior_tests": [
+        "phb03.ranger.iskusnyi_issledovatel"
+      ],
+      "readiness": {
+        "status": "blocked",
+        "handler": null,
+        "scope": "Следопыт: Искусный исследователь",
+        "blockers": [
+          "у умения нет ни активности, ни поля листа: языки и владения Искусного исследователя не появляются"
+        ]
+      },
+      "revision": 1
+    },
+    {
+      "id": "phb2024.phb03.ranger.boevoi_stil",
+      "rules_family": "dnd2024",
+      "name": "Следопыт: Боевой стиль (Следопыт)",
+      "kind": "procedure",
+      "classification": {
+        "mode": "deterministic",
+        "semantic_required": false,
+        "formal_required": true,
+        "reason": "Числа и порядок шагов заданы текстом PHB 2024 (см. facts)"
+      },
+      "conditions": [],
+      "triggers": [
+        "ranger.boevoi_stil"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "feats": 1,
+            "druidic_warrior_cantrips": 2,
+            "ability": "Мудрость",
+            "druidic_warrior_list": "Друид",
+            "procedure_id": "ranger_boevoi_stil"
+          }
+        }
+      ],
+      "semantic_questions": [],
+      "facts": {
+        "feats": 1,
+        "druidic_warrior_cantrips": 2,
+        "ability": "Мудрость",
+        "druidic_warrior_list": "Друид"
+      },
+      "rule_parameters": {},
+      "constraints": [],
+      "exceptions": [],
+      "duration": "per_action",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "kind": "phb",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 155,
+        "printed_page": "154",
+        "section": "Следопыт, глава 3 «Классы персонажей»: Боевой стиль (Следопыт)"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "existing_engine_subset",
+      "auto_activate": false,
+      "dependencies": [
+        "phb2024.phb05.fighting_style"
+      ],
+      "behavior_tests": [
+        "phb03.ranger.boevoi_stil"
+      ],
+      "readiness": {
+        "status": "engine_subset_verified",
+        "handler": "CombatEngine.attack",
+        "scope": "Следопыт: Боевой стиль (Следопыт)",
+        "blockers": []
+      },
+      "revision": 1
+    },
+    {
+      "id": "phb2024.phb03.ranger.podklass_sledopyta",
+      "rules_family": "dnd2024",
+      "name": "Следопыт: Подкласс Следопыта",
+      "kind": "procedure",
+      "classification": {
+        "mode": "deterministic",
+        "semantic_required": false,
+        "formal_required": true,
+        "reason": "Числа и порядок шагов заданы текстом PHB 2024 (см. facts)"
+      },
+      "conditions": [],
+      "triggers": [
+        "ranger.podklass_sledopyta"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "subclass_level": 3,
+            "procedure_id": "ranger_podklass_sledopyta"
+          }
+        }
+      ],
+      "semantic_questions": [],
+      "facts": {
+        "subclass_level": 3,
+        "subclasses": [
+          "Охотник",
+          "Повелитель зверей",
+          "Странник фей",
+          "Сумрачный охотник"
+        ]
+      },
+      "rule_parameters": {},
+      "constraints": [],
+      "exceptions": [],
+      "duration": "per_action",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "kind": "phb",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 155,
+        "printed_page": "154",
+        "section": "Следопыт, глава 3 «Классы персонажей»: Подкласс Следопыта"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "existing_engine_subset",
+      "auto_activate": false,
+      "dependencies": [],
+      "behavior_tests": [
+        "phb03.ranger.podklass_sledopyta"
+      ],
+      "readiness": {
+        "status": "engine_subset_verified",
+        "handler": null,
+        "scope": "Следопыт: Подкласс Следопыта",
+        "blockers": []
+      },
+      "revision": 1
+    },
+    {
+      "id": "phb2024.phb03.ranger.uvelichenie_harakteristik",
+      "rules_family": "dnd2024",
+      "name": "Следопыт: Увеличение характеристик",
+      "kind": "procedure",
+      "classification": {
+        "mode": "deterministic",
+        "semantic_required": false,
+        "formal_required": true,
+        "reason": "Числа и порядок шагов заданы текстом PHB 2024 (см. facts)"
+      },
+      "conditions": [],
+      "triggers": [
+        "ranger.uvelichenie_harakteristik"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "procedure_id": "ranger_uvelichenie_harakteristik"
+          }
+        }
+      ],
+      "semantic_questions": [],
+      "facts": {
+        "levels": [
+          "4",
+          "8",
+          "12",
+          "16"
+        ]
+      },
+      "rule_parameters": {},
+      "constraints": [],
+      "exceptions": [],
+      "duration": "per_action",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "kind": "phb",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 155,
+        "printed_page": "154",
+        "section": "Следопыт, глава 3 «Классы персонажей»: Увеличение характеристик"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "existing_engine_subset",
+      "auto_activate": false,
+      "dependencies": [
+        "phb2024.phb05.ability_score_improvement"
+      ],
+      "behavior_tests": [
+        "phb03.ranger.uvelichenie_harakteristik"
+      ],
+      "readiness": {
+        "status": "engine_subset_verified",
+        "handler": null,
+        "scope": "Следопыт: Увеличение характеристик",
+        "blockers": []
+      },
+      "revision": 1
+    },
+    {
+      "id": "phb2024.phb03.ranger.dopolnitelnaya_ataka",
+      "rules_family": "dnd2024",
+      "name": "Следопыт: Дополнительная атака",
+      "kind": "procedure",
+      "classification": {
+        "mode": "deterministic",
+        "semantic_required": false,
+        "formal_required": true,
+        "reason": "Числа и порядок шагов заданы текстом PHB 2024 (см. facts)"
+      },
+      "conditions": [],
+      "triggers": [
+        "ranger.dopolnitelnaya_ataka"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "attacks_per_attack_action": 2,
+            "unlock_level": 5,
+            "procedure_id": "ranger_dopolnitelnaya_ataka"
+          }
+        }
+      ],
+      "semantic_questions": [],
+      "facts": {
+        "attacks_per_attack_action": 2,
+        "unlock_level": 5
+      },
+      "rule_parameters": {},
+      "constraints": [],
+      "exceptions": [],
+      "duration": "per_action",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "kind": "phb",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 156,
+        "printed_page": "155",
+        "section": "Следопыт, глава 3 «Классы персонажей»: Дополнительная атака"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "existing_engine_subset",
+      "auto_activate": false,
+      "dependencies": [
+        "phb2024.phb02.attack_action"
+      ],
+      "behavior_tests": [
+        "phb03.ranger.dopolnitelnaya_ataka"
+      ],
+      "readiness": {
+        "status": "engine_subset_verified",
+        "handler": null,
+        "scope": "Следопыт: Дополнительная атака",
+        "blockers": []
+      },
+      "revision": 1
+    },
+    {
+      "id": "phb2024.phb03.ranger.vseprolaznost",
+      "rules_family": "dnd2024",
+      "name": "Следопыт: Всепролазность",
+      "kind": "procedure",
+      "classification": {
+        "mode": "deterministic",
+        "semantic_required": false,
+        "formal_required": true,
+        "reason": "Числа и порядок шагов заданы текстом PHB 2024 (см. facts)"
+      },
+      "conditions": [],
+      "triggers": [
+        "ranger.vseprolaznost"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "speed_bonus_feet": 10,
+            "climb_speed_equals_speed": true,
+            "swim_speed_equals_speed": true,
+            "unless_heavy_armor": true,
+            "procedure_id": "ranger_vseprolaznost"
+          }
+        }
+      ],
+      "semantic_questions": [],
+      "facts": {
+        "speed_bonus_feet": 10,
+        "climb_speed_equals_speed": true,
+        "swim_speed_equals_speed": true,
+        "unless_heavy_armor": true
+      },
+      "rule_parameters": {},
+      "constraints": [],
+      "exceptions": [],
+      "duration": "per_action",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "kind": "phb",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 156,
+        "printed_page": "155",
+        "section": "Следопыт, глава 3 «Классы персонажей»: Всепролазность"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "not_implemented",
+      "auto_activate": false,
+      "dependencies": [],
+      "behavior_tests": [
+        "phb03.ranger.vseprolaznost"
+      ],
+      "readiness": {
+        "status": "blocked",
+        "handler": null,
+        "scope": "Следопыт: Всепролазность",
+        "blockers": [
+          "у умения нет активности: скорость лазания и плавания не появляется"
+        ]
+      },
+      "revision": 1
+    },
+    {
+      "id": "phb2024.phb03.ranger.ekspertnost",
+      "rules_family": "dnd2024",
+      "name": "Следопыт: Экспертность (Следопыт)",
+      "kind": "procedure",
+      "classification": {
+        "mode": "deterministic",
+        "semantic_required": false,
+        "formal_required": true,
+        "reason": "Числа и порядок шагов заданы текстом PHB 2024 (см. facts)"
+      },
+      "conditions": [],
+      "triggers": [
+        "ranger.ekspertnost"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "skills": 2,
+            "procedure_id": "ranger_ekspertnost"
+          }
+        }
+      ],
+      "semantic_questions": [],
+      "facts": {
+        "skills": 2
+      },
+      "rule_parameters": {},
+      "constraints": [],
+      "exceptions": [],
+      "duration": "per_action",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "kind": "phb",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 156,
+        "printed_page": "155",
+        "section": "Следопыт, глава 3 «Классы персонажей»: Экспертность (Следопыт)"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "existing_engine_subset",
+      "auto_activate": false,
+      "dependencies": [
+        "phb2024.phb01.expertise"
+      ],
+      "behavior_tests": [
+        "phb03.ranger.ekspertnost"
+      ],
+      "readiness": {
+        "status": "engine_subset_verified",
+        "handler": null,
+        "scope": "Следопыт: Экспертность (Следопыт)",
+        "blockers": []
+      },
+      "revision": 1
+    },
+    {
+      "id": "phb2024.phb03.ranger.neutomimyi",
+      "rules_family": "dnd2024",
+      "name": "Следопыт: Неутомимый",
+      "kind": "procedure",
+      "classification": {
+        "mode": "deterministic",
+        "semantic_required": false,
+        "formal_required": true,
+        "reason": "Числа и порядок шагов заданы текстом PHB 2024 (см. facts)"
+      },
+      "conditions": [],
+      "triggers": [
+        "ranger.neutomimyi"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "temp_hp": "1к8 + модификатор Мудрости, минимум 1",
+            "uses": "модификатор Мудрости, минимум 1",
+            "recharge": "Долгий отдых",
+            "exhaustion_reduction_per_short_rest": 1,
+            "procedure_id": "ranger_neutomimyi"
+          }
+        }
+      ],
+      "semantic_questions": [],
+      "facts": {
+        "temp_hp": "1к8 + модификатор Мудрости, минимум 1",
+        "uses": "модификатор Мудрости, минимум 1",
+        "recharge": "Долгий отдых",
+        "exhaustion_reduction_per_short_rest": 1
+      },
+      "rule_parameters": {},
+      "constraints": [],
+      "exceptions": [],
+      "duration": "per_action",
+      "resources": [
+        {
+          "id": "tireless_temp_hp",
+          "handling": "dependency_not_extracted"
+        }
+      ],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "kind": "phb",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 156,
+        "printed_page": "155",
+        "section": "Следопыт, глава 3 «Классы персонажей»: Неутомимый"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "not_implemented",
+      "auto_activate": false,
+      "dependencies": [],
+      "behavior_tests": [
+        "phb03.ranger.neutomimyi"
+      ],
+      "readiness": {
+        "status": "blocked",
+        "handler": null,
+        "scope": "Следопыт: Неутомимый",
+        "blockers": [
+          "активность отвергается движком: `Unparseable dice expression: '1d8+(max(1,2))'` — формула лечения не разбирается"
+        ]
+      },
+      "revision": 1
+    },
+    {
+      "id": "phb2024.phb03.ranger.upornyi_ohotnik",
+      "rules_family": "dnd2024",
+      "name": "Следопыт: Упорный охотник",
+      "kind": "procedure",
+      "classification": {
+        "mode": "deterministic",
+        "semantic_required": false,
+        "formal_required": true,
+        "reason": "Числа и порядок шагов заданы текстом PHB 2024 (см. facts)"
+      },
+      "conditions": [],
+      "triggers": [
+        "ranger.upornyi_ohotnik"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "concentration_not_broken_by_damage": true,
+            "procedure_id": "ranger_upornyi_ohotnik"
+          }
+        }
+      ],
+      "semantic_questions": [],
+      "facts": {
+        "concentration_not_broken_by_damage": true
+      },
+      "rule_parameters": {},
+      "constraints": [],
+      "exceptions": [],
+      "duration": "per_action",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "kind": "phb",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 156,
+        "printed_page": "155",
+        "section": "Следопыт, глава 3 «Классы персонажей»: Упорный охотник"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "not_implemented",
+      "auto_activate": false,
+      "dependencies": [],
+      "behavior_tests": [
+        "phb03.ranger.upornyi_ohotnik"
+      ],
+      "readiness": {
+        "status": "blocked",
+        "handler": null,
+        "scope": "Следопыт: Упорный охотник",
+        "blockers": [
+          "у умения нет активности: сопротивление урону отмеченной добычи не исполняется"
+        ]
+      },
+      "revision": 1
+    },
+    {
+      "id": "phb2024.phb03.ranger.prirodnaya_zavesa",
+      "rules_family": "dnd2024",
+      "name": "Следопыт: Природная завеса",
+      "kind": "procedure",
+      "classification": {
+        "mode": "deterministic",
+        "semantic_required": false,
+        "formal_required": true,
+        "reason": "Числа и порядок шагов заданы текстом PHB 2024 (см. facts)"
+      },
+      "conditions": [],
+      "triggers": [
+        "ranger.prirodnaya_zavesa"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "bonus_action": true,
+            "invisible_until_end_of_next_turn": true,
+            "uses": "модификатор Мудрости, минимум 1",
+            "recharge": "Долгий отдых",
+            "procedure_id": "ranger_prirodnaya_zavesa"
+          }
+        }
+      ],
+      "semantic_questions": [],
+      "facts": {
+        "bonus_action": true,
+        "invisible_until_end_of_next_turn": true,
+        "uses": "модификатор Мудрости, минимум 1",
+        "recharge": "Долгий отдых"
+      },
+      "rule_parameters": {},
+      "constraints": [],
+      "exceptions": [],
+      "duration": "per_action",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "kind": "phb",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 156,
+        "printed_page": "155",
+        "section": "Следопыт, глава 3 «Классы персонажей»: Природная завеса"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "existing_engine_subset",
+      "auto_activate": false,
+      "dependencies": [],
+      "behavior_tests": [
+        "phb03.ranger.prirodnaya_zavesa"
+      ],
+      "readiness": {
+        "status": "engine_subset_verified",
+        "handler": null,
+        "scope": "Следопыт: Природная завеса",
+        "blockers": []
+      },
+      "revision": 1
+    },
+    {
+      "id": "phb2024.phb03.ranger.metkii_ohotnik",
+      "rules_family": "dnd2024",
+      "name": "Следопыт: Меткий охотник",
+      "kind": "procedure",
+      "classification": {
+        "mode": "deterministic",
+        "semantic_required": false,
+        "formal_required": true,
+        "reason": "Числа и порядок шагов заданы текстом PHB 2024 (см. facts)"
+      },
+      "conditions": [],
+      "triggers": [
+        "ranger.metkii_ohotnik"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "advantage_vs_hunters_mark_target": true,
+            "procedure_id": "ranger_metkii_ohotnik"
+          }
+        }
+      ],
+      "semantic_questions": [],
+      "facts": {
+        "advantage_vs_hunters_mark_target": true
+      },
+      "rule_parameters": {},
+      "constraints": [],
+      "exceptions": [],
+      "duration": "per_action",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "kind": "phb",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 156,
+        "printed_page": "155",
+        "section": "Следопыт, глава 3 «Классы персонажей»: Меткий охотник"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "not_implemented",
+      "auto_activate": false,
+      "dependencies": [],
+      "behavior_tests": [
+        "phb03.ranger.metkii_ohotnik"
+      ],
+      "readiness": {
+        "status": "blocked",
+        "handler": null,
+        "scope": "Следопыт: Меткий охотник",
+        "blockers": [
+          "у умения нет активности: преимущество против отмеченной добычи не исполняется"
+        ]
+      },
+      "revision": 1
+    },
+    {
+      "id": "phb2024.phb03.ranger.dikie_chuvstva",
+      "rules_family": "dnd2024",
+      "name": "Следопыт: Дикие чувства",
+      "kind": "procedure",
+      "classification": {
+        "mode": "deterministic",
+        "semantic_required": false,
+        "formal_required": true,
+        "reason": "Числа и порядок шагов заданы текстом PHB 2024 (см. facts)"
+      },
+      "conditions": [],
+      "triggers": [
+        "ranger.dikie_chuvstva"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "blindsight_feet": 30,
+            "procedure_id": "ranger_dikie_chuvstva"
+          }
+        }
+      ],
+      "semantic_questions": [],
+      "facts": {
+        "blindsight_feet": 30
+      },
+      "rule_parameters": {},
+      "constraints": [],
+      "exceptions": [],
+      "duration": "per_action",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "kind": "phb",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 156,
+        "printed_page": "155",
+        "section": "Следопыт, глава 3 «Классы персонажей»: Дикие чувства"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "not_implemented",
+      "auto_activate": false,
+      "dependencies": [],
+      "behavior_tests": [
+        "phb03.ranger.dikie_chuvstva"
+      ],
+      "readiness": {
+        "status": "blocked",
+        "handler": null,
+        "scope": "Следопыт: Дикие чувства",
+        "blockers": [
+          "у умения нет активности: слепое зрение на 30 футов не появляется"
+        ]
+      },
+      "revision": 1
+    },
+    {
+      "id": "phb2024.phb03.ranger.epicheskii_dar",
+      "rules_family": "dnd2024",
+      "name": "Следопыт: Эпический дар",
+      "kind": "procedure",
+      "classification": {
+        "mode": "deterministic",
+        "semantic_required": false,
+        "formal_required": true,
+        "reason": "Числа и порядок шагов заданы текстом PHB 2024 (см. facts)"
+      },
+      "conditions": [],
+      "triggers": [
+        "ranger.epicheskii_dar"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "procedure_id": "ranger_epicheskii_dar"
+          }
+        }
+      ],
+      "semantic_questions": [],
+      "facts": {},
+      "rule_parameters": {},
+      "constraints": [],
+      "exceptions": [],
+      "duration": "per_action",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "kind": "phb",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 156,
+        "printed_page": "155",
+        "section": "Следопыт, глава 3 «Классы персонажей»: Эпический дар"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "existing_engine_subset",
+      "auto_activate": false,
+      "dependencies": [
+        "phb2024.phb05.epic_boon"
+      ],
+      "behavior_tests": [
+        "phb03.ranger.epicheskii_dar"
+      ],
+      "readiness": {
+        "status": "adjudication_required",
+        "handler": null,
+        "scope": "Следопыт: Эпический дар",
+        "blockers": [
+          "дар не входит в репертуар ни одного класса: use_feature даёт CastFailed(not_in_repertoire)",
+          "выгод дара нет: activities и passive_effects пусты в данных, слово epic в ядре встречается только в labels.py"
+        ]
+      },
+      "revision": 1
+    },
+    {
+      "id": "phb2024.phb03.ranger.groza_vragov",
+      "rules_family": "dnd2024",
+      "name": "Следопыт: Гроза врагов",
+      "kind": "procedure",
+      "classification": {
+        "mode": "deterministic",
+        "semantic_required": false,
+        "formal_required": true,
+        "reason": "Числа и порядок шагов заданы текстом PHB 2024 (см. facts)"
+      },
+      "conditions": [],
+      "triggers": [
+        "ranger.groza_vragov"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "hunters_mark_die": "к10",
+            "procedure_id": "ranger_groza_vragov"
+          }
+        }
+      ],
+      "semantic_questions": [],
+      "facts": {
+        "hunters_mark_die": "к10"
+      },
+      "rule_parameters": {},
+      "constraints": [],
+      "exceptions": [],
+      "duration": "per_action",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "kind": "phb",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 156,
+        "printed_page": "155",
+        "section": "Следопыт, глава 3 «Классы персонажей»: Гроза врагов"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "existing_engine_subset",
+      "auto_activate": false,
+      "dependencies": [],
+      "behavior_tests": [
+        "phb03.ranger.groza_vragov"
+      ],
+      "readiness": {
+        "status": "engine_subset_verified",
+        "handler": null,
+        "scope": "Следопыт: Гроза врагов",
+        "blockers": []
+      },
+      "revision": 1
+    }
+  ]
+}

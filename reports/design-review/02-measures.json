@@ -1,0 +1,3113 @@
+{
+ "meta": {
+  "commit": "f8d71907",
+  "frames": 40,
+  "base": "http://127.0.0.1:36971",
+  "data_dir": "/home/hermes/projects/SoloRealmsAI-Nat20/runtime/n08-audit5",
+  "tag": "02"
+ },
+ "frames": [
+  {
+   "viewport": {
+    "w": 375,
+    "h": 812,
+    "dpr": 1
+   },
+   "scrollWidth": 375,
+   "scrollHeight": 812,
+   "overflowX": 0,
+   "activeView": "welcome",
+   "campaignOpen": true,
+   "kbOpen": false,
+   "textElements": 18,
+   "fontMin": 14,
+   "smallText": [],
+   "fontDistinct": 3,
+   "fontSizes": {
+    "14": 11,
+    "16": 6,
+    "30": 1
+   },
+   "tapCount": 6,
+   "tapsBad": [],
+   "tapsBadCount": 0,
+   "contrastBad": [],
+   "contrastBadCount": 0,
+   "contrastMin": null,
+   "interactiveVisible": 6,
+   "clipped": [],
+   "clippedCount": 0,
+   "colorsOutsideCount": 0,
+   "colorsOutside": [],
+   "drawer": null,
+   "state": "home",
+   "theme": "dark",
+   "width": 375,
+   "height": 812,
+   "file": "02-home-dark-375.png",
+   "jsErrors": []
+  },
+  {
+   "viewport": {
+    "w": 375,
+    "h": 812,
+    "dpr": 1
+   },
+   "scrollWidth": 375,
+   "scrollHeight": 812,
+   "overflowX": 0,
+   "activeView": "creation",
+   "campaignOpen": true,
+   "kbOpen": false,
+   "textElements": 11,
+   "fontMin": 16,
+   "smallText": [],
+   "fontDistinct": 3,
+   "fontSizes": {
+    "16": 9,
+    "22": 1,
+    "30": 1
+   },
+   "tapCount": 8,
+   "tapsBad": [],
+   "tapsBadCount": 0,
+   "contrastBad": [],
+   "contrastBadCount": 0,
+   "contrastMin": null,
+   "interactiveVisible": 8,
+   "clipped": [],
+   "clippedCount": 0,
+   "colorsOutsideCount": 0,
+   "colorsOutside": [],
+   "drawer": null,
+   "state": "new",
+   "theme": "dark",
+   "width": 375,
+   "height": 812,
+   "file": "02-new-dark-375.png",
+   "jsErrors": []
+  },
+  {
+   "viewport": {
+    "w": 375,
+    "h": 812,
+    "dpr": 1
+   },
+   "scrollWidth": 375,
+   "scrollHeight": 812,
+   "overflowX": 0,
+   "activeView": "character",
+   "campaignOpen": true,
+   "kbOpen": false,
+   "textElements": 21,
+   "fontMin": 14,
+   "smallText": [],
+   "fontDistinct": 3,
+   "fontSizes": {
+    "14": 10,
+    "16": 1,
+    "22": 10
+   },
+   "tapCount": 2,
+   "tapsBad": [],
+   "tapsBadCount": 0,
+   "contrastBad": [],
+   "contrastBadCount": 0,
+   "contrastMin": null,
+   "interactiveVisible": 2,
+   "clipped": [],
+   "clippedCount": 0,
+   "colorsOutsideCount": 0,
+   "colorsOutside": [],
+   "drawer": null,
+   "state": "hero",
+   "theme": "dark",
+   "width": 375,
+   "height": 812,
+   "file": "02-hero-dark-375.png",
+   "jsErrors": []
+  },
+  {
+   "viewport": {
+    "w": 375,
+    "h": 812,
+    "dpr": 1
+   },
+   "scrollWidth": 375,
+   "scrollHeight": 812,
+   "overflowX": 0,
+   "activeView": "creation",
+   "campaignOpen": true,
+   "kbOpen": false,
+   "textElements": 11,
+   "fontMin": 16,
+   "smallText": [],
+   "fontDistinct": 3,
+   "fontSizes": {
+    "16": 9,
+    "22": 1,
+    "30": 1
+   },
+   "tapCount": 8,
+   "tapsBad": [],
+   "tapsBadCount": 0,
+   "contrastBad": [],
+   "contrastBadCount": 0,
+   "contrastMin": null,
+   "interactiveVisible": 8,
+   "clipped": [],
+   "clippedCount": 0,
+   "colorsOutsideCount": 0,
+   "colorsOutside": [],
+   "drawer": null,
+   "state": "prep",
+   "theme": "dark",
+   "width": 375,
+   "height": 812,
+   "prep": {
+    "prepare": true,
+    "disabled": true,
+    "dialog": false,
+    "panel": false
+   },
+   "prep_panel": null,
+   "reached": false,
+   "file": "02-prep-dark-375.png",
+   "jsErrors": []
+  },
+  {
+   "viewport": {
+    "w": 375,
+    "h": 812,
+    "dpr": 1
+   },
+   "scrollWidth": 375,
+   "scrollHeight": 812,
+   "overflowX": 0,
+   "activeView": "creation",
+   "campaignOpen": true,
+   "kbOpen": false,
+   "textElements": 11,
+   "fontMin": 16,
+   "smallText": [],
+   "fontDistinct": 3,
+   "fontSizes": {
+    "16": 9,
+    "22": 1,
+    "30": 1
+   },
+   "tapCount": 8,
+   "tapsBad": [],
+   "tapsBadCount": 0,
+   "contrastBad": [],
+   "contrastBadCount": 0,
+   "contrastMin": null,
+   "interactiveVisible": 8,
+   "clipped": [],
+   "clippedCount": 0,
+   "colorsOutsideCount": 0,
+   "colorsOutside": [],
+   "drawer": null,
+   "state": "prep-log",
+   "theme": "dark",
+   "width": 375,
+   "height": 812,
+   "prep": {
+    "prepare": true,
+    "disabled": true,
+    "dialog": false,
+    "panel": false
+   },
+   "prep_panel": null,
+   "reached": false,
+   "file": "02-prep-log-dark-375.png",
+   "jsErrors": []
+  },
+  {
+   "viewport": {
+    "w": 375,
+    "h": 812,
+    "dpr": 1
+   },
+   "scrollWidth": 375,
+   "scrollHeight": 812,
+   "overflowX": 0,
+   "activeView": "play",
+   "campaignOpen": true,
+   "kbOpen": false,
+   "textElements": 10,
+   "fontMin": 14,
+   "smallText": [],
+   "fontDistinct": 3,
+   "fontSizes": {
+    "14": 2,
+    "16": 7,
+    "17": 1
+   },
+   "tapCount": 5,
+   "tapsBad": [],
+   "tapsBadCount": 0,
+   "contrastBad": [],
+   "contrastBadCount": 0,
+   "contrastMin": null,
+   "interactiveVisible": 5,
+   "clipped": [],
+   "clippedCount": 0,
+   "colorsOutsideCount": 0,
+   "colorsOutside": [],
+   "drawer": null,
+   "chatBlocks": [
+    {
+     "tag": "message master",
+     "h": 202,
+     "text": "МАСТЕР\nУ сторожевого поста гоблин перекрыл тропу. Осмотрите "
+    }
+   ],
+   "state": "game",
+   "theme": "dark",
+   "width": 375,
+   "height": 812,
+   "file": "02-game-dark-375.png",
+   "jsErrors": []
+  },
+  {
+   "viewport": {
+    "w": 375,
+    "h": 476,
+    "dpr": 1
+   },
+   "scrollWidth": 375,
+   "scrollHeight": 476,
+   "overflowX": 0,
+   "activeView": "play",
+   "campaignOpen": true,
+   "kbOpen": true,
+   "textElements": 8,
+   "fontMin": 14,
+   "smallText": [],
+   "fontDistinct": 3,
+   "fontSizes": {
+    "14": 1,
+    "16": 6,
+    "17": 1
+   },
+   "tapCount": 4,
+   "tapsBad": [],
+   "tapsBadCount": 0,
+   "contrastBad": [],
+   "contrastBadCount": 0,
+   "contrastMin": null,
+   "interactiveVisible": 4,
+   "clipped": [],
+   "clippedCount": 0,
+   "colorsOutsideCount": 0,
+   "colorsOutside": [],
+   "drawer": null,
+   "chatBlocks": [
+    {
+     "tag": "message master",
+     "h": 202,
+     "text": "МАСТЕР\nУ сторожевого поста гоблин перекрыл тропу. Осмотрите "
+    }
+   ],
+   "state": "game-kb",
+   "theme": "dark",
+   "width": 375,
+   "height": 476,
+   "file": "02-game-kb-dark-375.png",
+   "jsErrors": []
+  },
+  {
+   "viewport": {
+    "w": 375,
+    "h": 812,
+    "dpr": 1
+   },
+   "scrollWidth": 375,
+   "scrollHeight": 812,
+   "overflowX": 0,
+   "activeView": "welcome",
+   "campaignOpen": true,
+   "kbOpen": false,
+   "textElements": 43,
+   "fontMin": 14,
+   "smallText": [],
+   "fontDistinct": 4,
+   "fontSizes": {
+    "14": 11,
+    "16": 30,
+    "19": 1,
+    "30": 1
+   },
+   "tapCount": 29,
+   "tapsBad": [],
+   "tapsBadCount": 0,
+   "contrastBad": [],
+   "contrastBadCount": 0,
+   "contrastMin": null,
+   "interactiveVisible": 29,
+   "clipped": [],
+   "clippedCount": 0,
+   "colorsOutsideCount": 0,
+   "colorsOutside": [],
+   "drawer": {
+    "h": 617,
+    "top": 162,
+    "rows": 18,
+    "blocks": [
+     "Кампания",
+     "Приложение"
+    ],
+    "scrollTop": 0,
+    "scroll": 0,
+    "content": 617
+   },
+   "state": "menu",
+   "theme": "dark",
+   "width": 375,
+   "height": 812,
+   "debug": {
+    "bodyClass": "effects tabletop campaign-open nat20-game mobile-menu-open",
+    "burger": true,
+    "aside": {
+     "x": 0,
+     "y": 0,
+     "w": 375,
+     "h": 812
+    },
+    "drawer": {
+     "x": 12,
+     "y": 162,
+     "w": 351,
+     "h": 617
+    }
+   },
+   "file": "02-menu-dark-375.png",
+   "jsErrors": []
+  },
+  {
+   "viewport": {
+    "w": 375,
+    "h": 812,
+    "dpr": 1
+   },
+   "scrollWidth": 375,
+   "scrollHeight": 812,
+   "overflowX": 0,
+   "activeView": "welcome",
+   "campaignOpen": true,
+   "kbOpen": false,
+   "textElements": 43,
+   "fontMin": 14,
+   "smallText": [],
+   "fontDistinct": 4,
+   "fontSizes": {
+    "14": 11,
+    "16": 30,
+    "19": 1,
+    "30": 1
+   },
+   "tapCount": 29,
+   "tapsBad": [],
+   "tapsBadCount": 0,
+   "contrastBad": [],
+   "contrastBadCount": 0,
+   "contrastMin": null,
+   "interactiveVisible": 29,
+   "clipped": [],
+   "clippedCount": 0,
+   "colorsOutsideCount": 0,
+   "colorsOutside": [],
+   "drawer": {
+    "h": 617,
+    "top": 162,
+    "rows": 18,
+    "blocks": [
+     "Кампания",
+     "Приложение"
+    ],
+    "scrollTop": 0,
+    "scroll": 0,
+    "content": 617
+   },
+   "state": "menu-app",
+   "theme": "dark",
+   "width": 375,
+   "height": 812,
+   "debug": {
+    "bodyClass": "effects tabletop campaign-open nat20-game mobile-menu-open",
+    "burger": true,
+    "aside": {
+     "x": 0,
+     "y": 0,
+     "w": 375,
+     "h": 812
+    },
+    "drawer": {
+     "x": 12,
+     "y": 162,
+     "w": 351,
+     "h": 617
+    }
+   },
+   "file": "02-menu-app-dark-375.png",
+   "jsErrors": []
+  },
+  {
+   "viewport": {
+    "w": 375,
+    "h": 812,
+    "dpr": 1
+   },
+   "scrollWidth": 375,
+   "scrollHeight": 812,
+   "overflowX": 0,
+   "activeView": "journal",
+   "campaignOpen": true,
+   "kbOpen": false,
+   "textElements": 9,
+   "fontMin": 16,
+   "smallText": [],
+   "fontDistinct": 3,
+   "fontSizes": {
+    "16": 7,
+    "22": 1,
+    "30": 1
+   },
+   "tapCount": 7,
+   "tapsBad": [],
+   "tapsBadCount": 0,
+   "contrastBad": [],
+   "contrastBadCount": 0,
+   "contrastMin": null,
+   "interactiveVisible": 7,
+   "clipped": [],
+   "clippedCount": 0,
+   "colorsOutsideCount": 0,
+   "colorsOutside": [],
+   "drawer": null,
+   "state": "notes",
+   "theme": "dark",
+   "width": 375,
+   "height": 812,
+   "file": "02-notes-dark-375.png",
+   "jsErrors": []
+  },
+  {
+   "viewport": {
+    "w": 375,
+    "h": 812,
+    "dpr": 1
+   },
+   "scrollWidth": 375,
+   "scrollHeight": 812,
+   "overflowX": 0,
+   "activeView": "welcome",
+   "campaignOpen": true,
+   "kbOpen": false,
+   "textElements": 18,
+   "fontMin": 14,
+   "smallText": [],
+   "fontDistinct": 3,
+   "fontSizes": {
+    "14": 11,
+    "16": 6,
+    "30": 1
+   },
+   "tapCount": 6,
+   "tapsBad": [],
+   "tapsBadCount": 0,
+   "contrastBad": [],
+   "contrastBadCount": 0,
+   "contrastMin": null,
+   "interactiveVisible": 6,
+   "clipped": [],
+   "clippedCount": 0,
+   "colorsOutsideCount": 0,
+   "colorsOutside": [],
+   "drawer": null,
+   "state": "home",
+   "theme": "light",
+   "width": 375,
+   "height": 812,
+   "file": "02-home-light-375.png",
+   "jsErrors": []
+  },
+  {
+   "viewport": {
+    "w": 375,
+    "h": 812,
+    "dpr": 1
+   },
+   "scrollWidth": 375,
+   "scrollHeight": 812,
+   "overflowX": 0,
+   "activeView": "creation",
+   "campaignOpen": true,
+   "kbOpen": false,
+   "textElements": 11,
+   "fontMin": 16,
+   "smallText": [],
+   "fontDistinct": 3,
+   "fontSizes": {
+    "16": 9,
+    "22": 1,
+    "30": 1
+   },
+   "tapCount": 8,
+   "tapsBad": [],
+   "tapsBadCount": 0,
+   "contrastBad": [],
+   "contrastBadCount": 0,
+   "contrastMin": null,
+   "interactiveVisible": 8,
+   "clipped": [],
+   "clippedCount": 0,
+   "colorsOutsideCount": 0,
+   "colorsOutside": [],
+   "drawer": null,
+   "state": "new",
+   "theme": "light",
+   "width": 375,
+   "height": 812,
+   "file": "02-new-light-375.png",
+   "jsErrors": []
+  },
+  {
+   "viewport": {
+    "w": 375,
+    "h": 812,
+    "dpr": 1
+   },
+   "scrollWidth": 375,
+   "scrollHeight": 812,
+   "overflowX": 0,
+   "activeView": "character",
+   "campaignOpen": true,
+   "kbOpen": false,
+   "textElements": 21,
+   "fontMin": 14,
+   "smallText": [],
+   "fontDistinct": 3,
+   "fontSizes": {
+    "14": 10,
+    "16": 1,
+    "22": 10
+   },
+   "tapCount": 2,
+   "tapsBad": [],
+   "tapsBadCount": 0,
+   "contrastBad": [],
+   "contrastBadCount": 0,
+   "contrastMin": null,
+   "interactiveVisible": 2,
+   "clipped": [],
+   "clippedCount": 0,
+   "colorsOutsideCount": 0,
+   "colorsOutside": [],
+   "drawer": null,
+   "state": "hero",
+   "theme": "light",
+   "width": 375,
+   "height": 812,
+   "file": "02-hero-light-375.png",
+   "jsErrors": []
+  },
+  {
+   "viewport": {
+    "w": 375,
+    "h": 812,
+    "dpr": 1
+   },
+   "scrollWidth": 375,
+   "scrollHeight": 812,
+   "overflowX": 0,
+   "activeView": "creation",
+   "campaignOpen": true,
+   "kbOpen": false,
+   "textElements": 11,
+   "fontMin": 16,
+   "smallText": [],
+   "fontDistinct": 3,
+   "fontSizes": {
+    "16": 9,
+    "22": 1,
+    "30": 1
+   },
+   "tapCount": 8,
+   "tapsBad": [],
+   "tapsBadCount": 0,
+   "contrastBad": [],
+   "contrastBadCount": 0,
+   "contrastMin": null,
+   "interactiveVisible": 8,
+   "clipped": [],
+   "clippedCount": 0,
+   "colorsOutsideCount": 0,
+   "colorsOutside": [],
+   "drawer": null,
+   "state": "prep",
+   "theme": "light",
+   "width": 375,
+   "height": 812,
+   "prep": {
+    "prepare": true,
+    "disabled": true,
+    "dialog": false,
+    "panel": false
+   },
+   "prep_panel": null,
+   "reached": false,
+   "file": "02-prep-light-375.png",
+   "jsErrors": []
+  },
+  {
+   "viewport": {
+    "w": 375,
+    "h": 812,
+    "dpr": 1
+   },
+   "scrollWidth": 375,
+   "scrollHeight": 812,
+   "overflowX": 0,
+   "activeView": "creation",
+   "campaignOpen": true,
+   "kbOpen": false,
+   "textElements": 11,
+   "fontMin": 16,
+   "smallText": [],
+   "fontDistinct": 3,
+   "fontSizes": {
+    "16": 9,
+    "22": 1,
+    "30": 1
+   },
+   "tapCount": 8,
+   "tapsBad": [],
+   "tapsBadCount": 0,
+   "contrastBad": [],
+   "contrastBadCount": 0,
+   "contrastMin": null,
+   "interactiveVisible": 8,
+   "clipped": [],
+   "clippedCount": 0,
+   "colorsOutsideCount": 0,
+   "colorsOutside": [],
+   "drawer": null,
+   "state": "prep-log",
+   "theme": "light",
+   "width": 375,
+   "height": 812,
+   "prep": {
+    "prepare": true,
+    "disabled": true,
+    "dialog": false,
+    "panel": false
+   },
+   "prep_panel": null,
+   "reached": false,
+   "file": "02-prep-log-light-375.png",
+   "jsErrors": []
+  },
+  {
+   "viewport": {
+    "w": 375,
+    "h": 812,
+    "dpr": 1
+   },
+   "scrollWidth": 375,
+   "scrollHeight": 812,
+   "overflowX": 0,
+   "activeView": "play",
+   "campaignOpen": true,
+   "kbOpen": false,
+   "textElements": 10,
+   "fontMin": 14,
+   "smallText": [],
+   "fontDistinct": 3,
+   "fontSizes": {
+    "14": 2,
+    "16": 7,
+    "17": 1
+   },
+   "tapCount": 5,
+   "tapsBad": [],
+   "tapsBadCount": 0,
+   "contrastBad": [],
+   "contrastBadCount": 0,
+   "contrastMin": null,
+   "interactiveVisible": 5,
+   "clipped": [],
+   "clippedCount": 0,
+   "colorsOutsideCount": 0,
+   "colorsOutside": [],
+   "drawer": null,
+   "chatBlocks": [
+    {
+     "tag": "message master",
+     "h": 202,
+     "text": "МАСТЕР\nУ сторожевого поста гоблин перекрыл тропу. Осмотрите "
+    }
+   ],
+   "state": "game",
+   "theme": "light",
+   "width": 375,
+   "height": 812,
+   "file": "02-game-light-375.png",
+   "jsErrors": []
+  },
+  {
+   "viewport": {
+    "w": 375,
+    "h": 476,
+    "dpr": 1
+   },
+   "scrollWidth": 375,
+   "scrollHeight": 476,
+   "overflowX": 0,
+   "activeView": "play",
+   "campaignOpen": true,
+   "kbOpen": true,
+   "textElements": 8,
+   "fontMin": 14,
+   "smallText": [],
+   "fontDistinct": 3,
+   "fontSizes": {
+    "14": 1,
+    "16": 6,
+    "17": 1
+   },
+   "tapCount": 4,
+   "tapsBad": [],
+   "tapsBadCount": 0,
+   "contrastBad": [],
+   "contrastBadCount": 0,
+   "contrastMin": null,
+   "interactiveVisible": 4,
+   "clipped": [],
+   "clippedCount": 0,
+   "colorsOutsideCount": 0,
+   "colorsOutside": [],
+   "drawer": null,
+   "chatBlocks": [
+    {
+     "tag": "message master",
+     "h": 202,
+     "text": "МАСТЕР\nУ сторожевого поста гоблин перекрыл тропу. Осмотрите "
+    }
+   ],
+   "state": "game-kb",
+   "theme": "light",
+   "width": 375,
+   "height": 476,
+   "file": "02-game-kb-light-375.png",
+   "jsErrors": []
+  },
+  {
+   "viewport": {
+    "w": 375,
+    "h": 812,
+    "dpr": 1
+   },
+   "scrollWidth": 375,
+   "scrollHeight": 812,
+   "overflowX": 0,
+   "activeView": "welcome",
+   "campaignOpen": true,
+   "kbOpen": false,
+   "textElements": 43,
+   "fontMin": 14,
+   "smallText": [],
+   "fontDistinct": 4,
+   "fontSizes": {
+    "14": 11,
+    "16": 30,
+    "19": 1,
+    "30": 1
+   },
+   "tapCount": 29,
+   "tapsBad": [],
+   "tapsBadCount": 0,
+   "contrastBad": [],
+   "contrastBadCount": 0,
+   "contrastMin": null,
+   "interactiveVisible": 29,
+   "clipped": [],
+   "clippedCount": 0,
+   "colorsOutsideCount": 0,
+   "colorsOutside": [],
+   "drawer": {
+    "h": 617,
+    "top": 162,
+    "rows": 18,
+    "blocks": [
+     "Кампания",
+     "Приложение"
+    ],
+    "scrollTop": 0,
+    "scroll": 0,
+    "content": 617
+   },
+   "state": "menu",
+   "theme": "light",
+   "width": 375,
+   "height": 812,
+   "debug": {
+    "bodyClass": "effects tabletop campaign-open nat20-game mobile-menu-open",
+    "burger": true,
+    "aside": {
+     "x": 0,
+     "y": 0,
+     "w": 375,
+     "h": 812
+    },
+    "drawer": {
+     "x": 12,
+     "y": 162,
+     "w": 351,
+     "h": 617
+    }
+   },
+   "file": "02-menu-light-375.png",
+   "jsErrors": []
+  },
+  {
+   "viewport": {
+    "w": 375,
+    "h": 812,
+    "dpr": 1
+   },
+   "scrollWidth": 375,
+   "scrollHeight": 812,
+   "overflowX": 0,
+   "activeView": "welcome",
+   "campaignOpen": true,
+   "kbOpen": false,
+   "textElements": 43,
+   "fontMin": 14,
+   "smallText": [],
+   "fontDistinct": 4,
+   "fontSizes": {
+    "14": 11,
+    "16": 30,
+    "19": 1,
+    "30": 1
+   },
+   "tapCount": 29,
+   "tapsBad": [],
+   "tapsBadCount": 0,
+   "contrastBad": [],
+   "contrastBadCount": 0,
+   "contrastMin": null,
+   "interactiveVisible": 29,
+   "clipped": [],
+   "clippedCount": 0,
+   "colorsOutsideCount": 0,
+   "colorsOutside": [],
+   "drawer": {
+    "h": 617,
+    "top": 162,
+    "rows": 18,
+    "blocks": [
+     "Кампания",
+     "Приложение"
+    ],
+    "scrollTop": 0,
+    "scroll": 0,
+    "content": 617
+   },
+   "state": "menu-app",
+   "theme": "light",
+   "width": 375,
+   "height": 812,
+   "debug": {
+    "bodyClass": "effects tabletop campaign-open nat20-game mobile-menu-open",
+    "burger": true,
+    "aside": {
+     "x": 0,
+     "y": 0,
+     "w": 375,
+     "h": 812
+    },
+    "drawer": {
+     "x": 12,
+     "y": 162,
+     "w": 351,
+     "h": 617
+    }
+   },
+   "file": "02-menu-app-light-375.png",
+   "jsErrors": []
+  },
+  {
+   "viewport": {
+    "w": 375,
+    "h": 812,
+    "dpr": 1
+   },
+   "scrollWidth": 375,
+   "scrollHeight": 812,
+   "overflowX": 0,
+   "activeView": "journal",
+   "campaignOpen": true,
+   "kbOpen": false,
+   "textElements": 9,
+   "fontMin": 16,
+   "smallText": [],
+   "fontDistinct": 3,
+   "fontSizes": {
+    "16": 7,
+    "22": 1,
+    "30": 1
+   },
+   "tapCount": 7,
+   "tapsBad": [],
+   "tapsBadCount": 0,
+   "contrastBad": [],
+   "contrastBadCount": 0,
+   "contrastMin": null,
+   "interactiveVisible": 7,
+   "clipped": [],
+   "clippedCount": 0,
+   "colorsOutsideCount": 0,
+   "colorsOutside": [],
+   "drawer": null,
+   "state": "notes",
+   "theme": "light",
+   "width": 375,
+   "height": 812,
+   "file": "02-notes-light-375.png",
+   "jsErrors": []
+  },
+  {
+   "viewport": {
+    "w": 1440,
+    "h": 900,
+    "dpr": 1
+   },
+   "scrollWidth": 1440,
+   "scrollHeight": 900,
+   "overflowX": 0,
+   "activeView": "welcome",
+   "campaignOpen": true,
+   "kbOpen": false,
+   "textElements": 23,
+   "fontMin": 14,
+   "smallText": [],
+   "fontDistinct": 3,
+   "fontSizes": {
+    "14": 12,
+    "16": 10,
+    "30": 1
+   },
+   "tapCount": 11,
+   "tapsBad": [
+    {
+     "sel": "html > body.effects.tabletop > aside.sidebar > a.brand",
+     "label": "Solo Realms AI",
+     "w": 115.6,
+     "h": 21
+    },
+    {
+     "sel": "body.effects.tabletop > aside.sidebar > nav > div.nav-bar:nth-of-type(1) > button.nav:nth-of-type(1)",
+     "label": "BUTTON",
+     "w": 68,
+     "h": 38
+    },
+    {
+     "sel": "body.effects.tabletop > aside.sidebar > nav > div.nav-bar:nth-of-type(1) > button.nav:nth-of-type(2)",
+     "label": "BUTTON",
+     "w": 111,
+     "h": 38
+    },
+    {
+     "sel": "body.effects.tabletop > aside.sidebar > nav > div.nav-bar:nth-of-type(1) > button.nav:nth-of-type(3)",
+     "label": "BUTTON",
+     "w": 113,
+     "h": 38
+    },
+    {
+     "sel": "body.effects.tabletop > aside.sidebar > nav > div.nav-bar:nth-of-type(1) > button.nav:nth-of-type(4)",
+     "label": "BUTTON",
+     "w": 90,
+     "h": 38
+    },
+    {
+     "sel": "button#nav-more",
+     "label": "Ещё",
+     "w": 59,
+     "h": 36
+    }
+   ],
+   "tapsBadCount": 6,
+   "contrastBad": [],
+   "contrastBadCount": 0,
+   "contrastMin": null,
+   "interactiveVisible": 11,
+   "clipped": [],
+   "clippedCount": 0,
+   "colorsOutsideCount": 0,
+   "colorsOutside": [],
+   "drawer": null,
+   "state": "home",
+   "theme": "dark",
+   "width": 1440,
+   "height": 900,
+   "file": "02-home-dark-1440.png",
+   "jsErrors": []
+  },
+  {
+   "viewport": {
+    "w": 1440,
+    "h": 900,
+    "dpr": 1
+   },
+   "scrollWidth": 1440,
+   "scrollHeight": 1102,
+   "overflowX": 0,
+   "activeView": "creation",
+   "campaignOpen": true,
+   "kbOpen": false,
+   "textElements": 24,
+   "fontMin": 14,
+   "smallText": [],
+   "fontDistinct": 4,
+   "fontSizes": {
+    "14": 12,
+    "16": 9,
+    "22": 2,
+    "30": 1
+   },
+   "tapCount": 13,
+   "tapsBad": [
+    {
+     "sel": "html > body.effects.tabletop > aside.sidebar > a.brand",
+     "label": "Solo Realms AI",
+     "w": 115.6,
+     "h": 21
+    },
+    {
+     "sel": "body.effects.tabletop > aside.sidebar > nav > div.nav-bar:nth-of-type(1) > button.nav:nth-of-type(1)",
+     "label": "BUTTON",
+     "w": 68,
+     "h": 38
+    },
+    {
+     "sel": "body.effects.tabletop > aside.sidebar > nav > div.nav-bar:nth-of-type(1) > button.nav:nth-of-type(2)",
+     "label": "BUTTON",
+     "w": 111,
+     "h": 38
+    },
+    {
+     "sel": "body.effects.tabletop > aside.sidebar > nav > div.nav-bar:nth-of-type(1) > button.nav:nth-of-type(3)",
+     "label": "BUTTON",
+     "w": 113,
+     "h": 38
+    },
+    {
+     "sel": "body.effects.tabletop > aside.sidebar > nav > div.nav-bar:nth-of-type(1) > button.nav:nth-of-type(4)",
+     "label": "BUTTON",
+     "w": 90,
+     "h": 38
+    },
+    {
+     "sel": "button#nav-more",
+     "label": "Ещё",
+     "w": 59,
+     "h": 36
+    },
+    {
+     "sel": "html > body.effects.tabletop > main > header > button.themetoggle:nth-of-type(1)",
+     "label": "Светлая тема",
+     "w": 34,
+     "h": 34
+    },
+    {
+     "sel": "section#creation-mock-notice > div.button-row > button",
+     "label": "Открыть готовое испытание",
+     "w": 243,
+     "h": 43
+    }
+   ],
+   "tapsBadCount": 8,
+   "contrastBad": [],
+   "contrastBadCount": 0,
+   "contrastMin": null,
+   "interactiveVisible": 13,
+   "clipped": [],
+   "clippedCount": 0,
+   "colorsOutsideCount": 0,
+   "colorsOutside": [],
+   "drawer": null,
+   "state": "new",
+   "theme": "dark",
+   "width": 1440,
+   "height": 900,
+   "file": "02-new-dark-1440.png",
+   "jsErrors": []
+  },
+  {
+   "viewport": {
+    "w": 1440,
+    "h": 900,
+    "dpr": 1
+   },
+   "scrollWidth": 1440,
+   "scrollHeight": 1299,
+   "overflowX": 0,
+   "activeView": "character",
+   "campaignOpen": true,
+   "kbOpen": false,
+   "textElements": 37,
+   "fontMin": 14,
+   "smallText": [],
+   "fontDistinct": 4,
+   "fontSizes": {
+    "14": 18,
+    "16": 8,
+    "22": 10,
+    "30": 1
+   },
+   "tapCount": 7,
+   "tapsBad": [
+    {
+     "sel": "html > body.effects.tabletop > aside.sidebar > a.brand",
+     "label": "Solo Realms AI",
+     "w": 115.6,
+     "h": 21
+    },
+    {
+     "sel": "body.effects.tabletop > aside.sidebar > nav > div.nav-bar:nth-of-type(1) > button.nav:nth-of-type(1)",
+     "label": "BUTTON",
+     "w": 68,
+     "h": 38
+    },
+    {
+     "sel": "body.effects.tabletop > aside.sidebar > nav > div.nav-bar:nth-of-type(1) > button.nav:nth-of-type(2)",
+     "label": "BUTTON",
+     "w": 111,
+     "h": 38
+    },
+    {
+     "sel": "body.effects.tabletop > aside.sidebar > nav > div.nav-bar:nth-of-type(1) > button.nav.active:nth-of-type(3)",
+     "label": "BUTTON",
+     "w": 113,
+     "h": 38
+    },
+    {
+     "sel": "body.effects.tabletop > aside.sidebar > nav > div.nav-bar:nth-of-type(1) > button.nav:nth-of-type(4)",
+     "label": "BUTTON",
+     "w": 90,
+     "h": 38
+    },
+    {
+     "sel": "button#nav-more",
+     "label": "Ещё",
+     "w": 59,
+     "h": 36
+    },
+    {
+     "sel": "html > body.effects.tabletop > main > header > button.themetoggle:nth-of-type(1)",
+     "label": "Светлая тема",
+     "w": 34,
+     "h": 34
+    }
+   ],
+   "tapsBadCount": 7,
+   "contrastBad": [],
+   "contrastBadCount": 0,
+   "contrastMin": null,
+   "interactiveVisible": 7,
+   "clipped": [],
+   "clippedCount": 0,
+   "colorsOutsideCount": 0,
+   "colorsOutside": [],
+   "drawer": null,
+   "state": "hero",
+   "theme": "dark",
+   "width": 1440,
+   "height": 900,
+   "file": "02-hero-dark-1440.png",
+   "jsErrors": []
+  },
+  {
+   "viewport": {
+    "w": 1440,
+    "h": 900,
+    "dpr": 1
+   },
+   "scrollWidth": 1440,
+   "scrollHeight": 1102,
+   "overflowX": 0,
+   "activeView": "creation",
+   "campaignOpen": true,
+   "kbOpen": false,
+   "textElements": 24,
+   "fontMin": 14,
+   "smallText": [],
+   "fontDistinct": 4,
+   "fontSizes": {
+    "14": 12,
+    "16": 9,
+    "22": 2,
+    "30": 1
+   },
+   "tapCount": 13,
+   "tapsBad": [
+    {
+     "sel": "html > body.effects.tabletop > aside.sidebar > a.brand",
+     "label": "Solo Realms AI",
+     "w": 115.6,
+     "h": 21
+    },
+    {
+     "sel": "body.effects.tabletop > aside.sidebar > nav > div.nav-bar:nth-of-type(1) > button.nav:nth-of-type(1)",
+     "label": "BUTTON",
+     "w": 68,
+     "h": 38
+    },
+    {
+     "sel": "body.effects.tabletop > aside.sidebar > nav > div.nav-bar:nth-of-type(1) > button.nav:nth-of-type(2)",
+     "label": "BUTTON",
+     "w": 111,
+     "h": 38
+    },
+    {
+     "sel": "body.effects.tabletop > aside.sidebar > nav > div.nav-bar:nth-of-type(1) > button.nav:nth-of-type(3)",
+     "label": "BUTTON",
+     "w": 113,
+     "h": 38
+    },
+    {
+     "sel": "body.effects.tabletop > aside.sidebar > nav > div.nav-bar:nth-of-type(1) > button.nav:nth-of-type(4)",
+     "label": "BUTTON",
+     "w": 90,
+     "h": 38
+    },
+    {
+     "sel": "button#nav-more",
+     "label": "Ещё",
+     "w": 59,
+     "h": 36
+    },
+    {
+     "sel": "html > body.effects.tabletop > main > header > button.themetoggle:nth-of-type(1)",
+     "label": "Светлая тема",
+     "w": 34,
+     "h": 34
+    },
+    {
+     "sel": "section#creation-mock-notice > div.button-row > button",
+     "label": "Открыть готовое испытание",
+     "w": 243,
+     "h": 43
+    }
+   ],
+   "tapsBadCount": 8,
+   "contrastBad": [],
+   "contrastBadCount": 0,
+   "contrastMin": null,
+   "interactiveVisible": 13,
+   "clipped": [],
+   "clippedCount": 0,
+   "colorsOutsideCount": 0,
+   "colorsOutside": [],
+   "drawer": null,
+   "state": "prep",
+   "theme": "dark",
+   "width": 1440,
+   "height": 900,
+   "prep": {
+    "prepare": true,
+    "disabled": true,
+    "dialog": false,
+    "panel": false
+   },
+   "prep_panel": null,
+   "reached": false,
+   "file": "02-prep-dark-1440.png",
+   "jsErrors": []
+  },
+  {
+   "viewport": {
+    "w": 1440,
+    "h": 900,
+    "dpr": 1
+   },
+   "scrollWidth": 1440,
+   "scrollHeight": 1102,
+   "overflowX": 0,
+   "activeView": "creation",
+   "campaignOpen": true,
+   "kbOpen": false,
+   "textElements": 24,
+   "fontMin": 14,
+   "smallText": [],
+   "fontDistinct": 4,
+   "fontSizes": {
+    "14": 12,
+    "16": 9,
+    "22": 2,
+    "30": 1
+   },
+   "tapCount": 13,
+   "tapsBad": [
+    {
+     "sel": "html > body.effects.tabletop > aside.sidebar > a.brand",
+     "label": "Solo Realms AI",
+     "w": 115.6,
+     "h": 21
+    },
+    {
+     "sel": "body.effects.tabletop > aside.sidebar > nav > div.nav-bar:nth-of-type(1) > button.nav:nth-of-type(1)",
+     "label": "BUTTON",
+     "w": 68,
+     "h": 38
+    },
+    {
+     "sel": "body.effects.tabletop > aside.sidebar > nav > div.nav-bar:nth-of-type(1) > button.nav:nth-of-type(2)",
+     "label": "BUTTON",
+     "w": 111,
+     "h": 38
+    },
+    {
+     "sel": "body.effects.tabletop > aside.sidebar > nav > div.nav-bar:nth-of-type(1) > button.nav:nth-of-type(3)",
+     "label": "BUTTON",
+     "w": 113,
+     "h": 38
+    },
+    {
+     "sel": "body.effects.tabletop > aside.sidebar > nav > div.nav-bar:nth-of-type(1) > button.nav:nth-of-type(4)",
+     "label": "BUTTON",
+     "w": 90,
+     "h": 38
+    },
+    {
+     "sel": "button#nav-more",
+     "label": "Ещё",
+     "w": 59,
+     "h": 36
+    },
+    {
+     "sel": "html > body.effects.tabletop > main > header > button.themetoggle:nth-of-type(1)",
+     "label": "Светлая тема",
+     "w": 34,
+     "h": 34
+    },
+    {
+     "sel": "section#creation-mock-notice > div.button-row > button",
+     "label": "Открыть готовое испытание",
+     "w": 243,
+     "h": 43
+    }
+   ],
+   "tapsBadCount": 8,
+   "contrastBad": [],
+   "contrastBadCount": 0,
+   "contrastMin": null,
+   "interactiveVisible": 13,
+   "clipped": [],
+   "clippedCount": 0,
+   "colorsOutsideCount": 0,
+   "colorsOutside": [],
+   "drawer": null,
+   "state": "prep-log",
+   "theme": "dark",
+   "width": 1440,
+   "height": 900,
+   "prep": {
+    "prepare": true,
+    "disabled": true,
+    "dialog": false,
+    "panel": false
+   },
+   "prep_panel": null,
+   "reached": false,
+   "file": "02-prep-log-dark-1440.png",
+   "jsErrors": []
+  },
+  {
+   "viewport": {
+    "w": 1440,
+    "h": 900,
+    "dpr": 1
+   },
+   "scrollWidth": 1440,
+   "scrollHeight": 900,
+   "overflowX": 0,
+   "activeView": "play",
+   "campaignOpen": true,
+   "kbOpen": false,
+   "textElements": 25,
+   "fontMin": 14,
+   "smallText": [],
+   "fontDistinct": 4,
+   "fontSizes": {
+    "14": 12,
+    "16": 10,
+    "22": 2,
+    "30": 1
+   },
+   "tapCount": 12,
+   "tapsBad": [
+    {
+     "sel": "html > body.effects.tabletop > aside.sidebar > a.brand",
+     "label": "Solo Realms AI",
+     "w": 115.6,
+     "h": 21
+    },
+    {
+     "sel": "body.effects.tabletop > aside.sidebar > nav > div.nav-bar:nth-of-type(1) > button.nav.active:nth-of-type(1)",
+     "label": "BUTTON",
+     "w": 68,
+     "h": 38
+    },
+    {
+     "sel": "body.effects.tabletop > aside.sidebar > nav > div.nav-bar:nth-of-type(1) > button.nav:nth-of-type(2)",
+     "label": "BUTTON",
+     "w": 111,
+     "h": 38
+    },
+    {
+     "sel": "body.effects.tabletop > aside.sidebar > nav > div.nav-bar:nth-of-type(1) > button.nav:nth-of-type(3)",
+     "label": "BUTTON",
+     "w": 113,
+     "h": 38
+    },
+    {
+     "sel": "body.effects.tabletop > aside.sidebar > nav > div.nav-bar:nth-of-type(1) > button.nav:nth-of-type(4)",
+     "label": "BUTTON",
+     "w": 90,
+     "h": 38
+    },
+    {
+     "sel": "button#nav-more",
+     "label": "Ещё",
+     "w": 59,
+     "h": 36
+    },
+    {
+     "sel": "html > body.effects.tabletop > main > header > button.themetoggle:nth-of-type(1)",
+     "label": "Светлая тема",
+     "w": 34,
+     "h": 34
+    },
+    {
+     "sel": "details#scene-hero > summary",
+     "label": "Ваш герой",
+     "w": 225,
+     "h": 18.9
+    },
+    {
+     "sel": "details#scene-hero > div.disclosure-body > button.quiet.sheet-link",
+     "label": "Лист героя",
+     "w": 82,
+     "h": 30.4
+    }
+   ],
+   "tapsBadCount": 9,
+   "contrastBad": [],
+   "contrastBadCount": 0,
+   "contrastMin": null,
+   "interactiveVisible": 12,
+   "clipped": [],
+   "clippedCount": 0,
+   "colorsOutsideCount": 0,
+   "colorsOutside": [],
+   "drawer": null,
+   "chatBlocks": [
+    {
+     "tag": "message master",
+     "h": 173,
+     "text": "МАСТЕР\nУ сторожевого поста гоблин перекрыл тропу. Осмотрите "
+    }
+   ],
+   "state": "game",
+   "theme": "dark",
+   "width": 1440,
+   "height": 900,
+   "file": "02-game-dark-1440.png",
+   "jsErrors": []
+  },
+  {
+   "viewport": {
+    "w": 1440,
+    "h": 564,
+    "dpr": 1
+   },
+   "scrollWidth": 1440,
+   "scrollHeight": 564,
+   "overflowX": 0,
+   "activeView": "play",
+   "campaignOpen": true,
+   "kbOpen": true,
+   "textElements": 25,
+   "fontMin": 14,
+   "smallText": [],
+   "fontDistinct": 4,
+   "fontSizes": {
+    "14": 12,
+    "16": 10,
+    "22": 2,
+    "30": 1
+   },
+   "tapCount": 12,
+   "tapsBad": [
+    {
+     "sel": "html > body.effects.tabletop > aside.sidebar > a.brand",
+     "label": "Solo Realms AI",
+     "w": 115.6,
+     "h": 21
+    },
+    {
+     "sel": "body.effects.tabletop > aside.sidebar > nav > div.nav-bar:nth-of-type(1) > button.nav.active:nth-of-type(1)",
+     "label": "BUTTON",
+     "w": 68,
+     "h": 38
+    },
+    {
+     "sel": "body.effects.tabletop > aside.sidebar > nav > div.nav-bar:nth-of-type(1) > button.nav:nth-of-type(2)",
+     "label": "BUTTON",
+     "w": 111,
+     "h": 38
+    },
+    {
+     "sel": "body.effects.tabletop > aside.sidebar > nav > div.nav-bar:nth-of-type(1) > button.nav:nth-of-type(3)",
+     "label": "BUTTON",
+     "w": 113,
+     "h": 38
+    },
+    {
+     "sel": "body.effects.tabletop > aside.sidebar > nav > div.nav-bar:nth-of-type(1) > button.nav:nth-of-type(4)",
+     "label": "BUTTON",
+     "w": 90,
+     "h": 38
+    },
+    {
+     "sel": "button#nav-more",
+     "label": "Ещё",
+     "w": 59,
+     "h": 36
+    },
+    {
+     "sel": "html > body.effects.tabletop > main > header > button.themetoggle:nth-of-type(1)",
+     "label": "Светлая тема",
+     "w": 34,
+     "h": 34
+    },
+    {
+     "sel": "details#scene-hero > summary",
+     "label": "Ваш герой",
+     "w": 1313,
+     "h": 18.9
+    },
+    {
+     "sel": "details#scene-hero > div.disclosure-body > button.quiet.sheet-link",
+     "label": "Лист героя",
+     "w": 82,
+     "h": 30.4
+    }
+   ],
+   "tapsBadCount": 9,
+   "contrastBad": [],
+   "contrastBadCount": 0,
+   "contrastMin": null,
+   "interactiveVisible": 12,
+   "clipped": [],
+   "clippedCount": 0,
+   "colorsOutsideCount": 0,
+   "colorsOutside": [],
+   "drawer": null,
+   "chatBlocks": [
+    {
+     "tag": "message master",
+     "h": 173,
+     "text": "МАСТЕР\nУ сторожевого поста гоблин перекрыл тропу. Осмотрите "
+    }
+   ],
+   "state": "game-kb",
+   "theme": "dark",
+   "width": 1440,
+   "height": 564,
+   "file": "02-game-kb-dark-1440.png",
+   "jsErrors": []
+  },
+  {
+   "viewport": {
+    "w": 1440,
+    "h": 900,
+    "dpr": 1
+   },
+   "scrollWidth": 1440,
+   "scrollHeight": 900,
+   "overflowX": 0,
+   "activeView": "welcome",
+   "campaignOpen": true,
+   "kbOpen": false,
+   "textElements": 41,
+   "fontMin": 14,
+   "smallText": [],
+   "fontDistinct": 3,
+   "fontSizes": {
+    "14": 14,
+    "16": 26,
+    "30": 1
+   },
+   "tapCount": 27,
+   "tapsBad": [
+    {
+     "sel": "html > body.effects.tabletop > aside.sidebar.show-more > a.brand",
+     "label": "Solo Realms AI",
+     "w": 115.6,
+     "h": 21
+    },
+    {
+     "sel": "body.effects.tabletop > aside.sidebar.show-more > nav > div.nav-bar:nth-of-type(1) > button.nav:nth-of-type(1)",
+     "label": "BUTTON",
+     "w": 68,
+     "h": 38
+    },
+    {
+     "sel": "body.effects.tabletop > aside.sidebar.show-more > nav > div.nav-bar:nth-of-type(1) > button.nav:nth-of-type(2)",
+     "label": "BUTTON",
+     "w": 111,
+     "h": 38
+    },
+    {
+     "sel": "body.effects.tabletop > aside.sidebar.show-more > nav > div.nav-bar:nth-of-type(1) > button.nav:nth-of-type(3)",
+     "label": "BUTTON",
+     "w": 113,
+     "h": 38
+    },
+    {
+     "sel": "body.effects.tabletop > aside.sidebar.show-more > nav > div.nav-bar:nth-of-type(1) > button.nav:nth-of-type(4)",
+     "label": "BUTTON",
+     "w": 90,
+     "h": 38
+    },
+    {
+     "sel": "button#nav-more",
+     "label": "Ещё",
+     "w": 59,
+     "h": 36
+    },
+    {
+     "sel": "div#nav-drawer > div.nav-block:nth-of-type(1) > button.nav:nth-of-type(1)",
+     "label": "BUTTON",
+     "w": 287,
+     "h": 38
+    },
+    {
+     "sel": "div#nav-drawer > div.nav-block:nth-of-type(1) > button.nav:nth-of-type(2)",
+     "label": "BUTTON",
+     "w": 287,
+     "h": 38
+    },
+    {
+     "sel": "div#nav-drawer > div.nav-block:nth-of-type(1) > button.nav:nth-of-type(3)",
+     "label": "BUTTON",
+     "w": 287,
+     "h": 38
+    },
+    {
+     "sel": "div#nav-drawer > div.nav-block:nth-of-type(1) > button.nav:nth-of-type(4)",
+     "label": "BUTTON",
+     "w": 287,
+     "h": 38
+    },
+    {
+     "sel": "div#nav-drawer > div.nav-block:nth-of-type(1) > button.nav:nth-of-type(5)",
+     "label": "BUTTON",
+     "w": 287,
+     "h": 38
+    },
+    {
+     "sel": "div#nav-drawer > div.nav-block:nth-of-type(1) > button.nav:nth-of-type(6)",
+     "label": "BUTTON",
+     "w": 287,
+     "h": 38
+    },
+    {
+     "sel": "div#nav-drawer > div.nav-block:nth-of-type(2) > button.nav:nth-of-type(1)",
+     "label": "BUTTON",
+     "w": 287,
+     "h": 38
+    },
+    {
+     "sel": "div#nav-drawer > div.nav-block:nth-of-type(2) > button.nav:nth-of-type(2)",
+     "label": "BUTTON",
+     "w": 287,
+     "h": 38
+    },
+    {
+     "sel": "div#nav-drawer > div.nav-block:nth-of-type(2) > button.nav:nth-of-type(3)",
+     "label": "BUTTON",
+     "w": 287,
+     "h": 38
+    }
+   ],
+   "tapsBadCount": 22,
+   "contrastBad": [],
+   "contrastBadCount": 0,
+   "contrastMin": null,
+   "interactiveVisible": 27,
+   "clipped": [],
+   "clippedCount": 0,
+   "colorsOutsideCount": 0,
+   "colorsOutside": [],
+   "drawer": {
+    "h": 750,
+    "top": 56,
+    "rows": 17,
+    "blocks": [
+     "Кампания",
+     "Приложение"
+    ],
+    "scrollTop": 0,
+    "scroll": 0,
+    "content": 750
+   },
+   "state": "menu",
+   "theme": "dark",
+   "width": 1440,
+   "height": 900,
+   "debug": {
+    "bodyClass": "effects tabletop campaign-open nat20-game",
+    "burger": false,
+    "aside": {
+     "x": 0,
+     "y": 0,
+     "w": 1440,
+     "h": 56
+    },
+    "drawer": {
+     "x": 0,
+     "y": 56,
+     "w": 320,
+     "h": 750
+    }
+   },
+   "file": "02-menu-dark-1440.png",
+   "jsErrors": []
+  },
+  {
+   "viewport": {
+    "w": 1440,
+    "h": 900,
+    "dpr": 1
+   },
+   "scrollWidth": 1440,
+   "scrollHeight": 900,
+   "overflowX": 0,
+   "activeView": "welcome",
+   "campaignOpen": true,
+   "kbOpen": false,
+   "textElements": 41,
+   "fontMin": 14,
+   "smallText": [],
+   "fontDistinct": 3,
+   "fontSizes": {
+    "14": 14,
+    "16": 26,
+    "30": 1
+   },
+   "tapCount": 27,
+   "tapsBad": [
+    {
+     "sel": "html > body.effects.tabletop > aside.sidebar.show-more > a.brand",
+     "label": "Solo Realms AI",
+     "w": 115.6,
+     "h": 21
+    },
+    {
+     "sel": "body.effects.tabletop > aside.sidebar.show-more > nav > div.nav-bar:nth-of-type(1) > button.nav:nth-of-type(1)",
+     "label": "BUTTON",
+     "w": 68,
+     "h": 38
+    },
+    {
+     "sel": "body.effects.tabletop > aside.sidebar.show-more > nav > div.nav-bar:nth-of-type(1) > button.nav:nth-of-type(2)",
+     "label": "BUTTON",
+     "w": 111,
+     "h": 38
+    },
+    {
+     "sel": "body.effects.tabletop > aside.sidebar.show-more > nav > div.nav-bar:nth-of-type(1) > button.nav:nth-of-type(3)",
+     "label": "BUTTON",
+     "w": 113,
+     "h": 38
+    },
+    {
+     "sel": "body.effects.tabletop > aside.sidebar.show-more > nav > div.nav-bar:nth-of-type(1) > button.nav:nth-of-type(4)",
+     "label": "BUTTON",
+     "w": 90,
+     "h": 38
+    },
+    {
+     "sel": "button#nav-more",
+     "label": "Ещё",
+     "w": 59,
+     "h": 36
+    },
+    {
+     "sel": "div#nav-drawer > div.nav-block:nth-of-type(1) > button.nav:nth-of-type(1)",
+     "label": "BUTTON",
+     "w": 287,
+     "h": 38
+    },
+    {
+     "sel": "div#nav-drawer > div.nav-block:nth-of-type(1) > button.nav:nth-of-type(2)",
+     "label": "BUTTON",
+     "w": 287,
+     "h": 38
+    },
+    {
+     "sel": "div#nav-drawer > div.nav-block:nth-of-type(1) > button.nav:nth-of-type(3)",
+     "label": "BUTTON",
+     "w": 287,
+     "h": 38
+    },
+    {
+     "sel": "div#nav-drawer > div.nav-block:nth-of-type(1) > button.nav:nth-of-type(4)",
+     "label": "BUTTON",
+     "w": 287,
+     "h": 38
+    },
+    {
+     "sel": "div#nav-drawer > div.nav-block:nth-of-type(1) > button.nav:nth-of-type(5)",
+     "label": "BUTTON",
+     "w": 287,
+     "h": 38
+    },
+    {
+     "sel": "div#nav-drawer > div.nav-block:nth-of-type(1) > button.nav:nth-of-type(6)",
+     "label": "BUTTON",
+     "w": 287,
+     "h": 38
+    },
+    {
+     "sel": "div#nav-drawer > div.nav-block:nth-of-type(2) > button.nav:nth-of-type(1)",
+     "label": "BUTTON",
+     "w": 287,
+     "h": 38
+    },
+    {
+     "sel": "div#nav-drawer > div.nav-block:nth-of-type(2) > button.nav:nth-of-type(2)",
+     "label": "BUTTON",
+     "w": 287,
+     "h": 38
+    },
+    {
+     "sel": "div#nav-drawer > div.nav-block:nth-of-type(2) > button.nav:nth-of-type(3)",
+     "label": "BUTTON",
+     "w": 287,
+     "h": 38
+    }
+   ],
+   "tapsBadCount": 22,
+   "contrastBad": [],
+   "contrastBadCount": 0,
+   "contrastMin": null,
+   "interactiveVisible": 27,
+   "clipped": [],
+   "clippedCount": 0,
+   "colorsOutsideCount": 0,
+   "colorsOutside": [],
+   "drawer": {
+    "h": 750,
+    "top": 56,
+    "rows": 17,
+    "blocks": [
+     "Кампания",
+     "Приложение"
+    ],
+    "scrollTop": 0,
+    "scroll": 0,
+    "content": 750
+   },
+   "state": "menu-app",
+   "theme": "dark",
+   "width": 1440,
+   "height": 900,
+   "debug": {
+    "bodyClass": "effects tabletop campaign-open nat20-game",
+    "burger": false,
+    "aside": {
+     "x": 0,
+     "y": 0,
+     "w": 1440,
+     "h": 56
+    },
+    "drawer": {
+     "x": 0,
+     "y": 56,
+     "w": 320,
+     "h": 750
+    }
+   },
+   "file": "02-menu-app-dark-1440.png",
+   "jsErrors": []
+  },
+  {
+   "viewport": {
+    "w": 1440,
+    "h": 900,
+    "dpr": 1
+   },
+   "scrollWidth": 1440,
+   "scrollHeight": 1116,
+   "overflowX": 0,
+   "activeView": "journal",
+   "campaignOpen": true,
+   "kbOpen": false,
+   "textElements": 23,
+   "fontMin": 14,
+   "smallText": [],
+   "fontDistinct": 4,
+   "fontSizes": {
+    "14": 13,
+    "16": 6,
+    "22": 3,
+    "30": 1
+   },
+   "tapCount": 12,
+   "tapsBad": [
+    {
+     "sel": "html > body.effects.tabletop > aside.sidebar > a.brand",
+     "label": "Solo Realms AI",
+     "w": 115.6,
+     "h": 21
+    },
+    {
+     "sel": "body.effects.tabletop > aside.sidebar > nav > div.nav-bar:nth-of-type(1) > button.nav:nth-of-type(1)",
+     "label": "BUTTON",
+     "w": 68,
+     "h": 38
+    },
+    {
+     "sel": "body.effects.tabletop > aside.sidebar > nav > div.nav-bar:nth-of-type(1) > button.nav:nth-of-type(2)",
+     "label": "BUTTON",
+     "w": 111,
+     "h": 38
+    },
+    {
+     "sel": "body.effects.tabletop > aside.sidebar > nav > div.nav-bar:nth-of-type(1) > button.nav:nth-of-type(3)",
+     "label": "BUTTON",
+     "w": 113,
+     "h": 38
+    },
+    {
+     "sel": "body.effects.tabletop > aside.sidebar > nav > div.nav-bar:nth-of-type(1) > button.nav:nth-of-type(4)",
+     "label": "BUTTON",
+     "w": 90,
+     "h": 38
+    },
+    {
+     "sel": "button#nav-more",
+     "label": "Ещё",
+     "w": 59,
+     "h": 36
+    },
+    {
+     "sel": "html > body.effects.tabletop > main > header > button.themetoggle:nth-of-type(1)",
+     "label": "Светлая тема",
+     "w": 34,
+     "h": 34
+    },
+    {
+     "sel": "section#journal > div.tabletop-tabs:nth-of-type(1) > button:nth-of-type(1)",
+     "label": "События и записи",
+     "w": 158,
+     "h": 39
+    },
+    {
+     "sel": "section#journal > div.tabletop-tabs:nth-of-type(1) > button:nth-of-type(2)",
+     "label": "Контрольные точки",
+     "w": 172,
+     "h": 39
+    }
+   ],
+   "tapsBadCount": 9,
+   "contrastBad": [],
+   "contrastBadCount": 0,
+   "contrastMin": null,
+   "interactiveVisible": 12,
+   "clipped": [],
+   "clippedCount": 0,
+   "colorsOutsideCount": 0,
+   "colorsOutside": [],
+   "drawer": null,
+   "state": "notes",
+   "theme": "dark",
+   "width": 1440,
+   "height": 900,
+   "file": "02-notes-dark-1440.png",
+   "jsErrors": []
+  },
+  {
+   "viewport": {
+    "w": 1440,
+    "h": 900,
+    "dpr": 1
+   },
+   "scrollWidth": 1440,
+   "scrollHeight": 900,
+   "overflowX": 0,
+   "activeView": "welcome",
+   "campaignOpen": true,
+   "kbOpen": false,
+   "textElements": 23,
+   "fontMin": 14,
+   "smallText": [],
+   "fontDistinct": 3,
+   "fontSizes": {
+    "14": 12,
+    "16": 10,
+    "30": 1
+   },
+   "tapCount": 11,
+   "tapsBad": [
+    {
+     "sel": "html > body.effects.tabletop > aside.sidebar > a.brand",
+     "label": "Solo Realms AI",
+     "w": 115.6,
+     "h": 21
+    },
+    {
+     "sel": "body.effects.tabletop > aside.sidebar > nav > div.nav-bar:nth-of-type(1) > button.nav:nth-of-type(1)",
+     "label": "BUTTON",
+     "w": 68,
+     "h": 38
+    },
+    {
+     "sel": "body.effects.tabletop > aside.sidebar > nav > div.nav-bar:nth-of-type(1) > button.nav:nth-of-type(2)",
+     "label": "BUTTON",
+     "w": 111,
+     "h": 38
+    },
+    {
+     "sel": "body.effects.tabletop > aside.sidebar > nav > div.nav-bar:nth-of-type(1) > button.nav:nth-of-type(3)",
+     "label": "BUTTON",
+     "w": 113,
+     "h": 38
+    },
+    {
+     "sel": "body.effects.tabletop > aside.sidebar > nav > div.nav-bar:nth-of-type(1) > button.nav:nth-of-type(4)",
+     "label": "BUTTON",
+     "w": 90,
+     "h": 38
+    },
+    {
+     "sel": "button#nav-more",
+     "label": "Ещё",
+     "w": 59,
+     "h": 36
+    }
+   ],
+   "tapsBadCount": 6,
+   "contrastBad": [],
+   "contrastBadCount": 0,
+   "contrastMin": null,
+   "interactiveVisible": 11,
+   "clipped": [],
+   "clippedCount": 0,
+   "colorsOutsideCount": 0,
+   "colorsOutside": [],
+   "drawer": null,
+   "state": "home",
+   "theme": "light",
+   "width": 1440,
+   "height": 900,
+   "file": "02-home-light-1440.png",
+   "jsErrors": []
+  },
+  {
+   "viewport": {
+    "w": 1440,
+    "h": 900,
+    "dpr": 1
+   },
+   "scrollWidth": 1440,
+   "scrollHeight": 1102,
+   "overflowX": 0,
+   "activeView": "creation",
+   "campaignOpen": true,
+   "kbOpen": false,
+   "textElements": 24,
+   "fontMin": 14,
+   "smallText": [],
+   "fontDistinct": 4,
+   "fontSizes": {
+    "14": 12,
+    "16": 9,
+    "22": 2,
+    "30": 1
+   },
+   "tapCount": 13,
+   "tapsBad": [
+    {
+     "sel": "html > body.effects.tabletop > aside.sidebar > a.brand",
+     "label": "Solo Realms AI",
+     "w": 115.6,
+     "h": 21
+    },
+    {
+     "sel": "body.effects.tabletop > aside.sidebar > nav > div.nav-bar:nth-of-type(1) > button.nav:nth-of-type(1)",
+     "label": "BUTTON",
+     "w": 68,
+     "h": 38
+    },
+    {
+     "sel": "body.effects.tabletop > aside.sidebar > nav > div.nav-bar:nth-of-type(1) > button.nav:nth-of-type(2)",
+     "label": "BUTTON",
+     "w": 111,
+     "h": 38
+    },
+    {
+     "sel": "body.effects.tabletop > aside.sidebar > nav > div.nav-bar:nth-of-type(1) > button.nav:nth-of-type(3)",
+     "label": "BUTTON",
+     "w": 113,
+     "h": 38
+    },
+    {
+     "sel": "body.effects.tabletop > aside.sidebar > nav > div.nav-bar:nth-of-type(1) > button.nav:nth-of-type(4)",
+     "label": "BUTTON",
+     "w": 90,
+     "h": 38
+    },
+    {
+     "sel": "button#nav-more",
+     "label": "Ещё",
+     "w": 59,
+     "h": 36
+    },
+    {
+     "sel": "html > body.effects.tabletop > main > header > button.themetoggle:nth-of-type(1)",
+     "label": "Тёмная тема",
+     "w": 34,
+     "h": 34
+    },
+    {
+     "sel": "section#creation-mock-notice > div.button-row > button",
+     "label": "Открыть готовое испытание",
+     "w": 243,
+     "h": 43
+    }
+   ],
+   "tapsBadCount": 8,
+   "contrastBad": [],
+   "contrastBadCount": 0,
+   "contrastMin": null,
+   "interactiveVisible": 13,
+   "clipped": [],
+   "clippedCount": 0,
+   "colorsOutsideCount": 0,
+   "colorsOutside": [],
+   "drawer": null,
+   "state": "new",
+   "theme": "light",
+   "width": 1440,
+   "height": 900,
+   "file": "02-new-light-1440.png",
+   "jsErrors": []
+  },
+  {
+   "viewport": {
+    "w": 1440,
+    "h": 900,
+    "dpr": 1
+   },
+   "scrollWidth": 1440,
+   "scrollHeight": 1299,
+   "overflowX": 0,
+   "activeView": "character",
+   "campaignOpen": true,
+   "kbOpen": false,
+   "textElements": 37,
+   "fontMin": 14,
+   "smallText": [],
+   "fontDistinct": 4,
+   "fontSizes": {
+    "14": 18,
+    "16": 8,
+    "22": 10,
+    "30": 1
+   },
+   "tapCount": 7,
+   "tapsBad": [
+    {
+     "sel": "html > body.effects.tabletop > aside.sidebar > a.brand",
+     "label": "Solo Realms AI",
+     "w": 115.6,
+     "h": 21
+    },
+    {
+     "sel": "body.effects.tabletop > aside.sidebar > nav > div.nav-bar:nth-of-type(1) > button.nav:nth-of-type(1)",
+     "label": "BUTTON",
+     "w": 68,
+     "h": 38
+    },
+    {
+     "sel": "body.effects.tabletop > aside.sidebar > nav > div.nav-bar:nth-of-type(1) > button.nav:nth-of-type(2)",
+     "label": "BUTTON",
+     "w": 111,
+     "h": 38
+    },
+    {
+     "sel": "body.effects.tabletop > aside.sidebar > nav > div.nav-bar:nth-of-type(1) > button.nav.active:nth-of-type(3)",
+     "label": "BUTTON",
+     "w": 113,
+     "h": 38
+    },
+    {
+     "sel": "body.effects.tabletop > aside.sidebar > nav > div.nav-bar:nth-of-type(1) > button.nav:nth-of-type(4)",
+     "label": "BUTTON",
+     "w": 90,
+     "h": 38
+    },
+    {
+     "sel": "button#nav-more",
+     "label": "Ещё",
+     "w": 59,
+     "h": 36
+    },
+    {
+     "sel": "html > body.effects.tabletop > main > header > button.themetoggle:nth-of-type(1)",
+     "label": "Тёмная тема",
+     "w": 34,
+     "h": 34
+    }
+   ],
+   "tapsBadCount": 7,
+   "contrastBad": [],
+   "contrastBadCount": 0,
+   "contrastMin": null,
+   "interactiveVisible": 7,
+   "clipped": [],
+   "clippedCount": 0,
+   "colorsOutsideCount": 0,
+   "colorsOutside": [],
+   "drawer": null,
+   "state": "hero",
+   "theme": "light",
+   "width": 1440,
+   "height": 900,
+   "file": "02-hero-light-1440.png",
+   "jsErrors": []
+  },
+  {
+   "viewport": {
+    "w": 1440,
+    "h": 900,
+    "dpr": 1
+   },
+   "scrollWidth": 1440,
+   "scrollHeight": 1102,
+   "overflowX": 0,
+   "activeView": "creation",
+   "campaignOpen": true,
+   "kbOpen": false,
+   "textElements": 24,
+   "fontMin": 14,
+   "smallText": [],
+   "fontDistinct": 4,
+   "fontSizes": {
+    "14": 12,
+    "16": 9,
+    "22": 2,
+    "30": 1
+   },
+   "tapCount": 13,
+   "tapsBad": [
+    {
+     "sel": "html > body.effects.tabletop > aside.sidebar > a.brand",
+     "label": "Solo Realms AI",
+     "w": 115.6,
+     "h": 21
+    },
+    {
+     "sel": "body.effects.tabletop > aside.sidebar > nav > div.nav-bar:nth-of-type(1) > button.nav:nth-of-type(1)",
+     "label": "BUTTON",
+     "w": 68,
+     "h": 38
+    },
+    {
+     "sel": "body.effects.tabletop > aside.sidebar > nav > div.nav-bar:nth-of-type(1) > button.nav:nth-of-type(2)",
+     "label": "BUTTON",
+     "w": 111,
+     "h": 38
+    },
+    {
+     "sel": "body.effects.tabletop > aside.sidebar > nav > div.nav-bar:nth-of-type(1) > button.nav:nth-of-type(3)",
+     "label": "BUTTON",
+     "w": 113,
+     "h": 38
+    },
+    {
+     "sel": "body.effects.tabletop > aside.sidebar > nav > div.nav-bar:nth-of-type(1) > button.nav:nth-of-type(4)",
+     "label": "BUTTON",
+     "w": 90,
+     "h": 38
+    },
+    {
+     "sel": "button#nav-more",
+     "label": "Ещё",
+     "w": 59,
+     "h": 36
+    },
+    {
+     "sel": "html > body.effects.tabletop > main > header > button.themetoggle:nth-of-type(1)",
+     "label": "Тёмная тема",
+     "w": 34,
+     "h": 34
+    },
+    {
+     "sel": "section#creation-mock-notice > div.button-row > button",
+     "label": "Открыть готовое испытание",
+     "w": 243,
+     "h": 43
+    }
+   ],
+   "tapsBadCount": 8,
+   "contrastBad": [],
+   "contrastBadCount": 0,
+   "contrastMin": null,
+   "interactiveVisible": 13,
+   "clipped": [],
+   "clippedCount": 0,
+   "colorsOutsideCount": 0,
+   "colorsOutside": [],
+   "drawer": null,
+   "state": "prep",
+   "theme": "light",
+   "width": 1440,
+   "height": 900,
+   "prep": {
+    "prepare": true,
+    "disabled": true,
+    "dialog": false,
+    "panel": false
+   },
+   "prep_panel": null,
+   "reached": false,
+   "file": "02-prep-light-1440.png",
+   "jsErrors": []
+  },
+  {
+   "viewport": {
+    "w": 1440,
+    "h": 900,
+    "dpr": 1
+   },
+   "scrollWidth": 1440,
+   "scrollHeight": 1102,
+   "overflowX": 0,
+   "activeView": "creation",
+   "campaignOpen": true,
+   "kbOpen": false,
+   "textElements": 24,
+   "fontMin": 14,
+   "smallText": [],
+   "fontDistinct": 4,
+   "fontSizes": {
+    "14": 12,
+    "16": 9,
+    "22": 2,
+    "30": 1
+   },
+   "tapCount": 13,
+   "tapsBad": [
+    {
+     "sel": "html > body.effects.tabletop > aside.sidebar > a.brand",
+     "label": "Solo Realms AI",
+     "w": 115.6,
+     "h": 21
+    },
+    {
+     "sel": "body.effects.tabletop > aside.sidebar > nav > div.nav-bar:nth-of-type(1) > button.nav:nth-of-type(1)",
+     "label": "BUTTON",
+     "w": 68,
+     "h": 38
+    },
+    {
+     "sel": "body.effects.tabletop > aside.sidebar > nav > div.nav-bar:nth-of-type(1) > button.nav:nth-of-type(2)",
+     "label": "BUTTON",
+     "w": 111,
+     "h": 38
+    },
+    {
+     "sel": "body.effects.tabletop > aside.sidebar > nav > div.nav-bar:nth-of-type(1) > button.nav:nth-of-type(3)",
+     "label": "BUTTON",
+     "w": 113,
+     "h": 38
+    },
+    {
+     "sel": "body.effects.tabletop > aside.sidebar > nav > div.nav-bar:nth-of-type(1) > button.nav:nth-of-type(4)",
+     "label": "BUTTON",
+     "w": 90,
+     "h": 38
+    },
+    {
+     "sel": "button#nav-more",
+     "label": "Ещё",
+     "w": 59,
+     "h": 36
+    },
+    {
+     "sel": "html > body.effects.tabletop > main > header > button.themetoggle:nth-of-type(1)",
+     "label": "Тёмная тема",
+     "w": 34,
+     "h": 34
+    },
+    {
+     "sel": "section#creation-mock-notice > div.button-row > button",
+     "label": "Открыть готовое испытание",
+     "w": 243,
+     "h": 43
+    }
+   ],
+   "tapsBadCount": 8,
+   "contrastBad": [],
+   "contrastBadCount": 0,
+   "contrastMin": null,
+   "interactiveVisible": 13,
+   "clipped": [],
+   "clippedCount": 0,
+   "colorsOutsideCount": 0,
+   "colorsOutside": [],
+   "drawer": null,
+   "state": "prep-log",
+   "theme": "light",
+   "width": 1440,
+   "height": 900,
+   "prep": {
+    "prepare": true,
+    "disabled": true,
+    "dialog": false,
+    "panel": false
+   },
+   "prep_panel": null,
+   "reached": false,
+   "file": "02-prep-log-light-1440.png",
+   "jsErrors": []
+  },
+  {
+   "viewport": {
+    "w": 1440,
+    "h": 900,
+    "dpr": 1
+   },
+   "scrollWidth": 1440,
+   "scrollHeight": 900,
+   "overflowX": 0,
+   "activeView": "play",
+   "campaignOpen": true,
+   "kbOpen": false,
+   "textElements": 25,
+   "fontMin": 14,
+   "smallText": [],
+   "fontDistinct": 4,
+   "fontSizes": {
+    "14": 12,
+    "16": 10,
+    "22": 2,
+    "30": 1
+   },
+   "tapCount": 12,
+   "tapsBad": [
+    {
+     "sel": "html > body.effects.tabletop > aside.sidebar > a.brand",
+     "label": "Solo Realms AI",
+     "w": 115.6,
+     "h": 21
+    },
+    {
+     "sel": "body.effects.tabletop > aside.sidebar > nav > div.nav-bar:nth-of-type(1) > button.nav.active:nth-of-type(1)",
+     "label": "BUTTON",
+     "w": 68,
+     "h": 38
+    },
+    {
+     "sel": "body.effects.tabletop > aside.sidebar > nav > div.nav-bar:nth-of-type(1) > button.nav:nth-of-type(2)",
+     "label": "BUTTON",
+     "w": 111,
+     "h": 38
+    },
+    {
+     "sel": "body.effects.tabletop > aside.sidebar > nav > div.nav-bar:nth-of-type(1) > button.nav:nth-of-type(3)",
+     "label": "BUTTON",
+     "w": 113,
+     "h": 38
+    },
+    {
+     "sel": "body.effects.tabletop > aside.sidebar > nav > div.nav-bar:nth-of-type(1) > button.nav:nth-of-type(4)",
+     "label": "BUTTON",
+     "w": 90,
+     "h": 38
+    },
+    {
+     "sel": "button#nav-more",
+     "label": "Ещё",
+     "w": 59,
+     "h": 36
+    },
+    {
+     "sel": "html > body.effects.tabletop > main > header > button.themetoggle:nth-of-type(1)",
+     "label": "Тёмная тема",
+     "w": 34,
+     "h": 34
+    },
+    {
+     "sel": "details#scene-hero > summary",
+     "label": "Ваш герой",
+     "w": 225,
+     "h": 18.9
+    },
+    {
+     "sel": "details#scene-hero > div.disclosure-body > button.quiet.sheet-link",
+     "label": "Лист героя",
+     "w": 82,
+     "h": 30.4
+    }
+   ],
+   "tapsBadCount": 9,
+   "contrastBad": [],
+   "contrastBadCount": 0,
+   "contrastMin": null,
+   "interactiveVisible": 12,
+   "clipped": [],
+   "clippedCount": 0,
+   "colorsOutsideCount": 0,
+   "colorsOutside": [],
+   "drawer": null,
+   "chatBlocks": [
+    {
+     "tag": "message master",
+     "h": 173,
+     "text": "МАСТЕР\nУ сторожевого поста гоблин перекрыл тропу. Осмотрите "
+    }
+   ],
+   "state": "game",
+   "theme": "light",
+   "width": 1440,
+   "height": 900,
+   "file": "02-game-light-1440.png",
+   "jsErrors": []
+  },
+  {
+   "viewport": {
+    "w": 1440,
+    "h": 564,
+    "dpr": 1
+   },
+   "scrollWidth": 1440,
+   "scrollHeight": 564,
+   "overflowX": 0,
+   "activeView": "play",
+   "campaignOpen": true,
+   "kbOpen": true,
+   "textElements": 25,
+   "fontMin": 14,
+   "smallText": [],
+   "fontDistinct": 4,
+   "fontSizes": {
+    "14": 12,
+    "16": 10,
+    "22": 2,
+    "30": 1
+   },
+   "tapCount": 12,
+   "tapsBad": [
+    {
+     "sel": "html > body.effects.tabletop > aside.sidebar > a.brand",
+     "label": "Solo Realms AI",
+     "w": 115.6,
+     "h": 21
+    },
+    {
+     "sel": "body.effects.tabletop > aside.sidebar > nav > div.nav-bar:nth-of-type(1) > button.nav.active:nth-of-type(1)",
+     "label": "BUTTON",
+     "w": 68,
+     "h": 38
+    },
+    {
+     "sel": "body.effects.tabletop > aside.sidebar > nav > div.nav-bar:nth-of-type(1) > button.nav:nth-of-type(2)",
+     "label": "BUTTON",
+     "w": 111,
+     "h": 38
+    },
+    {
+     "sel": "body.effects.tabletop > aside.sidebar > nav > div.nav-bar:nth-of-type(1) > button.nav:nth-of-type(3)",
+     "label": "BUTTON",
+     "w": 113,
+     "h": 38
+    },
+    {
+     "sel": "body.effects.tabletop > aside.sidebar > nav > div.nav-bar:nth-of-type(1) > button.nav:nth-of-type(4)",
+     "label": "BUTTON",
+     "w": 90,
+     "h": 38
+    },
+    {
+     "sel": "button#nav-more",
+     "label": "Ещё",
+     "w": 59,
+     "h": 36
+    },
+    {
+     "sel": "html > body.effects.tabletop > main > header > button.themetoggle:nth-of-type(1)",
+     "label": "Тёмная тема",
+     "w": 34,
+     "h": 34
+    },
+    {
+     "sel": "details#scene-hero > summary",
+     "label": "Ваш герой",
+     "w": 1313,
+     "h": 18.9
+    },
+    {
+     "sel": "details#scene-hero > div.disclosure-body > button.quiet.sheet-link",
+     "label": "Лист героя",
+     "w": 82,
+     "h": 30.4
+    }
+   ],
+   "tapsBadCount": 9,
+   "contrastBad": [],
+   "contrastBadCount": 0,
+   "contrastMin": null,
+   "interactiveVisible": 12,
+   "clipped": [],
+   "clippedCount": 0,
+   "colorsOutsideCount": 0,
+   "colorsOutside": [],
+   "drawer": null,
+   "chatBlocks": [
+    {
+     "tag": "message master",
+     "h": 173,
+     "text": "МАСТЕР\nУ сторожевого поста гоблин перекрыл тропу. Осмотрите "
+    }
+   ],
+   "state": "game-kb",
+   "theme": "light",
+   "width": 1440,
+   "height": 564,
+   "file": "02-game-kb-light-1440.png",
+   "jsErrors": []
+  },
+  {
+   "viewport": {
+    "w": 1440,
+    "h": 900,
+    "dpr": 1
+   },
+   "scrollWidth": 1440,
+   "scrollHeight": 900,
+   "overflowX": 0,
+   "activeView": "welcome",
+   "campaignOpen": true,
+   "kbOpen": false,
+   "textElements": 41,
+   "fontMin": 14,
+   "smallText": [],
+   "fontDistinct": 3,
+   "fontSizes": {
+    "14": 14,
+    "16": 26,
+    "30": 1
+   },
+   "tapCount": 27,
+   "tapsBad": [
+    {
+     "sel": "html > body.effects.tabletop > aside.sidebar.show-more > a.brand",
+     "label": "Solo Realms AI",
+     "w": 115.6,
+     "h": 21
+    },
+    {
+     "sel": "body.effects.tabletop > aside.sidebar.show-more > nav > div.nav-bar:nth-of-type(1) > button.nav:nth-of-type(1)",
+     "label": "BUTTON",
+     "w": 68,
+     "h": 38
+    },
+    {
+     "sel": "body.effects.tabletop > aside.sidebar.show-more > nav > div.nav-bar:nth-of-type(1) > button.nav:nth-of-type(2)",
+     "label": "BUTTON",
+     "w": 111,
+     "h": 38
+    },
+    {
+     "sel": "body.effects.tabletop > aside.sidebar.show-more > nav > div.nav-bar:nth-of-type(1) > button.nav:nth-of-type(3)",
+     "label": "BUTTON",
+     "w": 113,
+     "h": 38
+    },
+    {
+     "sel": "body.effects.tabletop > aside.sidebar.show-more > nav > div.nav-bar:nth-of-type(1) > button.nav:nth-of-type(4)",
+     "label": "BUTTON",
+     "w": 90,
+     "h": 38
+    },
+    {
+     "sel": "button#nav-more",
+     "label": "Ещё",
+     "w": 59,
+     "h": 36
+    },
+    {
+     "sel": "div#nav-drawer > div.nav-block:nth-of-type(1) > button.nav:nth-of-type(1)",
+     "label": "BUTTON",
+     "w": 287,
+     "h": 38
+    },
+    {
+     "sel": "div#nav-drawer > div.nav-block:nth-of-type(1) > button.nav:nth-of-type(2)",
+     "label": "BUTTON",
+     "w": 287,
+     "h": 38
+    },
+    {
+     "sel": "div#nav-drawer > div.nav-block:nth-of-type(1) > button.nav:nth-of-type(3)",
+     "label": "BUTTON",
+     "w": 287,
+     "h": 38
+    },
+    {
+     "sel": "div#nav-drawer > div.nav-block:nth-of-type(1) > button.nav:nth-of-type(4)",
+     "label": "BUTTON",
+     "w": 287,
+     "h": 38
+    },
+    {
+     "sel": "div#nav-drawer > div.nav-block:nth-of-type(1) > button.nav:nth-of-type(5)",
+     "label": "BUTTON",
+     "w": 287,
+     "h": 38
+    },
+    {
+     "sel": "div#nav-drawer > div.nav-block:nth-of-type(1) > button.nav:nth-of-type(6)",
+     "label": "BUTTON",
+     "w": 287,
+     "h": 38
+    },
+    {
+     "sel": "div#nav-drawer > div.nav-block:nth-of-type(2) > button.nav:nth-of-type(1)",
+     "label": "BUTTON",
+     "w": 287,
+     "h": 38
+    },
+    {
+     "sel": "div#nav-drawer > div.nav-block:nth-of-type(2) > button.nav:nth-of-type(2)",
+     "label": "BUTTON",
+     "w": 287,
+     "h": 38
+    },
+    {
+     "sel": "div#nav-drawer > div.nav-block:nth-of-type(2) > button.nav:nth-of-type(3)",
+     "label": "BUTTON",
+     "w": 287,
+     "h": 38
+    }
+   ],
+   "tapsBadCount": 22,
+   "contrastBad": [],
+   "contrastBadCount": 0,
+   "contrastMin": null,
+   "interactiveVisible": 27,
+   "clipped": [],
+   "clippedCount": 0,
+   "colorsOutsideCount": 0,
+   "colorsOutside": [],
+   "drawer": {
+    "h": 750,
+    "top": 56,
+    "rows": 17,
+    "blocks": [
+     "Кампания",
+     "Приложение"
+    ],
+    "scrollTop": 0,
+    "scroll": 0,
+    "content": 750
+   },
+   "state": "menu",
+   "theme": "light",
+   "width": 1440,
+   "height": 900,
+   "debug": {
+    "bodyClass": "effects tabletop campaign-open nat20-game",
+    "burger": false,
+    "aside": {
+     "x": 0,
+     "y": 0,
+     "w": 1440,
+     "h": 56
+    },
+    "drawer": {
+     "x": 0,
+     "y": 56,
+     "w": 320,
+     "h": 750
+    }
+   },
+   "file": "02-menu-light-1440.png",
+   "jsErrors": []
+  },
+  {
+   "viewport": {
+    "w": 1440,
+    "h": 900,
+    "dpr": 1
+   },
+   "scrollWidth": 1440,
+   "scrollHeight": 900,
+   "overflowX": 0,
+   "activeView": "welcome",
+   "campaignOpen": true,
+   "kbOpen": false,
+   "textElements": 41,
+   "fontMin": 14,
+   "smallText": [],
+   "fontDistinct": 3,
+   "fontSizes": {
+    "14": 14,
+    "16": 26,
+    "30": 1
+   },
+   "tapCount": 27,
+   "tapsBad": [
+    {
+     "sel": "html > body.effects.tabletop > aside.sidebar.show-more > a.brand",
+     "label": "Solo Realms AI",
+     "w": 115.6,
+     "h": 21
+    },
+    {
+     "sel": "body.effects.tabletop > aside.sidebar.show-more > nav > div.nav-bar:nth-of-type(1) > button.nav:nth-of-type(1)",
+     "label": "BUTTON",
+     "w": 68,
+     "h": 38
+    },
+    {
+     "sel": "body.effects.tabletop > aside.sidebar.show-more > nav > div.nav-bar:nth-of-type(1) > button.nav:nth-of-type(2)",
+     "label": "BUTTON",
+     "w": 111,
+     "h": 38
+    },
+    {
+     "sel": "body.effects.tabletop > aside.sidebar.show-more > nav > div.nav-bar:nth-of-type(1) > button.nav:nth-of-type(3)",
+     "label": "BUTTON",
+     "w": 113,
+     "h": 38
+    },
+    {
+     "sel": "body.effects.tabletop > aside.sidebar.show-more > nav > div.nav-bar:nth-of-type(1) > button.nav:nth-of-type(4)",
+     "label": "BUTTON",
+     "w": 90,
+     "h": 38
+    },
+    {
+     "sel": "button#nav-more",
+     "label": "Ещё",
+     "w": 59,
+     "h": 36
+    },
+    {
+     "sel": "div#nav-drawer > div.nav-block:nth-of-type(1) > button.nav:nth-of-type(1)",
+     "label": "BUTTON",
+     "w": 287,
+     "h": 38
+    },
+    {
+     "sel": "div#nav-drawer > div.nav-block:nth-of-type(1) > button.nav:nth-of-type(2)",
+     "label": "BUTTON",
+     "w": 287,
+     "h": 38
+    },
+    {
+     "sel": "div#nav-drawer > div.nav-block:nth-of-type(1) > button.nav:nth-of-type(3)",
+     "label": "BUTTON",
+     "w": 287,
+     "h": 38
+    },
+    {
+     "sel": "div#nav-drawer > div.nav-block:nth-of-type(1) > button.nav:nth-of-type(4)",
+     "label": "BUTTON",
+     "w": 287,
+     "h": 38
+    },
+    {
+     "sel": "div#nav-drawer > div.nav-block:nth-of-type(1) > button.nav:nth-of-type(5)",
+     "label": "BUTTON",
+     "w": 287,
+     "h": 38
+    },
+    {
+     "sel": "div#nav-drawer > div.nav-block:nth-of-type(1) > button.nav:nth-of-type(6)",
+     "label": "BUTTON",
+     "w": 287,
+     "h": 38
+    },
+    {
+     "sel": "div#nav-drawer > div.nav-block:nth-of-type(2) > button.nav:nth-of-type(1)",
+     "label": "BUTTON",
+     "w": 287,
+     "h": 38
+    },
+    {
+     "sel": "div#nav-drawer > div.nav-block:nth-of-type(2) > button.nav:nth-of-type(2)",
+     "label": "BUTTON",
+     "w": 287,
+     "h": 38
+    },
+    {
+     "sel": "div#nav-drawer > div.nav-block:nth-of-type(2) > button.nav:nth-of-type(3)",
+     "label": "BUTTON",
+     "w": 287,
+     "h": 38
+    }
+   ],
+   "tapsBadCount": 22,
+   "contrastBad": [],
+   "contrastBadCount": 0,
+   "contrastMin": null,
+   "interactiveVisible": 27,
+   "clipped": [],
+   "clippedCount": 0,
+   "colorsOutsideCount": 0,
+   "colorsOutside": [],
+   "drawer": {
+    "h": 750,
+    "top": 56,
+    "rows": 17,
+    "blocks": [
+     "Кампания",
+     "Приложение"
+    ],
+    "scrollTop": 0,
+    "scroll": 0,
+    "content": 750
+   },
+   "state": "menu-app",
+   "theme": "light",
+   "width": 1440,
+   "height": 900,
+   "debug": {
+    "bodyClass": "effects tabletop campaign-open nat20-game",
+    "burger": false,
+    "aside": {
+     "x": 0,
+     "y": 0,
+     "w": 1440,
+     "h": 56
+    },
+    "drawer": {
+     "x": 0,
+     "y": 56,
+     "w": 320,
+     "h": 750
+    }
+   },
+   "file": "02-menu-app-light-1440.png",
+   "jsErrors": []
+  },
+  {
+   "viewport": {
+    "w": 1440,
+    "h": 900,
+    "dpr": 1
+   },
+   "scrollWidth": 1440,
+   "scrollHeight": 1116,
+   "overflowX": 0,
+   "activeView": "journal",
+   "campaignOpen": true,
+   "kbOpen": false,
+   "textElements": 23,
+   "fontMin": 14,
+   "smallText": [],
+   "fontDistinct": 4,
+   "fontSizes": {
+    "14": 13,
+    "16": 6,
+    "22": 3,
+    "30": 1
+   },
+   "tapCount": 12,
+   "tapsBad": [
+    {
+     "sel": "html > body.effects.tabletop > aside.sidebar > a.brand",
+     "label": "Solo Realms AI",
+     "w": 115.6,
+     "h": 21
+    },
+    {
+     "sel": "body.effects.tabletop > aside.sidebar > nav > div.nav-bar:nth-of-type(1) > button.nav:nth-of-type(1)",
+     "label": "BUTTON",
+     "w": 68,
+     "h": 38
+    },
+    {
+     "sel": "body.effects.tabletop > aside.sidebar > nav > div.nav-bar:nth-of-type(1) > button.nav:nth-of-type(2)",
+     "label": "BUTTON",
+     "w": 111,
+     "h": 38
+    },
+    {
+     "sel": "body.effects.tabletop > aside.sidebar > nav > div.nav-bar:nth-of-type(1) > button.nav:nth-of-type(3)",
+     "label": "BUTTON",
+     "w": 113,
+     "h": 38
+    },
+    {
+     "sel": "body.effects.tabletop > aside.sidebar > nav > div.nav-bar:nth-of-type(1) > button.nav:nth-of-type(4)",
+     "label": "BUTTON",
+     "w": 90,
+     "h": 38
+    },
+    {
+     "sel": "button#nav-more",
+     "label": "Ещё",
+     "w": 59,
+     "h": 36
+    },
+    {
+     "sel": "html > body.effects.tabletop > main > header > button.themetoggle:nth-of-type(1)",
+     "label": "Тёмная тема",
+     "w": 34,
+     "h": 34
+    },
+    {
+     "sel": "section#journal > div.tabletop-tabs:nth-of-type(1) > button:nth-of-type(1)",
+     "label": "События и записи",
+     "w": 158,
+     "h": 39
+    },
+    {
+     "sel": "section#journal > div.tabletop-tabs:nth-of-type(1) > button:nth-of-type(2)",
+     "label": "Контрольные точки",
+     "w": 172,
+     "h": 39
+    }
+   ],
+   "tapsBadCount": 9,
+   "contrastBad": [],
+   "contrastBadCount": 0,
+   "contrastMin": null,
+   "interactiveVisible": 12,
+   "clipped": [],
+   "clippedCount": 0,
+   "colorsOutsideCount": 0,
+   "colorsOutside": [],
+   "drawer": null,
+   "state": "notes",
+   "theme": "light",
+   "width": 1440,
+   "height": 900,
+   "file": "02-notes-light-1440.png",
+   "jsErrors": []
+  }
+ ]
+}

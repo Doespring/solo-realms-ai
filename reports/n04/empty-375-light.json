@@ -1,0 +1,134 @@
+{
+ "viewport": "375x812",
+ "theme": "light",
+ "errors": [],
+ "documentScrollWidth": 375,
+ "innerWidth": 375,
+ "innerHeight": 812,
+ "documentScrollHeight": 812,
+ "bodyScrollWidth": 375,
+ "activeView": "welcome",
+ "bodyClass": "effects tabletop",
+ "interactiveCount": 3,
+ "interactive": [
+  {
+   "tag": "button",
+   "text": "Меню",
+   "id": "mobile-burger",
+   "cls": "m-burger",
+   "w": 44,
+   "h": 44,
+   "y": 6,
+   "font": "16px",
+   "bg": "rgba(0, 0, 0, 0)"
+  },
+  {
+   "tag": "button",
+   "text": "Начать историю",
+   "id": null,
+   "cls": "start__btn start__btn--primary",
+   "w": 343,
+   "h": 52,
+   "y": 259,
+   "font": "16px",
+   "bg": "rgb(138, 87, 20)"
+  },
+  {
+   "tag": "button",
+   "text": "Загрузить книгу",
+   "id": null,
+   "cls": "start__btn start__btn--ghost",
+   "w": 343,
+   "h": 52,
+   "y": 319,
+   "font": "16px",
+   "bg": "rgba(0, 0, 0, 0)"
+  }
+ ],
+ "accentCount": 1,
+ "accent": [
+  "Начать историю"
+ ],
+ "fontSizes": {
+  "14px": 2,
+  "30px": 2,
+  "16px": 4
+ },
+ "fontKinds": 3,
+ "pageFontSizes": {
+  "14px": 3,
+  "30px": 2,
+  "16px": 4
+ },
+ "pageFontKinds": 3,
+ "rect": {
+  "w": 375,
+  "h": 756
+ },
+ "parts": {
+  "header": {
+   "w": 375,
+   "h": 56,
+   "x": 0,
+   "y": 0,
+   "font": "10px",
+   "text": "Solo Realms AI"
+  },
+  "eyebrow": {
+   "w": 343,
+   "h": 21,
+   "x": 16,
+   "y": 80,
+   "font": "14px",
+   "text": "ОДИНОЧНОЕ ПРИКЛЮЧЕНИЕ"
+  },
+  "h1": {
+   "w": 343,
+   "h": 65,
+   "x": 16,
+   "y": 109,
+   "font": "30px",
+   "text": "Тихая история\nна целый вечер"
+  },
+  "lead": {
+   "w": 343,
+   "h": 50,
+   "x": 16,
+   "y": 186,
+   "font": "16px",
+   "text": "Мастер помнит, что было вчера. Правила считает движок, слова — рассказчик."
+  },
+  "primary": {
+   "w": 343,
+   "h": 52,
+   "x": 16,
+   "y": 259,
+   "font": "16px",
+   "text": "Начать историю"
+  },
+  "ghost": {
+   "w": 343,
+   "h": 52,
+   "x": 16,
+   "y": 319,
+   "font": "16px",
+   "text": "Загрузить книгу"
+  },
+  "continueRow": null,
+  "list": null,
+  "storyList": null,
+  "story": null,
+  "kicker": null,
+  "foot": {
+   "w": 343,
+   "h": 34,
+   "x": 16,
+   "y": 754,
+   "font": "14px",
+   "text": "Сохранения и книги остаются на этом компьютере"
+  },
+  "art": null
+ },
+ "text": "ОДИНОЧНОЕ ПРИКЛЮЧЕНИЕ\nТихая история\nна целый вечер\nМастер помнит, что было вчера. Правила считает движок, слова — рассказчик.\nНачать историю\nЗагрузить книгу\nУ вас пока нет историй. Начните с книги или загрузите свою\nСохранения и книги остаются на этом компьютере",
+ "offRight": 0
+}

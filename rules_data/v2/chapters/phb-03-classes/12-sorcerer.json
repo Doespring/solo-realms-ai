@@ -1,0 +1,851 @@
+{
+  "schema_version": "2.1.0",
+  "rules": [
+    {
+      "id": "phb2024.phb03.sorcerer.class_attributes",
+      "rules_family": "dnd2024",
+      "name": "Чародей: Ключевые атрибуты",
+      "kind": "procedure",
+      "classification": {
+        "mode": "deterministic",
+        "semantic_required": false,
+        "formal_required": true,
+        "reason": "Таблица «Ключевые атрибуты» задаёт точные значения (Кость хитов, спасброски, владения) без выбора Мастера"
+      },
+      "conditions": [],
+      "triggers": [
+        "sorcerer.class_attributes"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "procedure_id": "sorcerer_class_attributes"
+          }
+        }
+      ],
+      "semantic_questions": [],
+      "facts": {
+        "hit_die": "к6",
+        "primary": "Харизма",
+        "saves": [
+          "Телосложение",
+          "Харизма"
+        ],
+        "weapons": "Простое оружие",
+        "armor": "Отсутствует",
+        "subclass_level": 3,
+        "subclasses": [
+          "Аберрантное чародейство",
+          "Драконье чародейство",
+          "Заводное чародейство",
+          "Чародейство дикой магии"
+        ],
+        "pdf_span": [
+          163,
+          177
+        ]
+      },
+      "rule_parameters": {
+        "class_resources": {
+          "1": "Очки чародейства",
+          "2": "Метамагия",
+          "3": "использования Врождённого чародейства"
+        }
+      },
+      "constraints": [],
+      "exceptions": [],
+      "duration": "not_applicable",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "kind": "phb",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 164,
+        "printed_page": "163",
+        "section": "Чародей, глава 3 «Классы персонажей»: Выбор Чародея..."
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "existing_engine_subset",
+      "auto_activate": false,
+      "dependencies": [],
+      "behavior_tests": [
+        "phb03.sorcerer.class_attributes"
+      ],
+      "readiness": {
+        "status": "engine_subset_verified",
+        "handler": null,
+        "scope": "Проецирование классовых атрибутов на лист персонажа",
+        "blockers": []
+      },
+      "revision": 1
+    },
+    {
+      "id": "phb2024.phb03.sorcerer.sotvorenie_zaklinanii",
+      "rules_family": "dnd2024",
+      "name": "Чародей: Сотворение заклинаний (Чародей)",
+      "kind": "procedure",
+      "classification": {
+        "mode": "deterministic",
+        "semantic_required": false,
+        "formal_required": true,
+        "reason": "Числа и порядок шагов заданы текстом PHB 2024 (см. facts)"
+      },
+      "conditions": [],
+      "triggers": [
+        "sorcerer.sotvorenie_zaklinanii"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "cantrips_start": 4,
+            "prepared_level_1": 2,
+            "spellcasting_ability": "Харизма",
+            "replace_prepared": 1,
+            "procedure_id": "sorcerer_sotvorenie_zaklinanii"
+          }
+        }
+      ],
+      "semantic_questions": [],
+      "facts": {
+        "cantrips_start": 4,
+        "cantrip_levels": [
+          "4",
+          "10"
+        ],
+        "prepared_level_1": 2,
+        "spellcasting_ability": "Харизма",
+        "replace_prepared": 1
+      },
+      "rule_parameters": {},
+      "constraints": [],
+      "exceptions": [],
+      "duration": "per_action",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "kind": "phb",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 164,
+        "printed_page": "163",
+        "section": "Чародей, глава 3 «Классы персонажей»: Сотворение заклинаний (Чародей)"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "existing_engine_subset",
+      "auto_activate": false,
+      "dependencies": [
+        "phb2024.phb01.spell_slots"
+      ],
+      "behavior_tests": [
+        "phb03.sorcerer.sotvorenie_zaklinanii"
+      ],
+      "readiness": {
+        "status": "engine_subset_verified",
+        "handler": null,
+        "scope": "Чародей: Сотворение заклинаний (Чародей)",
+        "blockers": []
+      },
+      "revision": 1
+    },
+    {
+      "id": "phb2024.phb03.sorcerer.vrozhdennoe_charodeistvo",
+      "rules_family": "dnd2024",
+      "name": "Чародей: Врождённое чародейство",
+      "kind": "procedure",
+      "classification": {
+        "mode": "deterministic",
+        "semantic_required": false,
+        "formal_required": true,
+        "reason": "Числа и порядок шагов заданы текстом PHB 2024 (см. facts)"
+      },
+      "conditions": [],
+      "triggers": [
+        "sorcerer.vrozhdennoe_charodeistvo"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "bonus_action": true,
+            "duration_minutes": 1,
+            "spell_save_dc_bonus": 1,
+            "spell_attack_advantage": true,
+            "uses": 2,
+            "recharge": "Долгий отдых",
+            "procedure_id": "sorcerer_vrozhdennoe_charodeistvo"
+          }
+        }
+      ],
+      "semantic_questions": [],
+      "facts": {
+        "bonus_action": true,
+        "duration_minutes": 1,
+        "spell_save_dc_bonus": 1,
+        "spell_attack_advantage": true,
+        "uses": 2,
+        "recharge": "Долгий отдых"
+      },
+      "rule_parameters": {},
+      "constraints": [],
+      "exceptions": [],
+      "duration": "per_action",
+      "resources": [
+        {
+          "id": "innate_sorcery_uses",
+          "handling": "dependency_not_extracted"
+        }
+      ],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "kind": "phb",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 165,
+        "printed_page": "164",
+        "section": "Чародей, глава 3 «Классы персонажей»: Врождённое чародейство"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "existing_engine_subset",
+      "auto_activate": false,
+      "dependencies": [],
+      "behavior_tests": [
+        "phb03.sorcerer.vrozhdennoe_charodeistvo"
+      ],
+      "readiness": {
+        "status": "engine_subset_verified",
+        "handler": null,
+        "scope": "Чародей: Врождённое чародейство",
+        "blockers": []
+      },
+      "revision": 1
+    },
+    {
+      "id": "phb2024.phb03.sorcerer.istochnik_magii",
+      "rules_family": "dnd2024",
+      "name": "Чародей: Источник магии",
+      "kind": "procedure",
+      "classification": {
+        "mode": "deterministic",
+        "semantic_required": false,
+        "formal_required": true,
+        "reason": "Числа и порядок шагов заданы текстом PHB 2024 (см. facts)"
+      },
+      "conditions": [],
+      "triggers": [
+        "sorcerer.istochnik_magii"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "points_start": 2,
+            "slot_to_points": "равно уровню ячейки",
+            "recharge": "Долгий отдых",
+            "max_created_slot_level": 5,
+            "procedure_id": "sorcerer_istochnik_magii"
+          }
+        }
+      ],
+      "semantic_questions": [],
+      "facts": {
+        "points_start": 2,
+        "slot_to_points": "равно уровню ячейки",
+        "recharge": "Долгий отдых",
+        "max_created_slot_level": 5
+      },
+      "rule_parameters": {
+        "points_by_level": {
+          "1": "0",
+          "2": "2",
+          "3": "3",
+          "4": "4",
+          "5": "5",
+          "6": "6",
+          "7": "7",
+          "8": "8",
+          "9": "9",
+          "10": "10",
+          "11": "11",
+          "12": "12",
+          "13": "13",
+          "14": "14",
+          "15": "15",
+          "16": "16",
+          "17": "17",
+          "18": "18",
+          "19": "19",
+          "20": "20"
+        },
+        "slot_creation_cost": {
+          "1": "2",
+          "2": "3",
+          "3": "5",
+          "4": "6",
+          "5": "7"
+        },
+        "slot_creation_min_level": {
+          "1": "2",
+          "2": "3",
+          "3": "5",
+          "4": "7",
+          "5": "9"
+        }
+      },
+      "constraints": [],
+      "exceptions": [],
+      "duration": "per_action",
+      "resources": [
+        {
+          "id": "sorcery_points",
+          "handling": "dependency_not_extracted"
+        }
+      ],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "kind": "phb",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 165,
+        "printed_page": "164",
+        "section": "Чародей, глава 3 «Классы персонажей»: Источник магии"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "existing_engine_subset",
+      "auto_activate": false,
+      "dependencies": [],
+      "behavior_tests": [
+        "phb03.sorcerer.istochnik_magii"
+      ],
+      "readiness": {
+        "status": "adjudication_required",
+        "handler": null,
+        "scope": "Чародей: Источник магии",
+        "blockers": [
+          "движок принимает умение и тратит использование, но обмен очков на ячейки и обратно прогоном не наблюдается"
+        ]
+      },
+      "revision": 1
+    },
+    {
+      "id": "phb2024.phb03.sorcerer.metamagiya",
+      "rules_family": "dnd2024",
+      "name": "Чародей: Метамагия",
+      "kind": "procedure",
+      "classification": {
+        "mode": "deterministic",
+        "semantic_required": false,
+        "formal_required": true,
+        "reason": "Числа и порядок шагов заданы текстом PHB 2024 (см. facts)"
+      },
+      "conditions": [],
+      "triggers": [
+        "sorcerer.metamagiya"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "options_start": 2,
+            "one_option_per_spell": true,
+            "replace_on": "получение уровня Чародея",
+            "procedure_id": "sorcerer_metamagiya"
+          }
+        }
+      ],
+      "semantic_questions": [],
+      "facts": {
+        "options_start": 2,
+        "one_option_per_spell": true,
+        "replace_on": "получение уровня Чародея"
+      },
+      "rule_parameters": {
+        "extra_options": {
+          "10": "2",
+          "17": "2"
+        }
+      },
+      "constraints": [],
+      "exceptions": [],
+      "duration": "per_action",
+      "resources": [
+        {
+          "id": "sorcery_points",
+          "handling": "dependency_not_extracted"
+        }
+      ],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "kind": "phb",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 166,
+        "printed_page": "165",
+        "section": "Чародей, глава 3 «Классы персонажей»: Метамагия"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "not_implemented",
+      "auto_activate": false,
+      "dependencies": [],
+      "behavior_tests": [
+        "phb03.sorcerer.metamagiya"
+      ],
+      "readiness": {
+        "status": "blocked",
+        "handler": null,
+        "scope": "Чародей: Метамагия",
+        "blockers": [
+          "Метамагия остаётся прозой: у умения нет типизированной активности (матрица апстрима: Metamagic inert)"
+        ]
+      },
+      "revision": 1
+    },
+    {
+      "id": "phb2024.phb03.sorcerer.podklass_charodeya",
+      "rules_family": "dnd2024",
+      "name": "Чародей: Подкласс Чародея",
+      "kind": "procedure",
+      "classification": {
+        "mode": "deterministic",
+        "semantic_required": false,
+        "formal_required": true,
+        "reason": "Числа и порядок шагов заданы текстом PHB 2024 (см. facts)"
+      },
+      "conditions": [],
+      "triggers": [
+        "sorcerer.podklass_charodeya"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "subclass_level": 3,
+            "procedure_id": "sorcerer_podklass_charodeya"
+          }
+        }
+      ],
+      "semantic_questions": [],
+      "facts": {
+        "subclass_level": 3,
+        "subclasses": [
+          "Аберрантное чародейство",
+          "Драконье чародейство",
+          "Заводное чародейство",
+          "Чародейство дикой магии"
+        ]
+      },
+      "rule_parameters": {},
+      "constraints": [],
+      "exceptions": [],
+      "duration": "per_action",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "kind": "phb",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 166,
+        "printed_page": "165",
+        "section": "Чародей, глава 3 «Классы персонажей»: Подкласс Чародея"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "existing_engine_subset",
+      "auto_activate": false,
+      "dependencies": [],
+      "behavior_tests": [
+        "phb03.sorcerer.podklass_charodeya"
+      ],
+      "readiness": {
+        "status": "engine_subset_verified",
+        "handler": null,
+        "scope": "Чародей: Подкласс Чародея",
+        "blockers": []
+      },
+      "revision": 1
+    },
+    {
+      "id": "phb2024.phb03.sorcerer.uvelichenie_harakteristik",
+      "rules_family": "dnd2024",
+      "name": "Чародей: Увеличение характеристик",
+      "kind": "procedure",
+      "classification": {
+        "mode": "deterministic",
+        "semantic_required": false,
+        "formal_required": true,
+        "reason": "Числа и порядок шагов заданы текстом PHB 2024 (см. facts)"
+      },
+      "conditions": [],
+      "triggers": [
+        "sorcerer.uvelichenie_harakteristik"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "procedure_id": "sorcerer_uvelichenie_harakteristik"
+          }
+        }
+      ],
+      "semantic_questions": [],
+      "facts": {
+        "levels": [
+          "4",
+          "8",
+          "12",
+          "16"
+        ]
+      },
+      "rule_parameters": {},
+      "constraints": [],
+      "exceptions": [],
+      "duration": "per_action",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "kind": "phb",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 166,
+        "printed_page": "165",
+        "section": "Чародей, глава 3 «Классы персонажей»: Увеличение характеристик"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "existing_engine_subset",
+      "auto_activate": false,
+      "dependencies": [
+        "phb2024.phb05.ability_score_improvement"
+      ],
+      "behavior_tests": [
+        "phb03.sorcerer.uvelichenie_harakteristik"
+      ],
+      "readiness": {
+        "status": "engine_subset_verified",
+        "handler": null,
+        "scope": "Чародей: Увеличение характеристик",
+        "blockers": []
+      },
+      "revision": 1
+    },
+    {
+      "id": "phb2024.phb03.sorcerer.charodeiskoe_vosstanovlenie",
+      "rules_family": "dnd2024",
+      "name": "Чародей: Чародейское восстановление",
+      "kind": "procedure",
+      "classification": {
+        "mode": "deterministic",
+        "semantic_required": false,
+        "formal_required": true,
+        "reason": "Числа и порядок шагов заданы текстом PHB 2024 (см. facts)"
+      },
+      "conditions": [],
+      "triggers": [
+        "sorcerer.charodeiskoe_vosstanovlenie"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "recharge": "Короткий отдых",
+            "restore": "половина уровня Чародея, округляя в меньшую сторону",
+            "once_per_long_rest": true,
+            "procedure_id": "sorcerer_charodeiskoe_vosstanovlenie"
+          }
+        }
+      ],
+      "semantic_questions": [],
+      "facts": {
+        "recharge": "Короткий отдых",
+        "restore": "половина уровня Чародея, округляя в меньшую сторону",
+        "once_per_long_rest": true
+      },
+      "rule_parameters": {},
+      "constraints": [],
+      "exceptions": [],
+      "duration": "per_action",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "kind": "phb",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 166,
+        "printed_page": "165",
+        "section": "Чародей, глава 3 «Классы персонажей»: Чародейское восстановление"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "existing_engine_subset",
+      "auto_activate": false,
+      "dependencies": [
+        "phb2024.phb01.rounding"
+      ],
+      "behavior_tests": [
+        "phb03.sorcerer.charodeiskoe_vosstanovlenie"
+      ],
+      "readiness": {
+        "status": "engine_subset_verified",
+        "handler": null,
+        "scope": "Чародей: Чародейское восстановление",
+        "blockers": []
+      },
+      "revision": 1
+    },
+    {
+      "id": "phb2024.phb03.sorcerer.voploshenie_charodeistva",
+      "rules_family": "dnd2024",
+      "name": "Чародей: Воплощение чародейства",
+      "kind": "procedure",
+      "classification": {
+        "mode": "deterministic",
+        "semantic_required": false,
+        "formal_required": true,
+        "reason": "Числа и порядок шагов заданы текстом PHB 2024 (см. facts)"
+      },
+      "conditions": [],
+      "triggers": [
+        "sorcerer.voploshenie_charodeistva"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "point_cost": 2,
+            "metamagic_max_per_spell": 2,
+            "procedure_id": "sorcerer_voploshenie_charodeistva"
+          }
+        }
+      ],
+      "semantic_questions": [],
+      "facts": {
+        "point_cost": 2,
+        "metamagic_max_per_spell": 2
+      },
+      "rule_parameters": {},
+      "constraints": [],
+      "exceptions": [],
+      "duration": "per_action",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "kind": "phb",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 166,
+        "printed_page": "165",
+        "section": "Чародей, глава 3 «Классы персонажей»: Воплощение чародейства"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "existing_engine_subset",
+      "auto_activate": false,
+      "dependencies": [],
+      "behavior_tests": [
+        "phb03.sorcerer.voploshenie_charodeistva"
+      ],
+      "readiness": {
+        "status": "adjudication_required",
+        "handler": null,
+        "scope": "Чародей: Воплощение чародейства",
+        "blockers": [
+          "движок принимает умение, но прибавка к метамагии не наблюдается"
+        ]
+      },
+      "revision": 1
+    },
+    {
+      "id": "phb2024.phb03.sorcerer.epicheskii_dar",
+      "rules_family": "dnd2024",
+      "name": "Чародей: Эпический дар",
+      "kind": "procedure",
+      "classification": {
+        "mode": "deterministic",
+        "semantic_required": false,
+        "formal_required": true,
+        "reason": "Числа и порядок шагов заданы текстом PHB 2024 (см. facts)"
+      },
+      "conditions": [],
+      "triggers": [
+        "sorcerer.epicheskii_dar"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "procedure_id": "sorcerer_epicheskii_dar"
+          }
+        }
+      ],
+      "semantic_questions": [],
+      "facts": {},
+      "rule_parameters": {},
+      "constraints": [],
+      "exceptions": [],
+      "duration": "per_action",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "kind": "phb",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 166,
+        "printed_page": "165",
+        "section": "Чародей, глава 3 «Классы персонажей»: Эпический дар"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "existing_engine_subset",
+      "auto_activate": false,
+      "dependencies": [
+        "phb2024.phb05.epic_boon"
+      ],
+      "behavior_tests": [
+        "phb03.sorcerer.epicheskii_dar"
+      ],
+      "readiness": {
+        "status": "adjudication_required",
+        "handler": null,
+        "scope": "Чародей: Эпический дар",
+        "blockers": [
+          "дар не входит в репертуар ни одного класса: use_feature даёт CastFailed(not_in_repertoire)",
+          "выгод дара нет: activities и passive_effects пусты в данных, слово epic в ядре встречается только в labels.py"
+        ]
+      },
+      "revision": 1
+    },
+    {
+      "id": "phb2024.phb03.sorcerer.misticheskii_apofeoz",
+      "rules_family": "dnd2024",
+      "name": "Чародей: Мистический апофеоз",
+      "kind": "procedure",
+      "classification": {
+        "mode": "deterministic",
+        "semantic_required": false,
+        "formal_required": true,
+        "reason": "Числа и порядок шагов заданы текстом PHB 2024 (см. facts)"
+      },
+      "conditions": [],
+      "triggers": [
+        "sorcerer.misticheskii_apofeoz"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "one_free_metamagic_per_turn": true,
+            "procedure_id": "sorcerer_misticheskii_apofeoz"
+          }
+        }
+      ],
+      "semantic_questions": [],
+      "facts": {
+        "one_free_metamagic_per_turn": true
+      },
+      "rule_parameters": {},
+      "constraints": [],
+      "exceptions": [],
+      "duration": "per_action",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "kind": "phb",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 166,
+        "printed_page": "165",
+        "section": "Чародей, глава 3 «Классы персонажей»: Мистический апофеоз"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "not_implemented",
+      "auto_activate": false,
+      "dependencies": [],
+      "behavior_tests": [
+        "phb03.sorcerer.misticheskii_apofeoz"
+      ],
+      "readiness": {
+        "status": "blocked",
+        "handler": null,
+        "scope": "Чародей: Мистический апофеоз",
+        "blockers": [
+          "у умения нет активности: снятие предела очков магии не исполняется"
+        ]
+      },
+      "revision": 1
+    },
+    {
+      "id": "phb2024.phb03.sorcerer.akkuratnoe_zaklinanie",
+      "rules_family": "dnd2024",
+      "name": "Чародей: Аккуратное заклинание",
+      "kind": "procedure",
+      "classification": {
+        "mode": "deterministic",
+        "semantic_required": false,
+        "formal_required": true,
+        "reason": "Числа и порядок шагов заданы текстом PHB 2024 (см. facts)"
+      },
+      "conditions": [],
+      "triggers": [
+        "sorcerer.akkuratnoe_zaklinanie"
+      ],
+      "formal_operations": [
+        {
+          "op": "registered_procedure",
+          "inputs": [],
+          "constants": {
+            "cost": 1,
+            "targets_max": "модификатор Харизмы, минимум 1",
+            "auto_success": true,
+            "no_damage": true,
+            "procedure_id": "sorcerer_akkuratnoe_zaklinanie"
+          }
+        }
+      ],
+      "semantic_questions": [],
+      "facts": {
+        "cost": 1,
+        "targets_max": "модификатор Харизмы, минимум 1",
+        "auto_success": true,
+        "no_damage": true
+      },
+      "rule_parameters": {},
+      "constraints": [],
+      "exceptions": [],
+      "duration": "per_action",
+      "resources": [],
+      "source": {
+        "document_id": "phb_2024_ru",
+        "kind": "phb",
+        "sha256": "40a8ea0225049902328fcc93aa79c14862a222148bb3bf76ce4ad5efbc8633a5",
+        "publication_year": 2024,
+        "pdf_page": 166,
+        "printed_page": "165",
+        "section": "Чародей, глава 3 «Классы персонажей»: Аккуратное заклинание"
+      },
+      "verification": "source_checked_human_pending",
+      "implementation": "not_implemented",
+      "auto_activate": false,
+      "dependencies": [],
+      "behavior_tests": [
+        "phb03.sorcerer.akkuratnoe_zaklinanie"
+      ],
+      "readiness": {
+        "status": "blocked",
+        "handler": null,
+        "scope": "Чародей: Аккуратное заклинание",
+        "blockers": [
+          "вариант метамагии «Аккуратное заклинание» не исполняется: метамагия в движке — проза"
+        ]
+      },
+      "revision": 1
+    }
+  ]
+}

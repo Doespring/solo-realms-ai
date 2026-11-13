@@ -1,0 +1,14 @@
+/home/hermes/projects/SoloRealmsAI-Nat20/.venv/lib/python3.14/site-packages/fastapi/testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+  from starlette.testclient import TestClient as TestClient  # noqa
+модуль: auto-ffdf6324-02 | страницы: [102, 171] | мест: 5 | людей в пакете: 11
+Капанук стоит в месте: Оголай
+кандидаты в месте: 2 | Капанук: [{"id": "npc-7eb4ce7b5ed2224cc02d0981", "name": "Капанук", "place": "Оголай", "present": true, "attitude": null, "joined": false, "class_slug": "fighter", "species_slug": "human", "from_book": false, "evidence": ""}]
+в партии: ['Живой найм', 'Капанук']
+лист спутника: {"level": 1, "classes": {"fighter": 1}, "hp_max": 12, "ac": 16}
+происхождение: {"class_slug": "fighter", "evidence": "", "from_book": false, "note": "Параметры не из книги: в материале его класс не назван, лист собран по умолчанию.", "npc_id": "npc-7eb4ce7b5ed2224cc02d0981", "place": "Оголай", "printed_level": null, "sheet": "Параметры не из книги: в материале его класс не назван, лист собран по умолчанию.", "species_slug": "human", "reason": "rescued", "reason_text": "спасён"}
+журнал: [{"type": "scripted", "kind": "npc_joined_party", "text": "Капанук вступает в партию: спасён. Параметры не из книги: в материале его класс не назван, лист собран по умолчанию.", "events": [{"type": "npc_joined_party", "target_id": "companion-1", "name": "Капанук", "reason": "rescued", "reason_text": "спасён", "npc_id": "npc-7eb4ce7b5ed2224cc02d0981", "place": "Оголай", "from_book": false}], "npc_joined_party": {"type": "npc_joined_party", "target_id": "companion-1", "name": "Капанук", "reason": "rescued", "reason_text": "спасён", "npc_id": "npc-7eb4ce7b5ed2224cc02d0981", "place": "Оголай", "from_book": false, "id": "companion-1", "sheet": "Параметры не из книги: в материале его класс не назв
+инициатива: {"companion-1": 22, "hero": 21, "goblin": 17} | party_ids: ['companion-1', 'hero']
+ходов спутника: 4
+  ход: Капанук | действия: [('move', None), ('attack', None)]
+  ход: Капанук | действия: [('attack', None)]
+лента: ['Капанук вступает в партию: спасён. Параметры не из книги: в материале его класс не назван, лист собран по умолчанию.']

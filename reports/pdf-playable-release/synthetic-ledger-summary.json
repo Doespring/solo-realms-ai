@@ -1,0 +1,39 @@
+{
+  "synthetic": true,
+  "real_spend": false,
+  "entries": [
+    {
+      "purpose": "interpreter",
+      "status": "ok",
+      "error_code": "",
+      "entries": 4
+    },
+    {
+      "purpose": "narrator",
+      "status": "error",
+      "error_code": "http_400",
+      "entries": 1
+    },
+    {
+      "purpose": "narrator",
+      "status": "ok",
+      "error_code": "",
+      "entries": 3
+    },
+    {
+      "purpose": "preparation_world",
+      "status": "ok",
+      "error_code": "",
+      "entries": 1
+    }
+  ],
+  "errors": [
+    {
+      "purpose": "narrator",
+      "status": "error",
+      "error_code": "http_400",
+      "turn_ref": "pdf-look"
+    }
+  ],
+  "explanation": "pdf-look observation has place/atmosphere keys; the closed fixture only accepts outcomes/player_words/description_sources narrator packets. Synthetic HTTP400 triggers existing source-grounded engine_fallback, HTTP API200; no external fallback."
+}

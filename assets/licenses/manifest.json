@@ -1,0 +1,252 @@
+[
+  {
+    "name": "fastapi",
+    "version": "0.143.0",
+    "license": "MIT",
+    "files": [
+      "licenses/LICENSE"
+    ]
+  },
+  {
+    "name": "starlette",
+    "version": "1.7.0",
+    "license": "BSD-3-Clause",
+    "files": [
+      "licenses/LICENSE.md"
+    ]
+  },
+  {
+    "name": "pydantic",
+    "version": "2.14.1",
+    "license": "MIT",
+    "files": [
+      "licenses/LICENSE"
+    ]
+  },
+  {
+    "name": "pydantic_core",
+    "version": "2.50.1",
+    "license": "MIT",
+    "files": [
+      "licenses/LICENSE"
+    ]
+  },
+  {
+    "name": "httpx",
+    "version": "0.28.1",
+    "license": "BSD-3-Clause",
+    "files": [
+      "licenses/LICENSE.md"
+    ]
+  },
+  {
+    "name": "httpcore",
+    "version": "1.0.9",
+    "license": "BSD-3-Clause",
+    "files": [
+      "licenses/LICENSE.md"
+    ]
+  },
+  {
+    "name": "anyio",
+    "version": "4.15.1",
+    "license": "MIT",
+    "files": [
+      "licenses/LICENSE"
+    ]
+  },
+  {
+    "name": "certifi",
+    "version": "2026.7.22",
+    "license": "MPL-2.0",
+    "files": [
+      "licenses/LICENSE"
+    ]
+  },
+  {
+    "name": "idna",
+    "version": "3.20",
+    "license": "BSD-3-Clause",
+    "files": [
+      "licenses/LICENSE.md"
+    ]
+  },
+  {
+    "name": "h11",
+    "version": "0.16.0",
+    "license": "MIT",
+    "files": [
+      "licenses/LICENSE.txt"
+    ]
+  },
+  {
+    "name": "uvicorn",
+    "version": "0.54.0",
+    "license": "BSD-3-Clause",
+    "files": [
+      "licenses/LICENSE.md"
+    ]
+  },
+  {
+    "name": "click",
+    "version": "8.5.0",
+    "license": "BSD-3-Clause",
+    "files": [
+      "licenses/LICENSE.txt"
+    ]
+  },
+  {
+    "name": "colorama",
+    "version": "0.4.6",
+    "license": "See package metadata",
+    "files": [
+      "licenses/LICENSE.txt"
+    ]
+  },
+  {
+    "name": "typing_extensions",
+    "version": "4.16.0",
+    "license": "PSF-2.0",
+    "files": [
+      "licenses/LICENSE"
+    ]
+  },
+  {
+    "name": "typing-inspection",
+    "version": "0.4.4",
+    "license": "MIT",
+    "files": [
+      "licenses/LICENSE"
+    ]
+  },
+  {
+    "name": "annotated-types",
+    "version": "0.8.0",
+    "license": "MIT",
+    "files": [
+      "licenses/LICENSE"
+    ]
+  },
+  {
+    "name": "annotated-doc",
+    "version": "0.0.5",
+    "license": "MIT",
+    "files": [
+      "licenses/LICENSE"
+    ]
+  },
+  {
+    "name": "opentelemetry-api",
+    "version": "1.45.1",
+    "license": "Apache-2.0",
+    "files": [
+      "licenses/LICENSE"
+    ]
+  },
+  {
+    "name": "psutil",
+    "version": "7.2.2",
+    "license": "BSD-3-Clause",
+    "files": [
+      "LICENSE"
+    ]
+  },
+  {
+    "name": "pywebview",
+    "version": "6.2.1",
+    "license": "BSD 3-Clause License\n\nCopyright (c) 2014-2017, Roman Sirokov\nAll rights reserved.\n\nRedistribution and use in source and binary forms, with or without\nmodification, are permitted provided that the following conditions are met:\n\n* Redistributions of source code must retain the above copyright notice, this\n  list of conditions and the following disclaimer.\n\n* Redistributions in binary form must reproduce the above copyright notice,\n  this list of conditions and the following disclaimer in the documentation\n  and/or other materials provided with the distribution.\n\n* Neither the name of the copyright holder nor the names of its\n  contributors may be used to endorse or promote products derived from\n  this software without specific prior written permission.\n\nTHIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS \"AS IS\"\nAND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE\nIMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE\nDISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE\nFOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL\nDAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR\nSERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER\nCAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,\nOR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE\nOF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.\n",
+    "files": [
+      "licenses/LICENSE"
+    ]
+  },
+  {
+    "name": "pythonnet",
+    "version": "3.2.1",
+    "license": "MIT",
+    "files": [
+      "licenses/AUTHORS.md",
+      "licenses/LICENSE"
+    ]
+  },
+  {
+    "name": "clr_loader",
+    "version": "0.3.1",
+    "license": "See package metadata",
+    "files": [
+      "licenses/LICENSE"
+    ]
+  },
+  {
+    "name": "bottle",
+    "version": "0.13.4",
+    "license": "MIT",
+    "files": [
+      "licenses/LICENSE"
+    ]
+  },
+  {
+    "name": "proxy_tools",
+    "version": "0.1.0",
+    "license": "MIT",
+    "files": [
+      "METADATA.txt"
+    ]
+  },
+  {
+    "name": "cffi",
+    "version": "2.1.1",
+    "license": "MIT-0",
+    "files": [
+      "licenses/LICENSE"
+    ]
+  },
+  {
+    "name": "pycparser",
+    "version": "3.11",
+    "license": "BSD-3-Clause",
+    "files": [
+      "licenses/LICENSE"
+    ]
+  },
+  {
+    "name": "pypdf",
+    "version": "6.20.1",
+    "license": "BSD-3-Clause",
+    "files": [
+      "licenses/LICENSE"
+    ]
+  },
+  {
+    "name": "pypdfium2",
+    "version": "5.14.0",
+    "license": "BSD-3-Clause, Apache-2.0, dependency licenses",
+    "files": [
+      "licenses/LICENSES/Apache-2.0.txt",
+      "licenses/LICENSES/BSD-3-Clause.txt",
+      "licenses/LICENSES/CC-BY-4.0.txt",
+      "licenses/data/windows_x64/BUILD_LICENSES/abseil.txt",
+      "licenses/data/windows_x64/BUILD_LICENSES/agg23.txt",
+      "licenses/data/windows_x64/BUILD_LICENSES/fast_float.txt",
+      "licenses/data/windows_x64/BUILD_LICENSES/freetype.txt",
+      "licenses/data/windows_x64/BUILD_LICENSES/icu.txt",
+      "licenses/data/windows_x64/BUILD_LICENSES/lcms.txt",
+      "licenses/data/windows_x64/BUILD_LICENSES/libjpeg_turbo.ijg",
+      "licenses/data/windows_x64/BUILD_LICENSES/libjpeg_turbo.md",
+      "licenses/data/windows_x64/BUILD_LICENSES/libopenjpeg.txt",
+      "licenses/data/windows_x64/BUILD_LICENSES/libpng.txt",
+      "licenses/data/windows_x64/BUILD_LICENSES/llvm-libc.txt",
+      "licenses/data/windows_x64/BUILD_LICENSES/pdfium-binaries.txt",
+      "licenses/data/windows_x64/BUILD_LICENSES/pdfium.txt",
+      "licenses/data/windows_x64/BUILD_LICENSES/simdutf.txt",
+      "licenses/data/windows_x64/BUILD_LICENSES/zlib.txt"
+    ]
+  },
+  {
+    "name": "pillow",
+    "version": "12.3.0",
+    "license": "MIT-CMU",
+    "files": [
+      "licenses/LICENSE"
+    ]
+  }
+]

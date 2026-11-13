@@ -1,0 +1,52 @@
+{
+  "backup_status": 200,
+  "copy_exists": true,
+  "copy_bytes": 294912,
+  "broken_links": 1,
+  "summary": "Файл solo.sqlite3: нарушено внешних связей — 1 (таблицы: checkpoints); записи не удалены",
+  "report_file": "integrity-report.json",
+  "orphan": {
+    "table": "checkpoints",
+    "rowid": 1,
+    "parent": "campaigns",
+    "columns": [
+      {
+        "column": "campaign",
+        "parent_column": "id"
+      }
+    ],
+    "values": {
+      "campaign": "нет-такой-кампании"
+    }
+  },
+  "copy_integrity": "ok",
+  "list_nonempty": [
+    "manual-20261108T045025Z-e966bd11"
+  ],
+  "list_broken": 1,
+  "export_status": 200,
+  "export_bytes": 19770,
+  "export_header": "broken_links=1; damaged=0; links=broken",
+  "export_names": [
+    "solo.sqlite3",
+    "cloud-usage.sqlite3",
+    "preparation.sqlite3",
+    "adventure.sqlite3",
+    "snapshot.json",
+    "integrity-report.json"
+  ],
+  "export_report_broken": 1,
+  "md5_before": "a525b9b1bf171dda240f7df5908e320c",
+  "md5_after": "a525b9b1bf171dda240f7df5908e320c",
+  "md5_same": true,
+  "orphan_kept": [
+    "нет-такой-кампании"
+  ],
+  "copy_campaign": {
+    "row": [
+      "Кампания"
+    ],
+    "checkpoints": 1
+  },
+  "live_campaign": "c343011c-6d52-40c7-86e6-5aebda6b8af8"
+}

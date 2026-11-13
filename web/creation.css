@@ -1,0 +1,11 @@
+/* n16: служебные кнопки — ПОД материалами, не липкие к верху.
+   Было: position:sticky и sticky-полоса закрывала шапку экрана
+   подготовки, и первым видимым оставались три кнопки 16 px. */
+.creation-controls{display:flex;flex-wrap:wrap;gap:.6rem;padding:.7rem 0;margin-top:1.2rem;border-top:1px solid var(--line)}
+.creation-drop{border:2px dashed var(--gold);border-radius:12px;padding:1.4rem;margin:1.2rem 0;background:color-mix(in srgb,var(--gold) 10%,var(--surface))}
+.creation-drop.dragging{outline:3px solid var(--gold);background:color-mix(in srgb,var(--gold) 30%,transparent)}
+.creation-file{display:flex;flex-wrap:wrap;align-items:center;gap:.7rem;padding:.8rem;border-bottom:1px solid var(--line)}
+.creation-file strong{flex:1 1 230px;overflow-wrap:anywhere}.creation-file small{flex:1 1 180px}
+#creation textarea{width:100%;box-sizing:border-box}#creation-drafts{display:grid;gap:1rem;margin-top:1.2rem}
+.character-entry{margin:1.5rem 0;padding:1.2rem;border:1px solid var(--line);border-radius:12px}.character-entry button{margin:.5rem .5rem .5rem 0}
+@media(max-width:600px){.creation-controls button{flex:1 1 110px}.creation-drop{padding:.8rem}.creation-file{padding:.6rem 0}}
